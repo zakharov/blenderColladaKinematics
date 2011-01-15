@@ -1,1 +1,4 @@
-BlenderColladaKinematics Project
+Kinematics add-on for Blender 2.5x COLLADA exporter/importer
+
+* Collection of COLLADA 1.5 kinematics models 
+* Validation unit test for the models
