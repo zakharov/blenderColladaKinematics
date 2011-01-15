@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA version="1.5.0" xmlns="http://www.collada.org/2008/03/COLLADASchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:math="http://www.w3.org/1998/Math/MathML" xsi:schemaLocation="http://www.collada.org/2008/03/COLLADASchema http://www.khronos.org/files/collada_schema_1_5">
+  <asset>
+    <created>2010-08-03T10:48:15</created>
+    <modified>2010-08-03T10:48:15</modified>
+    <unit name="decimetre" meter="0.1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_cameras/>
+  <library_lights/>
+  <library_images/>
+  <library_effects>
+    <effect id="Material_003-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1.0</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1.0</color>
+            </ambient>
+            <diffuse>
+              <color>0.8 0 0.061335 1.0</color>
+            </diffuse>
+            <reflective>
+              <color>1.0 1.0 1.0 1.0</color>
+            </reflective>
+            <reflectivity>
+              <float>0.5</float>
+            </reflectivity>
+            <transparent>
+              <color>0 0 0 1.0</color>
+            </transparent>
+            <transparency>
+              <float>1.0</float>
+            </transparency>
+            <index_of_refraction>
+              <float>1.0</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+        <extra>
+          <technique profile="GOOGLEEARTH">
+            <double_sided>1</double_sided>
+          </technique>
+        </extra>
+      </profile_COMMON>
+      <extra><technique profile="MAX3D"><double_sided>1</double_sided></technique></extra>
+    </effect>
+    <effect id="Material-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1.0</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1.0</color>
+            </ambient>
+            <diffuse>
+              <color>0.005274 0 0.8 1.0</color>
+            </diffuse>
+            <reflective>
+              <color>1.0 1.0 1.0 1.0</color>
+            </reflective>
+            <reflectivity>
+              <float>0.5</float>
+            </reflectivity>
+            <transparent>
+              <color>0 0 0 1.0</color>
+            </transparent>
+            <transparency>
+              <float>1.0</float>
+            </transparency>
+            <index_of_refraction>
+              <float>1.0</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+        <extra>
+          <technique profile="GOOGLEEARTH">
+            <double_sided>1</double_sided>
+          </technique>
+        </extra>
+      </profile_COMMON>
+      <extra><technique profile="MAX3D"><double_sided>1</double_sided></technique></extra>
+    </effect>
+    <effect id="Material_004-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1.0</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1.0</color>
+            </ambient>
+            <diffuse>
+              <color>0.18395 0.8 0 1.0</color>
+            </diffuse>
+            <reflective>
+              <color>1.0 1.0 1.0 1.0</color>
+            </reflective>
+            <reflectivity>
+              <float>0.5</float>
+            </reflectivity>
+            <transparent>
+              <color>0 0 0 1.0</color>
+            </transparent>
+            <transparency>
+              <float>1.0</float>
+            </transparency>
+            <index_of_refraction>
+              <float>1.0</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+        <extra>
+          <technique profile="GOOGLEEARTH">
+            <double_sided>1</double_sided>
+          </technique>
+        </extra>
+      </profile_COMMON>
+      <extra><technique profile="MAX3D"><double_sided>1</double_sided></technique></extra>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="Material_003" name="Material.003">
+      <instance_effect url="#Material_003-effect"/>
+    </material>
+    <material id="Material" name="Material">
+      <instance_effect url="#Material-effect"/>
+    </material>
+    <material id="Material_004" name="Material.004">
+      <instance_effect url="#Material_004-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="base-mesh">
+      <mesh>
+        <source id="base-mesh-positions">
+          <float_array id="base-mesh-positions-array" count="24">1000.0 999.999939 0 1000.0 -1000.0 0 -1000.000122 -999.999878 0 -999.999634 1000.000366 0 1000.000488 999.999451 2000.0 999.999329 -1000.00061 2000.0 -1000.000366 -999.999634 2000.0 -999.999939 1000.0 2000.0</float_array>
+          <technique_common>
+            <accessor source="#base-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="base-mesh-normals">
+          <float_array id="base-mesh-normals-array" count="36">0.0 1.0 0.0 0.0 1.0 0.0 -1.0 0.0 -0.0 -1.0 0.0 -0.0 0 -1.0 -0.0 -0.0 -1.0 0.0 1.0 0 -0.0 1.0 -0.000001 0.0 0 0 1.0 0 0 1.0 0 0 -1.0 0 0 -1.0</float_array>
+          <technique_common>
+            <accessor source="#base-mesh-normals-array" count="12" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="base-mesh-map-0">
+          <float_array id="base-mesh-map-0-array" count="72">0 0 1.0 0 1.0 1.0 0 0 1.0 1.0 0 1.0 0 0 1.0 0 1.0 1.0 0 0 1.0 1.0 0 1.0 0 0 1.0 0 0 1.0 1.0 0 1.0 1.0 0 1.0 0 0 1.0 0 0 1.0 1.0 0 1.0 1.0 0 1.0 0 0 1.0 0 0 1.0 1.0 0 1.0 1.0 0 1.0 0 0 1.0 0 1.0 1.0 0 0 1.0 1.0 0 1.0</float_array>
+          <technique_common>
+            <accessor source="#base-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="base-mesh-colors">
+          <float_array id="base-mesh-colors-array" count="108">1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</float_array>
+          <technique_common>
+            <accessor source="#base-mesh-colors-array" count="36" stride="3">
+              <param name="R" type="float"/>
+              <param name="G" type="float"/>
+              <param name="B" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="base-mesh-vertices">
+          <input semantic="POSITION" source="#base-mesh-positions"/>
+        </vertices>
+        <polylist material="Material_003" count="12">
+          <input semantic="VERTEX" source="#base-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#base-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#base-mesh-map-0" offset="2" set="0"/>
+          <input semantic="COLOR" source="#base-mesh-colors" offset="3"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>4 0 0 0 0 0 1 1 3 0 2 2 4 1 3 3 3 1 4 4 7 1 5 5 2 2 6 6 6 2 7 7 7 2 8 8 2 3 9 9 7 3 10 10 3 3 11 11 1 4 12 12 5 4 13 13 2 4 14 14 5 5 15 15 6 5 16 16 2 5 17 17 0 6 18 18 4 6 19 19 1 6 20 20 4 7 21 21 5 7 22 22 1 7 23 23 4 8 24 24 7 8 25 25 5 8 26 26 7 9 27 27 6 9 28 28 5 9 29 29 0 10 30 30 1 10 31 31 2 10 32 32 0 11 33 33 2 11 34 34 3 11 35 35</p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="arm1-mesh">
+      <mesh>
+        <source id="arm1-mesh-positions">
+          <float_array id="arm1-mesh-positions-array" count="24">1000.0 999.999939 2000.0 1000.0 -1000.0 2000.0 -1000.000122 -999.999878 2000.0 -999.999634 1000.000366 2000.0 1000.000488 999.999451 4000.0 999.999329 -1000.00061 4000.0 -1000.000366 -999.999634 4000.0 -999.999939 1000.0 4000.0</float_array>
+          <technique_common>
+            <accessor source="#arm1-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="arm1-mesh-normals">
+          <float_array id="arm1-mesh-normals-array" count="36">0.0 1.0 0.0 0.0 1.0 0.0 -1.0 0.0 -0.0 -1.0 0.0 -0.0 0 -1.0 -0.0 -0.0 -1.0 0.0 1.0 0 -0.0 1.0 -0.000001 0.0 0 0 1.0 0 0 1.0 0 0 -1.0 0 0 -1.0</float_array>
+          <technique_common>
+            <accessor source="#arm1-mesh-normals-array" count="12" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="arm1-mesh-map-0">
+          <float_array id="arm1-mesh-map-0-array" count="72">0 0 1.0 0 1.0 1.0 0 0 1.0 1.0 0 1.0 0 0 1.0 0 1.0 1.0 0 0 1.0 1.0 0 1.0 0 0 1.0 0 0 1.0 1.0 0 1.0 1.0 0 1.0 0 0 1.0 0 0 1.0 1.0 0 1.0 1.0 0 1.0 0 0 1.0 0 0 1.0 1.0 0 1.0 1.0 0 1.0 0 0 1.0 0 1.0 1.0 0 0 1.0 1.0 0 1.0</float_array>
+          <technique_common>
+            <accessor source="#arm1-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="arm1-mesh-colors">
+          <float_array id="arm1-mesh-colors-array" count="108">1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</float_array>
+          <technique_common>
+            <accessor source="#arm1-mesh-colors-array" count="36" stride="3">
+              <param name="R" type="float"/>
+              <param name="G" type="float"/>
+              <param name="B" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="arm1-mesh-vertices">
+          <input semantic="POSITION" source="#arm1-mesh-positions"/>
+        </vertices>
+        <polylist material="Material" count="12">
+          <input semantic="VERTEX" source="#arm1-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#arm1-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#arm1-mesh-map-0" offset="2" set="0"/>
+          <input semantic="COLOR" source="#arm1-mesh-colors" offset="3"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>4 0 0 0 0 0 1 1 3 0 2 2 4 1 3 3 3 1 4 4 7 1 5 5 2 2 6 6 6 2 7 7 7 2 8 8 2 3 9 9 7 3 10 10 3 3 11 11 1 4 12 12 5 4 13 13 2 4 14 14 5 5 15 15 6 5 16 16 2 5 17 17 0 6 18 18 4 6 19 19 1 6 20 20 4 7 21 21 5 7 22 22 1 7 23 23 4 8 24 24 7 8 25 25 5 8 26 26 7 9 27 27 6 9 28 28 5 9 29 29 0 10 30 30 1 10 31 31 2 10 32 32 0 11 33 33 2 11 34 34 3 11 35 35</p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="arm2-mesh">
+      <mesh>
+        <source id="arm2-mesh-positions">
+          <float_array id="arm2-mesh-positions-array" count="24">3000.0 3000.0 2000.0 3000.0 -1000.0 2000.0 999.999878 -999.999756 2000.0 1000.000366 3000.000732 2000.0 3000.000488 2999.999023 4000.0 2999.999268 -1000.001221 4000.0 999.999634 -999.999268 4000.0 1000.000061 3000.0 4000.0</float_array>
+          <technique_common>
+            <accessor source="#arm2-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="arm2-mesh-normals">
+          <float_array id="arm2-mesh-normals-array" count="36">0.0 1.0 0.0 0.0 1.0 0.0 -1.0 0 -0.0 -1.0 0.0 -0.0 -0.0 -1.0 -0.000001 -0.000001 -1.0 0.0 1.0 0 -0.0 1.0 -0.0 0.0 0 0 1.0 0 0 1.0 0 0 -1.0 0 0 -1.0</float_array>
+          <technique_common>
+            <accessor source="#arm2-mesh-normals-array" count="12" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="arm2-mesh-map-0">
+          <float_array id="arm2-mesh-map-0-array" count="72">0 0 1.0 0 1.0 1.0 0 0 1.0 1.0 0 1.0 0 0 1.0 0 1.0 1.0 0 0 1.0 1.0 0 1.0 0 0 1.0 0 0 1.0 1.0 0 1.0 1.0 0 1.0 0 0 1.0 0 0 1.0 1.0 0 1.0 1.0 0 1.0 0 0 1.0 0 0 1.0 1.0 0 1.0 1.0 0 1.0 0 0 1.0 0 1.0 1.0 0 0 1.0 1.0 0 1.0</float_array>
+          <technique_common>
+            <accessor source="#arm2-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="arm2-mesh-colors">
+          <float_array id="arm2-mesh-colors-array" count="108">1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</float_array>
+          <technique_common>
+            <accessor source="#arm2-mesh-colors-array" count="36" stride="3">
+              <param name="R" type="float"/>
+              <param name="G" type="float"/>
+              <param name="B" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="arm2-mesh-vertices">
+          <input semantic="POSITION" source="#arm2-mesh-positions"/>
+        </vertices>
+        <polylist material="Material_004" count="12">
+          <input semantic="VERTEX" source="#arm2-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#arm2-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#arm2-mesh-map-0" offset="2" set="0"/>
+          <input semantic="COLOR" source="#arm2-mesh-colors" offset="3"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>4 0 0 0 0 0 1 1 3 0 2 2 4 1 3 3 3 1 4 4 7 1 5 5 2 2 6 6 6 2 7 7 7 2 8 8 2 3 9 9 7 3 10 10 3 3 11 11 1 4 12 12 5 4 13 13 2 4 14 14 5 5 15 15 6 5 16 16 2 5 17 17 0 6 18 18 4 6 19 19 1 6 20 20 4 7 21 21 5 7 22 22 1 7 23 23 4 8 24 24 7 8 25 25 5 8 26 26 7 9 27 27 6 9 28 28 5 9 29 29 0 10 30 30 1 10 31 31 2 10 32 32 0 11 33 33 2 11 34 34 3 11 35 35</p>
+        </polylist>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_animations/>
+  <library_controllers/>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="base" type="NODE">
+        <rotate sid="joint_2_axis0">0 0 -1 0</rotate> 
+        <instance_geometry url="#base-mesh">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Material_003" target="#Material_003">
+                <bind_vertex_input semantic="UVTex" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+	<node id="hyi" type="NODE">
+	</node>
+        <node id="arm1" type="NODE">
+          <rotate sid="joint_3_axis0">0 0 -1 0</rotate>	
+          <instance_geometry url="#arm1-mesh">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="Material" target="#Material">
+                  <bind_vertex_input semantic="UVTex" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+          <node id="arm2" type="NODE">
+           <rotate sid="joint_4_axis0">0 0 -1 0</rotate>
+             <instance_geometry url="#arm2-mesh">
+              <bind_material>
+                <technique_common>
+                  <instance_material symbol="Material_004" target="#Material_004">
+                    <bind_vertex_input semantic="UVTex" input_semantic="TEXCOORD" input_set="0"/>
+                  </instance_material>
+                </technique_common>
+              </bind_material>
+            </instance_geometry>
+          </node>
+        </node>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+
+  <library_joints id="libjoints">
+    <joint id="joint_0" name="joint_0">
+      <prismatic sid="axis0">
+        <axis>1 0 0</axis>
+	<limits>
+          <min>-10000</min>
+	  <max>10000</max>
+	</limits>
+      </prismatic>
+    </joint>
+    <joint id="joint_1" name="joint_1">
+      <prismatic sid="axis0">
+        <axis>0 1 0</axis>
+        <limits>
+          <min>-10000</min>
+          <max>10000</max>
+	</limits>
+      </prismatic>
+    </joint>
+    <joint id="joint_2" name="joint_2">
+      <revolute sid="axis0">
+        <axis>0 0 1</axis>
+        <limits>
+          <min>-180</min>
+          <max>180</max>
+	</limits>
+      </revolute>
+    </joint>
+    <joint id="joint_3" name="joint_3">
+      <revolute sid="axis0">
+        <axis>0 0 1</axis>
+        <limits>
+          <min>-170</min>
+	  <max>170</max>
+        </limits>
+      </revolute>
+    </joint>
+    <joint id="joint_4" name="joint_4">
+      <revolute sid="axis0">
+        <axis>1 0 0</axis>
+        <limits>
+          <min>-170</min>
+	  <max>170</max>
+        </limits>
+      </revolute>
+    </joint>
+ <joint id="joint_5" name="joint_5">
+      <revolute sid="axis0">
+        <axis>1 0 0</axis>
+        <limits>
+          <min>-170</min>
+	  <max>170</max>
+        </limits>
+      </revolute>
+    </joint>
+  </library_joints>
+
+  <library_kinematics_models id="libkinmodels">
+    <kinematics_model id="kinmodel.0" name="D5Device">
+      <technique_common>
+        <instance_joint url="#joint_0" sid="joint_0"/>
+        <instance_joint url="#joint_1" sid="joint_1"/>
+        <instance_joint url="#joint_2" sid="joint_2"/>
+        <instance_joint url="#joint_3" sid="joint_3"/>
+	<instance_joint url="#joint_4" sid="joint_4"/>
+	<instance_joint url="#joint_5" sid="joint_5"/>
+        <link sid="link_0" name="link_0">
+          <attachment_full joint="kinmodel.0/joint_0">
+	    <translate>0 0 0</translate>
+	    <link sid="link_1" name="link_1">
+              <attachment_full joint="kinmodel.0/joint_1">
+                <link sid="link_2" name="link_2">
+		  <attachment_full joint="kinmodel.0/joint_2">
+                    <link sid="link_3" name="link_3">
+    		      <translate sid="location">0 0 2000</translate>   
+                      <attachment_full joint="kinmodel.0/joint_3">
+			<translate sid="location">0 0 1000</translate>   
+			
+			   <link sid="link_4" name="link_4">
+			    
+                             <attachment_full joint="kinmodel.0/joint_4">
+                               <translate>2000 0.0 0</translate>
+			       
+                             </attachment_full>
+
+   			     
+                           </link>
+			
+			     
+                            
+                          
+
+                      </attachment_full>
+                    </link>
+                  </attachment_full>
+	        </link>
+              </attachment_full>
+            </link>
+          </attachment_full>
+
+        </link>
+      </technique_common>
+    </kinematics_model>
+  </library_kinematics_models>
+  <library_kinematics_scenes id="libkinscenes">
+    <kinematics_scene id="libkinscenes.kinScene">
+      <instance_kinematics_model url="#kinmodel.0" sid="inst_kinmodel.0">
+        <newparam sid="libkinscenes.kinScene_libkinscenes.kinScene_inst_kinmodel.0">
+	  <SIDREF>libkinscenes.kinScene/inst_kinmodel.0</SIDREF>
+	</newparam>
+	<newparam sid="libkinscenes.kinScene_libkinscenes.kinScene_inst_kinmodel.0_joint_0_axis0">
+	  <SIDREF>libkinscenes.kinScene/inst_kinmodel.0/joint_0/axis0</SIDREF>
+	</newparam>
+	<newparam sid="libkinscenes.kinScene_libkinscenes.kinScene_inst_kinmodel.0_joint_0_axis0_value">
+	  <float>0</float>
+	</newparam>
+	<newparam sid="libkinscenes.kinScene_libkinscenes.kinScene_inst_kinmodel.0_joint_1_axis0">
+	  <SIDREF>libkinscenes.kinScene/inst_kinmodel.0/joint_1/axis0</SIDREF>
+	</newparam>
+	<newparam sid="libkinscenes.kinScene_libkinscenes.kinScene_inst_kinmodel.0_joint_1_axis0_value">
+	  <float>0</float>
+	</newparam>
+	<newparam sid="libkinscenes.kinScene_libkinscenes.kinScene_inst_kinmodel.0_joint_2_axis0">
+	  <SIDREF>libkinscenes.kinScene/inst_kinmodel.0/joint_2/axis0</SIDREF>
+	</newparam>
+	<newparam sid="libkinscenes.kinScene_libkinscenes.kinScene_inst_kinmodel.0_joint_2_axis0_value">
+	  <float>0</float>
+	</newparam>
+	<newparam sid="libkinscenes.kinScene_libkinscenes.kinScene_inst_kinmodel.0_joint_3_axis0">
+	  <SIDREF>libkinscenes.kinScene/inst_kinmodel.0/joint_3/axis0</SIDREF>
+	</newparam>
+	<newparam sid="libkinscenes.kinScene_libkinscenes.kinScene_inst_kinmodel.0_joint_3_axis0_value">
+	  <float>0</float>
+	</newparam>
+        <newparam sid="libkinscenes.kinScene_libkinscenes.kinScene_inst_kinmodel.0_joint_4_axis0">
+	  <SIDREF>libkinscenes.kinScene/inst_kinmodel.0/joint_4/axis0</SIDREF>
+	</newparam>
+	<newparam sid="libkinscenes.kinScene_libkinscenes.kinScene_inst_kinmodel.0_joint_4_axis0_value">
+	  <float>0</float>
+	</newparam>
+      </instance_kinematics_model>
+    </kinematics_scene>
+  </library_kinematics_scenes>
+  <scene>
+  <instance_kinematics_scene url="#libkinscenes.kinScene">
+      <bind_kinematics_model node="base">
+        <param>libkinscenes.kinScene_libkinscenes.kinScene_inst_kinmodel.0</param>
+      </bind_kinematics_model>
+      <bind_joint_axis target="base/joint_2_axis0">
+        <axis>
+	  <param>libkinscenes.kinScene_libkinscenes.kinScene_inst_kinmodel.0_joint_2_axis0</param>
+	</axis>
+        <value>
+	  <param>libkinscenes.kinScene_libkinscenes.kinScene_inst_kinmodel.0_joint_2_axis0_value</param>
+	</value>
+      </bind_joint_axis>
+      <bind_joint_axis target="arm1/joint_3_axis0">
+        <axis>
+	  <param>libkinscenes.kinScene_libkinscenes.kinScene_inst_kinmodel.0_joint_3_axis0</param>
+	</axis>
+        <value>
+	  <param>libkinscenes.kinScene_libkinscenes.kinScene_inst_kinmodel.0_joint_3_axis0_value</param>
+	</value>
+      </bind_joint_axis>
+      <bind_joint_axis target="arm2/joint_4_axis0">
+        <axis>
+	  <param>libkinscenes.kinScene_libkinscenes.kinScene_inst_kinmodel.0_joint_4_axis0</param>
+	</axis>
+        <value>
+	  <param>libkinscenes.kinScene_libkinscenes.kinScene_inst_kinmodel.0_joint_4_axis0_value</param>
+	</value>
+      </bind_joint_axis>
+    </instance_kinematics_scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>
