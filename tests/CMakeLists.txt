@@ -3,6 +3,7 @@ INCLUDE_DIRECTORIES(
     ${CMAKE_HOME_DIRECTORY}/src 
     ${CPPUNIT_INCLUDE_DIR}
     ${OPENCOLLADA_INCLUDE_DIR}
+    ${BLENDER_SOURCE_DIR}
 )
 
 # add library directories (-L)

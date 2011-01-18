@@ -37,7 +37,7 @@ void ColladaValidationTest::parse(const string& fileName, ValidationErrorHandler
 }
 
 bool ColladaValidationTest::testModel(const string& name){
-	cout << "<---------------------Starting to test " << name << " ------------------------> " << endl;
+	cout << "<---Starting to test " << name << "---> " << endl;
 	ValidationErrorHandler errorHandler;
 	parse(path+name, errorHandler);
 

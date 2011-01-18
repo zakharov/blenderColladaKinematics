@@ -60,6 +60,9 @@ SET(OPENCOLLADA_INCLUDE_DIR
 	${OPENCOLLADA_DIR}/GeneratedSaxParser/include
 )
 
+# path to the blender's source code
+SET(BLENDER_SOURCE_DIR ${CMAKE_HOME_DIRECTORY}/external/blender/source/blender)
+
 #include all CMakeList.txt files within this package
 #each generates one library or application	
 ADD_SUBDIRECTORY(src)    
