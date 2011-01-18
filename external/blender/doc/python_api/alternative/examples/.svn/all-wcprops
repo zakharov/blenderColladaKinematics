@@ -1,0 +1,275 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples
+END
+bge.types.KX_Scene.py
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/bge.types.KX_Scene.py
+END
+bge.types.KX_LightObject.py
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/bge.types.KX_LightObject.py
+END
+bge.events.py
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/bge.events.py
+END
+bge.types.KX_Camera.pointInsideFrustum.py
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/bge.types.KX_Camera.pointInsideFrustum.py
+END
+bge.events.allkeys.py
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/bge.events.allkeys.py
+END
+bgl.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/bgl.py
+END
+idprop.IDGroup.py
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/idprop.IDGroup.py
+END
+bge.types.KX_GameObject.rayCast.py
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/bge.types.KX_GameObject.rayCast.py
+END
+bge.types.KX_PolygonMaterial.py
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/bge.types.KX_PolygonMaterial.py
+END
+mathutils.Vector.py
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/mathutils.Vector.py
+END
+bgl.Buffer.py
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/bgl.Buffer.py
+END
+aud.Factory.join.py
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/aud.Factory.join.py
+END
+mathutils.Matrix.py
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/mathutils.Matrix.py
+END
+bge.types.KX_Scene.active_camera.py
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/bge.types.KX_Scene.active_camera.py
+END
+bge.types.KX_SCA_ReplaceMeshActuator.py
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/bge.types.KX_SCA_ReplaceMeshActuator.py
+END
+bge.types.KX_PolygonMaterial.setTexture.py
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/bge.types.KX_PolygonMaterial.setTexture.py
+END
+geometry.PolyFill.py
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/geometry.PolyFill.py
+END
+bge.types.CListValue.from_id.py
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/bge.types.CListValue.from_id.py
+END
+bge.types.KX_Camera.getScreenVect.py
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/bge.types.KX_Camera.getScreenVect.py
+END
+bge.logic.py
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/bge.logic.py
+END
+bge.types.KX_VertexProxy.getRGBA.py
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/bge.types.KX_VertexProxy.getRGBA.py
+END
+bge.types.KX_Camera.getScreenPosition.py
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/bge.types.KX_Camera.getScreenPosition.py
+END
+idprop.py
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/idprop.py
+END
+aud.Device.lock.py
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/aud.Device.lock.py
+END
+mathutils.Quaternion.py
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/mathutils.Quaternion.py
+END
+bge.types.KX_MeshProxy.py
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/bge.types.KX_MeshProxy.py
+END
+aud.Factory.pingpong.py
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/aud.Factory.pingpong.py
+END
+bge.types.KX_Camera.sphereInsideFrustum.py
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/bge.types.KX_Camera.sphereInsideFrustum.py
+END
+bge.types.KX_Camera.boxInsideFrustum.py
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/bge.types.KX_Camera.boxInsideFrustum.py
+END
+bpy.data.py
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/bpy.data.py
+END
+aud.Factory.filter.py
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/aud.Factory.filter.py
+END
+idprop.IDGroup.values.py
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/idprop.IDGroup.values.py
+END
+bge.types.KX_VertexProxy.setRGBA.py
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/bge.types.KX_VertexProxy.setRGBA.py
+END
+geometry.BoxPack2D.py
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/geometry.BoxPack2D.py
+END
+bgl.glRasterPos.py
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/bgl.glRasterPos.py
+END
+aud.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/aud.py
+END
+idprop.IDGroup.iteritems.py
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/idprop.IDGroup.iteritems.py
+END
+PhysicsConstraints.py
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/PhysicsConstraints.py
+END
+mathutils.py
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/mathutils.py
+END
+bge.types.KX_PolygonMaterial.setCustomMaterial.py
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/bge.types.KX_PolygonMaterial.setCustomMaterial.py
+END
+bge.render.py
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/bge.render.py
+END
+aud.Factory.sine.py
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/aud.Factory.sine.py
+END
+bge.types.KX_Camera.getScreenRay.py
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/bge.types.KX_Camera.getScreenRay.py
+END
+mathutils.Euler.py
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/mathutils.Euler.py
+END
+VideoTexture.py
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/examples/VideoTexture.py
+END

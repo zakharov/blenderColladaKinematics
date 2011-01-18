@@ -1,0 +1,221 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/bf-blender/!svn/ver/25043/trunk/blender/extern/Eigen2/Eigen/src/Core
+END
+Flagged.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/23994/trunk/blender/extern/Eigen2/Eigen/src/Core/Flagged.h
+END
+CommaInitializer.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/23994/trunk/blender/extern/Eigen2/Eigen/src/Core/CommaInitializer.h
+END
+CacheFriendlyProduct.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/src/Core/CacheFriendlyProduct.h
+END
+DiagonalMatrix.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/src/Core/DiagonalMatrix.h
+END
+Matrix.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-blender/!svn/ver/23994/trunk/blender/extern/Eigen2/Eigen/src/Core/Matrix.h
+END
+IO.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/src/Core/IO.h
+END
+Cwise.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/bf-blender/!svn/ver/23994/trunk/blender/extern/Eigen2/Eigen/src/Core/Cwise.h
+END
+CoreInstantiations.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/src/Core/CoreInstantiations.cpp
+END
+Map.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/src/Core/Map.h
+END
+CwiseBinaryOp.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/src/Core/CwiseBinaryOp.h
+END
+Product.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/src/Core/Product.h
+END
+CwiseNullaryOp.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/src/Core/CwiseNullaryOp.h
+END
+MathFunctions.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/src/Core/MathFunctions.h
+END
+Minor.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/src/Core/Minor.h
+END
+Assign.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/src/Core/Assign.h
+END
+Dot.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/src/Core/Dot.h
+END
+Redux.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/src/Core/Redux.h
+END
+Fuzzy.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/src/Core/Fuzzy.h
+END
+CwiseUnaryOp.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/src/Core/CwiseUnaryOp.h
+END
+MatrixStorage.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/src/Core/MatrixStorage.h
+END
+Block.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/src/Core/Block.h
+END
+MatrixBase.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/src/Core/MatrixBase.h
+END
+Visitor.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/src/Core/Visitor.h
+END
+NestByValue.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/23994/trunk/blender/extern/Eigen2/Eigen/src/Core/NestByValue.h
+END
+Functors.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/bf-blender/!svn/ver/23994/trunk/blender/extern/Eigen2/Eigen/src/Core/Functors.h
+END
+DiagonalCoeffs.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/src/Core/DiagonalCoeffs.h
+END
+Sum.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/src/Core/Sum.h
+END
+Coeffs.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/src/Core/Coeffs.h
+END
+Part.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/bf-blender/!svn/ver/23994/trunk/blender/extern/Eigen2/Eigen/src/Core/Part.h
+END
+MapBase.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/src/Core/MapBase.h
+END
+Swap.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/bf-blender/!svn/ver/23994/trunk/blender/extern/Eigen2/Eigen/src/Core/Swap.h
+END
+GenericPacketMath.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/src/Core/GenericPacketMath.h
+END
+Transpose.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/src/Core/Transpose.h
+END
+DiagonalProduct.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/src/Core/DiagonalProduct.h
+END
+SolveTriangular.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/src/Core/SolveTriangular.h
+END
+NumTraits.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/src/Core/NumTraits.h
+END

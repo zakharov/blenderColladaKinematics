@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/bf-blender/!svn/ver/33556/trunk/blender/source/blender/makesrna/rna_cleanup
+END
+rna_cleaner_merge.py
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/bf-blender/!svn/ver/31402/trunk/blender/source/blender/makesrna/rna_cleanup/rna_cleaner_merge.py
+END
+rna_cleaner.py
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/31460/trunk/blender/source/blender/makesrna/rna_cleanup/rna_cleaner.py
+END
+rna_properties.txt
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/bf-blender/!svn/ver/33556/trunk/blender/source/blender/makesrna/rna_cleanup/rna_properties.txt
+END
+rna_update.sh
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/bf-blender/!svn/ver/31730/trunk/blender/source/blender/makesrna/rna_cleanup/rna_update.sh
+END

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/bf-blender/!svn/ver/33718/trunk/blender/doc/python_api/alternative/epy
+END
+PhysicsConstraints.py
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/epy/PhysicsConstraints.py
+END
+geometry.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/epy/geometry.py
+END
+idprop.py
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/epy/idprop.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/33718/trunk/blender/doc/python_api/alternative/epy/__init__.py
+END
+bgl.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/epy/bgl.py
+END
+VideoTexture.py
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/epy/VideoTexture.py
+END

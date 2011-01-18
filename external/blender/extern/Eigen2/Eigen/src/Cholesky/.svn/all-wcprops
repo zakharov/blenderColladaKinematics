@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/src/Cholesky
+END
+LLT.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/src/Cholesky/LLT.h
+END
+LDLT.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/src/Cholesky/LDLT.h
+END
+CholeskyInstantiations.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/src/Cholesky/CholeskyInstantiations.cpp
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/bf-blender/!svn/ver/33846/trunk/blender/intern/audaspace/OpenAL
+END
+AUD_OpenALDevice.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/33846/trunk/blender/intern/audaspace/OpenAL/AUD_OpenALDevice.cpp
+END
+AUD_OpenALDevice.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/31372/trunk/blender/intern/audaspace/OpenAL/AUD_OpenALDevice.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/audaspace/OpenAL/Makefile
+END

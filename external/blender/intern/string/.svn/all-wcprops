@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/bf-blender/!svn/ver/33864/trunk/blender/intern/string
+END
+STR_HashedString.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/intern/string/STR_HashedString.h
+END
+STR_String.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/bf-blender/!svn/ver/29259/trunk/blender/intern/string/STR_String.h
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/bf-blender/!svn/ver/32381/trunk/blender/intern/string/SConscript
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/bf-blender/!svn/ver/33864/trunk/blender/intern/string/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/string/Makefile
+END

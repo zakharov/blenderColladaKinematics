@@ -1,0 +1,221 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/bf-blender/!svn/ver/34195/trunk/blender/source/gameengine/VideoTexture
+END
+FilterNormal.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/gameengine/VideoTexture/FilterNormal.cpp
+END
+Texture.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/27617/trunk/blender/source/gameengine/VideoTexture/Texture.cpp
+END
+ImageMix.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/27066/trunk/blender/source/gameengine/VideoTexture/ImageMix.cpp
+END
+VideoFFmpeg.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/27806/trunk/blender/source/gameengine/VideoTexture/VideoFFmpeg.h
+END
+VideoBase.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/34195/trunk/blender/source/gameengine/VideoTexture/VideoBase.cpp
+END
+Exception.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/27066/trunk/blender/source/gameengine/VideoTexture/Exception.h
+END
+FilterSource.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/gameengine/VideoTexture/FilterSource.cpp
+END
+FilterBase.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/gameengine/VideoTexture/FilterBase.cpp
+END
+ImageViewport.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/34195/trunk/blender/source/gameengine/VideoTexture/ImageViewport.cpp
+END
+ImageRender.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/34195/trunk/blender/source/gameengine/VideoTexture/ImageRender.cpp
+END
+ImageBase.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/27066/trunk/blender/source/gameengine/VideoTexture/ImageBase.h
+END
+ImageBuff.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/32517/trunk/blender/source/gameengine/VideoTexture/ImageBuff.cpp
+END
+PyTypeList.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/33830/trunk/blender/source/gameengine/VideoTexture/PyTypeList.cpp
+END
+FilterColor.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/gameengine/VideoTexture/FilterColor.h
+END
+BlendType.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/26964/trunk/blender/source/gameengine/VideoTexture/BlendType.h
+END
+VideoFFmpeg.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/29240/trunk/blender/source/gameengine/VideoTexture/VideoFFmpeg.cpp
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/gameengine/VideoTexture/Makefile
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/gameengine/VideoTexture/CMakeLists.txt
+END
+blendVideoTex.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/29486/trunk/blender/source/gameengine/VideoTexture/blendVideoTex.cpp
+END
+Common.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/gameengine/VideoTexture/Common.h
+END
+Exception.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/27066/trunk/blender/source/gameengine/VideoTexture/Exception.cpp
+END
+FilterBlueScreen.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/bf-blender/!svn/ver/33442/trunk/blender/source/gameengine/VideoTexture/FilterBlueScreen.h
+END
+FilterNormal.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/gameengine/VideoTexture/FilterNormal.h
+END
+Texture.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/gameengine/VideoTexture/Texture.h
+END
+ImageMix.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/26689/trunk/blender/source/gameengine/VideoTexture/ImageMix.h
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/33156/trunk/blender/source/gameengine/VideoTexture/SConscript
+END
+VideoBase.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/gameengine/VideoTexture/VideoBase.h
+END
+FilterSource.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/gameengine/VideoTexture/FilterSource.h
+END
+ImageBase.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/33998/trunk/blender/source/gameengine/VideoTexture/ImageBase.cpp
+END
+FilterColor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/34195/trunk/blender/source/gameengine/VideoTexture/FilterColor.cpp
+END
+FilterBase.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/gameengine/VideoTexture/FilterBase.h
+END
+ImageViewport.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/26689/trunk/blender/source/gameengine/VideoTexture/ImageViewport.h
+END
+ImageRender.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/33442/trunk/blender/source/gameengine/VideoTexture/ImageRender.h
+END
+ImageBuff.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/27158/trunk/blender/source/gameengine/VideoTexture/ImageBuff.h
+END
+PyTypeList.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/33829/trunk/blender/source/gameengine/VideoTexture/PyTypeList.h
+END
+FilterBlueScreen.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/bf-blender/!svn/ver/34195/trunk/blender/source/gameengine/VideoTexture/FilterBlueScreen.cpp
+END

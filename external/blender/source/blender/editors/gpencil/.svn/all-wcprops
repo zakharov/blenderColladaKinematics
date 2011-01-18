@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/bf-blender/!svn/ver/34381/trunk/blender/source/blender/editors/gpencil
+END
+drawgpencil.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/34160/trunk/blender/source/blender/editors/gpencil/drawgpencil.c
+END
+gpencil_buttons.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/33868/trunk/blender/source/blender/editors/gpencil/gpencil_buttons.c
+END
+gpencil_ops.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/31673/trunk/blender/source/blender/editors/gpencil/gpencil_ops.c
+END
+editaction_gpencil.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/bf-blender/!svn/ver/34236/trunk/blender/source/blender/editors/gpencil/editaction_gpencil.c
+END
+gpencil_intern.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/27639/trunk/blender/source/blender/editors/gpencil/gpencil_intern.h
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/24751/trunk/blender/source/blender/editors/gpencil/SConscript
+END
+gpencil_edit.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/34291/trunk/blender/source/blender/editors/gpencil/gpencil_edit.c
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/editors/gpencil/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blender/editors/gpencil/Makefile
+END
+gpencil_paint.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/34381/trunk/blender/source/blender/editors/gpencil/gpencil_paint.c
+END

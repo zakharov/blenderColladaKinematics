@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/bf-blender/!svn/ver/33753/trunk/blender/release/plugins/sequence
+END
+color-correction-hsv.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/33753/trunk/blender/release/plugins/sequence/color-correction-hsv.c
+END
+gamma.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/release/plugins/sequence/gamma.c
+END
+dnr.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/release/plugins/sequence/dnr.c
+END
+blur.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/bf-blender/!svn/ver/27866/trunk/blender/release/plugins/sequence/blur.c
+END
+color-correction-yuv.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/33753/trunk/blender/release/plugins/sequence/color-correction-yuv.c
+END
+scatter.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/release/plugins/sequence/scatter.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/bf-blender/!svn/ver/31223/trunk/blender/release/plugins/sequence/Makefile
+END

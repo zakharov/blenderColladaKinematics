@@ -1,0 +1,887 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/bf-blender/!svn/ver/34380/trunk/blender/source/gameengine/Ketsji
+END
+KX_Scene.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-blender/!svn/ver/33707/trunk/blender/source/gameengine/Ketsji/KX_Scene.cpp
+END
+KX_CameraIpoSGController.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/Ketsji/KX_CameraIpoSGController.h
+END
+KX_IPhysicsController.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/Ketsji/KX_IPhysicsController.h
+END
+KX_PositionInterpolator.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/source/gameengine/Ketsji/KX_PositionInterpolator.cpp
+END
+KX_PhysicsObjectWrapper.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_PhysicsObjectWrapper.h
+END
+KX_NearSensor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_NearSensor.cpp
+END
+KX_KetsjiEngine.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/33707/trunk/blender/source/gameengine/Ketsji/KX_KetsjiEngine.cpp
+END
+KX_SCA_DynamicActuator.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/Ketsji/KX_SCA_DynamicActuator.h
+END
+KX_ScalingInterpolator.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/source/gameengine/Ketsji/KX_ScalingInterpolator.cpp
+END
+KX_Dome.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_Dome.cpp
+END
+KX_PhysicsEngineEnums.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/Ketsji/KX_PhysicsEngineEnums.h
+END
+KX_SG_NodeRelationships.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/Ketsji/KX_SG_NodeRelationships.h
+END
+KX_ConstraintWrapper.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_ConstraintWrapper.h
+END
+KX_EmptyObject.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/Ketsji/KX_EmptyObject.h
+END
+KX_VisibilityActuator.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_VisibilityActuator.cpp
+END
+KX_PyConstraintBinding.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_PyConstraintBinding.h
+END
+KX_IpoActuator.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/34145/trunk/blender/source/gameengine/Ketsji/KX_IpoActuator.h
+END
+KX_SceneActuator.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_SceneActuator.cpp
+END
+KX_PolygonMaterial.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/33089/trunk/blender/source/gameengine/Ketsji/KX_PolygonMaterial.cpp
+END
+KX_ScalarInterpolator.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/source/gameengine/Ketsji/KX_ScalarInterpolator.cpp
+END
+KX_SCA_AddObjectActuator.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_SCA_AddObjectActuator.cpp
+END
+KX_WorldInfo.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/Ketsji/KX_WorldInfo.h
+END
+KX_RayCast.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/Ketsji/KX_RayCast.h
+END
+KX_SCA_DynamicActuator.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_SCA_DynamicActuator.cpp
+END
+BL_Texture.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-blender/!svn/ver/33275/trunk/blender/source/gameengine/Ketsji/BL_Texture.h
+END
+KX_SG_BoneParentNodeRelationship.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/Ketsji/KX_SG_BoneParentNodeRelationship.h
+END
+KX_EmptyObject.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/source/gameengine/Ketsji/KX_EmptyObject.cpp
+END
+KX_ConstraintWrapper.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_ConstraintWrapper.cpp
+END
+KX_ClientObjectInfo.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/Ketsji/KX_ClientObjectInfo.h
+END
+BL_Shader.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/BL_Shader.h
+END
+KX_ConstraintActuator.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_ConstraintActuator.cpp
+END
+KX_MouseFocusSensor.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_MouseFocusSensor.h
+END
+KX_StateActuator.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/Ketsji/KX_StateActuator.h
+END
+KX_Camera.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/33203/trunk/blender/source/gameengine/Ketsji/KX_Camera.cpp
+END
+KX_Dome.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/Ketsji/KX_Dome.h
+END
+KX_PythonInitTypes.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/33707/trunk/blender/source/gameengine/Ketsji/KX_PythonInitTypes.cpp
+END
+KX_SoundActuator.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_SoundActuator.cpp
+END
+KX_OrientationInterpolator.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/source/gameengine/Ketsji/KX_OrientationInterpolator.cpp
+END
+KX_BulletPhysicsController.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/bf-blender/!svn/ver/32392/trunk/blender/source/gameengine/Ketsji/KX_BulletPhysicsController.cpp
+END
+KX_PythonSeq.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_PythonSeq.h
+END
+KX_FontObject.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/bf-blender/!svn/ver/34077/trunk/blender/source/gameengine/Ketsji/KX_FontObject.h
+END
+KX_SceneActuator.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_SceneActuator.h
+END
+KX_PyMath.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/bf-blender/!svn/ver/33502/trunk/blender/source/gameengine/Ketsji/KX_PyMath.h
+END
+KX_WorldIpoController.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/Ketsji/KX_WorldIpoController.h
+END
+KX_ObColorIpoSGController.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/Ketsji/KX_ObColorIpoSGController.h
+END
+KX_MotionState.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/Ketsji/KX_MotionState.h
+END
+KX_GameActuator.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_GameActuator.cpp
+END
+KX_ScalarInterpolator.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/Ketsji/KX_ScalarInterpolator.h
+END
+KX_SCA_AddObjectActuator.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_SCA_AddObjectActuator.h
+END
+KX_ObjectActuator.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_ObjectActuator.h
+END
+BL_Shader.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/BL_Shader.cpp
+END
+KX_IScalarInterpolator.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/Ketsji/KX_IScalarInterpolator.h
+END
+KX_PolyProxy.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_PolyProxy.h
+END
+KX_CameraActuator.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_CameraActuator.cpp
+END
+KX_Camera.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_Camera.h
+END
+KX_FontObject.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/34077/trunk/blender/source/gameengine/Ketsji/KX_FontObject.cpp
+END
+KX_CameraIpoSGController.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/source/gameengine/Ketsji/KX_CameraIpoSGController.cpp
+END
+KX_IInterpolator.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/Ketsji/KX_IInterpolator.h
+END
+KX_PhysicsPropertiesobsolete.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/Ketsji/KX_PhysicsPropertiesobsolete.h
+END
+KX_ISceneConverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/Ketsji/KX_ISceneConverter.h
+END
+KX_MeshProxy.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_MeshProxy.h
+END
+KX_TimeLogger.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/bf-blender/!svn/ver/31950/trunk/blender/source/gameengine/Ketsji/KX_TimeLogger.h
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/bf-blender/!svn/ver/33707/trunk/blender/source/gameengine/Ketsji/SConscript
+END
+KX_ObColorIpoSGController.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/source/gameengine/Ketsji/KX_ObColorIpoSGController.cpp
+END
+KX_ObjectActuator.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_ObjectActuator.cpp
+END
+KX_PhysicsObjectWrapper.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_PhysicsObjectWrapper.cpp
+END
+KX_PositionInterpolator.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/Ketsji/KX_PositionInterpolator.h
+END
+KX_MaterialIpoController.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/Ketsji/KX_MaterialIpoController.h
+END
+KX_VertexProxy.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_VertexProxy.cpp
+END
+KX_GameActuator.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/Ketsji/KX_GameActuator.h
+END
+KX_NearSensor.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_NearSensor.h
+END
+KX_KetsjiEngine.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/33707/trunk/blender/source/gameengine/Ketsji/KX_KetsjiEngine.h
+END
+KX_PolyProxy.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_PolyProxy.cpp
+END
+KX_SCA_ReplaceMeshActuator.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_SCA_ReplaceMeshActuator.h
+END
+KX_ScalingInterpolator.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/Ketsji/KX_ScalingInterpolator.h
+END
+KX_IPOTransform.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/Ketsji/KX_IPOTransform.h
+END
+KX_IpoActuator.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/33522/trunk/blender/source/gameengine/Ketsji/KX_IpoActuator.cpp
+END
+KX_TimeCategoryLogger.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/source/gameengine/Ketsji/KX_TimeCategoryLogger.cpp
+END
+KX_ParentActuator.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_ParentActuator.cpp
+END
+KX_ISystem.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/Ketsji/KX_ISystem.h
+END
+KX_RayCast.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/bf-blender/!svn/ver/28415/trunk/blender/source/gameengine/Ketsji/KX_RayCast.cpp
+END
+KX_Light.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-blender/!svn/ver/33442/trunk/blender/source/gameengine/Ketsji/KX_Light.cpp
+END
+KX_PythonInit.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_PythonInit.h
+END
+KX_SG_BoneParentNodeRelationship.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/source/gameengine/Ketsji/KX_SG_BoneParentNodeRelationship.cpp
+END
+KX_ArmatureSensor.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_ArmatureSensor.h
+END
+KX_TouchEventManager.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/bf-blender/!svn/ver/32613/trunk/blender/source/gameengine/Ketsji/KX_TouchEventManager.cpp
+END
+KX_TrackToActuator.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_TrackToActuator.h
+END
+KX_SCA_ReplaceMeshActuator.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_SCA_ReplaceMeshActuator.cpp
+END
+KX_MouseFocusSensor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_MouseFocusSensor.cpp
+END
+KX_RadarSensor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/33324/trunk/blender/source/gameengine/Ketsji/KX_RadarSensor.cpp
+END
+KX_RayEventManager.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/source/gameengine/Ketsji/KX_RayEventManager.cpp
+END
+KX_PythonSeq.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_PythonSeq.cpp
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/bf-blender/!svn/ver/33707/trunk/blender/source/gameengine/Ketsji/Makefile
+END
+KX_SCA_EndObjectActuator.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/Ketsji/KX_SCA_EndObjectActuator.h
+END
+KX_ConstraintActuator.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/Ketsji/KX_ConstraintActuator.h
+END
+KX_ConvertPhysicsObjects.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/bf-blender/!svn/ver/32613/trunk/blender/source/gameengine/Ketsji/KX_ConvertPhysicsObjects.cpp
+END
+KX_BlenderMaterial.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_BlenderMaterial.h
+END
+KX_IPhysicsController.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/source/gameengine/Ketsji/KX_IPhysicsController.cpp
+END
+KX_SoundActuator.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_SoundActuator.h
+END
+KX_TimeCategoryLogger.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/31950/trunk/blender/source/gameengine/Ketsji/KX_TimeCategoryLogger.h
+END
+KX_ParentActuator.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_ParentActuator.h
+END
+KX_PyMath.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_PyMath.cpp
+END
+KX_PythonInit.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/34121/trunk/blender/source/gameengine/Ketsji/KX_PythonInit.cpp
+END
+KX_MotionState.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/source/gameengine/Ketsji/KX_MotionState.cpp
+END
+KX_TouchSensor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_TouchSensor.cpp
+END
+BL_Material.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/Ketsji/BL_Material.h
+END
+KX_ConvertPhysicsObject.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/32392/trunk/blender/source/gameengine/Ketsji/KX_ConvertPhysicsObject.h
+END
+KX_VehicleWrapper.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_VehicleWrapper.cpp
+END
+BL_BlenderShader.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/29494/trunk/blender/source/gameengine/Ketsji/BL_BlenderShader.h
+END
+KX_LightIpoSGController.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/Ketsji/KX_LightIpoSGController.h
+END
+KX_SG_NodeRelationships.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/source/gameengine/Ketsji/KX_SG_NodeRelationships.cpp
+END
+KX_RayEventManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/Ketsji/KX_RayEventManager.h
+END
+KX_MeshProxy.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/34380/trunk/blender/source/gameengine/Ketsji/KX_MeshProxy.cpp
+END
+KX_TimeLogger.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/source/gameengine/Ketsji/KX_TimeLogger.cpp
+END
+KX_VisibilityActuator.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/Ketsji/KX_VisibilityActuator.h
+END
+KX_CameraActuator.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_CameraActuator.h
+END
+KX_GameObject.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/33707/trunk/blender/source/gameengine/Ketsji/KX_GameObject.cpp
+END
+KX_WorldInfo.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/source/gameengine/Ketsji/KX_WorldInfo.cpp
+END
+BL_Material.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/gameengine/Ketsji/BL_Material.cpp
+END
+KX_MaterialIpoController.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/source/gameengine/Ketsji/KX_MaterialIpoController.cpp
+END
+KX_PolygonMaterial.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_PolygonMaterial.h
+END
+BL_Texture.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/bf-blender/!svn/ver/33275/trunk/blender/source/gameengine/Ketsji/BL_Texture.cpp
+END
+BL_BlenderShader.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/gameengine/Ketsji/BL_BlenderShader.cpp
+END
+KX_LightIpoSGController.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/source/gameengine/Ketsji/KX_LightIpoSGController.cpp
+END
+KX_TouchSensor.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_TouchSensor.h
+END
+KX_StateActuator.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_StateActuator.cpp
+END
+KX_VertexProxy.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_VertexProxy.h
+END
+KX_IPO_SGController.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/31950/trunk/blender/source/gameengine/Ketsji/KX_IPO_SGController.cpp
+END
+KX_VehicleWrapper.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_VehicleWrapper.h
+END
+KX_RaySensor.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_RaySensor.h
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/gameengine/Ketsji/CMakeLists.txt
+END
+KX_PythonInitTypes.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_PythonInitTypes.h
+END
+KX_Scene.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/bf-blender/!svn/ver/33707/trunk/blender/source/gameengine/Ketsji/KX_Scene.h
+END
+KX_OrientationInterpolator.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/Ketsji/KX_OrientationInterpolator.h
+END
+KX_BulletPhysicsController.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/bf-blender/!svn/ver/32392/trunk/blender/source/gameengine/Ketsji/KX_BulletPhysicsController.h
+END
+KX_WorldIpoController.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/source/gameengine/Ketsji/KX_WorldIpoController.cpp
+END
+KX_GameObject.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_GameObject.h
+END
+KX_ArmatureSensor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_ArmatureSensor.cpp
+END
+KX_TrackToActuator.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_TrackToActuator.cpp
+END
+KX_Light.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_Light.h
+END
+KX_TouchEventManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/Ketsji/KX_TouchEventManager.h
+END
+KX_RaySensor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/33324/trunk/blender/source/gameengine/Ketsji/KX_RaySensor.cpp
+END
+KX_SCA_EndObjectActuator.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_SCA_EndObjectActuator.cpp
+END
+KX_RadarSensor.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/Ketsji/KX_RadarSensor.h
+END
+KX_PyConstraintBinding.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_PyConstraintBinding.cpp
+END
+KX_IPO_SGController.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/Ketsji/KX_IPO_SGController.h
+END
+KX_BlenderMaterial.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KX_BlenderMaterial.cpp
+END

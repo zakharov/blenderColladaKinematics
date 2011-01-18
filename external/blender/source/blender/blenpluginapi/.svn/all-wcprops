@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/blenpluginapi
+END
+documentation.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/blenpluginapi/documentation.h
+END
+util.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/blender/blenpluginapi/util.h
+END
+plugin.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/blender/blenpluginapi/plugin.h
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/bf-blender/!svn/ver/31645/trunk/blender/source/blender/blenpluginapi/SConscript
+END
+externdef.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/blender/blenpluginapi/externdef.h
+END
+iff.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/bf-blender/!svn/ver/32517/trunk/blender/source/blender/blenpluginapi/iff.h
+END
+floatpatch.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/blender/blenpluginapi/floatpatch.h
+END
+plugin.DEF
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/blender/blenpluginapi/plugin.DEF
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/blenpluginapi/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blender/blenpluginapi/Makefile
+END

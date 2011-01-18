@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/compat
+END
+_scons_itertools.py
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/compat/_scons_itertools.py
+END
+_scons_sets15.py
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/compat/_scons_sets15.py
+END
+_scons_UserString.py
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/compat/_scons_UserString.py
+END
+builtins.py
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/compat/builtins.py
+END
+_scons_subprocess.py
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/compat/_scons_subprocess.py
+END
+_scons_hashlib.py
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/compat/_scons_hashlib.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/compat/__init__.py
+END
+_scons_optparse.py
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/compat/_scons_optparse.py
+END
+_scons_sets.py
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/compat/_scons_sets.py
+END
+_scons_textwrap.py
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/compat/_scons_textwrap.py
+END
+_scons_shlex.py
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/compat/_scons_shlex.py
+END

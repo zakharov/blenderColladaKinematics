@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/bf-blender/!svn/ver/30157/trunk/blender/extern/glew/src
+END
+glew.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/bf-blender/!svn/ver/30157/trunk/blender/extern/glew/src/glew.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/bf-blender/!svn/ver/23425/trunk/blender/extern/glew/src/Makefile
+END

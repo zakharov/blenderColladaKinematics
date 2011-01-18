@@ -1,0 +1,167 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/bf-blender/!svn/ver/33191/trunk/blender/intern/smoke/intern
+END
+FLUID_3D.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/bf-blender/!svn/ver/30809/trunk/blender/intern/smoke/intern/FLUID_3D.h
+END
+WTURBULENCE.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/bf-blender/!svn/ver/33190/trunk/blender/intern/smoke/intern/WTURBULENCE.cpp
+END
+FLUID_3D_STATIC.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/bf-blender/!svn/ver/26705/trunk/blender/intern/smoke/intern/FLUID_3D_STATIC.cpp
+END
+OBSTACLE.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/smoke/intern/OBSTACLE.h
+END
+MERSENNETWISTER.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/smoke/intern/MERSENNETWISTER.h
+END
+WTURBULENCE.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/smoke/intern/WTURBULENCE.h
+END
+VEC3.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/bf-blender/!svn/ver/26872/trunk/blender/intern/smoke/intern/VEC3.h
+END
+FLUID_3D_SOLVERS.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/bf-blender/!svn/ver/26250/trunk/blender/intern/smoke/intern/FLUID_3D_SOLVERS.cpp
+END
+smoke_API.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/bf-blender/!svn/ver/30811/trunk/blender/intern/smoke/intern/smoke_API.cpp
+END
+WAVELET_NOISE.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/bf-blender/!svn/ver/33191/trunk/blender/intern/smoke/intern/WAVELET_NOISE.h
+END
+Makefile.FFT
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/smoke/intern/Makefile.FFT
+END
+LU_HELPER.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/bf-blender/!svn/ver/26259/trunk/blender/intern/smoke/intern/LU_HELPER.cpp
+END
+LICENSE.txt
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/smoke/intern/LICENSE.txt
+END
+FFT_NOISE.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/smoke/intern/FFT_NOISE.h
+END
+EIGENVALUE_HELPER.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/26259/trunk/blender/intern/smoke/intern/EIGENVALUE_HELPER.cpp
+END
+main.cpp.back
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/smoke/intern/main.cpp.back
+END
+LU_HELPER.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/bf-blender/!svn/ver/26250/trunk/blender/intern/smoke/intern/LU_HELPER.h
+END
+SPHERE.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/smoke/intern/SPHERE.cpp
+END
+IMAGE.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/bf-blender/!svn/ver/27257/trunk/blender/intern/smoke/intern/IMAGE.h
+END
+EIGENVALUE_HELPER.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/bf-blender/!svn/ver/26250/trunk/blender/intern/smoke/intern/EIGENVALUE_HELPER.h
+END
+FLUID_3D.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/bf-blender/!svn/ver/30809/trunk/blender/intern/smoke/intern/FLUID_3D.cpp
+END
+Makefile.linux
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/smoke/intern/Makefile.linux
+END
+Makefile.cygwin
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/smoke/intern/Makefile.cygwin
+END
+INTERPOLATE.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/smoke/intern/INTERPOLATE.h
+END
+Makefile.mac
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/smoke/intern/Makefile.mac
+END
+SPHERE.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/smoke/intern/SPHERE.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/bf-blender/!svn/ver/24429/trunk/blender/intern/smoke/intern/Makefile
+END

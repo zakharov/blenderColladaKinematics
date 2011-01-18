@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/bf-extensions/!svn/ver/1304/trunk/py/scripts/addons/rigify/rigs
+END
+palm.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/bf-extensions/!svn/ver/1165/trunk/py/scripts/addons/rigify/rigs/palm.py
+END
+copy.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/bf-extensions/!svn/ver/1165/trunk/py/scripts/addons/rigify/rigs/copy.py
+END
+finger.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/bf-extensions/!svn/ver/1210/trunk/py/scripts/addons/rigify/rigs/finger.py
+END
+spine.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/bf-extensions/!svn/ver/1165/trunk/py/scripts/addons/rigify/rigs/spine.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/bf-extensions/!svn/ver/1165/trunk/py/scripts/addons/rigify/rigs/__init__.py
+END
+neck_short.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-extensions/!svn/ver/1165/trunk/py/scripts/addons/rigify/rigs/neck_short.py
+END

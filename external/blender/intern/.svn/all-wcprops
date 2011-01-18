@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/bf-blender/!svn/ver/34391/trunk/blender/intern
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/intern/SConscript
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/bf-blender/!svn/ver/23474/trunk/blender/intern/Makefile
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/bf-blender/!svn/ver/33549/trunk/blender/intern/CMakeLists.txt
+END

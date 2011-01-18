@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/bf-blender/!svn/ver/32815/trunk/blender/intern/audaspace/ffmpeg
+END
+AUD_FFMPEGReader.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/32815/trunk/blender/intern/audaspace/ffmpeg/AUD_FFMPEGReader.cpp
+END
+AUD_FFMPEGFactory.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/31372/trunk/blender/intern/audaspace/ffmpeg/AUD_FFMPEGFactory.cpp
+END
+AUD_FFMPEGReader.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/31372/trunk/blender/intern/audaspace/ffmpeg/AUD_FFMPEGReader.h
+END
+AUD_FFMPEGFactory.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/31372/trunk/blender/intern/audaspace/ffmpeg/AUD_FFMPEGFactory.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/audaspace/ffmpeg/Makefile
+END

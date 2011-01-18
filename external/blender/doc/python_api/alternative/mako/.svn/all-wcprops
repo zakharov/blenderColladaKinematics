@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/bf-blender/!svn/ver/33718/trunk/blender/doc/python_api/alternative/mako
+END
+parsetree.py
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/33718/trunk/blender/doc/python_api/alternative/mako/parsetree.py
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/mako/LICENSE
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/33718/trunk/blender/doc/python_api/alternative/mako/__init__.py
+END
+cache.py
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/bf-blender/!svn/ver/33718/trunk/blender/doc/python_api/alternative/mako/cache.py
+END
+codegen.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/33718/trunk/blender/doc/python_api/alternative/mako/codegen.py
+END
+pyparser.py
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/33718/trunk/blender/doc/python_api/alternative/mako/pyparser.py
+END
+filters.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/33718/trunk/blender/doc/python_api/alternative/mako/filters.py
+END
+lookup.py
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/33718/trunk/blender/doc/python_api/alternative/mako/lookup.py
+END
+template.py
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/33718/trunk/blender/doc/python_api/alternative/mako/template.py
+END
+util.py
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/bf-blender/!svn/ver/33718/trunk/blender/doc/python_api/alternative/mako/util.py
+END
+lexer.py
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/bf-blender/!svn/ver/33718/trunk/blender/doc/python_api/alternative/mako/lexer.py
+END
+exceptions.py
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/33718/trunk/blender/doc/python_api/alternative/mako/exceptions.py
+END
+pygen.py
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/bf-blender/!svn/ver/33718/trunk/blender/doc/python_api/alternative/mako/pygen.py
+END
+runtime.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/33718/trunk/blender/doc/python_api/alternative/mako/runtime.py
+END
+_ast_util.py
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/33718/trunk/blender/doc/python_api/alternative/mako/_ast_util.py
+END
+ast.py
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/33718/trunk/blender/doc/python_api/alternative/mako/ast.py
+END

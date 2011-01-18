@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/templates
+END
+Layout.rst
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/templates/Layout.rst
+END
+bge.logic.Module.rst
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/templates/bge.logic.Module.rst
+END
+contents.rst
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/templates/contents.rst
+END
+bpy.ops.Class.rst
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/templates/bpy.ops.Class.rst
+END
+bpy.ops.Module.rst
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/templates/bpy.ops.Module.rst
+END
+bpy.types.Class.rst
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/templates/bpy.types.Class.rst
+END
+bge.events.Module.rst
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/templates/bge.events.Module.rst
+END
+Class.rst
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/templates/Class.rst
+END
+Module.rst
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/templates/Module.rst
+END
+conf.py
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/templates/conf.py
+END
+bpy.data.Module.rst
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/alternative/templates/bpy.data.Module.rst
+END

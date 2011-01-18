@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/bf-blender/!svn/ver/34273/trunk/blender/source/blender/blenfont/intern
+END
+blf_util.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/27641/trunk/blender/source/blender/blenfont/intern/blf_util.c
+END
+blf_dir.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/bf-blender/!svn/ver/32997/trunk/blender/source/blender/blenfont/intern/blf_dir.c
+END
+blf.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/bf-blender/!svn/ver/34273/trunk/blender/source/blender/blenfont/intern/blf.c
+END
+blf_internal.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/33344/trunk/blender/source/blender/blenfont/intern/blf_internal.h
+END
+blf_lang.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/34160/trunk/blender/source/blender/blenfont/intern/blf_lang.c
+END
+blf_glyph.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/33344/trunk/blender/source/blender/blenfont/intern/blf_glyph.c
+END
+blf_internal_types.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/bf-blender/!svn/ver/33579/trunk/blender/source/blender/blenfont/intern/blf_internal_types.h
+END
+blf_font.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/34175/trunk/blender/source/blender/blenfont/intern/blf_font.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blender/blenfont/intern/Makefile
+END

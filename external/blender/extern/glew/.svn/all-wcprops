@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/bf-blender/!svn/ver/33864/trunk/blender/extern/glew
+END
+ChangeLog
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/glew/ChangeLog
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/bf-blender/!svn/ver/24733/trunk/blender/extern/glew/SConscript
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/bf-blender/!svn/ver/23425/trunk/blender/extern/glew/README.txt
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/bf-blender/!svn/ver/33864/trunk/blender/extern/glew/CMakeLists.txt
+END

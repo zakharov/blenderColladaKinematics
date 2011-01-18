@@ -1,0 +1,305 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/bf-blender/!svn/ver/34380/trunk/blender/source/blender/blenlib
+END
+BLI_dlrbTree.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/blenlib/BLI_dlrbTree.h
+END
+BLI_storage.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/bf-blender/!svn/ver/32997/trunk/blender/source/blender/blenlib/BLI_storage.h
+END
+BLI_winstuff.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-blender/!svn/ver/33026/trunk/blender/source/blender/blenlib/BLI_winstuff.h
+END
+BLI_listbase.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-blender/!svn/ver/33835/trunk/blender/source/blender/blenlib/BLI_listbase.h
+END
+BLI_edgehash.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/blenlib/BLI_edgehash.h
+END
+BLI_noise.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/blenlib/BLI_noise.h
+END
+BLI_gsqueue.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/blenlib/BLI_gsqueue.h
+END
+BLI_fnmatch.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/bf-blender/!svn/ver/28392/trunk/blender/source/blender/blenlib/BLI_fnmatch.h
+END
+BLI_math_base.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/34335/trunk/blender/source/blender/blenlib/BLI_math_base.h
+END
+BLI_dynstr.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/bf-blender/!svn/ver/33466/trunk/blender/source/blender/blenlib/BLI_dynstr.h
+END
+BLI_rand.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/bf-blender/!svn/ver/28202/trunk/blender/source/blender/blenlib/BLI_rand.h
+END
+BLI_math_color.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/bf-blender/!svn/ver/34335/trunk/blender/source/blender/blenlib/BLI_math_color.h
+END
+BLI_path_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/33104/trunk/blender/source/blender/blenlib/BLI_path_util.h
+END
+BLI_ghash.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/bf-blender/!svn/ver/34159/trunk/blender/source/blender/blenlib/BLI_ghash.h
+END
+BLI_args.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/bf-blender/!svn/ver/33448/trunk/blender/source/blender/blenlib/BLI_args.h
+END
+BLI_kdopbvh.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/bf-blender/!svn/ver/32641/trunk/blender/source/blender/blenlib/BLI_kdopbvh.h
+END
+BLI_voxel.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/blenlib/BLI_voxel.h
+END
+BLI_pbvh.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/bf-blender/!svn/ver/30325/trunk/blender/source/blender/blenlib/BLI_pbvh.h
+END
+BLI_fileops.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/bf-blender/!svn/ver/33167/trunk/blender/source/blender/blenlib/BLI_fileops.h
+END
+BLI_jitter.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/blenlib/BLI_jitter.h
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-blender/!svn/ver/34159/trunk/blender/source/blender/blenlib/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blender/blenlib/Makefile
+END
+BLI_string.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/bf-blender/!svn/ver/33466/trunk/blender/source/blender/blenlib/BLI_string.h
+END
+BLI_blenlib.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/bf-blender/!svn/ver/32845/trunk/blender/source/blender/blenlib/BLI_blenlib.h
+END
+BLI_mempool.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/blenlib/BLI_mempool.h
+END
+BLI_math_rotation.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/34335/trunk/blender/source/blender/blenlib/BLI_math_rotation.h
+END
+BLI_math_vector.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/bf-blender/!svn/ver/34335/trunk/blender/source/blender/blenlib/BLI_math_vector.h
+END
+BLI_utildefines.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/bf-blender/!svn/ver/34198/trunk/blender/source/blender/blenlib/BLI_utildefines.h
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/bf-blender/!svn/ver/32923/trunk/blender/source/blender/blenlib/SConscript
+END
+PIL_time.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/blenlib/PIL_time.h
+END
+BLI_math_matrix.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/bf-blender/!svn/ver/34335/trunk/blender/source/blender/blenlib/BLI_math_matrix.h
+END
+BLI_boxpack2d.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/34002/trunk/blender/source/blender/blenlib/BLI_boxpack2d.h
+END
+BLI_heap.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/blenlib/BLI_heap.h
+END
+BLI_kdtree.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/blenlib/BLI_kdtree.h
+END
+BLI_uvproject.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/29479/trunk/blender/source/blender/blenlib/BLI_uvproject.h
+END
+BLI_memarena.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-blender/!svn/ver/28202/trunk/blender/source/blender/blenlib/BLI_memarena.h
+END
+BLI_editVert.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-blender/!svn/ver/32177/trunk/blender/source/blender/blenlib/BLI_editVert.h
+END
+BLI_vfontdata.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/27655/trunk/blender/source/blender/blenlib/BLI_vfontdata.h
+END
+BLI_math_inline.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/bf-blender/!svn/ver/34335/trunk/blender/source/blender/blenlib/BLI_math_inline.h
+END
+BLI_cpu.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/bf-blender/!svn/ver/29675/trunk/blender/source/blender/blenlib/BLI_cpu.h
+END
+BLI_storage_types.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/34335/trunk/blender/source/blender/blenlib/BLI_storage_types.h
+END
+BLI_math.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/bf-blender/!svn/ver/34335/trunk/blender/source/blender/blenlib/BLI_math.h
+END
+BLI_linklist.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-blender/!svn/ver/29623/trunk/blender/source/blender/blenlib/BLI_linklist.h
+END
+BLI_threads.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/bf-blender/!svn/ver/33442/trunk/blender/source/blender/blenlib/BLI_threads.h
+END
+BLI_scanfill.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-blender/!svn/ver/32484/trunk/blender/source/blender/blenlib/BLI_scanfill.h
+END
+BLI_rect.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/bf-blender/!svn/ver/31573/trunk/blender/source/blender/blenlib/BLI_rect.h
+END
+BLI_bpath.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/bf-blender/!svn/ver/34377/trunk/blender/source/blender/blenlib/BLI_bpath.h
+END
+PIL_dynlib.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/bf-blender/!svn/ver/33448/trunk/blender/source/blender/blenlib/PIL_dynlib.h
+END
+BLI_math_geom.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/34335/trunk/blender/source/blender/blenlib/BLI_math_geom.h
+END
+BLI_graph.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/blender/blenlib/BLI_graph.h
+END

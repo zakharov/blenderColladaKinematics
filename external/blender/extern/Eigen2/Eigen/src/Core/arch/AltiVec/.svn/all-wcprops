@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/src/Core/arch/AltiVec
+END
+PacketMath.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/src/Core/arch/AltiVec/PacketMath.h
+END

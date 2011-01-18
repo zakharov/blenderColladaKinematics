@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/bf-blender/!svn/ver/34384/trunk/blender/release/scripts/modules
+END
+animsys_refactor.py
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/33978/trunk/blender/release/scripts/modules/animsys_refactor.py
+END
+sys_info.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/bf-blender/!svn/ver/33978/trunk/blender/release/scripts/modules/sys_info.py
+END
+graphviz_export.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/31815/trunk/blender/release/scripts/modules/graphviz_export.py
+END
+rna_info.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/bf-blender/!svn/ver/32501/trunk/blender/release/scripts/modules/rna_info.py
+END
+rna_prop_ui.py
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/33978/trunk/blender/release/scripts/modules/rna_prop_ui.py
+END
+add_object_utils.py
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/34283/trunk/blender/release/scripts/modules/add_object_utils.py
+END
+blend_render_info.py
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/31815/trunk/blender/release/scripts/modules/blend_render_info.py
+END
+bpy_types.py
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/bf-blender/!svn/ver/34384/trunk/blender/release/scripts/modules/bpy_types.py
+END
+bpyml_ui.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/bf-blender/!svn/ver/31815/trunk/blender/release/scripts/modules/bpyml_ui.py
+END
+image_utils.py
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/34307/trunk/blender/release/scripts/modules/image_utils.py
+END
+bpyml.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/bf-blender/!svn/ver/31815/trunk/blender/release/scripts/modules/bpyml.py
+END
+io_utils.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/bf-blender/!svn/ver/33555/trunk/blender/release/scripts/modules/io_utils.py
+END

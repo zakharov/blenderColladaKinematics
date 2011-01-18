@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/bf-blender/!svn/ver/30237/trunk/blender/build_files/make/example_scripts
+END
+linux_nanmakefiles.sh
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/bf-blender/!svn/ver/30237/trunk/blender/build_files/make/example_scripts/linux_nanmakefiles.sh
+END
+macos_nanmakefiles.sh
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/bf-blender/!svn/ver/30237/trunk/blender/build_files/make/example_scripts/macos_nanmakefiles.sh
+END
+sunos_nanmakefiles.sh
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/bf-blender/!svn/ver/30237/trunk/blender/build_files/make/example_scripts/sunos_nanmakefiles.sh
+END

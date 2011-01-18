@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/bf-blender/!svn/ver/34057/trunk/blender/source/gameengine/Rasterizer/RAS_OpenGLRasterizer
+END
+RAS_GLExtensionManager.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/Rasterizer/RAS_OpenGLRasterizer/RAS_GLExtensionManager.cpp
+END
+RAS_ListRasterizer.h
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/Rasterizer/RAS_OpenGLRasterizer/RAS_ListRasterizer.h
+END
+RAS_VAOpenGLRasterizer.h
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/Rasterizer/RAS_OpenGLRasterizer/RAS_VAOpenGLRasterizer.h
+END
+RAS_GLExtensionManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/Rasterizer/RAS_OpenGLRasterizer/RAS_GLExtensionManager.h
+END
+RAS_OpenGLRasterizer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svnroot/bf-blender/!svn/ver/34057/trunk/blender/source/gameengine/Rasterizer/RAS_OpenGLRasterizer/RAS_OpenGLRasterizer.cpp
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svnroot/bf-blender/!svn/ver/33375/trunk/blender/source/gameengine/Rasterizer/RAS_OpenGLRasterizer/SConscript
+END
+RAS_OpenGLRasterizer.h
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svnroot/bf-blender/!svn/ver/31950/trunk/blender/source/gameengine/Rasterizer/RAS_OpenGLRasterizer/RAS_OpenGLRasterizer.h
+END
+RAS_ListRasterizer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svnroot/bf-blender/!svn/ver/32552/trunk/blender/source/gameengine/Rasterizer/RAS_OpenGLRasterizer/RAS_ListRasterizer.cpp
+END
+RAS_VAOpenGLRasterizer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svnroot/bf-blender/!svn/ver/30804/trunk/blender/source/gameengine/Rasterizer/RAS_OpenGLRasterizer/RAS_VAOpenGLRasterizer.cpp
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/gameengine/Rasterizer/RAS_OpenGLRasterizer/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/gameengine/Rasterizer/RAS_OpenGLRasterizer/Makefile
+END

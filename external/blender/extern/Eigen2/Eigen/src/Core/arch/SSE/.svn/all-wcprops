@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/src/Core/arch/SSE
+END
+PacketMath.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/src/Core/arch/SSE/PacketMath.h
+END

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/source/gameengine/PyDoc
+END
+PhysicsConstraints.py
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/31730/trunk/blender/source/gameengine/PyDoc/PhysicsConstraints.py
+END
+bge_api_validate_py.txt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/gameengine/PyDoc/bge_api_validate_py.txt
+END
+epy_docgen.sh
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/gameengine/PyDoc/epy_docgen.sh
+END
+how_to_build_win.txt
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/31730/trunk/blender/source/gameengine/PyDoc/how_to_build_win.txt
+END
+API_intro.py
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/bf-blender/!svn/ver/28126/trunk/blender/source/gameengine/PyDoc/API_intro.py
+END
+.cvsignore
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/gameengine/PyDoc/.cvsignore
+END
+VideoTexture.py
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/bf-blender/!svn/ver/31730/trunk/blender/source/gameengine/PyDoc/VideoTexture.py
+END

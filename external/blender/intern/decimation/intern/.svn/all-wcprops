@@ -1,0 +1,131 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/intern/decimation/intern
+END
+LOD_QuadricEditor.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/intern/decimation/intern/LOD_QuadricEditor.h
+END
+LOD_DecimationClass.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/intern/decimation/intern/LOD_DecimationClass.h
+END
+LOD_MeshPrimitives.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/intern/decimation/intern/LOD_MeshPrimitives.cpp
+END
+LOD_EdgeCollapser.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/intern/decimation/intern/LOD_EdgeCollapser.cpp
+END
+LOD_ManMesh2.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/intern/decimation/intern/LOD_ManMesh2.cpp
+END
+LOD_QSDecimator.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/intern/decimation/intern/LOD_QSDecimator.cpp
+END
+LOD_ExternBufferEditor.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/intern/decimation/intern/LOD_ExternBufferEditor.h
+END
+LOD_MeshBounds.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/intern/decimation/intern/LOD_MeshBounds.h
+END
+LOD_decimation.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/intern/decimation/intern/LOD_decimation.cpp
+END
+LOD_MeshPrimitives.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/intern/decimation/intern/LOD_MeshPrimitives.h
+END
+LOD_FaceNormalEditor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/intern/decimation/intern/LOD_FaceNormalEditor.cpp
+END
+LOD_EdgeCollapser.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/intern/decimation/intern/LOD_EdgeCollapser.h
+END
+LOD_ManMesh2.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/intern/decimation/intern/LOD_ManMesh2.h
+END
+LOD_QSDecimator.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/intern/decimation/intern/LOD_QSDecimator.h
+END
+LOD_MeshException.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/intern/decimation/intern/LOD_MeshException.h
+END
+LOD_FaceNormalEditor.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/intern/decimation/intern/LOD_FaceNormalEditor.h
+END
+LOD_ExternNormalEditor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/intern/decimation/intern/LOD_ExternNormalEditor.cpp
+END
+LOD_ExternNormalEditor.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/intern/decimation/intern/LOD_ExternNormalEditor.h
+END
+LOD_Quadric.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/intern/decimation/intern/LOD_Quadric.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/decimation/intern/Makefile
+END
+LOD_QuadricEditor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/intern/decimation/intern/LOD_QuadricEditor.cpp
+END

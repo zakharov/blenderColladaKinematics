@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/bf-blender/!svn/ver/25043/trunk/blender/extern/Eigen2/Eigen
+END
+LU
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/LU
+END
+QtAlignedMalloc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/QtAlignedMalloc
+END
+Cholesky
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/Cholesky
+END
+QR
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/QR
+END
+Eigen
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/Eigen
+END
+NewStdVector
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/NewStdVector
+END
+Core
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/Core
+END
+Geometry
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/Geometry
+END
+LeastSquares
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/LeastSquares
+END
+SVD
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/SVD
+END
+Sparse
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/Sparse
+END
+StdVector
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/StdVector
+END
+Array
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/Array
+END
+Dense
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/Dense
+END

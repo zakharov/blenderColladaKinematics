@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/bf-blender/!svn/ver/34222/trunk/blender/release/scripts/keyingsets
+END
+keyingsets_builtins.py
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/bf-blender/!svn/ver/33925/trunk/blender/release/scripts/keyingsets/keyingsets_builtins.py
+END
+keyingsets_utils.py
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/34222/trunk/blender/release/scripts/keyingsets/keyingsets_utils.py
+END

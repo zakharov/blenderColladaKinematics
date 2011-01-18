@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/bf-blender/!svn/ver/30526/trunk/blender/intern/string/intern
+END
+STR_String.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/bf-blender/!svn/ver/30526/trunk/blender/intern/string/intern/STR_String.cpp
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/string/intern/Makefile
+END

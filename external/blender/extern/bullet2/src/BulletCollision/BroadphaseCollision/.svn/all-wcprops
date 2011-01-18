@@ -1,0 +1,137 @@
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/bf-blender/!svn/ver/24972/trunk/blender/extern/bullet2/src/BulletCollision/BroadphaseCollision
+END
+btQuantizedBvh.h
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletCollision/BroadphaseCollision/btQuantizedBvh.h
+END
+btBroadphaseProxy.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/BroadphaseCollision/btBroadphaseProxy.cpp
+END
+btBroadphaseProxy.h
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svnroot/bf-blender/!svn/ver/24972/trunk/blender/extern/bullet2/src/BulletCollision/BroadphaseCollision/btBroadphaseProxy.h
+END
+btSimpleBroadphase.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/BroadphaseCollision/btSimpleBroadphase.cpp
+END
+btOverlappingPairCallback.h
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletCollision/BroadphaseCollision/btOverlappingPairCallback.h
+END
+btOverlappingPairCache.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/BroadphaseCollision/btOverlappingPairCache.cpp
+END
+btDispatcher.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/BroadphaseCollision/btDispatcher.cpp
+END
+btMultiSapBroadphase.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletCollision/BroadphaseCollision/btMultiSapBroadphase.cpp
+END
+btSimpleBroadphase.h
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/BroadphaseCollision/btSimpleBroadphase.h
+END
+btDbvtBroadphase.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletCollision/BroadphaseCollision/btDbvtBroadphase.cpp
+END
+btDispatcher.h
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/BroadphaseCollision/btDispatcher.h
+END
+btAxisSweep3.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/BroadphaseCollision/btAxisSweep3.cpp
+END
+btOverlappingPairCache.h
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/BroadphaseCollision/btOverlappingPairCache.h
+END
+btMultiSapBroadphase.h
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletCollision/BroadphaseCollision/btMultiSapBroadphase.h
+END
+btDbvtBroadphase.h
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletCollision/BroadphaseCollision/btDbvtBroadphase.h
+END
+btBroadphaseInterface.h
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/BroadphaseCollision/btBroadphaseInterface.h
+END
+btDbvt.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletCollision/BroadphaseCollision/btDbvt.cpp
+END
+btAxisSweep3.h
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/BroadphaseCollision/btAxisSweep3.h
+END
+btCollisionAlgorithm.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/BroadphaseCollision/btCollisionAlgorithm.cpp
+END
+btDbvt.h
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletCollision/BroadphaseCollision/btDbvt.h
+END
+btQuantizedBvh.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletCollision/BroadphaseCollision/btQuantizedBvh.cpp
+END
+btCollisionAlgorithm.h
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/BroadphaseCollision/btCollisionAlgorithm.h
+END

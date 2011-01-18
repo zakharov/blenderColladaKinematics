@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/bf-extensions/!svn/ver/1424/trunk/py/scripts/addons/io_anim_bvh
+END
+import_bvh.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-extensions/!svn/ver/1424/trunk/py/scripts/addons/io_anim_bvh/import_bvh.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/bf-extensions/!svn/ver/1404/trunk/py/scripts/addons/io_anim_bvh/__init__.py
+END
+export_bvh.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-extensions/!svn/ver/1404/trunk/py/scripts/addons/io_anim_bvh/export_bvh.py
+END

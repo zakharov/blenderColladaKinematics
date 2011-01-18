@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/bf-blender/!svn/ver/31894/trunk/blender/build_files/package_spec/pacman
+END
+blender.install
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/31894/trunk/blender/build_files/package_spec/pacman/blender.install
+END
+PKGBUILD
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/bf-blender/!svn/ver/31894/trunk/blender/build_files/package_spec/pacman/PKGBUILD
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/bf-blender/!svn/ver/31372/trunk/blender/intern/audaspace/SDL
+END
+AUD_SDLDevice.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/bf-blender/!svn/ver/31372/trunk/blender/intern/audaspace/SDL/AUD_SDLDevice.h
+END
+AUD_SDLDevice.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/31372/trunk/blender/intern/audaspace/SDL/AUD_SDLDevice.cpp
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/audaspace/SDL/Makefile
+END

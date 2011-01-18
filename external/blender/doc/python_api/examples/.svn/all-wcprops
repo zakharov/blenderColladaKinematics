@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/examples
+END
+mathutils.py
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/examples/mathutils.py
+END
+mathutils.Vector.py
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/examples/mathutils.Vector.py
+END
+mathutils.Matrix.py
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/examples/mathutils.Matrix.py
+END
+mathutils.Quaternion.py
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/examples/mathutils.Quaternion.py
+END
+bpy.data.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/examples/bpy.data.py
+END
+mathutils.Euler.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/examples/mathutils.Euler.py
+END

@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-blender/!svn/ver/34160/trunk/blender/source/blender/render/intern/raytrace
+END
+rayobject.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/bf-blender/!svn/ver/34160/trunk/blender/source/blender/render/intern/raytrace/rayobject.cpp
+END
+rayobject_qbvh.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/bf-blender/!svn/ver/31369/trunk/blender/source/blender/render/intern/raytrace/rayobject_qbvh.cpp
+END
+bvh.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/34159/trunk/blender/source/blender/render/intern/raytrace/bvh.h
+END
+rayobject_rtbuild.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svnroot/bf-blender/!svn/ver/34160/trunk/blender/source/blender/render/intern/raytrace/rayobject_rtbuild.cpp
+END
+rayobject_vbvh.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/bf-blender/!svn/ver/34160/trunk/blender/source/blender/render/intern/raytrace/rayobject_vbvh.cpp
+END
+rayobject_hint.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/render/intern/raytrace/rayobject_hint.h
+END
+rayobject_svbvh.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svnroot/bf-blender/!svn/ver/31369/trunk/blender/source/blender/render/intern/raytrace/rayobject_svbvh.cpp
+END
+reorganize.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/34159/trunk/blender/source/blender/render/intern/raytrace/reorganize.h
+END
+vbvh.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/34159/trunk/blender/source/blender/render/intern/raytrace/vbvh.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/31029/trunk/blender/source/blender/render/intern/raytrace/Makefile
+END
+rayobject_rtbuild.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/render/intern/raytrace/rayobject_rtbuild.h
+END
+svbvh.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/34159/trunk/blender/source/blender/render/intern/raytrace/svbvh.h
+END

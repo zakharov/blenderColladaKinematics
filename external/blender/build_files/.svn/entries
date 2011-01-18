@@ -1,0 +1,40 @@
+10
+
+dir
+34392
+https://svn.blender.org/svnroot/bf-blender/trunk/blender/build_files
+https://svn.blender.org/svnroot/bf-blender
+
+
+
+2011-01-05T09:00:28.777462Z
+34090
+jesterking
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+954f8c5b-7b00-dc11-b283-0030488c597c
+
+cmake
+dir
+
+package_spec
+dir
+
+scons
+dir
+
+make
+dir
+

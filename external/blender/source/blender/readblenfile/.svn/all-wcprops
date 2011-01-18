@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/readblenfile
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/33825/trunk/blender/source/blender/readblenfile/SConscript
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/readblenfile/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blender/readblenfile/Makefile
+END
+BLO_readblenfile.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/33448/trunk/blender/source/blender/readblenfile/BLO_readblenfile.h
+END

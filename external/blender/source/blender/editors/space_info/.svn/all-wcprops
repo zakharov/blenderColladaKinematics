@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/bf-blender/!svn/ver/34160/trunk/blender/source/blender/editors/space_info
+END
+info_intern.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/33431/trunk/blender/source/blender/editors/space_info/info_intern.h
+END
+textview.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/34160/trunk/blender/source/blender/editors/space_info/textview.c
+END
+textview.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/33431/trunk/blender/source/blender/editors/space_info/textview.h
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/29224/trunk/blender/source/blender/editors/space_info/SConscript
+END
+info_report.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/34159/trunk/blender/source/blender/editors/space_info/info_report.c
+END
+space_info.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/34159/trunk/blender/source/blender/editors/space_info/space_info.c
+END
+info_draw.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/34160/trunk/blender/source/blender/editors/space_info/info_draw.c
+END
+info_stats.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/34159/trunk/blender/source/blender/editors/space_info/info_stats.c
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/editors/space_info/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blender/editors/space_info/Makefile
+END
+info_ops.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/34159/trunk/blender/source/blender/editors/space_info/info_ops.c
+END

@@ -1,0 +1,167 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/bf-blender/!svn/ver/34392/trunk/blender/source/blender/python/generic
+END
+mathutils_matrix.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/34392/trunk/blender/source/blender/python/generic/mathutils_matrix.c
+END
+mathutils_vector.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/34335/trunk/blender/source/blender/python/generic/mathutils_vector.h
+END
+IDProp.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/33167/trunk/blender/source/blender/python/generic/IDProp.h
+END
+mathutils_matrix.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/34335/trunk/blender/source/blender/python/generic/mathutils_matrix.h
+END
+blf_py_api.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/34160/trunk/blender/source/blender/python/generic/blf_py_api.c
+END
+bgl.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/bf-blender/!svn/ver/34381/trunk/blender/source/blender/python/generic/bgl.c
+END
+mathutils_quat.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/34392/trunk/blender/source/blender/python/generic/mathutils_quat.c
+END
+py_capi_utils.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/33866/trunk/blender/source/blender/python/generic/py_capi_utils.c
+END
+mathutils_euler.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/34392/trunk/blender/source/blender/python/generic/mathutils_euler.c
+END
+mathutils_color.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/34392/trunk/blender/source/blender/python/generic/mathutils_color.c
+END
+blf_py_api.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/33573/trunk/blender/source/blender/python/generic/blf_py_api.h
+END
+bgl.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/bf-blender/!svn/ver/34335/trunk/blender/source/blender/python/generic/bgl.h
+END
+mathutils_quat.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/34335/trunk/blender/source/blender/python/generic/mathutils_quat.h
+END
+py_capi_utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/33448/trunk/blender/source/blender/python/generic/py_capi_utils.h
+END
+mathutils.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/34350/trunk/blender/source/blender/python/generic/mathutils.c
+END
+mathutils_euler.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/34335/trunk/blender/source/blender/python/generic/mathutils_euler.h
+END
+mathutils_color.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/34335/trunk/blender/source/blender/python/generic/mathutils_color.h
+END
+noise.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-blender/!svn/ver/34160/trunk/blender/source/blender/python/generic/noise.c
+END
+mathutils.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/34335/trunk/blender/source/blender/python/generic/mathutils.h
+END
+bpy_internal_import.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/bf-blender/!svn/ver/34160/trunk/blender/source/blender/python/generic/bpy_internal_import.c
+END
+bpy_internal_import.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/bf-blender/!svn/ver/32728/trunk/blender/source/blender/python/generic/bpy_internal_import.h
+END
+mathutils_geometry.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/34380/trunk/blender/source/blender/python/generic/mathutils_geometry.c
+END
+mathutils_geometry.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/34335/trunk/blender/source/blender/python/generic/mathutils_geometry.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blender/python/generic/Makefile
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/python/generic/CMakeLists.txt
+END
+mathutils_vector.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/34392/trunk/blender/source/blender/python/generic/mathutils_vector.c
+END
+IDProp.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/34195/trunk/blender/source/blender/python/generic/IDProp.c
+END
