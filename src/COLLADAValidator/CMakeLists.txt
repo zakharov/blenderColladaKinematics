@@ -21,8 +21,8 @@ INCLUDE_DIRECTORIES(
 	${libValidator_include_dirs} 
 	${OPENCOLLADA_INCLUDE_DIR}
 )
+MESSAGE(${OPENCOLLADA_LIB_DIR})
 LINK_DIRECTORIES(${OPENCOLLADA_LIB_DIR})
-
 ADD_LIBRARY(${name} ${libValidator_src_files})
 TARGET_LINK_LIBRARIES(${name} ${libValidator_libs})
 

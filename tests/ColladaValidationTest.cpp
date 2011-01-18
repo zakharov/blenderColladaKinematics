@@ -37,6 +37,7 @@ void ColladaValidationTest::parse(const string& fileName, ValidationErrorHandler
 }
 
 bool ColladaValidationTest::testModel(const string& name){
+	cout << "<---------------------Starting to test " << name << " ------------------------> " << endl;
 	ValidationErrorHandler errorHandler;
 	parse(path+name, errorHandler);
 
@@ -77,8 +78,9 @@ void ColladaValidationTest::testAllModels() {
 	CPPUNIT_ASSERT(testModel("/pr2/pr2-beta-static.dae"));
 	CPPUNIT_ASSERT(testModel("/schunkSAHrobot/schunkSAHrobot.dae"));
 	CPPUNIT_ASSERT(testModel("/kr210L180/kr210L180.dae"));
-	CPPUNIT_ASSERT(testModel("/simpleArm/simple.dae"));
+	CPPUNIT_ASSERT(testModel("/simpleArm/simpleArm.dae"));
 	CPPUNIT_ASSERT(testModel("/zange/zange.dae"));
+	CPPUNIT_ASSERT(testModel("/greifer/greifer.dae"));
 }
 
 }

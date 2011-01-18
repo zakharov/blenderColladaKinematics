@@ -15,7 +15,8 @@ LINK_DIRECTORIES(
 FILE(GLOB CPPUNITTEST_SOURCES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} "*Test.cpp" )
 MESSAGE("CppUnitTests: ${CPPUNITTEST_SOURCES}")
 
-# compile unit testing executable 
+# compile unit testing executable
+LINK_DIRECTORIES(${OPENCOLLADA_LIB_DIR})
 ADD_EXECUTABLE(run_unit_tests TestRunner.cpp ${CPPUNITTEST_SOURCES})
 TARGET_LINK_LIBRARIES(run_unit_tests ${CPPUNIT_LIBRARIES} COLLADAValidator)
 
