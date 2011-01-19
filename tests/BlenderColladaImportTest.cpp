@@ -7,9 +7,10 @@
     http://www.opensource.org/licenses/mit-license.php
 */
 
-#include "blenkernel/BKE_scene.h"
-#include "blenkernel/BKE_context.h"
+#include "BKE_scene.h"
+#include "BKE_context.h"
 #include "COLLADABlender/DocumentImporter.h"
+#include "BlenderColladaImportTest.h"
 
 using namespace std;
 
@@ -17,22 +18,22 @@ namespace unitTests {
 
 CPPUNIT_TEST_SUITE_REGISTRATION(BlenderColladaImportTest);
 
-bool ColladaValidationTest::testModel(const string& name) {
+bool BlenderColladaImportTest::testModel(const string& name) {
 	cout << "<---Starting to test " << name << "---> " << endl;
-	bContext context
+	bContext context;
 	DocumentImporter import (context, path+name);
 	return import.import();
 }
 
-void ColladaValidationTest::setUp(){
+void BlenderColladaImportTest::setUp(){
 	path = string(KINEMATICS_MODELS_DIR);
 }
 
-void ColladaValidationTest::tearDown(){
+void BlenderColladaImportTest::tearDown(){
 	
 }
 
-void ColladaValidationTest::testAllModels() {
+void BlenderColladaImportTest::testAllModels() {
 	CPPUNIT_ASSERT(testModel("/simple/simple.dae"));
 	CPPUNIT_ASSERT(testModel("/blocks/blocks.dae"));
 	CPPUNIT_ASSERT(testModel("/kukayoubot/youbot.dae"));

@@ -7,7 +7,7 @@ MARK_AS_ADVANCED(CMAKE_CONFIGURATION_TYPES)
 PROJECT(BlenderCOLLADAKinematics)      #must be after setting cmake_configuration_types
 
 #defines where specific parts of BRICS_MM are stored or created
-SET(KINEMATICS_CORE_SRC                 ${CMAKE_HOME_DIRECTORY}/src)  #core sources
+SET(KINEMATICS_CORE_SRC            ${CMAKE_HOME_DIRECTORY}/src)  #core sources
 SET(LIBRARY_OUTPUT_PATH            ${CMAKE_HOME_DIRECTORY}/lib)  #static libraries 
 SET(EXECUTABLE_OUTPUT_PATH         ${CMAKE_HOME_DIRECTORY}/bin)  #executables 
 SET(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_HOME_DIRECTORY}/bin)  #dynamic libraries (plugins) 
@@ -62,6 +62,13 @@ SET(OPENCOLLADA_INCLUDE_DIR
 
 # path to the blender's source code
 SET(BLENDER_SOURCE_DIR ${CMAKE_HOME_DIRECTORY}/external/blender/source/blender)
+SET(BLENDER_INCLUDE_DIRS 
+	${BLENDER_SOURCE_DIR}/blenkernel
+	${BLENDER_SOURCE_DIR}/makesdna
+	${BLENDER_SOURCE_DIR}/makesrna
+	${BLENDER_SOURCE_DIR}/blenloader
+)
+SET(BLENDER_SOURCES)
 
 #include all CMakeList.txt files within this package
 #each generates one library or application	
