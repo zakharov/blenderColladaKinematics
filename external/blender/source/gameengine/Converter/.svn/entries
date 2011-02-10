@@ -1,14 +1,14 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/gameengine/Converter
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-07T19:18:31.464706Z
-34160
+2011-01-30T15:29:22.294392Z
+34567
 campbellbarton
 
 
@@ -304,11 +304,11 @@ file
 
 
 
-2011-01-18T22:04:26.813021Z
-b22e809f70cca2586790bbc300b2a0fd
-2010-09-16T19:03:01.967219Z
-31968
-blendix
+2011-02-10T19:48:36.995667Z
+d428f3985f8794451c492a63484c9cd0
+2011-01-18T22:27:18.842430Z
+34393
+dfelinto
 has-props
 
 
@@ -330,7 +330,7 @@ has-props
 
 
 
-2325
+2384
 
 BL_ModifierDeformer.h
 file
@@ -338,11 +338,11 @@ file
 
 
 
-2011-01-18T22:04:26.813021Z
-dae46d4439ee52fd4b400a624496bb9a
-2010-09-15T16:13:32.976747Z
-31950
-campbellbarton
+2011-02-10T19:48:36.995667Z
+2589e10c03b397193b514d8a65dad885
+2011-01-23T17:17:21.114643Z
+34469
+ben2610
 has-props
 
 
@@ -364,7 +364,7 @@ has-props
 
 
 
-2990
+3094
 
 BL_SkinDeformer.cpp
 file
@@ -536,40 +536,6 @@ has-props
 
 3365
 
-KX_BlenderSceneConverter.cpp
-file
-
-
-
-
-2011-01-18T22:04:26.813021Z
-e3281398cec3c705fa283ab8badb913e
-2010-11-17T14:36:19.257062Z
-33133
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-38969
-
 BL_ShapeActionActuator.h
 file
 
@@ -603,6 +569,40 @@ has-props
 
 
 4264
+
+KX_BlenderSceneConverter.cpp
+file
+
+
+
+
+2011-01-18T22:04:26.813021Z
+e3281398cec3c705fa283ab8badb913e
+2010-11-17T14:36:19.257062Z
+33133
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+38969
 
 BL_ArmatureObject.h
 file
@@ -740,17 +740,17 @@ has-props
 
 3332
 
-Makefile
+BL_BlenderDataConversion.h
 file
 
 
 
 
 2011-01-18T22:04:26.813021Z
-ac7a58abec57e9125705942f0e7b316d
-2010-08-10T21:22:26.642559Z
-31223
-gsrb3d
+caac61f0d7922bf4d0ce10bf2d5dfb60
+2010-02-12T13:34:04.213317Z
+26841
+campbellbarton
 has-props
 
 
@@ -772,7 +772,7 @@ has-props
 
 
 
-2300
+1764
 
 BL_ActionActuator.cpp
 file
@@ -808,17 +808,17 @@ has-props
 
 18355
 
-BL_BlenderDataConversion.h
+BL_ModifierDeformer.cpp
 file
 
 
 
 
-2011-01-18T22:04:26.813021Z
-caac61f0d7922bf4d0ce10bf2d5dfb60
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-02-10T19:48:36.995667Z
+349d3d845843bf9d6f9826b2d8f875dc
+2011-01-23T17:17:21.114643Z
+34469
+ben2610
 has-props
 
 
@@ -840,7 +840,7 @@ has-props
 
 
 
-1764
+6801
 
 BlenderWorldInfo.cpp
 file
@@ -848,11 +848,11 @@ file
 
 
 
-2011-01-18T22:04:26.813021Z
-f74fa5d89e68b44ed4ed7bd4bd13926d
-2010-09-16T19:03:01.967219Z
-31968
-blendix
+2011-02-10T19:48:36.995667Z
+30d2f583219a560d73614c245b5c1393
+2011-01-18T22:27:18.842430Z
+34393
+dfelinto
 has-props
 
 
@@ -874,41 +874,7 @@ has-props
 
 
 
-4160
-
-BL_ModifierDeformer.cpp
-file
-
-
-
-
-2011-01-18T22:04:26.813021Z
-e239b42e70bdc38fd913a6a217057163
-2011-01-07T19:18:31.464706Z
-34160
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5558
+4309
 
 BL_MeshDeformer.h
 file
@@ -978,40 +944,6 @@ has-props
 
 3240
 
-KX_ConvertProperties.h
-file
-
-
-
-
-2011-01-18T22:04:26.813021Z
-f4e3fbf9de9ea8b6bb36d6036d94a0ff
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1327
-
 KX_ConvertSensors.h
 file
 
@@ -1045,6 +977,40 @@ has-props
 
 
 1471
+
+KX_ConvertProperties.h
+file
+
+
+
+
+2011-01-18T22:04:26.813021Z
+f4e3fbf9de9ea8b6bb36d6036d94a0ff
+2010-02-12T13:34:04.213317Z
+26841
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1327
 
 BL_ArmatureActuator.h
 file
@@ -1188,10 +1154,10 @@ file
 
 
 
-2011-01-18T22:04:26.813021Z
-b4977def15762f58b61f2099f74f7652
-2010-10-31T04:11:39.269118Z
-32788
+2011-02-10T19:48:36.995667Z
+0d2e98663961b4d4ad918d192facf46c
+2011-01-23T12:42:07.392212Z
+34465
 campbellbarton
 has-props
 
@@ -1494,11 +1460,11 @@ file
 
 
 
-2011-01-18T22:04:26.823021Z
-ff9ca05ad32f1add3d59841062884eb4
-2011-01-07T19:18:31.464706Z
-34160
-campbellbarton
+2011-02-10T19:48:36.995667Z
+2d2afc82d5f741e120fe83b21c86789a
+2011-01-23T17:17:21.114643Z
+34469
+ben2610
 has-props
 
 
@@ -1520,7 +1486,7 @@ has-props
 
 
 
-83721
+83770
 
 BL_MeshDeformer.cpp
 file

@@ -1,7 +1,7 @@
 /**
  * blenlib/BKE_screen.h (mar-2001 nzc)
  *	
- * $Id: BKE_screen.h 28359 2010-04-22 19:57:18Z campbellbarton $ 
+ * $Id: BKE_screen.h 34475 2011-01-24 05:02:01Z campbellbarton $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *

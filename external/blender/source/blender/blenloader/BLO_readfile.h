@@ -1,5 +1,5 @@
 /*
- * $Id: BLO_readfile.h 33124 2010-11-17 09:45:45Z campbellbarton $
+ * $Id: BLO_readfile.h 34701 2011-02-07 22:48:23Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -200,7 +200,7 @@ int BLO_has_bfile_extension(char *str);
 int BLO_is_a_library(const char *path, char *dir, char *group);
 
 struct Main* BLO_library_append_begin(const struct bContext *C, BlendHandle** bh, char *dir);
-void BLO_library_append_named_part(const struct bContext *C, struct Main *mainl, BlendHandle** bh, char *name, int idcode, short flag);
+void BLO_library_append_named_part(const struct bContext *C, struct Main *mainl, BlendHandle** bh, const char *name, int idcode, short flag);
 void BLO_library_append_end(const struct bContext *C, struct Main *mainl, BlendHandle** bh, int idcode, short flag);
 
 /* deprecated */

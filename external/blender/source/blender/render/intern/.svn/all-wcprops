@@ -1,11 +1,5 @@
 K 25
 svn:wc:ra_dav:version-url
 V 77
-/svnroot/bf-blender/!svn/ver/34263/trunk/blender/source/blender/render/intern
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 86
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blender/render/intern/Makefile
+/svnroot/bf-blender/!svn/ver/34729/trunk/blender/source/blender/render/intern
 END

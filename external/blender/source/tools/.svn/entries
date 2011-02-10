@@ -1,14 +1,14 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/tools
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2010-11-07T16:38:56.543206Z
-32927
+2011-01-30T15:29:22.294392Z
+34567
 campbellbarton
 
 
@@ -96,9 +96,6 @@ has-props
 
 
 486
-
-guess
-dir
 
 to_dos
 file

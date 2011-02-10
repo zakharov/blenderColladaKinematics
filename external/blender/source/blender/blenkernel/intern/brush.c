@@ -1,5 +1,5 @@
 /**
- * $Id: brush.c 34159 2011-01-07 18:36:47Z campbellbarton $
+ * $Id: brush.c 34643 2011-02-04 16:10:30Z nazgul $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -907,7 +907,13 @@ static void brush_apply_pressure(BrushPainter *painter, Brush *brush, float pres
 
 void brush_jitter_pos(Brush *brush, float *pos, float *jitterpos)
 {
-	if(brush->jitter){
+	int use_jitter= brush->jitter != 0;
+
+	/* jitter-ed brush gives wierd and unpredictable result for this
+	   kinds of stroke, so manyally disable jitter usage (sergey) */
+	use_jitter&= (brush->flag & (BRUSH_RESTORE_MESH|BRUSH_ANCHORED)) == 0;
+
+	if(use_jitter){
 		float rand_pos[2];
 		const int radius= brush_size(brush);
 		const int diameter= 2*radius;

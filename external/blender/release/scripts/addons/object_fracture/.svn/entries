@@ -1,15 +1,15 @@
 10
 
 dir
-1437
+1566
 https://svn.blender.org/svnroot/bf-extensions/trunk/py/scripts/addons/object_fracture
 https://svn.blender.org/svnroot/bf-extensions
 
 
 
-2011-01-14T16:09:46.541096Z
-1397
-campbellbarton
+2011-01-30T11:17:29.811183Z
+1524
+jaydez
 
 
 
@@ -100,11 +100,11 @@ file
 
 
 
-2011-01-18T22:05:19.663021Z
-c02f64638e8d73703d91586a92f0faed
-2011-01-14T16:09:46.541096Z
-1397
-campbellbarton
+2011-02-10T19:49:02.815667Z
+361a4a209ae5e1cf379ccf52eb935278
+2011-01-30T11:17:29.811183Z
+1524
+jaydez
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-2465
+2449
 
 data.blend
 file

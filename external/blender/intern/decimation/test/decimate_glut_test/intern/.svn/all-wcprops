@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 97
-/svnroot/bf-blender/!svn/ver/31730/trunk/blender/intern/decimation/test/decimate_glut_test/intern
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/intern/decimation/test/decimate_glut_test/intern
 END
 GlutMeshDrawer.h
 K 25
@@ -26,12 +26,6 @@ K 25
 svn:wc:ra_dav:version-url
 V 116
 /svnroot/bf-blender/!svn/ver/26841/trunk/blender/intern/decimation/test/decimate_glut_test/intern/LOD_GhostTestApp.h
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 106
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/decimation/test/decimate_glut_test/intern/Makefile
 END
 MyGlutKeyHandler.h
 K 25

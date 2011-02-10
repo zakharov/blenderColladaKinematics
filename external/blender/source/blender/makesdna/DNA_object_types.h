@@ -3,7 +3,7 @@
  *	
  * Object is a sort of wrapper for general info.
  *
- * $Id: DNA_object_types.h 34360 2011-01-16 21:12:38Z campbellbarton $ 
+ * $Id: DNA_object_types.h 34536 2011-01-27 21:44:56Z zanqdo $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *

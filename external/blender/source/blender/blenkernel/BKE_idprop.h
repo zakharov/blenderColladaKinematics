@@ -1,5 +1,5 @@
 /**
- * $Id: BKE_idprop.h 33167 2010-11-19 02:14:18Z campbellbarton $
+ * $Id: BKE_idprop.h 34680 2011-02-07 05:05:41Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -127,6 +127,8 @@ int IDP_InsertToGroup(struct IDProperty *group, struct IDProperty *previous,
 void IDP_RemFromGroup(struct IDProperty *group, struct IDProperty *prop);
 
 IDProperty *IDP_GetPropertyFromGroup(struct IDProperty *prop, const char *name);
+/* same as above but ensure type match */
+IDProperty *IDP_GetPropertyTypeFromGroup(struct IDProperty *prop, const char *name, const char type);
 
 /*Get an iterator to iterate over the members of an id property group.
  Note that this will automatically free the iterator once iteration is complete;

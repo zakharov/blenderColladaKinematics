@@ -1,15 +1,15 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/extern/Eigen2/Eigen
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2009-12-01T10:25:21.923452Z
-25043
-damien78
+2011-01-27T09:40:20.348108Z
+34524
+campbellbarton
 
 
 
@@ -128,39 +128,8 @@ has-props
 
 2257
 
-NewStdVector
-file
-
-
-
-
-2011-01-18T22:05:05.703021Z
-710264ac4816261fd26ff1c69dc0f6e4
-2009-09-24T14:33:05.237429Z
-23455
-ben2610
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6454
+src
+dir
 
 Eigen
 file
@@ -196,17 +165,14 @@ has-props
 
 35
 
-src
-dir
-
-Core
+NewStdVector
 file
 
 
 
 
 2011-01-18T22:05:05.703021Z
-20e1761e639b241e3eb8ef845b9d101f
+710264ac4816261fd26ff1c69dc0f6e4
 2009-09-24T14:33:05.237429Z
 23455
 ben2610
@@ -231,7 +197,41 @@ has-props
 
 
 
-4674
+6454
+
+Core
+file
+
+
+
+
+2011-02-10T19:48:56.535667Z
+ec9983c72290bb73d8ed31d4c814fdcd
+2011-01-27T09:40:20.348108Z
+34524
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4693
 
 Geometry
 file

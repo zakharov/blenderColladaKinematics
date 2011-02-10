@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 79
-/svnroot/bf-blender/!svn/ver/34195/trunk/blender/source/gameengine/VideoTexture
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/gameengine/VideoTexture
 END
 FilterNormal.cpp
 K 25
@@ -87,35 +87,29 @@ svn:wc:ra_dav:version-url
 V 93
 /svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/gameengine/VideoTexture/FilterColor.h
 END
-BlendType.h
-K 25
-svn:wc:ra_dav:version-url
-V 91
-/svnroot/bf-blender/!svn/ver/26964/trunk/blender/source/gameengine/VideoTexture/BlendType.h
-END
 VideoFFmpeg.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 95
 /svnroot/bf-blender/!svn/ver/29240/trunk/blender/source/gameengine/VideoTexture/VideoFFmpeg.cpp
 END
-Makefile
+BlendType.h
 K 25
 svn:wc:ra_dav:version-url
-V 88
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/gameengine/VideoTexture/Makefile
-END
-CMakeLists.txt
-K 25
-svn:wc:ra_dav:version-url
-V 94
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/gameengine/VideoTexture/CMakeLists.txt
+V 91
+/svnroot/bf-blender/!svn/ver/26964/trunk/blender/source/gameengine/VideoTexture/BlendType.h
 END
 blendVideoTex.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 97
 /svnroot/bf-blender/!svn/ver/29486/trunk/blender/source/gameengine/VideoTexture/blendVideoTex.cpp
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/gameengine/VideoTexture/CMakeLists.txt
 END
 Common.h
 K 25
@@ -141,29 +135,29 @@ svn:wc:ra_dav:version-url
 V 94
 /svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/gameengine/VideoTexture/FilterNormal.h
 END
-Texture.h
-K 25
-svn:wc:ra_dav:version-url
-V 89
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/gameengine/VideoTexture/Texture.h
-END
 ImageMix.h
 K 25
 svn:wc:ra_dav:version-url
 V 90
 /svnroot/bf-blender/!svn/ver/26689/trunk/blender/source/gameengine/VideoTexture/ImageMix.h
 END
-SConscript
+Texture.h
 K 25
 svn:wc:ra_dav:version-url
-V 90
-/svnroot/bf-blender/!svn/ver/33156/trunk/blender/source/gameengine/VideoTexture/SConscript
+V 89
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/gameengine/VideoTexture/Texture.h
 END
 VideoBase.h
 K 25
 svn:wc:ra_dav:version-url
 V 91
 /svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/gameengine/VideoTexture/VideoBase.h
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/33156/trunk/blender/source/gameengine/VideoTexture/SConscript
 END
 FilterSource.h
 K 25

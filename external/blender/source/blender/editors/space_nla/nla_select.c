@@ -1,5 +1,5 @@
 /**
- * $Id: nla_select.c 33563 2010-12-08 21:56:50Z sirdude $
+ * $Id: nla_select.c 34427 2011-01-20 22:22:16Z aligorith $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -581,6 +581,7 @@ void NLA_OT_click_select (wmOperatorType *ot)
 	/* identifiers */
 	ot->name= "Mouse Select";
 	ot->idname= "NLA_OT_click_select";
+	ot->description= "Handle clicks to select NLA Strips";
 	
 	/* api callbacks - absolutely no exec() this yet... */
 	ot->invoke= nlaedit_clickselect_invoke;

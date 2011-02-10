@@ -1,5 +1,5 @@
 /*
- * $Id: mathutils_vector.h 34335 2011-01-15 16:14:57Z campbellbarton $
+ * $Id: mathutils_vector.h 34462 2011-01-23 08:37:34Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -43,7 +43,7 @@ typedef struct {
 } VectorObject;
 
 /*prototypes*/
-PyObject *newVectorObject(float *vec, int size, int type, PyTypeObject *base_type);
+PyObject *newVectorObject(float *vec, const int size, const int type, PyTypeObject *base_type);
 PyObject *newVectorObject_cb(PyObject *user, int size, int callback_type, int subtype);
 
 #endif				/* MATHUTILS_VECTOR_H */

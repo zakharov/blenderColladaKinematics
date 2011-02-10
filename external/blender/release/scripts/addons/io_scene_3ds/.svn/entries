@@ -1,14 +1,14 @@
 10
 
 dir
-1437
+1566
 https://svn.blender.org/svnroot/bf-extensions/trunk/py/scripts/addons/io_scene_3ds
 https://svn.blender.org/svnroot/bf-extensions
 
 
 
-2011-01-18T01:58:49.454964Z
-1424
+2011-02-08T21:36:44.718602Z
+1562
 campbellbarton
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2011-01-18T22:05:18.883021Z
-19aea5d952a0f71bd1f130d8bdccb1b9
-2011-01-18T01:58:49.454964Z
-1424
+2011-02-10T19:49:02.745667Z
+bd8f8a8e000e5a27bac195fca4123dde
+2011-02-05T07:08:34.456132Z
+1539
 campbellbarton
 has-props
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-35019
+35446
 
 __init__.py
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-01-18T22:05:18.883021Z
-b828504d753c0a433bcd5f3a535041a5
-2011-01-14T23:42:58.510264Z
-1404
-gsrb3d
+2011-02-10T19:49:02.745667Z
+901a5379fef52713b2cec1e07d1c48e1
+2011-01-20T09:04:36.963359Z
+1453
+campbellbarton
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-3852
+3968
 
 import_3ds.py
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-01-18T22:05:18.883021Z
-31a74621159dfc8c14cc724b73173154
-2011-01-14T23:42:58.510264Z
-1404
-gsrb3d
+2011-02-10T19:49:02.745667Z
+ea7b547dc38b2ce7320f81afe1bebdfa
+2011-02-08T21:36:44.718602Z
+1562
+campbellbarton
 has-props
 
 
@@ -126,5 +126,5 @@ has-props
 
 
 
-35113
+36142
 

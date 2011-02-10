@@ -1,15 +1,15 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/editors/animation
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-18T01:58:19.206348Z
-34380
-campbellbarton
+2011-02-10T09:39:55.665835Z
+34754
+aligorith
 
 
 
@@ -60,40 +60,6 @@ has-props
 
 8161
 
-fmodifier_ui.c
-file
-
-
-
-
-2011-01-18T22:04:49.173021Z
-cbdad155a82d748c6da350ad619f9091
-2011-01-07T18:36:47.041781Z
-34159
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-23920
-
 anim_draw.c
 file
 
@@ -128,16 +94,50 @@ has-props
 
 14930
 
-keyframes_draw.c
+fmodifier_ui.c
 file
 
 
 
 
 2011-01-18T22:04:49.173021Z
-1a0dcc89cb93cbb4a66ee1db4e159a4d
-2011-01-10T22:25:57.158128Z
-34237
+cbdad155a82d748c6da350ad619f9091
+2011-01-07T18:36:47.041781Z
+34159
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+23920
+
+keyframes_draw.c
+file
+
+
+
+
+2011-02-10T19:48:50.555667Z
+64481e297cb9312f2905efd7abb8494e
+2011-02-01T11:35:27.888067Z
+34600
 aligorith
 has-props
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-27329
+27515
 
 anim_channels_edit.c
 file
@@ -168,10 +168,10 @@ file
 
 
 
-2011-01-18T22:04:49.183021Z
-ce0a6dc566b13140aff81c00aeeb99fb
-2011-01-10T22:10:28.335360Z
-34236
+2011-02-10T19:48:50.565667Z
+80ff3f364e7dbedabcddc8b27df5ffa8
+2011-02-10T09:39:55.665835Z
+34754
 aligorith
 has-props
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-66554
+68245
 
 anim_ops.c
 file
@@ -264,40 +264,6 @@ has-props
 
 332
 
-anim_markers.c
-file
-
-
-
-
-2011-01-18T22:04:49.183021Z
-4ce6c2cef54ddeaf0e9ed41f40974e03
-2011-01-15T16:14:57.406996Z
-34335
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-38223
-
 anim_intern.h
 file
 
@@ -331,6 +297,40 @@ has-props
 
 
 2981
+
+anim_markers.c
+file
+
+
+
+
+2011-02-10T19:48:50.565667Z
+0da02fbf2dd466da3044a4324ddac9c8
+2011-02-09T01:05:40.164611Z
+34727
+aligorith
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+39392
 
 anim_ipo_utils.c
 file
@@ -440,44 +440,10 @@ file
 
 
 
-2011-01-18T22:04:49.183021Z
-6c8765250d6e636104d0b82f2fb693b6
-2011-01-18T01:58:19.206348Z
-34380
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-28472
-
-anim_filter.c
-file
-
-
-
-
-2011-01-18T22:04:49.183021Z
-1651d358fb54e0f1b3fadd627ab37a5d
-2011-01-10T22:31:34.193628Z
-34238
+2011-02-10T19:48:50.565667Z
+fb773d5555320e54a591d2dc4c544421
+2011-02-04T08:33:07.469593Z
+34634
 aligorith
 has-props
 
@@ -500,19 +466,19 @@ has-props
 
 
 
-84101
+28488
 
-keyframes_edit.c
+anim_filter.c
 file
 
 
 
 
-2011-01-18T22:04:49.183021Z
-e8abc5a039230e927587920fd5e6f947
-2011-01-07T19:18:31.464706Z
-34160
-campbellbarton
+2011-02-10T19:48:50.565667Z
+2309cd1215953ca8eb9d0297a6ba7069
+2011-02-01T23:41:01.351559Z
+34613
+aligorith
 has-props
 
 
@@ -534,7 +500,41 @@ has-props
 
 
 
-33835
+84240
+
+keyframes_edit.c
+file
+
+
+
+
+2011-02-10T19:48:50.565667Z
+66fcd26c2d9d302d3932339b38ae31ca
+2011-02-01T11:35:27.888067Z
+34600
+aligorith
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+34077
 
 anim_channels_defines.c
 file
@@ -569,40 +569,6 @@ has-props
 
 
 93224
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:49.193021Z
-fdfa0f088c3465412e128c81cff43f5d
-2010-08-10T21:22:26.642559Z
-31223
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1594
 
 CMakeLists.txt
 file
@@ -644,11 +610,11 @@ file
 
 
 
-2011-01-18T22:04:49.193021Z
-ada3aede03b7cff3e06e0dded7929659
-2011-01-18T01:58:19.206348Z
-34380
-campbellbarton
+2011-02-10T19:48:50.565667Z
+4d256ec0d2d716ad7ca792ad903dc810
+2011-02-07T12:37:14.162550Z
+34692
+aligorith
 has-props
 
 
@@ -670,5 +636,5 @@ has-props
 
 
 
-52594
+52522
 

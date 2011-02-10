@@ -1,14 +1,14 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern/iksolver/intern
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-16T20:25:47.134114Z
-34358
+2011-01-30T15:29:22.294392Z
+34567
 campbellbarton
 
 
@@ -368,40 +368,6 @@ has-props
 
 
 3364
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:09.743021Z
-16dcbfd450329127e0605a0e08236669
-2008-01-07T19:13:47.953844Z
-13161
-hos
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1316
 
 IK_Solver.cpp
 file

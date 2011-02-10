@@ -1,6 +1,6 @@
 /**
  *	
- * $Id: BKE_modifier.h 33466 2010-12-04 11:44:56Z campbellbarton $ 
+ * $Id: BKE_modifier.h 34587 2011-01-31 20:02:51Z nazgul $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -133,6 +133,12 @@ typedef struct ModifierTypeInfo {
 						struct DerivedMesh *derivedData,
 						float (*vertexCos)[3], int numVerts,
 						int useRenderParams, int isFinalCalc);
+
+	/* Like deformMatricesEM but called from object mode (for supporting modifiers in sculpt mode) */
+	void (*deformMatrices)(
+				struct ModifierData *md, struct Object *ob,
+				struct DerivedMesh *derivedData,
+				float (*vertexCos)[3], float (*defMats)[3][3], int numVerts);
 
 	/* Like deformVerts but called during editmode (for supporting modifiers)
 	 */

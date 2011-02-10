@@ -1,4 +1,4 @@
-# $Id: CMakeLists.txt 34004 2011-01-02 13:33:32Z ton $
+# $Id: CMakeLists.txt 34486 2011-01-25 14:43:13Z campbellbarton $
 # ***** BEGIN GPL LICENSE BLOCK *****
 #
 # This program is free software; you can redistribute it and/or
@@ -33,7 +33,7 @@ set(INC
 	../makesrna
 	../render/extern/include
 	../../../intern/guardedalloc
-	${ZLIB_INC}
+	${ZLIB_INCLUDE_DIRS}
 )
 
 set(SRC

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 85
-/svnroot/bf-blender/!svn/ver/34160/trunk/blender/source/blender/editors/space_buttons
+/svnroot/bf-blender/!svn/ver/34739/trunk/blender/source/blender/editors/space_buttons
 END
 buttons_ops.c
 K 25
@@ -13,7 +13,7 @@ buttons_context.c
 K 25
 svn:wc:ra_dav:version-url
 V 103
-/svnroot/bf-blender/!svn/ver/34160/trunk/blender/source/blender/editors/space_buttons/buttons_context.c
+/svnroot/bf-blender/!svn/ver/34720/trunk/blender/source/blender/editors/space_buttons/buttons_context.c
 END
 buttons_intern.h
 K 25
@@ -31,7 +31,7 @@ buttons_header.c
 K 25
 svn:wc:ra_dav:version-url
 V 102
-/svnroot/bf-blender/!svn/ver/34160/trunk/blender/source/blender/editors/space_buttons/buttons_header.c
+/svnroot/bf-blender/!svn/ver/34739/trunk/blender/source/blender/editors/space_buttons/buttons_header.c
 END
 space_buttons.c
 K 25
@@ -44,10 +44,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 100
 /svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/editors/space_buttons/CMakeLists.txt
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 94
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blender/editors/space_buttons/Makefile
 END

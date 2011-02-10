@@ -1,5 +1,5 @@
 /**
- * $Id: graph_ops.c 34290 2011-01-13 04:53:55Z campbellbarton $
+ * $Id: graph_ops.c 34614 2011-02-01 23:51:52Z aligorith $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -170,7 +170,7 @@ void GRAPH_OT_cursor_set(wmOperatorType *ot)
 	ot->exec= graphview_cursor_exec;
 	ot->invoke= graphview_cursor_invoke;
 	ot->modal= graphview_cursor_modal;
-	ot->poll= ED_operator_ipo_active;
+	ot->poll= ED_operator_graphedit_active;
 	
 	/* flags */
 	ot->flag= OPTYPE_BLOCKING|OPTYPE_UNDO;
@@ -204,10 +204,11 @@ void GRAPH_OT_view_togglehandles (wmOperatorType *ot)
 	/* identification */
 	ot->name= "Show/Hide All Handles";
 	ot->idname= "GRAPH_OT_handles_view_toggle";
+	ot->description= "Toggle whether handles are drawn on all keyframes that need them";
 	
 	/* callbacks */
 	ot->exec= view_toggle_handles_exec;
-	ot->poll= ED_operator_ipo_active;
+	ot->poll= ED_operator_graphedit_active;
 }
 
 /* ************************** registration - operator types **********************************/

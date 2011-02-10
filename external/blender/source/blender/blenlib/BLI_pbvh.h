@@ -1,7 +1,7 @@
 /**
  * A BVH for high poly meshes.
  * 
- * $Id: BLI_pbvh.h 30325 2010-07-14 14:11:03Z jwilkins $
+ * $Id: BLI_pbvh.h 34587 2011-01-31 20:02:51Z nazgul $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -118,8 +118,6 @@ float BLI_pbvh_node_get_tmin(PBVHNode* node);
 void BLI_pbvh_update(PBVH *bvh, int flags, float (*face_nors)[3]);
 void BLI_pbvh_redraw_BB(PBVH *bvh, float bb_min[3], float bb_max[3]);
 void BLI_pbvh_get_grid_updates(PBVH *bvh, int clear, void ***gridfaces, int *totface);
-void BLI_pbvh_grids_update(PBVH *bvh, struct DMGridData **grids,
-	struct DMGridAdjacency *gridadj, void **gridfaces);
 
 /* vertex deformer */
 float (*BLI_pbvh_get_vertCos(struct PBVH *pbvh))[3];

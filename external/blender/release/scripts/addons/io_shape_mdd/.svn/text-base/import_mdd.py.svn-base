@@ -76,7 +76,7 @@ def load(operator, context, filepath, frame_start=0, frame_step=1):
 
         for v in verts:  # 12 is the size of 3 floats
             v.co[:] = unpack('>3f', file.read(12))
-        #me.update()
+        # me.update()
         obj.show_only_shape_key = False
 
         # insert keyframes

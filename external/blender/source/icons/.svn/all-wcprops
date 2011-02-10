@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 61
-/svnroot/bf-blender/!svn/ver/31762/trunk/blender/source/icons
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/icons
 END
 winblender.ico
 K 25
@@ -32,12 +32,6 @@ K 25
 svn:wc:ra_dav:version-url
 V 75
 /svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/icons/winblender.rc
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 70
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/icons/Makefile
 END
 linuxcrossblender.rcscons
 K 25

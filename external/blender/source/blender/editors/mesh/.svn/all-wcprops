@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/svnroot/bf-blender/!svn/ver/34380/trunk/blender/source/blender/editors/mesh
+/svnroot/bf-blender/!svn/ver/34741/trunk/blender/source/blender/editors/mesh
 END
 editmesh.c
 K 25
 svn:wc:ra_dav:version-url
 V 87
-/svnroot/bf-blender/!svn/ver/34301/trunk/blender/source/blender/editors/mesh/editmesh.c
+/svnroot/bf-blender/!svn/ver/34693/trunk/blender/source/blender/editors/mesh/editmesh.c
 END
 editface.c
 K 25
@@ -27,17 +27,17 @@ svn:wc:ra_dav:version-url
 V 91
 /svnroot/bf-blender/!svn/ver/34159/trunk/blender/source/blender/editors/mesh/editmesh_add.c
 END
+mesh_ops.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/34569/trunk/blender/source/blender/editors/mesh/mesh_ops.c
+END
 meshtools.c
 K 25
 svn:wc:ra_dav:version-url
 V 88
 /svnroot/bf-blender/!svn/ver/34290/trunk/blender/source/blender/editors/mesh/meshtools.c
-END
-mesh_ops.c
-K 25
-svn:wc:ra_dav:version-url
-V 87
-/svnroot/bf-blender/!svn/ver/34290/trunk/blender/source/blender/editors/mesh/mesh_ops.c
 END
 mesh_intern.h
 K 25
@@ -49,19 +49,13 @@ editmesh_tools.c
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/34290/trunk/blender/source/blender/editors/mesh/editmesh_tools.c
+/svnroot/bf-blender/!svn/ver/34604/trunk/blender/source/blender/editors/mesh/editmesh_tools.c
 END
 editmesh_mods.c
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/34332/trunk/blender/source/blender/editors/mesh/editmesh_mods.c
-END
-mesh_data.c
-K 25
-svn:wc:ra_dav:version-url
-V 88
-/svnroot/bf-blender/!svn/ver/34283/trunk/blender/source/blender/editors/mesh/mesh_data.c
+/svnroot/bf-blender/!svn/ver/34569/trunk/blender/source/blender/editors/mesh/editmesh_mods.c
 END
 loopcut.c
 K 25
@@ -69,11 +63,17 @@ svn:wc:ra_dav:version-url
 V 86
 /svnroot/bf-blender/!svn/ver/34332/trunk/blender/source/blender/editors/mesh/loopcut.c
 END
+mesh_data.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/bf-blender/!svn/ver/34741/trunk/blender/source/blender/editors/mesh/mesh_data.c
+END
 editmesh_lib.c
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svnroot/bf-blender/!svn/ver/34380/trunk/blender/source/blender/editors/mesh/editmesh_lib.c
+/svnroot/bf-blender/!svn/ver/34465/trunk/blender/source/blender/editors/mesh/editmesh_lib.c
 END
 editmesh_loop.c
 K 25
@@ -81,15 +81,9 @@ svn:wc:ra_dav:version-url
 V 92
 /svnroot/bf-blender/!svn/ver/34159/trunk/blender/source/blender/editors/mesh/editmesh_loop.c
 END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 85
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blender/editors/mesh/Makefile
-END
 CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/editors/mesh/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/34733/trunk/blender/source/blender/editors/mesh/CMakeLists.txt
 END

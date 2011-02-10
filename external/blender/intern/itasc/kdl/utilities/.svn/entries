@@ -1,14 +1,14 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern/itasc/kdl/utilities
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2010-02-12T13:34:04.213317Z
-26841
+2011-01-30T15:29:22.294392Z
+34567
 campbellbarton
 
 
@@ -433,38 +433,4 @@ has-props
 
 
 2214
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:10.413021Z
-a681f3b40c73701359d86ae4cff344ca
-2009-09-25T22:38:15.050072Z
-23494
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1252
 

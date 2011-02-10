@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 65
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/intern/container
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/intern/container
 END
 CTR_UHeap.h
 K 25
@@ -44,10 +44,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 80
 /svnroot/bf-blender/!svn/ver/33864/trunk/blender/intern/container/CMakeLists.txt
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 74
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/container/Makefile
 END

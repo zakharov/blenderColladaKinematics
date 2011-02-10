@@ -1,14 +1,14 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/avi/intern
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2010-11-23T08:44:21.064438Z
-33250
+2011-01-30T15:29:22.294392Z
+34567
 campbellbarton
 
 
@@ -433,38 +433,4 @@ has-props
 
 
 4537
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:33.403021Z
-a588c712b7792cb93537503f3ce3b854
-2010-08-10T21:22:26.642559Z
-31223
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1442
 

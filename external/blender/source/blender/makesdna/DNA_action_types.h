@@ -1,5 +1,5 @@
 /*  
- * $Id: DNA_action_types.h 34210 2011-01-09 23:16:05Z aligorith $
+ * $Id: DNA_action_types.h 34417 2011-01-20 15:17:02Z ton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -327,7 +327,9 @@ typedef struct bPose {
 	ListBase chanbase; 			/* list of pose channels, PoseBones in RNA */
 	struct GHash *chanhash;		/* ghash for quicker string lookups */
 	
-	short flag, proxy_layer;	/* proxy layer: copy from armature, gets synced */
+	short flag, pad;
+	unsigned int proxy_layer;	/* proxy layer: copy from armature, gets synced */
+	int pad1;
 	
 	float ctime;				/* local action time of this pose */
 	float stride_offset[3];		/* applied to object */

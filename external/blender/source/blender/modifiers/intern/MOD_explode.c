@@ -1,5 +1,5 @@
 /*
-* $Id: MOD_explode.c 34175 2011-01-08 12:43:44Z campbellbarton $
+* $Id: MOD_explode.c 34587 2011-01-31 20:02:51Z nazgul $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -895,6 +895,7 @@ ModifierTypeInfo modifierType_Explode = {
 	/* flags */             eModifierTypeFlag_AcceptsMesh,
 	/* copyData */          copyData,
 	/* deformVerts */       0,
+	/* deformMatrices */    0,
 	/* deformVertsEM */     0,
 	/* deformMatricesEM */  0,
 	/* applyModifier */     applyModifier,

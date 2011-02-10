@@ -1,5 +1,5 @@
 /**
- * $Id: SHD_value.c 32517 2010-10-16 14:32:17Z campbellbarton $
+ * $Id: SHD_value.c 34712 2011-02-08 09:02:16Z lukastoenne $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -50,22 +50,17 @@ static int gpu_shader_value(GPUMaterial *mat, bNode *node, GPUNodeStack *in, GPU
 	return GPU_stack_link(mat, "set_value", in, out, vec);
 }
 
-bNodeType sh_node_value= {
-	/* *next,*prev */	NULL, NULL,
-	/* type code   */	SH_NODE_VALUE,
-	/* name        */	"Value",
-	/* width+range */	80, 50, 120,
-	/* class+opts  */	NODE_CLASS_INPUT, NODE_OPTIONS,
-	/* input sock  */	NULL,
-	/* output sock */	sh_node_value_out,
-	/* storage     */	"", 
-	/* execfunc    */	node_shader_exec_value,
-	/* butfunc     */	NULL,
-	/* initfunc    */	NULL,
-	/* freestoragefunc    */	NULL,
-	/* copystoragefunc    */	NULL,
-	/* id          */	NULL, NULL, NULL,
-	/* gpufunc     */	gpu_shader_value
-	
-};
+void register_node_type_sh_value(ListBase *lb)
+{
+	static bNodeType ntype;
+
+	node_type_base(&ntype, SH_NODE_VALUE, "Value", NODE_CLASS_INPUT, NODE_OPTIONS,
+		NULL, sh_node_value_out);
+	node_type_size(&ntype, 80, 50, 120);
+	node_type_exec(&ntype, node_shader_exec_value);
+	node_type_gpu(&ntype, gpu_shader_value);
+
+	nodeRegisterType(lb, &ntype);
+}
+
 

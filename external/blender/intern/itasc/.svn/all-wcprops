@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 61
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/intern/itasc
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/intern/itasc
 END
 Distance.hpp
 K 25
@@ -81,11 +81,11 @@ svn:wc:ra_dav:version-url
 V 82
 /svnroot/bf-blender/!svn/ver/23467/trunk/blender/intern/itasc/ControlledObject.cpp
 END
-Makefile
+ublas_types.hpp
 K 25
 svn:wc:ra_dav:version-url
-V 70
-/svnroot/bf-blender/!svn/ver/23494/trunk/blender/intern/itasc/Makefile
+V 77
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/intern/itasc/ublas_types.hpp
 END
 UncontrolledObject.cpp
 K 25
@@ -93,23 +93,17 @@ svn:wc:ra_dav:version-url
 V 84
 /svnroot/bf-blender/!svn/ver/23467/trunk/blender/intern/itasc/UncontrolledObject.cpp
 END
-ublas_types.hpp
+CopyPose.cpp
 K 25
 svn:wc:ra_dav:version-url
-V 77
-/svnroot/bf-blender/!svn/ver/23463/trunk/blender/intern/itasc/ublas_types.hpp
+V 74
+/svnroot/bf-blender/!svn/ver/23480/trunk/blender/intern/itasc/CopyPose.cpp
 END
 ControlledObject.hpp
 K 25
 svn:wc:ra_dav:version-url
 V 82
 /svnroot/bf-blender/!svn/ver/23463/trunk/blender/intern/itasc/ControlledObject.hpp
-END
-CopyPose.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 74
-/svnroot/bf-blender/!svn/ver/23480/trunk/blender/intern/itasc/CopyPose.cpp
 END
 Cache.cpp
 K 25
@@ -123,17 +117,17 @@ svn:wc:ra_dav:version-url
 V 84
 /svnroot/bf-blender/!svn/ver/23463/trunk/blender/intern/itasc/UncontrolledObject.hpp
 END
-SConscript
-K 25
-svn:wc:ra_dav:version-url
-V 72
-/svnroot/bf-blender/!svn/ver/31567/trunk/blender/intern/itasc/SConscript
-END
 CopyPose.hpp
 K 25
 svn:wc:ra_dav:version-url
 V 74
 /svnroot/bf-blender/!svn/ver/23463/trunk/blender/intern/itasc/CopyPose.hpp
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/bf-blender/!svn/ver/31567/trunk/blender/intern/itasc/SConscript
 END
 Cache.hpp
 K 25
@@ -159,17 +153,17 @@ svn:wc:ra_dav:version-url
 V 72
 /svnroot/bf-blender/!svn/ver/23463/trunk/blender/intern/itasc/Solver.hpp
 END
-Armature.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 74
-/svnroot/bf-blender/!svn/ver/27371/trunk/blender/intern/itasc/Armature.cpp
-END
 eigen_types.hpp
 K 25
 svn:wc:ra_dav:version-url
 V 77
 /svnroot/bf-blender/!svn/ver/23463/trunk/blender/intern/itasc/eigen_types.hpp
+END
+Armature.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/bf-blender/!svn/ver/27371/trunk/blender/intern/itasc/Armature.cpp
 END
 WorldObject.hpp
 K 25

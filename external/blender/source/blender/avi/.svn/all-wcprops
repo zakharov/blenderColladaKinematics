@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 67
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/avi
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/blender/avi
 END
 AVI_avi.h
 K 25
@@ -19,11 +19,5 @@ CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/avi/CMakeLists.txt
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 76
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blender/avi/Makefile
+/svnroot/bf-blender/!svn/ver/34486/trunk/blender/source/blender/avi/CMakeLists.txt
 END

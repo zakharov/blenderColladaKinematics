@@ -1,14 +1,14 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/release/scripts/templates
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-14T16:49:43.989072Z
-34321
+2011-02-08T21:32:26.845415Z
+34723
 campbellbarton
 has-props
 
@@ -32,44 +32,10 @@ file
 
 
 
-2011-01-18T22:04:14.453021Z
-c99440522b2d9724e9d196898f485ab9
-2011-01-11T21:13:34.900231Z
-34265
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-967
-
-gamelogic_basic.py
-file
-
-
-
-
-2011-01-18T22:04:14.453021Z
-e043f3176fa154baed9eb97115e58ad2
-2010-10-11T22:25:28.329588Z
-32423
+2011-02-10T19:48:36.055667Z
+c8b7451bf52b85108e48cfa93bcd5fbd
+2011-01-26T07:54:27.843846Z
+34495
 campbellbarton
 has-props
 
@@ -92,7 +58,41 @@ has-props
 
 
 
-266
+915
+
+gamelogic_basic.py
+file
+
+
+
+
+2011-02-10T19:48:36.055667Z
+d61c2b1226bdd581ea6eb269dfe76d7c
+2011-01-26T07:54:27.843846Z
+34495
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+267
 
 operator_modal_view3d.py
 file
@@ -100,10 +100,10 @@ file
 
 
 
-2011-01-18T22:04:14.453021Z
-198cc59ddf6905763670bdf5d578604a
-2010-12-08T11:42:11.686831Z
-33555
+2011-02-10T19:48:36.055667Z
+d688fd0d08ba600a8171a5b73acd50fd
+2011-01-26T07:54:27.843846Z
+34495
 campbellbarton
 has-props
 
@@ -134,10 +134,10 @@ file
 
 
 
-2011-01-18T22:04:14.453021Z
-c889d597d0e4dfcfe7fbbb5ed6601a5a
-2010-08-02T03:30:07.610702Z
-30964
+2011-02-10T19:48:36.055667Z
+f6f90c970ce0954e92d3bd3e85f6bee4
+2011-01-26T07:54:27.843846Z
+34495
 campbellbarton
 has-props
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-492
+493
 
 background_job.py
 file
@@ -168,10 +168,10 @@ file
 
 
 
-2011-01-18T22:04:14.453021Z
-bb503bd2a602124cbe53e201772bdb61
-2011-01-11T02:30:01.611936Z
-34242
+2011-02-10T19:48:36.065667Z
+31688acba928ea146f34b0a83be061ed
+2011-02-01T12:47:50.868331Z
+34604
 campbellbarton
 has-props
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-3970
+4169
 
 gamelogic_module.py
 file
@@ -202,10 +202,10 @@ file
 
 
 
-2011-01-18T22:04:14.453021Z
-8c825dca60eb17b827068816b1c8d680
-2010-10-11T22:25:28.329588Z
-32423
+2011-02-10T19:48:36.065667Z
+82c8cdc9651a5a93d5e897182517adcd
+2011-01-26T07:54:27.843846Z
+34495
 campbellbarton
 has-props
 
@@ -228,7 +228,7 @@ has-props
 
 
 
-835
+836
 
 operator_export.py
 file
@@ -236,10 +236,10 @@ file
 
 
 
-2011-01-18T22:04:14.453021Z
-f7d3f590ae2a480199e32c892511c313
-2010-11-17T07:00:14.928129Z
-33122
+2011-02-10T19:48:36.065667Z
+aa5c5ea743bedcf0b9f97b80b13aa151
+2011-01-26T07:54:27.843846Z
+34495
 campbellbarton
 has-props
 
@@ -262,7 +262,7 @@ has-props
 
 
 
-1845
+1842
 
 operator_mesh_add.py
 file
@@ -270,11 +270,11 @@ file
 
 
 
-2011-01-18T22:04:14.453021Z
-d22b4ce3486b3d6eccfbb9df029b64d0
-2011-01-12T20:17:32.068205Z
-34288
-gsrb3d
+2011-02-10T19:48:36.065667Z
+e50b07c050165e0dceb625457575c602
+2011-02-08T21:32:26.845415Z
+34723
+campbellbarton
 has-props
 
 
@@ -296,7 +296,7 @@ has-props
 
 
 
-2573
+2637
 
 addon_add_object.py
 file
@@ -304,10 +304,10 @@ file
 
 
 
-2011-01-18T22:04:14.463021Z
-db7bc1b35d1be84f16c097253c80e628
-2011-01-14T16:49:43.989072Z
-34321
+2011-02-10T19:48:36.065667Z
+3da76b9860b76c2976eaa796c2da1bac
+2011-01-26T07:54:27.843846Z
+34495
 campbellbarton
 has-props
 
@@ -330,7 +330,7 @@ has-props
 
 
 
-1891
+1912
 
 operator_modal_draw.py
 file
@@ -338,10 +338,10 @@ file
 
 
 
-2011-01-18T22:04:14.463021Z
-e2bccafebfbc3239d947792112d6f478
-2010-12-08T11:42:11.686831Z
-33555
+2011-02-10T19:48:36.065667Z
+2fc2b0c544e24be1be8c01568c59171f
+2011-01-26T07:54:27.843846Z
+34495
 campbellbarton
 has-props
 
@@ -364,7 +364,7 @@ has-props
 
 
 
-1932
+1934
 
 operator_simple.py
 file
@@ -372,10 +372,10 @@ file
 
 
 
-2011-01-18T22:04:14.463021Z
-ae44e17b156c6122de3de0b058b35674
-2010-08-09T01:37:09.839110Z
-31183
+2011-02-10T19:48:36.065667Z
+b2f0acdd33cfc9dd2134a2b672d54f7e
+2011-01-26T07:54:27.843846Z
+34495
 campbellbarton
 has-props
 
@@ -398,7 +398,7 @@ has-props
 
 
 
-461
+470
 
 operator_uv.py
 file
@@ -406,10 +406,10 @@ file
 
 
 
-2011-01-18T22:04:14.463021Z
-46d04becf15c712dcac8785fa99d4a52
-2010-11-24T18:37:54.603630Z
-33295
+2011-02-10T19:48:36.065667Z
+52a8b42ba042eee740da3a59146f3bf6
+2011-01-26T07:54:27.843846Z
+34495
 campbellbarton
 has-props
 
@@ -432,7 +432,7 @@ has-props
 
 
 
-1138
+1137
 
 gamelogic.py
 file
@@ -440,10 +440,10 @@ file
 
 
 
-2011-01-18T22:04:14.463021Z
-bdfb6c0f613d5264cc96a004741c0340
-2010-10-11T22:25:28.329588Z
-32423
+2011-02-10T19:48:36.065667Z
+0f4fc8b396299fc7edcc9f3f29162140
+2011-01-26T07:54:27.843846Z
+34495
 campbellbarton
 has-props
 
@@ -466,7 +466,7 @@ has-props
 
 
 
-2333
+2331
 
 operator_modal.py
 file
@@ -474,10 +474,10 @@ file
 
 
 
-2011-01-18T22:04:14.463021Z
-f242cac3f2042ff600112ad334c2143b
-2010-12-08T11:42:11.686831Z
-33555
+2011-02-10T19:48:36.065667Z
+d5d343afa78ecf236fb67d32db1e0fb4
+2011-01-26T07:54:27.843846Z
+34495
 campbellbarton
 has-props
 
@@ -500,5 +500,5 @@ has-props
 
 
 
-1179
+1180
 

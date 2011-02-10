@@ -1,14 +1,14 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern/decimation/test
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2010-10-23T15:14:54.517582Z
-32667
+2011-01-30T15:29:22.294392Z
+34567
 campbellbarton
 
 
@@ -28,38 +28,4 @@ campbellbarton
 
 decimate_glut_test
 dir
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:10.943021Z
-bb8d732005aa9c3709a1bb327d0f0e20
-2008-01-07T19:13:47.953844Z
-13161
-hos
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1873
 

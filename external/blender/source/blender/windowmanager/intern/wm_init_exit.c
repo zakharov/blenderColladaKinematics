@@ -1,5 +1,5 @@
 /**
- * $Id: wm_init_exit.c 34160 2011-01-07 19:18:31Z campbellbarton $
+ * $Id: wm_init_exit.c 34412 2011-01-20 07:38:00Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -136,7 +136,7 @@ void WM_init(bContext *C, int argc, char **argv)
 	BLF_lang_init();
 	
 	/* get the default database, plus a wm */
-	WM_read_homefile(C, NULL);
+	WM_read_homefile(C, NULL, G.factory_startup);
 
 	/* note: there is a bug where python needs initializing before loading the
 	 * startup.blend because it may contain PyDrivers. It also needs to be after
@@ -177,8 +177,11 @@ void WM_init(bContext *C, int argc, char **argv)
 	
 	read_history();
 
+	/* allow a path of "", this is what happens when making a new file */
+	/*
 	if(G.main->name[0] == 0)
 		BLI_make_file_string("/", G.main->name, BLI_getDefaultDocumentFolder(), "untitled.blend");
+	*/
 
 	BLI_strncpy(G.lib, G.main->name, FILE_MAX);
 

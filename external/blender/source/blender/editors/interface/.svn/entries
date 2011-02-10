@@ -1,15 +1,15 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/editors/interface
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-18T04:32:41.263991Z
-34383
-nicholasbishop
+2011-02-07T22:48:23.532584Z
+34701
+campbellbarton
 
 
 
@@ -26,50 +26,50 @@ nicholasbishop
 
 954f8c5b-7b00-dc11-b283-0030488c597c
 
-interface.c
-file
-
-
-
-
-2011-01-18T22:05:00.733021Z
-a13b54bcdf1189b0a0327e4dc80b5bc2
-2011-01-13T04:53:55.701793Z
-34290
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-92051
-
 view2d.c
 file
 
 
 
 
-2011-01-18T22:05:00.733021Z
-17634b6191044150de10bcabcb5f730a
-2011-01-09T01:17:56.259376Z
-34183
+2011-02-10T19:48:54.875667Z
+a12401140661b46a3bc9accf35c7cd3f
+2011-02-01T17:54:02.107790Z
+34608
+ton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+65220
+
+interface.c
+file
+
+
+
+
+2011-02-10T19:48:54.875667Z
+f3a7d01b3cd9075c1832ad7d202aa188
+2011-01-24T02:56:23.181249Z
+34472
 campbellbarton
 has-props
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-65073
+92088
 
 interface_anim.c
 file
@@ -168,10 +168,44 @@ file
 
 
 
-2011-01-18T22:05:00.733021Z
-d3b2508a89c7eb210e0d821fcf5d573c
-2011-01-12T03:41:12.073182Z
-34273
+2011-02-10T19:48:54.875667Z
+d2a2d3f3bae7824dbd8ea43aec836da9
+2011-02-04T08:33:07.469593Z
+34634
+aligorith
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+48154
+
+interface_draw.c
+file
+
+
+
+
+2011-02-10T19:48:54.875667Z
+a5d879e141f1bea8f84dc1eb0212da4b
+2011-01-23T11:42:29.171118Z
+34463
 campbellbarton
 has-props
 
@@ -194,41 +228,7 @@ has-props
 
 
 
-47927
-
-interface_draw.c
-file
-
-
-
-
-2011-01-18T22:05:00.733021Z
-4ce507a7c167a2ffde12d481a9875d54
-2011-01-09T18:59:35.584853Z
-34207
-lmg
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-44805
+44820
 
 interface_templates.c
 file
@@ -298,17 +298,17 @@ has-props
 
 32987
 
-interface_utils.c
+interface_handlers.c
 file
 
 
 
 
-2011-01-18T22:05:00.733021Z
-8e88953c65fa085863c50c660362544a
-2011-01-07T19:18:31.464706Z
-34160
-campbellbarton
+2011-02-10T19:48:54.885667Z
+83dd94b029821e0ec18dc8572e2b3042
+2011-01-30T13:51:02.126527Z
+34564
+ton
 has-props
 
 
@@ -330,7 +330,7 @@ has-props
 
 
 
-6142
+159097
 
 interface_style.c
 file
@@ -366,16 +366,16 @@ has-props
 
 9980
 
-interface_handlers.c
+interface_utils.c
 file
 
 
 
 
-2011-01-18T22:05:00.733021Z
-3addbe33aefb324da48eeffb28036c27
-2011-01-12T03:41:12.073182Z
-34273
+2011-02-10T19:48:54.885667Z
+c683a2538b179082bd3318f2b43453be
+2011-01-24T02:56:23.181249Z
+34472
 campbellbarton
 has-props
 
@@ -398,41 +398,7 @@ has-props
 
 
 
-158944
-
-interface_ops.c
-file
-
-
-
-
-2011-01-18T22:05:00.743021Z
-a2dcba55448cc743d118dd293fddad8c
-2011-01-07T18:36:47.041781Z
-34159
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-11842
+6130
 
 view2d_ops.c
 file
@@ -468,16 +434,16 @@ has-props
 
 52981
 
-interface_intern.h
+interface_ops.c
 file
 
 
 
 
 2011-01-18T22:05:00.743021Z
-a576ec768a7fb562002d2c463feaab2e
-2011-01-15T16:14:57.406996Z
-34335
+a2dcba55448cc743d118dd293fddad8c
+2011-01-07T18:36:47.041781Z
+34159
 campbellbarton
 has-props
 
@@ -500,7 +466,41 @@ has-props
 
 
 
-14756
+11842
+
+interface_intern.h
+file
+
+
+
+
+2011-02-10T19:48:54.885667Z
+92689e6e2cc22fc78b93a61cec9dd205
+2011-02-07T22:48:23.532584Z
+34701
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14696
 
 interface_widgets.c
 file
@@ -508,10 +508,10 @@ file
 
 
 
-2011-01-18T22:05:00.743021Z
-c26e379e6ea66f7799566bab0a8b0796
-2011-01-07T18:36:47.041781Z
-34159
+2011-02-10T19:48:54.885667Z
+7d854ec72cdf74d9ce706f7c6f57f9c3
+2011-02-07T22:48:23.532584Z
+34701
 campbellbarton
 has-props
 
@@ -534,7 +534,7 @@ has-props
 
 
 
-75283
+75795
 
 interface_regions.c
 file
@@ -542,10 +542,10 @@ file
 
 
 
-2011-01-18T22:05:00.743021Z
-5d92b79ac9689e24c3ffe22567ac1196
-2011-01-07T18:36:47.041781Z
-34159
+2011-02-10T19:48:54.885667Z
+a108f7e3192283c36161332db373af88
+2011-01-24T02:56:23.181249Z
+34472
 campbellbarton
 has-props
 
@@ -568,7 +568,7 @@ has-props
 
 
 
-64944
+64952
 
 interface_icons.c
 file
@@ -576,11 +576,11 @@ file
 
 
 
-2011-01-18T22:05:00.743021Z
-1f9fadea49ac7c25bb46f47668ba13b6
-2011-01-18T04:32:41.263991Z
-34383
-nicholasbishop
+2011-02-10T19:48:54.885667Z
+1bf46bebc068880f0df38aa53c674762
+2011-01-19T17:11:02.471758Z
+34403
+ton
 has-props
 
 
@@ -602,41 +602,7 @@ has-props
 
 
 
-27745
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:05:00.743021Z
-d705473cc601580460513e3724c85a65
-2010-08-10T21:22:26.642559Z
-31223
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1695
+28090
 
 CMakeLists.txt
 file
@@ -678,10 +644,10 @@ file
 
 
 
-2011-01-18T22:05:00.743021Z
-615f48fb53326bf816557a6839b8e210
-2011-01-07T18:36:47.041781Z
-34159
+2011-02-10T19:48:54.885667Z
+15971baeec3f52858888ae575d1e2368
+2011-01-24T05:15:14.928694Z
+34476
 campbellbarton
 has-props
 
@@ -704,5 +670,5 @@ has-props
 
 
 
-67646
+67625
 

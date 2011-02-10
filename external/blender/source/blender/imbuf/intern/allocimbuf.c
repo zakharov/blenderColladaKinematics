@@ -1,7 +1,7 @@
 /*
  * allocimbuf.c
  *
- * $Id: allocimbuf.c 34370 2011-01-17 18:16:10Z ton $
+ * $Id: allocimbuf.c 34761 2011-02-10 15:47:55Z ton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -299,8 +299,12 @@ short imb_addrectImBuf(ImBuf *ibuf)
 	int size;
 
 	if(ibuf==NULL) return FALSE;
-	imb_freerectImBuf(ibuf);
-
+	
+	/* don't call imb_freerectImBuf, it frees mipmaps, this call is used only too give float buffers display */
+	if(ibuf->rect && (ibuf->mall & IB_rect))
+		MEM_freeN(ibuf->rect);
+	ibuf->rect= NULL;
+	
 	size = ibuf->x*ibuf->y;
 	size = size*sizeof(unsigned int);
 

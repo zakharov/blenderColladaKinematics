@@ -1,14 +1,14 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern/iksolver
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-16T20:25:47.134114Z
-34358
+2011-01-30T15:29:22.294392Z
+34567
 campbellbarton
 
 
@@ -102,38 +102,4 @@ has-props
 
 
 1910
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:09.823021Z
-ada8a54e12ffb18a8a19a970cf1eb26b
-2009-03-19T01:50:45.273516Z
-19330
-hos
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1734
 

@@ -1,5 +1,5 @@
 /**
- * $Id: resources.c 34273 2011-01-12 03:41:12Z campbellbarton $
+ * $Id: resources.c 34634 2011-02-04 08:33:07Z aligorith $
  *
  * ***** BEGIN GPL/BL DUAL LICENSE BLOCK *****
  *
@@ -1015,7 +1015,7 @@ void init_userdef_do_versions(void)
 	}
 	if (U.savetime <= 0) {
 		U.savetime = 1;
-// XXX		error("startup.blend is buggy, please consider removing it.\n");
+// XXX		error(STRINGIFY(BLENDER_STARTUP_FILE)" is buggy, please consider removing it.\n");
 	}
 	/* transform widget settings */
 	if(U.tw_hotspot==0) {
@@ -1509,6 +1509,11 @@ void init_userdef_do_versions(void)
 			SETCOL(btheme->tv3d.extra_face_angle, 0, 32, 0, 255);
 			SETCOL(btheme->tv3d.extra_face_area, 0, 0, 128, 255);
 		}
+	}
+	
+	if (bmain->versionfile < 257) {
+		/* clear "AUTOKEY_FLAG_ONLYKEYINGSET" flag from userprefs, so that it doesn't linger around from old configs like a ghost */
+		U.autokey_flag &= ~AUTOKEY_FLAG_ONLYKEYINGSET;
 	}
 	
 	/* GL Texture Garbage Collection (variable abused above!) */

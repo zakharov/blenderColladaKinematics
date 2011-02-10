@@ -22,7 +22,7 @@ bl_info = {
     "version": (0, 7, 12),
     "blender": (2, 5, 5),
     "api": 33931,
-    "location": "View3D > Properties > Measure",
+    "location": "View3D > Properties > Measure Panel",
     "description": "Measure distances between objects",
     "warning": "",
     "wiki_url": "http://wiki.blender.org/index.php/Extensions:2.5/Py/" \
@@ -237,7 +237,7 @@ def getMeasurePoints(context):
                 # local  ... the object center to the 3D cursor.
                 # global ... the origin to the 3D cursor.
                 cur_loc = sce.cursor_location
-                obj_loc = obj.matrix_world.translation_part()
+                obj_loc = obj.matrix_world.to_translation()
 
                 # Convert to local space, if needed.
                 if measureLocal(sce):
@@ -272,7 +272,7 @@ def getMeasurePoints(context):
                 # Two vertices selected.
                 # We measure the distance between the
                 # two selected vertices.
-                obj_loc = obj.matrix_world.translation_part()
+                obj_loc = obj.matrix_world.to_translation()
                 vert1_loc = verts_selected[0].co.copy()
                 vert2_loc = verts_selected[1].co.copy()
 
@@ -299,15 +299,15 @@ def getMeasurePoints(context):
             # 2 objects selected.
             # We measure the distance between the 2 selected objects.
             obj1, obj2 = context.selected_objects
-            obj1_loc = obj1.matrix_world.translation_part()
-            obj2_loc = obj2.matrix_world.translation_part()
+            obj1_loc = obj1.matrix_world.to_translation()
+            obj2_loc = obj2.matrix_world.to_translation()
             return (obj1_loc, obj2_loc, COLOR_GLOBAL)
 
         elif (obj):
             # One object selected.
             # We measure the distance from the object to the 3D cursor.
             cur_loc = sce.cursor_location
-            obj_loc = obj.matrix_world.translation_part()
+            obj_loc = obj.matrix_world.to_translation()
             return (obj_loc, cur_loc, COLOR_GLOBAL)
 
         elif not context.selected_objects:
@@ -691,9 +691,7 @@ def draw_measurements_callback(self, context):
 
 class VIEW3D_OT_display_measurements(bpy.types.Operator):
     '''Display the measurements made in the 'Measure' panel'''
-    # Do not use bl_idname here (class name is used instead),
-    # so the callback can be added easily.
-    #bl_idname = "view3d.display_measurements"
+    bl_idname = "view3d.display_measurements"
     bl_label = "Display the measurements made in the" \
         " 'Measure' panel in the 3D View."
     bl_options = {'REGISTER'}

@@ -1,5 +1,5 @@
 /**
- * $Id: image_draw.c 34370 2011-01-17 18:16:10Z ton $
+ * $Id: image_draw.c 34579 2011-01-31 11:57:37Z lukastoenne $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -390,7 +390,7 @@ static void draw_image_buffer(SpaceImage *sima, ARegion *ar, Scene *scene, Image
 			sima_draw_alpha_backdrop(x, y, ibuf->x, ibuf->y, zoomx, zoomy, col1, col2);
 
 			glEnable(GL_BLEND);
-			glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
+			glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 		}
 
 		/* we don't draw floats buffers directly but

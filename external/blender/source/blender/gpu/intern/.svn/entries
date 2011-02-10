@@ -1,14 +1,14 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/gpu/intern
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-14T21:06:28.223229Z
-34327
+2011-02-10T14:59:17.571759Z
+34760
 campbellbarton
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-01-18T22:04:41.203021Z
-8402d1eef303981f8eafda1ecc55702f
-2010-08-06T18:40:05.652936Z
-31122
-letterrip
+2011-02-10T19:48:45.675667Z
+abf460d56fcc42f2b0ad8f269da5de8e
+2011-02-08T13:40:54.181072Z
+34718
+lmg
 
 
 
@@ -58,7 +58,7 @@ letterrip
 
 
 
-34245
+38724
 
 gpu_shader_vertex.glsl.c
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-01-18T22:04:41.203021Z
-ab84aff224a3ac9092beb9a1e6b1a277
-2010-08-06T18:40:05.652936Z
-31122
-letterrip
+2011-02-10T19:48:45.675667Z
+42583cae8dce073eeb3b08c303401316
+2011-02-08T13:40:54.181072Z
+34718
+lmg
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-138208
+156264
 
 gpu_codegen.h
 file
@@ -270,10 +270,10 @@ file
 
 
 
-2011-01-18T22:04:41.213021Z
-a042cf91fdd7a68a993674718d71f351
-2011-01-07T19:18:31.464706Z
-34160
+2011-02-10T19:48:45.675667Z
+da4f4baf39ddf016c7c863f253ee98e3
+2011-02-10T14:59:17.571759Z
+34760
 campbellbarton
 has-props
 
@@ -296,7 +296,7 @@ has-props
 
 
 
-44242
+47790
 
 gpu_extensions.c
 file
@@ -331,40 +331,6 @@ has-props
 
 
 30516
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:41.213021Z
-8992b8cf2c1762f3ca7393c34e20712e
-2010-08-10T21:22:26.642559Z
-31223
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1693
 
 gpu_shader_vertex.glsl
 file

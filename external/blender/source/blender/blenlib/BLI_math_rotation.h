@@ -1,5 +1,5 @@
 /**
- * $Id: BLI_math_rotation.h 34335 2011-01-15 16:14:57Z campbellbarton $
+ * $Id: BLI_math_rotation.h 34616 2011-02-02 00:40:55Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -39,6 +39,7 @@ extern "C" {
 /* stored in (w, x, y, z) order                                              */
 
 /* init */
+void unit_axis_angle(float axis[3], float *angle);
 void unit_qt(float q[4]);
 void copy_qt_qt(float q[4], const float a[4]);
 

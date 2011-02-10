@@ -1,5 +1,5 @@
 /**
- * $Id: BlenderWorldInfo.h 31968 2010-09-16 19:03:01Z blendix $
+ * $Id: BlenderWorldInfo.h 34393 2011-01-18 22:27:18Z dfelinto $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -64,6 +64,12 @@ public:
     float	getMistColorGreen();
     float	getMistColorBlue();     
 
+		void
+	setBackColor(
+		float r,
+		float g,
+		float b
+	);
 		void	
 	setMistStart(
 		float d

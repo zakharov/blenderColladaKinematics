@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 73
-/svnroot/bf-blender/!svn/ver/34090/trunk/blender/build_files/scons/config
+/svnroot/bf-blender/!svn/ver/34533/trunk/blender/build_files/scons/config
 END
 aix4-config.py
 K 25
@@ -13,7 +13,7 @@ win32-vc-config.py
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/32724/trunk/blender/build_files/scons/config/win32-vc-config.py
+/svnroot/bf-blender/!svn/ver/34533/trunk/blender/build_files/scons/config/win32-vc-config.py
 END
 linuxcross-config.py
 K 25
@@ -37,7 +37,7 @@ win64-vc-config.py
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/34090/trunk/blender/build_files/scons/config/win64-vc-config.py
+/svnroot/bf-blender/!svn/ver/34533/trunk/blender/build_files/scons/config/win64-vc-config.py
 END
 freebsd7-config.py
 K 25
@@ -55,7 +55,7 @@ linux2-config.py
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/33442/trunk/blender/build_files/scons/config/linux2-config.py
+/svnroot/bf-blender/!svn/ver/34520/trunk/blender/build_files/scons/config/linux2-config.py
 END
 win32-mingw-config.py
 K 25

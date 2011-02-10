@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 79
-/svnroot/bf-blender/!svn/ver/34290/trunk/blender/source/blender/editors/physics
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/blender/editors/physics
 END
 physics_pointcache.c
 K 25
@@ -43,7 +43,7 @@ particle_edit.c
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svnroot/bf-blender/!svn/ver/34290/trunk/blender/source/blender/editors/physics/particle_edit.c
+/svnroot/bf-blender/!svn/ver/34526/trunk/blender/source/blender/editors/physics/particle_edit.c
 END
 particle_object.c
 K 25
@@ -56,10 +56,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 94
 /svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/editors/physics/CMakeLists.txt
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 88
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blender/editors/physics/Makefile
 END

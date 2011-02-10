@@ -1,14 +1,14 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern/decimation/test/decimate_glut_test/intern/ply
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2010-04-18T10:28:37.496249Z
-28254
+2011-01-30T15:29:22.294392Z
+34567
 campbellbarton
 
 
@@ -93,38 +93,4 @@ has-props
 
 
 7759
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:10.743021Z
-0dffb823c7e383f65e30f6a5e87f0247
-2008-01-07T19:13:47.953844Z
-13161
-hos
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1177
 

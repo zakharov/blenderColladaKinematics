@@ -1,5 +1,5 @@
 /**
- * $Id: rna_userdef.c 34160 2011-01-07 19:18:31Z campbellbarton $
+ * $Id: rna_userdef.c 34634 2011-02-04 08:33:07Z aligorith $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -2184,10 +2184,6 @@ static void rna_def_userdef_edit(BlenderRNA *brna)
 	prop= RNA_def_property(srna, "use_keyframe_insert_available", PROP_BOOLEAN, PROP_NONE);
 	RNA_def_property_boolean_sdna(prop, NULL, "autokey_flag", AUTOKEY_FLAG_INSERTAVAIL);
 	RNA_def_property_ui_text(prop, "Auto Keyframe Insert Available", "Automatic keyframe insertion in available curves");
-	
-	prop= RNA_def_property(srna, "use_keyframe_insert_keyingset", PROP_BOOLEAN, PROP_NONE);
-	RNA_def_property_boolean_sdna(prop, NULL, "autokey_flag", AUTOKEY_FLAG_ONLYKEYINGSET);
-	RNA_def_property_ui_text(prop, "Auto Keyframe Insert Keying Set", "Automatic keyframe insertion using active Keying Set");
 	
 	/* keyframing settings */
 	prop= RNA_def_property(srna, "use_keyframe_insert_needed", PROP_BOOLEAN, PROP_NONE);

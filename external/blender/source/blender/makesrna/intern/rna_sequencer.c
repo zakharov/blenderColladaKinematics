@@ -1,5 +1,5 @@
 /**
- * $Id: rna_sequencer.c 34160 2011-01-07 19:18:31Z campbellbarton $
+ * $Id: rna_sequencer.c 34428 2011-01-20 23:05:25Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 83
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/gameengine/Ketsji/KXNetwork
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/gameengine/Ketsji/KXNetwork
 END
 KX_NetworkMessageSensor.h
 K 25
@@ -19,7 +19,7 @@ KX_NetworkMessageActuator.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 113
-/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KXNetwork/KX_NetworkMessageActuator.cpp
+/svnroot/bf-blender/!svn/ver/34520/trunk/blender/source/gameengine/Ketsji/KXNetwork/KX_NetworkMessageActuator.cpp
 END
 KX_NetworkObjectActuator.cpp
 K 25
@@ -49,7 +49,7 @@ KX_NetworkMessageSensor.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 111
-/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KXNetwork/KX_NetworkMessageSensor.cpp
+/svnroot/bf-blender/!svn/ver/34520/trunk/blender/source/gameengine/Ketsji/KXNetwork/KX_NetworkMessageSensor.cpp
 END
 KX_NetworkObjectActuator.h
 K 25
@@ -68,12 +68,6 @@ K 25
 svn:wc:ra_dav:version-url
 V 110
 /svnroot/bf-blender/!svn/ver/28254/trunk/blender/source/gameengine/Ketsji/KXNetwork/KX_NetworkObjectSensor.cpp
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 92
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/gameengine/Ketsji/KXNetwork/Makefile
 END
 KX_NetworkEventManager.h
 K 25

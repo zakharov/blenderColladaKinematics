@@ -1,15 +1,15 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/extern/lzo/minilzo
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2010-03-21T01:14:04.745514Z
-27639
-gsrb3d
+2011-01-30T15:29:22.294392Z
+34567
+campbellbarton
 
 
 
@@ -263,38 +263,4 @@ has-props
 
 
 65826
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:05:03.973021Z
-9df04c24620c75e01d26c638e6e6537a
-2010-03-21T01:14:04.745514Z
-27639
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1442
 

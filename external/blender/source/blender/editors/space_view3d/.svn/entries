@@ -1,14 +1,14 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/editors/space_view3d
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-18T14:34:59.344396Z
-34388
+2011-02-05T19:07:54.584397Z
+34662
 ton
 
 
@@ -94,40 +94,6 @@ has-props
 
 63833
 
-view3d_edit.c
-file
-
-
-
-
-2011-01-18T22:04:52.133021Z
-597ecdcc1801c52e63be25550d210220
-2011-01-17T23:47:11.761476Z
-34376
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-86956
-
 SConscript
 file
 
@@ -161,6 +127,40 @@ has-props
 
 
 703
+
+view3d_edit.c
+file
+
+
+
+
+2011-02-10T19:48:52.495667Z
+c09f454448020b008f1bcc0fd3283117
+2011-02-05T19:07:54.584397Z
+34662
+ton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+87271
 
 view3d_header.c
 file
@@ -304,10 +304,10 @@ file
 
 
 
-2011-01-18T22:04:52.143021Z
-c6eff9a6cbb14eb160fad4edeac4f6c5
-2011-01-07T18:36:47.041781Z
-34159
+2011-02-10T19:48:52.495667Z
+288fa2ff6f9d7a1c0d3c2264b0b1c056
+2011-01-21T02:32:58.420991Z
+34432
 campbellbarton
 has-props
 
@@ -330,7 +330,7 @@ has-props
 
 
 
-64143
+64142
 
 view3d_buttons.c
 file
@@ -366,40 +366,6 @@ has-props
 
 44299
 
-view3d_ops.c
-file
-
-
-
-
-2011-01-18T22:04:52.143021Z
-8d86feb443f231c724caa1033cc3c4e6
-2011-01-07T18:36:47.041781Z
-34159
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-17344
-
 view3d_snap.c
 file
 
@@ -434,16 +400,50 @@ has-props
 
 24560
 
-view3d_toolbar.c
+view3d_ops.c
 file
 
 
 
 
 2011-01-18T22:04:52.143021Z
-2e5804b74ba64c216f5336c96d2fabf0
-2011-01-12T18:00:23.706555Z
-34287
+8d86feb443f231c724caa1033cc3c4e6
+2011-01-07T18:36:47.041781Z
+34159
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+17344
+
+view3d_toolbar.c
+file
+
+
+
+
+2011-02-10T19:48:52.495667Z
+bd8a0090166fcfabf41566260384ced9
+2011-01-19T14:19:20.333456Z
+34401
 ton
 has-props
 
@@ -466,7 +466,7 @@ has-props
 
 
 
-7103
+7200
 
 drawobject.c
 file
@@ -542,11 +542,11 @@ file
 
 
 
-2011-01-18T22:04:52.143021Z
-c6f69cb2246a0a72371b2b2064c127ba
-2011-01-15T16:14:57.406996Z
-34335
-campbellbarton
+2011-02-10T19:48:52.495667Z
+4973749589c342800c15ee1fd7fd3a26
+2011-02-05T19:07:54.584397Z
+34662
+ton
 has-props
 
 
@@ -568,7 +568,7 @@ has-props
 
 
 
-7613
+7554
 
 drawanimviz.c
 file
@@ -610,11 +610,11 @@ file
 
 
 
-2011-01-18T22:04:52.143021Z
-213dc4faa2ff8480ada373159f05cea3
-2011-01-18T01:04:14.555426Z
-34378
-aligorith
+2011-02-10T19:48:52.505667Z
+9bef9585e3e92cb100d7b59fe81fb51b
+2011-02-05T19:07:54.584397Z
+34662
+ton
 has-props
 
 
@@ -636,41 +636,7 @@ has-props
 
 
 
-47749
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:52.143021Z
-34b952911afa3238c1c2600e90860eb6
-2010-08-10T21:22:26.642559Z
-31223
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1802
+47879
 
 CMakeLists.txt
 file

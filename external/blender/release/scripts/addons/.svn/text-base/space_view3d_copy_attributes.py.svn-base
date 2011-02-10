@@ -24,7 +24,7 @@ bl_info = {
     'version': (0, 42),
     'blender': (2, 5, 6),
     'api': 34324,
-    'location': 'View3D > Ctrl/C',
+    'location': 'View3D > Ctrl-C',
     'description': 'Copy Attributes Menu from Blender 2.4',
     'wiki_url': 'http://wiki.blender.org/index.php/Extensions:2.5/Py/'\
         'Scripts/3D_interaction/Copy_Attributes_Menu',
@@ -107,8 +107,13 @@ def getmat(bone, active, context, ignoreparent):
            context.active_object.pose.bones[data_bone.parent.name].matrix)
         parentbonemat = Matrix(data_bone.parent.matrix_local)
     else:
-        parentposemat = bonemat_local.copy().identity()
-        parentbonemat = bonemat_local.copy().identity()
+        parentposemat = bonemat_local.copy()
+        parentbonemat = bonemat_local.copy()
+
+        # FIXME! why copy from the parent if setting identity ?, Campbell
+        parentposemat.identity()
+        parentbonemat.identity()
+
     if parentbonemat == parentposemat or ignoreparent:
         newmat = bonemat_local.invert() * otherloc
     else:
@@ -121,13 +126,13 @@ def getmat(bone, active, context, ignoreparent):
 def rotcopy(item, mat):
     '''copy rotation to item from matrix mat depending on item.rotation_mode'''
     if item.rotation_mode == 'QUATERNION':
-        item.rotation_quaternion = mat.rotation_part().to_quat()
+        item.rotation_quaternion = mat.to_3x3().to_quaternion()
     elif item.rotation_mode == 'AXIS_ANGLE':
-        quat = mat.rotation_part().to_quat()
+        quat = mat.to_3x3().to_quaternion()
         item.rotation_axis_angle = Vector([quat.axis[0],
            quat.axis[1], quat.axis[2], quat.angle])
     else:
-        item.rotation_euler = mat.rotation_part().to_euler(item.rotation_mode)
+        item.rotation_euler = mat.to_3x3().to_euler(item.rotation_mode)
 
 
 def pLoopExec(self, context, funk):
@@ -146,7 +151,7 @@ def pLocLocExec(bone, active, context):
 
 
 def pLocRotExec(bone, active, context):
-    rotcopy(bone, active.matrix_basis.rotation_part())
+    rotcopy(bone, active.matrix_basis.to_3x3())
 
 
 def pLocScaExec(bone, active, context):
@@ -154,7 +159,7 @@ def pLocScaExec(bone, active, context):
 
 
 def pVisLocExec(bone, active, context):
-    bone.location = getmat(bone, active, context, False).translation_part()
+    bone.location = getmat(bone, active, context, False).to_translation()
 
 
 def pVisRotExec(bone, active, context):
@@ -165,7 +170,7 @@ def pVisRotExec(bone, active, context):
 def pVisScaExec(bone, active, context):
     bone.scale = getmat(bone, active, context,
        not context.active_object.data.bones[bone.name].use_inherit_scale)\
-          .scale_part()
+          .to_scale()
 
 
 def pDrwExec(bone, active, context):
@@ -192,25 +197,25 @@ def pConExec(bone, active, context):
 def pIKsExec(bone, active, context):
     generic_copy(active, bone, "ik_")
 
-pose_copies = (('POSE_LOC_LOC', "Local Location",
+pose_copies = (('pose_loc_loc', "Local Location",
                 "Copy Location from Active to Selected", pLocLocExec),
-                ('POSE_LOC_ROT', "Local Rotation",
+                ('pose_loc_rot', "Local Rotation",
                 "Copy Rotation from Active to Selected", pLocRotExec),
-                ('POSE_LOC_SCA', "Local Scale",
+                ('pose_loc_sca', "Local Scale",
                 "Copy Scale from Active to Selected", pLocScaExec),
-                ('POSE_VIS_LOC', "Visual Location",
+                ('pose_vis_loc', "Visual Location",
                 "Copy Location from Active to Selected", pVisLocExec),
-                ('POSE_VIS_ROT', "Visual Rotation",
+                ('pose_vis_rot', "Visual Rotation",
                 "Copy Rotation from Active to Selected", pVisRotExec),
-                ('POSE_VIS_SCA', "Visual Scale",
+                ('pose_vis_sca', "Visual Scale",
                 "Copy Scale from Active to Selected", pVisScaExec),
-                ('POSE_DRW', "Bone Shape",
+                ('pose_drw', "Bone Shape",
                 "Copy Bone Shape from Active to Selected", pDrwExec),
-                ('POSE_LOK', "Protected Transform",
+                ('pose_lok', "Protected Transform",
                 "Copy Protected Tranforms from Active to Selected", pLokExec),
-                ('POSE_CON', "Bone Constraints",
+                ('pose_con', "Bone Constraints",
                 "Copy Object Constraints from Active to Selected", pConExec),
-                ('POSE_IKS', "IK Limits",
+                ('pose_iks', "IK Limits",
                 "Copy IK Limits from Active to Selected", pIKsExec))
 
 
@@ -289,7 +294,7 @@ def obLoc(ob, active, context):
 
 
 def obRot(ob, active, context):
-    rotcopy(ob, active.matrix_world.rotation_part())
+    rotcopy(ob, active.matrix_world.to_3x3())
 
 
 def obSca(ob, active, context):
@@ -418,51 +423,51 @@ def obWei(ob, active, context):
                         groups = ob.vertex_groups
                         for vgs in range(0, len(groups)):
                             if groups[vgs].name == groupName:
-                                ob.vertex_groups.assign(v.index, groups[vgs],
+                                groups[vgs].add((v.index,),
                                    vgroupIndex_weight[i][1], "REPLACE")
     return('INFO', "weights copied")
 
-object_copies = (('OBJ_LOC', "Location",
+object_copies = (('obj_loc', "Location",
                 "Copy Location from Active to Selected", obLoc),
-                ('OBJ_ROT', "Rotation",
+                ('obj_rot', "Rotation",
                 "Copy Rotation from Active to Selected", obRot),
-                ('OBJ_SCA', "Scale",
+                ('obj_sca', "Scale",
                 "Copy Scale from Active to Selected", obSca),
-                ('OBJ_DRW', "Draw Options",
+                ('obj_drw', "Draw Options",
                 "Copy Draw Options from Active to Selected", obDrw),
-                ('OBJ_OFS', "Time Offset",
+                ('obj_ofs', "Time Offset",
                 "Copy Time Offset from Active to Selected", obOfs),
-                ('OBJ_DUP', "Dupli",
+                ('obj_dup', "Dupli",
                 "Copy Dupli from Active to Selected", obDup),
-                ('OBJ_COL', "Object Color",
+                ('obj_col', "Object Color",
                 "Copy Object Color from Active to Selected", obCol),
-                ('OBJ_MAS', "Mass",
+                ('obj_mas', "Mass",
                 "Copy Mass from Active to Selected", obMas),
-                #('OBJ_DMP', "Damping",
+                #('obj_dmp', "Damping",
                 #"Copy Damping from Active to Selected"),
-                #('OBJ_ALL', "All Physical Attributes",
+                #('obj_all', "All Physical Attributes",
                 #"Copy Physical Atributes from Active to Selected"),
-                #('OBJ_PRP', "Properties",
+                #('obj_prp', "Properties",
                 #"Copy Properties from Active to Selected"),
-                #('OBJ_LOG', "Logic Bricks",
+                #('obj_log', "Logic Bricks",
                 #"Copy Logic Bricks from Active to Selected"),
-                ('OBJ_LOK', "Protected Transform",
+                ('obj_lok', "Protected Transform",
                 "Copy Protected Tranforms from Active to Selected", obLok),
-                ('OBJ_CON', "Object Constraints",
+                ('obj_con', "Object Constraints",
                 "Copy Object Constraints from Active to Selected", obCon),
-                #('OBJ_NLA', "NLA Strips",
+                #('obj_nla', "NLA Strips",
                 #"Copy NLA Strips from Active to Selected"),
-                #('OBJ_TEX', "Texture Space",
+                #('obj_tex', "Texture Space",
                 #"Copy Texture Space from Active to Selected", obTex),
-                #('OBJ_SUB', "Subsurf Settings",
+                #('obj_sub', "Subsurf Settings",
                 #"Copy Subsurf Setings from Active to Selected"),
-                #('OBJ_SMO', "AutoSmooth",
+                #('obj_smo', "AutoSmooth",
                 #"Copy AutoSmooth from Active to Selected"),
-                ('OBJ_IDX', "Pass Index",
+                ('obj_idx', "Pass Index",
                 "Copy Pass Index from Active to Selected", obIdx),
-                ('OBJ_MOD', "Modifiers",
+                ('obj_mod', "Modifiers",
                 "Copy Modifiers from Active to Selected", obMod),
-                ('OBJ_WEI', "Vertex Weights",
+                ('obj_wei', "Vertex Weights",
                 "Copy vertex weights based on indices", obWei))
 
 

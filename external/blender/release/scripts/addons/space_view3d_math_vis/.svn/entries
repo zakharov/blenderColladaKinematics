@@ -1,14 +1,14 @@
 10
 
 dir
-1437
+1566
 https://svn.blender.org/svnroot/bf-extensions/trunk/py/scripts/addons/space_view3d_math_vis
 https://svn.blender.org/svnroot/bf-extensions
 
 
 
-2011-01-18T02:21:58.222389Z
-1425
+2011-02-05T07:08:34.456132Z
+1539
 campbellbarton
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2011-01-18T22:05:17.963021Z
-53a37b1556356e9fa2a0391462f130a4
-2010-12-08T11:47:35.871924Z
-1253
+2011-02-10T19:49:02.165667Z
+7eb70b3a9c33142663ffc0700c60767f
+2011-02-05T07:08:34.456132Z
+1539
 campbellbarton
 has-props
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-6560
+6544
 
 __init__.py
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-01-18T22:05:17.963021Z
-f948374e8929319394daf206defa508c
-2011-01-14T16:09:46.541096Z
-1397
-campbellbarton
+2011-02-10T19:49:02.165667Z
+ce5219e093b176577daf0e2d2c73908a
+2011-02-01T12:09:20.823407Z
+1533
+jaydez
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-3302
+3301
 
 utils.py
 file
@@ -100,10 +100,10 @@ file
 
 
 
-2011-01-18T22:05:17.963021Z
-8d6ab7cbd27acb28128fb5abe79ad507
-2011-01-18T02:21:58.222389Z
-1425
+2011-02-10T19:49:02.165667Z
+a141cc73a41fdf6aa7a18794d8bdd133
+2011-02-05T07:08:34.456132Z
+1539
 campbellbarton
 has-props
 
@@ -126,5 +126,5 @@ has-props
 
 
 
-2315
+2295
 

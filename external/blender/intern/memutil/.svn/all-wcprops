@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 63
-/svnroot/bf-blender/!svn/ver/34359/trunk/blender/intern/memutil
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/intern/memutil
 END
 MEM_RefCountPtr.h
 K 25
@@ -62,10 +62,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 81
 /svnroot/bf-blender/!svn/ver/34359/trunk/blender/intern/memutil/MEM_NonCopyable.h
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 72
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/memutil/Makefile
 END

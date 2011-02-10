@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 81
-/svnroot/bf-blender/!svn/ver/34160/trunk/blender/source/blender/editors/space_api
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/blender/editors/space_api
 END
 spacetypes.c
 K 25
@@ -26,10 +26,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 96
 /svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/editors/space_api/CMakeLists.txt
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 90
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blender/editors/space_api/Makefile
 END

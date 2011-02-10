@@ -1,5 +1,5 @@
 /**
- * $Id: py_capi_utils.h 33448 2010-12-03 17:05:21Z campbellbarton $
+ * $Id: py_capi_utils.h 34603 2011-02-01 12:37:53Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -39,4 +39,7 @@ const char *	PyC_UnicodeAsByte(PyObject *py_str, PyObject **coerce); /* coerce m
 /* name namespace function for bpy & bge */
 PyObject *		PyC_DefaultNameSpace(const char *filename);
 void			PyC_RunQuicky(const char *filepath, int n, ...);
+
+void PyC_MainModule_Backup(PyObject **main_mod);
+void PyC_MainModule_Restore(PyObject *main_mod);
 #endif // PY_CAPI_UTILS_H

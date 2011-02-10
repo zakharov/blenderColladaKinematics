@@ -1,15 +1,15 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/icons
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2010-09-05T07:08:21.431237Z
-31762
-dingto
+2011-01-30T15:29:22.294392Z
+34567
+campbellbarton
 
 
 
@@ -195,40 +195,6 @@ has-props
 
 
 77
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:05:01.823021Z
-0aa40eb60aa89ae80d6db374dee619e3
-2010-08-10T21:22:26.642559Z
-31223
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1112
 
 linuxcrossblender.rcscons
 file

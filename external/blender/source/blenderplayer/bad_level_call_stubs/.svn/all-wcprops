@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/34184/trunk/blender/source/blenderplayer/bad_level_call_stubs
+/svnroot/bf-blender/!svn/ver/34587/trunk/blender/source/blenderplayer/bad_level_call_stubs
 END
 stubs.c
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/svnroot/bf-blender/!svn/ver/34184/trunk/blender/source/blenderplayer/bad_level_call_stubs/stubs.c
+/svnroot/bf-blender/!svn/ver/34587/trunk/blender/source/blenderplayer/bad_level_call_stubs/stubs.c
 END
 SConscript
 K 25
@@ -20,10 +20,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 105
 /svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blenderplayer/bad_level_call_stubs/CMakeLists.txt
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 99
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blenderplayer/bad_level_call_stubs/Makefile
 END

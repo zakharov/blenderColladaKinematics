@@ -1,15 +1,15 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/quicktime/apple
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2010-12-12T13:45:35.556114Z
-33610
-ton
+2011-01-30T15:29:22.294392Z
+34567
+campbellbarton
 
 
 
@@ -127,40 +127,6 @@ has-props
 
 
 27837
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:40.263021Z
-a9aa63458462b6641f97b99e8af476b9
-2010-08-10T21:22:26.642559Z
-31223
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1884
 
 quicktime_export.c
 file

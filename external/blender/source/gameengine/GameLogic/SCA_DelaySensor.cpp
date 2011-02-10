@@ -1,7 +1,7 @@
 /**
  * Delay trigger
  *
- * $Id: SCA_DelaySensor.cpp 32788 2010-10-31 04:11:39Z campbellbarton $
+ * $Id: SCA_DelaySensor.cpp 34520 2011-01-27 00:02:25Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -34,6 +34,8 @@
 // It can occasionally cause DevStudio to have internal compiler warnings.
 #pragma warning( disable : 4786 )     
 #endif
+
+#include <stddef.h>
 
 #include "SCA_DelaySensor.h"
 #include "SCA_LogicManager.h"

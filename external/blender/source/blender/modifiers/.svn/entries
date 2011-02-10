@@ -1,15 +1,15 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/modifiers
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-18T01:58:19.206348Z
-34380
-campbellbarton
+2011-02-10T00:44:26.438010Z
+34748
+mfoxdogg
 
 
 
@@ -103,10 +103,10 @@ file
 
 
 
-2011-01-18T22:04:34.533021Z
-a597b5f71e68d2a4690e42443f26239c
-2010-12-22T23:09:30.468439Z
-33864
+2011-02-10T19:48:44.015667Z
+593f5deaf73a7c38d5c774c33b5b0083
+2011-01-25T14:43:13.999734Z
+34486
 campbellbarton
 has-props
 
@@ -129,39 +129,5 @@ has-props
 
 
 
-2492
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:34.533021Z
-34ff6fc0e772b0f1fa7c1c35078a0670
-2010-11-11T11:06:15.215170Z
-33004
-ton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1111
+2501
 

@@ -1,7 +1,7 @@
 /*
  * texture_ext.h
  *
- * $Id: texture.h 30936 2010-08-01 12:47:49Z blendix $
+ * $Id: texture.h 34548 2011-01-29 11:56:11Z lmg $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -48,6 +48,7 @@ if(tex->saturation != 1.0f) { \
 	hsv_to_rgb(_hsv[0], _hsv[1], _hsv[2], &texres->tr, &texres->tg, &texres->tb); \
 } \
 
+#define RGBTOBW(r,g,b)	( r*0.35 + g*0.45 + b*0.2 )		/* keep this in sync with gpu_shader_material.glsl:rgbtobw */
 
 struct HaloRen;
 struct ShadeInput;

@@ -1,5 +1,5 @@
 /**
- * $Id: graph_buttons.c 34159 2011-01-07 18:36:47Z campbellbarton $
+ * $Id: graph_buttons.c 34614 2011-02-01 23:51:52Z aligorith $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -762,7 +762,7 @@ void GRAPH_OT_properties(wmOperatorType *ot)
 	ot->description= "Toggle display properties panel";
 	
 	ot->exec= graph_properties;
-	ot->poll= ED_operator_ipo_active; // xxx
+	ot->poll= ED_operator_graphedit_active;
  	
 	/* flags */
 	ot->flag= 0;

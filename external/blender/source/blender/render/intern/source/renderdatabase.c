@@ -1,5 +1,5 @@
 /**
- * $Id: renderdatabase.c 34250 2011-01-11 07:40:31Z campbellbarton $
+ * $Id: renderdatabase.c 34656 2011-02-05 13:41:29Z blendix $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -76,8 +76,8 @@
 #include "BKE_DerivedMesh.h"
 
 #include "RE_render_ext.h"	/* externtex */
-#include "RE_raytrace.h"
 
+#include "rayobject.h"
 #include "renderpipeline.h"
 #include "render_types.h"
 #include "renderdatabase.h"

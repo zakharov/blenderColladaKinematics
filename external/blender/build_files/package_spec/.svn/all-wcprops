@@ -1,5 +1,11 @@
 K 25
 svn:wc:ra_dav:version-url
 V 73
-/svnroot/bf-blender/!svn/ver/31894/trunk/blender/build_files/package_spec
+/svnroot/bf-blender/!svn/ver/34752/trunk/blender/build_files/package_spec
+END
+build_debian.sh
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/bf-blender/!svn/ver/34752/trunk/blender/build_files/package_spec/build_debian.sh
 END

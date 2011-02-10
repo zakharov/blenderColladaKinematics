@@ -1,5 +1,5 @@
 /**
- * $Id: rna_fcurve.c 34386 2011-01-18 11:27:52Z campbellbarton $
+ * $Id: rna_fcurve.c 34600 2011-02-01 11:35:27Z aligorith $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -62,6 +62,7 @@ EnumPropertyItem beztriple_keyframe_type_items[] = {
 	{BEZT_KEYTYPE_KEYFRAME, "KEYFRAME", 0, "Keyframe", ""},
 	{BEZT_KEYTYPE_BREAKDOWN, "BREAKDOWN", 0, "Breakdown", ""},
 	{BEZT_KEYTYPE_EXTREME, "EXTREME", 0, "Extreme", ""},
+	{BEZT_KEYTYPE_JITTER, "JITTER", 0, "Jitter", ""},
 	{0, NULL, 0, NULL, NULL}};
 
 #ifdef RNA_RUNTIME

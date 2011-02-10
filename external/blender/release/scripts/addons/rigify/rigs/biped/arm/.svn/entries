@@ -1,14 +1,14 @@
 10
 
 dir
-1437
+1566
 https://svn.blender.org/svnroot/bf-extensions/trunk/py/scripts/addons/rigify/rigs/biped/arm
 https://svn.blender.org/svnroot/bf-extensions
 
 
 
-2010-12-22T21:41:21.796593Z
-1304
+2011-02-08T21:36:44.718602Z
+1562
 campbellbarton
 
 
@@ -100,11 +100,11 @@ file
 
 
 
-2011-01-18T22:05:18.603021Z
+2011-02-10T19:49:02.555667Z
 00074092565cae10f608a95a579d0589
-2010-11-17T18:12:18.841214Z
-1165
-gsrb3d
+2011-02-08T21:36:44.718602Z
+1562
+campbellbarton
 has-props
 
 
@@ -134,11 +134,11 @@ file
 
 
 
-2011-01-18T22:05:18.603021Z
+2011-02-10T19:49:02.555667Z
 e06323c3f4a5d81b2844e85300619b41
-2010-11-29T23:24:13.505130Z
-1210
-cessen
+2011-02-08T21:36:44.718602Z
+1562
+campbellbarton
 has-props
 
 

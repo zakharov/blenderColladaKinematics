@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 74
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/gameengine/Network
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/gameengine/Network
 END
 NG_NetworkScene.h
 K 25
@@ -56,10 +56,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 89
 /svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/gameengine/Network/CMakeLists.txt
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 83
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/gameengine/Network/Makefile
 END

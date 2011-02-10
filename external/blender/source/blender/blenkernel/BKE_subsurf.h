@@ -1,4 +1,4 @@
-/* $Id: BKE_subsurf.h 29164 2010-06-02 18:04:31Z blendix $ 
+/* $Id: BKE_subsurf.h 34587 2011-01-31 20:02:51Z nazgul $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -72,7 +72,6 @@ typedef struct CCGDerivedMesh {
 	char *faceFlags;
 
 	struct PBVH *pbvh;
-	int pbvh_draw;
 	struct ListBase *fmap;
 	struct IndexNode *fmap_mem;
 

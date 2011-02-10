@@ -22,8 +22,8 @@ bl_info = {
     "version": (1,),
     "blender": (2, 5, 3),
     "api": 32411,
-    "location": "Toolshelf > search > simplify curves",
-    "description": "This script simplifies 3D curves and fcurves",
+    "location": "Search > Simplify Curves",
+    "description": "Simplifies 3D curves and fcurves",
     "warning": "",
     "wiki_url": "http://wiki.blender.org/index.php/Extensions:2.5/Py/"\
         "Scripts/Curve/Curve_Simplify",
@@ -254,7 +254,7 @@ def main(context, obj, options):
                                 for splineVert in spline.bezier_points.values()]
 
             else: # verts from all other types of curves
-                splineVerts = [splineVert.co.copy().resize3D()
+                splineVerts = [splineVert.co.to_3d()
                                 for splineVert in spline.points.values()]
 
             # simplify spline according to mode
@@ -304,7 +304,7 @@ def getFcurveData(obj):
     fcurves = []
     for fc in obj.animation_data.action.fcurves:
         if fc.select:
-            fcVerts = [vcVert.co.copy().resize3D()
+            fcVerts = [vcVert.co.to_3d()
                         for vcVert in fc.keyframe_points.values()]
             fcurves.append(fcVerts)
     return fcurves

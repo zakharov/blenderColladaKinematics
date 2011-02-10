@@ -1,125 +1,119 @@
 K 25
 svn:wc:ra_dav:version-url
 V 86
-/svnroot/bf-blender/!svn/ver/34160/trunk/blender/source/blender/nodes/intern/SHD_nodes
-END
-SHD_output.c
-K 25
-svn:wc:ra_dav:version-url
-V 99
-/svnroot/bf-blender/!svn/ver/32517/trunk/blender/source/blender/nodes/intern/SHD_nodes/SHD_output.c
+/svnroot/bf-blender/!svn/ver/34717/trunk/blender/source/blender/nodes/intern/SHD_nodes
 END
 SHD_texture.c
 K 25
 svn:wc:ra_dav:version-url
 V 100
-/svnroot/bf-blender/!svn/ver/33038/trunk/blender/source/blender/nodes/intern/SHD_nodes/SHD_texture.c
+/svnroot/bf-blender/!svn/ver/34712/trunk/blender/source/blender/nodes/intern/SHD_nodes/SHD_texture.c
 END
-SHD_invert.c
+SHD_output.c
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svnroot/bf-blender/!svn/ver/32517/trunk/blender/source/blender/nodes/intern/SHD_nodes/SHD_invert.c
+/svnroot/bf-blender/!svn/ver/34712/trunk/blender/source/blender/nodes/intern/SHD_nodes/SHD_output.c
 END
 SHD_curves.c
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svnroot/bf-blender/!svn/ver/32517/trunk/blender/source/blender/nodes/intern/SHD_nodes/SHD_curves.c
+/svnroot/bf-blender/!svn/ver/34712/trunk/blender/source/blender/nodes/intern/SHD_nodes/SHD_curves.c
+END
+SHD_invert.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/34712/trunk/blender/source/blender/nodes/intern/SHD_nodes/SHD_invert.c
 END
 SHD_rgb.c
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/svnroot/bf-blender/!svn/ver/32517/trunk/blender/source/blender/nodes/intern/SHD_nodes/SHD_rgb.c
+/svnroot/bf-blender/!svn/ver/34712/trunk/blender/source/blender/nodes/intern/SHD_nodes/SHD_rgb.c
 END
 SHD_vectMath.c
 K 25
 svn:wc:ra_dav:version-url
 V 101
-/svnroot/bf-blender/!svn/ver/33448/trunk/blender/source/blender/nodes/intern/SHD_nodes/SHD_vectMath.c
+/svnroot/bf-blender/!svn/ver/34717/trunk/blender/source/blender/nodes/intern/SHD_nodes/SHD_vectMath.c
 END
 SHD_value.c
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/svnroot/bf-blender/!svn/ver/32517/trunk/blender/source/blender/nodes/intern/SHD_nodes/SHD_value.c
+/svnroot/bf-blender/!svn/ver/34712/trunk/blender/source/blender/nodes/intern/SHD_nodes/SHD_value.c
 END
 SHD_valToRgb.c
 K 25
 svn:wc:ra_dav:version-url
 V 101
-/svnroot/bf-blender/!svn/ver/32517/trunk/blender/source/blender/nodes/intern/SHD_nodes/SHD_valToRgb.c
+/svnroot/bf-blender/!svn/ver/34712/trunk/blender/source/blender/nodes/intern/SHD_nodes/SHD_valToRgb.c
 END
 SHD_squeeze.c
 K 25
 svn:wc:ra_dav:version-url
 V 100
-/svnroot/bf-blender/!svn/ver/32517/trunk/blender/source/blender/nodes/intern/SHD_nodes/SHD_squeeze.c
+/svnroot/bf-blender/!svn/ver/34712/trunk/blender/source/blender/nodes/intern/SHD_nodes/SHD_squeeze.c
 END
 SHD_sepcombRGB.c
 K 25
 svn:wc:ra_dav:version-url
 V 103
-/svnroot/bf-blender/!svn/ver/32517/trunk/blender/source/blender/nodes/intern/SHD_nodes/SHD_sepcombRGB.c
+/svnroot/bf-blender/!svn/ver/34712/trunk/blender/source/blender/nodes/intern/SHD_nodes/SHD_sepcombRGB.c
 END
 SHD_dynamic.c
 K 25
 svn:wc:ra_dav:version-url
 V 100
-/svnroot/bf-blender/!svn/ver/34160/trunk/blender/source/blender/nodes/intern/SHD_nodes/SHD_dynamic.c
+/svnroot/bf-blender/!svn/ver/34712/trunk/blender/source/blender/nodes/intern/SHD_nodes/SHD_dynamic.c
 END
 SHD_geom.c
 K 25
 svn:wc:ra_dav:version-url
 V 97
-/svnroot/bf-blender/!svn/ver/32517/trunk/blender/source/blender/nodes/intern/SHD_nodes/SHD_geom.c
-END
-SHD_normal.c
-K 25
-svn:wc:ra_dav:version-url
-V 99
-/svnroot/bf-blender/!svn/ver/32517/trunk/blender/source/blender/nodes/intern/SHD_nodes/SHD_normal.c
-END
-SHD_mixRgb.c
-K 25
-svn:wc:ra_dav:version-url
-V 99
-/svnroot/bf-blender/!svn/ver/33448/trunk/blender/source/blender/nodes/intern/SHD_nodes/SHD_mixRgb.c
+/svnroot/bf-blender/!svn/ver/34712/trunk/blender/source/blender/nodes/intern/SHD_nodes/SHD_geom.c
 END
 SHD_camera.c
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svnroot/bf-blender/!svn/ver/32517/trunk/blender/source/blender/nodes/intern/SHD_nodes/SHD_camera.c
+/svnroot/bf-blender/!svn/ver/34712/trunk/blender/source/blender/nodes/intern/SHD_nodes/SHD_camera.c
+END
+SHD_mixRgb.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/34717/trunk/blender/source/blender/nodes/intern/SHD_nodes/SHD_mixRgb.c
+END
+SHD_normal.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/34712/trunk/blender/source/blender/nodes/intern/SHD_nodes/SHD_normal.c
 END
 SHD_math.c
 K 25
 svn:wc:ra_dav:version-url
 V 97
-/svnroot/bf-blender/!svn/ver/33448/trunk/blender/source/blender/nodes/intern/SHD_nodes/SHD_math.c
+/svnroot/bf-blender/!svn/ver/34717/trunk/blender/source/blender/nodes/intern/SHD_nodes/SHD_math.c
 END
 SHD_mapping.c
 K 25
 svn:wc:ra_dav:version-url
 V 100
-/svnroot/bf-blender/!svn/ver/32517/trunk/blender/source/blender/nodes/intern/SHD_nodes/SHD_mapping.c
+/svnroot/bf-blender/!svn/ver/34712/trunk/blender/source/blender/nodes/intern/SHD_nodes/SHD_mapping.c
 END
 SHD_hueSatVal.c
 K 25
 svn:wc:ra_dav:version-url
 V 102
-/svnroot/bf-blender/!svn/ver/32517/trunk/blender/source/blender/nodes/intern/SHD_nodes/SHD_hueSatVal.c
+/svnroot/bf-blender/!svn/ver/34712/trunk/blender/source/blender/nodes/intern/SHD_nodes/SHD_hueSatVal.c
 END
 SHD_material.c
 K 25
 svn:wc:ra_dav:version-url
 V 101
-/svnroot/bf-blender/!svn/ver/33242/trunk/blender/source/blender/nodes/intern/SHD_nodes/SHD_material.c
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 95
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blender/nodes/intern/SHD_nodes/Makefile
+/svnroot/bf-blender/!svn/ver/34712/trunk/blender/source/blender/nodes/intern/SHD_nodes/SHD_material.c
 END

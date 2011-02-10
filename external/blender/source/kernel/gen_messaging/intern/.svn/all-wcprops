@@ -1,13 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 83
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/kernel/gen_messaging/intern
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 92
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/kernel/gen_messaging/intern/Makefile
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/kernel/gen_messaging/intern
 END
 messaging.c
 K 25

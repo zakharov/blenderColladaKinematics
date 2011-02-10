@@ -1,5 +1,5 @@
 /**
- * $Id: KX_PythonInit.cpp 34121 2011-01-06 05:04:07Z campbellbarton $
+ * $Id: KX_PythonInit.cpp 34393 2011-01-18 22:27:18Z dfelinto $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -923,6 +923,11 @@ static PyObject* gPySetBackgroundColor(PyObject*, PyObject* value)
 	{
 		gp_Rasterizer->SetBackColor(vec[0], vec[1], vec[2], vec[3]);
 	}
+
+	KX_WorldInfo *wi = gp_KetsjiScene->GetWorldInfo();
+	if (wi->hasWorld())
+		wi->setBackColor(vec[0], vec[1], vec[2]);
+
 	Py_RETURN_NONE;
 }
 

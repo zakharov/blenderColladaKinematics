@@ -1,5 +1,5 @@
 /**
- * $Id: BlenderWorldInfo.cpp 31968 2010-09-16 19:03:01Z blendix $
+ * $Id: BlenderWorldInfo.cpp 34393 2011-01-18 22:27:18Z dfelinto $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can [0]istribute it and/or
@@ -188,6 +188,12 @@ float BlenderWorldInfo::getMistColorBlue()
 	return m_mistcolor[2];
 }
 
+void BlenderWorldInfo::setBackColor(float r, float g, float b)
+{
+	m_backgroundcolor[0] = r;
+	m_backgroundcolor[1] = g;
+	m_backgroundcolor[2] = b;
+}
 
 	void	
 BlenderWorldInfo::setMistStart(

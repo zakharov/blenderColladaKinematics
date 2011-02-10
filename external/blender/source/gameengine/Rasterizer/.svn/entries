@@ -1,15 +1,15 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/gameengine/Rasterizer
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-04T07:43:32.204867Z
-34057
-moguri
+2011-02-07T22:48:23.532584Z
+34701
+campbellbarton
 
 
 
@@ -202,11 +202,11 @@ file
 
 
 
-2011-01-18T22:04:29.283021Z
-4ac7707cb16413a3768690478d652fc2
-2010-09-15T16:13:32.976747Z
-31950
-campbellbarton
+2011-02-10T19:48:37.695667Z
+a0b1349a627f1640b904b216e11e3c33
+2011-01-23T17:17:21.114643Z
+34469
+ben2610
 has-props
 
 
@@ -228,7 +228,7 @@ has-props
 
 
 
-2562
+2622
 
 RAS_IRasterizer.h
 file
@@ -409,11 +409,11 @@ file
 
 
 
-2011-01-18T22:04:29.293021Z
-e3b87079377a0965fa255bd84aa0b5f7
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-02-10T19:48:37.695667Z
+3328e624e23e3f39c991a0814a4f8b18
+2011-01-23T17:17:21.114643Z
+34469
+ben2610
 has-props
 
 
@@ -435,41 +435,7 @@ has-props
 
 
 
-5379
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:29.293021Z
-74a5c5bc107b280c15b98b5dc2fe7b92
-2010-08-10T21:22:26.642559Z
-31223
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1672
+5432
 
 CMakeLists.txt
 file
@@ -477,10 +443,10 @@ file
 
 
 
-2011-01-18T22:04:29.293021Z
-e867e83affa5c66e17f872d621e895a0
-2010-12-22T23:09:30.468439Z
-33864
+2011-02-10T19:48:37.695667Z
+32b4fbf5d6a72cef3c4038fcf05452ce
+2011-01-25T14:43:13.999734Z
+34486
 campbellbarton
 has-props
 
@@ -503,7 +469,7 @@ has-props
 
 
 
-2353
+2362
 
 RAS_MeshObject.h
 file
@@ -573,39 +539,8 @@ has-props
 
 1316
 
-RAS_Polygon.h
-file
-
-
-
-
-2011-01-18T22:04:29.293021Z
-bbcc62fb85fb0a95373fa19c247f2a14
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2652
+RAS_OpenGLFilters
+dir
 
 RAS_MaterialBucket.cpp
 file
@@ -641,19 +576,16 @@ has-props
 
 16655
 
-RAS_OpenGLFilters
-dir
-
-SConscript
+RAS_Polygon.h
 file
 
 
 
 
 2011-01-18T22:04:29.293021Z
-429652ebea1fba56b902db9305a72caa
-2010-11-18T11:42:05.232926Z
-33156
+bbcc62fb85fb0a95373fa19c247f2a14
+2010-06-06T01:15:44.640463Z
+29259
 campbellbarton
 has-props
 
@@ -676,7 +608,7 @@ has-props
 
 
 
-675
+2652
 
 RAS_TexVert.cpp
 file
@@ -711,6 +643,40 @@ has-props
 
 
 3924
+
+SConscript
+file
+
+
+
+
+2011-01-18T22:04:29.293021Z
+429652ebea1fba56b902db9305a72caa
+2010-11-18T11:42:05.232926Z
+33156
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+675
 
 RAS_Rect.h
 file
@@ -854,11 +820,11 @@ file
 
 
 
-2011-01-18T22:04:29.293021Z
-4f39084c2c503026a20670876b7383c5
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-02-10T19:48:37.695667Z
+3f5418e96a28a3585aadcd6bbb3d581a
+2011-01-23T17:17:21.114643Z
+34469
+ben2610
 has-props
 
 
@@ -880,41 +846,7 @@ has-props
 
 
 
-5551
-
-RAS_MeshObject.cpp
-file
-
-
-
-
-2011-01-18T22:04:29.293021Z
-e868680e54f9819fca7aa9ee0626a5f1
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-14797
+5613
 
 RAS_FramingManager.h
 file
@@ -949,6 +881,40 @@ has-props
 
 
 5823
+
+RAS_MeshObject.cpp
+file
+
+
+
+
+2011-01-18T22:04:29.293021Z
+e868680e54f9819fca7aa9ee0626a5f1
+2010-02-12T13:34:04.213317Z
+26841
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14797
 
 RAS_texmatrix.cpp
 file

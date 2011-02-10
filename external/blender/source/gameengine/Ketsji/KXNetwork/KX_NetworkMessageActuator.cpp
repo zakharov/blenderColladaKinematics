@@ -1,5 +1,5 @@
 /**
- * $Id: KX_NetworkMessageActuator.cpp 32788 2010-10-31 04:11:39Z campbellbarton $
+ * $Id: KX_NetworkMessageActuator.cpp 34520 2011-01-27 00:02:25Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,8 @@
  * ***** END GPL LICENSE BLOCK *****
  * Ketsji Logic Extenstion: Network Message Actuator generic implementation
  */
+
+#include <stddef.h>
 
 #include "NG_NetworkScene.h"
 #include "KX_NetworkMessageActuator.h"

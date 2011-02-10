@@ -1,7 +1,7 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/doc/python_api/alternative/examples
 https://svn.blender.org/svnroot/bf-blender
 
@@ -502,40 +502,6 @@ has-props
 
 388
 
-bge.types.KX_PolygonMaterial.setTexture.py
-file
-
-
-
-
-2011-01-18T22:05:03.623021Z
-0226428e734e9e9f6760a484b36b2e5e
-2010-08-16T19:51:29.979267Z
-31397
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-27
-
 bge.types.KX_SCA_ReplaceMeshActuator.py
 file
 
@@ -569,6 +535,40 @@ has-props
 
 
 1420
+
+bge.types.KX_PolygonMaterial.setTexture.py
+file
+
+
+
+
+2011-01-18T22:05:03.623021Z
+0226428e734e9e9f6760a484b36b2e5e
+2010-08-16T19:51:29.979267Z
+31397
+gsrb3d
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+27
 
 geometry.PolyFill.py
 file
@@ -638,40 +638,6 @@ has-props
 
 58
 
-bge.types.KX_Camera.getScreenVect.py
-file
-
-
-
-
-2011-01-18T22:05:03.633021Z
-176d0160afad2963b7d67a7979d9930e
-2010-08-16T19:51:29.979267Z
-31397
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-89
-
 bge.logic.py
 file
 
@@ -705,6 +671,40 @@ has-props
 
 
 990
+
+bge.types.KX_Camera.getScreenVect.py
+file
+
+
+
+
+2011-01-18T22:05:03.633021Z
+176d0160afad2963b7d67a7979d9930e
+2010-08-16T19:51:29.979267Z
+31397
+gsrb3d
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+89
 
 bge.types.KX_VertexProxy.getRGBA.py
 file
@@ -808,40 +808,6 @@ has-props
 
 100
 
-aud.Device.lock.py
-file
-
-
-
-
-2011-01-18T22:05:03.633021Z
-3b847141867cca80785e748c49ad6517
-2010-09-03T03:30:20.436068Z
-31730
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-471
-
 mathutils.Quaternion.py
 file
 
@@ -876,16 +842,16 @@ has-props
 
 25
 
-bge.types.KX_MeshProxy.py
+aud.Device.lock.py
 file
 
 
 
 
 2011-01-18T22:05:03.633021Z
-b7e408364234233a9fa46b7a1c466db1
-2010-08-16T19:51:29.979267Z
-31397
+3b847141867cca80785e748c49ad6517
+2010-09-03T03:30:20.436068Z
+31730
 gsrb3d
 has-props
 
@@ -908,7 +874,7 @@ has-props
 
 
 
-452
+471
 
 aud.Factory.pingpong.py
 file
@@ -944,6 +910,40 @@ has-props
 
 145
 
+bge.types.KX_MeshProxy.py
+file
+
+
+
+
+2011-01-18T22:05:03.633021Z
+b7e408364234233a9fa46b7a1c466db1
+2010-08-16T19:51:29.979267Z
+31397
+gsrb3d
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+452
+
 bge.types.KX_Camera.sphereInsideFrustum.py
 file
 
@@ -978,40 +978,6 @@ has-props
 
 304
 
-bge.types.KX_Camera.boxInsideFrustum.py
-file
-
-
-
-
-2011-01-18T22:05:03.633021Z
-39b2a2b02c711eb6c9d879245dd96b70
-2010-08-16T19:51:29.979267Z
-31397
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-506
-
 bpy.data.py
 file
 
@@ -1045,6 +1011,40 @@ has-props
 
 
 548
+
+bge.types.KX_Camera.boxInsideFrustum.py
+file
+
+
+
+
+2011-01-18T22:05:03.633021Z
+39b2a2b02c711eb6c9d879245dd96b70
+2010-08-16T19:51:29.979267Z
+31397
+gsrb3d
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+506
 
 idprop.IDGroup.values.py
 file

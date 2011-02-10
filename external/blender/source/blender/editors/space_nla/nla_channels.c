@@ -1,5 +1,5 @@
 /**
- * $Id: nla_channels.c 34290 2011-01-13 04:53:55Z campbellbarton $
+ * $Id: nla_channels.c 34427 2011-01-20 22:22:16Z aligorith $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -341,8 +341,9 @@ static int nlachannels_mouseclick_invoke(bContext *C, wmOperator *op, wmEvent *e
 void NLA_OT_channels_click (wmOperatorType *ot)
 {
 	/* identifiers */
-	ot->name= "Mouse Click on Channels";
+	ot->name= "Mouse Click on NLA Channels";
 	ot->idname= "NLA_OT_channels_click";
+	ot->description= "Handle clicks to select NLA channels";
 	
 	/* api callbacks */
 	ot->invoke= nlachannels_mouseclick_invoke;

@@ -1,14 +1,14 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/gameengine/SceneGraph
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2010-12-22T23:09:30.468439Z
-33864
+2011-01-30T15:29:22.294392Z
+34567
 campbellbarton
 
 
@@ -128,40 +128,6 @@ has-props
 
 1259
 
-SG_IObject.h
-file
-
-
-
-
-2011-01-18T22:04:23.113021Z
-8d9691cffaad1dcc7b0136fd5379c904
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8154
-
 SG_DList.h
 file
 
@@ -195,6 +161,40 @@ has-props
 
 
 5718
+
+SG_IObject.h
+file
+
+
+
+
+2011-01-18T22:04:23.113021Z
+8d9691cffaad1dcc7b0136fd5379c904
+2010-06-06T01:15:44.640463Z
+29259
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8154
 
 SG_Node.cpp
 file
@@ -264,40 +264,6 @@ has-props
 
 2729
 
-SG_Node.h
-file
-
-
-
-
-2011-01-18T22:04:23.113021Z
-7f96f5bfb07046f9ab3e79be5ebb04dc
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5267
-
 SG_BBox.cpp
 file
 
@@ -331,6 +297,40 @@ has-props
 
 
 6732
+
+SG_Node.h
+file
+
+
+
+
+2011-01-18T22:04:23.113021Z
+7f96f5bfb07046f9ab3e79be5ebb04dc
+2010-06-06T01:15:44.640463Z
+29259
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5267
 
 SG_ParentRelation.h
 file
@@ -400,40 +400,6 @@ has-props
 
 4569
 
-SG_BBox.h
-file
-
-
-
-
-2011-01-18T22:04:23.113021Z
-a6554da20baf84033d64d5bb15b17455
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3931
-
 SG_Tree.cpp
 file
 
@@ -467,6 +433,40 @@ has-props
 
 
 7902
+
+SG_BBox.h
+file
+
+
+
+
+2011-01-18T22:04:23.113021Z
+a6554da20baf84033d64d5bb15b17455
+2010-06-06T01:15:44.640463Z
+29259
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3931
 
 SG_QList.h
 file
@@ -535,40 +535,6 @@ has-props
 
 
 6409
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:23.113021Z
-b66454b43de4f9500a7b4ab44752a146
-2010-08-10T21:22:26.642559Z
-31223
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1163
 
 CMakeLists.txt
 file

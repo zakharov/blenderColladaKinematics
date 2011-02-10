@@ -1,7 +1,7 @@
 /**
  * blenkernel/DNA_userdef_types.h (mar-2001 nzc)
  *
- *	$Id: DNA_userdef_types.h 34335 2011-01-15 16:14:57Z campbellbarton $
+ *	$Id: DNA_userdef_types.h 34634 2011-02-04 08:33:07Z aligorith $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -492,9 +492,9 @@ extern UserDef U; /* from blenkernel blender.c */
 #define		AUTOKEY_FLAG_INSERTNEEDED	(1<<1)
 #define		AUTOKEY_FLAG_AUTOMATKEY		(1<<2)
 #define		AUTOKEY_FLAG_XYZ2RGB		(1<<3)
-	/* U.autokey_flag (strictly autokeying only) */
+
+/* toolsettings->autokey_flag */
 #define 	AUTOKEY_FLAG_ONLYKEYINGSET	(1<<6)
-	/* toolsettings->autokey_flag */
 #define 	ANIMRECORD_FLAG_WITHNLA		(1<<10)
 
 /* transopts */

@@ -1,4 +1,4 @@
-# $Id: CMakeLists.txt 33864 2010-12-22 23:09:30Z campbellbarton $
+# $Id: CMakeLists.txt 34486 2011-01-25 14:43:13Z campbellbarton $
 # ***** BEGIN GPL LICENSE BLOCK *****
 #
 # This program is free software; you can redistribute it and/or
@@ -35,7 +35,7 @@ set(INC
 	../../../extern/glew/include
 	../../../intern/guardedalloc
 	../Expressions
-	${PYTHON_INC}
+	${PYTHON_INCLUDE_DIRS}
 )
 
 set(SRC

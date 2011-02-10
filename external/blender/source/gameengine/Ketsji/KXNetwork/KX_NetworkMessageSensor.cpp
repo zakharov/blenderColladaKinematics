@@ -1,5 +1,5 @@
 /**
- * $Id: KX_NetworkMessageSensor.cpp 32788 2010-10-31 04:11:39Z campbellbarton $
+ * $Id: KX_NetworkMessageSensor.cpp 34520 2011-01-27 00:02:25Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,8 @@
  * ***** END GPL LICENSE BLOCK *****
  * Ketsji Logic Extenstion: Network Message Sensor generic implementation
  */
+
+#include <stddef.h>
 
 #include "KX_NetworkMessageSensor.h"
 #include "KX_NetworkEventManager.h"

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 72
-/svnroot/bf-blender/!svn/ver/34160/trunk/blender/source/blender/ikplugin
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/blender/ikplugin
 END
 BIK_api.h
 K 25
@@ -20,10 +20,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 87
 /svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/ikplugin/CMakeLists.txt
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 81
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blender/ikplugin/Makefile
 END

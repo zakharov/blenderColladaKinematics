@@ -1,5 +1,5 @@
 /**
- * $Id: BL_BlenderDataConversion.cpp 34160 2011-01-07 19:18:31Z campbellbarton $
+ * $Id: BL_BlenderDataConversion.cpp 34469 2011-01-23 17:17:21Z ben2610 $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -1525,7 +1525,7 @@ void BL_CreatePhysicsObjectNew(KX_GameObject* gameobj,
 	KX_BoxBounds bb;
 	DerivedMesh* dm = NULL;
 	if (gameobj->GetDeformer())
-		dm = gameobj->GetDeformer()->GetFinalMesh();
+		dm = gameobj->GetDeformer()->GetPhysicsMesh();
 	my_get_local_bounds(blenderobject,dm,objprop.m_boundobject.box.m_center,bb.m_extends);
 	if (blenderobject->gameflag & OB_BOUNDS)
 	{
@@ -1618,6 +1618,10 @@ void BL_CreatePhysicsObjectNew(KX_GameObject* gameobj,
 	}
 	delete shapeprops;
 	delete smmaterial;
+	if (dm) {
+		dm->needsFree = 1;
+		dm->release(dm);
+	}
 }
 
 

@@ -1,5 +1,5 @@
 /*
-* $Id: MOD_solidify.c 34380 2011-01-18 01:58:19Z campbellbarton $
+* $Id: MOD_solidify.c 34587 2011-01-31 20:02:51Z nazgul $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -651,6 +651,7 @@ ModifierTypeInfo modifierType_Solidify = {
 
 	/* copyData */          copyData,
 	/* deformVerts */       0,
+	/* deformMatrices */    0,
 	/* deformVertsEM */     0,
 	/* deformMatricesEM */  0,
 	/* applyModifier */     applyModifier,

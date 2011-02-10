@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 71
-/svnroot/bf-blender/!svn/ver/34239/trunk/blender/source/blender/collada
+/svnroot/bf-blender/!svn/ver/34640/trunk/blender/source/blender/collada
 END
 TransformReader.cpp
 K 25
@@ -13,7 +13,7 @@ DocumentImporter.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/34159/trunk/blender/source/blender/collada/DocumentImporter.cpp
+/svnroot/bf-blender/!svn/ver/34542/trunk/blender/source/blender/collada/DocumentImporter.cpp
 END
 collada_internal.h
 K 25
@@ -55,7 +55,7 @@ DocumentExporter.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/32862/trunk/blender/source/blender/collada/DocumentExporter.cpp
+/svnroot/bf-blender/!svn/ver/34533/trunk/blender/source/blender/collada/DocumentExporter.cpp
 END
 TransformWriter.cpp
 K 25
@@ -67,13 +67,13 @@ ArmatureExporter.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/32355/trunk/blender/source/blender/collada/ArmatureExporter.cpp
+/svnroot/bf-blender/!svn/ver/34533/trunk/blender/source/blender/collada/ArmatureExporter.cpp
 END
 MeshImporter.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 88
-/svnroot/bf-blender/!svn/ver/33831/trunk/blender/source/blender/collada/MeshImporter.cpp
+/svnroot/bf-blender/!svn/ver/34533/trunk/blender/source/blender/collada/MeshImporter.cpp
 END
 collada_utils.cpp
 K 25
@@ -93,23 +93,23 @@ svn:wc:ra_dav:version-url
 V 90
 /svnroot/bf-blender/!svn/ver/32546/trunk/blender/source/blender/collada/CameraExporter.cpp
 END
-SkinInfo.h
-K 25
-svn:wc:ra_dav:version-url
-V 82
-/svnroot/bf-blender/!svn/ver/32310/trunk/blender/source/blender/collada/SkinInfo.h
-END
 EffectExporter.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 90
 /svnroot/bf-blender/!svn/ver/32360/trunk/blender/source/blender/collada/EffectExporter.cpp
 END
+SkinInfo.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/bf-blender/!svn/ver/32310/trunk/blender/source/blender/collada/SkinInfo.h
+END
 GeometryExporter.h
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/33111/trunk/blender/source/blender/collada/GeometryExporter.h
+/svnroot/bf-blender/!svn/ver/34533/trunk/blender/source/blender/collada/GeometryExporter.h
 END
 collada_internal.cpp
 K 25
@@ -117,23 +117,17 @@ svn:wc:ra_dav:version-url
 V 92
 /svnroot/bf-blender/!svn/ver/33111/trunk/blender/source/blender/collada/collada_internal.cpp
 END
-MaterialExporter.h
-K 25
-svn:wc:ra_dav:version-url
-V 90
-/svnroot/bf-blender/!svn/ver/32355/trunk/blender/source/blender/collada/MaterialExporter.h
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 80
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blender/collada/Makefile
-END
 CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 86
 /svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/collada/CMakeLists.txt
+END
+MaterialExporter.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/32355/trunk/blender/source/blender/collada/MaterialExporter.h
 END
 collada.cpp
 K 25
@@ -163,19 +157,19 @@ DocumentImporter.h
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/33668/trunk/blender/source/blender/collada/DocumentImporter.h
-END
-SConscript
-K 25
-svn:wc:ra_dav:version-url
-V 82
-/svnroot/bf-blender/!svn/ver/31645/trunk/blender/source/blender/collada/SConscript
+/svnroot/bf-blender/!svn/ver/34640/trunk/blender/source/blender/collada/DocumentImporter.h
 END
 InstanceWriter.h
 K 25
 svn:wc:ra_dav:version-url
 V 88
 /svnroot/bf-blender/!svn/ver/32355/trunk/blender/source/blender/collada/InstanceWriter.h
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/bf-blender/!svn/ver/31645/trunk/blender/source/blender/collada/SConscript
 END
 ArmatureImporter.h
 K 25
@@ -217,13 +211,13 @@ MeshImporter.h
 K 25
 svn:wc:ra_dav:version-url
 V 86
-/svnroot/bf-blender/!svn/ver/32862/trunk/blender/source/blender/collada/MeshImporter.h
+/svnroot/bf-blender/!svn/ver/34533/trunk/blender/source/blender/collada/MeshImporter.h
 END
 GeometryExporter.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/33111/trunk/blender/source/blender/collada/GeometryExporter.cpp
+/svnroot/bf-blender/!svn/ver/34533/trunk/blender/source/blender/collada/GeometryExporter.cpp
 END
 collada_utils.h
 K 25

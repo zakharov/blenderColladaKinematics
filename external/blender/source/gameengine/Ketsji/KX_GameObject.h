@@ -1,5 +1,5 @@
 /*
- * $Id: KX_GameObject.h 32788 2010-10-31 04:11:39Z campbellbarton $
+ * $Id: KX_GameObject.h 34520 2011-01-27 00:02:25Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -36,6 +36,7 @@
 #pragma warning (disable : 4355) 
 #endif 
 
+#include <stddef.h>
 
 #include "ListValue.h"
 #include "SCA_IObject.h"

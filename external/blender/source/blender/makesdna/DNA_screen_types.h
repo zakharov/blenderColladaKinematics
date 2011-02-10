@@ -1,5 +1,5 @@
 /**
- * $Id: DNA_screen_types.h 34335 2011-01-15 16:14:57Z campbellbarton $ 
+ * $Id: DNA_screen_types.h 34613 2011-02-01 23:41:01Z aligorith $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -53,6 +53,9 @@ typedef struct bScreen {
 	
 	struct Scene *scene;
 	struct Scene *newscene;				/* temporary when switching */
+	
+	int redraws_flag;					/* user-setting for which editors get redrawn during anim playback (used to be time->redraws) */
+	int pad1;
 	
 	short full;							/* temp screen for image render display or fileselect */
 	short temp;							/* temp screen in a temp window, don't save (like user prefs) */

@@ -1,5 +1,5 @@
 /**
- * $Id: graph_edit.c 34316 2011-01-14 05:19:04Z aligorith $
+ * $Id: graph_edit.c 34614 2011-02-01 23:51:52Z aligorith $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -178,10 +178,11 @@ void GRAPH_OT_previewrange_set (wmOperatorType *ot)
 	/* identifiers */
 	ot->name= "Auto-Set Preview Range";
 	ot->idname= "GRAPH_OT_previewrange_set";
+	ot->description= "Automatically set Preview Range based on range of keyframes";
 	
 	/* api callbacks */
 	ot->exec= graphkeys_previewrange_exec;
-	ot->poll= ED_operator_ipo_active; // XXX: unchecked poll to get fsamples working too, but makes modifier damage trickier...
+	ot->poll= ED_operator_graphedit_active; // XXX: unchecked poll to get fsamples working too, but makes modifier damage trickier...
 	
 	/* flags */
 	ot->flag= OPTYPE_REGISTER|OPTYPE_UNDO;
@@ -229,7 +230,7 @@ void GRAPH_OT_view_all (wmOperatorType *ot)
 	
 	/* api callbacks */
 	ot->exec= graphkeys_viewall_exec;
-	ot->poll= ED_operator_ipo_active; // XXX: unchecked poll to get fsamples working too, but makes modifier damage trickier...
+	ot->poll= ED_operator_graphedit_active; // XXX: unchecked poll to get fsamples working too, but makes modifier damage trickier...
 	
 	/* flags */
 	ot->flag= OPTYPE_REGISTER|OPTYPE_UNDO;
@@ -387,7 +388,7 @@ void GRAPH_OT_ghost_curves_clear (wmOperatorType *ot)
 	
 	/* api callbacks */
 	ot->exec= graphkeys_clear_ghostcurves_exec;
-	ot->poll= ED_operator_ipo_active;
+	ot->poll= ED_operator_graphedit_active;
 	
 	/* flags */
 	ot->flag= OPTYPE_REGISTER|OPTYPE_UNDO;

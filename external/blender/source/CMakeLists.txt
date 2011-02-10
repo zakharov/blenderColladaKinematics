@@ -1,4 +1,4 @@
-# $Id: CMakeLists.txt 33549 2010-12-08 08:43:06Z campbellbarton $
+# $Id: CMakeLists.txt 34463 2011-01-23 11:42:29Z campbellbarton $
 # ***** BEGIN GPL LICENSE BLOCK *****
 #
 # This program is free software; you can redistribute it and/or
@@ -34,3 +34,5 @@ endif()
 if(WINDOWS)
 	add_subdirectory(icons)
 endif()
+
+add_subdirectory(tests)

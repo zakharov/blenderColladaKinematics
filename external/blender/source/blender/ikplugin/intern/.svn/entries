@@ -1,14 +1,14 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/ikplugin/intern
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-07T19:18:31.464706Z
-34160
+2011-01-30T15:29:22.294392Z
+34567
 campbellbarton
 
 
@@ -195,40 +195,6 @@ has-props
 
 
 3396
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:39.133021Z
-517bb9bdb9896cf2df8a09568344d61c
-2010-09-12T12:27:12.826983Z
-31891
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1648
 
 iksolver_plugin.c
 file

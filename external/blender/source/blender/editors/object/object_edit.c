@@ -1,5 +1,5 @@
 /**
- * $Id: object_edit.c 34159 2011-01-07 18:36:47Z campbellbarton $
+ * $Id: object_edit.c 34762 2011-02-10 17:23:00Z ton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -50,6 +50,7 @@
 #include "DNA_property_types.h"
 #include "DNA_scene_types.h"
 #include "DNA_object_types.h"
+#include "DNA_object_force.h"
 #include "DNA_meshdata_types.h"
 #include "DNA_vfont_types.h"
 
@@ -59,6 +60,7 @@
 #include "BKE_constraint.h"
 #include "BKE_context.h"
 #include "BKE_curve.h"
+#include "BKE_effect.h"
 #include "BKE_depsgraph.h"
 #include "BKE_font.h"
 #include "BKE_image.h"
@@ -585,7 +587,7 @@ void OBJECT_OT_posemode_toggle(wmOperatorType *ot)
 	ot->poll= ED_operator_object_active_editable;
 	
 	/* flag */
-	ot->flag= OPTYPE_REGISTER;
+	ot->flag= OPTYPE_REGISTER|OPTYPE_UNDO;
 }
 
 /* *********************** */
@@ -1239,9 +1241,9 @@ void copy_attr(Main *bmain, Scene *scene, View3D *v3d, short event)
 				else if(event==2) {  /* rot */
 					VECCOPY(base->object->rot, ob->rot);
 					VECCOPY(base->object->drot, ob->drot);
-					/* Quats arnt used yet */
-					/*VECCOPY(base->object->quat, ob->quat);
-					VECCOPY(base->object->dquat, ob->dquat);*/
+
+					QUATCOPY(base->object->quat, ob->quat);
+					QUATCOPY(base->object->dquat, ob->dquat);
 				}
 				else if(event==3) {  /* size */
 					VECCOPY(base->object->size, ob->size);
@@ -1498,6 +1500,39 @@ void copy_attr_menu(Main *bmain, Scene *scene, View3D *v3d)
 	if(event<= 0) return;
 	
 	copy_attr(bmain, scene, v3d, event);
+}
+
+/* ******************* force field toggle operator ***************** */
+
+static int forcefield_toggle_exec(bContext *C, wmOperator *UNUSED(op))
+{
+	Object *ob = CTX_data_active_object(C);
+
+	if(ob->pd == NULL)
+		ob->pd = object_add_collision_fields(PFIELD_FORCE);
+
+	if(ob->pd->forcefield == 0)
+		ob->pd->forcefield = PFIELD_FORCE;
+	else
+		ob->pd->forcefield = 0;
+	
+	return OPERATOR_FINISHED;
+}
+
+void OBJECT_OT_forcefield_toggle(wmOperatorType *ot)
+{
+	
+	/* identifiers */
+	ot->name= "Toggle Force Field";
+	ot->description = "Toggle object's force field";
+	ot->idname= "OBJECT_OT_forcefield_toggle";
+	
+	/* api callbacks */
+	ot->exec= forcefield_toggle_exec;
+	ot->poll= ED_operator_object_active_editable;
+	
+	/* flags */
+	ot->flag= OPTYPE_REGISTER|OPTYPE_UNDO;
 }
 
 /* ********************************************** */

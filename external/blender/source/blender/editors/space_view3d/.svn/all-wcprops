@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svnroot/bf-blender/!svn/ver/34388/trunk/blender/source/blender/editors/space_view3d
+/svnroot/bf-blender/!svn/ver/34662/trunk/blender/source/blender/editors/space_view3d
 END
 drawarmature.c
 K 25
@@ -15,17 +15,17 @@ svn:wc:ra_dav:version-url
 V 100
 /svnroot/bf-blender/!svn/ver/34388/trunk/blender/source/blender/editors/space_view3d/view3d_select.c
 END
-view3d_edit.c
-K 25
-svn:wc:ra_dav:version-url
-V 98
-/svnroot/bf-blender/!svn/ver/34376/trunk/blender/source/blender/editors/space_view3d/view3d_edit.c
-END
 SConscript
 K 25
 svn:wc:ra_dav:version-url
 V 95
 /svnroot/bf-blender/!svn/ver/32787/trunk/blender/source/blender/editors/space_view3d/SConscript
+END
+view3d_edit.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/bf-blender/!svn/ver/34662/trunk/blender/source/blender/editors/space_view3d/view3d_edit.c
 END
 view3d_header.c
 K 25
@@ -55,7 +55,7 @@ view3d_draw.c
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/svnroot/bf-blender/!svn/ver/34159/trunk/blender/source/blender/editors/space_view3d/view3d_draw.c
+/svnroot/bf-blender/!svn/ver/34432/trunk/blender/source/blender/editors/space_view3d/view3d_draw.c
 END
 view3d_buttons.c
 K 25
@@ -63,23 +63,23 @@ svn:wc:ra_dav:version-url
 V 101
 /svnroot/bf-blender/!svn/ver/34183/trunk/blender/source/blender/editors/space_view3d/view3d_buttons.c
 END
-view3d_ops.c
-K 25
-svn:wc:ra_dav:version-url
-V 97
-/svnroot/bf-blender/!svn/ver/34159/trunk/blender/source/blender/editors/space_view3d/view3d_ops.c
-END
 view3d_snap.c
 K 25
 svn:wc:ra_dav:version-url
 V 98
 /svnroot/bf-blender/!svn/ver/34159/trunk/blender/source/blender/editors/space_view3d/view3d_snap.c
 END
+view3d_ops.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/34159/trunk/blender/source/blender/editors/space_view3d/view3d_ops.c
+END
 view3d_toolbar.c
 K 25
 svn:wc:ra_dav:version-url
 V 101
-/svnroot/bf-blender/!svn/ver/34287/trunk/blender/source/blender/editors/space_view3d/view3d_toolbar.c
+/svnroot/bf-blender/!svn/ver/34401/trunk/blender/source/blender/editors/space_view3d/view3d_toolbar.c
 END
 drawobject.c
 K 25
@@ -91,7 +91,7 @@ view3d_intern.h
 K 25
 svn:wc:ra_dav:version-url
 V 100
-/svnroot/bf-blender/!svn/ver/34335/trunk/blender/source/blender/editors/space_view3d/view3d_intern.h
+/svnroot/bf-blender/!svn/ver/34662/trunk/blender/source/blender/editors/space_view3d/view3d_intern.h
 END
 drawvolume.c
 K 25
@@ -109,13 +109,7 @@ view3d_view.c
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/svnroot/bf-blender/!svn/ver/34378/trunk/blender/source/blender/editors/space_view3d/view3d_view.c
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 93
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blender/editors/space_view3d/Makefile
+/svnroot/bf-blender/!svn/ver/34662/trunk/blender/source/blender/editors/space_view3d/view3d_view.c
 END
 CMakeLists.txt
 K 25

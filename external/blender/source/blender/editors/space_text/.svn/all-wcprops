@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/svnroot/bf-blender/!svn/ver/34303/trunk/blender/source/blender/editors/space_text
+/svnroot/bf-blender/!svn/ver/34714/trunk/blender/source/blender/editors/space_text
 END
 space_text.c
 K 25
@@ -13,13 +13,13 @@ text_draw.c
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/34273/trunk/blender/source/blender/editors/space_text/text_draw.c
+/svnroot/bf-blender/!svn/ver/34701/trunk/blender/source/blender/editors/space_text/text_draw.c
 END
 text_ops.c
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/34303/trunk/blender/source/blender/editors/space_text/text_ops.c
+/svnroot/bf-blender/!svn/ver/34714/trunk/blender/source/blender/editors/space_text/text_ops.c
 END
 text_python.c
 K 25
@@ -37,19 +37,13 @@ text_intern.h
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/svnroot/bf-blender/!svn/ver/33468/trunk/blender/source/blender/editors/space_text/text_intern.h
+/svnroot/bf-blender/!svn/ver/34701/trunk/blender/source/blender/editors/space_text/text_intern.h
 END
 CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 97
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/editors/space_text/CMakeLists.txt
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 91
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blender/editors/space_text/Makefile
+/svnroot/bf-blender/!svn/ver/34486/trunk/blender/source/blender/editors/space_text/CMakeLists.txt
 END
 text_header.c
 K 25

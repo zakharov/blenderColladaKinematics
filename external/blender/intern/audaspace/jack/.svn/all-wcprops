@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 70
-/svnroot/bf-blender/!svn/ver/33846/trunk/blender/intern/audaspace/jack
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/intern/audaspace/jack
 END
 AUD_JackDevice.cpp
 K 25
@@ -14,10 +14,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 87
 /svnroot/bf-blender/!svn/ver/33846/trunk/blender/intern/audaspace/jack/AUD_JackDevice.h
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 79
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/audaspace/jack/Makefile
 END

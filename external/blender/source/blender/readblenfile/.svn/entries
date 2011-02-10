@@ -1,14 +1,14 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/readblenfile
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2010-12-22T23:09:30.468439Z
-33864
+2011-01-30T15:29:22.294392Z
+34567
 campbellbarton
 
 
@@ -102,40 +102,6 @@ has-props
 
 
 1249
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:05:01.703021Z
-ab05beaae4438823484765837c8a1d6c
-2010-08-10T21:22:26.642559Z
-31223
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1124
 
 BLO_readblenfile.h
 file

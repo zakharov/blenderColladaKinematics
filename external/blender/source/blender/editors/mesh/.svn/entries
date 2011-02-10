@@ -1,14 +1,14 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/editors/mesh
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-18T01:58:19.206348Z
-34380
+2011-02-09T15:13:20.803099Z
+34741
 campbellbarton
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-01-18T22:04:54.103021Z
-ee2ab1c83c13c631646c6131ffbc506a
-2011-01-13T19:01:27.320190Z
-34301
-ton
+2011-02-10T19:48:54.005667Z
+eb5a8a393ea8dd345cc6a92861225fe4
+2011-02-07T13:02:44.124555Z
+34693
+campbellbarton
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-49272
+48763
 
 editface.c
 file
@@ -162,6 +162,40 @@ has-props
 
 50226
 
+mesh_ops.c
+file
+
+
+
+
+2011-02-10T19:48:54.015667Z
+07ba7138d0cd694cc6725265cf0f7f0a
+2011-01-30T16:19:08.380132Z
+34569
+ton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14035
+
 meshtools.c
 file
 
@@ -195,40 +229,6 @@ has-props
 
 
 34920
-
-mesh_ops.c
-file
-
-
-
-
-2011-01-18T22:04:54.113021Z
-c5a8115690f684169e5a9235bec67b7e
-2011-01-13T04:53:55.701793Z
-34290
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-14084
 
 mesh_intern.h
 file
@@ -270,10 +270,10 @@ file
 
 
 
-2011-01-18T22:04:54.113021Z
-b1f25c19db6cfdd5f6b87aee9eabad04
-2011-01-13T04:53:55.701793Z
-34290
+2011-02-10T19:48:54.015667Z
+86139e0ad9a647f865d25a6bdc4ccc11
+2011-02-01T12:47:50.868331Z
+34604
 campbellbarton
 has-props
 
@@ -296,7 +296,7 @@ has-props
 
 
 
-199481
+199482
 
 editmesh_mods.c
 file
@@ -304,10 +304,10 @@ file
 
 
 
-2011-01-18T22:04:54.113021Z
-86cc0098076875e1f76e49abc7f7642d
-2011-01-15T14:07:11.596615Z
-34332
+2011-02-10T19:48:54.015667Z
+d67a8ff0df5eebfad1de62991328f6cb
+2011-01-30T16:19:08.380132Z
+34569
 ton
 has-props
 
@@ -330,41 +330,7 @@ has-props
 
 
 
-114274
-
-mesh_data.c
-file
-
-
-
-
-2011-01-18T22:04:54.113021Z
-2294650789a780a923691e7eb7766b05
-2011-01-12T15:45:00.031170Z
-34283
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-19808
+114276
 
 loopcut.c
 file
@@ -400,16 +366,50 @@ has-props
 
 13200
 
+mesh_data.c
+file
+
+
+
+
+2011-02-10T19:48:54.015667Z
+ce1b2537cf212161bf348b531e483a0b
+2011-02-09T15:13:20.803099Z
+34741
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+17918
+
 editmesh_lib.c
 file
 
 
 
 
-2011-01-18T22:04:54.113021Z
-3b8ea87904b6137fdb44259bfb0e840d
-2011-01-18T01:58:19.206348Z
-34380
+2011-02-10T19:48:54.015667Z
+50f7c8de7cfc0dec3e698cf832425fec
+2011-01-23T12:42:07.392212Z
+34465
 campbellbarton
 has-props
 
@@ -468,50 +468,16 @@ has-props
 
 18599
 
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:54.113021Z
-2de9c036a0facb7169a83535e88636a7
-2010-08-10T21:22:26.642559Z
-31223
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1645
-
 CMakeLists.txt
 file
 
 
 
 
-2011-01-18T22:04:54.113021Z
+2011-02-10T19:48:54.015667Z
 a76b174b1d84d4c27a5e3834db03702d
-2010-12-22T23:09:30.468439Z
-33864
+2011-02-09T02:28:11.718946Z
+34733
 campbellbarton
 has-props
 

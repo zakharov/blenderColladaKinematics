@@ -1,14 +1,14 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/imbuf/intern/dds
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2010-12-31T04:29:11.127530Z
-33962
+2011-01-30T15:29:22.294392Z
+34567
 campbellbarton
 
 
@@ -196,40 +196,6 @@ has-props
 
 3770
 
-SConscript
-file
-
-
-
-
-2011-01-18T22:04:46.373021Z
-ce597625e10fc108689ce5773aefd905
-2010-11-18T11:42:05.232926Z
-33156
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-459
-
 DirectDrawSurface.h
 file
 
@@ -263,6 +229,40 @@ has-props
 
 
 4703
+
+SConscript
+file
+
+
+
+
+2011-01-18T22:04:46.373021Z
+ce597625e10fc108689ce5773aefd905
+2010-11-18T11:42:05.232926Z
+33156
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+459
 
 dds_api.h
 file
@@ -535,40 +535,6 @@ has-props
 
 
 2513
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:46.373021Z
-95114fd8746c3d309f97cad51020c6d5
-2010-08-10T21:22:26.642559Z
-31223
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1901
 
 CMakeLists.txt
 file

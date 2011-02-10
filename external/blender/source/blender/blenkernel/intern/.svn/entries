@@ -1,15 +1,15 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/blenkernel/intern
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-18T15:02:58.302521Z
-34390
-kwk
+2011-02-10T14:13:13.640858Z
+34759
+campbellbarton
 
 
 
@@ -25,40 +25,6 @@ kwk
 
 
 954f8c5b-7b00-dc11-b283-0030488c597c
-
-boids.c
-file
-
-
-
-
-2011-01-18T22:04:38.633021Z
-4125d6808618ccf146bac6c20319ed71
-2011-01-07T19:18:31.464706Z
-34160
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-46313
 
 bvhutils.c
 file
@@ -94,14 +60,14 @@ has-props
 
 17088
 
-fmodifier.c
+boids.c
 file
 
 
 
 
 2011-01-18T22:04:38.633021Z
-db6102ac362a08bd13c8df3f776debd2
+4125d6808618ccf146bac6c20319ed71
 2011-01-07T19:18:31.464706Z
 34160
 campbellbarton
@@ -126,7 +92,7 @@ has-props
 
 
 
-38508
+46313
 
 script.c
 file
@@ -162,6 +128,108 @@ has-props
 
 1458
 
+fmodifier.c
+file
+
+
+
+
+2011-01-18T22:04:38.633021Z
+db6102ac362a08bd13c8df3f776debd2
+2011-01-07T19:18:31.464706Z
+34160
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+38508
+
+mesh_validate.c
+file
+
+
+
+
+2011-02-10T19:48:43.415667Z
+bc6c14858f437664f0469734c1f088af
+2011-02-10T14:13:13.640858Z
+34759
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+11483
+
+cdderivedmesh.c
+file
+
+
+
+
+2011-02-10T19:48:43.415667Z
+f677a05366e88382d63fc5d6a905ee3f
+2011-02-07T13:02:44.124555Z
+34693
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+55400
+
 font.c
 file
 
@@ -196,16 +264,16 @@ has-props
 
 28862
 
-cdderivedmesh.c
+blender.c
 file
 
 
 
 
-2011-01-18T22:04:38.633021Z
-fba49a0d2f9455af04b49ae4688ce77f
-2011-01-14T21:06:28.223229Z
-34327
+2011-02-10T19:48:43.415667Z
+63c47dfe2e919d7c43e0d9f2cb67c732
+2011-01-20T07:44:58.936233Z
+34414
 campbellbarton
 has-props
 
@@ -228,7 +296,7 @@ has-props
 
 
 
-55124
+17026
 
 icons.c
 file
@@ -264,50 +332,16 @@ has-props
 
 6996
 
-blender.c
-file
-
-
-
-
-2011-01-18T22:04:38.633021Z
-b2bf9eb92a8c7450439f9f28eaca3a73
-2011-01-18T00:10:11.065396Z
-34377
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-17109
-
 action.c
 file
 
 
 
 
-2011-01-18T22:04:38.633021Z
-a32ce899ea80832cf527ea857920c3c5
-2011-01-07T19:18:31.464706Z
-34160
+2011-02-10T19:48:43.415667Z
+6360178b73f55c07817c0a7e3913074d
+2011-02-02T00:40:55.137304Z
+34616
 campbellbarton
 has-props
 
@@ -330,7 +364,7 @@ has-props
 
 
 
-45662
+45638
 
 unit.c
 file
@@ -434,40 +468,6 @@ has-props
 
 55726
 
-BME_tools.c
-file
-
-
-
-
-2011-01-18T22:04:38.643021Z
-099291421bad59f1b08688575b473e58
-2011-01-07T18:36:47.041781Z
-34159
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-37094
-
 BME_structure.c
 file
 
@@ -501,6 +501,40 @@ has-props
 
 
 15565
+
+BME_tools.c
+file
+
+
+
+
+2011-01-18T22:04:38.643021Z
+099291421bad59f1b08688575b473e58
+2011-01-07T18:36:47.041781Z
+34159
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+37094
 
 text.c
 file
@@ -542,11 +576,11 @@ file
 
 
 
-2011-01-18T22:04:38.643021Z
-893cc2894a7cc2a44ce337df3cabe81a
-2011-01-07T19:18:31.464706Z
-34160
-campbellbarton
+2011-02-10T19:48:43.415667Z
+a814f335bb5e53ca0d38600a8be8a2dd
+2011-02-08T05:51:20.066352Z
+34710
+aligorith
 has-props
 
 
@@ -568,7 +602,7 @@ has-props
 
 
 
-129072
+130738
 
 BME_Customdata.c
 file
@@ -706,40 +740,6 @@ has-props
 
 6032
 
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:38.643021Z
-97f0e251016f895534e75dabe0324411
-2010-08-10T21:22:26.642559Z
-31223
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3732
-
 writeframeserver.c
 file
 
@@ -814,11 +814,11 @@ file
 
 
 
-2011-01-18T22:04:38.653021Z
-5b9d0dca45194e270e16c32510f98ba3
-2011-01-07T19:18:31.464706Z
-34160
-campbellbarton
+2011-02-10T19:48:43.415667Z
+afd965f71e17bab8054aa11c5ab234ad
+2011-01-29T11:56:11.914803Z
+34548
+lmg
 has-props
 
 
@@ -840,7 +840,7 @@ has-props
 
 
 
-32723
+32747
 
 multires.c
 file
@@ -848,11 +848,11 @@ file
 
 
 
-2011-01-18T22:04:38.653021Z
-79613dbd2fa39ef4f6ed6c5b63645e7e
-2011-01-13T04:53:55.701793Z
-34290
-campbellbarton
+2011-02-10T19:48:43.415667Z
+654a98b294f83a5268692447b1925428
+2011-01-31T20:02:51.740130Z
+34587
+nazgul
 has-props
 
 
@@ -874,7 +874,7 @@ has-props
 
 
 
-58374
+58607
 
 subsurf_ccg.c
 file
@@ -882,11 +882,11 @@ file
 
 
 
-2011-01-18T22:04:38.653021Z
-263d67f1a91f2afcf4d681ec7e68c3db
-2011-01-10T03:55:47.347267Z
-34217
-campbellbarton
+2011-02-10T19:48:43.415667Z
+a564a48e08f0f90dbcf0ccd933bdc4d3
+2011-01-31T20:02:51.740130Z
+34587
+nazgul
 has-props
 
 
@@ -908,7 +908,7 @@ has-props
 
 
 
-78833
+77531
 
 CCGSubSurf.c
 file
@@ -950,10 +950,10 @@ file
 
 
 
-2011-01-18T22:04:38.653021Z
-a7f6802f563657175f87c8abb49b04f0
-2011-01-18T09:25:37.284337Z
-34385
+2011-02-10T19:48:43.425667Z
+c36cc1a744a11245c1df035902540a90
+2011-02-04T15:48:13.972679Z
+34642
 jhk
 has-props
 
@@ -976,7 +976,7 @@ has-props
 
 
 
-117019
+118861
 
 cloth.c
 file
@@ -1052,10 +1052,10 @@ file
 
 
 
-2011-01-18T22:04:38.653021Z
-207928b2e63be24ba9f103102512265b
-2011-01-07T19:18:31.464706Z
-34160
+2011-02-10T19:48:43.425667Z
+4c1ecaf8ec8a5f12650cad13dafd7fb4
+2011-02-01T12:37:53.805608Z
+34603
 campbellbarton
 has-props
 
@@ -1078,7 +1078,7 @@ has-props
 
 
 
-6569
+6661
 
 fluidsim.c
 file
@@ -1154,11 +1154,11 @@ file
 
 
 
-2011-01-18T22:04:38.653021Z
-7c74c7bd057bb26f45939df30b233d46
-2011-01-13T04:53:55.701793Z
-34290
-campbellbarton
+2011-02-10T19:48:43.425667Z
+bea2c3f6995068b3c2be0cc0500f69ea
+2011-02-06T15:50:00.427431Z
+34670
+jhk
 has-props
 
 
@@ -1180,75 +1180,7 @@ has-props
 
 
 
-42761
-
-packedFile.c
-file
-
-
-
-
-2011-01-18T22:04:38.653021Z
-3328495c9fd68d9dba04c987fbbf8d20
-2011-01-07T18:36:47.041781Z
-34159
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-12223
-
-idcode.c
-file
-
-
-
-
-2011-01-18T22:04:38.653021Z
-e6d1a22b862df94364435e4aa0d4c885
-2010-12-03T17:05:21.802549Z
-33448
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3976
+42807
 
 bullet.c
 file
@@ -1284,16 +1216,16 @@ has-props
 
 2306
 
-key.c
+idcode.c
 file
 
 
 
 
-2011-01-18T22:04:38.663021Z
-7960335e1eb25abdf5ac5ee92e177650
-2011-01-09T15:12:08.700922Z
-34198
+2011-01-18T22:04:38.653021Z
+e6d1a22b862df94364435e4aa0d4c885
+2010-12-03T17:05:21.802549Z
+33448
 campbellbarton
 has-props
 
@@ -1316,7 +1248,41 @@ has-props
 
 
 
-41416
+3976
+
+packedFile.c
+file
+
+
+
+
+2011-01-18T22:04:38.653021Z
+3328495c9fd68d9dba04c987fbbf8d20
+2011-01-07T18:36:47.041781Z
+34159
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12223
 
 shrinkwrap.c
 file
@@ -1324,10 +1290,10 @@ file
 
 
 
-2011-01-18T22:04:38.653021Z
-46cc6265ef403d3cfa3967ae08ba3844
-2011-01-07T19:18:31.464706Z
-34160
+2011-02-10T19:48:43.425667Z
+04fdaeb71d57ed1d9ad8147c3e493343
+2011-02-08T02:09:59.983162Z
+34708
 campbellbarton
 has-props
 
@@ -1350,7 +1316,41 @@ has-props
 
 
 
-17177
+17083
+
+key.c
+file
+
+
+
+
+2011-02-10T19:48:43.425667Z
+b5a021b9d2da2df52dc5d01f2b8207b3
+2011-01-26T22:01:51.879065Z
+34514
+aligorith
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+41211
 
 sequencer.c
 file
@@ -1358,11 +1358,11 @@ file
 
 
 
-2011-01-18T22:04:38.663021Z
-d73daea046d5dbf883d538c6cc9c0715
-2011-01-11T07:40:31.650041Z
-34250
-campbellbarton
+2011-02-10T19:48:43.425667Z
+ac3e9b72391e326452345b48ed09fc3d
+2011-02-05T15:11:29.554572Z
+34659
+schlaile
 has-props
 
 
@@ -1384,41 +1384,7 @@ has-props
 
 
 
-87545
-
-exotic.c
-file
-
-
-
-
-2011-01-18T22:04:38.663021Z
-398aaa820829bd25aeaa628f72277149
-2011-01-07T19:18:31.464706Z
-34160
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-57995
+87694
 
 BME_conversions.c
 file
@@ -1454,14 +1420,14 @@ has-props
 
 18765
 
-mesh.c
+exotic.c
 file
 
 
 
 
 2011-01-18T22:04:38.663021Z
-81b89ac47ed9ffdd5394c83a0daabef9
+398aaa820829bd25aeaa628f72277149
 2011-01-07T19:18:31.464706Z
 34160
 campbellbarton
@@ -1486,7 +1452,41 @@ has-props
 
 
 
-35016
+57995
+
+mesh.c
+file
+
+
+
+
+2011-02-10T19:48:43.425667Z
+12b130af9bf299cc35e009afa52bb08a
+2011-02-10T09:29:31.160075Z
+34753
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+35947
 
 DerivedMesh.c
 file
@@ -1494,10 +1494,10 @@ file
 
 
 
-2011-01-18T22:04:38.663021Z
-5fbafaac8a16b6281a12442a6e6dc4ba
-2011-01-18T01:58:19.206348Z
-34380
+2011-02-10T19:48:43.425667Z
+cceaa6687411c740ee2a26c93efc3ff1
+2011-02-07T13:02:44.124555Z
+34693
 campbellbarton
 has-props
 
@@ -1520,7 +1520,7 @@ has-props
 
 
 
-75544
+77393
 
 texture.c
 file
@@ -1528,11 +1528,11 @@ file
 
 
 
-2011-01-18T22:04:38.663021Z
-6f79ca380adb26d225eb51984c958ea7
-2011-01-07T18:36:47.041781Z
-34159
-campbellbarton
+2011-02-10T19:48:43.435667Z
+ee79d819162f2cbde1d4953648bb7779
+2011-01-30T16:24:23.623063Z
+34570
+lmg
 has-props
 
 
@@ -1554,41 +1554,7 @@ has-props
 
 
 
-27809
-
-particle.c
-file
-
-
-
-
-2011-01-18T22:04:38.663021Z
-536be347cdeec7cf5f9f9b7580d10899
-2011-01-15T12:00:15.661673Z
-34330
-jhk
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-123432
+27823
 
 customdata_file.c
 file
@@ -1624,84 +1590,50 @@ has-props
 
 9573
 
+particle.c
+file
+
+
+
+
+2011-02-10T19:48:43.435667Z
+e828e2ae4643442e628b2f29d3585023
+2011-02-07T11:43:33.879146Z
+34687
+jhk
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+123205
+
 object.c
 file
 
 
 
 
-2011-01-18T22:04:38.663021Z
-fe8287b04f3b19b1f4aecaa69427f0af
-2011-01-18T15:02:58.302521Z
-34390
-kwk
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-73380
-
-nla.c
-file
-
-
-
-
-2011-01-18T22:04:38.673021Z
-b3247f4647787559a82985a53e70e0c5
-2011-01-12T01:36:12.599301Z
-34271
-aligorith
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-46586
-
-implicit.c
-file
-
-
-
-
-2011-01-18T22:04:38.673021Z
-bf0dc6238d9da1c4ad2f28fcefa2f22c
-2011-01-12T03:41:12.073182Z
-34273
+2011-02-10T19:48:43.435667Z
+9d978e01160b1452d83ab885a7a9a346
+2011-02-02T01:01:01.569210Z
+34617
 campbellbarton
 has-props
 
@@ -1724,7 +1656,7 @@ has-props
 
 
 
-54010
+73853
 
 suggestions.c
 file
@@ -1759,6 +1691,74 @@ has-props
 
 
 5973
+
+implicit.c
+file
+
+
+
+
+2011-02-10T19:48:43.435667Z
+15a9abac80bfbcedaaec08698913147d
+2011-01-22T03:50:09.669523Z
+34445
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+54054
+
+nla.c
+file
+
+
+
+
+2011-02-10T19:48:43.435667Z
+cdb43eaaf1cff1fe9bc62c5c62400802
+2011-01-19T23:05:02.167911Z
+34410
+aligorith
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+46610
 
 paint.c
 file
@@ -1828,40 +1828,6 @@ has-props
 
 12134
 
-depsgraph.c
-file
-
-
-
-
-2011-01-18T22:04:38.673021Z
-7d95d4e2777567a9297bc4256b58edb7
-2011-01-09T15:12:08.700922Z
-34198
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-66623
-
 booleanops_mesh.c
 file
 
@@ -1896,16 +1862,16 @@ has-props
 
 5915
 
-BME_mesh.c
+depsgraph.c
 file
 
 
 
 
-2011-01-18T22:04:38.673021Z
-9700c4d4f200262a72c4220351891b3e
-2010-03-22T09:30:00.354846Z
-27655
+2011-02-10T19:48:43.435667Z
+2473d25444f89e978f36d79dd17e236c
+2011-02-08T00:18:00.491445Z
+34705
 campbellbarton
 has-props
 
@@ -1928,7 +1894,7 @@ has-props
 
 
 
-8142
+67406
 
 screen.c
 file
@@ -1963,6 +1929,40 @@ has-props
 
 
 8598
+
+BME_mesh.c
+file
+
+
+
+
+2011-01-18T22:04:38.673021Z
+9700c4d4f200262a72c4220351891b3e
+2010-03-22T09:30:00.354846Z
+27655
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8142
 
 BME_eulers.c
 file
@@ -2004,11 +2004,11 @@ file
 
 
 
-2011-01-18T22:04:38.673021Z
-044f5c5f5c12f6d084a8cd2d75ac2a3c
-2011-01-07T18:36:47.041781Z
-34159
-campbellbarton
+2011-02-10T19:48:43.445667Z
+a92be1a4c46df3fc9691d4939abfb11b
+2011-02-04T16:10:30.323385Z
+34643
+nazgul
 has-props
 
 
@@ -2030,41 +2030,7 @@ has-props
 
 
 
-38682
-
-curve.c
-file
-
-
-
-
-2011-01-18T22:04:38.673021Z
-ff051b44badbd0d6908e607b0886c0d4
-2011-01-10T03:58:07.140950Z
-34218
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-73555
+38914
 
 property.c
 file
@@ -2099,6 +2065,40 @@ has-props
 
 
 6669
+
+curve.c
+file
+
+
+
+
+2011-01-18T22:04:38.673021Z
+ff051b44badbd0d6908e607b0886c0d4
+2011-01-10T03:58:07.140950Z
+34218
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+73555
 
 bmfont.c
 file
@@ -2140,11 +2140,11 @@ file
 
 
 
-2011-01-18T22:04:38.673021Z
-c893381355bf0cc8ab6dad2137a8088a
-2011-01-18T01:58:19.206348Z
-34380
-campbellbarton
+2011-02-10T19:48:43.445667Z
+7073e47f9091e2d0638d6876afe5beaa
+2011-02-09T01:16:11.161132Z
+34728
+aligorith
 has-props
 
 
@@ -2166,7 +2166,7 @@ has-props
 
 
 
-58422
+58958
 
 mball.c
 file
@@ -2242,11 +2242,11 @@ file
 
 
 
-2011-01-18T22:04:38.683021Z
-2de3f9683407919126ff544551d2f057
-2011-01-09T01:17:56.259376Z
-34183
-campbellbarton
+2011-02-10T19:48:43.445667Z
+6c8aba6f8a2891a84bf9a5862c9b5026
+2011-01-22T14:13:36.063033Z
+34452
+jhk
 has-props
 
 
@@ -2268,7 +2268,7 @@ has-props
 
 
 
-122161
+122232
 
 group.c
 file
@@ -2310,10 +2310,10 @@ file
 
 
 
-2011-01-18T22:04:38.683021Z
-e2a6097c4f4bb22b24d80310aef72313
-2011-01-14T21:06:28.223229Z
-34327
+2011-02-10T19:48:43.445667Z
+46fe2dc63e4cdef7006e16c7ddb3d402
+2011-02-07T05:05:41.950351Z
+34680
 campbellbarton
 has-props
 
@@ -2336,7 +2336,7 @@ has-props
 
 
 
-19868
+20084
 
 bmesh_private.h
 file
@@ -2548,11 +2548,11 @@ file
 
 
 
-2011-01-18T22:04:38.683021Z
-7255114422a5335c39efbc1393343ae0
-2011-01-07T18:36:47.041781Z
-34159
-campbellbarton
+2011-02-10T19:48:43.445667Z
+c92f8aca87309881f6b20c66bc74946a
+2011-01-28T00:59:42.151272Z
+34540
+jhk
 has-props
 
 
@@ -2574,7 +2574,7 @@ has-props
 
 
 
-5383
+5519
 
 pointcache.c
 file
@@ -2582,11 +2582,11 @@ file
 
 
 
-2011-01-18T22:04:38.683021Z
-e2330c30eaaf33d708ad9b04b7ea11e6
-2011-01-12T03:41:12.073182Z
-34273
-campbellbarton
+2011-02-10T19:48:43.445667Z
+e852b4d32b49f2ab3c7f9a5c67c1e056
+2011-01-25T17:08:43.112481Z
+34488
+jhk
 has-props
 
 
@@ -2608,7 +2608,7 @@ has-props
 
 
 
-83655
+83663
 
 writeffmpeg.c
 file
@@ -2650,11 +2650,11 @@ file
 
 
 
-2011-01-18T22:04:38.693021Z
-9b7f57ad169cb4838c2bb75c66e27cab
-2011-01-07T19:18:31.464706Z
-34160
-campbellbarton
+2011-02-10T19:48:43.445667Z
+e28edc092a6bb64082f8a22b38450855
+2011-02-05T13:19:14.142859Z
+34655
+blendix
 has-props
 
 
@@ -2676,7 +2676,7 @@ has-props
 
 
 
-73437
+73212
 
 sketch.c
 file
@@ -2786,10 +2786,10 @@ file
 
 
 
-2011-01-18T22:04:38.693021Z
-07aaa74d961da1dec0f6911366b02a2b
-2011-01-18T13:28:18.296919Z
-34387
+2011-02-10T19:48:43.445667Z
+e55df63dcf381c1fbca35f9e92d997b2
+2011-02-08T12:54:32.455710Z
+34717
 lukastoenne
 has-props
 
@@ -2812,7 +2812,7 @@ has-props
 
 
 
-92923
+94284
 
 lattice.c
 file
@@ -2990,10 +2990,10 @@ file
 
 
 
-2011-01-18T22:04:38.693021Z
-0072ab9dceef481cfabdbaadcbd7a404
-2011-01-07T19:18:31.464706Z
-34160
+2011-02-10T19:48:43.445667Z
+fc5e1c277a9dc099bcdc019bfec0d0e4
+2011-02-07T22:48:23.532584Z
+34701
 campbellbarton
 has-props
 
@@ -3016,5 +3016,5 @@ has-props
 
 
 
-27994
+29323
 

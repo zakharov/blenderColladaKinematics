@@ -1,15 +1,15 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern/audaspace
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-09T14:53:18.842857Z
-34195
-campbellbarton
+2011-02-03T13:25:05.050761Z
+34626
+nexyon
 
 
 
@@ -33,6 +33,9 @@ SDL
 dir
 
 sndfile
+dir
+
+SRC
 dir
 
 SConscript
@@ -69,10 +72,10 @@ has-props
 
 1502
 
-SRC
+intern
 dir
 
-intern
+ffmpeg
 dir
 
 COPYING.LESSER
@@ -109,10 +112,10 @@ nexyon
 
 7637
 
-ffmpeg
+fftw
 dir
 
-fftw
+jack
 dir
 
 COPYING
@@ -149,42 +152,8 @@ nexyon
 
 35147
 
-jack
+FX
 dir
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:07.833021Z
-2ff23b4c0a112772e6c327b29aef77c0
-2010-10-24T00:09:23.361957Z
-32672
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3427
 
 CMakeLists.txt
 file
@@ -192,10 +161,10 @@ file
 
 
 
-2011-01-18T22:04:07.833021Z
-8fb649ccf362b1361ef89be8029aef3c
-2010-12-22T23:09:30.468439Z
-33864
+2011-02-10T19:48:33.185667Z
+6b4d02b45792ead6dd598b407cb037f3
+2011-01-25T14:43:13.999734Z
+34486
 campbellbarton
 has-props
 
@@ -218,10 +187,7 @@ has-props
 
 
 
-5945
-
-FX
-dir
+5954
 
 OpenAL
 dir

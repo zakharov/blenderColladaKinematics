@@ -1,4 +1,4 @@
-﻿# ##### BEGIN GPL LICENSE BLOCK #####
+# ##### BEGIN GPL LICENSE BLOCK #####
 #
 #  This program is free software; you can redistribute it and/or
 #  modify it under the terms of the GNU General Public License
@@ -22,8 +22,8 @@ bl_info = {
     'version': (0,2),
     'blender': (2, 5, 3),
     'api': 32411,
-    'location': 'Add Curve menu',
-    'description': 'adds many types of curves',
+    'location': 'View3D > Add > Curve',
+    'description': 'Adds many different types of Curves',
     'warning': '', # used for warning icon and text in addons panel
     'wiki_url': 'http://wiki.blender.org/index.php/Extensions:2.5/Py/' \
         'Scripts/Curve/Curves_Galore',
@@ -603,7 +603,7 @@ def align_matrix(context):
     obj_align = context.user_preferences.edit.object_align
     if (context.space_data.type == 'VIEW_3D'
         and obj_align == 'VIEW'):
-        rot = context.space_data.region_3d.view_matrix.rotation_part().invert().resize4x4()
+        rot = context.space_data.region_3d.view_matrix.to_3x3().inverted().to_4x4()
     else:
         rot = Matrix()
     align_matrix = loc * rot
@@ -765,7 +765,7 @@ def main(context, self, align_matrix):
 
 class Curveaceous_galore(bpy.types.Operator):
     ''''''
-    bl_idname = "curveaceous_galore"
+    bl_idname = "mesh.curveaceous_galore"
     bl_label = "Curveaceous galore"
     bl_options = {'REGISTER', 'UNDO'}
     bl_description = "adds many types of curves"

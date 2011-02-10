@@ -3,7 +3,7 @@
  *
  * ID and Library types, which are fundamental for sdna,
  *
- * $Id: DNA_ID.h 34382 2011-01-18 04:08:01Z nicholasbishop $
+ * $Id: DNA_ID.h 34448 2011-01-22 04:40:15Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -127,11 +127,12 @@ typedef struct Library {
 #define PREVIEW_MIPMAP_LARGE 1
 
 typedef struct PreviewImage {
-	unsigned int w[PREVIEW_MIPMAPS];
-	unsigned int h[PREVIEW_MIPMAPS];	
-	short changed[PREVIEW_MIPMAPS];
-	short changed_timestamp[PREVIEW_MIPMAPS];
-	unsigned int * rect[PREVIEW_MIPMAPS];
+	/* All values of 2 are really PREVIEW_MIPMAPS */
+	unsigned int w[2];
+	unsigned int h[2];
+	short changed[2];
+	short changed_timestamp[2];
+	unsigned int * rect[2];
 } PreviewImage;
 
 /**

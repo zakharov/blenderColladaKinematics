@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/svnroot/bf-blender/!svn/ver/34160/trunk/blender/source/gameengine/Converter
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/gameengine/Converter
 END
 BL_DeformableGameObject.cpp
 K 25
@@ -55,13 +55,13 @@ BlenderWorldInfo.h
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svnroot/bf-blender/!svn/ver/31968/trunk/blender/source/gameengine/Converter/BlenderWorldInfo.h
+/svnroot/bf-blender/!svn/ver/34393/trunk/blender/source/gameengine/Converter/BlenderWorldInfo.h
 END
 BL_ModifierDeformer.h
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/svnroot/bf-blender/!svn/ver/31950/trunk/blender/source/gameengine/Converter/BL_ModifierDeformer.h
+/svnroot/bf-blender/!svn/ver/34469/trunk/blender/source/gameengine/Converter/BL_ModifierDeformer.h
 END
 BL_SkinDeformer.cpp
 K 25
@@ -93,17 +93,17 @@ svn:wc:ra_dav:version-url
 V 100
 /svnroot/bf-blender/!svn/ver/31950/trunk/blender/source/gameengine/Converter/KX_SoftBodyDeformer.cpp
 END
-KX_BlenderSceneConverter.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 105
-/svnroot/bf-blender/!svn/ver/33133/trunk/blender/source/gameengine/Converter/KX_BlenderSceneConverter.cpp
-END
 BL_ShapeActionActuator.h
 K 25
 svn:wc:ra_dav:version-url
 V 101
 /svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Converter/BL_ShapeActionActuator.h
+END
+KX_BlenderSceneConverter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/bf-blender/!svn/ver/33133/trunk/blender/source/gameengine/Converter/KX_BlenderSceneConverter.cpp
 END
 BL_ArmatureObject.h
 K 25
@@ -129,11 +129,11 @@ svn:wc:ra_dav:version-url
 V 91
 /svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/gameengine/Converter/CMakeLists.txt
 END
-Makefile
+BL_BlenderDataConversion.h
 K 25
 svn:wc:ra_dav:version-url
-V 85
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/gameengine/Converter/Makefile
+V 103
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/Converter/BL_BlenderDataConversion.h
 END
 BL_ActionActuator.cpp
 K 25
@@ -141,23 +141,17 @@ svn:wc:ra_dav:version-url
 V 98
 /svnroot/bf-blender/!svn/ver/34160/trunk/blender/source/gameengine/Converter/BL_ActionActuator.cpp
 END
-BL_BlenderDataConversion.h
+BL_ModifierDeformer.cpp
 K 25
 svn:wc:ra_dav:version-url
-V 103
-/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/Converter/BL_BlenderDataConversion.h
+V 100
+/svnroot/bf-blender/!svn/ver/34469/trunk/blender/source/gameengine/Converter/BL_ModifierDeformer.cpp
 END
 BlenderWorldInfo.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 97
-/svnroot/bf-blender/!svn/ver/31968/trunk/blender/source/gameengine/Converter/BlenderWorldInfo.cpp
-END
-BL_ModifierDeformer.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 100
-/svnroot/bf-blender/!svn/ver/34160/trunk/blender/source/gameengine/Converter/BL_ModifierDeformer.cpp
+/svnroot/bf-blender/!svn/ver/34393/trunk/blender/source/gameengine/Converter/BlenderWorldInfo.cpp
 END
 BL_MeshDeformer.h
 K 25
@@ -171,17 +165,17 @@ svn:wc:ra_dav:version-url
 V 102
 /svnroot/bf-blender/!svn/ver/32705/trunk/blender/source/gameengine/Converter/BL_DeformableGameObject.h
 END
-KX_ConvertProperties.h
-K 25
-svn:wc:ra_dav:version-url
-V 99
-/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/Converter/KX_ConvertProperties.h
-END
 KX_ConvertSensors.h
 K 25
 svn:wc:ra_dav:version-url
 V 96
 /svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/Converter/KX_ConvertSensors.h
+END
+KX_ConvertProperties.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/Converter/KX_ConvertProperties.h
 END
 BL_ArmatureActuator.h
 K 25
@@ -211,7 +205,7 @@ KX_ConvertControllers.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 102
-/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Converter/KX_ConvertControllers.cpp
+/svnroot/bf-blender/!svn/ver/34465/trunk/blender/source/gameengine/Converter/KX_ConvertControllers.cpp
 END
 BL_SkinDeformer.h
 K 25
@@ -265,7 +259,7 @@ BL_BlenderDataConversion.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 105
-/svnroot/bf-blender/!svn/ver/34160/trunk/blender/source/gameengine/Converter/BL_BlenderDataConversion.cpp
+/svnroot/bf-blender/!svn/ver/34469/trunk/blender/source/gameengine/Converter/BL_BlenderDataConversion.cpp
 END
 BL_MeshDeformer.cpp
 K 25

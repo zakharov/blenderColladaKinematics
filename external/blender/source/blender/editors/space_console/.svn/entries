@@ -1,15 +1,15 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/editors/space_console
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-08T17:47:34.361727Z
-34178
-ton
+2011-01-30T15:29:22.294392Z
+34567
+campbellbarton
 
 
 
@@ -195,40 +195,6 @@ has-props
 
 
 1250
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:52.343021Z
-2dd20b1f230e770034cd7ba7f42f6b96
-2010-08-10T21:22:26.642559Z
-31223
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1579
 
 space_console.c
 file

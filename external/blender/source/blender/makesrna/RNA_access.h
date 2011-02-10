@@ -1,5 +1,5 @@
 /**
- * $Id: RNA_access.h 34335 2011-01-15 16:14:57Z campbellbarton $
+ * $Id: RNA_access.h 34615 2011-02-01 23:53:54Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -617,10 +617,13 @@ int RNA_struct_idprops_register_check(StructRNA *type);
 
 
 PropertyRNA *RNA_struct_find_property(PointerRNA *ptr, const char *identifier);
-const struct ListBase *RNA_struct_defined_properties(StructRNA *srna);
+
+/* lower level functions for access to type properties */
+const struct ListBase *RNA_struct_type_properties(StructRNA *srna);
+PropertyRNA *RNA_struct_type_find_property(StructRNA *srna, const char *identifier);
 
 FunctionRNA *RNA_struct_find_function(PointerRNA *ptr, const char *identifier);
-const struct ListBase *RNA_struct_defined_functions(StructRNA *srna);
+const struct ListBase *RNA_struct_type_functions(StructRNA *srna);
 
 char *RNA_struct_name_get_alloc(PointerRNA *ptr, char *fixedbuf, int fixedlen);
 
@@ -747,8 +750,8 @@ int RNA_property_collection_type_get(PointerRNA *ptr, PropertyRNA *prop, Pointer
 
 /* efficient functions to set properties for arrays */
 int RNA_property_collection_raw_array(PointerRNA *ptr, PropertyRNA *prop, PropertyRNA *itemprop, RawArray *array);
-int RNA_property_collection_raw_get(struct ReportList *reports, PointerRNA *ptr, PropertyRNA *prop, char *propname, void *array, RawPropertyType type, int len);
-int RNA_property_collection_raw_set(struct ReportList *reports, PointerRNA *ptr, PropertyRNA *prop, char *propname, void *array, RawPropertyType type, int len);
+int RNA_property_collection_raw_get(struct ReportList *reports, PointerRNA *ptr, PropertyRNA *prop, const char *propname, void *array, RawPropertyType type, int len);
+int RNA_property_collection_raw_set(struct ReportList *reports, PointerRNA *ptr, PropertyRNA *prop, const char *propname, void *array, RawPropertyType type, int len);
 int RNA_raw_type_sizeof(RawPropertyType type);
 RawPropertyType RNA_property_raw_type(PropertyRNA *prop);
 

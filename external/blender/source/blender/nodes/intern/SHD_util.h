@@ -1,5 +1,5 @@
 /**
- * $Id: SHD_util.h 34160 2011-01-07 19:18:31Z campbellbarton $
+ * $Id: SHD_util.h 34682 2011-02-07 09:33:36Z lukastoenne $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -51,6 +51,7 @@
 #include "BKE_image.h"
 #include "BKE_main.h"
 #include "BKE_material.h"
+#include "BKE_node.h"
 #include "BKE_texture.h"
 
 #include "BKE_library.h"

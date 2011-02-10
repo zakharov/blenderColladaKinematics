@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 67
-/svnroot/bf-blender/!svn/ver/27639/trunk/blender/extern/lzo/minilzo
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/extern/lzo/minilzo
 END
 README.LZO
 K 25
@@ -44,10 +44,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 77
 /svnroot/bf-blender/!svn/ver/23425/trunk/blender/extern/lzo/minilzo/lzodefs.h
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 76
-/svnroot/bf-blender/!svn/ver/27639/trunk/blender/extern/lzo/minilzo/Makefile
 END

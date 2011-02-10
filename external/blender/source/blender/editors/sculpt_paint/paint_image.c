@@ -1,5 +1,5 @@
 /**
- * $Id: paint_image.c 34380 2011-01-18 01:58:19Z campbellbarton $
+ * $Id: paint_image.c 34680 2011-02-07 05:05:41Z campbellbarton $
  * imagepaint.c
  *
  * Functions to paint images in 2D and 3D.
@@ -5452,10 +5452,10 @@ static int texture_paint_camera_project_exec(bContext *C, wmOperator *op)
 	idgroup= IDP_GetProperties(&image->id, 0);
 
 	if(idgroup) {
-		view_data= IDP_GetPropertyFromGroup(idgroup, PROJ_VIEW_DATA_ID);
+		view_data= IDP_GetPropertyTypeFromGroup(idgroup, PROJ_VIEW_DATA_ID, IDP_ARRAY);
 
 		/* type check to make sure its ok */
-		if(view_data->len != PROJ_VIEW_DATA_SIZE || view_data->type != IDP_ARRAY || view_data->subtype != IDP_FLOAT) {
+		if(view_data->len != PROJ_VIEW_DATA_SIZE || view_data->subtype != IDP_FLOAT) {
 			BKE_report(op->reports, RPT_ERROR, "Image project data invalid.");
 			return OPERATOR_CANCELLED;
 		}

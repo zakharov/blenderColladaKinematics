@@ -3,7 +3,7 @@
  *	
  * Blender util stuff?
  *
- * $Id: BKE_blender.h 34287 2011-01-12 18:00:23Z ton $ 
+ * $Id: BKE_blender.h 34655 2011-02-05 13:19:14Z blendix $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -45,7 +45,7 @@ struct Scene;
 struct Main;
 
 #define BLENDER_VERSION			256
-#define BLENDER_SUBVERSION		0
+#define BLENDER_SUBVERSION		1
 
 #define BLENDER_MINVERSION		250
 #define BLENDER_MINSUBVERSION	0

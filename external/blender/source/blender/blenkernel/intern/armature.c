@@ -1,5 +1,5 @@
 /**
- * $Id: armature.c 34160 2011-01-07 19:18:31Z campbellbarton $
+ * $Id: armature.c 34655 2011-02-05 13:19:14Z blendix $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -1400,13 +1400,6 @@ void where_is_armature_bone(Bone *bone, Bone *prevbone)
 		copy_m4_m3(bone->arm_mat, bone->bone_mat);
 		VECCOPY(bone->arm_mat[3], bone->head);
 	}
-	
-	/* head */
-	VECCOPY(bone->arm_head, bone->arm_mat[3]);
-	/* tail is in current local coord system */
-	VECCOPY(vec, bone->arm_mat[1]);
-	mul_v3_fl(vec, bone->length);
-	add_v3_v3v3(bone->arm_tail, bone->arm_head, vec);
 	
 	/* and the kiddies */
 	prevbone= bone;

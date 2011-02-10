@@ -1,23 +1,23 @@
 K 25
 svn:wc:ra_dav:version-url
 V 66
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/build_files/cmake
+/svnroot/bf-blender/!svn/ver/34636/trunk/blender/build_files/cmake
 END
 cmake_qtcreator_project.py
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/33722/trunk/blender/build_files/cmake/cmake_qtcreator_project.py
+/svnroot/bf-blender/!svn/ver/34636/trunk/blender/build_files/cmake/cmake_qtcreator_project.py
 END
 macros.cmake
 K 25
 svn:wc:ra_dav:version-url
 V 79
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/build_files/cmake/macros.cmake
+/svnroot/bf-blender/!svn/ver/34494/trunk/blender/build_files/cmake/macros.cmake
 END
 cmake_consistency_check.py
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/33721/trunk/blender/build_files/cmake/cmake_consistency_check.py
+/svnroot/bf-blender/!svn/ver/34636/trunk/blender/build_files/cmake/cmake_consistency_check.py
 END

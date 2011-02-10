@@ -1,5 +1,5 @@
 /**
- * $Id: logic_window.c 34290 2011-01-13 04:53:55Z campbellbarton $
+ * $Id: logic_window.c 34701 2011-02-07 22:48:23Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -47,6 +47,7 @@
 #include "BLI_blenlib.h"
 #include "BLI_utildefines.h"
 
+#include "BKE_action.h"
 #include "BKE_context.h"
 #include "BKE_global.h"
 #include "BKE_library.h"
@@ -1079,6 +1080,20 @@ static void draw_default_sensor_header(bSensor *sens,
 			 "Invert the level (output) of this sensor");
 }
 
+static void get_armature_bone_constraint(Object *ob, const char *posechannel, const char *constraint_name, bConstraint **constraint)
+{
+	/* check that bone exist in the active object */
+	if (ob->type == OB_ARMATURE && ob->pose) {
+		bPoseChannel *pchan= get_pose_channel(ob->pose, posechannel);
+		if(pchan) {
+			bConstraint *con= BLI_findstring(&pchan->constraints, constraint_name, offsetof(bConstraint, name));
+			if(con) {
+				*constraint= con;
+			}
+		}
+	}
+	/* didn't find any */
+}
 static void check_armature_bone_constraint(Object *ob, char *posechannel, char *constraint)
 {
 	/* check that bone exist in the active object */
@@ -3263,7 +3278,8 @@ static void draw_sensor_armature(uiLayout *layout, PointerRNA *ptr)
 	}
 	row = uiLayoutRow(layout, 1);
 	uiItemR(row, ptr, "test_type", 0, NULL, ICON_NULL);
-	uiItemR(row, ptr, "value", 0, NULL, ICON_NULL);
+	if (RNA_enum_get(ptr, "test_type") != SENS_ARM_STATE_CHANGED)
+		uiItemR(row, ptr, "value", 0, NULL, ICON_NULL);
 }
 
 static void draw_sensor_collision(uiLayout *layout, PointerRNA *ptr, bContext *C)
@@ -3691,6 +3707,7 @@ static void draw_actuator_armature(uiLayout *layout, PointerRNA *ptr)
 	bActuator *act = (bActuator*)ptr->data;
 	bArmatureActuator *aa = (bArmatureActuator *) act->data;
 	Object *ob = (Object *)ptr->id.data;
+	bConstraint *constraint = NULL;
 	PointerRNA pose_ptr, pchan_ptr;
 	PropertyRNA *bones_prop = NULL;
 
@@ -3728,7 +3745,12 @@ static void draw_actuator_armature(uiLayout *layout, PointerRNA *ptr)
 			}
 
 			uiItemR(layout, ptr, "target", 0, NULL, ICON_NULL);
-			uiItemR(layout, ptr, "secondary_target", 0, NULL, ICON_NULL);
+
+			/* show second target only if the constraint supports it */
+			get_armature_bone_constraint(ob, aa->posechannel, aa->constraint, &constraint);
+			if (constraint && constraint->type == CONSTRAINT_TYPE_KINEMATIC) {
+				uiItemR(layout, ptr, "secondary_target", 0, NULL, ICON_NULL);
+			}
 			break;
 		case ACT_ARM_SETWEIGHT:
 			if (ob->pose) {
@@ -3752,7 +3774,7 @@ static void draw_actuator_camera(uiLayout *layout, PointerRNA *ptr)
 	uiItemR(row, ptr, "height", 0, NULL, ICON_NULL);
 	uiItemR(row, ptr, "axis", 0, NULL, ICON_NULL);
 
-	row = uiLayoutRow(layout, 0);
+	row = uiLayoutRow(layout, 1);
 	uiItemR(row, ptr, "min", 0, NULL, ICON_NULL);
 	uiItemR(row, ptr, "max", 0, NULL, ICON_NULL);
 }
@@ -3813,7 +3835,7 @@ static void draw_actuator_constraint(uiLayout *layout, PointerRNA *ptr, bContext
 			break;
 
 		case ACT_CONST_TYPE_ORI:
-			uiItemR(layout, ptr, "direction_axis", 0, NULL, ICON_NULL);
+			uiItemR(layout, ptr, "direction_axis_pos", 0, NULL, ICON_NULL);
 
 			row=uiLayoutRow(layout, 1);
 			uiItemR(row, ptr, "damping", UI_ITEM_R_SLIDER , NULL, ICON_NULL);
@@ -4096,14 +4118,19 @@ static void draw_actuator_motion(uiLayout *layout, PointerRNA *ptr)
 
 static void draw_actuator_parent(uiLayout *layout, PointerRNA *ptr)
 {
-	uiLayout *row;
+	uiLayout *row, *subrow;
 
 	uiItemR(layout, ptr, "mode", 0, NULL, ICON_NULL);
-	uiItemR(layout, ptr, "object", 0, NULL, ICON_NULL);
 
-	row = uiLayoutRow(layout, 0);
-	uiItemR(row, ptr, "use_compound", 0, NULL, ICON_NULL);
-	uiItemR(row, ptr, "use_ghost", 0, NULL, ICON_NULL);
+	if (RNA_enum_get(ptr, "mode") == ACT_PARENT_SET) {
+		uiItemR(layout, ptr, "object", 0, NULL, ICON_NULL);
+
+		row = uiLayoutRow(layout, 0);
+		uiItemR(row, ptr, "use_compound", 0, NULL, ICON_NULL);
+		subrow= uiLayoutRow(row, 0);
+		uiLayoutSetActive(subrow, RNA_boolean_get(ptr, "use_compound")==1);
+		uiItemR(subrow, ptr, "use_ghost", 0, NULL, ICON_NULL);
+	}
 }
 
 static void draw_actuator_property(uiLayout *layout, PointerRNA *ptr)

@@ -215,7 +215,7 @@ def clientSendJobBlender(conn, scene, anim = False):
     for object in bpy.data.objects:
         for modifier in object.modifiers:
             if modifier.type == 'FLUID_SIMULATION' and modifier.settings.type == "DOMAIN":
-                addFluidFiles(job, bpy.path.abspath(modifier.settings.path))
+                addFluidFiles(job, bpy.path.abspath(modifier.settings.filepath))
             elif modifier.type == "CLOTH":
                 addPointCache(job, object, modifier.point_cache, default_path)
             elif modifier.type == "SOFT_BODY":
@@ -261,7 +261,7 @@ def requestResult(conn, job_id, frame):
 class NetworkRenderEngine(bpy.types.RenderEngine):
     bl_idname = 'NET_RENDER'
     bl_label = "Network Render"
-    bl_postprocess = False
+    bl_use_postprocess = False
     def render(self, scene):
         if scene.network_render.mode == "RENDER_CLIENT":
             self.render_client(scene)
@@ -365,7 +365,6 @@ def compatible(module):
         except:	pass
     del module
 
-#compatible("properties_render")
 compatible("properties_world")
 compatible("properties_material")
 compatible("properties_data_mesh")

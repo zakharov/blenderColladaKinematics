@@ -1,5 +1,5 @@
 /**
- * $Id: idprop.c 34327 2011-01-14 21:06:28Z campbellbarton $
+ * $Id: idprop.c 34680 2011-02-07 05:05:41Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -533,6 +533,12 @@ void IDP_RemFromGroup(IDProperty *group, IDProperty *prop)
 IDProperty *IDP_GetPropertyFromGroup(IDProperty *prop, const char *name)
 {
 	return (IDProperty *)BLI_findstring(&prop->data.group, name, offsetof(IDProperty, name));
+}
+
+IDProperty *IDP_GetPropertyTypeFromGroup(IDProperty *prop, const char *name, const char type)
+{
+	IDProperty *idprop= IDP_GetPropertyFromGroup(prop, name);
+	return (idprop && idprop->type == type) ? idprop : NULL;
 }
 
 typedef struct IDPIter {

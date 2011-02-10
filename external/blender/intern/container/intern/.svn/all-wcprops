@@ -1,17 +1,11 @@
 K 25
 svn:wc:ra_dav:version-url
 V 72
-/svnroot/bf-blender/!svn/ver/28254/trunk/blender/intern/container/intern
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/intern/container/intern
 END
 CTR_List.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 85
 /svnroot/bf-blender/!svn/ver/28254/trunk/blender/intern/container/intern/CTR_List.cpp
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 81
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/container/intern/Makefile
 END

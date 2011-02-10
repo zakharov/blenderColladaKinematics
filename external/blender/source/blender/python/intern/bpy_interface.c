@@ -1,5 +1,5 @@
 /**
- * $Id: bpy_interface.c 34198 2011-01-09 15:12:08Z campbellbarton $
+ * $Id: bpy_interface.c 34711 2011-02-08 06:22:06Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -62,8 +62,7 @@
 static int py_call_level= 0;
 BPy_StructRNA *bpy_context_module= NULL; /* for fast access */
 
-// only for tests
-#define TIME_PY_RUN
+// #define TIME_PY_RUN // simple python tests. prints on exit.
 
 #ifdef TIME_PY_RUN
 #include "PIL_time.h"
@@ -231,6 +230,11 @@ void BPY_python_start( int argc, char **argv )
 
 	BPY_python_start_path(); /* allow to use our own included python */
 
+	/* Python 3.2 now looks for '2.56/python/include/python3.2d/pyconfig.h' to parse
+	 * from the 'sysconfig' module which is used by 'site', so for now disable site.
+	 * alternatively we could copy the file. */
+	Py_NoSiteFlag= 1;
+
 	Py_Initialize(  );
 	
 	// PySys_SetArgv( argc, argv); // broken in py3, not a huge deal
@@ -314,8 +318,22 @@ void BPY_python_end(void)
 
 }
 
+/* super annoying, undo _PyModule_Clear(), bug [#23871] */
+#define PYMODULE_CLEAR_WORKAROUND
+
+#ifdef PYMODULE_CLEAR_WORKAROUND
+/* bad!, we should never do this, but currently only safe way I could find to keep namespace.
+ * from being cleared. - campbell */
+typedef struct {
+	PyObject_HEAD
+	PyObject *md_dict;
+	/* ommit other values, we only want the dict. */
+} PyModuleObject;
+#endif
+
 static int python_script_exec(bContext *C, const char *fn, struct Text *text, struct ReportList *reports)
 {
+	PyObject *main_mod= NULL;
 	PyObject *py_dict= NULL, *py_result= NULL;
 	PyGILState_STATE gilstate;
 
@@ -326,6 +344,8 @@ static int python_script_exec(bContext *C, const char *fn, struct Text *text, st
 	}
 
 	bpy_context_set(C, &gilstate);
+
+	PyC_MainModule_Backup(&main_mod);
 
 	if (text) {
 		char fn_dummy[FILE_MAXDIR];
@@ -390,24 +410,20 @@ static int python_script_exec(bContext *C, const char *fn, struct Text *text, st
 		Py_DECREF( py_result );
 	}
 
-/* super annoying, undo _PyModule_Clear() */
-#define PYMODULE_CLEAR_WORKAROUND
-
 	if(py_dict) {
 #ifdef PYMODULE_CLEAR_WORKAROUND
-		PyObject *py_dict_back= PyDict_Copy(py_dict);
-		Py_INCREF(py_dict);
+		PyModuleObject *mmod= (PyModuleObject *)PyDict_GetItemString(PyThreadState_GET()->interp->modules, "__main__");
+		PyObject *dict_back = mmod->md_dict;
+		/* freeing the module will clear the namespace,
+		 * gives problems running classes defined in this namespace being used later. */
+		mmod->md_dict= NULL;
+		Py_DECREF(dict_back);
 #endif
-		/* normal */
-		PyDict_SetItemString(PyThreadState_GET()->interp->modules, "__main__", Py_None);
-#ifdef PYMODULE_CLEAR_WORKAROUND
-		PyDict_Clear(py_dict);
-		PyDict_Update(py_dict, py_dict_back);
-		Py_DECREF(py_dict);
-		Py_DECREF(py_dict_back);
-#endif
+
 #undef PYMODULE_CLEAR_WORKAROUND
 	}
+
+	PyC_MainModule_Restore(main_mod);
 
 	bpy_context_clear(C, &gilstate);
 
@@ -438,6 +454,7 @@ int BPY_button_exec(bContext *C, const char *expr, double *value)
 	PyGILState_STATE gilstate;
 	PyObject *py_dict, *mod, *retval;
 	int error_ret = 0;
+	PyObject *main_mod= NULL;
 	
 	if (!value || !expr) return -1;
 
@@ -447,7 +464,9 @@ int BPY_button_exec(bContext *C, const char *expr, double *value)
 	}
 
 	bpy_context_set(C, &gilstate);
-	
+
+	PyC_MainModule_Backup(&main_mod);
+
 	py_dict= PyC_DefaultNameSpace("<blender button>");
 
 	mod = PyImport_ImportModule("math");
@@ -498,7 +517,7 @@ int BPY_button_exec(bContext *C, const char *expr, double *value)
 		BPy_errors_to_report(CTX_wm_reports(C));
 	}
 
-	PyDict_SetItemString(PyThreadState_GET()->interp->modules, "__main__", Py_None);
+	PyC_MainModule_Backup(&main_mod);
 	
 	bpy_context_clear(C, &gilstate);
 	
@@ -508,6 +527,7 @@ int BPY_button_exec(bContext *C, const char *expr, double *value)
 int BPY_string_exec(bContext *C, const char *expr)
 {
 	PyGILState_STATE gilstate;
+	PyObject *main_mod= NULL;
 	PyObject *py_dict, *retval;
 	int error_ret = 0;
 
@@ -518,6 +538,8 @@ int BPY_string_exec(bContext *C, const char *expr)
 	}
 
 	bpy_context_set(C, &gilstate);
+
+	PyC_MainModule_Backup(&main_mod);
 
 	py_dict= PyC_DefaultNameSpace("<blender string>");
 
@@ -532,8 +554,8 @@ int BPY_string_exec(bContext *C, const char *expr)
 		Py_DECREF(retval);
 	}
 
-	PyDict_SetItemString(PyThreadState_GET()->interp->modules, "__main__", Py_None);
-	
+	PyC_MainModule_Restore(main_mod);
+
 	bpy_context_clear(C, &gilstate);
 	
 	return error_ret;

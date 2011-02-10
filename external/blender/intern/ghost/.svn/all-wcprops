@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 61
-/svnroot/bf-blender/!svn/ver/34391/trunk/blender/intern/ghost
+/svnroot/bf-blender/!svn/ver/34701/trunk/blender/intern/ghost
 END
 GHOST_IEventConsumer.h
 K 25
@@ -67,13 +67,7 @@ CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/svnroot/bf-blender/!svn/ver/34096/trunk/blender/intern/ghost/CMakeLists.txt
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 70
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/ghost/Makefile
+/svnroot/bf-blender/!svn/ver/34501/trunk/blender/intern/ghost/CMakeLists.txt
 END
 GHOST_Types.h
 K 25

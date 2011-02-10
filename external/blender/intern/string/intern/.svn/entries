@@ -1,14 +1,14 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern/string/intern
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2010-07-20T10:41:08.422832Z
-30526
+2011-01-30T15:29:22.294392Z
+34567
 campbellbarton
 
 
@@ -59,38 +59,4 @@ has-props
 
 
 14333
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:10.473021Z
-3b4a87f3ec61b8411cc6ce09936588f3
-2008-01-07T19:13:47.953844Z
-13161
-hos
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1156
 

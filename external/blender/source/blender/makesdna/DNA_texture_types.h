@@ -1,7 +1,7 @@
 /**
  * blenlib/DNA_texture_types.h (mar-2001 nzc)
  *
- * $Id: DNA_texture_types.h 34157 2011-01-07 16:55:56Z blendix $ 
+ * $Id: DNA_texture_types.h 34548 2011-01-29 11:56:11Z lmg $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -454,7 +454,11 @@ typedef struct TexMapping {
 #define MTEX_VIEWSPACE		16
 #define MTEX_DUPLI_MAPTO	32
 #define MTEX_OB_DUPLI_ORIG	64
-#define MTEX_NEW_BUMP		128
+#define MTEX_COMPAT_BUMP	128
+#define MTEX_3TAP_BUMP		256
+#define MTEX_5TAP_BUMP		512
+#define MTEX_BUMP_OBJECTSPACE	1024
+#define MTEX_BUMP_TEXTURESPACE	2048
 
 /* blendtype */
 #define MTEX_BLEND		0

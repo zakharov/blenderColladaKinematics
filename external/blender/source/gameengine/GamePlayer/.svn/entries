@@ -1,15 +1,15 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/gameengine/GamePlayer
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-05T01:34:33.335758Z
-34079
-moguri
+2011-01-30T15:29:22.294392Z
+34567
+campbellbarton
 
 
 
@@ -102,38 +102,4 @@ has-props
 
 
 1123
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:26.383021Z
-13abf381618bea781a3b686f55b81390
-2010-08-10T21:22:26.642559Z
-31223
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1555
 

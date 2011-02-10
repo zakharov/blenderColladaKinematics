@@ -1,5 +1,5 @@
 /*
-* $Id: MOD_hook.c 34160 2011-01-07 19:18:31Z campbellbarton $
+* $Id: MOD_hook.c 34587 2011-01-31 20:02:51Z nazgul $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -284,6 +284,7 @@ ModifierTypeInfo modifierType_Hook = {
 							| eModifierTypeFlag_SupportsEditmode,
 	/* copyData */          copyData,
 	/* deformVerts */       deformVerts,
+	/* deformMatrices */    0,
 	/* deformVertsEM */     deformVertsEM,
 	/* deformMatricesEM */  0,
 	/* applyModifier */     0,

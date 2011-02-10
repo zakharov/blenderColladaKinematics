@@ -99,7 +99,10 @@ class TEXTURE_PT_context_texture(TextureButtonsPanel, bpy.types.Panel):
         if not isinstance(pin_id, bpy.types.Material):
             pin_id = None
 
-        tex_collection = (pin_id is None) and (node is None) and (not isinstance(idblock, bpy.types.Brush))
+        if not space.use_pin_id:
+            layout.prop(space, "texture_context", expand=True)
+
+        tex_collection = (not space.use_pin_id) and (node is None) and (not isinstance(idblock, bpy.types.Brush))
 
         if tex_collection:
             row = layout.row()
@@ -125,9 +128,6 @@ class TEXTURE_PT_context_texture(TextureButtonsPanel, bpy.types.Panel):
             col.template_ID(space, "pin_id")
 
         col = split.column()
-
-        if not space.pin_id:
-            col.prop(space, "show_brush_texture", text="Brush", toggle=True)
 
         if tex:
             split = layout.split(percentage=0.2)
@@ -994,17 +994,27 @@ class TEXTURE_PT_influence(TextureSlotPanel, bpy.types.Panel):
         # color is used on grayscale textures even when use_rgb_to_intensity is disabled.
         col.prop(tex, "color", text="")
 
-        if isinstance(idblock, bpy.types.Material):
-            sub = layout.row()
-            sub.prop(tex, "bump_method", text="Bump Method")
-            sub.active = tex.use_map_normal
-
         col = split.column()
         col.prop(tex, "invert", text="Negative")
         col.prop(tex, "use_stencil")
 
         if isinstance(idblock, bpy.types.Material) or isinstance(idblock, bpy.types.World):
             col.prop(tex, "default_value", text="DVar", slider=True)
+
+        if isinstance(idblock, bpy.types.Material):
+            row = layout.row()
+            row.label(text="Bump Mapping:")
+
+            row = layout.row()
+            # only show bump settings if activated but not for normalmap images
+            row.active = tex.use_map_normal and not (tex.texture.type == 'IMAGE' and tex.texture.use_normal_map)
+
+            col = row.column()
+            col.prop(tex, "bump_method", text="Method")
+
+            col = row.column()
+            col.prop(tex, "bump_objectspace", text="Space")
+            col.active = tex.bump_method in ('BUMP_DEFAULT', 'BUMP_BEST_QUALITY')
 
 
 class TEXTURE_PT_custom_props(TextureButtonsPanel, PropertyPanel, bpy.types.Panel):

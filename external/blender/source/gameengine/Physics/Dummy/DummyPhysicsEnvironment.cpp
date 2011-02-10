@@ -1,5 +1,5 @@
 /**
- * $Id: DummyPhysicsEnvironment.cpp 28254 2010-04-18 10:28:37Z campbellbarton $
+ * $Id: DummyPhysicsEnvironment.cpp 34520 2011-01-27 00:02:25Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,9 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+#include <stddef.h>
+
 #include "DummyPhysicsEnvironment.h"
 #include "PHY_IMotionState.h"
 

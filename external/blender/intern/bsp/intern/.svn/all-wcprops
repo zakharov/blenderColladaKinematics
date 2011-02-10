@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 66
-/svnroot/bf-blender/!svn/ver/28254/trunk/blender/intern/bsp/intern
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/intern/bsp/intern
 END
 BSP_MeshPrimitives.h
 K 25
@@ -32,12 +32,6 @@ K 25
 svn:wc:ra_dav:version-url
 V 89
 /svnroot/bf-blender/!svn/ver/28254/trunk/blender/intern/bsp/intern/BSP_MeshPrimitives.cpp
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 75
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/bsp/intern/Makefile
 END
 BSP_CSGMesh.cpp
 K 25

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 83
-/svnroot/bf-blender/!svn/ver/34160/trunk/blender/source/blender/editors/space_sound
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/blender/editors/space_sound
 END
 sound_header.c
 K 25
@@ -26,12 +26,6 @@ K 25
 svn:wc:ra_dav:version-url
 V 98
 /svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/editors/space_sound/CMakeLists.txt
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 92
-/svnroot/bf-blender/!svn/ver/31388/trunk/blender/source/blender/editors/space_sound/Makefile
 END
 sound_intern.h
 K 25

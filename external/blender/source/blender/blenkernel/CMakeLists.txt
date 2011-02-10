@@ -1,4 +1,4 @@
-# $Id: CMakeLists.txt 34159 2011-01-07 18:36:47Z campbellbarton $
+# $Id: CMakeLists.txt 34733 2011-02-09 02:28:11Z campbellbarton $
 # ***** BEGIN GPL LICENSE BLOCK *****
 #
 # This program is free software; you can redistribute it and/or
@@ -49,7 +49,7 @@ set(INC
 	../../../intern/opennl/extern
 	../../../intern/smoke/extern
     ../../../source/blender/windowmanager # XXX - BAD LEVEL CALL WM_api.h
-	${ZLIB_INC}
+	${ZLIB_INCLUDE_DIRS}
 )
 
 set(SRC
@@ -105,6 +105,7 @@ set(SRC
 	intern/material.c
 	intern/mball.c
 	intern/mesh.c
+	intern/mesh_validate.c
 	intern/modifier.c
 	intern/multires.c
 	intern/nla.c
@@ -273,7 +274,7 @@ if(WITH_LCMS)
 endif()
 
 if(WITH_PYTHON)
-	list(APPEND INC ../python ${PYTHON_INC})
+	list(APPEND INC ../python ${PYTHON_INCLUDE_DIRS})
 	add_definitions(-DWITH_PYTHON)
 endif()
 

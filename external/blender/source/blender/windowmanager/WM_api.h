@@ -1,5 +1,5 @@
 /**
- * $Id: WM_api.h 34067 2011-01-04 14:59:55Z ton $
+ * $Id: WM_api.h 34396 2011-01-19 09:13:24Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -81,7 +81,8 @@ void		WM_window_open_temp	(struct bContext *C, struct rcti *position, int type);
 
 
 			/* files */
-int			WM_read_homefile	(struct bContext *C, struct wmOperator *op);
+int			WM_read_homefile_exec(struct bContext *C, struct wmOperator *op);
+int			WM_read_homefile	(struct bContext *C, struct ReportList *reports, short from_memory);
 int			WM_write_homefile	(struct bContext *C, struct wmOperator *op);
 void		WM_read_file		(struct bContext *C, const char *name, struct ReportList *reports);
 int			WM_write_file		(struct bContext *C, const char *target, int fileflags, struct ReportList *reports, int copy);

@@ -1,5 +1,5 @@
 /**
- * $Id: RNA_enum_types.h 34335 2011-01-15 16:14:57Z campbellbarton $
+ * $Id: RNA_enum_types.h 34717 2011-02-08 12:54:32Z lukastoenne $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -95,6 +95,11 @@ extern EnumPropertyItem property_type_items[];
 extern EnumPropertyItem property_unit_items[];
 
 extern EnumPropertyItem viewport_shade_items[];
+
+extern EnumPropertyItem node_blend_type_items[];
+extern EnumPropertyItem node_math_items[];
+extern EnumPropertyItem node_vec_math_items[];
+extern EnumPropertyItem node_filter_items[];
 
 struct bContext;
 struct PointerRNA;

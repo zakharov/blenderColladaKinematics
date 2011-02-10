@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 67
-/svnroot/bf-blender/!svn/ver/34347/trunk/blender/extern/bullet2/src
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/extern/bullet2/src
 END
 Bullet-C-Api.h
 K 25
@@ -32,10 +32,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 93
 /svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/btBulletCollisionCommon.h
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 76
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/Makefile
 END

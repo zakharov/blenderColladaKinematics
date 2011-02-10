@@ -1,15 +1,15 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/render/intern/source
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-11T18:40:44.644246Z
-34263
-ton
+2011-02-09T01:21:03.092559Z
+34729
+mfoxdogg
 
 
 
@@ -60,17 +60,51 @@ has-props
 
 45977
 
+render_texture.c
+file
+
+
+
+
+2011-02-10T19:48:40.445667Z
+ef54137661d9903d9c17d6e9e567cf20
+2011-02-07T21:55:54.387973Z
+34699
+lmg
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+97056
+
 rayshade.c
 file
 
 
 
 
-2011-01-18T22:04:33.053021Z
-898fb6239297e7f41a31febb2ecfca01
-2011-01-11T18:40:44.644246Z
-34263
-ton
+2011-02-10T19:48:40.455667Z
+bc56747f500f4dd06426343d228c56fd
+2011-02-05T17:54:00.739736Z
+34661
+blendix
 has-props
 
 
@@ -92,41 +126,7 @@ has-props
 
 
 
-66749
-
-texture.c
-file
-
-
-
-
-2011-01-18T22:04:33.053021Z
-d7cf1de750b55a3fbcc367b132cca18a
-2011-01-07T19:18:31.464706Z
-34160
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-88386
+67128
 
 volume_precache.c
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-01-18T22:04:33.053021Z
-0b3cae5ad3f89bff0cca52b67aec299a
-2011-01-07T18:36:47.041781Z
-34159
-campbellbarton
+2011-02-10T19:48:40.455667Z
+4e374f772621d49332a9f6b787dc2838
+2011-02-05T13:41:29.872623Z
+34656
+blendix
 has-props
 
 
@@ -160,41 +160,7 @@ has-props
 
 
 
-22633
-
-initrender.c
-file
-
-
-
-
-2011-01-18T22:04:33.053021Z
-ddd27d7fcec9edfb3e12f518265a3a6a
-2011-01-07T19:18:31.464706Z
-34160
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-13043
+22655
 
 imagetexture.c
 file
@@ -230,48 +196,14 @@ has-props
 
 50973
 
-renderdatabase.c
+initrender.c
 file
 
 
 
 
 2011-01-18T22:04:33.053021Z
-22b9ada28bee39794fcdc411e4bd46d1
-2011-01-11T07:40:31.650041Z
-34250
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-35723
-
-shadeinput.c
-file
-
-
-
-
-2011-01-18T22:04:33.053021Z
-472ad545153e4c48589f82df25bdcd08
+ddd27d7fcec9edfb3e12f518265a3a6a
 2011-01-07T19:18:31.464706Z
 34160
 campbellbarton
@@ -296,19 +228,19 @@ has-props
 
 
 
-38313
+13043
 
-pipeline.c
+shadeinput.c
 file
 
 
 
 
-2011-01-18T22:04:33.063021Z
-47e3efa97ae58862f66b398d058621f7
-2011-01-07T18:36:47.041781Z
-34159
-campbellbarton
+2011-02-10T19:48:40.455667Z
+00864546a94f2a73d88c02c59c523ce6
+2011-02-09T01:21:03.092559Z
+34729
+mfoxdogg
 has-props
 
 
@@ -330,7 +262,75 @@ has-props
 
 
 
-89608
+38149
+
+renderdatabase.c
+file
+
+
+
+
+2011-02-10T19:48:40.455667Z
+b6adb3fb6142c54a1ea6bf6b0e1fb24d
+2011-02-05T13:41:29.872623Z
+34656
+blendix
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+35714
+
+shadeoutput.c
+file
+
+
+
+
+2011-02-10T19:48:40.455667Z
+1e6af4c7046a9b404d0419954ce8de85
+2011-02-03T16:31:03.647561Z
+34628
+ton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+49173
 
 gammaCorrectionTables.c
 file
@@ -366,16 +366,16 @@ has-props
 
 5145
 
-shadeoutput.c
+pipeline.c
 file
 
 
 
 
-2011-01-18T22:04:33.053021Z
-acbe6be69b257a5c0d91970f166c8df4
-2011-01-07T19:18:31.464706Z
-34160
+2011-02-10T19:48:40.455667Z
+0026302a7ce1f9f3a2dbd4b055d38120
+2011-02-08T10:31:47.192085Z
+34715
 campbellbarton
 has-props
 
@@ -398,41 +398,7 @@ has-props
 
 
 
-49183
-
-rayobject_instance.c
-file
-
-
-
-
-2011-01-18T22:04:33.063021Z
-ee0bd236472712b7054e9a467955e984
-2011-01-07T19:18:31.464706Z
-34160
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5833
+89647
 
 zbuf.c
 file
@@ -467,40 +433,6 @@ has-props
 
 
 105060
-
-rayobject_blibvh.c
-file
-
-
-
-
-2011-01-18T22:04:33.063021Z
-b691a9463b0cd19cd9db10f1f379753d
-2011-01-07T19:18:31.464706Z
-34160
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4417
 
 sss.c
 file
@@ -542,11 +474,11 @@ file
 
 
 
-2011-01-18T22:04:33.063021Z
-9c1a8bc93c857bb00639599e4ba77e2f
-2011-01-07T19:18:31.464706Z
-34160
-campbellbarton
+2011-02-10T19:48:40.455667Z
+da9d81b566198a18a2f28913519fe07b
+2011-02-07T18:09:27.521949Z
+34696
+ton
 has-props
 
 
@@ -568,7 +500,7 @@ has-props
 
 
 
-155918
+156619
 
 shadbuf.c
 file
@@ -637,40 +569,6 @@ has-props
 
 
 15612
-
-rayobject_octree.c
-file
-
-
-
-
-2011-01-18T22:04:33.063021Z
-3efff855cc97a1f05f98f854c81a1ee9
-2011-01-07T19:18:31.464706Z
-34160
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-24945
 
 pixelblending.c
 file
@@ -780,11 +678,11 @@ file
 
 
 
-2011-01-18T22:04:33.073021Z
-a85fb9fb4411d7342b45c6a19015e9b4
-2011-01-07T19:18:31.464706Z
-34160
-campbellbarton
+2011-02-10T19:48:40.455667Z
+9951e603743f014dc9677b970d37c05f
+2011-02-05T17:54:00.739736Z
+34661
+blendix
 has-props
 
 
@@ -806,7 +704,7 @@ has-props
 
 
 
-67682
+67324
 
 pointdensity.c
 file
@@ -848,11 +746,11 @@ file
 
 
 
-2011-01-18T22:04:33.073021Z
-aa3d14c1b1734176defb5739b471d7e3
-2011-01-07T18:36:47.041781Z
-34159
-campbellbarton
+2011-02-10T19:48:40.465667Z
+a06ac15ea34b06cf1299c45128a3ef8f
+2011-02-05T13:41:29.872623Z
+34656
+blendix
 has-props
 
 
@@ -874,7 +772,7 @@ has-props
 
 
 
-24884
+24908
 
 strand.c
 file
@@ -910,40 +808,6 @@ has-props
 
 29543
 
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:33.073021Z
-c4e95e27e9aa4ab6d9ef6a1626dc1496
-2010-04-15T10:28:32.865033Z
-28202
-blendix
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1968
-
 sunsky.c
 file
 
@@ -977,38 +841,4 @@ has-props
 
 
 14458
-
-rayobject_raycounter.c
-file
-
-
-
-
-2011-01-18T22:04:33.073021Z
-d38b57a777453a81380e370da1a9b9f5
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3370
 

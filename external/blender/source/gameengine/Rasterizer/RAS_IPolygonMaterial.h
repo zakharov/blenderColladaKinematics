@@ -1,5 +1,5 @@
 /**
- * $Id: RAS_IPolygonMaterial.h 29259 2010-06-06 01:15:44Z campbellbarton $
+ * $Id: RAS_IPolygonMaterial.h 34469 2011-01-23 17:17:21Z ben2610 $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -45,6 +45,7 @@
 class RAS_IRasterizer;
 struct MTFace;
 struct Material;
+struct Image;
 struct Scene;
 class SCA_IScene;
 
@@ -160,6 +161,7 @@ public:
 	int					GetMaterialIndex() const;
 
 	virtual Material*   GetBlenderMaterial() const;
+	virtual Image*      GetBlenderImage() const;
 	virtual Scene*		GetBlenderScene() const;
 	virtual void		ReleaseMaterial();
 	virtual void		GetMaterialRGBAColor(unsigned char *rgba) const;

@@ -1,4 +1,4 @@
-# $Id: CMakeLists.txt 33864 2010-12-22 23:09:30Z campbellbarton $
+# $Id: CMakeLists.txt 34520 2011-01-27 00:02:25Z campbellbarton $
 # ***** BEGIN GPL LICENSE BLOCK *****
 #
 # This program is free software; you can redistribute it and/or
@@ -318,5 +318,10 @@ set(SRC
 	src/btBulletCollisionCommon.h
 	src/btBulletDynamicsCommon.h
 )
+
+if(CMAKE_COMPILER_IS_GNUCC)
+	# needed for gcc 4.6+
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fpermissive")
+endif()
 
 blender_add_lib(extern_bullet "${SRC}" "${INC}")

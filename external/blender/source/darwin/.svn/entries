@@ -1,15 +1,15 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/darwin
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2010-10-14T19:30:55.108252Z
-32475
-sgefant
+2011-01-30T15:29:22.294392Z
+34567
+campbellbarton
 
 
 
@@ -37,38 +37,4 @@ dir
 
 blendercreator.app
 dir
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:32.073021Z
-f140ab329590aeb44a1aa999364db8fd
-2010-10-14T19:30:55.108252Z
-32475
-sgefant
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3026
 

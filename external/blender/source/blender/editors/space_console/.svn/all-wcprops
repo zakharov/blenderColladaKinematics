@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 85
-/svnroot/bf-blender/!svn/ver/34178/trunk/blender/source/blender/editors/space_console
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/blender/editors/space_console
 END
 console_draw.c
 K 25
@@ -32,12 +32,6 @@ K 25
 svn:wc:ra_dav:version-url
 V 100
 /svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/editors/space_console/CMakeLists.txt
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 94
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blender/editors/space_console/Makefile
 END
 space_console.c
 K 25

@@ -1,15 +1,15 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/makesdna
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-18T04:08:01.276084Z
-34382
-nicholasbishop
+2011-02-10T18:54:49.499310Z
+34763
+lukastoenne
 
 
 
@@ -100,11 +100,11 @@ file
 
 
 
-2011-01-18T22:04:39.913021Z
-76b86292177cb68487d8a770ee4386c8
-2010-08-25T02:18:37.810661Z
-31561
-scourage
+2011-02-10T19:48:45.365667Z
+72c79a34d695b05bf2c42d2c18b399d0
+2011-02-10T18:54:49.499310Z
+34763
+lukastoenne
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-9090
+9295
 
 DNA_packedFile_types.h
 file
@@ -236,11 +236,11 @@ file
 
 
 
-2011-01-18T22:04:39.913021Z
-ea6e5e83baa5b74d268669e052821f70
-2011-01-16T21:12:38.636406Z
-34360
-campbellbarton
+2011-02-10T19:48:45.365667Z
+ed4092d7734dba072494556f5c87716f
+2011-02-09T02:09:25.898449Z
+34731
+aligorith
 has-props
 
 
@@ -262,7 +262,7 @@ has-props
 
 
 
-24525
+25068
 
 DNA_mesh_types.h
 file
@@ -372,11 +372,11 @@ file
 
 
 
-2011-01-18T22:04:39.913021Z
-087f6095072e45ad803f4fd3e9c50b7e
-2011-01-16T21:12:38.636406Z
-34360
-campbellbarton
+2011-02-10T19:48:45.365667Z
+f25bd5c0a1f73822f283b05c93d398bd
+2011-02-07T18:09:27.521949Z
+34696
+ton
 has-props
 
 
@@ -398,7 +398,7 @@ has-props
 
 
 
-34696
+34712
 
 DNA_userdef_types.h
 file
@@ -406,11 +406,11 @@ file
 
 
 
-2011-01-18T22:04:39.913021Z
-d45a673b4ae3c8c84431c1f5c3c49fd6
-2011-01-15T16:14:57.406996Z
-34335
-campbellbarton
+2011-02-10T19:48:45.375667Z
+b0f85d85cbe436dc5254c13e4d15cb75
+2011-02-04T08:33:07.469593Z
+34634
+aligorith
 has-props
 
 
@@ -432,7 +432,7 @@ has-props
 
 
 
-16211
+16157
 
 DNA_view2d_types.h
 file
@@ -508,11 +508,11 @@ file
 
 
 
-2011-01-18T22:04:39.913021Z
-2a68d46a1afd99729973f7d8b0f5421f
-2011-01-07T16:55:56.613628Z
-34157
-blendix
+2011-02-10T19:48:45.375667Z
+f34c07a38cbe44a6f57f7c085c45d7f8
+2011-01-29T11:56:11.914803Z
+34548
+lmg
 has-props
 
 
@@ -534,7 +534,7 @@ has-props
 
 
 
-13083
+13208
 
 DNA_particle_types.h
 file
@@ -542,11 +542,11 @@ file
 
 
 
-2011-01-18T22:04:39.923021Z
-7fe2e9fcb49cd42f8cfef2b8d6af1e37
-2011-01-16T21:12:38.636406Z
-34360
-campbellbarton
+2011-02-10T19:48:45.375667Z
+1d566cf378ec549ff5b4734e1d21e4de
+2011-02-07T11:43:33.879146Z
+34687
+jhk
 has-props
 
 
@@ -568,7 +568,7 @@ has-props
 
 
 
-14213
+14234
 
 DNA_object_types.h
 file
@@ -576,10 +576,44 @@ file
 
 
 
-2011-01-18T22:04:39.923021Z
+2011-02-10T19:48:45.375667Z
 274a6836f417e634c02d521a7d16491e
-2011-01-16T21:12:38.636406Z
-34360
+2011-01-27T21:44:56.982703Z
+34536
+zanqdo
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+16232
+
+DNA_ID.h
+file
+
+
+
+
+2011-02-10T19:48:45.375667Z
+23d1fa92579e0bb1e790c6301210671a
+2011-01-22T04:40:15.442042Z
+34448
 campbellbarton
 has-props
 
@@ -602,41 +636,7 @@ has-props
 
 
 
-16240
-
-DNA_ID.h
-file
-
-
-
-
-2011-01-18T22:04:39.923021Z
-f01d144b4110b45a5afab16a1d6ebbd2
-2011-01-18T04:08:01.276084Z
-34382
-nicholasbishop
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7310
+7289
 
 DNA_nla_types.h
 file
@@ -672,40 +672,6 @@ has-props
 
 3547
 
-DNA_action_types.h
-file
-
-
-
-
-2011-01-18T22:04:39.923021Z
-848011a442487ccfee986d2dc516ed1d
-2011-01-09T23:16:05.064827Z
-34210
-aligorith
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-24198
-
 DNA_boid_types.h
 file
 
@@ -740,17 +706,51 @@ has-props
 
 6445
 
+DNA_action_types.h
+file
+
+
+
+
+2011-02-10T19:48:45.375667Z
+8f8e6c462b311afb5f0ac6cdf4056fec
+2011-01-20T15:17:02.478232Z
+34417
+ton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+24222
+
 DNA_screen_types.h
 file
 
 
 
 
-2011-01-18T22:04:39.923021Z
-92af2cfe5d10c5774f4e3f03fc48106a
-2011-01-15T16:14:57.406996Z
-34335
-campbellbarton
+2011-02-10T19:48:45.375667Z
+02bb943935396421b2370a1378cba998
+2011-02-01T23:41:01.351559Z
+34613
+aligorith
 has-props
 
 
@@ -772,41 +772,7 @@ has-props
 
 
 
-7249
-
-DNA_gpencil_types.h
-file
-
-
-
-
-2011-01-18T22:04:39.923021Z
-541e901cea76e0835f74d95b869b756c
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5549
+7377
 
 CMakeLists.txt
 file
@@ -842,48 +808,14 @@ has-props
 
 3851
 
-Makefile
+DNA_gpencil_types.h
 file
 
 
 
 
 2011-01-18T22:04:39.923021Z
-e80451ce0d38a846c380f7e45bedfff9
-2010-08-10T21:22:26.642559Z
-31223
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1287
-
-DNA_listBase.h
-file
-
-
-
-
-2011-01-18T22:04:39.923021Z
-e64810c11dc5acabe49704a7b7f6221b
+541e901cea76e0835f74d95b869b756c
 2010-02-12T13:34:04.213317Z
 26841
 campbellbarton
@@ -908,41 +840,7 @@ has-props
 
 
 
-1741
-
-DNA_image_types.h
-file
-
-
-
-
-2011-01-18T22:04:39.923021Z
-6464060856dc94ca1ade1a639c2e0d30
-2010-11-21T03:45:35.360977Z
-33204
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3601
+5549
 
 DNA_actuator_types.h
 file
@@ -978,17 +876,17 @@ has-props
 
 13235
 
-DNA_brush_types.h
+DNA_image_types.h
 file
 
 
 
 
 2011-01-18T22:04:39.923021Z
-8740595b75c98c3e698d3edfc6852b51
-2011-01-16T18:33:08.984566Z
-34355
-nicholasbishop
+6464060856dc94ca1ade1a639c2e0d30
+2010-11-21T03:45:35.360977Z
+33204
+campbellbarton
 has-props
 
 
@@ -1010,7 +908,41 @@ has-props
 
 
 
-5058
+3601
+
+DNA_listBase.h
+file
+
+
+
+
+2011-01-18T22:04:39.923021Z
+e64810c11dc5acabe49704a7b7f6221b
+2010-02-12T13:34:04.213317Z
+26841
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1741
 
 DNA_controller_types.h
 file
@@ -1046,17 +978,17 @@ has-props
 
 2249
 
-DNA_curve_types.h
+DNA_brush_types.h
 file
 
 
 
 
 2011-01-18T22:04:39.923021Z
-a14211dfe3110fd49c455c8f11d51679
-2011-01-05T10:40:38.953177Z
-34091
-nazgul
+8740595b75c98c3e698d3edfc6852b51
+2011-01-16T18:33:08.984566Z
+34355
+nicholasbishop
 has-props
 
 
@@ -1078,7 +1010,41 @@ has-props
 
 
 
-9771
+5058
+
+DNA_curve_types.h
+file
+
+
+
+
+2011-02-10T19:48:45.375667Z
+e642224977b4dffc68394a0c1567bd26
+2011-02-01T11:35:27.888067Z
+34600
+aligorith
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9861
 
 DNA_constraint_types.h
 file
@@ -1086,10 +1052,10 @@ file
 
 
 
-2011-01-18T22:04:39.923021Z
-9433d947982679b0890e6f1f4a2f71ab
-2011-01-02T13:33:32.341390Z
-34004
+2011-02-10T19:48:45.375667Z
+9bc96f6113b16e118551e91b780dd498
+2011-02-06T17:36:42.301364Z
+34672
 ton
 has-props
 
@@ -1112,7 +1078,7 @@ has-props
 
 
 
-24052
+24073
 
 DNA_property_types.h
 file
@@ -1324,10 +1290,10 @@ file
 
 
 
-2011-01-18T22:04:39.923021Z
-edc68262f94456bbdecb5a189b2b0f25
-2010-02-12T13:34:04.213317Z
-26841
+2011-02-10T19:48:45.375667Z
+65f83ee966036abcc2e0cc72728ee1da
+2011-02-07T13:02:44.124555Z
+34693
 campbellbarton
 has-props
 
@@ -1350,7 +1316,7 @@ has-props
 
 
 
-6408
+6385
 
 DNA_ipo_types.h
 file
@@ -1562,11 +1528,11 @@ file
 
 
 
-2011-01-18T22:04:39.923021Z
-6c2511e03eabd2e547f936360258360c
-2011-01-14T16:57:53.145742Z
-34322
-nazgul
+2011-02-10T19:48:45.375667Z
+5bc2b13a6d9cdc57827a14a1a2f0894c
+2011-02-10T00:44:26.438010Z
+34748
+mfoxdogg
 has-props
 
 
@@ -1588,7 +1554,7 @@ has-props
 
 
 
-20519
+20553
 
 DNA_material_types.h
 file
@@ -1732,11 +1698,11 @@ file
 
 
 
-2011-01-18T22:04:39.933021Z
-6cb5b1cba5a02ef9c432fd95bbba4ec4
-2010-12-12T01:33:12.669695Z
-33607
-campbellbarton
+2011-02-10T19:48:45.375667Z
+f6f0b7ae2f4b99f748a664c416d5e178
+2011-01-22T18:15:42.724140Z
+34456
+ton
 has-props
 
 
@@ -1758,7 +1724,7 @@ has-props
 
 
 
-9567
+9623
 
 intern
 dir
@@ -2041,11 +2007,11 @@ file
 
 
 
-2011-01-18T22:04:39.933021Z
-245958ffc8f5ed442216324776c34658
-2010-12-12T18:16:54.271116Z
-33615
-ton
+2011-02-10T19:48:45.375667Z
+3e0c10c424bb532527df5c1e04ac305a
+2011-02-05T13:19:14.142859Z
+34655
+blendix
 has-props
 
 
@@ -2067,5 +2033,5 @@ has-props
 
 
 
-7726
+7795
 

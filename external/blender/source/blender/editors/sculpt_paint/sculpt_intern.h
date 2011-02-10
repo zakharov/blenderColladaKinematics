@@ -1,5 +1,5 @@
 /*
- * $Id: sculpt_intern.h 34169 2011-01-08 01:45:02Z nicholasbishop $
+ * $Id: sculpt_intern.h 34587 2011-01-31 20:02:51Z nazgul $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -61,6 +61,9 @@ void sculpt(Sculpt *sd);
 int sculpt_poll(struct bContext *C);
 void sculpt_update_mesh_elements(struct Scene *scene, struct Object *ob, int need_fmap);
 
+/* Deformed mesh sculpt */
+void sculpt_free_deformMats(struct SculptSession *ss);
+
 /* Stroke */
 struct SculptStroke *sculpt_stroke_new(const int max);
 void sculpt_stroke_free(struct SculptStroke *);
@@ -78,6 +81,7 @@ typedef struct SculptUndoNode {
 	void *node;					/* only during push, not valid afterwards! */
 
 	float (*co)[3];
+	float (*orig_co)[3];
 	short (*no)[3];
 	int totvert;
 

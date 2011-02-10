@@ -1,17 +1,17 @@
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svnroot/bf-extensions/!svn/ver/1397/trunk/py/scripts/addons/io_export_anim_mesh_xna
+/svnroot/bf-extensions/!svn/ver/1561/trunk/py/scripts/addons/io_export_anim_mesh_xna
 END
 __init__.py
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/svnroot/bf-extensions/!svn/ver/1397/trunk/py/scripts/addons/io_export_anim_mesh_xna/__init__.py
+/svnroot/bf-extensions/!svn/ver/1561/trunk/py/scripts/addons/io_export_anim_mesh_xna/__init__.py
 END
 export_xna.py
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/svnroot/bf-extensions/!svn/ver/1377/trunk/py/scripts/addons/io_export_anim_mesh_xna/export_xna.py
+/svnroot/bf-extensions/!svn/ver/1561/trunk/py/scripts/addons/io_export_anim_mesh_xna/export_xna.py
 END

@@ -1,5 +1,5 @@
 /**
- * $Id: DNA_meshdata_types.h 26841 2010-02-12 13:34:04Z campbellbarton $ 
+ * $Id: DNA_meshdata_types.h 34693 2011-02-07 13:02:44Z campbellbarton $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -61,8 +61,7 @@ typedef struct MDeformVert {
 typedef struct MVert {
 	float	co[3];
 	short	no[3];
-	short	mat_nr;
-	char flag, bweight, pad[2];
+	char flag, bweight;
 } MVert;
 
 /* at the moment alpha is abused for vertex painting

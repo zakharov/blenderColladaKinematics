@@ -1,5 +1,5 @@
 /*
-* $Id: MOD_screw.c 34175 2011-01-08 12:43:44Z campbellbarton $
+* $Id: MOD_screw.c 34587 2011-01-31 20:02:51Z nazgul $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -217,7 +217,7 @@ static DerivedMesh *applyModifier(ModifierData *md, Object *ob,
 
 		/* angle */
 
-#if 0	// cant incluide this, not pradictable enough, though quite fun,.
+#if 0	// cant incluide this, not predictable enough, though quite fun,.
 		if(ltmd->flag & MOD_SCREW_OBJECT_ANGLE) {
 			float mtx3_tx[3][3];
 			copy_m3_m4(mtx3_tx, mtx_tx);
@@ -266,7 +266,7 @@ static DerivedMesh *applyModifier(ModifierData *md, Object *ob,
 	step_tot = ((step_tot + 1) * ltmd->iter) - (ltmd->iter - 1);
 
 	/* will the screw be closed?
-	 * Note! smaller then FLT_EPSILON*100 gives problems with float precission so its never closed. */
+	 * Note! smaller then FLT_EPSILON*100 gives problems with float precision so its never closed. */
 	if (fabs(screw_ofs) <= (FLT_EPSILON*100) && fabs(fabs(angle) - (M_PI * 2)) <= (FLT_EPSILON*100)) {
 		close= 1;
 		step_tot--;
@@ -884,6 +884,7 @@ ModifierTypeInfo modifierType_Screw = {
 
 	/* copyData */          copyData,
 	/* deformVerts */       0,
+	/* deformMatrices */    0,
 	/* deformVertsEM */     0,
 	/* deformMatricesEM */  0,
 	/* applyModifier */     applyModifier,

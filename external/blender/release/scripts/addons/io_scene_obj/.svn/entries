@@ -1,14 +1,14 @@
 10
 
 dir
-1437
+1566
 https://svn.blender.org/svnroot/bf-extensions/trunk/py/scripts/addons/io_scene_obj
 https://svn.blender.org/svnroot/bf-extensions
 
 
 
-2011-01-18T01:58:49.454964Z
-1424
+2011-02-05T07:08:34.456132Z
+1539
 campbellbarton
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2011-01-18T22:05:18.253021Z
-ff1532814f8b20ae2a7796942f579aba
-2011-01-18T01:58:49.454964Z
-1424
+2011-02-10T19:49:02.405667Z
+e557bf295b01384f7aa12e95a6377c1e
+2011-02-05T07:08:34.456132Z
+1539
 campbellbarton
 has-props
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-31874
+32055
 
 __init__.py
 file
@@ -66,10 +66,10 @@ file
 
 
 
-2011-01-18T22:05:18.253021Z
-ef5c4090640a122c0f9a84ca9f84822d
-2011-01-15T19:34:59.357422Z
-1409
+2011-02-10T19:49:02.405667Z
+6bbadd94863f5ceb1e943746e7c92556
+2011-01-20T07:51:19.496801Z
+1451
 campbellbarton
 has-props
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-6463
+6469
 
 import_obj.py
 file
@@ -100,10 +100,10 @@ file
 
 
 
-2011-01-18T22:05:18.253021Z
-413f6d7cd1b812f0d2d91b1d51016955
-2011-01-18T01:58:49.454964Z
-1424
+2011-02-10T19:49:02.405667Z
+e2e1982173360fe434e24af34dc9d4ba
+2011-02-02T06:02:36.620868Z
+1536
 campbellbarton
 has-props
 
@@ -126,5 +126,5 @@ has-props
 
 
 
-44684
+50043
 

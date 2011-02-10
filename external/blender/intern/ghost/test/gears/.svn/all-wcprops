@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 72
-/svnroot/bf-blender/!svn/ver/28254/trunk/blender/intern/ghost/test/gears
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/intern/ghost/test/gears
 END
 GHOST_C-Test.c
 K 25
@@ -14,10 +14,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 87
 /svnroot/bf-blender/!svn/ver/28254/trunk/blender/intern/ghost/test/gears/GHOST_Test.cpp
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 81
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/ghost/test/gears/Makefile
 END

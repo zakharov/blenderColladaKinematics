@@ -1,15 +1,15 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/readblenfile/test
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2010-08-10T21:22:26.642559Z
-31223
-gsrb3d
+2011-01-30T15:29:22.294392Z
+34567
+campbellbarton
 
 
 
@@ -59,38 +59,4 @@ has-props
 
 
 1474
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:05:01.673021Z
-755903312009310546018b2aace1e4ba
-2010-08-10T21:22:26.642559Z
-31223
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1461
 

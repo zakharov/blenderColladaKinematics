@@ -1,7 +1,7 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/extern/bullet2/src/BulletSoftBody
 https://svn.blender.org/svnroot/bf-blender
 
@@ -298,14 +298,14 @@ has-props
 
 62588
 
-btSoftSoftCollisionAlgorithm.cpp
+btSoftBodyRigidBodyCollisionConfiguration.cpp
 file
 
 
 
 
 2011-01-18T22:05:06.923021Z
-d258fa0bc49c5a3bd281952423da27bf
+76c2d09427fffd9db2e686647ed787ad
 2009-09-14T14:45:32.818085Z
 23221
 sirdude
@@ -330,7 +330,7 @@ has-props
 
 
 
-2101
+5417
 
 btSoftRigidDynamicsWorld.cpp
 file
@@ -366,14 +366,14 @@ has-props
 
 9042
 
-btSoftBodyRigidBodyCollisionConfiguration.cpp
+btSoftSoftCollisionAlgorithm.cpp
 file
 
 
 
 
 2011-01-18T22:05:06.923021Z
-76c2d09427fffd9db2e686647ed787ad
+d258fa0bc49c5a3bd281952423da27bf
 2009-09-14T14:45:32.818085Z
 23221
 sirdude
@@ -398,7 +398,7 @@ has-props
 
 
 
-5417
+2101
 
 btSoftBody.h
 file
@@ -434,17 +434,17 @@ has-props
 
 26293
 
-btSoftRigidDynamicsWorld.h
+btSparseSDF.h
 file
 
 
 
 
 2011-01-18T22:05:06.923021Z
-e071a0a745ba0618d5c3d1536f41192b
-2010-01-06T08:46:04.276664Z
-25767
-ben2610
+458ac407ded31ce6b70613a1a6cd4f85
+2009-09-14T14:45:32.818085Z
+23221
+sirdude
 has-props
 
 
@@ -466,7 +466,7 @@ has-props
 
 
 
-3001
+6937
 
 btSoftBodyRigidBodyCollisionConfiguration.h
 file
@@ -502,17 +502,17 @@ has-props
 
 2266
 
-btSparseSDF.h
+btSoftRigidDynamicsWorld.h
 file
 
 
 
 
 2011-01-18T22:05:06.923021Z
-458ac407ded31ce6b70613a1a6cd4f85
-2009-09-14T14:45:32.818085Z
-23221
-sirdude
+e071a0a745ba0618d5c3d1536f41192b
+2010-01-06T08:46:04.276664Z
+25767
+ben2610
 has-props
 
 
@@ -534,7 +534,7 @@ has-props
 
 
 
-6937
+3001
 
 btSoftSoftCollisionAlgorithm.h
 file

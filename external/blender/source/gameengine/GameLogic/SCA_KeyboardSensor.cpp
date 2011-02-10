@@ -1,5 +1,5 @@
 /**
- * $Id: SCA_KeyboardSensor.cpp 32788 2010-10-31 04:11:39Z campbellbarton $
+ * $Id: SCA_KeyboardSensor.cpp 34520 2011-01-27 00:02:25Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,9 @@
  * ***** END GPL LICENSE BLOCK *****
  * Sensor for keyboard input
  */
+
+#include <stddef.h>
+
 #include "SCA_KeyboardSensor.h"
 #include "SCA_KeyboardManager.h"
 #include "SCA_LogicManager.h"

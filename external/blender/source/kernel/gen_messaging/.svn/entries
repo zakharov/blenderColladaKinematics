@@ -1,15 +1,15 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/kernel/gen_messaging
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2010-08-10T21:22:26.642559Z
-31223
-gsrb3d
+2011-01-30T15:29:22.294392Z
+34567
+campbellbarton
 
 
 
@@ -62,38 +62,4 @@ has-props
 
 
 1521
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:29.383021Z
-c1f826b10cb65bff9a3fb9ee666125c5
-2010-08-10T21:22:26.642559Z
-31223
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1119
 

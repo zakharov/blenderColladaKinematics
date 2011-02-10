@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 67
-/svnroot/bf-extensions/!svn/ver/1397/trunk/py/scripts/addons/rigify
+/svnroot/bf-extensions/!svn/ver/1562/trunk/py/scripts/addons/rigify
 END
 rig_ui_template.py
 K 25
@@ -31,13 +31,13 @@ __init__.py
 K 25
 svn:wc:ra_dav:version-url
 V 79
-/svnroot/bf-extensions/!svn/ver/1397/trunk/py/scripts/addons/rigify/__init__.py
+/svnroot/bf-extensions/!svn/ver/1524/trunk/py/scripts/addons/rigify/__init__.py
 END
 utils.py
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/svnroot/bf-extensions/!svn/ver/1304/trunk/py/scripts/addons/rigify/utils.py
+/svnroot/bf-extensions/!svn/ver/1562/trunk/py/scripts/addons/rigify/utils.py
 END
 README
 K 25

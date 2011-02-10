@@ -1,15 +1,15 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/render/intern/include
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2010-12-26T17:47:17.144525Z
-33894
-ton
+2011-02-06T00:49:58.015510Z
+34664
+gsrb3d
 
 
 
@@ -25,6 +25,40 @@ ton
 
 
 954f8c5b-7b00-dc11-b283-0030488c597c
+
+volumetric.h
+file
+
+
+
+
+2011-02-10T19:48:40.545667Z
+52963f1e7b017311cfe1446cf594fc81
+2011-02-05T13:41:29.872623Z
+34656
+blendix
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1611
 
 pointdensity.h
 file
@@ -60,74 +94,6 @@ has-props
 
 1347
 
-volumetric.h
-file
-
-
-
-
-2011-01-18T22:04:33.173021Z
-46f3f5262dc7a3392b08288df7399fb2
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1557
-
-raycounter.h
-file
-
-
-
-
-2011-01-18T22:04:33.173021Z
-31bb67d7b776a4a54a2a4799b2505c91
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1587
-
 strand.h
 file
 
@@ -161,6 +127,40 @@ has-props
 
 
 3540
+
+raycounter.h
+file
+
+
+
+
+2011-02-10T19:48:40.545667Z
+609758e66be619f77fa86bb5bb651462
+2011-02-05T13:41:29.872623Z
+34656
+blendix
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1866
 
 sunsky.h
 file
@@ -236,11 +236,11 @@ file
 
 
 
-2011-01-18T22:04:33.173021Z
-0a3209197aedc56cc2f55e0f6d032926
-2010-08-01T12:47:49.963352Z
-30936
-blendix
+2011-02-10T19:48:40.545667Z
+73cecdbff1d034f2aee10a3dd57d6f3f
+2011-01-29T11:56:11.914803Z
+34548
+lmg
 has-props
 
 
@@ -262,7 +262,7 @@ has-props
 
 
 
-2950
+3060
 
 volume_precache.h
 file
@@ -298,40 +298,6 @@ has-props
 
 1263
 
-render_types.h
-file
-
-
-
-
-2011-01-18T22:04:33.183021Z
-87000195bf3a66b793d6f55b93b0bc2b
-2010-12-26T17:47:17.144525Z
-33894
-ton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-15623
-
 initrender.h
 file
 
@@ -365,6 +331,40 @@ has-props
 
 
 1390
+
+render_types.h
+file
+
+
+
+
+2011-02-10T19:48:40.545667Z
+acd2094f9b258ee96677cecf6295781c
+2011-02-05T13:41:29.872623Z
+34656
+blendix
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+15651
 
 renderdatabase.h
 file
@@ -400,40 +400,6 @@ has-props
 
 6016
 
-renderpipeline.h
-file
-
-
-
-
-2011-01-18T22:04:33.183021Z
-431dc91303337b46466e9d71ab9f0205
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1340
-
 gammaCorrectionTables.h
 file
 
@@ -467,6 +433,40 @@ has-props
 
 
 1401
+
+renderpipeline.h
+file
+
+
+
+
+2011-01-18T22:04:33.183021Z
+431dc91303337b46466e9d71ab9f0205
+2010-02-12T13:34:04.213317Z
+26841
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1340
 
 zbuf.h
 file
@@ -644,11 +644,11 @@ file
 
 
 
-2011-01-18T22:04:33.183021Z
-b8cb3e7372ececaf7366eea81692fd6a
-2010-03-22T09:30:00.354846Z
-27655
-campbellbarton
+2011-02-10T19:48:40.545667Z
+47a492f77451a41bdde9a17339c6ea7d
+2011-02-05T13:41:29.872623Z
+34656
+blendix
 has-props
 
 
@@ -670,7 +670,41 @@ has-props
 
 
 
-6283
+3796
+
+rayintersection.h
+file
+
+
+
+
+2011-02-10T19:48:40.545667Z
+bf0b88f3403dda2178fcdf12568f8063
+2011-02-06T00:49:58.015510Z
+34664
+gsrb3d
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3295
 
 pixelblending.h
 file
@@ -780,11 +814,11 @@ file
 
 
 
-2011-01-18T22:04:33.183021Z
-dc14cad7974ed4c8b7071d6119c08715
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-02-10T19:48:40.545667Z
+97541e47750064ddbf79710d50cb58ec
+2011-02-05T13:41:29.872623Z
+34656
+blendix
 has-props
 
 
@@ -806,5 +840,5 @@ has-props
 
 
 
-3177
+3195
 

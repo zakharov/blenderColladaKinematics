@@ -1,5 +1,5 @@
 /*
- * $Id: BKE_multires.h 34162 2011-01-07 21:12:47Z nicholasbishop $
+ * $Id: BKE_multires.h 34587 2011-01-31 20:02:51Z nazgul $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -53,6 +53,7 @@ struct DerivedMesh *multires_dm_create_from_derived(struct MultiresModifierData*
 
 struct MultiresModifierData *find_multires_modifier_before(struct Scene *scene,
 	struct ModifierData *lastmd);
+struct MultiresModifierData *get_multires_modifier(struct Scene *scene, struct Object *ob, int use_first);
 struct DerivedMesh *get_multires_dm(struct Scene *scene, struct MultiresModifierData *mmd,
 				struct Object *ob);
 void multiresModifier_del_levels(struct MultiresModifierData *, struct Object *, int direction);
@@ -80,7 +81,7 @@ int multires_mdisp_corners(struct MDisps *s);
 void multires_mdisp_smooth_bounds(struct MDisps *disps);
 
 /* update multires data after topology changing */
-void multires_topology_changed(struct Object *ob);
+void multires_topology_changed(struct Scene *scene, struct Object *ob);
 
 /**** interpolation stuff ****/
 void old_mdisps_bilinear(float out[3], float (*disps)[3], int st, float u, float v);

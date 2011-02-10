@@ -1,7 +1,7 @@
 /* texture.c
  *
  *
- * $Id: texture.c 34159 2011-01-07 18:36:47Z campbellbarton $
+ * $Id: texture.c 34570 2011-01-30 16:24:23Z lmg $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -630,7 +630,7 @@ void default_mtex(MTex *mtex)
 	mtex->size[1]= 1.0;
 	mtex->size[2]= 1.0;
 	mtex->tex= 0;
-	mtex->texflag= MTEX_NEW_BUMP;
+	mtex->texflag= MTEX_3TAP_BUMP | MTEX_BUMP_OBJECTSPACE;
 	mtex->colormodel= 0;
 	mtex->r= 1.0;
 	mtex->g= 0.0;

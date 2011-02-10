@@ -938,7 +938,7 @@ def make_fquat(bquat):
     
 def make_fquat_default(bquat):
     quat = FQuat()
-    
+    #print(dir(bquat))
     quat.X = bquat.x
     quat.Y = bquat.y
     quat.Z = bquat.z
@@ -969,9 +969,9 @@ def parse_bone(blender_bone, psk_file, psa_file, parent_id, is_root_bone, parent
     
     if child_parent != None:
         quat_root = blender_bone.matrix
-        quat = make_fquat(quat_root.to_quat())
-        
-        quat_parent = child_parent.matrix.to_quat().inverse()
+        quat = make_fquat(quat_root.to_quaternion())
+        #print("DIR:",dir(child_parent.matrix.to_quaternion()))
+        quat_parent = child_parent.matrix.to_quaternion().inverted()
         parent_head = child_parent.head * quat_parent
         parent_tail = child_parent.tail * quat_parent
         
@@ -980,10 +980,10 @@ def parse_bone(blender_bone, psk_file, psa_file, parent_id, is_root_bone, parent
         # ROOT BONE
         #This for root 
         set_position = blender_bone.head * parent_matrix #ARMATURE OBJECT Locction
-        rot_mat = blender_bone.matrix * parent_matrix.rotation_part() #ARMATURE OBJECT Rotation
+        rot_mat = blender_bone.matrix * parent_matrix.to_3x3() #ARMATURE OBJECT Rotation
         #print(dir(rot_mat))
         
-        quat = make_fquat_default(rot_mat.to_quat())
+        quat = make_fquat_default(rot_mat.to_quaternion())
         
     #print ("[[======= FINAL POSITION:", set_position)
     final_parent_id = parent_id
@@ -1266,8 +1266,8 @@ def parse_animation(blender_scene, blender_armatures, psa_file):
                                 parentposemat = mathutils.Matrix(parent_pose.matrix)
                                 #blender 2.4X it been flip around with new 2.50 (mat1 * mat2) should now be (mat2 * mat1)
                                 posebonemat = parentposemat.invert() * posebonemat
-                            head = posebonemat.translation_part()
-                            quat = posebonemat.to_quat().normalize()
+                            head = posebonemat.to_translation()
+                            quat = posebonemat.to_quaternion().normalize()
                             vkey = VQuatAnimKey()
                             vkey.Position.X = head.x
                             vkey.Position.Y = head.y
@@ -1410,14 +1410,18 @@ def parse_animation(blender_scene, blender_armatures, psa_file):
                         if parent_pose != None:
                             parentposemat = mathutils.Matrix(parent_pose.matrix)
                             #blender 2.4X it been flip around with new 2.50 (mat1 * mat2) should now be (mat2 * mat1)
-                            posebonemat = parentposemat.invert() * posebonemat
-                        head = posebonemat.translation_part()
-                        quat = posebonemat.to_quat().normalize()
+                            posebonemat = parentposemat.inverted() * posebonemat
+                            #print("parentposemat ::::",parentposemat)
+                        #print("parentposemat ::::",dir(posebonemat.to_quaternion()))
+                        head = posebonemat.to_translation()
+                        quat = posebonemat.to_quaternion().normalized()
+                        #print("position :",posebonemat.to_translation(),"quat",posebonemat.to_quaternion().normalized())
+                        #print("posebonemat",posebonemat)
                         vkey = VQuatAnimKey()
                         vkey.Position.X = head.x
                         vkey.Position.Y = head.y
                         vkey.Position.Z = head.z
-                        
+                        #print("quat:",quat)
                         if parent_pose != None:
                             quat = make_fquat(quat)
                         else:
@@ -1660,7 +1664,7 @@ bpy.types.Scene.unrealexportpsa = BoolProperty(
 class ExportUDKAnimData(bpy.types.Operator):
     global exportmessage
     '''Export Skeleton Mesh / Animation Data file(s)'''
-    bl_idname = "export.udk_anim_data" # this is important since its how bpy.ops.export.udk_anim_data is constructed
+    bl_idname = "export_anim.udk" # this is important since its how bpy.ops.export.udk_anim_data is constructed
     bl_label = "Export PSK/PSA"
     __doc__ = "One mesh and one armature else select one mesh or armature to be exported."
 
@@ -1716,7 +1720,9 @@ class VIEW3D_PT_unrealtools_objectmode(bpy.types.Panel):
         layout = self.layout
         rd = context.scene
         layout.prop(rd, "unrealexport_settings",expand=True)        
-        layout.operator("object.UnrealExport")#button
+        #layout.operator("object.UnrealExport")#button#blender 2.55 version
+        layout.operator(OBJECT_OT_UnrealExport.bl_idname)#button blender #2.56 version
+        #print("Button Name:",OBJECT_OT_UnrealExport.bl_idname) #2.56 version
         #FPS #it use the real data from your scene
         layout.prop(rd.render, "fps")
         
@@ -1742,7 +1748,7 @@ class VIEW3D_PT_unrealtools_objectmode(bpy.types.Panel):
         
 class OBJECT_OT_UnrealExport(bpy.types.Operator):
     global exportmessage
-    bl_idname = "OBJECT_OT_UnrealExport"
+    bl_idname = "export_mesh.udk"  # XXX, name???
     bl_label = "Unreal Export"
     __doc__ = "Select export setting for .psk/.psa or both."
     
@@ -1772,7 +1778,7 @@ def menu_func(self, context):
     #bpy.context.scene.unrealexportpsk = True
     #bpy.context.scene.unrealexportpsa = True
     default_path = os.path.splitext(bpy.data.filepath)[0] + ".psk"
-    self.layout.operator("export.udk_anim_data", text="Skeleton Mesh / Animation Data (.psk/.psa)").filepath = default_path
+    self.layout.operator(ExportUDKAnimData.bl_idname, text="Skeleton Mesh / Animation Data (.psk/.psa)").filepath = default_path
 
 def register():
     bpy.types.INFO_MT_file_export.append(menu_func)

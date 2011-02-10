@@ -1,15 +1,15 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/editors/space_text
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-13T20:16:36.525865Z
-34303
-nazgul
+2011-02-08T09:57:51.110125Z
+34714
+aligorith
 
 
 
@@ -66,10 +66,10 @@ file
 
 
 
-2011-01-18T22:04:50.113021Z
-3bc2a7a7b57d5155b678ac1ee160130b
-2011-01-12T03:41:12.073182Z
-34273
+2011-02-10T19:48:51.285667Z
+a49897e01bd63f9ef60ff79ce4bf31e1
+2011-02-07T22:48:23.532584Z
+34701
 campbellbarton
 has-props
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-45888
+45912
 
 text_ops.c
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-01-18T22:04:50.113021Z
-e50eeba8f1a30a289dfb71aafe962b06
-2011-01-13T20:16:36.525865Z
-34303
-nazgul
+2011-02-10T19:48:51.285667Z
+4dafd062a117244ee01236688efa6851
+2011-02-08T09:57:51.110125Z
+34714
+aligorith
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-69927
+71666
 
 text_python.c
 file
@@ -202,10 +202,10 @@ file
 
 
 
-2011-01-18T22:04:50.113021Z
-4346bf255a4676bac718e92b680aa473
-2010-12-04T13:00:28.400300Z
-33468
+2011-02-10T19:48:51.285667Z
+4c6d8e7b90ec6a24149196c89a77e2b6
+2011-02-07T22:48:23.532584Z
+34701
 campbellbarton
 has-props
 
@@ -228,7 +228,7 @@ has-props
 
 
 
-5660
+5684
 
 CMakeLists.txt
 file
@@ -236,10 +236,10 @@ file
 
 
 
-2011-01-18T22:04:50.113021Z
-be50b7e61b3ecaef71c777c8eeaa2a31
-2010-12-22T23:09:30.468439Z
-33864
+2011-02-10T19:48:51.285667Z
+6dd2b3b423cfb981b5d2d49b92a03c35
+2011-01-25T14:43:13.999734Z
+34486
 campbellbarton
 has-props
 
@@ -262,41 +262,7 @@ has-props
 
 
 
-1286
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:50.113021Z
-86d679a801bfeecefed01ebfacced7d8
-2010-08-10T21:22:26.642559Z
-31223
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1618
+1295
 
 text_header.c
 file

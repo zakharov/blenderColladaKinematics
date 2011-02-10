@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 72
-/svnroot/bf-blender/!svn/ver/34195/trunk/blender/intern/audaspace/Python
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/intern/audaspace/Python
 END
 AUD_PyAPI.h
 K 25
@@ -14,10 +14,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 86
 /svnroot/bf-blender/!svn/ver/34195/trunk/blender/intern/audaspace/Python/AUD_PyAPI.cpp
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 81
-/svnroot/bf-blender/!svn/ver/31397/trunk/blender/intern/audaspace/Python/Makefile
 END

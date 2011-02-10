@@ -1,5 +1,5 @@
 /**
- * $Id: rna_rna.c 34159 2011-01-07 18:36:47Z campbellbarton $
+ * $Id: rna_rna.c 34482 2011-01-25 05:45:21Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -321,14 +321,15 @@ int rna_builtin_properties_lookup_string(PointerRNA *ptr, const char *key, Point
 				return TRUE;
 			}
 		}
+		else {
+			for(prop=srna->cont.properties.first; prop; prop=prop->next) {
+				if(!(prop->flag & PROP_BUILTIN) && strcmp(prop->identifier, key)==0) {
+					propptr.type= &RNA_Property;
+					propptr.data= prop;
 
-		for(prop=srna->cont.properties.first; prop; prop=prop->next) {
-			if(!(prop->flag & PROP_BUILTIN) && strcmp(prop->identifier, key)==0) {
-				propptr.type= &RNA_Property;
-				propptr.data= prop;
-
-				*r_ptr= propptr;
-				return TRUE;
+					*r_ptr= propptr;
+					return TRUE;
+				}
 			}
 		}
 	} while((srna=srna->base));

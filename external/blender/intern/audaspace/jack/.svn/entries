@@ -1,15 +1,15 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern/audaspace/jack
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2010-12-22T10:51:34.458705Z
-33846
-nexyon
+2011-01-30T15:29:22.294392Z
+34567
+campbellbarton
 
 
 
@@ -93,38 +93,4 @@ has-props
 
 
 3542
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:07.483021Z
-61015d814e8f1afe760e6fd1b9d1096b
-2009-08-21T22:56:26.114993Z
-22688
-bdiego
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1259
 

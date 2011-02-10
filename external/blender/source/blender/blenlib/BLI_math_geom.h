@@ -1,5 +1,5 @@
 /**
- * $Id: BLI_math_geom.h 34335 2011-01-15 16:14:57Z campbellbarton $
+ * $Id: BLI_math_geom.h 34619 2011-02-02 03:32:58Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -119,6 +119,8 @@ int isect_axial_line_tri_v3(int axis, float co1[3], float co2[3],
 int isect_aabb_aabb_v3(float min1[3], float max1[3], float min2[3], float max2[3]);
 
 int clip_line_plane(float clipco[3], float plane[4], float co[3]);
+
+void plot_line_v2v2i(int p1[2], int p2[2], int (*callback)(int, int, void *), void *userData);
 
 /****************************** Interpolation ********************************/
 

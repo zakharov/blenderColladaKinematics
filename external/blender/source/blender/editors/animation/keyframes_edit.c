@@ -1,5 +1,5 @@
 /**
- * $Id: keyframes_edit.c 34160 2011-01-07 19:18:31Z campbellbarton $
+ * $Id: keyframes_edit.c 34600 2011-02-01 11:35:27Z aligorith $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -995,6 +995,13 @@ static short set_keytype_extreme(KeyframeEditData *UNUSED(ked), BezTriple *bezt)
 	return 0;
 }
 
+static short set_keytype_jitter(KeyframeEditData *UNUSED(ked), BezTriple *bezt) 
+{
+	if (bezt->f2 & SELECT) 
+		BEZKEYTYPE(bezt)= BEZT_KEYTYPE_JITTER;
+	return 0;
+}
+
 /* Set the interpolation type of the selected BezTriples in each F-Curve to the specified one */
 KeyframeEditFunc ANIM_editkeyframes_keytype(short code)
 {
@@ -1004,6 +1011,9 @@ KeyframeEditFunc ANIM_editkeyframes_keytype(short code)
 			
 		case BEZT_KEYTYPE_EXTREME: /* extreme keyframe */
 			return set_keytype_extreme;
+			
+		case BEZT_KEYTYPE_JITTER: /* jitter keyframe */
+			return set_keytype_jitter;
 			
 		case BEZT_KEYTYPE_KEYFRAME: /* proper keyframe */	
 		default:

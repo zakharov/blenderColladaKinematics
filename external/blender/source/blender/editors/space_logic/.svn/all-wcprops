@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 83
-/svnroot/bf-blender/!svn/ver/34290/trunk/blender/source/blender/editors/space_logic
+/svnroot/bf-blender/!svn/ver/34701/trunk/blender/source/blender/editors/space_logic
 END
 logic_ops.c
 K 25
@@ -19,7 +19,7 @@ logic_window.c
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/svnroot/bf-blender/!svn/ver/34290/trunk/blender/source/blender/editors/space_logic/logic_window.c
+/svnroot/bf-blender/!svn/ver/34701/trunk/blender/source/blender/editors/space_logic/logic_window.c
 END
 SConscript
 K 25
@@ -44,10 +44,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 98
 /svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/editors/space_logic/CMakeLists.txt
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 92
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blender/editors/space_logic/Makefile
 END

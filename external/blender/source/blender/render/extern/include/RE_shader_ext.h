@@ -1,5 +1,5 @@
 /**
- * $Id: RE_shader_ext.h 33912 2010-12-27 19:26:38Z ton $
+ * $Id: RE_shader_ext.h 34656 2011-02-05 13:41:29Z blendix $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -30,7 +30,6 @@
 #ifndef RE_SHADER_EXT_H
 #define RE_SHADER_EXT_H
 
-#include "RE_raytrace.h" /* For RE_RAYCOUNTER */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* this include is for shading and texture exports            */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */

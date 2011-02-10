@@ -1,15 +1,15 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/render/intern/raytrace
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-07T19:18:31.464706Z
-34160
-campbellbarton
+2011-02-06T00:49:58.015510Z
+34664
+gsrb3d
 
 
 
@@ -26,17 +26,17 @@ campbellbarton
 
 954f8c5b-7b00-dc11-b283-0030488c597c
 
-rayobject.cpp
+rayobject_empty.cpp
 file
 
 
 
 
-2011-01-18T22:04:33.273021Z
-1315668087312f6209213008eb5c856a
-2011-01-07T19:18:31.464706Z
-34160
-campbellbarton
+2011-02-10T19:48:40.655667Z
+8bb4d381744a5c4e9301731986cea1a0
+2011-02-06T00:49:58.015510Z
+34664
+gsrb3d
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-14629
+1961
 
 rayobject_qbvh.cpp
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-01-18T22:04:33.273021Z
-315abd4658cd556ab463ed0b49752901
-2010-08-16T09:24:18.898693Z
-31369
-campbellbarton
+2011-02-10T19:48:40.655667Z
+161b8c483806bd3a2f02be3241ebdaa3
+2011-02-05T13:41:29.872623Z
+34656
+blendix
 has-props
 
 
@@ -92,19 +92,19 @@ has-props
 
 
 
-4090
+4204
 
-bvh.h
+rayobject_instance.cpp
 file
 
 
 
 
-2011-01-18T22:04:33.273021Z
-2958204e1812bfd4d0bed9ea983b6339
-2011-01-07T18:36:47.041781Z
-34159
-campbellbarton
+2011-02-10T19:48:40.665667Z
+d34e9c002e30ace47cc3c72b2ba05796
+2011-02-06T00:49:58.015510Z
+34664
+gsrb3d
 has-props
 
 
@@ -126,41 +126,7 @@ has-props
 
 
 
-10702
-
-rayobject_rtbuild.cpp
-file
-
-
-
-
-2011-01-18T22:04:33.273021Z
-09009d1803353fad1466be19cb17c7a1
-2011-01-07T19:18:31.464706Z
-34160
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-12168
+5820
 
 rayobject_vbvh.cpp
 file
@@ -168,11 +134,11 @@ file
 
 
 
-2011-01-18T22:04:33.273021Z
-73c69c122787cfb4832bdb5246ef2ad8
-2011-01-07T19:18:31.464706Z
-34160
-campbellbarton
+2011-02-10T19:48:40.665667Z
+cdbfff4ee663eec03087008210c8cd56
+2011-02-05T13:41:29.872623Z
+34656
+blendix
 has-props
 
 
@@ -194,7 +160,75 @@ has-props
 
 
 
-5033
+5182
+
+rayobject_rtbuild.cpp
+file
+
+
+
+
+2011-02-10T19:48:40.665667Z
+0e954bb1ca7f2fcf7e3ae74e5b2b0066
+2011-02-05T13:41:29.872623Z
+34656
+blendix
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12667
+
+rayobject_blibvh.cpp
+file
+
+
+
+
+2011-02-10T19:48:40.665667Z
+e42d5d085d152f9e2e386bf8681d6a6a
+2011-02-06T00:49:58.015510Z
+34664
+gsrb3d
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4343
 
 rayobject_hint.h
 file
@@ -202,11 +236,11 @@ file
 
 
 
-2011-01-18T22:04:33.273021Z
-fe061698bece84841366315f5265234b
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-02-10T19:48:40.665667Z
+e8cfc1057fa8a434b15e2f310b6fe244
+2011-02-05T13:41:29.872623Z
+34656
+blendix
 has-props
 
 
@@ -228,75 +262,7 @@ has-props
 
 
 
-1680
-
-rayobject_svbvh.cpp
-file
-
-
-
-
-2011-01-18T22:04:33.273021Z
-06c57b0f2a437c6a4680a47ff693ffa1
-2010-08-16T09:24:18.898693Z
-31369
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4837
-
-reorganize.h
-file
-
-
-
-
-2011-01-18T22:04:33.273021Z
-2127248c59d5ba60a9826d3c8354a604
-2011-01-07T18:36:47.041781Z
-34159
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-12493
+1675
 
 vbvh.h
 file
@@ -304,11 +270,11 @@ file
 
 
 
-2011-01-18T22:04:33.273021Z
-62cb4b9bda2e7bd6bad448e1f202c169
-2011-01-07T18:36:47.041781Z
-34159
-campbellbarton
+2011-02-10T19:48:40.665667Z
+9a5e50f231fc2be40e834f25506bb865
+2011-02-05T13:41:29.872623Z
+34656
+blendix
 has-props
 
 
@@ -330,19 +296,19 @@ has-props
 
 
 
-4445
+4432
 
-Makefile
+reorganize.h
 file
 
 
 
 
-2011-01-18T22:04:33.273021Z
-c9040b18d6f2028f0e9f16fe765e68f5
-2010-08-04T08:42:18.746776Z
-31029
-sgefant
+2011-02-10T19:48:40.665667Z
+f92e9db05bc8e54c4fd68fa246de2497
+2011-02-05T14:04:59.970789Z
+34657
+blendix
 has-props
 
 
@@ -364,7 +330,7 @@ has-props
 
 
 
-2048
+12500
 
 rayobject_rtbuild.h
 file
@@ -400,17 +366,17 @@ has-props
 
 3434
 
-svbvh.h
+rayobject.cpp
 file
 
 
 
 
-2011-01-18T22:04:33.273021Z
-228e109f7c44653e098ddfa20e6242ef
-2011-01-07T18:36:47.041781Z
-34159
-campbellbarton
+2011-02-10T19:48:40.665667Z
+a9ff72a622c14aca1d308ee73b8a2ffd
+2011-02-05T13:41:29.872623Z
+34656
+blendix
 has-props
 
 
@@ -432,5 +398,209 @@ has-props
 
 
 
-5898
+12921
+
+rayobject_internal.h
+file
+
+
+
+
+2011-02-10T19:48:40.665667Z
+e4156a7b4240278f2b1dbd5a255b66a2
+2011-02-06T00:49:58.015510Z
+34664
+gsrb3d
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4117
+
+rayobject_octree.cpp
+file
+
+
+
+
+2011-02-10T19:48:40.665667Z
+50968819fb8b5696991313c7ab850544
+2011-02-06T00:49:58.015510Z
+34664
+gsrb3d
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+25038
+
+bvh.h
+file
+
+
+
+
+2011-02-10T19:48:40.665667Z
+a29900b50900751930f69e6d7cf628c1
+2011-02-05T13:41:29.872623Z
+34656
+blendix
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+11859
+
+rayobject_svbvh.cpp
+file
+
+
+
+
+2011-02-10T19:48:40.665667Z
+1f57bfddb5ee77ce95f6dfa19f3d3865
+2011-02-05T13:41:29.872623Z
+34656
+blendix
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4966
+
+svbvh.h
+file
+
+
+
+
+2011-02-10T19:48:40.665667Z
+39b85a1ccb3908c24c294f1a3ba19b35
+2011-02-05T13:41:29.872623Z
+34656
+blendix
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8540
+
+rayobject_raycounter.cpp
+file
+
+
+
+
+2011-02-10T19:48:40.665667Z
+c6886c2d8c486d3a278b2e0a38f8b592
+2011-02-06T00:49:58.015510Z
+34664
+gsrb3d
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3365
 

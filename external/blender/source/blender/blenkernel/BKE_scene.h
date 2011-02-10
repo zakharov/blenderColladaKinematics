@@ -1,7 +1,7 @@
 /**
  * blenlib/BKE_scene.h (mar-2001 nzc)
  *	
- * $Id: BKE_scene.h 33742 2010-12-17 15:37:59Z campbellbarton $ 
+ * $Id: BKE_scene.h 34701 2011-02-07 22:48:23Z campbellbarton $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -62,7 +62,7 @@ struct Scene *add_scene(const char *name);
 struct Base *object_in_scene(struct Object *ob, struct Scene *sce);
 
 void set_scene_bg(struct Main *bmain, struct Scene *sce);
-struct Scene *set_scene_name(struct Main *bmain, char *name);
+struct Scene *set_scene_name(struct Main *bmain, const char *name);
 
 struct Scene *copy_scene(struct Scene *sce, int type);
 void unlink_scene(struct Main *bmain, struct Scene *sce, struct Scene *newsce);

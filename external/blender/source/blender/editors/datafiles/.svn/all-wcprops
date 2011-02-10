@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 81
-/svnroot/bf-blender/!svn/ver/34324/trunk/blender/source/blender/editors/datafiles
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/blender/editors/datafiles
 END
 blob.png.c
 K 25
@@ -87,17 +87,17 @@ svn:wc:ra_dav:version-url
 V 94
 /svnroot/bf-blender/!svn/ver/30548/trunk/blender/source/blender/editors/datafiles/crease.png.c
 END
-blur.png.c
-K 25
-svn:wc:ra_dav:version-url
-V 92
-/svnroot/bf-blender/!svn/ver/30562/trunk/blender/source/blender/editors/datafiles/blur.png.c
-END
 darken.png.c
 K 25
 svn:wc:ra_dav:version-url
 V 94
 /svnroot/bf-blender/!svn/ver/30562/trunk/blender/source/blender/editors/datafiles/darken.png.c
+END
+blur.png.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/30562/trunk/blender/source/blender/editors/datafiles/blur.png.c
 END
 smear.png.c
 K 25
@@ -105,23 +105,17 @@ svn:wc:ra_dav:version-url
 V 93
 /svnroot/bf-blender/!svn/ver/30562/trunk/blender/source/blender/editors/datafiles/smear.png.c
 END
-smooth.png.c
-K 25
-svn:wc:ra_dav:version-url
-V 94
-/svnroot/bf-blender/!svn/ver/30548/trunk/blender/source/blender/editors/datafiles/smooth.png.c
-END
 CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 96
 /svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/editors/datafiles/CMakeLists.txt
 END
-Makefile
+smooth.png.c
 K 25
 svn:wc:ra_dav:version-url
-V 90
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blender/editors/datafiles/Makefile
+V 94
+/svnroot/bf-blender/!svn/ver/30548/trunk/blender/source/blender/editors/datafiles/smooth.png.c
 END
 grab.png.c
 K 25
@@ -147,11 +141,11 @@ svn:wc:ra_dav:version-url
 V 92
 /svnroot/bf-blender/!svn/ver/33590/trunk/blender/source/blender/editors/datafiles/prvicons.c
 END
-snake_hook.png.c
+bfont.ttf.c
 K 25
 svn:wc:ra_dav:version-url
-V 98
-/svnroot/bf-blender/!svn/ver/30548/trunk/blender/source/blender/editors/datafiles/snake_hook.png.c
+V 93
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/blender/editors/datafiles/bfont.ttf.c
 END
 preview.blend.c
 K 25
@@ -159,11 +153,11 @@ svn:wc:ra_dav:version-url
 V 97
 /svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/blender/editors/datafiles/preview.blend.c
 END
-bfont.ttf.c
+snake_hook.png.c
 K 25
 svn:wc:ra_dav:version-url
-V 93
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/blender/editors/datafiles/bfont.ttf.c
+V 98
+/svnroot/bf-blender/!svn/ver/30548/trunk/blender/source/blender/editors/datafiles/snake_hook.png.c
 END
 inflate.png.c
 K 25

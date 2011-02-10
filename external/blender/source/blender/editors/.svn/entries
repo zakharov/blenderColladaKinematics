@@ -1,14 +1,14 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/editors
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-18T14:49:06.198970Z
-34389
+2011-02-10T18:54:49.499310Z
+34763
 lukastoenne
 
 
@@ -74,48 +74,11 @@ dir
 transform
 dir
 
-space_outliner
-dir
-
 space_view3d
 dir
 
-space_console
+space_outliner
 dir
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:05:01.653021Z
-50977cdd26e4bba70ac2fc13d2d608e0
-2010-08-10T21:22:26.642559Z
-31223
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1693
 
 CMakeLists.txt
 file
@@ -150,6 +113,9 @@ has-props
 
 
 1901
+
+space_console
+dir
 
 render
 dir
@@ -206,10 +172,10 @@ has-props
 space_file
 dir
 
-datafiles
+mesh
 dir
 
-mesh
+datafiles
 dir
 
 space_image

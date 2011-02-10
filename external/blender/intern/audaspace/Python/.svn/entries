@@ -1,14 +1,14 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern/audaspace/Python
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-09T14:53:18.842857Z
-34195
+2011-01-30T15:29:22.294392Z
+34567
 campbellbarton
 
 
@@ -93,38 +93,4 @@ has-props
 
 
 69975
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:07.223021Z
-bd699d04efb864329ed548396d4bf0cc
-2010-08-16T19:51:29.979267Z
-31397
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1949
 

@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 63
-/svnroot/bf-blender/!svn/ver/33991/trunk/blender/doc/python_api
+/svnroot/bf-blender/!svn/ver/34668/trunk/blender/doc/python_api
 END
 sphinx_doc_gen.sh
 K 25
 svn:wc:ra_dav:version-url
 V 81
-/svnroot/bf-blender/!svn/ver/32739/trunk/blender/doc/python_api/sphinx_doc_gen.sh
+/svnroot/bf-blender/!svn/ver/34668/trunk/blender/doc/python_api/sphinx_doc_gen.sh
 END
 sphinx_html_compact.diff
 K 25
@@ -19,5 +19,5 @@ sphinx_doc_gen.py
 K 25
 svn:wc:ra_dav:version-url
 V 81
-/svnroot/bf-blender/!svn/ver/33861/trunk/blender/doc/python_api/sphinx_doc_gen.py
+/svnroot/bf-blender/!svn/ver/34668/trunk/blender/doc/python_api/sphinx_doc_gen.py
 END

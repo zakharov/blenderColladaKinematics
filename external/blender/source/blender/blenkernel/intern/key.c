@@ -2,7 +2,7 @@
 /*  key.c      
  *  
  * 
- * $Id: key.c 34198 2011-01-09 15:12:08Z campbellbarton $
+ * $Id: key.c 34514 2011-01-26 22:01:51Z aligorith $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -154,10 +154,6 @@ Key *copy_key(Key *key)
 	
 	keyn= copy_libblock(key);
 	
-#if 0 // XXX old animation system
-	keyn->ipo= copy_ipo(key->ipo);
-#endif // XXX old animation system
-	
 	BLI_duplicatelist(&keyn->block, &key->block);
 	
 	kb= key->block.first;
@@ -185,10 +181,6 @@ void make_local_key(Key *key)
 	
 	key->id.lib= 0;
 	new_id(0, (ID *)key, 0);
-
-#if 0 // XXX old animation system
-	make_local_ipo(key->ipo);
-#endif // XXX old animation system
 }
 
 /* Sort shape keys and Ipo curves after a change.  This assumes that at most

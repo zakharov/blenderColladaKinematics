@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 77
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/gameengine/SceneGraph
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/gameengine/SceneGraph
 END
 SConscript
 K 25
@@ -21,17 +21,17 @@ svn:wc:ra_dav:version-url
 V 95
 /svnroot/bf-blender/!svn/ver/28254/trunk/blender/source/gameengine/SceneGraph/SG_Controller.cpp
 END
-SG_IObject.h
-K 25
-svn:wc:ra_dav:version-url
-V 90
-/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/SceneGraph/SG_IObject.h
-END
 SG_DList.h
 K 25
 svn:wc:ra_dav:version-url
 V 88
 /svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/SceneGraph/SG_DList.h
+END
+SG_IObject.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/SceneGraph/SG_IObject.h
 END
 SG_Node.cpp
 K 25
@@ -45,17 +45,17 @@ svn:wc:ra_dav:version-url
 V 93
 /svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/SceneGraph/SG_Controller.h
 END
-SG_Node.h
-K 25
-svn:wc:ra_dav:version-url
-V 87
-/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/SceneGraph/SG_Node.h
-END
 SG_BBox.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 89
 /svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/SceneGraph/SG_BBox.cpp
+END
+SG_Node.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/SceneGraph/SG_Node.h
 END
 SG_ParentRelation.h
 K 25
@@ -69,17 +69,17 @@ svn:wc:ra_dav:version-url
 V 92
 /svnroot/bf-blender/!svn/ver/28254/trunk/blender/source/gameengine/SceneGraph/SG_Spatial.cpp
 END
-SG_BBox.h
-K 25
-svn:wc:ra_dav:version-url
-V 87
-/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/SceneGraph/SG_BBox.h
-END
 SG_Tree.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 89
 /svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/SceneGraph/SG_Tree.cpp
+END
+SG_BBox.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/SceneGraph/SG_BBox.h
 END
 SG_QList.h
 K 25
@@ -92,12 +92,6 @@ K 25
 svn:wc:ra_dav:version-url
 V 90
 /svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/SceneGraph/SG_Spatial.h
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 86
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/gameengine/SceneGraph/Makefile
 END
 CMakeLists.txt
 K 25

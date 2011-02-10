@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/gameengine/Network/TerraplayNetwork
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/gameengine/Network/TerraplayNetwork
 END
 NG_TerraplayNetworkDeviceInterface.cpp
 K 25
@@ -14,10 +14,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 128
 /svnroot/bf-blender/!svn/ver/29240/trunk/blender/source/gameengine/Network/TerraplayNetwork/NG_TerraplayNetworkDeviceInterface.h
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 100
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/gameengine/Network/TerraplayNetwork/Makefile
 END

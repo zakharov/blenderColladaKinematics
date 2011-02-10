@@ -1,5 +1,5 @@
 /*
-* $Id: MOD_multires.c 32586 2010-10-19 07:10:12Z nazgul $
+* $Id: MOD_multires.c 34587 2011-01-31 20:02:51Z nazgul $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -109,6 +109,7 @@ ModifierTypeInfo modifierType_Multires = {
 
 	/* copyData */          copyData,
 	/* deformVerts */       0,
+	/* deformMatrices */    0,
 	/* deformVertsEM */     0,
 	/* deformMatricesEM */  0,
 	/* applyModifier */     applyModifier,

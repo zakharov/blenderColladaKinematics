@@ -1,5 +1,5 @@
 /**
- * $Id: anim_markers.c 34335 2011-01-15 16:14:57Z campbellbarton $
+ * $Id: anim_markers.c 34727 2011-02-09 01:05:40Z aligorith $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -264,6 +264,29 @@ TimeMarker *ED_markers_get_first_selected(ListBase *markers)
 	return NULL;
 }
 
+/* --------------------------------- */
+
+/* Print debugging prints of list of markers 
+ * BSI's: do NOT make static or put in if-defs as "unused code". That's too much trouble when we need to use for quick debuggging!
+ */
+void debug_markers_print_list(ListBase *markers)
+{
+	TimeMarker *marker;
+	
+	if (markers == NULL) {
+		printf("No markers list to print debug for\n");
+		return;
+	}
+	
+	printf("List of markers follows: -----\n");
+	
+	for (marker = markers->first; marker; marker = marker->next) {
+		printf("\t'%s' on %d at %p with %d\n", marker->name, marker->frame, marker, marker->flag);
+	}
+	
+	printf("End of list ------------------\n");
+}
+
 /* ************* Marker Drawing ************ */
 
 /* function to draw markers */
@@ -402,6 +425,19 @@ static int ed_markers_poll_selected_markers(bContext *C)
 		
 	/* check if some marker is selected */
 	return ED_markers_get_first_selected(markers) != NULL;
+}
+
+/* special poll() which checks if there are any markers at all first */
+static int ed_markers_poll_markers_exist(bContext *C)
+{
+	ListBase *markers = ED_context_get_markers(C);
+	
+	/* first things first: markers can only exist in timeline views */
+	if (ED_operator_animview_active(C) == 0)
+		return 0;
+		
+	/* list of markers must exist, as well as some markers in it! */
+	return (markers && markers->first);
 }
  
 /* ------------------------ */ 
@@ -855,6 +891,7 @@ static void ed_marker_duplicate_apply(bContext *C)
 #endif
 
 			/* new marker is added to the begining of list */
+			// FIXME: bad ordering!
 			BLI_addhead(markers, newmarker);
 		}
 	}
@@ -983,8 +1020,8 @@ static int ed_marker_select(bContext *C, wmEvent *evt, int extend, int camera)
 	WM_event_add_notifier(C, NC_SCENE|ND_MARKERS, NULL);
 	WM_event_add_notifier(C, NC_ANIMATION|ND_MARKERS, NULL);
 
-	/* allowing tweaks */
-	return OPERATOR_PASS_THROUGH;
+	/* allowing tweaks, but needs OPERATOR_FINISHED, otherwise renaming fails... [#25987] */
+	return OPERATOR_FINISHED|OPERATOR_PASS_THROUGH;
 }
 
 static int ed_marker_select_invoke(bContext *C, wmOperator *op, wmEvent *evt)
@@ -1011,7 +1048,7 @@ static void MARKER_OT_select(wmOperatorType *ot)
 	
 	/* api callbacks */
 	ot->invoke= ed_marker_select_invoke_wrapper;
-	ot->poll= ED_operator_animview_active;
+	ot->poll= ed_markers_poll_markers_exist;
 	
 	/* flags */
 	ot->flag= OPTYPE_REGISTER|OPTYPE_UNDO;
@@ -1098,7 +1135,7 @@ static void MARKER_OT_select_border(wmOperatorType *ot)
 	ot->invoke= ed_marker_select_border_invoke_wrapper;
 	ot->modal= WM_border_select_modal;
 	
-	ot->poll= ED_operator_animview_active;
+	ot->poll= ed_markers_poll_markers_exist;
 	
 	/* flags */
 	ot->flag= OPTYPE_REGISTER|OPTYPE_UNDO;
@@ -1152,7 +1189,7 @@ static void MARKER_OT_select_all(wmOperatorType *ot)
 	/* api callbacks */
 	ot->exec= ed_marker_select_all_exec;
 	ot->invoke = ed_markers_opwrap_invoke;
-	ot->poll= ED_operator_animview_active;
+	ot->poll= ed_markers_poll_markers_exist;
 	
 	/* flags */
 	ot->flag= OPTYPE_REGISTER|OPTYPE_UNDO;
@@ -1219,12 +1256,12 @@ static int ed_marker_rename_exec(bContext *C, wmOperator *op)
 {
 	TimeMarker *marker= ED_markers_get_first_selected(ED_context_get_markers(C));
 
-	if(marker) {
+	if (marker) {
 		RNA_string_get(op->ptr, "name", marker->name);
-
+		
 		WM_event_add_notifier(C, NC_SCENE|ND_MARKERS, NULL);
 		WM_event_add_notifier(C, NC_ANIMATION|ND_MARKERS, NULL);
-
+		
 		return OPERATOR_FINISHED;
 	}
 	else {

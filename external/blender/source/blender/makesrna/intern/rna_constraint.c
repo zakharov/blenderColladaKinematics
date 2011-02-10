@@ -1,5 +1,5 @@
 /**
- * $Id: rna_constraint.c 34160 2011-01-07 19:18:31Z campbellbarton $
+ * $Id: rna_constraint.c 34518 2011-01-26 23:33:08Z aligorith $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -79,7 +79,7 @@ EnumPropertyItem space_pchan_items[] = {
 
 EnumPropertyItem space_object_items[] = {
 	{0, "WORLD", 0, "World Space", ""},
-	{1, "LOCAL", 0, "Local (Without Parent) Space", ""},
+	{1, "LOCAL", 0, "Local Space", ""},
 	{0, NULL, 0, NULL, NULL}};
 
 EnumPropertyItem constraint_ik_type_items[] ={

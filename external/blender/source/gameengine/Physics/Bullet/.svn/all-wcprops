@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 81
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/gameengine/Physics/Bullet
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/gameengine/Physics/Bullet
 END
 CcdGraphicController.h
 K 25
@@ -13,7 +13,7 @@ CcdPhysicsController.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 106
-/svnroot/bf-blender/!svn/ver/32789/trunk/blender/source/gameengine/Physics/Bullet/CcdPhysicsController.cpp
+/svnroot/bf-blender/!svn/ver/34469/trunk/blender/source/gameengine/Physics/Bullet/CcdPhysicsController.cpp
 END
 CcdPhysicsEnvironment.cpp
 K 25
@@ -49,11 +49,5 @@ CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/gameengine/Physics/Bullet/CMakeLists.txt
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 90
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/gameengine/Physics/Bullet/Makefile
+/svnroot/bf-blender/!svn/ver/34486/trunk/blender/source/gameengine/Physics/Bullet/CMakeLists.txt
 END

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 81
-/svnroot/bf-blender/!svn/ver/34335/trunk/blender/source/blender/editors/transform
+/svnroot/bf-blender/!svn/ver/34695/trunk/blender/source/blender/editors/transform
 END
 transform.h
 K 25
@@ -25,7 +25,7 @@ transform_conversions.c
 K 25
 svn:wc:ra_dav:version-url
 V 105
-/svnroot/bf-blender/!svn/ver/34312/trunk/blender/source/blender/editors/transform/transform_conversions.c
+/svnroot/bf-blender/!svn/ver/34634/trunk/blender/source/blender/editors/transform/transform_conversions.c
 END
 SConscript
 K 25
@@ -49,7 +49,7 @@ transform_generics.c
 K 25
 svn:wc:ra_dav:version-url
 V 102
-/svnroot/bf-blender/!svn/ver/34236/trunk/blender/source/blender/editors/transform/transform_generics.c
+/svnroot/bf-blender/!svn/ver/34634/trunk/blender/source/blender/editors/transform/transform_generics.c
 END
 transform_input.c
 K 25
@@ -61,19 +61,13 @@ transform.c
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/34317/trunk/blender/source/blender/editors/transform/transform.c
+/svnroot/bf-blender/!svn/ver/34695/trunk/blender/source/blender/editors/transform/transform.c
 END
 CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 96
 /svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/editors/transform/CMakeLists.txt
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 90
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blender/editors/transform/Makefile
 END
 transform_ops.c
 K 25
@@ -85,5 +79,5 @@ transform_snap.c
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/svnroot/bf-blender/!svn/ver/34290/trunk/blender/source/blender/editors/transform/transform_snap.c
+/svnroot/bf-blender/!svn/ver/34690/trunk/blender/source/blender/editors/transform/transform_snap.c
 END

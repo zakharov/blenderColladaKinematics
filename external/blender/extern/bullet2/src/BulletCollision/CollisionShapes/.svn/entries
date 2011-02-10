@@ -1,7 +1,7 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes
 https://svn.blender.org/svnroot/bf-blender
 
@@ -94,40 +94,6 @@ has-props
 
 2696
 
-btScaledBvhTriangleMeshShape.cpp
-file
-
-
-
-
-2011-01-18T22:05:07.003021Z
-5c1f31a868879b73e48e084c1315dbc7
-2011-01-16T06:16:28.355502Z
-34347
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5191
-
 btEmptyShape.cpp
 file
 
@@ -161,6 +127,40 @@ has-props
 
 
 1574
+
+btScaledBvhTriangleMeshShape.cpp
+file
+
+
+
+
+2011-01-18T22:05:07.003021Z
+5c1f31a868879b73e48e084c1315dbc7
+2011-01-16T06:16:28.355502Z
+34347
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5191
 
 btConvexShape.cpp
 file
@@ -196,14 +196,14 @@ has-props
 
 10772
 
-btTriangleMesh.h
+btHeightfieldTerrainShape.h
 file
 
 
 
 
 2011-01-18T22:05:07.003021Z
-0c98795098500c0d65da87c5f7d115a1
+a172d78a98fd639b8a24486e2c335566
 2009-03-17T21:44:58.713628Z
 19323
 blendix
@@ -228,7 +228,7 @@ has-props
 
 
 
-2998
+6316
 
 btMultiSphereShape.h
 file
@@ -264,14 +264,14 @@ has-props
 
 2391
 
-btHeightfieldTerrainShape.h
+btTriangleMesh.h
 file
 
 
 
 
 2011-01-18T22:05:07.003021Z
-a172d78a98fd639b8a24486e2c335566
+0c98795098500c0d65da87c5f7d115a1
 2009-03-17T21:44:58.713628Z
 19323
 blendix
@@ -296,7 +296,7 @@ has-props
 
 
 
-6316
+2998
 
 btStaticPlaneShape.h
 file
@@ -332,40 +332,6 @@ has-props
 
 2100
 
-btTriangleIndexVertexArray.h
-file
-
-
-
-
-2011-01-18T22:05:07.003021Z
-77305de4488738cc91b39e3e61799d31
-2009-03-17T21:44:58.713628Z
-19323
-blendix
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4603
-
 btConcaveShape.cpp
 file
 
@@ -399,6 +365,40 @@ has-props
 
 
 1092
+
+btTriangleIndexVertexArray.h
+file
+
+
+
+
+2011-01-18T22:05:07.003021Z
+77305de4488738cc91b39e3e61799d31
+2009-03-17T21:44:58.713628Z
+19323
+blendix
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4603
 
 btUniformScalingShape.cpp
 file
@@ -1114,40 +1114,6 @@ has-props
 
 3829
 
-btTriangleIndexVertexMaterialArray.cpp
-file
-
-
-
-
-2011-01-18T22:05:07.013021Z
-68022befb28d344115719bf38e8a7ee2
-2009-09-14T14:45:32.818085Z
-23221
-sirdude
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3891
-
 btOptimizedBvh.h
 file
 
@@ -1181,6 +1147,40 @@ has-props
 
 
 2327
+
+btTriangleIndexVertexMaterialArray.cpp
+file
+
+
+
+
+2011-01-18T22:05:07.013021Z
+68022befb28d344115719bf38e8a7ee2
+2009-09-14T14:45:32.818085Z
+23221
+sirdude
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3891
 
 btCollisionShape.cpp
 file
@@ -1284,40 +1284,6 @@ has-props
 
 3979
 
-btShapeHull.cpp
-file
-
-
-
-
-2011-01-18T22:05:07.013021Z
-1abcbba4944a7cfdbdf71434999b7d5e
-2009-09-14T14:45:32.818085Z
-23221
-sirdude
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6187
-
 btConvexInternalShape.h
 file
 
@@ -1352,14 +1318,48 @@ has-props
 
 1734
 
-btStridingMeshInterface.h
+btShapeHull.cpp
 file
 
 
 
 
 2011-01-18T22:05:07.013021Z
-0084266d6d62f58755220357eccee39b
+1abcbba4944a7cfdbdf71434999b7d5e
+2009-09-14T14:45:32.818085Z
+23221
+sirdude
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6187
+
+btConvexTriangleMeshShape.cpp
+file
+
+
+
+
+2011-01-18T22:05:07.013021Z
+735bdcd7645b8b217f0ff4f5c74dd203
 2009-03-17T21:44:58.713628Z
 19323
 blendix
@@ -1384,7 +1384,7 @@ has-props
 
 
 
-4040
+8289
 
 btMinkowskiSumShape.h
 file
@@ -1420,14 +1420,14 @@ has-props
 
 2363
 
-btConvexTriangleMeshShape.cpp
+btStridingMeshInterface.h
 file
 
 
 
 
 2011-01-18T22:05:07.013021Z
-735bdcd7645b8b217f0ff4f5c74dd203
+0084266d6d62f58755220357eccee39b
 2009-03-17T21:44:58.713628Z
 19323
 blendix
@@ -1452,7 +1452,7 @@ has-props
 
 
 
-8289
+4040
 
 btTriangleCallback.h
 file
@@ -1556,40 +1556,6 @@ has-props
 
 1158
 
-btTriangleBuffer.cpp
-file
-
-
-
-
-2011-01-18T22:05:07.023021Z
-dcd23696ebeb481a684abdc6b509be22
-2008-11-12T21:16:53.478104Z
-17433
-blendix
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1295
-
 btCylinderShape.h
 file
 
@@ -1623,6 +1589,40 @@ has-props
 
 
 3802
+
+btTriangleBuffer.cpp
+file
+
+
+
+
+2011-01-18T22:05:07.023021Z
+dcd23696ebeb481a684abdc6b509be22
+2008-11-12T21:16:53.478104Z
+17433
+blendix
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1295
 
 btBvhTriangleMeshShape.cpp
 file
@@ -1828,17 +1828,17 @@ has-props
 
 4124
 
-btStridingMeshInterface.cpp
+btCollisionShape.h
 file
 
 
 
 
 2011-01-18T22:05:07.023021Z
-a29b56319267606ffde848afbdd5cf86
-2008-11-12T21:16:53.478104Z
-17433
-blendix
+ee6d8a669f9d158faa63dcff5642649a
+2009-11-28T17:30:34.442380Z
+24972
+ben2610
 has-props
 
 
@@ -1860,7 +1860,7 @@ has-props
 
 
 
-4920
+3673
 
 btMinkowskiSumShape.cpp
 file
@@ -1896,50 +1896,16 @@ has-props
 
 2228
 
-btCollisionShape.h
+btStridingMeshInterface.cpp
 file
 
 
 
 
 2011-01-18T22:05:07.023021Z
-ee6d8a669f9d158faa63dcff5642649a
-2009-11-28T17:30:34.442380Z
-24972
-ben2610
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3673
-
-btTriangleMesh.cpp
-file
-
-
-
-
-2011-01-18T22:05:07.023021Z
-945ab1e3f9e6388e597030817ff7267e
-2009-03-17T21:44:58.713628Z
-19323
+a29b56319267606ffde848afbdd5cf86
+2008-11-12T21:16:53.478104Z
+17433
 blendix
 has-props
 
@@ -1962,41 +1928,7 @@ has-props
 
 
 
-4443
-
-btMultiSphereShape.cpp
-file
-
-
-
-
-2011-01-18T22:05:07.023021Z
-5cd169c297cf79674ef93e2efc88637e
-2009-03-17T21:44:58.713628Z
-19323
-blendix
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3774
+4920
 
 btHeightfieldTerrainShape.cpp
 file
@@ -2032,17 +1964,17 @@ has-props
 
 11024
 
-btScaledBvhTriangleMeshShape.h
+btMultiSphereShape.cpp
 file
 
 
 
 
 2011-01-18T22:05:07.023021Z
-7a4c3df600907defe6d01b0fa3008563
-2009-09-14T14:45:32.818085Z
-23221
-sirdude
+5cd169c297cf79674ef93e2efc88637e
+2009-03-17T21:44:58.713628Z
+19323
+blendix
 has-props
 
 
@@ -2064,7 +1996,41 @@ has-props
 
 
 
-2353
+3774
+
+btTriangleMesh.cpp
+file
+
+
+
+
+2011-01-18T22:05:07.023021Z
+945ab1e3f9e6388e597030817ff7267e
+2009-03-17T21:44:58.713628Z
+19323
+blendix
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4443
 
 btEmptyShape.h
 file
@@ -2100,17 +2066,17 @@ has-props
 
 2173
 
-btStaticPlaneShape.cpp
+btScaledBvhTriangleMeshShape.h
 file
 
 
 
 
 2011-01-18T22:05:07.023021Z
-a093674947ff63fd1a431d2b780587d5
-2009-03-17T21:44:58.713628Z
-19323
-blendix
+7a4c3df600907defe6d01b0fa3008563
+2009-09-14T14:45:32.818085Z
+23221
+sirdude
 has-props
 
 
@@ -2132,7 +2098,7 @@ has-props
 
 
 
-3585
+2353
 
 btConvexShape.h
 file
@@ -2167,6 +2133,40 @@ has-props
 
 
 3121
+
+btStaticPlaneShape.cpp
+file
+
+
+
+
+2011-01-18T22:05:07.023021Z
+a093674947ff63fd1a431d2b780587d5
+2009-03-17T21:44:58.713628Z
+19323
+blendix
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3585
 
 btTriangleIndexVertexArray.cpp
 file

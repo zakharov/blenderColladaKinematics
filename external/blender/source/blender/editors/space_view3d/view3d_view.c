@@ -1,5 +1,5 @@
 /**
- * $Id: view3d_view.c 34378 2011-01-18 01:04:14Z aligorith $
+ * $Id: view3d_view.c 34662 2011-02-05 19:07:54Z ton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -476,6 +476,13 @@ static int view3d_setobjectascamera_exec(bContext *C, wmOperator *UNUSED(op))
 	
 	return OPERATOR_FINISHED;
 }
+
+static int region3d_unlocked_poll(bContext *C)
+{
+	RegionView3D *rv3d= CTX_wm_region_view3d(C);
+	return (rv3d && rv3d->viewlock==0);
+}
+
 
 void VIEW3D_OT_object_as_camera(wmOperatorType *ot)
 {

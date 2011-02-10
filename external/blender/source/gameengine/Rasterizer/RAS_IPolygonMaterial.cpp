@@ -1,5 +1,5 @@
 /**
- * $Id: RAS_IPolygonMaterial.cpp 28254 2010-04-18 10:28:37Z campbellbarton $
+ * $Id: RAS_IPolygonMaterial.cpp 34469 2011-01-23 17:17:21Z ben2610 $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -204,6 +204,11 @@ int RAS_IPolyMaterial::GetMaterialIndex() const
 }
 
 Material *RAS_IPolyMaterial::GetBlenderMaterial() const
+{
+	return NULL;
+}
+
+Image *RAS_IPolyMaterial::GetBlenderImage() const
 {
 	return NULL;
 }

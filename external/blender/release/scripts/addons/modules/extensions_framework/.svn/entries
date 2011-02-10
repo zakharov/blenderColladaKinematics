@@ -1,14 +1,14 @@
 10
 
 dir
-1437
+1566
 https://svn.blender.org/svnroot/bf-extensions/trunk/py/scripts/addons/modules/extensions_framework
 https://svn.blender.org/svnroot/bf-extensions
 
 
 
-2010-12-18T14:11:07.852610Z
-1292
+2011-02-05T15:57:24.921949Z
+1540
 dougal2
 
 
@@ -59,9 +59,6 @@ has-props
 
 
 5818
-
-outputs
-dir
 
 ui.py
 file
@@ -137,11 +134,11 @@ file
 
 
 
-2011-01-18T22:05:18.083021Z
-637a0d78eaea0aaceb0023ca2110f0f2
-2010-12-12T00:29:28.834049Z
-1270
-gsrb3d
+2011-02-10T19:49:02.295667Z
+b70ceef01ff9d8c8682adfd9d46ac536
+2011-02-02T00:42:00.398557Z
+1535
+dougal2
 has-props
 
 
@@ -163,7 +160,7 @@ has-props
 
 
 
-3159
+3257
 
 __init__.py
 file

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 75
-/svnroot/bf-blender/!svn/ver/26841/trunk/blender/intern/itasc/kdl/utilities
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/intern/itasc/kdl/utilities
 END
 error.h
 K 25
@@ -74,10 +74,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 84
 /svnroot/bf-blender/!svn/ver/23467/trunk/blender/intern/itasc/kdl/utilities/traits.h
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 84
-/svnroot/bf-blender/!svn/ver/23494/trunk/blender/intern/itasc/kdl/utilities/Makefile
 END

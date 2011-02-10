@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 79
-/svnroot/bf-blender/!svn/ver/34160/trunk/blender/source/blender/ikplugin/intern
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/blender/ikplugin/intern
 END
 ikplugin_api.h
 K 25
@@ -32,12 +32,6 @@ K 25
 svn:wc:ra_dav:version-url
 V 94
 /svnroot/bf-blender/!svn/ver/34160/trunk/blender/source/blender/ikplugin/intern/ikplugin_api.c
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 88
-/svnroot/bf-blender/!svn/ver/31891/trunk/blender/source/blender/ikplugin/intern/Makefile
 END
 iksolver_plugin.c
 K 25

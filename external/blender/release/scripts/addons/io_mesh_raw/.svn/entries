@@ -1,15 +1,15 @@
 10
 
 dir
-1437
+1566
 https://svn.blender.org/svnroot/bf-extensions/trunk/py/scripts/addons/io_mesh_raw
 https://svn.blender.org/svnroot/bf-extensions
 
 
 
-2011-01-18T00:04:49.122019Z
-1423
-aurel
+2011-02-08T21:36:44.718602Z
+1562
+campbellbarton
 
 
 
@@ -100,11 +100,11 @@ file
 
 
 
-2011-01-18T22:05:18.813021Z
+2011-02-10T19:49:02.715667Z
 b619a07cd2e22c57f6ea8c12ff60bb1f
-2011-01-18T00:04:49.122019Z
-1423
-aurel
+2011-02-08T21:36:44.718602Z
+1562
+campbellbarton
 has-props
 
 

@@ -1,15 +1,15 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern/audaspace/ffmpeg
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2010-11-01T18:13:10.166523Z
-32815
-schlaile
+2011-01-30T15:29:22.294392Z
+34567
+campbellbarton
 
 
 
@@ -161,38 +161,4 @@ has-props
 
 
 1958
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:07.323021Z
-b84815d5b57079fccae60e7ee563c9f7
-2009-08-21T22:56:26.114993Z
-22688
-bdiego
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1210
 

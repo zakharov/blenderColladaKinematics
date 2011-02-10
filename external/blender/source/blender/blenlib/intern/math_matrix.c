@@ -1,5 +1,5 @@
 /*
- * $Id: math_matrix.c 34175 2011-01-08 12:43:44Z campbellbarton $
+ * $Id: math_matrix.c 34587 2011-01-31 20:02:51Z nazgul $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -107,6 +107,20 @@ void copy_m4_m3(float m1[][4], float m2[][3])	/* no clear */
 	m1[3][2]=0.0F;	
 	m1[3][3]=1.0F;
 
+}
+
+void swap_m3m3(float m1[][3], float m2[][3])
+{
+	float t;
+	int i, j;
+
+	for(i = 0; i < 3; i++) {
+		for (j = 0; j < 3; j++) {
+			t        = m1[i][j];
+			m1[i][j] = m2[i][j];
+			m2[i][j] = t;
+		}
+	}
 }
 
 void swap_m4m4(float m1[][4], float m2[][4])

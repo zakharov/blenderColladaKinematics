@@ -1,14 +1,14 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/build_files/package_spec
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2010-09-12T16:00:12.758684Z
-31894
+2011-02-10T07:22:56.183029Z
+34752
 campbellbarton
 
 
@@ -28,4 +28,41 @@ campbellbarton
 
 pacman
 dir
+
+debian
+dir
+
+build_debian.sh
+file
+
+
+
+
+2011-02-10T19:48:55.985667Z
+f8443aca657fc43afffb6c1fc0a2d9b1
+2011-02-10T07:22:56.183029Z
+34752
+campbellbarton
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+782
 

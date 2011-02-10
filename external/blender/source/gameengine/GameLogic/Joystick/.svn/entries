@@ -1,15 +1,15 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/gameengine/GameLogic/Joystick
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2010-08-10T21:22:26.642559Z
-31223
-gsrb3d
+2011-01-30T15:29:22.294392Z
+34567
+campbellbarton
 
 
 
@@ -195,38 +195,4 @@ has-props
 
 
 3411
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:26.873021Z
-cab6e4e72532071e7bc091c87b67c963
-2010-08-10T21:22:26.642559Z
-31223
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1402
 

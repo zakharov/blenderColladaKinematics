@@ -1,7 +1,7 @@
 /**
  * Actuator sensor
  *
- * $Id: SCA_ActuatorSensor.cpp 32788 2010-10-31 04:11:39Z campbellbarton $
+ * $Id: SCA_ActuatorSensor.cpp 34520 2011-01-27 00:02:25Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,8 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+#include <stddef.h>
 
 #include <iostream>
 #include "SCA_ActuatorSensor.h"

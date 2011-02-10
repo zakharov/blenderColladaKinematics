@@ -1,7 +1,7 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver
 https://svn.blender.org/svnroot/bf-blender
 
@@ -162,16 +162,16 @@ has-props
 
 3473
 
-btConstraintSolver.h
+btSolverConstraint.h
 file
 
 
 
 
 2011-01-18T22:05:05.983021Z
-486f5f0a230f9aa782193f126bffdb88
-2008-11-12T21:16:53.478104Z
-17433
+c1d9ee742efb319d3bc7cd84040d6d6c
+2009-03-17T21:44:58.713628Z
+19323
 blendix
 has-props
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-2032
+2433
 
 btConeTwistConstraint.cpp
 file
@@ -230,16 +230,16 @@ has-props
 
 32982
 
-btSolverConstraint.h
+btConstraintSolver.h
 file
 
 
 
 
 2011-01-18T22:05:05.983021Z
-c1d9ee742efb319d3bc7cd84040d6d6c
-2009-03-17T21:44:58.713628Z
-19323
+486f5f0a230f9aa782193f126bffdb88
+2008-11-12T21:16:53.478104Z
+17433
 blendix
 has-props
 
@@ -262,7 +262,7 @@ has-props
 
 
 
-2433
+2032
 
 btSliderConstraint.cpp
 file
@@ -332,40 +332,6 @@ has-props
 
 6874
 
-btPoint2PointConstraint.cpp
-file
-
-
-
-
-2011-01-18T22:05:05.983021Z
-03a22987dc44267edfb0a6dab2e44ab7
-2009-03-17T21:44:58.713628Z
-19323
-blendix
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7039
-
 btTypedConstraint.cpp
 file
 
@@ -399,6 +365,40 @@ has-props
 
 
 3166
+
+btPoint2PointConstraint.cpp
+file
+
+
+
+
+2011-01-18T22:05:05.983021Z
+03a22987dc44267edfb0a6dab2e44ab7
+2009-03-17T21:44:58.713628Z
+19323
+blendix
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7039
 
 btSliderConstraint.h
 file
@@ -434,40 +434,6 @@ has-props
 
 9921
 
-btJacobianEntry.h
-file
-
-
-
-
-2011-01-18T22:05:05.983021Z
-298452d86b7c97dcf75c11bbbc14ec7d
-2008-11-12T21:16:53.478104Z
-17433
-blendix
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5424
-
 btSolverBody.h
 file
 
@@ -501,6 +467,40 @@ has-props
 
 
 4742
+
+btJacobianEntry.h
+file
+
+
+
+
+2011-01-18T22:05:05.983021Z
+298452d86b7c97dcf75c11bbbc14ec7d
+2008-11-12T21:16:53.478104Z
+17433
+blendix
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5424
 
 btHingeConstraint.cpp
 file

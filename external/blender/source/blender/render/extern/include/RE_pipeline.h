@@ -1,5 +1,5 @@
 /**
- * $Id: RE_pipeline.h 34160 2011-01-07 19:18:31Z campbellbarton $
+ * $Id: RE_pipeline.h 34715 2011-02-08 10:31:47Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -287,7 +287,7 @@ typedef struct RenderEngine {
 	ListBase fullresult;
 } RenderEngine;
 
-void RE_layer_load_from_file(RenderLayer *layer, struct ReportList *reports, const char *filename);
+void RE_layer_load_from_file(RenderLayer *layer, struct ReportList *reports, const char *filename, int x, int y);
 void RE_result_load_from_file(RenderResult *result, struct ReportList *reports, const char *filename);
 
 struct RenderResult *RE_engine_begin_result(RenderEngine *engine, int x, int y, int w, int h);

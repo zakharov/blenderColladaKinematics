@@ -1,7 +1,7 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/doc/python_api/alternative/mako
 https://svn.blender.org/svnroot/bf-blender
 
@@ -264,6 +264,9 @@ has-props
 
 5786
 
+ext
+dir
+
 lookup.py
 file
 
@@ -297,9 +300,6 @@ has-props
 
 
 7562
-
-ext
-dir
 
 template.py
 file

@@ -1,5 +1,5 @@
 /**
- * $Id: object_ops.c 34162 2011-01-07 21:12:47Z nicholasbishop $
+ * $Id: object_ops.c 34468 2011-01-23 14:04:31Z jhk $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -77,6 +77,7 @@ void ED_operatortypes_object(void)
 	WM_operatortype_append(OBJECT_OT_shade_flat);
 	WM_operatortype_append(OBJECT_OT_paths_calculate);
 	WM_operatortype_append(OBJECT_OT_paths_clear);
+	WM_operatortype_append(OBJECT_OT_forcefield_toggle);
 
 	WM_operatortype_append(OBJECT_OT_parent_set);
 	WM_operatortype_append(OBJECT_OT_parent_no_inverse_set);

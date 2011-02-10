@@ -1,15 +1,15 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/editors/transform
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-15T16:14:57.406996Z
-34335
-campbellbarton
+2011-02-07T16:41:57.103334Z
+34695
+ton
 
 
 
@@ -134,10 +134,10 @@ file
 
 
 
-2011-01-18T22:04:51.733021Z
-ea686611b8189df8153f2c88c05d0960
-2011-01-13T23:53:14.309346Z
-34312
+2011-02-10T19:48:52.375667Z
+2ba16012fc6d18270bb60b2481df6dd4
+2011-02-04T08:33:07.469593Z
+34634
 aligorith
 has-props
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-150500
+151572
 
 SConscript
 file
@@ -270,10 +270,10 @@ file
 
 
 
-2011-01-18T22:04:51.733021Z
-b4c30b0b1b2a6765d389ca76393ef837
-2011-01-10T22:10:28.335360Z
-34236
+2011-02-10T19:48:52.375667Z
+98ab78379c88d9baeff26884d2b2dbc7
+2011-02-04T08:33:07.469593Z
+34634
 aligorith
 has-props
 
@@ -296,7 +296,7 @@ has-props
 
 
 
-41282
+41289
 
 transform_input.c
 file
@@ -338,11 +338,11 @@ file
 
 
 
-2011-01-18T22:04:51.733021Z
-095cde926ce40a22fd0f5f8752b94324
-2011-01-14T06:46:28.388559Z
-34317
-aligorith
+2011-02-10T19:48:52.375667Z
+b7078c09dcbd5545c8acd9b80ca2fef0
+2011-02-07T16:41:57.103334Z
+34695
+ton
 has-props
 
 
@@ -364,7 +364,7 @@ has-props
 
 
 
-143685
+143847
 
 CMakeLists.txt
 file
@@ -399,40 +399,6 @@ has-props
 
 
 1315
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:51.743021Z
-744d83241be6cc7ca4f1c769f326d4fa
-2010-08-10T21:22:26.642559Z
-31223
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1548
 
 transform_ops.c
 file
@@ -474,10 +440,10 @@ file
 
 
 
-2011-01-18T22:04:51.743021Z
-9b78a0ca5a8b2c7a97b710a3a7794262
-2011-01-13T04:53:55.701793Z
-34290
+2011-02-10T19:48:52.385667Z
+32a8c624fdbf674f4e7ab4b902d251b0
+2011-02-07T12:07:26.652948Z
+34690
 campbellbarton
 has-props
 
@@ -500,5 +466,5 @@ has-props
 
 
 
-47185
+47222
 

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 67
-/svnroot/bf-blender/!svn/ver/34327/trunk/blender/source/blender/gpu
+/svnroot/bf-blender/!svn/ver/34760/trunk/blender/source/blender/gpu
 END
 GPU_material.h
 K 25
@@ -32,12 +32,6 @@ K 25
 svn:wc:ra_dav:version-url
 V 81
 /svnroot/bf-blender/!svn/ver/33442/trunk/blender/source/blender/gpu/GPU_buffers.h
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 76
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blender/gpu/Makefile
 END
 GPU_draw.h
 K 25

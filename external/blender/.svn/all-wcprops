@@ -1,13 +1,19 @@
 K 25
 svn:wc:ra_dav:version-url
 V 48
-/svnroot/bf-blender/!svn/ver/34392/trunk/blender
+/svnroot/bf-blender/!svn/ver/34763/trunk/blender
 END
 SConstruct
 K 25
 svn:wc:ra_dav:version-url
 V 59
-/svnroot/bf-blender/!svn/ver/34367/trunk/blender/SConstruct
+/svnroot/bf-blender/!svn/ver/34724/trunk/blender/SConstruct
+END
+GNUmakefile
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/bf-blender/!svn/ver/34680/trunk/blender/GNUmakefile
 END
 COPYING
 K 25
@@ -19,11 +25,5 @@ CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 63
-/svnroot/bf-blender/!svn/ver/34198/trunk/blender/CMakeLists.txt
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 57
-/svnroot/bf-blender/!svn/ver/30755/trunk/blender/Makefile
+/svnroot/bf-blender/!svn/ver/34711/trunk/blender/CMakeLists.txt
 END

@@ -3,7 +3,7 @@
  *
  *  
  * 
- * $Id: mesh.c 34160 2011-01-07 19:18:31Z campbellbarton $
+ * $Id: mesh.c 34753 2011-02-10 09:29:31Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -444,7 +444,7 @@ int test_index_face(MFace *mface, CustomData *fdata, int mfindex, int nr)
 		mface->v4= 0;
 		nr--;
 	}
-	if(mface->v2 && mface->v2==mface->v3) {
+	if((mface->v2 || mface->v4) && mface->v2==mface->v3) {
 		mface->v3= mface->v4;
 		mface->v4= 0;
 		nr--;
@@ -454,6 +454,32 @@ int test_index_face(MFace *mface, CustomData *fdata, int mfindex, int nr)
 		mface->v3= mface->v4;
 		mface->v4= 0;
 		nr--;
+	}
+
+	/* check corrupt cases, bowtie geometry, cant handle these because edge data wont exist so just return 0 */
+	if(nr==3) {
+		if(
+		/* real edges */
+			mface->v1==mface->v2 ||
+			mface->v2==mface->v3 ||
+			mface->v3==mface->v1
+		) {
+			return 0;
+		}
+	}
+	else if(nr==4) {
+		if(
+		/* real edges */
+			mface->v1==mface->v2 ||
+			mface->v2==mface->v3 ||
+			mface->v3==mface->v4 ||
+			mface->v4==mface->v1 ||
+		/* across the face */
+			mface->v1==mface->v3 ||
+			mface->v2==mface->v4
+		) {
+			return 0;
+		}
 	}
 
 	/* prevent a zero at wrong index location */
@@ -676,6 +702,23 @@ void mesh_strip_loose_faces(Mesh *me)
 		}
 	}
 	me->totface = b;
+}
+
+void mesh_strip_loose_edges(Mesh *me)
+{
+	int a,b;
+
+	for (a=b=0; a<me->totedge; a++) {
+		if (me->medge[a].v1!=me->medge[a].v2) {
+			if (a!=b) {
+				memcpy(&me->medge[b],&me->medge[a],sizeof(me->medge[b]));
+				CustomData_copy_data(&me->edata, &me->edata, a, b, 1);
+				CustomData_free_elem(&me->edata, a, 1);
+			}
+			b++;
+		}
+	}
+	me->totedge = b;
 }
 
 void mball_to_mesh(ListBase *lb, Mesh *me)
@@ -1513,7 +1556,10 @@ int mesh_center_median(Mesh *me, float cent[3])
 	for(mvert= me->mvert; i--; mvert++) {
 		add_v3_v3(cent, mvert->co);
 	}
-	mul_v3_fl(cent, 1.0f/(float)me->totvert);
+	/* otherwise we get NAN for 0 verts */
+	if(me->totvert) {
+		mul_v3_fl(cent, 1.0f/(float)me->totvert);
+	}
 
 	return (me->totvert != 0);
 }

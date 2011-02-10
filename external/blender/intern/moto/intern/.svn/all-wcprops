@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 67
-/svnroot/bf-blender/!svn/ver/28254/trunk/blender/intern/moto/intern
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/intern/moto/intern
 END
 MT_random.cpp
 K 25
@@ -74,10 +74,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 81
 /svnroot/bf-blender/!svn/ver/28254/trunk/blender/intern/moto/intern/MT_Point3.cpp
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 76
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/moto/intern/Makefile
 END

@@ -1,14 +1,14 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern/decimation/intern
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2010-04-18T10:28:37.496249Z
-28254
+2011-01-30T15:29:22.294392Z
+34567
 campbellbarton
 
 
@@ -196,40 +196,6 @@ has-props
 
 12302
 
-LOD_QSDecimator.cpp
-file
-
-
-
-
-2011-01-18T22:04:10.693021Z
-a841a220bae5ce48ca7aeceb88696562
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7663
-
 LOD_ExternBufferEditor.h
 file
 
@@ -264,16 +230,16 @@ has-props
 
 4239
 
-LOD_MeshBounds.h
+LOD_QSDecimator.cpp
 file
 
 
 
 
-2011-01-18T22:04:10.703021Z
-6dae9d0c04ef8017fef3c5f22948e7c8
-2010-02-12T13:34:04.213317Z
-26841
+2011-01-18T22:04:10.693021Z
+a841a220bae5ce48ca7aeceb88696562
+2010-04-18T10:28:37.496249Z
+28254
 campbellbarton
 has-props
 
@@ -296,7 +262,7 @@ has-props
 
 
 
-2536
+7663
 
 LOD_decimation.cpp
 file
@@ -332,6 +298,40 @@ has-props
 
 3898
 
+LOD_MeshBounds.h
+file
+
+
+
+
+2011-01-18T22:04:10.703021Z
+6dae9d0c04ef8017fef3c5f22948e7c8
+2010-02-12T13:34:04.213317Z
+26841
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2536
+
 LOD_MeshPrimitives.h
 file
 
@@ -365,40 +365,6 @@ has-props
 
 
 3252
-
-LOD_FaceNormalEditor.cpp
-file
-
-
-
-
-2011-01-18T22:04:10.703021Z
-6edb46240b8e25286b972bae38f74237
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6131
 
 LOD_EdgeCollapser.h
 file
@@ -434,6 +400,40 @@ has-props
 
 2862
 
+LOD_FaceNormalEditor.cpp
+file
+
+
+
+
+2011-01-18T22:04:10.703021Z
+6edb46240b8e25286b972bae38f74237
+2010-04-18T10:28:37.496249Z
+28254
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6131
+
 LOD_ManMesh2.h
 file
 
@@ -468,40 +468,6 @@ has-props
 
 4848
 
-LOD_MeshException.h
-file
-
-
-
-
-2011-01-18T22:04:10.703021Z
-da53b831736810c0942399a8c7e49750
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1370
-
 LOD_QSDecimator.h
 file
 
@@ -535,6 +501,40 @@ has-props
 
 
 2732
+
+LOD_MeshException.h
+file
+
+
+
+
+2011-01-18T22:04:10.703021Z
+da53b831736810c0942399a8c7e49750
+2010-02-12T13:34:04.213317Z
+26841
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1370
 
 LOD_FaceNormalEditor.h
 file
@@ -674,40 +674,6 @@ has-props
 
 
 3209
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:10.703021Z
-3d25362ec740feecaa06f487044f17b1
-2008-01-07T19:13:47.953844Z
-13161
-hos
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1262
 
 LOD_QuadricEditor.cpp
 file

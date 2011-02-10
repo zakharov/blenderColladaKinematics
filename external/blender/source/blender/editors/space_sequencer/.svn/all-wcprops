@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 87
-/svnroot/bf-blender/!svn/ver/34335/trunk/blender/source/blender/editors/space_sequencer
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/blender/editors/space_sequencer
 END
 sequencer_intern.h
 K 25
@@ -68,10 +68,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 102
 /svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/editors/space_sequencer/CMakeLists.txt
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 96
-/svnroot/bf-blender/!svn/ver/31388/trunk/blender/source/blender/editors/space_sequencer/Makefile
 END

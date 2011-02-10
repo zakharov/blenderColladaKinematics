@@ -1,14 +1,14 @@
 10
 
 dir
-1437
+1566
 https://svn.blender.org/svnroot/bf-extensions/trunk/py/scripts/addons/io_mesh_stl
 https://svn.blender.org/svnroot/bf-extensions
 
 
 
-2011-01-14T19:31:42.964299Z
-1401
+2011-02-08T21:36:44.718602Z
+1562
 campbellbarton
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2011-01-18T22:05:17.933021Z
-1aa0e49b6d49c0ba2912737c4dbca25f
-2011-01-14T19:31:42.964299Z
-1401
+2011-02-10T19:49:02.135667Z
+b178de76bf88d72a883f01ed00801a07
+2011-02-08T21:36:44.718602Z
+1562
 campbellbarton
 has-props
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-1647
+2462
 
 __init__.py
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-01-18T22:05:17.933021Z
-0d181c2d77d7db1302920e0e320bcddf
-2011-01-14T17:45:54.679233Z
-1399
-campbellbarton
+2011-02-10T19:49:02.135667Z
+4bbc8518ebef72c880154fe2b587926c
+2011-01-21T13:46:37.063428Z
+1467
+guillaum
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-4269
+4407
 
 stl_utils.py
 file
@@ -100,10 +100,10 @@ file
 
 
 
-2011-01-18T22:05:17.933021Z
-4a86d3152608f91af9e922e119b387e4
-2011-01-14T19:31:42.964299Z
-1401
+2011-02-10T19:49:02.135667Z
+cebed41fd4e0f4767570d4e37309d317
+2011-01-21T09:54:16.584994Z
+1461
 campbellbarton
 has-props
 
@@ -126,5 +126,5 @@ has-props
 
 
 
-6429
+7244
 

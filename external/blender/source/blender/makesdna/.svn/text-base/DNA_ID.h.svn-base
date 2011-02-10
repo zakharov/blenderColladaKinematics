@@ -127,11 +127,12 @@ typedef struct Library {
 #define PREVIEW_MIPMAP_LARGE 1
 
 typedef struct PreviewImage {
-	unsigned int w[PREVIEW_MIPMAPS];
-	unsigned int h[PREVIEW_MIPMAPS];	
-	short changed[PREVIEW_MIPMAPS];
-	short changed_timestamp[PREVIEW_MIPMAPS];
-	unsigned int * rect[PREVIEW_MIPMAPS];
+	/* All values of 2 are really PREVIEW_MIPMAPS */
+	unsigned int w[2];
+	unsigned int h[2];
+	short changed[2];
+	short changed_timestamp[2];
+	unsigned int * rect[2];
 } PreviewImage;
 
 /**

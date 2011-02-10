@@ -1,5 +1,5 @@
 /**
- * $Id: mallocn.c 33442 2010-12-03 12:30:59Z campbellbarton $
+ * $Id: mallocn.c 34465 2011-01-23 12:42:07Z campbellbarton $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -28,7 +28,7 @@
 
 /**
 
- * $Id: mallocn.c 33442 2010-12-03 12:30:59Z campbellbarton $
+ * $Id: mallocn.c 34465 2011-01-23 12:42:07Z campbellbarton $
  * Copyright (C) 2001 NaN Technologies B.V.
  * Guarded memory allocation, and boundary-write detection.
  */
@@ -57,7 +57,7 @@
 
 /* Only for debugging:
  * lets you count the allocations so as to find the allocator of unfreed memory
- * in situations where the leak is pradictable */
+ * in situations where the leak is predictable */
 
 // #define DEBUG_MEMCOUNTER
 

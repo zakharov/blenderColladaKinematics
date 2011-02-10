@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-extensions/!svn/ver/1292/trunk/py/scripts/addons/modules/extensions_framework
+/svnroot/bf-extensions/!svn/ver/1540/trunk/py/scripts/addons/modules/extensions_framework
 END
 validate.py
 K 25
@@ -25,7 +25,7 @@ plugin.py
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svnroot/bf-extensions/!svn/ver/1270/trunk/py/scripts/addons/modules/extensions_framework/plugin.py
+/svnroot/bf-extensions/!svn/ver/1535/trunk/py/scripts/addons/modules/extensions_framework/plugin.py
 END
 __init__.py
 K 25

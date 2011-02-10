@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/svnroot/bf-blender/!svn/ver/34392/trunk/blender/source/gameengine/GameLogic
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/gameengine/GameLogic
 END
 SCA_EventManager.cpp
 K 25
@@ -9,17 +9,23 @@ svn:wc:ra_dav:version-url
 V 97
 /svnroot/bf-blender/!svn/ver/28254/trunk/blender/source/gameengine/GameLogic/SCA_EventManager.cpp
 END
+SCA_RandomSensor.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/GameLogic/SCA_RandomSensor.h
+END
 SCA_IObject.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 92
 /svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/GameLogic/SCA_IObject.cpp
 END
-SCA_RandomSensor.h
+SCA_RandomActuator.cpp
 K 25
 svn:wc:ra_dav:version-url
-V 95
-/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/GameLogic/SCA_RandomSensor.h
+V 99
+/svnroot/bf-blender/!svn/ver/34520/trunk/blender/source/gameengine/GameLogic/SCA_RandomActuator.cpp
 END
 SCA_BasicEventManager.h
 K 25
@@ -27,23 +33,17 @@ svn:wc:ra_dav:version-url
 V 100
 /svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/GameLogic/SCA_BasicEventManager.h
 END
-SCA_RandomActuator.cpp
+SCA_ActuatorEventManager.h
 K 25
 svn:wc:ra_dav:version-url
-V 99
-/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/GameLogic/SCA_RandomActuator.cpp
+V 103
+/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/GameLogic/SCA_ActuatorEventManager.h
 END
 SCA_ORController.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 97
 /svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/GameLogic/SCA_ORController.cpp
-END
-SCA_ActuatorEventManager.h
-K 25
-svn:wc:ra_dav:version-url
-V 103
-/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/GameLogic/SCA_ActuatorEventManager.h
 END
 SCA_PropertyEventManager.h
 K 25
@@ -73,19 +73,19 @@ SCA_IController.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/GameLogic/SCA_IController.cpp
-END
-SCA_AlwaysEventManager.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 103
-/svnroot/bf-blender/!svn/ver/28254/trunk/blender/source/gameengine/GameLogic/SCA_AlwaysEventManager.cpp
+/svnroot/bf-blender/!svn/ver/34520/trunk/blender/source/gameengine/GameLogic/SCA_IController.cpp
 END
 SCA_IInputDevice.h
 K 25
 svn:wc:ra_dav:version-url
 V 95
 /svnroot/bf-blender/!svn/ver/32613/trunk/blender/source/gameengine/GameLogic/SCA_IInputDevice.h
+END
+SCA_AlwaysEventManager.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/source/gameengine/GameLogic/SCA_AlwaysEventManager.cpp
 END
 SCA_KeyboardSensor.h
 K 25
@@ -110,12 +110,6 @@ K 25
 svn:wc:ra_dav:version-url
 V 98
 /svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/GameLogic/SCA_ANDController.cpp
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 85
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/gameengine/GameLogic/Makefile
 END
 SCA_XORController.cpp
 K 25
@@ -145,13 +139,13 @@ SCA_MouseSensor.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/GameLogic/SCA_MouseSensor.cpp
+/svnroot/bf-blender/!svn/ver/34520/trunk/blender/source/gameengine/GameLogic/SCA_MouseSensor.cpp
 END
 SCA_ISensor.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/GameLogic/SCA_ISensor.cpp
+/svnroot/bf-blender/!svn/ver/34520/trunk/blender/source/gameengine/GameLogic/SCA_ISensor.cpp
 END
 SCA_RandomEventManager.h
 K 25
@@ -169,7 +163,7 @@ SCA_PythonController.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 101
-/svnroot/bf-blender/!svn/ver/34392/trunk/blender/source/gameengine/GameLogic/SCA_PythonController.cpp
+/svnroot/bf-blender/!svn/ver/34520/trunk/blender/source/gameengine/GameLogic/SCA_PythonController.cpp
 END
 SCA_LogicManager.cpp
 K 25
@@ -183,29 +177,29 @@ svn:wc:ra_dav:version-url
 V 95
 /svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/GameLogic/SCA_ORController.h
 END
-SCA_XNORController.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 99
-/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/GameLogic/SCA_XNORController.cpp
-END
 SCA_AlwaysSensor.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 97
 /svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/GameLogic/SCA_AlwaysSensor.cpp
 END
-SCA_IActuator.h
+SCA_XNORController.cpp
 K 25
 svn:wc:ra_dav:version-url
-V 92
-/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/GameLogic/SCA_IActuator.h
+V 99
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/GameLogic/SCA_XNORController.cpp
 END
 SCA_RandomNumberGenerator.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 106
 /svnroot/bf-blender/!svn/ver/28254/trunk/blender/source/gameengine/GameLogic/SCA_RandomNumberGenerator.cpp
+END
+SCA_IActuator.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/GameLogic/SCA_IActuator.h
 END
 SCA_IController.h
 K 25
@@ -219,23 +213,23 @@ svn:wc:ra_dav:version-url
 V 96
 /svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/GameLogic/SCA_NORController.h
 END
-SCA_IScene.h
-K 25
-svn:wc:ra_dav:version-url
-V 89
-/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/GameLogic/SCA_IScene.h
-END
 SCA_ANDController.h
 K 25
 svn:wc:ra_dav:version-url
 V 96
 /svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/GameLogic/SCA_ANDController.h
 END
+SCA_IScene.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/GameLogic/SCA_IScene.h
+END
 SCA_ActuatorSensor.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/GameLogic/SCA_ActuatorSensor.cpp
+/svnroot/bf-blender/!svn/ver/34520/trunk/blender/source/gameengine/GameLogic/SCA_ActuatorSensor.cpp
 END
 SCA_RandomEventManager.cpp
 K 25
@@ -243,17 +237,17 @@ svn:wc:ra_dav:version-url
 V 103
 /svnroot/bf-blender/!svn/ver/28254/trunk/blender/source/gameengine/GameLogic/SCA_RandomEventManager.cpp
 END
-SCA_PropertySensor.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 99
-/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/GameLogic/SCA_PropertySensor.cpp
-END
 SCA_2DFilterActuator.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 101
-/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/GameLogic/SCA_2DFilterActuator.cpp
+/svnroot/bf-blender/!svn/ver/34520/trunk/blender/source/gameengine/GameLogic/SCA_2DFilterActuator.cpp
+END
+SCA_PropertySensor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/34520/trunk/blender/source/gameengine/GameLogic/SCA_PropertySensor.cpp
 END
 SCA_XORController.h
 K 25
@@ -267,35 +261,35 @@ svn:wc:ra_dav:version-url
 V 94
 /svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/GameLogic/SCA_ILogicBrick.h
 END
-SCA_MouseSensor.h
-K 25
-svn:wc:ra_dav:version-url
-V 94
-/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/GameLogic/SCA_MouseSensor.h
-END
 SCA_ISensor.h
 K 25
 svn:wc:ra_dav:version-url
 V 90
 /svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/GameLogic/SCA_ISensor.h
 END
+SCA_MouseSensor.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/GameLogic/SCA_MouseSensor.h
+END
 SCA_DelaySensor.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/GameLogic/SCA_DelaySensor.cpp
-END
-SCA_JoystickManager.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 100
-/svnroot/bf-blender/!svn/ver/28254/trunk/blender/source/gameengine/GameLogic/SCA_JoystickManager.cpp
+/svnroot/bf-blender/!svn/ver/34520/trunk/blender/source/gameengine/GameLogic/SCA_DelaySensor.cpp
 END
 SCA_PythonMouse.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 96
 /svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/GameLogic/SCA_PythonMouse.cpp
+END
+SCA_JoystickManager.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/source/gameengine/GameLogic/SCA_JoystickManager.cpp
 END
 SCA_IActuator.cpp
 K 25
@@ -321,29 +315,29 @@ svn:wc:ra_dav:version-url
 V 97
 /svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/GameLogic/SCA_JoystickSensor.h
 END
-SCA_AlwaysSensor.h
-K 25
-svn:wc:ra_dav:version-url
-V 95
-/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/GameLogic/SCA_AlwaysSensor.h
-END
 SCA_XNORController.h
 K 25
 svn:wc:ra_dav:version-url
 V 97
 /svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/GameLogic/SCA_XNORController.h
 END
-SCA_KeyboardManager.h
+SCA_AlwaysSensor.h
 K 25
 svn:wc:ra_dav:version-url
-V 98
-/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/GameLogic/SCA_KeyboardManager.h
+V 95
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/GameLogic/SCA_AlwaysSensor.h
 END
 SCA_TimeEventManager.h
 K 25
 svn:wc:ra_dav:version-url
 V 99
 /svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/GameLogic/SCA_TimeEventManager.h
+END
+SCA_KeyboardManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/bf-blender/!svn/ver/29259/trunk/blender/source/gameengine/GameLogic/SCA_KeyboardManager.h
 END
 SCA_PythonKeyboard.cpp
 K 25
@@ -373,7 +367,7 @@ SCA_RandomSensor.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 97
-/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/GameLogic/SCA_RandomSensor.cpp
+/svnroot/bf-blender/!svn/ver/34520/trunk/blender/source/gameengine/GameLogic/SCA_RandomSensor.cpp
 END
 SCA_BasicEventManager.cpp
 K 25
@@ -397,7 +391,7 @@ SCA_ILogicBrick.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/GameLogic/SCA_ILogicBrick.cpp
+/svnroot/bf-blender/!svn/ver/34520/trunk/blender/source/gameengine/GameLogic/SCA_ILogicBrick.cpp
 END
 SCA_PropertySensor.h
 K 25
@@ -427,7 +421,7 @@ SCA_PropertyActuator.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 101
-/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/GameLogic/SCA_PropertyActuator.cpp
+/svnroot/bf-blender/!svn/ver/34520/trunk/blender/source/gameengine/GameLogic/SCA_PropertyActuator.cpp
 END
 SCA_IInputDevice.cpp
 K 25
@@ -451,7 +445,7 @@ SCA_KeyboardSensor.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/GameLogic/SCA_KeyboardSensor.cpp
+/svnroot/bf-blender/!svn/ver/34520/trunk/blender/source/gameengine/GameLogic/SCA_KeyboardSensor.cpp
 END
 SCA_KeyboardManager.cpp
 K 25

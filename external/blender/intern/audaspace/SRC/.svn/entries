@@ -1,15 +1,15 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern/audaspace/SRC
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-01-30T15:29:22.294392Z
+34567
+campbellbarton
 
 
 
@@ -161,38 +161,4 @@ has-props
 
 
 2707
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:07.393021Z
-48aecaacfa1af37fc33c8e77ca3b890e
-2009-12-17T17:42:26.196364Z
-25446
-sirdude
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1281
 

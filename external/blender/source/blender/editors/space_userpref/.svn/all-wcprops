@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 86
-/svnroot/bf-blender/!svn/ver/34159/trunk/blender/source/blender/editors/space_userpref
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/blender/editors/space_userpref
 END
 userpref_intern.h
 K 25
@@ -26,12 +26,6 @@ K 25
 svn:wc:ra_dav:version-url
 V 101
 /svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/editors/space_userpref/CMakeLists.txt
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 95
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blender/editors/space_userpref/Makefile
 END
 userpref_ops.c
 K 25

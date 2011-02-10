@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 81
-/svnroot/bf-blender/!svn/ver/34360/trunk/blender/source/blender/blenloader/intern
+/svnroot/bf-blender/!svn/ver/34725/trunk/blender/source/blender/blenloader/intern
 END
 readblenentry.c
 K 25
@@ -25,17 +25,11 @@ writefile.c
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/34360/trunk/blender/source/blender/blenloader/intern/writefile.c
+/svnroot/bf-blender/!svn/ver/34481/trunk/blender/source/blender/blenloader/intern/writefile.c
 END
 readfile.c
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/34336/trunk/blender/source/blender/blenloader/intern/readfile.c
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 90
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blender/blenloader/intern/Makefile
+/svnroot/bf-blender/!svn/ver/34725/trunk/blender/source/blender/blenloader/intern/readfile.c
 END

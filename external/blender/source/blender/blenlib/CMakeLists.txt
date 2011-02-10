@@ -1,4 +1,4 @@
-# $Id: CMakeLists.txt 34159 2011-01-07 18:36:47Z campbellbarton $
+# $Id: CMakeLists.txt 34486 2011-01-25 14:43:13Z campbellbarton $
 # ***** BEGIN GPL LICENSE BLOCK *****
 #
 # This program is free software; you can redistribute it and/or
@@ -31,7 +31,7 @@ set(INC
 	../gpu
 	../../../intern/ghost
 	../../../intern/guardedalloc
-	${ZLIB_INC}
+	${ZLIB_INCLUDE_DIRS}
 	${FREETYPE_INCLUDE_DIRS}
 )
 

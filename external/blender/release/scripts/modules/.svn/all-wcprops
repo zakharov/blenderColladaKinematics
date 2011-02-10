@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 72
-/svnroot/bf-blender/!svn/ver/34384/trunk/blender/release/scripts/modules
+/svnroot/bf-blender/!svn/ver/34703/trunk/blender/release/scripts/modules
 END
 animsys_refactor.py
 K 25
@@ -37,7 +37,7 @@ add_object_utils.py
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/34283/trunk/blender/release/scripts/modules/add_object_utils.py
+/svnroot/bf-blender/!svn/ver/34648/trunk/blender/release/scripts/modules/add_object_utils.py
 END
 blend_render_info.py
 K 25
@@ -49,7 +49,7 @@ bpy_types.py
 K 25
 svn:wc:ra_dav:version-url
 V 85
-/svnroot/bf-blender/!svn/ver/34384/trunk/blender/release/scripts/modules/bpy_types.py
+/svnroot/bf-blender/!svn/ver/34648/trunk/blender/release/scripts/modules/bpy_types.py
 END
 bpyml_ui.py
 K 25

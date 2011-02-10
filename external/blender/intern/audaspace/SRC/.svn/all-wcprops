@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 69
-/svnroot/bf-blender/!svn/ver/31372/trunk/blender/intern/audaspace/SRC
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/intern/audaspace/SRC
 END
 AUD_SRCResampleFactory.cpp
 K 25
@@ -26,10 +26,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 95
 /svnroot/bf-blender/!svn/ver/31372/trunk/blender/intern/audaspace/SRC/AUD_SRCResampleReader.cpp
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 78
-/svnroot/bf-blender/!svn/ver/25446/trunk/blender/intern/audaspace/SRC/Makefile
 END

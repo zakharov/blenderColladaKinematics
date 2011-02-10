@@ -1,5 +1,5 @@
 /**
- * $Id: rna_scene_api.c 34218 2011-01-10 03:58:07Z campbellbarton $
+ * $Id: rna_scene_api.c 34596 2011-02-01 04:24:47Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -101,9 +101,8 @@ void RNA_api_scene_render(StructRNA *srna)
 	func= RNA_def_function(srna, "frame_path", "rna_SceneRender_get_frame_path");
 	RNA_def_function_ui_description(func, "Return the absolute path to the filename to be written for a given frame.");
 	RNA_def_int(func, "frame", INT_MIN, INT_MIN, INT_MAX, "", "Frame number to use, if unset the current frame will be used.", MINAFRAME, MAXFRAME);
-	parm= RNA_def_string(func, "filepath", "", FILE_MAX, "File Path", "the resulting filepath from the scenes render settings.");
+	parm= RNA_def_string_file_path(func, "filepath", "", FILE_MAX, "File Path", "the resulting filepath from the scenes render settings.");
 	RNA_def_property_flag(parm, PROP_THICK_WRAP); /* needed for string return value */
-	RNA_def_property_subtype(parm, PROP_FILEPATH); /* allow non utf8 */
 	RNA_def_function_output(func, parm);
 }
 

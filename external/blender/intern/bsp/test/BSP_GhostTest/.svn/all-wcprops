@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 78
-/svnroot/bf-blender/!svn/ver/28254/trunk/blender/intern/bsp/test/BSP_GhostTest
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/intern/bsp/test/BSP_GhostTest
 END
 BSP_PlyLoader.cpp
 K 25
@@ -15,11 +15,11 @@ svn:wc:ra_dav:version-url
 V 96
 /svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/bsp/test/BSP_GhostTest/BSP_GhostTest.dsw
 END
-plyfile.c
+BSP_PlyLoader.h
 K 25
 svn:wc:ra_dav:version-url
-V 88
-/svnroot/bf-blender/!svn/ver/28254/trunk/blender/intern/bsp/test/BSP_GhostTest/plyfile.c
+V 94
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/intern/bsp/test/BSP_GhostTest/BSP_PlyLoader.h
 END
 bsp_cube.ply
 K 25
@@ -27,11 +27,11 @@ svn:wc:ra_dav:version-url
 V 91
 /svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/bsp/test/BSP_GhostTest/bsp_cube.ply
 END
-BSP_PlyLoader.h
+plyfile.c
 K 25
 svn:wc:ra_dav:version-url
-V 94
-/svnroot/bf-blender/!svn/ver/26841/trunk/blender/intern/bsp/test/BSP_GhostTest/BSP_PlyLoader.h
+V 88
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/intern/bsp/test/BSP_GhostTest/plyfile.c
 END
 BSP_MeshDrawer.cpp
 K 25
@@ -63,29 +63,23 @@ svn:wc:ra_dav:version-url
 V 98
 /svnroot/bf-blender/!svn/ver/28254/trunk/blender/intern/bsp/test/BSP_GhostTest/BSP_GhostTest3D.cpp
 END
-main.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 87
-/svnroot/bf-blender/!svn/ver/28254/trunk/blender/intern/bsp/test/BSP_GhostTest/main.cpp
-END
 BSP_GhostTest3D.h
 K 25
 svn:wc:ra_dav:version-url
 V 96
 /svnroot/bf-blender/!svn/ver/26841/trunk/blender/intern/bsp/test/BSP_GhostTest/BSP_GhostTest3D.h
 END
+main.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/intern/bsp/test/BSP_GhostTest/main.cpp
+END
 BSP_TMesh.h
 K 25
 svn:wc:ra_dav:version-url
 V 90
 /svnroot/bf-blender/!svn/ver/26841/trunk/blender/intern/bsp/test/BSP_GhostTest/BSP_TMesh.h
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 87
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/bsp/test/BSP_GhostTest/Makefile
 END
 BSP_GhostTest.dsp
 K 25

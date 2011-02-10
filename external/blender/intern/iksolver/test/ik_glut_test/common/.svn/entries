@@ -1,14 +1,14 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern/iksolver/test/ik_glut_test/common
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2010-04-18T10:28:37.496249Z
-28254
+2011-01-30T15:29:22.294392Z
+34567
 campbellbarton
 
 
@@ -229,38 +229,4 @@ has-props
 
 
 2108
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:09.803021Z
-0930c82256de248adb97e87dc48cdba5
-2008-01-07T19:13:47.953844Z
-13161
-hos
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1269
 

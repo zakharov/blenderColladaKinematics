@@ -1,6 +1,6 @@
 /*  softbody.c
  *
- * $Id: softbody.c 34183 2011-01-09 01:17:56Z campbellbarton $
+ * $Id: softbody.c 34452 2011-01-22 14:13:36Z jhk $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -4151,7 +4151,7 @@ void sbObjectStep(Scene *scene, Object *ob, float cfra, float (*vertexCos)[3], i
 	else if(cache_result==PTCACHE_READ_OLD) {
 		; /* do nothing */
 	}
-	else if(ob->id.lib || (cache->flag & PTCACHE_BAKED)) {
+	else if(/*ob->id.lib || */(cache->flag & PTCACHE_BAKED)) { /* "library linking & pointcaches" has to be solved properly at some point */
 		/* if baked and nothing in cache, do nothing */
 		BKE_ptcache_invalidate(cache);
 		return;

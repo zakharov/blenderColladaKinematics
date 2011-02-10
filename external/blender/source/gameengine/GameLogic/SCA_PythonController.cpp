@@ -1,7 +1,7 @@
 /**
  * Execute Python scripts
  *
- * $Id: SCA_PythonController.cpp 34392 2011-01-18 21:39:50Z campbellbarton $
+ * $Id: SCA_PythonController.cpp 34520 2011-01-27 00:02:25Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,8 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+#include <stddef.h>
 
 #include "SCA_PythonController.h"
 #include "SCA_LogicManager.h"

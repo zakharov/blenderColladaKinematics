@@ -1,5 +1,5 @@
 /**
- * $Id: outliner.c 34363 2011-01-17 08:31:57Z campbellbarton $
+ * $Id: outliner.c 34701 2011-02-07 22:48:23Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -1244,7 +1244,7 @@ void add_seq_dup(SpaceOops *soops, Sequence *seq, TreeElement *te, short index)
 	}
 }
 
-static int outliner_filter_has_name(TreeElement *te, char *name, int flags)
+static int outliner_filter_has_name(TreeElement *te, const char *name, int flags)
 {
 #if 0
 	int found= 0;
@@ -1845,6 +1845,7 @@ void OUTLINER_OT_show_one_level(wmOperatorType *ot)
 	/* identifiers */
 	ot->name= "Show/Hide One Level";
 	ot->idname= "OUTLINER_OT_show_one_level";
+	ot->description= "Expand/collapse all entries by one level";
 	
 	/* callbacks */
 	ot->exec= outliner_one_level_exec;
@@ -2559,9 +2560,12 @@ static int outliner_item_activate(bContext *C, wmOperator *op, wmEvent *event)
 	TreeElement *te;
 	float fmval[2];
 	int extend= RNA_boolean_get(op->ptr, "extend");
-	
+
 	UI_view2d_region_to_view(&ar->v2d, event->x - ar->winrct.xmin, event->y - ar->winrct.ymin, fmval, fmval+1);
-	
+
+	if(!ELEM3(soops->outlinevis, SO_DATABLOCKS, SO_USERDEF, SO_KEYMAP) && !(soops->flag & SO_HIDE_RESTRICTCOLS) && fmval[0] > ar->v2d.cur.xmax - OL_TOG_RESTRICT_VIEWX)
+		return OPERATOR_CANCELLED;
+
 	for(te= soops->tree.first; te; te= te->next) {
 		if(do_outliner_item_activate(C, scene, ar, soops, te, extend, fmval)) break;
 	}
@@ -2594,6 +2598,7 @@ void OUTLINER_OT_item_activate(wmOperatorType *ot)
 {
 	ot->name= "Activate Item";
 	ot->idname= "OUTLINER_OT_item_activate";
+	ot->description= "Handle mouse clicks to activate/select items";
 	
 	ot->invoke= outliner_item_activate;
 	
@@ -2656,6 +2661,7 @@ void OUTLINER_OT_item_openclose(wmOperatorType *ot)
 {
 	ot->name= "Open/Close Item";
 	ot->idname= "OUTLINER_OT_item_openclose";
+	ot->description= "Toggle whether item under cursor is enabled or closed";
 	
 	ot->invoke= outliner_item_openclose;
 	
@@ -2686,9 +2692,11 @@ static int do_outliner_item_rename(bContext *C, ARegion *ar, SpaceOops *soops, T
 				error("Cannot edit sequence name");
 			else if(tselem->id->lib) {
 				// XXX						error_libdata();
-			} else if(te->idcode == ID_LI && te->parent) {
+			} 
+			else if(te->idcode == ID_LI && te->parent) {
 				error("Cannot edit the path of an indirectly linked library");
-			} else {
+			} 
+			else {
 				tselem->flag |= TSE_TEXTBUT;
 				ED_region_tag_redraw(ar);
 			}
@@ -2723,6 +2731,7 @@ void OUTLINER_OT_item_rename(wmOperatorType *ot)
 {
 	ot->name= "Rename Item";
 	ot->idname= "OUTLINER_OT_item_rename";
+	ot->description= "Rename item under cursor";
 	
 	ot->invoke= outliner_item_rename;
 	
@@ -3777,6 +3786,7 @@ void OUTLINER_OT_operation(wmOperatorType *ot)
 {
 	ot->name= "Execute Operation";
 	ot->idname= "OUTLINER_OT_operation";
+	ot->description= "Context menu for item operations";
 	
 	ot->invoke= outliner_operation;
 	
@@ -4051,7 +4061,7 @@ void OUTLINER_OT_drivers_add_selected(wmOperatorType *ot)
 	ot->poll= ed_operator_outliner_datablocks_active;
 	
 	/* flags */
-	ot->flag = OPTYPE_UNDO;
+	ot->flag = OPTYPE_REGISTER|OPTYPE_UNDO;
 }
 
 
@@ -4086,7 +4096,7 @@ void OUTLINER_OT_drivers_delete_selected(wmOperatorType *ot)
 	ot->poll= ed_operator_outliner_datablocks_active;
 	
 	/* flags */
-	ot->flag = OPTYPE_UNDO;
+	ot->flag = OPTYPE_REGISTER|OPTYPE_UNDO;
 }
 
 /* ***************** KEYINGSET OPERATIONS *************** */
@@ -4216,14 +4226,15 @@ void OUTLINER_OT_keyingset_add_selected(wmOperatorType *ot)
 {
 	/* identifiers */
 	ot->idname= "OUTLINER_OT_keyingset_add_selected";
-	ot->name= "Keyingset Add Selected";
+	ot->name= "Keying Set Add Selected";
+	ot->description= "Add selected items (blue-grey rows) to active Keying Set";
 	
 	/* api callbacks */
 	ot->exec= outliner_keyingset_additems_exec;
 	ot->poll= ed_operator_outliner_datablocks_active;
 	
 	/* flags */
-	ot->flag = OPTYPE_UNDO;
+	ot->flag = OPTYPE_REGISTER|OPTYPE_UNDO;
 }
 
 
@@ -4252,14 +4263,15 @@ void OUTLINER_OT_keyingset_remove_selected(wmOperatorType *ot)
 {
 	/* identifiers */
 	ot->idname= "OUTLINER_OT_keyingset_remove_selected";
-	ot->name= "Keyingset Remove Selected";
+	ot->name= "Keying Set Remove Selected";
+	ot->description = "Remove selected items (blue-grey rows) from active Keying Set";
 	
 	/* api callbacks */
 	ot->exec= outliner_keyingset_removeitems_exec;
 	ot->poll= ed_operator_outliner_datablocks_active;
 	
 	/* flags */
-	ot->flag = OPTYPE_UNDO;
+	ot->flag = OPTYPE_REGISTER|OPTYPE_UNDO;
 }
 
 /* ***************** DRAW *************** */
@@ -5709,6 +5721,8 @@ void draw_outliner(const bContext *C)
 	/* update size of tot-rect (extents of data/viewable area) */
 	UI_view2d_totRect_set(v2d, sizex, sizey);
 
+	/* force display to pixel coords */
+	v2d->flag |= (V2D_PIXELOFS_X|V2D_PIXELOFS_Y);
 	/* set matrix for 2d-view controls */
 	UI_view2d_view_ortho(v2d);
 

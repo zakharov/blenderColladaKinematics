@@ -1,5 +1,5 @@
 /**
- * $Id: node_select.c 34159 2011-01-07 18:36:47Z campbellbarton $
+ * $Id: node_select.c 34427 2011-01-20 22:22:16Z aligorith $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -137,6 +137,7 @@ void NODE_OT_select(wmOperatorType *ot)
 	/* identifiers */
 	ot->name= "Select";
 	ot->idname= "NODE_OT_select";
+	ot->description= "Select node under cursor";
 	
 	/* api callbacks */
 	ot->invoke= node_select_invoke;

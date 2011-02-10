@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 79
-/svnroot/bf-blender/!svn/ver/34381/trunk/blender/source/blender/editors/gpencil
+/svnroot/bf-blender/!svn/ver/34619/trunk/blender/source/blender/editors/gpencil
 END
 drawgpencil.c
 K 25
@@ -51,15 +51,9 @@ svn:wc:ra_dav:version-url
 V 94
 /svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/editors/gpencil/CMakeLists.txt
 END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 88
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blender/editors/gpencil/Makefile
-END
 gpencil_paint.c
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svnroot/bf-blender/!svn/ver/34381/trunk/blender/source/blender/editors/gpencil/gpencil_paint.c
+/svnroot/bf-blender/!svn/ver/34619/trunk/blender/source/blender/editors/gpencil/gpencil_paint.c
 END

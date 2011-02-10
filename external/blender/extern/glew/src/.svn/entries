@@ -1,15 +1,15 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/extern/glew/src
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2010-07-09T19:14:02.351085Z
-30157
-blendix
+2011-01-30T15:29:22.294392Z
+34567
+campbellbarton
 
 
 
@@ -59,38 +59,4 @@ has-props
 
 
 597964
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:05:09.033021Z
-ed932643658cb235c19a9303b18dde77
-2009-09-22T19:09:04.813038Z
-23425
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1872
 

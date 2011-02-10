@@ -1,5 +1,5 @@
 /**
- * $Id: makesrna.c 34380 2011-01-18 01:58:19Z campbellbarton $
+ * $Id: makesrna.c 34589 2011-01-31 23:54:51Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -37,7 +37,7 @@
 
 #include "rna_internal.h"
 
-#define RNA_VERSION_DATE "$Id: makesrna.c 34380 2011-01-18 01:58:19Z campbellbarton $"
+#define RNA_VERSION_DATE "$Id: makesrna.c 34589 2011-01-31 23:54:51Z campbellbarton $"
 
 #ifdef _WIN32
 #ifndef snprintf
@@ -1013,7 +1013,7 @@ static char *rna_def_property_lookup_int_func(FILE *f, StructRNA *srna, Property
 		fprintf(f, "		else {\n");
 		fprintf(f, "			while(index-- > 0 && internal->link)\n");
 		fprintf(f, "				internal->link= internal->link->next;\n");
-		fprintf(f, "			found= 1;\n");
+		fprintf(f, "			found= (index == -1 && internal->link);\n");
 		fprintf(f, "		}\n");
 	}
 

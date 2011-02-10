@@ -1,7 +1,7 @@
 /**
  * Set random/camera stuff
  *
- * $Id: SCA_RandomActuator.cpp 32788 2010-10-31 04:11:39Z campbellbarton $
+ * $Id: SCA_RandomActuator.cpp 34520 2011-01-27 00:02:25Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,8 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+#include <stddef.h>
 
 #include "BoolValue.h"
 #include "IntValue.h"

@@ -2349,6 +2349,7 @@ void RE_MergeFullSample(Render *re, Main *bmain, Scene *sce, bNodeTree *ntree)
 	G.afbreek= 0;
 	
 	re->main= bmain;
+	re->scene= sce;
 	
 	/* first call RE_ReadRenderResult on every renderlayer scene. this creates Render structs */
 	
@@ -3276,7 +3277,7 @@ void RE_engine_update_stats(RenderEngine *engine, const char *stats, const char 
 
 /* loads in image into a result, size must match
  * x/y offsets are only used on a partial copy when dimensions dont match */
-void RE_layer_load_from_file(RenderLayer *layer, ReportList *reports, const char *filename)
+void RE_layer_load_from_file(RenderLayer *layer, ReportList *reports, const char *filename, int x, int y)
 {
 	ImBuf *ibuf = IMB_loadiffname(filename, IB_rect);
 
@@ -3287,7 +3288,7 @@ void RE_layer_load_from_file(RenderLayer *layer, ReportList *reports, const char
 
 			memcpy(layer->rectf, ibuf->rect_float, sizeof(float)*4*layer->rectx*layer->recty);
 		} else {
-			if ((ibuf->x >= layer->rectx) && (ibuf->y >= layer->recty)) {
+			if ((ibuf->x - x >= layer->rectx) && (ibuf->y - y >= layer->recty)) {
 				ImBuf *ibuf_clip;
 
 				if(ibuf->rect_float==NULL)
@@ -3295,7 +3296,7 @@ void RE_layer_load_from_file(RenderLayer *layer, ReportList *reports, const char
 
 				ibuf_clip = IMB_allocImBuf(layer->rectx, layer->recty, 32, IB_rectfloat);
 				if(ibuf_clip) {
-					IMB_rectcpy(ibuf_clip, ibuf, 0,0, 0,0, layer->rectx, layer->recty);
+					IMB_rectcpy(ibuf_clip, ibuf, 0,0, x,y, layer->rectx, layer->recty);
 
 					memcpy(layer->rectf, ibuf_clip->rect_float, sizeof(float)*4*layer->rectx*layer->recty);
 					IMB_freeImBuf(ibuf_clip);

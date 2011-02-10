@@ -1,5 +1,5 @@
 /**
- * $Id: GeometryExporter.h 33111 2010-11-16 22:27:31Z jesterking $
+ * $Id: GeometryExporter.h 34533 2011-01-27 19:39:06Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -83,9 +83,9 @@ public:
 
 	void create_normals(std::vector<Normal> &nor, std::vector<Face> &ind, Mesh *me);
 	
-	std::string getIdBySemantics(std::string geom_id, COLLADASW::Semantics type, std::string other_suffix = "");
+	std::string getIdBySemantics(std::string geom_id, COLLADASW::InputSemantic::Semantics type, std::string other_suffix = "");
 	
-	COLLADASW::URI getUrlBySemantics(std::string geom_id, COLLADASW::Semantics type, std::string other_suffix = "");
+	COLLADASW::URI getUrlBySemantics(std::string geom_id, COLLADASW::InputSemantic::Semantics type, std::string other_suffix = "");
 
 	COLLADASW::URI makeUrl(std::string id);
 	

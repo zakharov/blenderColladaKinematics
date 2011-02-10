@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 79
-/svnroot/bf-blender/!svn/ver/34273/trunk/blender/source/blender/blenfont/intern
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/blender/blenfont/intern
 END
 blf_util.c
 K 25
@@ -50,10 +50,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 90
 /svnroot/bf-blender/!svn/ver/34175/trunk/blender/source/blender/blenfont/intern/blf_font.c
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 88
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blender/blenfont/intern/Makefile
 END

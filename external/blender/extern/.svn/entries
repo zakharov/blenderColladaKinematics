@@ -1,14 +1,14 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/extern
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-16T06:16:28.355502Z
-34347
+2011-01-30T15:29:22.294392Z
+34567
 campbellbarton
 
 
@@ -111,40 +111,6 @@ has-props
 
 
 1478
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:05:09.463021Z
-70af56c340687b611f3809ada922148b
-2009-11-09T20:08:19.564903Z
-24429
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1893
 
 glew
 dir

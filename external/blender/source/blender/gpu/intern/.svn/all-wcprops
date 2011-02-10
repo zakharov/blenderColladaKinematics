@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 74
-/svnroot/bf-blender/!svn/ver/34327/trunk/blender/source/blender/gpu/intern
+/svnroot/bf-blender/!svn/ver/34760/trunk/blender/source/blender/gpu/intern
 END
 gpu_shader_material.glsl
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svnroot/bf-blender/!svn/ver/31122/trunk/blender/source/blender/gpu/intern/gpu_shader_material.glsl
+/svnroot/bf-blender/!svn/ver/34718/trunk/blender/source/blender/gpu/intern/gpu_shader_material.glsl
 END
 gpu_shader_vertex.glsl.c
 K 25
@@ -25,7 +25,7 @@ gpu_shader_material.glsl.c
 K 25
 svn:wc:ra_dav:version-url
 V 101
-/svnroot/bf-blender/!svn/ver/31122/trunk/blender/source/blender/gpu/intern/gpu_shader_material.glsl.c
+/svnroot/bf-blender/!svn/ver/34718/trunk/blender/source/blender/gpu/intern/gpu_shader_material.glsl.c
 END
 gpu_codegen.h
 K 25
@@ -49,19 +49,13 @@ gpu_material.c
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/34160/trunk/blender/source/blender/gpu/intern/gpu_material.c
+/svnroot/bf-blender/!svn/ver/34760/trunk/blender/source/blender/gpu/intern/gpu_material.c
 END
 gpu_extensions.c
 K 25
 svn:wc:ra_dav:version-url
 V 91
 /svnroot/bf-blender/!svn/ver/34160/trunk/blender/source/blender/gpu/intern/gpu_extensions.c
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 83
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blender/gpu/intern/Makefile
 END
 gpu_shader_vertex.glsl
 K 25

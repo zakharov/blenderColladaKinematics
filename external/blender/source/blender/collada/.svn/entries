@@ -1,14 +1,14 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/collada
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-10T23:31:14.919687Z
-34239
+2011-02-04T13:18:44.655047Z
+34640
 jesterking
 
 
@@ -66,11 +66,11 @@ file
 
 
 
-2011-01-18T22:04:42.183021Z
-3b3bae44b2850b48a620877e9715b19a
-2011-01-07T18:36:47.041781Z
-34159
-campbellbarton
+2011-02-10T19:48:46.285667Z
+5881dd58bbdd02b6d4cc30dcabc270c8
+2011-01-28T12:56:30.723045Z
+34542
+jesterking
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-29768
+30658
 
 collada_internal.h
 file
@@ -304,11 +304,11 @@ file
 
 
 
-2011-01-18T22:04:42.183021Z
-c40b5e3395042dc2ad6457319a737bdd
-2010-11-03T22:44:39.617039Z
-32862
-campbellbarton
+2011-02-10T19:48:46.285667Z
+92ac5910f51528b30de130b972d4175f
+2011-01-27T19:39:06.247669Z
+34533
+jesterking
 has-props
 
 
@@ -330,7 +330,7 @@ has-props
 
 
 
-26897
+27532
 
 TransformWriter.cpp
 file
@@ -372,44 +372,10 @@ file
 
 
 
-2011-01-18T22:04:42.183021Z
-abea5c84b28e7b334169e2223170941b
-2010-10-06T20:40:16.801783Z
-32355
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-12897
-
-MeshImporter.cpp
-file
-
-
-
-
-2011-01-18T22:04:42.183021Z
-c66bb972ceff8c6d81fd792abb10047a
-2010-12-21T09:41:02.229754Z
-33831
+2011-02-10T19:48:46.285667Z
+0d1e4cbd6c978df3bd5360e18ddd6278
+2011-01-27T19:39:06.247669Z
+34533
 jesterking
 has-props
 
@@ -432,7 +398,41 @@ has-props
 
 
 
-25458
+12961
+
+MeshImporter.cpp
+file
+
+
+
+
+2011-02-10T19:48:46.285667Z
+08d7be29eba73c114f4a18a3c92af7b8
+2011-01-27T19:39:06.247669Z
+34533
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+25556
 
 collada_utils.cpp
 file
@@ -536,40 +536,6 @@ has-props
 
 2508
 
-SkinInfo.h
-file
-
-
-
-
-2011-01-18T22:04:42.193021Z
-a6d0f4a1206dbb43c3e895a27a286cb1
-2010-10-05T00:49:39.000968Z
-32310
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4327
-
 EffectExporter.cpp
 file
 
@@ -604,16 +570,50 @@ has-props
 
 8995
 
-GeometryExporter.h
+SkinInfo.h
 file
 
 
 
 
 2011-01-18T22:04:42.193021Z
-b197d2358a9f4b4cc35f49d814927b77
-2010-11-16T22:27:31.754966Z
-33111
+a6d0f4a1206dbb43c3e895a27a286cb1
+2010-10-05T00:49:39.000968Z
+32310
+gsrb3d
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4327
+
+GeometryExporter.h
+file
+
+
+
+
+2011-02-10T19:48:46.285667Z
+0533e8dc6405921982c6005cf0141748
+2011-01-27T19:39:06.247669Z
+34533
 jesterking
 has-props
 
@@ -636,7 +636,7 @@ has-props
 
 
 
-3177
+3207
 
 collada_internal.cpp
 file
@@ -672,74 +672,6 @@ has-props
 
 7904
 
-MaterialExporter.h
-file
-
-
-
-
-2011-01-18T22:04:42.193021Z
-919293e2d29f271ab0e56ea03990480b
-2010-10-06T20:40:16.801783Z
-32355
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2554
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:42.193021Z
-2628b44eab64fe29654e55ef2c69b287
-2010-08-10T21:22:26.642559Z
-31223
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1479
-
 CMakeLists.txt
 file
 
@@ -773,6 +705,40 @@ has-props
 
 
 2443
+
+MaterialExporter.h
+file
+
+
+
+
+2011-01-18T22:04:42.193021Z
+919293e2d29f271ab0e56ea03990480b
+2010-10-06T20:40:16.801783Z
+32355
+gsrb3d
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2554
 
 collada.cpp
 file
@@ -916,10 +882,10 @@ file
 
 
 
-2011-01-18T22:04:42.193021Z
-79b3ebad4b18ac58b6bc160a9d34649a
-2010-12-14T21:46:03.759298Z
-33668
+2011-02-10T19:48:46.285667Z
+0eac91bf7557f11f8f65d6beff909e57
+2011-02-04T13:18:44.655047Z
+34640
 jesterking
 has-props
 
@@ -942,41 +908,7 @@ has-props
 
 
 
-4632
-
-SConscript
-file
-
-
-
-
-2011-01-18T22:04:42.193021Z
-94be5e4b990132406dbaad8ba8509f0f
-2010-08-29T20:52:05.030364Z
-31645
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2014
+4913
 
 InstanceWriter.h
 file
@@ -1011,6 +943,40 @@ has-props
 
 
 1252
+
+SConscript
+file
+
+
+
+
+2011-01-18T22:04:42.193021Z
+94be5e4b990132406dbaad8ba8509f0f
+2010-08-29T20:52:05.030364Z
+31645
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2014
 
 ArmatureImporter.h
 file
@@ -1222,44 +1188,10 @@ file
 
 
 
-2011-01-18T22:04:42.193021Z
-7f897bd0938ae0bce0b6757894c0c9bd
-2010-11-03T22:44:39.617039Z
-32862
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4979
-
-GeometryExporter.cpp
-file
-
-
-
-
-2011-01-18T22:04:42.193021Z
-2f2eff04a58e5c28bca2907da9bd5ed9
-2010-11-16T22:27:31.754966Z
-33111
+2011-02-10T19:48:46.295667Z
+2fb1090bc82c18f83ac498f2cc529f7c
+2011-01-27T19:39:06.247669Z
+34533
 jesterking
 has-props
 
@@ -1282,7 +1214,41 @@ has-props
 
 
 
-12501
+4987
+
+GeometryExporter.cpp
+file
+
+
+
+
+2011-02-10T19:48:46.295667Z
+e97a5299ee6ade89fed9007f059402e0
+2011-01-27T19:39:06.247669Z
+34533
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12786
 
 collada_utils.h
 file

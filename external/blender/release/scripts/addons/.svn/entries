@@ -1,14 +1,14 @@
 10
 
 dir
-1437
+1566
 https://svn.blender.org/svnroot/bf-extensions/trunk/py/scripts/addons
 https://svn.blender.org/svnroot/bf-extensions
 
 
 
-2011-01-18T21:51:54.651463Z
-1437
+2011-02-10T00:10:20.627607Z
+1566
 campbellbarton
 
 
@@ -29,16 +29,50 @@ campbellbarton
 render_povray
 dir
 
+development_icon_get.py
+file
+
+
+
+
+2011-02-10T19:49:03.795667Z
+139d9561145f121a72d71fd0110c9829
+2011-02-01T11:47:29.310406Z
+1532
+jaydez
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8564
+
 io_import_scene_mhx.py
 file
 
 
 
 
-2011-01-18T22:05:19.933021Z
+2011-02-10T19:49:03.805667Z
 646e901a82e8381785ada7d54a517057
-2011-01-18T21:50:52.353885Z
-1436
+2011-02-08T21:36:44.718602Z
+1562
 campbellbarton
 has-props
 
@@ -72,11 +106,11 @@ file
 
 
 
-2011-01-18T22:05:19.933021Z
-91bd5148e834fb77795bbd49a8b5b685
-2011-01-14T16:09:46.541096Z
-1397
-campbellbarton
+2011-02-10T19:49:03.805667Z
+3f5e76130a031019436cf2fa0c808d0f
+2011-02-01T12:09:20.823407Z
+1533
+jaydez
 has-props
 
 
@@ -98,7 +132,7 @@ has-props
 
 
 
-23663
+23652
 
 space_view3d_materials_utils.py
 file
@@ -106,10 +140,10 @@ file
 
 
 
-2011-01-18T22:05:19.933021Z
-958a90a6dab180c4b1e673356abeab32
-2011-01-14T16:09:46.541096Z
-1397
+2011-02-10T19:49:03.805667Z
+3144ba674c92c44bf9535090bccda5e6
+2011-02-08T21:36:44.718602Z
+1562
 campbellbarton
 has-props
 
@@ -132,7 +166,7 @@ has-props
 
 
 
-21246
+21344
 
 object_animrenderbake.py
 file
@@ -140,11 +174,11 @@ file
 
 
 
-2011-01-18T22:05:19.933021Z
-8ccee2bb290548727dbd4eaa2c8a0ac8
-2011-01-14T16:09:46.541096Z
-1397
-campbellbarton
+2011-02-10T19:49:03.805667Z
+b4d89b9e3d26ccb650d5b7cdff7afae5
+2011-02-01T12:09:20.823407Z
+1533
+jaydez
 has-props
 
 
@@ -166,7 +200,7 @@ has-props
 
 
 
-6330
+6338
 
 io_import_gimp_image_to_scene.py
 file
@@ -208,10 +242,10 @@ file
 
 
 
-2011-01-18T22:05:19.933021Z
-dedff088fec555ffa41daa4d9046469c
-2011-01-14T16:09:46.541096Z
-1397
+2011-02-10T19:49:03.805667Z
+0c5a01cf43c297c009eec23d72a4205c
+2011-01-25T12:48:10.535891Z
+1497
 campbellbarton
 has-props
 
@@ -234,7 +268,7 @@ has-props
 
 
 
-43848
+43829
 
 io_import_scene_unreal_psk.py
 file
@@ -242,10 +276,10 @@ file
 
 
 
-2011-01-18T22:05:19.943021Z
-7ab8702402122490c642b9904515a121
-2011-01-14T16:09:46.541096Z
-1397
+2011-02-10T19:49:03.805667Z
+7e1cf10ab09873ace585185b5cd0db0a
+2011-02-08T21:36:44.718602Z
+1562
 campbellbarton
 has-props
 
@@ -268,7 +302,7 @@ has-props
 
 
 
-22911
+24145
 
 add_mesh_twisted_torus.py
 file
@@ -276,10 +310,10 @@ file
 
 
 
-2011-01-18T22:05:19.943021Z
-de2017d7573cc8b79c8d337a7c3e62b6
-2011-01-14T16:09:46.541096Z
-1397
+2011-02-10T19:49:03.805667Z
+2c688fc70c8700dafdf44543b165998e
+2011-02-08T21:36:44.718602Z
+1562
 campbellbarton
 has-props
 
@@ -302,7 +336,7 @@ has-props
 
 
 
-10857
+8146
 
 mesh_surface_sketch.py
 file
@@ -310,10 +344,10 @@ file
 
 
 
-2011-01-18T22:05:19.943021Z
-68d60e4579747ce81d39bad9892b8b91
-2011-01-14T16:09:46.541096Z
-1397
+2011-02-10T19:49:03.805667Z
+2f35f54c4c4d97051cccb456a0aca61b
+2011-02-08T21:36:44.718602Z
+1562
 campbellbarton
 has-props
 
@@ -336,7 +370,7 @@ has-props
 
 
 
-37948
+38008
 
 space_view3d_align_tools.py
 file
@@ -344,11 +378,11 @@ file
 
 
 
-2011-01-18T22:05:19.943021Z
-bfda5702bfa2af0f3137bf487b5cc94a
-2011-01-14T16:09:46.541096Z
-1397
-campbellbarton
+2011-02-10T19:49:03.805667Z
+ad341248ca804f2a3b69800a0691c200
+2011-01-30T11:29:13.558758Z
+1525
+jaydez
 has-props
 
 
@@ -370,7 +404,7 @@ has-props
 
 
 
-9905
+9860
 
 add_curve_torus_knots.py
 file
@@ -412,10 +446,10 @@ file
 
 
 
-2011-01-18T22:05:19.943021Z
-50bc82ae0d7db330687b6127fb629401
-2011-01-14T16:09:46.541096Z
-1397
+2011-02-10T19:49:03.805667Z
+374375105de07caa48600cf0d722fef7
+2011-02-08T21:36:44.718602Z
+1562
 campbellbarton
 has-props
 
@@ -438,7 +472,7 @@ has-props
 
 
 
-19767
+16521
 
 io_scene_x3d
 dir
@@ -449,10 +483,10 @@ file
 
 
 
-2011-01-18T22:05:19.943021Z
-6071645a06dfe921969f74eb692b731f
-2011-01-14T16:09:46.541096Z
-1397
+2011-02-10T19:49:03.805667Z
+75017d23ed3c26c2bf0f0eadef476483
+2011-02-05T07:08:34.456132Z
+1539
 campbellbarton
 has-props
 
@@ -475,15 +509,12 @@ has-props
 
 
 
-41133
+41023
 
 io_coat3D
 dir
 
 io_mesh_stl
-dir
-
-space_view3d_math_vis
 dir
 
 io_import_scene_dxf.py
@@ -492,10 +523,10 @@ file
 
 
 
-2011-01-18T22:05:19.943021Z
-9ba493a14dd84d7136da1292fbd0948c
-2011-01-15T01:48:20.900737Z
-1405
+2011-02-10T19:49:03.815667Z
+aebcd907d5ff682e751cf35c4614e6fc
+2011-02-06T00:11:38.824988Z
+1541
 migius
 has-props
 
@@ -518,47 +549,13 @@ has-props
 
 
 
-75031
+75284
+
+space_view3d_math_vis
+dir
 
 io_mesh_ply
 dir
-
-modules
-dir
-
-space_view3d_3d_navigation.py
-file
-
-
-
-
-2011-01-18T22:05:19.943021Z
-7f98738e23ced28e5fb65f11d8220645
-2011-01-14T16:09:46.541096Z
-1397
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3409
 
 io_export_directx_x.py
 file
@@ -566,11 +563,11 @@ file
 
 
 
-2011-01-18T22:05:19.943021Z
-1d25ade91bb6a12b765988ccbeb9a4f0
-2011-01-14T16:09:46.541096Z
-1397
-campbellbarton
+2011-02-10T19:49:03.815667Z
+0f6d012151e0c8e5f22ba774123be2fe
+2011-02-09T06:49:21.051704Z
+1564
+kiravakaan
 has-props
 
 
@@ -592,19 +589,19 @@ has-props
 
 
 
-61225
+61371
 
-animation_rotobezier.py
+space_view3d_3d_navigation.py
 file
 
 
 
 
-2011-01-18T22:05:19.943021Z
-37db614aa934071c5c29a41d45c32a75
-2011-01-14T16:09:46.541096Z
-1397
-campbellbarton
+2011-02-10T19:49:03.815667Z
+e22d21b3f49d24453085d8c1318d77fb
+2011-02-01T12:09:20.823407Z
+1533
+jaydez
 has-props
 
 
@@ -626,7 +623,10 @@ has-props
 
 
 
-11581
+3436
+
+modules
+dir
 
 io_anim_camera.py
 file
@@ -634,10 +634,10 @@ file
 
 
 
-2011-01-18T22:05:19.943021Z
-b659bf63c7c46671b39864aaee5098d0
-2011-01-14T16:09:46.541096Z
-1397
+2011-02-10T19:49:03.815667Z
+66e9d010d7a60baf2ff8fccbef7fb803
+2011-02-05T07:08:34.456132Z
+1539
 campbellbarton
 has-props
 
@@ -660,19 +660,19 @@ has-props
 
 
 
-5300
+5266
 
-object_cloud_gen.py
+animation_rotobezier.py
 file
 
 
 
 
-2011-01-18T22:05:19.943021Z
-597826a1f6fa95dd392764ee7ef9226f
-2011-01-14T16:09:46.541096Z
-1397
-campbellbarton
+2011-02-10T19:49:03.815667Z
+d360dc6d5402f017198fa1bb540d0a92
+2011-02-01T12:09:20.823407Z
+1533
+jaydez
 has-props
 
 
@@ -694,7 +694,7 @@ has-props
 
 
 
-26750
+11592
 
 add_mesh_gears.py
 file
@@ -702,10 +702,10 @@ file
 
 
 
-2011-01-18T22:05:19.943021Z
-ce6b00a1d0b3a992e087aac20328bafb
-2011-01-14T16:09:46.541096Z
-1397
+2011-02-10T19:49:03.815667Z
+ffd7ad980bf53b9cb4e61abeffab83fc
+2011-02-08T21:36:44.718602Z
+1562
 campbellbarton
 has-props
 
@@ -728,10 +728,41 @@ has-props
 
 
 
-28952
+25793
 
-io_scene_obj
-dir
+object_cloud_gen.py
+file
+
+
+
+
+2011-02-10T19:49:03.815667Z
+cf75e70fa8d4b7cd4faffd6fc9b59434
+2011-02-08T21:36:44.718602Z
+1562
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+26782
 
 mesh_relax.py
 file
@@ -767,16 +798,19 @@ has-props
 
 3830
 
+io_scene_obj
+dir
+
 add_mesh_gemstones.py
 file
 
 
 
 
-2011-01-18T22:05:19.943021Z
-097f2b2e8ada1c410dd3a78afbef13ae
-2011-01-14T16:09:46.541096Z
-1397
+2011-02-10T19:49:03.815667Z
+284825a41981aaf885c56396588c067a
+2011-02-08T21:36:44.718602Z
+1562
 campbellbarton
 has-props
 
@@ -799,7 +833,7 @@ has-props
 
 
 
-14051
+10987
 
 add_mesh_extras.py
 file
@@ -807,10 +841,10 @@ file
 
 
 
-2011-01-18T22:05:19.953021Z
-429caad8be1ec5d0fead805e523ac75a
-2011-01-14T16:09:46.541096Z
-1397
+2011-02-10T19:49:03.815667Z
+b432689328ed78626e00899739f1dfa1
+2011-02-08T21:36:44.718602Z
+1562
 campbellbarton
 has-props
 
@@ -833,41 +867,7 @@ has-props
 
 
 
-20222
-
-system_icon_get.py
-file
-
-
-
-
-2011-01-18T22:05:19.953021Z
-7593c0dfda339053465e22b6d1a66b9c
-2011-01-14T16:09:46.541096Z
-1397
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5639
+16556
 
 io_scene_fbx
 dir
@@ -881,11 +881,11 @@ file
 
 
 
-2011-01-18T22:05:19.953021Z
-889b2cd49734e13b16ac5ad623928a2e
-2011-01-14T16:09:46.541096Z
-1397
-campbellbarton
+2011-02-10T19:49:03.825667Z
+16c2773505534609b24e2d8646929499
+2011-02-08T16:56:23.000936Z
+1558
+darknet
 has-props
 
 
@@ -907,7 +907,7 @@ has-props
 
 
 
-72483
+73132
 
 add_mesh_solid.py
 file
@@ -915,10 +915,10 @@ file
 
 
 
-2011-01-18T22:05:19.953021Z
-05057a7f402d9a51aaa13d6eae07848d
-2011-01-14T16:09:46.541096Z
-1397
+2011-02-10T19:49:03.825667Z
+fea2e0b6a2f9ddbbc316c10dda6b8d95
+2011-02-08T21:36:44.718602Z
+1562
 campbellbarton
 has-props
 
@@ -941,7 +941,7 @@ has-props
 
 
 
-36995
+34430
 
 curve_simplify.py
 file
@@ -949,10 +949,10 @@ file
 
 
 
-2011-01-18T22:05:19.953021Z
-25259e16a6da58069f737c2af6a86021
-2011-01-18T21:50:52.353885Z
-1436
+2011-02-10T19:49:03.825667Z
+e93653b1fc847f5a08982814567d5ca8
+2011-02-05T07:08:34.456132Z
+1539
 campbellbarton
 has-props
 
@@ -975,7 +975,7 @@ has-props
 
 
 
-20285
+20241
 
 space_view3d_spacebar_menu.py
 file
@@ -983,11 +983,11 @@ file
 
 
 
-2011-01-18T22:05:19.953021Z
-8d3fb9d56a7fa262537896e8fe4542ac
-2011-01-14T16:09:46.541096Z
-1397
-campbellbarton
+2011-02-10T19:49:03.825667Z
+b0e656d317798593fc5b41b311aa6a55
+2011-02-01T11:47:29.310406Z
+1532
+jaydez
 has-props
 
 
@@ -1009,7 +1009,7 @@ has-props
 
 
 
-50688
+50692
 
 rigify
 dir
@@ -1054,10 +1054,10 @@ file
 
 
 
-2011-01-18T22:05:19.953021Z
-aa06d1feed97be7e8216356653895132
-2011-01-14T16:09:46.541096Z
-1397
+2011-02-10T19:49:03.825667Z
+642aba3ad4ee1becd77928f80ddc7b56
+2011-01-24T07:57:56.418163Z
+1487
 campbellbarton
 has-props
 
@@ -1080,7 +1080,7 @@ has-props
 
 
 
-37920
+37922
 
 system_blend_info.py
 file
@@ -1088,11 +1088,11 @@ file
 
 
 
-2011-01-18T22:05:19.953021Z
-99ea91f6ba1ca598b680e2368897c0a6
-2011-01-14T16:09:46.541096Z
-1397
-campbellbarton
+2011-02-10T19:49:03.825667Z
+b1e4187ba364ebb5e485ca3d3af42d28
+2011-02-01T12:09:20.823407Z
+1533
+jaydez
 has-props
 
 
@@ -1114,7 +1114,7 @@ has-props
 
 
 
-6296
+6286
 
 animation_add_corrective_shape_key.py
 file
@@ -1122,10 +1122,10 @@ file
 
 
 
-2011-01-18T22:05:19.953021Z
+2011-02-10T19:49:03.825667Z
 d620aaa9d27707a77b4cda9c4316ec32
-2011-01-14T16:09:46.541096Z
-1397
+2011-02-08T21:36:44.718602Z
+1562
 campbellbarton
 has-props
 
@@ -1165,10 +1165,10 @@ file
 
 
 
-2011-01-18T22:05:19.953021Z
-01568a33e647b6d2e4e5d6fcdc0824da
-2011-01-14T16:09:46.541096Z
-1397
+2011-02-10T19:49:03.825667Z
+8803321496609359f47d25c0f368423f
+2011-02-08T11:11:40.473233Z
+1556
 campbellbarton
 has-props
 
@@ -1191,7 +1191,7 @@ has-props
 
 
 
-6802
+7283
 
 object_fracture
 dir
@@ -1202,10 +1202,10 @@ file
 
 
 
-2011-01-18T22:05:19.953021Z
-3ccb1ed00c45633f97fc8290268b569d
-2011-01-14T16:09:46.541096Z
-1397
+2011-02-10T19:49:03.825667Z
+dd91bc6ddf81a28e7006c4f1a9916573
+2011-02-08T21:36:44.718602Z
+1562
 campbellbarton
 has-props
 
@@ -1228,7 +1228,7 @@ has-props
 
 
 
-12905
+12900
 
 io_export_pc2.py
 file
@@ -1236,10 +1236,10 @@ file
 
 
 
-2011-01-18T22:05:19.953021Z
-ebc905457b9f6b25d4632883cae27743
-2011-01-14T16:09:46.541096Z
-1397
+2011-02-10T19:49:03.825667Z
+82f9650e205f607f5bc5249523d77f47
+2011-01-24T13:19:05.938527Z
+1491
 campbellbarton
 has-props
 
@@ -1262,7 +1262,7 @@ has-props
 
 
 
-6999
+7005
 
 space_view3d_copy_attributes.py
 file
@@ -1270,11 +1270,11 @@ file
 
 
 
-2011-01-18T22:05:19.953021Z
-0f03f00e944560dcba2ee943874ae349
-2011-01-14T18:10:02.370315Z
-1400
-bassamk
+2011-02-10T19:49:03.825667Z
+4dba50fb154198b2bbaa8c582d05b6c4
+2011-02-06T07:05:23.159099Z
+1542
+campbellbarton
 has-props
 
 
@@ -1296,7 +1296,41 @@ has-props
 
 
 
-28339
+28414
+
+animation_animall.py
+file
+
+
+
+
+2011-02-10T19:49:03.825667Z
+cdd4e390c43822cd1306236e3e886016
+2011-02-01T20:18:08.836160Z
+1534
+gsrb3d
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9339
 
 add_mesh_ant_landscape.py
 file
@@ -1304,10 +1338,10 @@ file
 
 
 
-2011-01-18T22:05:19.953021Z
-09bf14e98b16ac6dcd1c8e45292456be
-2011-01-14T16:09:46.541096Z
-1397
+2011-02-10T19:49:03.835667Z
+2532aca913a8a39124796a39ebfe108c
+2011-02-08T21:36:44.718602Z
+1562
 campbellbarton
 has-props
 
@@ -1330,7 +1364,7 @@ has-props
 
 
 
-30383
+27573
 
 object_add_chain.py
 file
@@ -1338,11 +1372,11 @@ file
 
 
 
-2011-01-18T22:05:19.953021Z
-d55deeb835f3cff96243195ac98d1034
-2011-01-14T16:09:46.541096Z
-1397
-campbellbarton
+2011-02-10T19:49:03.835667Z
+c77d912f1c76086bb44f6af49a6c8e46
+2011-02-01T12:09:20.823407Z
+1533
+jaydez
 has-props
 
 
@@ -1364,7 +1398,7 @@ has-props
 
 
 
-4835
+4827
 
 io_anim_bvh
 dir
@@ -1378,10 +1412,10 @@ file
 
 
 
-2011-01-18T22:05:19.963021Z
-62cf6a54e565fab0a6632662488f4164
-2011-01-14T16:09:46.541096Z
-1397
+2011-02-10T19:49:03.835667Z
+9cd4c5e7022eee5f9dedd9f3280ab55f
+2011-02-05T07:08:34.456132Z
+1539
 campbellbarton
 has-props
 
@@ -1404,7 +1438,7 @@ has-props
 
 
 
-39062
+39072
 
 add_mesh_pipe_joint.py
 file
@@ -1412,10 +1446,10 @@ file
 
 
 
-2011-01-18T22:05:19.963021Z
-f1e7afdb0898e966cddfa1c8cfa3d029
-2011-01-14T16:09:46.541096Z
-1397
+2011-02-10T19:49:03.835667Z
+ed4da40fe25b2409531312709251e8af
+2011-02-08T21:36:44.718602Z
+1562
 campbellbarton
 has-props
 
@@ -1438,7 +1472,7 @@ has-props
 
 
 
-44209
+39657
 
 add_mesh_BoltFactory
 dir

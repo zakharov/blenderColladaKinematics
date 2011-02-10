@@ -1,14 +1,14 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/blenfont
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-12T03:41:12.073182Z
-34273
+2011-01-30T15:29:22.294392Z
+34567
 campbellbarton
 
 
@@ -130,38 +130,4 @@ has-props
 
 
 1482
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:47.973021Z
-9b2c9b2ea55136dabf58fb8ac65dc0b6
-2010-08-10T21:22:26.642559Z
-31223
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1099
 

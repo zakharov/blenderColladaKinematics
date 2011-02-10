@@ -1,7 +1,7 @@
 /* particle.c
  *
  *
- * $Id: particle.c 34330 2011-01-15 12:00:15Z jhk $
+ * $Id: particle.c 34687 2011-02-07 11:43:33Z jhk $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -1001,6 +1001,8 @@ static float interpolate_particle_value(float v1, float v2, float v3, float v4, 
 	value= w[0]*v1 + w[1]*v2 + w[2]*v3;
 	if(four)
 		value += w[3]*v4;
+
+	CLAMP(value, 0.f, 1.f);
 	
 	return value;
 }
@@ -1192,12 +1194,12 @@ static void mvert_to_particle(ParticleKey *key, MVert *mvert, HairKey *hkey)
 	key->time = hkey->time;
 }
 
-static void do_particle_interpolation(ParticleSystem *psys, int p, ParticleData *pa, float t, float frs_sec, ParticleInterpolationData *pind, ParticleKey *result)
+static void do_particle_interpolation(ParticleSystem *psys, int p, ParticleData *pa, float t, ParticleInterpolationData *pind, ParticleKey *result)
 {
 	PTCacheEditPoint *point = pind->epoint;
 	ParticleKey keys[4];
 	int point_vel = (point && point->keys->vel);
-	float real_t, dfra, keytime;
+	float real_t, dfra, keytime, invdt;
 
 	/* billboards wont fill in all of these, so start cleared */
 	memset(keys, 0, sizeof(keys));
@@ -1336,11 +1338,12 @@ static void do_particle_interpolation(ParticleSystem *psys, int p, ParticleData 
 
 	dfra = keys[2].time - keys[1].time;
 	keytime = (real_t - keys[1].time) / dfra;
+	invdt = dfra * 0.04f * psys->part->timetweak;
 
 	/* convert velocity to timestep size */
 	if(pind->keyed || pind->cache || point_vel){
-		mul_v3_fl(keys[1].vel, dfra / frs_sec);
-		mul_v3_fl(keys[2].vel, dfra / frs_sec);
+		mul_v3_fl(keys[1].vel, invdt);
+		mul_v3_fl(keys[2].vel, invdt);
 		interp_qt_qtqt(result->rot,keys[1].rot,keys[2].rot,keytime);
 	}
 
@@ -1351,7 +1354,7 @@ static void do_particle_interpolation(ParticleSystem *psys, int p, ParticleData 
 
 	/* the velocity needs to be converted back from cubic interpolation */
 	if(pind->keyed || pind->cache || point_vel)
-		mul_v3_fl(result->vel, frs_sec / dfra);
+		mul_v3_fl(result->vel, 1.f/invdt);
 }
 /************************************************/
 /*			Particles on a dm					*/
@@ -1467,7 +1470,7 @@ void psys_interpolate_face(MVert *mvert, MFace *mface, MTFace *tface, float (*or
 		}
 		else {
 			VECCOPY(orco, vec);
-			if(ornor)
+			if(ornor && nor)
 				VECCOPY(ornor, nor);
 		}
 	}
@@ -1959,7 +1962,7 @@ static void do_kink(ParticleKey *state, ParticleKey *par, float *par_rot, float 
 	{
 		float y_vec[3]={0.f,1.f,0.f};
 		float z_vec[3]={0.f,0.f,1.f};
-		float vec_one[3], radius, state_co[3];
+		float vec_one[3], state_co[3];
 		float inp_y, inp_z, length;
 
 		if(par_rot) {
@@ -1968,7 +1971,7 @@ static void do_kink(ParticleKey *state, ParticleKey *par, float *par_rot, float 
 		}
 		
 		mul_v3_fl(par_vec, -1.f);
-		radius= normalize_v3_v3(vec_one, par_vec);
+		normalize_v3_v3(vec_one, par_vec);
 
 		inp_y=dot_v3v3(y_vec, vec_one);
 		inp_z=dot_v3v3(z_vec, vec_one);
@@ -2243,12 +2246,13 @@ static void do_path_effectors(ParticleSimulationData *sim, int i, ParticleCacheK
 
 	normalize_v3(force);
 
-	VECADDFAC(ca->co, (ca-1)->co, force, *length);
-
-	if(k < steps) {
+	if(k < steps)
 		sub_v3_v3v3(vec, (ca+1)->co, ca->co);
+
+	madd_v3_v3v3fl(ca->co, (ca-1)->co, force, *length);
+
+	if(k < steps)
 		*length = len_v3(vec);
-	}
 }
 static int check_path_length(int k, ParticleCacheKey *keys, ParticleCacheKey *state, float max_length, float *cur_length, float length, float *dvec)
 {
@@ -2743,7 +2747,6 @@ void psys_cache_child_paths(ParticleSimulationData *sim, float cfra, int editupd
 {
 	ParticleThread *pthreads;
 	ParticleThreadContext *ctx;
-	ParticleCacheKey **cache;
 	ListBase threads;
 	int i, totchild, totparent, totthread;
 
@@ -2762,7 +2765,7 @@ void psys_cache_child_paths(ParticleSimulationData *sim, float cfra, int editupd
 	totparent= ctx->totparent;
 
 	if(editupdate && sim->psys->childcache && totchild == sim->psys->totchildcache) {
-		cache = sim->psys->childcache;
+		; /* just overwrite the existing cache */
 	}
 	else {
 		/* clear out old and create new empty path cache */
@@ -2861,7 +2864,7 @@ void psys_cache_paths(ParticleSimulationData *sim, float cfra)
 	PARTICLE_P;
 	
 	float birthtime = 0.0, dietime = 0.0;
-	float t, time = 0.0, dfra = 1.0, frs_sec = sim->scene->r.frs_sec;
+	float t, time = 0.0, dfra = 1.0 /* , frs_sec = sim->scene->r.frs_sec*/ /*UNUSED*/;
 	float col[4] = {0.5f, 0.5f, 0.5f, 1.0f};
 	float prev_tangent[3] = {0.0f, 0.0f, 0.0f}, hairmat[4][4];
 	float rotmat[3][3];
@@ -2953,7 +2956,7 @@ void psys_cache_paths(ParticleSimulationData *sim, float cfra)
 			time = (float)k / (float)steps;
 			t = birthtime + time * (dietime - birthtime);
 			result.time = -t;
-			do_particle_interpolation(psys, p, pa, t, frs_sec, &pind, &result);
+			do_particle_interpolation(psys, p, pa, t, &pind, &result);
 			copy_v3_v3(ca->co, result.co);
 
 			/* dynamic hair is in object space */
@@ -3100,6 +3103,7 @@ void psys_cache_edit_paths(Scene *scene, Object *ob, PTCacheEdit *edit, float cf
 		/* should init_particle_interpolation set this ? */
 		if(pset->brushtype==PE_BRUSH_WEIGHT){
 			pind.hkey[0] = NULL;
+			/* pa != NULL since the weight brush is only available for hair */
 			pind.hkey[1] = pa->hair;
 		}
 
@@ -3131,7 +3135,7 @@ void psys_cache_edit_paths(Scene *scene, Object *ob, PTCacheEdit *edit, float cf
 			time = (float)k / (float)steps;
 			t = birthtime + time * (dietime - birthtime);
 			result.time = -t;
-			do_particle_interpolation(psys, i, pa, t, frs_sec, &pind, &result);
+			do_particle_interpolation(psys, i, pa, t, &pind, &result);
 			copy_v3_v3(ca->co, result.co);
 
 			 /* non-hair points are already in global space */
@@ -3469,7 +3473,7 @@ static void default_particle_settings(ParticleSettings *part)
 	part->bb_uv_split=1;
 	part->bb_align=PART_BB_VIEW;
 	part->bb_split_offset=PART_BB_OFF_LINEAR;
-	part->flag=PART_EDISTR|PART_TRAND;
+	part->flag=PART_EDISTR|PART_TRAND|PART_HIDE_ADVANCED_HAIR;
 
 	part->sta= 1.0;
 	part->end= 200.0;
@@ -3952,10 +3956,9 @@ void psys_get_particle_on_path(ParticleSimulationData *sim, int p, ParticleKey *
 	ParticleThreadContext ctx; /* fake thread context for child modifiers */
 	ParticleInterpolationData pind;
 
-	float t, frs_sec = sim->scene->r.frs_sec;
+	float t;
 	float co[3], orco[3];
 	float hairmat[4][4];
-	/*int totparent = 0;*/ /*UNUSED*/
 	int totpart = psys->totpart;
 	int totchild = psys->totchild;
 	short between = 0, edit = 0;
@@ -3965,11 +3968,8 @@ void psys_get_particle_on_path(ParticleSimulationData *sim, int p, ParticleKey *
 
 	float *cpa_fuv; int cpa_num; short cpa_from;
 
-	//if(psys_in_edit_mode(scene, psys)){
-	//	if((psys->edit_path->flag & PSYS_EP_SHOW_CHILD)==0)
-	//		totchild=0;
-	//	edit=1;
-	//}
+	/* initialize keys to zero */
+	memset(keys, 0, 4*sizeof(ParticleKey));
 
 	t=state->time;
 	CLAMP(t, 0.0, 1.0);
@@ -3984,7 +3984,7 @@ void psys_get_particle_on_path(ParticleSimulationData *sim, int p, ParticleKey *
 		 * account when subdividing for instance */
 		pind.dm = psys_in_edit_mode(sim->scene, psys) ? NULL : psys->hair_out_dm;
 		init_particle_interpolation(sim->ob, psys, pa, &pind);
-		do_particle_interpolation(psys, p, pa, t, frs_sec, &pind, state);
+		do_particle_interpolation(psys, p, pa, t, &pind, state);
 
 		if(!keyed && !cached) {
 			if((pa->flag & PARS_REKEY)==0) {
@@ -4011,12 +4011,6 @@ void psys_get_particle_on_path(ParticleSimulationData *sim, int p, ParticleKey *
 			t = psys_get_child_time(psys, cpa, -state->time, NULL, NULL);
 		
 		if(totchild && part->from!=PART_FROM_PARTICLE && part->childtype==PART_CHILD_FACES){
-#if 0		/* totparent is UNUSED */
-			totparent=(int)(totchild*part->parents*0.3);
-			
-			if(G.rendering && part->child_nbr && part->ren_child_nbr)
-				totparent*=(float)part->child_nbr/(float)part->ren_child_nbr;
-#endif
 			/* part->parents could still be 0 so we can't test with totparent */
 			between=1;
 		}

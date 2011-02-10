@@ -1,5 +1,5 @@
 /*
-* $Id: MOD_cloth.c 34160 2011-01-07 19:18:31Z campbellbarton $
+* $Id: MOD_cloth.c 34587 2011-01-31 20:02:51Z nazgul $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -196,6 +196,7 @@ ModifierTypeInfo modifierType_Cloth = {
 
 	/* copyData */          copyData,
 	/* deformVerts */       0,
+	/* deformMatrices */    0,
 	/* deformVertsEM */     0,
 	/* deformMatricesEM */  0,
 	/* applyModifier */     applyModifier,

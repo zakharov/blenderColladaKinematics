@@ -1,5 +1,5 @@
 /**
- * $Id: editmesh_lib.c 34380 2011-01-18 01:58:19Z campbellbarton $
+ * $Id: editmesh_lib.c 34465 2011-01-23 12:42:07Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -360,7 +360,7 @@ void EM_editselection_plane(float *plane, EditSelection *ese)
 		however selecting different edges can swap the direction of the y axis.
 		this makes it less likely for the y axis of the manipulator
 		(running along the edge).. to flip less often.
-		at least its more pradictable */
+		at least its more predictable */
 		if (eed->v2->co[1] > eed->v1->co[1]) /*check which to do first */
 			sub_v3_v3v3(plane, eed->v2->co, eed->v1->co);
 		else

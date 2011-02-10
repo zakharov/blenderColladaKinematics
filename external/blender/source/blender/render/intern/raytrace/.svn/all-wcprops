@@ -1,67 +1,61 @@
 K 25
 svn:wc:ra_dav:version-url
 V 86
-/svnroot/bf-blender/!svn/ver/34160/trunk/blender/source/blender/render/intern/raytrace
+/svnroot/bf-blender/!svn/ver/34664/trunk/blender/source/blender/render/intern/raytrace
 END
-rayobject.cpp
+rayobject_empty.cpp
 K 25
 svn:wc:ra_dav:version-url
-V 100
-/svnroot/bf-blender/!svn/ver/34160/trunk/blender/source/blender/render/intern/raytrace/rayobject.cpp
+V 106
+/svnroot/bf-blender/!svn/ver/34664/trunk/blender/source/blender/render/intern/raytrace/rayobject_empty.cpp
 END
 rayobject_qbvh.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 105
-/svnroot/bf-blender/!svn/ver/31369/trunk/blender/source/blender/render/intern/raytrace/rayobject_qbvh.cpp
+/svnroot/bf-blender/!svn/ver/34656/trunk/blender/source/blender/render/intern/raytrace/rayobject_qbvh.cpp
 END
-bvh.h
+rayobject_instance.cpp
 K 25
 svn:wc:ra_dav:version-url
-V 92
-/svnroot/bf-blender/!svn/ver/34159/trunk/blender/source/blender/render/intern/raytrace/bvh.h
-END
-rayobject_rtbuild.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 108
-/svnroot/bf-blender/!svn/ver/34160/trunk/blender/source/blender/render/intern/raytrace/rayobject_rtbuild.cpp
+V 109
+/svnroot/bf-blender/!svn/ver/34664/trunk/blender/source/blender/render/intern/raytrace/rayobject_instance.cpp
 END
 rayobject_vbvh.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 105
-/svnroot/bf-blender/!svn/ver/34160/trunk/blender/source/blender/render/intern/raytrace/rayobject_vbvh.cpp
+/svnroot/bf-blender/!svn/ver/34656/trunk/blender/source/blender/render/intern/raytrace/rayobject_vbvh.cpp
+END
+rayobject_rtbuild.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svnroot/bf-blender/!svn/ver/34656/trunk/blender/source/blender/render/intern/raytrace/rayobject_rtbuild.cpp
+END
+rayobject_blibvh.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/bf-blender/!svn/ver/34664/trunk/blender/source/blender/render/intern/raytrace/rayobject_blibvh.cpp
 END
 rayobject_hint.h
 K 25
 svn:wc:ra_dav:version-url
 V 103
-/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/render/intern/raytrace/rayobject_hint.h
-END
-rayobject_svbvh.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 106
-/svnroot/bf-blender/!svn/ver/31369/trunk/blender/source/blender/render/intern/raytrace/rayobject_svbvh.cpp
-END
-reorganize.h
-K 25
-svn:wc:ra_dav:version-url
-V 99
-/svnroot/bf-blender/!svn/ver/34159/trunk/blender/source/blender/render/intern/raytrace/reorganize.h
+/svnroot/bf-blender/!svn/ver/34656/trunk/blender/source/blender/render/intern/raytrace/rayobject_hint.h
 END
 vbvh.h
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/34159/trunk/blender/source/blender/render/intern/raytrace/vbvh.h
+/svnroot/bf-blender/!svn/ver/34656/trunk/blender/source/blender/render/intern/raytrace/vbvh.h
 END
-Makefile
+reorganize.h
 K 25
 svn:wc:ra_dav:version-url
-V 95
-/svnroot/bf-blender/!svn/ver/31029/trunk/blender/source/blender/render/intern/raytrace/Makefile
+V 99
+/svnroot/bf-blender/!svn/ver/34657/trunk/blender/source/blender/render/intern/raytrace/reorganize.h
 END
 rayobject_rtbuild.h
 K 25
@@ -69,9 +63,45 @@ svn:wc:ra_dav:version-url
 V 106
 /svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/render/intern/raytrace/rayobject_rtbuild.h
 END
+rayobject.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/bf-blender/!svn/ver/34656/trunk/blender/source/blender/render/intern/raytrace/rayobject.cpp
+END
+rayobject_internal.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/bf-blender/!svn/ver/34664/trunk/blender/source/blender/render/intern/raytrace/rayobject_internal.h
+END
+rayobject_octree.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/bf-blender/!svn/ver/34664/trunk/blender/source/blender/render/intern/raytrace/rayobject_octree.cpp
+END
+bvh.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/34656/trunk/blender/source/blender/render/intern/raytrace/bvh.h
+END
+rayobject_svbvh.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svnroot/bf-blender/!svn/ver/34656/trunk/blender/source/blender/render/intern/raytrace/rayobject_svbvh.cpp
+END
 svbvh.h
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/34159/trunk/blender/source/blender/render/intern/raytrace/svbvh.h
+/svnroot/bf-blender/!svn/ver/34656/trunk/blender/source/blender/render/intern/raytrace/svbvh.h
+END
+rayobject_raycounter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svnroot/bf-blender/!svn/ver/34664/trunk/blender/source/blender/render/intern/raytrace/rayobject_raycounter.cpp
 END

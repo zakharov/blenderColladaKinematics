@@ -1,5 +1,5 @@
 /**
- * $Id: render_types.h 33894 2010-12-26 17:47:17Z ton $
+ * $Id: render_types.h 34656 2011-02-05 13:41:29Z blendix $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -607,6 +607,7 @@ typedef struct LampRen {
 #define R_DIVIDE_24		32	
 /* vertex normals are tangent or view-corrected vector, for hair strands */
 #define R_TANGENT		64		
+#define R_TRACEBLE		128
 
 /* strandbuffer->flag */
 #define R_STRAND_BSPLINE	1

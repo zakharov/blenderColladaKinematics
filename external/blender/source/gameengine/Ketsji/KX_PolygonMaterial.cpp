@@ -1,5 +1,5 @@
 /**
- * $Id: KX_PolygonMaterial.cpp 33089 2010-11-16 02:18:50Z campbellbarton $
+ * $Id: KX_PolygonMaterial.cpp 34520 2011-01-27 00:02:25Z campbellbarton $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,9 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+#include <stddef.h>
+
 #include "KX_PolygonMaterial.h"
 
 #include "BKE_mesh.h"
@@ -106,6 +109,11 @@ KX_PolygonMaterial::~KX_PolygonMaterial()
 		Py_DECREF(m_pymaterial);
 	}
 #endif // WITH_PYTHON
+}
+
+Image *KX_PolygonMaterial::GetBlenderImage() const
+{
+	return (m_tface) ? m_tface->tpage : NULL;
 }
 
 bool KX_PolygonMaterial::Activate(RAS_IRasterizer* rasty, TCachingInfo& cachingInfo) const 

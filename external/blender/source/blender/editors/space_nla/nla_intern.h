@@ -1,5 +1,5 @@
 /**
- * $Id: nla_intern.h 33435 2010-12-03 01:52:28Z campbellbarton $
+ * $Id: nla_intern.h 34395 2011-01-18 23:38:36Z aligorith $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -100,6 +100,7 @@ void NLA_OT_split(wmOperatorType *ot);
 
 void NLA_OT_mute_toggle(wmOperatorType *ot);
 
+void NLA_OT_swap(wmOperatorType *ot);
 void NLA_OT_move_up(wmOperatorType *ot);
 void NLA_OT_move_down(wmOperatorType *ot);
 

@@ -1,15 +1,15 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/kernel/gen_messaging/intern
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2010-08-10T21:22:26.642559Z
-31223
-gsrb3d
+2011-01-30T15:29:22.294392Z
+34567
+campbellbarton
 
 
 
@@ -25,40 +25,6 @@ gsrb3d
 
 
 954f8c5b-7b00-dc11-b283-0030488c597c
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:29.373021Z
-d95f7141d066635744d76eb02b49fe3c
-2010-08-10T21:22:26.642559Z
-31223
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1182
 
 messaging.c
 file

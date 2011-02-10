@@ -1,5 +1,5 @@
 /**
- * $Id: CMP_scale.c 32517 2010-10-16 14:32:17Z campbellbarton $
+ * $Id: CMP_scale.c 34712 2011-02-08 09:02:16Z lukastoenne $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -109,22 +109,18 @@ static void node_composit_exec_scale(void *data, bNode *node, bNodeStack **in, b
 	}
 };
 
-bNodeType cmp_node_scale= {
-	/* *next,*prev */	NULL, NULL,
-	/* type code   */	CMP_NODE_SCALE,
-	/* name        */	"Scale",
-	/* width+range */	140, 100, 320,
-	/* class+opts  */	NODE_CLASS_DISTORT, NODE_OPTIONS,
-	/* input sock  */	cmp_node_scale_in,
-	/* output sock */	cmp_node_scale_out,
-	/* storage     */	"",
-	/* execfunc    */	node_composit_exec_scale,
-	/* butfunc     */	NULL,
-	/* initfunc    */	NULL,
-	/* freestoragefunc    */	NULL,
-	/* copystoragefunc    */	NULL,
-	/* id          */	NULL
-};
+void register_node_type_cmp_scale(ListBase *lb)
+{
+	static bNodeType ntype;
+
+	node_type_base(&ntype, CMP_NODE_SCALE, "Scale", NODE_CLASS_DISTORT, NODE_OPTIONS,
+		cmp_node_scale_in, cmp_node_scale_out);
+	node_type_size(&ntype, 140, 100, 320);
+	node_type_exec(&ntype, node_composit_exec_scale);
+
+	nodeRegisterType(lb, &ntype);
+}
+
 
 
 

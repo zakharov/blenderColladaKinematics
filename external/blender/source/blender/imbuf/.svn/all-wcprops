@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 69
-/svnroot/bf-blender/!svn/ver/34370/trunk/blender/source/blender/imbuf
+/svnroot/bf-blender/!svn/ver/34761/trunk/blender/source/blender/imbuf
 END
 IMB_imbuf.h
 K 25
@@ -37,11 +37,5 @@ CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/imbuf/CMakeLists.txt
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 78
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blender/imbuf/Makefile
+/svnroot/bf-blender/!svn/ver/34486/trunk/blender/source/blender/imbuf/CMakeLists.txt
 END

@@ -1,5 +1,5 @@
 /**
- * $Id: space_outliner.c 34159 2011-01-07 18:36:47Z campbellbarton $
+ * $Id: space_outliner.c 34437 2011-01-21 08:59:08Z dfelinto $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -117,6 +117,7 @@ static void outliner_main_area_listener(ARegion *ar, wmNotifier *wmn)
 					break;
 				case ND_BONE_ACTIVE:
 				case ND_BONE_SELECT:
+				case ND_DRAW:
 				case ND_PARENT:
 				case ND_OB_SHADING:
 					ED_region_tag_redraw(ar);

@@ -1,14 +1,14 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/po
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2010-07-26T11:47:33.844512Z
-30755
+2011-01-30T15:29:22.294392Z
+34567
 campbellbarton
 
 
@@ -162,40 +162,6 @@ has-props
 
 8784
 
-fr.po
-file
-
-
-
-
-2011-01-18T22:05:15.183021Z
-f145e876f261ddbf3741f46ff7d3a764
-2008-11-12T21:16:53.478104Z
-17433
-blendix
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-92627
-
 es.po
 file
 
@@ -230,14 +196,14 @@ has-props
 
 23029
 
-nl.po
+fr.po
 file
 
 
 
 
 2011-01-18T22:05:15.183021Z
-9cfc443763f43e7808d85c634956b644
+f145e876f261ddbf3741f46ff7d3a764
 2008-11-12T21:16:53.478104Z
 17433
 blendix
@@ -262,7 +228,41 @@ has-props
 
 
 
-10590
+92627
+
+hr.po
+file
+
+
+
+
+2011-01-18T22:05:15.183021Z
+bc9e75e810351ac8e6ba0caad5c5a87c
+2008-11-12T21:16:53.478104Z
+17433
+blendix
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+56954
 
 ko.po
 file
@@ -298,14 +298,14 @@ blendix
 
 468167
 
-hr.po
+nl.po
 file
 
 
 
 
 2011-01-18T22:05:15.183021Z
-bc9e75e810351ac8e6ba0caad5c5a87c
+9cfc443763f43e7808d85c634956b644
 2008-11-12T21:16:53.478104Z
 17433
 blendix
@@ -330,7 +330,7 @@ has-props
 
 
 
-56954
+10590
 
 pl.po
 file
@@ -773,40 +773,6 @@ blendix
 
 
 336910
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:05:15.223021Z
-f2fe6a0c1a269b6891f37bef314dbe8c
-2010-07-26T11:47:33.844512Z
-30755
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1978
 
 zh_CN.po
 file

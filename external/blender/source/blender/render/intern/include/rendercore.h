@@ -1,7 +1,7 @@
 /*
  * rendercore_ext.h
  *
- * $Id: rendercore.h 26841 2010-02-12 13:34:04Z campbellbarton $
+ * $Id: rendercore.h 34656 2011-02-05 13:41:29Z blendix $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -48,6 +48,7 @@ struct RenderPart;
 struct RenderLayer;
 struct ObjectRen;
 struct ListBase;
+struct RayObject;
 
 /* ------------------------------------------------------------------------- */
 
@@ -95,7 +96,7 @@ int get_sample_layers(struct RenderPart *pa, struct RenderLayer *rl, struct Rend
 
 extern void freeraytree(Render *re);
 extern void makeraytree(Render *re);
-RayObject* makeraytree_object(Render *re, ObjectInstanceRen *obi);
+struct RayObject* makeraytree_object(Render *re, ObjectInstanceRen *obi);
 
 extern void ray_shadow(ShadeInput *, LampRen *, float *);
 extern void ray_trace(ShadeInput *, ShadeResult *);

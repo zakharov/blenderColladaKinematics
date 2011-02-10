@@ -1,15 +1,15 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/makesrna/intern
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-18T11:27:52.660990Z
-34386
-campbellbarton
+2011-02-10T18:54:49.499310Z
+34763
+lukastoenne
 
 
 
@@ -66,10 +66,10 @@ file
 
 
 
-2011-01-18T22:04:45.363021Z
-bd8f6971abfe7d875ca3afc6753bebb3
-2011-01-18T01:58:19.206348Z
-34380
+2011-02-10T19:48:48.085667Z
+64826c2b4fd36812647f80ef305e47b6
+2011-01-31T23:54:51.068380Z
+34589
 campbellbarton
 has-props
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-89057
+89087
 
 rna_ui_api.c
 file
@@ -196,40 +196,6 @@ has-props
 
 2261
 
-rna_boid.c
-file
-
-
-
-
-2011-01-18T22:04:45.373021Z
-40423f4633381dea1b435e6751dade17
-2011-01-07T19:18:31.464706Z
-34160
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-25359
-
 rna_action.c
 file
 
@@ -264,16 +230,16 @@ has-props
 
 21902
 
-rna_rna.c
+rna_boid.c
 file
 
 
 
 
 2011-01-18T22:04:45.373021Z
-6682b5cf688feedfbe7c4d35cb34e1a8
-2011-01-07T18:36:47.041781Z
-34159
+40423f4633381dea1b435e6751dade17
+2011-01-07T19:18:31.464706Z
+34160
 campbellbarton
 has-props
 
@@ -296,7 +262,41 @@ has-props
 
 
 
-45787
+25359
+
+rna_rna.c
+file
+
+
+
+
+2011-02-10T19:48:48.085667Z
+2a2a5543fff75182c1ef31e1b3e93bcc
+2011-01-25T05:45:21.549965Z
+34482
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+45807
 
 rna_gpencil.c
 file
@@ -366,6 +366,40 @@ has-props
 
 18728
 
+rna_wm.c
+file
+
+
+
+
+2011-02-10T19:48:48.085667Z
+a95b2ffe5e3ef537f1af994fec7074ff
+2011-01-24T05:15:14.928694Z
+34476
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+62714
+
 rna_controller.c
 file
 
@@ -399,74 +433,6 @@ has-props
 
 
 9392
-
-rna_wm.c
-file
-
-
-
-
-2011-01-18T22:04:45.373021Z
-91fa4139ecce6ff24d7a53353c0f71ea
-2011-01-07T19:18:31.464706Z
-34160
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-61879
-
-rna_constraint.c
-file
-
-
-
-
-2011-01-18T22:04:45.373021Z
-5b6aeddc5f7e85891e2a8a09edd92cca
-2011-01-07T19:18:31.464706Z
-34160
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-102063
 
 rna_text.c
 file
@@ -502,6 +468,40 @@ has-props
 
 8898
 
+rna_constraint.c
+file
+
+
+
+
+2011-02-10T19:48:48.085667Z
+03b4a8446cb10494437b691574d8e490
+2011-01-26T23:33:08.309039Z
+34518
+aligorith
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+102041
+
 rna_world.c
 file
 
@@ -536,16 +536,16 @@ has-props
 
 26060
 
-Makefile
+rna_modifier.c
 file
 
 
 
 
-2011-01-18T22:04:45.373021Z
-b0d72d2edef8ddfe40bd187a5a386ac3
-2010-11-26T22:12:46.487179Z
-33344
+2011-02-10T19:48:48.095667Z
+f9c04adad09dd02c40c3f4c253045862
+2011-02-10T00:44:26.438010Z
+34748
 mfoxdogg
 has-props
 
@@ -568,41 +568,7 @@ has-props
 
 
 
-4417
-
-rna_modifier.c
-file
-
-
-
-
-2011-01-18T22:04:45.373021Z
-50c61333291784efe17c492fdc786619
-2011-01-14T16:57:53.145742Z
-34322
-nazgul
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-105716
+106351
 
 rna_material.c
 file
@@ -610,11 +576,11 @@ file
 
 
 
-2011-01-18T22:04:45.373021Z
-877b839ecb719a3b1e4bca61062dcb67
-2011-01-17T23:30:28.708396Z
-34375
-campbellbarton
+2011-02-10T19:48:48.095667Z
+3a2a2890f42fc3175f9206c0a3e206d5
+2011-01-30T16:17:08.507803Z
+34568
+ton
 has-props
 
 
@@ -636,7 +602,7 @@ has-props
 
 
 
-92434
+92886
 
 rna_pose_api.c
 file
@@ -678,10 +644,10 @@ file
 
 
 
-2011-01-18T22:04:45.383021Z
-6545a5ea8bc1dec435e627854e009779
-2011-01-17T08:31:57.365286Z
-34363
+2011-02-10T19:48:48.095667Z
+b9e19c4bd0c9a160c3cd1048515fea7b
+2011-02-07T05:05:41.950351Z
+34680
 campbellbarton
 has-props
 
@@ -704,7 +670,7 @@ has-props
 
 
 
-120728
+121301
 
 rna_sculpt_paint.c
 file
@@ -746,11 +712,11 @@ file
 
 
 
-2011-01-18T22:04:45.383021Z
-7d1b506a1596592442c7d6d2e10c16d3
-2011-01-07T19:18:31.464706Z
-34160
-campbellbarton
+2011-02-10T19:48:48.095667Z
+f69a331d25ef447ff9fc0bd56bccbaad
+2011-02-07T18:24:15.389603Z
+34697
+dfelinto
 has-props
 
 
@@ -772,7 +738,7 @@ has-props
 
 
 
-34868
+35103
 
 rna_armature_api.c
 file
@@ -882,10 +848,10 @@ file
 
 
 
-2011-01-18T22:04:45.383021Z
-5382fabb86010b96451a0da2185567c7
-2011-01-11T02:30:01.611936Z
-34242
+2011-02-10T19:48:48.095667Z
+f81f996413cbd99bf29fb36139348eab
+2011-02-01T04:24:47.426077Z
+34596
 campbellbarton
 has-props
 
@@ -908,7 +874,7 @@ has-props
 
 
 
-45219
+45259
 
 rna_color.c
 file
@@ -1086,10 +1052,10 @@ file
 
 
 
-2011-01-18T22:04:45.383021Z
-c4cc6339a8727766b9473c45d5c4187b
-2011-01-10T03:58:07.140950Z
-34218
+2011-02-10T19:48:48.095667Z
+6fa0d79987bdb7d942bdde1a6757dc45
+2011-02-01T04:24:47.426077Z
+34596
 campbellbarton
 has-props
 
@@ -1112,41 +1078,7 @@ has-props
 
 
 
-3736
-
-rna_key.c
-file
-
-
-
-
-2011-01-18T22:04:45.383021Z
-be7f0c5c3cca139cae949b45bb287870
-2011-01-07T19:18:31.464706Z
-34160
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-17083
+3677
 
 rna_camera.c
 file
@@ -1182,6 +1114,74 @@ has-props
 
 8335
 
+rna_key.c
+file
+
+
+
+
+2011-02-10T19:48:48.095667Z
+5fcdd6bca4bbd93978601ac7175e8af7
+2011-01-26T21:58:32.472964Z
+34513
+aligorith
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+19493
+
+rna_sequencer.c
+file
+
+
+
+
+2011-02-10T19:48:48.095667Z
+833489ba2c58655f31310758bb865d3f
+2011-01-20T23:05:25.605233Z
+34428
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+62085
+
 rna_define.c
 file
 
@@ -1216,16 +1216,16 @@ has-props
 
 79777
 
-rna_sequencer.c
+rna_ID.c
 file
 
 
 
 
-2011-01-18T22:04:45.383021Z
-833489ba2c58655f31310758bb865d3f
-2011-01-07T19:18:31.464706Z
-34160
+2011-02-10T19:48:48.095667Z
+d510b1d118c079261f7fe87971f8c334
+2011-02-07T08:13:28.998642Z
+34681
 campbellbarton
 has-props
 
@@ -1248,7 +1248,7 @@ has-props
 
 
 
-62085
+18583
 
 rna_mesh.c
 file
@@ -1256,11 +1256,11 @@ file
 
 
 
-2011-01-18T22:04:45.393021Z
-b19f95fcda22806051ba076f43ae9c91
-2011-01-13T04:53:55.701793Z
-34290
-campbellbarton
+2011-02-10T19:48:48.105667Z
+61273d17890fc6ba0523561dbc5b9c34
+2011-01-26T22:31:14.165856Z
+34516
+aligorith
 has-props
 
 
@@ -1282,41 +1282,7 @@ has-props
 
 
 
-78034
-
-rna_ID.c
-file
-
-
-
-
-2011-01-18T22:04:45.393021Z
-99ec13d61ab5cdfc681b6cc3280993cc
-2011-01-13T14:29:57.100455Z
-34298
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-18571
+78477
 
 rna_userdef.c
 file
@@ -1324,11 +1290,11 @@ file
 
 
 
-2011-01-18T22:04:45.393021Z
-f86366a5e143bcc6dbe54d83f97a83a7
-2011-01-07T19:18:31.464706Z
-34160
-campbellbarton
+2011-02-10T19:48:48.105667Z
+55a9b047791888389c8a6c196c1978f0
+2011-02-04T08:33:07.469593Z
+34634
+aligorith
 has-props
 
 
@@ -1350,7 +1316,7 @@ has-props
 
 
 
-134996
+134688
 
 rna_nodetree_types.h
 file
@@ -1392,78 +1358,10 @@ file
 
 
 
-2011-01-18T22:04:45.393021Z
-c5a754726febae312f8b1ac4d69e9bd3
-2011-01-13T23:16:10.217679Z
-34308
-aligorith
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-77055
-
-rna_particle.c
-file
-
-
-
-
-2011-01-18T22:04:45.393021Z
-c563f7fd62d25e3d1af275cbfc1d9f14
-2011-01-09T19:09:41.462025Z
-34208
-jhk
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-108374
-
-rna_nodetree.c
-file
-
-
-
-
-2011-01-18T22:04:45.393021Z
-ec6d75fe92d20a174ff6df554a1ac33e
-2011-01-17T15:16:08.407601Z
-34369
+2011-02-10T19:48:48.165667Z
+b8333c928bf3fe86eec3894531a62ebe
+2011-01-28T14:51:03.863031Z
+34544
 ton
 has-props
 
@@ -1486,19 +1384,19 @@ has-props
 
 
 
-105126
+77107
 
-rna_object.c
+rna_particle.c
 file
 
 
 
 
-2011-01-18T22:04:45.393021Z
-4596b39f065edd2a4b11c93410ff8402
-2011-01-13T04:53:55.701793Z
-34290
-campbellbarton
+2011-02-10T19:48:48.165667Z
+2943fe55a81664d07be66bf595e9d8f1
+2011-02-07T11:43:33.879146Z
+34687
+jhk
 has-props
 
 
@@ -1520,19 +1418,19 @@ has-props
 
 
 
-94217
+110415
 
-rna_action_api.c
+rna_nodetree.c
 file
 
 
 
 
-2011-01-18T22:04:45.393021Z
-648a9ec8bc7b44c90e648ba66a356702
-2010-08-30T13:50:59.163366Z
-31664
-campbellbarton
+2011-02-10T19:48:48.165667Z
+af9104c34623f1d8663d0ebdb65d73c3
+2011-02-10T18:54:49.499310Z
+34763
+lukastoenne
 has-props
 
 
@@ -1554,7 +1452,7 @@ has-props
 
 
 
-1242
+105477
 
 rna_timeline.c
 file
@@ -1590,50 +1488,16 @@ has-props
 
 2443
 
-rna_nla.c
+rna_action_api.c
 file
 
 
 
 
-2011-01-18T22:04:45.403021Z
-4b19af4247bafca17b65b96448cd8c28
-2011-01-12T01:17:13.077867Z
-34270
-aligorith
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-22873
-
-rna_image_api.c
-file
-
-
-
-
-2011-01-18T22:04:45.403021Z
-e78cb2f76cc950e0f5cd7e1fd52538b4
-2011-01-10T03:58:07.140950Z
-34218
+2011-01-18T22:04:45.393021Z
+648a9ec8bc7b44c90e648ba66a356702
+2010-08-30T13:50:59.163366Z
+31664
 campbellbarton
 has-props
 
@@ -1656,19 +1520,19 @@ has-props
 
 
 
-7252
+1242
 
-rna_controller_api.c
+rna_object.c
 file
 
 
 
 
-2011-01-18T22:04:45.403021Z
-ec86a076cec6b8b4828ff6b2d27d462f
-2010-07-10T21:15:10.507066Z
-30190
-dfelinto
+2011-02-10T19:48:48.175667Z
+fb1d21db1f42333aafb320885470c503
+2011-01-27T21:05:01.498947Z
+34535
+zanqdo
 has-props
 
 
@@ -1690,7 +1554,75 @@ has-props
 
 
 
-2784
+94209
+
+rna_nla.c
+file
+
+
+
+
+2011-02-10T19:48:48.175667Z
+a43c9418b0c016cf652decaa7e0fc011
+2011-01-19T10:54:34.238368Z
+34399
+aligorith
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+24928
+
+rna_image_api.c
+file
+
+
+
+
+2011-02-10T19:48:48.175667Z
+2a38b7d1173a809dd7a9efaf92051b1d
+2011-02-01T04:24:47.426077Z
+34596
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7262
 
 rna_wm_api.c
 file
@@ -1726,16 +1658,50 @@ has-props
 
 9674
 
-rna_animviz.c
+rna_controller_api.c
 file
 
 
 
 
 2011-01-18T22:04:45.403021Z
-2d9b8c2dc15235a7ff01c11ec87e3fe6
-2011-01-07T19:18:31.464706Z
-34160
+ec86a076cec6b8b4828ff6b2d27d462f
+2010-07-10T21:15:10.507066Z
+30190
+dfelinto
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2784
+
+rna_ui.c
+file
+
+
+
+
+2011-02-10T19:48:48.175667Z
+020f239ab9e0ddfd8e164d31a32a9c9d
+2011-01-24T05:02:01.450870Z
+34475
 campbellbarton
 has-props
 
@@ -1758,7 +1724,7 @@ has-props
 
 
 
-16295
+25757
 
 rna_text_api.c
 file
@@ -1794,14 +1760,14 @@ has-props
 
 1453
 
-rna_ui.c
+rna_animviz.c
 file
 
 
 
 
 2011-01-18T22:04:45.403021Z
-56a48191261ea11a016a21af1eaf43f0
+2d9b8c2dc15235a7ff01c11ec87e3fe6
 2011-01-07T19:18:31.464706Z
 34160
 campbellbarton
@@ -1826,41 +1792,7 @@ has-props
 
 
 
-25360
-
-rna_screen.c
-file
-
-
-
-
-2011-01-18T22:04:45.403021Z
-0ade5c527182823c08142841f0f257cd
-2011-01-13T04:53:55.701793Z
-34290
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8034
+16295
 
 rna_animation.c
 file
@@ -1868,11 +1800,11 @@ file
 
 
 
-2011-01-18T22:04:45.403021Z
-059dc1037486476fbe3b3face25e59de
-2011-01-13T04:53:55.701793Z
-34290
-campbellbarton
+2011-02-10T19:48:48.175667Z
+5f0b11f4d5086e47a31f60d6780ea345
+2011-02-01T11:39:51.682732Z
+34601
+aligorith
 has-props
 
 
@@ -1894,7 +1826,41 @@ has-props
 
 
 
-27405
+28553
+
+rna_screen.c
+file
+
+
+
+
+2011-02-10T19:48:48.175667Z
+ff3b07f5fe8cdc010c090f8d03a743c2
+2011-02-01T23:41:01.351559Z
+34613
+aligorith
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10568
 
 rna_actuator.c
 file
@@ -1902,11 +1868,11 @@ file
 
 
 
-2011-01-18T22:04:45.403021Z
-9b4e0710559c097a3f42490552b77adf
-2011-01-07T19:18:31.464706Z
-34160
-campbellbarton
+2011-02-10T19:48:48.175667Z
+0097cee181092657efc71107f6a43bfc
+2011-02-07T18:42:07.535122Z
+34698
+dfelinto
 has-props
 
 
@@ -1928,7 +1894,7 @@ has-props
 
 
 
-81519
+83551
 
 rna_brush.c
 file
@@ -1964,16 +1930,16 @@ has-props
 
 35305
 
-rna_property.c
+rna_curve.c
 file
 
 
 
 
 2011-01-18T22:04:45.403021Z
-2e453f3afcf5ffb29420c91ac9966b16
-2011-01-07T19:18:31.464706Z
-34160
+086293aa5151d8efad1d16ae7c11f2ea
+2011-01-18T11:27:52.660990Z
+34386
 campbellbarton
 has-props
 
@@ -1996,7 +1962,7 @@ has-props
 
 
 
-6691
+58981
 
 rna_object_force.c
 file
@@ -2032,16 +1998,16 @@ has-props
 
 71779
 
-rna_curve.c
+rna_property.c
 file
 
 
 
 
 2011-01-18T22:04:45.403021Z
-086293aa5151d8efad1d16ae7c11f2ea
-2011-01-18T11:27:52.660990Z
-34386
+2e453f3afcf5ffb29420c91ac9966b16
+2011-01-07T19:18:31.464706Z
+34160
 campbellbarton
 has-props
 
@@ -2064,7 +2030,7 @@ has-props
 
 
 
-58981
+6691
 
 rna_meta.c
 file
@@ -2100,40 +2066,6 @@ has-props
 
 12515
 
-rna_packedfile.c
-file
-
-
-
-
-2011-01-18T22:04:45.403021Z
-33c1e9f7dd350c3c19709579459a3309
-2010-03-24T09:51:32.106035Z
-27708
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1848
-
 rna_material_api.c
 file
 
@@ -2167,6 +2099,40 @@ has-props
 
 
 1174
+
+rna_packedfile.c
+file
+
+
+
+
+2011-01-18T22:04:45.403021Z
+33c1e9f7dd350c3c19709579459a3309
+2010-03-24T09:51:32.106035Z
+27708
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1848
 
 rna_sound.c
 file
@@ -2378,10 +2344,10 @@ file
 
 
 
-2011-01-18T22:04:45.413021Z
-16c602de2c53b60f893c6dd418bcd9a3
-2011-01-07T19:18:31.464706Z
-34160
+2011-02-10T19:48:48.175667Z
+4b05eeb52e21c1dce5d2fed59e56d49d
+2011-01-23T12:42:07.392212Z
+34465
 campbellbarton
 has-props
 
@@ -2446,10 +2412,10 @@ file
 
 
 
-2011-01-18T22:04:45.413021Z
-f3bd8ce4f82a159e0c375d72fc79d1bc
-2011-01-07T19:18:31.464706Z
-34160
+2011-02-10T19:48:48.175667Z
+bdc37e7733d737904702dd7ad8cf61b2
+2011-02-08T10:31:47.192085Z
+34715
 campbellbarton
 has-props
 
@@ -2472,7 +2438,7 @@ has-props
 
 
 
-14190
+14508
 
 rna_armature.c
 file
@@ -2480,10 +2446,10 @@ file
 
 
 
-2011-01-18T22:04:45.413021Z
-a322e5e712b811e4766eec1cce030a8d
-2011-01-12T01:36:12.599301Z
-34271
+2011-02-10T19:48:48.175667Z
+a084c877e039f4f04df38103cd7ab8f2
+2011-01-31T11:19:23.253361Z
+34578
 aligorith
 has-props
 
@@ -2506,7 +2472,7 @@ has-props
 
 
 
-39578
+39750
 
 rna_sequencer_api.c
 file
@@ -2616,10 +2582,10 @@ file
 
 
 
-2011-01-18T22:04:45.413021Z
-510643f90a9b251e8d0bf9b59a538844
-2010-08-26T22:44:05.427647Z
-31597
+2011-02-10T19:48:48.175667Z
+94dba2cf1e4cd6df016d9ad3e62e3814
+2011-02-10T09:29:31.160075Z
+34753
 campbellbarton
 has-props
 
@@ -2642,7 +2608,7 @@ has-props
 
 
 
-1875
+2289
 
 rna_lattice.c
 file
@@ -2684,44 +2650,10 @@ file
 
 
 
-2011-01-18T22:04:45.413021Z
-ff6c7d7c38cab5e26a08e157537e9b33
-2011-01-18T11:27:52.660990Z
-34386
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-60706
-
-rna_space.c
-file
-
-
-
-
-2011-01-18T22:04:45.413021Z
-aa04d276e6b3ee0d65369a3e7ae13d16
-2011-01-10T22:10:28.335360Z
-34236
+2011-02-10T19:48:48.175667Z
+238779c6a67de3af14c63a9ef8eeccea
+2011-02-01T11:35:27.888067Z
+34600
 aligorith
 has-props
 
@@ -2744,7 +2676,41 @@ has-props
 
 
 
-108373
+60752
+
+rna_space.c
+file
+
+
+
+
+2011-02-10T19:48:48.185667Z
+8835bb276ec20a5c5d17f503a079f396
+2011-02-10T10:24:05.868854Z
+34756
+aligorith
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+109795
 
 rna_vfont.c
 file
@@ -2786,11 +2752,11 @@ file
 
 
 
-2011-01-18T22:04:45.423021Z
-596f6dce965c8909ae3bdf1f2e395903
-2011-01-15T16:14:57.406996Z
-34335
-campbellbarton
+2011-02-10T19:48:48.185667Z
+bcc6ec1a74bc9645afa54b98b82e8d0b
+2011-02-04T08:33:07.469593Z
+34634
+aligorith
 has-props
 
 
@@ -2812,5 +2778,5 @@ has-props
 
 
 
-156162
+156780
 

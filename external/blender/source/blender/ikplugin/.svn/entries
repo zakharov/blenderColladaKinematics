@@ -1,14 +1,14 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/ikplugin
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-07T19:18:31.464706Z
-34160
+2011-01-30T15:29:22.294392Z
+34567
 campbellbarton
 
 
@@ -130,38 +130,4 @@ has-props
 
 
 1521
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:39.143021Z
-5cd8f2d026b28c2f451f634784b2ad87
-2010-08-10T21:22:26.642559Z
-31223
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1059
 

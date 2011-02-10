@@ -1,5 +1,5 @@
 /*
-* $Id: MOD_particlesystem.c 34160 2011-01-07 19:18:31Z campbellbarton $
+* $Id: MOD_particlesystem.c 34587 2011-01-31 20:02:51Z nazgul $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -229,6 +229,7 @@ ModifierTypeInfo modifierType_ParticleSystem = {
 	/* copyData */          copyData,
 	/* deformVerts */       deformVerts,
 	/* deformVertsEM */     0 /* deformVertsEM */ ,
+	/* deformMatrices */    0,
 	/* deformMatricesEM */  0,
 	/* applyModifier */     0,
 	/* applyModifierEM */   0,

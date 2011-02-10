@@ -1,5 +1,5 @@
 /**
- * $Id: CMP_mapUV.c 32517 2010-10-16 14:32:17Z campbellbarton $
+ * $Id: CMP_mapUV.c 34712 2011-02-08 09:02:16Z lukastoenne $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -159,21 +159,17 @@ static void node_composit_exec_mapuv(void *UNUSED(data), bNode *node, bNodeStack
 	}
 }
 
-bNodeType cmp_node_mapuv= {
-	/* *next,*prev */	NULL, NULL,
-	/* type code   */	CMP_NODE_MAP_UV,
-	/* name        */	"Map UV",
-	/* width+range */	140, 100, 320,
-	/* class+opts  */	NODE_CLASS_DISTORT, NODE_OPTIONS,
-	/* input sock  */	cmp_node_mapuv_in,
-	/* output sock */	cmp_node_mapuv_out,
-	/* storage     */	"",
-	/* execfunc    */	node_composit_exec_mapuv,
-	/* butfunc     */	NULL,
-	/* initfunc    */	NULL,
-	/* freestoragefunc    */	NULL,
-	/* copystoragefunc    */	NULL,
-	/* id          */	NULL
-};
+void register_node_type_cmp_mapuv(ListBase *lb)
+{
+	static bNodeType ntype;
+
+	node_type_base(&ntype, CMP_NODE_MAP_UV, "Map UV", NODE_CLASS_DISTORT, NODE_OPTIONS,
+		cmp_node_mapuv_in, cmp_node_mapuv_out);
+	node_type_size(&ntype, 140, 100, 320);
+	node_type_exec(&ntype, node_composit_exec_mapuv);
+
+	nodeRegisterType(lb, &ntype);
+}
+
 
 

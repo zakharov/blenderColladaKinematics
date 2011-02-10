@@ -1,5 +1,5 @@
 /**
- * $Id: RAS_Deformer.h 31950 2010-09-15 16:13:32Z campbellbarton $
+ * $Id: RAS_Deformer.h 34469 2011-01-23 17:17:21Z ben2610 $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -73,6 +73,10 @@ public:
 		return m_bDynamic;
 	}
 	virtual struct DerivedMesh* GetFinalMesh()
+	{
+		return NULL;
+	}
+	virtual struct DerivedMesh* GetPhysicsMesh()
 	{
 		return NULL;
 	}

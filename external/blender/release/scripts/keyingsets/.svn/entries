@@ -1,15 +1,15 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/release/scripts/keyingsets
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-10T10:22:08.891255Z
-34222
-aligorith
+2011-02-04T09:27:25.712030Z
+34636
+campbellbarton
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-01-18T22:04:12.003021Z
-cb473e5039c7e80524f689dcddab56d8
-2010-12-28T11:50:10.016299Z
-33925
-aligorith
+2011-02-10T19:48:34.525667Z
+fda2ab3e45f8fe6ce21f47f4a1871dc3
+2011-02-04T09:27:25.712030Z
+34636
+campbellbarton
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-5894
+11270
 
 keyingsets_utils.py
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-01-18T22:04:12.013021Z
-fc2b6ce663df16f6799b1da203663544
-2011-01-10T10:22:08.891255Z
-34222
-aligorith
+2011-02-10T19:48:34.525667Z
+ec9065cdf4d596866d91eea50dbc4078
+2011-02-04T09:27:25.712030Z
+34636
+campbellbarton
 has-props
 
 
@@ -92,5 +92,5 @@ has-props
 
 
 
-5369
+5311
 

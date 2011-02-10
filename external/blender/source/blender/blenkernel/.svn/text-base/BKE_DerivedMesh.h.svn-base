@@ -492,6 +492,8 @@ DerivedMesh *mesh_create_derived_no_deform_render(struct Scene *scene, struct Ob
 /* for gameengine */
 DerivedMesh *mesh_create_derived_no_virtual(struct Scene *scene, struct Object *ob, float (*vertCos)[3],
 											CustomDataMask dataMask);
+DerivedMesh *mesh_create_derived_physics(struct Scene *scene, struct Object *ob, float (*vertCos)[3],
+											CustomDataMask dataMask);
 
 DerivedMesh *editmesh_get_derived_base(struct Object *, struct EditMesh *em);
 DerivedMesh *editmesh_get_derived_cage(struct Scene *scene, struct Object *, 
@@ -505,6 +507,10 @@ void makeDerivedMesh(struct Scene *scene, struct Object *ob, struct EditMesh *em
    number of modifiers left */
 int editmesh_get_first_deform_matrices(struct Scene *, struct Object *, struct EditMesh *em,
 									   float (**deformmats)[3][3], float (**deformcos)[3]);
+
+/* returns an array of deform matrices for crazyspace correction when sculpting */
+void sculpt_get_deform_matrices(struct Scene *scene, struct Object *ob,
+								float (**deformmats)[3][3], float (**deformcos)[3]);
 
 void weight_to_rgb(float input, float *fr, float *fg, float *fb);
 

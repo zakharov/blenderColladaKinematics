@@ -1,5 +1,5 @@
 /**
- * $Id: info_report.c 34159 2011-01-07 18:36:47Z campbellbarton $
+ * $Id: info_report.c 34719 2011-02-08 13:48:06Z ton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -128,6 +128,9 @@ static int select_report_pick_invoke(bContext *C, wmOperator *op, wmEvent *event
 	ReportList *reports= CTX_wm_reports(C);
 	Report *report;
 
+	/* uses opengl */
+	wmSubWindowSet(CTX_wm_window(C), ar->swinid);
+	
 	report= info_text_pick(sinfo, ar, reports, event->mval[1]);
 
 	RNA_int_set(op->ptr, "report_index", BLI_findindex(&reports->list, report));

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 74
-/svnroot/bf-blender/!svn/ver/33250/trunk/blender/source/blender/avi/intern
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/blender/avi/intern
 END
 endian.c
 K 25
@@ -74,10 +74,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 84
 /svnroot/bf-blender/!svn/ver/32532/trunk/blender/source/blender/avi/intern/options.c
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 83
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blender/avi/intern/Makefile
 END

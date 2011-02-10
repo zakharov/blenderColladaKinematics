@@ -1,17 +1,11 @@
 K 25
 svn:wc:ra_dav:version-url
 V 83
-/svnroot/bf-blender/!svn/ver/33448/trunk/blender/source/blender/readblenfile/intern
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/blender/readblenfile/intern
 END
 BLO_readblenfile.c
 K 25
 svn:wc:ra_dav:version-url
 V 102
 /svnroot/bf-blender/!svn/ver/33448/trunk/blender/source/blender/readblenfile/intern/BLO_readblenfile.c
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 92
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blender/readblenfile/intern/Makefile
 END

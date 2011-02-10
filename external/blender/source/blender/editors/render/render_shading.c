@@ -1,5 +1,5 @@
 /**
- * $Id: render_shading.c 34290 2011-01-13 04:53:55Z campbellbarton $
+ * $Id: render_shading.c 34721 2011-02-08 14:33:08Z lmg $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -791,6 +791,7 @@ static int texture_slot_move(bContext *C, wmOperator *op)
 			}
 		}
 
+		DAG_id_tag_update(id, 0);
 		WM_event_add_notifier(C, NC_TEXTURE, CTX_data_scene(C));
 	}
 

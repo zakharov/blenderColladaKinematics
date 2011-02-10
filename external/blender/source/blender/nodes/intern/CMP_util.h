@@ -1,5 +1,5 @@
 /**
- * $Id: CMP_util.h 34302 2011-01-13 19:16:35Z campbellbarton $
+ * $Id: CMP_util.h 34712 2011-02-08 09:02:16Z lukastoenne $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -59,6 +59,7 @@
 #include "BKE_image.h"
 #include "BKE_main.h"
 #include "BKE_material.h"
+#include "BKE_node.h"
 #include "BKE_texture.h"
 
 #include "BKE_library.h"

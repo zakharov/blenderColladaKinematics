@@ -1,5 +1,5 @@
 /**
- * $Id: BL_ModifierDeformer.h 31950 2010-09-15 16:13:32Z campbellbarton $
+ * $Id: BL_ModifierDeformer.h 34469 2011-01-23 17:17:21Z ben2610 $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -95,7 +95,8 @@ public:
 	{
 		return m_dm;
 	}
-
+	// The derived mesh returned by this function must be released!
+	virtual struct DerivedMesh* GetPhysicsMesh();
 
 protected:
 	double					 m_lastModifierUpdate;

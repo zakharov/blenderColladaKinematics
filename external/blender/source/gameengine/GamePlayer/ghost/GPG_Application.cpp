@@ -1,5 +1,5 @@
 /**
- * $Id: GPG_Application.cpp 33829 2010-12-21 06:58:44Z moguri $
+ * $Id: GPG_Application.cpp 34470 2011-01-23 17:25:27Z dfelinto $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -546,7 +546,10 @@ bool GPG_Application::initEngine(GHOST_IWindow* window, const int stereoMode)
 		if (!m_canvas)
 			return false;
 				
-		m_canvas->Init();				
+		m_canvas->Init();
+		if (gm->flag & GAME_SHOW_MOUSE)
+			m_canvas->SetMouseState(RAS_ICanvas::MOUSE_NORMAL);				
+
 		m_rendertools = new GPC_RenderTools();
 		if (!m_rendertools)
 			goto initFailed;

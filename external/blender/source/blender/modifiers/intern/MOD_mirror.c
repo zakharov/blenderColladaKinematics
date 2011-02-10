@@ -1,5 +1,5 @@
 /*
-* $Id: MOD_mirror.c 34160 2011-01-07 19:18:31Z campbellbarton $
+* $Id: MOD_mirror.c 34748 2011-02-10 00:44:26Z mfoxdogg $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -142,7 +142,11 @@ static DerivedMesh *doMirrorOnAxis(MirrorModifierData *mmd,
 		if (mmd->mirror_ob) {
 			mul_m4_v3(mtx, co);
 		}
-		isShared = ABS(co[axis])<=tolerance;
+		
+		if(mmd->flag & MOD_MIR_NO_MERGE)
+			isShared = 0;
+		else
+			isShared = ABS(co[axis])<=tolerance;
 		
 		/* Because the topology result (# of vertices) must be the same if
 		* the mesh data is overridden by vertex cos, have to calc sharedness
@@ -154,8 +158,8 @@ static DerivedMesh *doMirrorOnAxis(MirrorModifierData *mmd,
 		
 		indexMap[i][0] = numVerts - 1;
 		indexMap[i][1] = !isShared;
-		
-		if(isShared) {
+		//
+		if(isShared ) {
 			co[axis] = 0;
 			if (mmd->mirror_ob) {
 				mul_m4_v3(imtx, co);
@@ -338,6 +342,7 @@ ModifierTypeInfo modifierType_Mirror = {
 
 	/* copyData */          copyData,
 	/* deformVerts */       0,
+	/* deformMatrices */    0,
 	/* deformVertsEM */     0,
 	/* deformMatricesEM */  0,
 	/* applyModifier */     applyModifier,

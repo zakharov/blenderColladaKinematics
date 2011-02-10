@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 81
-/svnroot/bf-blender/!svn/ver/34380/trunk/blender/source/blender/editors/animation
+/svnroot/bf-blender/!svn/ver/34754/trunk/blender/source/blender/editors/animation
 END
 anim_deps.c
 K 25
@@ -9,29 +9,29 @@ svn:wc:ra_dav:version-url
 V 93
 /svnroot/bf-blender/!svn/ver/34159/trunk/blender/source/blender/editors/animation/anim_deps.c
 END
-fmodifier_ui.c
-K 25
-svn:wc:ra_dav:version-url
-V 96
-/svnroot/bf-blender/!svn/ver/34159/trunk/blender/source/blender/editors/animation/fmodifier_ui.c
-END
 anim_draw.c
 K 25
 svn:wc:ra_dav:version-url
 V 93
 /svnroot/bf-blender/!svn/ver/33159/trunk/blender/source/blender/editors/animation/anim_draw.c
 END
+fmodifier_ui.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/34159/trunk/blender/source/blender/editors/animation/fmodifier_ui.c
+END
 keyframes_draw.c
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/svnroot/bf-blender/!svn/ver/34237/trunk/blender/source/blender/editors/animation/keyframes_draw.c
+/svnroot/bf-blender/!svn/ver/34600/trunk/blender/source/blender/editors/animation/keyframes_draw.c
 END
 anim_channels_edit.c
 K 25
 svn:wc:ra_dav:version-url
 V 102
-/svnroot/bf-blender/!svn/ver/34236/trunk/blender/source/blender/editors/animation/anim_channels_edit.c
+/svnroot/bf-blender/!svn/ver/34754/trunk/blender/source/blender/editors/animation/anim_channels_edit.c
 END
 anim_ops.c
 K 25
@@ -45,17 +45,17 @@ svn:wc:ra_dav:version-url
 V 92
 /svnroot/bf-blender/!svn/ver/23587/trunk/blender/source/blender/editors/animation/SConscript
 END
-anim_markers.c
-K 25
-svn:wc:ra_dav:version-url
-V 96
-/svnroot/bf-blender/!svn/ver/34335/trunk/blender/source/blender/editors/animation/anim_markers.c
-END
 anim_intern.h
 K 25
 svn:wc:ra_dav:version-url
 V 95
 /svnroot/bf-blender/!svn/ver/27738/trunk/blender/source/blender/editors/animation/anim_intern.h
+END
+anim_markers.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/34727/trunk/blender/source/blender/editors/animation/anim_markers.c
 END
 anim_ipo_utils.c
 K 25
@@ -79,31 +79,25 @@ keyingsets.c
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/34380/trunk/blender/source/blender/editors/animation/keyingsets.c
+/svnroot/bf-blender/!svn/ver/34634/trunk/blender/source/blender/editors/animation/keyingsets.c
 END
 anim_filter.c
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svnroot/bf-blender/!svn/ver/34238/trunk/blender/source/blender/editors/animation/anim_filter.c
+/svnroot/bf-blender/!svn/ver/34613/trunk/blender/source/blender/editors/animation/anim_filter.c
 END
 keyframes_edit.c
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/svnroot/bf-blender/!svn/ver/34160/trunk/blender/source/blender/editors/animation/keyframes_edit.c
+/svnroot/bf-blender/!svn/ver/34600/trunk/blender/source/blender/editors/animation/keyframes_edit.c
 END
 anim_channels_defines.c
 K 25
 svn:wc:ra_dav:version-url
 V 105
 /svnroot/bf-blender/!svn/ver/34292/trunk/blender/source/blender/editors/animation/anim_channels_defines.c
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 90
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blender/editors/animation/Makefile
 END
 CMakeLists.txt
 K 25
@@ -115,5 +109,5 @@ keyframing.c
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/34380/trunk/blender/source/blender/editors/animation/keyframing.c
+/svnroot/bf-blender/!svn/ver/34692/trunk/blender/source/blender/editors/animation/keyframing.c
 END

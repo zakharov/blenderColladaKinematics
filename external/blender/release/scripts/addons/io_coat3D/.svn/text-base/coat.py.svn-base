@@ -36,7 +36,7 @@ class ObjectButtonsPanel():
     bl_region_type = 'WINDOW'
     bl_context = "object"
 
-class SCENE_PT_Borgleader(ObjectButtonsPanel,bpy.types.Panel):
+class SCENE_PT_Main(ObjectButtonsPanel,bpy.types.Panel):
     bl_label = "3D-Coat Applink"
     bl_space_type = "PROPERTIES"
     bl_region_type = "WINDOW"
@@ -69,12 +69,12 @@ class SCENE_PT_Borgleader(ObjectButtonsPanel,bpy.types.Panel):
         colR = row.column()
         if(context.selected_objects):
             if(context.selected_objects[0].type == 'MESH'):
-                colL.active = True
+                row.active = True
             else:
-                colL.active = False
+                row.active = False
         else:
-            colL.active = False
-        colL.operator("exportbutton", text="Export")
+            row.active = False
+        colL.operator("export_applink.pilgway_3d_coat", text="Export")
         colL.label(text="Export Settings:")
 
         colL.prop(coat3D,"exportover")
@@ -82,14 +82,8 @@ class SCENE_PT_Borgleader(ObjectButtonsPanel,bpy.types.Panel):
             colL.prop(coat3D,"exportmod")
         colL.prop(coat3D,"exportfile")
         colL.prop(coat3D,"export_pos")
-        
-        
-        if(bpy.context.active_object):
-            colR.active = True
-        else:
-            colR.active = False
             
-        colR.operator("importbutton", text="Import")
+        colR.operator("import_applink.pilgway_3d_coat", text="Import")
         colR.label(text="Import Settings:")
         colR.prop(coat3D,"importmesh")
         colR.prop(coat3D,"importmod")
@@ -97,17 +91,29 @@ class SCENE_PT_Borgleader(ObjectButtonsPanel,bpy.types.Panel):
         colR.prop(coat3D,"importtextures")
         row = layout.row()
         
-        if(bpy.context.scene.objects.active):
-            row.label(text="%s Path:"%(bpy.context.scene.objects.active.name))
-            row = layout.row()
-            row.prop(coa,"objectdir",text="")
+        if(bpy.context.selected_objects):
+            if(context.selected_objects[0].type == 'MESH'):
+                coa = context.selected_objects[0].coat3D
+                colL = row.column()
+                colR = row.column()
+                colL.label(text="Object Path:")
+                if(coa.path3b):
+                    colR.active = True
+                else:
+                    colR.active = False
+                    
+                colR.operator("import_applink.pilgway_3d_coat_3b", text="Load 3b")
+                row = layout.row()
+                row.prop(coa,"objectdir",text="")
                     
         row = layout.row()
         
         if(coat['status'] == 1):
-            row.label(text="Exchange Folder: connected")
             Blender_folder = ("%s%sBlender"%(coat3D.exchangedir,os.sep))
             Blender_export = Blender_folder
+            Blender_export = Blender_folder
+            path3b_now = coat3D.exchangedir
+            path3b_now += ('last_saved_3b_file.txt')
             Blender_export += ('%sexport.txt'%(os.sep))
 
             if(not(os.path.isdir(Blender_folder))):
@@ -123,12 +129,22 @@ class SCENE_PT_Borgleader(ObjectButtonsPanel,bpy.types.Panel):
                     obj_path = line
                     break
                 obj_pathh.close()
-                print("%s"%obj_path)
                 export = obj_path
                 mod_time = os.path.getmtime(obj_path)
                 mtl_list = obj_path.replace('.obj','.mtl')
                 if(os.path.isfile(mtl_list)):
                     os.remove(mtl_list)
+                    
+                if(os.path.isfile(path3b_now)):
+                    path3b_file = open(path3b_now)
+                    for lin in path3b_file:
+                        path_export = lin
+                        path_on = 1
+                    path3b_file.close()
+                    os.remove(path3b_now)
+                else:
+                    print("ei toimi")
+                    path_on = 0
 
                 for palikka in bpy.context.scene.objects:
                     if(palikka.type == 'MESH'):
@@ -144,6 +160,9 @@ class SCENE_PT_Borgleader(ObjectButtonsPanel,bpy.types.Panel):
                     bpy.ops.import_scene.obj(filepath=obj_path)
                     new_obj = scene.objects[0]
                     scene.objects[0].coat3D.objectdir = export
+                    if(path_on):
+                        scene.objects[0].coat3D.path3b = path_export
+                    
                 os.remove(Blender_export)
                 
                 bpy.context.scene.objects.active = new_obj
@@ -159,22 +178,76 @@ class SCENE_PT_Borgleader(ObjectButtonsPanel,bpy.types.Panel):
                 
 
                 
-                
-            
+        if(context.selected_objects):
+            if(context.selected_objects[0].type == 'MESH'):
+                coa = bpy.context.selected_objects[0].coat3D
+                row = layout.row()
+                row.label(text="Texture output folder:")
+                row = layout.row()
+                row.prop(coa,"texturefolder",text="")
+        row = layout.row()
         if(coat['status'] == 0):
             row.label(text="Exchange Folder: not connected")
+        else:
+            row.label(text="Exchange Folder: connected")        
+
+class SCENE_PT_Settings(ObjectButtonsPanel,bpy.types.Panel):
+    bl_label = "Applink Settings"
+    bl_space_type = "PROPERTIES"
+    bl_region_type = "WINDOW"
+    bl_context = "scene"
+
+    def draw(self, context):
+        layout = self.layout
+        scene = context.scene
+        coat3D = bpy.context.scene.coat3D
+        
+
+        row = layout.row()
+        if(bpy.context.selected_objects):
+            if(context.selected_objects[0].type == 'MESH'):
+                row.active = True
+        else:
+            row.active = False
+        row.operator("import_applink.pilgway_3d_deltex",text="Delete Textures")
+        row = layout.row()
+        row.label(text="Exchange Folder:")
         row = layout.row()
         row.prop(coat3D,"exchangedir",text="")
-        row = layout.row()
-        colL = row.column()
-        colR = row.column()
-        colL.operator("deltex",text="Del Tex")
-        row = layout.row()
-        row.label(text="Author: haikalle@gmail.com")
+        if(bpy.context.scene.objects.active):
+            coa = bpy.context.scene.objects.active.coat3D
+            row = layout.row()
+            row.label(text="3b path:")
+            row = layout.row()
+            row.prop(coa,"path3b",text="")
+        #colL = row.column()
+        #colR = row.column()
+        #colL.prop(coat3D,"export_box")
+        #colR.prop(coat3D,"import_box")
+        #if(not(coat3D.export_box)):
+        #    row = layout.row()
+        #    colL.label(text="Export settings:")
+        #    row = layout.row()
+        #    colL = row.column()
+        #    colR = row.column()
+        #    colL.prop(coat3D,"export_color")
+        #    colL.prop(coat3D,"export_spec")
+        #    colL.prop(coat3D,"export_normal")
+        #    colL.prop(coat3D,"export_disp")
+        #    colR.prop(coat3D,"export_position")
+        #    colR.prop(coat3D,"export_export_zero_layer")
+        #    colR.prop(coat3D,"export_coarse")
+        #row = layout.row()
+        #colL = row.column()
+        #colR = row.column()
+
+        
+       
+        
 
 
 class SCENE_OT_export(bpy.types.Operator):
-    bl_idname = "exportbutton"
+    bl_idname = "export_applink.pilgway_3d_coat"
     bl_label = "Export your custom property"
     bl_description = "Export your custom property"
 
@@ -204,7 +277,7 @@ class SCENE_OT_export(bpy.types.Operator):
             if(coat3D.export_pos):
 
                 bpy.ops.export_scene.obj(filepath=checkname,use_selection=True,
-                use_modifiers=coat3D.exportmod,use_blen_objects=False, group_by_material= True,
+                use_apply_modifiers=coat3D.exportmod,use_blen_objects=False, group_by_material= True,
                 use_materials = False,keep_vertex_order = True)
 
                 coat3D.export_on = True
@@ -217,7 +290,7 @@ class SCENE_OT_export(bpy.types.Operator):
                 obj.scale = (1,1,1)
 
                 bpy.ops.export_scene.obj(filepath=checkname,use_selection=True,
-                use_modifiers=coat3D.exportmod,use_blen_objects=False, group_by_material= True,
+                use_apply_modifiers=coat3D.exportmod,use_blen_objects=False, group_by_material= True,
                 use_materials = False,keep_vertex_order = True)
 
                 obj.location = coat3D.loca
@@ -232,6 +305,13 @@ class SCENE_OT_export(bpy.types.Operator):
             file.write("%s"%(checkname))
             file.write("\n%s"%(checkname))
             file.write("\n[%s]"%(coat3D.type))
+            if(coa.texturefolder):
+                file.write("\n[TexOutput:%s"%(coa.texturefolder))
+            
+            
+        
+
+            
             file.close()
         coa.objectdir = checkname
 
@@ -239,7 +319,7 @@ class SCENE_OT_export(bpy.types.Operator):
 
 
 class SCENE_OT_import(bpy.types.Operator):
-    bl_idname = "importbutton"
+    bl_idname = "import_applink.pilgway_3d_coat"
     bl_label = "import your custom property"
     bl_description = "import your custom property"
     
@@ -256,6 +336,8 @@ class SCENE_OT_import(bpy.types.Operator):
         coa = bpy.context.scene.objects.active.coat3D
 
         exportfile = coat3D.exchangedir
+        path3b_n = coat3D.exchangedir
+        path3b_n += ('last_saved_3b_file.txt')
         exportfile += ('%sexport.txt'%(os.sep))
         if(os.path.isfile(exportfile)):
             export_file = open(exportfile)
@@ -289,6 +371,7 @@ class SCENE_OT_import(bpy.types.Operator):
             proxy_mat.user_clear()
             bpy.data.materials.remove(proxy_mat)
             bpy.ops.object.select_all(action='TOGGLE')
+            
             if(coat3D.export_pos):
                 scene.objects.active = objekti
                 objekti.select = True
@@ -336,6 +419,7 @@ class SCENE_OT_import(bpy.types.Operator):
                 bpy.ops.object.delete()
                 objekti.select = True
                 bpy.context.scene.objects.active = objekti
+
                 
                 
     
@@ -343,6 +427,13 @@ class SCENE_OT_import(bpy.types.Operator):
                 bpy.ops.object.shade_smooth()
             else:
                 bpy.ops.object.shade_flat()
+
+        if(os.path.isfile(path3b_n)):
+            path3b_fil = open(path3b_n)
+            for lin in path3b_fil:
+                objekti.coat3D.path3b = lin
+            path3b_fil.close()
+            os.remove(path3b_n)
                 
         if(coat3D.importmesh and not(os.path.isfile(coa.objectdir))):
             coat3D.importmesh = False
@@ -374,50 +465,56 @@ class SCENE_OT_import(bpy.types.Operator):
         return('FINISHED')
 
 class SCENE_OT_load3b(bpy.types.Operator):
-    bl_idname = "load3b"
+    bl_idname = "import_applink.pilgway_3d_coat_3b"
     bl_label = "Loads 3b linked into object"
     bl_description = "Loads 3b linked into object"
 
     
     def invoke(self, context, event):
         checkname = ''
-        coat3D = bpy.context.scene.coat3D
-        scene = context.scene
-        importfile = coat3D.exchangedir
-        importfile += ('%simport.txt'%(os.sep))
-        
-        coat_path = bpy.context.active_object.coat3D.coatpath
-        
-        file = open(importfile, "w")
-        file.write("%s"%(coat_path))
-        file.write("\n%s"%(coat_path))
-        file.write("\n[3B]")
-        file.close()
-        coat['active_coat'] = coat_path
+        coa = bpy.context.scene.objects.active.coat3D
+        if(coa.path3b):
+            coat3D = bpy.context.scene.coat3D
+            scene = context.scene
+            importfile = coat3D.exchangedir
+            importfile += ('%simport.txt'%(os.sep))
+            
+            coat_path = bpy.context.active_object.coat3D.path3b
+            
+            file = open(importfile, "w")
+            file.write("%s"%(coat_path))
+            file.write("\n%s"%(coat_path))
+            file.write("\n[3B]")
+            file.close()
 
 
         return('FINISHED')
 
 class SCENE_OT_deltex(bpy.types.Operator):
-    bl_idname = "deltex"
+    bl_idname = "import_applink.pilgway_3d_deltex"  # XXX, name?
     bl_label = "Picks Object's name into path"
     bl_description = "Loads 3b linked into object"
 
     
     def invoke(self, context, event):
-        coat3D = bpy.context.scene.coat3D
-        coa = bpy.context.scene.objects.active.coat3D
-        scene = context.scene
-        nimi = tex.objname(coa.objectdir)
-        osoite = os.path.dirname(coa.objectdir) + os.sep
-        just_nimi = tex.justname(nimi)
-        just_nimi += '_'
+        if(bpy.context.selected_objects):
+            if(context.selected_objects[0].type == 'MESH'):
+                coat3D = bpy.context.scene.coat3D
+                coa = bpy.context.scene.objects.active.coat3D
+                scene = context.scene
+                nimi = tex.objname(coa.objectdir)
+                if(coa.texturefolder):
+                    osoite = os.path.dirname(coa.texturefolder) + os.sep
+                else:
+                    osoite = os.path.dirname(coa.objectdir) + os.sep
+                just_nimi = tex.justname(nimi)
+                just_nimi += '_'
 
-        files = os.listdir(osoite)
-        for i in files:
-            if(i.rfind(just_nimi) >= 0):
-                del_osoite = osoite + i
-                os.remove(del_osoite)
+                files = os.listdir(osoite)
+                for i in files:
+                    if(i.rfind(just_nimi) >= 0):
+                        del_osoite = osoite + i
+                        os.remove(del_osoite)
     
         return('FINISHED')
 

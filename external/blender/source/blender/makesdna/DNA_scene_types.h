@@ -1,5 +1,5 @@
 /**
- * $Id: DNA_scene_types.h 34360 2011-01-16 21:12:38Z campbellbarton $ 
+ * $Id: DNA_scene_types.h 34696 2011-02-07 18:09:27Z ton $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -492,6 +492,7 @@ typedef struct GameData {
 #define GAME_GLSL_NO_EXTRA_TEX				(1 << 11)
 #define GAME_IGNORE_DEPRECATION_WARNINGS	(1 << 12)
 #define GAME_ENABLE_ANIMATION_RECORD		(1 << 13)
+#define GAME_SHOW_MOUSE						(1 << 14)
 
 /* GameData.matmode */
 #define GAME_MAT_TEXFACE	0
@@ -922,7 +923,7 @@ typedef struct Scene {
 #define R_COMP_FREE			0x0800
 #define R_NO_IMAGE_LOAD		0x1000
 #define R_NO_TEX			0x2000
-/*#define R_STAMP_INFO		0x4000	deprecated */
+#define R_NO_FRAME_UPDATE	0x4000
 #define R_FULL_SAMPLE		0x8000
 /* #define R_DEPRECATED		0x10000 */
 /* #define R_RECURS_PROTECTION	0x20000 */

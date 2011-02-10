@@ -1,5 +1,5 @@
 /**
- * $Id: ED_sculpt.h 34287 2011-01-12 18:00:23Z ton $
+ * $Id: ED_sculpt.h 34587 2011-01-31 20:02:51Z nazgul $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -40,6 +40,7 @@ void ED_operatortypes_sculpt(void);
 void sculpt_get_redraw_planes(float planes[4][4], struct ARegion *ar,
 				   struct RegionView3D *rv3d, struct Object *ob);
 void ED_sculpt_force_update(struct bContext *C);
+void ED_sculpt_modifiers_changed(struct Object *ob);
 
 /* paint_ops.c */
 void ED_operatortypes_paint(void);

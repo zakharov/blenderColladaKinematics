@@ -3,7 +3,7 @@
  *
  * Curve stuff.
  *
- * $Id: DNA_curve_types.h 34091 2011-01-05 10:40:38Z nazgul $ 
+ * $Id: DNA_curve_types.h 34600 2011-02-01 11:35:27Z aligorith $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -328,7 +328,8 @@ typedef enum eBezTriple_Interpolation {
 typedef enum eBezTriple_KeyframeType {
 	BEZT_KEYTYPE_KEYFRAME = 0,	/* default - 'proper' Keyframe */
 	BEZT_KEYTYPE_EXTREME,		/* 'extreme' keyframe */
-	BEZT_KEYTYPE_BREAKDOWN		/* 'breakdown' keyframe */
+	BEZT_KEYTYPE_BREAKDOWN,		/* 'breakdown' keyframe */
+	BEZT_KEYTYPE_JITTER,		/* 'jitter' keyframe (for adding 'filler' secondary motion) */
 } eBezTriple_KeyframeType;
 
 /* checks if the given BezTriple is selected */

@@ -1,19 +1,19 @@
 K 25
 svn:wc:ra_dav:version-url
 V 77
-/svnroot/bf-blender/!svn/ver/34328/trunk/blender/source/blender/windowmanager
+/svnroot/bf-blender/!svn/ver/34701/trunk/blender/source/blender/windowmanager
 END
 wm_window.h
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/32506/trunk/blender/source/blender/windowmanager/wm_window.h
+/svnroot/bf-blender/!svn/ver/34701/trunk/blender/source/blender/windowmanager/wm_window.h
 END
 WM_api.h
 K 25
 svn:wc:ra_dav:version-url
 V 86
-/svnroot/bf-blender/!svn/ver/34067/trunk/blender/source/blender/windowmanager/WM_api.h
+/svnroot/bf-blender/!svn/ver/34396/trunk/blender/source/blender/windowmanager/WM_api.h
 END
 wm_draw.h
 K 25
@@ -55,19 +55,13 @@ CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/windowmanager/CMakeLists.txt
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 86
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blender/windowmanager/Makefile
+/svnroot/bf-blender/!svn/ver/34486/trunk/blender/source/blender/windowmanager/CMakeLists.txt
 END
 WM_types.h
 K 25
 svn:wc:ra_dav:version-url
 V 88
-/svnroot/bf-blender/!svn/ver/34159/trunk/blender/source/blender/windowmanager/WM_types.h
+/svnroot/bf-blender/!svn/ver/34695/trunk/blender/source/blender/windowmanager/WM_types.h
 END
 wm_event_system.h
 K 25

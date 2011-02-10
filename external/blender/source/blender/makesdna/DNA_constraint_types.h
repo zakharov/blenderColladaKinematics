@@ -1,5 +1,5 @@
 /**
- * $Id: DNA_constraint_types.h 34004 2011-01-02 13:33:32Z ton $
+ * $Id: DNA_constraint_types.h 34672 2011-02-06 17:36:42Z ton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -699,7 +699,8 @@ typedef enum eChildOf_Flags {
 	CHILDOF_ROTZ	= (1<<5),
 	CHILDOF_SIZEX	= (1<<6),
 	CHILDOF_SIZEY	= (1<<7),
-	CHILDOF_SIZEZ	= (1<<8)
+	CHILDOF_SIZEZ	= (1<<8),
+	CHILDOF_ALL		= 511
 } eChildOf_Flags;
 
 /* Pivot Constraint */

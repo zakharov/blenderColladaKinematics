@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 56
-/svnroot/bf-blender/!svn/ver/34384/trunk/blender/release
+/svnroot/bf-blender/!svn/ver/34760/trunk/blender/release
 END
 VERSION
 K 25
@@ -26,16 +26,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 78
 /svnroot/bf-blender/!svn/ver/23979/trunk/blender/release/environment-mswindows
-END
-getversion.py
-K 25
-svn:wc:ra_dav:version-url
-V 70
-/svnroot/bf-blender/!svn/ver/33978/trunk/blender/release/getversion.py
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 65
-/svnroot/bf-blender/!svn/ver/33381/trunk/blender/release/Makefile
 END

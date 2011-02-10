@@ -1,5 +1,5 @@
 /**
- * $Id: stubs.c 34184 2011-01-09 02:43:26Z moguri $
+ * $Id: stubs.c 34587 2011-01-31 20:02:51Z nazgul $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -431,6 +431,7 @@ float sculpt_get_brush_unprojected_radius(struct Brush *brush){return 0.0f;}
 void sculpt_set_brush_unprojected_radius(struct Brush *brush, float unprojected_radius){}
 float sculpt_get_brush_alpha(struct Brush *brush){return 0.0f;}
 void sculpt_set_brush_alpha(struct Brush *brush, float alpha){}
+void ED_sculpt_modifiers_changed(struct Object *ob){};
 
 char blender_path[] = "";
 

@@ -1,15 +1,15 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern/audaspace/FX
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-01-30T15:29:22.294392Z
+34567
+campbellbarton
 
 
 
@@ -60,40 +60,6 @@ has-props
 
 2264
 
-AUD_PingPongFactory.cpp
-file
-
-
-
-
-2011-01-18T22:04:07.813021Z
-fdc1ec7437014ada6d241cbc70fd65c6
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1407
-
 AUD_FaderReader.h
 file
 
@@ -127,6 +93,40 @@ has-props
 
 
 2063
+
+AUD_PingPongFactory.cpp
+file
+
+
+
+
+2011-01-18T22:04:07.813021Z
+fdc1ec7437014ada6d241cbc70fd65c6
+2010-08-16T11:41:07.837561Z
+31372
+nexyon
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1407
 
 AUD_SuperposeReader.h
 file
@@ -264,40 +264,6 @@ has-props
 
 1794
 
-AUD_EffectFactory.cpp
-file
-
-
-
-
-2011-01-18T22:04:07.813021Z
-adea5b00cb02d01827e20f07ad9be3cd
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1164
-
 AUD_EffectReader.h
 file
 
@@ -331,6 +297,40 @@ has-props
 
 
 1802
+
+AUD_EffectFactory.cpp
+file
+
+
+
+
+2011-01-18T22:04:07.813021Z
+adea5b00cb02d01827e20f07ad9be3cd
+2010-08-16T11:41:07.837561Z
+31372
+nexyon
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1164
 
 AUD_DelayReader.h
 file
@@ -434,40 +434,6 @@ has-props
 
 1236
 
-AUD_ReverseReader.h
-file
-
-
-
-
-2011-01-18T22:04:07.813021Z
-424bdd9cd02d799c6d210caafd962d77
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1944
-
 AUD_HighpassFactory.h
 file
 
@@ -502,17 +468,17 @@ has-props
 
 1698
 
-Makefile
+AUD_ReverseReader.h
 file
 
 
 
 
 2011-01-18T22:04:07.813021Z
-5da8c7f91b4777b461f8841dc4b2d87a
-2009-08-10T01:56:54.345087Z
-22331
-gsrb3d
+424bdd9cd02d799c6d210caafd962d77
+2010-08-16T11:41:07.837561Z
+31372
+nexyon
 has-props
 
 
@@ -534,7 +500,7 @@ has-props
 
 
 
-1240
+1944
 
 AUD_VolumeFactory.h
 file
@@ -1046,40 +1012,6 @@ has-props
 
 1398
 
-AUD_HighpassFactory.cpp
-file
-
-
-
-
-2011-01-18T22:04:07.813021Z
-7864b0a41b1c444926c62c649b2382e6
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1724
-
 AUD_ReverseReader.cpp
 file
 
@@ -1113,6 +1045,40 @@ has-props
 
 
 2456
+
+AUD_HighpassFactory.cpp
+file
+
+
+
+
+2011-01-18T22:04:07.813021Z
+7864b0a41b1c444926c62c649b2382e6
+2010-08-16T11:41:07.837561Z
+31372
+nexyon
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1724
 
 AUD_LoopReader.h
 file
@@ -1284,40 +1250,6 @@ has-props
 
 2072
 
-AUD_AccumulatorFactory.h
-file
-
-
-
-
-2011-01-18T22:04:07.823021Z
-39f25d225c28689802ce049795018e8f
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1664
-
 AUD_IIRFilterReader.cpp
 file
 
@@ -1351,6 +1283,40 @@ has-props
 
 
 1468
+
+AUD_AccumulatorFactory.h
+file
+
+
+
+
+2011-01-18T22:04:07.823021Z
+39f25d225c28689802ce049795018e8f
+2010-08-16T11:41:07.837561Z
+31372
+nexyon
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1664
 
 AUD_LowpassFactory.cpp
 file
@@ -1386,40 +1352,6 @@ has-props
 
 1719
 
-AUD_DelayFactory.cpp
-file
-
-
-
-
-2011-01-18T22:04:07.823021Z
-680ecdb959565ca8e34779efee8b6464
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1277
-
 AUD_ButterworthFactory.h
 file
 
@@ -1453,6 +1385,40 @@ has-props
 
 
 1644
+
+AUD_DelayFactory.cpp
+file
+
+
+
+
+2011-01-18T22:04:07.823021Z
+680ecdb959565ca8e34779efee8b6464
+2010-08-16T11:41:07.837561Z
+31372
+nexyon
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1277
 
 AUD_LoopReader.cpp
 file
@@ -1488,14 +1454,14 @@ has-props
 
 2382
 
-AUD_SquareFactory.h
+AUD_DoubleReader.cpp
 file
 
 
 
 
 2011-01-18T22:04:07.823021Z
-84e4eb514d33c18efacd6f7cc4e920ba
+3ed9a8cafb0972ff7b637bca994bb856
 2010-08-16T11:41:07.837561Z
 31372
 nexyon
@@ -1520,7 +1486,7 @@ has-props
 
 
 
-1647
+2885
 
 AUD_LimiterReader.h
 file
@@ -1556,14 +1522,14 @@ has-props
 
 1913
 
-AUD_DoubleReader.cpp
+AUD_SquareFactory.h
 file
 
 
 
 
 2011-01-18T22:04:07.823021Z
-3ed9a8cafb0972ff7b637bca994bb856
+84e4eb514d33c18efacd6f7cc4e920ba
 2010-08-16T11:41:07.837561Z
 31372
 nexyon
@@ -1588,7 +1554,7 @@ has-props
 
 
 
-2885
+1647
 
 AUD_PitchReader.h
 file
@@ -1658,40 +1624,6 @@ has-props
 
 1411
 
-AUD_RectifyFactory.h
-file
-
-
-
-
-2011-01-18T22:04:07.823021Z
-56fa22a250c3040506b3f231f5589f92
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1460
-
 AUD_LimiterFactory.h
 file
 
@@ -1725,6 +1657,40 @@ has-props
 
 
 1896
+
+AUD_RectifyFactory.h
+file
+
+
+
+
+2011-01-18T22:04:07.823021Z
+56fa22a250c3040506b3f231f5589f92
+2010-08-16T11:41:07.837561Z
+31372
+nexyon
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1460
 
 AUD_ReverseFactory.h
 file
@@ -1930,40 +1896,6 @@ has-props
 
 2496
 
-AUD_SquareFactory.cpp
-file
-
-
-
-
-2011-01-18T22:04:07.823021Z
-227bd7890f493b7e46d0639ad444fd8c
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1688
-
 AUD_LimiterReader.cpp
 file
 
@@ -1998,14 +1930,14 @@ has-props
 
 2254
 
-AUD_CallbackIIRFilterReader.cpp
+AUD_SquareFactory.cpp
 file
 
 
 
 
 2011-01-18T22:04:07.823021Z
-29f37370f739daf1bebad5b3604df1c0
+227bd7890f493b7e46d0639ad444fd8c
 2010-08-16T11:41:07.837561Z
 31372
 nexyon
@@ -2030,7 +1962,7 @@ has-props
 
 
 
-1461
+1688
 
 AUD_EffectFactory.h
 file
@@ -2065,6 +1997,40 @@ has-props
 
 
 2049
+
+AUD_CallbackIIRFilterReader.cpp
+file
+
+
+
+
+2011-01-18T22:04:07.823021Z
+29f37370f739daf1bebad5b3604df1c0
+2010-08-16T11:41:07.837561Z
+31372
+nexyon
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1461
 
 AUD_PitchReader.cpp
 file

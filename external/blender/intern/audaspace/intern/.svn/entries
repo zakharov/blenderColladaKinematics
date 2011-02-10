@@ -1,15 +1,15 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern/audaspace/intern
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2010-12-27T11:32:43.050917Z
-33904
-nexyon
+2011-01-30T15:29:22.294392Z
+34567
+campbellbarton
 
 
 
@@ -570,14 +570,14 @@ has-props
 
 2242
 
-AUD_Mixer.h
+AUD_SinusFactory.cpp
 file
 
 
 
 
 2011-01-18T22:04:06.263021Z
-0f732d430856e40785022f5b67e59f7b
+4dc246ab998e928a1c5f08bbcf46882f
 2010-08-16T11:41:07.837561Z
 31372
 nexyon
@@ -602,7 +602,7 @@ has-props
 
 
 
-2747
+1302
 
 AUD_C-API.cpp
 file
@@ -638,14 +638,14 @@ has-props
 
 17980
 
-AUD_SinusFactory.cpp
+AUD_Mixer.h
 file
 
 
 
 
 2011-01-18T22:04:06.263021Z
-4dc246ab998e928a1c5f08bbcf46882f
+0f732d430856e40785022f5b67e59f7b
 2010-08-16T11:41:07.837561Z
 31372
 nexyon
@@ -670,41 +670,7 @@ has-props
 
 
 
-1302
-
-AUD_LinearResampleFactory.cpp
-file
-
-
-
-
-2011-01-18T22:04:06.263021Z
-20f6108a50d19e1431eb756cf63f3fe7
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1372
+2747
 
 AUD_ReadDevice.cpp
 file
@@ -739,6 +705,40 @@ has-props
 
 
 1528
+
+AUD_LinearResampleFactory.cpp
+file
+
+
+
+
+2011-01-18T22:04:06.263021Z
+20f6108a50d19e1431eb756cf63f3fe7
+2010-08-16T11:41:07.837561Z
+31372
+nexyon
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1372
 
 AUD_BufferReader.cpp
 file
@@ -808,40 +808,6 @@ has-props
 
 1572
 
-AUD_ConverterReader.h
-file
-
-
-
-
-2011-01-18T22:04:06.263021Z
-bc0b699cc2eb364676a64109b8f8fb85
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1852
-
 AUD_NULLDevice.h
 file
 
@@ -876,16 +842,16 @@ has-props
 
 2160
 
-AUD_ConverterFunctions.cpp
+AUD_ConverterReader.h
 file
 
 
 
 
 2011-01-18T22:04:06.263021Z
-66dd1789b4f2a83a890e2286e236e812
-2010-01-01T11:55:56.632948Z
-25646
+bc0b699cc2eb364676a64109b8f8fb85
+2010-08-16T11:41:07.837561Z
+31372
 nexyon
 has-props
 
@@ -908,7 +874,7 @@ has-props
 
 
 
-11091
+1852
 
 AUD_Space.h
 file
@@ -944,6 +910,40 @@ has-props
 
 5328
 
+AUD_ConverterFunctions.cpp
+file
+
+
+
+
+2011-01-18T22:04:06.263021Z
+66dd1789b4f2a83a890e2286e236e812
+2010-01-01T11:55:56.632948Z
+25646
+nexyon
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+11091
+
 AUD_Reference.h
 file
 
@@ -978,17 +978,17 @@ has-props
 
 2378
 
-Makefile
+AUD_ConverterFactory.h
 file
 
 
 
 
 2011-01-18T22:04:06.263021Z
-91012f35c3fa4115f57dde095ea1d5b3
-2010-08-16T17:04:46.775980Z
-31387
-ton
+9ec15320bb32cc695a9f96496fdc77f8
+2010-08-16T11:41:07.837561Z
+31372
+nexyon
 has-props
 
 
@@ -1010,7 +1010,7 @@ has-props
 
 
 
-1869
+1479
 
 AUD_I3DDevice.h
 file
@@ -1045,40 +1045,6 @@ has-props
 
 
 9229
-
-AUD_ConverterFactory.h
-file
-
-
-
-
-2011-01-18T22:04:06.263021Z
-9ec15320bb32cc695a9f96496fdc77f8
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1479
 
 AUD_ChannelMapperReader.h
 file

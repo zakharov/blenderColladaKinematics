@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 83
-/svnroot/bf-blender/!svn/ver/34327/trunk/blender/source/blender/imbuf/intern/cineon
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/blender/imbuf/intern/cineon
 END
 dpxfile.h
 K 25
@@ -9,17 +9,17 @@ svn:wc:ra_dav:version-url
 V 93
 /svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/imbuf/intern/cineon/dpxfile.h
 END
-logImageCore.h
-K 25
-svn:wc:ra_dav:version-url
-V 98
-/svnroot/bf-blender/!svn/ver/33445/trunk/blender/source/blender/imbuf/intern/cineon/logImageCore.h
-END
 cineonlib.c
 K 25
 svn:wc:ra_dav:version-url
 V 95
 /svnroot/bf-blender/!svn/ver/32532/trunk/blender/source/blender/imbuf/intern/cineon/cineonlib.c
+END
+logImageCore.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/bf-blender/!svn/ver/33445/trunk/blender/source/blender/imbuf/intern/cineon/logImageCore.h
 END
 SConscript
 K 25
@@ -45,11 +45,11 @@ svn:wc:ra_dav:version-url
 V 90
 /svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/blender/imbuf/intern/cineon/README
 END
-logImageLib.h
+logmemfile.c
 K 25
 svn:wc:ra_dav:version-url
-V 97
-/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/imbuf/intern/cineon/logImageLib.h
+V 96
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/imbuf/intern/cineon/logmemfile.c
 END
 cineonfile.h
 K 25
@@ -57,11 +57,11 @@ svn:wc:ra_dav:version-url
 V 96
 /svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/imbuf/intern/cineon/cineonfile.h
 END
-logmemfile.c
+logImageLib.h
 K 25
 svn:wc:ra_dav:version-url
-V 96
-/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/imbuf/intern/cineon/logmemfile.c
+V 97
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/imbuf/intern/cineon/logImageLib.h
 END
 dpxlib.c
 K 25
@@ -92,12 +92,6 @@ K 25
 svn:wc:ra_dav:version-url
 V 101
 /svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/blender/imbuf/intern/cineon/cin_debug_stuff.h
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 92
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blender/imbuf/intern/cineon/Makefile
 END
 CMakeLists.txt
 K 25

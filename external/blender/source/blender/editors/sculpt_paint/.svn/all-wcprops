@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svnroot/bf-blender/!svn/ver/34380/trunk/blender/source/blender/editors/sculpt_paint
+/svnroot/bf-blender/!svn/ver/34743/trunk/blender/source/blender/editors/sculpt_paint
 END
 sculpt_intern.h
 K 25
 svn:wc:ra_dav:version-url
 V 100
-/svnroot/bf-blender/!svn/ver/34169/trunk/blender/source/blender/editors/sculpt_paint/sculpt_intern.h
+/svnroot/bf-blender/!svn/ver/34587/trunk/blender/source/blender/editors/sculpt_paint/sculpt_intern.h
 END
 paint_intern.h
 K 25
@@ -19,7 +19,7 @@ sculpt_undo.c
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/svnroot/bf-blender/!svn/ver/34159/trunk/blender/source/blender/editors/sculpt_paint/sculpt_undo.c
+/svnroot/bf-blender/!svn/ver/34743/trunk/blender/source/blender/editors/sculpt_paint/sculpt_undo.c
 END
 paint_undo.c
 K 25
@@ -49,7 +49,7 @@ sculpt.c
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/34333/trunk/blender/source/blender/editors/sculpt_paint/sculpt.c
+/svnroot/bf-blender/!svn/ver/34607/trunk/blender/source/blender/editors/sculpt_paint/sculpt.c
 END
 paint_utils.c
 K 25
@@ -63,12 +63,6 @@ svn:wc:ra_dav:version-url
 V 99
 /svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/editors/sculpt_paint/CMakeLists.txt
 END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 93
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blender/editors/sculpt_paint/Makefile
-END
 paint_ops.c
 K 25
 svn:wc:ra_dav:version-url
@@ -79,5 +73,5 @@ paint_image.c
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/svnroot/bf-blender/!svn/ver/34380/trunk/blender/source/blender/editors/sculpt_paint/paint_image.c
+/svnroot/bf-blender/!svn/ver/34680/trunk/blender/source/blender/editors/sculpt_paint/paint_image.c
 END

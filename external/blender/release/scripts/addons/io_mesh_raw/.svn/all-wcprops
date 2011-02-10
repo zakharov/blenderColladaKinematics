@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 72
-/svnroot/bf-extensions/!svn/ver/1423/trunk/py/scripts/addons/io_mesh_raw
+/svnroot/bf-extensions/!svn/ver/1562/trunk/py/scripts/addons/io_mesh_raw
 END
 export_raw.py
 K 25
@@ -19,5 +19,5 @@ import_raw.py
 K 25
 svn:wc:ra_dav:version-url
 V 86
-/svnroot/bf-extensions/!svn/ver/1423/trunk/py/scripts/addons/io_mesh_raw/import_raw.py
+/svnroot/bf-extensions/!svn/ver/1562/trunk/py/scripts/addons/io_mesh_raw/import_raw.py
 END

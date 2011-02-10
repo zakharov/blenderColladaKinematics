@@ -1,14 +1,14 @@
 10
 
 dir
-1437
+1566
 https://svn.blender.org/svnroot/bf-extensions/trunk/py/scripts/addons/rigify
 https://svn.blender.org/svnroot/bf-extensions
 
 
 
-2011-01-14T16:09:46.541096Z
-1397
+2011-02-08T21:36:44.718602Z
+1562
 campbellbarton
 
 
@@ -171,11 +171,11 @@ file
 
 
 
-2011-01-18T22:05:18.753021Z
-0cc417ea1378156e41d1b59066cb7afe
-2011-01-14T16:09:46.541096Z
-1397
-campbellbarton
+2011-02-10T19:49:02.685667Z
+0f523de890881a327cd92034b915ca02
+2011-01-30T11:17:29.811183Z
+1524
+jaydez
 has-props
 
 
@@ -197,7 +197,7 @@ has-props
 
 
 
-4887
+4955
 
 utils.py
 file
@@ -205,10 +205,10 @@ file
 
 
 
-2011-01-18T22:05:18.753021Z
-656345404a5767d9864b6b5a9d75ebf7
-2010-12-22T21:41:21.796593Z
-1304
+2011-02-10T19:49:02.685667Z
+e805a90b398f4c6b6e1c7adbbd6e9602
+2011-02-08T21:36:44.718602Z
+1562
 campbellbarton
 has-props
 
@@ -231,7 +231,7 @@ has-props
 
 
 
-27663
+27659
 
 metarigs
 dir

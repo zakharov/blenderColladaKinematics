@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 74
-/svnroot/bf-blender/!svn/ver/34360/trunk/blender/source/blender/blenloader
+/svnroot/bf-blender/!svn/ver/34725/trunk/blender/source/blender/blenloader
 END
 BLO_sys_types.h
 K 25
@@ -37,17 +37,11 @@ BLO_readfile.h
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/33124/trunk/blender/source/blender/blenloader/BLO_readfile.h
+/svnroot/bf-blender/!svn/ver/34701/trunk/blender/source/blender/blenloader/BLO_readfile.h
 END
 CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/34004/trunk/blender/source/blender/blenloader/CMakeLists.txt
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 83
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blender/blenloader/Makefile
+/svnroot/bf-blender/!svn/ver/34486/trunk/blender/source/blender/blenloader/CMakeLists.txt
 END

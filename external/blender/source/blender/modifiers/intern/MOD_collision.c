@@ -1,5 +1,5 @@
 /*
-* $Id: MOD_collision.c 34160 2011-01-07 19:18:31Z campbellbarton $
+* $Id: MOD_collision.c 34587 2011-01-31 20:02:51Z nazgul $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -243,6 +243,7 @@ ModifierTypeInfo modifierType_Collision = {
 
 	/* copyData */          0,
 	/* deformVerts */       deformVerts,
+	/* deformMatrices */    0,
 	/* deformVertsEM */     0,
 	/* deformMatricesEM */  0,
 	/* applyModifier */     0,

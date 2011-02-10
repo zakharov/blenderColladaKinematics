@@ -5,7 +5,7 @@
  * any data in Blender. This block is not serialized, but built anew
  * for every fresh Blender run.
  *
- * $Id: BKE_global.h 34335 2011-01-15 16:14:57Z campbellbarton $ 
+ * $Id: BKE_global.h 34414 2011-01-20 07:44:58Z campbellbarton $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -61,7 +61,8 @@ typedef struct Global {
 	struct ListBase recent_files;
         
 	short afbreek, moving, file_loaded;
-	short background;
+	char background;
+	char factory_startup;
 	short winpos, displaymode;	/* used to be in Render */
 	short rendering;			/* to indicate render is busy, prevent renderwindow events etc */
 
@@ -91,10 +92,6 @@ typedef struct Global {
 
 	/* ndof device found ? */
 	int ndofdevice;
-	
-	/* confusing... G.f and G.flags */
-	int flags;
-
 } Global;
 
 /* **************** GLOBAL ********************* */

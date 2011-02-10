@@ -1,4 +1,4 @@
-$Id: cmake.txt 32452 2010-10-13 14:44:22Z mindrones $
+$Id: cmake.txt 34486 2011-01-25 14:43:13Z campbellbarton $
 
     Blender CMake build system
     ============================
@@ -132,9 +132,9 @@ $Id: cmake.txt 32452 2010-10-13 14:44:22Z mindrones $
     The commandline can be used to override detected/default settings, e.g:
  
     On Unix: 
-      cmake -D PYTHON_LIB=/usr/local/lib/python3.1/config/libpython3.1.so -D PYTHON_INC=/usr/local/include/python3.1 -G "Unix Makefiles" ../blender
+      cmake -D PYTHON_LIBRARY=/usr/local/lib/python3.1/config/libpython3.1.so -D PYTHON_INCLUDE_DIRS=/usr/local/include/python3.1 -G "Unix Makefiles" ../blender
     On Macs: 
-      cmake -D PYTHON_INC=/System/Library/Frameworks/Python.framework/Versions/3.1/include/python3.1 -G Xcode ../blender
+      cmake -D PYTHON_INCLUDE_DIRS=/System/Library/Frameworks/Python.framework/Versions/3.1/include/python3.1 -G Xcode ../blender
 
     Mote that this should only be needed once per build directory generation because it will keep the overrides in CMakeCache.txt for subsequent runs.
 

@@ -1,15 +1,15 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/editors/curve
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-18T01:58:19.206348Z
-34380
-campbellbarton
+2011-02-04T21:10:27.664856Z
+34645
+nazgul
 
 
 
@@ -168,11 +168,11 @@ file
 
 
 
-2011-01-18T22:04:49.873021Z
-3ffdf6369480cbde15f0ae0975806b64
-2011-01-18T01:58:19.206348Z
-34380
-campbellbarton
+2011-02-10T19:48:50.905667Z
+6cc3241def7d46a5e9673c0c3160dc97
+2011-02-04T21:10:27.664856Z
+34645
+nazgul
 has-props
 
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-164804
+166430
 
 CMakeLists.txt
 file
@@ -229,40 +229,6 @@ has-props
 
 
 1148
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:49.873021Z
-b43ddc3801702d8f049d4fb525789a08
-2010-08-10T21:22:26.642559Z
-31223
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1646
 
 editfont.c
 file

@@ -1,4 +1,4 @@
- /* $Id: editmesh_tools.c 34290 2011-01-13 04:53:55Z campbellbarton $
+ /* $Id: editmesh_tools.c 34604 2011-02-01 12:47:50Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -7150,7 +7150,7 @@ static int sort_faces_exec(bContext *C, wmOperator *op)
 	if (!v3d) return OPERATOR_CANCELLED;
 
 	/* This operator work in Object Mode, not in edit mode.
-	 * After talk with Cambell we agree that there is no point to port this to EditMesh right now.
+	 * After talk with Campbell we agree that there is no point to port this to EditMesh right now.
 	 * so for now, we just exit_editmode and enter_editmode at the end of this function.
 	 */
 	ED_object_exit_editmode(C, EM_FREEDATA);

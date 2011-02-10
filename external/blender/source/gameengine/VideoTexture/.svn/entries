@@ -1,14 +1,14 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/gameengine/VideoTexture
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-09T14:53:18.842857Z
-34195
+2011-01-30T15:29:22.294392Z
+34567
 campbellbarton
 
 
@@ -502,40 +502,6 @@ has-props
 
 5259
 
-VideoFFmpeg.cpp
-file
-
-
-
-
-2011-01-18T22:04:27.613021Z
-8ec3edef7dbdf78a3e20b4e8698cd6f0
-2010-06-05T15:31:55.041297Z
-29240
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-39681
-
 BlendType.h
 file
 
@@ -570,50 +536,16 @@ has-props
 
 2521
 
-Makefile
+VideoFFmpeg.cpp
 file
 
 
 
 
 2011-01-18T22:04:27.613021Z
-6e231b0ab68126cf69e55ebf6a3cfc86
-2010-08-10T21:22:26.642559Z
-31223
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2138
-
-CMakeLists.txt
-file
-
-
-
-
-2011-01-18T22:04:27.613021Z
-8893802ffe2b50375508062912350840
-2010-12-22T23:09:30.468439Z
-33864
+8ec3edef7dbdf78a3e20b4e8698cd6f0
+2010-06-05T15:31:55.041297Z
+29240
 campbellbarton
 has-props
 
@@ -636,7 +568,7 @@ has-props
 
 
 
-2471
+39681
 
 blendVideoTex.cpp
 file
@@ -671,6 +603,40 @@ has-props
 
 
 6201
+
+CMakeLists.txt
+file
+
+
+
+
+2011-01-18T22:04:27.613021Z
+8893802ffe2b50375508062912350840
+2010-12-22T23:09:30.468439Z
+33864
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2471
 
 Common.h
 file
@@ -808,40 +774,6 @@ has-props
 
 3381
 
-Texture.h
-file
-
-
-
-
-2011-01-18T22:04:27.613021Z
-6b511a1764fd6b632716dd566da23edf
-2009-04-20T15:06:46.913736Z
-19820
-blendix
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2390
-
 ImageMix.h
 file
 
@@ -876,17 +808,17 @@ has-props
 
 3573
 
-SConscript
+Texture.h
 file
 
 
 
 
 2011-01-18T22:04:27.613021Z
-9c7d3405136f4e3419bf7d2827449b8b
-2010-11-18T11:42:05.232926Z
-33156
-campbellbarton
+6b511a1764fd6b632716dd566da23edf
+2009-04-20T15:06:46.913736Z
+19820
+blendix
 has-props
 
 
@@ -908,7 +840,7 @@ has-props
 
 
 
-1205
+2390
 
 VideoBase.h
 file
@@ -943,6 +875,40 @@ has-props
 
 
 4668
+
+SConscript
+file
+
+
+
+
+2011-01-18T22:04:27.613021Z
+9c7d3405136f4e3419bf7d2827449b8b
+2010-11-18T11:42:05.232926Z
+33156
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1205
 
 FilterSource.h
 file

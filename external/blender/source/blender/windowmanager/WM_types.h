@@ -1,5 +1,5 @@
 /**
- * $Id: WM_types.h 34159 2011-01-07 18:36:47Z campbellbarton $
+ * $Id: WM_types.h 34695 2011-02-07 16:41:57Z ton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -193,6 +193,7 @@ typedef struct wmNotifier {
 #define ND_TOOLSETTINGS		(15<<16)
 #define ND_LAYER			(16<<16)
 #define ND_FRAME_RANGE		(17<<16)
+#define ND_TRANSFORM_DONE	(18<<16)
 #define ND_WORLD			(92<<16)
 #define ND_LAYER_CONTENT	(101<<16)
 

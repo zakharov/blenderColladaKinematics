@@ -2,7 +2,7 @@
  * 
  * common help functions and data
  * 
- * $Id: blender.c 34377 2011-01-18 00:10:11Z campbellbarton $
+ * $Id: blender.c 34414 2011-01-20 07:44:58Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -299,8 +299,6 @@ static void setup_app_data(bContext *C, BlendFileData *bfd, const char *filename
 	/* these are the same at times, should never copy to the same location */
 	if(G.main->name != filename)
 		BLI_strncpy(G.main->name, filename, FILE_MAX);
-	
-	BLI_strncpy(G.main->name, filename, FILE_MAX); /* is guaranteed current file */
 
 	/* baseflags, groups, make depsgraph, etc */
 	set_scene_bg(G.main, CTX_data_scene(C));

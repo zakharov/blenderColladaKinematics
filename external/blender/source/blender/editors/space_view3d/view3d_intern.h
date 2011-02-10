@@ -1,5 +1,5 @@
 /**
- * $Id: view3d_intern.h 34335 2011-01-15 16:14:57Z campbellbarton $
+ * $Id: view3d_intern.h 34662 2011-02-05 19:07:54Z ton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -85,7 +85,6 @@ void VIEW3D_OT_drawtype(struct wmOperatorType *ot);
 
 void view3d_boxview_copy(ScrArea *sa, ARegion *ar);
 void view3d_persp_mat4(struct RegionView3D *rv3d, float mat[][4]);
-int region3d_unlocked_poll(struct bContext *C);
 
 /* view3d_fly.c */
 void view3d_keymap(struct wmKeyConfig *keyconf);

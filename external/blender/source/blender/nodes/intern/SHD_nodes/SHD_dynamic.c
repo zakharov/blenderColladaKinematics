@@ -1,5 +1,5 @@
 /**
- * $Id: SHD_dynamic.c 34160 2011-01-07 19:18:31Z campbellbarton $
+ * $Id: SHD_dynamic.c 34712 2011-02-08 09:02:16Z lukastoenne $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -758,26 +758,29 @@ static void node_dynamic_exec_cb(void *data, bNode *node, bNodeStack **in, bNode
 #endif
 }
 
-bNodeType node_dynamic_typeinfo = {
-	/* next, prev  */	NULL, NULL,
-	/* type code   */	NODE_DYNAMIC,
-	/* name        */	"Dynamic",
-	/* width+range */	150, 60, 300,
-	/* class+opts  */	NODE_CLASS_OP_DYNAMIC, NODE_OPTIONS,
-	/* input sock  */	NULL,
-	/* output sock */	NULL,
-	/* storage     */	"NodeScriptDict",
-	/* execfunc    */	node_dynamic_exec_cb,
-	/* butfunc     */	NULL,
-	/* initfunc    */	node_dynamic_init_cb,
-	/* freefunc    */	node_dynamic_free_storage_cb,
-	/* copyfunc    */	node_dynamic_copy_cb,
-	/* id          */	NULL
-};
+void register_node_type_sh_dynamic(ListBase *lb)
+{
+	static bNodeType ntype;
+	
+	node_type_base(&ntype, SH_NODE_DYNAMIC, "Dynamic", NODE_CLASS_OP_DYNAMIC, NODE_OPTIONS, NULL, NULL);
+	node_type_size(&ntype, 150, 60, 300);
+	node_type_init(&ntype, node_dynamic_init_cb);
+	node_type_storage(&ntype, "NodeScriptDict", node_dynamic_free_storage_cb, node_dynamic_copy_cb);
+	node_type_exec(&ntype, node_dynamic_exec_cb);
+	
+	nodeRegisterType(lb, &ntype);
+}
 
 #else
 
-bNodeType node_dynamic_typeinfo = {NULL};
+void register_node_type_sh_dynamic(ListBase *lb)
+{
+	static bNodeType ntype;
+	
+	node_type_base(&ntype, 0, "", 0, 0, NULL, NULL);
+	
+	nodeRegisterType(lb, &ntype);
+}
 
 #endif
 

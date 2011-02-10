@@ -1,5 +1,5 @@
 /**
- * $Id: image_buttons.c 34159 2011-01-07 18:36:47Z campbellbarton $
+ * $Id: image_buttons.c 34508 2011-01-26 16:21:54Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -781,14 +781,20 @@ void uiTemplateImage(uiLayout *layout, bContext *C, PointerRNA *ptr, const char 
 
 	if(!ptr->data)
 		return;
-	
+
 	prop= RNA_struct_find_property(ptr, propname);
 	if(!prop) {
 		printf("uiTemplateImage: property not found: %s.%s\n", RNA_struct_identifier(ptr->type), propname);
 		return;
 	}
 
+	if(RNA_property_type(prop) != PROP_POINTER) {
+		printf("uiTemplateImage: expected pointer property for %s.%s\n", RNA_struct_identifier(ptr->type), propname);
+		return;
+	}
+
 	block= uiLayoutGetBlock(layout);
+
 
 	imaptr= RNA_property_pointer_get(ptr, prop);
 	ima= imaptr.data;

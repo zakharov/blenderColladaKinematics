@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/svnroot/bf-blender/!svn/ver/34287/trunk/blender/source/blender/editors/util
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/blender/editors/util
 END
 editmode_undo.c
 K 25
@@ -25,7 +25,7 @@ ed_util.c
 K 25
 svn:wc:ra_dav:version-url
 V 86
-/svnroot/bf-blender/!svn/ver/33448/trunk/blender/source/blender/editors/util/ed_util.c
+/svnroot/bf-blender/!svn/ver/34506/trunk/blender/source/blender/editors/util/ed_util.c
 END
 undo.c
 K 25
@@ -44,10 +44,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 91
 /svnroot/bf-blender/!svn/ver/34102/trunk/blender/source/blender/editors/util/CMakeLists.txt
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 85
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blender/editors/util/Makefile
 END

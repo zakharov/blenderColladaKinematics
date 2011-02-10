@@ -1,5 +1,5 @@
 /*
- * $Id: readfile.c 34336 2011-01-15 18:00:46Z ton $
+ * $Id: readfile.c 34725 2011-02-09 00:51:30Z aligorith $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -1039,7 +1039,7 @@ void blo_freefiledata(FileData *fd)
 
 int BLO_has_bfile_extension(char *str)
 {
-	return (BLI_testextensie(str, ".ble") || BLI_testextensie(str, ".blend")||BLI_testextensie(str, ".blend.gz"));
+	return (BLI_testextensie(str, ".ble") || BLI_testextensie(str, ".blend") || BLI_testextensie(str, ".blend.gz"));
 }
 
 int BLO_is_a_library(const char *path, char *dir, char *group)
@@ -3823,11 +3823,11 @@ static void direct_link_modifiers(FileData *fd, ListBase *lb)
 				clmd->sim_parms->reset = 0;
 
 				clmd->sim_parms->effector_weights = newdataadr(fd, clmd->sim_parms->effector_weights);
-			}
 
-			if(!clmd->sim_parms->effector_weights)
-				clmd->sim_parms->effector_weights = BKE_add_effector_weights(NULL);
-			
+				if(!clmd->sim_parms->effector_weights) {
+					clmd->sim_parms->effector_weights = BKE_add_effector_weights(NULL);
+				}
+			}
 		}
 		else if (md->type==eModifierType_Fluidsim) {
 			FluidsimModifierData *fluidmd = (FluidsimModifierData*) md;
@@ -5279,7 +5279,11 @@ static void direct_link_screen(FileData *fd, bScreen *sc)
 				for(cl= sconsole->history.first; cl; cl= cl_next) {
 					cl_next= cl->next;
 					cl->line= newdataadr(fd, cl->line);
-					if (cl->line == NULL) {
+					if (cl->line) {
+						/* the allocted length is not written, so reset here */
+						cl->len_alloc= cl->len + 1;
+					}
+					else {
 						BLI_remlink(&sconsole->history, cl);
 						MEM_freeN(cl);
 					}
@@ -5740,6 +5744,23 @@ static int map_223_keybd_code_to_224_keybd_code(int code)
 		case 158:	return 159; /* PAD9 */
 		default: return code;
 	}
+}
+
+static void do_version_bone_head_tail_237(Bone *bone)
+{
+	Bone *child;
+	float vec[3];
+
+	/* head */
+	copy_v3_v3(bone->arm_head, bone->arm_mat[3]);
+
+	/* tail is in current local coord system */
+	copy_v3_v3(vec, bone->arm_mat[1]);
+	mul_v3_fl(vec, bone->length);
+	add_v3_v3v3(bone->arm_tail, bone->arm_head, vec);
+
+	for(child= bone->childbase.first; child; child= child->next)
+		do_version_bone_head_tail_237(child);
 }
 
 static void bone_version_238(ListBase *lb)
@@ -6334,6 +6355,8 @@ static void area_add_window_regions(ScrArea *sa, SpaceLink *sl, ListBase *lb)
 			}
 			case SPACE_ACTION:
 			{
+				SpaceAction *saction= (SpaceAction *)sl;
+				
 				/* we totally reinit the view for the Action Editor, as some old instances had some weird cruft set */
 				ar->v2d.tot.xmin= -20.0f;
 				ar->v2d.tot.ymin= (float)(-sa->winy)/3.0f;
@@ -6343,10 +6366,10 @@ static void area_add_window_regions(ScrArea *sa, SpaceLink *sl, ListBase *lb)
 				ar->v2d.cur= ar->v2d.tot;
 				
 				ar->v2d.min[0]= 0.0f;
-				 ar->v2d.min[1]= 0.0f;
+				ar->v2d.min[1]= 0.0f;
 				
 				ar->v2d.max[0]= MAXFRAMEF;
-				 ar->v2d.max[1]= FLT_MAX;
+				ar->v2d.max[1]= FLT_MAX;
 			 	
 				ar->v2d.minzoom= 0.01f;
 				ar->v2d.maxzoom= 50;
@@ -6355,6 +6378,13 @@ static void area_add_window_regions(ScrArea *sa, SpaceLink *sl, ListBase *lb)
 				ar->v2d.keepzoom= V2D_LOCKZOOM_Y;
 				ar->v2d.align= V2D_ALIGN_NO_POS_Y;
 				ar->v2d.flag = V2D_VIEWSYNC_AREA_VERTICAL;
+				
+				/* for old files with ShapeKey editors open + an action set, clear the action as 
+				 * it doesn't make sense in the new system (i.e. violates concept that ShapeKey edit
+				 * only shows ShapeKey-rooted actions only)
+				 */
+				if (saction->mode == SACTCONT_SHAPEKEY)
+					saction->action = NULL;
 				break;
 			}
 			case SPACE_SEQ:
@@ -6649,6 +6679,19 @@ static void do_versions_seq_unique_name_all_strips(
 		}
 		seq=seq->next;
 	}
+}
+
+
+static void do_version_bone_roll_256(Bone *bone)
+{
+	Bone *child;
+	float submat[3][3];
+	
+	copy_m3_m4(submat, bone->arm_mat);
+	mat3_to_vec_roll(submat, 0, &bone->arm_roll);
+	
+	for(child = bone->childbase.first; child; child = child->next)
+		do_version_bone_roll_256(child);
 }
 
 static void do_versions(FileData *fd, Library *lib, Main *main)
@@ -7960,10 +8003,14 @@ static void do_versions(FileData *fd, Library *lib, Main *main)
 		bArmature *arm;
 		bConstraint *con;
 		Object *ob;
+		Bone *bone;
 		
 		// armature recode checks 
 		for(arm= main->armature.first; arm; arm= arm->id.next) {
 			where_is_armature(arm);
+
+			for(bone= arm->bonebase.first; bone; bone= bone->next)
+				do_version_bone_head_tail_237(bone);
 		}
 		for(ob= main->object.first; ob; ob= ob->id.next) {
 			if(ob->parent) {
@@ -8867,9 +8914,13 @@ static void do_versions(FileData *fd, Library *lib, Main *main)
 				ob->soft->pointcache= BKE_ptcache_add(&ob->soft->ptcaches);
 
 			for(psys=ob->particlesystem.first; psys; psys=psys->next) {
-				//if(psys->soft && !psys->soft->pointcache)
-				//	psys->soft->pointcache= BKE_ptcache_add(&psys->soft->ptcaches);
-				if(!psys->pointcache)
+				if(psys->pointcache) {
+					if(psys->pointcache->flag & PTCACHE_BAKED && (psys->pointcache->flag & PTCACHE_DISK_CACHE)==0) {
+						printf("Old memory cache isn't supported for particles, so re-bake the simulation!\n");
+						psys->pointcache->flag &= ~PTCACHE_BAKED;
+					}
+				}
+				else
 					psys->pointcache= BKE_ptcache_add(&psys->ptcaches);
 			}
 
@@ -9983,12 +10034,15 @@ static void do_versions(FileData *fd, Library *lib, Main *main)
 			for(a=0; a<MAX_MTEX; a++) {
 				if(ma->mtex[a]) {
 					tex= ma->mtex[a]->tex;
-					if(!tex)
-						ma->mtex[a]->texflag |= MTEX_NEW_BUMP;
-					else {
+					if(!tex) {
+						ma->mtex[a]->texflag |= MTEX_3TAP_BUMP;
+						ma->mtex[a]->texflag |= MTEX_BUMP_OBJECTSPACE;
+					} else {
 						tex= (Tex*)newlibadr(fd, ma->id.lib, tex);
-						if(tex && tex->type == 0) /* invalid type */
-							ma->mtex[a]->texflag |= MTEX_NEW_BUMP;
+						if(tex && tex->type == 0) { /* invalid type */
+							ma->mtex[a]->texflag |= MTEX_3TAP_BUMP;
+							ma->mtex[a]->texflag |= MTEX_BUMP_OBJECTSPACE;
+						}
 					}
 				}
 			}
@@ -11238,13 +11292,13 @@ static void do_versions(FileData *fd, Library *lib, Main *main)
 			}
 		}
 	}
-
-	/* put compatibility code here until next subversion bump */
 	
-	{
-		/* Fix for sample line scope initializing with no height */
+	if (main->versionfile < 256) {
 		bScreen *sc;
 		ScrArea *sa;
+		Key *key;
+		
+		/* Fix for sample line scope initializing with no height */
 		for(sc= main->screen.first; sc; sc= sc->id.next) {
 			sa= sc->areabase.first;
 			while(sa) {
@@ -11259,10 +11313,6 @@ static void do_versions(FileData *fd, Library *lib, Main *main)
 				sa= sa->next;
 			}
 		}
-	}
-	
-	{
-		Key *key;
 		
 		/* old files could have been saved with slidermin = slidermax = 0.0, but the UI in
 		 * 2.4x would never reveal this to users as a dummy value always ended up getting used
@@ -11274,6 +11324,43 @@ static void do_versions(FileData *fd, Library *lib, Main *main)
 			for (kb = key->block.first; kb; kb = kb->next) {
 				if (IS_EQ(kb->slidermin, kb->slidermax) && IS_EQ(kb->slidermax, 0))
 					kb->slidermax = kb->slidermin + 1.0f;
+			}
+		}
+	}
+	
+	if (main->versionfile < 256 || (main->versionfile == 256 && main->subversionfile < 1)) {
+		/* fix for bones that didn't have arm_roll before */
+		bArmature* arm;
+		Bone* bone;
+		Object *ob;
+
+		for (arm = main->armature.first; arm; arm = arm->id.next)
+			for (bone = arm->bonebase.first; bone; bone = bone->next)
+				do_version_bone_roll_256(bone);
+
+		/* fix for objects which have zero dquat's
+		 * since this is multiplied with the quat rather then added */
+		for(ob= main->object.first; ob; ob= ob->id.next) {
+			if(is_zero_v4(ob->dquat)) {
+				unit_qt(ob->dquat);
+			}
+			if(is_zero_v3(ob->drotAxis) && ob->drotAngle == 0.0f) {
+				unit_axis_angle(ob->drotAxis, &ob->drotAngle);
+			}
+		}
+	}
+
+	/* put compatibility code here until next subversion bump */
+	
+	{
+		bScreen *sc;
+		
+		/* redraws flag in SpaceTime has been moved to Screen level */
+		for (sc = main->screen.first; sc; sc= sc->id.next) {
+			if (sc->redraws_flag == 0) {
+				/* just initialise to default? */
+				// XXX: we could also have iterated through areas, and taken them from the first timeline available...
+				sc->redraws_flag = TIME_ALL_3D_WIN|TIME_ALL_ANIM_WIN;
 			}
 		}
 	}
@@ -12422,7 +12509,7 @@ static void give_base_to_groups(Main *mainvar, Scene *scene)
 	}
 }
 
-static void append_named_part(const bContext *C, Main *mainl, FileData *fd, char *name, int idcode, short flag)
+static void append_named_part(const bContext *C, Main *mainl, FileData *fd, const char *name, int idcode, short flag)
 {
 	Scene *scene= CTX_data_scene(C);
 	Object *ob;
@@ -12488,7 +12575,7 @@ static void append_named_part(const bContext *C, Main *mainl, FileData *fd, char
 	}
 }
 
-void BLO_library_append_named_part(const bContext *C, Main *mainl, BlendHandle** bh, char *name, int idcode, short flag)
+void BLO_library_append_named_part(const bContext *C, Main *mainl, BlendHandle** bh, const char *name, int idcode, short flag)
 {
 	FileData *fd= (FileData*)(*bh);
 	append_named_part(C, mainl, fd, name, idcode, flag);
@@ -12666,7 +12753,7 @@ void BLO_library_append_end(const bContext *C, struct Main *mainl, BlendHandle**
 /* tentatively removed, Python should be able to use the split functions too: */
 /* BLO_library_append_begin, BLO_library_append_end, BLO_library_append_named_part */
 #if 0 
-void BLO_script_library_append(BlendHandle **bh, char *dir, char *name, 
+void BLO_script_library_append(BlendHandle **bh, char *dir, const char *name, 
 		int idcode, short flag, Main *mainvar, Scene *scene, ReportList *reports)
 {
 	FileData *fd= (FileData*)(*bh);

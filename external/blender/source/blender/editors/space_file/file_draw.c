@@ -1,5 +1,5 @@
 /**
- * $Id: file_draw.c 34373 2011-01-17 20:10:18Z elubie $
+ * $Id: file_draw.c 34562 2011-01-30 13:12:03Z ton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -255,6 +255,8 @@ static int get_file_icon(struct direntry *file)
 		return ICON_FILE_FOLDER;
 	}
 	else if (file->flags & BLENDERFILE)
+		return ICON_FILE_BLEND;
+	else if (file->flags & BLENDERFILE_BACKUP)
 		return ICON_FILE_BLEND;
 	else if (file->flags & IMAGEFILE)
 		return ICON_FILE_IMAGE;

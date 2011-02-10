@@ -1,5 +1,5 @@
 /**
- * $Id: SCA_IController.cpp 32788 2010-10-31 04:11:39Z campbellbarton $
+ * $Id: SCA_IController.cpp 34520 2011-01-27 00:02:25Z campbellbarton $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,8 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+#include <stddef.h>
 
 #include "SCA_IController.h"
 #include "SCA_LogicManager.h"

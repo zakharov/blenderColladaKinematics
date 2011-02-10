@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/28254/trunk/blender/intern/iksolver/test/ik_glut_test/common
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/intern/iksolver/test/ik_glut_test/common
 END
 GlutMouseManager.cpp
 K 25
@@ -38,10 +38,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 111
 /svnroot/bf-blender/!svn/ver/26841/trunk/blender/intern/iksolver/test/ik_glut_test/common/GlutKeyboardManager.h
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 98
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/iksolver/test/ik_glut_test/common/Makefile
 END

@@ -37,7 +37,7 @@ def find_index(objekti):
 def gettex(mat_list, objekti, scene,export):
 
     coat3D = bpy.context.scene.coat3D
-    coa = bpy.context.scene.objects.active.coat3D
+    
     
     if(bpy.context.scene.render.engine == 'VRAY_RENDER' or bpy.context.scene.render.engine == 'VRAY_RENDER_PREVIEW'):
         vray = True
@@ -73,8 +73,12 @@ def gettex(mat_list, objekti, scene,export):
                     if(tex_slot.texture.type == 'IMAGE'):
                                                 tex_slot.texture.image.reload()
     else:
+        coa = bpy.context.scene.objects.active.coat3D
         nimi = objname(coa.objectdir)
-        osoite = os.path.dirname(coa.objectdir) + os.sep
+        if(coa.texturefolder):
+            osoite = os.path.dirname(coa.texturefolder) + os.sep
+        else:
+            osoite = os.path.dirname(coa.objectdir) + os.sep
     just_nimi = justname(nimi)
     just_nimi += '_'
     just_nimi_len = len(just_nimi)
@@ -219,6 +223,7 @@ def gettex(mat_list, objekti, scene,export):
             else:
                 bpy.data.textures[name_tex].use_normal_map = True
                 objekti.active_material.texture_slots[index].normal_map_space = 'TANGENT'
+                objekti.active_material.texture_slots[index].normal_factor = -1
 
             
 
@@ -231,6 +236,7 @@ def gettex(mat_list, objekti, scene,export):
                 objekti.active_material.texture_slots[index].uv_layer = objekti.data.uv_textures.active.name
             objekti.active_material.texture_slots[index].use_map_color_diffuse = False
             objekti.active_material.texture_slots[index].use_map_normal = True
+            objekti.active_material.texture_slots[index].normal_factor = -1
 
 
     if(bring_spec == 1 and texcoat['specular']):

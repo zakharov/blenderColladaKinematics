@@ -1,5 +1,5 @@
 /**
- * $Id: node_util.h 26841 2010-02-12 13:34:04Z campbellbarton $
+ * $Id: node_util.h 34717 2011-02-08 12:54:32Z lukastoenne $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -37,6 +37,11 @@ extern void node_free_standard_storage(struct bNode *node);
 
 extern void node_copy_curves(struct bNode *orig_node, struct bNode *new_node);
 extern void node_copy_standard_storage(struct bNode *orig_node, struct bNode *new_node);
+
+const char *node_blend_label(struct bNode *node);
+const char *node_math_label(struct bNode *node);
+const char *node_vect_math_label(struct bNode *node);
+const char *node_filter_label(struct bNode *node);
 
 #endif
 

@@ -1,14 +1,14 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern/itasc
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2010-12-22T23:09:30.468439Z
-33864
+2011-01-30T15:29:22.294392Z
+34567
 campbellbarton
 
 
@@ -468,16 +468,16 @@ has-props
 
 1338
 
-Makefile
+UncontrolledObject.cpp
 file
 
 
 
 
 2011-01-18T22:04:10.463021Z
-90e74a6995cde3f84b72b96913ca9aa2
-2009-09-25T22:38:15.050072Z
-23494
+43ee07213ce3e6436e97475746006912
+2009-09-25T01:13:07.010893Z
+23467
 gsrb3d
 has-props
 
@@ -500,7 +500,7 @@ has-props
 
 
 
-1788
+845
 
 ublas_types.hpp
 file
@@ -536,17 +536,17 @@ has-props
 
 2437
 
-UncontrolledObject.cpp
+CopyPose.cpp
 file
 
 
 
 
 2011-01-18T22:04:10.463021Z
-43ee07213ce3e6436e97475746006912
-2009-09-25T01:13:07.010893Z
-23467
-gsrb3d
+56cefe1aa8e451e6af1f047a76bb2bab
+2009-09-25T09:33:46.019299Z
+23480
+blendix
 has-props
 
 
@@ -568,7 +568,7 @@ has-props
 
 
 
-845
+14020
 
 ControlledObject.hpp
 file
@@ -603,40 +603,6 @@ has-props
 
 
 2155
-
-CopyPose.cpp
-file
-
-
-
-
-2011-01-18T22:04:10.463021Z
-56cefe1aa8e451e6af1f047a76bb2bab
-2009-09-25T09:33:46.019299Z
-23480
-blendix
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-14020
 
 Cache.cpp
 file
@@ -706,40 +672,6 @@ has-props
 
 914
 
-SConscript
-file
-
-
-
-
-2011-01-18T22:04:10.463021Z
-a40e43e715cd4b4cedc7ed77a8f1a989
-2010-08-25T04:30:47.772689Z
-31567
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-282
-
 CopyPose.hpp
 file
 
@@ -773,6 +705,40 @@ has-props
 
 
 3578
+
+SConscript
+file
+
+
+
+
+2011-01-18T22:04:10.463021Z
+a40e43e715cd4b4cedc7ed77a8f1a989
+2010-08-25T04:30:47.772689Z
+31567
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+282
 
 Cache.hpp
 file
@@ -910,40 +876,6 @@ has-props
 
 808
 
-Armature.cpp
-file
-
-
-
-
-2011-01-18T22:04:10.463021Z
-e0af8287a31983281ed51bea41f41b70
-2010-03-09T22:44:03.720274Z
-27371
-ben2610
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-21388
-
 eigen_types.hpp
 file
 
@@ -977,6 +909,40 @@ has-props
 
 
 2341
+
+Armature.cpp
+file
+
+
+
+
+2011-01-18T22:04:10.463021Z
+e0af8287a31983281ed51bea41f41b70
+2010-03-09T22:44:03.720274Z
+27371
+ben2610
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+21388
 
 WorldObject.hpp
 file

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 62
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/intern/elbeem
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/intern/elbeem
 END
 COPYING_trimesh2
 K 25
@@ -25,11 +25,5 @@ CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 77
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/intern/elbeem/CMakeLists.txt
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 71
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/elbeem/Makefile
+/svnroot/bf-blender/!svn/ver/34486/trunk/blender/intern/elbeem/CMakeLists.txt
 END

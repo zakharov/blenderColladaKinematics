@@ -1,5 +1,5 @@
 /* 
- * $Id: mathutils.h 34335 2011-01-15 16:14:57Z campbellbarton $
+ * $Id: mathutils.h 34649 2011-02-05 09:57:02Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -100,5 +100,6 @@ int _BaseMathObject_WriteIndexCallback(BaseMathObject *self, int index);
 
 /* utility func */
 int mathutils_array_parse(float *array, int array_min, int array_max, PyObject *value, const char *error_prefix);
+int mathutils_any_to_rotmat(float rmat[3][3], PyObject *value, const char *error_prefix);
 
 #endif /* MATHUTILS_H */

@@ -1,5 +1,5 @@
 /**
- * $Id: screen_intern.h 32471 2010-10-14 12:24:08Z campbellbarton $
+ * $Id: screen_intern.h 34672 2011-02-06 17:36:42Z ton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -32,12 +32,14 @@
 struct wmWindow;
 struct Scene;
 
+#define AZONESPOT		12
+
 /* area.c */
 void		area_copy_data	(ScrArea *sa1, ScrArea *sa2, int swap_space);
 
 /* screen_edit.c */
 ScrEdge		*screen_findedge(bScreen *sc, ScrVert *v1, ScrVert *v2);
-ScrArea		*area_split(bScreen *sc, ScrArea *sa, char dir, float fac);
+ScrArea		*area_split(bScreen *sc, ScrArea *sa, char dir, float fac, int merge);
 int			screen_area_join(bContext *C, bScreen* scr, ScrArea *sa1, ScrArea *sa2);
 int			area_getorientation(ScrArea *sa, ScrArea *sb);
 void		select_connected_scredge(bScreen *sc, ScrEdge *edge);

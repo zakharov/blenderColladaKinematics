@@ -1,15 +1,15 @@
 10
 
 dir
-34392
+34763
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern/audaspace/SDL
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-01-30T15:29:22.294392Z
+34567
+campbellbarton
 
 
 
@@ -93,38 +93,4 @@ has-props
 
 
 2564
-
-Makefile
-file
-
-
-
-
-2011-01-18T22:04:07.253021Z
-01558a487eee1cc72daf39dfc453ce91
-2009-08-21T22:56:26.114993Z
-22688
-bdiego
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1204
 

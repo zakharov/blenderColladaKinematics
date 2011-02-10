@@ -4115,7 +4115,7 @@ static int ui_but_menu(bContext *C, uiBut *but)
 	button_timers_tooltip_remove(C, but);
 
 	if(but->rnaprop)
-		name= (char*)RNA_property_ui_name(but->rnaprop);
+		name= RNA_property_ui_name(but->rnaprop);
 	else if (but->optype)
 		name= but->optype->name;
 	else
@@ -5238,8 +5238,15 @@ static int ui_handle_button_event(bContext *C, wmEvent *event, uiBut *but)
 		retval= WM_UI_HANDLER_CONTINUE;
 	}
 	else if(data->state == BUTTON_STATE_MENU_OPEN) {
+		/* check for exit because of mouse-over another button */
 		switch(event->type) {
-			case MOUSEMOVE: {
+			case MOUSEMOVE:
+				
+				if(data->menu && data->menu->region)
+					if(ui_mouse_inside_region(data->menu->region, event->x, event->y))
+						break;
+			
+			{
 				uiBut *bt= ui_but_find_mouse_over(ar, event->x, event->y);
 
 				if(bt && bt->active != data) {
@@ -5722,7 +5729,7 @@ int ui_handle_menu_event(bContext *C, wmEvent *event, uiPopupBlockHandle *menu, 
 
 				if(ELEM3(event->type, LEFTMOUSE, MIDDLEMOUSE, RIGHTMOUSE) && event->val==KM_PRESS) {
 					if(saferct && !BLI_in_rctf(&saferct->parent, event->x, event->y)) {
-						if(block->flag & (UI_BLOCK_OUT_1|UI_BLOCK_KEEP_OPEN))
+						if(block->flag & (UI_BLOCK_OUT_1))
 							menu->menuretval= UI_RETURN_OK;
 						else
 							menu->menuretval= UI_RETURN_OUT;
@@ -5763,7 +5770,7 @@ int ui_handle_menu_event(bContext *C, wmEvent *event, uiPopupBlockHandle *menu, 
 
 					/* strict check, and include the parent rect */
 					if(!menu->dotowards && !saferct) {
-						if(block->flag & (UI_BLOCK_OUT_1|UI_BLOCK_KEEP_OPEN))
+						if(block->flag & (UI_BLOCK_OUT_1))
 							menu->menuretval= UI_RETURN_OK;
 						else
 							menu->menuretval= UI_RETURN_OUT;

@@ -1,5 +1,5 @@
 /*
- * $Id: writefile.c 34360 2011-01-16 21:12:38Z campbellbarton $
+ * $Id: writefile.c 34481 2011-01-25 01:51:28Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -1948,21 +1948,23 @@ static void write_gpencils(WriteData *wd, ListBase *lb)
 	bGPDstroke *gps;
 	
 	for (gpd= lb->first; gpd; gpd= gpd->id.next) {
-		/* write gpd data block to file */
-		writestruct(wd, ID_GD, "bGPdata", 1, gpd);
-		
-		/* write grease-pencil layers to file */
-		for (gpl= gpd->layers.first; gpl; gpl= gpl->next) {
-			writestruct(wd, DATA, "bGPDlayer", 1, gpl);
+		if (gpd->id.us>0 || wd->current) {
+			/* write gpd data block to file */
+			writestruct(wd, ID_GD, "bGPdata", 1, gpd);
 			
-			/* write this layer's frames to file */
-			for (gpf= gpl->frames.first; gpf; gpf= gpf->next) {
-				writestruct(wd, DATA, "bGPDframe", 1, gpf);
+			/* write grease-pencil layers to file */
+			for (gpl= gpd->layers.first; gpl; gpl= gpl->next) {
+				writestruct(wd, DATA, "bGPDlayer", 1, gpl);
 				
-				/* write strokes */
-				for (gps= gpf->strokes.first; gps; gps= gps->next) {
-					writestruct(wd, DATA, "bGPDstroke", 1, gps);
-					writestruct(wd, DATA, "bGPDspoint", gps->totpoints, gps->points);				
+				/* write this layer's frames to file */
+				for (gpf= gpl->frames.first; gpf; gpf= gpf->next) {
+					writestruct(wd, DATA, "bGPDframe", 1, gpf);
+					
+					/* write strokes */
+					for (gps= gpf->strokes.first; gps; gps= gps->next) {
+						writestruct(wd, DATA, "bGPDstroke", 1, gps);
+						writestruct(wd, DATA, "bGPDspoint", gps->totpoints, gps->points);				
+					}
 				}
 			}
 		}
@@ -2137,6 +2139,7 @@ static void write_screens(WriteData *wd, ListBase *scrbase)
 					ConsoleLine *cl;
 
 					for (cl=con->history.first; cl; cl=cl->next) {
+						/* 'len_alloc' is invalid on write, set from 'len' on read */
 						writestruct(wd, DATA, "ConsoleLine", 1, cl);
 						writedata(wd, DATA, cl->len+1, cl->line);
 					}

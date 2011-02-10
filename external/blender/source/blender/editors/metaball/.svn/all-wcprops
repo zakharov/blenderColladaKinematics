@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 80
-/svnroot/bf-blender/!svn/ver/34159/trunk/blender/source/blender/editors/metaball
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/blender/editors/metaball
 END
 SConscript
 K 25
@@ -26,12 +26,6 @@ K 25
 svn:wc:ra_dav:version-url
 V 95
 /svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/editors/metaball/CMakeLists.txt
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 89
-/svnroot/bf-blender/!svn/ver/31223/trunk/blender/source/blender/editors/metaball/Makefile
 END
 mball_edit.c
 K 25

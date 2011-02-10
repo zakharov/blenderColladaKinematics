@@ -1,5 +1,5 @@
 /**
- * $Id: rna_texture.c 34308 2011-01-13 23:16:10Z aligorith $
+ * $Id: rna_texture.c 34544 2011-01-28 14:51:03Z ton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -174,6 +174,7 @@ void rna_TextureSlot_update(Main *bmain, Scene *scene, PointerRNA *ptr)
 	switch(GS(id->name)) {
 		case ID_MA: 
 			WM_main_add_notifier(NC_MATERIAL|ND_SHADING, id);
+			WM_main_add_notifier(NC_MATERIAL|ND_SHADING_DRAW, id);
 			break;
 		case ID_WO: 
 			WM_main_add_notifier(NC_WORLD, id);
