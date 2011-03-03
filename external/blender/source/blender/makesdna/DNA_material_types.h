@@ -1,7 +1,5 @@
-/**
- * blenlib/DNA_material_types.h (mar-2001 nzc)
- *
- * $Id: DNA_material_types.h 33540 2010-12-07 12:58:25Z jhk $ 
+/*
+ * $Id: DNA_material_types.h 34941 2011-02-17 20:48:12Z jesterking $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -30,6 +28,10 @@
  */
 #ifndef DNA_MATERIAL_TYPES_H
 #define DNA_MATERIAL_TYPES_H
+
+/** \file DNA_material_types.h
+ *  \ingroup DNA
+ */
 
 #include "DNA_ID.h"
 #include "DNA_listBase.h"

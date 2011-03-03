@@ -1,5 +1,5 @@
-/**
- * $Id: PIL_dynlib.h 33448 2010-12-03 17:05:21Z campbellbarton $
+/*
+ * $Id: PIL_dynlib.h 35246 2011-02-27 20:37:56Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/blenlib/PIL_dynlib.h
+ *  \ingroup bli
+ */
+
 #ifndef __PIL_DYNLIB_H__
 #define __PIL_DYNLIB_H__
 

@@ -1,4 +1,6 @@
 /*
+ * $Id: paint.c 35247 2011-02-27 20:40:57Z jesterking $
+ *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -23,7 +25,12 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
- */ 
+ */
+
+/** \file blender/blenkernel/intern/paint.c
+ *  \ingroup bke
+ */
+
 
 
 #include "DNA_object_types.h"

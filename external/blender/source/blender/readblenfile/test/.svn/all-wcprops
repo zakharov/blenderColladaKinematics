@@ -1,11 +1,11 @@
 K 25
 svn:wc:ra_dav:version-url
 V 81
-/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/blender/readblenfile/test
+/svnroot/bf-blender/!svn/ver/35106/trunk/blender/source/blender/readblenfile/test
 END
 test.c
 K 25
 svn:wc:ra_dav:version-url
 V 88
-/svnroot/bf-blender/!svn/ver/28254/trunk/blender/source/blender/readblenfile/test/test.c
+/svnroot/bf-blender/!svn/ver/35106/trunk/blender/source/blender/readblenfile/test/test.c
 END

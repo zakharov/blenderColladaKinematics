@@ -1,4 +1,4 @@
-/**
+/*
  * $Id$
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_action/action_ops.c
+ *  \ingroup spaction
+ */
+
 
 #include <stdlib.h>
 #include <math.h>
@@ -58,6 +63,7 @@ void action_operatortypes(void)
 	WM_operatortype_append(ACTION_OT_select_linked);
 	WM_operatortype_append(ACTION_OT_select_more);
 	WM_operatortype_append(ACTION_OT_select_less);
+	WM_operatortype_append(ACTION_OT_select_leftright);
 	
 		/* editing */
 	WM_operatortype_append(ACTION_OT_snap);
@@ -78,6 +84,8 @@ void action_operatortypes(void)
 	
 	WM_operatortype_append(ACTION_OT_previewrange_set);
 	WM_operatortype_append(ACTION_OT_view_all);
+	
+	WM_operatortype_append(ACTION_OT_markers_make_local);
 }
 
 /* ************************** registration - keymaps **********************************/
@@ -96,8 +104,16 @@ static void action_keymap_keyframes (wmKeyConfig *keyconf, wmKeyMap *keymap)
 	kmi= WM_keymap_add_item(keymap, "ACTION_OT_clickselect", SELECTMOUSE, KM_PRESS, KM_ALT|KM_SHIFT, 0);
 		RNA_boolean_set(kmi->ptr, "extend", 1);
 		RNA_boolean_set(kmi->ptr, "column", 1);
-	kmi= WM_keymap_add_item(keymap, "ACTION_OT_clickselect", SELECTMOUSE, KM_PRESS, KM_CTRL, 0);
-		RNA_enum_set(kmi->ptr, "left_right", ACTKEYS_LRSEL_TEST);
+		
+		/* select left/right */
+	WM_keymap_add_item(keymap, "ACTION_OT_select_leftright", SELECTMOUSE, KM_PRESS, KM_CTRL, 0);
+	kmi= WM_keymap_add_item(keymap, "ACTION_OT_select_leftright", SELECTMOUSE, KM_PRESS, KM_CTRL|KM_SHIFT, 0);
+		RNA_boolean_set(kmi->ptr, "extend", 1);
+	
+	kmi= WM_keymap_add_item(keymap, "ACTION_OT_select_leftright", LEFTBRACKETKEY, KM_PRESS, 0, 0);
+		RNA_enum_set(kmi->ptr, "mode", ACTKEYS_LRSEL_LEFT);
+	kmi= WM_keymap_add_item(keymap, "ACTION_OT_select_leftright", RIGHTBRACKETKEY, KM_PRESS, 0, 0);
+		RNA_enum_set(kmi->ptr, "mode", ACTKEYS_LRSEL_RIGHT);
 	
 		/* deselect all */
 	WM_keymap_add_item(keymap, "ACTION_OT_select_all_toggle", AKEY, KM_PRESS, 0, 0);

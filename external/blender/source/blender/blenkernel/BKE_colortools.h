@@ -1,5 +1,5 @@
-/**
- * $Id: BKE_colortools.h 30882 2010-07-30 00:06:59Z broken $ 
+/*
+ * $Id: BKE_colortools.h 34962 2011-02-18 13:05:18Z jesterking $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,10 @@
  */
 #ifndef BKE_COLORTOOLS_H
 #define BKE_COLORTOOLS_H
+
+/** \file BKE_colortools.h
+ *  \ingroup bke
+ */
 
 struct CurveMapping;
 struct CurveMap;

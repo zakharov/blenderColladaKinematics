@@ -1,5 +1,5 @@
 /* 
- * $Id: colortools.c 34175 2011-01-08 12:43:44Z campbellbarton $
+ * $Id: colortools.c 35247 2011-02-27 20:40:57Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL/BL DUAL LICENSE BLOCK *****
  */
+
+/** \file blender/blenkernel/intern/colortools.c
+ *  \ingroup bke
+ */
+
 
 #include <string.h>
 #include <math.h>

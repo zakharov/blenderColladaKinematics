@@ -1,4 +1,4 @@
-/**
+/*
  * $Id$
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
@@ -24,6 +24,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/render/intern/include/render_types.h
+ *  \ingroup render
+ */
+
 
 #ifndef RENDER_TYPES_H
 #define RENDER_TYPES_H

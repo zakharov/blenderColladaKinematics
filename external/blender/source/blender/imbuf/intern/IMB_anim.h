@@ -1,7 +1,7 @@
-/**
+/*
  * allocimbuf.h
  *
- * $Id: IMB_anim.h 34335 2011-01-15 16:14:57Z campbellbarton $
+ * $Id: IMB_anim.h 35239 2011-02-27 20:23:21Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/imbuf/intern/IMB_anim.h
+ *  \ingroup imbuf
+ */
+
 
 #ifndef IMB_ANIM_H
 #define IMB_ANIM_H

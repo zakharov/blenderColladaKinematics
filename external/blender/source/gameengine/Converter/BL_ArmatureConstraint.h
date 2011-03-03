@@ -1,5 +1,5 @@
-/**
- * $Id: BL_ArmatureConstraint.h 32788 2010-10-31 04:11:39Z campbellbarton $
+/*
+ * $Id: BL_ArmatureConstraint.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file BL_ArmatureConstraint.h
+ *  \ingroup bgeconv
+ */
+
 #ifndef __BL_ARMATURECONSTRAINT
 #define __BL_ARMATURECONSTRAINT
 

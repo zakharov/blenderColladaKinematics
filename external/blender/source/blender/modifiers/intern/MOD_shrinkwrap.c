@@ -1,5 +1,5 @@
 /*
-* $Id: MOD_shrinkwrap.c 34587 2011-01-31 20:02:51Z nazgul $
+* $Id: MOD_shrinkwrap.c 35178 2011-02-25 13:57:17Z jesterking $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -30,10 +30,15 @@
 *
 */
 
+/** \file blender/modifiers/intern/MOD_shrinkwrap.c
+ *  \ingroup modifiers
+ */
+
+
 #include <string.h>
 
+#include "BLI_string.h"
 #include "BLI_utildefines.h"
-
 
 #include "BKE_cdderivedmesh.h"
 #include "BKE_modifier.h"
@@ -65,7 +70,7 @@ static void copyData(ModifierData *md, ModifierData *target)
 	tsmd->target	= smd->target;
 	tsmd->auxTarget = smd->auxTarget;
 
-	strcpy(tsmd->vgroup_name, smd->vgroup_name);
+	BLI_strncpy(tsmd->vgroup_name, smd->vgroup_name, sizeof(tsmd->vgroup_name));
 
 	tsmd->keepDist	= smd->keepDist;
 	tsmd->shrinkType= smd->shrinkType;

@@ -1,5 +1,5 @@
-/**
- * $Id: meshlaplacian.h 33468 2010-12-04 13:00:28Z campbellbarton $
+/*
+ * $Id: meshlaplacian.h 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  * ***** END GPL LICENSE BLOCK *****
  * BIF_meshlaplacian.h: Algorithms using the mesh laplacian.
  */
+
+/** \file blender/editors/armature/meshlaplacian.h
+ *  \ingroup edarmature
+ */
+
 
 #ifndef BIF_MESHLAPLACIAN_H
 #define BIF_MESHLAPLACIAN_H

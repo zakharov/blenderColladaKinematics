@@ -1,4 +1,4 @@
-/**
+/*
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,8 +26,13 @@
  * ***** END GPL LICENSE BLOCK *****
  * writeimage.c
  *
- * $Id: writeimage.c 33167 2010-11-19 02:14:18Z campbellbarton $
+ * $Id: writeimage.c 35239 2011-02-27 20:23:21Z jesterking $
  */
+
+/** \file blender/imbuf/intern/writeimage.c
+ *  \ingroup imbuf
+ */
+
 
 #include <stdio.h>
 

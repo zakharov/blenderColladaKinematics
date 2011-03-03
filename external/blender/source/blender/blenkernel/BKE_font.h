@@ -1,7 +1,5 @@
-/**
- * blenlib/BKE_vfont.h (mar-2001 nzc)
- *	
- * $Id: BKE_font.h 33124 2010-11-17 09:45:45Z campbellbarton $ 
+/*
+ * $Id: BKE_font.h 34962 2011-02-18 13:05:18Z jesterking $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -30,6 +28,10 @@
  */
 #ifndef BKE_VFONT_H
 #define BKE_VFONT_H
+
+/** \file BKE_font.h
+ *  \ingroup bke
+ */
 
 #ifdef __cplusplus
 extern "C" {

@@ -1,5 +1,5 @@
-/**
- * $Id: DNA_screen_types.h 34613 2011-02-01 23:41:01Z aligorith $ 
+/*
+ * $Id: DNA_screen_types.h 35300 2011-03-02 14:09:54Z ton $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,10 @@
  */
 #ifndef DNA_SCREEN_TYPES_H
 #define DNA_SCREEN_TYPES_H
+
+/** \file DNA_screen_types.h
+ *  \ingroup DNA
+ */
 
 #include "DNA_listBase.h"
 #include "DNA_view2d_types.h"
@@ -180,6 +184,8 @@ typedef struct ARegion {
 #define AREA_FLAG_DRAWJOINTO	2
 #define AREA_FLAG_DRAWJOINFROM	4
 #define AREA_TEMP_INFO			8
+#define AREA_FLAG_DRAWSPLIT_H	16
+#define AREA_FLAG_DRAWSPLIT_V	32
 
 /* If you change EDGEWIDTH, also do the global arrat edcol[]  */
 #define EDGEWIDTH	1

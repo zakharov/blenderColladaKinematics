@@ -1,5 +1,5 @@
 # -*- mode: cmake; indent-tabs-mode: t; -*-
-# $Id: CMakeLists.txt 34711 2011-02-08 06:22:06Z campbellbarton $
+# $Id: CMakeLists.txt 35327 2011-03-03 12:00:35Z campbellbarton $
 # ***** BEGIN GPL LICENSE BLOCK *****
 #
 # This program is free software; you can redistribute it and/or
@@ -28,8 +28,7 @@
 #-----------------------------------------------------------------------------
 # We don't allow in-source builds. This causes no end of troubles because 
 # all out-of-source builds will use the CMakeCache.txt file there and even 
-# build the libs and objects in it. It will also conflict with the current 
-# Makefile system for Blender
+# build the libs and objects in it.
 
 if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_BINARY_DIR})
 message(FATAL_ERROR "CMake generation for blender is not allowed within the source directory! 
@@ -39,11 +38,11 @@ Remove the CMakeCache.txt file and try again from another folder, e.g.:
 	cd ..
 	mkdir cmake-make 
 	cd cmake-make
-	cmake -G \"Unix Makefiles\" ../blender
+	cmake ../blender
 ")
 endif()
 
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 2.8)
 
 # quiet output for Makefiles, 'make -s' helps too
 # set_property(GLOBAL PROPERTY RULE_MESSAGES OFF)
@@ -70,6 +69,8 @@ get_blender_version()
 # Blender internal features
 option(WITH_INTERNATIONAL "Enable I18N   (International fonts and text)" ON)
 option(WITH_PYTHON        "Enable Embedded Python API" ON)
+option(WITH_PYTHON_SAFETY "Enable internal API error checking to track invalid data to prevent crash on access (at the expense of some effeciency)." OFF)
+option(WITH_PYTHON_MODULE "Enable building as a python module (experemental)" OFF)
 option(WITH_BUILDINFO     "Include extra build details" ON)
 option(WITH_IK_ITASC      "Enable ITASC IK solver" ON)
 option(WITH_FFTW3         "Enable FFTW3 support (Used for smoke and audio effects)" OFF)
@@ -159,7 +160,27 @@ if(NOT WITH_IMAGE_OPENJPEG AND WITH_IMAGE_REDCODE)
 	message(FATAL_ERROR "WITH_IMAGE_REDCODE requires WITH_IMAGE_OPENJPEG")
 endif()
 
+# python module, needs some different options
+if(WITH_PYTHON_MODULE AND WITH_PLAYER)
+	message(FATAL_ERROR "WITH_PYTHON_MODULE requires WITH_PLAYER to be OFF")
+endif()
+
+if(WITH_PYTHON_MODULE AND WITH_PYTHON_INSTALL)
+	message(FATAL_ERROR "WITH_PYTHON_MODULE requires WITH_PYTHON_INSTALL to be OFF")
+endif()
+
 TEST_SSE_SUPPORT()
+
+#-----------------------------------------------------------------------------
+# Initialize un-cached vars, avoid unused warning
+
+# linux only, not cached
+set(WITH_BINRELOC OFF)
+
+# these are added to later on.
+set(C_WARNINGS "")
+set(CXX_WARNINGS "")
+
 
 # disabled for now, not supported
 # option(WITH_WEBPLUGIN     "Enable Web Plugin (Unix only)" OFF)
@@ -227,6 +248,7 @@ if(UNIX AND NOT APPLE)
 		# find_package(PythonLibs)
 		set(PYTHON /usr)
 		set(PYTHON_VERSION 3.1 CACHE STRING "")
+		mark_as_advanced(PYTHON_VERSION)
 		set(PYTHON_INCLUDE_DIRS "${PYTHON}/include/python${PYTHON_VERSION}" CACHE STRING "")
 		mark_as_advanced(PYTHON_INCLUDE_DIRS)
 		# set(PYTHON_BINARY python) # not used yet
@@ -338,17 +360,22 @@ if(UNIX AND NOT APPLE)
 	endif()
 
 	find_package(X11 REQUIRED)
+	find_path(X11_XF86keysym_INCLUDE_PATH X11/XF86keysym.h ${X11_INC_SEARCH_PATH})
+	mark_as_advanced(X11_XF86keysym_INCLUDE_PATH)
 
 	# OpenSuse needs lutil, ArchLinux not, for now keep, can avoid by using --as-needed
 	set(LLIBS "-lutil -lc -lm -lpthread -lstdc++ ${X11_X11_LIB} ${X11_Xinput_LIB}")
 
 	if(CMAKE_SYSTEM_NAME MATCHES "Linux")
-		# BSD's dont use libdl.so
-		list(APPEND LLIBS -ldl)
+		if(NOT WITH_PYTHON_MODULE)
+			# BSD's dont use libdl.so
+			list(APPEND LLIBS -ldl)
 
-		# binreloc is linux only
-		set(BINRELOC ${CMAKE_SOURCE_DIR}/extern/binreloc)
-		set(BINRELOC_INC ${BINRELOC}/include)
+			# binreloc is linux only
+			set(BINRELOC ${CMAKE_SOURCE_DIR}/extern/binreloc)
+			set(BINRELOC_INC ${BINRELOC}/include)
+			set(WITH_BINRELOC ON)
+		endif()
 	endif()
 
 	set(PLATFORM_LINKFLAGS "-pthread")
@@ -890,28 +917,6 @@ elseif(APPLE)
 	endif()
 endif()
 
-
-# buildinfo
-if(WITH_BUILDINFO)
-	# BUILD_PLATFORM and BUILD_PLATFORM are taken from CMake
-	if(UNIX)
-		execute_process(COMMAND date "+%Y-%m-%d" OUTPUT_VARIABLE BUILD_DATE OUTPUT_STRIP_TRAILING_WHITESPACE)
-		execute_process(COMMAND date "+%H:%M:%S" OUTPUT_VARIABLE BUILD_TIME OUTPUT_STRIP_TRAILING_WHITESPACE)  
-		execute_process(COMMAND svnversion ${CMAKE_SOURCE_DIR} OUTPUT_VARIABLE BUILD_REV RESULT_VARIABLE BUILD_REV_RETURN OUTPUT_STRIP_TRAILING_WHITESPACE)
-		if(BUILD_REV_RETURN)
-			set(BUILD_REV "unknown")
-		endif()
-	endif()
-	
-	if(WIN32)
-		execute_process(COMMAND cmd /c date /t OUTPUT_VARIABLE BUILD_DATE OUTPUT_STRIP_TRAILING_WHITESPACE)
-		execute_process(COMMAND cmd /c time /t OUTPUT_VARIABLE BUILD_TIME OUTPUT_STRIP_TRAILING_WHITESPACE)  
-		execute_process(COMMAND svnversion ${CMAKE_SOURCE_DIR} OUTPUT_VARIABLE BUILD_REV RESULT_VARIABLE BUILD_REV_RETURN OUTPUT_STRIP_TRAILING_WHITESPACE)
-		if(BUILD_REV_RETURN)
-			set(BUILD_REV "unknown")
-		endif()
-	endif()
-endif()
 #-----------------------------------------------------------------------------
 # Common.
 
@@ -932,8 +937,15 @@ if(WITH_RAYOPTIMIZATION)
 endif()
 
 if(WITH_IMAGE_OPENJPEG)
-	set(OPENJPEG ${CMAKE_SOURCE_DIR}/extern/libopenjpeg)
-	set(OPENJPEG_INC ${OPENJPEG})
+	if(UNIX AND NOT APPLE)
+		set(OPENJPEG /usr)
+		set(OPENJPEG_INC ${OPENJPEG}/include)
+		set(OPENJPEG_LIB openjpeg)
+		set(OPENJPEG_LIBPATH ${OPENJPEG}/lib)
+	else()
+		set(OPENJPEG ${CMAKE_SOURCE_DIR}/extern/libopenjpeg)
+		set(OPENJPEG_INC ${OPENJPEG})
+	endif()
 endif()
 
 if(WITH_IMAGE_REDCODE)
@@ -1030,6 +1042,9 @@ endif()
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${PLATFORM_CFLAGS} ${C_WARNINGS}")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${PLATFORM_CFLAGS} ${CXX_WARNINGS}")
 
+#-------------------------------------------------------------------------------
+# Global Defines
+
 # better not define flags here but this is a debugging option thats off by default.
 if(WITH_CXX_GUARDEDALLOC)
 	set(CMAKE_CXX_FLAGS " -DWITH_CXX_GUARDEDALLOC -I${CMAKE_SOURCE_DIR}/intern/guardedalloc ${CMAKE_CXX_FLAGS}")
@@ -1060,3 +1075,7 @@ add_subdirectory(source/creator)
 if(WITH_PLAYER)
 	add_subdirectory(source/blenderplayer)
 endif()
+
+#-----------------------------------------------------------------------------
+# CPack for generating packages
+include(build_files/cmake/packaging.cmake)

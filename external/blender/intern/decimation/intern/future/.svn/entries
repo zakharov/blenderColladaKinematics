@@ -1,15 +1,15 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern/decimation/intern/future
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-02-25T10:47:28.630336Z
+35147
+jesterking
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-01-18T22:04:10.663021Z
-b86b2897152c173f4920532fe3105ff3
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:25:43.414297Z
+258e58b6d84fbc3558551c2677aa2811
+2011-02-25T10:47:28.630336Z
+35147
+jesterking
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-2706
+2793
 
 LOD_NdQuadricEditor.cpp
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-01-18T22:04:10.663021Z
-b6eb42fc33e3648d3955077b41eb9066
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:25:43.418297Z
+d02a99f800697a6698164f2d713d8351
+2011-02-25T10:47:28.630336Z
+35147
+jesterking
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-7613
+7697
 
 LOD_NdQSDecimator.h
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-01-18T22:04:10.663021Z
-0761e1e0a802483822afc9ce123076d5
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:43.418297Z
+81c9bae26cb02aa24b1327ad81b53b8b
+2011-02-25T10:47:28.630336Z
+35147
+jesterking
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-3068
+3148
 
 LOD_ExternVColorEditor.h
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-01-18T22:04:10.663021Z
-a5993197757813672ece7bdb38893fd0
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:43.422297Z
+f01ac72eb5a3891f8b0f5b4b810912cc
+2011-02-25T10:47:28.630336Z
+35147
+jesterking
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-1890
+1975
 
 LOD_NdQuadricEditor.h
 file
@@ -168,11 +168,11 @@ file
 
 
 
-2011-01-18T22:04:10.663021Z
-44b799cfde5992adfc0748b75043673c
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:43.422297Z
+afc3337e316403bc96d44e973d809e8a
+2011-02-25T10:47:28.630336Z
+35147
+jesterking
 has-props
 
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-2363
+2445
 
 LOD_NdQuadric.cpp
 file
@@ -202,11 +202,11 @@ file
 
 
 
-2011-01-18T22:04:10.663021Z
-d69c641db5a5a3d0046f8d6f3dc90572
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:25:43.422297Z
+c85d71fffd447c5406702d0cea40bde8
+2011-02-25T10:47:28.630336Z
+35147
+jesterking
 has-props
 
 
@@ -228,7 +228,7 @@ has-props
 
 
 
-5959
+6037
 
 LOD_NdQSDecimator.cpp
 file
@@ -236,11 +236,11 @@ file
 
 
 
-2011-01-18T22:04:10.663021Z
-ce50e6a08f077c979f47184a1c2e4e58
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:25:43.426297Z
+becf230d8d8a16e610581485af2d7bb5
+2011-02-25T10:47:28.630336Z
+35147
+jesterking
 has-props
 
 
@@ -262,7 +262,7 @@ has-props
 
 
 
-11781
+11863
 
 LOD_NdQuadric.h
 file
@@ -270,11 +270,11 @@ file
 
 
 
-2011-01-18T22:04:10.663021Z
-38f36f03197d08c7cf48a5433d2e297f
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:43.426297Z
+367c53961e3f2daa970a31477ed0054b
+2011-02-25T10:47:28.630336Z
+35147
+jesterking
 has-props
 
 
@@ -296,5 +296,5 @@ has-props
 
 
 
-3393
+3469
 

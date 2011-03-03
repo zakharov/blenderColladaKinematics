@@ -1,5 +1,5 @@
-/**
- * $Id: BL_ArmatureChannel.cpp 33088 2010-11-16 01:19:37Z campbellbarton $
+/*
+ * $Id: BL_ArmatureChannel.cpp 35167 2011-02-25 13:30:41Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/Converter/BL_ArmatureChannel.cpp
+ *  \ingroup bgeconv
+ */
+
 
 #include "DNA_armature_types.h"
 #include "BL_ArmatureChannel.h"

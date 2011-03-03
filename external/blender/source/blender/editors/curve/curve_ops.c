@@ -1,5 +1,5 @@
-/**
- * $Id: curve_ops.c 34227 2011-01-10 12:50:46Z mindrones $
+/*
+ * $Id: curve_ops.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  * ***** END GPL LICENSE BLOCK *****
  */
 
+/** \file blender/editors/curve/curve_ops.c
+ *  \ingroup edcurve
+ */
+
+
 #include <stdlib.h>
 #include <math.h>
 
@@ -41,10 +46,10 @@
 #include "WM_api.h"
 #include "WM_types.h"
 
+#include "ED_curve.h"
 #include "ED_object.h"
 #include "ED_screen.h"
 #include "ED_transform.h"
-
 
 #include "curve_intern.h"
 

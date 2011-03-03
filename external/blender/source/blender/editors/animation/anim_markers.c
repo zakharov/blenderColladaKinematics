@@ -1,5 +1,5 @@
-/**
- * $Id: anim_markers.c 34727 2011-02-09 01:05:40Z aligorith $
+/*
+ * $Id: anim_markers.c 35314 2011-03-02 23:40:32Z aligorith $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/animation/anim_markers.c
+ *  \ingroup edanimation
+ */
+
 
 #include <math.h>
 
@@ -205,7 +210,7 @@ void ED_markers_get_minmax (ListBase *markers, short sel, float *first, float *l
 /* --------------------------------- */
 
 /* Adds a marker to list of cfra elems */
-void add_marker_to_cfra_elem(ListBase *lb, TimeMarker *marker, short only_sel)
+static void add_marker_to_cfra_elem(ListBase *lb, TimeMarker *marker, short only_sel)
 {
 	CfraElem *ce, *cen;
 	
@@ -281,7 +286,7 @@ void debug_markers_print_list(ListBase *markers)
 	printf("List of markers follows: -----\n");
 	
 	for (marker = markers->first; marker; marker = marker->next) {
-		printf("\t'%s' on %d at %p with %d\n", marker->name, marker->frame, marker, marker->flag);
+		printf("\t'%s' on %d at %p with %d\n", marker->name, marker->frame, (void *)marker, marker->flag);
 	}
 	
 	printf("End of list ------------------\n");
@@ -341,7 +346,6 @@ static void draw_marker(View2D *v2d, TimeMarker *marker, int cfra, int flag)
 	
 	UI_icon_draw(xpos*xscale-5.0f, 16.0f, icon_id);
 	
-	glBlendFunc(GL_ONE, GL_ZERO);
 	glDisable(GL_BLEND);
 	
 	/* and the marker name too, shifted slightly to the top-right */
@@ -366,7 +370,7 @@ static void draw_marker(View2D *v2d, TimeMarker *marker, int cfra, int flag)
 		}
 
 #ifdef DURIAN_CAMERA_SWITCH
-		if(marker->camera && marker->camera->restrictflag & OB_RESTRICT_RENDER) {
+		if(marker->camera && (marker->camera->restrictflag & OB_RESTRICT_RENDER)) {
 			float col[4];
 			glGetFloatv(GL_CURRENT_COLOR, col);
 			col[3]= 0.4;
@@ -410,7 +414,7 @@ void draw_markers_time(const bContext *C, int flag)
  */
 
 /* maximum y-axis value (in region screen-space) that marker events should still be accepted for  */
-#define ANIMEDIT_MARKER_YAXIS_MAX 	40
+#define ANIMEDIT_MARKER_YAXIS_MAX 	30
 
 /* ------------------------ */
 
@@ -519,7 +523,7 @@ static int ed_marker_add(bContext *C, wmOperator *UNUSED(op))
 	marker = MEM_callocN(sizeof(TimeMarker), "TimeMarker");
 	marker->flag= SELECT;
 	marker->frame= frame;
-	sprintf(marker->name, "F_%02d", frame); // XXX - temp code only
+	BLI_snprintf(marker->name, sizeof(marker->name), "F_%02d", frame); // XXX - temp code only
 	BLI_addtail(markers, marker);
 	
 	WM_event_add_notifier(C, NC_SCENE|ND_MARKERS, NULL);
@@ -747,19 +751,19 @@ static int ed_marker_move_modal(bContext *C, wmOperator *op, wmEvent *evt)
 					if (ELEM(mm->slink->spacetype, SPACE_TIME, SPACE_SOUND)) {
 						SpaceTime *stime= (SpaceTime *)mm->slink;
 						if (stime->flag & TIME_DRAWFRAMES) 
-							sprintf(str, "Marker %d offset %d", selmarker->frame, offs);
+							BLI_snprintf(str, sizeof(str), "Marker %d offset %d", selmarker->frame, offs);
 						else 
-							sprintf(str, "Marker %.2f offset %.2f", FRA2TIME(selmarker->frame), FRA2TIME(offs));
+							BLI_snprintf(str, sizeof(str), "Marker %.2f offset %.2f", FRA2TIME(selmarker->frame), FRA2TIME(offs));
 					}
 					else if (mm->slink->spacetype == SPACE_ACTION) {
 						SpaceAction *saction= (SpaceAction *)mm->slink;
 						if (saction->flag & SACTION_DRAWTIME)
-							sprintf(str, "Marker %.2f offset %.2f", FRA2TIME(selmarker->frame), FRA2TIME(offs));
+							BLI_snprintf(str, sizeof(str), "Marker %.2f offset %.2f", FRA2TIME(selmarker->frame), FRA2TIME(offs));
 						else
-							sprintf(str, "Marker %.2f offset %.2f", (double)(selmarker->frame), (double)(offs));
+							BLI_snprintf(str, sizeof(str), "Marker %.2f offset %.2f", (double)(selmarker->frame), (double)(offs));
 					}
 					else {
-						sprintf(str, "Marker %.2f offset %.2f", (double)(selmarker->frame), (double)(offs));
+						BLI_snprintf(str, sizeof(str), "Marker %.2f offset %.2f", (double)(selmarker->frame), (double)(offs));
 					}
 				}
 				else {
@@ -767,19 +771,19 @@ static int ed_marker_move_modal(bContext *C, wmOperator *op, wmEvent *evt)
 					if (ELEM(mm->slink->spacetype, SPACE_TIME, SPACE_SOUND)) { 
 						SpaceTime *stime= (SpaceTime *)mm->slink;
 						if (stime->flag & TIME_DRAWFRAMES) 
-							sprintf(str, "Marker offset %d ", offs);
+							BLI_snprintf(str, sizeof(str), "Marker offset %d ", offs);
 						else 
-							sprintf(str, "Marker offset %.2f ", FRA2TIME(offs));
+							BLI_snprintf(str, sizeof(str), "Marker offset %.2f ", FRA2TIME(offs));
 					}
 					else if (mm->slink->spacetype == SPACE_ACTION) {
 						SpaceAction *saction= (SpaceAction *)mm->slink;
 						if (saction->flag & SACTION_DRAWTIME)
-							sprintf(str, "Marker offset %.2f ", FRA2TIME(offs));
+							BLI_snprintf(str, sizeof(str), "Marker offset %.2f ", FRA2TIME(offs));
 						else
-							sprintf(str, "Marker offset %.2f ", (double)(offs));
+							BLI_snprintf(str, sizeof(str), "Marker offset %.2f ", (double)(offs));
 					}
 					else {
-						sprintf(str, "Marker offset %.2f ", (double)(offs));
+						BLI_snprintf(str, sizeof(str), "Marker offset %.2f ", (double)(offs));
 					}
 				}
 				
@@ -802,7 +806,7 @@ static int ed_marker_move_modal(bContext *C, wmOperator *op, wmEvent *evt)
 			ed_marker_move_apply(op);
 			// ed_marker_header_update(C, op, str, (int)vec[0]);
 			// strcat(str, str_tx);
-			sprintf(str, "Marker offset %s", str_tx);
+			BLI_snprintf(str, sizeof(str), "Marker offset %s", str_tx);
 			ED_area_headerprint(CTX_wm_area(C), str);
 			
 			WM_event_add_notifier(C, NC_SCENE|ND_MARKERS, NULL);

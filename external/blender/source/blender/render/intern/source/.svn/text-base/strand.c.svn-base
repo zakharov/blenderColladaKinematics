@@ -1,4 +1,4 @@
-/**
+/*
  * $Id$
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/render/intern/source/strand.c
+ *  \ingroup render
+ */
+
 
 #include <math.h>
 #include <string.h>
@@ -314,7 +319,7 @@ struct StrandShadeCache {
 	MemArena *memarena;
 };
 
-StrandShadeCache *strand_shade_cache_create()
+StrandShadeCache *strand_shade_cache_create(void)
 {
 	StrandShadeCache *cache;
 

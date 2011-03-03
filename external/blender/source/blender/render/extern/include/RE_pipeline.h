@@ -1,5 +1,5 @@
-/**
- * $Id: RE_pipeline.h 34715 2011-02-08 10:31:47Z campbellbarton $
+/*
+ * $Id: RE_pipeline.h 35014 2011-02-21 06:58:46Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,10 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file RE_pipeline.h
+ *  \ingroup render
  */
 
 #ifndef RE_PIPELINE_H

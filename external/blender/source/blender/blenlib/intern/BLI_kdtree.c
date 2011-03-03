@@ -1,5 +1,5 @@
-/**
- * $Id: BLI_kdtree.c 32517 2010-10-16 14:32:17Z campbellbarton $
+/*
+ * $Id: BLI_kdtree.c 35246 2011-02-27 20:37:56Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/blenlib/intern/BLI_kdtree.c
+ *  \ingroup bli
+ */
+
 
 
 #include "MEM_guardedalloc.h"
@@ -255,7 +260,7 @@ static void add_nearest(KDTreeNearest *ptn, int *found, int n, int index, float 
 /* finds the nearest n entries in tree to specified coordinates */
 int	BLI_kdtree_find_n_nearest(KDTree *tree, int n, float *co, float *nor, KDTreeNearest *nearest)
 {
-	KDTreeNode *root, *node=0;
+	KDTreeNode *root, *node= NULL;
 	KDTreeNode **stack, *defaultstack[100];
 	float cur_dist;
 	int i, totstack, cur=0, found=0;
@@ -370,7 +375,7 @@ static void add_in_range(KDTreeNearest **ptn, int found, int *totfoundstack, int
 }
 int BLI_kdtree_range_search(KDTree *tree, float range, float *co, float *nor, KDTreeNearest **nearest)
 {
-	KDTreeNode *root, *node=0;
+	KDTreeNode *root, *node= NULL;
 	KDTreeNode **stack, *defaultstack[100];
 	KDTreeNearest *foundstack=NULL;
 	float range2 = range*range, dist2;

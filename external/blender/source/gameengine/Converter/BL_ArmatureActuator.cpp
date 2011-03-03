@@ -1,5 +1,5 @@
-/**
- * $Id: BL_ArmatureActuator.cpp 32788 2010-10-31 04:11:39Z campbellbarton $
+/*
+ * $Id: BL_ArmatureActuator.cpp 35167 2011-02-25 13:30:41Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/Converter/BL_ArmatureActuator.cpp
+ *  \ingroup bgeconv
+ */
+
 
 #include "DNA_action_types.h"
 #include "DNA_constraint_types.h"

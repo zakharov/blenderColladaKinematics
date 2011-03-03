@@ -1,7 +1,7 @@
 /*
  * initrender_ext.h
  *
- * $Id: initrender.h 26841 2010-02-12 13:34:04Z campbellbarton $
+ * $Id: initrender.h 35233 2011-02-27 19:31:27Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/render/intern/include/initrender.h
+ *  \ingroup render
+ */
+
 
 #ifndef INITRENDER_H
 #define INITRENDER_H 

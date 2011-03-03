@@ -1,6 +1,6 @@
 /*
  * VectorValue.h: interface for the CVectorValue class.
- * $Id: VectorValue.h 29259 2010-06-06 01:15:44Z campbellbarton $
+ * $Id: VectorValue.h 35063 2011-02-22 10:33:14Z jesterking $
  * Copyright (c) 1996-2000 Erwin Coumans <coockie@acm.org>
  *
  * Permission to use, copy, modify, distribute and sell this software
@@ -12,6 +12,11 @@
  * purpose.  It is provided "as is" without express or implied warranty.
  *
  */
+
+/** \file VectorValue.h
+ *  \ingroup expressions
+ */
+
 #if !defined _VECTORVALUE_H
 #define _VECTORVALUE_H
 

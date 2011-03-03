@@ -1,5 +1,5 @@
-/**
- * $Id: math_geom_inline.c 34335 2011-01-15 16:14:57Z campbellbarton $
+/*
+ * $Id: math_geom_inline.c 35246 2011-02-27 20:37:56Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  * */
+
+/** \file blender/blenlib/intern/math_geom_inline.c
+ *  \ingroup bli
+ */
+
 
 #include "BLI_math.h"
 

@@ -1,5 +1,5 @@
-/**
- * $Id: DNA_lattice_types.h 34078 2011-01-05 00:37:21Z aligorith $ 
+/*
+ * $Id: DNA_lattice_types.h 34941 2011-02-17 20:48:12Z jesterking $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,10 @@
  */
 #ifndef DNA_LATTICE_TYPES_H
 #define DNA_LATTICE_TYPES_H
+
+/** \file DNA_lattice_types.h
+ *  \ingroup DNA
+ */
 
 #include "DNA_ID.h"
 

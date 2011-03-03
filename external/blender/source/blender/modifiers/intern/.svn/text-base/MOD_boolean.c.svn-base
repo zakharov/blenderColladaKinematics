@@ -30,6 +30,11 @@
 *
 */
 
+/** \file blender/modifiers/intern/MOD_boolean.c
+ *  \ingroup modifiers
+ */
+
+
 #include "DNA_object_types.h"
 
 #include "BLI_utildefines.h"
@@ -41,6 +46,7 @@
 #include "depsgraph_private.h"
 
 #include "MOD_boolean_util.h"
+#include "MOD_util.h"
 
 
 static void copyData(ModifierData *md, ModifierData *target)

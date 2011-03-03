@@ -1,7 +1,7 @@
-/**
+/*
  * Quicktime_import.h
  *
- * $Id: quicktime_import.h 33167 2010-11-19 02:14:18Z campbellbarton $
+ * $Id: quicktime_import.h 35235 2011-02-27 20:01:38Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/quicktime/quicktime_import.h
+ *  \ingroup quicktime
+ */
+
 
 
 #ifndef __QUICKTIME_IMP_H__

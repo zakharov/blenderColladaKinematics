@@ -1,4 +1,7 @@
-/* $Id: FilterNormal.cpp 22330 2009-08-10 00:07:34Z campbellbarton $
+/** \file gameengine/VideoTexture/FilterNormal.cpp
+ *  \ingroup bgevideotex
+ */
+/* $Id: FilterNormal.cpp 35176 2011-02-25 13:39:34Z jesterking $
 -----------------------------------------------------------------------------
 This source file is part of VideoTexture library
 

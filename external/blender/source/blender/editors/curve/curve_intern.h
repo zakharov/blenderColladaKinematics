@@ -1,5 +1,5 @@
-/**
- * $Id: curve_intern.h 33435 2010-12-03 01:52:28Z campbellbarton $
+/*
+ * $Id: curve_intern.h 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/curve/curve_intern.h
+ *  \ingroup edcurve
+ */
+
 
 #ifndef ED_CURVE_INTERN_H
 #define ED_CURVE_INTERN_H

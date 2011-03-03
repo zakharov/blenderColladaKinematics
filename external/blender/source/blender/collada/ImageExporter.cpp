@@ -1,5 +1,5 @@
-/**
- * $Id: ImageExporter.cpp 33274 2010-11-23 23:58:12Z jesterking $
+/*
+ * $Id: ImageExporter.cpp 35243 2011-02-27 20:30:35Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -22,6 +22,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/collada/ImageExporter.cpp
+ *  \ingroup collada
+ */
+
 
 #include "COLLADABUURI.h"
 #include "COLLADASWImage.h"

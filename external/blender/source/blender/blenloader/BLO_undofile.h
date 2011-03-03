@@ -1,5 +1,5 @@
 /*
- * $Id: BLO_undofile.h 27639 2010-03-21 01:14:04Z gsrb3d $
+ * $Id: BLO_undofile.h 35245 2011-02-27 20:35:41Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -30,6 +30,10 @@
 
 #ifndef BLO_UNDOFILE_H
 #define BLO_UNDOFILE_H
+
+/** \file BLO_undofile.h
+ *  \ingroup blenloader
+ */
 
 typedef struct {
 	void *next, *prev;

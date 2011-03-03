@@ -1,5 +1,5 @@
-/**
- * $Id: messaging.c 28254 2010-04-18 10:28:37Z campbellbarton $
+/*
+ * $Id: messaging.c 35163 2011-02-25 13:24:53Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  * ***** END GPL LICENSE BLOCK *****
  * A message and error sink for c and c++
  */
+
+/** \file kernel/gen_messaging/intern/messaging.c
+ *  \ingroup genmess
+ */
+
 
 
 #include "GEN_messaging.h"

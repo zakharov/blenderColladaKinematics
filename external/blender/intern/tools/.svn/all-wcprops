@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 61
-/svnroot/bf-blender/!svn/ver/34637/trunk/blender/intern/tools
+/svnroot/bf-blender/!svn/ver/35260/trunk/blender/intern/tools
 END
 dump_rna2xml.py
 K 25
 svn:wc:ra_dav:version-url
 V 77
-/svnroot/bf-blender/!svn/ver/34637/trunk/blender/intern/tools/dump_rna2xml.py
+/svnroot/bf-blender/!svn/ver/35260/trunk/blender/intern/tools/dump_rna2xml.py
 END
 pydna.py
 K 25
@@ -25,5 +25,5 @@ bpy_introspect_ui.py
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/svnroot/bf-blender/!svn/ver/34637/trunk/blender/intern/tools/bpy_introspect_ui.py
+/svnroot/bf-blender/!svn/ver/34890/trunk/blender/intern/tools/bpy_introspect_ui.py
 END

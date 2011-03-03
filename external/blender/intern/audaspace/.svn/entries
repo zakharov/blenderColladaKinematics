@@ -1,15 +1,15 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern/audaspace
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-02-03T13:25:05.050761Z
-34626
-nexyon
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 
 
 
@@ -26,13 +26,22 @@ nexyon
 
 954f8c5b-7b00-dc11-b283-0030488c597c
 
+intern
+dir
+
 Python
 dir
 
 SDL
 dir
 
+ffmpeg
+dir
+
 sndfile
+dir
+
+fftw
 dir
 
 SRC
@@ -44,7 +53,7 @@ file
 
 
 
-2011-01-18T22:04:07.833021Z
+2011-03-03T12:25:18.630297Z
 68ebfb52d3163ddc1e501b04d2e7e355
 2010-11-21T14:32:55.729393Z
 33212
@@ -72,49 +81,6 @@ has-props
 
 1502
 
-intern
-dir
-
-ffmpeg
-dir
-
-COPYING.LESSER
-file
-
-
-
-
-2011-01-18T22:04:07.833021Z
-b52f2d57d10c4f7ee67a7eb9615d5d24
-2009-08-09T21:16:39.341510Z
-22326
-nexyon
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7637
-
-fftw
-dir
-
 jack
 dir
 
@@ -124,10 +90,10 @@ file
 
 
 
-2011-01-18T22:04:07.833021Z
-d32239bcb673463ab874e80d47fae504
-2009-08-09T21:16:39.341510Z
-22326
+2011-03-03T12:25:18.630297Z
+7316c8a55f6166386b7b0bf7a239839b
+2011-02-18T23:47:37.358430Z
+34981
 nexyon
 
 
@@ -150,7 +116,7 @@ nexyon
 
 
 
-35147
+17840
 
 FX
 dir
@@ -161,7 +127,7 @@ file
 
 
 
-2011-02-10T19:48:33.185667Z
+2011-03-03T12:25:18.634297Z
 6b4d02b45792ead6dd598b407cb037f3
 2011-01-25T14:43:13.999734Z
 34486

@@ -1,5 +1,5 @@
-/**
- * $Id: rayobject_hint.h 34656 2011-02-05 13:41:29Z blendix $
+/*
+ * $Id: rayobject_hint.h 35233 2011-02-27 19:31:27Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/render/intern/raytrace/rayobject_hint.h
+ *  \ingroup render
+ */
+
 
 #ifndef RE_RAYTRACE_RAYOBJECT_HINT_H
 #define RE_RAYTRACE_RAYOBJECT_HINT_H

@@ -1,5 +1,5 @@
 /*
- * $Id: KX_StateActuator.h 26841 2010-02-12 13:34:04Z campbellbarton $
+ * $Id: KX_StateActuator.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,7 +25,11 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
- * Actuator to toggle visibility/invisibility of objects
+ */
+
+/** \file KX_StateActuator.h
+ *  \ingroup ketsji
+ *  \brief Actuator to toggle visibility/invisibility of objects
  */
 
 #ifndef __KX_STATEACTUATOR

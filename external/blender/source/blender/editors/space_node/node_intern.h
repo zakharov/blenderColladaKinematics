@@ -1,5 +1,5 @@
-/**
- * $Id: node_intern.h 34717 2011-02-08 12:54:32Z lukastoenne $
+/*
+ * $Id: node_intern.h 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_node/node_intern.h
+ *  \ingroup spnode
+ */
+
 #ifndef ED_NODE_INTERN_H
 #define ED_NODE_INTERN_H
 
@@ -103,6 +108,10 @@ void NODE_OT_links_cut(struct wmOperatorType *ot);
 void NODE_OT_group_make(struct wmOperatorType *ot);
 void NODE_OT_group_ungroup(struct wmOperatorType *ot);
 void NODE_OT_group_edit(struct wmOperatorType *ot);
+void NODE_OT_group_socket_add(struct wmOperatorType *ot);
+void NODE_OT_group_socket_remove(struct wmOperatorType *ot);
+void NODE_OT_group_socket_move_up(struct wmOperatorType *ot);
+void NODE_OT_group_socket_move_down(struct wmOperatorType *ot);
 
 void NODE_OT_mute_toggle(struct wmOperatorType *ot);
 void NODE_OT_hide_toggle(struct wmOperatorType *ot);
@@ -120,6 +129,8 @@ void NODE_OT_backimage_zoom(struct wmOperatorType *ot);
 void NODE_OT_backimage_sample(wmOperatorType *ot);
 
 void NODE_OT_add_file(struct wmOperatorType *ot);
+
+extern const char *node_context_dir[];
 
 // XXXXXX
 

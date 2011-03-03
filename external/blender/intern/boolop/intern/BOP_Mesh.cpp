@@ -1,6 +1,6 @@
-/**
+/*
  *
- * $Id: BOP_Mesh.cpp 26841 2010-02-12 13:34:04Z campbellbarton $
+ * $Id: BOP_Mesh.cpp 35143 2011-02-25 10:32:33Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file boolop/intern/BOP_Mesh.cpp
+ *  \ingroup boolopintern
+ */
+
  
 #include "BOP_Mesh.h"
 #include "BOP_MathUtils.h"

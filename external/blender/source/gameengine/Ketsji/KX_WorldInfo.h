@@ -1,5 +1,5 @@
-/**
- * $Id: KX_WorldInfo.h 34393 2011-01-18 22:27:18Z dfelinto $
+/*
+ * $Id: KX_WorldInfo.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file KX_WorldInfo.h
+ *  \ingroup ketsji
+ */
+
 #ifndef __KX_WORLDINFO_H
 #define __KX_WORLDINFO_H
 

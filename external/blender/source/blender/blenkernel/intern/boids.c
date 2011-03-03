@@ -1,7 +1,7 @@
 /* boids.c
  *
  *
- * $Id: boids.c 34160 2011-01-07 19:18:31Z campbellbarton $
+ * $Id: boids.c 35247 2011-02-27 20:40:57Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/blenkernel/intern/boids.c
+ *  \ingroup bke
+ */
+
 
 #include <string.h>
 #include <math.h>
@@ -1470,7 +1475,7 @@ BoidRule *boid_new_rule(int type)
 
 	rule->type = type;
 	rule->flag |= BOIDRULE_IN_AIR|BOIDRULE_ON_LAND;
-	strcpy(rule->name, boidrule_type_items[type-1].name);
+	BLI_strncpy(rule->name, boidrule_type_items[type-1].name, sizeof(rule->name));
 
 	return rule;
 }

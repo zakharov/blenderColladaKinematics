@@ -1,6 +1,6 @@
-/**
+/*
  *	
- * $Id: BKE_bullet.h 26841 2010-02-12 13:34:04Z campbellbarton $
+ * $Id: BKE_bullet.h 34962 2011-02-18 13:05:18Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -29,6 +29,10 @@
  */
 #ifndef BKE_BULLET_H
 #define BKE_BULLET_H
+
+/** \file BKE_bullet.h
+ *  \ingroup bke
+ */
 
 struct BulletSoftBody;
 

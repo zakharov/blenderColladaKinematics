@@ -1,5 +1,5 @@
 /* 
- * $Id: mathutils_geometry.c 34380 2011-01-18 01:58:19Z campbellbarton $
+ * $Id: mathutils_geometry.c 35267 2011-02-28 18:42:41Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,13 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/python/generic/mathutils_geometry.c
+ *  \ingroup pygen
+ */
+
+
+#include <Python.h>
 
 #include "mathutils_geometry.h"
 
@@ -85,7 +92,7 @@ static PyObject *M_Geometry_intersect_ray_tri(PyObject *UNUSED(self), PyObject* 
 		return NULL;
 	}
 
-	if(!BaseMath_ReadCallback(vec1) || !BaseMath_ReadCallback(vec2) || !BaseMath_ReadCallback(vec3) || !BaseMath_ReadCallback(ray) || !BaseMath_ReadCallback(ray_off))
+	if(BaseMath_ReadCallback(vec1) == -1 || BaseMath_ReadCallback(vec2) == -1 || BaseMath_ReadCallback(vec3) == -1 || BaseMath_ReadCallback(ray) == -1 || BaseMath_ReadCallback(ray_off) == -1)
 		return NULL;
 
 	VECCOPY(v1, vec1->vec);
@@ -172,7 +179,7 @@ static PyObject *M_Geometry_intersect_line_line(PyObject *UNUSED(self), PyObject
 		return NULL;
 	}
 
-	if(!BaseMath_ReadCallback(vec1) || !BaseMath_ReadCallback(vec2) || !BaseMath_ReadCallback(vec3) || !BaseMath_ReadCallback(vec4))
+	if(BaseMath_ReadCallback(vec1) == -1 || BaseMath_ReadCallback(vec2) == -1 || BaseMath_ReadCallback(vec3) == -1 || BaseMath_ReadCallback(vec4) == -1)
 		return NULL;
 
 	if(vec1->size == 3 || vec1->size == 2) {
@@ -258,7 +265,7 @@ static PyObject *M_Geometry_normal(PyObject *UNUSED(self), PyObject* args)
 			return NULL;
 		}
 
-		if(!BaseMath_ReadCallback(vec1) || !BaseMath_ReadCallback(vec2) || !BaseMath_ReadCallback(vec3))
+		if(BaseMath_ReadCallback(vec1) == -1 || BaseMath_ReadCallback(vec2) == -1 || BaseMath_ReadCallback(vec3) == -1)
 			return NULL;
 
 		normal_tri_v3(n, vec1->vec, vec2->vec, vec3->vec);
@@ -276,7 +283,7 @@ static PyObject *M_Geometry_normal(PyObject *UNUSED(self), PyObject* args)
 			return NULL;
 		}
 
-		if(!BaseMath_ReadCallback(vec1) || !BaseMath_ReadCallback(vec2) || !BaseMath_ReadCallback(vec3) || !BaseMath_ReadCallback(vec4))
+		if(BaseMath_ReadCallback(vec1) == -1 || BaseMath_ReadCallback(vec2) == -1 || BaseMath_ReadCallback(vec3) == -1 || BaseMath_ReadCallback(vec4) == -1)
 			return NULL;
 
 		normal_quad_v3(n, vec1->vec, vec2->vec, vec3->vec, vec4->vec);
@@ -313,7 +320,7 @@ static PyObject *M_Geometry_area_tri(PyObject *UNUSED(self), PyObject* args)
 		return NULL;
 	}
 
-	if(!BaseMath_ReadCallback(vec1) || !BaseMath_ReadCallback(vec2) || !BaseMath_ReadCallback(vec3))
+	if(BaseMath_ReadCallback(vec1) == -1 || BaseMath_ReadCallback(vec2) == -1 || BaseMath_ReadCallback(vec3) == -1)
 		return NULL;
 
 	if (vec1->size == 3) {
@@ -390,7 +397,7 @@ static PyObject *M_Geometry_tesselate_polygon(PyObject *UNUSED(self), PyObject *
 				polyVec= PySequence_GetItem(polyLine, index);
 				if(VectorObject_Check(polyVec)) {
 					
-					if(!BaseMath_ReadCallback((VectorObject *)polyVec))
+					if(BaseMath_ReadCallback((VectorObject *)polyVec) == -1)
 						ls_error= 1;
 					
 					fp[0]= ((VectorObject *)polyVec)->vec[0];
@@ -477,7 +484,7 @@ static PyObject *M_Geometry_intersect_line_line_2d(PyObject *UNUSED(self), PyObj
 		return NULL;
 	}
 	
-	if(!BaseMath_ReadCallback(line_a1) || !BaseMath_ReadCallback(line_a2) || !BaseMath_ReadCallback(line_b1) || !BaseMath_ReadCallback(line_b2))
+	if(BaseMath_ReadCallback(line_a1) == -1 || BaseMath_ReadCallback(line_a2) == -1 || BaseMath_ReadCallback(line_b1) == -1 || BaseMath_ReadCallback(line_b2) == -1)
 		return NULL;
 
 	if(isect_seg_seg_v2_point(line_a1->vec, line_a2->vec, line_b1->vec, line_b2->vec, vi) == 1) {
@@ -516,7 +523,7 @@ static PyObject *M_Geometry_intersect_point_line(PyObject *UNUSED(self), PyObjec
 		return NULL;
 	}
 	
-	if(!BaseMath_ReadCallback(pt) || !BaseMath_ReadCallback(line_1) || !BaseMath_ReadCallback(line_2))
+	if(BaseMath_ReadCallback(pt) == -1 || BaseMath_ReadCallback(line_1) == -1 || BaseMath_ReadCallback(line_2) == -1)
 		return NULL;
 	
 	/* accept 2d verts */
@@ -566,7 +573,7 @@ static PyObject *M_Geometry_intersect_point_tri_2d(PyObject *UNUSED(self), PyObj
 		return NULL;
 	}
 	
-	if(!BaseMath_ReadCallback(pt_vec) || !BaseMath_ReadCallback(tri_p1) || !BaseMath_ReadCallback(tri_p2) || !BaseMath_ReadCallback(tri_p3))
+	if(BaseMath_ReadCallback(pt_vec) == -1 || BaseMath_ReadCallback(tri_p1) == -1 || BaseMath_ReadCallback(tri_p2) == -1 || BaseMath_ReadCallback(tri_p3) == -1)
 		return NULL;
 	
 	return PyLong_FromLong(isect_point_tri_v2(pt_vec->vec, tri_p1->vec, tri_p2->vec, tri_p3->vec));
@@ -603,7 +610,7 @@ static PyObject *M_Geometry_intersect_point_quad_2d(PyObject *UNUSED(self), PyOb
 		return NULL;
 	}
 	
-	if(!BaseMath_ReadCallback(pt_vec) || !BaseMath_ReadCallback(quad_p1) || !BaseMath_ReadCallback(quad_p2) || !BaseMath_ReadCallback(quad_p3) || !BaseMath_ReadCallback(quad_p4))
+	if(BaseMath_ReadCallback(pt_vec) == -1 || BaseMath_ReadCallback(quad_p1) == -1 || BaseMath_ReadCallback(quad_p2) == -1 || BaseMath_ReadCallback(quad_p3) == -1 || BaseMath_ReadCallback(quad_p4) == -1)
 		return NULL;
 	
 	return PyLong_FromLong(isect_point_quad_v2(pt_vec->vec, quad_p1->vec, quad_p2->vec, quad_p3->vec, quad_p4->vec));
@@ -760,7 +767,7 @@ static PyObject *M_Geometry_interpolate_bezier(PyObject *UNUSED(self), PyObject*
 		return NULL;
 	}
 
-	if(!BaseMath_ReadCallback(vec_k1) || !BaseMath_ReadCallback(vec_h1) || !BaseMath_ReadCallback(vec_k2) || !BaseMath_ReadCallback(vec_h2))
+	if(BaseMath_ReadCallback(vec_k1) == -1 || BaseMath_ReadCallback(vec_h1) == -1 || BaseMath_ReadCallback(vec_k2) == -1 || BaseMath_ReadCallback(vec_h2) == -1)
 		return NULL;
 
 	dims= MAX4(vec_k1->size, vec_h1->size, vec_h2->size, vec_k2->size);
@@ -844,7 +851,7 @@ static PyObject *M_Geometry_barycentric_transform(PyObject *UNUSED(self), PyObje
 	return newVectorObject(vec, 3, Py_NEW, NULL);
 }
 
-struct PyMethodDef M_Geometry_methods[]= {
+static PyMethodDef M_Geometry_methods[]= {
 	{"intersect_ray_tri", (PyCFunction) M_Geometry_intersect_ray_tri, METH_VARARGS, M_Geometry_intersect_ray_tri_doc},
 	{"intersect_point_line", (PyCFunction) M_Geometry_intersect_point_line, METH_VARARGS, M_Geometry_intersect_point_line_doc},
 	{"intersect_point_tri_2d", (PyCFunction) M_Geometry_intersect_point_tri_2d, METH_VARARGS, M_Geometry_intersect_point_tri_2d_doc},
@@ -866,10 +873,10 @@ static struct PyModuleDef M_Geometry_module_def= {
 	M_Geometry_doc,  /* m_doc */
 	0,  /* m_size */
 	M_Geometry_methods,  /* m_methods */
-	0,  /* m_reload */
-	0,  /* m_traverse */
-	0,  /* m_clear */
-	0,  /* m_free */
+	NULL,  /* m_reload */
+	NULL,  /* m_traverse */
+	NULL,  /* m_clear */
+	NULL,  /* m_free */
 };
 
 /*----------------------------MODULE INIT-------------------------*/

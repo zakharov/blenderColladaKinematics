@@ -1,5 +1,5 @@
-/**
- * $Id: mmap_win.c 33298 2010-11-24 20:56:25Z campbellbarton $
+/*
+ * $Id: mmap_win.c 35153 2011-02-25 11:41:12Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file guardedalloc/intern/mmap_win.c
+ *  \ingroup MEM
+ */
+
  
 #if defined(WIN32)
 

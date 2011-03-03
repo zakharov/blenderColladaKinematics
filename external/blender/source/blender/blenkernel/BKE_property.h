@@ -1,7 +1,5 @@
-/**
- * blenkernel/BKE_property.h (mar-2001 nzc)
- *
- * $Id: BKE_property.h 33448 2010-12-03 17:05:21Z campbellbarton $ 
+/*
+ * $Id: BKE_property.h 34962 2011-02-18 13:05:18Z jesterking $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -30,6 +28,10 @@
  */
 #ifndef BKE_PROPERTY_H
 #define BKE_PROPERTY_H
+
+/** \file BKE_property.h
+ *  \ingroup bke
+ */
 
 struct bProperty;
 struct ListBase;

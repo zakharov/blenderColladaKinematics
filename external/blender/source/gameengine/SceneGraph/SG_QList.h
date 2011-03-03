@@ -1,5 +1,5 @@
-/**
- * $Id: SG_QList.h 29259 2010-06-06 01:15:44Z campbellbarton $
+/*
+ * $Id: SG_QList.h 35082 2011-02-22 19:30:37Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file SG_QList.h
+ *  \ingroup bgesg
+ */
+ 
 #ifndef __SG_QLIST
 #define __SG_QLIST
 

@@ -1,4 +1,7 @@
-/* $Id: ImageBase.cpp 33998 2011-01-02 10:05:22Z moguri $
+/** \file gameengine/VideoTexture/ImageBase.cpp
+ *  \ingroup bgevideotex
+ */
+/* $Id: ImageBase.cpp 35176 2011-02-25 13:39:34Z jesterking $
 -----------------------------------------------------------------------------
 This source file is part of VideoTexture library
 

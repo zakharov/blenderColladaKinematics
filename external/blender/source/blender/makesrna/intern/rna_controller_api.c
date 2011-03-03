@@ -1,5 +1,5 @@
-/**
- * $Id: rna_controller_api.c 30190 2010-07-10 21:15:10Z dfelinto $
+/*
+ * $Id: rna_controller_api.c 35238 2011-02-27 20:20:01Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/makesrna/intern/rna_controller_api.c
+ *  \ingroup RNA
+ */
+
 
 #include <stdlib.h>
 #include <stdio.h>

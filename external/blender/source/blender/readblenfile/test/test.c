@@ -1,5 +1,5 @@
-/**
- * $Id: test.c 28254 2010-04-18 10:28:37Z campbellbarton $
+/*
+ * $Id: test.c 35106 2011-02-23 10:52:22Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *

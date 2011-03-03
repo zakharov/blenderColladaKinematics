@@ -1,5 +1,5 @@
-/**
- * $Id: BKE_animsys.h 33934 2010-12-29 11:51:53Z aligorith $
+/*
+ * $Id: BKE_animsys.h 34962 2011-02-18 13:05:18Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
 
 #ifndef BKE_ANIM_SYS_H
 #define BKE_ANIM_SYS_H
+
+/** \file BKE_animsys.h
+ *  \ingroup bke
+ *  \author Joshua Leung
+ */
 
 struct ID;
 struct ListBase;

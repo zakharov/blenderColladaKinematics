@@ -1,5 +1,5 @@
-/**
- * $Id: file_intern.h 33442 2010-12-03 12:30:59Z campbellbarton $
+/*
+ * $Id: file_intern.h 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_file/file_intern.h
+ *  \ingroup spfile
+ */
+
 #ifndef ED_FILE_INTERN_H
 #define ED_FILE_INTERN_H
 

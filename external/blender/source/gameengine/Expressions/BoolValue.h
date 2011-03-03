@@ -1,6 +1,6 @@
 /*
  * BoolValue.h: interface for the CBoolValue class.
- * $Id: BoolValue.h 32788 2010-10-31 04:11:39Z campbellbarton $
+ * $Id: BoolValue.h 35063 2011-02-22 10:33:14Z jesterking $
  * Copyright (c) 1996-2000 Erwin Coumans <coockie@acm.org>
  *
  * Permission to use, copy, modify, distribute and sell this software
@@ -12,6 +12,11 @@
  * purpose.  It is provided "as is" without express or implied warranty.
  *
  */
+
+/** \file BoolValue.h
+ *  \ingroup expressions
+ */
+
 #if !defined _BOOLVALUE_H
 #define _BOOLVALUE_H
 

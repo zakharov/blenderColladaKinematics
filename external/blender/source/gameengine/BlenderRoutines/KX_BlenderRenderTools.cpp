@@ -1,5 +1,5 @@
-/**
- * $Id: KX_BlenderRenderTools.cpp 33707 2010-12-16 10:25:41Z dfelinto $
+/*
+ * $Id: KX_BlenderRenderTools.cpp 35166 2011-02-25 13:29:48Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/BlenderRoutines/KX_BlenderRenderTools.cpp
+ *  \ingroup blroutines
+ */
+
 
 #include "GL/glew.h"
 

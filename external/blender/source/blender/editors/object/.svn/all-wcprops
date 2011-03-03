@@ -1,107 +1,107 @@
 K 25
 svn:wc:ra_dav:version-url
 V 78
-/svnroot/bf-blender/!svn/ver/34762/trunk/blender/source/blender/editors/object
+/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/object
 END
 object_shapekey.c
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/svnroot/bf-blender/!svn/ver/34159/trunk/blender/source/blender/editors/object/object_shapekey.c
+/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/object/object_shapekey.c
 END
 object_transform.c
 K 25
 svn:wc:ra_dav:version-url
 V 97
-/svnroot/bf-blender/!svn/ver/34742/trunk/blender/source/blender/editors/object/object_transform.c
+/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/object/object_transform.c
 END
 object_select.c
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/34159/trunk/blender/source/blender/editors/object/object_select.c
+/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/object/object_select.c
 END
 SConscript
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/blender/editors/object/SConscript
+/svnroot/bf-blender/!svn/ver/35028/trunk/blender/source/blender/editors/object/SConscript
 END
 object_vgroup.c
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/34701/trunk/blender/source/blender/editors/object/object_vgroup.c
+/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/object/object_vgroup.c
 END
 object_constraint.c
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/svnroot/bf-blender/!svn/ver/34710/trunk/blender/source/blender/editors/object/object_constraint.c
-END
-object_edit.c
-K 25
-svn:wc:ra_dav:version-url
-V 92
-/svnroot/bf-blender/!svn/ver/34762/trunk/blender/source/blender/editors/object/object_edit.c
+/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/object/object_constraint.c
 END
 object_lattice.c
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svnroot/bf-blender/!svn/ver/34273/trunk/blender/source/blender/editors/object/object_lattice.c
+/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/object/object_lattice.c
+END
+object_edit.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/object/object_edit.c
 END
 object_add.c
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svnroot/bf-blender/!svn/ver/34749/trunk/blender/source/blender/editors/object/object_add.c
+/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/object/object_add.c
 END
 object_group.c
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/34159/trunk/blender/source/blender/editors/object/object_group.c
+/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/object/object_group.c
 END
 object_modifier.c
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/svnroot/bf-blender/!svn/ver/34326/trunk/blender/source/blender/editors/object/object_modifier.c
-END
-object_hook.c
-K 25
-svn:wc:ra_dav:version-url
-V 92
-/svnroot/bf-blender/!svn/ver/34159/trunk/blender/source/blender/editors/object/object_hook.c
+/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/object/object_modifier.c
 END
 object_relations.c
 K 25
 svn:wc:ra_dav:version-url
 V 97
-/svnroot/bf-blender/!svn/ver/34755/trunk/blender/source/blender/editors/object/object_relations.c
+/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/object/object_relations.c
+END
+object_hook.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/object/object_hook.c
 END
 object_ops.c
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svnroot/bf-blender/!svn/ver/34468/trunk/blender/source/blender/editors/object/object_ops.c
+/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/object/object_ops.c
 END
 object_bake.c
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/34159/trunk/blender/source/blender/editors/object/object_bake.c
+/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/object/object_bake.c
 END
 object_intern.h
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/34468/trunk/blender/source/blender/editors/object/object_intern.h
+/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/object/object_intern.h
 END
 CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/editors/object/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/35028/trunk/blender/source/blender/editors/object/CMakeLists.txt
 END

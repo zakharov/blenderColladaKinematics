@@ -1,9 +1,7 @@
-/**
- * avirgb.c
+/*
+ * $Id: avirgb.c 35249 2011-02-27 20:43:42Z jesterking $
  *
  * This is external code. Converts rgb-type avi-s.
- *
- * $Id: avirgb.c 32532 2010-10-17 06:38:56Z campbellbarton $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -31,6 +29,11 @@
  * ***** END GPL LICENSE BLOCK *****
  *
  */
+
+/** \file blender/avi/intern/avirgb.c
+ *  \ingroup avi
+ */
+
 
 #include "AVI_avi.h"
 #include <stdlib.h>

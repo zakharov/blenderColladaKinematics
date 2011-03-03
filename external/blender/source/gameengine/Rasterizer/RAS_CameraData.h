@@ -1,5 +1,5 @@
-/**
- * $Id: RAS_CameraData.h 27076 2010-02-22 09:22:36Z campbellbarton $
+/*
+ * $Id: RAS_CameraData.h 35072 2011-02-22 12:42:55Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file RAS_CameraData.h
+ *  \ingroup bgerast
+ */
+
 #ifndef __RAS_CAMERADATA_H
 #define __RAS_CAMERADATA_H
 

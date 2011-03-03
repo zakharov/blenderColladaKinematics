@@ -1,7 +1,7 @@
-/**
+/*
  * Assign, change, copy properties
  *
- * $Id: SCA_PropertyActuator.cpp 34520 2011-01-27 00:02:25Z campbellbarton $
+ * $Id: SCA_PropertyActuator.cpp 35169 2011-02-25 13:32:11Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/GameLogic/SCA_PropertyActuator.cpp
+ *  \ingroup gamelogic
+ */
+
 
 #include <stddef.h>
 

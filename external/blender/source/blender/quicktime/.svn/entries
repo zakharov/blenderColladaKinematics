@@ -1,15 +1,15 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/quicktime
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-30T15:29:22.294392Z
-34567
-campbellbarton
+2011-02-27T20:01:38.970644Z
+35235
+jesterking
 
 
 
@@ -35,11 +35,11 @@ file
 
 
 
-2011-01-18T22:04:40.993021Z
-1390fdf241a7619c246cebb8b53bcaec
-2010-12-04T05:34:16.666913Z
-33460
-campbellbarton
+2011-03-03T12:27:15.306297Z
+a0f98fa336543b1090c2ba9a6135e505
+2011-02-27T20:01:38.970644Z
+35235
+jesterking
 has-props
 
 
@@ -61,7 +61,7 @@ has-props
 
 
 
-6152
+6224
 
 SConscript
 file
@@ -69,7 +69,7 @@ file
 
 
 
-2011-01-18T22:04:40.993021Z
+2011-03-03T12:27:15.306297Z
 5acde747a031e8f3180023df8beed76c
 2010-08-29T20:52:05.030364Z
 31645
@@ -103,11 +103,11 @@ file
 
 
 
-2011-01-18T22:04:40.993021Z
-13c1dedd63a4f4be1a346e050697e998
-2010-11-19T02:14:18.951059Z
-33167
-campbellbarton
+2011-03-03T12:27:15.306297Z
+4f9a56b764e1a285da76a4a71204b0f2
+2011-02-27T20:01:38.970644Z
+35235
+jesterking
 has-props
 
 
@@ -129,7 +129,7 @@ has-props
 
 
 
-1992
+2063
 
 CMakeLists.txt
 file
@@ -137,7 +137,7 @@ file
 
 
 
-2011-01-18T22:04:40.993021Z
+2011-03-03T12:27:15.306297Z
 71bd84850093a2dfc512b439d7798f35
 2010-12-22T23:09:30.468439Z
 33864

@@ -1,15 +1,15 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern/iksolver/intern
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-30T15:29:22.294392Z
-34567
-campbellbarton
+2011-02-25T11:43:19.248098Z
+35154
+jesterking
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-01-18T22:04:09.743021Z
-a48baed7084e7e1de242e1d068fbe258
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:37.478297Z
+b440de91aae372399370aa468d7e0207
+2011-02-25T11:43:19.248098Z
+35154
+jesterking
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-2674
+2738
 
 MT_ExpMap.h
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-01-18T22:04:09.743021Z
-0e2ef44d1a7bb49e09e76cbdd1a9b350
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:37.478297Z
+9e80cb5652bef01b6e01867b8135524c
+2011-02-25T11:43:19.248098Z
+35154
+jesterking
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-5271
+5332
 
 TNT
 dir
@@ -103,11 +103,11 @@ file
 
 
 
-2011-01-18T22:04:09.743021Z
-1590ab65553bed5716e7a0a65895da95
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:37.478297Z
+37664441e6c8e465116db215ff2268da
+2011-02-25T11:43:19.248098Z
+35154
+jesterking
 has-props
 
 
@@ -129,7 +129,7 @@ has-props
 
 
 
-10583
+10655
 
 IK_QSegment.cpp
 file
@@ -137,11 +137,11 @@ file
 
 
 
-2011-01-18T22:04:09.743021Z
-e645a89d45d543e48d79e53dfa1a6ac7
-2010-04-20T09:28:15.687811Z
-28298
-blendix
+2011-03-03T12:25:37.478297Z
+574ccd527c845d416a0248341a7d6957
+2011-02-25T11:43:19.248098Z
+35154
+jesterking
 has-props
 
 
@@ -163,7 +163,7 @@ has-props
 
 
 
-22509
+22581
 
 IK_QTask.cpp
 file
@@ -171,11 +171,11 @@ file
 
 
 
-2011-01-18T22:04:09.743021Z
-b3b07b0c37dab7278a794a306e2aca64
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:37.478297Z
+673f68732c3b46fa1a843af6e25dbb56
+2011-02-25T11:43:19.248098Z
+35154
+jesterking
 has-props
 
 
@@ -197,7 +197,7 @@ has-props
 
 
 
-5801
+5863
 
 IK_QJacobian.cpp
 file
@@ -205,11 +205,11 @@ file
 
 
 
-2011-01-18T22:04:09.743021Z
-82428f24bed045688deee1a45499418a
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:37.482297Z
+79a2ce28a1abe7724fe88cb4b96f4830
+2011-02-25T11:43:19.248098Z
+35154
+jesterking
 has-props
 
 
@@ -231,7 +231,7 @@ has-props
 
 
 
-11048
+11114
 
 IK_QJacobianSolver.h
 file
@@ -239,11 +239,11 @@ file
 
 
 
-2011-01-18T22:04:09.743021Z
-78e6b6359b1337c9d0b0d5c080d0b58e
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:37.482297Z
+262c19e69574c7f2686808caf358926c
+2011-02-25T11:43:19.248098Z
+35154
+jesterking
 has-props
 
 
@@ -265,7 +265,7 @@ has-props
 
 
 
-2546
+2616
 
 MT_ExpMap.cpp
 file
@@ -273,11 +273,11 @@ file
 
 
 
-2011-01-18T22:04:09.743021Z
-ac0b7978a9415027abe31be6fcabe945
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:37.482297Z
+a5c4483df77e21f076482742adf92750
+2011-02-25T11:43:19.248098Z
+35154
+jesterking
 has-props
 
 
@@ -299,7 +299,7 @@ has-props
 
 
 
-5597
+5660
 
 IK_QSegment.h
 file
@@ -307,11 +307,11 @@ file
 
 
 
-2011-01-18T22:04:09.743021Z
-03f9e40cda9962ab5e94b3c8eec0975d
-2011-01-16T20:25:47.134114Z
-34358
-campbellbarton
+2011-03-03T12:25:37.482297Z
+e98451c7c4ba9161dd7acfa03542d827
+2011-02-25T11:43:19.248098Z
+35154
+jesterking
 has-props
 
 
@@ -333,7 +333,7 @@ has-props
 
 
 
-9417
+9480
 
 IK_QTask.h
 file
@@ -341,11 +341,11 @@ file
 
 
 
-2011-01-18T22:04:09.743021Z
-24ac7c911149c3aa05281bf508510c65
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:37.482297Z
+d5aefcc0ab17049ef072cfbfa42203d1
+2011-02-25T11:43:19.248098Z
+35154
+jesterking
 has-props
 
 
@@ -367,7 +367,7 @@ has-props
 
 
 
-3364
+3424
 
 IK_Solver.cpp
 file
@@ -375,11 +375,11 @@ file
 
 
 
-2011-01-18T22:04:09.743021Z
-cda2724f2a29f8d4829fea22a0555a98
-2010-10-17T11:20:12.855166Z
-32538
-aligorith
+2011-03-03T12:25:37.482297Z
+208d7971d1cc42089863e8a4bc3be206
+2011-02-25T11:43:19.248098Z
+35154
+jesterking
 has-props
 
 
@@ -401,5 +401,5 @@ has-props
 
 
 
-9253
+9321
 

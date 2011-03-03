@@ -1,5 +1,5 @@
-/**
- * $Id: object_modifier.c 34326 2011-01-14 19:35:59Z campbellbarton $
+/*
+ * $Id: object_modifier.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/object/object_modifier.c
+ *  \ingroup edobj
+ */
+
 
 #include <math.h>
 #include <stdio.h>

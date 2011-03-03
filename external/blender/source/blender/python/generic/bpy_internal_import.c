@@ -1,5 +1,5 @@
 /* 
- * $Id: bpy_internal_import.c 34160 2011-01-07 19:18:31Z campbellbarton $
+ * $Id: bpy_internal_import.c 35236 2011-02-27 20:10:08Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
 */
+
+/** \file blender/python/generic/bpy_internal_import.c
+ *  \ingroup pygen
+ */
+
 
 #include <Python.h>
 #include <stddef.h>
@@ -212,7 +217,7 @@ static PyObject *blender_import(PyObject *UNUSED(self), PyObject *args,  PyObjec
 	
 	PyObject *newmodule;
 	//PyObject_Print(args, stderr, 0);
-	static const char *kwlist[] = {"name", "globals", "locals", "fromlist", "level", 0};
+	static const char *kwlist[] = {"name", "globals", "locals", "fromlist", "level", NULL};
 	
 	if( !PyArg_ParseTupleAndKeywords(args, kw, "s|OOOi:bpy_import_meth", (char **)kwlist,
 				   &name, &globals, &locals, &fromlist, &level) )

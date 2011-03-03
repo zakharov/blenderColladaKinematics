@@ -1,6 +1,6 @@
 
-/**
- * $Id: bpy_operator_wrap.c 34159 2011-01-07 18:36:47Z campbellbarton $
+/*
+ * $Id: bpy_operator_wrap.c 35295 2011-03-02 04:51:43Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -23,12 +23,20 @@
  * ***** END GPL LICENSE BLOCK *****
  */
 
+/** \file blender/python/intern/bpy_operator_wrap.c
+ *  \ingroup pythonintern
+ */
+
+
+#include <Python.h>
+
 #include "bpy_operator_wrap.h"
 #include "WM_api.h"
 #include "WM_types.h"
 
 #include "BLI_utildefines.h"
 
+#include "RNA_access.h"
 #include "RNA_define.h"
 
 #include "bpy_rna.h"

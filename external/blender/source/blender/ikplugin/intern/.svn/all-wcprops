@@ -1,41 +1,41 @@
 K 25
 svn:wc:ra_dav:version-url
 V 79
-/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/blender/ikplugin/intern
+/svnroot/bf-blender/!svn/ver/35336/trunk/blender/source/blender/ikplugin/intern
 END
 ikplugin_api.h
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/ikplugin/intern/ikplugin_api.h
+/svnroot/bf-blender/!svn/ver/35240/trunk/blender/source/blender/ikplugin/intern/ikplugin_api.h
 END
 iksolver_plugin.h
 K 25
 svn:wc:ra_dav:version-url
 V 97
-/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/ikplugin/intern/iksolver_plugin.h
+/svnroot/bf-blender/!svn/ver/35240/trunk/blender/source/blender/ikplugin/intern/iksolver_plugin.h
 END
 itasc_plugin.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/svnroot/bf-blender/!svn/ver/34159/trunk/blender/source/blender/ikplugin/intern/itasc_plugin.cpp
+/svnroot/bf-blender/!svn/ver/35240/trunk/blender/source/blender/ikplugin/intern/itasc_plugin.cpp
 END
 itasc_plugin.h
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/ikplugin/intern/itasc_plugin.h
+/svnroot/bf-blender/!svn/ver/35240/trunk/blender/source/blender/ikplugin/intern/itasc_plugin.h
 END
 ikplugin_api.c
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/34160/trunk/blender/source/blender/ikplugin/intern/ikplugin_api.c
+/svnroot/bf-blender/!svn/ver/35240/trunk/blender/source/blender/ikplugin/intern/ikplugin_api.c
 END
 iksolver_plugin.c
 K 25
 svn:wc:ra_dav:version-url
 V 97
-/svnroot/bf-blender/!svn/ver/34160/trunk/blender/source/blender/ikplugin/intern/iksolver_plugin.c
+/svnroot/bf-blender/!svn/ver/35336/trunk/blender/source/blender/ikplugin/intern/iksolver_plugin.c
 END

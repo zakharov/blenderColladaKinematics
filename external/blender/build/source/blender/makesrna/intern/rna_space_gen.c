@@ -1,0 +1,7372 @@
+
+/* Automatically generated struct definitions for the Data API.
+   Do not edit manually, changes will be overwritten.           */
+
+#define RNA_RUNTIME
+
+#include <float.h>
+#include <stdio.h>
+#include <limits.h>
+#include <string.h>
+
+#include <stddef.h>
+
+#include "DNA_ID.h"
+#include "DNA_scene_types.h"
+#include "BLI_blenlib.h"
+
+#include "BLI_utildefines.h"
+
+#include "BKE_context.h"
+#include "BKE_library.h"
+#include "BKE_main.h"
+#include "BKE_report.h"
+#include "RNA_define.h"
+#include "RNA_types.h"
+#include "rna_internal.h"
+
+extern StructRNA RNA_Action;
+extern StructRNA RNA_ActionActuator;
+extern StructRNA RNA_ActionConstraint;
+extern StructRNA RNA_ActionFCurves;
+extern StructRNA RNA_ActionGroup;
+extern StructRNA RNA_ActionGroups;
+extern StructRNA RNA_ActionPoseMarkers;
+extern StructRNA RNA_Actuator;
+extern StructRNA RNA_ActuatorSensor;
+extern StructRNA RNA_Addon;
+extern StructRNA RNA_Addons;
+extern StructRNA RNA_AlwaysSensor;
+extern StructRNA RNA_AndController;
+extern StructRNA RNA_AnimData;
+extern StructRNA RNA_AnimViz;
+extern StructRNA RNA_AnimVizMotionPaths;
+extern StructRNA RNA_AnimVizOnionSkinning;
+extern StructRNA RNA_AnyType;
+extern StructRNA RNA_Area;
+extern StructRNA RNA_AreaLamp;
+extern StructRNA RNA_Armature;
+extern StructRNA RNA_ArmatureActuator;
+extern StructRNA RNA_ArmatureBones;
+extern StructRNA RNA_ArmatureEditBones;
+extern StructRNA RNA_ArmatureModifier;
+extern StructRNA RNA_ArmatureSensor;
+extern StructRNA RNA_ArrayModifier;
+extern StructRNA RNA_BackgroundImage;
+extern StructRNA RNA_BevelModifier;
+extern StructRNA RNA_BezierSplinePoint;
+extern StructRNA RNA_BlendData;
+extern StructRNA RNA_BlendDataActions;
+extern StructRNA RNA_BlendDataArmatures;
+extern StructRNA RNA_BlendDataBrushes;
+extern StructRNA RNA_BlendDataCameras;
+extern StructRNA RNA_BlendDataCurves;
+extern StructRNA RNA_BlendDataFonts;
+extern StructRNA RNA_BlendDataGreasePencils;
+extern StructRNA RNA_BlendDataGroups;
+extern StructRNA RNA_BlendDataImages;
+extern StructRNA RNA_BlendDataLamps;
+extern StructRNA RNA_BlendDataLattices;
+extern StructRNA RNA_BlendDataLibraries;
+extern StructRNA RNA_BlendDataMaterials;
+extern StructRNA RNA_BlendDataMeshes;
+extern StructRNA RNA_BlendDataMetaBalls;
+extern StructRNA RNA_BlendDataNodeTrees;
+extern StructRNA RNA_BlendDataObjects;
+extern StructRNA RNA_BlendDataParticles;
+extern StructRNA RNA_BlendDataScenes;
+extern StructRNA RNA_BlendDataScreens;
+extern StructRNA RNA_BlendDataSounds;
+extern StructRNA RNA_BlendDataTexts;
+extern StructRNA RNA_BlendDataTextures;
+extern StructRNA RNA_BlendDataWindowManagers;
+extern StructRNA RNA_BlendDataWorlds;
+extern StructRNA RNA_BlendTexture;
+extern StructRNA RNA_BlenderRNA;
+extern StructRNA RNA_BoidRule;
+extern StructRNA RNA_BoidRuleAverageSpeed;
+extern StructRNA RNA_BoidRuleAvoid;
+extern StructRNA RNA_BoidRuleAvoidCollision;
+extern StructRNA RNA_BoidRuleFight;
+extern StructRNA RNA_BoidRuleFollowLeader;
+extern StructRNA RNA_BoidRuleGoal;
+extern StructRNA RNA_BoidSettings;
+extern StructRNA RNA_BoidState;
+extern StructRNA RNA_Bone;
+extern StructRNA RNA_BoneGroup;
+extern StructRNA RNA_BoneGroups;
+extern StructRNA RNA_BooleanModifier;
+extern StructRNA RNA_BooleanProperty;
+extern StructRNA RNA_Brush;
+extern StructRNA RNA_BrushTextureSlot;
+extern StructRNA RNA_BuildModifier;
+extern StructRNA RNA_Camera;
+extern StructRNA RNA_CameraActuator;
+extern StructRNA RNA_CastModifier;
+extern StructRNA RNA_ChannelDriverVariables;
+extern StructRNA RNA_ChildOfConstraint;
+extern StructRNA RNA_ChildParticle;
+extern StructRNA RNA_ClampToConstraint;
+extern StructRNA RNA_ClothCollisionSettings;
+extern StructRNA RNA_ClothModifier;
+extern StructRNA RNA_ClothSettings;
+extern StructRNA RNA_CloudsTexture;
+extern StructRNA RNA_CollectionProperty;
+extern StructRNA RNA_CollisionModifier;
+extern StructRNA RNA_CollisionSensor;
+extern StructRNA RNA_CollisionSettings;
+extern StructRNA RNA_ColorRamp;
+extern StructRNA RNA_ColorRampElement;
+extern StructRNA RNA_ColorRampElements;
+extern StructRNA RNA_ColorSequence;
+extern StructRNA RNA_CompositorNode;
+extern StructRNA RNA_CompositorNodeAlphaOver;
+extern StructRNA RNA_CompositorNodeBilateralblur;
+extern StructRNA RNA_CompositorNodeBlur;
+extern StructRNA RNA_CompositorNodeBrightContrast;
+extern StructRNA RNA_CompositorNodeChannelMatte;
+extern StructRNA RNA_CompositorNodeChromaMatte;
+extern StructRNA RNA_CompositorNodeColorBalance;
+extern StructRNA RNA_CompositorNodeColorMatte;
+extern StructRNA RNA_CompositorNodeColorSpill;
+extern StructRNA RNA_CompositorNodeCombHSVA;
+extern StructRNA RNA_CompositorNodeCombRGBA;
+extern StructRNA RNA_CompositorNodeCombYCCA;
+extern StructRNA RNA_CompositorNodeCombYUVA;
+extern StructRNA RNA_CompositorNodeComposite;
+extern StructRNA RNA_CompositorNodeCrop;
+extern StructRNA RNA_CompositorNodeCurveRGB;
+extern StructRNA RNA_CompositorNodeCurveVec;
+extern StructRNA RNA_CompositorNodeDBlur;
+extern StructRNA RNA_CompositorNodeDefocus;
+extern StructRNA RNA_CompositorNodeDiffMatte;
+extern StructRNA RNA_CompositorNodeDilateErode;
+extern StructRNA RNA_CompositorNodeDisplace;
+extern StructRNA RNA_CompositorNodeDistanceMatte;
+extern StructRNA RNA_CompositorNodeFilter;
+extern StructRNA RNA_CompositorNodeFlip;
+extern StructRNA RNA_CompositorNodeGamma;
+extern StructRNA RNA_CompositorNodeGlare;
+extern StructRNA RNA_CompositorNodeHueCorrect;
+extern StructRNA RNA_CompositorNodeHueSat;
+extern StructRNA RNA_CompositorNodeIDMask;
+extern StructRNA RNA_CompositorNodeImage;
+extern StructRNA RNA_CompositorNodeInvert;
+extern StructRNA RNA_CompositorNodeLensdist;
+extern StructRNA RNA_CompositorNodeLevels;
+extern StructRNA RNA_CompositorNodeLumaMatte;
+extern StructRNA RNA_CompositorNodeMapUV;
+extern StructRNA RNA_CompositorNodeMapValue;
+extern StructRNA RNA_CompositorNodeMath;
+extern StructRNA RNA_CompositorNodeMixRGB;
+extern StructRNA RNA_CompositorNodeNormal;
+extern StructRNA RNA_CompositorNodeNormalize;
+extern StructRNA RNA_CompositorNodeOutputFile;
+extern StructRNA RNA_CompositorNodePremulKey;
+extern StructRNA RNA_CompositorNodeRGB;
+extern StructRNA RNA_CompositorNodeRGBToBW;
+extern StructRNA RNA_CompositorNodeRLayers;
+extern StructRNA RNA_CompositorNodeRotate;
+extern StructRNA RNA_CompositorNodeScale;
+extern StructRNA RNA_CompositorNodeSepHSVA;
+extern StructRNA RNA_CompositorNodeSepRGBA;
+extern StructRNA RNA_CompositorNodeSepYCCA;
+extern StructRNA RNA_CompositorNodeSepYUVA;
+extern StructRNA RNA_CompositorNodeSetAlpha;
+extern StructRNA RNA_CompositorNodeSplitViewer;
+extern StructRNA RNA_CompositorNodeTexture;
+extern StructRNA RNA_CompositorNodeTime;
+extern StructRNA RNA_CompositorNodeTonemap;
+extern StructRNA RNA_CompositorNodeTranslate;
+extern StructRNA RNA_CompositorNodeTree;
+extern StructRNA RNA_CompositorNodeValToRGB;
+extern StructRNA RNA_CompositorNodeValue;
+extern StructRNA RNA_CompositorNodeVecBlur;
+extern StructRNA RNA_CompositorNodeViewer;
+extern StructRNA RNA_CompositorNodeZcombine;
+extern StructRNA RNA_CompositorNodes;
+extern StructRNA RNA_ConsoleLine;
+extern StructRNA RNA_Constraint;
+extern StructRNA RNA_ConstraintActuator;
+extern StructRNA RNA_ConstraintTarget;
+extern StructRNA RNA_Context;
+extern StructRNA RNA_ControlFluidSettings;
+extern StructRNA RNA_Controller;
+extern StructRNA RNA_CopyLocationConstraint;
+extern StructRNA RNA_CopyRotationConstraint;
+extern StructRNA RNA_CopyScaleConstraint;
+extern StructRNA RNA_CopyTransformsConstraint;
+extern StructRNA RNA_Curve;
+extern StructRNA RNA_CurveMap;
+extern StructRNA RNA_CurveMapPoint;
+extern StructRNA RNA_CurveMapping;
+extern StructRNA RNA_CurveModifier;
+extern StructRNA RNA_CurveSplines;
+extern StructRNA RNA_DampedTrackConstraint;
+extern StructRNA RNA_DecimateModifier;
+extern StructRNA RNA_DelaySensor;
+extern StructRNA RNA_DisplaceModifier;
+extern StructRNA RNA_DistortedNoiseTexture;
+extern StructRNA RNA_DomainFluidSettings;
+extern StructRNA RNA_DopeSheet;
+extern StructRNA RNA_Driver;
+extern StructRNA RNA_DriverTarget;
+extern StructRNA RNA_DriverVariable;
+extern StructRNA RNA_DupliObject;
+extern StructRNA RNA_EdgeSplitModifier;
+extern StructRNA RNA_EditBone;
+extern StructRNA RNA_EditObjectActuator;
+extern StructRNA RNA_EffectSequence;
+extern StructRNA RNA_EffectorWeights;
+extern StructRNA RNA_EnumProperty;
+extern StructRNA RNA_EnumPropertyItem;
+extern StructRNA RNA_EnvironmentMap;
+extern StructRNA RNA_EnvironmentMapTexture;
+extern StructRNA RNA_Event;
+extern StructRNA RNA_ExplodeModifier;
+extern StructRNA RNA_ExpressionController;
+extern StructRNA RNA_FCurve;
+extern StructRNA RNA_FCurveActuator;
+extern StructRNA RNA_FCurveKeyframePoints;
+extern StructRNA RNA_FCurveModifiers;
+extern StructRNA RNA_FCurveSample;
+extern StructRNA RNA_FModifier;
+extern StructRNA RNA_FModifierCycles;
+extern StructRNA RNA_FModifierEnvelope;
+extern StructRNA RNA_FModifierEnvelopeControlPoint;
+extern StructRNA RNA_FModifierFunctionGenerator;
+extern StructRNA RNA_FModifierGenerator;
+extern StructRNA RNA_FModifierLimits;
+extern StructRNA RNA_FModifierNoise;
+extern StructRNA RNA_FModifierPython;
+extern StructRNA RNA_FModifierStepped;
+extern StructRNA RNA_FieldSettings;
+extern StructRNA RNA_FileSelectParams;
+extern StructRNA RNA_Filter2DActuator;
+extern StructRNA RNA_FloatProperty;
+extern StructRNA RNA_FloorConstraint;
+extern StructRNA RNA_FluidFluidSettings;
+extern StructRNA RNA_FluidSettings;
+extern StructRNA RNA_FluidSimulationModifier;
+extern StructRNA RNA_FollowPathConstraint;
+extern StructRNA RNA_Function;
+extern StructRNA RNA_GPencilFrame;
+extern StructRNA RNA_GPencilLayer;
+extern StructRNA RNA_GPencilStroke;
+extern StructRNA RNA_GPencilStrokePoint;
+extern StructRNA RNA_GameActuator;
+extern StructRNA RNA_GameBooleanProperty;
+extern StructRNA RNA_GameFloatProperty;
+extern StructRNA RNA_GameIntProperty;
+extern StructRNA RNA_GameObjectSettings;
+extern StructRNA RNA_GameProperty;
+extern StructRNA RNA_GameSoftBodySettings;
+extern StructRNA RNA_GameStringProperty;
+extern StructRNA RNA_GameTimerProperty;
+extern StructRNA RNA_GlowSequence;
+extern StructRNA RNA_GreasePencil;
+extern StructRNA RNA_Group;
+extern StructRNA RNA_GroupInputs;
+extern StructRNA RNA_GroupObjects;
+extern StructRNA RNA_GroupOutputs;
+extern StructRNA RNA_Header;
+extern StructRNA RNA_HemiLamp;
+extern StructRNA RNA_Histogram;
+extern StructRNA RNA_HookModifier;
+extern StructRNA RNA_ID;
+extern StructRNA RNA_IDMaterials;
+extern StructRNA RNA_IKParam;
+extern StructRNA RNA_Image;
+extern StructRNA RNA_ImagePaint;
+extern StructRNA RNA_ImageSequence;
+extern StructRNA RNA_ImageTexture;
+extern StructRNA RNA_ImageUser;
+extern StructRNA RNA_InflowFluidSettings;
+extern StructRNA RNA_IntProperty;
+extern StructRNA RNA_Itasc;
+extern StructRNA RNA_JoystickSensor;
+extern StructRNA RNA_Key;
+extern StructRNA RNA_KeyConfig;
+extern StructRNA RNA_KeyConfigurations;
+extern StructRNA RNA_KeyMap;
+extern StructRNA RNA_KeyMapItem;
+extern StructRNA RNA_KeyMapItems;
+extern StructRNA RNA_KeyMaps;
+extern StructRNA RNA_KeyboardSensor;
+extern StructRNA RNA_Keyframe;
+extern StructRNA RNA_KeyingSet;
+extern StructRNA RNA_KeyingSetInfo;
+extern StructRNA RNA_KeyingSetPath;
+extern StructRNA RNA_KeyingSetPaths;
+extern StructRNA RNA_KeyingSets;
+extern StructRNA RNA_KeyingSetsAll;
+extern StructRNA RNA_KinematicConstraint;
+extern StructRNA RNA_Lamp;
+extern StructRNA RNA_LampSkySettings;
+extern StructRNA RNA_LampTextureSlot;
+extern StructRNA RNA_LampTextureSlots;
+extern StructRNA RNA_Lattice;
+extern StructRNA RNA_LatticeModifier;
+extern StructRNA RNA_LatticePoint;
+extern StructRNA RNA_Library;
+extern StructRNA RNA_LimitDistanceConstraint;
+extern StructRNA RNA_LimitLocationConstraint;
+extern StructRNA RNA_LimitRotationConstraint;
+extern StructRNA RNA_LimitScaleConstraint;
+extern StructRNA RNA_LockedTrackConstraint;
+extern StructRNA RNA_Macro;
+extern StructRNA RNA_MagicTexture;
+extern StructRNA RNA_MaintainVolumeConstraint;
+extern StructRNA RNA_MarbleTexture;
+extern StructRNA RNA_MaskModifier;
+extern StructRNA RNA_Material;
+extern StructRNA RNA_MaterialHalo;
+extern StructRNA RNA_MaterialPhysics;
+extern StructRNA RNA_MaterialRaytraceMirror;
+extern StructRNA RNA_MaterialRaytraceTransparency;
+extern StructRNA RNA_MaterialSlot;
+extern StructRNA RNA_MaterialStrand;
+extern StructRNA RNA_MaterialSubsurfaceScattering;
+extern StructRNA RNA_MaterialTextureSlot;
+extern StructRNA RNA_MaterialTextureSlots;
+extern StructRNA RNA_MaterialVolume;
+extern StructRNA RNA_Menu;
+extern StructRNA RNA_Mesh;
+extern StructRNA RNA_MeshColor;
+extern StructRNA RNA_MeshColorLayer;
+extern StructRNA RNA_MeshDeformModifier;
+extern StructRNA RNA_MeshEdge;
+extern StructRNA RNA_MeshEdges;
+extern StructRNA RNA_MeshFace;
+extern StructRNA RNA_MeshFaces;
+extern StructRNA RNA_MeshFloatProperty;
+extern StructRNA RNA_MeshFloatPropertyLayer;
+extern StructRNA RNA_MeshIntProperty;
+extern StructRNA RNA_MeshIntPropertyLayer;
+extern StructRNA RNA_MeshSticky;
+extern StructRNA RNA_MeshStringProperty;
+extern StructRNA RNA_MeshStringPropertyLayer;
+extern StructRNA RNA_MeshTextureFace;
+extern StructRNA RNA_MeshTextureFaceLayer;
+extern StructRNA RNA_MeshVertex;
+extern StructRNA RNA_MeshVertices;
+extern StructRNA RNA_MessageActuator;
+extern StructRNA RNA_MessageSensor;
+extern StructRNA RNA_MetaBall;
+extern StructRNA RNA_MetaBallElements;
+extern StructRNA RNA_MetaElement;
+extern StructRNA RNA_MetaSequence;
+extern StructRNA RNA_MirrorModifier;
+extern StructRNA RNA_Modifier;
+extern StructRNA RNA_MotionPath;
+extern StructRNA RNA_MotionPathVert;
+extern StructRNA RNA_MouseSensor;
+extern StructRNA RNA_MovieSequence;
+extern StructRNA RNA_MulticamSequence;
+extern StructRNA RNA_MultiresModifier;
+extern StructRNA RNA_MusgraveTexture;
+extern StructRNA RNA_NandController;
+extern StructRNA RNA_NearSensor;
+extern StructRNA RNA_NlaStrip;
+extern StructRNA RNA_NlaStrips;
+extern StructRNA RNA_NlaTrack;
+extern StructRNA RNA_NlaTracks;
+extern StructRNA RNA_Node;
+extern StructRNA RNA_NodeGroup;
+extern StructRNA RNA_NodeLink;
+extern StructRNA RNA_NodeLinks;
+extern StructRNA RNA_NodeSocket;
+extern StructRNA RNA_NodeTree;
+extern StructRNA RNA_NoiseTexture;
+extern StructRNA RNA_NorController;
+extern StructRNA RNA_Object;
+extern StructRNA RNA_ObjectActuator;
+extern StructRNA RNA_ObjectBase;
+extern StructRNA RNA_ObjectConstraints;
+extern StructRNA RNA_ObjectModifiers;
+extern StructRNA RNA_ObstacleFluidSettings;
+extern StructRNA RNA_Operator;
+extern StructRNA RNA_OperatorFileListElement;
+extern StructRNA RNA_OperatorMousePath;
+extern StructRNA RNA_OperatorProperties;
+extern StructRNA RNA_OperatorStrokeElement;
+extern StructRNA RNA_OperatorTypeMacro;
+extern StructRNA RNA_OrController;
+extern StructRNA RNA_OutflowFluidSettings;
+extern StructRNA RNA_PackedFile;
+extern StructRNA RNA_Paint;
+extern StructRNA RNA_Panel;
+extern StructRNA RNA_ParentActuator;
+extern StructRNA RNA_Particle;
+extern StructRNA RNA_ParticleBrush;
+extern StructRNA RNA_ParticleDupliWeight;
+extern StructRNA RNA_ParticleEdit;
+extern StructRNA RNA_ParticleFluidSettings;
+extern StructRNA RNA_ParticleHairKey;
+extern StructRNA RNA_ParticleInstanceModifier;
+extern StructRNA RNA_ParticleKey;
+extern StructRNA RNA_ParticleSettings;
+extern StructRNA RNA_ParticleSettingsTextureSlot;
+extern StructRNA RNA_ParticleSettingsTextureSlots;
+extern StructRNA RNA_ParticleSystem;
+extern StructRNA RNA_ParticleSystemModifier;
+extern StructRNA RNA_ParticleSystems;
+extern StructRNA RNA_ParticleTarget;
+extern StructRNA RNA_PivotConstraint;
+extern StructRNA RNA_PluginSequence;
+extern StructRNA RNA_PluginTexture;
+extern StructRNA RNA_PointCache;
+extern StructRNA RNA_PointCaches;
+extern StructRNA RNA_PointDensity;
+extern StructRNA RNA_PointDensityTexture;
+extern StructRNA RNA_PointLamp;
+extern StructRNA RNA_PointerProperty;
+extern StructRNA RNA_Pose;
+extern StructRNA RNA_PoseBone;
+extern StructRNA RNA_PoseBoneConstraints;
+extern StructRNA RNA_Property;
+extern StructRNA RNA_PropertyActuator;
+extern StructRNA RNA_PropertyGroup;
+extern StructRNA RNA_PropertyGroupItem;
+extern StructRNA RNA_PropertySensor;
+extern StructRNA RNA_PythonConstraint;
+extern StructRNA RNA_PythonController;
+extern StructRNA RNA_RGBANodeSocket;
+extern StructRNA RNA_RadarSensor;
+extern StructRNA RNA_RandomActuator;
+extern StructRNA RNA_RandomSensor;
+extern StructRNA RNA_RaySensor;
+extern StructRNA RNA_Region;
+extern StructRNA RNA_RegionView3D;
+extern StructRNA RNA_RenderEngine;
+extern StructRNA RNA_RenderLayer;
+extern StructRNA RNA_RenderLayers;
+extern StructRNA RNA_RenderPass;
+extern StructRNA RNA_RenderResult;
+extern StructRNA RNA_RenderSettings;
+extern StructRNA RNA_RigidBodyJointConstraint;
+extern StructRNA RNA_SPHFluidSettings;
+extern StructRNA RNA_Scene;
+extern StructRNA RNA_SceneActuator;
+extern StructRNA RNA_SceneBases;
+extern StructRNA RNA_SceneGameData;
+extern StructRNA RNA_SceneObjects;
+extern StructRNA RNA_SceneRenderLayer;
+extern StructRNA RNA_SceneSequence;
+extern StructRNA RNA_Scopes;
+extern StructRNA RNA_Screen;
+extern StructRNA RNA_ScrewModifier;
+extern StructRNA RNA_Sculpt;
+extern StructRNA RNA_Sensor;
+extern StructRNA RNA_Sequence;
+extern StructRNA RNA_SequenceColorBalance;
+extern StructRNA RNA_SequenceCrop;
+extern StructRNA RNA_SequenceEditor;
+extern StructRNA RNA_SequenceElement;
+extern StructRNA RNA_SequenceProxy;
+extern StructRNA RNA_SequenceTransform;
+extern StructRNA RNA_ShaderNode;
+extern StructRNA RNA_ShaderNodeCameraData;
+extern StructRNA RNA_ShaderNodeCombineRGB;
+extern StructRNA RNA_ShaderNodeExtendedMaterial;
+extern StructRNA RNA_ShaderNodeGeometry;
+extern StructRNA RNA_ShaderNodeHueSaturation;
+extern StructRNA RNA_ShaderNodeInvert;
+extern StructRNA RNA_ShaderNodeMapping;
+extern StructRNA RNA_ShaderNodeMaterial;
+extern StructRNA RNA_ShaderNodeMath;
+extern StructRNA RNA_ShaderNodeMixRGB;
+extern StructRNA RNA_ShaderNodeNormal;
+extern StructRNA RNA_ShaderNodeOutput;
+extern StructRNA RNA_ShaderNodeRGB;
+extern StructRNA RNA_ShaderNodeRGBCurve;
+extern StructRNA RNA_ShaderNodeRGBToBW;
+extern StructRNA RNA_ShaderNodeSeparateRGB;
+extern StructRNA RNA_ShaderNodeSqueeze;
+extern StructRNA RNA_ShaderNodeTexture;
+extern StructRNA RNA_ShaderNodeTree;
+extern StructRNA RNA_ShaderNodeValToRGB;
+extern StructRNA RNA_ShaderNodeValue;
+extern StructRNA RNA_ShaderNodeVectorCurve;
+extern StructRNA RNA_ShaderNodeVectorMath;
+extern StructRNA RNA_ShaderNodes;
+extern StructRNA RNA_ShapeActionActuator;
+extern StructRNA RNA_ShapeKey;
+extern StructRNA RNA_ShapeKeyBezierPoint;
+extern StructRNA RNA_ShapeKeyCurvePoint;
+extern StructRNA RNA_ShapeKeyPoint;
+extern StructRNA RNA_ShrinkwrapConstraint;
+extern StructRNA RNA_ShrinkwrapModifier;
+extern StructRNA RNA_SimpleDeformModifier;
+extern StructRNA RNA_SmokeCollSettings;
+extern StructRNA RNA_SmokeDomainSettings;
+extern StructRNA RNA_SmokeFlowSettings;
+extern StructRNA RNA_SmokeModifier;
+extern StructRNA RNA_SmoothModifier;
+extern StructRNA RNA_SoftBodyModifier;
+extern StructRNA RNA_SoftBodySettings;
+extern StructRNA RNA_SolidifyModifier;
+extern StructRNA RNA_Sound;
+extern StructRNA RNA_SoundActuator;
+extern StructRNA RNA_SoundSequence;
+extern StructRNA RNA_Space;
+extern StructRNA RNA_SpaceConsole;
+extern StructRNA RNA_SpaceDopeSheetEditor;
+extern StructRNA RNA_SpaceFileBrowser;
+extern StructRNA RNA_SpaceGraphEditor;
+extern StructRNA RNA_SpaceImageEditor;
+extern StructRNA RNA_SpaceInfo;
+extern StructRNA RNA_SpaceLogicEditor;
+extern StructRNA RNA_SpaceNLA;
+extern StructRNA RNA_SpaceNodeEditor;
+extern StructRNA RNA_SpaceOutliner;
+extern StructRNA RNA_SpaceProperties;
+extern StructRNA RNA_SpaceSequenceEditor;
+extern StructRNA RNA_SpaceTextEditor;
+extern StructRNA RNA_SpaceTimeline;
+extern StructRNA RNA_SpaceUVEditor;
+extern StructRNA RNA_SpaceUserPreferences;
+extern StructRNA RNA_SpaceView3D;
+extern StructRNA RNA_SpeedControlSequence;
+extern StructRNA RNA_Spline;
+extern StructRNA RNA_SplineBezierPoints;
+extern StructRNA RNA_SplineIKConstraint;
+extern StructRNA RNA_SplinePoint;
+extern StructRNA RNA_SplinePoints;
+extern StructRNA RNA_SpotLamp;
+extern StructRNA RNA_StateActuator;
+extern StructRNA RNA_StretchToConstraint;
+extern StructRNA RNA_StringProperty;
+extern StructRNA RNA_Struct;
+extern StructRNA RNA_StucciTexture;
+extern StructRNA RNA_SubsurfModifier;
+extern StructRNA RNA_SunLamp;
+extern StructRNA RNA_SurfaceCurve;
+extern StructRNA RNA_SurfaceModifier;
+extern StructRNA RNA_TexMapping;
+extern StructRNA RNA_Text;
+extern StructRNA RNA_TextBox;
+extern StructRNA RNA_TextCharacterFormat;
+extern StructRNA RNA_TextCurve;
+extern StructRNA RNA_TextLine;
+extern StructRNA RNA_TextMarker;
+extern StructRNA RNA_Texture;
+extern StructRNA RNA_TextureNode;
+extern StructRNA RNA_TextureNodeBricks;
+extern StructRNA RNA_TextureNodeChecker;
+extern StructRNA RNA_TextureNodeCompose;
+extern StructRNA RNA_TextureNodeCoordinates;
+extern StructRNA RNA_TextureNodeCurveRGB;
+extern StructRNA RNA_TextureNodeCurveTime;
+extern StructRNA RNA_TextureNodeDecompose;
+extern StructRNA RNA_TextureNodeDistance;
+extern StructRNA RNA_TextureNodeHueSaturation;
+extern StructRNA RNA_TextureNodeImage;
+extern StructRNA RNA_TextureNodeInvert;
+extern StructRNA RNA_TextureNodeMath;
+extern StructRNA RNA_TextureNodeMixRGB;
+extern StructRNA RNA_TextureNodeOutput;
+extern StructRNA RNA_TextureNodeRGBToBW;
+extern StructRNA RNA_TextureNodeRotate;
+extern StructRNA RNA_TextureNodeScale;
+extern StructRNA RNA_TextureNodeTexture;
+extern StructRNA RNA_TextureNodeTranslate;
+extern StructRNA RNA_TextureNodeTree;
+extern StructRNA RNA_TextureNodeValToNor;
+extern StructRNA RNA_TextureNodeValToRGB;
+extern StructRNA RNA_TextureNodeViewer;
+extern StructRNA RNA_TextureNodes;
+extern StructRNA RNA_TextureSlot;
+extern StructRNA RNA_Theme;
+extern StructRNA RNA_ThemeAudioWindow;
+extern StructRNA RNA_ThemeBoneColorSet;
+extern StructRNA RNA_ThemeConsole;
+extern StructRNA RNA_ThemeDopeSheet;
+extern StructRNA RNA_ThemeFileBrowser;
+extern StructRNA RNA_ThemeFontStyle;
+extern StructRNA RNA_ThemeGraphEditor;
+extern StructRNA RNA_ThemeImageEditor;
+extern StructRNA RNA_ThemeInfo;
+extern StructRNA RNA_ThemeLogicEditor;
+extern StructRNA RNA_ThemeNLAEditor;
+extern StructRNA RNA_ThemeNodeEditor;
+extern StructRNA RNA_ThemeOutliner;
+extern StructRNA RNA_ThemeProperties;
+extern StructRNA RNA_ThemeSequenceEditor;
+extern StructRNA RNA_ThemeStyle;
+extern StructRNA RNA_ThemeTextEditor;
+extern StructRNA RNA_ThemeTimeline;
+extern StructRNA RNA_ThemeUserInterface;
+extern StructRNA RNA_ThemeUserPreferences;
+extern StructRNA RNA_ThemeView3D;
+extern StructRNA RNA_ThemeWidgetColors;
+extern StructRNA RNA_ThemeWidgetStateColors;
+extern StructRNA RNA_TimelineMarker;
+extern StructRNA RNA_TimelineMarkers;
+extern StructRNA RNA_ToolSettings;
+extern StructRNA RNA_TouchSensor;
+extern StructRNA RNA_TrackToConstraint;
+extern StructRNA RNA_TransformConstraint;
+extern StructRNA RNA_TransformOrientation;
+extern StructRNA RNA_TransformSequence;
+extern StructRNA RNA_UILayout;
+extern StructRNA RNA_UVProjectModifier;
+extern StructRNA RNA_UVProjector;
+extern StructRNA RNA_UVTextures;
+extern StructRNA RNA_UnitSettings;
+extern StructRNA RNA_UnknownType;
+extern StructRNA RNA_UserPreferences;
+extern StructRNA RNA_UserPreferencesEdit;
+extern StructRNA RNA_UserPreferencesFilePaths;
+extern StructRNA RNA_UserPreferencesInput;
+extern StructRNA RNA_UserPreferencesSystem;
+extern StructRNA RNA_UserPreferencesView;
+extern StructRNA RNA_UserSolidLight;
+extern StructRNA RNA_ValueNodeSocket;
+extern StructRNA RNA_VectorFont;
+extern StructRNA RNA_VectorNodeSocket;
+extern StructRNA RNA_VertexColors;
+extern StructRNA RNA_VertexGroup;
+extern StructRNA RNA_VertexGroupElement;
+extern StructRNA RNA_VertexGroups;
+extern StructRNA RNA_VertexPaint;
+extern StructRNA RNA_VisibilityActuator;
+extern StructRNA RNA_VoronoiTexture;
+extern StructRNA RNA_VoxelData;
+extern StructRNA RNA_VoxelDataTexture;
+extern StructRNA RNA_WaveModifier;
+extern StructRNA RNA_Window;
+extern StructRNA RNA_WindowManager;
+extern StructRNA RNA_WipeSequence;
+extern StructRNA RNA_WoodTexture;
+extern StructRNA RNA_World;
+extern StructRNA RNA_WorldLighting;
+extern StructRNA RNA_WorldMistSettings;
+extern StructRNA RNA_WorldStarsSettings;
+extern StructRNA RNA_WorldTextureSlot;
+extern StructRNA RNA_WorldTextureSlots;
+extern StructRNA RNA_XnorController;
+extern StructRNA RNA_XorController;
+
+#include "rna_space.c"
+
+/* Autogenerated Functions */
+
+
+PointerPropertyRNA rna_BackgroundImage_rna_type;
+PointerPropertyRNA rna_BackgroundImage_image;
+EnumPropertyRNA rna_BackgroundImage_view_axis;
+PointerPropertyRNA rna_BackgroundImage_image_user;
+FloatPropertyRNA rna_BackgroundImage_opacity;
+CollectionPropertyRNA rna_BackgroundImage_rna_properties;
+BooleanPropertyRNA rna_BackgroundImage_show_expanded;
+FloatPropertyRNA rna_BackgroundImage_size;
+FloatPropertyRNA rna_BackgroundImage_offset_x;
+FloatPropertyRNA rna_BackgroundImage_offset_y;
+
+
+PointerPropertyRNA rna_ConsoleLine_rna_type;
+StringPropertyRNA rna_ConsoleLine_body;
+CollectionPropertyRNA rna_ConsoleLine_rna_properties;
+IntPropertyRNA rna_ConsoleLine_current_character;
+
+
+PointerPropertyRNA rna_FileSelectParams_rna_type;
+StringPropertyRNA rna_FileSelectParams_directory;
+EnumPropertyRNA rna_FileSelectParams_display_type;
+StringPropertyRNA rna_FileSelectParams_filter_glob;
+StringPropertyRNA rna_FileSelectParams_filename;
+BooleanPropertyRNA rna_FileSelectParams_use_filter_blender;
+BooleanPropertyRNA rna_FileSelectParams_use_filter;
+BooleanPropertyRNA rna_FileSelectParams_use_filter_folder;
+BooleanPropertyRNA rna_FileSelectParams_use_filter_font;
+BooleanPropertyRNA rna_FileSelectParams_use_filter_image;
+BooleanPropertyRNA rna_FileSelectParams_use_filter_movie;
+BooleanPropertyRNA rna_FileSelectParams_use_filter_script;
+BooleanPropertyRNA rna_FileSelectParams_use_filter_sound;
+BooleanPropertyRNA rna_FileSelectParams_use_filter_text;
+CollectionPropertyRNA rna_FileSelectParams_rna_properties;
+BooleanPropertyRNA rna_FileSelectParams_show_hidden;
+EnumPropertyRNA rna_FileSelectParams_sort_method;
+StringPropertyRNA rna_FileSelectParams_title;
+
+
+PointerPropertyRNA rna_RegionView3D_rna_type;
+BooleanPropertyRNA rna_RegionView3D_show_sync_view;
+BooleanPropertyRNA rna_RegionView3D_use_box_clip;
+FloatPropertyRNA rna_RegionView3D_view_distance;
+BooleanPropertyRNA rna_RegionView3D_lock_rotation;
+EnumPropertyRNA rna_RegionView3D_view_perspective;
+FloatPropertyRNA rna_RegionView3D_perspective_matrix;
+CollectionPropertyRNA rna_RegionView3D_rna_properties;
+FloatPropertyRNA rna_RegionView3D_view_location;
+FloatPropertyRNA rna_RegionView3D_view_matrix;
+FloatPropertyRNA rna_RegionView3D_view_rotation;
+
+
+PointerPropertyRNA rna_Space_rna_type;
+CollectionPropertyRNA rna_Space_rna_properties;
+EnumPropertyRNA rna_Space_type;
+
+
+extern PointerPropertyRNA rna_Space_rna_type;
+extern CollectionPropertyRNA rna_Space_rna_properties;
+extern EnumPropertyRNA rna_Space_type;
+
+IntPropertyRNA rna_SpaceConsole_font_size;
+CollectionPropertyRNA rna_SpaceConsole_history;
+StringPropertyRNA rna_SpaceConsole_language;
+CollectionPropertyRNA rna_SpaceConsole_scrollback;
+StringPropertyRNA rna_SpaceConsole_prompt;
+IntPropertyRNA rna_SpaceConsole_select_end;
+IntPropertyRNA rna_SpaceConsole_select_start;
+
+
+extern PointerPropertyRNA rna_Space_rna_type;
+extern CollectionPropertyRNA rna_Space_rna_properties;
+extern EnumPropertyRNA rna_Space_type;
+
+PointerPropertyRNA rna_SpaceDopeSheetEditor_action;
+EnumPropertyRNA rna_SpaceDopeSheetEditor_auto_snap;
+BooleanPropertyRNA rna_SpaceDopeSheetEditor_use_auto_merge_keyframes;
+PointerPropertyRNA rna_SpaceDopeSheetEditor_dopesheet;
+EnumPropertyRNA rna_SpaceDopeSheetEditor_mode;
+BooleanPropertyRNA rna_SpaceDopeSheetEditor_use_realtime_update;
+BooleanPropertyRNA rna_SpaceDopeSheetEditor_show_frame_indicator;
+BooleanPropertyRNA rna_SpaceDopeSheetEditor_show_pose_markers;
+BooleanPropertyRNA rna_SpaceDopeSheetEditor_show_seconds;
+BooleanPropertyRNA rna_SpaceDopeSheetEditor_show_sliders;
+BooleanPropertyRNA rna_SpaceDopeSheetEditor_use_marker_sync;
+
+
+extern PointerPropertyRNA rna_Space_rna_type;
+extern CollectionPropertyRNA rna_Space_rna_properties;
+extern EnumPropertyRNA rna_Space_type;
+
+PointerPropertyRNA rna_SpaceFileBrowser_params;
+PointerPropertyRNA rna_SpaceFileBrowser_operator;
+
+
+extern PointerPropertyRNA rna_Space_rna_type;
+extern CollectionPropertyRNA rna_Space_rna_properties;
+extern EnumPropertyRNA rna_Space_type;
+
+EnumPropertyRNA rna_SpaceGraphEditor_auto_snap;
+BooleanPropertyRNA rna_SpaceGraphEditor_use_auto_merge_keyframes;
+FloatPropertyRNA rna_SpaceGraphEditor_cursor_position_y;
+PointerPropertyRNA rna_SpaceGraphEditor_dopesheet;
+BooleanPropertyRNA rna_SpaceGraphEditor_has_ghost_curves;
+EnumPropertyRNA rna_SpaceGraphEditor_mode;
+BooleanPropertyRNA rna_SpaceGraphEditor_use_only_selected_curves_handles;
+BooleanPropertyRNA rna_SpaceGraphEditor_use_only_selected_keyframe_handles;
+EnumPropertyRNA rna_SpaceGraphEditor_pivot_point;
+BooleanPropertyRNA rna_SpaceGraphEditor_use_realtime_update;
+BooleanPropertyRNA rna_SpaceGraphEditor_show_cursor;
+BooleanPropertyRNA rna_SpaceGraphEditor_show_frame_indicator;
+BooleanPropertyRNA rna_SpaceGraphEditor_show_handles;
+BooleanPropertyRNA rna_SpaceGraphEditor_show_seconds;
+BooleanPropertyRNA rna_SpaceGraphEditor_show_sliders;
+BooleanPropertyRNA rna_SpaceGraphEditor_use_fancy_drawing;
+
+
+extern PointerPropertyRNA rna_Space_rna_type;
+extern CollectionPropertyRNA rna_Space_rna_properties;
+extern EnumPropertyRNA rna_Space_type;
+
+PointerPropertyRNA rna_SpaceImageEditor_curves;
+EnumPropertyRNA rna_SpaceImageEditor_draw_channels;
+BooleanPropertyRNA rna_SpaceImageEditor_show_repeat;
+PointerPropertyRNA rna_SpaceImageEditor_grease_pencil;
+PointerPropertyRNA rna_SpaceImageEditor_image;
+BooleanPropertyRNA rna_SpaceImageEditor_use_image_paint;
+BooleanPropertyRNA rna_SpaceImageEditor_use_image_pin;
+PointerPropertyRNA rna_SpaceImageEditor_image_user;
+PointerPropertyRNA rna_SpaceImageEditor_sample_histogram;
+PointerPropertyRNA rna_SpaceImageEditor_scopes;
+BooleanPropertyRNA rna_SpaceImageEditor_show_paint;
+BooleanPropertyRNA rna_SpaceImageEditor_show_render;
+BooleanPropertyRNA rna_SpaceImageEditor_show_uvedit;
+PointerPropertyRNA rna_SpaceImageEditor_uv_editor;
+BooleanPropertyRNA rna_SpaceImageEditor_use_realtime_update;
+BooleanPropertyRNA rna_SpaceImageEditor_use_grease_pencil;
+
+
+extern PointerPropertyRNA rna_Space_rna_type;
+extern CollectionPropertyRNA rna_Space_rna_properties;
+extern EnumPropertyRNA rna_Space_type;
+
+BooleanPropertyRNA rna_SpaceInfo_show_report_debug;
+BooleanPropertyRNA rna_SpaceInfo_show_report_error;
+BooleanPropertyRNA rna_SpaceInfo_show_report_info;
+BooleanPropertyRNA rna_SpaceInfo_show_report_operator;
+BooleanPropertyRNA rna_SpaceInfo_show_report_warning;
+
+
+extern PointerPropertyRNA rna_Space_rna_type;
+extern CollectionPropertyRNA rna_Space_rna_properties;
+extern EnumPropertyRNA rna_Space_type;
+
+BooleanPropertyRNA rna_SpaceLogicEditor_show_sensors_active_object;
+BooleanPropertyRNA rna_SpaceLogicEditor_show_controllers_active_object;
+BooleanPropertyRNA rna_SpaceLogicEditor_show_actuators_active_object;
+BooleanPropertyRNA rna_SpaceLogicEditor_show_sensors_active_states;
+BooleanPropertyRNA rna_SpaceLogicEditor_show_actuators_active_states;
+BooleanPropertyRNA rna_SpaceLogicEditor_show_actuators_linked_controller;
+BooleanPropertyRNA rna_SpaceLogicEditor_show_sensors_linked_controller;
+BooleanPropertyRNA rna_SpaceLogicEditor_show_controllers_linked_controller;
+BooleanPropertyRNA rna_SpaceLogicEditor_show_sensors_selected_objects;
+BooleanPropertyRNA rna_SpaceLogicEditor_show_controllers_selected_objects;
+BooleanPropertyRNA rna_SpaceLogicEditor_show_actuators_selected_objects;
+
+
+extern PointerPropertyRNA rna_Space_rna_type;
+extern CollectionPropertyRNA rna_Space_rna_properties;
+extern EnumPropertyRNA rna_Space_type;
+
+EnumPropertyRNA rna_SpaceNLA_auto_snap;
+PointerPropertyRNA rna_SpaceNLA_dopesheet;
+BooleanPropertyRNA rna_SpaceNLA_use_realtime_update;
+BooleanPropertyRNA rna_SpaceNLA_show_strip_curves;
+BooleanPropertyRNA rna_SpaceNLA_show_frame_indicator;
+BooleanPropertyRNA rna_SpaceNLA_show_seconds;
+
+
+extern PointerPropertyRNA rna_Space_rna_type;
+extern CollectionPropertyRNA rna_Space_rna_properties;
+extern EnumPropertyRNA rna_Space_type;
+
+BooleanPropertyRNA rna_SpaceNodeEditor_use_auto_render;
+BooleanPropertyRNA rna_SpaceNodeEditor_show_backdrop;
+FloatPropertyRNA rna_SpaceNodeEditor_backdrop_x;
+FloatPropertyRNA rna_SpaceNodeEditor_backdrop_y;
+FloatPropertyRNA rna_SpaceNodeEditor_backdrop_zoom;
+EnumPropertyRNA rna_SpaceNodeEditor_backdrop_channels;
+PointerPropertyRNA rna_SpaceNodeEditor_id;
+PointerPropertyRNA rna_SpaceNodeEditor_id_from;
+PointerPropertyRNA rna_SpaceNodeEditor_node_tree;
+EnumPropertyRNA rna_SpaceNodeEditor_texture_type;
+EnumPropertyRNA rna_SpaceNodeEditor_tree_type;
+
+
+extern PointerPropertyRNA rna_Space_rna_type;
+extern CollectionPropertyRNA rna_Space_rna_properties;
+extern EnumPropertyRNA rna_Space_type;
+
+BooleanPropertyRNA rna_SpaceOutliner_use_filter_case_sensitive;
+BooleanPropertyRNA rna_SpaceOutliner_use_filter_complete;
+StringPropertyRNA rna_SpaceOutliner_filter_text;
+EnumPropertyRNA rna_SpaceOutliner_display_mode;
+BooleanPropertyRNA rna_SpaceOutliner_show_restrict_columns;
+
+
+extern PointerPropertyRNA rna_Space_rna_type;
+extern CollectionPropertyRNA rna_Space_rna_properties;
+extern EnumPropertyRNA rna_Space_type;
+
+EnumPropertyRNA rna_SpaceProperties_align;
+EnumPropertyRNA rna_SpaceProperties_context;
+BooleanPropertyRNA rna_SpaceProperties_use_pin_id;
+EnumPropertyRNA rna_SpaceProperties_texture_context;
+PointerPropertyRNA rna_SpaceProperties_pin_id;
+
+
+extern PointerPropertyRNA rna_Space_rna_type;
+extern CollectionPropertyRNA rna_Space_rna_properties;
+extern EnumPropertyRNA rna_Space_type;
+
+IntPropertyRNA rna_SpaceSequenceEditor_display_channel;
+EnumPropertyRNA rna_SpaceSequenceEditor_display_mode;
+BooleanPropertyRNA rna_SpaceSequenceEditor_show_frames;
+PointerPropertyRNA rna_SpaceSequenceEditor_grease_pencil;
+EnumPropertyRNA rna_SpaceSequenceEditor_proxy_render_size;
+BooleanPropertyRNA rna_SpaceSequenceEditor_show_safe_margin;
+BooleanPropertyRNA rna_SpaceSequenceEditor_show_separate_color;
+BooleanPropertyRNA rna_SpaceSequenceEditor_show_frame_indicator;
+IntPropertyRNA rna_SpaceSequenceEditor_draw_overexposed;
+BooleanPropertyRNA rna_SpaceSequenceEditor_use_marker_sync;
+BooleanPropertyRNA rna_SpaceSequenceEditor_use_grease_pencil;
+EnumPropertyRNA rna_SpaceSequenceEditor_view_type;
+FloatPropertyRNA rna_SpaceSequenceEditor_offset_x;
+FloatPropertyRNA rna_SpaceSequenceEditor_offset_y;
+FloatPropertyRNA rna_SpaceSequenceEditor_zoom;
+
+
+extern PointerPropertyRNA rna_Space_rna_type;
+extern CollectionPropertyRNA rna_Space_rna_properties;
+extern EnumPropertyRNA rna_Space_type;
+
+BooleanPropertyRNA rna_SpaceTextEditor_use_find_all;
+StringPropertyRNA rna_SpaceTextEditor_find_text;
+BooleanPropertyRNA rna_SpaceTextEditor_use_find_wrap;
+IntPropertyRNA rna_SpaceTextEditor_font_size;
+BooleanPropertyRNA rna_SpaceTextEditor_show_line_highlight;
+BooleanPropertyRNA rna_SpaceTextEditor_show_line_numbers;
+BooleanPropertyRNA rna_SpaceTextEditor_use_live_edit;
+IntPropertyRNA rna_SpaceTextEditor_margin_column;
+BooleanPropertyRNA rna_SpaceTextEditor_use_overwrite;
+StringPropertyRNA rna_SpaceTextEditor_replace_text;
+BooleanPropertyRNA rna_SpaceTextEditor_show_margin;
+BooleanPropertyRNA rna_SpaceTextEditor_show_syntax_highlight;
+IntPropertyRNA rna_SpaceTextEditor_tab_width;
+PointerPropertyRNA rna_SpaceTextEditor_text;
+BooleanPropertyRNA rna_SpaceTextEditor_show_word_wrap;
+
+
+extern PointerPropertyRNA rna_Space_rna_type;
+extern CollectionPropertyRNA rna_Space_rna_properties;
+extern EnumPropertyRNA rna_Space_type;
+
+BooleanPropertyRNA rna_SpaceTimeline_cache_cloth;
+BooleanPropertyRNA rna_SpaceTimeline_show_only_selected;
+BooleanPropertyRNA rna_SpaceTimeline_cache_particles;
+BooleanPropertyRNA rna_SpaceTimeline_show_cache;
+BooleanPropertyRNA rna_SpaceTimeline_show_frame_indicator;
+BooleanPropertyRNA rna_SpaceTimeline_cache_smoke;
+BooleanPropertyRNA rna_SpaceTimeline_cache_softbody;
+
+
+PointerPropertyRNA rna_SpaceUVEditor_rna_type;
+FloatPropertyRNA rna_SpaceUVEditor_cursor_location;
+BooleanPropertyRNA rna_SpaceUVEditor_lock_bounds;
+BooleanPropertyRNA rna_SpaceUVEditor_show_modified_edges;
+BooleanPropertyRNA rna_SpaceUVEditor_show_other_objects;
+BooleanPropertyRNA rna_SpaceUVEditor_show_smooth_edges;
+BooleanPropertyRNA rna_SpaceUVEditor_show_stretch;
+EnumPropertyRNA rna_SpaceUVEditor_draw_stretch_type;
+EnumPropertyRNA rna_SpaceUVEditor_edge_draw_type;
+BooleanPropertyRNA rna_SpaceUVEditor_use_live_unwrap;
+BooleanPropertyRNA rna_SpaceUVEditor_show_normalized_coords;
+EnumPropertyRNA rna_SpaceUVEditor_pivot_point;
+CollectionPropertyRNA rna_SpaceUVEditor_rna_properties;
+BooleanPropertyRNA rna_SpaceUVEditor_use_snap_to_pixels;
+EnumPropertyRNA rna_SpaceUVEditor_sticky_select_mode;
+
+
+extern PointerPropertyRNA rna_Space_rna_type;
+extern CollectionPropertyRNA rna_Space_rna_properties;
+extern EnumPropertyRNA rna_Space_type;
+
+StringPropertyRNA rna_SpaceUserPreferences_filter_text;
+
+
+extern PointerPropertyRNA rna_Space_rna_type;
+extern CollectionPropertyRNA rna_Space_rna_properties;
+extern EnumPropertyRNA rna_Space_type;
+
+FloatPropertyRNA rna_SpaceView3D_cursor_location;
+PointerPropertyRNA rna_SpaceView3D_region_3d;
+BooleanPropertyRNA rna_SpaceView3D_use_pivot_point_align;
+BooleanPropertyRNA rna_SpaceView3D_show_all_objects_origin;
+CollectionPropertyRNA rna_SpaceView3D_background_images;
+PointerPropertyRNA rna_SpaceView3D_camera;
+FloatPropertyRNA rna_SpaceView3D_clip_end;
+FloatPropertyRNA rna_SpaceView3D_clip_start;
+PointerPropertyRNA rna_SpaceView3D_current_orientation;
+BooleanPropertyRNA rna_SpaceView3D_show_background_images;
+BooleanPropertyRNA rna_SpaceView3D_show_floor;
+BooleanPropertyRNA rna_SpaceView3D_show_axis_x;
+BooleanPropertyRNA rna_SpaceView3D_show_axis_y;
+BooleanPropertyRNA rna_SpaceView3D_show_axis_z;
+IntPropertyRNA rna_SpaceView3D_grid_lines;
+FloatPropertyRNA rna_SpaceView3D_grid_scale;
+IntPropertyRNA rna_SpaceView3D_grid_subdivisions;
+FloatPropertyRNA rna_SpaceView3D_lens;
+PointerPropertyRNA rna_SpaceView3D_local_view;
+BooleanPropertyRNA rna_SpaceView3D_lock_camera_and_layers;
+StringPropertyRNA rna_SpaceView3D_lock_bone;
+BooleanPropertyRNA rna_SpaceView3D_lock_cursor;
+PointerPropertyRNA rna_SpaceView3D_lock_object;
+BooleanPropertyRNA rna_SpaceView3D_show_manipulator;
+BooleanPropertyRNA rna_SpaceView3D_use_manipulator_rotate;
+BooleanPropertyRNA rna_SpaceView3D_use_manipulator_scale;
+BooleanPropertyRNA rna_SpaceView3D_use_manipulator_translate;
+BooleanPropertyRNA rna_SpaceView3D_use_occlude_geometry;
+BooleanPropertyRNA rna_SpaceView3D_show_only_render;
+BooleanPropertyRNA rna_SpaceView3D_show_outline_selected;
+EnumPropertyRNA rna_SpaceView3D_pivot_point;
+PointerPropertyRNA rna_SpaceView3D_region_quadview;
+BooleanPropertyRNA rna_SpaceView3D_show_relationship_lines;
+BooleanPropertyRNA rna_SpaceView3D_show_textured_solid;
+EnumPropertyRNA rna_SpaceView3D_transform_orientation;
+BooleanPropertyRNA rna_SpaceView3D_layers_used;
+EnumPropertyRNA rna_SpaceView3D_viewport_shade;
+BooleanPropertyRNA rna_SpaceView3D_layers;
+
+PointerRNA BackgroundImage_rna_type_get(PointerRNA *ptr)
+{
+	return rna_builtin_type_get(ptr);
+}
+
+PointerRNA BackgroundImage_image_get(PointerRNA *ptr)
+{
+	BGpic *data= (BGpic*)(ptr->data);
+	return rna_pointer_inherit_refine(ptr, &RNA_Image, data->ima);
+}
+
+void BackgroundImage_image_set(PointerRNA *ptr, PointerRNA value)
+{
+	BGpic *data= (BGpic*)(ptr->data);
+
+	if(data->ima)
+		id_us_min((ID*)data->ima);
+	if(value.data)
+		id_us_plus((ID*)value.data);
+
+	data->ima= value.data;
+}
+
+int BackgroundImage_view_axis_get(PointerRNA *ptr)
+{
+	BGpic *data= (BGpic*)(ptr->data);
+	return (int)(data->view);
+}
+
+void BackgroundImage_view_axis_set(PointerRNA *ptr, int value)
+{
+	BGpic *data= (BGpic*)(ptr->data);
+	data->view= value;
+}
+
+PointerRNA BackgroundImage_image_user_get(PointerRNA *ptr)
+{
+	BGpic *data= (BGpic*)(ptr->data);
+	return rna_pointer_inherit_refine(ptr, &RNA_ImageUser, &data->iuser);
+}
+
+float BackgroundImage_opacity_get(PointerRNA *ptr)
+{
+	return rna_BackgroundImage_opacity_get(ptr);
+}
+
+void BackgroundImage_opacity_set(PointerRNA *ptr, float value)
+{
+	rna_BackgroundImage_opacity_set(ptr, value);
+}
+
+static PointerRNA BackgroundImage_rna_properties_get(CollectionPropertyIterator *iter)
+{
+	return rna_builtin_properties_get(iter);
+}
+
+void BackgroundImage_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+	memset(iter, 0, sizeof(*iter));
+	iter->parent= *ptr;
+	iter->prop= (PropertyRNA*)&rna_BackgroundImage_rna_properties;
+
+	rna_builtin_properties_begin(iter, ptr);
+
+	if(iter->valid)
+		iter->ptr= BackgroundImage_rna_properties_get(iter);
+}
+
+void BackgroundImage_rna_properties_next(CollectionPropertyIterator *iter)
+{
+	rna_builtin_properties_next(iter);
+
+	if(iter->valid)
+		iter->ptr= BackgroundImage_rna_properties_get(iter);
+}
+
+void BackgroundImage_rna_properties_end(CollectionPropertyIterator *iter)
+{
+	rna_iterator_listbase_end(iter);
+}
+
+int BackgroundImage_show_expanded_get(PointerRNA *ptr)
+{
+	BGpic *data= (BGpic*)(ptr->data);
+	return (((data->flag) & 2) != 0);
+}
+
+void BackgroundImage_show_expanded_set(PointerRNA *ptr, int value)
+{
+	BGpic *data= (BGpic*)(ptr->data);
+	if(value) data->flag |= 2;
+	else data->flag &= ~2;
+}
+
+float BackgroundImage_size_get(PointerRNA *ptr)
+{
+	BGpic *data= (BGpic*)(ptr->data);
+	return (float)(data->size);
+}
+
+void BackgroundImage_size_set(PointerRNA *ptr, float value)
+{
+	BGpic *data= (BGpic*)(ptr->data);
+	data->size= CLAMPIS(value, 0.0f, FLT_MAX);
+}
+
+float BackgroundImage_offset_x_get(PointerRNA *ptr)
+{
+	BGpic *data= (BGpic*)(ptr->data);
+	return (float)(data->xof);
+}
+
+void BackgroundImage_offset_x_set(PointerRNA *ptr, float value)
+{
+	BGpic *data= (BGpic*)(ptr->data);
+	data->xof= value;
+}
+
+float BackgroundImage_offset_y_get(PointerRNA *ptr)
+{
+	BGpic *data= (BGpic*)(ptr->data);
+	return (float)(data->yof);
+}
+
+void BackgroundImage_offset_y_set(PointerRNA *ptr, float value)
+{
+	BGpic *data= (BGpic*)(ptr->data);
+	data->yof= value;
+}
+
+PointerRNA ConsoleLine_rna_type_get(PointerRNA *ptr)
+{
+	return rna_builtin_type_get(ptr);
+}
+
+void ConsoleLine_body_get(PointerRNA *ptr, char *value)
+{
+	rna_ConsoleLine_body_get(ptr, value);
+}
+
+int ConsoleLine_body_length(PointerRNA *ptr)
+{
+	return rna_ConsoleLine_body_length(ptr);
+}
+
+void ConsoleLine_body_set(PointerRNA *ptr, const char *value)
+{
+	rna_ConsoleLine_body_set(ptr, value);
+}
+
+static PointerRNA ConsoleLine_rna_properties_get(CollectionPropertyIterator *iter)
+{
+	return rna_builtin_properties_get(iter);
+}
+
+void ConsoleLine_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+	memset(iter, 0, sizeof(*iter));
+	iter->parent= *ptr;
+	iter->prop= (PropertyRNA*)&rna_ConsoleLine_rna_properties;
+
+	rna_builtin_properties_begin(iter, ptr);
+
+	if(iter->valid)
+		iter->ptr= ConsoleLine_rna_properties_get(iter);
+}
+
+void ConsoleLine_rna_properties_next(CollectionPropertyIterator *iter)
+{
+	rna_builtin_properties_next(iter);
+
+	if(iter->valid)
+		iter->ptr= ConsoleLine_rna_properties_get(iter);
+}
+
+void ConsoleLine_rna_properties_end(CollectionPropertyIterator *iter)
+{
+	rna_iterator_listbase_end(iter);
+}
+
+int ConsoleLine_current_character_get(PointerRNA *ptr)
+{
+	ConsoleLine *data= (ConsoleLine*)(ptr->data);
+	return (int)(data->cursor);
+}
+
+void ConsoleLine_current_character_set(PointerRNA *ptr, int value)
+{
+	ConsoleLine *data= (ConsoleLine*)(ptr->data);
+	data->cursor= value;
+}
+
+PointerRNA FileSelectParams_rna_type_get(PointerRNA *ptr)
+{
+	return rna_builtin_type_get(ptr);
+}
+
+void FileSelectParams_directory_get(PointerRNA *ptr, char *value)
+{
+	FileSelectParams *data= (FileSelectParams*)(ptr->data);
+	BLI_strncpy(value, data->dir, 240);
+}
+
+int FileSelectParams_directory_length(PointerRNA *ptr)
+{
+	FileSelectParams *data= (FileSelectParams*)(ptr->data);
+	return strlen(data->dir);
+}
+
+void FileSelectParams_directory_set(PointerRNA *ptr, const char *value)
+{
+	FileSelectParams *data= (FileSelectParams*)(ptr->data);
+	BLI_strncpy(data->dir, value, 240);
+}
+
+int FileSelectParams_display_type_get(PointerRNA *ptr)
+{
+	FileSelectParams *data= (FileSelectParams*)(ptr->data);
+	return (int)(data->display);
+}
+
+void FileSelectParams_display_type_set(PointerRNA *ptr, int value)
+{
+	FileSelectParams *data= (FileSelectParams*)(ptr->data);
+	data->display= value;
+}
+
+void FileSelectParams_filter_glob_get(PointerRNA *ptr, char *value)
+{
+	FileSelectParams *data= (FileSelectParams*)(ptr->data);
+	BLI_strncpy(value, data->filter_glob, 64);
+}
+
+int FileSelectParams_filter_glob_length(PointerRNA *ptr)
+{
+	FileSelectParams *data= (FileSelectParams*)(ptr->data);
+	return strlen(data->filter_glob);
+}
+
+void FileSelectParams_filter_glob_set(PointerRNA *ptr, const char *value)
+{
+	FileSelectParams *data= (FileSelectParams*)(ptr->data);
+	BLI_strncpy(data->filter_glob, value, 64);
+}
+
+void FileSelectParams_filename_get(PointerRNA *ptr, char *value)
+{
+	FileSelectParams *data= (FileSelectParams*)(ptr->data);
+	BLI_strncpy(value, data->file, 80);
+}
+
+int FileSelectParams_filename_length(PointerRNA *ptr)
+{
+	FileSelectParams *data= (FileSelectParams*)(ptr->data);
+	return strlen(data->file);
+}
+
+void FileSelectParams_filename_set(PointerRNA *ptr, const char *value)
+{
+	FileSelectParams *data= (FileSelectParams*)(ptr->data);
+	BLI_strncpy(data->file, value, 80);
+}
+
+int FileSelectParams_use_filter_blender_get(PointerRNA *ptr)
+{
+	FileSelectParams *data= (FileSelectParams*)(ptr->data);
+	return (((data->filter) & 4) != 0);
+}
+
+void FileSelectParams_use_filter_blender_set(PointerRNA *ptr, int value)
+{
+	FileSelectParams *data= (FileSelectParams*)(ptr->data);
+	if(value) data->filter |= 4;
+	else data->filter &= ~4;
+}
+
+int FileSelectParams_use_filter_get(PointerRNA *ptr)
+{
+	FileSelectParams *data= (FileSelectParams*)(ptr->data);
+	return (((data->flag) & 256) != 0);
+}
+
+void FileSelectParams_use_filter_set(PointerRNA *ptr, int value)
+{
+	FileSelectParams *data= (FileSelectParams*)(ptr->data);
+	if(value) data->flag |= 256;
+	else data->flag &= ~256;
+}
+
+int FileSelectParams_use_filter_folder_get(PointerRNA *ptr)
+{
+	FileSelectParams *data= (FileSelectParams*)(ptr->data);
+	return (((data->filter) & 2048) != 0);
+}
+
+void FileSelectParams_use_filter_folder_set(PointerRNA *ptr, int value)
+{
+	FileSelectParams *data= (FileSelectParams*)(ptr->data);
+	if(value) data->filter |= 2048;
+	else data->filter &= ~2048;
+}
+
+int FileSelectParams_use_filter_font_get(PointerRNA *ptr)
+{
+	FileSelectParams *data= (FileSelectParams*)(ptr->data);
+	return (((data->filter) & 128) != 0);
+}
+
+void FileSelectParams_use_filter_font_set(PointerRNA *ptr, int value)
+{
+	FileSelectParams *data= (FileSelectParams*)(ptr->data);
+	if(value) data->filter |= 128;
+	else data->filter &= ~128;
+}
+
+int FileSelectParams_use_filter_image_get(PointerRNA *ptr)
+{
+	FileSelectParams *data= (FileSelectParams*)(ptr->data);
+	return (((data->filter) & 16) != 0);
+}
+
+void FileSelectParams_use_filter_image_set(PointerRNA *ptr, int value)
+{
+	FileSelectParams *data= (FileSelectParams*)(ptr->data);
+	if(value) data->filter |= 16;
+	else data->filter &= ~16;
+}
+
+int FileSelectParams_use_filter_movie_get(PointerRNA *ptr)
+{
+	FileSelectParams *data= (FileSelectParams*)(ptr->data);
+	return (((data->filter) & 32) != 0);
+}
+
+void FileSelectParams_use_filter_movie_set(PointerRNA *ptr, int value)
+{
+	FileSelectParams *data= (FileSelectParams*)(ptr->data);
+	if(value) data->filter |= 32;
+	else data->filter &= ~32;
+}
+
+int FileSelectParams_use_filter_script_get(PointerRNA *ptr)
+{
+	FileSelectParams *data= (FileSelectParams*)(ptr->data);
+	return (((data->filter) & 64) != 0);
+}
+
+void FileSelectParams_use_filter_script_set(PointerRNA *ptr, int value)
+{
+	FileSelectParams *data= (FileSelectParams*)(ptr->data);
+	if(value) data->filter |= 64;
+	else data->filter &= ~64;
+}
+
+int FileSelectParams_use_filter_sound_get(PointerRNA *ptr)
+{
+	FileSelectParams *data= (FileSelectParams*)(ptr->data);
+	return (((data->filter) & 256) != 0);
+}
+
+void FileSelectParams_use_filter_sound_set(PointerRNA *ptr, int value)
+{
+	FileSelectParams *data= (FileSelectParams*)(ptr->data);
+	if(value) data->filter |= 256;
+	else data->filter &= ~256;
+}
+
+int FileSelectParams_use_filter_text_get(PointerRNA *ptr)
+{
+	FileSelectParams *data= (FileSelectParams*)(ptr->data);
+	return (((data->filter) & 512) != 0);
+}
+
+void FileSelectParams_use_filter_text_set(PointerRNA *ptr, int value)
+{
+	FileSelectParams *data= (FileSelectParams*)(ptr->data);
+	if(value) data->filter |= 512;
+	else data->filter &= ~512;
+}
+
+static PointerRNA FileSelectParams_rna_properties_get(CollectionPropertyIterator *iter)
+{
+	return rna_builtin_properties_get(iter);
+}
+
+void FileSelectParams_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+	memset(iter, 0, sizeof(*iter));
+	iter->parent= *ptr;
+	iter->prop= (PropertyRNA*)&rna_FileSelectParams_rna_properties;
+
+	rna_builtin_properties_begin(iter, ptr);
+
+	if(iter->valid)
+		iter->ptr= FileSelectParams_rna_properties_get(iter);
+}
+
+void FileSelectParams_rna_properties_next(CollectionPropertyIterator *iter)
+{
+	rna_builtin_properties_next(iter);
+
+	if(iter->valid)
+		iter->ptr= FileSelectParams_rna_properties_get(iter);
+}
+
+void FileSelectParams_rna_properties_end(CollectionPropertyIterator *iter)
+{
+	rna_iterator_listbase_end(iter);
+}
+
+int FileSelectParams_show_hidden_get(PointerRNA *ptr)
+{
+	FileSelectParams *data= (FileSelectParams*)(ptr->data);
+	return !(((data->flag) & 8) != 0);
+}
+
+void FileSelectParams_show_hidden_set(PointerRNA *ptr, int value)
+{
+	FileSelectParams *data= (FileSelectParams*)(ptr->data);
+	if(!value) data->flag |= 8;
+	else data->flag &= ~8;
+}
+
+int FileSelectParams_sort_method_get(PointerRNA *ptr)
+{
+	FileSelectParams *data= (FileSelectParams*)(ptr->data);
+	return (int)(data->sort);
+}
+
+void FileSelectParams_sort_method_set(PointerRNA *ptr, int value)
+{
+	FileSelectParams *data= (FileSelectParams*)(ptr->data);
+	data->sort= value;
+}
+
+void FileSelectParams_title_get(PointerRNA *ptr, char *value)
+{
+	FileSelectParams *data= (FileSelectParams*)(ptr->data);
+	BLI_strncpy(value, data->title, 32);
+}
+
+int FileSelectParams_title_length(PointerRNA *ptr)
+{
+	FileSelectParams *data= (FileSelectParams*)(ptr->data);
+	return strlen(data->title);
+}
+
+PointerRNA RegionView3D_rna_type_get(PointerRNA *ptr)
+{
+	return rna_builtin_type_get(ptr);
+}
+
+int RegionView3D_show_sync_view_get(PointerRNA *ptr)
+{
+	RegionView3D *data= (RegionView3D*)(ptr->data);
+	return (((data->viewlock) & 2) != 0);
+}
+
+void RegionView3D_show_sync_view_set(PointerRNA *ptr, int value)
+{
+	RegionView3D *data= (RegionView3D*)(ptr->data);
+	if(value) data->viewlock |= 2;
+	else data->viewlock &= ~2;
+}
+
+int RegionView3D_use_box_clip_get(PointerRNA *ptr)
+{
+	RegionView3D *data= (RegionView3D*)(ptr->data);
+	return (((data->viewlock) & 4) != 0);
+}
+
+void RegionView3D_use_box_clip_set(PointerRNA *ptr, int value)
+{
+	RegionView3D *data= (RegionView3D*)(ptr->data);
+	if(value) data->viewlock |= 4;
+	else data->viewlock &= ~4;
+}
+
+float RegionView3D_view_distance_get(PointerRNA *ptr)
+{
+	RegionView3D *data= (RegionView3D*)(ptr->data);
+	return (float)(data->dist);
+}
+
+void RegionView3D_view_distance_set(PointerRNA *ptr, float value)
+{
+	RegionView3D *data= (RegionView3D*)(ptr->data);
+	data->dist= CLAMPIS(value, 0.0f, FLT_MAX);
+}
+
+int RegionView3D_lock_rotation_get(PointerRNA *ptr)
+{
+	RegionView3D *data= (RegionView3D*)(ptr->data);
+	return (((data->viewlock) & 1) != 0);
+}
+
+void RegionView3D_lock_rotation_set(PointerRNA *ptr, int value)
+{
+	RegionView3D *data= (RegionView3D*)(ptr->data);
+	if(value) data->viewlock |= 1;
+	else data->viewlock &= ~1;
+}
+
+int RegionView3D_view_perspective_get(PointerRNA *ptr)
+{
+	RegionView3D *data= (RegionView3D*)(ptr->data);
+	return (int)(data->persp);
+}
+
+void RegionView3D_view_perspective_set(PointerRNA *ptr, int value)
+{
+	RegionView3D *data= (RegionView3D*)(ptr->data);
+	data->persp= value;
+}
+
+void RegionView3D_perspective_matrix_get(PointerRNA *ptr, float values[16])
+{
+	RegionView3D *data= (RegionView3D*)(ptr->data);
+	int i;
+
+	for(i=0; i<16; i++) {
+		values[i]= (float)(((float*)data->persmat)[i]);
+	}
+}
+
+static PointerRNA RegionView3D_rna_properties_get(CollectionPropertyIterator *iter)
+{
+	return rna_builtin_properties_get(iter);
+}
+
+void RegionView3D_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+	memset(iter, 0, sizeof(*iter));
+	iter->parent= *ptr;
+	iter->prop= (PropertyRNA*)&rna_RegionView3D_rna_properties;
+
+	rna_builtin_properties_begin(iter, ptr);
+
+	if(iter->valid)
+		iter->ptr= RegionView3D_rna_properties_get(iter);
+}
+
+void RegionView3D_rna_properties_next(CollectionPropertyIterator *iter)
+{
+	rna_builtin_properties_next(iter);
+
+	if(iter->valid)
+		iter->ptr= RegionView3D_rna_properties_get(iter);
+}
+
+void RegionView3D_rna_properties_end(CollectionPropertyIterator *iter)
+{
+	rna_iterator_listbase_end(iter);
+}
+
+void RegionView3D_view_location_get(PointerRNA *ptr, float values[3])
+{
+	rna_RegionView3D_view_location_get(ptr, values);
+}
+
+void RegionView3D_view_location_set(PointerRNA *ptr, const float values[3])
+{
+	rna_RegionView3D_view_location_set(ptr, values);
+}
+
+void RegionView3D_view_matrix_get(PointerRNA *ptr, float values[16])
+{
+	RegionView3D *data= (RegionView3D*)(ptr->data);
+	int i;
+
+	for(i=0; i<16; i++) {
+		values[i]= (float)(((float*)data->viewmat)[i]);
+	}
+}
+
+void RegionView3D_view_rotation_get(PointerRNA *ptr, float values[4])
+{
+	RegionView3D *data= (RegionView3D*)(ptr->data);
+	int i;
+
+	for(i=0; i<4; i++) {
+		values[i]= (float)(((float*)data->viewquat)[i]);
+	}
+}
+
+void RegionView3D_view_rotation_set(PointerRNA *ptr, const float values[4])
+{
+	RegionView3D *data= (RegionView3D*)(ptr->data);
+	int i;
+
+	for(i=0; i<4; i++) {
+		((float*)data->viewquat)[i]= values[i];
+	}
+}
+
+PointerRNA Space_rna_type_get(PointerRNA *ptr)
+{
+	return rna_builtin_type_get(ptr);
+}
+
+static PointerRNA Space_rna_properties_get(CollectionPropertyIterator *iter)
+{
+	return rna_builtin_properties_get(iter);
+}
+
+void Space_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+	memset(iter, 0, sizeof(*iter));
+	iter->parent= *ptr;
+	iter->prop= (PropertyRNA*)&rna_Space_rna_properties;
+
+	rna_builtin_properties_begin(iter, ptr);
+
+	if(iter->valid)
+		iter->ptr= Space_rna_properties_get(iter);
+}
+
+void Space_rna_properties_next(CollectionPropertyIterator *iter)
+{
+	rna_builtin_properties_next(iter);
+
+	if(iter->valid)
+		iter->ptr= Space_rna_properties_get(iter);
+}
+
+void Space_rna_properties_end(CollectionPropertyIterator *iter)
+{
+	rna_iterator_listbase_end(iter);
+}
+
+int Space_type_get(PointerRNA *ptr)
+{
+	SpaceLink *data= (SpaceLink*)(ptr->data);
+	return (int)(data->spacetype);
+}
+
+int SpaceConsole_font_size_get(PointerRNA *ptr)
+{
+	SpaceConsole *data= (SpaceConsole*)(ptr->data);
+	return (int)(data->lheight);
+}
+
+void SpaceConsole_font_size_set(PointerRNA *ptr, int value)
+{
+	SpaceConsole *data= (SpaceConsole*)(ptr->data);
+	data->lheight= CLAMPIS(value, 8, 32);
+}
+
+static PointerRNA SpaceConsole_history_get(CollectionPropertyIterator *iter)
+{
+	return rna_pointer_inherit_refine(&iter->parent, &RNA_ConsoleLine, rna_iterator_listbase_get(iter));
+}
+
+void SpaceConsole_history_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+	SpaceConsole *data= (SpaceConsole*)(ptr->data);
+
+	memset(iter, 0, sizeof(*iter));
+	iter->parent= *ptr;
+	iter->prop= (PropertyRNA*)&rna_SpaceConsole_history;
+
+	rna_iterator_listbase_begin(iter, &data->history, NULL);
+
+	if(iter->valid)
+		iter->ptr= SpaceConsole_history_get(iter);
+}
+
+void SpaceConsole_history_next(CollectionPropertyIterator *iter)
+{
+	rna_iterator_listbase_next(iter);
+
+	if(iter->valid)
+		iter->ptr= SpaceConsole_history_get(iter);
+}
+
+void SpaceConsole_history_end(CollectionPropertyIterator *iter)
+{
+	rna_iterator_listbase_end(iter);
+}
+
+int SpaceConsole_history_lookup_int(PointerRNA *ptr, int index, PointerRNA *r_ptr)
+{
+	int found= 0;
+	CollectionPropertyIterator iter;
+
+	SpaceConsole_history_begin(&iter, ptr);
+
+	if(iter.valid){
+		ListBaseIterator *internal= iter.internal;
+		if(internal->skip) {
+			while(index-- > 0 && iter.valid) {
+				rna_iterator_listbase_next(&iter);
+			}
+			found= (index == -1 && iter.valid);
+		}
+		else {
+			while(index-- > 0 && internal->link)
+				internal->link= internal->link->next;
+			found= (index == -1 && internal->link);
+		}
+		if(found) *r_ptr = SpaceConsole_history_get(&iter);
+	}
+
+	SpaceConsole_history_end(&iter);
+
+	return found;
+}
+
+void SpaceConsole_language_get(PointerRNA *ptr, char *value)
+{
+	SpaceConsole *data= (SpaceConsole*)(ptr->data);
+	BLI_strncpy(value, data->language, 32);
+}
+
+int SpaceConsole_language_length(PointerRNA *ptr)
+{
+	SpaceConsole *data= (SpaceConsole*)(ptr->data);
+	return strlen(data->language);
+}
+
+void SpaceConsole_language_set(PointerRNA *ptr, const char *value)
+{
+	SpaceConsole *data= (SpaceConsole*)(ptr->data);
+	BLI_strncpy(data->language, value, 32);
+}
+
+static PointerRNA SpaceConsole_scrollback_get(CollectionPropertyIterator *iter)
+{
+	return rna_pointer_inherit_refine(&iter->parent, &RNA_ConsoleLine, rna_iterator_listbase_get(iter));
+}
+
+void SpaceConsole_scrollback_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+	SpaceConsole *data= (SpaceConsole*)(ptr->data);
+
+	memset(iter, 0, sizeof(*iter));
+	iter->parent= *ptr;
+	iter->prop= (PropertyRNA*)&rna_SpaceConsole_scrollback;
+
+	rna_iterator_listbase_begin(iter, &data->scrollback, NULL);
+
+	if(iter->valid)
+		iter->ptr= SpaceConsole_scrollback_get(iter);
+}
+
+void SpaceConsole_scrollback_next(CollectionPropertyIterator *iter)
+{
+	rna_iterator_listbase_next(iter);
+
+	if(iter->valid)
+		iter->ptr= SpaceConsole_scrollback_get(iter);
+}
+
+void SpaceConsole_scrollback_end(CollectionPropertyIterator *iter)
+{
+	rna_iterator_listbase_end(iter);
+}
+
+int SpaceConsole_scrollback_lookup_int(PointerRNA *ptr, int index, PointerRNA *r_ptr)
+{
+	int found= 0;
+	CollectionPropertyIterator iter;
+
+	SpaceConsole_scrollback_begin(&iter, ptr);
+
+	if(iter.valid){
+		ListBaseIterator *internal= iter.internal;
+		if(internal->skip) {
+			while(index-- > 0 && iter.valid) {
+				rna_iterator_listbase_next(&iter);
+			}
+			found= (index == -1 && iter.valid);
+		}
+		else {
+			while(index-- > 0 && internal->link)
+				internal->link= internal->link->next;
+			found= (index == -1 && internal->link);
+		}
+		if(found) *r_ptr = SpaceConsole_scrollback_get(&iter);
+	}
+
+	SpaceConsole_scrollback_end(&iter);
+
+	return found;
+}
+
+void SpaceConsole_prompt_get(PointerRNA *ptr, char *value)
+{
+	SpaceConsole *data= (SpaceConsole*)(ptr->data);
+	BLI_strncpy(value, data->prompt, 256);
+}
+
+int SpaceConsole_prompt_length(PointerRNA *ptr)
+{
+	SpaceConsole *data= (SpaceConsole*)(ptr->data);
+	return strlen(data->prompt);
+}
+
+void SpaceConsole_prompt_set(PointerRNA *ptr, const char *value)
+{
+	SpaceConsole *data= (SpaceConsole*)(ptr->data);
+	BLI_strncpy(data->prompt, value, 256);
+}
+
+int SpaceConsole_select_end_get(PointerRNA *ptr)
+{
+	SpaceConsole *data= (SpaceConsole*)(ptr->data);
+	return (int)(data->sel_end);
+}
+
+void SpaceConsole_select_end_set(PointerRNA *ptr, int value)
+{
+	SpaceConsole *data= (SpaceConsole*)(ptr->data);
+	data->sel_end= CLAMPIS(value, 0, INT_MAX);
+}
+
+int SpaceConsole_select_start_get(PointerRNA *ptr)
+{
+	SpaceConsole *data= (SpaceConsole*)(ptr->data);
+	return (int)(data->sel_start);
+}
+
+void SpaceConsole_select_start_set(PointerRNA *ptr, int value)
+{
+	SpaceConsole *data= (SpaceConsole*)(ptr->data);
+	data->sel_start= CLAMPIS(value, 0, INT_MAX);
+}
+
+PointerRNA SpaceDopeSheetEditor_action_get(PointerRNA *ptr)
+{
+	SpaceAction *data= (SpaceAction*)(ptr->data);
+	return rna_pointer_inherit_refine(ptr, &RNA_Action, data->action);
+}
+
+void SpaceDopeSheetEditor_action_set(PointerRNA *ptr, PointerRNA value)
+{
+	rna_SpaceDopeSheetEditor_action_set(ptr, value);
+}
+
+int SpaceDopeSheetEditor_auto_snap_get(PointerRNA *ptr)
+{
+	SpaceAction *data= (SpaceAction*)(ptr->data);
+	return (int)(data->autosnap);
+}
+
+void SpaceDopeSheetEditor_auto_snap_set(PointerRNA *ptr, int value)
+{
+	SpaceAction *data= (SpaceAction*)(ptr->data);
+	data->autosnap= value;
+}
+
+int SpaceDopeSheetEditor_use_auto_merge_keyframes_get(PointerRNA *ptr)
+{
+	SpaceAction *data= (SpaceAction*)(ptr->data);
+	return !(((data->flag) & 16) != 0);
+}
+
+void SpaceDopeSheetEditor_use_auto_merge_keyframes_set(PointerRNA *ptr, int value)
+{
+	SpaceAction *data= (SpaceAction*)(ptr->data);
+	if(!value) data->flag |= 16;
+	else data->flag &= ~16;
+}
+
+PointerRNA SpaceDopeSheetEditor_dopesheet_get(PointerRNA *ptr)
+{
+	SpaceAction *data= (SpaceAction*)(ptr->data);
+	return rna_pointer_inherit_refine(ptr, &RNA_DopeSheet, &data->ads);
+}
+
+int SpaceDopeSheetEditor_mode_get(PointerRNA *ptr)
+{
+	SpaceAction *data= (SpaceAction*)(ptr->data);
+	return (int)(data->mode);
+}
+
+void SpaceDopeSheetEditor_mode_set(PointerRNA *ptr, int value)
+{
+	SpaceAction *data= (SpaceAction*)(ptr->data);
+	data->mode= value;
+}
+
+int SpaceDopeSheetEditor_use_realtime_update_get(PointerRNA *ptr)
+{
+	SpaceAction *data= (SpaceAction*)(ptr->data);
+	return !(((data->flag) & 1024) != 0);
+}
+
+void SpaceDopeSheetEditor_use_realtime_update_set(PointerRNA *ptr, int value)
+{
+	SpaceAction *data= (SpaceAction*)(ptr->data);
+	if(!value) data->flag |= 1024;
+	else data->flag &= ~1024;
+}
+
+int SpaceDopeSheetEditor_show_frame_indicator_get(PointerRNA *ptr)
+{
+	SpaceAction *data= (SpaceAction*)(ptr->data);
+	return !(((data->flag) & 256) != 0);
+}
+
+void SpaceDopeSheetEditor_show_frame_indicator_set(PointerRNA *ptr, int value)
+{
+	SpaceAction *data= (SpaceAction*)(ptr->data);
+	if(!value) data->flag |= 256;
+	else data->flag &= ~256;
+}
+
+int SpaceDopeSheetEditor_show_pose_markers_get(PointerRNA *ptr)
+{
+	SpaceAction *data= (SpaceAction*)(ptr->data);
+	return (((data->flag) & 64) != 0);
+}
+
+void SpaceDopeSheetEditor_show_pose_markers_set(PointerRNA *ptr, int value)
+{
+	SpaceAction *data= (SpaceAction*)(ptr->data);
+	if(value) data->flag |= 64;
+	else data->flag &= ~64;
+}
+
+int SpaceDopeSheetEditor_show_seconds_get(PointerRNA *ptr)
+{
+	SpaceAction *data= (SpaceAction*)(ptr->data);
+	return (((data->flag) & 4) != 0);
+}
+
+int SpaceDopeSheetEditor_show_sliders_get(PointerRNA *ptr)
+{
+	SpaceAction *data= (SpaceAction*)(ptr->data);
+	return (((data->flag) & 2) != 0);
+}
+
+void SpaceDopeSheetEditor_show_sliders_set(PointerRNA *ptr, int value)
+{
+	SpaceAction *data= (SpaceAction*)(ptr->data);
+	if(value) data->flag |= 2;
+	else data->flag &= ~2;
+}
+
+int SpaceDopeSheetEditor_use_marker_sync_get(PointerRNA *ptr)
+{
+	SpaceAction *data= (SpaceAction*)(ptr->data);
+	return (((data->flag) & 2048) != 0);
+}
+
+void SpaceDopeSheetEditor_use_marker_sync_set(PointerRNA *ptr, int value)
+{
+	SpaceAction *data= (SpaceAction*)(ptr->data);
+	if(value) data->flag |= 2048;
+	else data->flag &= ~2048;
+}
+
+PointerRNA SpaceFileBrowser_params_get(PointerRNA *ptr)
+{
+	SpaceFile *data= (SpaceFile*)(ptr->data);
+	return rna_pointer_inherit_refine(ptr, &RNA_FileSelectParams, data->params);
+}
+
+PointerRNA SpaceFileBrowser_operator_get(PointerRNA *ptr)
+{
+	SpaceFile *data= (SpaceFile*)(ptr->data);
+	return rna_pointer_inherit_refine(ptr, &RNA_Operator, data->op);
+}
+
+int SpaceGraphEditor_auto_snap_get(PointerRNA *ptr)
+{
+	SpaceIpo *data= (SpaceIpo*)(ptr->data);
+	return (int)(data->autosnap);
+}
+
+void SpaceGraphEditor_auto_snap_set(PointerRNA *ptr, int value)
+{
+	SpaceIpo *data= (SpaceIpo*)(ptr->data);
+	data->autosnap= value;
+}
+
+int SpaceGraphEditor_use_auto_merge_keyframes_get(PointerRNA *ptr)
+{
+	SpaceIpo *data= (SpaceIpo*)(ptr->data);
+	return !(((data->flag) & 2) != 0);
+}
+
+void SpaceGraphEditor_use_auto_merge_keyframes_set(PointerRNA *ptr, int value)
+{
+	SpaceIpo *data= (SpaceIpo*)(ptr->data);
+	if(!value) data->flag |= 2;
+	else data->flag &= ~2;
+}
+
+float SpaceGraphEditor_cursor_position_y_get(PointerRNA *ptr)
+{
+	SpaceIpo *data= (SpaceIpo*)(ptr->data);
+	return (float)(data->cursorVal);
+}
+
+void SpaceGraphEditor_cursor_position_y_set(PointerRNA *ptr, float value)
+{
+	SpaceIpo *data= (SpaceIpo*)(ptr->data);
+	data->cursorVal= value;
+}
+
+PointerRNA SpaceGraphEditor_dopesheet_get(PointerRNA *ptr)
+{
+	SpaceIpo *data= (SpaceIpo*)(ptr->data);
+	return rna_pointer_inherit_refine(ptr, &RNA_DopeSheet, data->ads);
+}
+
+int SpaceGraphEditor_has_ghost_curves_get(PointerRNA *ptr)
+{
+	return rna_SpaceGraphEditor_has_ghost_curves_get(ptr);
+}
+
+void SpaceGraphEditor_has_ghost_curves_set(PointerRNA *ptr, int value)
+{
+	SpaceIpo *data= (SpaceIpo*)(ptr->data);
+	data->flag= value;
+}
+
+int SpaceGraphEditor_mode_get(PointerRNA *ptr)
+{
+	SpaceIpo *data= (SpaceIpo*)(ptr->data);
+	return (int)(data->mode);
+}
+
+void SpaceGraphEditor_mode_set(PointerRNA *ptr, int value)
+{
+	SpaceIpo *data= (SpaceIpo*)(ptr->data);
+	data->mode= value;
+}
+
+int SpaceGraphEditor_use_only_selected_curves_handles_get(PointerRNA *ptr)
+{
+	SpaceIpo *data= (SpaceIpo*)(ptr->data);
+	return (((data->flag) & 32) != 0);
+}
+
+void SpaceGraphEditor_use_only_selected_curves_handles_set(PointerRNA *ptr, int value)
+{
+	SpaceIpo *data= (SpaceIpo*)(ptr->data);
+	if(value) data->flag |= 32;
+	else data->flag &= ~32;
+}
+
+int SpaceGraphEditor_use_only_selected_keyframe_handles_get(PointerRNA *ptr)
+{
+	SpaceIpo *data= (SpaceIpo*)(ptr->data);
+	return (((data->flag) & 512) != 0);
+}
+
+void SpaceGraphEditor_use_only_selected_keyframe_handles_set(PointerRNA *ptr, int value)
+{
+	SpaceIpo *data= (SpaceIpo*)(ptr->data);
+	if(value) data->flag |= 512;
+	else data->flag &= ~512;
+}
+
+int SpaceGraphEditor_pivot_point_get(PointerRNA *ptr)
+{
+	SpaceIpo *data= (SpaceIpo*)(ptr->data);
+	return (int)(data->around);
+}
+
+void SpaceGraphEditor_pivot_point_set(PointerRNA *ptr, int value)
+{
+	SpaceIpo *data= (SpaceIpo*)(ptr->data);
+	data->around= value;
+}
+
+int SpaceGraphEditor_use_realtime_update_get(PointerRNA *ptr)
+{
+	SpaceIpo *data= (SpaceIpo*)(ptr->data);
+	return !(((data->flag) & 2048) != 0);
+}
+
+void SpaceGraphEditor_use_realtime_update_set(PointerRNA *ptr, int value)
+{
+	SpaceIpo *data= (SpaceIpo*)(ptr->data);
+	if(!value) data->flag |= 2048;
+	else data->flag &= ~2048;
+}
+
+int SpaceGraphEditor_show_cursor_get(PointerRNA *ptr)
+{
+	SpaceIpo *data= (SpaceIpo*)(ptr->data);
+	return !(((data->flag) & 256) != 0);
+}
+
+void SpaceGraphEditor_show_cursor_set(PointerRNA *ptr, int value)
+{
+	SpaceIpo *data= (SpaceIpo*)(ptr->data);
+	if(!value) data->flag |= 256;
+	else data->flag &= ~256;
+}
+
+int SpaceGraphEditor_show_frame_indicator_get(PointerRNA *ptr)
+{
+	SpaceIpo *data= (SpaceIpo*)(ptr->data);
+	return !(((data->flag) & 8) != 0);
+}
+
+void SpaceGraphEditor_show_frame_indicator_set(PointerRNA *ptr, int value)
+{
+	SpaceIpo *data= (SpaceIpo*)(ptr->data);
+	if(!value) data->flag |= 8;
+	else data->flag &= ~8;
+}
+
+int SpaceGraphEditor_show_handles_get(PointerRNA *ptr)
+{
+	SpaceIpo *data= (SpaceIpo*)(ptr->data);
+	return !(((data->flag) & 4) != 0);
+}
+
+void SpaceGraphEditor_show_handles_set(PointerRNA *ptr, int value)
+{
+	SpaceIpo *data= (SpaceIpo*)(ptr->data);
+	if(!value) data->flag |= 4;
+	else data->flag &= ~4;
+}
+
+int SpaceGraphEditor_show_seconds_get(PointerRNA *ptr)
+{
+	SpaceIpo *data= (SpaceIpo*)(ptr->data);
+	return (((data->flag) & 16) != 0);
+}
+
+int SpaceGraphEditor_show_sliders_get(PointerRNA *ptr)
+{
+	SpaceIpo *data= (SpaceIpo*)(ptr->data);
+	return (((data->flag) & 128) != 0);
+}
+
+void SpaceGraphEditor_show_sliders_set(PointerRNA *ptr, int value)
+{
+	SpaceIpo *data= (SpaceIpo*)(ptr->data);
+	if(value) data->flag |= 128;
+	else data->flag &= ~128;
+}
+
+int SpaceGraphEditor_use_fancy_drawing_get(PointerRNA *ptr)
+{
+	SpaceIpo *data= (SpaceIpo*)(ptr->data);
+	return !(((data->flag) & 4096) != 0);
+}
+
+void SpaceGraphEditor_use_fancy_drawing_set(PointerRNA *ptr, int value)
+{
+	SpaceIpo *data= (SpaceIpo*)(ptr->data);
+	if(!value) data->flag |= 4096;
+	else data->flag &= ~4096;
+}
+
+PointerRNA SpaceImageEditor_curves_get(PointerRNA *ptr)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	return rna_pointer_inherit_refine(ptr, &RNA_CurveMapping, data->cumap);
+}
+
+int SpaceImageEditor_draw_channels_get(PointerRNA *ptr)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	return ((data->flag) & 28672);
+}
+
+void SpaceImageEditor_draw_channels_set(PointerRNA *ptr, int value)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	data->flag &= ~28672;
+	data->flag |= value;
+}
+
+int SpaceImageEditor_show_repeat_get(PointerRNA *ptr)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	return (((data->flag) & 524288) != 0);
+}
+
+void SpaceImageEditor_show_repeat_set(PointerRNA *ptr, int value)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	if(value) data->flag |= 524288;
+	else data->flag &= ~524288;
+}
+
+PointerRNA SpaceImageEditor_grease_pencil_get(PointerRNA *ptr)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	return rna_pointer_inherit_refine(ptr, &RNA_GreasePencil, data->gpd);
+}
+
+void SpaceImageEditor_grease_pencil_set(PointerRNA *ptr, PointerRNA value)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+
+	if(data->gpd)
+		id_us_min((ID*)data->gpd);
+	if(value.data)
+		id_us_plus((ID*)value.data);
+
+	data->gpd= value.data;
+}
+
+PointerRNA SpaceImageEditor_image_get(PointerRNA *ptr)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	return rna_pointer_inherit_refine(ptr, &RNA_Image, data->image);
+}
+
+void SpaceImageEditor_image_set(PointerRNA *ptr, PointerRNA value)
+{
+	rna_SpaceImageEditor_image_set(ptr, value);
+}
+
+int SpaceImageEditor_use_image_paint_get(PointerRNA *ptr)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	return (((data->flag) & 8) != 0);
+}
+
+void SpaceImageEditor_use_image_paint_set(PointerRNA *ptr, int value)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	if(value) data->flag |= 8;
+	else data->flag &= ~8;
+}
+
+int SpaceImageEditor_use_image_pin_get(PointerRNA *ptr)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	return (int)(data->pin);
+}
+
+void SpaceImageEditor_use_image_pin_set(PointerRNA *ptr, int value)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	data->pin= value;
+}
+
+PointerRNA SpaceImageEditor_image_user_get(PointerRNA *ptr)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	return rna_pointer_inherit_refine(ptr, &RNA_ImageUser, &data->iuser);
+}
+
+PointerRNA SpaceImageEditor_sample_histogram_get(PointerRNA *ptr)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	return rna_pointer_inherit_refine(ptr, &RNA_Histogram, &data->sample_line_hist);
+}
+
+PointerRNA SpaceImageEditor_scopes_get(PointerRNA *ptr)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	return rna_pointer_inherit_refine(ptr, &RNA_Scopes, &data->scopes);
+}
+
+int SpaceImageEditor_show_paint_get(PointerRNA *ptr)
+{
+	return rna_SpaceImageEditor_show_paint_get(ptr);
+}
+
+int SpaceImageEditor_show_render_get(PointerRNA *ptr)
+{
+	return rna_SpaceImageEditor_show_render_get(ptr);
+}
+
+int SpaceImageEditor_show_uvedit_get(PointerRNA *ptr)
+{
+	return rna_SpaceImageEditor_show_uvedit_get(ptr);
+}
+
+PointerRNA SpaceImageEditor_uv_editor_get(PointerRNA *ptr)
+{
+	return rna_SpaceImageEditor_uvedit_get(ptr);
+}
+
+int SpaceImageEditor_use_realtime_update_get(PointerRNA *ptr)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	return (int)(data->lock);
+}
+
+void SpaceImageEditor_use_realtime_update_set(PointerRNA *ptr, int value)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	data->lock= value;
+}
+
+int SpaceImageEditor_use_grease_pencil_get(PointerRNA *ptr)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	return (((data->flag) & 4194304) != 0);
+}
+
+void SpaceImageEditor_use_grease_pencil_set(PointerRNA *ptr, int value)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	if(value) data->flag |= 4194304;
+	else data->flag &= ~4194304;
+}
+
+int SpaceInfo_show_report_debug_get(PointerRNA *ptr)
+{
+	SpaceInfo *data= (SpaceInfo*)(ptr->data);
+	return (((data->rpt_mask) & 1) != 0);
+}
+
+void SpaceInfo_show_report_debug_set(PointerRNA *ptr, int value)
+{
+	SpaceInfo *data= (SpaceInfo*)(ptr->data);
+	if(value) data->rpt_mask |= 1;
+	else data->rpt_mask &= ~1;
+}
+
+int SpaceInfo_show_report_error_get(PointerRNA *ptr)
+{
+	SpaceInfo *data= (SpaceInfo*)(ptr->data);
+	return (((data->rpt_mask) & 16) != 0);
+}
+
+void SpaceInfo_show_report_error_set(PointerRNA *ptr, int value)
+{
+	SpaceInfo *data= (SpaceInfo*)(ptr->data);
+	if(value) data->rpt_mask |= 16;
+	else data->rpt_mask &= ~16;
+}
+
+int SpaceInfo_show_report_info_get(PointerRNA *ptr)
+{
+	SpaceInfo *data= (SpaceInfo*)(ptr->data);
+	return (((data->rpt_mask) & 2) != 0);
+}
+
+void SpaceInfo_show_report_info_set(PointerRNA *ptr, int value)
+{
+	SpaceInfo *data= (SpaceInfo*)(ptr->data);
+	if(value) data->rpt_mask |= 2;
+	else data->rpt_mask &= ~2;
+}
+
+int SpaceInfo_show_report_operator_get(PointerRNA *ptr)
+{
+	SpaceInfo *data= (SpaceInfo*)(ptr->data);
+	return (((data->rpt_mask) & 4) != 0);
+}
+
+void SpaceInfo_show_report_operator_set(PointerRNA *ptr, int value)
+{
+	SpaceInfo *data= (SpaceInfo*)(ptr->data);
+	if(value) data->rpt_mask |= 4;
+	else data->rpt_mask &= ~4;
+}
+
+int SpaceInfo_show_report_warning_get(PointerRNA *ptr)
+{
+	SpaceInfo *data= (SpaceInfo*)(ptr->data);
+	return (((data->rpt_mask) & 8) != 0);
+}
+
+void SpaceInfo_show_report_warning_set(PointerRNA *ptr, int value)
+{
+	SpaceInfo *data= (SpaceInfo*)(ptr->data);
+	if(value) data->rpt_mask |= 8;
+	else data->rpt_mask &= ~8;
+}
+
+int SpaceLogicEditor_show_sensors_active_object_get(PointerRNA *ptr)
+{
+	SpaceLogic *data= (SpaceLogic*)(ptr->data);
+	return (((data->scaflag) & 2) != 0);
+}
+
+void SpaceLogicEditor_show_sensors_active_object_set(PointerRNA *ptr, int value)
+{
+	SpaceLogic *data= (SpaceLogic*)(ptr->data);
+	if(value) data->scaflag |= 2;
+	else data->scaflag &= ~2;
+}
+
+int SpaceLogicEditor_show_controllers_active_object_get(PointerRNA *ptr)
+{
+	SpaceLogic *data= (SpaceLogic*)(ptr->data);
+	return (((data->scaflag) & 16) != 0);
+}
+
+void SpaceLogicEditor_show_controllers_active_object_set(PointerRNA *ptr, int value)
+{
+	SpaceLogic *data= (SpaceLogic*)(ptr->data);
+	if(value) data->scaflag |= 16;
+	else data->scaflag &= ~16;
+}
+
+int SpaceLogicEditor_show_actuators_active_object_get(PointerRNA *ptr)
+{
+	SpaceLogic *data= (SpaceLogic*)(ptr->data);
+	return (((data->scaflag) & 128) != 0);
+}
+
+void SpaceLogicEditor_show_actuators_active_object_set(PointerRNA *ptr, int value)
+{
+	SpaceLogic *data= (SpaceLogic*)(ptr->data);
+	if(value) data->scaflag |= 128;
+	else data->scaflag &= ~128;
+}
+
+int SpaceLogicEditor_show_sensors_active_states_get(PointerRNA *ptr)
+{
+	SpaceLogic *data= (SpaceLogic*)(ptr->data);
+	return (((data->scaflag) & 512) != 0);
+}
+
+void SpaceLogicEditor_show_sensors_active_states_set(PointerRNA *ptr, int value)
+{
+	SpaceLogic *data= (SpaceLogic*)(ptr->data);
+	if(value) data->scaflag |= 512;
+	else data->scaflag &= ~512;
+}
+
+int SpaceLogicEditor_show_actuators_active_states_get(PointerRNA *ptr)
+{
+	SpaceLogic *data= (SpaceLogic*)(ptr->data);
+	return (((data->scaflag) & 1024) != 0);
+}
+
+void SpaceLogicEditor_show_actuators_active_states_set(PointerRNA *ptr, int value)
+{
+	SpaceLogic *data= (SpaceLogic*)(ptr->data);
+	if(value) data->scaflag |= 1024;
+	else data->scaflag &= ~1024;
+}
+
+int SpaceLogicEditor_show_actuators_linked_controller_get(PointerRNA *ptr)
+{
+	SpaceLogic *data= (SpaceLogic*)(ptr->data);
+	return (((data->scaflag) & 256) != 0);
+}
+
+void SpaceLogicEditor_show_actuators_linked_controller_set(PointerRNA *ptr, int value)
+{
+	SpaceLogic *data= (SpaceLogic*)(ptr->data);
+	if(value) data->scaflag |= 256;
+	else data->scaflag &= ~256;
+}
+
+int SpaceLogicEditor_show_sensors_linked_controller_get(PointerRNA *ptr)
+{
+	SpaceLogic *data= (SpaceLogic*)(ptr->data);
+	return (((data->scaflag) & 4) != 0);
+}
+
+void SpaceLogicEditor_show_sensors_linked_controller_set(PointerRNA *ptr, int value)
+{
+	SpaceLogic *data= (SpaceLogic*)(ptr->data);
+	if(value) data->scaflag |= 4;
+	else data->scaflag &= ~4;
+}
+
+int SpaceLogicEditor_show_controllers_linked_controller_get(PointerRNA *ptr)
+{
+	SpaceLogic *data= (SpaceLogic*)(ptr->data);
+	return (((data->scaflag) & 32) != 0);
+}
+
+void SpaceLogicEditor_show_controllers_linked_controller_set(PointerRNA *ptr, int value)
+{
+	SpaceLogic *data= (SpaceLogic*)(ptr->data);
+	if(value) data->scaflag |= 32;
+	else data->scaflag &= ~32;
+}
+
+int SpaceLogicEditor_show_sensors_selected_objects_get(PointerRNA *ptr)
+{
+	SpaceLogic *data= (SpaceLogic*)(ptr->data);
+	return (((data->scaflag) & 1) != 0);
+}
+
+void SpaceLogicEditor_show_sensors_selected_objects_set(PointerRNA *ptr, int value)
+{
+	SpaceLogic *data= (SpaceLogic*)(ptr->data);
+	if(value) data->scaflag |= 1;
+	else data->scaflag &= ~1;
+}
+
+int SpaceLogicEditor_show_controllers_selected_objects_get(PointerRNA *ptr)
+{
+	SpaceLogic *data= (SpaceLogic*)(ptr->data);
+	return (((data->scaflag) & 8) != 0);
+}
+
+void SpaceLogicEditor_show_controllers_selected_objects_set(PointerRNA *ptr, int value)
+{
+	SpaceLogic *data= (SpaceLogic*)(ptr->data);
+	if(value) data->scaflag |= 8;
+	else data->scaflag &= ~8;
+}
+
+int SpaceLogicEditor_show_actuators_selected_objects_get(PointerRNA *ptr)
+{
+	SpaceLogic *data= (SpaceLogic*)(ptr->data);
+	return (((data->scaflag) & 64) != 0);
+}
+
+void SpaceLogicEditor_show_actuators_selected_objects_set(PointerRNA *ptr, int value)
+{
+	SpaceLogic *data= (SpaceLogic*)(ptr->data);
+	if(value) data->scaflag |= 64;
+	else data->scaflag &= ~64;
+}
+
+int SpaceNLA_auto_snap_get(PointerRNA *ptr)
+{
+	SpaceNla *data= (SpaceNla*)(ptr->data);
+	return (int)(data->autosnap);
+}
+
+void SpaceNLA_auto_snap_set(PointerRNA *ptr, int value)
+{
+	SpaceNla *data= (SpaceNla*)(ptr->data);
+	data->autosnap= value;
+}
+
+PointerRNA SpaceNLA_dopesheet_get(PointerRNA *ptr)
+{
+	SpaceNla *data= (SpaceNla*)(ptr->data);
+	return rna_pointer_inherit_refine(ptr, &RNA_DopeSheet, data->ads);
+}
+
+int SpaceNLA_use_realtime_update_get(PointerRNA *ptr)
+{
+	SpaceNla *data= (SpaceNla*)(ptr->data);
+	return !(((data->flag) & 64) != 0);
+}
+
+void SpaceNLA_use_realtime_update_set(PointerRNA *ptr, int value)
+{
+	SpaceNla *data= (SpaceNla*)(ptr->data);
+	if(!value) data->flag |= 64;
+	else data->flag &= ~64;
+}
+
+int SpaceNLA_show_strip_curves_get(PointerRNA *ptr)
+{
+	SpaceNla *data= (SpaceNla*)(ptr->data);
+	return !(((data->flag) & 32) != 0);
+}
+
+void SpaceNLA_show_strip_curves_set(PointerRNA *ptr, int value)
+{
+	SpaceNla *data= (SpaceNla*)(ptr->data);
+	if(!value) data->flag |= 32;
+	else data->flag &= ~32;
+}
+
+int SpaceNLA_show_frame_indicator_get(PointerRNA *ptr)
+{
+	SpaceNla *data= (SpaceNla*)(ptr->data);
+	return !(((data->flag) & 16) != 0);
+}
+
+void SpaceNLA_show_frame_indicator_set(PointerRNA *ptr, int value)
+{
+	SpaceNla *data= (SpaceNla*)(ptr->data);
+	if(!value) data->flag |= 16;
+	else data->flag &= ~16;
+}
+
+int SpaceNLA_show_seconds_get(PointerRNA *ptr)
+{
+	SpaceNla *data= (SpaceNla*)(ptr->data);
+	return (((data->flag) & 4) != 0);
+}
+
+int SpaceNodeEditor_use_auto_render_get(PointerRNA *ptr)
+{
+	SpaceNode *data= (SpaceNode*)(ptr->data);
+	return (((data->flag) & 32) != 0);
+}
+
+void SpaceNodeEditor_use_auto_render_set(PointerRNA *ptr, int value)
+{
+	SpaceNode *data= (SpaceNode*)(ptr->data);
+	if(value) data->flag |= 32;
+	else data->flag &= ~32;
+}
+
+int SpaceNodeEditor_show_backdrop_get(PointerRNA *ptr)
+{
+	SpaceNode *data= (SpaceNode*)(ptr->data);
+	return (((data->flag) & 2) != 0);
+}
+
+void SpaceNodeEditor_show_backdrop_set(PointerRNA *ptr, int value)
+{
+	SpaceNode *data= (SpaceNode*)(ptr->data);
+	if(value) data->flag |= 2;
+	else data->flag &= ~2;
+}
+
+float SpaceNodeEditor_backdrop_x_get(PointerRNA *ptr)
+{
+	SpaceNode *data= (SpaceNode*)(ptr->data);
+	return (float)(data->xof);
+}
+
+void SpaceNodeEditor_backdrop_x_set(PointerRNA *ptr, float value)
+{
+	SpaceNode *data= (SpaceNode*)(ptr->data);
+	data->xof= value;
+}
+
+float SpaceNodeEditor_backdrop_y_get(PointerRNA *ptr)
+{
+	SpaceNode *data= (SpaceNode*)(ptr->data);
+	return (float)(data->yof);
+}
+
+void SpaceNodeEditor_backdrop_y_set(PointerRNA *ptr, float value)
+{
+	SpaceNode *data= (SpaceNode*)(ptr->data);
+	data->yof= value;
+}
+
+float SpaceNodeEditor_backdrop_zoom_get(PointerRNA *ptr)
+{
+	SpaceNode *data= (SpaceNode*)(ptr->data);
+	return (float)(data->zoom);
+}
+
+void SpaceNodeEditor_backdrop_zoom_set(PointerRNA *ptr, float value)
+{
+	SpaceNode *data= (SpaceNode*)(ptr->data);
+	data->zoom= CLAMPIS(value, 0.0099999998f, FLT_MAX);
+}
+
+int SpaceNodeEditor_backdrop_channels_get(PointerRNA *ptr)
+{
+	SpaceNode *data= (SpaceNode*)(ptr->data);
+	return ((data->flag) & 24);
+}
+
+void SpaceNodeEditor_backdrop_channels_set(PointerRNA *ptr, int value)
+{
+	SpaceNode *data= (SpaceNode*)(ptr->data);
+	data->flag &= ~24;
+	data->flag |= value;
+}
+
+PointerRNA SpaceNodeEditor_id_get(PointerRNA *ptr)
+{
+	SpaceNode *data= (SpaceNode*)(ptr->data);
+	return rna_pointer_inherit_refine(ptr, &RNA_ID, data->id);
+}
+
+PointerRNA SpaceNodeEditor_id_from_get(PointerRNA *ptr)
+{
+	SpaceNode *data= (SpaceNode*)(ptr->data);
+	return rna_pointer_inherit_refine(ptr, &RNA_ID, data->from);
+}
+
+PointerRNA SpaceNodeEditor_node_tree_get(PointerRNA *ptr)
+{
+	SpaceNode *data= (SpaceNode*)(ptr->data);
+	return rna_pointer_inherit_refine(ptr, &RNA_NodeTree, data->nodetree);
+}
+
+int SpaceNodeEditor_texture_type_get(PointerRNA *ptr)
+{
+	SpaceNode *data= (SpaceNode*)(ptr->data);
+	return (int)(data->texfrom);
+}
+
+void SpaceNodeEditor_texture_type_set(PointerRNA *ptr, int value)
+{
+	SpaceNode *data= (SpaceNode*)(ptr->data);
+	data->texfrom= value;
+}
+
+int SpaceNodeEditor_tree_type_get(PointerRNA *ptr)
+{
+	SpaceNode *data= (SpaceNode*)(ptr->data);
+	return (int)(data->treetype);
+}
+
+void SpaceNodeEditor_tree_type_set(PointerRNA *ptr, int value)
+{
+	SpaceNode *data= (SpaceNode*)(ptr->data);
+	data->treetype= value;
+}
+
+int SpaceOutliner_use_filter_case_sensitive_get(PointerRNA *ptr)
+{
+	SpaceOops *data= (SpaceOops*)(ptr->data);
+	return (((data->search_flags) & 1) != 0);
+}
+
+void SpaceOutliner_use_filter_case_sensitive_set(PointerRNA *ptr, int value)
+{
+	SpaceOops *data= (SpaceOops*)(ptr->data);
+	if(value) data->search_flags |= 1;
+	else data->search_flags &= ~1;
+}
+
+int SpaceOutliner_use_filter_complete_get(PointerRNA *ptr)
+{
+	SpaceOops *data= (SpaceOops*)(ptr->data);
+	return (((data->search_flags) & 2) != 0);
+}
+
+void SpaceOutliner_use_filter_complete_set(PointerRNA *ptr, int value)
+{
+	SpaceOops *data= (SpaceOops*)(ptr->data);
+	if(value) data->search_flags |= 2;
+	else data->search_flags &= ~2;
+}
+
+void SpaceOutliner_filter_text_get(PointerRNA *ptr, char *value)
+{
+	SpaceOops *data= (SpaceOops*)(ptr->data);
+	BLI_strncpy(value, data->search_string, 32);
+}
+
+int SpaceOutliner_filter_text_length(PointerRNA *ptr)
+{
+	SpaceOops *data= (SpaceOops*)(ptr->data);
+	return strlen(data->search_string);
+}
+
+void SpaceOutliner_filter_text_set(PointerRNA *ptr, const char *value)
+{
+	SpaceOops *data= (SpaceOops*)(ptr->data);
+	BLI_strncpy(data->search_string, value, 32);
+}
+
+int SpaceOutliner_display_mode_get(PointerRNA *ptr)
+{
+	SpaceOops *data= (SpaceOops*)(ptr->data);
+	return (int)(data->outlinevis);
+}
+
+void SpaceOutliner_display_mode_set(PointerRNA *ptr, int value)
+{
+	SpaceOops *data= (SpaceOops*)(ptr->data);
+	data->outlinevis= value;
+}
+
+int SpaceOutliner_show_restrict_columns_get(PointerRNA *ptr)
+{
+	SpaceOops *data= (SpaceOops*)(ptr->data);
+	return !(((data->flag) & 4) != 0);
+}
+
+void SpaceOutliner_show_restrict_columns_set(PointerRNA *ptr, int value)
+{
+	SpaceOops *data= (SpaceOops*)(ptr->data);
+	if(!value) data->flag |= 4;
+	else data->flag &= ~4;
+}
+
+int SpaceProperties_align_get(PointerRNA *ptr)
+{
+	SpaceButs *data= (SpaceButs*)(ptr->data);
+	return (int)(data->align);
+}
+
+void SpaceProperties_align_set(PointerRNA *ptr, int value)
+{
+	rna_SpaceProperties_align_set(ptr, value);
+}
+
+int SpaceProperties_context_get(PointerRNA *ptr)
+{
+	SpaceButs *data= (SpaceButs*)(ptr->data);
+	return (int)(data->mainb);
+}
+
+void SpaceProperties_context_set(PointerRNA *ptr, int value)
+{
+	rna_SpaceProperties_context_set(ptr, value);
+}
+
+int SpaceProperties_use_pin_id_get(PointerRNA *ptr)
+{
+	SpaceButs *data= (SpaceButs*)(ptr->data);
+	return (((data->flag) & 2) != 0);
+}
+
+void SpaceProperties_use_pin_id_set(PointerRNA *ptr, int value)
+{
+	SpaceButs *data= (SpaceButs*)(ptr->data);
+	if(value) data->flag |= 2;
+	else data->flag &= ~2;
+}
+
+int SpaceProperties_texture_context_get(PointerRNA *ptr)
+{
+	SpaceButs *data= (SpaceButs*)(ptr->data);
+	return (int)(data->texture_context);
+}
+
+void SpaceProperties_texture_context_set(PointerRNA *ptr, int value)
+{
+	SpaceButs *data= (SpaceButs*)(ptr->data);
+	data->texture_context= value;
+}
+
+PointerRNA SpaceProperties_pin_id_get(PointerRNA *ptr)
+{
+	SpaceButs *data= (SpaceButs*)(ptr->data);
+	return rna_pointer_inherit_refine(ptr, &RNA_ID, data->pinid);
+}
+
+void SpaceProperties_pin_id_set(PointerRNA *ptr, PointerRNA value)
+{
+	rna_SpaceProperties_pin_id_set(ptr, value);
+}
+
+int SpaceSequenceEditor_display_channel_get(PointerRNA *ptr)
+{
+	SpaceSeq *data= (SpaceSeq*)(ptr->data);
+	return (int)(data->chanshown);
+}
+
+void SpaceSequenceEditor_display_channel_set(PointerRNA *ptr, int value)
+{
+	SpaceSeq *data= (SpaceSeq*)(ptr->data);
+	data->chanshown= CLAMPIS(value, -5, 32);
+}
+
+int SpaceSequenceEditor_display_mode_get(PointerRNA *ptr)
+{
+	SpaceSeq *data= (SpaceSeq*)(ptr->data);
+	return (int)(data->mainb);
+}
+
+void SpaceSequenceEditor_display_mode_set(PointerRNA *ptr, int value)
+{
+	SpaceSeq *data= (SpaceSeq*)(ptr->data);
+	data->mainb= value;
+}
+
+int SpaceSequenceEditor_show_frames_get(PointerRNA *ptr)
+{
+	SpaceSeq *data= (SpaceSeq*)(ptr->data);
+	return (((data->flag) & 1) != 0);
+}
+
+void SpaceSequenceEditor_show_frames_set(PointerRNA *ptr, int value)
+{
+	SpaceSeq *data= (SpaceSeq*)(ptr->data);
+	if(value) data->flag |= 1;
+	else data->flag &= ~1;
+}
+
+PointerRNA SpaceSequenceEditor_grease_pencil_get(PointerRNA *ptr)
+{
+	SpaceSeq *data= (SpaceSeq*)(ptr->data);
+	return rna_pointer_inherit_refine(ptr, &RNA_UnknownType, data->gpd);
+}
+
+int SpaceSequenceEditor_proxy_render_size_get(PointerRNA *ptr)
+{
+	SpaceSeq *data= (SpaceSeq*)(ptr->data);
+	return (int)(data->render_size);
+}
+
+void SpaceSequenceEditor_proxy_render_size_set(PointerRNA *ptr, int value)
+{
+	SpaceSeq *data= (SpaceSeq*)(ptr->data);
+	data->render_size= value;
+}
+
+int SpaceSequenceEditor_show_safe_margin_get(PointerRNA *ptr)
+{
+	SpaceSeq *data= (SpaceSeq*)(ptr->data);
+	return (((data->flag) & 8) != 0);
+}
+
+void SpaceSequenceEditor_show_safe_margin_set(PointerRNA *ptr, int value)
+{
+	SpaceSeq *data= (SpaceSeq*)(ptr->data);
+	if(value) data->flag |= 8;
+	else data->flag &= ~8;
+}
+
+int SpaceSequenceEditor_show_separate_color_get(PointerRNA *ptr)
+{
+	SpaceSeq *data= (SpaceSeq*)(ptr->data);
+	return (((data->flag) & 4) != 0);
+}
+
+void SpaceSequenceEditor_show_separate_color_set(PointerRNA *ptr, int value)
+{
+	SpaceSeq *data= (SpaceSeq*)(ptr->data);
+	if(value) data->flag |= 4;
+	else data->flag &= ~4;
+}
+
+int SpaceSequenceEditor_show_frame_indicator_get(PointerRNA *ptr)
+{
+	SpaceSeq *data= (SpaceSeq*)(ptr->data);
+	return !(((data->flag) & 32) != 0);
+}
+
+void SpaceSequenceEditor_show_frame_indicator_set(PointerRNA *ptr, int value)
+{
+	SpaceSeq *data= (SpaceSeq*)(ptr->data);
+	if(!value) data->flag |= 32;
+	else data->flag &= ~32;
+}
+
+int SpaceSequenceEditor_draw_overexposed_get(PointerRNA *ptr)
+{
+	SpaceSeq *data= (SpaceSeq*)(ptr->data);
+	return (int)(data->zebra);
+}
+
+void SpaceSequenceEditor_draw_overexposed_set(PointerRNA *ptr, int value)
+{
+	SpaceSeq *data= (SpaceSeq*)(ptr->data);
+	data->zebra= CLAMPIS(value, 0, 110);
+}
+
+int SpaceSequenceEditor_use_marker_sync_get(PointerRNA *ptr)
+{
+	SpaceSeq *data= (SpaceSeq*)(ptr->data);
+	return (((data->flag) & 2) != 0);
+}
+
+void SpaceSequenceEditor_use_marker_sync_set(PointerRNA *ptr, int value)
+{
+	SpaceSeq *data= (SpaceSeq*)(ptr->data);
+	if(value) data->flag |= 2;
+	else data->flag &= ~2;
+}
+
+int SpaceSequenceEditor_use_grease_pencil_get(PointerRNA *ptr)
+{
+	SpaceSeq *data= (SpaceSeq*)(ptr->data);
+	return (((data->flag) & 16) != 0);
+}
+
+void SpaceSequenceEditor_use_grease_pencil_set(PointerRNA *ptr, int value)
+{
+	SpaceSeq *data= (SpaceSeq*)(ptr->data);
+	if(value) data->flag |= 16;
+	else data->flag &= ~16;
+}
+
+int SpaceSequenceEditor_view_type_get(PointerRNA *ptr)
+{
+	SpaceSeq *data= (SpaceSeq*)(ptr->data);
+	return (int)(data->view);
+}
+
+void SpaceSequenceEditor_view_type_set(PointerRNA *ptr, int value)
+{
+	SpaceSeq *data= (SpaceSeq*)(ptr->data);
+	data->view= value;
+}
+
+float SpaceSequenceEditor_offset_x_get(PointerRNA *ptr)
+{
+	SpaceSeq *data= (SpaceSeq*)(ptr->data);
+	return (float)(data->xof);
+}
+
+void SpaceSequenceEditor_offset_x_set(PointerRNA *ptr, float value)
+{
+	SpaceSeq *data= (SpaceSeq*)(ptr->data);
+	data->xof= value;
+}
+
+float SpaceSequenceEditor_offset_y_get(PointerRNA *ptr)
+{
+	SpaceSeq *data= (SpaceSeq*)(ptr->data);
+	return (float)(data->yof);
+}
+
+void SpaceSequenceEditor_offset_y_set(PointerRNA *ptr, float value)
+{
+	SpaceSeq *data= (SpaceSeq*)(ptr->data);
+	data->yof= value;
+}
+
+float SpaceSequenceEditor_zoom_get(PointerRNA *ptr)
+{
+	SpaceSeq *data= (SpaceSeq*)(ptr->data);
+	return (float)(data->zoom);
+}
+
+void SpaceSequenceEditor_zoom_set(PointerRNA *ptr, float value)
+{
+	SpaceSeq *data= (SpaceSeq*)(ptr->data);
+	data->zoom= value;
+}
+
+int SpaceTextEditor_use_find_all_get(PointerRNA *ptr)
+{
+	SpaceText *data= (SpaceText*)(ptr->data);
+	return (((data->flags) & 64) != 0);
+}
+
+void SpaceTextEditor_use_find_all_set(PointerRNA *ptr, int value)
+{
+	SpaceText *data= (SpaceText*)(ptr->data);
+	if(value) data->flags |= 64;
+	else data->flags &= ~64;
+}
+
+void SpaceTextEditor_find_text_get(PointerRNA *ptr, char *value)
+{
+	SpaceText *data= (SpaceText*)(ptr->data);
+	BLI_strncpy(value, data->findstr, 256);
+}
+
+int SpaceTextEditor_find_text_length(PointerRNA *ptr)
+{
+	SpaceText *data= (SpaceText*)(ptr->data);
+	return strlen(data->findstr);
+}
+
+void SpaceTextEditor_find_text_set(PointerRNA *ptr, const char *value)
+{
+	SpaceText *data= (SpaceText*)(ptr->data);
+	BLI_strncpy(data->findstr, value, 256);
+}
+
+int SpaceTextEditor_use_find_wrap_get(PointerRNA *ptr)
+{
+	SpaceText *data= (SpaceText*)(ptr->data);
+	return (((data->flags) & 32) != 0);
+}
+
+void SpaceTextEditor_use_find_wrap_set(PointerRNA *ptr, int value)
+{
+	SpaceText *data= (SpaceText*)(ptr->data);
+	if(value) data->flags |= 32;
+	else data->flags &= ~32;
+}
+
+int SpaceTextEditor_font_size_get(PointerRNA *ptr)
+{
+	SpaceText *data= (SpaceText*)(ptr->data);
+	return (int)(data->lheight);
+}
+
+void SpaceTextEditor_font_size_set(PointerRNA *ptr, int value)
+{
+	SpaceText *data= (SpaceText*)(ptr->data);
+	data->lheight= CLAMPIS(value, 8, 32);
+}
+
+int SpaceTextEditor_show_line_highlight_get(PointerRNA *ptr)
+{
+	SpaceText *data= (SpaceText*)(ptr->data);
+	return (int)(data->line_hlight);
+}
+
+void SpaceTextEditor_show_line_highlight_set(PointerRNA *ptr, int value)
+{
+	SpaceText *data= (SpaceText*)(ptr->data);
+	data->line_hlight= value;
+}
+
+int SpaceTextEditor_show_line_numbers_get(PointerRNA *ptr)
+{
+	SpaceText *data= (SpaceText*)(ptr->data);
+	return (int)(data->showlinenrs);
+}
+
+void SpaceTextEditor_show_line_numbers_set(PointerRNA *ptr, int value)
+{
+	SpaceText *data= (SpaceText*)(ptr->data);
+	data->showlinenrs= value;
+}
+
+int SpaceTextEditor_use_live_edit_get(PointerRNA *ptr)
+{
+	SpaceText *data= (SpaceText*)(ptr->data);
+	return (((data->live_edit) & 1) != 0);
+}
+
+void SpaceTextEditor_use_live_edit_set(PointerRNA *ptr, int value)
+{
+	SpaceText *data= (SpaceText*)(ptr->data);
+	if(value) data->live_edit |= 1;
+	else data->live_edit &= ~1;
+}
+
+int SpaceTextEditor_margin_column_get(PointerRNA *ptr)
+{
+	SpaceText *data= (SpaceText*)(ptr->data);
+	return (int)(data->margin_column);
+}
+
+void SpaceTextEditor_margin_column_set(PointerRNA *ptr, int value)
+{
+	SpaceText *data= (SpaceText*)(ptr->data);
+	data->margin_column= CLAMPIS(value, 0, 1024);
+}
+
+int SpaceTextEditor_use_overwrite_get(PointerRNA *ptr)
+{
+	SpaceText *data= (SpaceText*)(ptr->data);
+	return (((data->overwrite) & 1) != 0);
+}
+
+void SpaceTextEditor_use_overwrite_set(PointerRNA *ptr, int value)
+{
+	SpaceText *data= (SpaceText*)(ptr->data);
+	if(value) data->overwrite |= 1;
+	else data->overwrite &= ~1;
+}
+
+void SpaceTextEditor_replace_text_get(PointerRNA *ptr, char *value)
+{
+	SpaceText *data= (SpaceText*)(ptr->data);
+	BLI_strncpy(value, data->replacestr, 256);
+}
+
+int SpaceTextEditor_replace_text_length(PointerRNA *ptr)
+{
+	SpaceText *data= (SpaceText*)(ptr->data);
+	return strlen(data->replacestr);
+}
+
+void SpaceTextEditor_replace_text_set(PointerRNA *ptr, const char *value)
+{
+	SpaceText *data= (SpaceText*)(ptr->data);
+	BLI_strncpy(data->replacestr, value, 256);
+}
+
+int SpaceTextEditor_show_margin_get(PointerRNA *ptr)
+{
+	SpaceText *data= (SpaceText*)(ptr->data);
+	return (((data->flags) & 128) != 0);
+}
+
+void SpaceTextEditor_show_margin_set(PointerRNA *ptr, int value)
+{
+	SpaceText *data= (SpaceText*)(ptr->data);
+	if(value) data->flags |= 128;
+	else data->flags &= ~128;
+}
+
+int SpaceTextEditor_show_syntax_highlight_get(PointerRNA *ptr)
+{
+	SpaceText *data= (SpaceText*)(ptr->data);
+	return (int)(data->showsyntax);
+}
+
+void SpaceTextEditor_show_syntax_highlight_set(PointerRNA *ptr, int value)
+{
+	SpaceText *data= (SpaceText*)(ptr->data);
+	data->showsyntax= value;
+}
+
+int SpaceTextEditor_tab_width_get(PointerRNA *ptr)
+{
+	SpaceText *data= (SpaceText*)(ptr->data);
+	return (int)(data->tabnumber);
+}
+
+void SpaceTextEditor_tab_width_set(PointerRNA *ptr, int value)
+{
+	SpaceText *data= (SpaceText*)(ptr->data);
+	data->tabnumber= CLAMPIS(value, 2, 8);
+}
+
+PointerRNA SpaceTextEditor_text_get(PointerRNA *ptr)
+{
+	SpaceText *data= (SpaceText*)(ptr->data);
+	return rna_pointer_inherit_refine(ptr, &RNA_Text, data->text);
+}
+
+void SpaceTextEditor_text_set(PointerRNA *ptr, PointerRNA value)
+{
+	rna_SpaceTextEditor_text_set(ptr, value);
+}
+
+int SpaceTextEditor_show_word_wrap_get(PointerRNA *ptr)
+{
+	SpaceText *data= (SpaceText*)(ptr->data);
+	return (int)(data->wordwrap);
+}
+
+void SpaceTextEditor_show_word_wrap_set(PointerRNA *ptr, int value)
+{
+	rna_SpaceTextEditor_word_wrap_set(ptr, value);
+}
+
+int SpaceTimeline_cache_cloth_get(PointerRNA *ptr)
+{
+	SpaceTime *data= (SpaceTime*)(ptr->data);
+	return (((data->cache_display) & 8) != 0);
+}
+
+void SpaceTimeline_cache_cloth_set(PointerRNA *ptr, int value)
+{
+	SpaceTime *data= (SpaceTime*)(ptr->data);
+	if(value) data->cache_display |= 8;
+	else data->cache_display &= ~8;
+}
+
+int SpaceTimeline_show_only_selected_get(PointerRNA *ptr)
+{
+	SpaceTime *data= (SpaceTime*)(ptr->data);
+	return (((data->flag) & 4) != 0);
+}
+
+void SpaceTimeline_show_only_selected_set(PointerRNA *ptr, int value)
+{
+	SpaceTime *data= (SpaceTime*)(ptr->data);
+	if(value) data->flag |= 4;
+	else data->flag &= ~4;
+}
+
+int SpaceTimeline_cache_particles_get(PointerRNA *ptr)
+{
+	SpaceTime *data= (SpaceTime*)(ptr->data);
+	return (((data->cache_display) & 4) != 0);
+}
+
+void SpaceTimeline_cache_particles_set(PointerRNA *ptr, int value)
+{
+	SpaceTime *data= (SpaceTime*)(ptr->data);
+	if(value) data->cache_display |= 4;
+	else data->cache_display &= ~4;
+}
+
+int SpaceTimeline_show_cache_get(PointerRNA *ptr)
+{
+	SpaceTime *data= (SpaceTime*)(ptr->data);
+	return (((data->cache_display) & 1) != 0);
+}
+
+void SpaceTimeline_show_cache_set(PointerRNA *ptr, int value)
+{
+	SpaceTime *data= (SpaceTime*)(ptr->data);
+	if(value) data->cache_display |= 1;
+	else data->cache_display &= ~1;
+}
+
+int SpaceTimeline_show_frame_indicator_get(PointerRNA *ptr)
+{
+	SpaceTime *data= (SpaceTime*)(ptr->data);
+	return (((data->flag) & 2) != 0);
+}
+
+void SpaceTimeline_show_frame_indicator_set(PointerRNA *ptr, int value)
+{
+	SpaceTime *data= (SpaceTime*)(ptr->data);
+	if(value) data->flag |= 2;
+	else data->flag &= ~2;
+}
+
+int SpaceTimeline_cache_smoke_get(PointerRNA *ptr)
+{
+	SpaceTime *data= (SpaceTime*)(ptr->data);
+	return (((data->cache_display) & 16) != 0);
+}
+
+void SpaceTimeline_cache_smoke_set(PointerRNA *ptr, int value)
+{
+	SpaceTime *data= (SpaceTime*)(ptr->data);
+	if(value) data->cache_display |= 16;
+	else data->cache_display &= ~16;
+}
+
+int SpaceTimeline_cache_softbody_get(PointerRNA *ptr)
+{
+	SpaceTime *data= (SpaceTime*)(ptr->data);
+	return (((data->cache_display) & 2) != 0);
+}
+
+void SpaceTimeline_cache_softbody_set(PointerRNA *ptr, int value)
+{
+	SpaceTime *data= (SpaceTime*)(ptr->data);
+	if(value) data->cache_display |= 2;
+	else data->cache_display &= ~2;
+}
+
+PointerRNA SpaceUVEditor_rna_type_get(PointerRNA *ptr)
+{
+	return rna_builtin_type_get(ptr);
+}
+
+void SpaceUVEditor_cursor_location_get(PointerRNA *ptr, float values[2])
+{
+	rna_SpaceImageEditor_cursor_location_get(ptr, values);
+}
+
+void SpaceUVEditor_cursor_location_set(PointerRNA *ptr, const float values[2])
+{
+	rna_SpaceImageEditor_cursor_location_set(ptr, values);
+}
+
+int SpaceUVEditor_lock_bounds_get(PointerRNA *ptr)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	return (((data->flag) & 4) != 0);
+}
+
+void SpaceUVEditor_lock_bounds_set(PointerRNA *ptr, int value)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	if(value) data->flag |= 4;
+	else data->flag &= ~4;
+}
+
+int SpaceUVEditor_show_modified_edges_get(PointerRNA *ptr)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	return (((data->flag) & 32) != 0);
+}
+
+void SpaceUVEditor_show_modified_edges_set(PointerRNA *ptr, int value)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	if(value) data->flag |= 32;
+	else data->flag &= ~32;
+}
+
+int SpaceUVEditor_show_other_objects_get(PointerRNA *ptr)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	return (((data->flag) & 8388608) != 0);
+}
+
+void SpaceUVEditor_show_other_objects_set(PointerRNA *ptr, int value)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	if(value) data->flag |= 8388608;
+	else data->flag &= ~8388608;
+}
+
+int SpaceUVEditor_show_smooth_edges_get(PointerRNA *ptr)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	return (((data->flag) & 1048576) != 0);
+}
+
+void SpaceUVEditor_show_smooth_edges_set(PointerRNA *ptr, int value)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	if(value) data->flag |= 1048576;
+	else data->flag &= ~1048576;
+}
+
+int SpaceUVEditor_show_stretch_get(PointerRNA *ptr)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	return (((data->flag) & 2097152) != 0);
+}
+
+void SpaceUVEditor_show_stretch_set(PointerRNA *ptr, int value)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	if(value) data->flag |= 2097152;
+	else data->flag &= ~2097152;
+}
+
+int SpaceUVEditor_draw_stretch_type_get(PointerRNA *ptr)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	return (int)(data->dt_uvstretch);
+}
+
+void SpaceUVEditor_draw_stretch_type_set(PointerRNA *ptr, int value)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	data->dt_uvstretch= value;
+}
+
+int SpaceUVEditor_edge_draw_type_get(PointerRNA *ptr)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	return (int)(data->dt_uv);
+}
+
+void SpaceUVEditor_edge_draw_type_set(PointerRNA *ptr, int value)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	data->dt_uv= value;
+}
+
+int SpaceUVEditor_use_live_unwrap_get(PointerRNA *ptr)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	return (((data->flag) & 2048) != 0);
+}
+
+void SpaceUVEditor_use_live_unwrap_set(PointerRNA *ptr, int value)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	if(value) data->flag |= 2048;
+	else data->flag &= ~2048;
+}
+
+int SpaceUVEditor_show_normalized_coords_get(PointerRNA *ptr)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	return (((data->flag) & 512) != 0);
+}
+
+void SpaceUVEditor_show_normalized_coords_set(PointerRNA *ptr, int value)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	if(value) data->flag |= 512;
+	else data->flag &= ~512;
+}
+
+int SpaceUVEditor_pivot_point_get(PointerRNA *ptr)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	return (int)(data->around);
+}
+
+void SpaceUVEditor_pivot_point_set(PointerRNA *ptr, int value)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	data->around= value;
+}
+
+static PointerRNA SpaceUVEditor_rna_properties_get(CollectionPropertyIterator *iter)
+{
+	return rna_builtin_properties_get(iter);
+}
+
+void SpaceUVEditor_rna_properties_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+
+	memset(iter, 0, sizeof(*iter));
+	iter->parent= *ptr;
+	iter->prop= (PropertyRNA*)&rna_SpaceUVEditor_rna_properties;
+
+	rna_builtin_properties_begin(iter, ptr);
+
+	if(iter->valid)
+		iter->ptr= SpaceUVEditor_rna_properties_get(iter);
+}
+
+void SpaceUVEditor_rna_properties_next(CollectionPropertyIterator *iter)
+{
+	rna_builtin_properties_next(iter);
+
+	if(iter->valid)
+		iter->ptr= SpaceUVEditor_rna_properties_get(iter);
+}
+
+void SpaceUVEditor_rna_properties_end(CollectionPropertyIterator *iter)
+{
+	rna_iterator_listbase_end(iter);
+}
+
+int SpaceUVEditor_use_snap_to_pixels_get(PointerRNA *ptr)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	return (((data->flag) & 1024) != 0);
+}
+
+void SpaceUVEditor_use_snap_to_pixels_set(PointerRNA *ptr, int value)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	if(value) data->flag |= 1024;
+	else data->flag &= ~1024;
+}
+
+int SpaceUVEditor_sticky_select_mode_get(PointerRNA *ptr)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	return (int)(data->sticky);
+}
+
+void SpaceUVEditor_sticky_select_mode_set(PointerRNA *ptr, int value)
+{
+	SpaceImage *data= (SpaceImage*)(ptr->data);
+	data->sticky= value;
+}
+
+void SpaceUserPreferences_filter_text_get(PointerRNA *ptr, char *value)
+{
+	SpaceUserPref *data= (SpaceUserPref*)(ptr->data);
+	BLI_strncpy(value, data->filter, 64);
+}
+
+int SpaceUserPreferences_filter_text_length(PointerRNA *ptr)
+{
+	SpaceUserPref *data= (SpaceUserPref*)(ptr->data);
+	return strlen(data->filter);
+}
+
+void SpaceUserPreferences_filter_text_set(PointerRNA *ptr, const char *value)
+{
+	SpaceUserPref *data= (SpaceUserPref*)(ptr->data);
+	BLI_strncpy(data->filter, value, 64);
+}
+
+void SpaceView3D_cursor_location_get(PointerRNA *ptr, float values[3])
+{
+	rna_View3D_CursorLocation_get(ptr, values);
+}
+
+void SpaceView3D_cursor_location_set(PointerRNA *ptr, const float values[3])
+{
+	rna_View3D_CursorLocation_set(ptr, values);
+}
+
+PointerRNA SpaceView3D_region_3d_get(PointerRNA *ptr)
+{
+	return rna_SpaceView3D_region_3d_get(ptr);
+}
+
+int SpaceView3D_use_pivot_point_align_get(PointerRNA *ptr)
+{
+	View3D *data= (View3D*)(ptr->data);
+	return (((data->flag) & 1024) != 0);
+}
+
+void SpaceView3D_use_pivot_point_align_set(PointerRNA *ptr, int value)
+{
+	View3D *data= (View3D*)(ptr->data);
+	if(value) data->flag |= 1024;
+	else data->flag &= ~1024;
+}
+
+int SpaceView3D_show_all_objects_origin_get(PointerRNA *ptr)
+{
+	View3D *data= (View3D*)(ptr->data);
+	return (((data->flag) & 32768) != 0);
+}
+
+void SpaceView3D_show_all_objects_origin_set(PointerRNA *ptr, int value)
+{
+	View3D *data= (View3D*)(ptr->data);
+	if(value) data->flag |= 32768;
+	else data->flag &= ~32768;
+}
+
+static PointerRNA SpaceView3D_background_images_get(CollectionPropertyIterator *iter)
+{
+	return rna_pointer_inherit_refine(&iter->parent, &RNA_BackgroundImage, rna_iterator_listbase_get(iter));
+}
+
+void SpaceView3D_background_images_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
+{
+	View3D *data= (View3D*)(ptr->data);
+
+	memset(iter, 0, sizeof(*iter));
+	iter->parent= *ptr;
+	iter->prop= (PropertyRNA*)&rna_SpaceView3D_background_images;
+
+	rna_iterator_listbase_begin(iter, &data->bgpicbase, NULL);
+
+	if(iter->valid)
+		iter->ptr= SpaceView3D_background_images_get(iter);
+}
+
+void SpaceView3D_background_images_next(CollectionPropertyIterator *iter)
+{
+	rna_iterator_listbase_next(iter);
+
+	if(iter->valid)
+		iter->ptr= SpaceView3D_background_images_get(iter);
+}
+
+void SpaceView3D_background_images_end(CollectionPropertyIterator *iter)
+{
+	rna_iterator_listbase_end(iter);
+}
+
+int SpaceView3D_background_images_lookup_int(PointerRNA *ptr, int index, PointerRNA *r_ptr)
+{
+	int found= 0;
+	CollectionPropertyIterator iter;
+
+	SpaceView3D_background_images_begin(&iter, ptr);
+
+	if(iter.valid){
+		ListBaseIterator *internal= iter.internal;
+		if(internal->skip) {
+			while(index-- > 0 && iter.valid) {
+				rna_iterator_listbase_next(&iter);
+			}
+			found= (index == -1 && iter.valid);
+		}
+		else {
+			while(index-- > 0 && internal->link)
+				internal->link= internal->link->next;
+			found= (index == -1 && internal->link);
+		}
+		if(found) *r_ptr = SpaceView3D_background_images_get(&iter);
+	}
+
+	SpaceView3D_background_images_end(&iter);
+
+	return found;
+}
+
+PointerRNA SpaceView3D_camera_get(PointerRNA *ptr)
+{
+	View3D *data= (View3D*)(ptr->data);
+	return rna_pointer_inherit_refine(ptr, &RNA_Object, data->camera);
+}
+
+void SpaceView3D_camera_set(PointerRNA *ptr, PointerRNA value)
+{
+	View3D *data= (View3D*)(ptr->data);
+	if(value.data)
+		id_lib_extern((ID*)value.data);
+
+	data->camera= value.data;
+}
+
+float SpaceView3D_clip_end_get(PointerRNA *ptr)
+{
+	View3D *data= (View3D*)(ptr->data);
+	return (float)(data->far);
+}
+
+void SpaceView3D_clip_end_set(PointerRNA *ptr, float value)
+{
+	View3D *data= (View3D*)(ptr->data);
+	data->far= CLAMPIS(value, 1.0f, FLT_MAX);
+}
+
+float SpaceView3D_clip_start_get(PointerRNA *ptr)
+{
+	View3D *data= (View3D*)(ptr->data);
+	return (float)(data->near);
+}
+
+void SpaceView3D_clip_start_set(PointerRNA *ptr, float value)
+{
+	View3D *data= (View3D*)(ptr->data);
+	data->near= CLAMPIS(value, 0.0f, FLT_MAX);
+}
+
+PointerRNA SpaceView3D_current_orientation_get(PointerRNA *ptr)
+{
+	return rna_CurrentOrientation_get(ptr);
+}
+
+int SpaceView3D_show_background_images_get(PointerRNA *ptr)
+{
+	View3D *data= (View3D*)(ptr->data);
+	return (((data->flag) & 2) != 0);
+}
+
+void SpaceView3D_show_background_images_set(PointerRNA *ptr, int value)
+{
+	View3D *data= (View3D*)(ptr->data);
+	if(value) data->flag |= 2;
+	else data->flag &= ~2;
+}
+
+int SpaceView3D_show_floor_get(PointerRNA *ptr)
+{
+	View3D *data= (View3D*)(ptr->data);
+	return (((data->gridflag) & 1) != 0);
+}
+
+void SpaceView3D_show_floor_set(PointerRNA *ptr, int value)
+{
+	View3D *data= (View3D*)(ptr->data);
+	if(value) data->gridflag |= 1;
+	else data->gridflag &= ~1;
+}
+
+int SpaceView3D_show_axis_x_get(PointerRNA *ptr)
+{
+	View3D *data= (View3D*)(ptr->data);
+	return (((data->gridflag) & 2) != 0);
+}
+
+void SpaceView3D_show_axis_x_set(PointerRNA *ptr, int value)
+{
+	View3D *data= (View3D*)(ptr->data);
+	if(value) data->gridflag |= 2;
+	else data->gridflag &= ~2;
+}
+
+int SpaceView3D_show_axis_y_get(PointerRNA *ptr)
+{
+	View3D *data= (View3D*)(ptr->data);
+	return (((data->gridflag) & 4) != 0);
+}
+
+void SpaceView3D_show_axis_y_set(PointerRNA *ptr, int value)
+{
+	View3D *data= (View3D*)(ptr->data);
+	if(value) data->gridflag |= 4;
+	else data->gridflag &= ~4;
+}
+
+int SpaceView3D_show_axis_z_get(PointerRNA *ptr)
+{
+	View3D *data= (View3D*)(ptr->data);
+	return (((data->gridflag) & 8) != 0);
+}
+
+void SpaceView3D_show_axis_z_set(PointerRNA *ptr, int value)
+{
+	View3D *data= (View3D*)(ptr->data);
+	if(value) data->gridflag |= 8;
+	else data->gridflag &= ~8;
+}
+
+int SpaceView3D_grid_lines_get(PointerRNA *ptr)
+{
+	View3D *data= (View3D*)(ptr->data);
+	return (int)(data->gridlines);
+}
+
+void SpaceView3D_grid_lines_set(PointerRNA *ptr, int value)
+{
+	View3D *data= (View3D*)(ptr->data);
+	data->gridlines= CLAMPIS(value, 0, 1024);
+}
+
+float SpaceView3D_grid_scale_get(PointerRNA *ptr)
+{
+	View3D *data= (View3D*)(ptr->data);
+	return (float)(data->grid);
+}
+
+void SpaceView3D_grid_scale_set(PointerRNA *ptr, float value)
+{
+	View3D *data= (View3D*)(ptr->data);
+	data->grid= CLAMPIS(value, 0.0f, FLT_MAX);
+}
+
+int SpaceView3D_grid_subdivisions_get(PointerRNA *ptr)
+{
+	View3D *data= (View3D*)(ptr->data);
+	return (int)(data->gridsubdiv);
+}
+
+void SpaceView3D_grid_subdivisions_set(PointerRNA *ptr, int value)
+{
+	View3D *data= (View3D*)(ptr->data);
+	data->gridsubdiv= CLAMPIS(value, 1, 1024);
+}
+
+float SpaceView3D_lens_get(PointerRNA *ptr)
+{
+	View3D *data= (View3D*)(ptr->data);
+	return (float)(data->lens);
+}
+
+void SpaceView3D_lens_set(PointerRNA *ptr, float value)
+{
+	View3D *data= (View3D*)(ptr->data);
+	data->lens= CLAMPIS(value, 1.0f, 250.0f);
+}
+
+PointerRNA SpaceView3D_local_view_get(PointerRNA *ptr)
+{
+	View3D *data= (View3D*)(ptr->data);
+	return rna_pointer_inherit_refine(ptr, &RNA_SpaceView3D, data->localvd);
+}
+
+int SpaceView3D_lock_camera_and_layers_get(PointerRNA *ptr)
+{
+	View3D *data= (View3D*)(ptr->data);
+	return (((data->scenelock) & 1) != 0);
+}
+
+void SpaceView3D_lock_camera_and_layers_set(PointerRNA *ptr, int value)
+{
+	rna_SpaceView3D_lock_camera_and_layers_set(ptr, value);
+}
+
+void SpaceView3D_lock_bone_get(PointerRNA *ptr, char *value)
+{
+	View3D *data= (View3D*)(ptr->data);
+	BLI_strncpy(value, data->ob_centre_bone, 32);
+}
+
+int SpaceView3D_lock_bone_length(PointerRNA *ptr)
+{
+	View3D *data= (View3D*)(ptr->data);
+	return strlen(data->ob_centre_bone);
+}
+
+void SpaceView3D_lock_bone_set(PointerRNA *ptr, const char *value)
+{
+	View3D *data= (View3D*)(ptr->data);
+	BLI_strncpy(data->ob_centre_bone, value, 32);
+}
+
+int SpaceView3D_lock_cursor_get(PointerRNA *ptr)
+{
+	View3D *data= (View3D*)(ptr->data);
+	return (((data->ob_centre_cursor) & 1) != 0);
+}
+
+void SpaceView3D_lock_cursor_set(PointerRNA *ptr, int value)
+{
+	View3D *data= (View3D*)(ptr->data);
+	if(value) data->ob_centre_cursor |= 1;
+	else data->ob_centre_cursor &= ~1;
+}
+
+PointerRNA SpaceView3D_lock_object_get(PointerRNA *ptr)
+{
+	View3D *data= (View3D*)(ptr->data);
+	return rna_pointer_inherit_refine(ptr, &RNA_Object, data->ob_centre);
+}
+
+void SpaceView3D_lock_object_set(PointerRNA *ptr, PointerRNA value)
+{
+	View3D *data= (View3D*)(ptr->data);
+	if(value.data)
+		id_lib_extern((ID*)value.data);
+
+	data->ob_centre= value.data;
+}
+
+int SpaceView3D_show_manipulator_get(PointerRNA *ptr)
+{
+	View3D *data= (View3D*)(ptr->data);
+	return (((data->twflag) & 1) != 0);
+}
+
+void SpaceView3D_show_manipulator_set(PointerRNA *ptr, int value)
+{
+	View3D *data= (View3D*)(ptr->data);
+	if(value) data->twflag |= 1;
+	else data->twflag &= ~1;
+}
+
+int SpaceView3D_use_manipulator_rotate_get(PointerRNA *ptr)
+{
+	View3D *data= (View3D*)(ptr->data);
+	return (((data->twtype) & 2) != 0);
+}
+
+void SpaceView3D_use_manipulator_rotate_set(PointerRNA *ptr, int value)
+{
+	View3D *data= (View3D*)(ptr->data);
+	if(value) data->twtype |= 2;
+	else data->twtype &= ~2;
+}
+
+int SpaceView3D_use_manipulator_scale_get(PointerRNA *ptr)
+{
+	View3D *data= (View3D*)(ptr->data);
+	return (((data->twtype) & 4) != 0);
+}
+
+void SpaceView3D_use_manipulator_scale_set(PointerRNA *ptr, int value)
+{
+	View3D *data= (View3D*)(ptr->data);
+	if(value) data->twtype |= 4;
+	else data->twtype &= ~4;
+}
+
+int SpaceView3D_use_manipulator_translate_get(PointerRNA *ptr)
+{
+	View3D *data= (View3D*)(ptr->data);
+	return (((data->twtype) & 1) != 0);
+}
+
+void SpaceView3D_use_manipulator_translate_set(PointerRNA *ptr, int value)
+{
+	View3D *data= (View3D*)(ptr->data);
+	if(value) data->twtype |= 1;
+	else data->twtype &= ~1;
+}
+
+int SpaceView3D_use_occlude_geometry_get(PointerRNA *ptr)
+{
+	View3D *data= (View3D*)(ptr->data);
+	return (((data->flag) & 4096) != 0);
+}
+
+void SpaceView3D_use_occlude_geometry_set(PointerRNA *ptr, int value)
+{
+	View3D *data= (View3D*)(ptr->data);
+	if(value) data->flag |= 4096;
+	else data->flag &= ~4096;
+}
+
+int SpaceView3D_show_only_render_get(PointerRNA *ptr)
+{
+	View3D *data= (View3D*)(ptr->data);
+	return (((data->flag2) & 4) != 0);
+}
+
+void SpaceView3D_show_only_render_set(PointerRNA *ptr, int value)
+{
+	View3D *data= (View3D*)(ptr->data);
+	if(value) data->flag2 |= 4;
+	else data->flag2 &= ~4;
+}
+
+int SpaceView3D_show_outline_selected_get(PointerRNA *ptr)
+{
+	View3D *data= (View3D*)(ptr->data);
+	return (((data->flag) & 2048) != 0);
+}
+
+void SpaceView3D_show_outline_selected_set(PointerRNA *ptr, int value)
+{
+	View3D *data= (View3D*)(ptr->data);
+	if(value) data->flag |= 2048;
+	else data->flag &= ~2048;
+}
+
+int SpaceView3D_pivot_point_get(PointerRNA *ptr)
+{
+	View3D *data= (View3D*)(ptr->data);
+	return (int)(data->around);
+}
+
+void SpaceView3D_pivot_point_set(PointerRNA *ptr, int value)
+{
+	View3D *data= (View3D*)(ptr->data);
+	data->around= value;
+}
+
+PointerRNA SpaceView3D_region_quadview_get(PointerRNA *ptr)
+{
+	return rna_SpaceView3D_region_quadview_get(ptr);
+}
+
+int SpaceView3D_show_relationship_lines_get(PointerRNA *ptr)
+{
+	View3D *data= (View3D*)(ptr->data);
+	return !(((data->flag) & 4) != 0);
+}
+
+void SpaceView3D_show_relationship_lines_set(PointerRNA *ptr, int value)
+{
+	View3D *data= (View3D*)(ptr->data);
+	if(!value) data->flag |= 4;
+	else data->flag &= ~4;
+}
+
+int SpaceView3D_show_textured_solid_get(PointerRNA *ptr)
+{
+	View3D *data= (View3D*)(ptr->data);
+	return (((data->flag2) & 8) != 0);
+}
+
+void SpaceView3D_show_textured_solid_set(PointerRNA *ptr, int value)
+{
+	View3D *data= (View3D*)(ptr->data);
+	if(value) data->flag2 |= 8;
+	else data->flag2 &= ~8;
+}
+
+int SpaceView3D_transform_orientation_get(PointerRNA *ptr)
+{
+	View3D *data= (View3D*)(ptr->data);
+	return (int)(data->twmode);
+}
+
+void SpaceView3D_transform_orientation_set(PointerRNA *ptr, int value)
+{
+	View3D *data= (View3D*)(ptr->data);
+	data->twmode= value;
+}
+
+void SpaceView3D_layers_used_get(PointerRNA *ptr, int values[20])
+{
+	View3D *data= (View3D*)(ptr->data);
+	int i;
+
+	for(i=0; i<20; i++) {
+		values[i]= ((data->lay_used & (1<<i)) != 0);
+	}
+}
+
+int SpaceView3D_viewport_shade_get(PointerRNA *ptr)
+{
+	View3D *data= (View3D*)(ptr->data);
+	return (int)(data->drawtype);
+}
+
+void SpaceView3D_viewport_shade_set(PointerRNA *ptr, int value)
+{
+	View3D *data= (View3D*)(ptr->data);
+	data->drawtype= value;
+}
+
+void SpaceView3D_layers_get(PointerRNA *ptr, int values[20])
+{
+	View3D *data= (View3D*)(ptr->data);
+	int i;
+
+	for(i=0; i<20; i++) {
+		values[i]= ((data->lay & (1<<i)) != 0);
+	}
+}
+
+void SpaceView3D_layers_set(PointerRNA *ptr, const int values[20])
+{
+	rna_SpaceView3D_layer_set(ptr, values);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Background Image */
+PointerPropertyRNA rna_BackgroundImage_rna_type = {
+	{(PropertyRNA*)&rna_BackgroundImage_image, NULL,
+	-1, "rna_type", 524288, "RNA",
+	"RNA type definition",
+	0,
+	PROP_POINTER, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	BackgroundImage_rna_type_get, NULL, NULL, NULL,&RNA_Struct
+};
+
+PointerPropertyRNA rna_BackgroundImage_image = {
+	{(PropertyRNA*)&rna_BackgroundImage_view_axis, (PropertyRNA*)&rna_BackgroundImage_rna_type,
+	-1, "image", 65, "Image",
+	"Image displayed and edited in this space",
+	0,
+	PROP_POINTER, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	0, -1, NULL},
+	BackgroundImage_image_get, BackgroundImage_image_set, NULL, NULL,&RNA_Image
+};
+
+static EnumPropertyItem rna_BackgroundImage_view_axis_items[13] = {
+	{0, "", 0, "X Axis", ""},
+	{8, "LEFT", 0, "Left", ""},
+	{16, "RIGHT", 0, "Right", ""},
+	{0, "", 0, "Y Axis", ""},
+	{4, "BACK", 0, "Back", ""},
+	{2, "FRONT", 0, "Front", ""},
+	{0, "", 0, "Z Axis", ""},
+	{64, "BOTTOM", 0, "Bottom", ""},
+	{32, "TOP", 0, "Top", ""},
+	{0, "", 0, "Other", ""},
+	{0, "ALL", 0, "All Views", ""},
+	{256, "CAMERA", 0, "Camera", ""},
+	{0, NULL, 0, NULL, NULL}
+};
+
+EnumPropertyRNA rna_BackgroundImage_view_axis = {
+	{(PropertyRNA*)&rna_BackgroundImage_image_user, (PropertyRNA*)&rna_BackgroundImage_image,
+	-1, "view_axis", 3, "Image Axis",
+	"The axis to display the image on",
+	0,
+	PROP_ENUM, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	0, -1, NULL},
+	BackgroundImage_view_axis_get, BackgroundImage_view_axis_set, NULL, rna_BackgroundImage_view_axis_items, 12, 0
+};
+
+PointerPropertyRNA rna_BackgroundImage_image_user = {
+	{(PropertyRNA*)&rna_BackgroundImage_opacity, (PropertyRNA*)&rna_BackgroundImage_view_axis,
+	-1, "image_user", 262144, "Image User",
+	"Parameters defining which layer, pass and frame of the image is displayed",
+	0,
+	PROP_POINTER, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	0, -1, NULL},
+	BackgroundImage_image_user_get, NULL, NULL, NULL,&RNA_ImageUser
+};
+
+FloatPropertyRNA rna_BackgroundImage_opacity = {
+	{(PropertyRNA*)&rna_BackgroundImage_rna_properties, (PropertyRNA*)&rna_BackgroundImage_image_user,
+	-1, "opacity", 3, "Opacity",
+	"Image opacity to blend the image against the background color",
+	0,
+	PROP_FLOAT, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	0, -1, NULL},
+	BackgroundImage_opacity_get, BackgroundImage_opacity_set, NULL, NULL, NULL, 0.0f, 1.0f, 0.0f, 1.0f, 10.0f, 3, 0.0f, NULL
+};
+
+CollectionPropertyRNA rna_BackgroundImage_rna_properties = {
+	{(PropertyRNA*)&rna_BackgroundImage_show_expanded, (PropertyRNA*)&rna_BackgroundImage_opacity,
+	-1, "rna_properties", 128, "Properties",
+	"RNA property collection",
+	0,
+	PROP_COLLECTION, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	BackgroundImage_rna_properties_begin, BackgroundImage_rna_properties_next, BackgroundImage_rna_properties_end, BackgroundImage_rna_properties_get, NULL, NULL, rna_builtin_properties_lookup_string, &RNA_Property
+};
+
+BooleanPropertyRNA rna_BackgroundImage_show_expanded = {
+	{(PropertyRNA*)&rna_BackgroundImage_size, (PropertyRNA*)&rna_BackgroundImage_rna_properties,
+	-1, "show_expanded", 4099, "Show Expanded",
+	"Show the expanded in the user interface",
+	4,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	BackgroundImage_show_expanded_get, BackgroundImage_show_expanded_set, NULL, NULL, 0, NULL
+};
+
+FloatPropertyRNA rna_BackgroundImage_size = {
+	{(PropertyRNA*)&rna_BackgroundImage_offset_x, (PropertyRNA*)&rna_BackgroundImage_show_expanded,
+	-1, "size", 8195, "Size",
+	"Scaling factor for the background image",
+	0,
+	PROP_FLOAT, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	offsetof(BGpic, size), 4, NULL},
+	BackgroundImage_size_get, BackgroundImage_size_set, NULL, NULL, NULL, 0.0f, FLT_MAX, 0.0f, FLT_MAX, 10.0f, 3, 0.0f, NULL
+};
+
+FloatPropertyRNA rna_BackgroundImage_offset_x = {
+	{(PropertyRNA*)&rna_BackgroundImage_offset_y, (PropertyRNA*)&rna_BackgroundImage_size,
+	-1, "offset_x", 8195, "X Offset",
+	"Offsets image horizontally from the world origin",
+	0,
+	PROP_FLOAT, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	offsetof(BGpic, xof), 4, NULL},
+	BackgroundImage_offset_x_get, BackgroundImage_offset_x_set, NULL, NULL, NULL, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, 0.0f, NULL
+};
+
+FloatPropertyRNA rna_BackgroundImage_offset_y = {
+	{NULL, (PropertyRNA*)&rna_BackgroundImage_offset_x,
+	-1, "offset_y", 8195, "Y Offset",
+	"Offsets image vertically from the world origin",
+	0,
+	PROP_FLOAT, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	offsetof(BGpic, yof), 4, NULL},
+	BackgroundImage_offset_y_get, BackgroundImage_offset_y_set, NULL, NULL, NULL, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, 0.0f, NULL
+};
+
+StructRNA RNA_BackgroundImage = {
+	{(ContainerRNA *)&RNA_BevelModifier, (ContainerRNA *)&RNA_ArrayModifier,
+	NULL,
+	{(PropertyRNA*)&rna_BackgroundImage_rna_type, (PropertyRNA*)&rna_BackgroundImage_offset_y}},
+	"BackgroundImage"	, NULL,NULL
+, 0, "Background Image", "Image and settings for display in the 3d View background",
+	17,
+	NULL, (PropertyRNA*)&rna_BackgroundImage_rna_properties,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	{NULL, NULL}
+};
+
+/* Console Input */
+PointerPropertyRNA rna_ConsoleLine_rna_type = {
+	{(PropertyRNA*)&rna_ConsoleLine_body, NULL,
+	-1, "rna_type", 524288, "RNA",
+	"RNA type definition",
+	0,
+	PROP_POINTER, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	ConsoleLine_rna_type_get, NULL, NULL, NULL,&RNA_Struct
+};
+
+StringPropertyRNA rna_ConsoleLine_body = {
+	{(PropertyRNA*)&rna_ConsoleLine_rna_properties, (PropertyRNA*)&rna_ConsoleLine_rna_type,
+	-1, "body", 1, "Line",
+	"Text in the line",
+	0,
+	PROP_STRING, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 251723776, NULL, NULL,
+	0, -1, NULL},
+	ConsoleLine_body_get, ConsoleLine_body_length, ConsoleLine_body_set, 0, ""
+};
+
+CollectionPropertyRNA rna_ConsoleLine_rna_properties = {
+	{(PropertyRNA*)&rna_ConsoleLine_current_character, (PropertyRNA*)&rna_ConsoleLine_body,
+	-1, "rna_properties", 128, "Properties",
+	"RNA property collection",
+	0,
+	PROP_COLLECTION, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	ConsoleLine_rna_properties_begin, ConsoleLine_rna_properties_next, ConsoleLine_rna_properties_end, ConsoleLine_rna_properties_get, NULL, NULL, rna_builtin_properties_lookup_string, &RNA_Property
+};
+
+IntPropertyRNA rna_ConsoleLine_current_character = {
+	{NULL, (PropertyRNA*)&rna_ConsoleLine_rna_properties,
+	-1, "current_character", 8195, "current_character",
+	"",
+	0,
+	PROP_INT, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 251723776, NULL, NULL,
+	offsetof(ConsoleLine, cursor), 0, NULL},
+	ConsoleLine_current_character_get, ConsoleLine_current_character_set, NULL, NULL, rna_ConsoleLine_cursor_index_range,
+	-10000, 10000, INT_MIN, INT_MAX, 1, 0, NULL
+};
+
+StructRNA RNA_ConsoleLine = {
+	{(ContainerRNA *)&RNA_Constraint, (ContainerRNA *)&RNA_CompositorNodes,
+	NULL,
+	{(PropertyRNA*)&rna_ConsoleLine_rna_type, (PropertyRNA*)&rna_ConsoleLine_current_character}},
+	"ConsoleLine"	, NULL,NULL
+, 0, "Console Input", "Input line for the interactive console",
+	17,
+	NULL, (PropertyRNA*)&rna_ConsoleLine_rna_properties,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	{NULL, NULL}
+};
+
+/* File Select Parameters */
+PointerPropertyRNA rna_FileSelectParams_rna_type = {
+	{(PropertyRNA*)&rna_FileSelectParams_directory, NULL,
+	-1, "rna_type", 524288, "RNA",
+	"RNA type definition",
+	0,
+	PROP_POINTER, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	FileSelectParams_rna_type_get, NULL, NULL, NULL,&RNA_Struct
+};
+
+StringPropertyRNA rna_FileSelectParams_directory = {
+	{(PropertyRNA*)&rna_FileSelectParams_display_type, (PropertyRNA*)&rna_FileSelectParams_rna_type,
+	-1, "directory", 1, "Directory",
+	"Directory displayed in the file browser",
+	0,
+	PROP_STRING, PROP_DIRPATH|PROP_UNIT_NONE, NULL, 0, {240, 0, 0}, 0,
+	NULL, 251985920, NULL, NULL,
+	0, -1, NULL},
+	FileSelectParams_directory_get, FileSelectParams_directory_length, FileSelectParams_directory_set, 240, ""
+};
+
+static EnumPropertyItem rna_FileSelectParams_display_type_items[4] = {
+	{1, "FILE_SHORTDISPLAY", 681, "Short List", "Display files as short list"},
+	{2, "FILE_LONGDISPLAY", 680, "Long List", "Display files as a detailed list"},
+	{3, "FILE_IMGDISPLAY", 683, "Thumbnails", "Display files as thumbnails"},
+	{0, NULL, 0, NULL, NULL}
+};
+
+EnumPropertyRNA rna_FileSelectParams_display_type = {
+	{(PropertyRNA*)&rna_FileSelectParams_filter_glob, (PropertyRNA*)&rna_FileSelectParams_directory,
+	-1, "display_type", 3, "Display Mode",
+	"Display mode for the file list",
+	0,
+	PROP_ENUM, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 251985920, NULL, NULL,
+	0, -1, NULL},
+	FileSelectParams_display_type_get, FileSelectParams_display_type_set, NULL, rna_FileSelectParams_display_type_items, 3, 1
+};
+
+StringPropertyRNA rna_FileSelectParams_filter_glob = {
+	{(PropertyRNA*)&rna_FileSelectParams_filename, (PropertyRNA*)&rna_FileSelectParams_display_type,
+	-1, "filter_glob", 1, "Extension Filter",
+	"",
+	0,
+	PROP_STRING, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {64, 0, 0}, 0,
+	NULL, 252051456, NULL, NULL,
+	0, -1, NULL},
+	FileSelectParams_filter_glob_get, FileSelectParams_filter_glob_length, FileSelectParams_filter_glob_set, 64, ""
+};
+
+StringPropertyRNA rna_FileSelectParams_filename = {
+	{(PropertyRNA*)&rna_FileSelectParams_use_filter_blender, (PropertyRNA*)&rna_FileSelectParams_filter_glob,
+	-1, "filename", 1, "File Name",
+	"Active file in the file browser",
+	0,
+	PROP_STRING, PROP_FILENAME|PROP_UNIT_NONE, NULL, 0, {80, 0, 0}, 0,
+	NULL, 251985920, NULL, NULL,
+	0, -1, NULL},
+	FileSelectParams_filename_get, FileSelectParams_filename_length, FileSelectParams_filename_set, 80, ""
+};
+
+BooleanPropertyRNA rna_FileSelectParams_use_filter_blender = {
+	{(PropertyRNA*)&rna_FileSelectParams_use_filter, (PropertyRNA*)&rna_FileSelectParams_filename,
+	-1, "use_filter_blender", 3, "Filter Blender",
+	"Show .blend files",
+	695,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 251985920, NULL, NULL,
+	0, -1, NULL},
+	FileSelectParams_use_filter_blender_get, FileSelectParams_use_filter_blender_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_FileSelectParams_use_filter = {
+	{(PropertyRNA*)&rna_FileSelectParams_use_filter_folder, (PropertyRNA*)&rna_FileSelectParams_use_filter_blender,
+	-1, "use_filter", 3, "Filter Files",
+	"Enable filtering of files",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 251985920, NULL, NULL,
+	0, -1, NULL},
+	FileSelectParams_use_filter_get, FileSelectParams_use_filter_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_FileSelectParams_use_filter_folder = {
+	{(PropertyRNA*)&rna_FileSelectParams_use_filter_font, (PropertyRNA*)&rna_FileSelectParams_use_filter,
+	-1, "use_filter_folder", 3, "Filter Folder",
+	"Show folders",
+	693,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 251985920, NULL, NULL,
+	0, -1, NULL},
+	FileSelectParams_use_filter_folder_get, FileSelectParams_use_filter_folder_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_FileSelectParams_use_filter_font = {
+	{(PropertyRNA*)&rna_FileSelectParams_use_filter_image, (PropertyRNA*)&rna_FileSelectParams_use_filter_folder,
+	-1, "use_filter_font", 3, "Filter Fonts",
+	"Show font files",
+	700,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 251985920, NULL, NULL,
+	0, -1, NULL},
+	FileSelectParams_use_filter_font_get, FileSelectParams_use_filter_font_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_FileSelectParams_use_filter_image = {
+	{(PropertyRNA*)&rna_FileSelectParams_use_filter_movie, (PropertyRNA*)&rna_FileSelectParams_use_filter_font,
+	-1, "use_filter_image", 3, "Filter Images",
+	"Show image files",
+	696,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 251985920, NULL, NULL,
+	0, -1, NULL},
+	FileSelectParams_use_filter_image_get, FileSelectParams_use_filter_image_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_FileSelectParams_use_filter_movie = {
+	{(PropertyRNA*)&rna_FileSelectParams_use_filter_script, (PropertyRNA*)&rna_FileSelectParams_use_filter_image,
+	-1, "use_filter_movie", 3, "Filter Movies",
+	"Show movie files",
+	697,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 251985920, NULL, NULL,
+	0, -1, NULL},
+	FileSelectParams_use_filter_movie_get, FileSelectParams_use_filter_movie_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_FileSelectParams_use_filter_script = {
+	{(PropertyRNA*)&rna_FileSelectParams_use_filter_sound, (PropertyRNA*)&rna_FileSelectParams_use_filter_movie,
+	-1, "use_filter_script", 3, "Filter Script",
+	"Show script files",
+	698,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 251985920, NULL, NULL,
+	0, -1, NULL},
+	FileSelectParams_use_filter_script_get, FileSelectParams_use_filter_script_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_FileSelectParams_use_filter_sound = {
+	{(PropertyRNA*)&rna_FileSelectParams_use_filter_text, (PropertyRNA*)&rna_FileSelectParams_use_filter_script,
+	-1, "use_filter_sound", 3, "Filter Sound",
+	"Show sound files",
+	699,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 251985920, NULL, NULL,
+	0, -1, NULL},
+	FileSelectParams_use_filter_sound_get, FileSelectParams_use_filter_sound_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_FileSelectParams_use_filter_text = {
+	{(PropertyRNA*)&rna_FileSelectParams_rna_properties, (PropertyRNA*)&rna_FileSelectParams_use_filter_sound,
+	-1, "use_filter_text", 3, "Filter Text",
+	"Show text files",
+	694,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 251985920, NULL, NULL,
+	0, -1, NULL},
+	FileSelectParams_use_filter_text_get, FileSelectParams_use_filter_text_set, NULL, NULL, 0, NULL
+};
+
+CollectionPropertyRNA rna_FileSelectParams_rna_properties = {
+	{(PropertyRNA*)&rna_FileSelectParams_show_hidden, (PropertyRNA*)&rna_FileSelectParams_use_filter_text,
+	-1, "rna_properties", 128, "Properties",
+	"RNA property collection",
+	0,
+	PROP_COLLECTION, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	FileSelectParams_rna_properties_begin, FileSelectParams_rna_properties_next, FileSelectParams_rna_properties_end, FileSelectParams_rna_properties_get, NULL, NULL, rna_builtin_properties_lookup_string, &RNA_Property
+};
+
+BooleanPropertyRNA rna_FileSelectParams_show_hidden = {
+	{(PropertyRNA*)&rna_FileSelectParams_sort_method, (PropertyRNA*)&rna_FileSelectParams_rna_properties,
+	-1, "show_hidden", 3, "Show Hidden",
+	"Show hidden dot files",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 251985920, NULL, NULL,
+	0, -1, NULL},
+	FileSelectParams_show_hidden_get, FileSelectParams_show_hidden_set, NULL, NULL, 0, NULL
+};
+
+static EnumPropertyItem rna_FileSelectParams_sort_method_items[5] = {
+	{1, "FILE_SORT_ALPHA", 676, "Sort alphabetically", "Sort the file list alphabetically"},
+	{2, "FILE_SORT_EXTENSION", 677, "Sort by extension", "Sort the file list by extension"},
+	{3, "FILE_SORT_TIME", 678, "Sort by time", "Sort files by modification time"},
+	{4, "FILE_SORT_SIZE", 679, "Sort by size", "Sort files by size"},
+	{0, NULL, 0, NULL, NULL}
+};
+
+EnumPropertyRNA rna_FileSelectParams_sort_method = {
+	{(PropertyRNA*)&rna_FileSelectParams_title, (PropertyRNA*)&rna_FileSelectParams_show_hidden,
+	-1, "sort_method", 3, "Sort",
+	"",
+	0,
+	PROP_ENUM, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 251985920, NULL, NULL,
+	0, -1, NULL},
+	FileSelectParams_sort_method_get, FileSelectParams_sort_method_set, NULL, rna_FileSelectParams_sort_method_items, 4, 1
+};
+
+StringPropertyRNA rna_FileSelectParams_title = {
+	{NULL, (PropertyRNA*)&rna_FileSelectParams_sort_method,
+	-1, "title", 0, "Title",
+	"Title for the file browser",
+	0,
+	PROP_STRING, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {32, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	FileSelectParams_title_get, FileSelectParams_title_length, NULL, 32, ""
+};
+
+StructRNA RNA_FileSelectParams = {
+	{(ContainerRNA *)&RNA_Filter2DActuator, (ContainerRNA *)&RNA_FieldSettings,
+	NULL,
+	{(PropertyRNA*)&rna_FileSelectParams_rna_type, (PropertyRNA*)&rna_FileSelectParams_title}},
+	"FileSelectParams"	, NULL,NULL
+, 0, "File Select Parameters", "File Select Parameters",
+	17,
+	NULL, (PropertyRNA*)&rna_FileSelectParams_rna_properties,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	{NULL, NULL}
+};
+
+/* 3D View Region */
+PointerPropertyRNA rna_RegionView3D_rna_type = {
+	{(PropertyRNA*)&rna_RegionView3D_show_sync_view, NULL,
+	-1, "rna_type", 524288, "RNA",
+	"RNA type definition",
+	0,
+	PROP_POINTER, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	RegionView3D_rna_type_get, NULL, NULL, NULL,&RNA_Struct
+};
+
+BooleanPropertyRNA rna_RegionView3D_show_sync_view = {
+	{(PropertyRNA*)&rna_RegionView3D_use_box_clip, (PropertyRNA*)&rna_RegionView3D_rna_type,
+	-1, "show_sync_view", 3, "Box",
+	"Sync view position between side views",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	rna_RegionView3D_quadview_update, 252248064, NULL, NULL,
+	0, -1, NULL},
+	RegionView3D_show_sync_view_get, RegionView3D_show_sync_view_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_RegionView3D_use_box_clip = {
+	{(PropertyRNA*)&rna_RegionView3D_view_distance, (PropertyRNA*)&rna_RegionView3D_show_sync_view,
+	-1, "use_box_clip", 3, "Clip",
+	"Clip objects based on what\'s visible in other side views",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	rna_RegionView3D_quadview_clip_update, 252248064, NULL, NULL,
+	0, -1, NULL},
+	RegionView3D_use_box_clip_get, RegionView3D_use_box_clip_set, NULL, NULL, 0, NULL
+};
+
+FloatPropertyRNA rna_RegionView3D_view_distance = {
+	{(PropertyRNA*)&rna_RegionView3D_lock_rotation, (PropertyRNA*)&rna_RegionView3D_use_box_clip,
+	-1, "view_distance", 8195, "Distance",
+	"Distance to the view location",
+	0,
+	PROP_FLOAT, PROP_UNSIGNED|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	offsetof(RegionView3D, dist), 4, NULL},
+	RegionView3D_view_distance_get, RegionView3D_view_distance_set, NULL, NULL, NULL, 0.0f, 10000.0f, 0.0f, FLT_MAX, 10.0f, 3, 0.0f, NULL
+};
+
+BooleanPropertyRNA rna_RegionView3D_lock_rotation = {
+	{(PropertyRNA*)&rna_RegionView3D_view_perspective, (PropertyRNA*)&rna_RegionView3D_view_distance,
+	-1, "lock_rotation", 3, "Lock",
+	"Lock view rotation in side views",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	rna_RegionView3D_quadview_update, 252248064, NULL, NULL,
+	0, -1, NULL},
+	RegionView3D_lock_rotation_get, RegionView3D_lock_rotation_set, NULL, NULL, 0, NULL
+};
+
+static EnumPropertyItem rna_RegionView3D_view_perspective_items[4] = {
+	{1, "PERSP", 0, "Perspective", ""},
+	{0, "ORTHO", 0, "Orthographic", ""},
+	{2, "CAMERA", 0, "Camera", ""},
+	{0, NULL, 0, NULL, NULL}
+};
+
+EnumPropertyRNA rna_RegionView3D_view_perspective = {
+	{(PropertyRNA*)&rna_RegionView3D_perspective_matrix, (PropertyRNA*)&rna_RegionView3D_lock_rotation,
+	-1, "view_perspective", 3, "Perspective",
+	"View Perspective",
+	0,
+	PROP_ENUM, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	0, -1, NULL},
+	RegionView3D_view_perspective_get, RegionView3D_view_perspective_set, NULL, rna_RegionView3D_view_perspective_items, 3, 0
+};
+
+static float rna_RegionView3D_perspective_matrix_default[16] = {
+	0.0f,
+	0.0f,
+	0.0f,
+	0.0f,
+	0.0f,
+	0.0f,
+	0.0f,
+	0.0f,
+	0.0f,
+	0.0f,
+	0.0f,
+	0.0f,
+	0.0f,
+	0.0f,
+	0.0f,
+	0.0f
+};
+
+FloatPropertyRNA rna_RegionView3D_perspective_matrix = {
+	{(PropertyRNA*)&rna_RegionView3D_rna_properties, (PropertyRNA*)&rna_RegionView3D_view_perspective,
+	-1, "perspective_matrix", 8194, "Perspective Matrix",
+	"Current perspective matrix of the 3D region",
+	0,
+	PROP_FLOAT, PROP_MATRIX|PROP_UNIT_NONE, NULL, 2, {4, 4, 0}, 16,
+	NULL, 0, NULL, NULL,
+	offsetof(RegionView3D, persmat), 4, NULL},
+	NULL, NULL, RegionView3D_perspective_matrix_get, NULL, NULL, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, 0.0f, rna_RegionView3D_perspective_matrix_default
+};
+
+CollectionPropertyRNA rna_RegionView3D_rna_properties = {
+	{(PropertyRNA*)&rna_RegionView3D_view_location, (PropertyRNA*)&rna_RegionView3D_perspective_matrix,
+	-1, "rna_properties", 128, "Properties",
+	"RNA property collection",
+	0,
+	PROP_COLLECTION, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	RegionView3D_rna_properties_begin, RegionView3D_rna_properties_next, RegionView3D_rna_properties_end, RegionView3D_rna_properties_get, NULL, NULL, rna_builtin_properties_lookup_string, &RNA_Property
+};
+
+static float rna_RegionView3D_view_location_default[3] = {
+	0.0f,
+	0.0f,
+	0.0f
+};
+
+FloatPropertyRNA rna_RegionView3D_view_location = {
+	{(PropertyRNA*)&rna_RegionView3D_view_matrix, (PropertyRNA*)&rna_RegionView3D_rna_properties,
+	-1, "view_location", 3, "View Location",
+	"View pivot location",
+	0,
+	PROP_FLOAT, PROP_TRANSLATION|PROP_UNIT_LENGTH, NULL, 1, {3, 0, 0}, 3,
+	NULL, 33554432, NULL, NULL,
+	0, -1, NULL},
+	NULL, NULL, RegionView3D_view_location_get, RegionView3D_view_location_set, NULL, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 4, 0.0f, rna_RegionView3D_view_location_default
+};
+
+static float rna_RegionView3D_view_matrix_default[16] = {
+	0.0f,
+	0.0f,
+	0.0f,
+	0.0f,
+	0.0f,
+	0.0f,
+	0.0f,
+	0.0f,
+	0.0f,
+	0.0f,
+	0.0f,
+	0.0f,
+	0.0f,
+	0.0f,
+	0.0f,
+	0.0f
+};
+
+FloatPropertyRNA rna_RegionView3D_view_matrix = {
+	{(PropertyRNA*)&rna_RegionView3D_view_rotation, (PropertyRNA*)&rna_RegionView3D_view_location,
+	-1, "view_matrix", 8194, "View Matrix",
+	"Current view matrix of the 3D region",
+	0,
+	PROP_FLOAT, PROP_MATRIX|PROP_UNIT_NONE, NULL, 2, {4, 4, 0}, 16,
+	NULL, 0, NULL, NULL,
+	offsetof(RegionView3D, viewmat), 4, NULL},
+	NULL, NULL, RegionView3D_view_matrix_get, NULL, NULL, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, 0.0f, rna_RegionView3D_view_matrix_default
+};
+
+static float rna_RegionView3D_view_rotation_default[4] = {
+	0.0f,
+	0.0f,
+	0.0f,
+	0.0f
+};
+
+FloatPropertyRNA rna_RegionView3D_view_rotation = {
+	{NULL, (PropertyRNA*)&rna_RegionView3D_view_matrix,
+	-1, "view_rotation", 8195, "View Rotation",
+	"Rotation in quaternions (keep normalized)",
+	0,
+	PROP_FLOAT, PROP_QUATERNION|PROP_UNIT_NONE, NULL, 1, {4, 0, 0}, 4,
+	NULL, 252248064, NULL, NULL,
+	offsetof(RegionView3D, viewquat), 4, NULL},
+	NULL, NULL, RegionView3D_view_rotation_get, RegionView3D_view_rotation_set, NULL, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, 0.0f, rna_RegionView3D_view_rotation_default
+};
+
+StructRNA RNA_RegionView3D = {
+	{(ContainerRNA *)&RNA_RenderEngine, (ContainerRNA *)&RNA_Region,
+	NULL,
+	{(PropertyRNA*)&rna_RegionView3D_rna_type, (PropertyRNA*)&rna_RegionView3D_view_rotation}},
+	"RegionView3D"	, NULL,NULL
+, 0, "3D View Region", "3D View region data",
+	17,
+	NULL, (PropertyRNA*)&rna_RegionView3D_rna_properties,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	{NULL, NULL}
+};
+
+/* Space */
+PointerPropertyRNA rna_Space_rna_type = {
+	{(PropertyRNA*)&rna_Space_rna_properties, NULL,
+	-1, "rna_type", 524288, "RNA",
+	"RNA type definition",
+	0,
+	PROP_POINTER, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	Space_rna_type_get, NULL, NULL, NULL,&RNA_Struct
+};
+
+CollectionPropertyRNA rna_Space_rna_properties = {
+	{(PropertyRNA*)&rna_Space_type, (PropertyRNA*)&rna_Space_rna_type,
+	-1, "rna_properties", 128, "Properties",
+	"RNA property collection",
+	0,
+	PROP_COLLECTION, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	Space_rna_properties_begin, Space_rna_properties_next, Space_rna_properties_end, Space_rna_properties_get, NULL, NULL, rna_builtin_properties_lookup_string, &RNA_Property
+};
+
+static EnumPropertyItem rna_Space_type_items[20] = {
+	{0, "EMPTY", 0, "Empty", ""},
+	{1, "VIEW_3D", 0, "3D View", ""},
+	{2, "GRAPH_EDITOR", 0, "Graph Editor", ""},
+	{3, "OUTLINER", 0, "Outliner", ""},
+	{4, "PROPERTIES", 0, "Properties", ""},
+	{5, "FILE_BROWSER", 0, "File Browser", ""},
+	{6, "IMAGE_EDITOR", 0, "Image Editor", ""},
+	{7, "INFO", 0, "Info", ""},
+	{8, "SEQUENCE_EDITOR", 0, "Sequence Editor", ""},
+	{9, "TEXT_EDITOR", 0, "Text Editor", ""},
+	{11, "AUDIO_WINDOW", 0, "Audio Window", ""},
+	{12, "DOPESHEET_EDITOR", 0, "DopeSheet Editor", ""},
+	{13, "NLA_EDITOR", 0, "NLA Editor", ""},
+	{14, "SCRIPTS_WINDOW", 0, "Scripts Window", ""},
+	{15, "TIMELINE", 0, "Timeline", ""},
+	{16, "NODE_EDITOR", 0, "Node Editor", ""},
+	{17, "LOGIC_EDITOR", 0, "Logic Editor", ""},
+	{18, "CONSOLE", 0, "Python Console", ""},
+	{19, "USER_PREFERENCES", 0, "User Preferences", ""},
+	{0, NULL, 0, NULL, NULL}
+};
+
+EnumPropertyRNA rna_Space_type = {
+	{NULL, (PropertyRNA*)&rna_Space_rna_properties,
+	-1, "type", 2, "Type",
+	"Space data type",
+	0,
+	PROP_ENUM, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	Space_type_get, NULL, NULL, rna_Space_type_items, 19, 0
+};
+
+StructRNA RNA_Space = {
+	{(ContainerRNA *)&RNA_SpaceConsole, (ContainerRNA *)&RNA_SoundSequence,
+	NULL,
+	{(PropertyRNA*)&rna_Space_rna_type, (PropertyRNA*)&rna_Space_type}},
+	"Space"	, NULL,NULL
+, 0, "Space", "Space data for a screen area",
+	17,
+	NULL, (PropertyRNA*)&rna_Space_rna_properties,
+	NULL,
+	NULL,
+	rna_Space_refine,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	{NULL, NULL}
+};
+
+/* Space Console */
+IntPropertyRNA rna_SpaceConsole_font_size = {
+	{(PropertyRNA*)&rna_SpaceConsole_history, NULL,
+	-1, "font_size", 8195, "Font Size",
+	"Font size to use for displaying the text",
+	0,
+	PROP_INT, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 251723776, NULL, NULL,
+	offsetof(SpaceConsole, lheight), 0, NULL},
+	SpaceConsole_font_size_get, SpaceConsole_font_size_set, NULL, NULL, NULL,
+	8, 32, 8, 32, 1, 0, NULL
+};
+
+CollectionPropertyRNA rna_SpaceConsole_history = {
+	{(PropertyRNA*)&rna_SpaceConsole_language, (PropertyRNA*)&rna_SpaceConsole_font_size,
+	-1, "history", 0, "History",
+	"Command history",
+	0,
+	PROP_COLLECTION, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	SpaceConsole_history_begin, SpaceConsole_history_next, SpaceConsole_history_end, SpaceConsole_history_get, NULL, SpaceConsole_history_lookup_int, NULL, &RNA_ConsoleLine
+};
+
+StringPropertyRNA rna_SpaceConsole_language = {
+	{(PropertyRNA*)&rna_SpaceConsole_scrollback, (PropertyRNA*)&rna_SpaceConsole_history,
+	-1, "language", 1, "Language",
+	"Command line prompt language",
+	0,
+	PROP_STRING, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {32, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	SpaceConsole_language_get, SpaceConsole_language_length, SpaceConsole_language_set, 32, ""
+};
+
+CollectionPropertyRNA rna_SpaceConsole_scrollback = {
+	{(PropertyRNA*)&rna_SpaceConsole_prompt, (PropertyRNA*)&rna_SpaceConsole_language,
+	-1, "scrollback", 0, "Output",
+	"Command output",
+	0,
+	PROP_COLLECTION, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	SpaceConsole_scrollback_begin, SpaceConsole_scrollback_next, SpaceConsole_scrollback_end, SpaceConsole_scrollback_get, NULL, SpaceConsole_scrollback_lookup_int, NULL, &RNA_ConsoleLine
+};
+
+StringPropertyRNA rna_SpaceConsole_prompt = {
+	{(PropertyRNA*)&rna_SpaceConsole_select_end, (PropertyRNA*)&rna_SpaceConsole_scrollback,
+	-1, "prompt", 1, "Prompt",
+	"Command line prompt",
+	0,
+	PROP_STRING, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {256, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	SpaceConsole_prompt_get, SpaceConsole_prompt_length, SpaceConsole_prompt_set, 256, ""
+};
+
+IntPropertyRNA rna_SpaceConsole_select_end = {
+	{(PropertyRNA*)&rna_SpaceConsole_select_start, (PropertyRNA*)&rna_SpaceConsole_prompt,
+	-1, "select_end", 8195, "select_end",
+	"",
+	0,
+	PROP_INT, PROP_UNSIGNED|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 251723776, NULL, NULL,
+	offsetof(SpaceConsole, sel_end), 0, NULL},
+	SpaceConsole_select_end_get, SpaceConsole_select_end_set, NULL, NULL, NULL,
+	0, 10000, 0, INT_MAX, 1, 0, NULL
+};
+
+IntPropertyRNA rna_SpaceConsole_select_start = {
+	{NULL, (PropertyRNA*)&rna_SpaceConsole_select_end,
+	-1, "select_start", 8195, "select_start",
+	"",
+	0,
+	PROP_INT, PROP_UNSIGNED|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 251723776, NULL, NULL,
+	offsetof(SpaceConsole, sel_start), 0, NULL},
+	SpaceConsole_select_start_get, SpaceConsole_select_start_set, NULL, NULL, NULL,
+	0, 10000, 0, INT_MAX, 1, 0, NULL
+};
+
+StructRNA RNA_SpaceConsole = {
+	{(ContainerRNA *)&RNA_SpaceDopeSheetEditor, (ContainerRNA *)&RNA_Space,
+	NULL,
+	{(PropertyRNA*)&rna_SpaceConsole_font_size, (PropertyRNA*)&rna_SpaceConsole_select_start}},
+	"SpaceConsole"	, NULL,NULL
+, 0, "Space Console", "Interactive python console",
+	17,
+	NULL, (PropertyRNA*)&rna_Space_rna_properties,
+	&RNA_Space,
+	NULL,
+	rna_Space_refine,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	{NULL, NULL}
+};
+
+/* Space DopeSheet Editor */
+PointerPropertyRNA rna_SpaceDopeSheetEditor_action = {
+	{(PropertyRNA*)&rna_SpaceDopeSheetEditor_auto_snap, NULL,
+	-1, "action", 65, "Action",
+	"Action displayed and edited in this space",
+	0,
+	PROP_POINTER, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	rna_SpaceDopeSheetEditor_action_update, 239468545, NULL, NULL,
+	0, -1, NULL},
+	SpaceDopeSheetEditor_action_get, SpaceDopeSheetEditor_action_set, NULL, NULL,&RNA_Action
+};
+
+static EnumPropertyItem rna_SpaceDopeSheetEditor_auto_snap_items[5] = {
+	{0, "NONE", 0, "No Auto-Snap", ""},
+	{1, "STEP", 0, "Time Step", "Snap to 1.0 frame/second intervals"},
+	{2, "FRAME", 0, "Nearest Frame", "Snap to actual frames/seconds (nla-action time)"},
+	{3, "MARKER", 0, "Nearest Marker", "Snap to nearest marker"},
+	{0, NULL, 0, NULL, NULL}
+};
+
+EnumPropertyRNA rna_SpaceDopeSheetEditor_auto_snap = {
+	{(PropertyRNA*)&rna_SpaceDopeSheetEditor_use_auto_merge_keyframes, (PropertyRNA*)&rna_SpaceDopeSheetEditor_action,
+	-1, "auto_snap", 3, "Auto Snap",
+	"Automatic time snapping settings for transformations",
+	0,
+	PROP_ENUM, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252575744, NULL, NULL,
+	0, -1, NULL},
+	SpaceDopeSheetEditor_auto_snap_get, SpaceDopeSheetEditor_auto_snap_set, NULL, rna_SpaceDopeSheetEditor_auto_snap_items, 4, 0
+};
+
+BooleanPropertyRNA rna_SpaceDopeSheetEditor_use_auto_merge_keyframes = {
+	{(PropertyRNA*)&rna_SpaceDopeSheetEditor_dopesheet, (PropertyRNA*)&rna_SpaceDopeSheetEditor_auto_snap,
+	-1, "use_auto_merge_keyframes", 3, "AutoMerge Keyframes",
+	"Automatically merge nearby keyframes",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252575744, NULL, NULL,
+	0, -1, NULL},
+	SpaceDopeSheetEditor_use_auto_merge_keyframes_get, SpaceDopeSheetEditor_use_auto_merge_keyframes_set, NULL, NULL, 0, NULL
+};
+
+PointerPropertyRNA rna_SpaceDopeSheetEditor_dopesheet = {
+	{(PropertyRNA*)&rna_SpaceDopeSheetEditor_mode, (PropertyRNA*)&rna_SpaceDopeSheetEditor_use_auto_merge_keyframes,
+	-1, "dopesheet", 0, "DopeSheet",
+	"Settings for filtering animation data",
+	0,
+	PROP_POINTER, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	SpaceDopeSheetEditor_dopesheet_get, NULL, NULL, NULL,&RNA_DopeSheet
+};
+
+static EnumPropertyItem rna_SpaceDopeSheetEditor_mode_items[5] = {
+	{3, "DOPESHEET", 0, "DopeSheet", ""},
+	{0, "ACTION", 0, "Action Editor", ""},
+	{1, "SHAPEKEY", 0, "ShapeKey Editor", ""},
+	{2, "GPENCIL", 0, "Grease Pencil", ""},
+	{0, NULL, 0, NULL, NULL}
+};
+
+EnumPropertyRNA rna_SpaceDopeSheetEditor_mode = {
+	{(PropertyRNA*)&rna_SpaceDopeSheetEditor_use_realtime_update, (PropertyRNA*)&rna_SpaceDopeSheetEditor_dopesheet,
+	-1, "mode", 3, "Mode",
+	"Editing context being displayed",
+	0,
+	PROP_ENUM, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	rna_SpaceDopeSheetEditor_mode_update, 252575744, NULL, NULL,
+	0, -1, NULL},
+	SpaceDopeSheetEditor_mode_get, SpaceDopeSheetEditor_mode_set, NULL, rna_SpaceDopeSheetEditor_mode_items, 4, 0
+};
+
+BooleanPropertyRNA rna_SpaceDopeSheetEditor_use_realtime_update = {
+	{(PropertyRNA*)&rna_SpaceDopeSheetEditor_show_frame_indicator, (PropertyRNA*)&rna_SpaceDopeSheetEditor_mode,
+	-1, "use_realtime_update", 3, "Realtime Updates",
+	"When transforming keyframes, changes to the animation data are flushed to other views",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252575744, NULL, NULL,
+	0, -1, NULL},
+	SpaceDopeSheetEditor_use_realtime_update_get, SpaceDopeSheetEditor_use_realtime_update_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceDopeSheetEditor_show_frame_indicator = {
+	{(PropertyRNA*)&rna_SpaceDopeSheetEditor_show_pose_markers, (PropertyRNA*)&rna_SpaceDopeSheetEditor_use_realtime_update,
+	-1, "show_frame_indicator", 3, "Show Frame Number Indicator",
+	"Show frame number beside the current frame indicator line",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252575744, NULL, NULL,
+	0, -1, NULL},
+	SpaceDopeSheetEditor_show_frame_indicator_get, SpaceDopeSheetEditor_show_frame_indicator_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceDopeSheetEditor_show_pose_markers = {
+	{(PropertyRNA*)&rna_SpaceDopeSheetEditor_show_seconds, (PropertyRNA*)&rna_SpaceDopeSheetEditor_show_frame_indicator,
+	-1, "show_pose_markers", 3, "Show Pose Markers",
+	"Show markers belonging to the active action instead of Scene markers (Action and Shape Key Editors only)",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252575744, NULL, NULL,
+	0, -1, NULL},
+	SpaceDopeSheetEditor_show_pose_markers_get, SpaceDopeSheetEditor_show_pose_markers_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceDopeSheetEditor_show_seconds = {
+	{(PropertyRNA*)&rna_SpaceDopeSheetEditor_show_sliders, (PropertyRNA*)&rna_SpaceDopeSheetEditor_show_pose_markers,
+	-1, "show_seconds", 2, "Show Seconds",
+	"Show timing in seconds not frames",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252575744, NULL, NULL,
+	0, -1, NULL},
+	SpaceDopeSheetEditor_show_seconds_get, NULL, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceDopeSheetEditor_show_sliders = {
+	{(PropertyRNA*)&rna_SpaceDopeSheetEditor_use_marker_sync, (PropertyRNA*)&rna_SpaceDopeSheetEditor_show_seconds,
+	-1, "show_sliders", 3, "Show Sliders",
+	"Show sliders beside F-Curve channels",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252575744, NULL, NULL,
+	0, -1, NULL},
+	SpaceDopeSheetEditor_show_sliders_get, SpaceDopeSheetEditor_show_sliders_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceDopeSheetEditor_use_marker_sync = {
+	{NULL, (PropertyRNA*)&rna_SpaceDopeSheetEditor_show_sliders,
+	-1, "use_marker_sync", 3, "Sync Markers",
+	"Sync Markers with keyframe edits",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	SpaceDopeSheetEditor_use_marker_sync_get, SpaceDopeSheetEditor_use_marker_sync_set, NULL, NULL, 0, NULL
+};
+
+StructRNA RNA_SpaceDopeSheetEditor = {
+	{(ContainerRNA *)&RNA_SpaceFileBrowser, (ContainerRNA *)&RNA_SpaceConsole,
+	NULL,
+	{(PropertyRNA*)&rna_SpaceDopeSheetEditor_action, (PropertyRNA*)&rna_SpaceDopeSheetEditor_use_marker_sync}},
+	"SpaceDopeSheetEditor"	, NULL,NULL
+, 0, "Space DopeSheet Editor", "DopeSheet space data",
+	17,
+	NULL, (PropertyRNA*)&rna_Space_rna_properties,
+	&RNA_Space,
+	NULL,
+	rna_Space_refine,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	{NULL, NULL}
+};
+
+/* Space File Browser */
+PointerPropertyRNA rna_SpaceFileBrowser_params = {
+	{(PropertyRNA*)&rna_SpaceFileBrowser_operator, NULL,
+	-1, "params", 0, "Filebrowser Parameter",
+	"Parameters and Settings for the Filebrowser",
+	0,
+	PROP_POINTER, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	SpaceFileBrowser_params_get, NULL, NULL, NULL,&RNA_FileSelectParams
+};
+
+PointerPropertyRNA rna_SpaceFileBrowser_operator = {
+	{NULL, (PropertyRNA*)&rna_SpaceFileBrowser_params,
+	-1, "operator", 0, "Operator",
+	"",
+	0,
+	PROP_POINTER, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	SpaceFileBrowser_operator_get, NULL, NULL, NULL,&RNA_Operator
+};
+
+StructRNA RNA_SpaceFileBrowser = {
+	{(ContainerRNA *)&RNA_SpaceGraphEditor, (ContainerRNA *)&RNA_SpaceDopeSheetEditor,
+	NULL,
+	{(PropertyRNA*)&rna_SpaceFileBrowser_params, (PropertyRNA*)&rna_SpaceFileBrowser_operator}},
+	"SpaceFileBrowser"	, NULL,NULL
+, 0, "Space File Browser", "File browser space data",
+	17,
+	NULL, (PropertyRNA*)&rna_Space_rna_properties,
+	&RNA_Space,
+	NULL,
+	rna_Space_refine,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	{NULL, NULL}
+};
+
+/* Space Graph Editor */
+static EnumPropertyItem rna_SpaceGraphEditor_auto_snap_items[5] = {
+	{0, "NONE", 0, "No Auto-Snap", ""},
+	{1, "STEP", 0, "Time Step", "Snap to 1.0 frame/second intervals"},
+	{2, "FRAME", 0, "Nearest Frame", "Snap to actual frames/seconds (nla-action time)"},
+	{3, "MARKER", 0, "Nearest Marker", "Snap to nearest marker"},
+	{0, NULL, 0, NULL, NULL}
+};
+
+EnumPropertyRNA rna_SpaceGraphEditor_auto_snap = {
+	{(PropertyRNA*)&rna_SpaceGraphEditor_use_auto_merge_keyframes, NULL,
+	-1, "auto_snap", 3, "Auto Snap",
+	"Automatic time snapping settings for transformations",
+	0,
+	PROP_ENUM, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252510208, NULL, NULL,
+	0, -1, NULL},
+	SpaceGraphEditor_auto_snap_get, SpaceGraphEditor_auto_snap_set, NULL, rna_SpaceGraphEditor_auto_snap_items, 4, 0
+};
+
+BooleanPropertyRNA rna_SpaceGraphEditor_use_auto_merge_keyframes = {
+	{(PropertyRNA*)&rna_SpaceGraphEditor_cursor_position_y, (PropertyRNA*)&rna_SpaceGraphEditor_auto_snap,
+	-1, "use_auto_merge_keyframes", 3, "AutoMerge Keyframes",
+	"Automatically merge nearby keyframes",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252510208, NULL, NULL,
+	0, -1, NULL},
+	SpaceGraphEditor_use_auto_merge_keyframes_get, SpaceGraphEditor_use_auto_merge_keyframes_set, NULL, NULL, 0, NULL
+};
+
+FloatPropertyRNA rna_SpaceGraphEditor_cursor_position_y = {
+	{(PropertyRNA*)&rna_SpaceGraphEditor_dopesheet, (PropertyRNA*)&rna_SpaceGraphEditor_use_auto_merge_keyframes,
+	-1, "cursor_position_y", 8195, "Cursor Y-Value",
+	"Graph Editor 2D-Value cursor - Y-Value component",
+	0,
+	PROP_FLOAT, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252510208, NULL, NULL,
+	offsetof(SpaceIpo, cursorVal), 4, NULL},
+	SpaceGraphEditor_cursor_position_y_get, SpaceGraphEditor_cursor_position_y_set, NULL, NULL, NULL, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, 0.0f, NULL
+};
+
+PointerPropertyRNA rna_SpaceGraphEditor_dopesheet = {
+	{(PropertyRNA*)&rna_SpaceGraphEditor_has_ghost_curves, (PropertyRNA*)&rna_SpaceGraphEditor_cursor_position_y,
+	-1, "dopesheet", 0, "DopeSheet",
+	"Settings for filtering animation data",
+	0,
+	PROP_POINTER, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	SpaceGraphEditor_dopesheet_get, NULL, NULL, NULL,&RNA_DopeSheet
+};
+
+BooleanPropertyRNA rna_SpaceGraphEditor_has_ghost_curves = {
+	{(PropertyRNA*)&rna_SpaceGraphEditor_mode, (PropertyRNA*)&rna_SpaceGraphEditor_dopesheet,
+	-1, "has_ghost_curves", 3, "Has Ghost Curves",
+	"Graph Editor instance has some ghost curves stored",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252510208, NULL, NULL,
+	0, -1, NULL},
+	SpaceGraphEditor_has_ghost_curves_get, SpaceGraphEditor_has_ghost_curves_set, NULL, NULL, 0, NULL
+};
+
+static EnumPropertyItem rna_SpaceGraphEditor_mode_items[3] = {
+	{0, "FCURVES", 0, "F-Curve Editor", ""},
+	{1, "DRIVERS", 0, "Drivers", ""},
+	{0, NULL, 0, NULL, NULL}
+};
+
+EnumPropertyRNA rna_SpaceGraphEditor_mode = {
+	{(PropertyRNA*)&rna_SpaceGraphEditor_use_only_selected_curves_handles, (PropertyRNA*)&rna_SpaceGraphEditor_has_ghost_curves,
+	-1, "mode", 4194307, "Mode",
+	"Editing context being displayed",
+	0,
+	PROP_ENUM, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	(UpdateFunc)rna_SpaceGraphEditor_display_mode_update, 252510208, NULL, NULL,
+	0, -1, NULL},
+	SpaceGraphEditor_mode_get, SpaceGraphEditor_mode_set, NULL, rna_SpaceGraphEditor_mode_items, 2, 0
+};
+
+BooleanPropertyRNA rna_SpaceGraphEditor_use_only_selected_curves_handles = {
+	{(PropertyRNA*)&rna_SpaceGraphEditor_use_only_selected_keyframe_handles, (PropertyRNA*)&rna_SpaceGraphEditor_mode,
+	-1, "use_only_selected_curves_handles", 3, "Only Selected Curve Keyframes",
+	"Only keyframes of selected F-Curves are visible and editable",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252510208, NULL, NULL,
+	0, -1, NULL},
+	SpaceGraphEditor_use_only_selected_curves_handles_get, SpaceGraphEditor_use_only_selected_curves_handles_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceGraphEditor_use_only_selected_keyframe_handles = {
+	{(PropertyRNA*)&rna_SpaceGraphEditor_pivot_point, (PropertyRNA*)&rna_SpaceGraphEditor_use_only_selected_curves_handles,
+	-1, "use_only_selected_keyframe_handles", 3, "Only Selected Keyframes Handles",
+	"Only show and edit handles of selected keyframes",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252510208, NULL, NULL,
+	0, -1, NULL},
+	SpaceGraphEditor_use_only_selected_keyframe_handles_get, SpaceGraphEditor_use_only_selected_keyframe_handles_set, NULL, NULL, 0, NULL
+};
+
+static EnumPropertyItem rna_SpaceGraphEditor_pivot_point_items[4] = {
+	{0, "BOUNDING_BOX_CENTER", 551, "Bounding Box Center", ""},
+	{1, "CURSOR", 552, "2D Cursor", ""},
+	{2, "INDIVIDUAL_ORIGINS", 553, "Individual Centers", ""},
+	{0, NULL, 0, NULL, NULL}
+};
+
+EnumPropertyRNA rna_SpaceGraphEditor_pivot_point = {
+	{(PropertyRNA*)&rna_SpaceGraphEditor_use_realtime_update, (PropertyRNA*)&rna_SpaceGraphEditor_use_only_selected_keyframe_handles,
+	-1, "pivot_point", 3, "Pivot Point",
+	"Pivot center for rotation/scaling",
+	0,
+	PROP_ENUM, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252510208, NULL, NULL,
+	0, -1, NULL},
+	SpaceGraphEditor_pivot_point_get, SpaceGraphEditor_pivot_point_set, NULL, rna_SpaceGraphEditor_pivot_point_items, 3, 0
+};
+
+BooleanPropertyRNA rna_SpaceGraphEditor_use_realtime_update = {
+	{(PropertyRNA*)&rna_SpaceGraphEditor_show_cursor, (PropertyRNA*)&rna_SpaceGraphEditor_pivot_point,
+	-1, "use_realtime_update", 3, "Realtime Updates",
+	"When transforming keyframes, changes to the animation data are flushed to other views",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252510208, NULL, NULL,
+	0, -1, NULL},
+	SpaceGraphEditor_use_realtime_update_get, SpaceGraphEditor_use_realtime_update_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceGraphEditor_show_cursor = {
+	{(PropertyRNA*)&rna_SpaceGraphEditor_show_frame_indicator, (PropertyRNA*)&rna_SpaceGraphEditor_use_realtime_update,
+	-1, "show_cursor", 3, "Show Cursor",
+	"Show 2D cursor",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252510208, NULL, NULL,
+	0, -1, NULL},
+	SpaceGraphEditor_show_cursor_get, SpaceGraphEditor_show_cursor_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceGraphEditor_show_frame_indicator = {
+	{(PropertyRNA*)&rna_SpaceGraphEditor_show_handles, (PropertyRNA*)&rna_SpaceGraphEditor_show_cursor,
+	-1, "show_frame_indicator", 3, "Show Frame Number Indicator",
+	"Show frame number beside the current frame indicator line",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252510208, NULL, NULL,
+	0, -1, NULL},
+	SpaceGraphEditor_show_frame_indicator_get, SpaceGraphEditor_show_frame_indicator_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceGraphEditor_show_handles = {
+	{(PropertyRNA*)&rna_SpaceGraphEditor_show_seconds, (PropertyRNA*)&rna_SpaceGraphEditor_show_frame_indicator,
+	-1, "show_handles", 3, "Show Handles",
+	"Show handles of Bezier control points",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252510208, NULL, NULL,
+	0, -1, NULL},
+	SpaceGraphEditor_show_handles_get, SpaceGraphEditor_show_handles_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceGraphEditor_show_seconds = {
+	{(PropertyRNA*)&rna_SpaceGraphEditor_show_sliders, (PropertyRNA*)&rna_SpaceGraphEditor_show_handles,
+	-1, "show_seconds", 2, "Show Seconds",
+	"Show timing in seconds not frames",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252510208, NULL, NULL,
+	0, -1, NULL},
+	SpaceGraphEditor_show_seconds_get, NULL, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceGraphEditor_show_sliders = {
+	{(PropertyRNA*)&rna_SpaceGraphEditor_use_fancy_drawing, (PropertyRNA*)&rna_SpaceGraphEditor_show_seconds,
+	-1, "show_sliders", 3, "Show Sliders",
+	"Show sliders beside F-Curve channels",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252510208, NULL, NULL,
+	0, -1, NULL},
+	SpaceGraphEditor_show_sliders_get, SpaceGraphEditor_show_sliders_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceGraphEditor_use_fancy_drawing = {
+	{NULL, (PropertyRNA*)&rna_SpaceGraphEditor_show_sliders,
+	-1, "use_fancy_drawing", 3, "Use Fancy Drawing",
+	"Draw F-Curves using Anti-Aliasing and other fancy effects. Disable for better performance",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252510208, NULL, NULL,
+	0, -1, NULL},
+	SpaceGraphEditor_use_fancy_drawing_get, SpaceGraphEditor_use_fancy_drawing_set, NULL, NULL, 0, NULL
+};
+
+StructRNA RNA_SpaceGraphEditor = {
+	{(ContainerRNA *)&RNA_SpaceImageEditor, (ContainerRNA *)&RNA_SpaceFileBrowser,
+	NULL,
+	{(PropertyRNA*)&rna_SpaceGraphEditor_auto_snap, (PropertyRNA*)&rna_SpaceGraphEditor_use_fancy_drawing}},
+	"SpaceGraphEditor"	, NULL,NULL
+, 0, "Space Graph Editor", "Graph Editor space data",
+	17,
+	NULL, (PropertyRNA*)&rna_Space_rna_properties,
+	&RNA_Space,
+	NULL,
+	rna_Space_refine,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	{NULL, NULL}
+};
+
+/* Space Image Editor */
+PointerPropertyRNA rna_SpaceImageEditor_curves = {
+	{(PropertyRNA*)&rna_SpaceImageEditor_draw_channels, NULL,
+	-1, "curves", 0, "Curves",
+	"Color curve mapping to use for displaying the image",
+	0,
+	PROP_POINTER, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	rna_SpaceImageEditor_curves_update, 251920384, NULL, NULL,
+	0, -1, NULL},
+	SpaceImageEditor_curves_get, NULL, NULL, NULL,&RNA_CurveMapping
+};
+
+static EnumPropertyItem rna_SpaceImageEditor_draw_channels_items[5] = {
+	{0, "COLOR", 763, "Color", "Draw image with RGB colors"},
+	{4096, "COLOR_ALPHA", 764, "Color and Alpha", "Draw image with RGB colors and alpha transparency"},
+	{8192, "ALPHA", 765, "Alpha", "Draw alpha transparency channel"},
+	{16384, "Z_BUFFER", 766, "Z-Buffer", "Draw Z-buffer associated with image (mapped from camera clip start to end)"},
+	{0, NULL, 0, NULL, NULL}
+};
+
+EnumPropertyRNA rna_SpaceImageEditor_draw_channels = {
+	{(PropertyRNA*)&rna_SpaceImageEditor_show_repeat, (PropertyRNA*)&rna_SpaceImageEditor_curves,
+	-1, "draw_channels", 3, "Draw Channels",
+	"Channels of the image to draw",
+	0,
+	PROP_ENUM, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 251920384, NULL, NULL,
+	0, -1, NULL},
+	SpaceImageEditor_draw_channels_get, SpaceImageEditor_draw_channels_set, rna_SpaceImageEditor_draw_channels_itemf, rna_SpaceImageEditor_draw_channels_items, 4, 0
+};
+
+BooleanPropertyRNA rna_SpaceImageEditor_show_repeat = {
+	{(PropertyRNA*)&rna_SpaceImageEditor_grease_pencil, (PropertyRNA*)&rna_SpaceImageEditor_draw_channels,
+	-1, "show_repeat", 3, "Draw Repeated",
+	"Draw the image repeated outside of the main view",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 251920384, NULL, NULL,
+	0, -1, NULL},
+	SpaceImageEditor_show_repeat_get, SpaceImageEditor_show_repeat_set, NULL, NULL, 0, NULL
+};
+
+PointerPropertyRNA rna_SpaceImageEditor_grease_pencil = {
+	{(PropertyRNA*)&rna_SpaceImageEditor_image, (PropertyRNA*)&rna_SpaceImageEditor_show_repeat,
+	-1, "grease_pencil", 65, "Grease Pencil",
+	"Grease pencil data for this space",
+	0,
+	PROP_POINTER, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	SpaceImageEditor_grease_pencil_get, SpaceImageEditor_grease_pencil_set, NULL, NULL,&RNA_GreasePencil
+};
+
+PointerPropertyRNA rna_SpaceImageEditor_image = {
+	{(PropertyRNA*)&rna_SpaceImageEditor_use_image_paint, (PropertyRNA*)&rna_SpaceImageEditor_grease_pencil,
+	-1, "image", 65, "Image",
+	"Image displayed and edited in this space",
+	0,
+	PROP_POINTER, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 274399232, NULL, NULL,
+	0, -1, NULL},
+	SpaceImageEditor_image_get, SpaceImageEditor_image_set, NULL, NULL,&RNA_Image
+};
+
+BooleanPropertyRNA rna_SpaceImageEditor_use_image_paint = {
+	{(PropertyRNA*)&rna_SpaceImageEditor_use_image_pin, (PropertyRNA*)&rna_SpaceImageEditor_image,
+	-1, "use_image_paint", 3, "Image Painting",
+	"Enable image painting mode",
+	134,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	rna_SpaceImageEditor_paint_update, 251920384, NULL, NULL,
+	0, -1, NULL},
+	SpaceImageEditor_use_image_paint_get, SpaceImageEditor_use_image_paint_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceImageEditor_use_image_pin = {
+	{(PropertyRNA*)&rna_SpaceImageEditor_image_user, (PropertyRNA*)&rna_SpaceImageEditor_use_image_paint,
+	-1, "use_image_pin", 12291, "Image Pin",
+	"Display current image regardless of object selection",
+	42,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 251920384, NULL, NULL,
+	offsetof(SpaceImage, pin), 1, NULL},
+	SpaceImageEditor_use_image_pin_get, SpaceImageEditor_use_image_pin_set, NULL, NULL, 0, NULL
+};
+
+PointerPropertyRNA rna_SpaceImageEditor_image_user = {
+	{(PropertyRNA*)&rna_SpaceImageEditor_sample_histogram, (PropertyRNA*)&rna_SpaceImageEditor_use_image_pin,
+	-1, "image_user", 262144, "Image User",
+	"Parameters defining which layer, pass and frame of the image is displayed",
+	0,
+	PROP_POINTER, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 251920384, NULL, NULL,
+	0, -1, NULL},
+	SpaceImageEditor_image_user_get, NULL, NULL, NULL,&RNA_ImageUser
+};
+
+PointerPropertyRNA rna_SpaceImageEditor_sample_histogram = {
+	{(PropertyRNA*)&rna_SpaceImageEditor_scopes, (PropertyRNA*)&rna_SpaceImageEditor_image_user,
+	-1, "sample_histogram", 0, "Line sample",
+	"Sampled colors along line",
+	0,
+	PROP_POINTER, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	SpaceImageEditor_sample_histogram_get, NULL, NULL, NULL,&RNA_Histogram
+};
+
+PointerPropertyRNA rna_SpaceImageEditor_scopes = {
+	{(PropertyRNA*)&rna_SpaceImageEditor_show_paint, (PropertyRNA*)&rna_SpaceImageEditor_sample_histogram,
+	-1, "scopes", 0, "Scopes",
+	"Scopes to visualize image statistics.",
+	0,
+	PROP_POINTER, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	rna_SpaceImageEditor_scopes_update, 251920384, NULL, NULL,
+	0, -1, NULL},
+	SpaceImageEditor_scopes_get, NULL, NULL, NULL,&RNA_Scopes
+};
+
+BooleanPropertyRNA rna_SpaceImageEditor_show_paint = {
+	{(PropertyRNA*)&rna_SpaceImageEditor_show_render, (PropertyRNA*)&rna_SpaceImageEditor_scopes,
+	-1, "show_paint", 2, "Show Paint",
+	"Show paint related properties",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	SpaceImageEditor_show_paint_get, NULL, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceImageEditor_show_render = {
+	{(PropertyRNA*)&rna_SpaceImageEditor_show_uvedit, (PropertyRNA*)&rna_SpaceImageEditor_show_paint,
+	-1, "show_render", 2, "Show Render",
+	"Show render related properties",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	SpaceImageEditor_show_render_get, NULL, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceImageEditor_show_uvedit = {
+	{(PropertyRNA*)&rna_SpaceImageEditor_uv_editor, (PropertyRNA*)&rna_SpaceImageEditor_show_render,
+	-1, "show_uvedit", 2, "Show UV Editor",
+	"Show UV editing related properties",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	SpaceImageEditor_show_uvedit_get, NULL, NULL, NULL, 0, NULL
+};
+
+PointerPropertyRNA rna_SpaceImageEditor_uv_editor = {
+	{(PropertyRNA*)&rna_SpaceImageEditor_use_realtime_update, (PropertyRNA*)&rna_SpaceImageEditor_show_uvedit,
+	-1, "uv_editor", 262144, "UV Editor",
+	"UV editor settings",
+	0,
+	PROP_POINTER, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	SpaceImageEditor_uv_editor_get, NULL, NULL, NULL,&RNA_SpaceUVEditor
+};
+
+BooleanPropertyRNA rna_SpaceImageEditor_use_realtime_update = {
+	{(PropertyRNA*)&rna_SpaceImageEditor_use_grease_pencil, (PropertyRNA*)&rna_SpaceImageEditor_uv_editor,
+	-1, "use_realtime_update", 8195, "Update Automatically",
+	"Update other affected window spaces automatically to reflect changes during interactive operations such as transform",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	offsetof(SpaceImage, lock), 1, NULL},
+	SpaceImageEditor_use_realtime_update_get, SpaceImageEditor_use_realtime_update_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceImageEditor_use_grease_pencil = {
+	{NULL, (PropertyRNA*)&rna_SpaceImageEditor_use_realtime_update,
+	-1, "use_grease_pencil", 3, "Use Grease Pencil",
+	"Display and edit the grease pencil freehand annotations overlay",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	SpaceImageEditor_use_grease_pencil_get, SpaceImageEditor_use_grease_pencil_set, NULL, NULL, 0, NULL
+};
+
+StructRNA RNA_SpaceImageEditor = {
+	{(ContainerRNA *)&RNA_SpaceInfo, (ContainerRNA *)&RNA_SpaceGraphEditor,
+	NULL,
+	{(PropertyRNA*)&rna_SpaceImageEditor_curves, (PropertyRNA*)&rna_SpaceImageEditor_use_grease_pencil}},
+	"SpaceImageEditor"	, NULL,NULL
+, 0, "Space Image Editor", "Image and UV editor space data",
+	17,
+	NULL, (PropertyRNA*)&rna_Space_rna_properties,
+	&RNA_Space,
+	NULL,
+	rna_Space_refine,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	{NULL, NULL}
+};
+
+/* Space Info */
+BooleanPropertyRNA rna_SpaceInfo_show_report_debug = {
+	{(PropertyRNA*)&rna_SpaceInfo_show_report_error, NULL,
+	-1, "show_report_debug", 3, "Show Debug",
+	"Display debug reporting info",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 251789312, NULL, NULL,
+	0, -1, NULL},
+	SpaceInfo_show_report_debug_get, SpaceInfo_show_report_debug_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceInfo_show_report_error = {
+	{(PropertyRNA*)&rna_SpaceInfo_show_report_info, (PropertyRNA*)&rna_SpaceInfo_show_report_debug,
+	-1, "show_report_error", 3, "Show Error",
+	"Display error text",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 251789312, NULL, NULL,
+	0, -1, NULL},
+	SpaceInfo_show_report_error_get, SpaceInfo_show_report_error_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceInfo_show_report_info = {
+	{(PropertyRNA*)&rna_SpaceInfo_show_report_operator, (PropertyRNA*)&rna_SpaceInfo_show_report_error,
+	-1, "show_report_info", 3, "Show Info",
+	"Display general information",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 251789312, NULL, NULL,
+	0, -1, NULL},
+	SpaceInfo_show_report_info_get, SpaceInfo_show_report_info_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceInfo_show_report_operator = {
+	{(PropertyRNA*)&rna_SpaceInfo_show_report_warning, (PropertyRNA*)&rna_SpaceInfo_show_report_info,
+	-1, "show_report_operator", 3, "Show Operator",
+	"Display the operator log",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 251789312, NULL, NULL,
+	0, -1, NULL},
+	SpaceInfo_show_report_operator_get, SpaceInfo_show_report_operator_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceInfo_show_report_warning = {
+	{NULL, (PropertyRNA*)&rna_SpaceInfo_show_report_operator,
+	-1, "show_report_warning", 3, "Show Warn",
+	"Display warnings",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 251789312, NULL, NULL,
+	0, -1, NULL},
+	SpaceInfo_show_report_warning_get, SpaceInfo_show_report_warning_set, NULL, NULL, 0, NULL
+};
+
+StructRNA RNA_SpaceInfo = {
+	{(ContainerRNA *)&RNA_SpaceLogicEditor, (ContainerRNA *)&RNA_SpaceImageEditor,
+	NULL,
+	{(PropertyRNA*)&rna_SpaceInfo_show_report_debug, (PropertyRNA*)&rna_SpaceInfo_show_report_warning}},
+	"SpaceInfo"	, NULL,NULL
+, 0, "Space Info", "Info space data",
+	17,
+	NULL, (PropertyRNA*)&rna_Space_rna_properties,
+	&RNA_Space,
+	NULL,
+	rna_Space_refine,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	{NULL, NULL}
+};
+
+/* Space Logic Editor */
+BooleanPropertyRNA rna_SpaceLogicEditor_show_sensors_active_object = {
+	{(PropertyRNA*)&rna_SpaceLogicEditor_show_controllers_active_object, NULL,
+	-1, "show_sensors_active_object", 3, "Show Active Object",
+	"Show sensors of active object",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 318767104, NULL, NULL,
+	0, -1, NULL},
+	SpaceLogicEditor_show_sensors_active_object_get, SpaceLogicEditor_show_sensors_active_object_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceLogicEditor_show_controllers_active_object = {
+	{(PropertyRNA*)&rna_SpaceLogicEditor_show_actuators_active_object, (PropertyRNA*)&rna_SpaceLogicEditor_show_sensors_active_object,
+	-1, "show_controllers_active_object", 3, "Show Active Object",
+	"Show controllers of active object",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 318767104, NULL, NULL,
+	0, -1, NULL},
+	SpaceLogicEditor_show_controllers_active_object_get, SpaceLogicEditor_show_controllers_active_object_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceLogicEditor_show_actuators_active_object = {
+	{(PropertyRNA*)&rna_SpaceLogicEditor_show_sensors_active_states, (PropertyRNA*)&rna_SpaceLogicEditor_show_controllers_active_object,
+	-1, "show_actuators_active_object", 3, "Show Active Object",
+	"Show actuators of active object",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 318767104, NULL, NULL,
+	0, -1, NULL},
+	SpaceLogicEditor_show_actuators_active_object_get, SpaceLogicEditor_show_actuators_active_object_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceLogicEditor_show_sensors_active_states = {
+	{(PropertyRNA*)&rna_SpaceLogicEditor_show_actuators_active_states, (PropertyRNA*)&rna_SpaceLogicEditor_show_actuators_active_object,
+	-1, "show_sensors_active_states", 3, "Show Active States",
+	"Show only sensors connected to active states",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 318767104, NULL, NULL,
+	0, -1, NULL},
+	SpaceLogicEditor_show_sensors_active_states_get, SpaceLogicEditor_show_sensors_active_states_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceLogicEditor_show_actuators_active_states = {
+	{(PropertyRNA*)&rna_SpaceLogicEditor_show_actuators_linked_controller, (PropertyRNA*)&rna_SpaceLogicEditor_show_sensors_active_states,
+	-1, "show_actuators_active_states", 3, "Show Active States",
+	"Show only actuators connected to active states",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 318767104, NULL, NULL,
+	0, -1, NULL},
+	SpaceLogicEditor_show_actuators_active_states_get, SpaceLogicEditor_show_actuators_active_states_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceLogicEditor_show_actuators_linked_controller = {
+	{(PropertyRNA*)&rna_SpaceLogicEditor_show_sensors_linked_controller, (PropertyRNA*)&rna_SpaceLogicEditor_show_actuators_active_states,
+	-1, "show_actuators_linked_controller", 3, "Show Linked to Actuator",
+	"Show linked objects to the actuator",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 318767104, NULL, NULL,
+	0, -1, NULL},
+	SpaceLogicEditor_show_actuators_linked_controller_get, SpaceLogicEditor_show_actuators_linked_controller_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceLogicEditor_show_sensors_linked_controller = {
+	{(PropertyRNA*)&rna_SpaceLogicEditor_show_controllers_linked_controller, (PropertyRNA*)&rna_SpaceLogicEditor_show_actuators_linked_controller,
+	-1, "show_sensors_linked_controller", 3, "Show Linked to Controller",
+	"Show linked objects to the controller",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 318767104, NULL, NULL,
+	0, -1, NULL},
+	SpaceLogicEditor_show_sensors_linked_controller_get, SpaceLogicEditor_show_sensors_linked_controller_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceLogicEditor_show_controllers_linked_controller = {
+	{(PropertyRNA*)&rna_SpaceLogicEditor_show_sensors_selected_objects, (PropertyRNA*)&rna_SpaceLogicEditor_show_sensors_linked_controller,
+	-1, "show_controllers_linked_controller", 3, "Show Linked to Controller",
+	"Show linked objects to sensor/actuator",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 318767104, NULL, NULL,
+	0, -1, NULL},
+	SpaceLogicEditor_show_controllers_linked_controller_get, SpaceLogicEditor_show_controllers_linked_controller_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceLogicEditor_show_sensors_selected_objects = {
+	{(PropertyRNA*)&rna_SpaceLogicEditor_show_controllers_selected_objects, (PropertyRNA*)&rna_SpaceLogicEditor_show_controllers_linked_controller,
+	-1, "show_sensors_selected_objects", 3, "Show Selected Object",
+	"Show sensors of all selected objects",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 318767104, NULL, NULL,
+	0, -1, NULL},
+	SpaceLogicEditor_show_sensors_selected_objects_get, SpaceLogicEditor_show_sensors_selected_objects_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceLogicEditor_show_controllers_selected_objects = {
+	{(PropertyRNA*)&rna_SpaceLogicEditor_show_actuators_selected_objects, (PropertyRNA*)&rna_SpaceLogicEditor_show_sensors_selected_objects,
+	-1, "show_controllers_selected_objects", 3, "Show Selected Object",
+	"Show controllers of all selected objects",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 318767104, NULL, NULL,
+	0, -1, NULL},
+	SpaceLogicEditor_show_controllers_selected_objects_get, SpaceLogicEditor_show_controllers_selected_objects_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceLogicEditor_show_actuators_selected_objects = {
+	{NULL, (PropertyRNA*)&rna_SpaceLogicEditor_show_controllers_selected_objects,
+	-1, "show_actuators_selected_objects", 3, "Show Selected Object",
+	"Show actuators of all selected objects",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 318767104, NULL, NULL,
+	0, -1, NULL},
+	SpaceLogicEditor_show_actuators_selected_objects_get, SpaceLogicEditor_show_actuators_selected_objects_set, NULL, NULL, 0, NULL
+};
+
+StructRNA RNA_SpaceLogicEditor = {
+	{(ContainerRNA *)&RNA_SpaceNLA, (ContainerRNA *)&RNA_SpaceInfo,
+	NULL,
+	{(PropertyRNA*)&rna_SpaceLogicEditor_show_sensors_active_object, (PropertyRNA*)&rna_SpaceLogicEditor_show_actuators_selected_objects}},
+	"SpaceLogicEditor"	, NULL,NULL
+, 0, "Space Logic Editor", "Logic editor space data",
+	17,
+	NULL, (PropertyRNA*)&rna_Space_rna_properties,
+	&RNA_Space,
+	NULL,
+	rna_Space_refine,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	{NULL, NULL}
+};
+
+/* Space Nla Editor */
+static EnumPropertyItem rna_SpaceNLA_auto_snap_items[5] = {
+	{0, "NONE", 0, "No Auto-Snap", ""},
+	{1, "STEP", 0, "Time Step", "Snap to 1.0 frame/second intervals"},
+	{2, "FRAME", 0, "Nearest Frame", "Snap to actual frames/seconds (nla-action time)"},
+	{3, "MARKER", 0, "Nearest Marker", "Snap to nearest marker"},
+	{0, NULL, 0, NULL, NULL}
+};
+
+EnumPropertyRNA rna_SpaceNLA_auto_snap = {
+	{(PropertyRNA*)&rna_SpaceNLA_dopesheet, NULL,
+	-1, "auto_snap", 3, "Auto Snap",
+	"Automatic time snapping settings for transformations",
+	0,
+	PROP_ENUM, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252641280, NULL, NULL,
+	0, -1, NULL},
+	SpaceNLA_auto_snap_get, SpaceNLA_auto_snap_set, NULL, rna_SpaceNLA_auto_snap_items, 4, 0
+};
+
+PointerPropertyRNA rna_SpaceNLA_dopesheet = {
+	{(PropertyRNA*)&rna_SpaceNLA_use_realtime_update, (PropertyRNA*)&rna_SpaceNLA_auto_snap,
+	-1, "dopesheet", 0, "DopeSheet",
+	"Settings for filtering animation data",
+	0,
+	PROP_POINTER, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	SpaceNLA_dopesheet_get, NULL, NULL, NULL,&RNA_DopeSheet
+};
+
+BooleanPropertyRNA rna_SpaceNLA_use_realtime_update = {
+	{(PropertyRNA*)&rna_SpaceNLA_show_strip_curves, (PropertyRNA*)&rna_SpaceNLA_dopesheet,
+	-1, "use_realtime_update", 3, "Realtime Updates",
+	"When transforming strips, changes to the animation data are flushed to other views",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252641280, NULL, NULL,
+	0, -1, NULL},
+	SpaceNLA_use_realtime_update_get, SpaceNLA_use_realtime_update_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceNLA_show_strip_curves = {
+	{(PropertyRNA*)&rna_SpaceNLA_show_frame_indicator, (PropertyRNA*)&rna_SpaceNLA_use_realtime_update,
+	-1, "show_strip_curves", 3, "Show Control Curves",
+	"Show influence curves on strips",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252641280, NULL, NULL,
+	0, -1, NULL},
+	SpaceNLA_show_strip_curves_get, SpaceNLA_show_strip_curves_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceNLA_show_frame_indicator = {
+	{(PropertyRNA*)&rna_SpaceNLA_show_seconds, (PropertyRNA*)&rna_SpaceNLA_show_strip_curves,
+	-1, "show_frame_indicator", 3, "Show Frame Number Indicator",
+	"Show frame number beside the current frame indicator line",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252641280, NULL, NULL,
+	0, -1, NULL},
+	SpaceNLA_show_frame_indicator_get, SpaceNLA_show_frame_indicator_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceNLA_show_seconds = {
+	{NULL, (PropertyRNA*)&rna_SpaceNLA_show_frame_indicator,
+	-1, "show_seconds", 2, "Show Seconds",
+	"Show timing in seconds not frames",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252641280, NULL, NULL,
+	0, -1, NULL},
+	SpaceNLA_show_seconds_get, NULL, NULL, NULL, 0, NULL
+};
+
+StructRNA RNA_SpaceNLA = {
+	{(ContainerRNA *)&RNA_SpaceNodeEditor, (ContainerRNA *)&RNA_SpaceLogicEditor,
+	NULL,
+	{(PropertyRNA*)&rna_SpaceNLA_auto_snap, (PropertyRNA*)&rna_SpaceNLA_show_seconds}},
+	"SpaceNLA"	, NULL,NULL
+, 0, "Space Nla Editor", "NLA editor space data",
+	17,
+	NULL, (PropertyRNA*)&rna_Space_rna_properties,
+	&RNA_Space,
+	NULL,
+	rna_Space_refine,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	{NULL, NULL}
+};
+
+/* Space Node Editor */
+BooleanPropertyRNA rna_SpaceNodeEditor_use_auto_render = {
+	{(PropertyRNA*)&rna_SpaceNodeEditor_show_backdrop, NULL,
+	-1, "use_auto_render", 3, "Auto Render",
+	"Re-render and composite changed layer on 3D edits",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252772352, NULL, NULL,
+	0, -1, NULL},
+	SpaceNodeEditor_use_auto_render_get, SpaceNodeEditor_use_auto_render_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceNodeEditor_show_backdrop = {
+	{(PropertyRNA*)&rna_SpaceNodeEditor_backdrop_x, (PropertyRNA*)&rna_SpaceNodeEditor_use_auto_render,
+	-1, "show_backdrop", 3, "Backdrop",
+	"Use active Viewer Node output as backdrop for compositing nodes",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252772352, NULL, NULL,
+	0, -1, NULL},
+	SpaceNodeEditor_show_backdrop_get, SpaceNodeEditor_show_backdrop_set, NULL, NULL, 0, NULL
+};
+
+FloatPropertyRNA rna_SpaceNodeEditor_backdrop_x = {
+	{(PropertyRNA*)&rna_SpaceNodeEditor_backdrop_y, (PropertyRNA*)&rna_SpaceNodeEditor_show_backdrop,
+	-1, "backdrop_x", 8195, "Backdrop X",
+	"Backdrop X offset",
+	0,
+	PROP_FLOAT, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252772352, NULL, NULL,
+	offsetof(SpaceNode, xof), 4, NULL},
+	SpaceNodeEditor_backdrop_x_get, SpaceNodeEditor_backdrop_x_set, NULL, NULL, NULL, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, 0.0f, NULL
+};
+
+FloatPropertyRNA rna_SpaceNodeEditor_backdrop_y = {
+	{(PropertyRNA*)&rna_SpaceNodeEditor_backdrop_zoom, (PropertyRNA*)&rna_SpaceNodeEditor_backdrop_x,
+	-1, "backdrop_y", 8195, "Backdrop Y",
+	"Backdrop Y offset",
+	0,
+	PROP_FLOAT, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252772352, NULL, NULL,
+	offsetof(SpaceNode, yof), 4, NULL},
+	SpaceNodeEditor_backdrop_y_get, SpaceNodeEditor_backdrop_y_set, NULL, NULL, NULL, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, 0.0f, NULL
+};
+
+FloatPropertyRNA rna_SpaceNodeEditor_backdrop_zoom = {
+	{(PropertyRNA*)&rna_SpaceNodeEditor_backdrop_channels, (PropertyRNA*)&rna_SpaceNodeEditor_backdrop_y,
+	-1, "backdrop_zoom", 8195, "Backdrop Zoom",
+	"Backdrop zoom factor",
+	0,
+	PROP_FLOAT, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252772352, NULL, NULL,
+	offsetof(SpaceNode, zoom), 4, NULL},
+	SpaceNodeEditor_backdrop_zoom_get, SpaceNodeEditor_backdrop_zoom_set, NULL, NULL, NULL, 0.0099999998f, 100.0f, 0.0099999998f, FLT_MAX, 1.0f, 2, 1.0f, NULL
+};
+
+static EnumPropertyItem rna_SpaceNodeEditor_backdrop_channels_items[4] = {
+	{0, "COLOR", 763, "Color", "Draw image with RGB colors"},
+	{8, "COLOR_ALPHA", 764, "Color and Alpha", "Draw image with RGB colors and alpha transparency"},
+	{16, "ALPHA", 765, "Alpha", "Draw alpha transparency channel"},
+	{0, NULL, 0, NULL, NULL}
+};
+
+EnumPropertyRNA rna_SpaceNodeEditor_backdrop_channels = {
+	{(PropertyRNA*)&rna_SpaceNodeEditor_id, (PropertyRNA*)&rna_SpaceNodeEditor_backdrop_zoom,
+	-1, "backdrop_channels", 3, "Draw Channels",
+	"Channels of the image to draw",
+	0,
+	PROP_ENUM, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252772352, NULL, NULL,
+	0, -1, NULL},
+	SpaceNodeEditor_backdrop_channels_get, SpaceNodeEditor_backdrop_channels_set, NULL, rna_SpaceNodeEditor_backdrop_channels_items, 3, 0
+};
+
+PointerPropertyRNA rna_SpaceNodeEditor_id = {
+	{(PropertyRNA*)&rna_SpaceNodeEditor_id_from, (PropertyRNA*)&rna_SpaceNodeEditor_backdrop_channels,
+	-1, "id", 64, "ID",
+	"Datablock whose nodes are being edited",
+	0,
+	PROP_POINTER, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	SpaceNodeEditor_id_get, NULL, NULL, NULL,&RNA_ID
+};
+
+PointerPropertyRNA rna_SpaceNodeEditor_id_from = {
+	{(PropertyRNA*)&rna_SpaceNodeEditor_node_tree, (PropertyRNA*)&rna_SpaceNodeEditor_id,
+	-1, "id_from", 64, "ID From",
+	"Datablock from which the edited datablock is linked",
+	0,
+	PROP_POINTER, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	SpaceNodeEditor_id_from_get, NULL, NULL, NULL,&RNA_ID
+};
+
+PointerPropertyRNA rna_SpaceNodeEditor_node_tree = {
+	{(PropertyRNA*)&rna_SpaceNodeEditor_texture_type, (PropertyRNA*)&rna_SpaceNodeEditor_id_from,
+	-1, "node_tree", 64, "Node Tree",
+	"Node tree being displayed and edited",
+	0,
+	PROP_POINTER, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	SpaceNodeEditor_node_tree_get, NULL, NULL, NULL,&RNA_NodeTree
+};
+
+static EnumPropertyItem rna_SpaceNodeEditor_texture_type_items[4] = {
+	{0, "OBJECT", 159, "Object", "Edit texture nodes from Object"},
+	{1, "WORLD", 158, "World", "Edit texture nodes from World"},
+	{2, "BRUSH", 182, "Brush", "Edit texture nodes from Brush"},
+	{0, NULL, 0, NULL, NULL}
+};
+
+EnumPropertyRNA rna_SpaceNodeEditor_texture_type = {
+	{(PropertyRNA*)&rna_SpaceNodeEditor_tree_type, (PropertyRNA*)&rna_SpaceNodeEditor_node_tree,
+	-1, "texture_type", 3, "Texture Type",
+	"Type of data to take texture from",
+	0,
+	PROP_ENUM, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252116992, NULL, NULL,
+	0, -1, NULL},
+	SpaceNodeEditor_texture_type_get, SpaceNodeEditor_texture_type_set, NULL, rna_SpaceNodeEditor_texture_type_items, 3, 0
+};
+
+static EnumPropertyItem rna_SpaceNodeEditor_tree_type_items[4] = {
+	{0, "MATERIAL", 79, "Material", "Material nodes"},
+	{2, "TEXTURE", 80, "Texture", "Texture nodes"},
+	{1, "COMPOSITING", 157, "Compositing", "Compositing nodes"},
+	{0, NULL, 0, NULL, NULL}
+};
+
+EnumPropertyRNA rna_SpaceNodeEditor_tree_type = {
+	{NULL, (PropertyRNA*)&rna_SpaceNodeEditor_texture_type,
+	-1, "tree_type", 3, "Tree Type",
+	"Node tree type to display and edit",
+	0,
+	PROP_ENUM, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252116992, NULL, NULL,
+	0, -1, NULL},
+	SpaceNodeEditor_tree_type_get, SpaceNodeEditor_tree_type_set, NULL, rna_SpaceNodeEditor_tree_type_items, 3, 0
+};
+
+StructRNA RNA_SpaceNodeEditor = {
+	{(ContainerRNA *)&RNA_SpaceOutliner, (ContainerRNA *)&RNA_SpaceNLA,
+	NULL,
+	{(PropertyRNA*)&rna_SpaceNodeEditor_use_auto_render, (PropertyRNA*)&rna_SpaceNodeEditor_tree_type}},
+	"SpaceNodeEditor"	, NULL,NULL
+, 0, "Space Node Editor", "Node editor space data",
+	17,
+	NULL, (PropertyRNA*)&rna_Space_rna_properties,
+	&RNA_Space,
+	NULL,
+	rna_Space_refine,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	{NULL, NULL}
+};
+
+/* Space Outliner */
+BooleanPropertyRNA rna_SpaceOutliner_use_filter_case_sensitive = {
+	{(PropertyRNA*)&rna_SpaceOutliner_use_filter_complete, NULL,
+	-1, "use_filter_case_sensitive", 3, "Case Sensitive Matches Only",
+	"Only use case sensitive matches of search string",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252182528, NULL, NULL,
+	0, -1, NULL},
+	SpaceOutliner_use_filter_case_sensitive_get, SpaceOutliner_use_filter_case_sensitive_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceOutliner_use_filter_complete = {
+	{(PropertyRNA*)&rna_SpaceOutliner_filter_text, (PropertyRNA*)&rna_SpaceOutliner_use_filter_case_sensitive,
+	-1, "use_filter_complete", 3, "Complete Matches Only",
+	"Only use complete matches of search string",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252182528, NULL, NULL,
+	0, -1, NULL},
+	SpaceOutliner_use_filter_complete_get, SpaceOutliner_use_filter_complete_set, NULL, NULL, 0, NULL
+};
+
+StringPropertyRNA rna_SpaceOutliner_filter_text = {
+	{(PropertyRNA*)&rna_SpaceOutliner_display_mode, (PropertyRNA*)&rna_SpaceOutliner_use_filter_complete,
+	-1, "filter_text", 1, "Display Filter",
+	"Live search filtering string",
+	0,
+	PROP_STRING, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {32, 0, 0}, 0,
+	NULL, 252182528, NULL, NULL,
+	0, -1, NULL},
+	SpaceOutliner_filter_text_get, SpaceOutliner_filter_text_length, SpaceOutliner_filter_text_set, 32, ""
+};
+
+static EnumPropertyItem rna_SpaceOutliner_display_mode_items[13] = {
+	{0, "ALL_SCENES", 0, "All Scenes", ""},
+	{1, "CURRENT_SCENE", 0, "Current Scene", ""},
+	{2, "VISIBLE_LAYERS", 0, "Visible Layers", ""},
+	{3, "SELECTED", 0, "Selected", ""},
+	{4, "ACTIVE", 0, "Active", ""},
+	{5, "SAME_TYPES", 0, "Same Types", ""},
+	{6, "GROUPS", 0, "Groups", ""},
+	{7, "LIBRARIES", 0, "Libraries", ""},
+	{10, "SEQUENCE", 0, "Sequence", ""},
+	{11, "DATABLOCKS", 0, "Datablocks", ""},
+	{12, "USER_PREFERENCES", 0, "User Preferences", ""},
+	{13, "KEYMAPS", 0, "Key Maps", ""},
+	{0, NULL, 0, NULL, NULL}
+};
+
+EnumPropertyRNA rna_SpaceOutliner_display_mode = {
+	{(PropertyRNA*)&rna_SpaceOutliner_show_restrict_columns, (PropertyRNA*)&rna_SpaceOutliner_filter_text,
+	-1, "display_mode", 3, "Display Mode",
+	"Type of information to display",
+	0,
+	PROP_ENUM, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252182528, NULL, NULL,
+	0, -1, NULL},
+	SpaceOutliner_display_mode_get, SpaceOutliner_display_mode_set, NULL, rna_SpaceOutliner_display_mode_items, 12, 0
+};
+
+BooleanPropertyRNA rna_SpaceOutliner_show_restrict_columns = {
+	{NULL, (PropertyRNA*)&rna_SpaceOutliner_display_mode,
+	-1, "show_restrict_columns", 3, "Show Restriction Columns",
+	"Show column",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252182528, NULL, NULL,
+	0, -1, NULL},
+	SpaceOutliner_show_restrict_columns_get, SpaceOutliner_show_restrict_columns_set, NULL, NULL, 0, NULL
+};
+
+StructRNA RNA_SpaceOutliner = {
+	{(ContainerRNA *)&RNA_SpaceProperties, (ContainerRNA *)&RNA_SpaceNodeEditor,
+	NULL,
+	{(PropertyRNA*)&rna_SpaceOutliner_use_filter_case_sensitive, (PropertyRNA*)&rna_SpaceOutliner_show_restrict_columns}},
+	"SpaceOutliner"	, NULL,NULL
+, 0, "Space Outliner", "Outliner space data",
+	17,
+	NULL, (PropertyRNA*)&rna_Space_rna_properties,
+	&RNA_Space,
+	NULL,
+	rna_Space_refine,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	{NULL, NULL}
+};
+
+/* Properties Space */
+static EnumPropertyItem rna_SpaceProperties_align_items[3] = {
+	{1, "HORIZONTAL", 0, "Horizontal", ""},
+	{2, "VERTICAL", 0, "Vertical", ""},
+	{0, NULL, 0, NULL, NULL}
+};
+
+EnumPropertyRNA rna_SpaceProperties_align = {
+	{(PropertyRNA*)&rna_SpaceProperties_context, NULL,
+	-1, "align", 3, "Align",
+	"Arrangement of the panels",
+	0,
+	PROP_ENUM, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252313600, NULL, NULL,
+	0, -1, NULL},
+	SpaceProperties_align_get, SpaceProperties_align_set, NULL, rna_SpaceProperties_align_items, 2, 1
+};
+
+static EnumPropertyItem rna_SpaceProperties_context_items[14] = {
+	{1, "SCENE", 83, "Scene", "Scene"},
+	{0, "RENDER", 156, "Render", "Render"},
+	{2, "WORLD", 82, "World", "World"},
+	{3, "OBJECT", 159, "Object", "Object"},
+	{12, "CONSTRAINT", 175, "Constraints", "Constraints"},
+	{10, "MODIFIER", 442, "Modifiers", "Modifiers"},
+	{4, "DATA", 0, "Data", "Data"},
+	{9, "BONE", 174, "Bone", "Bone"},
+	{13, "BONE_CONSTRAINT", 175, "Bone Constraints", "Bone Constraints"},
+	{5, "MATERIAL", 79, "Material", "Material"},
+	{6, "TEXTURE", 80, "Texture", "Texture"},
+	{7, "PARTICLE", 88, "Particle", "Particle"},
+	{8, "PHYSICS", 89, "Physics", "Physics"},
+	{0, NULL, 0, NULL, NULL}
+};
+
+EnumPropertyRNA rna_SpaceProperties_context = {
+	{(PropertyRNA*)&rna_SpaceProperties_use_pin_id, (PropertyRNA*)&rna_SpaceProperties_align,
+	-1, "context", 3, "Context",
+	"Type of active data to display and edit",
+	0,
+	PROP_ENUM, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252313600, NULL, NULL,
+	0, -1, NULL},
+	SpaceProperties_context_get, SpaceProperties_context_set, NULL, rna_SpaceProperties_context_items, 13, 0
+};
+
+BooleanPropertyRNA rna_SpaceProperties_use_pin_id = {
+	{(PropertyRNA*)&rna_SpaceProperties_texture_context, (PropertyRNA*)&rna_SpaceProperties_context,
+	-1, "use_pin_id", 3, "Pin ID",
+	"Use the pinned context",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	SpaceProperties_use_pin_id_get, SpaceProperties_use_pin_id_set, NULL, NULL, 0, NULL
+};
+
+static EnumPropertyItem rna_SpaceProperties_texture_context_items[2] = {
+	{0, "MATERIAL", 79, "Material", "Material"},
+	{0, NULL, 0, NULL, NULL}
+};
+
+EnumPropertyRNA rna_SpaceProperties_texture_context = {
+	{(PropertyRNA*)&rna_SpaceProperties_pin_id, (PropertyRNA*)&rna_SpaceProperties_use_pin_id,
+	-1, "texture_context", 3, "Texture Context",
+	"Type of texture data to display and edit",
+	0,
+	PROP_ENUM, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 117440512, NULL, NULL,
+	0, -1, NULL},
+	SpaceProperties_texture_context_get, SpaceProperties_texture_context_set, rna_SpaceProperties_texture_context_itemf, rna_SpaceProperties_texture_context_items, 1, 0
+};
+
+PointerPropertyRNA rna_SpaceProperties_pin_id = {
+	{NULL, (PropertyRNA*)&rna_SpaceProperties_texture_context,
+	-1, "pin_id", 65, "pin_id",
+	"",
+	0,
+	PROP_POINTER, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	rna_SpaceProperties_pin_id_update, 252313600, NULL, NULL,
+	0, -1, NULL},
+	SpaceProperties_pin_id_get, SpaceProperties_pin_id_set, rna_SpaceProperties_pin_id_typef, NULL,&RNA_ID
+};
+
+StructRNA RNA_SpaceProperties = {
+	{(ContainerRNA *)&RNA_SpaceSequenceEditor, (ContainerRNA *)&RNA_SpaceOutliner,
+	NULL,
+	{(PropertyRNA*)&rna_SpaceProperties_align, (PropertyRNA*)&rna_SpaceProperties_pin_id}},
+	"SpaceProperties"	, NULL,NULL
+, 0, "Properties Space", "Properties space data",
+	17,
+	NULL, (PropertyRNA*)&rna_Space_rna_properties,
+	&RNA_Space,
+	NULL,
+	rna_Space_refine,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	{NULL, NULL}
+};
+
+/* Space Sequence Editor */
+IntPropertyRNA rna_SpaceSequenceEditor_display_channel = {
+	{(PropertyRNA*)&rna_SpaceSequenceEditor_display_mode, NULL,
+	-1, "display_channel", 8195, "Display Channel",
+	"The channel number shown in the image preview. 0 is the result of all strips combined",
+	0,
+	PROP_INT, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252706816, NULL, NULL,
+	offsetof(SpaceSeq, chanshown), 1, NULL},
+	SpaceSequenceEditor_display_channel_get, SpaceSequenceEditor_display_channel_set, NULL, NULL, NULL,
+	-5, 32, -5, 32, 1, 0, NULL
+};
+
+static EnumPropertyItem rna_SpaceSequenceEditor_display_mode_items[5] = {
+	{1, "IMAGE", 755, "Image Preview", ""},
+	{2, "WAVEFORM", 756, "Luma Waveform", ""},
+	{3, "VECTOR_SCOPE", 757, "Chroma Vectorscope", ""},
+	{4, "HISTOGRAM", 758, "Histogram", ""},
+	{0, NULL, 0, NULL, NULL}
+};
+
+EnumPropertyRNA rna_SpaceSequenceEditor_display_mode = {
+	{(PropertyRNA*)&rna_SpaceSequenceEditor_show_frames, (PropertyRNA*)&rna_SpaceSequenceEditor_display_channel,
+	-1, "display_mode", 3, "Display Mode",
+	"The view mode to use for displaying sequencer output",
+	0,
+	PROP_ENUM, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252706816, NULL, NULL,
+	0, -1, NULL},
+	SpaceSequenceEditor_display_mode_get, SpaceSequenceEditor_display_mode_set, NULL, rna_SpaceSequenceEditor_display_mode_items, 4, 1
+};
+
+BooleanPropertyRNA rna_SpaceSequenceEditor_show_frames = {
+	{(PropertyRNA*)&rna_SpaceSequenceEditor_grease_pencil, (PropertyRNA*)&rna_SpaceSequenceEditor_display_mode,
+	-1, "show_frames", 3, "Draw Frames",
+	"Draw frames rather than seconds",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252706816, NULL, NULL,
+	0, -1, NULL},
+	SpaceSequenceEditor_show_frames_get, SpaceSequenceEditor_show_frames_set, NULL, NULL, 0, NULL
+};
+
+PointerPropertyRNA rna_SpaceSequenceEditor_grease_pencil = {
+	{(PropertyRNA*)&rna_SpaceSequenceEditor_proxy_render_size, (PropertyRNA*)&rna_SpaceSequenceEditor_show_frames,
+	-1, "grease_pencil", 0, "Grease Pencil",
+	"Grease pencil data for this space",
+	0,
+	PROP_POINTER, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252706816, NULL, NULL,
+	0, -1, NULL},
+	SpaceSequenceEditor_grease_pencil_get, NULL, NULL, NULL,&RNA_UnknownType
+};
+
+static EnumPropertyItem rna_SpaceSequenceEditor_proxy_render_size_items[7] = {
+	{-1, "NONE", 0, "No display", ""},
+	{0, "SCENE", 0, "Scene render size", ""},
+	{25, "PROXY_25", 0, "Proxy size 25%", ""},
+	{50, "PROXY_50", 0, "Proxy size 50%", ""},
+	{75, "PROXY_75", 0, "Proxy size 75%", ""},
+	{100, "FULL", 0, "No proxy, full render", ""},
+	{0, NULL, 0, NULL, NULL}
+};
+
+EnumPropertyRNA rna_SpaceSequenceEditor_proxy_render_size = {
+	{(PropertyRNA*)&rna_SpaceSequenceEditor_show_safe_margin, (PropertyRNA*)&rna_SpaceSequenceEditor_grease_pencil,
+	-1, "proxy_render_size", 3, "Proxy render size",
+	"Draw preview using full resolution or different proxy resolutions",
+	0,
+	PROP_ENUM, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252706816, NULL, NULL,
+	0, -1, NULL},
+	SpaceSequenceEditor_proxy_render_size_get, SpaceSequenceEditor_proxy_render_size_set, NULL, rna_SpaceSequenceEditor_proxy_render_size_items, 6, 0
+};
+
+BooleanPropertyRNA rna_SpaceSequenceEditor_show_safe_margin = {
+	{(PropertyRNA*)&rna_SpaceSequenceEditor_show_separate_color, (PropertyRNA*)&rna_SpaceSequenceEditor_proxy_render_size,
+	-1, "show_safe_margin", 3, "Safe Margin",
+	"Draw title safe margins in preview",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252706816, NULL, NULL,
+	0, -1, NULL},
+	SpaceSequenceEditor_show_safe_margin_get, SpaceSequenceEditor_show_safe_margin_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceSequenceEditor_show_separate_color = {
+	{(PropertyRNA*)&rna_SpaceSequenceEditor_show_frame_indicator, (PropertyRNA*)&rna_SpaceSequenceEditor_show_safe_margin,
+	-1, "show_separate_color", 3, "Separate Colors",
+	"Separate color channels in preview",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252706816, NULL, NULL,
+	0, -1, NULL},
+	SpaceSequenceEditor_show_separate_color_get, SpaceSequenceEditor_show_separate_color_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceSequenceEditor_show_frame_indicator = {
+	{(PropertyRNA*)&rna_SpaceSequenceEditor_draw_overexposed, (PropertyRNA*)&rna_SpaceSequenceEditor_show_separate_color,
+	-1, "show_frame_indicator", 3, "Show Frame Number Indicator",
+	"Show frame number beside the current frame indicator line",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252706816, NULL, NULL,
+	0, -1, NULL},
+	SpaceSequenceEditor_show_frame_indicator_get, SpaceSequenceEditor_show_frame_indicator_set, NULL, NULL, 0, NULL
+};
+
+IntPropertyRNA rna_SpaceSequenceEditor_draw_overexposed = {
+	{(PropertyRNA*)&rna_SpaceSequenceEditor_use_marker_sync, (PropertyRNA*)&rna_SpaceSequenceEditor_show_frame_indicator,
+	-1, "draw_overexposed", 8195, "Show Overexposed",
+	"Show overexposed areas with zebra stripes",
+	0,
+	PROP_INT, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252706816, NULL, NULL,
+	offsetof(SpaceSeq, zebra), 1, NULL},
+	SpaceSequenceEditor_draw_overexposed_get, SpaceSequenceEditor_draw_overexposed_set, NULL, NULL, NULL,
+	0, 110, 0, 110, 1, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceSequenceEditor_use_marker_sync = {
+	{(PropertyRNA*)&rna_SpaceSequenceEditor_use_grease_pencil, (PropertyRNA*)&rna_SpaceSequenceEditor_draw_overexposed,
+	-1, "use_marker_sync", 3, "Transform Markers",
+	"Transform markers as well as strips",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252706816, NULL, NULL,
+	0, -1, NULL},
+	SpaceSequenceEditor_use_marker_sync_get, SpaceSequenceEditor_use_marker_sync_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceSequenceEditor_use_grease_pencil = {
+	{(PropertyRNA*)&rna_SpaceSequenceEditor_view_type, (PropertyRNA*)&rna_SpaceSequenceEditor_use_marker_sync,
+	-1, "use_grease_pencil", 3, "Use Grease Pencil",
+	"Display and edit the grease pencil freehand annotations overlay",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252706816, NULL, NULL,
+	0, -1, NULL},
+	SpaceSequenceEditor_use_grease_pencil_get, SpaceSequenceEditor_use_grease_pencil_set, NULL, NULL, 0, NULL
+};
+
+static EnumPropertyItem rna_SpaceSequenceEditor_view_type_items[4] = {
+	{1, "SEQUENCER", 754, "Sequencer", ""},
+	{2, "PREVIEW", 755, "Image Preview", ""},
+	{3, "SEQUENCER_PREVIEW", 759, "Sequencer and Image Preview", ""},
+	{0, NULL, 0, NULL, NULL}
+};
+
+EnumPropertyRNA rna_SpaceSequenceEditor_view_type = {
+	{(PropertyRNA*)&rna_SpaceSequenceEditor_offset_x, (PropertyRNA*)&rna_SpaceSequenceEditor_use_grease_pencil,
+	-1, "view_type", 4194307, "View Type",
+	"The type of the Sequencer view (sequencer, preview or both)",
+	0,
+	PROP_ENUM, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	(UpdateFunc)rna_Sequencer_display_mode_update, 0, NULL, NULL,
+	0, -1, NULL},
+	SpaceSequenceEditor_view_type_get, SpaceSequenceEditor_view_type_set, NULL, rna_SpaceSequenceEditor_view_type_items, 3, 1
+};
+
+FloatPropertyRNA rna_SpaceSequenceEditor_offset_x = {
+	{(PropertyRNA*)&rna_SpaceSequenceEditor_offset_y, (PropertyRNA*)&rna_SpaceSequenceEditor_view_type,
+	-1, "offset_x", 8195, "X Offset",
+	"Offsets image horizontally from the view center",
+	0,
+	PROP_FLOAT, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252706816, NULL, NULL,
+	offsetof(SpaceSeq, xof), 4, NULL},
+	SpaceSequenceEditor_offset_x_get, SpaceSequenceEditor_offset_x_set, NULL, NULL, NULL, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, 0.0f, NULL
+};
+
+FloatPropertyRNA rna_SpaceSequenceEditor_offset_y = {
+	{(PropertyRNA*)&rna_SpaceSequenceEditor_zoom, (PropertyRNA*)&rna_SpaceSequenceEditor_offset_x,
+	-1, "offset_y", 8195, "Y Offset",
+	"Offsets image horizontally from the view center",
+	0,
+	PROP_FLOAT, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252706816, NULL, NULL,
+	offsetof(SpaceSeq, yof), 4, NULL},
+	SpaceSequenceEditor_offset_y_get, SpaceSequenceEditor_offset_y_set, NULL, NULL, NULL, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, 0.0f, NULL
+};
+
+FloatPropertyRNA rna_SpaceSequenceEditor_zoom = {
+	{NULL, (PropertyRNA*)&rna_SpaceSequenceEditor_offset_y,
+	-1, "zoom", 8195, "Zoom",
+	"Display zoom level",
+	0,
+	PROP_FLOAT, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252706816, NULL, NULL,
+	offsetof(SpaceSeq, zoom), 4, NULL},
+	SpaceSequenceEditor_zoom_get, SpaceSequenceEditor_zoom_set, NULL, NULL, NULL, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, 0.0f, NULL
+};
+
+StructRNA RNA_SpaceSequenceEditor = {
+	{(ContainerRNA *)&RNA_SpaceTextEditor, (ContainerRNA *)&RNA_SpaceProperties,
+	NULL,
+	{(PropertyRNA*)&rna_SpaceSequenceEditor_display_channel, (PropertyRNA*)&rna_SpaceSequenceEditor_zoom}},
+	"SpaceSequenceEditor"	, NULL,NULL
+, 0, "Space Sequence Editor", "Sequence editor space data",
+	17,
+	NULL, (PropertyRNA*)&rna_Space_rna_properties,
+	&RNA_Space,
+	NULL,
+	rna_Space_refine,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	{NULL, NULL}
+};
+
+/* Space Text Editor */
+BooleanPropertyRNA rna_SpaceTextEditor_use_find_all = {
+	{(PropertyRNA*)&rna_SpaceTextEditor_find_text, NULL,
+	-1, "use_find_all", 3, "Find All",
+	"Search in all text datablocks, instead of only the active one",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252379136, NULL, NULL,
+	0, -1, NULL},
+	SpaceTextEditor_use_find_all_get, SpaceTextEditor_use_find_all_set, NULL, NULL, 0, NULL
+};
+
+StringPropertyRNA rna_SpaceTextEditor_find_text = {
+	{(PropertyRNA*)&rna_SpaceTextEditor_use_find_wrap, (PropertyRNA*)&rna_SpaceTextEditor_use_find_all,
+	-1, "find_text", 1, "Find Text",
+	"Text to search for with the find tool",
+	0,
+	PROP_STRING, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {256, 0, 0}, 0,
+	NULL, 252379136, NULL, NULL,
+	0, -1, NULL},
+	SpaceTextEditor_find_text_get, SpaceTextEditor_find_text_length, SpaceTextEditor_find_text_set, 256, ""
+};
+
+BooleanPropertyRNA rna_SpaceTextEditor_use_find_wrap = {
+	{(PropertyRNA*)&rna_SpaceTextEditor_font_size, (PropertyRNA*)&rna_SpaceTextEditor_find_text,
+	-1, "use_find_wrap", 3, "Find Wrap",
+	"Search again from the start of the file when reaching the end",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252379136, NULL, NULL,
+	0, -1, NULL},
+	SpaceTextEditor_use_find_wrap_get, SpaceTextEditor_use_find_wrap_set, NULL, NULL, 0, NULL
+};
+
+IntPropertyRNA rna_SpaceTextEditor_font_size = {
+	{(PropertyRNA*)&rna_SpaceTextEditor_show_line_highlight, (PropertyRNA*)&rna_SpaceTextEditor_use_find_wrap,
+	-1, "font_size", 8195, "Font Size",
+	"Font size to use for displaying the text",
+	0,
+	PROP_INT, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252379136, NULL, NULL,
+	offsetof(SpaceText, lheight), 1, NULL},
+	SpaceTextEditor_font_size_get, SpaceTextEditor_font_size_set, NULL, NULL, NULL,
+	8, 32, 8, 32, 1, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceTextEditor_show_line_highlight = {
+	{(PropertyRNA*)&rna_SpaceTextEditor_show_line_numbers, (PropertyRNA*)&rna_SpaceTextEditor_font_size,
+	-1, "show_line_highlight", 8195, "Highlight Line",
+	"Highlight the current line",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252379136, NULL, NULL,
+	offsetof(SpaceText, line_hlight), 1, NULL},
+	SpaceTextEditor_show_line_highlight_get, SpaceTextEditor_show_line_highlight_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceTextEditor_show_line_numbers = {
+	{(PropertyRNA*)&rna_SpaceTextEditor_use_live_edit, (PropertyRNA*)&rna_SpaceTextEditor_show_line_highlight,
+	-1, "show_line_numbers", 12291, "Line Numbers",
+	"Show line numbers next to the text",
+	744,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252379136, NULL, NULL,
+	offsetof(SpaceText, showlinenrs), 0, NULL},
+	SpaceTextEditor_show_line_numbers_get, SpaceTextEditor_show_line_numbers_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceTextEditor_use_live_edit = {
+	{(PropertyRNA*)&rna_SpaceTextEditor_margin_column, (PropertyRNA*)&rna_SpaceTextEditor_show_line_numbers,
+	-1, "use_live_edit", 3, "Live Edit",
+	"Run python while editing",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252379136, NULL, NULL,
+	0, -1, NULL},
+	SpaceTextEditor_use_live_edit_get, SpaceTextEditor_use_live_edit_set, NULL, NULL, 0, NULL
+};
+
+IntPropertyRNA rna_SpaceTextEditor_margin_column = {
+	{(PropertyRNA*)&rna_SpaceTextEditor_use_overwrite, (PropertyRNA*)&rna_SpaceTextEditor_use_live_edit,
+	-1, "margin_column", 8195, "Margin Column",
+	"Column number to show right margin at",
+	0,
+	PROP_INT, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252379136, NULL, NULL,
+	offsetof(SpaceText, margin_column), 1, NULL},
+	SpaceTextEditor_margin_column_get, SpaceTextEditor_margin_column_set, NULL, NULL, NULL,
+	0, 1024, 0, 1024, 1, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceTextEditor_use_overwrite = {
+	{(PropertyRNA*)&rna_SpaceTextEditor_replace_text, (PropertyRNA*)&rna_SpaceTextEditor_margin_column,
+	-1, "use_overwrite", 3, "Overwrite",
+	"Overwrite characters when typing rather than inserting them",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252379136, NULL, NULL,
+	0, -1, NULL},
+	SpaceTextEditor_use_overwrite_get, SpaceTextEditor_use_overwrite_set, NULL, NULL, 0, NULL
+};
+
+StringPropertyRNA rna_SpaceTextEditor_replace_text = {
+	{(PropertyRNA*)&rna_SpaceTextEditor_show_margin, (PropertyRNA*)&rna_SpaceTextEditor_use_overwrite,
+	-1, "replace_text", 1, "Replace Text",
+	"Text to replace selected text with using the replace tool",
+	0,
+	PROP_STRING, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {256, 0, 0}, 0,
+	NULL, 252379136, NULL, NULL,
+	0, -1, NULL},
+	SpaceTextEditor_replace_text_get, SpaceTextEditor_replace_text_length, SpaceTextEditor_replace_text_set, 256, ""
+};
+
+BooleanPropertyRNA rna_SpaceTextEditor_show_margin = {
+	{(PropertyRNA*)&rna_SpaceTextEditor_show_syntax_highlight, (PropertyRNA*)&rna_SpaceTextEditor_replace_text,
+	-1, "show_margin", 3, "Show Margin",
+	"Show right margin",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252379136, NULL, NULL,
+	0, -1, NULL},
+	SpaceTextEditor_show_margin_get, SpaceTextEditor_show_margin_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceTextEditor_show_syntax_highlight = {
+	{(PropertyRNA*)&rna_SpaceTextEditor_tab_width, (PropertyRNA*)&rna_SpaceTextEditor_show_margin,
+	-1, "show_syntax_highlight", 12291, "Syntax Highlight",
+	"Syntax highlight for scripting",
+	742,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252379136, NULL, NULL,
+	offsetof(SpaceText, showsyntax), 1, NULL},
+	SpaceTextEditor_show_syntax_highlight_get, SpaceTextEditor_show_syntax_highlight_set, NULL, NULL, 0, NULL
+};
+
+IntPropertyRNA rna_SpaceTextEditor_tab_width = {
+	{(PropertyRNA*)&rna_SpaceTextEditor_text, (PropertyRNA*)&rna_SpaceTextEditor_show_syntax_highlight,
+	-1, "tab_width", 8195, "Tab Width",
+	"Number of spaces to display tabs with",
+	0,
+	PROP_INT, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 201326593, NULL, NULL,
+	offsetof(SpaceText, tabnumber), 0, NULL},
+	SpaceTextEditor_tab_width_get, SpaceTextEditor_tab_width_set, NULL, NULL, NULL,
+	2, 8, 2, 8, 1, 0, NULL
+};
+
+PointerPropertyRNA rna_SpaceTextEditor_text = {
+	{(PropertyRNA*)&rna_SpaceTextEditor_show_word_wrap, (PropertyRNA*)&rna_SpaceTextEditor_tab_width,
+	-1, "text", 1, "Text",
+	"Text displayed and edited in this space",
+	0,
+	PROP_POINTER, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252379136, NULL, NULL,
+	0, -1, NULL},
+	SpaceTextEditor_text_get, SpaceTextEditor_text_set, NULL, NULL,&RNA_Text
+};
+
+BooleanPropertyRNA rna_SpaceTextEditor_show_word_wrap = {
+	{NULL, (PropertyRNA*)&rna_SpaceTextEditor_text,
+	-1, "show_word_wrap", 4099, "Word Wrap",
+	"Wrap words if there is not enough horizontal space",
+	740,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252379136, NULL, NULL,
+	0, -1, NULL},
+	SpaceTextEditor_show_word_wrap_get, SpaceTextEditor_show_word_wrap_set, NULL, NULL, 0, NULL
+};
+
+StructRNA RNA_SpaceTextEditor = {
+	{(ContainerRNA *)&RNA_SpaceTimeline, (ContainerRNA *)&RNA_SpaceSequenceEditor,
+	NULL,
+	{(PropertyRNA*)&rna_SpaceTextEditor_use_find_all, (PropertyRNA*)&rna_SpaceTextEditor_show_word_wrap}},
+	"SpaceTextEditor"	, NULL,NULL
+, 0, "Space Text Editor", "Text editor space data",
+	17,
+	NULL, (PropertyRNA*)&rna_Space_rna_properties,
+	&RNA_Space,
+	NULL,
+	rna_Space_refine,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	{NULL, NULL}
+};
+
+/* Space Timeline Editor */
+BooleanPropertyRNA rna_SpaceTimeline_cache_cloth = {
+	{(PropertyRNA*)&rna_SpaceTimeline_show_only_selected, NULL,
+	-1, "cache_cloth", 3, "Cloth",
+	"Show the active object\'s cloth point cache",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252444672, NULL, NULL,
+	0, -1, NULL},
+	SpaceTimeline_cache_cloth_get, SpaceTimeline_cache_cloth_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceTimeline_show_only_selected = {
+	{(PropertyRNA*)&rna_SpaceTimeline_cache_particles, (PropertyRNA*)&rna_SpaceTimeline_cache_cloth,
+	-1, "show_only_selected", 3, "Only Selected channels",
+	"Show keyframes for active Object and/or its selected channels only",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252444672, NULL, NULL,
+	0, -1, NULL},
+	SpaceTimeline_show_only_selected_get, SpaceTimeline_show_only_selected_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceTimeline_cache_particles = {
+	{(PropertyRNA*)&rna_SpaceTimeline_show_cache, (PropertyRNA*)&rna_SpaceTimeline_show_only_selected,
+	-1, "cache_particles", 3, "Particles",
+	"Show the active object\'s particle point cache",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252444672, NULL, NULL,
+	0, -1, NULL},
+	SpaceTimeline_cache_particles_get, SpaceTimeline_cache_particles_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceTimeline_show_cache = {
+	{(PropertyRNA*)&rna_SpaceTimeline_show_frame_indicator, (PropertyRNA*)&rna_SpaceTimeline_cache_particles,
+	-1, "show_cache", 3, "Show Cache",
+	"Show the status of cached frames in the timeline",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252444672, NULL, NULL,
+	0, -1, NULL},
+	SpaceTimeline_show_cache_get, SpaceTimeline_show_cache_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceTimeline_show_frame_indicator = {
+	{(PropertyRNA*)&rna_SpaceTimeline_cache_smoke, (PropertyRNA*)&rna_SpaceTimeline_show_cache,
+	-1, "show_frame_indicator", 3, "Show Frame Number Indicator",
+	"Show frame number beside the current frame indicator line",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252444672, NULL, NULL,
+	0, -1, NULL},
+	SpaceTimeline_show_frame_indicator_get, SpaceTimeline_show_frame_indicator_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceTimeline_cache_smoke = {
+	{(PropertyRNA*)&rna_SpaceTimeline_cache_softbody, (PropertyRNA*)&rna_SpaceTimeline_show_frame_indicator,
+	-1, "cache_smoke", 3, "Smoke",
+	"Show the active object\'s smoke cache",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252444672, NULL, NULL,
+	0, -1, NULL},
+	SpaceTimeline_cache_smoke_get, SpaceTimeline_cache_smoke_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceTimeline_cache_softbody = {
+	{NULL, (PropertyRNA*)&rna_SpaceTimeline_cache_smoke,
+	-1, "cache_softbody", 3, "Softbody",
+	"Show the active object\'s softbody point cache",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252444672, NULL, NULL,
+	0, -1, NULL},
+	SpaceTimeline_cache_softbody_get, SpaceTimeline_cache_softbody_set, NULL, NULL, 0, NULL
+};
+
+StructRNA RNA_SpaceTimeline = {
+	{(ContainerRNA *)&RNA_SpaceUVEditor, (ContainerRNA *)&RNA_SpaceTextEditor,
+	NULL,
+	{(PropertyRNA*)&rna_SpaceTimeline_cache_cloth, (PropertyRNA*)&rna_SpaceTimeline_cache_softbody}},
+	"SpaceTimeline"	, NULL,NULL
+, 0, "Space Timeline Editor", "Timeline editor space data",
+	17,
+	NULL, (PropertyRNA*)&rna_Space_rna_properties,
+	&RNA_Space,
+	NULL,
+	rna_Space_refine,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	{NULL, NULL}
+};
+
+/* Space UV Editor */
+PointerPropertyRNA rna_SpaceUVEditor_rna_type = {
+	{(PropertyRNA*)&rna_SpaceUVEditor_cursor_location, NULL,
+	-1, "rna_type", 524288, "RNA",
+	"RNA type definition",
+	0,
+	PROP_POINTER, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	SpaceUVEditor_rna_type_get, NULL, NULL, NULL,&RNA_Struct
+};
+
+static float rna_SpaceUVEditor_cursor_location_default[2] = {
+	0.0f,
+	0.0f
+};
+
+FloatPropertyRNA rna_SpaceUVEditor_cursor_location = {
+	{(PropertyRNA*)&rna_SpaceUVEditor_lock_bounds, (PropertyRNA*)&rna_SpaceUVEditor_rna_type,
+	-1, "cursor_location", 3, "2D Cursor Location",
+	"2D cursor location for this view",
+	0,
+	PROP_FLOAT, PROP_NONE|PROP_UNIT_NONE, NULL, 1, {2, 0, 0}, 2,
+	NULL, 251920384, NULL, NULL,
+	0, -1, NULL},
+	NULL, NULL, SpaceUVEditor_cursor_location_get, SpaceUVEditor_cursor_location_set, NULL, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 3, 0.0f, rna_SpaceUVEditor_cursor_location_default
+};
+
+BooleanPropertyRNA rna_SpaceUVEditor_lock_bounds = {
+	{(PropertyRNA*)&rna_SpaceUVEditor_show_modified_edges, (PropertyRNA*)&rna_SpaceUVEditor_cursor_location,
+	-1, "lock_bounds", 3, "Constrain to Image Bounds",
+	"Constraint to stay within the image bounds while editing",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 251920384, NULL, NULL,
+	0, -1, NULL},
+	SpaceUVEditor_lock_bounds_get, SpaceUVEditor_lock_bounds_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceUVEditor_show_modified_edges = {
+	{(PropertyRNA*)&rna_SpaceUVEditor_show_other_objects, (PropertyRNA*)&rna_SpaceUVEditor_lock_bounds,
+	-1, "show_modified_edges", 3, "Draw Modified Edges",
+	"Draw edges after modifiers are applied",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 251920384, NULL, NULL,
+	0, -1, NULL},
+	SpaceUVEditor_show_modified_edges_get, SpaceUVEditor_show_modified_edges_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceUVEditor_show_other_objects = {
+	{(PropertyRNA*)&rna_SpaceUVEditor_show_smooth_edges, (PropertyRNA*)&rna_SpaceUVEditor_show_modified_edges,
+	-1, "show_other_objects", 3, "Draw Other Objects",
+	"Draw other selected objects that share the same image",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 251920384, NULL, NULL,
+	0, -1, NULL},
+	SpaceUVEditor_show_other_objects_get, SpaceUVEditor_show_other_objects_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceUVEditor_show_smooth_edges = {
+	{(PropertyRNA*)&rna_SpaceUVEditor_show_stretch, (PropertyRNA*)&rna_SpaceUVEditor_show_other_objects,
+	-1, "show_smooth_edges", 3, "Draw Smooth Edges",
+	"Draw UV edges anti-aliased",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 251920384, NULL, NULL,
+	0, -1, NULL},
+	SpaceUVEditor_show_smooth_edges_get, SpaceUVEditor_show_smooth_edges_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceUVEditor_show_stretch = {
+	{(PropertyRNA*)&rna_SpaceUVEditor_draw_stretch_type, (PropertyRNA*)&rna_SpaceUVEditor_show_smooth_edges,
+	-1, "show_stretch", 3, "Draw Stretch",
+	"Draw faces colored according to the difference in shape between UVs and their 3D coordinates (blue for low distortion, red for high distortion)",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 251920384, NULL, NULL,
+	0, -1, NULL},
+	SpaceUVEditor_show_stretch_get, SpaceUVEditor_show_stretch_set, NULL, NULL, 0, NULL
+};
+
+static EnumPropertyItem rna_SpaceUVEditor_draw_stretch_type_items[3] = {
+	{0, "ANGLE", 0, "Angle", "Angular distortion between UV and 3D angles"},
+	{1, "AREA", 0, "Area", "Area distortion between UV and 3D faces"},
+	{0, NULL, 0, NULL, NULL}
+};
+
+EnumPropertyRNA rna_SpaceUVEditor_draw_stretch_type = {
+	{(PropertyRNA*)&rna_SpaceUVEditor_edge_draw_type, (PropertyRNA*)&rna_SpaceUVEditor_show_stretch,
+	-1, "draw_stretch_type", 3, "Draw Stretch Type",
+	"Type of stretch to draw",
+	0,
+	PROP_ENUM, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 251920384, NULL, NULL,
+	0, -1, NULL},
+	SpaceUVEditor_draw_stretch_type_get, SpaceUVEditor_draw_stretch_type_set, NULL, rna_SpaceUVEditor_draw_stretch_type_items, 2, 0
+};
+
+static EnumPropertyItem rna_SpaceUVEditor_edge_draw_type_items[5] = {
+	{0, "OUTLINE", 0, "Outline", "Draw white edges with black outline"},
+	{1, "DASH", 0, "Dash", "Draw dashed black-white edges"},
+	{2, "BLACK", 0, "Black", "Draw black edges"},
+	{3, "WHITE", 0, "White", "Draw white edges"},
+	{0, NULL, 0, NULL, NULL}
+};
+
+EnumPropertyRNA rna_SpaceUVEditor_edge_draw_type = {
+	{(PropertyRNA*)&rna_SpaceUVEditor_use_live_unwrap, (PropertyRNA*)&rna_SpaceUVEditor_draw_stretch_type,
+	-1, "edge_draw_type", 3, "Edge Draw Type",
+	"Draw type for drawing UV edges",
+	0,
+	PROP_ENUM, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 251920384, NULL, NULL,
+	0, -1, NULL},
+	SpaceUVEditor_edge_draw_type_get, SpaceUVEditor_edge_draw_type_set, NULL, rna_SpaceUVEditor_edge_draw_type_items, 4, 0
+};
+
+BooleanPropertyRNA rna_SpaceUVEditor_use_live_unwrap = {
+	{(PropertyRNA*)&rna_SpaceUVEditor_show_normalized_coords, (PropertyRNA*)&rna_SpaceUVEditor_edge_draw_type,
+	-1, "use_live_unwrap", 3, "Live Unwrap",
+	"Continuously unwrap the selected UV island while transforming pinned vertices",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 251920384, NULL, NULL,
+	0, -1, NULL},
+	SpaceUVEditor_use_live_unwrap_get, SpaceUVEditor_use_live_unwrap_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceUVEditor_show_normalized_coords = {
+	{(PropertyRNA*)&rna_SpaceUVEditor_pivot_point, (PropertyRNA*)&rna_SpaceUVEditor_use_live_unwrap,
+	-1, "show_normalized_coords", 3, "Normalized Coordinates",
+	"Display UV coordinates from 0.0 to 1.0 rather than in pixels",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 251920384, NULL, NULL,
+	0, -1, NULL},
+	SpaceUVEditor_show_normalized_coords_get, SpaceUVEditor_show_normalized_coords_set, NULL, NULL, 0, NULL
+};
+
+static EnumPropertyItem rna_SpaceUVEditor_pivot_point_items[4] = {
+	{0, "CENTER", 551, "Bounding Box Center", ""},
+	{3, "MEDIAN", 554, "Median Point", ""},
+	{1, "CURSOR", 552, "2D Cursor", ""},
+	{0, NULL, 0, NULL, NULL}
+};
+
+EnumPropertyRNA rna_SpaceUVEditor_pivot_point = {
+	{(PropertyRNA*)&rna_SpaceUVEditor_rna_properties, (PropertyRNA*)&rna_SpaceUVEditor_show_normalized_coords,
+	-1, "pivot_point", 3, "Pivot",
+	"Rotation/Scaling Pivot",
+	0,
+	PROP_ENUM, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 251920384, NULL, NULL,
+	0, -1, NULL},
+	SpaceUVEditor_pivot_point_get, SpaceUVEditor_pivot_point_set, NULL, rna_SpaceUVEditor_pivot_point_items, 3, 0
+};
+
+CollectionPropertyRNA rna_SpaceUVEditor_rna_properties = {
+	{(PropertyRNA*)&rna_SpaceUVEditor_use_snap_to_pixels, (PropertyRNA*)&rna_SpaceUVEditor_pivot_point,
+	-1, "rna_properties", 128, "Properties",
+	"RNA property collection",
+	0,
+	PROP_COLLECTION, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	SpaceUVEditor_rna_properties_begin, SpaceUVEditor_rna_properties_next, SpaceUVEditor_rna_properties_end, SpaceUVEditor_rna_properties_get, NULL, NULL, rna_builtin_properties_lookup_string, &RNA_Property
+};
+
+BooleanPropertyRNA rna_SpaceUVEditor_use_snap_to_pixels = {
+	{(PropertyRNA*)&rna_SpaceUVEditor_sticky_select_mode, (PropertyRNA*)&rna_SpaceUVEditor_rna_properties,
+	-1, "use_snap_to_pixels", 3, "Snap to Pixels",
+	"Snap UVs to pixel locations while editing",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 251920384, NULL, NULL,
+	0, -1, NULL},
+	SpaceUVEditor_use_snap_to_pixels_get, SpaceUVEditor_use_snap_to_pixels_set, NULL, NULL, 0, NULL
+};
+
+static EnumPropertyItem rna_SpaceUVEditor_sticky_select_mode_items[4] = {
+	{1, "DISABLED", 586, "Disabled", "Sticky vertex selection disabled"},
+	{0, "SHARED_LOCATION", 585, "Shared Location", "Select UVs that are at the same location and share a mesh vertex"},
+	{2, "SHARED_VERTEX", 587, "Shared Vertex", "Select UVs that share mesh vertex, irrespective if they are in the same location"},
+	{0, NULL, 0, NULL, NULL}
+};
+
+EnumPropertyRNA rna_SpaceUVEditor_sticky_select_mode = {
+	{NULL, (PropertyRNA*)&rna_SpaceUVEditor_use_snap_to_pixels,
+	-1, "sticky_select_mode", 3, "Sticky Selection Mode",
+	"Automatically select also UVs sharing the same vertex as the ones being selected",
+	0,
+	PROP_ENUM, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 251920384, NULL, NULL,
+	0, -1, NULL},
+	SpaceUVEditor_sticky_select_mode_get, SpaceUVEditor_sticky_select_mode_set, NULL, rna_SpaceUVEditor_sticky_select_mode_items, 3, 0
+};
+
+StructRNA RNA_SpaceUVEditor = {
+	{(ContainerRNA *)&RNA_SpaceUserPreferences, (ContainerRNA *)&RNA_SpaceTimeline,
+	NULL,
+	{(PropertyRNA*)&rna_SpaceUVEditor_rna_type, (PropertyRNA*)&rna_SpaceUVEditor_sticky_select_mode}},
+	"SpaceUVEditor"	, NULL,NULL
+, 0, "Space UV Editor", "UV editor data for the image editor space",
+	17,
+	NULL, (PropertyRNA*)&rna_SpaceUVEditor_rna_properties,
+	NULL,
+	&RNA_SpaceImageEditor,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	{NULL, NULL}
+};
+
+/* Space User Preferences */
+StringPropertyRNA rna_SpaceUserPreferences_filter_text = {
+	{NULL, NULL,
+	-1, "filter_text", 1, "Filter",
+	"Search term for filtering in the UI",
+	0,
+	PROP_STRING, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {64, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	SpaceUserPreferences_filter_text_get, SpaceUserPreferences_filter_text_length, SpaceUserPreferences_filter_text_set, 64, ""
+};
+
+StructRNA RNA_SpaceUserPreferences = {
+	{(ContainerRNA *)&RNA_SpaceView3D, (ContainerRNA *)&RNA_SpaceUVEditor,
+	NULL,
+	{(PropertyRNA*)&rna_SpaceUserPreferences_filter_text, (PropertyRNA*)&rna_SpaceUserPreferences_filter_text}},
+	"SpaceUserPreferences"	, NULL,NULL
+, 0, "Space User Preferences", "User preferences space data",
+	17,
+	NULL, (PropertyRNA*)&rna_Space_rna_properties,
+	&RNA_Space,
+	NULL,
+	rna_Space_refine,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	{NULL, NULL}
+};
+
+/* 3D View Space */
+static float rna_SpaceView3D_cursor_location_default[3] = {
+	0.0f,
+	0.0f,
+	0.0f
+};
+
+FloatPropertyRNA rna_SpaceView3D_cursor_location = {
+	{(PropertyRNA*)&rna_SpaceView3D_region_3d, NULL,
+	-1, "cursor_location", 3, "3D Cursor Location",
+	"3D cursor location for this view (dependent on local view setting)",
+	0,
+	PROP_FLOAT, PROP_XYZ|PROP_UNIT_LENGTH, NULL, 1, {3, 0, 0}, 3,
+	NULL, 252248064, NULL, NULL,
+	0, -1, NULL},
+	NULL, NULL, SpaceView3D_cursor_location_get, SpaceView3D_cursor_location_set, NULL, -10000.0f, 10000.0f, -FLT_MAX, FLT_MAX, 10.0f, 4, 0.0f, rna_SpaceView3D_cursor_location_default
+};
+
+PointerPropertyRNA rna_SpaceView3D_region_3d = {
+	{(PropertyRNA*)&rna_SpaceView3D_use_pivot_point_align, (PropertyRNA*)&rna_SpaceView3D_cursor_location,
+	-1, "region_3d", 0, "3D Region",
+	"3D region in this space, in case of quad view the camera region",
+	0,
+	PROP_POINTER, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	SpaceView3D_region_3d_get, NULL, NULL, NULL,&RNA_RegionView3D
+};
+
+BooleanPropertyRNA rna_SpaceView3D_use_pivot_point_align = {
+	{(PropertyRNA*)&rna_SpaceView3D_show_all_objects_origin, (PropertyRNA*)&rna_SpaceView3D_region_3d,
+	-1, "use_pivot_point_align", 3, "Align",
+	"Manipulate object centers only",
+	556,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	0, -1, NULL},
+	SpaceView3D_use_pivot_point_align_get, SpaceView3D_use_pivot_point_align_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceView3D_show_all_objects_origin = {
+	{(PropertyRNA*)&rna_SpaceView3D_background_images, (PropertyRNA*)&rna_SpaceView3D_use_pivot_point_align,
+	-1, "show_all_objects_origin", 3, "All Object Origins",
+	"Show the object origin center dot for all (selected and unselected) objects",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	0, -1, NULL},
+	SpaceView3D_show_all_objects_origin_get, SpaceView3D_show_all_objects_origin_set, NULL, NULL, 0, NULL
+};
+
+CollectionPropertyRNA rna_SpaceView3D_background_images = {
+	{(PropertyRNA*)&rna_SpaceView3D_camera, (PropertyRNA*)&rna_SpaceView3D_show_all_objects_origin,
+	-1, "background_images", 0, "Background Images",
+	"List of background images",
+	0,
+	PROP_COLLECTION, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	0, -1, NULL},
+	SpaceView3D_background_images_begin, SpaceView3D_background_images_next, SpaceView3D_background_images_end, SpaceView3D_background_images_get, NULL, SpaceView3D_background_images_lookup_int, NULL, &RNA_BackgroundImage
+};
+
+PointerPropertyRNA rna_SpaceView3D_camera = {
+	{(PropertyRNA*)&rna_SpaceView3D_clip_end, (PropertyRNA*)&rna_SpaceView3D_background_images,
+	-1, "camera", 1, "Camera",
+	"Active camera used in this view (when unlocked from the scene\'s active camera)",
+	0,
+	PROP_POINTER, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	0, -1, NULL},
+	SpaceView3D_camera_get, SpaceView3D_camera_set, NULL, NULL,&RNA_Object
+};
+
+FloatPropertyRNA rna_SpaceView3D_clip_end = {
+	{(PropertyRNA*)&rna_SpaceView3D_clip_start, (PropertyRNA*)&rna_SpaceView3D_camera,
+	-1, "clip_end", 8195, "Clip End",
+	"3D View far clipping distance",
+	0,
+	PROP_FLOAT, PROP_DISTANCE|PROP_UNIT_LENGTH, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	offsetof(View3D, far), 4, NULL},
+	SpaceView3D_clip_end_get, SpaceView3D_clip_end_set, NULL, NULL, NULL, 1.0f, FLT_MAX, 1.0f, FLT_MAX, 10.0f, 3, 0.0f, NULL
+};
+
+FloatPropertyRNA rna_SpaceView3D_clip_start = {
+	{(PropertyRNA*)&rna_SpaceView3D_current_orientation, (PropertyRNA*)&rna_SpaceView3D_clip_end,
+	-1, "clip_start", 8195, "Clip Start",
+	"3D View near clipping distance",
+	0,
+	PROP_FLOAT, PROP_DISTANCE|PROP_UNIT_LENGTH, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	offsetof(View3D, near), 4, NULL},
+	SpaceView3D_clip_start_get, SpaceView3D_clip_start_set, NULL, NULL, NULL, 0.0f, FLT_MAX, 0.0f, FLT_MAX, 10.0f, 3, 0.0f, NULL
+};
+
+PointerPropertyRNA rna_SpaceView3D_current_orientation = {
+	{(PropertyRNA*)&rna_SpaceView3D_show_background_images, (PropertyRNA*)&rna_SpaceView3D_clip_start,
+	-1, "current_orientation", 0, "Current Transform Orientation",
+	"Current Transformation orientation",
+	0,
+	PROP_POINTER, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	SpaceView3D_current_orientation_get, NULL, NULL, NULL,&RNA_TransformOrientation
+};
+
+BooleanPropertyRNA rna_SpaceView3D_show_background_images = {
+	{(PropertyRNA*)&rna_SpaceView3D_show_floor, (PropertyRNA*)&rna_SpaceView3D_current_orientation,
+	-1, "show_background_images", 3, "Display Background Images",
+	"Display reference images behind objects in the 3D View",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	0, -1, NULL},
+	SpaceView3D_show_background_images_get, SpaceView3D_show_background_images_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceView3D_show_floor = {
+	{(PropertyRNA*)&rna_SpaceView3D_show_axis_x, (PropertyRNA*)&rna_SpaceView3D_show_background_images,
+	-1, "show_floor", 3, "Display Grid Floor",
+	"Show the ground plane grid in perspective view",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	0, -1, NULL},
+	SpaceView3D_show_floor_get, SpaceView3D_show_floor_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceView3D_show_axis_x = {
+	{(PropertyRNA*)&rna_SpaceView3D_show_axis_y, (PropertyRNA*)&rna_SpaceView3D_show_floor,
+	-1, "show_axis_x", 3, "Display X Axis",
+	"Show the X axis line in perspective view",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	0, -1, NULL},
+	SpaceView3D_show_axis_x_get, SpaceView3D_show_axis_x_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceView3D_show_axis_y = {
+	{(PropertyRNA*)&rna_SpaceView3D_show_axis_z, (PropertyRNA*)&rna_SpaceView3D_show_axis_x,
+	-1, "show_axis_y", 3, "Display Y Axis",
+	"Show the Y axis line in perspective view",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	0, -1, NULL},
+	SpaceView3D_show_axis_y_get, SpaceView3D_show_axis_y_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceView3D_show_axis_z = {
+	{(PropertyRNA*)&rna_SpaceView3D_grid_lines, (PropertyRNA*)&rna_SpaceView3D_show_axis_y,
+	-1, "show_axis_z", 3, "Display Z Axis",
+	"Show the Z axis line in perspective view",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	0, -1, NULL},
+	SpaceView3D_show_axis_z_get, SpaceView3D_show_axis_z_set, NULL, NULL, 0, NULL
+};
+
+IntPropertyRNA rna_SpaceView3D_grid_lines = {
+	{(PropertyRNA*)&rna_SpaceView3D_grid_scale, (PropertyRNA*)&rna_SpaceView3D_show_axis_z,
+	-1, "grid_lines", 8195, "Grid Lines",
+	"The number of grid lines to display in perspective view",
+	0,
+	PROP_INT, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	offsetof(View3D, gridlines), 1, NULL},
+	SpaceView3D_grid_lines_get, SpaceView3D_grid_lines_set, NULL, NULL, NULL,
+	0, 1024, 0, 1024, 1, 0, NULL
+};
+
+FloatPropertyRNA rna_SpaceView3D_grid_scale = {
+	{(PropertyRNA*)&rna_SpaceView3D_grid_subdivisions, (PropertyRNA*)&rna_SpaceView3D_grid_lines,
+	-1, "grid_scale", 8195, "Grid Scale",
+	"The distance between 3D View grid lines",
+	0,
+	PROP_FLOAT, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	offsetof(View3D, grid), 4, NULL},
+	SpaceView3D_grid_scale_get, SpaceView3D_grid_scale_set, NULL, NULL, NULL, 0.0f, FLT_MAX, 0.0f, FLT_MAX, 10.0f, 3, 0.0f, NULL
+};
+
+IntPropertyRNA rna_SpaceView3D_grid_subdivisions = {
+	{(PropertyRNA*)&rna_SpaceView3D_lens, (PropertyRNA*)&rna_SpaceView3D_grid_scale,
+	-1, "grid_subdivisions", 8195, "Grid Subdivisions",
+	"The number of subdivisions between grid lines",
+	0,
+	PROP_INT, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	offsetof(View3D, gridsubdiv), 1, NULL},
+	SpaceView3D_grid_subdivisions_get, SpaceView3D_grid_subdivisions_set, NULL, NULL, NULL,
+	1, 1024, 1, 1024, 1, 0, NULL
+};
+
+FloatPropertyRNA rna_SpaceView3D_lens = {
+	{(PropertyRNA*)&rna_SpaceView3D_local_view, (PropertyRNA*)&rna_SpaceView3D_grid_subdivisions,
+	-1, "lens", 8195, "Lens",
+	"Lens angle (mm) in perspective view",
+	0,
+	PROP_FLOAT, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	offsetof(View3D, lens), 4, NULL},
+	SpaceView3D_lens_get, SpaceView3D_lens_set, NULL, NULL, NULL, 1.0f, 250.0f, 1.0f, 250.0f, 10.0f, 3, 0.0f, NULL
+};
+
+PointerPropertyRNA rna_SpaceView3D_local_view = {
+	{(PropertyRNA*)&rna_SpaceView3D_lock_camera_and_layers, (PropertyRNA*)&rna_SpaceView3D_lens,
+	-1, "local_view", 0, "Local View",
+	"Display an isolated sub-set of objects, apart from the scene visibility",
+	0,
+	PROP_POINTER, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	SpaceView3D_local_view_get, NULL, NULL, NULL,&RNA_SpaceView3D
+};
+
+BooleanPropertyRNA rna_SpaceView3D_lock_camera_and_layers = {
+	{(PropertyRNA*)&rna_SpaceView3D_lock_bone, (PropertyRNA*)&rna_SpaceView3D_local_view,
+	-1, "lock_camera_and_layers", 4099, "Lock Camera and Layers",
+	"Use the scene\'s active camera and layers in this view, rather than local layers",
+	633,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	0, -1, NULL},
+	SpaceView3D_lock_camera_and_layers_get, SpaceView3D_lock_camera_and_layers_set, NULL, NULL, 0, NULL
+};
+
+StringPropertyRNA rna_SpaceView3D_lock_bone = {
+	{(PropertyRNA*)&rna_SpaceView3D_lock_cursor, (PropertyRNA*)&rna_SpaceView3D_lock_camera_and_layers,
+	-1, "lock_bone", 1, "Lock to Bone",
+	"3D View center is locked to this bone\'s position",
+	0,
+	PROP_STRING, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {32, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	0, -1, NULL},
+	SpaceView3D_lock_bone_get, SpaceView3D_lock_bone_length, SpaceView3D_lock_bone_set, 32, ""
+};
+
+BooleanPropertyRNA rna_SpaceView3D_lock_cursor = {
+	{(PropertyRNA*)&rna_SpaceView3D_lock_object, (PropertyRNA*)&rna_SpaceView3D_lock_bone,
+	-1, "lock_cursor", 3, "Lock to Cursor",
+	"3D View center is locked to the cursor\'s position",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	0, -1, NULL},
+	SpaceView3D_lock_cursor_get, SpaceView3D_lock_cursor_set, NULL, NULL, 0, NULL
+};
+
+PointerPropertyRNA rna_SpaceView3D_lock_object = {
+	{(PropertyRNA*)&rna_SpaceView3D_show_manipulator, (PropertyRNA*)&rna_SpaceView3D_lock_cursor,
+	-1, "lock_object", 1, "Lock to Object",
+	"3D View center is locked to this object\'s position",
+	0,
+	PROP_POINTER, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	0, -1, NULL},
+	SpaceView3D_lock_object_get, SpaceView3D_lock_object_set, NULL, NULL,&RNA_Object
+};
+
+BooleanPropertyRNA rna_SpaceView3D_show_manipulator = {
+	{(PropertyRNA*)&rna_SpaceView3D_use_manipulator_rotate, (PropertyRNA*)&rna_SpaceView3D_lock_object,
+	-1, "show_manipulator", 3, "Manipulator",
+	"Use a 3D manipulator widget for controlling transforms",
+	575,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	0, -1, NULL},
+	SpaceView3D_show_manipulator_get, SpaceView3D_show_manipulator_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceView3D_use_manipulator_rotate = {
+	{(PropertyRNA*)&rna_SpaceView3D_use_manipulator_scale, (PropertyRNA*)&rna_SpaceView3D_show_manipulator,
+	-1, "use_manipulator_rotate", 3, "Manipulator Rotate",
+	"Use the manipulator for rotation transformations",
+	573,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	0, -1, NULL},
+	SpaceView3D_use_manipulator_rotate_get, SpaceView3D_use_manipulator_rotate_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceView3D_use_manipulator_scale = {
+	{(PropertyRNA*)&rna_SpaceView3D_use_manipulator_translate, (PropertyRNA*)&rna_SpaceView3D_use_manipulator_rotate,
+	-1, "use_manipulator_scale", 3, "Manipulator Scale",
+	"Use the manipulator for scale transformations",
+	574,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	0, -1, NULL},
+	SpaceView3D_use_manipulator_scale_get, SpaceView3D_use_manipulator_scale_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceView3D_use_manipulator_translate = {
+	{(PropertyRNA*)&rna_SpaceView3D_use_occlude_geometry, (PropertyRNA*)&rna_SpaceView3D_use_manipulator_scale,
+	-1, "use_manipulator_translate", 3, "Manipulator Translate",
+	"Use the manipulator for movement transformations",
+	572,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	0, -1, NULL},
+	SpaceView3D_use_manipulator_translate_get, SpaceView3D_use_manipulator_translate_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceView3D_use_occlude_geometry = {
+	{(PropertyRNA*)&rna_SpaceView3D_show_only_render, (PropertyRNA*)&rna_SpaceView3D_use_manipulator_translate,
+	-1, "use_occlude_geometry", 3, "Occlude Geometry",
+	"Limit selection to visible (clipped with depth buffer)",
+	630,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	0, -1, NULL},
+	SpaceView3D_use_occlude_geometry_get, SpaceView3D_use_occlude_geometry_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceView3D_show_only_render = {
+	{(PropertyRNA*)&rna_SpaceView3D_show_outline_selected, (PropertyRNA*)&rna_SpaceView3D_use_occlude_geometry,
+	-1, "show_only_render", 3, "Only Render",
+	"Display only objects which will be rendered",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	0, -1, NULL},
+	SpaceView3D_show_only_render_get, SpaceView3D_show_only_render_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceView3D_show_outline_selected = {
+	{(PropertyRNA*)&rna_SpaceView3D_pivot_point, (PropertyRNA*)&rna_SpaceView3D_show_only_render,
+	-1, "show_outline_selected", 3, "Outline Selected",
+	"Show an outline highlight around selected objects in non-wireframe views",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	0, -1, NULL},
+	SpaceView3D_show_outline_selected_get, SpaceView3D_show_outline_selected_set, NULL, NULL, 0, NULL
+};
+
+static EnumPropertyItem rna_SpaceView3D_pivot_point_items[6] = {
+	{0, "BOUNDING_BOX_CENTER", 551, "Bounding Box Center", ""},
+	{1, "CURSOR", 552, "3D Cursor", ""},
+	{2, "INDIVIDUAL_ORIGINS", 553, "Individual Origins", ""},
+	{3, "MEDIAN_POINT", 554, "Median Point", ""},
+	{4, "ACTIVE_ELEMENT", 555, "Active Element", ""},
+	{0, NULL, 0, NULL, NULL}
+};
+
+EnumPropertyRNA rna_SpaceView3D_pivot_point = {
+	{(PropertyRNA*)&rna_SpaceView3D_region_quadview, (PropertyRNA*)&rna_SpaceView3D_show_outline_selected,
+	-1, "pivot_point", 3, "Pivot Point",
+	"Pivot center for rotation/scaling",
+	0,
+	PROP_ENUM, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	0, -1, NULL},
+	SpaceView3D_pivot_point_get, SpaceView3D_pivot_point_set, NULL, rna_SpaceView3D_pivot_point_items, 5, 0
+};
+
+PointerPropertyRNA rna_SpaceView3D_region_quadview = {
+	{(PropertyRNA*)&rna_SpaceView3D_show_relationship_lines, (PropertyRNA*)&rna_SpaceView3D_pivot_point,
+	-1, "region_quadview", 0, "Quad View Region",
+	"3D region that defines the quad view settings",
+	0,
+	PROP_POINTER, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	SpaceView3D_region_quadview_get, NULL, NULL, NULL,&RNA_RegionView3D
+};
+
+BooleanPropertyRNA rna_SpaceView3D_show_relationship_lines = {
+	{(PropertyRNA*)&rna_SpaceView3D_show_textured_solid, (PropertyRNA*)&rna_SpaceView3D_region_quadview,
+	-1, "show_relationship_lines", 3, "Relationship Lines",
+	"Show dashed lines indicating parent or constraint relationships",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	0, -1, NULL},
+	SpaceView3D_show_relationship_lines_get, SpaceView3D_show_relationship_lines_set, NULL, NULL, 0, NULL
+};
+
+BooleanPropertyRNA rna_SpaceView3D_show_textured_solid = {
+	{(PropertyRNA*)&rna_SpaceView3D_transform_orientation, (PropertyRNA*)&rna_SpaceView3D_show_relationship_lines,
+	-1, "show_textured_solid", 3, "Textured Solid",
+	"Display face-assigned textures in solid view",
+	0,
+	PROP_BOOLEAN, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	0, -1, NULL},
+	SpaceView3D_show_textured_solid_get, SpaceView3D_show_textured_solid_set, NULL, NULL, 0, NULL
+};
+
+static EnumPropertyItem rna_SpaceView3D_transform_orientation_items[7] = {
+	{0, "GLOBAL", 0, "Global", "Align the transformation axes to world space"},
+	{1, "LOCAL", 0, "Local", "Align the transformation axes to the selected objects\' local space"},
+	{4, "GIMBAL", 0, "Gimbal", "Align each axis to the euler rotation axis as used for input"},
+	{2, "NORMAL", 0, "Normal", "Align the transformation axes to average normal of selected elements (bone Y axis for pose mode)"},
+	{3, "VIEW", 0, "View", "Align the transformation axes to the window"},
+	{5, "CUSTOM", 0, "Custom", "Use a custom transform orientation"},
+	{0, NULL, 0, NULL, NULL}
+};
+
+EnumPropertyRNA rna_SpaceView3D_transform_orientation = {
+	{(PropertyRNA*)&rna_SpaceView3D_layers_used, (PropertyRNA*)&rna_SpaceView3D_show_textured_solid,
+	-1, "transform_orientation", 3, "Transform Orientation",
+	"Transformation orientation",
+	0,
+	PROP_ENUM, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	0, -1, NULL},
+	SpaceView3D_transform_orientation_get, SpaceView3D_transform_orientation_set, rna_TransformOrientation_itemf, rna_SpaceView3D_transform_orientation_items, 6, 0
+};
+
+static int rna_SpaceView3D_layers_used_default[20] = {
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0
+};
+
+BooleanPropertyRNA rna_SpaceView3D_layers_used = {
+	{(PropertyRNA*)&rna_SpaceView3D_viewport_shade, (PropertyRNA*)&rna_SpaceView3D_transform_orientation,
+	-1, "layers_used", 2, "Used Layers",
+	"Layers that contain something",
+	0,
+	PROP_BOOLEAN, PROP_LAYER_MEMBER|PROP_UNIT_NONE, NULL, 1, {20, 0, 0}, 20,
+	NULL, 0, NULL, NULL,
+	0, -1, NULL},
+	NULL, NULL, SpaceView3D_layers_used_get, NULL, 0, rna_SpaceView3D_layers_used_default
+};
+
+static EnumPropertyItem rna_SpaceView3D_viewport_shade_items[5] = {
+	{1, "BOUNDBOX", 624, "Bounding Box", "Display the object\'s local bounding boxes only"},
+	{2, "WIREFRAME", 625, "Wireframe", "Display the object as wire edges"},
+	{3, "SOLID", 626, "Solid", "Display the object solid, lit with default OpenGL lights"},
+	{5, "TEXTURED", 628, "Textured", "Display the object solid, with face-assigned textures"},
+	{0, NULL, 0, NULL, NULL}
+};
+
+EnumPropertyRNA rna_SpaceView3D_viewport_shade = {
+	{(PropertyRNA*)&rna_SpaceView3D_layers, (PropertyRNA*)&rna_SpaceView3D_layers_used,
+	-1, "viewport_shade", 3, "Viewport Shading",
+	"Method to display/shade objects in the 3D View",
+	0,
+	PROP_ENUM, PROP_NONE|PROP_UNIT_NONE, NULL, 0, {0, 0, 0}, 0,
+	NULL, 252248064, NULL, NULL,
+	0, -1, NULL},
+	SpaceView3D_viewport_shade_get, SpaceView3D_viewport_shade_set, NULL, rna_SpaceView3D_viewport_shade_items, 4, 1
+};
+
+static int rna_SpaceView3D_layers_default[20] = {
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0
+};
+
+BooleanPropertyRNA rna_SpaceView3D_layers = {
+	{NULL, (PropertyRNA*)&rna_SpaceView3D_viewport_shade,
+	-1, "layers", 3, "Visible Layers",
+	"Layers visible in this 3D View",
+	0,
+	PROP_BOOLEAN, PROP_LAYER_MEMBER|PROP_UNIT_NONE, NULL, 1, {20, 0, 0}, 20,
+	NULL, 252248064, NULL, NULL,
+	0, -1, NULL},
+	NULL, NULL, SpaceView3D_layers_get, SpaceView3D_layers_set, 0, rna_SpaceView3D_layers_default
+};
+
+StructRNA RNA_SpaceView3D = {
+	{(ContainerRNA *)&RNA_SpeedControlSequence, (ContainerRNA *)&RNA_SpaceUserPreferences,
+	NULL,
+	{(PropertyRNA*)&rna_SpaceView3D_cursor_location, (PropertyRNA*)&rna_SpaceView3D_layers}},
+	"SpaceView3D"	, NULL,NULL
+, 0, "3D View Space", "3D View space data",
+	17,
+	NULL, (PropertyRNA*)&rna_Space_rna_properties,
+	&RNA_Space,
+	NULL,
+	rna_Space_refine,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	{NULL, NULL}
+};
+

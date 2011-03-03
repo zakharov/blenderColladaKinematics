@@ -1,4 +1,4 @@
-/**
+/*
  * $Id$
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/blenkernel/intern/constraint.c
+ *  \ingroup bke
+ */
+
 
 #include <stdio.h> 
 #include <stddef.h>
@@ -752,7 +757,7 @@ static void default_get_tarmat (bConstraint *con, bConstraintOb *cob, bConstrain
 			bConstraintTarget *ctn = ct->next; \
 			if (nocopy == 0) { \
 				datatar= ct->tar; \
-				strcpy(datasubtarget, ct->subtarget); \
+				BLI_strncpy(datasubtarget, ct->subtarget, sizeof(datasubtarget)); \
 				con->tarspace= (char)ct->space; \
 			} \
 			 \
@@ -2149,7 +2154,6 @@ static void actcon_flush_tars (bConstraint *con, ListBase *list, short nocopy)
 
 static void actcon_get_tarmat (bConstraint *con, bConstraintOb *cob, bConstraintTarget *ct, float UNUSED(ctime))
 {
-	extern void chan_calc_mat(bPoseChannel *chan);
 	bActionConstraint *data = con->data;
 	
 	if (VALID_CONS_TARGET(ct)) {
@@ -2217,7 +2221,7 @@ static void actcon_get_tarmat (bConstraint *con, bConstraintOb *cob, bConstraint
 			what_does_obaction(cob->scene, cob->ob, &workob, pose, data->act, pchan->name, t);
 			
 			/* convert animation to matrices for use here */
-			chan_calc_mat(tchan);
+			pchan_calc_mat(tchan);
 			copy_m4_m4(ct->matrix, tchan->chan_mat);
 			
 			/* Clean up */
@@ -3070,7 +3074,7 @@ static void rbj_flush_tars (bConstraint *con, ListBase *list, short nocopy)
 static bConstraintTypeInfo CTI_RIGIDBODYJOINT = {
 	CONSTRAINT_TYPE_RIGIDBODYJOINT, /* type */
 	sizeof(bRigidBodyJointConstraint), /* size */
-	"RigidBody Joint", /* name */
+	"Rigid Body Joint", /* name */
 	"bRigidBodyJointConstraint", /* struct name */
 	NULL, /* free data */
 	NULL, /* relink data */
@@ -3469,7 +3473,7 @@ static void shrinkwrap_get_tarmat (bConstraint *con, bConstraintOb *cob, bConstr
 		BVHTreeRayHit hit;
 		BVHTreeNearest nearest;
 		
-		BVHTreeFromMesh treeData= {0};
+		BVHTreeFromMesh treeData= {NULL};
 		
 		nearest.index = -1;
 		nearest.dist = FLT_MAX;

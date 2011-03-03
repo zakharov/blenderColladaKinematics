@@ -1,5 +1,5 @@
-/**
- * $Id: rna_context.c 31713 2010-09-02 04:53:05Z campbellbarton $
+/*
+ * $Id: rna_context.c 35238 2011-02-27 20:20:01Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/makesrna/intern/rna_context.c
+ *  \ingroup RNA
+ */
+
 
 #include <stdlib.h>
 

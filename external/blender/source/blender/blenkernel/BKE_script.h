@@ -1,7 +1,5 @@
-/**
- * blenlib/BKE_script.h (mar-2001 nzc)
- *	
- * $Id: BKE_script.h 26841 2010-02-12 13:34:04Z campbellbarton $ 
+/*
+ * $Id: BKE_script.h 34962 2011-02-18 13:05:18Z jesterking $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -30,6 +28,13 @@
  */
 #ifndef BKE_SCRIPT_H
 #define BKE_SCRIPT_H
+
+/** \file BKE_script.h
+ *  \ingroup bke
+ *  \since March 2001
+ *  \author nzc
+ *  \author Willian P. Germano
+ */
 
 #ifdef __cplusplus
 extern "C" {

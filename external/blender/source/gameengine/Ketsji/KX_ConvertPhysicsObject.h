@@ -1,5 +1,5 @@
-/**
- * $Id: KX_ConvertPhysicsObject.h 32392 2010-10-10 07:01:56Z campbellbarton $
+/*
+ * $Id: KX_ConvertPhysicsObject.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file KX_ConvertPhysicsObject.h
+ *  \ingroup ketsji
+ */
+
 #ifndef KX_CONVERTPHYSICSOBJECTS
 #define KX_CONVERTPHYSICSOBJECTS
 

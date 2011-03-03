@@ -1,5 +1,5 @@
-/**
- * $Id: BKE_fcurve.h 33448 2010-12-03 17:05:21Z campbellbarton $
+/*
+ * $Id: BKE_fcurve.h 34962 2011-02-18 13:05:18Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,12 @@
 
 #ifndef BKE_FCURVE_H
 #define BKE_FCURVE_H
+
+/** \file BKE_fcurve.h
+ *  \ingroup bke
+ *  \author Joshua Leung
+ *  \since 2009
+ */
 
 #ifdef __cplusplus
 extern "C" {

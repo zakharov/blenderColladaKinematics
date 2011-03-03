@@ -1,5 +1,5 @@
-/**
- * $Id: SHD_util.c 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: SHD_util.c 35237 2011-02-27 20:13:22Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/nodes/intern/SHD_util.c
+ *  \ingroup nodes
+ */
+
 
 #include "SHD_util.h"
 

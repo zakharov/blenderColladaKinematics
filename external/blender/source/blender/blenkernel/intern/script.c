@@ -1,7 +1,7 @@
 /* blenkernel/script.c
  *
  *
- * $Id: script.c 32788 2010-10-31 04:11:39Z campbellbarton $
+ * $Id: script.c 35247 2011-02-27 20:40:57Z jesterking $
  *
  * Function(s) related to struct script management.
  *
@@ -30,6 +30,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/blenkernel/intern/script.c
+ *  \ingroup bke
+ */
+
 
 
 #include "MEM_guardedalloc.h"

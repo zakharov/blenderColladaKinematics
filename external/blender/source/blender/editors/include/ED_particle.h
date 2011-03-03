@@ -1,5 +1,5 @@
 /* 
- * $Id: ED_particle.h 34287 2011-01-12 18:00:23Z ton $
+ * $Id: ED_particle.h 35016 2011-02-21 07:25:24Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,10 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file ED_particle.h
+ *  \ingroup editors
  */
 
 #ifndef ED_PARTICLE_H

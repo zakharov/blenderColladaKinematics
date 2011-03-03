@@ -1,5 +1,5 @@
-/**
- * $Id: KX_BlenderSceneConverter.cpp 33133 2010-11-17 14:36:19Z campbellbarton $
+/*
+ * $Id: KX_BlenderSceneConverter.cpp 35167 2011-02-25 13:30:41Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/Converter/KX_BlenderSceneConverter.cpp
+ *  \ingroup bgeconv
+ */
+
 
 #if defined(WIN32) && !defined(FREE_WINDOWS)
 #pragma warning (disable:4786) // suppress stl-MSVC debug info warning

@@ -1,5 +1,5 @@
-/**
- * $Id: transform_generics.c 34634 2011-02-04 08:33:07Z aligorith $
+/*
+ * $Id: transform_generics.c 35337 2011-03-03 17:59:04Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/transform/transform_generics.c
+ *  \ingroup edtransform
+ */
+
 
 #include <string.h>
 #include <math.h>
@@ -333,7 +338,7 @@ void recalcData(TransInfo *t)
 		Scene *scene= t->scene;
 		SpaceAction *saction= (SpaceAction *)t->sa->spacedata.first;
 		
-		bAnimContext ac= {0};
+		bAnimContext ac= {NULL};
 		ListBase anim_data = {NULL, NULL};
 		bAnimListElem *ale;
 		int filter;
@@ -1318,7 +1323,7 @@ void calculateCenterCursor2D(TransInfo *t)
 	calculateCenter2D(t);
 }
 
-void calculateCenterCursorGraph2D(TransInfo *t)
+static void calculateCenterCursorGraph2D(TransInfo *t)
 {
 	SpaceIpo *sipo= (SpaceIpo *)t->sa->spacedata.first;
 	Scene *scene= t->scene;

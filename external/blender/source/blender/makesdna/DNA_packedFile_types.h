@@ -1,8 +1,5 @@
-/* DNA_packedFile_types.h 
- * 
- * 12-oct-2000 nzc
- * 
- * $Id: DNA_packedFile_types.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: DNA_packedFile_types.h 34941 2011-02-17 20:48:12Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -32,6 +29,12 @@
 
 #ifndef DNA_PACKEDFILE_TYPES_H
 #define DNA_PACKEDFILE_TYPES_H
+
+/** \file DNA_packedFile_types.h
+ *  \ingroup DNA
+ *  \author nzc
+ *  \since 12-oct-2000 nzc
+ */
 
 typedef struct PackedFile {
 	int size;

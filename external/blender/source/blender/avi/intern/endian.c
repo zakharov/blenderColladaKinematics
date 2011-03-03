@@ -1,10 +1,8 @@
-/**
- * endian.h
+/*
+ * $Id: endian.c 35249 2011-02-27 20:43:42Z jesterking $
  *
  * This is external code. Streams bytes to output depending on the
  * endianness of the system.
- *
- * $Id: endian.c 32517 2010-10-16 14:32:17Z campbellbarton $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -30,7 +28,13 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
- *  */
+ *
+ */
+
+/** \file blender/avi/intern/endian.c
+ *  \ingroup avi
+ */
+
 
 #include <stdlib.h>
 #include <string.h>

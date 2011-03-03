@@ -1,14 +1,14 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/gameengine/Ketsji
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-30T15:29:22.294392Z
-34567
+2011-03-03T08:01:11.754141Z
+35323
 campbellbarton
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-01-18T22:04:28.893021Z
-542bffe6c2d617f323fb9aaaf7826200
-2010-12-16T10:25:41.788109Z
-33707
-dfelinto
+2011-03-03T12:26:41.386297Z
+eca5d54feb9d3e52efd99c6d75c8a816
+2011-02-27T04:01:58.324248Z
+35212
+campbellbarton
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-64075
+64552
 
 KX_CameraIpoSGController.h
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-01-18T22:04:28.893021Z
-1fdfc2178cd1e4831546bfb7b2b5ea04
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:41.386297Z
+fc39d3d135b590f825a80d518d7b21af
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-2553
+2611
 
 KX_IPhysicsController.h
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-01-18T22:04:28.893021Z
-cacc4d57e920b6d8c30b039a7d596ba4
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:41.386297Z
+21b6293b4e0759b70b6cf99749bbdfaf
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-4497
+4552
 
 KX_PositionInterpolator.cpp
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-01-18T22:04:28.893021Z
-d8d6fdd60af90ebb343a3e4c219d7244
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:41.390297Z
+520c32fdf61eac06a0aaa547ec613726
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-1361
+1438
 
 KX_PhysicsObjectWrapper.h
 file
@@ -168,11 +168,11 @@ file
 
 
 
-2011-01-18T22:04:28.893021Z
-6377d2594c7e2555f425e2be28b8c89e
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.390297Z
+ac12b468185dfbf4252153145e9a1184
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-1813
+1870
 
 KX_NearSensor.cpp
 file
@@ -202,11 +202,11 @@ file
 
 
 
-2011-01-18T22:04:28.893021Z
-cd8e4302c87146f99f580495a576253b
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.390297Z
+01a9fe7ccc89627fd64176d3b47aaf04
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -228,7 +228,7 @@ has-props
 
 
 
-7931
+7998
 
 KX_KetsjiEngine.cpp
 file
@@ -236,11 +236,11 @@ file
 
 
 
-2011-01-18T22:04:28.893021Z
-580239ec5645ecaa62b695ec3e5d473a
-2010-12-16T10:25:41.788109Z
-33707
-dfelinto
+2011-03-03T12:26:41.390297Z
+6c8b84be1b16df8fb97a12dd81dc4f99
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -262,7 +262,7 @@ has-props
 
 
 
-47782
+47858
 
 KX_SCA_DynamicActuator.h
 file
@@ -270,11 +270,11 @@ file
 
 
 
-2011-01-18T22:04:28.893021Z
-33fcff2f52aad217937be4f0a135a26e
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:41.390297Z
+07b363757e62d801eacbe4b112bc592b
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -296,7 +296,7 @@ has-props
 
 
 
-1895
+1953
 
 KX_ScalingInterpolator.cpp
 file
@@ -304,11 +304,11 @@ file
 
 
 
-2011-01-18T22:04:28.893021Z
-1466a002282c2a2aac6a7c3823bff722
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:41.390297Z
+0700b605c44abbdcc9bcd264f156503e
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -330,7 +330,7 @@ has-props
 
 
 
-1359
+1435
 
 KX_Dome.cpp
 file
@@ -338,11 +338,11 @@ file
 
 
 
-2011-01-18T22:04:28.893021Z
-ceea3053bcfb7ff9683c54d854c89d81
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.394297Z
+4143a259eb1d61a46317033642369dbf
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -364,7 +364,7 @@ has-props
 
 
 
-55410
+55470
 
 KX_PhysicsEngineEnums.h
 file
@@ -372,11 +372,11 @@ file
 
 
 
-2011-01-18T22:04:28.893021Z
-a4cec7eafd2911a6a9ace01ffea5495b
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:41.394297Z
+c16da833eee2657138ef7f50de9e2ad3
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -398,7 +398,7 @@ has-props
 
 
 
-1322
+1377
 
 KX_SG_NodeRelationships.h
 file
@@ -406,11 +406,11 @@ file
 
 
 
-2011-01-18T22:04:28.893021Z
-af2b57c7bdbdf15d4b77a039346ba0ed
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:41.394297Z
+c00633c736e04ca6a2b3770751a6f63f
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -432,7 +432,7 @@ has-props
 
 
 
-4553
+4570
 
 KX_VisibilityActuator.cpp
 file
@@ -440,11 +440,11 @@ file
 
 
 
-2011-01-18T22:04:28.893021Z
-033d2f4117b38591eacf9e1661c38d76
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.394297Z
+58300ddf784a290ce2cfbda2d3c406d3
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -466,7 +466,7 @@ has-props
 
 
 
-3126
+3202
 
 KX_ConstraintWrapper.h
 file
@@ -474,11 +474,11 @@ file
 
 
 
-2011-01-18T22:04:28.893021Z
-fe8cc2f99f432a28133f154ef5ab329a
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.394297Z
+6e38fd012df6170c2f58c1df0c369921
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -500,7 +500,7 @@ has-props
 
 
 
-1848
+1902
 
 KX_EmptyObject.h
 file
@@ -508,11 +508,11 @@ file
 
 
 
-2011-01-18T22:04:28.893021Z
-51dc9f9b4d21cdbef8f8c47b06a68bf3
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:41.394297Z
+a4b533f7022c4e7533de562c6ef2df3f
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -534,7 +534,7 @@ has-props
 
 
 
-1555
+1603
 
 KX_PyConstraintBinding.h
 file
@@ -542,11 +542,11 @@ file
 
 
 
-2011-01-18T22:04:28.893021Z
-6b31926ffd0363476ba2ad83425ecb02
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.394297Z
+b2772372ea01d78f1b69c64697acaaca
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -568,7 +568,7 @@ has-props
 
 
 
-1444
+1500
 
 KX_IpoActuator.h
 file
@@ -576,11 +576,11 @@ file
 
 
 
-2011-01-18T22:04:28.893021Z
-fa67e67720a62d5e0846cd4821bcf47c
-2011-01-07T08:43:29.644324Z
-34145
-campbellbarton
+2011-03-03T12:26:41.394297Z
+c8883a64e0e2ded5e673ec83f4330ecd
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -602,7 +602,7 @@ has-props
 
 
 
-4334
+4386
 
 KX_SceneActuator.cpp
 file
@@ -610,11 +610,11 @@ file
 
 
 
-2011-01-18T22:04:28.903021Z
-0e22f5eba89f13591caef8d71997271c
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.394297Z
+c65f424eca5515b4c322d3b3f058a430
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -636,7 +636,7 @@ has-props
 
 
 
-6865
+6935
 
 KX_PolygonMaterial.cpp
 file
@@ -644,11 +644,11 @@ file
 
 
 
-2011-02-10T19:48:37.465667Z
-edd0664eee6fbbb6328df892b1e68b5e
-2011-01-27T00:02:25.840105Z
-34520
-campbellbarton
+2011-03-03T12:26:41.394297Z
+028fd8cd3253677d42dc9a3601b11d3e
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -670,7 +670,7 @@ has-props
 
 
 
-11482
+11554
 
 KX_WorldInfo.h
 file
@@ -678,11 +678,11 @@ file
 
 
 
-2011-02-10T19:48:37.465667Z
-58163b384a786f75080323fc0ed01419
-2011-01-18T22:27:18.842430Z
-34393
-dfelinto
+2011-03-03T12:26:41.394297Z
+2f2bd90c0758c9d60b950acd5a333353
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -704,7 +704,7 @@ has-props
 
 
 
-2226
+2278
 
 KX_SCA_AddObjectActuator.cpp
 file
@@ -712,11 +712,11 @@ file
 
 
 
-2011-01-18T22:04:28.903021Z
-bcdf9fb56e5d2269c5b1d300e11e8df3
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.398297Z
+7be5bd9cef62660e5821bd297b6c708e
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -738,7 +738,7 @@ has-props
 
 
 
-8447
+8524
 
 KX_ScalarInterpolator.cpp
 file
@@ -746,11 +746,11 @@ file
 
 
 
-2011-01-18T22:04:28.903021Z
-60843972f940216533509591132d1914
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:41.398297Z
+77a70a0494d6d80b7136cf6bf38afb7b
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -772,7 +772,7 @@ has-props
 
 
 
-1239
+1314
 
 KX_RayCast.h
 file
@@ -780,11 +780,11 @@ file
 
 
 
-2011-01-18T22:04:28.903021Z
-cfa2eda8df2229594aef02068e3d59a9
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:41.398297Z
+d145b920f852c82469fe5d04f8fe7b0e
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -806,7 +806,7 @@ has-props
 
 
 
-4120
+4163
 
 KX_SCA_DynamicActuator.cpp
 file
@@ -814,11 +814,11 @@ file
 
 
 
-2011-01-18T22:04:28.903021Z
-8f22f3c403fadc337e749a980de6d84a
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.398297Z
+fcecb89012547136fc3fa21b9715ae5b
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -840,7 +840,7 @@ has-props
 
 
 
-3934
+4009
 
 BL_Texture.h
 file
@@ -848,11 +848,11 @@ file
 
 
 
-2011-01-18T22:04:28.903021Z
-e622711a358ebd42fb0db43db8a9415a
-2010-11-24T06:27:07.079583Z
-33275
-moguri
+2011-03-03T12:26:41.398297Z
+06f05ce20497913ef7daec70ced01720
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -874,7 +874,7 @@ has-props
 
 
 
-1815
+1864
 
 KX_SG_BoneParentNodeRelationship.h
 file
@@ -882,11 +882,11 @@ file
 
 
 
-2011-01-18T22:04:28.903021Z
-4704902579c3edb7ad9ce337d40ba2d5
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:41.398297Z
+0061d61c883eb7b05ffe4f114457fbd2
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -908,7 +908,7 @@ has-props
 
 
 
-2782
+2378
 
 KX_ConstraintWrapper.cpp
 file
@@ -916,11 +916,11 @@ file
 
 
 
-2011-01-18T22:04:28.903021Z
-775f978ef9510dcc9db63919e5a844d6
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.398297Z
+22fb74445220767ac41027d11997ce10
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -942,7 +942,7 @@ has-props
 
 
 
-3226
+3300
 
 KX_EmptyObject.cpp
 file
@@ -950,11 +950,11 @@ file
 
 
 
-2011-01-18T22:04:28.903021Z
-32e17fc904a745b0327fd28076cdad80
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:41.398297Z
+92bae6bb0453fa5e2159b31f7cfc9da2
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -976,7 +976,7 @@ has-props
 
 
 
-1122
+1190
 
 BL_Shader.h
 file
@@ -984,11 +984,11 @@ file
 
 
 
-2011-01-18T22:04:28.903021Z
-eb0930f2b95875cc8c0226db3975aed4
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.398297Z
+c5f21849c8cf1dddf64984951558ee46
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1010,7 +1010,7 @@ has-props
 
 
 
-6252
+6300
 
 KX_ClientObjectInfo.h
 file
@@ -1018,11 +1018,11 @@ file
 
 
 
-2011-01-18T22:04:28.903021Z
-e760dab8c2d60125a20e8e58cbb21842
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:41.398297Z
+5c29188dabc044a93841cba519bec283
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1044,7 +1044,7 @@ has-props
 
 
 
-2452
+2505
 
 KX_MouseFocusSensor.h
 file
@@ -1052,11 +1052,11 @@ file
 
 
 
-2011-01-18T22:04:28.903021Z
-601c84210b0b95d19d216d8c5c177e56
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.398297Z
+3db632fbb11f22653183e7678e1f3922
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1078,7 +1078,7 @@ has-props
 
 
 
-5233
+5293
 
 KX_ConstraintActuator.cpp
 file
@@ -1086,11 +1086,11 @@ file
 
 
 
-2011-01-18T22:04:28.903021Z
-bac11eea80d1bf95decbc480cc9706a4
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.402297Z
+61e2b44d0aeb0197f336b572dd8e3fc7
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -1112,7 +1112,7 @@ has-props
 
 
 
-20287
+20362
 
 KX_StateActuator.h
 file
@@ -1120,11 +1120,11 @@ file
 
 
 
-2011-01-18T22:04:28.903021Z
-a00d200ab80a95bf69f9e576233b31eb
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:41.402297Z
+dbdec13ebc5e2a9a3fbfcd9dd2a40a70
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1146,7 +1146,7 @@ has-props
 
 
 
-2472
+2530
 
 KX_Camera.cpp
 file
@@ -1154,11 +1154,11 @@ file
 
 
 
-2011-01-18T22:04:28.903021Z
-24c8be7aabead14b278b798971cbcadf
-2010-11-21T01:55:08.679949Z
-33203
-moguri
+2011-03-03T12:26:41.402297Z
+4e4065b20f7cdc9da749a109a54295e0
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -1180,7 +1180,7 @@ has-props
 
 
 
-29246
+29318
 
 KX_Dome.h
 file
@@ -1188,11 +1188,11 @@ file
 
 
 
-2011-01-18T22:04:28.903021Z
-46b1e597da53400e4f958c0a4474913e
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:41.402297Z
+121708fff07493b3ca288679306b8825
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1214,7 +1214,7 @@ has-props
 
 
 
-5385
+5426
 
 KX_PythonInitTypes.cpp
 file
@@ -1222,11 +1222,11 @@ file
 
 
 
-2011-01-18T22:04:28.903021Z
-998e548915377c4838c7be4fd60ad873
-2010-12-16T10:25:41.788109Z
-33707
-dfelinto
+2011-03-03T12:26:41.402297Z
+47d3746dbcf597a8736958baa4e1c7b8
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -1248,7 +1248,7 @@ has-props
 
 
 
-9931
+10009
 
 KX_SoundActuator.cpp
 file
@@ -1256,11 +1256,11 @@ file
 
 
 
-2011-01-18T22:04:28.903021Z
-e0ba4869649463c6f097bff842816313
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.402297Z
+f176475b06dd335e416d36e8ce583596
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -1282,7 +1282,7 @@ has-props
 
 
 
-14185
+14255
 
 KX_OrientationInterpolator.cpp
 file
@@ -1290,11 +1290,11 @@ file
 
 
 
-2011-01-18T22:04:28.903021Z
-1310b5b44f9534e6a0023a9ef6d83203
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:41.402297Z
+833ee8a8c2b654bed2b102b16892f8e5
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -1316,7 +1316,7 @@ has-props
 
 
 
-1760
+1840
 
 KX_BulletPhysicsController.cpp
 file
@@ -1324,11 +1324,11 @@ file
 
 
 
-2011-01-18T22:04:28.903021Z
-c9e4f4c58ab0925c04863ce786e71365
-2010-10-10T07:01:56.781449Z
-32392
-campbellbarton
+2011-03-03T12:26:41.406297Z
+95cf7671ab9d21f1104e4311196bf689
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -1350,7 +1350,7 @@ has-props
 
 
 
-17448
+17531
 
 KX_PythonSeq.h
 file
@@ -1358,11 +1358,11 @@ file
 
 
 
-2011-01-18T22:04:28.903021Z
-28cdfd1fc5911fd97ac982165ed1ece1
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.406297Z
+537c5f70668294029b5279784adf74c2
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1384,7 +1384,7 @@ has-props
 
 
 
-1927
+1980
 
 KX_FontObject.h
 file
@@ -1392,11 +1392,11 @@ file
 
 
 
-2011-01-18T22:04:28.903021Z
-6c90e9c3492bc4e73dc1f06481225965
-2011-01-04T21:27:44.912592Z
-34077
-dfelinto
+2011-03-03T12:26:41.406297Z
+0bd8bab40f3712081c39c60ad0a082d5
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1418,7 +1418,7 @@ has-props
 
 
 
-2114
+2167
 
 KX_SceneActuator.h
 file
@@ -1426,11 +1426,11 @@ file
 
 
 
-2011-01-18T22:04:28.903021Z
-b40352434988b8deaf41cd2bcef61126
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.406297Z
+e4aea1d9b1c0fb00125e8aef231d481c
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1452,7 +1452,7 @@ has-props
 
 
 
-3169
+3152
 
 KX_PyMath.h
 file
@@ -1460,10 +1460,10 @@ file
 
 
 
-2011-01-18T22:04:28.903021Z
-ff4b37c9a0ba9fe5ec76a5e9c606f14b
-2010-12-06T08:29:41.662859Z
-33502
+2011-03-03T12:26:41.406297Z
+06c2e9e7feb617b8285cfad19f10d020
+2011-02-28T18:42:41.491181Z
+35267
 campbellbarton
 has-props
 
@@ -1486,7 +1486,7 @@ has-props
 
 
 
-7125
+7194
 
 KX_WorldIpoController.h
 file
@@ -1494,11 +1494,11 @@ file
 
 
 
-2011-01-18T22:04:28.903021Z
-7e8731a74210f492a4401da54e9efcb1
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:41.406297Z
+8e1f433911a9ee1eb9ddcd5d0e62300d
+2011-02-22T12:42:55.440226Z
+35072
+jesterking
 has-props
 
 
@@ -1520,7 +1520,7 @@ has-props
 
 
 
-2609
+2661
 
 KX_ObColorIpoSGController.h
 file
@@ -1528,11 +1528,11 @@ file
 
 
 
-2011-01-18T22:04:28.913021Z
-6262ba8a58b13c02827fbc006b0ae295
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:41.406297Z
+c5ffb8ee38cd0899cbb86c81e7390eda
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1554,7 +1554,7 @@ has-props
 
 
 
-2097
+2156
 
 KX_MotionState.h
 file
@@ -1562,11 +1562,11 @@ file
 
 
 
-2011-01-18T22:04:28.913021Z
-0783d16e2185328a42c9b914ea5d15cf
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:41.406297Z
+228979d3145b9a8cecd7ad46fd7c9288
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1588,7 +1588,7 @@ has-props
 
 
 
-2131
+2179
 
 KX_GameActuator.cpp
 file
@@ -1596,11 +1596,11 @@ file
 
 
 
-2011-02-10T19:48:37.465667Z
-435f8b08eb28a1ab4949284eee115efb
-2011-01-27T00:02:25.840105Z
-34520
-campbellbarton
+2011-03-03T12:26:41.406297Z
+59a265b69e4b849649095a5add4bfa98
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -1622,7 +1622,7 @@ has-props
 
 
 
-6158
+6227
 
 KX_ScalarInterpolator.h
 file
@@ -1630,11 +1630,11 @@ file
 
 
 
-2011-01-18T22:04:28.913021Z
-8b9140585537423256acadad57817c5d
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:41.406297Z
+cd75398ffe838434c9580e83d0b48bdf
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1656,7 +1656,7 @@ has-props
 
 
 
-1886
+1941
 
 KX_SCA_AddObjectActuator.h
 file
@@ -1664,11 +1664,11 @@ file
 
 
 
-2011-01-18T22:04:28.913021Z
-8b2c60a3e6aff7058ca40987199cc0d2
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.406297Z
+3464939ee556bdaf5543322d36f4175d
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1690,7 +1690,7 @@ has-props
 
 
 
-3359
+3245
 
 KX_ObjectActuator.h
 file
@@ -1698,11 +1698,11 @@ file
 
 
 
-2011-01-18T22:04:28.913021Z
-7e36239bae96968eb01237b71a731b94
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.410297Z
+0f4ee03e8ae444fb05d2f61063c3a3ca
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1724,7 +1724,7 @@ has-props
 
 
 
-6636
+6691
 
 BL_Shader.cpp
 file
@@ -1732,11 +1732,11 @@ file
 
 
 
-2011-01-18T22:04:28.913021Z
-08b4e429d08ead87bcdef64938f4b420
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.410297Z
+b342906e5b1bcc972188ef5c446043f5
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -1758,7 +1758,7 @@ has-props
 
 
 
-30077
+30143
 
 KX_IScalarInterpolator.h
 file
@@ -1766,11 +1766,11 @@ file
 
 
 
-2011-01-18T22:04:28.913021Z
-d332c5082a5ee1b7ffdb37e99ee98c72
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:41.410297Z
+4da15105105e8138d492109ba2e2126a
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1792,7 +1792,7 @@ has-props
 
 
 
-1544
+1600
 
 KX_PolyProxy.h
 file
@@ -1800,11 +1800,11 @@ file
 
 
 
-2011-01-18T22:04:28.913021Z
-1a09a87f3bc42eafb5f8b580f757e31c
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.410297Z
+43d8a3b48cef07e779a7882f33a21287
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1826,7 +1826,7 @@ has-props
 
 
 
-3114
+3160
 
 KX_CameraActuator.cpp
 file
@@ -1834,11 +1834,11 @@ file
 
 
 
-2011-01-18T22:04:28.913021Z
-251acdcb342d7a1eb5eebc22d014b572
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.410297Z
+0e4d252d47ef811c48ff1813445984f7
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -1860,7 +1860,7 @@ has-props
 
 
 
-11019
+11090
 
 KX_Camera.h
 file
@@ -1868,11 +1868,11 @@ file
 
 
 
-2011-01-18T22:04:28.913021Z
-ec5a9b146fb98cc8b3d4900a9564f602
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.410297Z
+f72361367a427d96f28728b53d93f64c
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1894,7 +1894,7 @@ has-props
 
 
 
-10024
+10075
 
 KX_FontObject.cpp
 file
@@ -1902,11 +1902,11 @@ file
 
 
 
-2011-01-18T22:04:28.913021Z
-5466e1a892491d6a18ed7eb9634f5b52
-2011-01-04T21:27:44.912592Z
-34077
-dfelinto
+2011-03-03T12:26:41.410297Z
+9cf9f1d714dbada015b9d976b7cd1755
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -1928,7 +1928,7 @@ has-props
 
 
 
-4551
+4624
 
 KX_CameraIpoSGController.cpp
 file
@@ -1936,11 +1936,11 @@ file
 
 
 
-2011-01-18T22:04:28.913021Z
-fa97297cf2197ab807485609518dd412
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:41.410297Z
+e8f001eb29d124234886e3123da32fbb
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -1962,7 +1962,7 @@ has-props
 
 
 
-3441
+3519
 
 KX_IInterpolator.h
 file
@@ -1970,11 +1970,11 @@ file
 
 
 
-2011-01-18T22:04:28.913021Z
-4073f7ac9af4ad6473db76f14ae7c024
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:41.410297Z
+a6237b669f289634d15f86d72214b91b
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1996,7 +1996,7 @@ has-props
 
 
 
-1586
+1636
 
 KX_PhysicsPropertiesobsolete.h
 file
@@ -2004,11 +2004,11 @@ file
 
 
 
-2011-01-18T22:04:28.913021Z
-e06731386efd19be60cb77b2d37280c2
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:41.414297Z
+a53d85a96d06fbaf846fb6d18c4f4d4c
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -2030,7 +2030,7 @@ has-props
 
 
 
-2470
+2577
 
 KX_ISceneConverter.h
 file
@@ -2038,11 +2038,11 @@ file
 
 
 
-2011-01-18T22:04:28.913021Z
-ef23341e866906318e649274cd5d50cb
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:41.414297Z
+31efb7194e57f7889e6c3625249e0495
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -2064,7 +2064,7 @@ has-props
 
 
 
-3023
+3075
 
 KX_MeshProxy.h
 file
@@ -2072,11 +2072,11 @@ file
 
 
 
-2011-01-18T22:04:28.913021Z
-234283c15673b6291e2b87af59343ae7
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.414297Z
+5882b44686dac2b4375fbae1502c77bc
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -2098,7 +2098,7 @@ has-props
 
 
 
-2665
+2711
 
 KX_TimeLogger.h
 file
@@ -2106,11 +2106,11 @@ file
 
 
 
-2011-01-18T22:04:28.913021Z
-98ffec995abed5bf93990942154e84da
-2010-09-15T16:13:32.976747Z
-31950
-campbellbarton
+2011-03-03T12:26:41.414297Z
+e474550533f39dfe8db1a923432bb561
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -2132,7 +2132,7 @@ has-props
 
 
 
-2912
+2958
 
 SConscript
 file
@@ -2140,7 +2140,7 @@ file
 
 
 
-2011-01-18T22:04:28.913021Z
+2011-03-03T12:26:41.414297Z
 d94081c84c53aece2763ea17ed91d3c7
 2010-12-16T10:25:41.788109Z
 33707
@@ -2174,11 +2174,11 @@ file
 
 
 
-2011-01-18T22:04:28.913021Z
-28ec5801cc181f1d767b6bf9ac0ba540
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:41.414297Z
+804136e45a4eb6aa2e144ef9ee008226
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -2200,7 +2200,7 @@ has-props
 
 
 
-3096
+3175
 
 KX_ObjectActuator.cpp
 file
@@ -2208,10 +2208,10 @@ file
 
 
 
-2011-01-18T22:04:28.913021Z
-2870774b658c50dd3bc686425109dedc
-2010-10-31T04:11:39.269118Z
-32788
+2011-03-03T12:26:41.414297Z
+b84f29d2ddbd6e9869e57dda0409c7b2
+2011-03-03T08:01:11.754141Z
+35323
 campbellbarton
 has-props
 
@@ -2234,7 +2234,7 @@ has-props
 
 
 
-19856
+19946
 
 KX_PhysicsObjectWrapper.cpp
 file
@@ -2242,11 +2242,11 @@ file
 
 
 
-2011-01-18T22:04:28.913021Z
-3bee347acf5ce57380b0df77e3b97f48
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.414297Z
+c207b00ecf509d11d0246c7e6348b338
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -2268,7 +2268,7 @@ has-props
 
 
 
-3346
+3423
 
 KX_PositionInterpolator.h
 file
@@ -2276,11 +2276,11 @@ file
 
 
 
-2011-01-18T22:04:28.913021Z
-e1929abfd46327fb1ac7bc9e831257e2
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:41.414297Z
+d9605d9fcc621dde08f536fd4fb08241
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -2302,7 +2302,7 @@ has-props
 
 
 
-1802
+1859
 
 KX_VertexProxy.cpp
 file
@@ -2310,11 +2310,11 @@ file
 
 
 
-2011-01-18T22:04:28.913021Z
-102a2ef288e1679e06bf94567345d59d
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.414297Z
+6216207da1ba01102ee2656aeaf56a2b
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -2336,7 +2336,7 @@ has-props
 
 
 
-16226
+16294
 
 KX_MaterialIpoController.h
 file
@@ -2344,11 +2344,11 @@ file
 
 
 
-2011-01-18T22:04:28.913021Z
-0126a9c9fb6397e1777a7cfc96d05b57
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:41.418297Z
+5fc844f2da952696e5baff7d8ace0173
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -2370,7 +2370,7 @@ has-props
 
 
 
-1286
+1349
 
 KX_GameActuator.h
 file
@@ -2378,11 +2378,11 @@ file
 
 
 
-2011-01-18T22:04:28.913021Z
-ce6729f531eb71d4ef9d603627a68fd2
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:41.418297Z
+aef23c0ed3f2d12f6d4e02240b9f61b0
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -2404,7 +2404,7 @@ has-props
 
 
 
-2343
+2392
 
 KX_KetsjiEngine.h
 file
@@ -2412,11 +2412,11 @@ file
 
 
 
-2011-01-18T22:04:28.923021Z
-a6c49f25500daf8a476af6c9d15cceea
-2010-12-16T10:25:41.788109Z
-33707
-dfelinto
+2011-03-03T12:26:41.418297Z
+a15a5815c74ed99a610e2486b87629e2
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -2438,7 +2438,7 @@ has-props
 
 
 
-13001
+13057
 
 KX_NearSensor.h
 file
@@ -2446,11 +2446,11 @@ file
 
 
 
-2011-01-18T22:04:28.923021Z
-eeb6ebcf1506404861e73926796a7158
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.418297Z
+b790de973e2700d2036cd8d3af2503cd
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -2472,7 +2472,7 @@ has-props
 
 
 
-3059
+3110
 
 KX_PolyProxy.cpp
 file
@@ -2480,11 +2480,11 @@ file
 
 
 
-2011-01-18T22:04:28.923021Z
-ad27f5bc924f004cc9d1822901c38a0e
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.418297Z
+b4ec565be7159a1249263b572d5c0bcf
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -2506,7 +2506,7 @@ has-props
 
 
 
-8598
+8664
 
 KX_SCA_ReplaceMeshActuator.h
 file
@@ -2514,11 +2514,11 @@ file
 
 
 
-2011-01-18T22:04:28.923021Z
-9938d1ece438a13d37c658cbe2936763
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.418297Z
+71f5d0e8f6900e6f45aa259d89a4a2e8
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -2540,7 +2540,7 @@ has-props
 
 
 
-2547
+2616
 
 KX_IPOTransform.h
 file
@@ -2548,11 +2548,11 @@ file
 
 
 
-2011-01-18T22:04:28.923021Z
-4e46c17f19dec194a75b03918ffbc6b4
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:41.418297Z
+cc1b7e29c2b25a7daf871a393a079dd4
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -2574,7 +2574,7 @@ has-props
 
 
 
-2928
+2981
 
 KX_ScalingInterpolator.h
 file
@@ -2582,11 +2582,11 @@ file
 
 
 
-2011-01-18T22:04:28.923021Z
-36099560f5944e0fdbca181dc9022546
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:41.418297Z
+efa9764b6c6d7265661c199248f3093f
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -2608,7 +2608,7 @@ has-props
 
 
 
-1798
+1854
 
 KX_IpoActuator.cpp
 file
@@ -2616,11 +2616,11 @@ file
 
 
 
-2011-01-18T22:04:28.923021Z
-e5c00e83e891d558b24e4489da29f91c
-2010-12-07T01:54:25.243327Z
-33522
-dfelinto
+2011-03-03T12:26:41.418297Z
+41807c09aa40b1db3181ff4404fdfe9a
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -2642,7 +2642,7 @@ has-props
 
 
 
-13153
+13221
 
 KX_ParentActuator.cpp
 file
@@ -2650,11 +2650,11 @@ file
 
 
 
-2011-01-18T22:04:28.923021Z
-d46c4fcc0cf7c693a73b24de5f9c9972
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.418297Z
+aa23648d0709a630d84c9cb9a2383611
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -2676,7 +2676,7 @@ has-props
 
 
 
-5390
+5461
 
 KX_TimeCategoryLogger.cpp
 file
@@ -2684,11 +2684,11 @@ file
 
 
 
-2011-01-18T22:04:28.923021Z
-a30207a7560d9de360200b8efc4312c6
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:41.422297Z
+74e7a7a1161536f4addeb5adabb90464
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -2710,7 +2710,7 @@ has-props
 
 
 
-3404
+3479
 
 KX_ISystem.h
 file
@@ -2718,10 +2718,418 @@ file
 
 
 
-2011-01-18T22:04:28.923021Z
-1a4d1f8d7b57d0610536a12f7e4cc5aa
-2010-06-06T01:15:44.640463Z
-29259
+2011-03-03T12:26:41.422297Z
+cc3077dfbd623f0a0faa79f383331102
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1694
+
+KX_RayCast.cpp
+file
+
+
+
+
+2011-03-03T12:26:41.422297Z
+70751ce1de9a96bcfdbca617ae20ffc3
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4158
+
+KX_Light.cpp
+file
+
+
+
+
+2011-03-03T12:26:41.422297Z
+55b0d5211ab27cfdb3bcf30e19e44833
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+11297
+
+KX_PythonInit.h
+file
+
+
+
+
+2011-03-03T12:26:41.422297Z
+afc77c88f7e1ae47ae0b4186bacad782
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2722
+
+KX_SG_BoneParentNodeRelationship.cpp
+file
+
+
+
+
+2011-03-03T12:26:41.422297Z
+1de0ca69a8b9d1443dddbd82243a5f0d
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4548
+
+KX_TrackToActuator.h
+file
+
+
+
+
+2011-03-03T12:26:41.422297Z
+9faffa73ae43503e336b5169fb55a6ae
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2477
+
+KX_TouchEventManager.cpp
+file
+
+
+
+
+2011-03-03T12:26:41.422297Z
+55cbeb966deb5d1acfc21b3724722581
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6257
+
+KX_ArmatureSensor.h
+file
+
+
+
+
+2011-03-03T12:26:41.422297Z
+ef3811c0a13f33c1f35ba4ce94dd05d5
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2559
+
+KX_SCA_ReplaceMeshActuator.cpp
+file
+
+
+
+
+2011-03-03T12:26:41.422297Z
+a582d09ca81223263376879829ffbe42
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5107
+
+KX_MouseFocusSensor.cpp
+file
+
+
+
+
+2011-03-03T12:26:41.426297Z
+aad2d352e848f11b4e2574f3572b9e7d
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+13895
+
+KX_RadarSensor.cpp
+file
+
+
+
+
+2011-03-03T12:26:41.426297Z
+c5890ae091b48c44b14ca960dae3a851
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6171
+
+KX_RayEventManager.cpp
+file
+
+
+
+
+2011-03-03T12:26:41.426297Z
+463ff15c3d918ffabbf87861362a85ec
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1487
+
+KX_PythonSeq.cpp
+file
+
+
+
+
+2011-03-03T12:26:41.426297Z
+2c4a95af51a8cdff9219bba45b3bffad
+2011-02-27T03:59:17.608515Z
+35211
 campbellbarton
 has-props
 
@@ -2744,19 +3152,1076 @@ has-props
 
 
 
-1644
+16320
 
-KX_RayCast.cpp
+KX_SCA_EndObjectActuator.h
 file
 
 
 
 
-2011-01-18T22:04:28.923021Z
-9fcb586c0cc7351ec3aad647a340f524
-2010-04-25T15:24:18.748778Z
-28415
+2011-03-03T12:26:41.426297Z
+d72447b0765f93a78a7408e809195dae
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2084
+
+KX_ConstraintActuator.h
+file
+
+
+
+
+2011-03-03T12:26:41.426297Z
+5fcdc43a47ac84f20c42d8931af941a0
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4237
+
+KX_ConvertPhysicsObjects.cpp
+file
+
+
+
+
+2011-03-03T12:26:41.426297Z
+e87279ceff6d6d13e2b0bc5814e31801
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+19571
+
+KX_IPhysicsController.cpp
+file
+
+
+
+
+2011-03-03T12:26:41.426297Z
+5265e0618968fb4a32a7c35db1d43507
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1508
+
+KX_BlenderMaterial.h
+file
+
+
+
+
+2011-03-03T12:26:41.426297Z
+526fdb1959752b7193fda8c1fb7955c0
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4100
+
+KX_SoundActuator.h
+file
+
+
+
+
+2011-03-03T12:26:41.430297Z
+494d5b5f75829f9d3531562d0c7f5bfe
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3762
+
+KX_ParentActuator.h
+file
+
+
+
+
+2011-03-03T12:26:41.430297Z
+2006fc8e88fe05d899da08741a7f1a3f
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2714
+
+KX_TimeCategoryLogger.h
+file
+
+
+
+
+2011-03-03T12:26:41.430297Z
+b315ee6265cfcdaf5c0290f88ebe0158
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3819
+
+KX_PyMath.cpp
+file
+
+
+
+
+2011-03-03T12:26:41.430297Z
+696b7b01ff47aeef136cf4170bd1d2da
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4869
+
+KX_PythonInit.cpp
+file
+
+
+
+
+2011-03-03T12:26:41.430297Z
+04c72360d45225b00f352c00b01309c0
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+85594
+
+KX_MotionState.cpp
+file
+
+
+
+
+2011-03-03T12:26:41.430297Z
+aad240f4750401c85cd524abfad19655
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2859
+
+KX_TouchSensor.cpp
+file
+
+
+
+
+2011-03-03T12:26:41.430297Z
+e69cbfddea6f31c9d4053d6fbc519ad3
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10264
+
+BL_Material.h
+file
+
+
+
+
+2011-03-03T12:26:41.430297Z
+4cf10779f372edfe51f7be298fd3c9a4
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3456
+
+KX_ConvertPhysicsObject.h
+file
+
+
+
+
+2011-03-03T12:26:41.434297Z
+5e85607505fe8f6bbd2aa6410565a70e
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4848
+
+KX_VehicleWrapper.cpp
+file
+
+
+
+
+2011-03-03T12:26:41.434297Z
+a0e8b08f8c137de9d5b30a1a12cecae6
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7955
+
+KX_LightIpoSGController.h
+file
+
+
+
+
+2011-03-03T12:26:41.434297Z
+729558e17e0be3f1de3b02124bb6eb0c
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2652
+
+BL_BlenderShader.h
+file
+
+
+
+
+2011-03-03T12:26:41.434297Z
+04994fa10ce75cb74df583933acd945f
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2569
+
+KX_SG_NodeRelationships.cpp
+file
+
+
+
+
+2011-03-03T12:26:41.434297Z
+ff1c464cb80c72fe350c0aa3dff57d0e
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6690
+
+KX_RayEventManager.h
+file
+
+
+
+
+2011-03-03T12:26:41.434297Z
+4e52d14a8a0d42631112bc703b59679b
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1683
+
+KX_TimeLogger.cpp
+file
+
+
+
+
+2011-03-03T12:26:41.434297Z
+1f47947ab65f58553057a96c61b0b86a
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2688
+
+KX_MeshProxy.cpp
+file
+
+
+
+
+2011-03-03T12:26:41.434297Z
+7ee93b505c19ad57e76ef090115b9125
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8460
+
+KX_VisibilityActuator.h
+file
+
+
+
+
+2011-03-03T12:26:41.434297Z
+519cbfbc33726bea6f0a0458ebb087a8
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1896
+
+KX_GameObject.cpp
+file
+
+
+
+
+2011-03-03T12:26:41.438297Z
+4b2c9c7aa947a53950f3c1b639d007df
+2011-03-03T08:01:11.754141Z
+35323
 campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+89019
+
+KX_CameraActuator.h
+file
+
+
+
+
+2011-03-03T12:26:41.438297Z
+20eb09a96c7664d62ee5049892bb80b3
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3402
+
+KX_WorldInfo.cpp
+file
+
+
+
+
+2011-03-03T12:26:41.438297Z
+46c5b5668dcf9aca229541efcf7d0df0
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1178
+
+KXNetwork
+dir
+
+BL_Material.cpp
+file
+
+
+
+
+2011-03-03T12:26:41.438297Z
+369ab44016c7e7bac992ab850d81cef1
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2955
+
+KX_MaterialIpoController.cpp
+file
+
+
+
+
+2011-03-03T12:26:41.438297Z
+31aa6919f3e3aa4598565b476a14c15f
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2322
+
+BL_Texture.cpp
+file
+
+
+
+
+2011-03-03T12:26:41.438297Z
+b990b3f12e0b82d6a1ea44e7ed7e29f7
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+15665
+
+KX_PolygonMaterial.h
+file
+
+
+
+
+2011-03-03T12:26:41.438297Z
+fb3dc3c4f9da64e6dade756bffdc2334
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4506
+
+KX_LightIpoSGController.cpp
+file
+
+
+
+
+2011-03-03T12:26:41.438297Z
+a8e0f49312793a58fc18f588c6d9970a
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3453
+
+BL_BlenderShader.cpp
+file
+
+
+
+
+2011-03-03T12:26:41.442297Z
+ca8f6800919d41adaa7ee1cb7c2ab1d5
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4280
+
+KX_TouchSensor.h
+file
+
+
+
+
+2011-03-03T12:26:41.442297Z
+6d357202c1f2d0ec47f525a383eb9809
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -2780,1482 +4245,17 @@ has-props
 
 4094
 
-KX_Light.cpp
-file
-
-
-
-
-2011-01-18T22:04:28.923021Z
-2624610dedde22ae4ddca6ba6d8a07b9
-2010-12-03T12:30:59.861558Z
-33442
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-11235
-
-KX_PythonInit.h
-file
-
-
-
-
-2011-01-18T22:04:28.923021Z
-1839f2ce21258c02ef948f513a85e564
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2675
-
-KX_SG_BoneParentNodeRelationship.cpp
-file
-
-
-
-
-2011-01-18T22:04:28.923021Z
-cee5f6db6772d720387fd8a4354fe20e
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4462
-
-KX_TrackToActuator.h
-file
-
-
-
-
-2011-01-18T22:04:28.923021Z
-e159067a9f44d7d911fa6fae626269c8
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2490
-
-KX_TouchEventManager.cpp
-file
-
-
-
-
-2011-01-18T22:04:28.923021Z
-9bb38cc9386e1d33468ff6ccb6deab4c
-2010-10-20T12:33:00.885809Z
-32613
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6183
-
-KX_ArmatureSensor.h
-file
-
-
-
-
-2011-01-18T22:04:28.923021Z
-15a3e1035dcfbbad2513edd0e838a8fc
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2504
-
-KX_SCA_ReplaceMeshActuator.cpp
-file
-
-
-
-
-2011-02-10T19:48:37.465667Z
-80b67fd01318791c61b8f72f282ba284
-2011-01-27T00:02:25.840105Z
-34520
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5028
-
-KX_MouseFocusSensor.cpp
-file
-
-
-
-
-2011-01-18T22:04:28.923021Z
-237ffece1a523de795d57dad06fffae0
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-13822
-
-KX_RadarSensor.cpp
-file
-
-
-
-
-2011-01-18T22:04:28.923021Z
-b408e6c134bbfc9ee7d667965d7d4923
-2010-11-26T03:37:08.862515Z
-33324
-dfelinto
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6097
-
-KX_RayEventManager.cpp
-file
-
-
-
-
-2011-01-18T22:04:28.923021Z
-1f642b471056a067e2067f23a2c1df2e
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1415
-
-KX_PythonSeq.cpp
-file
-
-
-
-
-2011-01-18T22:04:28.923021Z
-9e22020ae9077528fcbc764a8a4c723e
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-16000
-
-KX_SCA_EndObjectActuator.h
-file
-
-
-
-
-2011-01-18T22:04:28.923021Z
-65e76dfbbd5d95aa949e7a11cead8d00
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2015
-
-KX_ConstraintActuator.h
-file
-
-
-
-
-2011-01-18T22:04:28.923021Z
-3c42df31cb2801e93b2a1e817983edf4
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4213
-
-KX_ConvertPhysicsObjects.cpp
-file
-
-
-
-
-2011-01-18T22:04:28.923021Z
-3ccee7153660046a63e8060bd71b5714
-2010-10-20T12:33:00.885809Z
-32613
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-19493
-
-KX_IPhysicsController.cpp
-file
-
-
-
-
-2011-01-18T22:04:28.923021Z
-1256a557fc81258db838a857711e66cc
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1433
-
-KX_BlenderMaterial.h
-file
-
-
-
-
-2011-01-18T22:04:28.923021Z
-9c267fffa1bd746cef6cd6ee00541ddc
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4044
-
-KX_SoundActuator.h
-file
-
-
-
-
-2011-01-18T22:04:28.923021Z
-aedd1270ccaa79d90930c089fb0fc138
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3738
-
-KX_ParentActuator.h
-file
-
-
-
-
-2011-01-18T22:04:28.933021Z
-5f18df66a52284765166974970a0f8bf
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2662
-
-KX_TimeCategoryLogger.h
-file
-
-
-
-
-2011-01-18T22:04:28.933021Z
-d350351b46a364a386bfccaba9ea840a
-2010-09-15T16:13:32.976747Z
-31950
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3765
-
-KX_PyMath.cpp
-file
-
-
-
-
-2011-01-18T22:04:28.933021Z
-f1c21e32d604f27eecc40bfda033848a
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4806
-
-KX_PythonInit.cpp
-file
-
-
-
-
-2011-02-10T19:48:37.465667Z
-76da98de62f673e6f65b59108c4feaec
-2011-01-18T22:27:18.842430Z
-34393
-dfelinto
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-85445
-
-KX_MotionState.cpp
-file
-
-
-
-
-2011-01-18T22:04:28.933021Z
-93abf87cce63ed9e031b857d6b50eb58
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2791
-
-KX_TouchSensor.cpp
-file
-
-
-
-
-2011-01-18T22:04:28.933021Z
-76852d47777f3454b95b9c04e511d710
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-10196
-
-BL_Material.h
-file
-
-
-
-
-2011-01-18T22:04:28.933021Z
-5161daa5dea604e7e39a95f4fa398c2b
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3406
-
-KX_ConvertPhysicsObject.h
-file
-
-
-
-
-2011-01-18T22:04:28.933021Z
-bf8cb45c22884f90865e645353b5515d
-2010-10-10T07:01:56.781449Z
-32392
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4791
-
-KX_VehicleWrapper.cpp
-file
-
-
-
-
-2011-01-18T22:04:28.933021Z
-cd75de685b9561f80fd137d379b46776
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7881
-
-KX_LightIpoSGController.h
-file
-
-
-
-
-2011-01-18T22:04:28.933021Z
-b829c121efcaf65910a2fe7ad2466f78
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2595
-
-BL_BlenderShader.h
-file
-
-
-
-
-2011-01-18T22:04:28.933021Z
-ab0ba51a2eb3a919083df552135f9fb9
-2010-06-16T19:07:20.681934Z
-29494
-moguri
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1476
-
-KX_SG_NodeRelationships.cpp
-file
-
-
-
-
-2011-01-18T22:04:28.933021Z
-3669a9d7922db9301b0e6ce5bef70dae
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6613
-
-KX_RayEventManager.h
-file
-
-
-
-
-2011-01-18T22:04:28.933021Z
-54bd2174cdea119624d0633945536626
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1627
-
-KX_TimeLogger.cpp
-file
-
-
-
-
-2011-01-18T22:04:28.933021Z
-39edc4f50e5ae4af82ab6eb5ba2fcce5
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2621
-
-KX_MeshProxy.cpp
-file
-
-
-
-
-2011-01-18T22:04:28.933021Z
-62d87b6092e896bb6ccbc3200ed63f8c
-2011-01-18T01:58:19.206348Z
-34380
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8394
-
-KX_VisibilityActuator.h
-file
-
-
-
-
-2011-01-18T22:04:28.933021Z
-f2138b95ed45ad891b547a95d5a64a84
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1833
-
-KX_GameObject.cpp
-file
-
-
-
-
-2011-01-18T22:04:28.933021Z
-e3d4b13baa9a4a0261f6c196cfb46659
-2010-12-16T10:25:41.788109Z
-33707
-dfelinto
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-88879
-
-KX_CameraActuator.h
-file
-
-
-
-
-2011-01-18T22:04:28.933021Z
-9c478858f4fb5e5d6a6fd48236b15e8c
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3352
-
-KX_WorldInfo.cpp
-file
-
-
-
-
-2011-01-18T22:04:28.933021Z
-53c73ba4e00ac9fac00bdf58ef37ff18
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1112
-
-KXNetwork
-dir
-
-BL_Material.cpp
-file
-
-
-
-
-2011-01-18T22:04:28.933021Z
-0ac746216710c455a5c3d339bbececc4
-2009-06-08T20:08:19.969575Z
-20741
-blendix
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2887
-
-KX_MaterialIpoController.cpp
-file
-
-
-
-
-2011-01-18T22:04:28.933021Z
-143841b2dc0d9cb3e10097bb8b8af85f
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2241
-
-BL_Texture.cpp
-file
-
-
-
-
-2011-01-18T22:04:28.933021Z
-1b2c6c028eac41955e116be7242500de
-2010-11-24T06:27:07.079583Z
-33275
-moguri
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-15598
-
-KX_PolygonMaterial.h
-file
-
-
-
-
-2011-02-10T19:48:37.465667Z
-96db23466fd991bb14f0b64ec09347a3
-2011-01-23T17:17:21.114643Z
-34469
-ben2610
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4447
-
-KX_LightIpoSGController.cpp
-file
-
-
-
-
-2011-01-18T22:04:28.933021Z
-eac7850408eb54d6b0c7dd706b2e3388
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3376
-
-BL_BlenderShader.cpp
-file
-
-
-
-
-2011-01-18T22:04:28.933021Z
-b55bdce6623b75d428adc8796777986a
-2009-08-16T20:14:49.557182Z
-22532
-blendix
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4207
-
-KX_TouchSensor.h
-file
-
-
-
-
-2011-01-18T22:04:28.943021Z
-de9383c54a9c40ff27defe0064bd3705
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4042
-
 KX_StateActuator.cpp
 file
 
 
 
 
-2011-01-18T22:04:28.943021Z
-f712fea4e6d51fea30bd636dac2e31b9
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.442297Z
+1e8422935a942a7467e5f0d64e3e5f2b
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -4277,41 +4277,7 @@ has-props
 
 
 
-4151
-
-KX_IPO_SGController.cpp
-file
-
-
-
-
-2011-01-18T22:04:28.943021Z
-e419824996b1cfc577ded29b29d5c2c3
-2010-09-15T16:13:32.976747Z
-31950
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-13076
+4222
 
 KX_VertexProxy.h
 file
@@ -4319,11 +4285,11 @@ file
 
 
 
-2011-01-18T22:04:28.943021Z
-5b4a65c4557d5ea3bf8ad1c1928d9cbf
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.442297Z
+535c8d1362dbdff6a20c212b2c0a67cc
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -4345,7 +4311,41 @@ has-props
 
 
 
-4928
+4976
+
+KX_IPO_SGController.cpp
+file
+
+
+
+
+2011-03-03T12:26:41.442297Z
+5bf04b9d6745cc7ac0931132d076569f
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+13149
 
 KX_VehicleWrapper.h
 file
@@ -4353,11 +4353,11 @@ file
 
 
 
-2011-01-18T22:04:28.943021Z
-392858310f0146adf943de16766eddc4
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.442297Z
+7ec47ddba9ec3b917a78de856f75e3bc
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -4379,7 +4379,7 @@ has-props
 
 
 
-1560
+1616
 
 KX_RaySensor.h
 file
@@ -4387,11 +4387,11 @@ file
 
 
 
-2011-01-18T22:04:28.943021Z
-62b369d697a628c57266213e22b62229
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.442297Z
+949c9c8892670404114fe12d66f728b7
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -4413,7 +4413,7 @@ has-props
 
 
 
-2632
+2682
 
 CMakeLists.txt
 file
@@ -4421,7 +4421,7 @@ file
 
 
 
-2011-01-18T22:04:28.943021Z
+2011-03-03T12:26:41.442297Z
 3c33778e99d5d7b9d168503e3083eee2
 2010-12-22T23:09:30.468439Z
 33864
@@ -4455,11 +4455,11 @@ file
 
 
 
-2011-01-18T22:04:28.943021Z
-259f56065f356e0d3374c5c80a220fca
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.442297Z
+34e500e10a6fb5ab5c762b75c2b1c1e9
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -4481,7 +4481,7 @@ has-props
 
 
 
-1239
+1290
 
 KX_Scene.h
 file
@@ -4489,11 +4489,11 @@ file
 
 
 
-2011-01-18T22:04:28.943021Z
-647652b493d434fb6106d16094ff6ef6
-2010-12-16T10:25:41.788109Z
-33707
-dfelinto
+2011-03-03T12:26:41.446297Z
+60f572b6939ccd53a0cb1a50d20f4ee6
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -4515,7 +4515,7 @@ has-props
 
 
 
-16525
+16573
 
 KX_OrientationInterpolator.h
 file
@@ -4523,11 +4523,11 @@ file
 
 
 
-2011-01-18T22:04:28.943021Z
-2408eb6605e453cccaf11926e6fb01b3
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:41.446297Z
+3e0b826eb7a09aa1d5985ab0caff3986
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -4549,7 +4549,7 @@ has-props
 
 
 
-1832
+1892
 
 KX_BulletPhysicsController.h
 file
@@ -4557,11 +4557,11 @@ file
 
 
 
-2011-01-18T22:04:28.943021Z
-ea33fd2be7e26b878702a10f89a37e67
-2010-10-10T07:01:56.781449Z
-32392
-campbellbarton
+2011-03-03T12:26:41.446297Z
+cb8185fc15a609f018c88088f1eb7adb
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -4583,7 +4583,7 @@ has-props
 
 
 
-3111
+3176
 
 KX_WorldIpoController.cpp
 file
@@ -4591,11 +4591,11 @@ file
 
 
 
-2011-01-18T22:04:28.943021Z
-7d6e87a37c62445c1ce1254baf3cf9af
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:41.446297Z
+e7946f15c470299b3413849ab1a3ceae
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -4617,7 +4617,7 @@ has-props
 
 
 
-3225
+3300
 
 KX_GameObject.h
 file
@@ -4625,11 +4625,11 @@ file
 
 
 
-2011-02-10T19:48:37.475667Z
-efd274bfbbea65d37dd4406194f65da8
-2011-01-27T00:02:25.840105Z
-34520
-campbellbarton
+2011-03-03T12:26:41.446297Z
+3daa53eee417bad0a737d7b4d1133ef1
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -4651,7 +4651,7 @@ has-props
 
 
 
-23141
+23196
 
 KX_ArmatureSensor.cpp
 file
@@ -4659,11 +4659,11 @@ file
 
 
 
-2011-01-18T22:04:28.943021Z
-f99af6ec19a295e10cdc9cb94647db00
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.446297Z
+84e251cc48d27a55a779eab3a0466728
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -4685,7 +4685,7 @@ has-props
 
 
 
-5447
+5518
 
 KX_TrackToActuator.cpp
 file
@@ -4693,11 +4693,11 @@ file
 
 
 
-2011-01-18T22:04:28.943021Z
-c867505bcab5c7351d9d5c7522d4ce9e
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.446297Z
+2fdd43ec1d879c01f6c95e349a3bc094
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -4719,7 +4719,7 @@ has-props
 
 
 
-11806
+11877
 
 KX_Light.h
 file
@@ -4727,11 +4727,11 @@ file
 
 
 
-2011-01-18T22:04:28.943021Z
-13fc200c4fd4df30d47aba0b6a299642
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.446297Z
+7a8b5982fbf8854e0b9c37665c4d5bef
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -4753,7 +4753,7 @@ has-props
 
 
 
-2785
+2827
 
 KX_TouchEventManager.h
 file
@@ -4761,11 +4761,11 @@ file
 
 
 
-2011-01-18T22:04:28.943021Z
-2bed013003de5443e39e1f59c7baa1b5
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:41.446297Z
+77e9dc5874760c0a7624c4c251c42992
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -4787,7 +4787,7 @@ has-props
 
 
 
-2598
+2652
 
 KX_RaySensor.cpp
 file
@@ -4795,11 +4795,11 @@ file
 
 
 
-2011-01-18T22:04:28.943021Z
-efa7929d865b65d56b68cdf9f1e316d0
-2010-11-26T03:37:08.862515Z
-33324
-dfelinto
+2011-03-03T12:26:41.446297Z
+0369d7fe2fe312f588d4a500cb7da5a1
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -4821,7 +4821,7 @@ has-props
 
 
 
-8659
+8731
 
 KX_SCA_EndObjectActuator.cpp
 file
@@ -4829,11 +4829,11 @@ file
 
 
 
-2011-01-18T22:04:28.943021Z
-353e16a96c423cb301dbb9c8818c1827
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.450297Z
+478cfadf017effd0f04899cb93b5477e
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -4855,7 +4855,7 @@ has-props
 
 
 
-2983
+3061
 
 KX_RadarSensor.h
 file
@@ -4863,11 +4863,11 @@ file
 
 
 
-2011-01-18T22:04:28.943021Z
-34256724f118633df3d7208d4e92fd12
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:41.450297Z
+4706ebbdc7f2141b8d2891467353bb89
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -4889,7 +4889,7 @@ has-props
 
 
 
-2528
+2576
 
 KX_PyConstraintBinding.cpp
 file
@@ -4897,11 +4897,11 @@ file
 
 
 
-2011-01-18T22:04:28.943021Z
-8de9708edc21367e0a6123a8dd829228
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.450297Z
+2ab08873b0c98e54f0615f783ee4d9a2
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -4923,7 +4923,7 @@ has-props
 
 
 
-16950
+17026
 
 KX_IPO_SGController.h
 file
@@ -4931,11 +4931,11 @@ file
 
 
 
-2011-01-18T22:04:28.943021Z
-801b19e935c03265db29f83498f60bb0
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:41.450297Z
+9d91c9a4094572584d7f8939fd8ba46e
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -4957,7 +4957,7 @@ has-props
 
 
 
-3722
+3775
 
 KX_BlenderMaterial.cpp
 file
@@ -4965,11 +4965,11 @@ file
 
 
 
-2011-01-18T22:04:28.943021Z
-d93e43b2284dcc5ebf7c92a6d9ef1143
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:41.450297Z
+5f543f54431e0dbf0275a23d71767e6d
+2011-02-25T13:35:59.516230Z
+35171
+jesterking
 has-props
 
 
@@ -4991,5 +4991,5 @@ has-props
 
 
 
-22937
+23012
 

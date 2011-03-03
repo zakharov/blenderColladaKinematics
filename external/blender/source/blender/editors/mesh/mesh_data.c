@@ -1,5 +1,5 @@
-/**
- * $Id: mesh_data.c 34741 2011-02-09 15:13:20Z campbellbarton $
+/*
+ * $Id: mesh_data.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/mesh/mesh_data.c
+ *  \ingroup edmesh
+ */
+
 
 #include <math.h>
 #include <stdlib.h>

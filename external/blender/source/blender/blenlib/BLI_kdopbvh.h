@@ -1,6 +1,5 @@
-/**
- *
- * $Id: BLI_kdopbvh.h 32641 2010-10-21 22:45:54Z campbellbarton $
+/*
+ * $Id: BLI_kdopbvh.h 34966 2011-02-18 13:58:08Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -31,6 +30,12 @@
 
 #ifndef BLI_KDOPBVH_H
 #define BLI_KDOPBVH_H
+
+/** \file BLI_kdopbvh.h
+ *  \ingroup bli
+ *  \author Daniel Genrich
+ *  \author Andre Pinto
+ */
 
 #ifdef __cplusplus
 extern "C" { 

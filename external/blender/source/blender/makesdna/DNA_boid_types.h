@@ -1,7 +1,5 @@
-/* DNA_particle_types.h
- *
- *
- * $Id: DNA_boid_types.h 34205 2011-01-09 18:23:41Z jhk $
+/* 
+ * $Id: DNA_boid_types.h 34941 2011-02-17 20:48:12Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -31,6 +29,10 @@
 
 #ifndef DNA_BOID_TYPES_H
 #define DNA_BOID_TYPES_H
+
+/** \file DNA_boid_types.h
+ *  \ingroup DNA
+ */
 
 #include "DNA_listBase.h"
 

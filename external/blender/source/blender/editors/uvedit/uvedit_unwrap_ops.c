@@ -1,5 +1,5 @@
-/**
- * $Id: uvedit_unwrap_ops.c 34380 2011-01-18 01:58:19Z campbellbarton $
+/*
+ * $Id: uvedit_unwrap_ops.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/uvedit/uvedit_unwrap_ops.c
+ *  \ingroup eduv
+ */
+
 
 #include <string.h>
 #include <stdlib.h>
@@ -129,7 +134,7 @@ static int ED_uvedit_ensure_uvs(bContext *C, Scene *scene, Object *obedit)
 
 /****************** Parametrizer Conversion ***************/
 
-ParamHandle *construct_param_handle(Scene *scene, EditMesh *em, short implicit, short fill, short sel, short correct_aspect)
+static ParamHandle *construct_param_handle(Scene *scene, EditMesh *em, short implicit, short fill, short sel, short correct_aspect)
 {
 	ParamHandle *handle;
 	EditFace *efa;

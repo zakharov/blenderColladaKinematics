@@ -1,5 +1,5 @@
-/**
- * $Id: util_intern.h 34287 2011-01-12 18:00:23Z ton $
+/*
+ * $Id: util_intern.h 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/util/util_intern.h
+ *  \ingroup edutil
+ */
+
 
 #ifndef ED_UTIL_INTERN_H
 #define ED_UTIL_INTERN_H

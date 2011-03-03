@@ -1,5 +1,5 @@
 /*
- * $Id: KX_KetsjiEngine.cpp 33707 2010-12-16 10:25:41Z dfelinto $
+ * $Id: KX_KetsjiEngine.cpp 35171 2011-02-25 13:35:59Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  * ***** END GPL LICENSE BLOCK *****
  * The engine ties all game modules together. 
  */
+
+/** \file gameengine/Ketsji/KX_KetsjiEngine.cpp
+ *  \ingroup ketsji
+ */
+
 
 #if defined(WIN32) && !defined(FREE_WINDOWS)
 #pragma warning (disable : 4786)

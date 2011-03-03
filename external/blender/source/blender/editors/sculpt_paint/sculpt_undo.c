@@ -1,5 +1,5 @@
 /*
- * $Id: sculpt_undo.c 34743 2011-02-09 15:38:49Z nazgul $
+ * $Id: sculpt_undo.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -29,6 +29,11 @@
  * Implements the Sculpt Mode tools
  *
  */
+
+/** \file blender/editors/sculpt_paint/sculpt_undo.c
+ *  \ingroup edsculpt
+ */
+
 
 #include "MEM_guardedalloc.h"
 
@@ -70,8 +75,10 @@ static void update_cb(PBVHNode *node, void *unused)
 
 static void sculpt_restore_deformed(SculptSession *ss, SculptUndoNode *unode, int uindex, int oindex, float coord[3])
 {
-	swap_v3_v3(coord, unode->orig_co[uindex]);
-	copy_v3_v3(unode->co[uindex], ss->deform_cos[oindex]);
+	if(unode->orig_co) {
+		swap_v3_v3(coord, unode->orig_co[uindex]);
+		copy_v3_v3(unode->co[uindex], ss->deform_cos[oindex]);
+	} else swap_v3_v3(coord, unode->co[uindex]);
 }
 
 static void sculpt_undo_restore(bContext *C, ListBase *lb)
@@ -126,7 +133,10 @@ static void sculpt_undo_restore(bContext *C, ListBase *lb)
 
 				for(i=0; i<unode->totvert; i++) {
 					if(ss->modifiers_active) sculpt_restore_deformed(ss, unode, i, index[i], vertCos[index[i]]);
-					else swap_v3_v3(vertCos[index[i]], unode->co[i]);
+					else {
+						if(unode->orig_co) swap_v3_v3(vertCos[index[i]], unode->orig_co[i]);
+						else swap_v3_v3(vertCos[index[i]], unode->co[i]);
+					}
 				}
 
 				/* propagate new coords to keyblock */
@@ -140,7 +150,10 @@ static void sculpt_undo_restore(bContext *C, ListBase *lb)
 			} else {
 				for(i=0; i<unode->totvert; i++) {
 					if(ss->modifiers_active) sculpt_restore_deformed(ss, unode, i, index[i], mvert[index[i]].co);
-					else swap_v3_v3(mvert[index[i]].co, unode->co[i]);
+					else {
+						if(unode->orig_co) swap_v3_v3(mvert[index[i]].co, unode->orig_co[i]);
+						else swap_v3_v3(mvert[index[i]].co, unode->co[i]);
+					}
 					mvert[index[i]].flag |= ME_VERT_PBVH_UPDATE;
 				}
 			}

@@ -1,5 +1,5 @@
 /* 
- * $Id: bpy_internal_import.h 32728 2010-10-27 06:05:22Z campbellbarton $
+ * $Id: bpy_internal_import.h 35236 2011-02-27 20:10:08Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
 */
+
+/** \file blender/python/generic/bpy_internal_import.h
+ *  \ingroup pygen
+ */
+
 
 /* Note, the BGE needs to use this too, keep it minimal */
 

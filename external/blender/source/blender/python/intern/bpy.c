@@ -1,5 +1,5 @@
-/**
- * $Id: bpy.c 34377 2011-01-18 00:10:11Z campbellbarton $
+/*
+ * $Id: bpy.c 35295 2011-03-02 04:51:43Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,12 +21,20 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/python/intern/bpy.c
+ *  \ingroup pythonintern
+ */
+
  
 /* This file defines the '_bpy' module which is used by python's 'bpy' package.
  * a script writer should never directly access this module */
  
 #define WITH_PYTHON /* for AUD_PyInit.h, possibly others */
 
+#include <Python.h>
+
+#include "bpy.h" 
 #include "bpy_util.h" 
 #include "bpy_rna.h"
 #include "bpy_app.h"
@@ -40,6 +48,8 @@
 
 #include "BKE_global.h" /* XXX, G.main only */
 
+#include "RNA_access.h"
+
 #include "MEM_guardedalloc.h"
 
  /* external util modules */
@@ -50,6 +60,8 @@
 
 #include "AUD_PyInit.h"
 
+PyObject *bpy_package_py= NULL;
+
 static char bpy_script_paths_doc[] =
 ".. function:: script_paths()\n"
 "\n"
@@ -58,7 +70,7 @@ static char bpy_script_paths_doc[] =
 "   :return: (system, user) strings will be empty when not found.\n"
 "   :rtype: tuple of strigs\n";
 
-PyObject *bpy_script_paths(PyObject *UNUSED(self))
+static PyObject *bpy_script_paths(PyObject *UNUSED(self))
 {
 	PyObject *ret= PyTuple_New(2);
 	char *path;
@@ -158,7 +170,7 @@ static PyMethodDef meth_bpy_script_paths = {"script_paths", (PyCFunction)bpy_scr
 static PyMethodDef meth_bpy_blend_paths = {"blend_paths", (PyCFunction)bpy_blend_paths, METH_VARARGS|METH_KEYWORDS, bpy_blend_paths_doc};
 static PyMethodDef meth_bpy_user_resource = {"user_resource", (PyCFunction)bpy_user_resource, METH_VARARGS|METH_KEYWORDS, NULL};
 
-static void bpy_import_test(const char *modname)
+static PyObject *bpy_import_test(const char *modname)
 {
 	PyObject *mod= PyImport_ImportModuleLevel((char *)modname, NULL, NULL, NULL, 0);
 	if(mod) {
@@ -167,7 +179,9 @@ static void bpy_import_test(const char *modname)
 	else {
 		PyErr_Print();
 		PyErr_Clear();
-	}	
+	}
+
+	return mod;
 }
 
 /*****************************************************************************
@@ -204,7 +218,7 @@ void BPy_init_modules( void )
 	BPY_rna_init();
 
 	PyModule_AddObject( mod, "types", BPY_rna_types() ); /* needs to be first so bpy_types can run */
-	PyModule_AddObject(mod, "StructMetaIDProp", (PyObject *)&pyrna_struct_meta_idprop_Type); /* metaclass for idprop types, bpy_types.py needs access */
+	PyModule_AddObject(mod, "StructMetaPropGroup", (PyObject *)&pyrna_struct_meta_idprop_Type); /* metaclass for idprop types, bpy_types.py needs access */
 			
 	bpy_import_test("bpy_types");
 	PyModule_AddObject( mod, "data", BPY_rna_module() ); /* imports bpy_types by running this */
@@ -227,6 +241,10 @@ void BPy_init_modules( void )
 	PyModule_AddObject(mod, meth_bpy_blend_paths.ml_name, (PyObject *)PyCFunction_New(&meth_bpy_blend_paths, NULL));
 	PyModule_AddObject(mod, meth_bpy_user_resource.ml_name, (PyObject *)PyCFunction_New(&meth_bpy_user_resource, NULL));
 
+	/* register funcs (bpy_rna.c) */
+	PyModule_AddObject(mod, meth_bpy_register_class.ml_name, (PyObject *)PyCFunction_New(&meth_bpy_register_class, NULL));
+	PyModule_AddObject(mod, meth_bpy_unregister_class.ml_name, (PyObject *)PyCFunction_New(&meth_bpy_unregister_class, NULL));
+
 	/* add our own modules dir, this is a python package */
-	bpy_import_test("bpy");
+	bpy_package_py= bpy_import_test("bpy");
 }

@@ -1,5 +1,5 @@
-/**
- * $Id: ED_markers.h 34238 2011-01-10 22:31:34Z aligorith $
+/*
+ * $Id: ED_markers.h 35016 2011-02-21 07:25:24Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file ED_markers.h
+ *  \ingroup editors
+ */
+
 #ifndef ED_MARKERS_H
 #define ED_MARKERS_H
 
@@ -64,6 +69,8 @@ void ED_operatortypes_marker(void);
 /* called in screen_ops.c:ED_keymap_screen() */
 void ED_marker_keymap(struct wmKeyConfig *keyconf);
 
+/* debugging only */
+void debug_markers_print_list(struct ListBase *markers);
 
 #endif /* ED_MARKERS_H */
 

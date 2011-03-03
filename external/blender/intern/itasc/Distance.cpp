@@ -1,4 +1,7 @@
-/* $Id: Distance.cpp 23479 2009-09-25 07:44:29Z ben2610 $
+/** \file itasc/Distance.cpp
+ *  \ingroup itasc
+ */
+/* $Id: Distance.cpp 35155 2011-02-25 11:45:16Z jesterking $
  * Distance.cpp
  *
  *  Created on: Jan 30, 2009

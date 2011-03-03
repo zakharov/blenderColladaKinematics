@@ -1,5 +1,5 @@
-/**
- * $Id: BLI_dlrbTree.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: BLI_dlrbTree.h 34966 2011-02-18 13:58:08Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
 
 #ifndef BLI_DLRB_TREE_H
 #define BLI_DLRB_TREE_H
+
+/** \file BLI_dlrbTree.h
+ *  \ingroup bli
+ *  \author Joshua Leung
+ */
 
 /* Double-Linked Red-Black Tree Implementation:
  * 

@@ -1,7 +1,5 @@
 /* 
- * Memory arena ADT
- * 
- * $Id: BLI_memarena.h 28202 2010-04-15 10:28:32Z blendix $
+ * $Id: BLI_memarena.h 34966 2011-02-18 13:58:08Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,11 +25,15 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
- * 
+ */ 
+
+/** \file BLI_memarena.h
+ *  \ingroup bli
+ *  \brief Memory arena ADT.
+ *  \section aboutmemarena Memory Arena
  * Memory arena's are commonly used when the program
  * needs to quickly allocate lots of little bits of
  * data, which are all freed at the same moment.
- * 
  */
 
 #ifndef BLI_MEMARENA_H

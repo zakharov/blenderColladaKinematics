@@ -1,7 +1,5 @@
-/**
-* Abstract system
-*
-* $Id: KX_ISystem.h 29259 2010-06-06 01:15:44Z campbellbarton $
+/*
+* $Id: KX_ISystem.h 35063 2011-02-22 10:33:14Z jesterking $
 *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
 */
+
+/** \file KX_ISystem.h
+ *  \ingroup ketsji
+ *  \brief Abstract system
+ */
 
 #ifndef __KX_ISYSTEM
 #define __KX_ISYSTEM

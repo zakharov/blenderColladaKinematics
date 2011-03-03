@@ -1,5 +1,5 @@
-/**
- * $Id: KX_PythonInit.cpp 34393 2011-01-18 22:27:18Z dfelinto $
+/*
+ * $Id: KX_PythonInit.cpp 35171 2011-02-25 13:35:59Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  * ***** END GPL LICENSE BLOCK *****
  * Initialize Python thingies.
  */
+
+/** \file gameengine/Ketsji/KX_PythonInit.cpp
+ *  \ingroup ketsji
+ */
+
 
 #include "GL/glew.h"
 
@@ -1398,6 +1403,7 @@ PyObject* initGameLogic(KX_KetsjiEngine *engine, KX_Scene* scene) // quick hack 
 
 	/* 7. Action actuator													   */
 	KX_MACRO_addTypesToDict(d, KX_ACTIONACT_PLAY,        ACT_ACTION_PLAY);
+	KX_MACRO_addTypesToDict(d, KX_ACTIONACT_PINGPONG,    ACT_ACTION_PINGPONG);
 	KX_MACRO_addTypesToDict(d, KX_ACTIONACT_FLIPPER,     ACT_ACTION_FLIPPER);
 	KX_MACRO_addTypesToDict(d, KX_ACTIONACT_LOOPSTOP,    ACT_ACTION_LOOP_STOP);
 	KX_MACRO_addTypesToDict(d, KX_ACTIONACT_LOOPEND,     ACT_ACTION_LOOP_END);

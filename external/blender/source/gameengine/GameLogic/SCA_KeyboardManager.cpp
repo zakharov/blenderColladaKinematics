@@ -1,7 +1,7 @@
-/**
+/*
  * Manager for keyboard events
  *
- * $Id: SCA_KeyboardManager.cpp 26841 2010-02-12 13:34:04Z campbellbarton $
+ * $Id: SCA_KeyboardManager.cpp 35169 2011-02-25 13:32:11Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/GameLogic/SCA_KeyboardManager.cpp
+ *  \ingroup gamelogic
+ */
+
 
 #include "BoolValue.h"
 #include "SCA_KeyboardManager.h"

@@ -1,5 +1,5 @@
-/**
- * $Id: render_intern.h 27821 2010-03-29 05:37:34Z broken $
+/*
+ * $Id: render_intern.h 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/render/render_intern.h
+ *  \ingroup edrend
+ */
+
 
 #ifndef RENDER_INTERN_H
 #define RENDER_INTERN_H

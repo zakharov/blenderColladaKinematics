@@ -30,10 +30,16 @@
 *
 */
 
+/** \file blender/modifiers/intern/MOD_simpledeform.c
+ *  \ingroup modifiers
+ */
+
+
 #include "DNA_meshdata_types.h"
 #include "DNA_object_types.h"
 
 #include "BLI_math.h"
+#include "BLI_string.h"
 #include "BLI_utildefines.h"
 
 #include "BKE_cdderivedmesh.h"
@@ -147,7 +153,7 @@ static void simpleDeform_bend(const float factor, const float dcut[3], float *co
 
 
 /* simple deform modifier */
-void SimpleDeformModifier_do(SimpleDeformModifierData *smd, struct Object *ob, struct DerivedMesh *dm, float (*vertexCos)[3], int numVerts)
+static void SimpleDeformModifier_do(SimpleDeformModifierData *smd, struct Object *ob, struct DerivedMesh *dm, float (*vertexCos)[3], int numVerts)
 {
 	static const float lock_axis[2] = {0.0f, 0.0f};
 
@@ -288,7 +294,7 @@ static void copyData(ModifierData *md, ModifierData *target)
 	tsmd->originOpts= smd->originOpts;
 	tsmd->factor= smd->factor;
 	memcpy(tsmd->limit, smd->limit, sizeof(tsmd->limit));
-	strcpy(tsmd->vgroup_name, smd->vgroup_name);
+	BLI_strncpy(tsmd->vgroup_name, smd->vgroup_name, sizeof(tsmd->vgroup_name));
 }
 
 static CustomDataMask requiredDataMask(Object *UNUSED(ob), ModifierData *md)

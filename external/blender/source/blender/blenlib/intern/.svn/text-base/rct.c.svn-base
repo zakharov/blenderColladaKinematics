@@ -35,9 +35,15 @@
  *
  */
 
-#include "DNA_vec_types.h"
+/** \file blender/blenlib/intern/rct.c
+ *  \ingroup bli
+ */
+
 #include <stdio.h>
 #include <math.h>
+
+#include "DNA_vec_types.h"
+#include "BLI_rect.h"
 
 int BLI_rcti_is_empty(rcti * rect)
 {

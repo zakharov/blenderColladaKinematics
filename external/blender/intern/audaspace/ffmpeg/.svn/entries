@@ -1,15 +1,15 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern/audaspace/ffmpeg
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-30T15:29:22.294392Z
-34567
-campbellbarton
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-01-18T22:04:07.323021Z
-445e2f41cc1976d4956c9a1ba15033b8
-2010-11-01T18:13:10.166523Z
-32815
-schlaile
+2011-03-03T12:25:17.750297Z
+074afe12213978a70bc1a19c75afb168
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-9905
+10038
 
 AUD_FFMPEGFactory.cpp
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-01-18T22:04:07.323021Z
-613ee7627e193b4b7d450d7ebd4ff081
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.750297Z
+40d4b08629bc14b56eb317f5eb48a9ff
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-1495
+1631
 
 AUD_FFMPEGReader.h
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-01-18T22:04:07.323021Z
-e1678e9c7977459868ad5eb2ceee96f9
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.750297Z
+65ff67d75702f673f1a64a96ec9000c3
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-3723
+3856
 
 AUD_FFMPEGFactory.h
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-01-18T22:04:07.323021Z
-a33e1c49f618eab446487a45a2435b88
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.750297Z
+85d650e988d4b0caab0b4c316c4deab8
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -160,5 +160,5 @@ has-props
 
 
 
-1958
+2092
 

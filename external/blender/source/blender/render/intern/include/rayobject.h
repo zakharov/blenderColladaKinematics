@@ -1,5 +1,5 @@
-/**
- * $Id: rayobject.h 34656 2011-02-05 13:41:29Z blendix $
+/*
+ * $Id: rayobject.h 35233 2011-02-27 19:31:27Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/render/intern/include/rayobject.h
+ *  \ingroup render
+ */
+
 
 #ifndef RE_RAYOBJECT_H
 #define RE_RAYOBJECT_H

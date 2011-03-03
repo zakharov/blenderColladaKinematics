@@ -1,6 +1,5 @@
-
-/**
- * $Id: bpy_operator.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: bpy_operator.h 35236 2011-02-27 20:10:08Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -22,15 +21,13 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/python/intern/bpy_operator.h
+ *  \ingroup pythonintern
+ */
+
 #ifndef BPY_OPERATOR_H
 #define BPY_OPERATOR_H
-
-#include <Python.h>
-
-#include "RNA_access.h"
-#include "RNA_types.h"
-#include "DNA_windowmanager_types.h"
-#include "BKE_context.h"
 
 extern PyTypeObject pyop_base_Type;
 

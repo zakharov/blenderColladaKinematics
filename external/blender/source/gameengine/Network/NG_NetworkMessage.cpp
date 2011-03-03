@@ -1,5 +1,5 @@
 /*
- * $Id: NG_NetworkMessage.cpp 28254 2010-04-18 10:28:37Z campbellbarton $
+ * $Id: NG_NetworkMessage.cpp 35172 2011-02-25 13:36:49Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  * ***** END GPL LICENSE BLOCK *****
  * generic Network Message implementation
  */
+
+/** \file gameengine/Network/NG_NetworkMessage.cpp
+ *  \ingroup bgenet
+ */
+
 #include "NG_NetworkMessage.h"
 #include <assert.h>
 

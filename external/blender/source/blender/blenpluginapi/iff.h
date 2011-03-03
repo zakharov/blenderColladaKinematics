@@ -1,5 +1,8 @@
+/** \file blender/blenpluginapi/iff.h
+ *  \ingroup blpluginapi
+ */
 /* Copyright (c) 1999, Not a Number / NeoGeo b.v. 
- * $Id: iff.h 32517 2010-10-16 14:32:17Z campbellbarton $
+ * $Id: iff.h 35244 2011-02-27 20:32:12Z jesterking $
  * 
  * All rights reserved.
  * 

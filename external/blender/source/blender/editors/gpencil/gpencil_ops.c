@@ -1,5 +1,5 @@
-/**
- * $Id: gpencil_ops.c 31673 2010-08-31 11:31:21Z campbellbarton $
+/*
+ * $Id: gpencil_ops.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  * ***** END GPL LICENSE BLOCK *****
  */
 
+/** \file blender/editors/gpencil/gpencil_ops.c
+ *  \ingroup edgpencil
+ */
+
+
 #include <stdlib.h>
 #include <stddef.h>
 #include <stdio.h>
@@ -37,6 +42,8 @@
 #include "WM_types.h"
 
 #include "RNA_access.h"
+
+#include "ED_gpencil.h"
 
 #include "gpencil_intern.h"
 

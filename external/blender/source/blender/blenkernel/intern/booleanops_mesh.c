@@ -1,7 +1,7 @@
 #if 0
 
-/**
- * $Id: booleanops_mesh.c 31364 2010-08-16 05:46:10Z campbellbarton $
+/*
+ * $Id: booleanops_mesh.c 35247 2011-02-27 20:40:57Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/blenkernel/intern/booleanops_mesh.c
+ *  \ingroup bke
+ */
+
 #include "CSG_BooleanOps.h"
 
 

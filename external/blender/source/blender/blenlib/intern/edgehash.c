@@ -1,5 +1,5 @@
-/**
- * $Id: edgehash.c 27655 2010-03-22 09:30:00Z campbellbarton $
+/*
+ * $Id: edgehash.c 35246 2011-02-27 20:37:56Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  * ***** END GPL LICENSE BLOCK *****
  * A general (pointer -> pointer) hash table ADT
  */
+
+/** \file blender/blenlib/intern/edgehash.c
+ *  \ingroup bli
+ */
+
 
 #include <stdlib.h>
 #include <string.h>

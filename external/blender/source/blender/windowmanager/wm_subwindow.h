@@ -1,5 +1,5 @@
-/**
- * $Id: wm_subwindow.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: wm_subwindow.h 35179 2011-02-25 14:04:21Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/windowmanager/wm_subwindow.h
+ *  \ingroup wm
+ */
+
 
 #ifndef WM_SUBWINDOW_H
 #define WM_SUBWINDOW_H

@@ -1,5 +1,5 @@
-/**
- * $Id: nla_private.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: nla_private.h 35247 2011-02-27 20:40:57Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/blenkernel/nla_private.h
+ *  \ingroup bke
+ */
+
 
 #ifndef NLA_PRIVATE
 #define NLA_PRIVATE

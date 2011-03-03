@@ -1,5 +1,5 @@
-/**
- * $Id: rna_pose_api.c 31993 2010-09-18 04:24:04Z campbellbarton $
+/*
+ * $Id: rna_pose_api.c 35238 2011-02-27 20:20:01Z jesterking $
  * 
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/makesrna/intern/rna_pose_api.c
+ *  \ingroup RNA
+ */
+
 
 #include <stdlib.h>
 #include <stdio.h>

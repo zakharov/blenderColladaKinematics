@@ -1,5 +1,5 @@
-/**
- * $Id: DNA_nla_types.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: DNA_nla_types.h 34941 2011-02-17 20:48:12Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -29,6 +29,10 @@
 
 #ifndef DNA_NLA_TYPES_H
 #define DNA_NLA_TYPES_H
+
+/** \file DNA_nla_types.h
+ *  \ingroup DNA
+ */
 
 #include "DNA_listBase.h"
 

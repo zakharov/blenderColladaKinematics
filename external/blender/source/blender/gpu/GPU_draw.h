@@ -1,5 +1,5 @@
-/**
- * $Id: GPU_draw.h 32499 2010-10-15 12:29:02Z campbellbarton $
+/*
+ * $Id: GPU_draw.h 35014 2011-02-21 06:58:46Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,10 @@
  * Contributor(s): Brecht Van Lommel.
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file GPU_draw.h
+ *  \ingroup gpu
  */
 
 #ifndef GPU_GAME_H

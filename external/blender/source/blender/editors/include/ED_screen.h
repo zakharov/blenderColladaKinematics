@@ -1,5 +1,5 @@
-/**
- * $Id: ED_screen.h 34614 2011-02-01 23:51:52Z aligorith $
+/*
+ * $Id: ED_screen.h 35016 2011-02-21 07:25:24Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file ED_screen.h
+ *  \ingroup editors
+ */
+
 #ifndef ED_SCREEN_H
 #define ED_SCREEN_H
 

@@ -1,5 +1,5 @@
-/**
- * $Id: BLI_heap.c 28202 2010-04-15 10:28:32Z blendix $
+/*
+ * $Id: BLI_heap.c 35246 2011-02-27 20:37:56Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  * ***** END GPL LICENSE BLOCK *****
  * A heap / priority queue ADT.
  */
+
+/** \file blender/blenlib/intern/BLI_heap.c
+ *  \ingroup bli
+ */
+
 
 #include <string.h>
 
@@ -64,7 +69,7 @@ struct Heap {
 
 /***/
 
-Heap *BLI_heap_new()
+Heap *BLI_heap_new(void)
 {
 	Heap *heap = (Heap*)MEM_callocN(sizeof(Heap), "BLIHeap");
 	heap->bufsize = 1;

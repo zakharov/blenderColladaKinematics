@@ -1,5 +1,5 @@
 /*
- * $Id: SYS_SingletonSystem.h 33157 2010-11-18 12:54:05Z campbellbarton $
+ * $Id: SYS_SingletonSystem.h 35164 2011-02-25 13:25:53Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,11 @@
  * Unique instance of system class for system specific information / access
  * Used by SYS_System
  */
+
+/** \file kernel/gen_system/SYS_SingletonSystem.h
+ *  \ingroup gensys
+ */
+
 #ifndef __SINGLETONSYSTEM_H
 #define __SINGLETONSYSTEM_H
 

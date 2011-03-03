@@ -1,31 +1,31 @@
 K 25
 svn:wc:ra_dav:version-url
 V 69
-/svnroot/bf-blender/!svn/ver/34761/trunk/blender/source/blender/imbuf
+/svnroot/bf-blender/!svn/ver/35336/trunk/blender/source/blender/imbuf
 END
 IMB_imbuf.h
 K 25
 svn:wc:ra_dav:version-url
 V 81
-/svnroot/bf-blender/!svn/ver/33665/trunk/blender/source/blender/imbuf/IMB_imbuf.h
+/svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/IMB_imbuf.h
 END
 IMB_thumbs.h
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/svnroot/bf-blender/!svn/ver/33442/trunk/blender/source/blender/imbuf/IMB_thumbs.h
+/svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/IMB_thumbs.h
 END
 IMB_imbuf_types.h
 K 25
 svn:wc:ra_dav:version-url
 V 87
-/svnroot/bf-blender/!svn/ver/34370/trunk/blender/source/blender/imbuf/IMB_imbuf_types.h
+/svnroot/bf-blender/!svn/ver/34923/trunk/blender/source/blender/imbuf/IMB_imbuf_types.h
 END
 SConscript
 K 25
 svn:wc:ra_dav:version-url
 V 80
-/svnroot/bf-blender/!svn/ver/31645/trunk/blender/source/blender/imbuf/SConscript
+/svnroot/bf-blender/!svn/ver/35028/trunk/blender/source/blender/imbuf/SConscript
 END
 readme.txt
 K 25
@@ -37,5 +37,5 @@ CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svnroot/bf-blender/!svn/ver/34486/trunk/blender/source/blender/imbuf/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/35028/trunk/blender/source/blender/imbuf/CMakeLists.txt
 END

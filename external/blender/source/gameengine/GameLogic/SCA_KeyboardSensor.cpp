@@ -1,5 +1,5 @@
-/**
- * $Id: SCA_KeyboardSensor.cpp 34520 2011-01-27 00:02:25Z campbellbarton $
+/*
+ * $Id: SCA_KeyboardSensor.cpp 35169 2011-02-25 13:32:11Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  * ***** END GPL LICENSE BLOCK *****
  * Sensor for keyboard input
  */
+
+/** \file gameengine/GameLogic/SCA_KeyboardSensor.cpp
+ *  \ingroup gamelogic
+ */
+
 
 #include <stddef.h>
 

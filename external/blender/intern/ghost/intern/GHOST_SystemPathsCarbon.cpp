@@ -1,5 +1,5 @@
-/**
- * $Id: GHOST_SystemPathsCarbon.cpp 34106 2011-01-05 19:19:49Z gsrb3d $
+/*
+ * $Id: GHOST_SystemPathsCarbon.cpp 35152 2011-02-25 11:28:33Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file ghost/intern/GHOST_SystemPathsCarbon.cpp
+ *  \ingroup GHOST
+ */
+
 
 #include <Carbon/Carbon.h>
 #include <ApplicationServices/ApplicationServices.h>

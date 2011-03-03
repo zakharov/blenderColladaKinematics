@@ -1,5 +1,5 @@
-/**
- * $Id: drawvolume.c 34160 2011-01-07 19:18:31Z campbellbarton $
+/*
+ * $Id: drawvolume.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_view3d/drawvolume.c
+ *  \ingroup spview3d
+ */
+
 
 
 #include <string.h>
@@ -126,7 +131,7 @@ static double tval()
 
 struct GPUTexture;
 
-int intersect_edges(float *points, float a, float b, float c, float d, float edges[12][2][3])
+static int intersect_edges(float *points, float a, float b, float c, float d, float edges[12][2][3])
 {
 	int i;
 	float t;

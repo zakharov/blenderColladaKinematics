@@ -1,15 +1,15 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern/audaspace/SDL
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-30T15:29:22.294392Z
-34567
-campbellbarton
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-01-18T22:04:07.253021Z
-f25349e95cf0e0f0c143b8af35bb6831
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.654297Z
+96167754f2b66a3ba19dae12a5eb01f7
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-2040
+2164
 
 AUD_SDLDevice.cpp
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-01-18T22:04:07.253021Z
-c31779677bbd114eb461a68e27261255
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.654297Z
+2c9e83dc90acbcbfd829c1b222ec9830
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -92,5 +92,5 @@ has-props
 
 
 
-2564
+2690
 

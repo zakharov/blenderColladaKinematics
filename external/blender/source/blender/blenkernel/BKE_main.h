@@ -1,14 +1,5 @@
-/**
- * blenlib/BKE_main.h (mar-2001 nzc)
- *
- * Main is the root of the 'database' of a Blender context. All data
- * is stuffed into lists, and all these lists are knotted to here. A
- * Blender file is not much more but a binary dump of these
- * lists. This list of lists is not serialized itself.
- *
- * Oops... this should be a _types.h file.
- *
- * $Id: BKE_main.h 34004 2011-01-02 13:33:32Z ton $ 
+/*
+ * $Id: BKE_main.h 34962 2011-02-18 13:05:18Z jesterking $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -38,6 +29,19 @@
 #ifndef BKE_MAIN_H
 #define BKE_MAIN_H
 
+/** \file BKE_main.h
+ *  \ingroup bke
+ *  \since March 2001
+ *  \author nzc
+ *  \section aboutmain Main struct
+ * Main is the root of the 'database' of a Blender context. All data
+ * is stuffed into lists, and all these lists are knotted to here. A
+ * Blender file is not much more but a binary dump of these
+ * lists. This list of lists is not serialized itself.
+ *
+ * Oops... this should be a _types.h file.
+ *
+ */
 #include "DNA_listBase.h"
 
 #ifdef __cplusplus

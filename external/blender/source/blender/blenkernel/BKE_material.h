@@ -1,5 +1,5 @@
-/**
- * $Id: BKE_material.h 33796 2010-12-19 20:12:12Z ton $
+/*
+ * $Id: BKE_material.h 34962 2011-02-18 13:05:18Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,12 +25,15 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
- * General operations, lookup, etc. for materials.
  */
 
 #ifndef BKE_MATERIAL_H
 #define BKE_MATERIAL_H
 
+/** \file BKE_material.h
+ *  \ingroup bke
+ *  \brief General operations, lookup, etc. for materials.
+ */
 #ifdef __cplusplus
 extern "C" {
 #endif

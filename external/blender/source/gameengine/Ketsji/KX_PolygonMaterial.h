@@ -1,5 +1,5 @@
-/**
- * $Id: KX_PolygonMaterial.h 34469 2011-01-23 17:17:21Z ben2610 $
+/*
+ * $Id: KX_PolygonMaterial.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file KX_PolygonMaterial.h
+ *  \ingroup ketsji
+ */
+
 #ifndef __KX_POLYGONMATERIAL_H__
 #define __KX_POLYGONMATERIAL_H__
 

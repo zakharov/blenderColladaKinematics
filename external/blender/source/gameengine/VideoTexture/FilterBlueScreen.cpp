@@ -1,4 +1,7 @@
-/* $Id: FilterBlueScreen.cpp 34195 2011-01-09 14:53:18Z campbellbarton $
+/** \file gameengine/VideoTexture/FilterBlueScreen.cpp
+ *  \ingroup bgevideotex
+ */
+/* $Id: FilterBlueScreen.cpp 35176 2011-02-25 13:39:34Z jesterking $
 -----------------------------------------------------------------------------
 This source file is part of VideoTexture library
 

@@ -1,7 +1,7 @@
 /* text.c
  *
  *
- * $Id: text.c 34327 2011-01-14 21:06:28Z campbellbarton $
+ * $Id: text.c 35247 2011-02-27 20:40:57Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/blenkernel/intern/text.c
+ *  \ingroup bke
+ */
+
 
 #include <string.h> /* strstr */
 #include <sys/types.h>

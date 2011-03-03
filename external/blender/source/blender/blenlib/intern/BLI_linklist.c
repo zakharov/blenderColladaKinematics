@@ -1,5 +1,5 @@
-/**
- * $Id: BLI_linklist.c 29623 2010-06-22 15:20:06Z blendix $
+/*
+ * $Id: BLI_linklist.c 35246 2011-02-27 20:37:56Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  * ***** END GPL LICENSE BLOCK *****
  * Support for linked lists.
  */
+
+/** \file blender/blenlib/intern/BLI_linklist.c
+ *  \ingroup bli
+ */
+
 
 #include "MEM_guardedalloc.h"
 #include "BLI_linklist.h"

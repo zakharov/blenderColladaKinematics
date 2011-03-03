@@ -1,5 +1,5 @@
-/**
- * $Id: editmesh.c 34693 2011-02-07 13:02:44Z campbellbarton $
+/*
+ * $Id: editmesh.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/mesh/editmesh.c
+ *  \ingroup edmesh
+ */
+
 
 
 #include <stdlib.h>
@@ -1181,7 +1186,9 @@ void load_editMesh(Scene *scene, Object *obedit)
 				eve= em->verts.first;
 				mvert = me->mvert;
 				while(eve) {
-					VECSUB(ofs[i], mvert->co, oldverts[eve->keyindex].co);
+					if(eve->keyindex>=0)
+						VECSUB(ofs[i], mvert->co, oldverts[eve->keyindex].co);
+
 					eve= eve->next;
 					i++;
 					mvert++;

@@ -1,5 +1,5 @@
-/**
- * $Id: BKE_object.h 33468 2010-12-04 13:00:28Z campbellbarton $
+/*
+ * $Id: BKE_object.h 34962 2011-02-18 13:05:18Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,12 +25,15 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
- * General operations, lookup, etc. for blender objects.
  */
 
 #ifndef BKE_OBJECT_H
 #define BKE_OBJECT_H
 
+/** \file BKE_object.h
+ *  \ingroup bke
+ *  \brief General operations, lookup, etc. for blender objects.
+ */
 #ifdef __cplusplus
 extern "C" {
 #endif

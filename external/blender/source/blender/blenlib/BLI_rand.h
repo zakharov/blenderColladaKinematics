@@ -1,8 +1,5 @@
-/**
- * @file BLI_rand.h
- * 
- * Random number functions.
- * $Id: BLI_rand.h 28202 2010-04-15 10:28:32Z blendix $
+/*
+ * $Id: BLI_rand.h 34966 2011-02-18 13:58:08Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -33,10 +30,15 @@
 #ifndef BLI_RAND_H
 #define BLI_RAND_H
 
-	/* RNG is just an abstract random number generator
-	 * type that avoids using globals, otherwise identical
-	 * to BLI_rand functions below.
-	 */
+/** \file BLI_rand.h
+ *  \ingroup bli
+ *  \brief Random number functions.
+ */
+
+/** RNG is just an abstract random number generator
+ * type that avoids using globals, otherwise identical
+ * to BLI_rand functions below.
+ */
 struct RNG;
 typedef struct RNG RNG;
 

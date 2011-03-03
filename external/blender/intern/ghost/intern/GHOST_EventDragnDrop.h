@@ -1,5 +1,5 @@
-/**
- * $Id: GHOST_EventDragnDrop.h 30526 2010-07-20 10:41:08Z campbellbarton $
+/*
+ * $Id: GHOST_EventDragnDrop.h 35152 2011-02-25 11:28:33Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file ghost/intern/GHOST_EventDragnDrop.h
+ *  \ingroup GHOST
+ */
+
 
 #ifndef _GHOST_EVENT_DRAGNDROP_H_
 #define _GHOST_EVENT_DRAGNDROP_H_

@@ -1,5 +1,5 @@
-/**
- * $Id: ED_anim_api.h 34078 2011-01-05 00:37:21Z aligorith $
+/*
+ * $Id: ED_anim_api.h 35016 2011-02-21 07:25:24Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,10 @@
  * Contributor(s): Joshua Leung
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file ED_anim_api.h
+ *  \ingroup editors
  */
 
 #ifndef ED_ANIM_API_H

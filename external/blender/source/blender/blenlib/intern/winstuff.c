@@ -1,5 +1,5 @@
-/**
- * $Id: winstuff.c 34167 2011-01-07 23:54:58Z aligorith $
+/*
+ * $Id: winstuff.c 35246 2011-02-27 20:37:56Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  * ***** END GPL LICENSE BLOCK *****
  * Windows-posix compatibility layer, windows-specific functions.
  */
+
+/** \file blender/blenlib/intern/winstuff.c
+ *  \ingroup bli
+ */
+
 
 #ifdef WIN32
 

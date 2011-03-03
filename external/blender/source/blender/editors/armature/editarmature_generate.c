@@ -1,5 +1,5 @@
-/**
- * $Id: editarmature_generate.c 34160 2011-01-07 19:18:31Z campbellbarton $
+/*
+ * $Id: editarmature_generate.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  * ***** END GPL LICENSE BLOCK *****
  * editarmature.c: Interface for creating and posing armature objects
  */
+
+/** \file blender/editors/armature/editarmature_generate.c
+ *  \ingroup edarmature
+ */
+
 
 #include <string.h>
 #include <math.h>

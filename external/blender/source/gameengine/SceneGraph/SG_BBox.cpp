@@ -1,5 +1,5 @@
-/**
- * $Id: SG_BBox.cpp 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: SG_BBox.cpp 35175 2011-02-25 13:39:04Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  * ***** END GPL LICENSE BLOCK *****
  * Bounding Box
  */
+
+/** \file gameengine/SceneGraph/SG_BBox.cpp
+ *  \ingroup bgesg
+ */
+
 
 #include <math.h>
  

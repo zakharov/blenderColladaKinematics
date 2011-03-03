@@ -1,15 +1,15 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/render/intern/raytrace
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-02-06T00:49:58.015510Z
-34664
-gsrb3d
+2011-02-27T19:31:27.705286Z
+35233
+jesterking
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-02-10T19:48:40.655667Z
-8bb4d381744a5c4e9301731986cea1a0
-2011-02-06T00:49:58.015510Z
-34664
-gsrb3d
+2011-03-03T12:26:58.634297Z
+6f27db2fe676f97f43409097268ec02e
+2011-02-27T19:31:27.705286Z
+35233
+jesterking
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-1961
+2051
 
 rayobject_qbvh.cpp
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-02-10T19:48:40.655667Z
-161b8c483806bd3a2f02be3241ebdaa3
-2011-02-05T13:41:29.872623Z
-34656
-blendix
+2011-03-03T12:26:58.638297Z
+aa6c183a7cfe88b2c33e6bafab3f4703
+2011-02-27T19:31:27.705286Z
+35233
+jesterking
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-4204
+4292
 
 rayobject_instance.cpp
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-02-10T19:48:40.665667Z
-d34e9c002e30ace47cc3c72b2ba05796
-2011-02-06T00:49:58.015510Z
-34664
-gsrb3d
+2011-03-03T12:26:58.638297Z
+01211fdaeed2e101a42eff4567198bc7
+2011-02-27T19:31:27.705286Z
+35233
+jesterking
 has-props
 
 
@@ -126,41 +126,7 @@ has-props
 
 
 
-5820
-
-rayobject_vbvh.cpp
-file
-
-
-
-
-2011-02-10T19:48:40.665667Z
-cdbfff4ee663eec03087008210c8cd56
-2011-02-05T13:41:29.872623Z
-34656
-blendix
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5182
+5913
 
 rayobject_rtbuild.cpp
 file
@@ -168,11 +134,11 @@ file
 
 
 
-2011-02-10T19:48:40.665667Z
-0e954bb1ca7f2fcf7e3ae74e5b2b0066
-2011-02-05T13:41:29.872623Z
-34656
-blendix
+2011-03-03T12:26:58.638297Z
+2cba03882715cef5c4c9b1ab0220adff
+2011-02-27T19:31:27.705286Z
+35233
+jesterking
 has-props
 
 
@@ -194,7 +160,41 @@ has-props
 
 
 
-12667
+12758
+
+rayobject_vbvh.cpp
+file
+
+
+
+
+2011-03-03T12:26:58.642297Z
+c33c9aacd3b48f2fe09bcbd0756f2e56
+2011-02-27T19:31:27.705286Z
+35233
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5270
 
 rayobject_blibvh.cpp
 file
@@ -202,11 +202,11 @@ file
 
 
 
-2011-02-10T19:48:40.665667Z
-e42d5d085d152f9e2e386bf8681d6a6a
-2011-02-06T00:49:58.015510Z
-34664
-gsrb3d
+2011-03-03T12:26:58.646297Z
+edc94b9a2e5e8044ef64b8dbeae8009e
+2011-02-27T19:31:27.705286Z
+35233
+jesterking
 has-props
 
 
@@ -228,7 +228,7 @@ has-props
 
 
 
-4343
+4434
 
 rayobject_hint.h
 file
@@ -236,11 +236,11 @@ file
 
 
 
-2011-02-10T19:48:40.665667Z
-e8cfc1057fa8a434b15e2f310b6fe244
-2011-02-05T13:41:29.872623Z
-34656
-blendix
+2011-03-03T12:26:58.646297Z
+118f614d8162b56ed2dcd86e0b33e662
+2011-02-27T19:31:27.705286Z
+35233
+jesterking
 has-props
 
 
@@ -262,7 +262,7 @@ has-props
 
 
 
-1675
+1761
 
 vbvh.h
 file
@@ -270,11 +270,11 @@ file
 
 
 
-2011-02-10T19:48:40.665667Z
-9a5e50f231fc2be40e834f25506bb865
-2011-02-05T13:41:29.872623Z
-34656
-blendix
+2011-03-03T12:26:58.646297Z
+b31710589c515ec1bf4517d7d78a507c
+2011-02-27T19:31:27.705286Z
+35233
+jesterking
 has-props
 
 
@@ -296,7 +296,7 @@ has-props
 
 
 
-4432
+4508
 
 reorganize.h
 file
@@ -304,11 +304,11 @@ file
 
 
 
-2011-02-10T19:48:40.665667Z
-f92e9db05bc8e54c4fd68fa246de2497
-2011-02-05T14:04:59.970789Z
-34657
-blendix
+2011-03-03T12:26:58.646297Z
+2445176a46091f99715c56cfc075fd5a
+2011-02-27T19:31:27.705286Z
+35233
+jesterking
 has-props
 
 
@@ -330,7 +330,7 @@ has-props
 
 
 
-12500
+12582
 
 rayobject_rtbuild.h
 file
@@ -338,11 +338,11 @@ file
 
 
 
-2011-01-18T22:04:33.273021Z
-1f5034aaa1d5e569207465ad3e82de85
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:58.646297Z
+c6504a981ba6aa4337c985ecaacd86e9
+2011-02-27T19:31:27.705286Z
+35233
+jesterking
 has-props
 
 
@@ -364,7 +364,7 @@ has-props
 
 
 
-3434
+3516
 
 rayobject.cpp
 file
@@ -372,11 +372,11 @@ file
 
 
 
-2011-02-10T19:48:40.665667Z
-a9ff72a622c14aca1d308ee73b8a2ffd
-2011-02-05T13:41:29.872623Z
-34656
-blendix
+2011-03-03T12:26:58.646297Z
+904e4a7711485b16cf595197d8ece4e9
+2011-02-27T19:31:27.705286Z
+35233
+jesterking
 has-props
 
 
@@ -398,7 +398,7 @@ has-props
 
 
 
-12921
+13004
 
 rayobject_internal.h
 file
@@ -406,11 +406,11 @@ file
 
 
 
-2011-02-10T19:48:40.665667Z
-e4156a7b4240278f2b1dbd5a255b66a2
-2011-02-06T00:49:58.015510Z
-34664
-gsrb3d
+2011-03-03T12:26:58.646297Z
+a3a54f3e879064664588039be073f94d
+2011-02-27T19:31:27.705286Z
+35233
+jesterking
 has-props
 
 
@@ -432,7 +432,7 @@ has-props
 
 
 
-4117
+4203
 
 rayobject_octree.cpp
 file
@@ -440,11 +440,11 @@ file
 
 
 
-2011-02-10T19:48:40.665667Z
-50968819fb8b5696991313c7ab850544
-2011-02-06T00:49:58.015510Z
-34664
-gsrb3d
+2011-03-03T12:26:58.646297Z
+d7481b694e3d0a3ee88e11a700237115
+2011-02-27T19:31:27.705286Z
+35233
+jesterking
 has-props
 
 
@@ -466,7 +466,7 @@ has-props
 
 
 
-25038
+25129
 
 bvh.h
 file
@@ -474,11 +474,11 @@ file
 
 
 
-2011-02-10T19:48:40.665667Z
-a29900b50900751930f69e6d7cf628c1
-2011-02-05T13:41:29.872623Z
-34656
-blendix
+2011-03-03T12:26:58.650297Z
+f6e62cf57f0f01634d6bfdfe8865f97f
+2011-02-27T19:31:27.705286Z
+35233
+jesterking
 has-props
 
 
@@ -500,7 +500,7 @@ has-props
 
 
 
-11859
+11934
 
 rayobject_svbvh.cpp
 file
@@ -508,11 +508,11 @@ file
 
 
 
-2011-02-10T19:48:40.665667Z
-1f57bfddb5ee77ce95f6dfa19f3d3865
-2011-02-05T13:41:29.872623Z
-34656
-blendix
+2011-03-03T12:26:58.650297Z
+92859ca10e2eb407353d87d1a4f2f663
+2011-02-27T19:31:27.705286Z
+35233
+jesterking
 has-props
 
 
@@ -534,7 +534,7 @@ has-props
 
 
 
-4966
+5055
 
 svbvh.h
 file
@@ -542,11 +542,11 @@ file
 
 
 
-2011-02-10T19:48:40.665667Z
-39b85a1ccb3908c24c294f1a3ba19b35
-2011-02-05T13:41:29.872623Z
-34656
-blendix
+2011-03-03T12:26:58.650297Z
+739e5c7c8f900b2f89f1cc2bd485ee6e
+2011-02-27T19:31:27.705286Z
+35233
+jesterking
 has-props
 
 
@@ -568,7 +568,7 @@ has-props
 
 
 
-8540
+8617
 
 rayobject_raycounter.cpp
 file
@@ -576,11 +576,11 @@ file
 
 
 
-2011-02-10T19:48:40.665667Z
-c6886c2d8c486d3a278b2e0a38f8b592
-2011-02-06T00:49:58.015510Z
-34664
-gsrb3d
+2011-03-03T12:26:58.650297Z
+142f8f9fad0951187441cef455ea26eb
+2011-02-27T19:31:27.705286Z
+35233
+jesterking
 has-props
 
 
@@ -602,5 +602,5 @@ has-props
 
 
 
-3365
+3460
 

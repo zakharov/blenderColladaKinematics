@@ -1,5 +1,5 @@
-/**
- * $Id: action_draw.c 34160 2011-01-07 19:18:31Z campbellbarton $
+/*
+ * $Id: action_draw.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_action/action_draw.c
+ *  \ingroup spaction
+ */
+
 
 /* System includes ----------------------------------------------------- */
 
@@ -58,6 +63,7 @@
 #include "ED_anim_api.h"
 #include "ED_keyframes_draw.h"
 
+#include "action_intern.h"
 
 /* ************************************************************************* */
 /* Channel List */

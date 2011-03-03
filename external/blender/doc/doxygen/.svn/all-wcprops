@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/bf-blender/!svn/ver/35292/trunk/blender/doc/doxygen
+END
+doxygen.main
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/bf-blender/!svn/ver/35251/trunk/blender/doc/doxygen/doxygen.main
+END
+doxygen.extern
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/bf-blender/!svn/ver/35251/trunk/blender/doc/doxygen/doxygen.extern
+END
+footer.html
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/bf-blender/!svn/ver/35253/trunk/blender/doc/doxygen/footer.html
+END
+Doxyfile
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/bf-blender/!svn/ver/35258/trunk/blender/doc/doxygen/Doxyfile
+END
+doxygen.intern
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/bf-blender/!svn/ver/35251/trunk/blender/doc/doxygen/doxygen.intern
+END
+doxygen.source
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/bf-blender/!svn/ver/35251/trunk/blender/doc/doxygen/doxygen.source
+END

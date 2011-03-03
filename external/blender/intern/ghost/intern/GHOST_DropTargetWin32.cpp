@@ -1,5 +1,5 @@
-/**
- * $Id: GHOST_DropTargetWin32.cpp 28554 2010-05-03 17:13:12Z damien78 $
+/*
+ * $Id: GHOST_DropTargetWin32.cpp 35152 2011-02-25 11:28:33Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file ghost/intern/GHOST_DropTargetWin32.cpp
+ *  \ingroup GHOST
+ */
+
  
 #include "GHOST_Debug.h"
 #include "GHOST_DropTargetWin32.h"

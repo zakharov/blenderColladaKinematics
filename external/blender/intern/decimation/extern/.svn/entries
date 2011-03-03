@@ -1,15 +1,15 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern/decimation/extern
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-02-25T10:47:28.630336Z
+35147
+jesterking
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-01-18T22:04:10.953021Z
-c8e36e3271b1e19ce4ff60cd628f6723
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:44.294297Z
+ed6ca3b4b04d5ce050323cdcb06d1843
+2011-02-25T10:47:28.630336Z
+35147
+jesterking
 has-props
 
 
@@ -58,5 +58,5 @@ has-props
 
 
 
-3272
+3342
 

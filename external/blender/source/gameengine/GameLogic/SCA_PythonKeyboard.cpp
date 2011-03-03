@@ -1,5 +1,5 @@
-/**
- * $Id: SCA_PythonKeyboard.cpp 32788 2010-10-31 04:11:39Z campbellbarton $
+/*
+ * $Id: SCA_PythonKeyboard.cpp 35169 2011-02-25 13:32:11Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/GameLogic/SCA_PythonKeyboard.cpp
+ *  \ingroup gamelogic
+ */
+
 
 #include "SCA_PythonKeyboard.h"
 #include "SCA_IInputDevice.h"

@@ -1,7 +1,5 @@
-/**
- * blenlib/DNA_vfont_types.h (mar-2001 nzc)
- *
- * $Id: DNA_vfont_types.h 32676 2010-10-24 07:02:19Z campbellbarton $ 
+/*
+ * $Id: DNA_vfont_types.h 34941 2011-02-17 20:48:12Z jesterking $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -30,6 +28,12 @@
  */
 #ifndef DNA_VFONT_TYPES_H
 #define DNA_VFONT_TYPES_H
+
+/** \file DNA_vfont_types.h
+ *  \ingroup DNA
+ *  \since mar-2001
+ *  \author nzc
+ */
 
 #include "DNA_ID.h"
 

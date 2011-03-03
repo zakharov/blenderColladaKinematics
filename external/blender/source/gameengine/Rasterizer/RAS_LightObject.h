@@ -1,5 +1,5 @@
-/**
- * $Id: RAS_LightObject.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: RAS_LightObject.h 35072 2011-02-22 12:42:55Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file RAS_LightObject.h
+ *  \ingroup bgerast
+ */
+
 #ifndef __RAS_LIGHTOBJECT_H
 #define __RAS_LIGHTOBJECT_H
 

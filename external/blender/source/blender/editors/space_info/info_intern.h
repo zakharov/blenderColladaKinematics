@@ -1,5 +1,5 @@
-/**
- * $Id: info_intern.h 33431 2010-12-02 21:48:46Z campbellbarton $
+/*
+ * $Id: info_intern.h 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_info/info_intern.h
+ *  \ingroup spinfo
+ */
+
 #ifndef ED_INFO_INTERN_H
 #define ED_INFO_INTERN_H
 

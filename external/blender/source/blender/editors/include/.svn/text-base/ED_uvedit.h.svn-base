@@ -1,4 +1,4 @@
-/**
+/*
  * $Id$
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
@@ -23,6 +23,10 @@
  * Contributor(s): Blender Foundation
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file ED_uvedit.h
+ *  \ingroup editors
  */
 
 #ifndef ED_UVEDIT_H
@@ -66,6 +70,8 @@ int ED_uvedit_nearest_uv(struct Scene *scene, struct Object *obedit, struct Imag
 void ED_uvedit_live_unwrap_begin(struct Scene *scene, struct Object *obedit);
 void ED_uvedit_live_unwrap_re_solve(void);
 void ED_uvedit_live_unwrap_end(short cancel);
+
+void draw_uvedit_main(struct SpaceImage *sima, struct ARegion *ar, struct Scene *scene, struct Object *obedit);
 
 #endif /* ED_UVEDIT_H */
 

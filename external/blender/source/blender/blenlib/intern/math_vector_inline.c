@@ -1,5 +1,5 @@
-/**
- * $Id: math_vector_inline.c 34709 2011-02-08 03:37:49Z campbellbarton $
+/*
+ * $Id: math_vector_inline.c 35246 2011-02-27 20:37:56Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  * */
+
+/** \file blender/blenlib/intern/math_vector_inline.c
+ *  \ingroup bli
+ */
+
 
 #include "BLI_math.h"
 

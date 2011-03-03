@@ -1,4 +1,4 @@
-/**
+/*
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,8 +26,13 @@
  * ***** END GPL LICENSE BLOCK *****
  * util.c
  *
- * $Id: util.c 33583 2010-12-10 04:10:21Z campbellbarton $
+ * $Id: util.c 35239 2011-02-27 20:23:21Z jesterking $
  */
+
+/** \file blender/imbuf/intern/util.c
+ *  \ingroup imbuf
+ */
+
 
 #ifdef _WIN32
 #include <io.h>

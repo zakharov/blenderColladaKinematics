@@ -1,5 +1,5 @@
-/**
- * $Id: particle_object.c 34160 2011-01-07 19:18:31Z campbellbarton $
+/*
+ * $Id: particle_object.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/physics/particle_object.c
+ *  \ingroup edphys
+ */
+
 
 #include <stdlib.h>
 #include <string.h>

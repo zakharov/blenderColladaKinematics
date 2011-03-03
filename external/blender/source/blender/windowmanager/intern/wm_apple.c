@@ -1,5 +1,5 @@
-/**
- * $Id: wm_apple.c 27655 2010-03-22 09:30:00Z campbellbarton $
+/*
+ * $Id: wm_apple.c 35179 2011-02-25 14:04:21Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/windowmanager/intern/wm_apple.c
+ *  \ingroup wm
+ */
+
 
 #ifdef __APPLE__
 

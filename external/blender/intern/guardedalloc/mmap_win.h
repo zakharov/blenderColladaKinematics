@@ -1,5 +1,5 @@
-/**
- * $Id: mmap_win.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: mmap_win.h 35025 2011-02-21 11:38:55Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file mmap_win.h
+ *  \ingroup MEM
+ *  \author Andrea Weikert
+ */
  
 #ifndef MMAP_WIN_H
 #define MMAP_WIN_H
@@ -45,7 +50,7 @@
 
 #define MAP_FAILED ((void *)-1)
 
-#include "BLO_sys_types.h" // needed for intptr_t
+#include "MEM_sys_types.h" // needed for intptr_t
 
 void *mmap(void *start, size_t len, int prot, int flags, int fd, off_t offset);
 intptr_t munmap(void *ptr, intptr_t size);

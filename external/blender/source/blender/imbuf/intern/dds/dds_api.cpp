@@ -1,5 +1,5 @@
-/**
- * $Id: dds_api.cpp 33167 2010-11-19 02:14:18Z campbellbarton $
+/*
+ * $Id: dds_api.cpp 35239 2011-02-27 20:23:21Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/imbuf/intern/dds/dds_api.cpp
+ *  \ingroup imbdds
+ */
+
 
 #include <stddef.h>
 #include <dds_api.h>

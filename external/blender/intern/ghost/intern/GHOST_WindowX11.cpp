@@ -1,5 +1,5 @@
-/**
- * $Id: GHOST_WindowX11.cpp 34701 2011-02-07 22:48:23Z campbellbarton $
+/*
+ * $Id: GHOST_WindowX11.cpp 35152 2011-02-25 11:28:33Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file ghost/intern/GHOST_WindowX11.cpp
+ *  \ingroup GHOST
+ */
+
 
 #include "GHOST_WindowX11.h"
 #include "GHOST_SystemX11.h"

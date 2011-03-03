@@ -1,5 +1,5 @@
-/**
- * $Id: MOD_util.c 34160 2011-01-07 19:18:31Z campbellbarton $
+/*
+ * $Id: MOD_util.c 35178 2011-02-25 13:57:17Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -29,6 +29,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/modifiers/intern/MOD_util.c
+ *  \ingroup modifiers
+ */
+
 
 #include <string.h>
 
@@ -148,7 +153,6 @@ DerivedMesh *get_dm(Object *ob, struct EditMesh *em, DerivedMesh *dm, float (*ve
 /* only called by BKE_modifier.h/modifier.c */
 void modifier_type_init(ModifierTypeInfo *types[])
 {
-	memset(types, 0, sizeof(types));
 #define INIT_TYPE(typeName) (types[eModifierType_##typeName] = &modifierType_##typeName)
 	INIT_TYPE(None);
 	INIT_TYPE(Curve);

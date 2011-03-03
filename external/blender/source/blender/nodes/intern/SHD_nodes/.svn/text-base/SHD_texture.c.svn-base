@@ -1,4 +1,4 @@
-/**
+/*
  * $Id$
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/nodes/intern/SHD_nodes/SHD_texture.c
+ *  \ingroup shdnodes
+ */
+
 
 #include "DNA_texture_types.h"
 

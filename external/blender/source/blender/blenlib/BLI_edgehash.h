@@ -1,7 +1,5 @@
-/**
- * A general unordered 2-int pair hash table ADT
- * 
- * $Id: BLI_edgehash.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: BLI_edgehash.h 34966 2011-02-18 13:58:08Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -31,6 +29,12 @@
  
 #ifndef BLI_EDGEHASH_H
 #define BLI_EDGEHASH_H
+
+/** \file BLI_storage.h
+ *  \ingroup bli
+ *  \author Daniel Dunbar
+ *  \brief A general unordered 2-int pair hash table ADT.
+ */
 
 struct EdgeHash;
 struct EdgeHashIterator;

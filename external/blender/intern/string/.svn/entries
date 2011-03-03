@@ -1,15 +1,15 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern/string
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-30T15:29:22.294392Z
-34567
-campbellbarton
+2011-02-25T11:51:19.443245Z
+35160
+jesterking
 
 
 
@@ -35,11 +35,11 @@ file
 
 
 
-2011-01-18T22:04:10.493021Z
-9059a7e14cbfdeb9c581f43ec1262f22
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:42.886297Z
+ba8a2bf2b391107ce97d705d9e46d890
+2011-02-25T11:51:19.443245Z
+35160
+jesterking
 has-props
 
 
@@ -61,7 +61,7 @@ has-props
 
 
 
-4219
+4272
 
 STR_String.h
 file
@@ -69,11 +69,11 @@ file
 
 
 
-2011-01-18T22:04:10.493021Z
-25b6b9a51b3626389e66d3394b67006a
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:25:42.890297Z
+c42c72901569b59e2fd703def43eaaa2
+2011-02-25T11:51:19.443245Z
+35160
+jesterking
 has-props
 
 
@@ -95,7 +95,7 @@ has-props
 
 
 
-9358
+9405
 
 SConscript
 file
@@ -103,7 +103,7 @@ file
 
 
 
-2011-01-18T22:04:10.493021Z
+2011-03-03T12:25:42.890297Z
 bf5735d453579d198fe5d760fef78cf9
 2010-10-08T20:39:56.785377Z
 32381
@@ -137,7 +137,7 @@ file
 
 
 
-2011-01-18T22:04:10.493021Z
+2011-03-03T12:25:42.890297Z
 3301f54a86d4fb043e1e423398ff2069
 2010-12-22T23:09:30.468439Z
 33864

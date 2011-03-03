@@ -1,5 +1,5 @@
-/**
- * $Id: gsqueue.c 28254 2010-04-18 10:28:37Z campbellbarton $
+/*
+ * $Id: gsqueue.c 35246 2011-02-27 20:37:56Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/blenlib/intern/gsqueue.c
+ *  \ingroup bli
+ */
+
 #include <string.h>
 
 #include "MEM_guardedalloc.h"

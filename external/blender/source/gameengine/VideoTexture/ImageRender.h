@@ -1,4 +1,4 @@
-/* $Id: ImageRender.h 33442 2010-12-03 12:30:59Z campbellbarton $
+/* $Id: ImageRender.h 35082 2011-02-22 19:30:37Z jesterking $
 -----------------------------------------------------------------------------
 This source file is part of VideoTexture library
 
@@ -20,6 +20,10 @@ http://www.gnu.org/copyleft/lesser.txt.
 -----------------------------------------------------------------------------
 */
 
+/** \file ImageRender.h
+ *  \ingroup bgevideotex
+ */
+ 
 #if !defined IMAGERENDER_H
 #define IMAGERENDER_H
 

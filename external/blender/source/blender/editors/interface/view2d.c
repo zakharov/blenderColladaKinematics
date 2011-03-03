@@ -1,5 +1,5 @@
-/**
- * $Id: view2d.c 34608 2011-02-01 17:54:02Z ton $
+/*
+ * $Id: view2d.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/interface/view2d.c
+ *  \ingroup edinterface
+ */
+
 
 #include <float.h>
 #include <limits.h>

@@ -1,5 +1,5 @@
-/**
- * $Id: MOD_util.h 33468 2010-12-04 13:00:28Z campbellbarton $
+/*
+ * $Id: MOD_util.h 35178 2011-02-25 13:57:17Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,8 +25,16 @@
  * ***** END GPL LICENSE BLOCK *****
  */
 
+/** \file blender/modifiers/intern/MOD_util.h
+ *  \ingroup modifiers
+ */
+
+
 #ifndef MOD_UTIL_H
 #define MOD_UTIL_H
+
+/* so modifier types match their defines */
+#include "MOD_modifiertypes.h"
 
 struct Tex;
 struct TexResult;

@@ -1,5 +1,5 @@
-/**
- * $Id: text_python.c 33442 2010-12-03 12:30:59Z campbellbarton $
+/*
+ * $Id: text_python.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_text/text_python.c
+ *  \ingroup sptext
+ */
+
 
 #include <ctype.h>
 #include <stdio.h>
@@ -98,7 +103,7 @@ int text_do_suggest_select(SpaceText *st, ARegion *ar)
 	return 1;
 }
 
-void text_pop_suggest_list()
+void text_pop_suggest_list(void)
 {
 	SuggItem *item, *sel;
 	int *top, i;
@@ -187,7 +192,7 @@ static void confirm_suggestion(Text *text, int skipleft)
 // XXX
 static int doc_scroll= 0;
 
-short do_texttools(SpaceText *st, char ascii, unsigned short evnt, short val)
+static short do_texttools(SpaceText *st, char ascii, unsigned short evnt, short val)
 {
 	ARegion *ar= NULL; // XXX
 	int qual= 0; // XXX
@@ -370,7 +375,7 @@ short do_texttools(SpaceText *st, char ascii, unsigned short evnt, short val)
 		; // XXX redraw_alltext();
 #endif
 
-short do_textmarkers(SpaceText *st, char ascii, unsigned short evnt, short val)
+static short do_textmarkers(SpaceText *st, char ascii, unsigned short evnt, short val)
 {
 	Text *text;
 	TextMarker *marker, *mrk, *nxt;

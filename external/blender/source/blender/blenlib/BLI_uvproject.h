@@ -1,5 +1,5 @@
-/**
- * $Id: BLI_uvproject.h 29479 2010-06-15 21:46:02Z campbellbarton $
+/*
+ * $Id: BLI_uvproject.h 34966 2011-02-18 13:58:08Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,10 @@
  */
 #ifndef BKE_UVPROJECT_H
 #define BKE_UVPROJECT_H
+
+/** \file BLI_uvproject.h
+ *  \ingroup bli
+ */
 
 struct UvCameraInfo;
 struct Object;

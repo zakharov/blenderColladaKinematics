@@ -1,7 +1,5 @@
-/**
- * blenlib/BKE_image.h (mar-2001 nzc)
- *	
- * $Id: BKE_image.h 34335 2011-01-15 16:14:57Z campbellbarton $ 
+/*
+ * $Id: BKE_image.h 34962 2011-02-18 13:05:18Z jesterking $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -30,6 +28,12 @@
  */
 #ifndef BKE_IMAGE_H
 #define BKE_IMAGE_H
+
+/** \file BKE_image.h
+ *  \ingroup bke
+ *  \since March 2001
+ *  \author nzc
+ */
 
 #ifdef __cplusplus
 extern "C" {

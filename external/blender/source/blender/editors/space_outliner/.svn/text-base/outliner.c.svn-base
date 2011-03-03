@@ -1,4 +1,4 @@
-/**
+/*
  * $Id$
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_outliner/outliner.c
+ *  \ingroup spoutliner
+ */
+
 
 #include <math.h>
 #include <string.h>
@@ -56,7 +61,9 @@
 #if defined WIN32 && !defined _LIBC
 # include "BLI_fnmatch.h" /* use fnmatch included in blenlib */
 #else
-# define _GNU_SOURCE
+#  ifndef _GNU_SOURCE
+#    define _GNU_SOURCE
+#  endif
 # include <fnmatch.h>
 #endif
 
@@ -1189,7 +1196,7 @@ static void outliner_make_hierarchy(SpaceOops *soops, ListBase *lb)
 }
 
 /* Helped function to put duplicate sequence in the same tree. */
-int need_add_seq_dup(Sequence *seq)
+static int need_add_seq_dup(Sequence *seq)
 {
 	Sequence *p;
 
@@ -1226,7 +1233,7 @@ int need_add_seq_dup(Sequence *seq)
 	return(1);
 }
 
-void add_seq_dup(SpaceOops *soops, Sequence *seq, TreeElement *te, short index)
+static void add_seq_dup(SpaceOops *soops, Sequence *seq, TreeElement *te, short index)
 {
 	TreeElement *ch;
 	Sequence *p;
@@ -1611,7 +1618,7 @@ static int common_restrict_check(bContext *C, Object *ob)
 	return 1;
 }
 
-void object_toggle_visibility_cb(bContext *C, Scene *scene, TreeElement *te, TreeStoreElem *UNUSED(tsep), TreeStoreElem *tselem)
+static void object_toggle_visibility_cb(bContext *C, Scene *scene, TreeElement *te, TreeStoreElem *UNUSED(tsep), TreeStoreElem *tselem)
 {
 	Base *base= (Base *)te->directdata;
 	Object *ob = (Object *)tselem->id;
@@ -1694,7 +1701,7 @@ void OUTLINER_OT_selectability_toggle(wmOperatorType *ot)
 	ot->flag= OPTYPE_REGISTER|OPTYPE_UNDO;
 }
 
-void object_toggle_renderability_cb(bContext *UNUSED(C), Scene *scene, TreeElement *te, TreeStoreElem *UNUSED(tsep), TreeStoreElem *tselem)
+static void object_toggle_renderability_cb(bContext *UNUSED(C), Scene *scene, TreeElement *te, TreeStoreElem *UNUSED(tsep), TreeStoreElem *tselem)
 {
 	Base *base= (Base *)te->directdata;
 	
@@ -1900,7 +1907,7 @@ static void outliner_open_reveal(SpaceOops *soops, ListBase *lb, TreeElement *te
 #endif
 
 // XXX just use View2D ops for this?
-void outliner_page_up_down(Scene *UNUSED(scene), ARegion *ar, SpaceOops *soops, int up)
+static void outliner_page_up_down(Scene *UNUSED(scene), ARegion *ar, SpaceOops *soops, int up)
 {
 	int dy= ar->v2d.mask.ymax-ar->v2d.mask.ymin;
 	
@@ -2107,6 +2114,16 @@ static int tree_element_active_lamp(bContext *UNUSED(C), Scene *scene, SpaceOops
 	else return 1;
 	
 	return 0;
+}
+
+static int tree_element_active_camera(bContext *UNUSED(C), Scene *scene, SpaceOops *soops, TreeElement *te, int set)
+{
+	Object *ob= (Object *)outliner_search_back(soops, te, ID_OB);
+
+	if(set)
+		return 0;
+
+	return scene->camera == ob;
 }
 
 static int tree_element_active_world(bContext *C, Scene *scene, SpaceOops *soops, TreeElement *te, int set)
@@ -2343,6 +2360,8 @@ static int tree_element_active(bContext *C, Scene *scene, SpaceOops *soops, Tree
 			return tree_element_active_texture(C, scene, soops, te, set);
 		case ID_TXT:
 			return tree_element_active_text(C, scene, soops, te, set);
+		case ID_CA:
+			return tree_element_active_camera(C, scene, soops, te, set);
 	}
 	return 0;
 }
@@ -3404,7 +3423,7 @@ static void outliner_do_data_operation(SpaceOops *soops, int type, int event, Li
 	}
 }
 
-void outliner_del(bContext *C, Scene *scene, ARegion *UNUSED(ar), SpaceOops *soops)
+static void outliner_del(bContext *C, Scene *scene, ARegion *UNUSED(ar), SpaceOops *soops)
 {
 	
 	if(soops->outlinevis==SO_SEQUENCE)
@@ -3953,7 +3972,7 @@ static void tree_element_to_path(SpaceOops *soops, TreeElement *te, TreeStoreEle
 enum {
 	DRIVERS_EDITMODE_ADD	= 0,
 	DRIVERS_EDITMODE_REMOVE,
-} eDrivers_EditModes;
+} /*eDrivers_EditModes*/;
 
 /* Utilities ---------------------------------- */ 
 
@@ -4107,7 +4126,7 @@ void OUTLINER_OT_drivers_delete_selected(wmOperatorType *ot)
 enum {
 	KEYINGSET_EDITMODE_ADD	= 0,
 	KEYINGSET_EDITMODE_REMOVE,
-} eKeyingSet_EditModes;
+} /*eKeyingSet_EditModes*/;
 
 /* Utilities ---------------------------------- */ 
  
@@ -5356,13 +5375,13 @@ static void outliner_draw_rnabuts(uiBlock *block, Scene *scene, ARegion *ar, Spa
 				prop= te->directdata;
 				
 				if(!(RNA_property_type(prop) == PROP_POINTER && (tselem->flag & TSE_CLOSED)==0))
-					uiDefAutoButR(block, ptr, prop, -1, "", ICON_NULL, sizex, (int)te->ys, OL_RNA_COL_SIZEX, OL_H-1);
+					uiDefAutoButR(block, ptr, prop, -1, "", ICON_NONE, sizex, (int)te->ys, OL_RNA_COL_SIZEX, OL_H-1);
 			}
 			else if(tselem->type == TSE_RNA_ARRAY_ELEM) {
 				ptr= &te->rnaptr;
 				prop= te->directdata;
 				
-				uiDefAutoButR(block, ptr, prop, te->index, "", ICON_NULL, sizex, (int)te->ys, OL_RNA_COL_SIZEX, OL_H-1);
+				uiDefAutoButR(block, ptr, prop, te->index, "", ICON_NONE, sizex, (int)te->ys, OL_RNA_COL_SIZEX, OL_H-1);
 			}
 		}
 		

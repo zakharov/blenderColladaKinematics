@@ -1,5 +1,5 @@
-/**
- * $Id: CMP_mixrgb.c 34717 2011-02-08 12:54:32Z lukastoenne $
+/*
+ * $Id: CMP_mixrgb.c 35237 2011-02-27 20:13:22Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/nodes/intern/CMP_nodes/CMP_mixrgb.c
+ *  \ingroup cmpnodes
+ */
+
 #include "../CMP_util.h"
 
 /* **************** MIX RGB ******************** */

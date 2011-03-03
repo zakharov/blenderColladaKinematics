@@ -1,5 +1,5 @@
-/**
- * $Id: EffectExporter.cpp 32360 2010-10-07 01:20:59Z gsrb3d $
+/*
+ * $Id: EffectExporter.cpp 35243 2011-02-27 20:30:35Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -22,6 +22,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/collada/EffectExporter.cpp
+ *  \ingroup collada
+ */
+
 
 #include <map>
 

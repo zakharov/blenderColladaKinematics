@@ -1,5 +1,5 @@
-/**
- * $Id: EXP_C-Api.cpp 28254 2010-04-18 10:28:37Z campbellbarton $
+/*
+ * $Id: EXP_C-Api.cpp 35168 2011-02-25 13:31:23Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/Expressions/EXP_C-Api.cpp
+ *  \ingroup expressions
+ */
+
 #include "EXP_C-Api.h"
 #include "IntValue.h"
 #include "BoolValue.h"

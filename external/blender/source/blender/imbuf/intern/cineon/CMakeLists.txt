@@ -1,4 +1,4 @@
-# $Id: CMakeLists.txt 33962 2010-12-31 04:29:11Z campbellbarton $
+# $Id: CMakeLists.txt 35028 2011-02-21 12:35:04Z jesterking $
 # ***** BEGIN GPL LICENSE BLOCK *****
 #
 # This program is free software; you can redistribute it and/or
@@ -29,6 +29,7 @@ set(INC
 		..
 		../..
 		../../../blenkernel
+		../../../blenloader
 		../../../blenlib
 		../../../makesdna
 		../../../../../intern/guardedalloc

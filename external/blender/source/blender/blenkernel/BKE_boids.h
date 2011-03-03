@@ -1,7 +1,5 @@
-/* BKE_particle.h
- *
- *
- * $Id: BKE_boids.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: BKE_boids.h 34962 2011-02-18 13:05:18Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -31,6 +29,12 @@
 
 #ifndef BKE_BOIDS_H
 #define BKE_BOIDS_H
+
+/** \file BKE_boids.h
+ *  \ingroup bke
+ *  \since 2009
+ *  \author Janne Karhu
+ */
 
 #include "DNA_boid_types.h"
 

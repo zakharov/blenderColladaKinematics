@@ -1,5 +1,5 @@
-/**
- * $Id: IMB_filetype.h 33167 2010-11-19 02:14:18Z campbellbarton $
+/*
+ * $Id: IMB_filetype.h 35239 2011-02-27 20:23:21Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/imbuf/intern/IMB_filetype.h
+ *  \ingroup imbuf
+ */
+
 
 #ifndef IMB_FILETYPE_H
 #define IMB_FILETYPE_H
@@ -81,7 +86,6 @@ int imb_savejp2(struct ImBuf *ibuf, const char *name, int flags);
 /* jpeg */
 int imb_is_a_jpeg(unsigned char *mem);
 int imb_savejpeg(struct ImBuf *ibuf, const char *name, int flags);
-struct ImBuf * imb_ibJpegImageFromFilename (const char * filename, int flags);
 struct ImBuf * imb_load_jpeg (unsigned char * buffer, size_t size, int flags);
 
 /* bmp */

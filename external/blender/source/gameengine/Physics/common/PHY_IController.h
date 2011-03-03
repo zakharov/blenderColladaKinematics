@@ -1,5 +1,5 @@
-/**
- * $Id: PHY_IController.h 29259 2010-06-06 01:15:44Z campbellbarton $
+/*
+ * $Id: PHY_IController.h 35072 2011-02-22 12:42:55Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file PHY_IController.h
+ *  \ingroup phys
+ */
+
 #ifndef PHY_ICONTROLLER_H
 #define PHY_ICONTROLLER_H
 

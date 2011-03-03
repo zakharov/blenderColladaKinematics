@@ -1,5 +1,5 @@
-/**
- * $Id: dynamiclist.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: dynamiclist.h 35246 2011-02-27 20:37:56Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/blenlib/intern/dynamiclist.h
+ *  \ingroup bli
+ */
+
 
 #ifndef B_DYNAMIC_LIST_H
 #define B_DYNAMIC_LIST_H

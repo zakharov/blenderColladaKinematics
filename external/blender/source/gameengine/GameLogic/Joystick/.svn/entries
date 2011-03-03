@@ -1,15 +1,15 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/gameengine/GameLogic/Joystick
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-30T15:29:22.294392Z
-34567
-campbellbarton
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-01-18T22:04:26.873021Z
-bebcaa5b14b42e4275249649e12116f8
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:34.866297Z
+c403586aaf6c777259d1be48378bcb9b
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-6455
+6540
 
 SCA_JoystickPrivate.h
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-01-18T22:04:26.873021Z
-929cd8503332c825bd2556849dc90b70
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:34.866297Z
+f74e8ad4eeeec67a3c2d66f43d401c1e
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-1253
+1312
 
 SCA_JoystickDefines.h
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-01-18T22:04:26.873021Z
-db9b1a5fb4bf14f510d091c53d869988
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:34.866297Z
+759d9ed1e51db2a4448a99a966c0f3df
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-1393
+1453
 
 SCA_Joystick.h
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-01-18T22:04:26.873021Z
-cd26dfba5f87085834b736e0a77fb978
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:34.866297Z
+6c35ad6c6d3ce17105ac05e1c0282338
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-4066
+4134
 
 SCA_JoystickEvents.cpp
 file
@@ -168,11 +168,11 @@ file
 
 
 
-2011-01-18T22:04:26.873021Z
-d6cbf3064cd7011174712cbf9e05e1ff
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:34.866297Z
+81e495e3d7c10ddea46f1a6e84576e4d
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 has-props
 
 
@@ -194,5 +194,5 @@ has-props
 
 
 
-3411
+3502
 

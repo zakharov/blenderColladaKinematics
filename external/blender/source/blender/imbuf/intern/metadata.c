@@ -1,5 +1,5 @@
-/**
- * $Id: metadata.c 28656 2010-05-07 22:04:48Z gsrb3d $
+/*
+ * $Id: metadata.c 35239 2011-02-27 20:23:21Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/imbuf/intern/metadata.c
+ *  \ingroup imbuf
+ */
+
 
 #include <stdlib.h>
 #include <string.h>

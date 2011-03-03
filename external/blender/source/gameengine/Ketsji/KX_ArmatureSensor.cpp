@@ -1,7 +1,7 @@
-/**
+/*
  * Armature sensor
  *
- * $Id: KX_ArmatureSensor.cpp 32788 2010-10-31 04:11:39Z campbellbarton $
+ * $Id: KX_ArmatureSensor.cpp 35171 2011-02-25 13:35:59Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/Ketsji/KX_ArmatureSensor.cpp
+ *  \ingroup ketsji
+ */
+
 
 #include "DNA_action_types.h"
 #include "DNA_constraint_types.h"

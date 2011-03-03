@@ -1,5 +1,5 @@
-/**
- * $Id: SCA_ActuatorEventManager.cpp 31730 2010-09-03 03:30:20Z gsrb3d $
+/*
+ * $Id: SCA_ActuatorEventManager.cpp 35169 2011-02-25 13:32:11Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/GameLogic/SCA_ActuatorEventManager.cpp
+ *  \ingroup gamelogic
+ */
+
 
 #include "SCA_ISensor.h"
 #include "SCA_ActuatorEventManager.h"

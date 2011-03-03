@@ -1,5 +1,5 @@
-/**
- * $Id: rna_render.c 34715 2011-02-08 10:31:47Z campbellbarton $
+/*
+ * $Id: rna_render.c 35336 2011-03-03 17:58:06Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/makesrna/intern/rna_render.c
+ *  \ingroup RNA
+ */
+
 
 #include <stdlib.h>
 
@@ -54,7 +59,7 @@ static RenderEngineType internal_game_type = {
 
 ListBase R_engines = {NULL, NULL};
 
-void RE_engines_init()
+void RE_engines_init(void)
 {
 	BLI_addtail(&R_engines, &internal_render_type);
 #ifdef WITH_GAMEENGINE
@@ -62,7 +67,7 @@ void RE_engines_init()
 #endif
 }
 
-void RE_engines_exit()
+void RE_engines_exit(void)
 {
 	RenderEngineType *type, *next;
 
@@ -110,8 +115,8 @@ static void rna_RenderEngine_unregister(const bContext *C, StructRNA *type)
 
 static StructRNA *rna_RenderEngine_register(bContext *C, ReportList *reports, void *data, const char *identifier, StructValidateFunc validate, StructCallbackFunc call, StructFreeFunc free)
 {
-	RenderEngineType *et, dummyet = {0};
-	RenderEngine dummyengine= {0};
+	RenderEngineType *et, dummyet = {NULL};
+	RenderEngine dummyengine= {NULL};
 	PointerRNA dummyptr;
 	int have_function[1];
 

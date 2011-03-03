@@ -1,5 +1,5 @@
-/**
- * $Id: ED_gpencil.h 34236 2011-01-10 22:10:28Z aligorith $
+/*
+ * $Id: ED_gpencil.h 35016 2011-02-21 07:25:24Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -23,6 +23,10 @@
  * Contributor(s): Joshua Leung
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file ED_gpencil.h
+ *  \ingroup editors
  */
 
 #ifndef ED_GPENCIL_H
@@ -82,7 +86,7 @@ void draw_gpencil_view3d_ext(struct Scene *scene, struct View3D *v3d, struct ARe
 void gpencil_panel_standard(const struct bContext *C, struct Panel *pa);
 
 /* ----------- Grease-Pencil AnimEdit API ------------------ */
-
+short gplayer_frames_looper(struct bGPDlayer *gpl, struct Scene *scene, short (*gpf_cb)(struct bGPDframe *, struct Scene *));
 void gplayer_make_cfra_list(struct bGPDlayer *gpl, ListBase *elems, short onlysel);
 
 void deselect_gpencil_layers(void *data, short select_mode);

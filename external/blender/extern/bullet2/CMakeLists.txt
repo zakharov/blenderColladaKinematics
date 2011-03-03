@@ -1,4 +1,4 @@
-# $Id: CMakeLists.txt 34520 2011-01-27 00:02:25Z campbellbarton $
+# $Id: CMakeLists.txt 34787 2011-02-12 06:25:04Z campbellbarton $
 # ***** BEGIN GPL LICENSE BLOCK *****
 #
 # This program is free software; you can redistribute it and/or
@@ -319,7 +319,7 @@ set(SRC
 	src/btBulletDynamicsCommon.h
 )
 
-if(CMAKE_COMPILER_IS_GNUCC)
+if(CMAKE_COMPILER_IS_GNUCXX)
 	# needed for gcc 4.6+
 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fpermissive")
 endif()

@@ -1,5 +1,5 @@
-/**
- * $Id: BKE_sca.h 33722 2010-12-16 23:24:25Z gsrb3d $
+/*
+ * $Id: BKE_sca.h 34962 2011-02-18 13:05:18Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,10 @@
  */
 #ifndef BKE_SCA_H
 #define BKE_SCA_H
+
+/** \file BKE_sca.h
+ *  \ingroup bke
+ */
 
 struct Text;
 struct bSensor;

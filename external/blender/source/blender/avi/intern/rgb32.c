@@ -1,9 +1,7 @@
-/**
- * rgb32.c
+/*
+ * $Id: rgb32.c 35249 2011-02-27 20:43:42Z jesterking $
  *
  * This is external code. Converts between rgb32 and avi.
- *
- * $Id: rgb32.c 32532 2010-10-17 06:38:56Z campbellbarton $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -29,7 +27,13 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
- *  */
+ *
+ */
+
+/** \file blender/avi/intern/rgb32.c
+ *  \ingroup avi
+ */
+
 
 #include "AVI_avi.h"
 #include <stdlib.h>

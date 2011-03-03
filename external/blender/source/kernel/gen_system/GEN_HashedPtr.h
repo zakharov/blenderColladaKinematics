@@ -1,5 +1,5 @@
 /*
- * $Id: GEN_HashedPtr.h 26841 2010-02-12 13:34:04Z campbellbarton $
+ * $Id: GEN_HashedPtr.h 35164 2011-02-25 13:25:53Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  * ***** END GPL LICENSE BLOCK *****
  *
  */
+
+/** \file kernel/gen_system/GEN_HashedPtr.h
+ *  \ingroup gensys
+ */
+
 #ifndef __GEN_HASHEDPTR
 #define __GEN_HASHEDPTR
 

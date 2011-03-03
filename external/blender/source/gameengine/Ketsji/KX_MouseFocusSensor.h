@@ -1,5 +1,5 @@
-/**
- * $Id: KX_MouseFocusSensor.h 32788 2010-10-31 04:11:39Z campbellbarton $
+/*
+ * $Id: KX_MouseFocusSensor.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,7 +25,11 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
- * KX_MouseFocusSensor determines mouse in/out/over events.
+ */
+
+/** \file KX_MouseFocusSensor.h
+ *  \ingroup ketsji
+ *  \brief KX_MouseFocusSensor determines mouse in/out/over events.
  */
 
 #ifndef __KX_MOUSEFOCUSSENSOR

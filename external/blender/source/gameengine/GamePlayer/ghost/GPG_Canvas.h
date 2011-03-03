@@ -1,5 +1,5 @@
-/**
- * $Id: GPG_Canvas.h 28393 2010-04-23 22:48:26Z dfelinto $
+/*
+ * $Id: GPG_Canvas.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,10 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file GPG_Canvas.h
+ *  \ingroup player
  */
 
 #ifndef _GPG_CANVAS_H_

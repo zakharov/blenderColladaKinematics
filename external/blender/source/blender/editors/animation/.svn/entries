@@ -1,14 +1,14 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/editors/animation
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-02-10T09:39:55.665835Z
-34754
+2011-03-02T23:40:32.487578Z
+35314
 aligorith
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-01-18T22:04:49.173021Z
-d35855bbe15966db8cace63ca7de4794
-2011-01-07T18:36:47.041781Z
-34159
-campbellbarton
+2011-03-03T12:27:40.402297Z
+f47b2f45550b9a052684bd512dcc742d
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-8161
+8235
 
 anim_draw.c
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-01-18T22:04:49.173021Z
-a5f49243298a12f7090dbcf07dac3f69
-2010-11-18T14:10:09.512136Z
-33159
-campbellbarton
+2011-03-03T12:27:40.406297Z
+9794c2897bc8c52ffada17cbb85eecf4
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-14930
+14976
 
 fmodifier_ui.c
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-01-18T22:04:49.173021Z
-cbdad155a82d748c6da350ad619f9091
-2011-01-07T18:36:47.041781Z
-34159
-campbellbarton
+2011-03-03T12:27:40.406297Z
+591b6f7c37277940cc3ed3157e21adf1
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-23920
+24022
 
 keyframes_draw.c
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-02-10T19:48:50.555667Z
-64481e297cb9312f2905efd7abb8494e
-2011-02-01T11:35:27.888067Z
-34600
-aligorith
+2011-03-03T12:27:40.406297Z
+e9460a4e78ad33e480adf67da94f2f83
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-27515
+27607
 
 anim_channels_edit.c
 file
@@ -168,11 +168,11 @@ file
 
 
 
-2011-02-10T19:48:50.565667Z
-80ff3f364e7dbedabcddc8b27df5ffa8
-2011-02-10T09:39:55.665835Z
-34754
-aligorith
+2011-03-03T12:27:40.406297Z
+65ca30ef300374b227697b75c324ac8f
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-68245
+68473
 
 anim_ops.c
 file
@@ -202,11 +202,11 @@ file
 
 
 
-2011-01-18T22:04:49.183021Z
-a71465c642dc7a6c8b01701208f0bf79
-2011-01-07T18:36:47.041781Z
-34159
-campbellbarton
+2011-03-03T12:27:40.406297Z
+17b81e98ca0fac4af18fcba5fc329313
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -228,7 +228,7 @@ has-props
 
 
 
-10887
+11013
 
 SConscript
 file
@@ -236,11 +236,11 @@ file
 
 
 
-2011-01-18T22:04:49.183021Z
-468c6898a40261f4496151421f09550c
-2009-10-01T16:32:33.040756Z
-23587
-theeth
+2011-03-03T12:27:40.410297Z
+1ff4a861d64d17cbffd7bae46caa0eeb
+2011-02-21T12:35:04.852834Z
+35028
+jesterking
 has-props
 
 
@@ -262,7 +262,7 @@ has-props
 
 
 
-332
+349
 
 anim_intern.h
 file
@@ -270,11 +270,11 @@ file
 
 
 
-2011-01-18T22:04:49.183021Z
-75ff33a72fc36a2cc70e1dcaad4abc3e
-2010-03-25T11:34:18.389689Z
-27738
-aligorith
+2011-03-03T12:27:40.410297Z
+af821976192ac3477d501085c02ee2c6
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -296,7 +296,7 @@ has-props
 
 
 
-2981
+3062
 
 anim_markers.c
 file
@@ -304,10 +304,10 @@ file
 
 
 
-2011-02-10T19:48:50.565667Z
-0da02fbf2dd466da3044a4324ddac9c8
-2011-02-09T01:05:40.164611Z
-34727
+2011-03-03T12:27:40.410297Z
+9e1f2c237e56044e787239efe0ddf692
+2011-03-02T23:40:32.487578Z
+35314
 aligorith
 has-props
 
@@ -330,7 +330,7 @@ has-props
 
 
 
-39392
+39684
 
 anim_ipo_utils.c
 file
@@ -338,11 +338,11 @@ file
 
 
 
-2011-01-18T22:04:49.183021Z
-40fae25238be6b2758195bc4bdf3c2e7
-2011-01-07T19:18:31.464706Z
-34160
-campbellbarton
+2011-03-03T12:27:40.410297Z
+938bf78f0f302a30f587fbec9dba6554
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -364,7 +364,7 @@ has-props
 
 
 
-7307
+7410
 
 drivers.c
 file
@@ -372,11 +372,11 @@ file
 
 
 
-2011-01-18T22:04:49.183021Z
-73c2abfe3f5e7023dca9c225fd67a370
-2011-01-14T02:06:35.191832Z
-34315
-aligorith
+2011-03-03T12:27:40.410297Z
+77bcb50941d01fa47148f71ca0a6fea4
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -398,7 +398,7 @@ has-props
 
 
 
-20304
+20485
 
 keyframes_general.c
 file
@@ -406,11 +406,11 @@ file
 
 
 
-2011-01-18T22:04:49.183021Z
-0dcb1fdafb21c44f6cb3c622aa61e575
-2011-01-07T18:36:47.041781Z
-34159
-campbellbarton
+2011-03-03T12:27:40.410297Z
+e611ea71d6de938c4e2bb047773956e5
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -432,7 +432,7 @@ has-props
 
 
 
-25637
+25793
 
 keyingsets.c
 file
@@ -440,11 +440,11 @@ file
 
 
 
-2011-02-10T19:48:50.565667Z
-fb773d5555320e54a591d2dc4c544421
-2011-02-04T08:33:07.469593Z
-34634
-aligorith
+2011-03-03T12:27:40.414297Z
+5cae538d9ac83bae0e0dc222bc59e24d
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -466,7 +466,7 @@ has-props
 
 
 
-28488
+28833
 
 anim_filter.c
 file
@@ -474,11 +474,11 @@ file
 
 
 
-2011-02-10T19:48:50.565667Z
-2309cd1215953ca8eb9d0297a6ba7069
-2011-02-01T23:41:01.351559Z
-34613
-aligorith
+2011-03-03T12:27:40.414297Z
+49392af9f1911adf7150348c2263f825
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -500,7 +500,7 @@ has-props
 
 
 
-84240
+84328
 
 keyframes_edit.c
 file
@@ -508,11 +508,11 @@ file
 
 
 
-2011-02-10T19:48:50.565667Z
-66fcd26c2d9d302d3932339b38ae31ca
-2011-02-01T11:35:27.888067Z
-34600
-aligorith
+2011-03-03T12:27:40.414297Z
+380c3163c9c32a87ece493cc4eabada2
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -534,7 +534,7 @@ has-props
 
 
 
-34077
+34170
 
 anim_channels_defines.c
 file
@@ -542,11 +542,11 @@ file
 
 
 
-2011-01-18T22:04:49.183021Z
-290d6cee5e7ccda7456bdb77c2bad322
-2011-01-13T06:14:14.314834Z
-34292
-aligorith
+2011-03-03T12:27:40.418297Z
+83a9dab1c1e81143e7429ae0c5f974c8
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -568,7 +568,7 @@ has-props
 
 
 
-93224
+93340
 
 CMakeLists.txt
 file
@@ -576,11 +576,11 @@ file
 
 
 
-2011-01-18T22:04:49.193021Z
-b9765ccd6f4f143db9dc024e1469729e
-2010-12-22T23:09:30.468439Z
-33864
-campbellbarton
+2011-03-03T12:27:40.418297Z
+80383dd3025e9fbfca9d44cc17aa4082
+2011-02-21T12:35:04.852834Z
+35028
+jesterking
 has-props
 
 
@@ -602,7 +602,7 @@ has-props
 
 
 
-1350
+1368
 
 keyframing.c
 file
@@ -610,11 +610,11 @@ file
 
 
 
-2011-02-10T19:48:50.565667Z
-4d256ec0d2d716ad7ca792ad903dc810
-2011-02-07T12:37:14.162550Z
-34692
-aligorith
+2011-03-03T12:27:40.418297Z
+f45a530e7df678def65b4b4ecf8c6444
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -636,5 +636,5 @@ has-props
 
 
 
-52522
+52778
 

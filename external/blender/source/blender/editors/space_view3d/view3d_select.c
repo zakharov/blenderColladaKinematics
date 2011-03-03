@@ -1,5 +1,5 @@
-/**
- * $Id: view3d_select.c 34388 2011-01-18 14:34:59Z ton $
+/*
+ * $Id: view3d_select.c 35337 2011-03-03 17:59:04Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_view3d/view3d_select.c
+ *  \ingroup spview3d
+ */
+
 
 #include <string.h>
 #include <stdio.h>
@@ -72,7 +77,7 @@
 #include "ED_mball.h"
 
 #include "UI_interface.h"
-
+#include "UI_resources.h"
 
 #include "view3d_intern.h"	// own include
 
@@ -137,7 +142,7 @@ void view3d_get_transformation(ARegion *ar, RegionView3D *rv3d, Object *ob, bglM
 
 /* local prototypes */
 
-void EM_backbuf_checkAndSelectVerts(EditMesh *em, int select)
+static void EM_backbuf_checkAndSelectVerts(EditMesh *em, int select)
 {
 	EditVert *eve;
 	int index= em_wireoffs;
@@ -151,7 +156,7 @@ void EM_backbuf_checkAndSelectVerts(EditMesh *em, int select)
 	}
 }
 
-void EM_backbuf_checkAndSelectEdges(EditMesh *em, int select)
+static void EM_backbuf_checkAndSelectEdges(EditMesh *em, int select)
 {
 	EditEdge *eed;
 	int index= em_solidoffs;
@@ -165,7 +170,7 @@ void EM_backbuf_checkAndSelectEdges(EditMesh *em, int select)
 	}
 }
 
-void EM_backbuf_checkAndSelectFaces(EditMesh *em, int select)
+static void EM_backbuf_checkAndSelectFaces(EditMesh *em, int select)
 {
 	EditFace *efa;
 	int index= 1;
@@ -179,7 +184,7 @@ void EM_backbuf_checkAndSelectFaces(EditMesh *em, int select)
 	}
 }
 
-void EM_backbuf_checkAndSelectTFaces(Mesh *me, int select)
+static void EM_backbuf_checkAndSelectTFaces(Mesh *me, int select)
 {
 	MFace *mface = me->mface;
 	int a;
@@ -1007,7 +1012,7 @@ static Base *mouse_select_menu(bContext *C, ViewContext *vc, unsigned int *buffe
 	}
 	else {
 		/* UI */
-		uiPopupMenu *pup= uiPupMenuBegin(C, "Select Object", ICON_NULL);
+		uiPopupMenu *pup= uiPupMenuBegin(C, "Select Object", ICON_NONE);
 		uiLayout *layout= uiPupMenuLayout(pup);
 		uiLayout *split= uiLayoutSplit(layout, 0, 0);
 		uiLayout *column= uiLayoutColumn(split, 0);
@@ -1258,7 +1263,7 @@ static int mouse_select(bContext *C, short *mval, short extend, short obcenter, 
 				}
 				base= base->next;
 				
-				if(base==0) base= FIRSTBASE;
+				if(base==NULL) base= FIRSTBASE;
 				if(base==startbase) break;
 			}
 		}
@@ -1787,7 +1792,10 @@ static int view3d_borderselect_exec(bContext *C, wmOperator *op)
 			}
 			break;
 		case OB_LATTICE:
-			ret= do_lattice_box_select(&vc, &rect, select, extend);			
+			ret= do_lattice_box_select(&vc, &rect, select, extend);		
+			if(ret & OPERATOR_FINISHED) {
+				WM_event_add_notifier(C, NC_GEOM|ND_SELECT, vc.obedit->data);
+			}
 			break;			
 		default:
 			assert(!"border select on incorrect object type");

@@ -1,14 +1,14 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/build_files/package_spec
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-02-10T07:22:56.183029Z
-34752
+2011-03-03T16:12:32.432899Z
+35334
 campbellbarton
 
 
@@ -38,11 +38,12 @@ file
 
 
 
-2011-02-10T19:48:55.985667Z
-f8443aca657fc43afffb6c1fc0a2d9b1
-2011-02-10T07:22:56.183029Z
-34752
+2011-03-03T12:28:40.610297Z
+3544312af201888194afbd3f7afff270
+2011-02-24T14:03:29.625694Z
+35125
 campbellbarton
+has-props
 
 
 
@@ -63,6 +64,5 @@ campbellbarton
 
 
 
-
-782
+1298
 

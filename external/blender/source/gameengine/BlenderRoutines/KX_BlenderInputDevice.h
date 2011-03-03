@@ -1,5 +1,5 @@
-/**
- * $Id: KX_BlenderInputDevice.h 31950 2010-09-15 16:13:32Z campbellbarton $
+/*
+ * $Id: KX_BlenderInputDevice.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file KX_BlenderInputDevice.h
+ *  \ingroup blroutines
+ */
+
 #ifndef __KX_BLENDERINPUTDEVICE
 #define __KX_BLENDERINPUTDEVICE
 

@@ -1,5 +1,5 @@
-/**
-* $Id: GPG_ghost.cpp 33968 2010-12-31 10:56:06Z moguri $
+/*
+* $Id: GPG_ghost.cpp 35170 2011-02-25 13:35:11Z jesterking $
 *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  * ***** END GPL LICENSE BLOCK *****
 * Start up of the Blender Player on GHOST.
 */
+
+/** \file gameengine/GamePlayer/ghost/GPG_ghost.cpp
+ *  \ingroup player
+ */
+
 
 #include <iostream>
 #include <math.h>
@@ -108,7 +113,7 @@ extern char datatoc_bfont_ttf[];
 const int kMinWindowWidth = 100;
 const int kMinWindowHeight = 100;
 
-char bprogname[FILE_MAXDIR+FILE_MAXFILE];
+char bprogname[FILE_MAX];
 
 #ifdef WIN32
 typedef enum 
@@ -362,7 +367,7 @@ int main(int argc, char** argv)
 	signal (SIGFPE, SIG_IGN);
 #endif /* __alpha__ */
 #endif /* __linux__ */
-	BLI_where_am_i(bprogname, argv[0]);
+	BLI_where_am_i(bprogname, sizeof(bprogname), argv[0]);
 #ifdef __APPLE__
     // Can't use Carbon right now because of double defined type ID (In Carbon.h and DNA_ID.h, sigh)
     /*

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# $Id: bpy_introspect_ui.py 34637 2011-02-04 09:35:20Z campbellbarton $
+# $Id: bpy_introspect_ui.py 34890 2011-02-16 02:51:56Z campbellbarton $
 # ***** BEGIN GPL LICENSE BLOCK *****
 #
 # This program is free software; you can redistribute it and/or
@@ -193,7 +193,7 @@ class Operator(BaseFakeUI):
     pass
 
 
-class IDPropertyGroup():
+class PropertyGroup():
     pass
 
 
@@ -205,7 +205,7 @@ def fake_main():
     bpy.types.Panel = Panel
     bpy.types.Header = Header
     bpy.types.Menu = Menu
-    bpy.types.IDPropertyGroup = IDPropertyGroup
+    bpy.types.PropertyGroup = PropertyGroup
     bpy.types.Operator = Operator
 
     bpy.types.Armature = type("Armature", (), {})

@@ -1,9 +1,9 @@
-/**
+/*
  * bmfont.c
  *
  * 04-10-2000 frank
  *
- * $Id: bmfont.cpp 28254 2010-04-18 10:28:37Z campbellbarton $
+ * $Id: bmfont.cpp 35170 2011-02-25 13:35:11Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -31,6 +31,11 @@
  * ***** END GPL LICENSE BLOCK *****
  *
  */
+
+/** \file gameengine/GamePlayer/common/bmfont.cpp
+ *  \ingroup player
+ */
+
 
 /**
  * Two external functions:

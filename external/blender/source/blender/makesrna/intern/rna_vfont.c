@@ -1,5 +1,5 @@
-/**
- * $Id: rna_vfont.c 31369 2010-08-16 09:24:18Z campbellbarton $
+/*
+ * $Id: rna_vfont.c 35238 2011-02-27 20:20:01Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/makesrna/intern/rna_vfont.c
+ *  \ingroup RNA
+ */
+
 
 #include <stdlib.h>
 

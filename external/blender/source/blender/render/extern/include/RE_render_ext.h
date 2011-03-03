@@ -1,5 +1,5 @@
-/**
- * $Id: RE_render_ext.h 32075 2010-09-23 12:03:34Z campbellbarton $
+/*
+ * $Id: RE_render_ext.h 35014 2011-02-21 06:58:46Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,10 @@
  *
  * ***** END GPL/BL DUAL LICENSE BLOCK *****
  */
+/** \file RE_render_ext.h
+ *  \ingroup render
+ */
+
 
 #ifndef RE_RENDER_EXT_H
 #define RE_RENDER_EXT_H

@@ -1,4 +1,9 @@
+/** \file blender/blenkernel/intern/writeffmpeg.c
+ *  \ingroup bke
+ */
 /*
+ * $Id: writeffmpeg.c 35247 2011-02-27 20:40:57Z jesterking $
+ *
  * ffmpeg-write support
  *
  * Partial Copyright (c) 2006 Peter Schlaile

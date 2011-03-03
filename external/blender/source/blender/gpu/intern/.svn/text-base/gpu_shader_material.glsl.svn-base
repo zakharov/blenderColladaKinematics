@@ -746,9 +746,9 @@ void texco_norm(vec3 normal, out vec3 outnormal)
 	outnormal = normalize(normal);
 }
 
-void texco_tangent(vec3 tangent, out vec3 outtangent)
+void texco_tangent(vec4 tangent, out vec3 outtangent)
 {
-	outtangent = normalize(tangent);
+	outtangent = normalize(tangent.xyz);
 }
 
 void texco_global(mat4 viewinvmat, vec3 co, out vec3 global)
@@ -1098,8 +1098,13 @@ void mtex_image(vec3 texco, sampler2D ima, out float value, out vec4 color)
 
 void mtex_normal(vec3 texco, sampler2D ima, out vec3 normal)
 {
+	// The invert of the red channel is to make
+	// the normal map compliant with the outside world.
+	// It needs to be done because in Blender
+	// the normal used points inward.
+	// Should this ever change this negate must be removed.
     vec4 color = texture2D(ima, texco.xy);
-	normal = 2.0*(vec3(color.r, -color.g, color.b) - vec3(0.5, -0.5, 0.5));
+	normal = 2.0*(vec3(-color.r, color.g, color.b) - vec3(-0.5, 0.5, 0.5));
 }
 
 void mtex_bump_normals_init( vec3 vN, out vec3 vNorg, out vec3 vNacc, out float fPrevMagnitude )
@@ -1250,12 +1255,11 @@ void mtex_negate_texnormal(vec3 normal, out vec3 outnormal)
 	outnormal = vec3(-normal.x, -normal.y, normal.z);
 }
 
-void mtex_nspace_tangent(vec3 tangent, vec3 normal, vec3 texnormal, out vec3 outnormal)
+void mtex_nspace_tangent(vec4 tangent, vec3 normal, vec3 texnormal, out vec3 outnormal)
 {
-	tangent = normalize(tangent);
-	vec3 B = cross(normal, tangent);
+	vec3 B = tangent.w * cross(normal, tangent.xyz);
 
-	outnormal = texnormal.x*tangent + texnormal.y*B + texnormal.z*normal;
+	outnormal = texnormal.x*tangent.xyz + texnormal.y*B + texnormal.z*normal;
 	outnormal = normalize(outnormal);
 }
 

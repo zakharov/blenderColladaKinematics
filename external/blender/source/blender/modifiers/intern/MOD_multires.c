@@ -1,5 +1,5 @@
 /*
-* $Id: MOD_multires.c 34587 2011-01-31 20:02:51Z nazgul $
+* $Id: MOD_multires.c 35178 2011-02-25 13:57:17Z jesterking $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -30,6 +30,11 @@
 *
 */
 
+/** \file blender/modifiers/intern/MOD_multires.c
+ *  \ingroup modifiers
+ */
+
+
 #include <stddef.h>
 
 #include "BKE_cdderivedmesh.h"
@@ -39,6 +44,8 @@
 #include "BKE_particle.h"
 
 #include "DNA_mesh_types.h"
+
+#include "MOD_util.h"
 
 static void initData(ModifierData *md)
 {

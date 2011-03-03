@@ -1,11 +1,11 @@
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/blender/blenpluginapi/intern
+/svnroot/bf-blender/!svn/ver/35244/trunk/blender/source/blender/blenpluginapi/intern
 END
 pluginapi.c
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/svnroot/bf-blender/!svn/ver/32517/trunk/blender/source/blender/blenpluginapi/intern/pluginapi.c
+/svnroot/bf-blender/!svn/ver/35244/trunk/blender/source/blender/blenpluginapi/intern/pluginapi.c
 END

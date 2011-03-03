@@ -1,5 +1,5 @@
-/**
- * $Id: DNA_armature_types.h 34655 2011-02-05 13:19:14Z blendix $
+/*
+ * $Id: DNA_armature_types.h 34941 2011-02-17 20:48:12Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,10 @@
 
 #ifndef DNA_ARMATURE_TYPES_H
 #define DNA_ARMATURE_TYPES_H
+
+/** \file DNA_armature_types.h
+ *  \ingroup DNA
+ */
 
 #include "DNA_listBase.h"
 #include "DNA_ID.h"
@@ -188,5 +192,7 @@ typedef enum eBone_Flag {
 	BONE_UNSELECTABLE			= (1<<21),	/* bone cannot be selected */
 	BONE_NO_LOCAL_LOCATION		= (1<<22)	/* bone location is in armature space */
 } eBone_Flag;
+
+#define MAXBONENAME 32
 
 #endif

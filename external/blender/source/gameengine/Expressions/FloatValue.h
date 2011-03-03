@@ -1,6 +1,6 @@
 /*
  * FloatValue.h: interface for the CFloatValue class.
- * $Id: FloatValue.h 32788 2010-10-31 04:11:39Z campbellbarton $
+ * $Id: FloatValue.h 35063 2011-02-22 10:33:14Z jesterking $
  * Copyright (c) 1996-2000 Erwin Coumans <coockie@acm.org>
  *
  * Permission to use, copy, modify, distribute and sell this software
@@ -12,6 +12,11 @@
  * purpose.  It is provided "as is" without express or implied warranty.
  *
  */
+
+/** \file FloatValue.h
+ *  \ingroup expressions
+ */
+
 #if !defined _FLOATVALUE_H
 #define _FLOATVALUE_H
 

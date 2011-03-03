@@ -1,7 +1,7 @@
-/**
+/*
  * Manager for sensor that only need to call Update
  *
- * $Id: SCA_BasicEventManager.h 29259 2010-06-06 01:15:44Z campbellbarton $
+ * $Id: SCA_BasicEventManager.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,10 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file SCA_BasicEventManager.h
+ *  \ingroup gamelogic
  */
 
 #ifndef __SCA_BASICEVENTMGR

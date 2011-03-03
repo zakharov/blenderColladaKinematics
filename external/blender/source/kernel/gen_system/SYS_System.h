@@ -1,5 +1,5 @@
 /*
- * $Id: SYS_System.h 26841 2010-02-12 13:34:04Z campbellbarton $
+ * $Id: SYS_System.h 35164 2011-02-25 13:25:53Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,11 @@
  * System specific information / access.
  * Interface to the commandline arguments
  */
+
+/** \file kernel/gen_system/SYS_System.h
+ *  \ingroup gensys
+ */
+
 
 #ifndef __SYSTEM_INCLUDE
 #define __SYSTEM_INCLUDE

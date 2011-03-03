@@ -1,5 +1,5 @@
-/**
- * $Id: report.c 34603 2011-02-01 12:37:53Z campbellbarton $
+/*
+ * $Id: report.c 35247 2011-02-27 20:40:57Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/blenkernel/intern/report.c
+ *  \ingroup bke
+ */
+
 
 #include "MEM_guardedalloc.h"
 

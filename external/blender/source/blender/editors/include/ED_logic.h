@@ -1,5 +1,5 @@
-/**
- * $Id: ED_logic.h 28507 2010-04-29 17:07:17Z gsrb3d $
+/*
+ * $Id: ED_logic.h 35016 2011-02-21 07:25:24Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file ED_logic.h
+ *  \ingroup editors
+ */
+
 #ifndef ED_LOGIC_H
 #define ED_LOGIC_H
 

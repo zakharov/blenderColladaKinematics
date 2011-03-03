@@ -1,5 +1,5 @@
-/**
- * $Id: GPU_material.h 33448 2010-12-03 17:05:21Z campbellbarton $
+/*
+ * $Id: GPU_material.h 35014 2011-02-21 06:58:46Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,10 @@
  * Contributor(s): Brecht Van Lommel.
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file GPU_material.h
+ *  \ingroup gpu
  */
 
 #ifndef __GPU_MATERIAL__

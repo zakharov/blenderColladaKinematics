@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 67
-/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/rst
+/svnroot/bf-blender/!svn/ver/35024/trunk/blender/doc/python_api/rst
 END
 bge.logic.rst
 K 25
@@ -25,5 +25,5 @@ bge.types.rst
 K 25
 svn:wc:ra_dav:version-url
 V 81
-/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/rst/bge.types.rst
+/svnroot/bf-blender/!svn/ver/35024/trunk/blender/doc/python_api/rst/bge.types.rst
 END

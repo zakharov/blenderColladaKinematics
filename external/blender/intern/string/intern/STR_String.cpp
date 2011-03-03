@@ -1,5 +1,5 @@
-/**
- * $Id: STR_String.cpp 30526 2010-07-20 10:41:08Z campbellbarton $
+/*
+ * $Id: STR_String.cpp 35160 2011-02-25 11:51:19Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -26,9 +26,14 @@
  * ***** END GPL LICENSE BLOCK *****
  */
 
+/** \file string/intern/STR_String.cpp
+ *  \ingroup string
+ */
+
+
 /**
 
- * $Id: STR_String.cpp 30526 2010-07-20 10:41:08Z campbellbarton $
+ * $Id: STR_String.cpp 35160 2011-02-25 11:51:19Z jesterking $
  * Copyright (C) 2001 NaN Technologies B.V.
  * This file was formerly known as: GEN_StdString.cpp.
  * @date	April, 25, 2001

@@ -1,5 +1,5 @@
-/**
- * $Id: smoke_API.cpp 30811 2010-07-27 15:33:21Z genscher $
+/*
+ * $Id: smoke_API.cpp 35159 2011-02-25 11:50:46Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file smoke/intern/smoke_API.cpp
+ *  \ingroup smoke
+ */
+
 
 #include "FLUID_3D.h"
 #include "WTURBULENCE.h"

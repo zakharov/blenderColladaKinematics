@@ -1,4 +1,4 @@
-/* $Id: KX_Dome.h 29259 2010-06-06 01:15:44Z campbellbarton $
+/* $Id: KX_Dome.h 35063 2011-02-22 10:33:14Z jesterking $
 -----------------------------------------------------------------------------
 
 This program is free software; you can redistribute it and/or modify it under
@@ -21,6 +21,10 @@ This source uses some of the ideas and code from Paul Bourke.
 Developed as part of a Research and Development project for SAT - La Soci�t� des arts technologiques.
 -----------------------------------------------------------------------------
 */
+
+/** \file KX_Dome.h
+ *  \ingroup ketsji
+ */
 
 #if !defined KX_DOME_H
 #define KX_DOME_H

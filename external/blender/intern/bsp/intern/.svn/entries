@@ -1,15 +1,15 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern/bsp/intern
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-30T15:29:22.294392Z
-34567
-campbellbarton
+2011-02-25T10:44:20.163661Z
+35145
+jesterking
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-01-18T22:04:04.693021Z
-1689f14d15a91dd91c944c0f96236d41
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:09.986297Z
+c316f2845ce6fdcf861c0609e8ea09a7
+2011-02-25T10:44:20.163661Z
+35145
+jesterking
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-5936
+5996
 
 BSP_CSGMesh.h
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-01-18T22:04:04.693021Z
-857d59769fec916e2b66cabcbcb5a23e
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:09.986297Z
+1d946aa63280d944427727ffb4d8d208
+2011-02-25T10:44:20.163661Z
+35145
+jesterking
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-4285
+4338
 
 BSP_CSGException.h
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-01-18T22:04:04.693021Z
-dc59aed0c8d9f4dc7fa1df6d3c70ed1b
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:09.986297Z
+a8e2e6f85814551595258dcc6c848d51
+2011-02-25T10:44:20.163661Z
+35145
+jesterking
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-1441
+1499
 
 BSP_CSGMesh_CFIterator.h
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-01-18T22:04:04.693021Z
-f218d3cb6dfe6a46de59beb137686d48
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:09.986297Z
+3c3fd42d14422b0d3de927ca443ab160
+2011-02-25T10:44:20.163661Z
+35145
+jesterking
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-6481
+6549
 
 BSP_MeshPrimitives.cpp
 file
@@ -168,11 +168,11 @@ file
 
 
 
-2011-01-18T22:04:04.703021Z
-20f9fe30b459958b7f42b69f2a364519
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:25:09.986297Z
+319aaffc1acbd1e208e95cca69e91cf9
+2011-02-25T10:44:20.163661Z
+35145
+jesterking
 has-props
 
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-4473
+4535
 
 BSP_CSGMesh.cpp
 file
@@ -202,11 +202,11 @@ file
 
 
 
-2011-01-18T22:04:04.703021Z
-b5c5296f56198f4fb043448b28a4ae91
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:09.986297Z
+566c70afb3ba50a3357e412652bf0486
+2011-02-25T10:44:20.163661Z
+35145
+jesterking
 has-props
 
 
@@ -228,7 +228,7 @@ has-props
 
 
 
-13059
+13114
 
 CSG_BooleanOps.cpp
 file
@@ -236,11 +236,11 @@ file
 
 
 
-2011-01-18T22:04:04.703021Z
-cfccea5235687a5892b139ec921159ad
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:25:09.986297Z
+dc15985d771b463da28597e5aeed7bed
+2011-02-25T10:44:20.163661Z
+35145
+jesterking
 has-props
 
 
@@ -262,5 +262,5 @@ has-props
 
 
 
-4135
+4197
 

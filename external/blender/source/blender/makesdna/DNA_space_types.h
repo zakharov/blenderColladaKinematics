@@ -1,7 +1,5 @@
-/**
- * blenlib/DNA_space_types.h (mar-2001 nzc)
- *	
- * $Id: DNA_space_types.h 34731 2011-02-09 02:09:25Z aligorith $ 
+/*
+ * $Id: DNA_space_types.h 34965 2011-02-18 13:57:54Z nazgul $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -30,6 +28,11 @@
  */
 #ifndef DNA_SPACE_TYPES_H
 #define DNA_SPACE_TYPES_H
+/** \file DNA_space_types.h
+ *  \ingroup DNA
+ *  \since mar-2001
+ *  \author nzc
+ */
 
 #include "DNA_listBase.h"
 #include "DNA_color_types.h"		/* for Histogram */
@@ -323,6 +326,9 @@ typedef struct SpaceText {
 
 	char findstr[256];		/* ST_MAX_FIND_STR */
 	char replacestr[256];	/* ST_MAX_FIND_STR */
+
+	short margin_column; /* column number to show right margin at */
+	char pad[6];
 
 	void *drawcache; /* cache for faster drawing */
 } SpaceText;
@@ -636,6 +642,7 @@ typedef struct SpaceSound {
 #define SB_TEXC_MAT_OR_LAMP	0
 #define SB_TEXC_WORLD		1
 #define SB_TEXC_BRUSH		2
+#define SB_TEXC_PARTICLES	3
 
 /* sbuts->align */
 #define BUT_FREE  		0
@@ -813,6 +820,7 @@ enum {
 									   // execution (see BPY_main.c)
 #define	ST_FIND_WRAP			0x0020
 #define	ST_FIND_ALL				0x0040
+#define	ST_SHOW_MARGIN			0x0080
 
 
 /* stext->findstr/replacestr */

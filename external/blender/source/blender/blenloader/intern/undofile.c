@@ -1,5 +1,5 @@
-/**
- * $Id: undofile.c 31168 2010-08-08 13:11:13Z campbellbarton $
+/*
+ * $Id: undofile.c 35245 2011-02-27 20:35:41Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  * ***** END GPL LICENSE BLOCK *****
  * .blend file reading entry point
  */
+
+/** \file blender/blenloader/intern/undofile.c
+ *  \ingroup blenloader
+ */
+
 
 #include <stdlib.h>
 #include <string.h>

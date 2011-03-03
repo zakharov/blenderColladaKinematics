@@ -1,5 +1,5 @@
-/**
- * $Id: BKE_gpencil.h 33448 2010-12-03 17:05:21Z campbellbarton $
+/*
+ * $Id: BKE_gpencil.h 34962 2011-02-18 13:05:18Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
 
 #ifndef BKE_GPENCIL_H
 #define BKE_GPENCIL_H
+
+/** \file BKE_gpencil.h
+ *  \ingroup bke
+ *  \author Joshua Leung
+ */
 
 struct ListBase;
 struct bGPdata;

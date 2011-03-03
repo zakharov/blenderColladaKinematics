@@ -1,5 +1,5 @@
-/**
- * $Id: view3d_view.c 34662 2011-02-05 19:07:54Z ton $
+/*
+ * $Id: view3d_view.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_view3d/view3d_view.c
+ *  \ingroup spview3d
+ */
+
 
 #include "DNA_camera_types.h"
 #include "DNA_lamp_types.h"
@@ -427,7 +432,7 @@ static int view3d_setcameratoview_exec(bContext *C, wmOperator *UNUSED(op))
 
 }
 
-int view3d_setcameratoview_poll(bContext *C)
+static int view3d_setcameratoview_poll(bContext *C)
 {
 	View3D *v3d = CTX_wm_view3d(C);
 	RegionView3D *rv3d= CTX_wm_region_view3d(C);
@@ -1734,7 +1739,7 @@ extern void StartKetsjiShell(struct bContext *C, struct ARegion *ar, rcti *cam_f
 
 #endif // WITH_GAMEENGINE
 
-int game_engine_poll(bContext *C)
+static int game_engine_poll(bContext *C)
 {
 	/* we need a context and area to launch BGE
 	it's a temporary solution to avoid crash at load time

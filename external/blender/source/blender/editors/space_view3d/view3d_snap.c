@@ -1,5 +1,5 @@
-/**
- * $Id: view3d_snap.c 34159 2011-01-07 18:36:47Z campbellbarton $
+/*
+ * $Id: view3d_snap.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_view3d/view3d_snap.c
+ *  \ingroup spview3d
+ */
+
 
 #include <math.h>
 #include <string.h>

@@ -1,5 +1,5 @@
-/**
- * $Id: KX_PolygonMaterial.cpp 34520 2011-01-27 00:02:25Z campbellbarton $
+/*
+ * $Id: KX_PolygonMaterial.cpp 35171 2011-02-25 13:35:59Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/Ketsji/KX_PolygonMaterial.cpp
+ *  \ingroup ketsji
+ */
+
 
 #include <stddef.h>
 

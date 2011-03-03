@@ -1,5 +1,5 @@
-/**
- * $Id: script_intern.h 29122 2010-06-01 08:15:43Z campbellbarton $
+/*
+ * $Id: script_intern.h 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_script/script_intern.h
+ *  \ingroup spscript
+ */
+
 #ifndef ED_SCRIPT_INTERN_H
 #define ED_SCRIPT_INTERN_H
 

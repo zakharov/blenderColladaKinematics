@@ -1,5 +1,5 @@
 /*
-* $Id: MOD_fluidsim.c 34587 2011-01-31 20:02:51Z nazgul $
+* $Id: MOD_fluidsim.c 35178 2011-02-25 13:57:17Z jesterking $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -30,6 +30,11 @@
 *
 */
 
+/** \file blender/modifiers/intern/MOD_fluidsim.c
+ *  \ingroup modifiers
+ */
+
+
 #include "DNA_scene_types.h"
 #include "DNA_object_fluidsim.h"
 #include "DNA_object_types.h"
@@ -42,6 +47,7 @@
 
 #include "depsgraph_private.h"
 
+#include "MOD_util.h"
 #include "MOD_fluidsim_util.h"
 #include "MEM_guardedalloc.h"
 

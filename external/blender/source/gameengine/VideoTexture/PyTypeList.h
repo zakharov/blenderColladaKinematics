@@ -1,4 +1,4 @@
-/* $Id: PyTypeList.h 33829 2010-12-21 06:58:44Z moguri $
+/* $Id: PyTypeList.h 35082 2011-02-22 19:30:37Z jesterking $
 -----------------------------------------------------------------------------
 This source file is part of blendTex library
 
@@ -20,6 +20,10 @@ http://www.gnu.org/copyleft/lesser.txt.
 -----------------------------------------------------------------------------
 */
 
+/** \file PyTypeList.h
+ *  \ingroup bgevideotex
+ */
+ 
 #if !defined PYTYPELIST_H
 #define PYTYPELIST_H
 

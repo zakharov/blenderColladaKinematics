@@ -1,5 +1,5 @@
-/**
- * $Id: KX_PythonSeq.h 32788 2010-10-31 04:11:39Z campbellbarton $
+/*
+ * $Id: KX_PythonSeq.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,7 +25,11 @@
  * Contributor(s): Campbell Barton
  *
  * ***** END GPL LICENSE BLOCK *****
- * Readonly sequence wrapper for lookups on logic bricks
+ */
+
+/** \file KX_PythonSeq.h
+ *  \ingroup ketsji
+ *  \brief Readonly sequence wrapper for lookups on logic bricks
  */
  
 #ifndef _adr_py_seq_h_				// only process once,

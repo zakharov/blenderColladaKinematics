@@ -1,5 +1,5 @@
-/**
- * $Id: ED_keyframing.h 34634 2011-02-04 08:33:07Z aligorith $
+/*
+ * $Id: ED_keyframing.h 35016 2011-02-21 07:25:24Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -23,6 +23,10 @@
  * Contributor(s): Joshua Leung
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file ED_keyframing.h
+ *  \ingroup editors
  */
 
 #ifndef ED_KEYFRAMING_H

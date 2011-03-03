@@ -1,5 +1,5 @@
-/**
- * $Id: BL_BlenderDataConversion.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: BL_BlenderDataConversion.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file BL_BlenderDataConversion.h
+ *  \ingroup bgeconv
+ */
+
 #ifndef __BLENDER_CONVERT
 #define __BLENDER_CONVERT
 

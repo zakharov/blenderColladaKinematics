@@ -1,5 +1,5 @@
 /*
- * $Id: physics_pointcache.c 34160 2011-01-07 19:18:31Z campbellbarton $
+ * $Id: physics_pointcache.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/physics/physics_pointcache.c
+ *  \ingroup edphys
+ */
+
 
 #include <stdlib.h>
 
@@ -75,13 +80,13 @@ static int ptcache_poll(bContext *C)
 	return (ptr.data && ptr.id.data);
 }
 
-void bake_console_progress(void *UNUSED(arg), int nr)
+static void bake_console_progress(void *UNUSED(arg), int nr)
 {
 	printf("\rbake: %3i%%", nr);
 	fflush(stdout);
 }
 
-void bake_console_progress_end(void *UNUSED(arg))
+static void bake_console_progress_end(void *UNUSED(arg))
 {
 	printf("\rbake: done!\n");
 }

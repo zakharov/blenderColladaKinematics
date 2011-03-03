@@ -1,5 +1,5 @@
-/**
- * $Id: rna_timeline.c 30384 2010-07-15 16:56:04Z campbellbarton $
+/*
+ * $Id: rna_timeline.c 35238 2011-02-27 20:20:01Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/makesrna/intern/rna_timeline.c
+ *  \ingroup RNA
+ */
+
 
 #include <stdlib.h>
 

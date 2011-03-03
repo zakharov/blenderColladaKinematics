@@ -1,5 +1,5 @@
-/**
- * $Id: interface_intern.h 34701 2011-02-07 22:48:23Z campbellbarton $
+/*
+ * $Id: interface_intern.h 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/interface/interface_intern.h
+ *  \ingroup edinterface
+ */
+
 
 #ifndef INTERFACE_H
 #define INTERFACE_H
@@ -364,7 +369,7 @@ extern void ui_convert_to_unit_alt_name(uiBut *but, char *str, int maxlen);
 extern int ui_set_but_string(struct bContext *C, uiBut *but, const char *str);
 extern int ui_get_but_string_max_length(uiBut *but);
 
-extern void ui_set_but_default(struct bContext *C, uiBut *but);
+extern void ui_set_but_default(struct bContext *C, uiBut *but, short all);
 
 extern void ui_set_but_soft_range(uiBut *but, double value);
 

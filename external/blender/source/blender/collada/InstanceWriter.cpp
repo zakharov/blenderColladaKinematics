@@ -1,5 +1,5 @@
-/**
- * $Id: InstanceWriter.cpp 32355 2010-10-06 20:40:16Z gsrb3d $
+/*
+ * $Id: InstanceWriter.cpp 35262 2011-02-28 14:24:52Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -23,6 +23,11 @@
  * ***** END GPL LICENSE BLOCK *****
  */
 
+/** \file blender/collada/InstanceWriter.cpp
+ *  \ingroup collada
+ */
+
+
 #include <string>
 
 #include "COLLADASWInstanceMaterial.h"
@@ -45,7 +50,7 @@ void InstanceWriter::add_material_bindings(COLLADASW::BindMaterial& bind_materia
 		COLLADASW::InstanceMaterialList& iml = bind_material.getInstanceMaterialList();
 
 		if (ma) {
-			std::string matid(id_name(ma));
+			std::string matid(get_material_id(ma));
 			matid = translate_id(matid);
 			COLLADASW::InstanceMaterial im(matid, COLLADASW::URI(COLLADABU::Utils::EMPTY_STRING, matid));
 			

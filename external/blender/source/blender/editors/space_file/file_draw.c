@@ -1,5 +1,5 @@
-/**
- * $Id: file_draw.c 34562 2011-01-30 13:12:03Z ton $
+/*
+ * $Id: file_draw.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_file/file_draw.c
+ *  \ingroup spfile
+ */
+
 
 #include <math.h>
 #include <string.h>
@@ -79,7 +84,7 @@
 enum {
 	B_FS_DIRNAME,
 	B_FS_FILENAME
-} eFile_ButEvents;
+} /*eFile_ButEvents*/;
 
 
 static void do_file_buttons(bContext *C, void *UNUSED(arg), int event)

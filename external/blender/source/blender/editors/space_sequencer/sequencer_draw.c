@@ -1,5 +1,5 @@
-/**
- * $Id: sequencer_draw.c 34160 2011-01-07 19:18:31Z campbellbarton $
+/*
+ * $Id: sequencer_draw.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_sequencer/sequencer_draw.c
+ *  \ingroup spseq
+ */
+
 
 #include <string.h>
 #include <math.h>
@@ -70,8 +75,6 @@
 
 
 /* Note, Dont use WHILE_SEQ while drawing! - it messes up transform, - Campbell */
-
-int no_rightbox=0, no_leftbox= 0;
 static void draw_shadedstrip(Sequence *seq, unsigned char col[3], float x1, float y1, float x2, float y2);
 
 static void get_seq_color3ubv(Scene *curscene, Sequence *seq, unsigned char col[3])
@@ -673,7 +676,7 @@ static void draw_seq_strip(Scene *scene, ARegion *ar, Sequence *seq, int outline
 
 static Sequence *special_seq_update= 0;
 
-void set_special_seq_update(int val)
+static void set_special_seq_update(int val)
 {
 //	int x;
 

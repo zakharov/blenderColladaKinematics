@@ -1,5 +1,5 @@
-/**
- * $Id: RNA_enum_types.h 34717 2011-02-08 12:54:32Z lukastoenne $
+/*
+ * $Id: RNA_enum_types.h 35033 2011-02-21 13:47:49Z lukastoenne $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,10 @@
 
 #ifndef RNA_ENUM_TYPES_H
 #define RNA_ENUM_TYPES_H
+
+/** \file RNA_enum_types.h
+ *  \ingroup RNA
+ */
 
 #include "RNA_types.h"
 
@@ -95,6 +99,8 @@ extern EnumPropertyItem property_type_items[];
 extern EnumPropertyItem property_unit_items[];
 
 extern EnumPropertyItem viewport_shade_items[];
+
+extern EnumPropertyItem node_socket_type_items[];
 
 extern EnumPropertyItem node_blend_type_items[];
 extern EnumPropertyItem node_math_items[];

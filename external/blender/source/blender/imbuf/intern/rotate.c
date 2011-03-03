@@ -1,4 +1,4 @@
-/**
+/*
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,8 +26,13 @@
  * ***** END GPL LICENSE BLOCK *****
  * rotate.c
  *
- * $Id: rotate.c 34160 2011-01-07 19:18:31Z campbellbarton $
+ * $Id: rotate.c 35239 2011-02-27 20:23:21Z jesterking $
  */
+
+/** \file blender/imbuf/intern/rotate.c
+ *  \ingroup imbuf
+ */
+
 
 #include "BLI_blenlib.h"
 #include "BLI_utildefines.h"

@@ -1,5 +1,5 @@
-/**
-* $Id: shadeoutput.c 34628 2011-02-03 16:31:03Z ton $
+/*
+* $Id: shadeoutput.c 35233 2011-02-27 19:31:27Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/render/intern/source/shadeoutput.c
+ *  \ingroup render
+ */
+
 
 #include <stdio.h>
 #include <float.h>

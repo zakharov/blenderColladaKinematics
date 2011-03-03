@@ -1,5 +1,5 @@
-/**
- * $Id: GHOST_WindowWin32.cpp 34641 2011-02-04 13:22:02Z jesterking $
+/*
+ * $Id: GHOST_WindowWin32.cpp 35152 2011-02-25 11:28:33Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -26,9 +26,14 @@
  * ***** END GPL LICENSE BLOCK *****
  */
 
+/** \file ghost/intern/GHOST_WindowWin32.cpp
+ *  \ingroup GHOST
+ */
+
+
 /**
 
- * $Id: GHOST_WindowWin32.cpp 34641 2011-02-04 13:22:02Z jesterking $
+ * $Id: GHOST_WindowWin32.cpp 35152 2011-02-25 11:28:33Z jesterking $
  * Copyright (C) 2001 NaN Technologies B.V.
  * @author	Maarten Gribnau
  * @date	May 10, 2001

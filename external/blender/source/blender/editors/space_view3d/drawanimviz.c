@@ -1,5 +1,5 @@
-/**
- * $Id: drawanimviz.c 33799 2010-12-20 03:59:22Z campbellbarton $
+/*
+ * $Id: drawanimviz.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_view3d/drawanimviz.c
+ *  \ingroup spview3d
+ */
+
 
 #include <stdlib.h>
 #include <string.h>

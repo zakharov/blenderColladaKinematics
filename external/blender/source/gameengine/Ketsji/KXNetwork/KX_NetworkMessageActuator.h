@@ -1,5 +1,5 @@
-/**
- * $Id: KX_NetworkMessageActuator.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: KX_NetworkMessageActuator.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,8 +25,13 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
- * Ketsji Logic Extenstion: Network Message Actuator class
  */
+
+/** \file KX_NetworkMessageActuator.h
+ *  \ingroup ketsjinet
+ *  \brief Ketsji Logic Extenstion: Network Message Actuator class
+ */
+
 #ifndef __KX_NETWORKMESSAGEACTUATOR_H
 #define __KX_NETWORKMESSAGEACTUATOR_H
 

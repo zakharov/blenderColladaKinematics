@@ -1,4 +1,4 @@
-/**
+/*
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/render/intern/source/volume_precache.c
+ *  \ingroup render
+ */
+
 
 #include <math.h>
 #include <stdlib.h>
@@ -397,7 +402,7 @@ void multiple_scattering_diffusion(Render *re, VolumePrecache *vp, Material *ma)
 					/* Displays progress every second */
 					if(time-lasttime>1.0f) {
 						char str[64];
-						sprintf(str, "Simulating multiple scattering: %d%%", (int)(100.0f * (c / total)));
+						BLI_snprintf(str, sizeof(str), "Simulating multiple scattering: %d%%", (int)(100.0f * (c / total)));
 						re->i.infostr= str;
 						re->stats_draw(re->sdh, &re->i);
 						re->i.infostr= NULL;
@@ -742,7 +747,7 @@ void vol_precache_objectinstance_threads(Render *re, ObjectInstanceRen *obi, Mat
 		time= PIL_check_seconds_timer();
 		if(time-lasttime>1.0f) {
 			char str[64];
-			sprintf(str, "Precaching volume: %d%%", (int)(100.0f * ((float)counter / (float)totparts)));
+			BLI_snprintf(str, sizeof(str), "Precaching volume: %d%%", (int)(100.0f * ((float)counter / (float)totparts)));
 			re->i.infostr= str;
 			re->stats_draw(re->sdh, &re->i);
 			re->i.infostr= NULL;

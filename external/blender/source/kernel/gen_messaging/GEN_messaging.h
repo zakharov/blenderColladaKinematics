@@ -1,5 +1,5 @@
-/**
- * $Id: GEN_messaging.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: GEN_messaging.h 35163 2011-02-25 13:24:53Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file kernel/gen_messaging/GEN_messaging.h
+ *  \ingroup genmess
+ */
+
 #ifndef GEN_MESSAGING_H
 #define GEN_MESSAGING_H
 

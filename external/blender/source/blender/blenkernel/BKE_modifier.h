@@ -1,6 +1,5 @@
-/**
- *	
- * $Id: BKE_modifier.h 34587 2011-01-31 20:02:51Z nazgul $ 
+/*
+ * $Id: BKE_modifier.h 35215 2011-02-27 08:31:10Z campbellbarton $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -29,6 +28,10 @@
  */
 #ifndef BKE_MODIFIER_H
 #define BKE_MODIFIER_H
+
+/** \file BKE_modifier.h
+ *  \ingroup bke
+ */
 
 #include "DNA_modifier_types.h"		/* needed for all enum typdefs */
 #include "BKE_customdata.h"
@@ -302,7 +305,7 @@ int			  modifier_sameTopology(ModifierData *md);
 int           modifier_isEnabled(struct Scene *scene, struct ModifierData *md, int required_mode);
 void          modifier_setError(struct ModifierData *md, const char *format, ...)
 #ifdef __GNUC__
-__attribute__ ((format (printf, 2, 3)));
+__attribute__ ((format (printf, 2, 3)))
 #endif
 ;
 

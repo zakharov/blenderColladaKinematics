@@ -1,5 +1,5 @@
-/**
- * $Id: MT_Matrix4x4.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: MT_Matrix4x4.h 35158 2011-02-25 11:49:19Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -26,9 +26,14 @@
  * ***** END GPL LICENSE BLOCK *****
  */
 
+/** \file moto/include/MT_Matrix4x4.h
+ *  \ingroup moto
+ */
+
+
 /**
 
- * $Id: MT_Matrix4x4.h 26841 2010-02-12 13:34:04Z campbellbarton $
+ * $Id: MT_Matrix4x4.h 35158 2011-02-25 11:49:19Z jesterking $
  * Copyright (C) 2001 NaN Technologies B.V.
  * A 4x4 matrix compatible with other stuff.
  */

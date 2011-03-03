@@ -1,5 +1,5 @@
-/**
- * $Id: BlenderWorldInfo.cpp 34393 2011-01-18 22:27:18Z dfelinto $
+/*
+ * $Id: BlenderWorldInfo.cpp 35167 2011-02-25 13:30:41Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can [0]istribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/Converter/BlenderWorldInfo.cpp
+ *  \ingroup bgeconv
+ */
+
 
 #include <stdio.h>  // printf()
 

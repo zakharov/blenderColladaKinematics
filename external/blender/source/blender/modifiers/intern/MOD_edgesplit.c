@@ -1,5 +1,5 @@
 /*
-* $Id: MOD_edgesplit.c 34587 2011-01-31 20:02:51Z nazgul $
+* $Id: MOD_edgesplit.c 35178 2011-02-25 13:57:17Z jesterking $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -30,6 +30,11 @@
 *
 */
 
+/** \file blender/modifiers/intern/MOD_edgesplit.c
+ *  \ingroup modifiers
+ */
+
+
 /* EdgeSplit modifier: Splits edges in the mesh according to sharpness flag
  * or edge angle (can be used to achieve autosmoothing) */
 
@@ -48,6 +53,7 @@
 
 #include "MEM_guardedalloc.h"
 
+#include "MOD_util.h"
 
 #if 0
 #define EDGESPLIT_DEBUG_3

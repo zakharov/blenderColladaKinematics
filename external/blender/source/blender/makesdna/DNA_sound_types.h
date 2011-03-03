@@ -1,7 +1,5 @@
-/**
- * blenlib/DNA_sound_types.h (mar-2001 nzc)
- *	
- * $Id: DNA_sound_types.h 31028 2010-08-04 04:01:27Z campbellbarton $ 
+/*
+ * $Id: DNA_sound_types.h 34941 2011-02-17 20:48:12Z jesterking $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -30,6 +28,11 @@
  */
 #ifndef DNA_SOUND_TYPES_H
 #define DNA_SOUND_TYPES_H
+/** \file DNA_sound_types.h
+ *  \ingroup DNA
+ *  \since mar-2001
+ *  \author nzc
+ */
 
 #include "DNA_listBase.h"
 #include "DNA_ID.h"

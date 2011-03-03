@@ -1,5 +1,5 @@
-/**
- * $Id: GHOST_EventPrinter.cpp 32332 2010-10-05 19:10:15Z campbellbarton $
+/*
+ * $Id: GHOST_EventPrinter.cpp 35152 2011-02-25 11:28:33Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,8 +25,9 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
-/**
- * @file	GHOST_EventPrinter.h
+
+/** \file ghost/intern/GHOST_EventPrinter.cpp
+ *  \ingroup GHOST
  * Declaration of GHOST_EventPrinter class.
  */
 
@@ -324,6 +325,18 @@ void GHOST_EventPrinter::getKeyString(GHOST_TKey key, STR_String& str) const
 			break;
 		case GHOST_kKeyNumpadSlash:
 			str = "NumpadSlash";
+			break;
+		case GHOST_kKeyMediaPlay:
+			str = "MediaPlayPause";
+			break;
+		case GHOST_kKeyMediaStop:
+			str = "MediaStop";
+			break;
+		case GHOST_kKeyMediaFirst:
+			str = "MediaFirst";
+			break;
+		case GHOST_kKeyMediaLast:
+			str = "MediaLast";
 			break;
 		default:
 			str = "unknown";

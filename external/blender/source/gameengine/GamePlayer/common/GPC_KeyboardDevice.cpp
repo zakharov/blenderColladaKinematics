@@ -1,5 +1,5 @@
-/**
- * $Id: GPC_KeyboardDevice.cpp 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: GPC_KeyboardDevice.cpp 35170 2011-02-25 13:35:11Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/GamePlayer/common/GPC_KeyboardDevice.cpp
+ *  \ingroup player
+ */
+
 
 #include "GPC_KeyboardDevice.h"
 

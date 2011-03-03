@@ -3,7 +3,7 @@
  * various string, file, list operations.
  *
  *
- * $Id: string.c 32230 2010-10-01 13:30:09Z campbellbarton $
+ * $Id: string.c 35246 2011-02-27 20:37:56Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -31,6 +31,11 @@
  * ***** END GPL LICENSE BLOCK *****
  * 
  */
+
+/** \file blender/blenlib/intern/string.c
+ *  \ingroup bli
+ */
+
 
 #include <string.h>
 #include <stdlib.h>
@@ -66,7 +71,7 @@ char *BLI_strdupcat(const char *str1, const char *str2)
 	return n;
 }
 
-char *BLI_strncpy(char *dst, const char *src, int maxncpy) {
+char *BLI_strncpy(char *dst, const char *src, const int maxncpy) {
 	int srclen= strlen(src);
 	int cpylen= (srclen>(maxncpy-1))?(maxncpy-1):srclen;
 	

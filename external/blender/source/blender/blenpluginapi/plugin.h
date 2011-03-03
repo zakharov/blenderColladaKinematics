@@ -1,5 +1,8 @@
+/** \file blender/blenpluginapi/plugin.h
+ *  \ingroup blpluginapi
+ */
 /* Copyright (c) 1999, Not a Number / NeoGeo b.v. 
- * $Id: plugin.h 17433 2008-11-12 21:16:53Z blendix $
+ * $Id: plugin.h 35244 2011-02-27 20:32:12Z jesterking $
  * 
  * All rights reserved.
  * 

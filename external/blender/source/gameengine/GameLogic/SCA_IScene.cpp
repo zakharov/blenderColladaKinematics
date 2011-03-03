@@ -1,5 +1,5 @@
-/**
- * $Id: SCA_IScene.cpp 28254 2010-04-18 10:28:37Z campbellbarton $
+/*
+ * $Id: SCA_IScene.cpp 35169 2011-02-25 13:32:11Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/GameLogic/SCA_IScene.cpp
+ *  \ingroup gamelogic
+ */
+
 
 #include "SCA_IScene.h"
 #include "Value.h"

@@ -1,7 +1,7 @@
-/**
+/*
  * Manager for ray events
  *
- * $Id: KX_RayEventManager.cpp 28254 2010-04-18 10:28:37Z campbellbarton $
+ * $Id: KX_RayEventManager.cpp 35171 2011-02-25 13:35:59Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/Ketsji/KX_RayEventManager.cpp
+ *  \ingroup ketsji
+ */
+
 #include "KX_RayEventManager.h"
 #include "SCA_LogicManager.h"
 #include "SCA_ISensor.h"

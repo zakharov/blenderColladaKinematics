@@ -1,7 +1,5 @@
-/**
- * blenlib/DNA_fileglobal_types.h (mar-2001 nzc)
- *	
- * $Id: DNA_fileglobal_types.h 34004 2011-01-02 13:33:32Z ton $ 
+/*
+ * $Id: DNA_fileglobal_types.h 34941 2011-02-17 20:48:12Z jesterking $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -30,6 +28,10 @@
  */
 #ifndef DNA_FILEGLOBAL_TYPES_H
 #define DNA_FILEGLOBAL_TYPES_H
+
+/** \file DNA_fileglobal_types.h
+ *  \ingroup DNA
+ */
 
 struct bScreen;
 struct Scene;

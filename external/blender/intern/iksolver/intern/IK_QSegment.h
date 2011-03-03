@@ -1,5 +1,5 @@
-/**
- * $Id: IK_QSegment.h 34358 2011-01-16 20:25:47Z campbellbarton $
+/*
+ * $Id: IK_QSegment.h 35154 2011-02-25 11:43:19Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file iksolver/intern/IK_QSegment.h
+ *  \ingroup iksolver
+ */
+
 
 #ifndef NAN_INCLUDED_IK_QSegment_h
 #define NAN_INCLUDED_IK_QSegment_h

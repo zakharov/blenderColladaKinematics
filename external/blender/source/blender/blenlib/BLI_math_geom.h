@@ -1,5 +1,5 @@
-/**
- * $Id: BLI_math_geom.h 34619 2011-02-02 03:32:58Z campbellbarton $
+/*
+ * $Id: BLI_math_geom.h 34966 2011-02-18 13:58:08Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,10 @@
 
 #ifndef BLI_MATH_GEOM_H
 #define BLI_MATH_GEOM_H
+
+/** \file BLI_math_geom.h
+ *  \ingroup bli
+ */
 
 #ifdef __cplusplus
 extern "C" {

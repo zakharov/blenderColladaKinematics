@@ -1,4 +1,4 @@
-/* $Id: BKE_subsurf.h 34587 2011-01-31 20:02:51Z nazgul $ 
+/* $Id: BKE_subsurf.h 34962 2011-02-18 13:05:18Z jesterking $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,10 @@
  */
 #ifndef BKE_SUBSURF_H
 #define BKE_SUBSURF_H
+
+/** \file BKE_subsurf.h
+ *  \ingroup bke
+ */
 
 struct DMGridAdjacency;
 struct DMGridData;

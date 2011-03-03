@@ -1,5 +1,5 @@
 /*
- * $Id: DocumentImporter.h 34640 2011-02-04 13:18:44Z jesterking $
+ * $Id: DocumentImporter.h 35020 2011-02-21 08:38:53Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -20,6 +20,10 @@
  * Contributor(s): Chingiz Dyussenov, Arystanbek Dyussenov.
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file DocumentImporter.h
+ *  \ingroup collada
  */
 
 #ifndef __DOCUMENTIMPORTER_H__

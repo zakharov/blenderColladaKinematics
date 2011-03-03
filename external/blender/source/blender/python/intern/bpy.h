@@ -1,5 +1,5 @@
-/**
- * $Id: bpy.h 31730 2010-09-03 03:30:20Z gsrb3d $
+/*
+ * $Id: bpy.h 35236 2011-02-27 20:10:08Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -20,6 +20,11 @@
  * Contributor(s): Campbell Barton
  *
  * ***** END GPL LICENSE BLOCK ***** */
+
+/** \file blender/python/intern/bpy.h
+ *  \ingroup pythonintern
+ */
+
  
 void BPy_init_modules( void );
- 
+extern PyObject *bpy_package_py;

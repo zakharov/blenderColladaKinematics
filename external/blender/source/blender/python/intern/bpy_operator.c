@@ -1,6 +1,6 @@
 
-/**
- * $Id: bpy_operator.c 34595 2011-02-01 02:54:29Z campbellbarton $
+/*
+ * $Id: bpy_operator.c 35295 2011-03-02 04:51:43Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -23,9 +23,18 @@
  * ***** END GPL LICENSE BLOCK *****
  */
 
+/** \file blender/python/intern/bpy_operator.c
+ *  \ingroup pythonintern
+ */
+
+
 /* Note, this module is not to be used directly by the user.
- * its accessed from blender with bpy.__ops__
+ * Internally its exposed as '_bpy.ops', which provides functions for 'bpy.ops', a python package.
  * */
+
+#include <Python.h>
+
+#include "RNA_types.h"
 
 #include "bpy_operator.h"
 #include "bpy_operator_wrap.h"
@@ -34,6 +43,7 @@
 
 #include "BLI_utildefines.h"
 
+#include "RNA_access.h"
 #include "RNA_enum_types.h"
 
 #include "WM_api.h"
@@ -41,6 +51,7 @@
 
 #include "MEM_guardedalloc.h"
 #include "BKE_report.h"
+#include "BKE_context.h"
 
 static PyObject *pyop_poll(PyObject *UNUSED(self), PyObject *args)
 {
@@ -57,7 +68,7 @@ static PyObject *pyop_poll(PyObject *UNUSED(self), PyObject *args)
 	bContext *C= (bContext *)BPy_GetContext();
 	
 	if(C==NULL) {
-		PyErr_SetString(PyExc_SystemError, "Context is None, cant poll any operators");
+		PyErr_SetString(PyExc_RuntimeError, "Context is None, cant poll any operators");
 		return NULL;
 	}
 
@@ -67,7 +78,7 @@ static PyObject *pyop_poll(PyObject *UNUSED(self), PyObject *args)
 	ot= WM_operatortype_find(opname, TRUE);
 
 	if (ot == NULL) {
-		PyErr_Format(PyExc_SystemError, "Polling operator \"bpy.ops.%s\" error, could not be found", opname);
+		PyErr_Format(PyExc_AttributeError, "Polling operator \"bpy.ops.%s\" error, could not be found", opname);
 		return NULL;
 	}
 
@@ -124,7 +135,7 @@ static PyObject *pyop_call(PyObject *UNUSED(self), PyObject *args)
 	bContext *C = (bContext *)BPy_GetContext();
 	
 	if(C==NULL) {
-		PyErr_SetString(PyExc_SystemError, "Context is None, cant poll any operators");
+		PyErr_SetString(PyExc_RuntimeError, "Context is None, cant poll any operators");
 		return NULL;
 	}
 	
@@ -134,12 +145,12 @@ static PyObject *pyop_call(PyObject *UNUSED(self), PyObject *args)
 	ot= WM_operatortype_find(opname, TRUE);
 
 	if (ot == NULL) {
-		PyErr_Format(PyExc_SystemError, "Calling operator \"bpy.ops.%s\" error, could not be found", opname);
+		PyErr_Format(PyExc_AttributeError, "Calling operator \"bpy.ops.%s\" error, could not be found", opname);
 		return NULL;
 	}
 	
 	if(!pyrna_write_check()) {
-		PyErr_Format(PyExc_SystemError, "Calling operator \"bpy.ops.%s\" error, can't modify blend data in this state (drawing/rendering)", opname);
+		PyErr_Format(PyExc_RuntimeError, "Calling operator \"bpy.ops.%s\" error, can't modify blend data in this state (drawing/rendering)", opname);
 		return NULL;
 	}
 
@@ -167,7 +178,7 @@ static PyObject *pyop_call(PyObject *UNUSED(self), PyObject *args)
 
 	if(WM_operator_poll_context((bContext*)C, ot, context) == FALSE) {
 		const char *msg= CTX_wm_operator_poll_msg_get(C);
-		PyErr_Format(PyExc_SystemError, "Operator bpy.ops.%.200s.poll() %.200s", opname, msg ? msg : "failed, context is incorrect");
+		PyErr_Format(PyExc_RuntimeError, "Operator bpy.ops.%.200s.poll() %.200s", opname, msg ? msg : "failed, context is incorrect");
 		CTX_wm_operator_poll_msg_set(C, NULL); /* better set to NULL else it could be used again */
 		error_val= -1;
 	}
@@ -255,10 +266,10 @@ static PyObject *pyop_as_string(PyObject *UNUSED(self), PyObject *args)
 	char *buf = NULL;
 	PyObject *pybuf;
 
-	bContext *C = (bContext *)BPy_GetContext();
+	bContext *C= (bContext *)BPy_GetContext();
 
 	if(C==NULL) {
-		PyErr_SetString(PyExc_SystemError, "Context is None, cant get the string representation of this object.");
+		PyErr_SetString(PyExc_RuntimeError, "Context is None, cant get the string representation of this object.");
 		return NULL;
 	}
 	
@@ -268,7 +279,7 @@ static PyObject *pyop_as_string(PyObject *UNUSED(self), PyObject *args)
 	ot= WM_operatortype_find(opname, TRUE);
 
 	if (ot == NULL) {
-		PyErr_Format(PyExc_SystemError, "_bpy.ops.as_string: operator \"%.200s\"could not be found", opname);
+		PyErr_Format(PyExc_AttributeError, "_bpy.ops.as_string: operator \"%.200s\"could not be found", opname);
 		return NULL;
 	}
 

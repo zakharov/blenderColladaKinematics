@@ -1,5 +1,5 @@
-/**
- * $Id: bpy_rna_callback.h 27639 2010-03-21 01:14:04Z gsrb3d $
+/*
+ * $Id: bpy_rna_callback.h 35236 2011-02-27 20:10:08Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -22,8 +22,13 @@
  * ***** END GPL LICENSE BLOCK *****
  */
 
+/** \file blender/python/intern/bpy_rna_callback.h
+ *  \ingroup pythonintern
+ */
+
+
 struct BPy_StructRNA;
 struct PyObject;
 
-struct PyObject *pyrna_callback_add(struct BPy_StructRNA *self, struct PyObject *args);
-struct PyObject *pyrna_callback_remove(struct BPy_StructRNA *self, struct PyObject *args);
+PyObject *pyrna_callback_add(BPy_StructRNA *self, PyObject *args);
+PyObject *pyrna_callback_remove(BPy_StructRNA *self, PyObject *args);

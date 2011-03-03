@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/svnroot/bf-extensions/!svn/ver/1524/trunk/py/scripts/addons/object_fracture
+/svnroot/bf-extensions/!svn/ver/1569/trunk/py/scripts/addons/object_fracture
 END
 fracture_setup.py
 K 25
@@ -19,7 +19,7 @@ __init__.py
 K 25
 svn:wc:ra_dav:version-url
 V 88
-/svnroot/bf-extensions/!svn/ver/1524/trunk/py/scripts/addons/object_fracture/__init__.py
+/svnroot/bf-extensions/!svn/ver/1569/trunk/py/scripts/addons/object_fracture/__init__.py
 END
 data.blend
 K 25

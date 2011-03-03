@@ -1,5 +1,5 @@
-/**
- * $Id: BL_ShapeDeformer.cpp 34160 2011-01-07 19:18:31Z campbellbarton $
+/*
+ * $Id: BL_ShapeDeformer.cpp 35167 2011-02-25 13:30:41Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/Converter/BL_ShapeDeformer.cpp
+ *  \ingroup bgeconv
+ */
+
 
 #if defined(WIN32) && !defined(FREE_WINDOWS)
 #pragma warning (disable : 4786)

@@ -1,5 +1,8 @@
+/** \file blender/blenpluginapi/floatpatch.h
+ *  \ingroup blpluginapi
+ */
 /* Copyright (c) 1999, Not a Number / NeoGeo b.v. 
- * $Id: floatpatch.h 12931 2007-12-17 18:20:48Z theeth $
+ * $Id: floatpatch.h 35244 2011-02-27 20:32:12Z jesterking $
  * 
  * All rights reserved.
  * 

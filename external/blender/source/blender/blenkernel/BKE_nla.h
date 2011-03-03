@@ -1,5 +1,5 @@
-/**
- * $Id: BKE_nla.h 27916 2010-04-01 06:26:41Z aligorith $
+/*
+ * $Id: BKE_nla.h 34962 2011-02-18 13:05:18Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -29,6 +29,11 @@
 
 #ifndef BKE_NLA_H
 #define BKE_NLA_H
+
+/** \file BKE_nla.h
+ *  \ingroup bke
+ *  \author Joshua Leung (full recode)
+ */
 
 struct AnimData;
 struct NlaStrip;

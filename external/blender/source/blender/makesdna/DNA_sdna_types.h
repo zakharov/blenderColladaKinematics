@@ -1,7 +1,5 @@
-/**
- * blenlib/DNA_sdna.h (mar-2001 nzc)
- *	
- * $Id: DNA_sdna_types.h 33448 2010-12-03 17:05:21Z campbellbarton $ 
+/*
+ * $Id: DNA_sdna_types.h 34936 2011-02-17 16:17:40Z jesterking $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -30,6 +28,10 @@
  */
 #ifndef DNA_SDNA_H
 #define DNA_SDNA_H
+/**
+ * \file DNA_sdna_types.h
+ * \ingroup DNA
+ */
 
 #
 #

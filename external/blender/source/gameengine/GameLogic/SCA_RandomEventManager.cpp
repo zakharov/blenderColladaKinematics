@@ -1,7 +1,7 @@
-/**
+/*
  * Manager for random events
  *
- * $Id: SCA_RandomEventManager.cpp 28254 2010-04-18 10:28:37Z campbellbarton $
+ * $Id: SCA_RandomEventManager.cpp 35169 2011-02-25 13:32:11Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/GameLogic/SCA_RandomEventManager.cpp
+ *  \ingroup gamelogic
+ */
+
 #include "SCA_RandomEventManager.h"
 #include "SCA_LogicManager.h"
 #include "SCA_ISensor.h"

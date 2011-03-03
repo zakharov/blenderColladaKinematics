@@ -1,5 +1,5 @@
 /*
- * $Id: KX_GameObject.h 34520 2011-01-27 00:02:25Z campbellbarton $
+ * $Id: KX_GameObject.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,7 +25,11 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
- * General KX game object.
+ */
+
+/** \file KX_GameObject.h
+ *  \ingroup ketsji
+ *  \brief General KX game object.
  */
 
 #ifndef __KX_GAMEOBJECT

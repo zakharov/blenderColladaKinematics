@@ -1,5 +1,5 @@
-/**
- * $Id: object_bake.c 34159 2011-01-07 18:36:47Z campbellbarton $
+/*
+ * $Id: object_bake.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/object/object_bake.c
+ *  \ingroup edobj
+ */
+
 
 /*
 	meshtools.c: no editmode (violated already :), tools operating on meshes
@@ -66,6 +71,8 @@
 #include "WM_types.h"
 
 #include "ED_object.h"
+
+#include "object_intern.h"
 
 /* ****************** render BAKING ********************** */
 
@@ -117,7 +124,7 @@ typedef struct BakeRender {
 } BakeRender;
 
 /* use by exec and invoke */
-int test_bake_internal(bContext *C, ReportList *reports)
+static int test_bake_internal(bContext *C, ReportList *reports)
 {
 	Scene *scene= CTX_data_scene(C);
 

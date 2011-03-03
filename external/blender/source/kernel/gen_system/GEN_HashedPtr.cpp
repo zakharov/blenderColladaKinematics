@@ -1,5 +1,5 @@
 /*
- * $Id: GEN_HashedPtr.cpp 31730 2010-09-03 03:30:20Z gsrb3d $
+ * $Id: GEN_HashedPtr.cpp 35164 2011-02-25 13:25:53Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  * ***** END GPL LICENSE BLOCK *****
  *
  */
+
+/** \file kernel/gen_system/GEN_HashedPtr.cpp
+ *  \ingroup gensys
+ */
+
 #include "GEN_HashedPtr.h"
 
 #include "BLO_sys_types.h" // for intptr_t support

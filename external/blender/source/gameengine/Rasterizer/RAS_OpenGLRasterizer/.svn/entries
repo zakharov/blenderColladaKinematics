@@ -1,15 +1,15 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/gameengine/Rasterizer/RAS_OpenGLRasterizer
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-02-07T22:48:23.532584Z
-34701
-campbellbarton
+2011-02-25T13:38:24.865735Z
+35174
+jesterking
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-01-18T22:04:29.113021Z
-c9a86f920204291fbb033ceddbe8eb5a
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:42.798297Z
+33bd0a1a2d42a463c0cb2c60e7cf060d
+2011-02-25T13:38:24.865735Z
+35174
+jesterking
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-2284
+2389
 
 RAS_ListRasterizer.h
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-01-18T22:04:29.113021Z
-82f8ab896ad766c933c1fc5d237ef8e0
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:42.802297Z
+db672f226f637b84a55f0c6d88ca02e6
+2011-02-22T12:42:55.440226Z
+35072
+jesterking
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-1882
+1943
 
 RAS_VAOpenGLRasterizer.h
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-01-18T22:04:29.113021Z
-2560d5ae2183bd3090886a448ab4e4d7
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:42.802297Z
+51ce19041bf536f1793b286f0e9cf9e6
+2011-02-22T12:42:55.440226Z
+35072
+jesterking
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-2140
+2200
 
 RAS_GLExtensionManager.h
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-01-18T22:04:29.113021Z
-cf19c0587b9616f7804c31b0f3718671
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:42.802297Z
+86ad96dd79c99fc586f730a9b8abd4e2
+2011-02-22T16:12:12.853823Z
+35078
+jesterking
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-1395
+1455
 
 RAS_OpenGLRasterizer.cpp
 file
@@ -168,11 +168,11 @@ file
 
 
 
-2011-02-10T19:48:37.665667Z
-9e22eae3d1082b2142eff3adeb57246a
-2011-02-07T22:48:23.532584Z
-34701
-campbellbarton
+2011-03-03T12:26:42.806297Z
+6095664f0a84a0294d41abefbc7d757a
+2011-02-25T13:38:24.865735Z
+35174
+jesterking
 has-props
 
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-27229
+27332
 
 SConscript
 file
@@ -202,7 +202,7 @@ file
 
 
 
-2011-01-18T22:04:29.123021Z
+2011-03-03T12:26:42.806297Z
 25221094717eb5426429d14400ba9033
 2010-11-29T07:56:45.468036Z
 33375
@@ -236,44 +236,10 @@ file
 
 
 
-2011-01-18T22:04:29.123021Z
-c02cc858dc79ed65366e8436cc9968cd
-2010-09-15T16:13:32.976747Z
-31950
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7290
-
-RAS_ListRasterizer.cpp
-file
-
-
-
-
-2011-01-18T22:04:29.123021Z
-f26f0dfbbd6c77f40eedb85191237c9e
-2010-10-18T06:52:10.598197Z
-32552
+2011-03-03T12:26:42.806297Z
+5c1c482345d017f637651a8dd619a7b3
+2011-02-22T12:42:55.440226Z
+35072
 jesterking
 has-props
 
@@ -296,19 +262,19 @@ has-props
 
 
 
-7240
+7348
 
-RAS_VAOpenGLRasterizer.cpp
+RAS_ListRasterizer.cpp
 file
 
 
 
 
-2011-01-18T22:04:29.123021Z
-3ed1e765a8d95fc5474054bb9b58a4f8
-2010-07-27T11:07:34.494763Z
-30804
-blendix
+2011-03-03T12:26:42.806297Z
+5cf6119f22e11d63e128fe4af901be85
+2011-02-25T13:38:24.865735Z
+35174
+jesterking
 has-props
 
 
@@ -330,7 +296,41 @@ has-props
 
 
 
-10019
+7344
+
+RAS_VAOpenGLRasterizer.cpp
+file
+
+
+
+
+2011-03-03T12:26:42.806297Z
+ffd1d202182c2b60558f44bd82847839
+2011-02-25T13:38:24.865735Z
+35174
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10131
 
 CMakeLists.txt
 file
@@ -338,7 +338,7 @@ file
 
 
 
-2011-01-18T22:04:29.123021Z
+2011-03-03T12:26:42.806297Z
 7adf18f4040b03e1b542de1f1c2135ea
 2010-12-22T23:09:30.468439Z
 33864

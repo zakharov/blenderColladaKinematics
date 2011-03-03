@@ -1,4 +1,7 @@
-/* $Id: CCGSubSurf.h 29619 2010-06-22 15:09:41Z blendix $ */
+/** \file blender/blenkernel/intern/CCGSubSurf.h
+ *  \ingroup bke
+ */
+/* $Id: CCGSubSurf.h 35247 2011-02-27 20:40:57Z jesterking $ */
 
 typedef void* CCGMeshHDL;
 typedef void* CCGVertHDL;

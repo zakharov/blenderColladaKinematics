@@ -1,5 +1,5 @@
-/**
- * $Id: GPC_Canvas.cpp 28254 2010-04-18 10:28:37Z campbellbarton $
+/*
+ * $Id: GPC_Canvas.cpp 35170 2011-02-25 13:35:11Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/GamePlayer/common/GPC_Canvas.cpp
+ *  \ingroup player
+ */
+
 
 #ifndef NOPNG
 #ifdef WIN32

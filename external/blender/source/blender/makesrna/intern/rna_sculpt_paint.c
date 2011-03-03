@@ -1,5 +1,5 @@
-/**
- * $Id: rna_sculpt_paint.c 34355 2011-01-16 18:33:08Z nicholasbishop $
+/*
+ * $Id: rna_sculpt_paint.c 35238 2011-02-27 20:20:01Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/makesrna/intern/rna_sculpt_paint.c
+ *  \ingroup RNA
+ */
+
 
 #include <stdlib.h>
 

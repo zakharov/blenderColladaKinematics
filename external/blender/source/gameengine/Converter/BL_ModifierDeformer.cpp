@@ -1,5 +1,5 @@
-/**
- * $Id: BL_ModifierDeformer.cpp 34469 2011-01-23 17:17:21Z ben2610 $
+/*
+ * $Id: BL_ModifierDeformer.cpp 35167 2011-02-25 13:30:41Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/Converter/BL_ModifierDeformer.cpp
+ *  \ingroup bgeconv
+ */
+
 
 #if defined(WIN32) && !defined(FREE_WINDOWS)
 #pragma warning (disable : 4786)

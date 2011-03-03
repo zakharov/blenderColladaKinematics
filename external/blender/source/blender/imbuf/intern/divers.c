@@ -1,4 +1,4 @@
-/**
+/*
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,8 +26,13 @@
  * ***** END GPL LICENSE BLOCK *****
  * allocimbuf.c
  *
- * $Id: divers.c 34370 2011-01-17 18:16:10Z ton $
+ * $Id: divers.c 35336 2011-03-03 17:58:06Z campbellbarton $
  */
+
+/** \file blender/imbuf/intern/divers.c
+ *  \ingroup imbuf
+ */
+
 
 #include "BLI_blenlib.h"
 #include "BLI_rand.h"
@@ -47,7 +52,7 @@ void IMB_de_interlace(struct ImBuf *ibuf)
 {
 	struct ImBuf * tbuf1, * tbuf2;
 	
-	if (ibuf == 0) return;
+	if (ibuf == NULL) return;
 	if (ibuf->flags & IB_fields) return;
 	ibuf->flags |= IB_fields;
 	
@@ -74,7 +79,7 @@ void IMB_interlace(struct ImBuf *ibuf)
 {
 	struct ImBuf * tbuf1, * tbuf2;
 
-	if (ibuf == 0) return;
+	if (ibuf == NULL) return;
 	ibuf->flags &= ~IB_fields;
 
 	ibuf->y *= 2;

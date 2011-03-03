@@ -1,5 +1,5 @@
-/**
- * $Id: UnixShell.c 32552 2010-10-18 06:52:10Z jesterking $
+/*
+ * $Id: UnixShell.c 35106 2011-02-23 10:52:22Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,7 +28,7 @@
  * NS api template, adapted to link to our own internals.
  */
 
-#define UNIXSH_VERSION "$Id: UnixShell.c 32552 2010-10-18 06:52:10Z jesterking $"
+#define UNIXSH_VERSION "$Id: UnixShell.c 35106 2011-02-23 10:52:22Z jesterking $"
 #define MOZ_X11 1
 
 /* -*- Mode: C; tab-width: 8; c-set-style: bsd -*- */

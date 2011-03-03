@@ -1,5 +1,5 @@
-/**
- * $Id: SCA_ISensor.h 32788 2010-10-31 04:11:39Z campbellbarton $
+/*
+ * $Id: SCA_ISensor.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,8 +25,12 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
- * Interface Class for all logic Sensors. Implements
- * pulsemode and pulsefrequency, and event suppression.
+ */
+
+/** \file SCA_IController.h
+ *  \ingroup gamelogic
+ *  \brief Interface Class for all logic Sensors. Implements
+ *   pulsemode and pulsefrequency, and event suppression.
  */
 
 #ifndef __SCA_ISENSOR

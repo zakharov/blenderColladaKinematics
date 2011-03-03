@@ -1,5 +1,5 @@
-/**
- * $Id: RAS_MeshObject.h 31950 2010-09-15 16:13:32Z campbellbarton $
+/*
+ * $Id: RAS_MeshObject.h 35072 2011-02-22 12:42:55Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file RAS_MeshObject.h
+ *  \ingroup bgerast
+ */
+
 #ifndef __RAS_MESHOBJECT
 #define __RAS_MESHOBJECT
 

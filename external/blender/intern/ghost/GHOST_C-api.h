@@ -1,5 +1,5 @@
-/**
- * $Id: GHOST_C-api.h 34096 2011-01-05 14:00:14Z elubie $
+/*
+ * $Id: GHOST_C-api.h 35092 2011-02-22 23:40:06Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,10 +25,10 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
-/**
- * @file	GHOST_C-api.h
- * GHOST C-API function and type declarations.
- * The C-API wraps the C++ objects with the 
+/** \ingroup GHOST
+ *
+ * \file	GHOST_C-api.h
+ * \brief GHOST C-API function and type declarations.
  */
 
 #ifndef	GHOST_C_API_H
@@ -44,7 +44,7 @@ extern "C" {
  * Creates a &quot;handle&quot; for a C++ GHOST object.
  * A handle is just an opaque pointer to an empty struct.
  * In the API the pointer is casted to the actual C++ class.
- * @param	name	Name of the handle to create.
+ * \param	name	Name of the handle to create.
  */
 
 GHOST_DECLARE_HANDLE(GHOST_SystemHandle);

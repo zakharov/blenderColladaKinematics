@@ -1,15 +1,15 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/avi/intern
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-30T15:29:22.294392Z
-34567
-campbellbarton
+2011-02-27T20:43:42.772909Z
+35249
+jesterking
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-01-18T22:04:33.403021Z
-7a8cc7f6615a5d8921a770e53f035a2c
-2010-10-16T14:32:17.904382Z
-32517
-campbellbarton
+2011-03-03T12:26:59.242297Z
+4eb37091abb471268bd1c715ddcf50a1
+2011-02-27T20:43:42.772909Z
+35249
+jesterking
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-5319
+5359
 
 avi.c
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-01-18T22:04:33.403021Z
-b7b3abcbf170ace351b4a2ba743ebb4e
-2010-11-23T08:44:21.064438Z
-33250
-campbellbarton
+2011-03-03T12:26:59.246297Z
+f0c055d78c93a2203d7ecb6039a64a41
+2011-02-27T20:43:42.772909Z
+35249
+jesterking
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-29599
+29639
 
 avirgb.h
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-01-18T22:04:33.403021Z
-6103df7cc3c4585333c125c814cca5e2
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:59.246297Z
+feaed582d6b536332d74e38bf5ed1bf7
+2011-02-27T20:43:42.772909Z
+35249
+jesterking
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-1240
+1296
 
 rgb32.c
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-01-18T22:04:33.403021Z
-ba1e1108fd1730d23b74fb8c648384f5
-2010-10-17T06:38:56.749322Z
-32532
-campbellbarton
+2011-03-03T12:26:59.250297Z
+b5c3bef84dfcd76f7308f5a4d708b255
+2011-02-27T20:43:42.772909Z
+35249
+jesterking
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-2492
+2532
 
 codecs.c
 file
@@ -168,11 +168,11 @@ file
 
 
 
-2011-01-18T22:04:33.403021Z
-fa9ebfb5446e9a2bb56a735b2b6d4351
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:59.250297Z
+0d4d1b895a6a99ed180d67270f53517c
+2011-02-27T20:43:42.772909Z
+35249
+jesterking
 has-props
 
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-3383
+3424
 
 mjpeg.c
 file
@@ -202,11 +202,11 @@ file
 
 
 
-2011-01-18T22:04:33.403021Z
-52c13082aea9e233c9ae20a087cf0c67
-2010-10-17T06:38:56.749322Z
-32532
-campbellbarton
+2011-03-03T12:26:59.250297Z
+4c4ef9de03ce8b7dff1d99894c53222b
+2011-02-27T20:43:42.772909Z
+35249
+jesterking
 has-props
 
 
@@ -228,7 +228,7 @@ has-props
 
 
 
-14644
+14684
 
 avi_intern.h
 file
@@ -236,11 +236,11 @@ file
 
 
 
-2011-01-18T22:04:33.403021Z
-adc10efaa52943698284e34a5bca4219
-2010-08-16T05:46:10.560053Z
-31364
-campbellbarton
+2011-03-03T12:26:59.254297Z
+b11fe375dee731b1d7053381f88eb4f3
+2011-02-27T20:43:42.772909Z
+35249
+jesterking
 has-props
 
 
@@ -262,7 +262,7 @@ has-props
 
 
 
-1774
+1834
 
 endian.h
 file
@@ -270,11 +270,11 @@ file
 
 
 
-2011-01-18T22:04:33.403021Z
-1ee21a42c9ddf32a8ce0a2d652d74132
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:59.254297Z
+92c82316f7ef10ad0a9a66cee7a83acc
+2011-02-27T20:43:42.772909Z
+35249
+jesterking
 has-props
 
 
@@ -296,7 +296,7 @@ has-props
 
 
 
-1457
+1497
 
 rgb32.h
 file
@@ -304,11 +304,11 @@ file
 
 
 
-2011-01-18T22:04:33.403021Z
-7ff037c3689aa48b2bf7ccbe4c12cebb
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:59.254297Z
+670bc3aae08512a0adef4fd84a4ab731
+2011-02-27T20:43:42.772909Z
+35249
+jesterking
 has-props
 
 
@@ -330,7 +330,7 @@ has-props
 
 
 
-1235
+1290
 
 mjpeg.h
 file
@@ -338,11 +338,11 @@ file
 
 
 
-2011-01-18T22:04:33.403021Z
-e6f79fc523bbf9bb781884ec1dbe2d15
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:59.254297Z
+91bc305e9e7d33c3e3be576a32bedfd0
+2011-02-27T20:43:42.772909Z
+35249
+jesterking
 has-props
 
 
@@ -364,7 +364,7 @@ has-props
 
 
 
-1235
+1290
 
 avirgb.c
 file
@@ -372,11 +372,11 @@ file
 
 
 
-2011-01-18T22:04:33.403021Z
-7add3be6980fbbcea2de3f01f81871fd
-2010-10-17T06:38:56.749322Z
-32532
-campbellbarton
+2011-03-03T12:26:59.258297Z
+0ae00280b19346ca34bea44c65ac8f82
+2011-02-27T20:43:42.772909Z
+35249
+jesterking
 has-props
 
 
@@ -398,7 +398,7 @@ has-props
 
 
 
-3835
+3875
 
 options.c
 file
@@ -406,11 +406,11 @@ file
 
 
 
-2011-01-18T22:04:33.403021Z
-2477f2573c6199556a3053c0344d5178
-2010-10-17T06:38:56.749322Z
-32532
-campbellbarton
+2011-03-03T12:26:59.258297Z
+e29d43e06745ebe0d062a10c4d1c25d2
+2011-02-27T20:43:42.772909Z
+35249
+jesterking
 has-props
 
 
@@ -432,5 +432,5 @@ has-props
 
 
 
-4537
+4577
 

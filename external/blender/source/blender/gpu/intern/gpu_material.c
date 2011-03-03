@@ -1,5 +1,5 @@
-/**
- * $Id: gpu_material.c 34760 2011-02-10 14:59:17Z campbellbarton $
+/*
+ * $Id: gpu_material.c 35336 2011-03-03 17:58:06Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/gpu/intern/gpu_material.c
+ *  \ingroup gpu
+ */
+
 
 #include <math.h>
 #include <string.h>
@@ -596,7 +601,7 @@ static void do_specular_ramp(GPUShadeInput *shi, GPUNodeLink *is, GPUNodeLink *t
 	}
 }
 
-void add_user_list(ListBase *list, void *data)
+static void add_user_list(ListBase *list, void *data)
 {
 	LinkData *link = MEM_callocN(sizeof(LinkData), "GPULinkData");
 	link->data = data;
@@ -776,12 +781,12 @@ static void material_lights(GPUShadeInput *shi, GPUShadeResult *shr)
 			ListBase *lb = object_duplilist(shi->gpumat->scene, ob);
 			
 			for(dob=lb->first; dob; dob=dob->next) {
-				Object *ob = dob->ob;
-				
-				if(ob->type==OB_LAMP) {
-					copy_m4_m4(ob->obmat, dob->mat);
+				Object *ob_iter = dob->ob;
 
-					lamp = GPU_lamp_from_blender(shi->gpumat->scene, ob, base->object);
+				if(ob_iter->type==OB_LAMP) {
+					copy_m4_m4(ob_iter->obmat, dob->mat);
+
+					lamp = GPU_lamp_from_blender(shi->gpumat->scene, ob_iter, ob);
 					if(lamp)
 						shade_one_light(shi, shr, lamp);
 				}
@@ -886,7 +891,7 @@ static void do_material_tex(GPUShadeInput *shi)
 	MTex *mtex;
 	Tex *tex;
 	GPUNodeLink *texco, *tin, *trgb, *tnor, *tcol, *stencil, *tnorfac;
-	GPUNodeLink *texco_norm, *texco_orco, *texco_object, *texco_tangent;
+	GPUNodeLink *texco_norm, *texco_orco, *texco_object;
 	GPUNodeLink *texco_global, *texco_uv = NULL;
 	GPUNodeLink *newnor, *orn;
 	char *lastuvname = NULL;
@@ -894,6 +899,7 @@ static void do_material_tex(GPUShadeInput *shi)
 	int tex_nr, rgbnor, talpha;
 	int init_done = 0, iBumpSpacePrev;
 	GPUNodeLink *vNorg, *vNacc, *fPrevMagnitude;
+	int iFirstTimeNMap=1;
 
 	GPU_link(mat, "set_value", GPU_uniform(&one), &stencil);
 
@@ -902,7 +908,7 @@ static void do_material_tex(GPUShadeInput *shi)
 	GPU_link(mat, "texco_object", GPU_builtin(GPU_INVERSE_VIEW_MATRIX),
 		GPU_builtin(GPU_INVERSE_OBJECT_MATRIX),
 		GPU_builtin(GPU_VIEW_POSITION), &texco_object);
-	GPU_link(mat, "texco_tangent", GPU_attribute(CD_TANGENT, ""), &texco_tangent);
+	//GPU_link(mat, "texco_tangent", GPU_attribute(CD_TANGENT, ""), &texco_tangent);
 	GPU_link(mat, "texco_global", GPU_builtin(GPU_INVERSE_VIEW_MATRIX),
 		GPU_builtin(GPU_VIEW_POSITION), &texco_global);
 
@@ -917,7 +923,7 @@ static void do_material_tex(GPUShadeInput *shi)
 			mtex= ma->mtex[tex_nr];
 			
 			tex= mtex->tex;
-			if(tex==0) continue;
+			if(tex == NULL) continue;
 
 			/* which coords */
 			if(mtex->texco==TEXCO_ORCO)
@@ -1037,7 +1043,20 @@ static void do_material_tex(GPUShadeInput *shi)
 							GPU_link(mat, "mtex_negate_texnormal", tnor, &tnor);
 
 						if(mtex->normapspace == MTEX_NSPACE_TANGENT)
-							GPU_link(mat, "mtex_nspace_tangent", GPU_attribute(CD_TANGENT, ""), shi->vn, tnor, &newnor);
+						{
+							if(iFirstTimeNMap!=0)
+							{
+								// use unnormalized normal (this is how we bake it - closer to gamedev)
+								GPUNodeLink *vNegNorm;
+								GPU_link(mat, "vec_math_negate", GPU_builtin(GPU_VIEW_NORMAL), &vNegNorm);
+								GPU_link(mat, "mtex_nspace_tangent", GPU_attribute(CD_TANGENT, ""), vNegNorm, tnor, &newnor);
+								iFirstTimeNMap = 0;
+							}
+							else	// otherwise use accumulated perturbations
+							{
+								GPU_link(mat, "mtex_nspace_tangent", GPU_attribute(CD_TANGENT, ""), shi->vn, tnor, &newnor);
+							}
+						}
 						else
 							newnor = tnor;
 						
@@ -1348,7 +1367,7 @@ void GPU_shaderesult_set(GPUShadeInput *shi, GPUShadeResult *shr)
 		GPU_link(mat, "linearrgb_to_srgb", shr->combined, &shr->combined);
 }
 
-GPUNodeLink *GPU_blender_material(GPUMaterial *mat, Material *ma)
+static GPUNodeLink *GPU_blender_material(GPUMaterial *mat, Material *ma)
 {
 	GPUShadeInput shi;
 	GPUShadeResult shr;

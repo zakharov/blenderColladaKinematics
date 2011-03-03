@@ -1,5 +1,5 @@
-/**
- * $Id: GEN_Map.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: GEN_Map.h 35164 2011-02-25 13:25:53Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file kernel/gen_system/GEN_Map.h
+ *  \ingroup gensys
+ */
+
 #ifndef GEN_MAP_H
 #define GEN_MAP_H
 

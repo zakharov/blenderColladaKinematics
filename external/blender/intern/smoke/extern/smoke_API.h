@@ -1,5 +1,5 @@
-/**
- * $Id: smoke_API.h 30811 2010-07-27 15:33:21Z genscher $
+/*
+ * $Id: smoke_API.h 35159 2011-02-25 11:50:46Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file smoke/extern/smoke_API.h
+ *  \ingroup smoke
+ */
+
 
 #ifndef SMOKE_API_H_
 #define SMOKE_API_H_

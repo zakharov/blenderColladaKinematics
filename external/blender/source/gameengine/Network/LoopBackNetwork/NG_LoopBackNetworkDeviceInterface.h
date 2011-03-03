@@ -1,5 +1,5 @@
 /*
- * $Id: NG_LoopBackNetworkDeviceInterface.h 29240 2010-06-05 15:31:55Z campbellbarton $
+ * $Id: NG_LoopBackNetworkDeviceInterface.h 35072 2011-02-22 12:42:55Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,7 +25,11 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
- * LoopbackNetworkDeviceInterface derived from NG_NetworkDeviceInterface
+ */
+
+/** \file NG_LoopBackNetworkDeviceInterface.h
+ *  \ingroup bgenetlb
+ *  \brief LoopbackNetworkDeviceInterface derived from NG_NetworkDeviceInterface
  */
 #ifndef NG_LOOPBACKNETWORKDEVICEINTERFACE_H
 #define NG_LOOPBACKNETWORKDEVICEINTERFACE_H

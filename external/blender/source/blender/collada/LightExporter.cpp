@@ -1,5 +1,5 @@
-/**
- * $Id: LightExporter.cpp 32468 2010-10-14 09:40:56Z jesterking $
+/*
+ * $Id: LightExporter.cpp 35243 2011-02-27 20:30:35Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -22,6 +22,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/collada/LightExporter.cpp
+ *  \ingroup collada
+ */
+
 
 #include <string>
 

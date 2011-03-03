@@ -1,5 +1,5 @@
-/**
- * $Id: GHOST_Buttons.cpp 28254 2010-04-18 10:28:37Z campbellbarton $
+/*
+ * $Id: GHOST_Buttons.cpp 35152 2011-02-25 11:28:33Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file ghost/intern/GHOST_Buttons.cpp
+ *  \ingroup GHOST
+ */
+
 
 #include "GHOST_Buttons.h"
 

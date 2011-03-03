@@ -1,5 +1,5 @@
-/**
- * $Id: BL_ArmatureChannel.h 32788 2010-10-31 04:11:39Z campbellbarton $
+/*
+ * $Id: BL_ArmatureChannel.h 35167 2011-02-25 13:30:41Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file BL_ArmatureChannel.h
+ *  \ingroup bgeconv
+ */
+
 #ifndef __BL_ARMATURECHANNEL
 #define __BL_ARMATURECHANNEL
 

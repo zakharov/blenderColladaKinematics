@@ -1,4 +1,7 @@
-/* $Id: ConstraintSet.cpp 23480 2009-09-25 09:33:46Z blendix $
+/** \file itasc/ConstraintSet.cpp
+ *  \ingroup itasc
+ */
+/* $Id: ConstraintSet.cpp 35155 2011-02-25 11:45:16Z jesterking $
  * ConstraintSet.cpp
  *
  *  Created on: Jan 5, 2009

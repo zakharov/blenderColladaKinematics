@@ -1,5 +1,5 @@
-/**
- * $Id: DNA_outliner_types.h 26841 2010-02-12 13:34:04Z campbellbarton $ 
+/*
+ * $Id: DNA_outliner_types.h 34941 2011-02-17 20:48:12Z jesterking $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,10 @@
  */
 #ifndef DNA_OUTLINER_TYPES_H
 #define DNA_OUTLINER_TYPES_H
+
+/** \file DNA_outliner_types.h
+ *  \ingroup DNA
+ */
 
 #include "DNA_listBase.h"
 

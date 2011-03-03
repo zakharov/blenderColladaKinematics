@@ -1,15 +1,15 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/gameengine/Rasterizer
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-02-07T22:48:23.532584Z
-34701
-campbellbarton
+2011-02-25T13:38:24.865735Z
+35174
+jesterking
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-01-18T22:04:29.283021Z
-d71fda0c5f82ff3cc2781eb62d017787
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:43.162297Z
+02d7b20b4f8ca244234124d5289185f1
+2011-02-22T12:42:55.440226Z
+35072
+jesterking
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-3300
+3344
 
 RAS_MaterialBucket.h
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-01-18T22:04:29.283021Z
-8a110bcdbce7e56f6c21428b974bfc15
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:43.166297Z
+eafc364ccb906ff84d21fa17003861fc
+2011-02-22T12:42:55.440226Z
+35072
+jesterking
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-6659
+6712
 
 RAS_LightObject.h
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-01-18T22:04:29.283021Z
-176ea29bb975c573ecd26b3b6ca52748
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:43.166297Z
+7287d6b53d308ddcc3e301e46f10015b
+2011-02-22T12:42:55.440226Z
+35072
+jesterking
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-1542
+1592
 
 RAS_TexVert.h
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-01-18T22:04:29.283021Z
-4bd031efac8f8bfecea8bc54417bab10
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:43.166297Z
+784191d3cc8ac23fbdf4e75f628c4407
+2011-02-22T12:42:55.440226Z
+35072
+jesterking
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-3676
+3722
 
 RAS_2DFilterManager.cpp
 file
@@ -168,11 +168,11 @@ file
 
 
 
-2011-01-18T22:04:29.283021Z
-8b675022223f3e96f6c9ddfe8ce7c1ec
-2010-11-01T00:15:12.122438Z
-32801
-moguri
+2011-03-03T12:26:43.166297Z
+1e40fbb5efcae6e5fd07f6a3add5765f
+2011-02-25T13:38:24.865735Z
+35174
+jesterking
 has-props
 
 
@@ -194,41 +194,7 @@ has-props
 
 
 
-14870
-
-RAS_Deformer.h
-file
-
-
-
-
-2011-02-10T19:48:37.695667Z
-a0b1349a627f1640b904b216e11e3c33
-2011-01-23T17:17:21.114643Z
-34469
-ben2610
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2622
+14952
 
 RAS_IRasterizer.h
 file
@@ -236,11 +202,11 @@ file
 
 
 
-2011-01-18T22:04:29.293021Z
-ef0db7de403c9e64c3f4d75d35d14f9b
-2010-09-15T16:13:32.976747Z
-31950
-campbellbarton
+2011-03-03T12:26:43.170297Z
+89b36a4c88568695287e671a2d3a74f5
+2011-02-22T12:42:55.440226Z
+35072
+jesterking
 has-props
 
 
@@ -262,7 +228,41 @@ has-props
 
 
 
-10773
+10823
+
+RAS_Deformer.h
+file
+
+
+
+
+2011-03-03T12:26:43.170297Z
+f342a4a390266b3789b987d878f05178
+2011-02-22T12:42:55.440226Z
+35072
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2675
 
 RAS_ObjectColor.h
 file
@@ -270,11 +270,11 @@ file
 
 
 
-2011-01-18T22:04:29.293021Z
-09348bf504ec252335efa3a5706dadb7
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:43.170297Z
+ba3fa855b9e521a7151f497a1e106d6e
+2011-02-22T12:42:55.440226Z
+35072
+jesterking
 has-props
 
 
@@ -296,7 +296,7 @@ has-props
 
 
 
-1214
+1264
 
 RAS_BucketManager.h
 file
@@ -304,11 +304,11 @@ file
 
 
 
-2011-01-18T22:04:29.293021Z
-3fb94d6c9436b768e7b6b7ab8eca9cd4
-2010-06-16T19:07:20.681934Z
-29494
-moguri
+2011-03-03T12:26:43.170297Z
+a52e433298f87ac525157f1cae46f279
+2011-02-22T12:42:55.440226Z
+35072
+jesterking
 has-props
 
 
@@ -330,10 +330,7 @@ has-props
 
 
 
-3013
-
-RAS_OpenGLRasterizer
-dir
+3032
 
 RAS_FramingManager.cpp
 file
@@ -341,11 +338,11 @@ file
 
 
 
-2011-01-18T22:04:29.293021Z
-321651a7e1ab9dc5cfe65010d3e01125
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:43.170297Z
+55d076d58481e2b680fd57638fd35bba
+2011-02-25T13:38:24.865735Z
+35174
+jesterking
 has-props
 
 
@@ -367,7 +364,7 @@ has-props
 
 
 
-7824
+7901
 
 RAS_IRenderTools.h
 file
@@ -375,11 +372,11 @@ file
 
 
 
-2011-01-18T22:04:29.293021Z
-56c9062da7282b654e5ec340259f038d
-2010-12-16T10:25:41.788109Z
-33707
-dfelinto
+2011-03-03T12:26:43.170297Z
+51cc4212acc3044bb3d6573137a89c05
+2011-02-22T12:42:55.440226Z
+35072
+jesterking
 has-props
 
 
@@ -401,7 +398,10 @@ has-props
 
 
 
-4147
+4204
+
+RAS_OpenGLRasterizer
+dir
 
 RAS_IPolygonMaterial.h
 file
@@ -409,11 +409,11 @@ file
 
 
 
-2011-02-10T19:48:37.695667Z
-3328e624e23e3f39c991a0814a4f8b18
-2011-01-23T17:17:21.114643Z
-34469
-ben2610
+2011-03-03T12:26:43.174297Z
+d9537a92e8522297ec5c325390d45f9d
+2011-02-22T12:42:55.440226Z
+35072
+jesterking
 has-props
 
 
@@ -435,7 +435,7 @@ has-props
 
 
 
-5432
+5462
 
 CMakeLists.txt
 file
@@ -443,7 +443,7 @@ file
 
 
 
-2011-02-10T19:48:37.695667Z
+2011-03-03T12:26:43.174297Z
 32b4fbf5d6a72cef3c4038fcf05452ce
 2011-01-25T14:43:13.999734Z
 34486
@@ -477,11 +477,11 @@ file
 
 
 
-2011-01-18T22:04:29.293021Z
-b62abe9df990cea19385a8617f68ef2a
-2010-09-15T16:13:32.976747Z
-31950
-campbellbarton
+2011-03-03T12:26:43.174297Z
+f899438d561f1c723af9e01a04832d53
+2011-02-22T12:42:55.440226Z
+35072
+jesterking
 has-props
 
 
@@ -503,7 +503,7 @@ has-props
 
 
 
-4863
+4912
 
 RAS_TexMatrix.h
 file
@@ -511,11 +511,11 @@ file
 
 
 
-2011-01-18T22:04:29.293021Z
-7ca1c917ec8a4d2dde1141d3334a0c09
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:43.162297Z
+1433f8523a60392be61e6fabef3dae90
+2011-02-22T12:42:55.440226Z
+35072
+jesterking
 has-props
 
 
@@ -537,10 +537,7 @@ has-props
 
 
 
-1316
-
-RAS_OpenGLFilters
-dir
+1364
 
 RAS_MaterialBucket.cpp
 file
@@ -548,11 +545,11 @@ file
 
 
 
-2011-01-18T22:04:29.293021Z
-620d3da6f52c17229abab62569ddbd76
-2010-09-15T16:13:32.976747Z
-31950
-campbellbarton
+2011-03-03T12:26:43.166297Z
+93470f9c29fe19c27df325feb82d2d3c
+2011-02-25T13:38:24.865735Z
+35174
+jesterking
 has-props
 
 
@@ -574,7 +571,7 @@ has-props
 
 
 
-16655
+16732
 
 RAS_Polygon.h
 file
@@ -582,11 +579,11 @@ file
 
 
 
-2011-01-18T22:04:29.293021Z
-bbcc62fb85fb0a95373fa19c247f2a14
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:43.166297Z
+826665ce611ad61d22c53d37e470c0f6
+2011-02-22T12:42:55.440226Z
+35072
+jesterking
 has-props
 
 
@@ -608,7 +605,10 @@ has-props
 
 
 
-2652
+2698
+
+RAS_OpenGLFilters
+dir
 
 RAS_TexVert.cpp
 file
@@ -616,11 +616,11 @@ file
 
 
 
-2011-01-18T22:04:29.293021Z
-1fd00831a326b954e718a1935a2d7387
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:43.166297Z
+a7fe0b332339d3147edd53d0aaf18acf
+2011-02-25T13:38:24.865735Z
+35174
+jesterking
 has-props
 
 
@@ -642,7 +642,7 @@ has-props
 
 
 
-3924
+3994
 
 SConscript
 file
@@ -650,7 +650,7 @@ file
 
 
 
-2011-01-18T22:04:29.293021Z
+2011-03-03T12:26:43.166297Z
 429652ebea1fba56b902db9305a72caa
 2010-11-18T11:42:05.232926Z
 33156
@@ -684,11 +684,11 @@ file
 
 
 
-2011-01-18T22:04:29.293021Z
-c058eab16f4eff751d1760d42ed9ad12
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:43.166297Z
+90f72e8c444abbf7f1272fd3f8a6f862
+2011-02-22T12:42:55.440226Z
+35072
+jesterking
 has-props
 
 
@@ -710,7 +710,7 @@ has-props
 
 
 
-2112
+2159
 
 RAS_BucketManager.cpp
 file
@@ -718,11 +718,11 @@ file
 
 
 
-2011-01-18T22:04:29.293021Z
-a48b3e5b4ba48a718b90dc96665f7c3f
-2010-09-15T16:13:32.976747Z
-31950
-campbellbarton
+2011-03-03T12:26:43.170297Z
+914d4e64cd52226a231bee7ef0474966
+2011-02-25T13:38:24.865735Z
+35174
+jesterking
 has-props
 
 
@@ -744,7 +744,7 @@ has-props
 
 
 
-10765
+10841
 
 RAS_IRenderTools.cpp
 file
@@ -752,11 +752,11 @@ file
 
 
 
-2011-01-18T22:04:29.293021Z
-05b229cefddfa7c07260e64c5d5ac1cc
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:43.170297Z
+eaaf19ee07efe9f9d1ef2da5bd2281d8
+2011-02-25T13:38:24.865735Z
+35174
+jesterking
 has-props
 
 
@@ -778,7 +778,7 @@ has-props
 
 
 
-1657
+1732
 
 RAS_2DFilterManager.h
 file
@@ -786,11 +786,11 @@ file
 
 
 
-2011-01-18T22:04:29.293021Z
-76318ba73c821b62970fc574f99f702f
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:43.170297Z
+3a290bdb45ff6bd96ec13399d21670e8
+2011-02-22T12:42:55.440226Z
+35072
+jesterking
 has-props
 
 
@@ -812,7 +812,7 @@ has-props
 
 
 
-3337
+3394
 
 RAS_IPolygonMaterial.cpp
 file
@@ -820,11 +820,11 @@ file
 
 
 
-2011-02-10T19:48:37.695667Z
-3f5418e96a28a3585aadcd6bbb3d581a
-2011-01-23T17:17:21.114643Z
-34469
-ben2610
+2011-03-03T12:26:43.170297Z
+9a36c7fd1bbfb63b39ee0fc73a166c32
+2011-02-25T13:38:24.865735Z
+35174
+jesterking
 has-props
 
 
@@ -846,7 +846,7 @@ has-props
 
 
 
-5613
+5699
 
 RAS_FramingManager.h
 file
@@ -854,11 +854,11 @@ file
 
 
 
-2011-01-18T22:04:29.293021Z
-18bed1c39f4ac0d6abebef5748871e39
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:43.174297Z
+52ba8b816dfd4cac35cf08f573893700
+2011-02-22T12:42:55.440226Z
+35072
+jesterking
 has-props
 
 
@@ -880,7 +880,7 @@ has-props
 
 
 
-5823
+5876
 
 RAS_MeshObject.cpp
 file
@@ -888,11 +888,11 @@ file
 
 
 
-2011-01-18T22:04:29.293021Z
-e868680e54f9819fca7aa9ee0626a5f1
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:43.174297Z
+42c3a4311c4bb0b28f14c467f540e48f
+2011-02-25T13:38:24.865735Z
+35174
+jesterking
 has-props
 
 
@@ -914,7 +914,7 @@ has-props
 
 
 
-14797
+14870
 
 RAS_texmatrix.cpp
 file
@@ -922,11 +922,11 @@ file
 
 
 
-2011-01-18T22:04:29.293021Z
-ae67369720ea4e171b56015b130d7503
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:43.174297Z
+d16603a62ac387e1555aece21e00c0b6
+2011-02-25T13:38:24.865735Z
+35174
+jesterking
 has-props
 
 
@@ -948,7 +948,7 @@ has-props
 
 
 
-3461
+3533
 
 RAS_CameraData.h
 file
@@ -956,11 +956,11 @@ file
 
 
 
-2011-01-18T22:04:29.293021Z
-2a4e71460e3ef3860659460c6484d830
-2010-02-22T09:22:36.030503Z
-27076
-campbellbarton
+2011-03-03T12:26:43.174297Z
+3db4262148b537575c26ddc602beb7aa
+2011-02-22T12:42:55.440226Z
+35072
+jesterking
 has-props
 
 
@@ -982,7 +982,7 @@ has-props
 
 
 
-1959
+2008
 
 RAS_Polygon.cpp
 file
@@ -990,11 +990,11 @@ file
 
 
 
-2011-01-18T22:04:29.293021Z
-1a55e172574ee90dab12dc81e69e19b4
-2010-09-15T16:13:32.976747Z
-31950
-campbellbarton
+2011-03-03T12:26:43.174297Z
+9e5fd4309df68e984272018267d83859
+2011-02-25T13:38:24.865735Z
+35174
+jesterking
 has-props
 
 
@@ -1016,5 +1016,5 @@ has-props
 
 
 
-3120
+3190
 

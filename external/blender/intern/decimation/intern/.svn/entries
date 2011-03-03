@@ -1,15 +1,15 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern/decimation/intern
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-30T15:29:22.294392Z
-34567
-campbellbarton
+2011-02-25T10:47:28.630336Z
+35147
+jesterking
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-01-18T22:04:10.683021Z
-c097f027c132bc7d04d8888a67dca452
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:43.434297Z
+05d7c3045a9be8478ff296555eb3f51b
+2011-02-25T10:47:28.630336Z
+35147
+jesterking
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-2168
+2241
 
 LOD_DecimationClass.h
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-01-18T22:04:10.693021Z
-50250e2cd765dd438f4b204b8d1d5fed
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:43.434297Z
+513970309c658ecbe4c833c2e4c62744
+2011-02-25T10:47:28.630336Z
+35147
+jesterking
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-2902
+2977
 
 LOD_MeshPrimitives.cpp
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-01-18T22:04:10.693021Z
-df272998cad91e319d9b694999861baf
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:25:43.434297Z
+f304d8fb7d983ef7fb5772a922d9a91e
+2011-02-25T10:47:28.630336Z
+35147
+jesterking
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-6249
+6325
 
 LOD_EdgeCollapser.cpp
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-01-18T22:04:10.693021Z
-6de7927d1eea885595e2237a2181d0c5
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:25:43.434297Z
+9ae3dfa04dbd600fce95b0a918a694ca
+2011-02-25T10:47:28.630336Z
+35147
+jesterking
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-11126
+11201
 
 LOD_ManMesh2.cpp
 file
@@ -168,11 +168,11 @@ file
 
 
 
-2011-01-18T22:04:10.693021Z
-30c450db0ae57efb3044892773c38513
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:25:43.438297Z
+029f6fadc81daa17fea174f5f697917f
+2011-02-25T10:47:28.630336Z
+35147
+jesterking
 has-props
 
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-12302
+12372
 
 LOD_ExternBufferEditor.h
 file
@@ -202,11 +202,11 @@ file
 
 
 
-2011-01-18T22:04:10.693021Z
-a1d16521358901e5d9d4f7567c38cf97
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:43.438297Z
+b5730ce46a90ab1c00b92366b1ffa0b1
+2011-02-25T10:47:28.630336Z
+35147
+jesterking
 has-props
 
 
@@ -228,7 +228,7 @@ has-props
 
 
 
-4239
+4313
 
 LOD_QSDecimator.cpp
 file
@@ -236,11 +236,11 @@ file
 
 
 
-2011-01-18T22:04:10.693021Z
-a841a220bae5ce48ca7aeceb88696562
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:25:43.438297Z
+a3dadc6f1dd972f746562913105220a7
+2011-02-25T10:47:28.630336Z
+35147
+jesterking
 has-props
 
 
@@ -262,7 +262,7 @@ has-props
 
 
 
-7663
+7736
 
 LOD_decimation.cpp
 file
@@ -270,11 +270,11 @@ file
 
 
 
-2011-01-18T22:04:10.703021Z
-d4865897015af1eabbd8bffbff7fde51
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:25:43.438297Z
+b89097dbeadab5ef77b8e006a5cd46b2
+2011-02-25T10:47:28.630336Z
+35147
+jesterking
 has-props
 
 
@@ -296,7 +296,7 @@ has-props
 
 
 
-3898
+3970
 
 LOD_MeshBounds.h
 file
@@ -304,11 +304,11 @@ file
 
 
 
-2011-01-18T22:04:10.703021Z
-6dae9d0c04ef8017fef3c5f22948e7c8
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:43.438297Z
+023e5f9067375fbe5fb9e737cd9aefb0
+2011-02-25T10:47:28.630336Z
+35147
+jesterking
 has-props
 
 
@@ -330,7 +330,7 @@ has-props
 
 
 
-2536
+2606
 
 LOD_MeshPrimitives.h
 file
@@ -338,11 +338,11 @@ file
 
 
 
-2011-01-18T22:04:10.703021Z
-9cff181dc8d195f606efb03995821712
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:43.438297Z
+7783e4d2367b7199fc7f3b2a6c8a5caa
+2011-02-25T10:47:28.630336Z
+35147
+jesterking
 has-props
 
 
@@ -364,7 +364,7 @@ has-props
 
 
 
-3252
+3326
 
 LOD_EdgeCollapser.h
 file
@@ -372,11 +372,11 @@ file
 
 
 
-2011-01-18T22:04:10.703021Z
-5cae9b07264e1a2d2699a27511cba179
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:43.438297Z
+129a56a0c1b8b49600d97151834d924f
+2011-02-25T10:47:28.630336Z
+35147
+jesterking
 has-props
 
 
@@ -398,7 +398,7 @@ has-props
 
 
 
-2862
+2935
 
 LOD_FaceNormalEditor.cpp
 file
@@ -406,11 +406,11 @@ file
 
 
 
-2011-01-18T22:04:10.703021Z
-6edb46240b8e25286b972bae38f74237
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:25:43.438297Z
+17b716e28a6b11366b33bbe6db332803
+2011-02-25T10:47:28.630336Z
+35147
+jesterking
 has-props
 
 
@@ -432,7 +432,7 @@ has-props
 
 
 
-6131
+6209
 
 LOD_ManMesh2.h
 file
@@ -440,11 +440,11 @@ file
 
 
 
-2011-01-18T22:04:10.703021Z
-c574a9668032e7a7645c5226601a0009
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:43.442297Z
+4c97d9b19a3b9720291d8ea303a1624e
+2011-02-25T10:47:28.630336Z
+35147
+jesterking
 has-props
 
 
@@ -466,7 +466,7 @@ has-props
 
 
 
-4848
+4916
 
 LOD_QSDecimator.h
 file
@@ -474,11 +474,11 @@ file
 
 
 
-2011-01-18T22:04:10.703021Z
-10a55c156872a386ef88b565e3d8de34
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:43.442297Z
+58afdf10957bc7ab40d1f98e9efcc5fc
+2011-02-25T10:47:28.630336Z
+35147
+jesterking
 has-props
 
 
@@ -500,7 +500,7 @@ has-props
 
 
 
-2732
+2803
 
 LOD_MeshException.h
 file
@@ -508,11 +508,11 @@ file
 
 
 
-2011-01-18T22:04:10.703021Z
-da53b831736810c0942399a8c7e49750
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:43.442297Z
+354e581eda2387b193c24a37338cafa4
+2011-02-25T10:47:28.630336Z
+35147
+jesterking
 has-props
 
 
@@ -534,7 +534,7 @@ has-props
 
 
 
-1370
+1443
 
 LOD_FaceNormalEditor.h
 file
@@ -542,11 +542,11 @@ file
 
 
 
-2011-01-18T22:04:10.703021Z
-2fabe3d38d218eec5c02c5509b14a8e7
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:43.442297Z
+ceb38e64139e60abdb5e9833ad997eb3
+2011-02-25T10:47:28.630336Z
+35147
+jesterking
 has-props
 
 
@@ -568,7 +568,7 @@ has-props
 
 
 
-2451
+2527
 
 LOD_ExternNormalEditor.cpp
 file
@@ -576,11 +576,11 @@ file
 
 
 
-2011-01-18T22:04:10.703021Z
-f3c25ffd22f93bc71bcb48270d08a722
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:25:43.442297Z
+764937dd8a05874e6b329a10efa49be5
+2011-02-25T10:47:28.630336Z
+35147
+jesterking
 has-props
 
 
@@ -602,7 +602,7 @@ has-props
 
 
 
-5914
+5994
 
 LOD_ExternNormalEditor.h
 file
@@ -610,11 +610,11 @@ file
 
 
 
-2011-01-18T22:04:10.703021Z
-3359fdbc263948985f31dc65b2fb5298
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:43.442297Z
+d3393b1afe0745d22816569c6e3aaa2c
+2011-02-25T10:47:28.630336Z
+35147
+jesterking
 has-props
 
 
@@ -636,7 +636,7 @@ has-props
 
 
 
-2443
+2521
 
 future
 dir
@@ -647,11 +647,11 @@ file
 
 
 
-2011-01-18T22:04:10.703021Z
-530cb38ef9f861503bcf8fbfc4ca2a3c
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:43.442297Z
+d3d08aebdc9519906a8cf95533fafcc3
+2011-02-25T10:47:28.630336Z
+35147
+jesterking
 has-props
 
 
@@ -673,7 +673,7 @@ has-props
 
 
 
-3209
+3276
 
 LOD_QuadricEditor.cpp
 file
@@ -681,11 +681,11 @@ file
 
 
 
-2011-01-18T22:04:10.703021Z
-f27fd8148aaa6d4caa0454f73f22e8c0
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:25:43.446297Z
+ac8343266c2a32314ebeeaf1c0e230f8
+2011-02-25T10:47:28.630336Z
+35147
+jesterking
 has-props
 
 
@@ -707,5 +707,5 @@ has-props
 
 
 
-6199
+6274
 

@@ -1,5 +1,5 @@
-/**
- * $Id: wm_jobs.c 34067 2011-01-04 14:59:55Z ton $
+/*
+ * $Id: wm_jobs.c 35179 2011-02-25 14:04:21Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/windowmanager/intern/wm_jobs.c
+ *  \ingroup wm
+ */
+
 
 #include <string.h>
 

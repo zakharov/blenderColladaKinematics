@@ -1,5 +1,5 @@
 /*
-* $Id: MOD_surface.c 34587 2011-01-31 20:02:51Z nazgul $
+* $Id: MOD_surface.c 35178 2011-02-25 13:57:17Z jesterking $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -29,6 +29,11 @@
 * ***** END GPL LICENSE BLOCK *****
 *
 */
+
+/** \file blender/modifiers/intern/MOD_surface.c
+ *  \ingroup modifiers
+ */
+
 
 #include "DNA_scene_types.h"
 #include "DNA_object_types.h"
@@ -91,7 +96,6 @@ static void deformVerts(ModifierData *md, Object *ob,
 						int UNUSED(isFinalCalc))
 {
 	SurfaceModifierData *surmd = (SurfaceModifierData*) md;
-	unsigned int numverts = 0, i = 0;
 	
 	if(surmd->dm)
 		surmd->dm->release(surmd->dm);
@@ -108,6 +112,7 @@ static void deformVerts(ModifierData *md, Object *ob,
 	
 	if(surmd->dm)
 	{
+		unsigned int numverts = 0, i = 0;
 		int init = 0;
 		float *vec;
 		MVert *x, *v;

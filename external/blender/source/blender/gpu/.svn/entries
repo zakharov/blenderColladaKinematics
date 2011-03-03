@@ -1,14 +1,14 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/gpu
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-02-10T14:59:17.571759Z
-34760
+2011-03-03T17:58:06.695335Z
+35336
 campbellbarton
 
 
@@ -35,11 +35,11 @@ file
 
 
 
-2011-01-18T22:04:41.483021Z
-3ed4e3598927b3e4361486f5c1394aaf
-2010-12-03T17:05:21.802549Z
-33448
-campbellbarton
+2011-03-03T12:27:16.094297Z
+5378c0c005e3d1ea3e1bb09b42b9f21e
+2011-02-21T06:58:46.816603Z
+35014
+jesterking
 has-props
 
 
@@ -61,7 +61,7 @@ has-props
 
 
 
-4998
+5040
 
 GPU_extensions.h
 file
@@ -69,11 +69,11 @@ file
 
 
 
-2011-01-18T22:04:41.483021Z
-e486bd0a5da79d4712661b6f4cc9a810
-2010-12-03T17:05:21.802549Z
-33448
-campbellbarton
+2011-03-03T12:27:16.094297Z
+2f5ad3b47a857011d35824e049b5b452
+2011-02-21T06:58:46.816603Z
+35014
+jesterking
 has-props
 
 
@@ -95,7 +95,7 @@ has-props
 
 
 
-6062
+6106
 
 SConscript
 file
@@ -103,11 +103,11 @@ file
 
 
 
-2011-01-18T22:04:41.493021Z
-b2a55a96a9d676b792f9b270a81a3831
-2010-04-14T17:15:33.397395Z
-28194
-dingto
+2011-03-03T12:27:16.094297Z
+7e5ee864e85cff0636fc61644162bdc9
+2011-02-21T12:35:04.852834Z
+35028
+jesterking
 has-props
 
 
@@ -129,7 +129,7 @@ has-props
 
 
 
-509
+523
 
 CMakeLists.txt
 file
@@ -137,11 +137,11 @@ file
 
 
 
-2011-01-18T22:04:41.493021Z
-e61640b0e0ce0eef53c43120ccd851e4
-2010-12-22T23:09:30.468439Z
-33864
-campbellbarton
+2011-03-03T12:27:16.094297Z
+874b120ff4ca2b68995c98f061a5ff2d
+2011-02-21T12:35:04.852834Z
+35028
+jesterking
 has-props
 
 
@@ -163,7 +163,7 @@ has-props
 
 
 
-1524
+1539
 
 GPU_buffers.h
 file
@@ -171,11 +171,11 @@ file
 
 
 
-2011-01-18T22:04:41.493021Z
-f018ff3416a043bd8c30166ebe743ea2
-2010-12-03T12:30:59.861558Z
-33442
-campbellbarton
+2011-03-03T12:27:16.094297Z
+e47fed8d754614467b655696448c54a5
+2011-02-21T06:58:46.816603Z
+35014
+jesterking
 has-props
 
 
@@ -197,7 +197,7 @@ has-props
 
 
 
-5624
+5853
 
 GPU_draw.h
 file
@@ -205,11 +205,11 @@ file
 
 
 
-2011-01-18T22:04:41.493021Z
-4d774df2ad40ff9db510236158fdcf23
-2010-10-15T12:29:02.964065Z
-32499
-campbellbarton
+2011-03-03T12:27:16.094297Z
+394f5d03fea2acef626db04a5f9cbc80
+2011-02-21T06:58:46.816603Z
+35014
+jesterking
 has-props
 
 
@@ -231,5 +231,5 @@ has-props
 
 
 
-4219
+4257
 

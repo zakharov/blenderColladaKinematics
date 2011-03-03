@@ -1,7 +1,5 @@
-/**
- * Sense if other objects are near
- *
- * $Id: KX_NearSensor.h 32788 2010-10-31 04:11:39Z campbellbarton $
+/*
+ * $Id: KX_NearSensor.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +25,11 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file KX_NearSensor.h
+ *  \ingroup ketsji
+ *  \brief Sense if other objects are near
  */
 
 #ifndef KX_NEARSENSOR_H

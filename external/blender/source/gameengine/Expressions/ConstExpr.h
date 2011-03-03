@@ -1,6 +1,6 @@
 /*
  * ConstExpr.h: interface for the CConstExpr class.
- * $Id: ConstExpr.h 29259 2010-06-06 01:15:44Z campbellbarton $
+ * $Id: ConstExpr.h 35063 2011-02-22 10:33:14Z jesterking $
  * Copyright (c) 1996-2000 Erwin Coumans <coockie@acm.org>
  *
  * Permission to use, copy, modify, distribute and sell this software
@@ -11,6 +11,10 @@
  * representations about the suitability of this software for any
  * purpose.  It is provided "as is" without express or implied warranty.
  *
+ */
+
+/** \file ConstExpr.h
+ *  \ingroup expressions
  */
 
 #ifndef __CONSTEXPR_H__

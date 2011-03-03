@@ -1,5 +1,5 @@
-/**
- * $Id: info_ops.c 34159 2011-01-07 18:36:47Z campbellbarton $
+/*
+ * $Id: info_ops.c 35255 2011-02-28 03:17:53Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_info/info_ops.c
+ *  \ingroup spinfo
+ */
+
 
 #include <string.h>
 #include <stdio.h>
@@ -53,6 +58,7 @@
 
 
 #include "UI_interface.h"
+#include "UI_resources.h"
 
 #include "IMB_imbuf_types.h"
 
@@ -155,7 +161,7 @@ static int unpack_all_invoke(bContext *C, wmOperator *op, wmEvent *UNUSED(event)
 	else
 		sprintf(title, "Unpack %d files", count);
 	
-	pup= uiPupMenuBegin(C, title, ICON_NULL);
+	pup= uiPupMenuBegin(C, title, ICON_NONE);
 	layout= uiPupMenuLayout(pup);
 
 	uiLayoutSetOperatorContext(layout, WM_OP_EXEC_DEFAULT);
@@ -251,10 +257,6 @@ void FILE_OT_make_paths_absolute(wmOperatorType *ot)
 
 static int report_missing_files_exec(bContext *UNUSED(C), wmOperator *op)
 {
-	char txtname[24]; /* text block name */
-
-	txtname[0] = '\0';
-	
 	/* run the missing file check */
 	checkMissingFiles(G.main, op->reports);
 	

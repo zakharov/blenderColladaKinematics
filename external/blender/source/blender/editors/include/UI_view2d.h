@@ -1,5 +1,5 @@
-/**
- * $Id: UI_view2d.h 33528 2010-12-07 07:02:47Z campbellbarton $
+/*
+ * $Id: UI_view2d.h 35016 2011-02-21 07:25:24Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,10 @@
  * Generic 2d view with should allow drawing grids,
  * panning, zooming, scrolling, .. 
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file UI_view2d.h
+ *  \ingroup editorui
  */
 
 #ifndef UI_VIEW2D_H

@@ -1,5 +1,5 @@
-/**
- * $Id: particle_boids.c 34159 2011-01-07 18:36:47Z campbellbarton $
+/*
+ * $Id: particle_boids.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/physics/particle_boids.c
+ *  \ingroup edphys
+ */
+
 
 #include <stdlib.h>
 

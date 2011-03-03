@@ -1,5 +1,5 @@
-/**
- * $Id: depsgraph_private.h 33448 2010-12-03 17:05:21Z campbellbarton $
+/*
+ * $Id: depsgraph_private.h 35247 2011-02-27 20:40:57Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/blenkernel/depsgraph_private.h
+ *  \ingroup bke
+ */
+
 #ifndef DEPSGRAPH_PRIVATE
 #define DEPSGRAPH_PRIVATE
 

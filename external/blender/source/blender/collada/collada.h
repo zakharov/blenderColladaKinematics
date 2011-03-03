@@ -1,5 +1,5 @@
-/**
- * $Id: collada.h 29191 2010-06-03 17:41:33Z kazanbas $
+/*
+ * $Id: collada.h 35020 2011-02-21 08:38:53Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file collada.h
+ *  \ingroup collada
+ */
+
 #ifndef BLENDER_COLLADA_H
 #define BLENDER_COLLADA_H
 

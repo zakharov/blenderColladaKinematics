@@ -1,4 +1,4 @@
-/* $Id: ImageBase.h 27066 2010-02-21 22:20:00Z ben2610 $
+/* $Id: ImageBase.h 35082 2011-02-22 19:30:37Z jesterking $
 -----------------------------------------------------------------------------
 This source file is part of blendTex library
 
@@ -20,6 +20,10 @@ http://www.gnu.org/copyleft/lesser.txt.
 -----------------------------------------------------------------------------
 */
 
+/** \file ImageBase.h
+ *  \ingroup bgevideotex
+ */
+ 
 #if !defined IMAGEBASE_H
 #define IMAGEBASE_H
 

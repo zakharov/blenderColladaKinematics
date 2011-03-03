@@ -1,5 +1,5 @@
-/**
- * $Id: GPG_System.cpp 28254 2010-04-18 10:28:37Z campbellbarton $
+/*
+ * $Id: GPG_System.cpp 35170 2011-02-25 13:35:11Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  * ***** END GPL LICENSE BLOCK *****
  * Blender Player system on GHOST.
  */
+
+/** \file gameengine/GamePlayer/ghost/GPG_System.cpp
+ *  \ingroup player
+ */
+
 
 #include "GPG_System.h"
 #include <assert.h>

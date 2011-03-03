@@ -1,9 +1,9 @@
-/**
+/*
  * bmfont.c
  *
  * 04-10-2000 frank
  *
- * $Id: bmfont.c 28651 2010-05-07 15:18:04Z blendix $
+ * $Id: bmfont.c 35247 2011-02-27 20:40:57Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -32,6 +32,11 @@
  *
  */
 
+/** \file blender/blenkernel/intern/bmfont.c
+ *  \ingroup bke
+ */
+
+
 /**
  * Two external functions:
  *
@@ -54,6 +59,7 @@
 #include "BKE_global.h"
 #include "IMB_imbuf_types.h"
 
+#include "BKE_bmfont.h"
 #include "BKE_bmfont_types.h"
 
 void printfGlyph(bmGlyph * glyph)

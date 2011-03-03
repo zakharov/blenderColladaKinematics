@@ -1,15 +1,15 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/gameengine/SceneGraph
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-30T15:29:22.294392Z
-34567
-campbellbarton
+2011-02-25T13:39:04.477846Z
+35175
+jesterking
 
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2011-01-18T22:04:23.113021Z
+2011-03-03T12:26:27.598297Z
 038445184708bee1b342da0b5939d4c0
 2010-11-29T07:56:45.468036Z
 33375
@@ -66,11 +66,11 @@ file
 
 
 
-2011-01-18T22:04:23.113021Z
-39c9c242b7f85b01332980d65544a4ab
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:27.598297Z
+fd0b7841603a74ae98a2658cb175cf19
+2011-02-25T13:39:04.477846Z
+35175
+jesterking
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-2128
+2195
 
 SG_Controller.cpp
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-01-18T22:04:23.113021Z
-d65ff3841be0b8facf08ee68ef6fa9fc
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:27.598297Z
+09771702bb40bcc5d9ce4ce0bcb2c955
+2011-02-25T13:39:04.477846Z
+35175
+jesterking
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-1259
+1329
 
 SG_DList.h
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-01-18T22:04:23.113021Z
-092f4e9021057dc8ce70b4f05c590b0f
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:27.602297Z
+d751f9912ca0f28814a1da1132e2e780
+2011-02-22T19:30:37.531882Z
+35082
+jesterking
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-5718
+5760
 
 SG_IObject.h
 file
@@ -168,11 +168,11 @@ file
 
 
 
-2011-01-18T22:04:23.113021Z
-8d9691cffaad1dcc7b0136fd5379c904
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:27.602297Z
+09b35ce6e5f820813d9271e263fce71a
+2011-02-22T19:30:37.531882Z
+35082
+jesterking
 has-props
 
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-8154
+8198
 
 SG_Node.cpp
 file
@@ -202,11 +202,11 @@ file
 
 
 
-2011-01-18T22:04:23.113021Z
-93a06e93e2f69561499d03ef1dc4c347
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:27.602297Z
+5137e8fec42996204a82540ee3a3b61d
+2011-02-25T13:39:04.477846Z
+35175
+jesterking
 has-props
 
 
@@ -228,7 +228,7 @@ has-props
 
 
 
-4831
+4895
 
 SG_Controller.h
 file
@@ -236,11 +236,11 @@ file
 
 
 
-2011-01-18T22:04:23.113021Z
-bdc9c44b8a099464d75d2293789c3940
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:27.602297Z
+aa409287f3d8b6e296374d5ae6dc9680
+2011-02-22T19:30:37.531882Z
+35082
+jesterking
 has-props
 
 
@@ -262,7 +262,7 @@ has-props
 
 
 
-2729
+2775
 
 SG_BBox.cpp
 file
@@ -270,11 +270,11 @@ file
 
 
 
-2011-01-18T22:04:23.113021Z
-f96819beb25c3dbedaf25274c0bdfa69
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:27.602297Z
+60c39812702be706075938c019039fff
+2011-02-25T13:39:04.477846Z
+35175
+jesterking
 has-props
 
 
@@ -296,7 +296,7 @@ has-props
 
 
 
-6732
+6796
 
 SG_Node.h
 file
@@ -304,11 +304,11 @@ file
 
 
 
-2011-01-18T22:04:23.113021Z
-7f96f5bfb07046f9ab3e79be5ebb04dc
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:27.602297Z
+1bae22ee78d6c20b69b70714e297e452
+2011-02-22T19:30:37.531882Z
+35082
+jesterking
 has-props
 
 
@@ -330,7 +330,7 @@ has-props
 
 
 
-5267
+5308
 
 SG_ParentRelation.h
 file
@@ -338,11 +338,11 @@ file
 
 
 
-2011-01-18T22:04:23.113021Z
-9bb0768a9fe1c4d518cf6a03badde9ae
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:27.602297Z
+27a5be12f9fbf20989df54604cd1aea5
+2011-02-25T13:39:04.477846Z
+35175
+jesterking
 has-props
 
 
@@ -364,7 +364,7 @@ has-props
 
 
 
-3554
+3664
 
 SG_Spatial.cpp
 file
@@ -372,11 +372,11 @@ file
 
 
 
-2011-01-18T22:04:23.113021Z
-8f97dd436835687cd125d08b9da20ce4
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:27.602297Z
+8c737c5e98d01c2a26723a5ee39776c3
+2011-02-25T13:39:04.477846Z
+35175
+jesterking
 has-props
 
 
@@ -398,41 +398,7 @@ has-props
 
 
 
-4569
-
-SG_Tree.cpp
-file
-
-
-
-
-2011-01-18T22:04:23.113021Z
-7a59b7fdcfeb32e35c8a882a813f03a4
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7902
+4636
 
 SG_BBox.h
 file
@@ -440,11 +406,11 @@ file
 
 
 
-2011-01-18T22:04:23.113021Z
-a6554da20baf84033d64d5bb15b17455
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:27.606297Z
+07e76b755d5bd9c7cadf0de38dfa1b23
+2011-02-22T19:30:37.531882Z
+35082
+jesterking
 has-props
 
 
@@ -466,7 +432,41 @@ has-props
 
 
 
-3931
+3978
+
+SG_Tree.cpp
+file
+
+
+
+
+2011-03-03T12:26:27.606297Z
+fea91b4266c96452f15fd308b33965d4
+2011-02-25T13:39:04.477846Z
+35175
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7966
 
 SG_QList.h
 file
@@ -474,11 +474,11 @@ file
 
 
 
-2011-01-18T22:04:23.113021Z
-d5b65324942e33e4262799972f12f490
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:27.606297Z
+6c9a655765322ebb69c3ec9a6b781021
+2011-02-22T19:30:37.531882Z
+35082
+jesterking
 has-props
 
 
@@ -500,7 +500,7 @@ has-props
 
 
 
-3872
+3914
 
 SG_Spatial.h
 file
@@ -508,11 +508,11 @@ file
 
 
 
-2011-01-18T22:04:23.113021Z
-11f54ba7581ad37cf6890f92be7a1c64
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:27.606297Z
+b168378194177563bf6e36c08a87def2
+2011-02-22T19:30:37.531882Z
+35082
+jesterking
 has-props
 
 
@@ -534,7 +534,7 @@ has-props
 
 
 
-6409
+6452
 
 CMakeLists.txt
 file
@@ -542,7 +542,7 @@ file
 
 
 
-2011-01-18T22:04:23.113021Z
+2011-03-03T12:26:27.606297Z
 de469386977205a9db563ad6c267aa15
 2010-12-22T23:09:30.468439Z
 33864
@@ -576,11 +576,11 @@ file
 
 
 
-2011-01-18T22:04:23.113021Z
-ebdb38607d06fee0f4121239c81fe446
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:27.606297Z
+314e3b0471ed6314199f32e71f3cb16a
+2011-02-22T19:30:37.531882Z
+35082
+jesterking
 has-props
 
 
@@ -602,5 +602,5 @@ has-props
 
 
 
-3693
+3717
 

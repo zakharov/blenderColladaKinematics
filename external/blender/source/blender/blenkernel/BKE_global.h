@@ -1,11 +1,5 @@
-/**
- * blenlib/BKE_global.h (mar-2001 nzc)
- *
- * Global settings, handles, pointers. This is the root for finding
- * any data in Blender. This block is not serialized, but built anew
- * for every fresh Blender run.
- *
- * $Id: BKE_global.h 34414 2011-01-20 07:44:58Z campbellbarton $ 
+/*
+ * $Id: BKE_global.h 34962 2011-02-18 13:05:18Z jesterking $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -35,6 +29,15 @@
 #ifndef BKE_GLOBAL_H
 #define BKE_GLOBAL_H
 
+/** \file BKE_global.h
+ *  \ingroup bke
+ *  \since March 2001
+ *  \author nzc
+ *  \section aboutglobal Global settings
+ *   Global settings, handles, pointers. This is the root for finding
+ *   any data in Blender. This block is not serialized, but built anew
+ *   for every fresh Blender run.
+ */
 #include "DNA_listBase.h"
 
 #ifdef __cplusplus

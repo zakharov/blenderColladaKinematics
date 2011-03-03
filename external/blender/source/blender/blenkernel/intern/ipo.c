@@ -1,6 +1,6 @@
 /* ipo.c
  * 
- * $Id: ipo.c 34728 2011-02-09 01:16:11Z aligorith $
+ * $Id: ipo.c 35247 2011-02-27 20:40:57Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/blenkernel/intern/ipo.c
+ *  \ingroup bke
+ */
+
 
 /* NOTE:
  *
@@ -62,7 +67,7 @@
 #include "BLI_utildefines.h"
 
 
-
+#include "BKE_ipo.h"
 #include "BKE_animsys.h"
 #include "BKE_action.h"
 #include "BKE_fcurve.h"

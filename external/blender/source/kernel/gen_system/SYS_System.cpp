@@ -1,5 +1,5 @@
 /*
- * $Id: SYS_System.cpp 28254 2010-04-18 10:28:37Z campbellbarton $
+ * $Id: SYS_System.cpp 35164 2011-02-25 13:25:53Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,11 @@
  * System specific information / access.
  * Interface to the commandline arguments
  */
+
+/** \file kernel/gen_system/SYS_System.cpp
+ *  \ingroup gensys
+ */
+
 #include "SYS_System.h"
 #include "SYS_SingletonSystem.h"
 

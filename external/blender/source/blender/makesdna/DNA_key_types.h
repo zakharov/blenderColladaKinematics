@@ -1,7 +1,5 @@
-/**
- * blenlib/DNA_key_types.h (mar-2001 nzc)
- *
- * $Id: DNA_key_types.h 26841 2010-02-12 13:34:04Z campbellbarton $ 
+/*
+ * $Id: DNA_key_types.h 34941 2011-02-17 20:48:12Z jesterking $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -30,6 +28,10 @@
  */
 #ifndef DNA_KEY_TYPES_H
 #define DNA_KEY_TYPES_H
+
+/** \file DNA_key_types.h
+ *  \ingroup DNA
+ */
 
 #include "DNA_listBase.h"
 #include "DNA_ID.h"

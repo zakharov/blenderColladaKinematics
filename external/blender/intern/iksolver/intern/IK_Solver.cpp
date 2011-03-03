@@ -1,5 +1,5 @@
-/**
- * $Id: IK_Solver.cpp 32538 2010-10-17 11:20:12Z aligorith $
+/*
+ * $Id: IK_Solver.cpp 35154 2011-02-25 11:43:19Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file iksolver/intern/IK_Solver.cpp
+ *  \ingroup iksolver
+ */
+
 
 #include "../extern/IK_solver.h"
 

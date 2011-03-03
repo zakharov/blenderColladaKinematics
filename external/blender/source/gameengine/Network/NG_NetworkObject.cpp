@@ -1,5 +1,5 @@
 /*
- * $Id: NG_NetworkObject.cpp 28254 2010-04-18 10:28:37Z campbellbarton $
+ * $Id: NG_NetworkObject.cpp 35172 2011-02-25 13:36:49Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  * ***** END GPL LICENSE BLOCK *****
  * NetworkGame_NetworkObject generic Network Object implementation
  */
+
+/** \file gameengine/Network/NG_NetworkObject.cpp
+ *  \ingroup bgenet
+ */
+
 #include "NG_NetworkObject.h"
 
 NG_NetworkObject::NG_NetworkObject()

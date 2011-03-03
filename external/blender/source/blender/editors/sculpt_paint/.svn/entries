@@ -1,15 +1,15 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/editors/sculpt_paint
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-02-09T15:38:49.007028Z
-34743
-nazgul
+2011-03-03T18:53:07.180518Z
+35338
+ton
 has-props
 
 
@@ -32,180 +32,10 @@ file
 
 
 
-2011-02-10T19:48:51.395667Z
-25ddb81620c31bd0ded826bafb43dfa8
-2011-01-31T20:02:51.740130Z
-34587
-nazgul
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3477
-
-paint_intern.h
-file
-
-
-
-
-2011-01-18T22:04:50.843021Z
-302c8b68a755df02e126f6a9c7ddcca7
-2011-01-15T14:48:44.145862Z
-34333
-nazgul
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5372
-
-sculpt_undo.c
-file
-
-
-
-
-2011-02-10T19:48:51.395667Z
-4055fdf35e607cab09bdf93b194914b2
-2011-02-09T15:38:49.007028Z
-34743
-nazgul
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-9016
-
-paint_undo.c
-file
-
-
-
-
-2011-01-18T22:04:50.843021Z
-a1eacdbbb28c44478075773bd709ffea
-2011-01-12T18:00:23.706555Z
-34287
-ton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6369
-
-paint_stroke.c
-file
-
-
-
-
-2011-01-18T22:04:50.843021Z
-1e1d47c361ea897751630f0e6d4e478a
-2011-01-15T14:48:44.145862Z
-34333
-nazgul
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-25099
-
-SConscript
-file
-
-
-
-
-2011-01-18T22:04:50.843021Z
-0d3eecd216fea85b05c3133ecf58e589
-2010-08-29T21:38:59.967680Z
-31646
+2011-03-03T12:27:48.038297Z
+18a65295fcbd1be58df5a7903975c5d2
+2011-02-27T20:29:51.598877Z
+35242
 jesterking
 has-props
 
@@ -228,86 +58,18 @@ has-props
 
 
 
-756
+3564
 
-paint_vertex.c
+paint_intern.h
 file
 
 
 
 
-2011-01-18T22:04:50.843021Z
-55aa2e1d50004fe6d0381481486b3b3e
-2011-01-12T03:41:12.073182Z
-34273
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-51282
-
-sculpt.c
-file
-
-
-
-
-2011-02-10T19:48:51.395667Z
-52b287ed694015c15984d90693945c94
-2011-02-01T15:51:40.628625Z
-34607
-nazgul
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-95081
-
-paint_utils.c
-file
-
-
-
-
-2011-01-18T22:04:50.843021Z
-c27d9b5f6a2ae48942b54ea1e40eabe1
-2011-01-09T18:43:47.943512Z
-34206
+2011-03-03T12:27:48.038297Z
+3c34df196b7c629669eecdc0ead395eb
+2011-03-01T16:26:37.032479Z
+35285
 ton
 has-props
 
@@ -330,7 +92,245 @@ has-props
 
 
 
-9058
+5648
+
+sculpt_undo.c
+file
+
+
+
+
+2011-03-03T12:27:48.042297Z
+5ee5fc6c46894dfca290f76e36f7cd2d
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9362
+
+paint_undo.c
+file
+
+
+
+
+2011-03-03T12:27:48.042297Z
+4c09d5473393f7156061802835cb6623
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6455
+
+paint_stroke.c
+file
+
+
+
+
+2011-03-03T12:27:48.046297Z
+a6bb406cc22e126ef5eb6f48e9539892
+2011-03-01T16:26:37.032479Z
+35285
+ton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+25312
+
+SConscript
+file
+
+
+
+
+2011-03-03T12:27:48.046297Z
+97c952626a01f0796ca2583a446b817e
+2011-02-21T12:35:04.852834Z
+35028
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+773
+
+paint_vertex.c
+file
+
+
+
+
+2011-03-03T12:27:48.050297Z
+1eb8ec526d4d283e8ed38820ce7acbd5
+2011-03-01T16:26:37.032479Z
+35285
+ton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+51392
+
+sculpt.c
+file
+
+
+
+
+2011-03-03T12:27:48.050297Z
+730b93af2d93af4cbc2d08ec1ace1a73
+2011-03-01T16:26:37.032479Z
+35285
+ton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+96475
+
+paint_utils.c
+file
+
+
+
+
+2011-03-03T12:27:48.050297Z
+418977559f4f5e6099fd36917bd55df0
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10940
 
 CMakeLists.txt
 file
@@ -338,11 +338,11 @@ file
 
 
 
-2011-01-18T22:04:50.843021Z
-9564d74223d0cb40bd573181bf7b251c
-2010-12-22T23:09:30.468439Z
-33864
-campbellbarton
+2011-03-03T12:27:48.050297Z
+4f687a3da7e163c19c38fde5d5d5c923
+2011-02-21T12:35:04.852834Z
+35028
+jesterking
 has-props
 
 
@@ -364,7 +364,7 @@ has-props
 
 
 
-1292
+1310
 
 paint_ops.c
 file
@@ -372,11 +372,11 @@ file
 
 
 
-2011-01-18T22:04:50.843021Z
-5216f5adb0069b2656a924ea5164ecb1
-2011-01-07T22:46:52.156247Z
-34164
-nicholasbishop
+2011-03-03T12:27:48.050297Z
+9deabfc775aa3eba0f07cbb36245467e
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -398,7 +398,7 @@ has-props
 
 
 
-15897
+16575
 
 paint_image.c
 file
@@ -406,11 +406,11 @@ file
 
 
 
-2011-02-10T19:48:51.405667Z
-cbebbf790cf072b26c3d557ea56af9be
-2011-02-07T05:05:41.950351Z
-34680
-campbellbarton
+2011-03-03T21:53:55.952120Z
+05775a6b6e569315e61ccdce57d83222
+2011-03-03T18:53:07.180518Z
+35338
+ton
 has-props
 
 
@@ -432,5 +432,5 @@ has-props
 
 
 
-173603
+174369
 

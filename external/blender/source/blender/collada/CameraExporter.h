@@ -1,5 +1,5 @@
-/**
- * $Id: CameraExporter.h 32355 2010-10-06 20:40:16Z gsrb3d $
+/*
+ * $Id: CameraExporter.h 35020 2011-02-21 08:38:53Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,10 @@
  *                 Nathan Letwory
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file CameraExporter.h
+ *  \ingroup collada
  */
 
 #ifndef __CAMERAEXPORTER_H__

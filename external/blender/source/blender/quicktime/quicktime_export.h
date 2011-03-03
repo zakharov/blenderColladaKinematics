@@ -1,4 +1,4 @@
-/* $Id: quicktime_export.h 33460 2010-12-04 05:34:16Z campbellbarton $ 
+/* $Id: quicktime_export.h 35235 2011-02-27 20:01:38Z jesterking $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/quicktime/quicktime_export.h
+ *  \ingroup quicktime
+ */
+
 
 #ifndef __QUICKTIME_EXPORT_H__
 #define __QUICKTIME_EXPORT_H__

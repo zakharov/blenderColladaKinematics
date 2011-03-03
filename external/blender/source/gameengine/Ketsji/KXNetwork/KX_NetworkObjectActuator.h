@@ -1,5 +1,5 @@
-/**
- * $Id: KX_NetworkObjectActuator.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: KX_NetworkObjectActuator.h 35171 2011-02-25 13:35:59Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,4 +26,9 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/Ketsji/KXNetwork/KX_NetworkObjectActuator.h
+ *  \ingroup ketsjinet
+ */
+
 

@@ -1,5 +1,5 @@
-/**
- * $Id: wm_operators.c 34658 2011-02-05 15:05:17Z ton $
+/*
+ * $Id: wm_operators.c 35337 2011-03-03 17:59:04Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/windowmanager/intern/wm_operators.c
+ *  \ingroup wm
+ */
+
 
 #include <float.h>
 #include <string.h>
@@ -83,6 +88,7 @@
 
 #include "RNA_access.h"
 #include "RNA_define.h"
+#include "RNA_enum_types.h"
 
 #include "UI_interface.h"
 #include "UI_resources.h"
@@ -219,7 +225,7 @@ static int wm_macro_exec(bContext *C, wmOperator *op)
 	return wm_macro_end(op, retval);
 }
 
-int wm_macro_invoke_internal(bContext *C, wmOperator *op, wmEvent *event, wmOperator *opm)
+static int wm_macro_invoke_internal(bContext *C, wmOperator *op, wmEvent *event, wmOperator *opm)
 {
 	int retval= OPERATOR_FINISHED;
 
@@ -381,21 +387,24 @@ void WM_operatortype_append_macro_ptr(void (*opfunc)(wmOperatorType*, void*), vo
 wmOperatorTypeMacro *WM_operatortype_macro_define(wmOperatorType *ot, const char *idname)
 {
 	wmOperatorTypeMacro *otmacro= MEM_callocN(sizeof(wmOperatorTypeMacro), "wmOperatorTypeMacro");
-	
+
 	BLI_strncpy(otmacro->idname, idname, OP_MAX_TYPENAME);
 
 	/* do this on first use, since operatordefinitions might have been not done yet */
 	WM_operator_properties_alloc(&(otmacro->ptr), &(otmacro->properties), idname);
 	WM_operator_properties_sanitize(otmacro->ptr, 1);
-	
+
 	BLI_addtail(&ot->macro, otmacro);
 
 	{
+		/* operator should always be found but in the event its not. dont segfault */
 		wmOperatorType *otsub = WM_operatortype_find(idname, 0);
-		RNA_def_pointer_runtime(ot->srna, otsub->idname, otsub->srna,
-		otsub->name, otsub->description);
+		if(otsub) {
+			RNA_def_pointer_runtime(ot->srna, otsub->idname, otsub->srna,
+			otsub->name, otsub->description);
+		}
 	}
-	
+
 	return otmacro;
 }
 
@@ -646,7 +655,7 @@ int WM_menu_invoke(bContext *C, wmOperator *op, wmEvent *UNUSED(event))
 		return op->type->exec(C, op);
 	}
 	else {
-		pup= uiPupMenuBegin(C, op->type->name, ICON_NULL);
+		pup= uiPupMenuBegin(C, op->type->name, ICON_NONE);
 		layout= uiPupMenuLayout(pup);
 		uiItemsFullEnumO(layout, op->type->idname, (char*)RNA_property_identifier(prop), op->ptr->data, WM_OP_EXEC_REGION_WIN, 0);
 		uiPupMenuEnd(C, pup);
@@ -721,7 +730,7 @@ static uiBlock *wm_enum_search_menu(bContext *C, ARegion *ar, void *arg_op)
 	/* fake button, it holds space for search items */
 	uiDefBut(block, LABEL, 0, "", 10, 10 - uiSearchBoxhHeight(), 180, uiSearchBoxhHeight(), NULL, 0, 0, 0, 0, NULL);
 
-	uiPopupBoundsBlock(block, 6.0f, 0, -20); /* move it downwards, mouse over button */
+	uiPopupBoundsBlock(block, 6, 0, -20); /* move it downwards, mouse over button */
 	uiEndBlock(C, block);
 
 	event= *(win->eventstate);	/* XXX huh huh? make api call */
@@ -755,7 +764,7 @@ int WM_operator_confirm_message(bContext *C, wmOperator *op, const char *message
 
 	pup= uiPupMenuBegin(C, "OK?", ICON_QUESTION);
 	layout= uiPupMenuLayout(pup);
-	uiItemFullO(layout, op->type->idname, message, ICON_NULL, properties, WM_OP_EXEC_REGION_WIN, 0);
+	uiItemFullO(layout, op->type->idname, message, ICON_NONE, properties, WM_OP_EXEC_REGION_WIN, 0);
 	uiPupMenuEnd(C, pup);
 	
 	return OPERATOR_CANCELLED;
@@ -914,7 +923,7 @@ static void dialog_exec_cb(bContext *C, void *arg1, void *arg2)
 	uiPupBlockClose(C, block);
 }
 
-void dialog_check_cb(bContext *C, void *op_ptr, void *UNUSED(arg))
+static void dialog_check_cb(bContext *C, void *op_ptr, void *UNUSED(arg))
 {
 	wmOperator *op= op_ptr;
 	if(op->type->check) {
@@ -1076,7 +1085,7 @@ static uiBlock *wm_block_create_splash(bContext *C, ARegion *ar, void *arg_unuse
 
 /* XXX: hack to refresh splash screen with updated prest menu name,
  * since popup blocks don't get regenerated like panels do */
-void wm_block_splash_refreshmenu (bContext *UNUSED(C), void *UNUSED(arg_block), void *UNUSED(arg))
+static void wm_block_splash_refreshmenu (bContext *UNUSED(C), void *UNUSED(arg_block), void *UNUSED(arg))
 {
 	/* ugh, causes crashes in other buttons, disabling for now until 
 	 * a better fix
@@ -1132,13 +1141,13 @@ static uiBlock *wm_block_create_splash(bContext *C, ARegion *ar, void *UNUSED(ar
 	uiBlockSetEmboss(block, UI_EMBOSS);
 	/* show the splash menu (containing interaction presets), using python */
 	if (mt) {
-		Menu menu= {0};
+		Menu menu= {NULL};
 		menu.layout= layout;
 		menu.type= mt;
 		mt->draw(C, &menu);
 
 //		wmWindowManager *wm= CTX_wm_manager(C);
-//		uiItemM(layout, C, "USERPREF_MT_keyconfigs", U.keyconfigstr, ICON_NULL);
+//		uiItemM(layout, C, "USERPREF_MT_keyconfigs", U.keyconfigstr, ICON_NONE);
 	}
 	
 	uiBlockSetEmboss(block, UI_EMBOSSP);
@@ -1146,7 +1155,7 @@ static uiBlock *wm_block_create_splash(bContext *C, ARegion *ar, void *UNUSED(ar
 	
 	split = uiLayoutSplit(layout, 0, 0);
 	col = uiLayoutColumn(split, 0);
-	uiItemL(col, "Links", ICON_NULL);
+	uiItemL(col, "Links", ICON_NONE);
 	uiItemStringO(col, "Donations", ICON_URL, "WM_OT_url_open", "url", "http://www.blender.org/blenderorg/blender-foundation/donation-payment/");
 	uiItemStringO(col, "Release Log", ICON_URL, "WM_OT_url_open", "url", "http://www.blender.org/development/release-logs/blender-256-beta/");
 	uiItemStringO(col, "Manual", ICON_URL, "WM_OT_url_open", "url", "http://wiki.blender.org/index.php/Doc:Manual");
@@ -1154,16 +1163,16 @@ static uiBlock *wm_block_create_splash(bContext *C, ARegion *ar, void *UNUSED(ar
 	uiItemStringO(col, "User Community", ICON_URL, "WM_OT_url_open", "url", "http://www.blender.org/community/user-community/"); // 
 	BLI_snprintf(url, sizeof(url), "http://www.blender.org/documentation/blender_python_api_%d_%d_%d", BLENDER_VERSION/100, BLENDER_VERSION%100, BLENDER_SUBVERSION);
 	uiItemStringO(col, "Python API Reference", ICON_URL, "WM_OT_url_open", "url", url);
-	uiItemL(col, "", ICON_NULL);
+	uiItemL(col, "", ICON_NONE);
 
 	col = uiLayoutColumn(split, 0);
-	uiItemL(col, "Recent", ICON_NULL);
+	uiItemL(col, "Recent", ICON_NONE);
 	for(recent = G.recent_files.first, i=0; (i<5) && (recent); recent = recent->next, i++) {
 		uiItemStringO(col, BLI_path_basename(recent->filepath), ICON_FILE_BLEND, "WM_OT_open_mainfile", "filepath", recent->filepath);
 	}
 	uiItemS(col);
 	uiItemO(col, NULL, ICON_RECOVER_LAST, "WM_OT_recover_last_session");
-	uiItemL(col, "", ICON_NULL);
+	uiItemL(col, "", ICON_NONE);
 	
 	uiCenteredBoundsBlock(block, 0.0f);
 	uiEndBlock(C, block);
@@ -1490,7 +1499,7 @@ static int wm_link_append_exec(bContext *C, wmOperator *op)
 {
 	Main *bmain= CTX_data_main(C);
 	Scene *scene= CTX_data_scene(C);
-	Main *mainl= 0;
+	Main *mainl= NULL;
 	BlendHandle *bh;
 	PropertyRNA *prop;
 	char name[FILE_MAX], dir[FILE_MAX], libname[FILE_MAX], group[GROUP_MAX];
@@ -2620,7 +2629,7 @@ void WM_OT_straightline_gesture(wmOperatorType *ot)
 
 /* *********************** radial control ****************** */
 
-const int WM_RADIAL_CONTROL_DISPLAY_SIZE = 200;
+static const int WM_RADIAL_CONTROL_DISPLAY_SIZE = 200;
 
 typedef struct wmRadialControl {
 	int mode;

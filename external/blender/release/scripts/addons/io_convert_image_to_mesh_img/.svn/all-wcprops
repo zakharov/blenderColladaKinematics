@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-extensions/!svn/ver/1562/trunk/py/scripts/addons/io_convert_image_to_mesh_img
+/svnroot/bf-extensions/!svn/ver/1569/trunk/py/scripts/addons/io_convert_image_to_mesh_img
 END
 __init__.py
 K 25
 svn:wc:ra_dav:version-url
 V 101
-/svnroot/bf-extensions/!svn/ver/1397/trunk/py/scripts/addons/io_convert_image_to_mesh_img/__init__.py
+/svnroot/bf-extensions/!svn/ver/1569/trunk/py/scripts/addons/io_convert_image_to_mesh_img/__init__.py
 END
 import_img.py
 K 25

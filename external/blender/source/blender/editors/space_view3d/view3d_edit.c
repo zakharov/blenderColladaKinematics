@@ -1,5 +1,5 @@
-/**
- * $Id: view3d_edit.c 34662 2011-02-05 19:07:54Z ton $
+/*
+ * $Id: view3d_edit.c 35337 2011-03-03 17:59:04Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_view3d/view3d_edit.c
+ *  \ingroup spview3d
+ */
+
 
 #include <string.h>
 #include <stdio.h>
@@ -1843,6 +1848,47 @@ void VIEW3D_OT_zoom_border(wmOperatorType *ot)
 	RNA_def_int(ot->srna, "ymax", 0, INT_MIN, INT_MAX, "Y Max", "", INT_MIN, INT_MAX);
 
 }
+
+/* sets the view to 1:1 camera/render-pixel */
+static void view3d_set_1_to_1_viewborder(Scene *scene, ARegion *ar)
+{
+	RegionView3D *rv3d= ar->regiondata;
+	float size[2];
+	int im_width= (scene->r.size*scene->r.xsch)/100;
+	
+	view3d_viewborder_size_get(scene, ar, size);
+	
+	rv3d->camzoom= (sqrt(4.0*im_width/size[0]) - M_SQRT2)*50.0;
+	rv3d->camzoom= CLAMPIS(rv3d->camzoom, RV3D_CAMZOOM_MIN, RV3D_CAMZOOM_MAX);
+}
+
+static int view3d_zoom_1_to_1_camera_exec(bContext *C, wmOperator *UNUSED(op))
+{
+	Scene *scene= CTX_data_scene(C);
+	ARegion *ar= CTX_wm_region(C);
+
+	view3d_set_1_to_1_viewborder(scene, ar);
+
+	WM_event_add_notifier(C, NC_SPACE|ND_SPACE_VIEW3D, CTX_wm_view3d(C));
+
+	return OPERATOR_FINISHED;
+}
+
+void VIEW3D_OT_zoom_camera_1_to_1(wmOperatorType *ot)
+{
+	/* identifiers */
+	ot->name= "Zoom Camera 1:1";
+	ot->description = "Match the camera to 1:1 to the render output";
+	ot->idname= "VIEW3D_OT_zoom_camera_1_to_1";
+
+	/* api callbacks */
+	ot->exec= view3d_zoom_1_to_1_camera_exec;
+	ot->poll= view3d_camera_active_poll;
+
+	/* flags */
+	ot->flag= 0;
+}
+
 /* ********************* Changing view operator ****************** */
 
 static EnumPropertyItem prop_view_items[] = {
@@ -1879,7 +1925,7 @@ static void axis_set_view(bContext *C, float q1, float q2, float q3, float q4, s
 			float twmat[3][3];
 
 			/* same as transform manipulator when normal is set */
-			ED_getTransformOrientationMatrix(C, twmat, TRUE);
+			ED_getTransformOrientationMatrix(C, twmat, FALSE);
 
 			mat3_to_quat( obact_quat,twmat);
 			invert_qt(obact_quat);
@@ -2732,7 +2778,7 @@ static int depth_segment_cb(int x, int y, void *userData)
 
 int view_autodist_depth_segment(struct ARegion *ar, short mval_sta[2], short mval_end[2], int margin, float *depth)
 {
-	struct { struct ARegion *ar; int margin; float depth; } data = {0};
+	struct { struct ARegion *ar; int margin; float depth; } data = {NULL};
 	int p1[2];
 	int p2[2];
 
@@ -2776,8 +2822,8 @@ int view_autodist_depth_segment(struct ARegion *ar, short mval_sta[2], short mva
 // speed and os, i changed the scaling values, but
 // those are still not ok
 
-
-float ndof_axis_scale[6] = {
+#if 0
+static float ndof_axis_scale[6] = {
 	+0.01,	// Tx
 	+0.01,	// Tz
 	+0.01,	// Ty
@@ -2786,7 +2832,7 @@ float ndof_axis_scale[6] = {
 	+0.0015	// Ry
 };
 
-void filterNDOFvalues(float *sbval)
+static void filterNDOFvalues(float *sbval)
 {
 	int i=0;
 	float max  = 0.0;
@@ -3139,6 +3185,7 @@ void viewmoveNDOF(Scene *scene, ARegion *ar, View3D *v3d, int UNUSED(mode))
 	 */
 // XXX    scrarea_do_windraw(curarea);
 }
+#endif // if 0, unused NDof code
 
 /* give a 4x4 matrix from a perspective view, only needs viewquat, ofs and dist
  * basically the same as...

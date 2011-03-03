@@ -1,5 +1,5 @@
-/**
- * $Id: GHOST_SystemCocoa.h 34096 2011-01-05 14:00:14Z elubie $
+/*
+ * $Id: GHOST_SystemCocoa.h 35152 2011-02-25 11:28:33Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -26,8 +26,9 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
-/**
- * @file	GHOST_SystemCocoa.h
+
+/** \file ghost/intern/GHOST_SystemCocoa.h
+ *  \ingroup GHOST
  * Declaration of GHOST_SystemCocoa class.
  */
 

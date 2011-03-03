@@ -1,5 +1,5 @@
-/**
- * $Id: BLI_math_vector.h 34709 2011-02-08 03:37:49Z campbellbarton $
+/*
+ * $Id: BLI_math_vector.h 34966 2011-02-18 13:58:08Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,10 @@
 
 #ifndef BLI_MATH_VECTOR_H
 #define BLI_MATH_VECTOR_H
+
+/** \file BLI_math_vector.h
+ *  \ingroup bli
+ */
 
 #ifdef __cplusplus
 extern "C" {

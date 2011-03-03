@@ -1,5 +1,5 @@
-/**
- * $Id: paint_intern.h 34333 2011-01-15 14:48:44Z nazgul $
+/*
+ * $Id: paint_intern.h 35285 2011-03-01 16:26:37Z ton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/sculpt_paint/paint_intern.h
+ *  \ingroup edsculpt
+ */
+
 
 #ifndef ED_PAINT_INTERN_H
 #define ED_PAINT_INTERN_H
@@ -53,7 +58,7 @@ typedef void (*StrokeDone)(struct bContext *C, struct PaintStroke *stroke);
 
 struct PaintStroke *paint_stroke_new(struct bContext *C,
 					 StrokeGetLocation get_location, StrokeTestStart test_start,
-					 StrokeUpdateStep update_step, StrokeDone done);
+					 StrokeUpdateStep update_step, StrokeDone done, int event_type);
 void paint_stroke_free(struct PaintStroke *stroke);
 
 int paint_space_stroke_enabled(struct Brush *br);
@@ -114,6 +119,9 @@ void BRUSH_OT_curve_preset(struct wmOperatorType *ot);
 void PAINT_OT_face_select_linked(struct wmOperatorType *ot);
 void PAINT_OT_face_select_linked_pick(struct wmOperatorType *ot);
 void PAINT_OT_face_select_all(struct wmOperatorType *ot);
+void PAINT_OT_face_select_inverse(struct wmOperatorType *ot);
+void PAINT_OT_face_select_hide(struct wmOperatorType *ot);
+void PAINT_OT_face_select_reveal(struct wmOperatorType *ot);
 
 int facemask_paint_poll(struct bContext *C);
 

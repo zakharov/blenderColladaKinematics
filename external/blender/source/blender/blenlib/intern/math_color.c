@@ -1,5 +1,5 @@
-/**
- * $Id: math_color.c 34175 2011-01-08 12:43:44Z campbellbarton $
+/*
+ * $Id: math_color.c 35246 2011-02-27 20:37:56Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  * */
+
+/** \file blender/blenlib/intern/math_color.c
+ *  \ingroup bli
+ */
+
 
 #include <assert.h>
 

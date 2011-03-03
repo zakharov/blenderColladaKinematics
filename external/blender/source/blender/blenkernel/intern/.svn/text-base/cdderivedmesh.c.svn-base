@@ -30,7 +30,12 @@
 *
 * BKE_cdderivedmesh.h contains the function prototypes for this file.
 *
-*/ 
+*/
+
+/** \file blender/blenkernel/intern/cdderivedmesh.c
+ *  \ingroup bke
+ */
+ 
 
 /* TODO maybe BIF_gl.h should include string.h? */
 #include <string.h>
@@ -729,7 +734,7 @@ static void cdDM_drawFacesTex_common(DerivedMesh *dm,
 		GPU_vertex_setup( dm );
 		GPU_normal_setup( dm );
 		GPU_uv_setup( dm );
-		if( col != 0 ) {
+		if( col != NULL ) {
 			/*if( realcol && dm->drawObject->colType == CD_TEXTURE_MCOL )  {
 				col = 0;
 			} else if( mcol && dm->drawObject->colType == CD_MCOL ) {
@@ -983,7 +988,7 @@ static void cdDM_drawMappedFacesGLSL(DerivedMesh *dm, int (*setMaterial)(int, vo
 
 	glShadeModel(GL_SMOOTH);
 
-	if( GPU_buffer_legacy(dm) || setDrawOptions != 0 ) {
+	if( GPU_buffer_legacy(dm) || setDrawOptions != NULL ) {
 		DEBUG_VBO( "Using legacy code. cdDM_drawMappedFacesGLSL\n" );
 		memset(&attribs, 0, sizeof(attribs));
 
@@ -1066,7 +1071,7 @@ static void cdDM_drawMappedFacesGLSL(DerivedMesh *dm, int (*setMaterial)(int, vo
 		}																			\
 		if(attribs.tottang) {														\
 			float *tang = attribs.tang.array[a*4 + vert];							\
-			glVertexAttrib3fvARB(attribs.tang.glIndex, tang);						\
+			glVertexAttrib4fvARB(attribs.tang.glIndex, tang);						\
 		}																			\
 		if(smoothnormal)															\
 			glNormal3sv(mvert[index].no);											\
@@ -1086,8 +1091,8 @@ static void cdDM_drawMappedFacesGLSL(DerivedMesh *dm, int (*setMaterial)(int, vo
 		glEnd();
 	}
 	else {
-		GPUBuffer *buffer = 0;
-		char *varray = 0;
+		GPUBuffer *buffer = NULL;
+		char *varray = NULL;
 		int numdata = 0, elementsize = 0, offset;
 		int start = 0, numfaces = 0, prevdraw = 0, curface = 0;
 		int i;
@@ -1124,9 +1129,9 @@ static void cdDM_drawMappedFacesGLSL(DerivedMesh *dm, int (*setMaterial)(int, vo
 
 							if( numdata != 0 ) {
 
-								GPU_buffer_free(buffer,0);
+								GPU_buffer_free(buffer, NULL);
 
-								buffer = 0;
+								buffer = NULL;
 							}
 
 						}
@@ -1158,22 +1163,22 @@ static void cdDM_drawMappedFacesGLSL(DerivedMesh *dm, int (*setMaterial)(int, vo
 						}	
 						if(attribs.tottang) {
 							datatypes[numdata].index = attribs.tang.glIndex;
-							datatypes[numdata].size = 3;
+							datatypes[numdata].size = 4;
 							datatypes[numdata].type = GL_FLOAT;
 							numdata++;
 						}
 						if( numdata != 0 ) {
 							elementsize = GPU_attrib_element_size( datatypes, numdata );
-							buffer = GPU_buffer_alloc( elementsize*dm->drawObject->nelements, 0 );
-							if( buffer == 0 ) {
+							buffer = GPU_buffer_alloc( elementsize*dm->drawObject->nelements, NULL );
+							if( buffer == NULL ) {
 								GPU_buffer_unbind();
 								dm->drawObject->legacy = 1;
 								return;
 							}
 							varray = GPU_buffer_lock_stream(buffer);
-							if( varray == 0 ) {
+							if( varray == NULL ) {
 								GPU_buffer_unbind();
-								GPU_buffer_free(buffer, 0);
+								GPU_buffer_free(buffer, NULL);
 								dm->drawObject->legacy = 1;
 								return;
 							}
@@ -1248,12 +1253,12 @@ static void cdDM_drawMappedFacesGLSL(DerivedMesh *dm, int (*setMaterial)(int, vo
 					}	
 					if(attribs.tottang) {
 						float *tang = attribs.tang.array[a*4 + 0];
-						VECCOPY((float *)&varray[elementsize*curface*3+offset], tang);
+						QUATCOPY((float *)&varray[elementsize*curface*3+offset], tang);
 						tang = attribs.tang.array[a*4 + 1];
-						VECCOPY((float *)&varray[elementsize*curface*3+offset+elementsize], tang);
+						QUATCOPY((float *)&varray[elementsize*curface*3+offset+elementsize], tang);
 						tang = attribs.tang.array[a*4 + 2];
-						VECCOPY((float *)&varray[elementsize*curface*3+offset+elementsize*2], tang);
-						offset += sizeof(float)*3;
+						QUATCOPY((float *)&varray[elementsize*curface*3+offset+elementsize*2], tang);
+						offset += sizeof(float)*4;
 					}
 				}
 				curface++;
@@ -1288,12 +1293,12 @@ static void cdDM_drawMappedFacesGLSL(DerivedMesh *dm, int (*setMaterial)(int, vo
 						}	
 						if(attribs.tottang) {
 							float *tang = attribs.tang.array[a*4 + 2];
-							VECCOPY((float *)&varray[elementsize*curface*3+offset], tang);
+							QUATCOPY((float *)&varray[elementsize*curface*3+offset], tang);
 							tang = attribs.tang.array[a*4 + 3];
-							VECCOPY((float *)&varray[elementsize*curface*3+offset+elementsize], tang);
+							QUATCOPY((float *)&varray[elementsize*curface*3+offset+elementsize], tang);
 							tang = attribs.tang.array[a*4 + 0];
-							VECCOPY((float *)&varray[elementsize*curface*3+offset+elementsize*2], tang);
-							offset += sizeof(float)*3;
+							QUATCOPY((float *)&varray[elementsize*curface*3+offset+elementsize*2], tang);
+							offset += sizeof(float)*4;
 						}
 					}
 					curface++;
@@ -1312,7 +1317,7 @@ static void cdDM_drawMappedFacesGLSL(DerivedMesh *dm, int (*setMaterial)(int, vo
 			}
 			GPU_buffer_unbind();
 		}
-		GPU_buffer_free( buffer, 0 );
+		GPU_buffer_free( buffer, NULL );
 	}
 
 	glShadeModel(GL_FLAT);

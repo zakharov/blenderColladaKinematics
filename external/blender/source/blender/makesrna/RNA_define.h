@@ -1,5 +1,5 @@
-/**
- * $Id: RNA_define.h 34298 2011-01-13 14:29:57Z campbellbarton $
+/*
+ * $Id: RNA_define.h 34923 2011-02-17 05:57:18Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,7 +25,9 @@
 #ifndef RNA_DEFINE_H
 #define RNA_DEFINE_H
 
-/* Functions used during preprocess and runtime, for defining the RNA. */
+/** \file RNA_define.h
+ *  \ingroup RNA
+ *  Functions used during preprocess and runtime, for defining the RNA. */
 
 #include <float.h>
 #include <limits.h>

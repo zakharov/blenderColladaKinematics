@@ -1,5 +1,5 @@
-/**
- * $Id: GHOST_C-api.cpp 33448 2010-12-03 17:05:21Z campbellbarton $
+/*
+ * $Id: GHOST_C-api.cpp 35152 2011-02-25 11:28:33Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -26,13 +26,18 @@
  * ***** END GPL LICENSE BLOCK *****
  */
 
+/** \file ghost/intern/GHOST_C-api.cpp
+ *  \ingroup GHOST
+ */
+
+
 /*
 
  * GHOST_C-Api.cpp
  *
  * C Api for GHOST
  *
- * Version: $Id: GHOST_C-api.cpp 33448 2010-12-03 17:05:21Z campbellbarton $
+ * Version: $Id: GHOST_C-api.cpp 35152 2011-02-25 11:28:33Z jesterking $
  */
 
 #include <stdlib.h>

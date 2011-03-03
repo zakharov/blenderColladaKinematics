@@ -1,8 +1,8 @@
-/**
+/*
  * @file PIL_time.h
  * 
  * Platform independant time functions.
- * $Id: PIL_time.h 26841 2010-02-12 13:34:04Z campbellbarton $
+ * $Id: PIL_time.h 35246 2011-02-27 20:37:56Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -29,6 +29,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/blenlib/PIL_time.h
+ *  \ingroup bli
+ */
+
  
 #ifndef PIL_TIME_H
 #define PIL_TIME_H

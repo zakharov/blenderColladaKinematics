@@ -1,4 +1,7 @@
-/* $Id: ImageBuff.cpp 32517 2010-10-16 14:32:17Z campbellbarton $
+/** \file gameengine/VideoTexture/ImageBuff.cpp
+ *  \ingroup bgevideotex
+ */
+/* $Id: ImageBuff.cpp 35176 2011-02-25 13:39:34Z jesterking $
 -----------------------------------------------------------------------------
 This source file is part of VideoTexture library
 

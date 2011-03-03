@@ -1,5 +1,5 @@
-/**
- * $Id: KX_HashedPtr.cpp 28254 2010-04-18 10:28:37Z campbellbarton $
+/*
+ * $Id: KX_HashedPtr.cpp 35168 2011-02-25 13:31:23Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/Expressions/KX_HashedPtr.cpp
+ *  \ingroup expressions
+ */
+
 
 #include "KX_HashedPtr.h"
 

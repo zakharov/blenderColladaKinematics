@@ -1,5 +1,5 @@
-/**
- * $Id: math_base.c 32579 2010-10-19 04:25:16Z campbellbarton $
+/*
+ * $Id: math_base.c 35246 2011-02-27 20:37:56Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  * */
+
+/** \file blender/blenlib/intern/math_base.c
+ *  \ingroup bli
+ */
+
 
 
 #include "BLI_math.h"

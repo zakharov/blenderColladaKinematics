@@ -1,6 +1,6 @@
-/**
+/*
  *
- * $Id: imagetexture.c 34160 2011-01-07 19:18:31Z campbellbarton $
+ * $Id: imagetexture.c 35233 2011-02-27 19:31:27Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL/BL DUAL LICENSE BLOCK *****
  */
+
+/** \file blender/render/intern/source/imagetexture.c
+ *  \ingroup render
+ */
+
 
 
 
@@ -53,12 +58,13 @@
 #include "BLI_threads.h"
 #include "BLI_utildefines.h"
 
-
 #include "BKE_global.h"
 #include "BKE_main.h"
 #include "BKE_image.h"
 #include "BKE_texture.h"
 #include "BKE_library.h"
+
+#include "RE_render_ext.h"
 
 #include "renderpipeline.h"
 #include "render_types.h"
@@ -209,8 +215,14 @@ int imagewrap(Tex *tex, Image *ima, ImBuf *ibuf, float *texvec, TexResult *texre
 	if(texres->nor) {
 		if(tex->imaflag & TEX_NORMALMAP) {
 			// qdn: normal from color
-			texres->nor[0] = 2.f*(texres->tr - 0.5f);
-			texres->nor[1] = 2.f*(0.5f - texres->tg);
+			// The invert of the red channel is to make
+			// the normal map compliant with the outside world.
+			// It needs to be done because in Blender
+			// the normal used in the renderer points inward. It is generated
+			// this way in calc_vertexnormals(). Should this ever change
+			// this negate must be removed.
+			texres->nor[0] = -2.f*(texres->tr - 0.5f);
+			texres->nor[1] = 2.f*(texres->tg - 0.5f);
 			texres->nor[2] = 2.f*(texres->tb - 0.5f);
 		}
 		else {
@@ -1347,8 +1359,14 @@ static int imagewraposa_aniso(Tex *tex, Image *ima, ImBuf *ibuf, float *texvec, 
 		ibuf->rect -= ibuf->x*ibuf->y;
 
 	if (texres->nor && (tex->imaflag & TEX_NORMALMAP)) {	// normal from color
-		texres->nor[0] = 2.f*(texres->tr - 0.5f);
-		texres->nor[1] = 2.f*(0.5f - texres->tg);
+		// The invert of the red channel is to make
+		// the normal map compliant with the outside world.
+		// It needs to be done because in Blender
+		// the normal used in the renderer points inward. It is generated
+		// this way in calc_vertexnormals(). Should this ever change
+		// this negate must be removed.
+		texres->nor[0] = -2.f*(texres->tr - 0.5f);
+		texres->nor[1] = 2.f*(texres->tg - 0.5f);
 		texres->nor[2] = 2.f*(texres->tb - 0.5f);
 	}
 	
@@ -1727,8 +1745,14 @@ int imagewraposa(Tex *tex, Image *ima, ImBuf *ibuf, float *texvec, float *DXT, f
 
 	if(texres->nor && (tex->imaflag & TEX_NORMALMAP)) {
 		// qdn: normal from color
-		texres->nor[0] = 2.f*(texres->tr - 0.5f);
-		texres->nor[1] = 2.f*(0.5f - texres->tg);
+		// The invert of the red channel is to make
+		// the normal map compliant with the outside world.
+		// It needs to be done because in Blender
+		// the normal used in the renderer points inward. It is generated
+		// this way in calc_vertexnormals(). Should this ever change
+		// this negate must be removed.
+		texres->nor[0] = -2.f*(texres->tr - 0.5f);
+		texres->nor[1] = 2.f*(texres->tg - 0.5f);
 		texres->nor[2] = 2.f*(texres->tb - 0.5f);
 	}
 	

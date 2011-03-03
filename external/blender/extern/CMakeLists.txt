@@ -1,4 +1,4 @@
-# $Id: CMakeLists.txt 33549 2010-12-08 08:43:06Z campbellbarton $
+# $Id: CMakeLists.txt 35032 2011-02-21 13:13:08Z campbellbarton $
 # ***** BEGIN GPL LICENSE BLOCK *****
 #
 # This program is free software; you can redistribute it and/or
@@ -31,13 +31,13 @@ if(WITH_BULLET)
 	add_subdirectory(bullet2)
 endif()
 
-if(CMAKE_SYSTEM_NAME MATCHES "Linux")
+if(WITH_BINRELOC)
 	add_subdirectory(binreloc)
 endif()
 
 add_subdirectory(glew)
 
-if(WITH_IMAGE_OPENJPEG)
+if(WITH_IMAGE_OPENJPEG AND (NOT UNIX OR APPLE))
 	add_subdirectory(libopenjpeg)
 endif()
 

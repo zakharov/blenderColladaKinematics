@@ -1,9 +1,7 @@
-/**
- * endian.h
+/*
+ * $Id: endian.h 35249 2011-02-27 20:43:42Z jesterking $
  *
  * This is external code.
- *
- * $Id: endian.h 26841 2010-02-12 13:34:04Z campbellbarton $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -29,7 +27,13 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
- *  */
+ *
+ */
+
+/** \file blender/avi/intern/endian.h
+ *  \ingroup avi
+ */
+
 
 #ifndef AVI_ENDIAN_H
 #define AVI_ENDIAN_H

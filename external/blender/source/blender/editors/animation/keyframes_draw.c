@@ -1,5 +1,5 @@
-/**
- * $Id: keyframes_draw.c 34600 2011-02-01 11:35:27Z aligorith $
+/*
+ * $Id: keyframes_draw.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/animation/keyframes_draw.c
+ *  \ingroup edanimation
+ */
+
 
 /* System includes ----------------------------------------------------- */
 
@@ -902,8 +907,8 @@ void fcurve_to_keylist(AnimData *adt, FCurve *fcu, DLRBT_Tree *keys, DLRBT_Tree 
 {
 	DLRBT_Tree *beztTree = NULL;
 	BezTriple *bezt;
-	int v;
-	
+	unsigned int v;
+
 	if (fcu && fcu->totvert && fcu->bezt) {
 		/* apply NLA-mapping (if applicable) */
 		if (adt)	

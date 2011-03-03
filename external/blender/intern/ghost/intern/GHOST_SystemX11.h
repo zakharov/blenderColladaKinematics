@@ -1,5 +1,5 @@
-/**
- * $Id: GHOST_SystemX11.h 34096 2011-01-05 14:00:14Z elubie $
+/*
+ * $Id: GHOST_SystemX11.h 35152 2011-02-25 11:28:33Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,8 +25,9 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
-/**
- * @file	GHOST_SystemX11.h
+
+/** \file ghost/intern/GHOST_SystemX11.h
+ *  \ingroup GHOST
  * Declaration of GHOST_SystemX11 class.
  */
 
@@ -181,7 +182,7 @@ public:
 	) const;
 
 	/**
-	 * @section
+	 * @section Interface Dirty
 	 * Flag a window as dirty. This will
 	 * generate a GHOST window update event on a call to processEvents() 
 	 */

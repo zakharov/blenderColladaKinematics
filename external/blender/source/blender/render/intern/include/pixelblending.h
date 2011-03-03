@@ -1,5 +1,5 @@
 /*
- * $Id: pixelblending.h 26841 2010-02-12 13:34:04Z campbellbarton $
+ * $Id: pixelblending.h 35233 2011-02-27 19:31:27Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,11 @@
  *
  * ***** END GPL/BL DUAL LICENSE BLOCK *****
  */
+
+/** \file blender/render/intern/include/pixelblending.h
+ *  \ingroup render
+ */
+
 
 #ifndef PIXELBLENDING_EXT_H
 #define PIXELBLENDING_EXT_H 

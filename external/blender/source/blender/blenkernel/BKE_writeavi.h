@@ -1,5 +1,5 @@
-/**
- * $Id: BKE_writeavi.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: BKE_writeavi.h 34962 2011-02-18 13:05:18Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -29,6 +29,10 @@
 
 #ifndef BKE_WRITEAVI_H
 #define BKE_WRITEAVI_H
+
+/** \file BKE_writeavi.h
+ *  \ingroup bke
+ */
 
 #ifdef __cplusplus
 extern "C" {

@@ -1,5 +1,5 @@
-/**
- * $Id: idcode.c 33448 2010-12-03 17:05:21Z campbellbarton $
+/*
+ * $Id: idcode.c 35247 2011-02-27 20:40:57Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,11 +27,18 @@
  * ***** END GPL LICENSE BLOCK *****
  * return info about ID types
  */
+
+/** \file blender/blenkernel/intern/idcode.c
+ *  \ingroup bke
+ */
+
  
 #include <stdlib.h>
 #include <string.h>
 
 #include "DNA_ID.h"
+
+#include "BKE_idcode.h"
 
 typedef struct {
 	unsigned short code;

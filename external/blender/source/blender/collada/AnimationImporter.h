@@ -1,5 +1,5 @@
-/**
- * $Id: AnimationImporter.h 32310 2010-10-05 00:49:39Z gsrb3d $
+/*
+ * $Id: AnimationImporter.h 35020 2011-02-21 08:38:53Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -22,6 +22,10 @@
  * ***** END GPL LICENSE BLOCK *****
  */
  
+/** \file AnimationImporter.h
+ *  \ingroup collada
+ */
+
 #ifndef __BC_ANIMATIONIMPORTER_H__
 #define __BC_ANIMATIONIMPORTER_H__
 

@@ -1,7 +1,5 @@
-/**
- * Senses touch and collision events
- *
- * $Id: KX_TouchSensor.h 32788 2010-10-31 04:11:39Z campbellbarton $
+/*
+ * $Id: KX_TouchSensor.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +25,11 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file KX_TouchSensor.h
+ *  \ingroup ketsji
+ *  \brief Senses touch and collision events
  */
 
 #ifndef __KX_TOUCHSENSOR

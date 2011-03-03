@@ -1,5 +1,5 @@
-/**
- * $Id: bpy_app.h 33348 2010-11-27 02:39:51Z campbellbarton $
+/*
+ * $Id: bpy_app.h 35236 2011-02-27 20:10:08Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,15 +21,14 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
-#ifndef BPY_APP_H__
-#define BPY_APP_H__
 
-#include <Python.h>
+/** \file blender/python/intern/bpy_app.h
+ *  \ingroup pythonintern
+ */
+
+#ifndef BPY_APP_H
+#define BPY_APP_H
 
 PyObject *BPY_app_struct( void );
 
-/* bpy_driver.c */
-int bpy_pydriver_create_dict(void);
-extern PyObject *bpy_pydriver_Dict;
-
-#endif
+#endif // BPY_APP_H

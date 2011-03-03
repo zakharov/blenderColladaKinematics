@@ -4,7 +4,7 @@
  * Functions to blend pixels with or without alpha, in various formats
  * nzc - June 2000
  *
- * $Id: pixelblending.c 27655 2010-03-22 09:30:00Z campbellbarton $
+ * $Id: pixelblending.c 35233 2011-02-27 19:31:27Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -29,6 +29,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/render/intern/source/pixelblending.c
+ *  \ingroup render
+ */
+
 
 #include <math.h>
 #include <string.h>

@@ -1,5 +1,5 @@
 /* 
- * $Id: envmap.c 34160 2011-01-07 19:18:31Z campbellbarton $
+ * $Id: envmap.c 35233 2011-02-27 19:31:27Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/render/intern/source/envmap.c
+ *  \ingroup render
+ */
+
 
 #include <math.h>
 #include <string.h>

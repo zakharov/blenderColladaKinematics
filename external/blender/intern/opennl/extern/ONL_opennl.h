@@ -1,5 +1,8 @@
+/** \file opennl/extern/ONL_opennl.h
+ *  \ingroup opennlextern
+ */
 /*
- *  $Id: ONL_opennl.h 33442 2010-12-03 12:30:59Z campbellbarton $
+ *  $Id: ONL_opennl.h 35142 2011-02-25 10:24:29Z jesterking $
  *
  *  OpenNL: Numerical Library
  *  Copyright (C) 2004 Bruno Levy

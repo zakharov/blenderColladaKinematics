@@ -1,9 +1,9 @@
-/**
+/*
  * blenlib/BLI_editVert.h    mar 2001 Nzc
  *
  * These callbacks are needed in the lib
  *
- * $Id: BLI_callbacks.h 33448 2010-12-03 17:05:21Z campbellbarton $
+ * $Id: BLI_callbacks.h 35246 2011-02-27 20:37:56Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -30,6 +30,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/blenlib/intern/BLI_callbacks.h
+ *  \ingroup bli
+ */
+
 
 #ifndef BLI_CALLBACKS_H
 #define BLI_CALLBACKS_H

@@ -1,7 +1,7 @@
 /* object.c
  *
  * 
- * $Id: object.c 34617 2011-02-02 01:01:01Z campbellbarton $
+ * $Id: object.c 35336 2011-03-03 17:58:06Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/blenkernel/intern/object.c
+ *  \ingroup bke
+ */
+
 
 #include <string.h>
 #include <math.h>
@@ -273,7 +278,7 @@ void free_object(Object *ob)
 			else if(ob->type==OB_CURVE) unlink_curve(ob->data);
 			else if(ob->type==OB_MBALL) unlink_mball(ob->data);
 		}
-		ob->data= 0;
+		ob->data= NULL;
 	}
 	
 	for(a=0; a<ob->totcol; a++) {
@@ -281,12 +286,12 @@ void free_object(Object *ob)
 	}
 	if(ob->mat) MEM_freeN(ob->mat);
 	if(ob->matbits) MEM_freeN(ob->matbits);
-	ob->mat= 0;
-	ob->matbits= 0;
+	ob->mat= NULL;
+	ob->matbits= NULL;
 	if(ob->bb) MEM_freeN(ob->bb); 
-	ob->bb= 0;
+	ob->bb= NULL;
 	if(ob->path) free_path(ob->path); 
-	ob->path= 0;
+	ob->path= NULL;
 	if(ob->adt) BKE_free_animdata((ID *)ob);
 	if(ob->poselib) ob->poselib->id.us--;
 	if(ob->gpd) ((ID *)ob->gpd)->us--;
@@ -739,11 +744,11 @@ void make_local_camera(Camera *cam)
 		* - mixed: make copy
 		*/
 	
-	if(cam->id.lib==0) return;
+	if(cam->id.lib==NULL) return;
 	if(cam->id.us==1) {
-		cam->id.lib= 0;
+		cam->id.lib= NULL;
 		cam->id.flag= LIB_LOCAL;
-		new_id(0, (ID *)cam, 0);
+		new_id(NULL, (ID *)cam, NULL);
 		return;
 	}
 	
@@ -757,9 +762,9 @@ void make_local_camera(Camera *cam)
 	}
 	
 	if(local && lib==0) {
-		cam->id.lib= 0;
+		cam->id.lib= NULL;
 		cam->id.flag= LIB_LOCAL;
-		new_id(0, (ID *)cam, 0);
+		new_id(NULL, (ID *)cam, NULL);
 	}
 	else if(local && lib) {
 		camn= copy_camera(cam);
@@ -769,7 +774,7 @@ void make_local_camera(Camera *cam)
 		while(ob) {
 			if(ob->data==cam) {
 				
-				if(ob->id.lib==0) {
+				if(ob->id.lib==NULL) {
 					ob->data= camn;
 					camn->id.us++;
 					cam->id.us--;
@@ -888,11 +893,11 @@ void make_local_lamp(Lamp *la)
 		* - mixed: make copy
 		*/
 	
-	if(la->id.lib==0) return;
+	if(la->id.lib==NULL) return;
 	if(la->id.us==1) {
-		la->id.lib= 0;
+		la->id.lib= NULL;
 		la->id.flag= LIB_LOCAL;
-		new_id(0, (ID *)la, 0);
+		new_id(NULL, (ID *)la, NULL);
 		return;
 	}
 	
@@ -906,9 +911,9 @@ void make_local_lamp(Lamp *la)
 	}
 	
 	if(local && lib==0) {
-		la->id.lib= 0;
+		la->id.lib= NULL;
 		la->id.flag= LIB_LOCAL;
-		new_id(0, (ID *)la, 0);
+		new_id(NULL, (ID *)la, NULL);
 	}
 	else if(local && lib) {
 		lan= copy_lamp(la);
@@ -918,7 +923,7 @@ void make_local_lamp(Lamp *la)
 		while(ob) {
 			if(ob->data==la) {
 				
-				if(ob->id.lib==0) {
+				if(ob->id.lib==NULL) {
 					ob->data= lan;
 					lan->id.us++;
 					la->id.us--;
@@ -1078,7 +1083,7 @@ Object *add_object(struct Scene *scene, int type)
 	Base *base;
 	char name[32];
 
-	strcpy(name, get_obdata_defname(type));
+	BLI_strncpy(name, get_obdata_defname(type), sizeof(name));
 	ob = add_only_object(type, name);
 
 	ob->data= add_obdata_from_type(type);
@@ -1127,7 +1132,7 @@ BulletSoftBody *copy_bulletsoftbody(BulletSoftBody *bsb)
 	return bsbn;
 }
 
-ParticleSystem *copy_particlesystem(ParticleSystem *psys)
+static ParticleSystem *copy_particlesystem(ParticleSystem *psys)
 {
 	ParticleSystem *psysn;
 	ParticleData *pa;
@@ -1406,7 +1411,7 @@ void make_local_object(Object *ob)
 	if(ob->id.us==1) {
 		ob->id.lib= NULL;
 		ob->id.flag= LIB_LOCAL;
-		new_id(0, (ID *)ob, 0);
+		new_id(NULL, (ID *)ob, NULL);
 
 	}
 	else {
@@ -1425,9 +1430,9 @@ void make_local_object(Object *ob)
 		}
 		
 		if(local && lib==0) {
-			ob->id.lib= 0;
+			ob->id.lib= NULL;
 			ob->id.flag= LIB_LOCAL;
-			new_id(0, (ID *)ob, 0);
+			new_id(NULL, (ID *)ob, NULL);
 		}
 		else if(local && lib) {
 			obn= copy_object(ob);
@@ -1435,7 +1440,7 @@ void make_local_object(Object *ob)
 			
 			sce= bmain->scene.first;
 			while(sce) {
-				if(sce->id.lib==0) {
+				if(sce->id.lib==NULL) {
 					base= sce->base.first;
 					while(base) {
 						if(base->object==ob) {
@@ -1626,7 +1631,7 @@ void object_make_proxy(Object *ob, Object *target, Object *gob)
 
 /* there is also a timing calculation in drawobject() */
 
-int no_speed_curve= 0;
+static int no_speed_curve= 0;
 
 void disable_speed_curve(int val)
 {
@@ -1688,10 +1693,10 @@ void object_rot_to_mat3(Object *ob, float mat[][3])
 	else {
 		/* quats are normalised before use to eliminate scaling issues */
 		float tquat[4];
-
+		
 		normalize_qt_qt(tquat, ob->quat);
 		quat_to_mat3(rmat, tquat);
-
+		
 		normalize_qt_qt(tquat, ob->dquat);
 		quat_to_mat3(dmat, tquat);
 	}
@@ -1735,7 +1740,7 @@ void object_apply_mat4(Object *ob, float mat[][4], const short use_compat, const
 		invert_m4_m4(imat, diff_mat);
 		mul_m4_m4m4(rmat, mat, imat); /* get the parent relative matrix */
 		object_apply_mat4(ob, rmat, use_compat, FALSE);
-
+		
 		/* same as below, use rmat rather then mat */
 		mat4_to_loc_rot_size(ob->loc, rot, ob->size, rmat);
 		object_mat3_to_rot(ob, rot, use_compat);
@@ -1775,6 +1780,7 @@ void object_to_mat4(Object *ob, float mat[][4])
 	add_v3_v3v3(mat[3], ob->loc, ob->dloc);
 }
 
+/* extern */
 int enable_cu_speed= 1;
 
 static void ob_parcurve(Scene *scene, Object *ob, Object *par, float mat[][4])
@@ -1808,12 +1814,17 @@ static void ob_parcurve(Scene *scene, Object *ob, Object *par, float mat[][4])
 		 * we divide the curvetime calculated in the previous step by the length of the path, to get a time
 		 * factor, which then gets clamped to lie within 0.0 - 1.0 range
 		 */
-		ctime= cu->ctime / cu->pathlen;
+		if (IS_EQ(cu->pathlen, 0.0f) == 0)
+			ctime= cu->ctime / cu->pathlen;
+		else
+			ctime= cu->ctime;
+		
 		CLAMP(ctime, 0.0, 1.0);
 	}
 	else {
 		ctime= scene->r.cfra - give_timeoffset(ob);
-		ctime /= cu->pathlen;
+		if (IS_EQ(cu->pathlen, 0.0f) == 0)
+			ctime /= cu->pathlen;
 		
 		CLAMP(ctime, 0.0, 1.0);
 	}
@@ -2262,7 +2273,7 @@ void what_does_parent(Scene *scene, Object *ob, Object *workob)
 	where_is_object(scene, workob);
 }
 
-BoundBox *unit_boundbox()
+BoundBox *unit_boundbox(void)
 {
 	BoundBox *bb;
 	float min[3] = {-1.0f,-1.0f,-1.0f}, max[3] = {-1.0f,-1.0f,-1.0f};

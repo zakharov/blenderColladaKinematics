@@ -1,5 +1,5 @@
-/**
- * $Id: GPC_RawLoadDotBlendArray.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: GPC_RawLoadDotBlendArray.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,10 @@
  * ***** END GPL LICENSE BLOCK *****
  */
  
+/** \file GPC_RawLoadDotBlendArray.h
+ *  \ingroup player
+ */
+
 #ifndef __GPC_RAWLOADDOTBLENDARRAY_H
 #define __GPC_RAWLOADDOTBLENDARRAY_H
 

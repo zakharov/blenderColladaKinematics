@@ -1,6 +1,6 @@
 /*
  * Operator1Expr.h: interface for the COperator1Expr class.
- * $Id: Operator1Expr.h 29259 2010-06-06 01:15:44Z campbellbarton $
+ * $Id: Operator1Expr.h 35063 2011-02-22 10:33:14Z jesterking $
  * Copyright (c) 1996-2000 Erwin Coumans <coockie@acm.org>
  *
  * Permission to use, copy, modify, distribute and sell this software
@@ -11,6 +11,10 @@
  * representations about the suitability of this software for any
  * purpose.  It is provided "as is" without express or implied warranty.
  *
+ */
+
+/** \file Operator1Expr.h
+ *  \ingroup expressions
  */
 
 #if !defined(AFX_OPERATOR1EXPR_H__A1653901_BF41_11D1_A51C_00A02472FC58__INCLUDED_)

@@ -1,53 +1,53 @@
 K 25
 svn:wc:ra_dav:version-url
 V 80
-/svnroot/bf-blender/!svn/ver/34752/trunk/blender/build_files/package_spec/debian
+/svnroot/bf-blender/!svn/ver/35334/trunk/blender/build_files/package_spec/debian
 END
 control
 K 25
 svn:wc:ra_dav:version-url
 V 88
-/svnroot/bf-blender/!svn/ver/34751/trunk/blender/build_files/package_spec/debian/control
+/svnroot/bf-blender/!svn/ver/35052/trunk/blender/build_files/package_spec/debian/control
 END
 compat
 K 25
 svn:wc:ra_dav:version-url
 V 87
-/svnroot/bf-blender/!svn/ver/34751/trunk/blender/build_files/package_spec/debian/compat
+/svnroot/bf-blender/!svn/ver/34784/trunk/blender/build_files/package_spec/debian/compat
 END
 menu
 K 25
 svn:wc:ra_dav:version-url
 V 85
-/svnroot/bf-blender/!svn/ver/34751/trunk/blender/build_files/package_spec/debian/menu
+/svnroot/bf-blender/!svn/ver/34932/trunk/blender/build_files/package_spec/debian/menu
 END
 watch
 K 25
 svn:wc:ra_dav:version-url
 V 86
-/svnroot/bf-blender/!svn/ver/34751/trunk/blender/build_files/package_spec/debian/watch
+/svnroot/bf-blender/!svn/ver/35334/trunk/blender/build_files/package_spec/debian/watch
 END
 changelog
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/34752/trunk/blender/build_files/package_spec/debian/changelog
+/svnroot/bf-blender/!svn/ver/34784/trunk/blender/build_files/package_spec/debian/changelog
 END
 copyright
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/34751/trunk/blender/build_files/package_spec/debian/copyright
+/svnroot/bf-blender/!svn/ver/34932/trunk/blender/build_files/package_spec/debian/copyright
 END
 docs
 K 25
 svn:wc:ra_dav:version-url
 V 85
-/svnroot/bf-blender/!svn/ver/34751/trunk/blender/build_files/package_spec/debian/docs
+/svnroot/bf-blender/!svn/ver/34932/trunk/blender/build_files/package_spec/debian/docs
 END
 rules
 K 25
 svn:wc:ra_dav:version-url
 V 86
-/svnroot/bf-blender/!svn/ver/34752/trunk/blender/build_files/package_spec/debian/rules
+/svnroot/bf-blender/!svn/ver/35034/trunk/blender/build_files/package_spec/debian/rules
 END

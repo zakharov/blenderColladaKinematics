@@ -1,5 +1,5 @@
 /* 
- * $Id: occlusion.c 34172 2011-01-08 10:23:36Z campbellbarton $
+ * $Id: occlusion.c 35233 2011-02-27 19:31:27Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/render/intern/source/occlusion.c
+ *  \ingroup render
+ */
+
 
 #include <math.h>
 #include <stdio.h>

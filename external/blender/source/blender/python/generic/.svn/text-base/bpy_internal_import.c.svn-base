@@ -26,6 +26,11 @@
  * ***** END GPL LICENSE BLOCK *****
 */
 
+/** \file blender/python/generic/bpy_internal_import.c
+ *  \ingroup pygen
+ */
+
+
 #include <Python.h>
 #include <stddef.h>
 
@@ -212,7 +217,7 @@ static PyObject *blender_import(PyObject *UNUSED(self), PyObject *args,  PyObjec
 	
 	PyObject *newmodule;
 	//PyObject_Print(args, stderr, 0);
-	static const char *kwlist[] = {"name", "globals", "locals", "fromlist", "level", 0};
+	static const char *kwlist[] = {"name", "globals", "locals", "fromlist", "level", NULL};
 	
 	if( !PyArg_ParseTupleAndKeywords(args, kw, "s|OOOi:bpy_import_meth", (char **)kwlist,
 				   &name, &globals, &locals, &fromlist, &level) )

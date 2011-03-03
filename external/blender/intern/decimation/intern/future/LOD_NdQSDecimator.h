@@ -1,5 +1,5 @@
-/**
- * $Id: LOD_NdQSDecimator.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: LOD_NdQSDecimator.h 35147 2011-02-25 10:47:28Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file decimation/intern/future/LOD_NdQSDecimator.h
+ *  \ingroup decimation
+ */
+
 
 #ifndef NAN_INCLUDED_LOD_NdQSDecimator_H
 #define NAN_INCLUDED_LOD_NdQSDecimator_H

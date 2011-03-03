@@ -1,5 +1,5 @@
-/**
- * $Id: filelist.h 33754 2010-12-17 19:05:34Z ton $
+/*
+ * $Id: filelist.h 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -29,6 +29,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_file/filelist.h
+ *  \ingroup spfile
+ */
+
 
 #ifndef FILELIST_H
 #define FILELIST_H
@@ -70,7 +75,7 @@ void				filelist_readdir(struct FileList* filelist);
 int					filelist_empty(struct FileList* filelist);
 void				filelist_parent(struct FileList* filelist);
 
-
+struct BlendHandle *filelist_lib(struct FileList* filelist);
 int					filelist_islibrary (struct FileList* filelist, char* dir, char* group);
 void				filelist_from_main(struct FileList* filelist);
 void				filelist_from_library(struct FileList* filelist);

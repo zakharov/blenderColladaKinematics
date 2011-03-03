@@ -1,7 +1,4 @@
-//
-// Add object to the game world on action of this actuator
-//
-// $Id: KX_SCA_EndObjectActuator.h 26841 2010-02-12 13:34:04Z campbellbarton $
+// $Id: KX_SCA_EndObjectActuator.h 35063 2011-02-22 10:33:14Z jesterking $
 //
 // ***** BEGIN GPL LICENSE BLOCK *****
 //
@@ -28,9 +25,13 @@
 //
 // ***** END GPL LICENSE BLOCK *****
 //
-// Previously existed as:
-// \source\gameengine\GameLogic\SCA_EndObjectActuator.h
-// Please look here for revision history.
+
+/** \file KX_SCA_EndObjectActuator.h
+ *  \ingroup ketsji
+ *  \brief Add object to the game world on action of this actuator
+ *  \attention Previously existed as: \source\gameengine\GameLogic\SCA_EndObjectActuator.h
+ * Please look here for revision history.
+ */
 
 #ifndef __KX_SCA_ENDOBJECTACTUATOR
 #define __KX_SCA_ENDOBJECTACTUATOR

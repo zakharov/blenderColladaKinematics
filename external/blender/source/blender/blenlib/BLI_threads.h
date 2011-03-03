@@ -1,6 +1,6 @@
 /*
  *
- * $Id: BLI_threads.h 33442 2010-12-03 12:30:59Z campbellbarton $
+ * $Id: BLI_threads.h 34966 2011-02-18 13:58:08Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -30,6 +30,10 @@
 
 #ifndef BLI_THREADS_H
 #define BLI_THREADS_H 
+
+/** \file BLI_threads.h
+ *  \ingroup bli
+ */
 
 #include <pthread.h>
 

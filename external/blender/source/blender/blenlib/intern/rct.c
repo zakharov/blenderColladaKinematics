@@ -4,7 +4,7 @@
  * 
  * april 95
  * 
- * $Id: rct.c 31573 2010-08-25 08:31:52Z campbellbarton $
+ * $Id: rct.c 35246 2011-02-27 20:37:56Z jesterking $
  *
  * A minimalist lib for functions doing stuff with rectangle structs.
  *
@@ -35,9 +35,15 @@
  *
  */
 
-#include "DNA_vec_types.h"
+/** \file blender/blenlib/intern/rct.c
+ *  \ingroup bli
+ */
+
 #include <stdio.h>
 #include <math.h>
+
+#include "DNA_vec_types.h"
+#include "BLI_rect.h"
 
 int BLI_rcti_is_empty(rcti * rect)
 {

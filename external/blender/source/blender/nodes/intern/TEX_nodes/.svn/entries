@@ -1,15 +1,15 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/nodes/intern/TEX_nodes
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-02-08T12:54:32.455710Z
-34717
-lukastoenne
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-02-10T19:48:50.285667Z
-47f0b48a24c0209943122ca92a4e0482
-2011-02-08T09:02:16.818195Z
-34712
-lukastoenne
+2011-03-03T12:27:37.930297Z
+5bec45c59efd90d1b9942ffd1cd09ae5
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-2733
+2817
 
 TEX_valToRgb.c
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-02-10T19:48:50.295667Z
-768a962599a181e6afb611121a2f4f66
-2011-02-08T09:02:16.818195Z
-34712
-lukastoenne
+2011-03-03T12:27:37.930297Z
+10dac86224fc51fd2a6cac18bae1ae46
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-3260
+3342
 
 TEX_image.c
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-02-10T19:48:50.295667Z
-851e4fa2acab8ffca4c08de9286e00b7
-2011-02-08T09:02:16.818195Z
-34712
-lukastoenne
+2011-03-03T12:27:37.934297Z
+57bb814cffb2300e9f8e3ff5d01809f4
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-2924
+3003
 
 TEX_scale.c
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-02-10T19:48:50.295667Z
-49edff25410854b44a052be65a33b550
-2011-02-08T09:02:16.818195Z
-34712
-lukastoenne
+2011-03-03T12:27:37.934297Z
+95677dbf8eb8659ca25d13b51f743ea3
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-2216
+2296
 
 TEX_mixRgb.c
 file
@@ -168,11 +168,11 @@ file
 
 
 
-2011-02-10T19:48:50.295667Z
-be336b86c0437ecec8742e036aee09a4
-2011-02-08T12:54:32.455710Z
-34717
-lukastoenne
+2011-03-03T12:27:37.934297Z
+158b2b33068dbc36f9cc54cb615150e1
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-2259
+2340
 
 TEX_math.c
 file
@@ -202,11 +202,11 @@ file
 
 
 
-2011-02-10T19:48:50.295667Z
-fa223a25fba9abe741b410ea8eb34be9
-2011-02-08T12:54:32.455710Z
-34717
-lukastoenne
+2011-03-03T12:27:37.934297Z
+f9cb80f770031fad5503e0ea32d84cb1
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -228,7 +228,7 @@ has-props
 
 
 
-3885
+4223
 
 TEX_distance.c
 file
@@ -236,11 +236,11 @@ file
 
 
 
-2011-02-10T19:48:50.295667Z
-caacadbe4c89696d36cb1a0a45387380
-2011-02-08T09:02:16.818195Z
-34712
-lukastoenne
+2011-03-03T12:27:37.934297Z
+f8666ad7972ec82eaf7ba89057c31791
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -262,7 +262,7 @@ has-props
 
 
 
-2143
+2226
 
 TEX_hueSatVal.c
 file
@@ -270,11 +270,11 @@ file
 
 
 
-2011-02-10T19:48:50.295667Z
-61666aa44ad22a1f4eb00d149493d336
-2011-02-08T09:02:16.818195Z
-34712
-lukastoenne
+2011-03-03T12:27:37.934297Z
+a8467face8778c7dfa4a79169c8103ed
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -296,7 +296,7 @@ has-props
 
 
 
-3179
+3263
 
 TEX_translate.c
 file
@@ -304,11 +304,11 @@ file
 
 
 
-2011-02-10T19:48:50.295667Z
-df1f190e48d42a5f9b655f150c713851
-2011-02-08T09:02:16.818195Z
-34712
-lukastoenne
+2011-03-03T12:27:37.934297Z
+45469b9e26b1103af80ff6a01e777368
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -330,7 +330,7 @@ has-props
 
 
 
-2140
+2224
 
 TEX_rotate.c
 file
@@ -338,11 +338,11 @@ file
 
 
 
-2011-02-10T19:48:50.295667Z
-47527970866ff20f1b679ce9c1fb3708
-2011-02-08T09:02:16.818195Z
-34712
-lukastoenne
+2011-03-03T12:27:37.934297Z
+28d15923c6dfe23c6bb5fdbfa8e33f32
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -364,7 +364,7 @@ has-props
 
 
 
-2814
+2895
 
 TEX_texture.c
 file
@@ -372,11 +372,11 @@ file
 
 
 
-2011-02-10T19:48:50.295667Z
-a4f1a3328cee7767e2f94db9b15c051c
-2011-02-08T09:02:16.818195Z
-34712
-lukastoenne
+2011-03-03T12:27:37.934297Z
+b7a0fe61ef3a44b1a57c0359c948cee8
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -398,7 +398,7 @@ has-props
 
 
 
-2656
+2738
 
 TEX_output.c
 file
@@ -406,11 +406,11 @@ file
 
 
 
-2011-02-10T19:48:50.295667Z
-2dea1fbcac70e8bfb5027abdbcb2ebfa
-2011-02-08T09:02:16.818195Z
-34712
-lukastoenne
+2011-03-03T12:27:37.934297Z
+c3cd2e64f38ded0e2df93028dfb67a4c
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -432,7 +432,7 @@ has-props
 
 
 
-4236
+4317
 
 TEX_viewer.c
 file
@@ -440,11 +440,11 @@ file
 
 
 
-2011-02-10T19:48:50.295667Z
-e0fb9c135df2a9e77b4b85f6acd0c5da
-2011-02-08T09:02:16.818195Z
-34712
-lukastoenne
+2011-03-03T12:27:37.938297Z
+a54fb7f4001f8c8f4074cc3c5415a503
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -466,7 +466,7 @@ has-props
 
 
 
-1880
+1961
 
 TEX_proc.c
 file
@@ -474,11 +474,11 @@ file
 
 
 
-2011-02-10T19:48:50.295667Z
-2c77257e52127f01e0506df61a9e5da1
-2011-02-08T09:02:16.818195Z
-34712
-lukastoenne
+2011-03-03T12:27:37.938297Z
+7c5fcab00743616449ae9b77074fccc7
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -500,7 +500,7 @@ has-props
 
 
 
-10455
+10524
 
 TEX_at.c
 file
@@ -508,11 +508,11 @@ file
 
 
 
-2011-02-10T19:48:50.295667Z
-ca5b1bfb1f406c344d98dda6defc3ec5
-2011-02-08T09:02:16.818195Z
-34712
-lukastoenne
+2011-03-03T12:27:37.938297Z
+ecf5671c9c0c3ba7c9938baba2c647af
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -534,7 +534,7 @@ has-props
 
 
 
-2025
+2102
 
 TEX_checker.c
 file
@@ -542,11 +542,11 @@ file
 
 
 
-2011-02-10T19:48:50.295667Z
-a8303ba21d494f23ef05ae6e6ea3def2
-2011-02-08T09:02:16.818195Z
-34712
-lukastoenne
+2011-03-03T12:27:37.938297Z
+6d2e95c82be4d847a0cc733c5c712f1e
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -568,7 +568,7 @@ has-props
 
 
 
-2427
+2509
 
 TEX_valToNor.c
 file
@@ -576,11 +576,11 @@ file
 
 
 
-2011-02-10T19:48:50.295667Z
-96129be9fc1b3c37f7fe228df05108b5
-2011-02-08T09:02:16.818195Z
-34712
-lukastoenne
+2011-03-03T12:27:37.938297Z
+cf85c1a6fdc9e2646a37d5c37ea3625f
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -602,7 +602,7 @@ has-props
 
 
 
-2441
+2524
 
 TEX_compose.c
 file
@@ -610,11 +610,11 @@ file
 
 
 
-2011-02-10T19:48:50.295667Z
-81c8fdaf0fcc59d76ee825ea16c4745c
-2011-02-08T09:02:16.818195Z
-34712
-lukastoenne
+2011-03-03T12:27:37.938297Z
+d7a78af5d3d2d9b5dafd6f4b0c34f32e
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -636,7 +636,7 @@ has-props
 
 
 
-2097
+2179
 
 TEX_coord.c
 file
@@ -644,11 +644,11 @@ file
 
 
 
-2011-02-10T19:48:50.305667Z
-188aa36b77047de9d421314af1e9020f
-2011-02-08T09:02:16.818195Z
-34712
-lukastoenne
+2011-03-03T12:27:37.938297Z
+9949b3c9e78239ac4b359b81a5353aa2
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -670,7 +670,7 @@ has-props
 
 
 
-1844
+1924
 
 TEX_invert.c
 file
@@ -678,11 +678,11 @@ file
 
 
 
-2011-02-10T19:48:50.305667Z
-a3737c01802e82b0025d50df882ae55f
-2011-02-08T09:02:16.818195Z
-34712
-lukastoenne
+2011-03-03T12:27:37.938297Z
+e9af49ebd28d4391db173a9d6c0818dd
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -704,7 +704,7 @@ has-props
 
 
 
-2001
+2082
 
 TEX_curves.c
 file
@@ -712,11 +712,11 @@ file
 
 
 
-2011-02-10T19:48:50.305667Z
-ef38a6938f9a953c640686c8406ecfad
-2011-02-08T09:02:16.818195Z
-34712
-lukastoenne
+2011-03-03T12:27:37.938297Z
+6d4f10839db6d46bc338b7e0fd7e67bc
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -738,7 +738,7 @@ has-props
 
 
 
-3501
+3582
 
 TEX_bricks.c
 file
@@ -746,11 +746,11 @@ file
 
 
 
-2011-02-10T19:48:50.305667Z
-d0520c432cee075fec0292351a0fa5b1
-2011-02-08T09:02:16.818195Z
-34712
-lukastoenne
+2011-03-03T12:27:37.938297Z
+fff1822f64c201e59ffdcce906109151
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -772,5 +772,5 @@ has-props
 
 
 
-4017
+4098
 

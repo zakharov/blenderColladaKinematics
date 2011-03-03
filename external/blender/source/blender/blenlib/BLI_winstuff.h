@@ -1,7 +1,5 @@
-/**
- * Compatibility-like things for windows.
- *
- * $Id: BLI_winstuff.h 33026 2010-11-11 22:09:09Z jesterking $ 
+/*
+ * $Id: BLI_winstuff.h 35296 2011-03-02 05:05:12Z campbellbarton $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -31,6 +29,11 @@
  
 #ifndef __WINSTUFF_H__
 #define __WINSTUFF_H__
+
+/** \file BLI_winstuff.h
+ *  \ingroup bli
+ *  \brief Compatibility-like things for windows.
+ */
 
 #ifdef _WIN32
 
@@ -72,7 +75,7 @@
 
 #undef small
 
-// These definitions are also in arithb for simplicity
+// These definitions are also in BLI_math for simplicity
 
 #ifdef __cplusplus
 extern "C" {

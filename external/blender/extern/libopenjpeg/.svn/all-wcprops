@@ -141,17 +141,17 @@ svn:wc:ra_dav:version-url
 V 73
 /svnroot/bf-blender/!svn/ver/23425/trunk/blender/extern/libopenjpeg/bio.c
 END
-tcd.c
-K 25
-svn:wc:ra_dav:version-url
-V 73
-/svnroot/bf-blender/!svn/ver/23425/trunk/blender/extern/libopenjpeg/tcd.c
-END
 cio.c
 K 25
 svn:wc:ra_dav:version-url
 V 73
 /svnroot/bf-blender/!svn/ver/23425/trunk/blender/extern/libopenjpeg/cio.c
+END
+tcd.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/bf-blender/!svn/ver/23425/trunk/blender/extern/libopenjpeg/tcd.c
 END
 j2k_lib.c
 K 25
@@ -171,17 +171,17 @@ svn:wc:ra_dav:version-url
 V 73
 /svnroot/bf-blender/!svn/ver/23425/trunk/blender/extern/libopenjpeg/bio.h
 END
-tcd.h
-K 25
-svn:wc:ra_dav:version-url
-V 73
-/svnroot/bf-blender/!svn/ver/23425/trunk/blender/extern/libopenjpeg/tcd.h
-END
 cio.h
 K 25
 svn:wc:ra_dav:version-url
 V 73
 /svnroot/bf-blender/!svn/ver/23425/trunk/blender/extern/libopenjpeg/cio.h
+END
+tcd.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/bf-blender/!svn/ver/23425/trunk/blender/extern/libopenjpeg/tcd.h
 END
 mqc.c
 K 25

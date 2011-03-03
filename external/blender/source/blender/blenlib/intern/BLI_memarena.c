@@ -1,5 +1,5 @@
-/**
- * $Id: BLI_memarena.c 28254 2010-04-18 10:28:37Z campbellbarton $
+/*
+ * $Id: BLI_memarena.c 35246 2011-02-27 20:37:56Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  * ***** END GPL LICENSE BLOCK *****
  * Efficient memory allocation for lots of similar small chunks.
  */
+
+/** \file blender/blenlib/intern/BLI_memarena.c
+ *  \ingroup bli
+ */
+
 
 
 #include "MEM_guardedalloc.h"

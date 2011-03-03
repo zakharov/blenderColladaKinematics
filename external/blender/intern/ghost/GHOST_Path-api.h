@@ -1,5 +1,5 @@
-/**
- * $Id: GHOST_Path-api.h 34099 2011-01-05 14:56:10Z elubie $
+/*
+ * $Id: GHOST_Path-api.h 35152 2011-02-25 11:28:33Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file ghost/GHOST_Path-api.h
+ *  \ingroup GHOST
+ */
+
 
 #ifndef	GHOST_PATH_API_H
 #define GHOST_PATH_API_H

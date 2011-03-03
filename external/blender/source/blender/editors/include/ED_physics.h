@@ -1,5 +1,5 @@
 /* 
- * $Id: ED_physics.h 28482 2010-04-28 07:25:39Z campbellbarton $
+ * $Id: ED_physics.h 35016 2011-02-21 07:25:24Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,10 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file ED_physics.h
+ *  \ingroup editors
  */
 
 #ifndef ED_PHYSICS_H

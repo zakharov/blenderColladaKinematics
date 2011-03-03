@@ -1,4 +1,4 @@
-/**
+/*
  * $Id$
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
@@ -22,11 +22,19 @@
  * ***** END GPL LICENSE BLOCK *****
  */
 
+/** \file blender/collada/MeshImporter.cpp
+ *  \ingroup collada
+ */
+
+
 #include <algorithm>
 
 #if !defined(WIN32) || defined(FREE_WINDOWS)
 #include <iostream>
 #endif
+
+/* COLLADABU_ASSERT, may be able to remove later */
+#include "COLLADABUPlatform.h"
 
 #include "COLLADAFWMeshPrimitive.h"
 #include "COLLADAFWMeshVertexData.h"

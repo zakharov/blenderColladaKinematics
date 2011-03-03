@@ -1,43 +1,37 @@
 K 25
 svn:wc:ra_dav:version-url
 V 80
-/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/blender/imbuf/intern/dds
+/svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/intern/dds
 END
 ColorBlock.h
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/imbuf/intern/dds/ColorBlock.h
+/svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/intern/dds/ColorBlock.h
 END
 PixelFormat.h
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/imbuf/intern/dds/PixelFormat.h
+/svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/intern/dds/PixelFormat.h
 END
 Stream.h
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/imbuf/intern/dds/Stream.h
+/svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/intern/dds/Stream.h
 END
 DirectDrawSurface.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 102
-/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/imbuf/intern/dds/DirectDrawSurface.cpp
+/svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/intern/dds/DirectDrawSurface.cpp
 END
 dds_api.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/33167/trunk/blender/source/blender/imbuf/intern/dds/dds_api.cpp
-END
-DirectDrawSurface.h
-K 25
-svn:wc:ra_dav:version-url
-V 100
-/svnroot/bf-blender/!svn/ver/27655/trunk/blender/source/blender/imbuf/intern/dds/DirectDrawSurface.h
+/svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/intern/dds/dds_api.cpp
 END
 SConscript
 K 25
@@ -45,53 +39,59 @@ svn:wc:ra_dav:version-url
 V 91
 /svnroot/bf-blender/!svn/ver/33156/trunk/blender/source/blender/imbuf/intern/dds/SConscript
 END
+DirectDrawSurface.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/intern/dds/DirectDrawSurface.h
+END
 dds_api.h
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/33167/trunk/blender/source/blender/imbuf/intern/dds/dds_api.h
+/svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/intern/dds/dds_api.h
 END
 BlockDXT.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/imbuf/intern/dds/BlockDXT.cpp
+/svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/intern/dds/BlockDXT.cpp
 END
 BlockDXT.h
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/imbuf/intern/dds/BlockDXT.h
+/svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/intern/dds/BlockDXT.h
 END
 Image.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/imbuf/intern/dds/Image.cpp
+/svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/intern/dds/Image.cpp
 END
 Color.h
 K 25
 svn:wc:ra_dav:version-url
 V 88
-/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/imbuf/intern/dds/Color.h
+/svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/intern/dds/Color.h
 END
 Image.h
 K 25
 svn:wc:ra_dav:version-url
 V 88
-/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/imbuf/intern/dds/Image.h
+/svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/intern/dds/Image.h
 END
 ColorBlock.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/imbuf/intern/dds/ColorBlock.cpp
+/svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/intern/dds/ColorBlock.cpp
 END
 Stream.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/imbuf/intern/dds/Stream.cpp
+/svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/intern/dds/Stream.cpp
 END
 CMakeLists.txt
 K 25
@@ -103,5 +103,5 @@ Common.h
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/imbuf/intern/dds/Common.h
+/svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/intern/dds/Common.h
 END

@@ -29,6 +29,11 @@
  * ***** END GPL LICENSE BLOCK *****
  */
 
+/** \file blender/blenkernel/intern/scene.c
+ *  \ingroup bke
+ */
+
+
 #include <stddef.h>
 #include <stdio.h>
 #include <string.h>
@@ -171,7 +176,7 @@ Scene *copy_scene(Scene *sce, int type)
 		BKE_keyingsets_copy(&(scen->keyingsets), &(sce->keyingsets));
 
 		if(sce->nodetree) {
-			scen->nodetree= ntreeCopyTree(sce->nodetree, 0); /* copies actions */
+			scen->nodetree= ntreeCopyTree(sce->nodetree); /* copies actions */
 			ntreeSwitchID(scen->nodetree, &sce->id, &scen->id);
 		}
 
@@ -829,7 +834,7 @@ char *scene_find_last_marker_name(Scene *scene, int frame)
 
 /* markers need transforming from different parts of the code so have
  * a generic function to do this */
-int scene_marker_tfm_translate(Scene *scene, int delta, int flag)
+int scene_marker_tfm_translate(Scene *scene, int delta, unsigned int flag)
 {
 	TimeMarker *marker;
 	int tot= 0;

@@ -1,9 +1,5 @@
-/**
- * blenlib/DNA_ID.h (mar-2001 nzc)
- *
- * ID and Library types, which are fundamental for sdna,
- *
- * $Id: DNA_ID.h 34448 2011-01-22 04:40:15Z campbellbarton $
+/*
+ * $Id: DNA_ID.h 34941 2011-02-17 20:48:12Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -32,6 +28,11 @@
  */
 #ifndef DNA_ID_H
 #define DNA_ID_H
+
+/** \file DNA_ID.h
+ *  \ingroup DNA
+ *  \brief ID and Library types, which are fundamental for sdna.
+ */
 
 #include "DNA_listBase.h"
 

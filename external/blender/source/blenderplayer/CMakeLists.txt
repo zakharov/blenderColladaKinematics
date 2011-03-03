@@ -1,5 +1,5 @@
 # -*- mode: cmake; indent-tabs-mode: t; -*-
-# $Id: CMakeLists.txt 33862 2010-12-22 22:15:20Z gsrb3d $
+# $Id: CMakeLists.txt 35181 2011-02-25 14:45:45Z campbellbarton $
 # ***** BEGIN GPL LICENSE BLOCK *****
 #
 # This program is free software; you can redistribute it and/or
@@ -31,11 +31,6 @@ setup_libdirs()
 
 if(WITH_CODEC_QUICKTIME)
 	add_definitions(-DWITH_QUICKTIME)
-endif()
-
-if(CMAKE_SYSTEM_NAME MATCHES "Linux")
-	add_definitions(-DWITH_BINRELOC)
-	blender_include_dirs(${BINRELOC_INC})
 endif()
 
 add_custom_command(
@@ -122,8 +117,9 @@ if(UNIX)
 		extern_minilzo
 		bf_intern_ghost # duplicate for linking
 		bf_blenkernel # duplicate for linking
+		bf_intern_mikktspace
 	)
-  
+
 	if(WITH_CODEC_QUICKTIME)
 		list(APPEND BLENDER_SORTED_LIBS bf_quicktime)
 	endif()

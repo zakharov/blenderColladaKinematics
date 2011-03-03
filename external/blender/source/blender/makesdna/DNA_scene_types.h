@@ -1,5 +1,5 @@
-/**
- * $Id: DNA_scene_types.h 34696 2011-02-07 18:09:27Z ton $ 
+/*
+ * $Id: DNA_scene_types.h 35336 2011-03-03 17:58:06Z campbellbarton $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,10 @@
  */
 #ifndef DNA_SCENE_TYPES_H
 #define DNA_SCENE_TYPES_H
+
+/** \file DNA_scene_types.h
+ *  \ingroup DNA
+ */
 
 // XXX, temp feature
 #define DURIAN_CAMERA_SWITCH
@@ -879,7 +883,8 @@ typedef struct Scene {
 #define R_OUTPUT_SCREEN	0
 #define R_OUTPUT_AREA	1
 #define R_OUTPUT_WINDOW	2
-/*#define R_OUTPUT_FORKED	3*/
+#define R_OUTPUT_NONE	3
+/*#define R_OUTPUT_FORKED	4*/
 
 /* filtertype */
 #define R_FILTER_BOX	0
@@ -1034,15 +1039,15 @@ typedef struct Scene {
 
 /* depricate this! */
 #define TESTBASE(v3d, base)	( ((base)->flag & SELECT) && ((base)->lay & v3d->lay) && (((base)->object->restrictflag & OB_RESTRICT_VIEW)==0) )
-#define TESTBASELIB(v3d, base)	( ((base)->flag & SELECT) && ((base)->lay & v3d->lay) && ((base)->object->id.lib==0) && (((base)->object->restrictflag & OB_RESTRICT_VIEW)==0))
-#define TESTBASELIB_BGMODE(v3d, scene, base)   ( ((base)->flag & SELECT) && ((base)->lay & (v3d ? v3d->lay : scene->lay)) && ((base)->object->id.lib==0) && (((base)->object->restrictflag & OB_RESTRICT_VIEW)==0))
-#define BASE_EDITABLE_BGMODE(v3d, scene, base)   (((base)->lay & (v3d ? v3d->lay : scene->lay)) && ((base)->object->id.lib==0) && (((base)->object->restrictflag & OB_RESTRICT_VIEW)==0))
+#define TESTBASELIB(v3d, base)	( ((base)->flag & SELECT) && ((base)->lay & v3d->lay) && ((base)->object->id.lib==NULL) && (((base)->object->restrictflag & OB_RESTRICT_VIEW)==0))
+#define TESTBASELIB_BGMODE(v3d, scene, base)   ( ((base)->flag & SELECT) && ((base)->lay & (v3d ? v3d->lay : scene->lay)) && ((base)->object->id.lib==NULL) && (((base)->object->restrictflag & OB_RESTRICT_VIEW)==0))
+#define BASE_EDITABLE_BGMODE(v3d, scene, base)   (((base)->lay & (v3d ? v3d->lay : scene->lay)) && ((base)->object->id.lib==NULL) && (((base)->object->restrictflag & OB_RESTRICT_VIEW)==0))
 #define BASE_SELECTABLE(v3d, base)	 ((base->lay & v3d->lay) && (base->object->restrictflag & (OB_RESTRICT_SELECT|OB_RESTRICT_VIEW))==0)
 #define BASE_VISIBLE(v3d, base)	 ((base->lay & v3d->lay) && (base->object->restrictflag & OB_RESTRICT_VIEW)==0)
 #define FIRSTBASE		scene->base.first
 #define LASTBASE		scene->base.last
 #define BASACT			(scene->basact)
-#define OBACT			(BASACT? BASACT->object: 0)
+#define OBACT			(BASACT? BASACT->object: NULL)
 
 #define ID_NEW(a)		if( (a) && (a)->id.newid ) (a)= (void *)(a)->id.newid
 #define ID_NEW_US(a)	if( (a)->id.newid) {(a)= (void *)(a)->id.newid; (a)->id.us++;}

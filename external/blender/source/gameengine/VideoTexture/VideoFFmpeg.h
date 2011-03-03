@@ -1,4 +1,4 @@
-/* $Id: VideoFFmpeg.h 27806 2010-03-28 17:50:45Z ben2610 $
+/* $Id: VideoFFmpeg.h 35082 2011-02-22 19:30:37Z jesterking $
 -----------------------------------------------------------------------------
 This source file is part of VideoTexture library
 
@@ -19,6 +19,11 @@ Place - Suite 330, Boston, MA 02111-1307, USA, or go to
 http://www.gnu.org/copyleft/lesser.txt.
 -----------------------------------------------------------------------------
 */
+
+/** \file VideoFFmpeg.h
+ *  \ingroup bgevideotex
+ */
+ 
 #if !defined VIDEOFFMPEG_H
 #define VIDEOFFMPEG_H
 

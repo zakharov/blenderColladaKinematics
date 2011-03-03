@@ -1,6 +1,6 @@
-/**
+/*
  *
- * $Id: bvhutils.c 34160 2011-01-07 19:18:31Z campbellbarton $
+ * $Id: bvhutils.c 35247 2011-02-27 20:40:57Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/blenkernel/intern/bvhutils.c
+ *  \ingroup bke
+ */
+
 #include <stdio.h>
 #include <string.h>
 #include <math.h>

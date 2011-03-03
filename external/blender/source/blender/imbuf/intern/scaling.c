@@ -1,4 +1,4 @@
-/**
+/*
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,8 +26,13 @@
  * ***** END GPL LICENSE BLOCK *****
  * allocimbuf.c
  *
- * $Id: scaling.c 33665 2010-12-14 18:02:41Z ton $
+ * $Id: scaling.c 35239 2011-02-27 20:23:21Z jesterking $
  */
+
+/** \file blender/imbuf/intern/scaling.c
+ *  \ingroup imbuf
+ */
+
 
 #include "BLI_blenlib.h"
 #include "MEM_guardedalloc.h"

@@ -1,7 +1,5 @@
-/**
- * blenlib/BKE_anim.h (mar-2001 nzc);
- *	
- * $Id: BKE_anim.h 31028 2010-08-04 04:01:27Z campbellbarton $ 
+/*
+ * $Id: BKE_anim.h 34962 2011-02-18 13:05:18Z jesterking $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -31,6 +29,11 @@
 #ifndef BKE_ANIM_H
 #define BKE_ANIM_H
 
+/** \file BKE_anim.h
+ *  \ingroup bke
+ *  \author nzc
+ *  \since March 2001
+ */
 struct Path;
 struct Object;
 struct PartEff;

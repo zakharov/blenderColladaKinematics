@@ -1,5 +1,5 @@
-/**
- * $Id: RAS_Polygon.h 29259 2010-06-06 01:15:44Z campbellbarton $
+/*
+ * $Id: RAS_Polygon.h 35072 2011-02-22 12:42:55Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file RAS_Polygon.h
+ *  \ingroup bgerast
+ */
+
 #ifndef __RAS_POLYGON
 #define __RAS_POLYGON
 

@@ -1,7 +1,5 @@
-/**
- * KX_ConstraintActuator.h
- *
- * $Id: KX_ConstraintActuator.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: KX_ConstraintActuator.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +25,10 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file KX_ConstraintActuator.h
+ *  \ingroup ketsji
  */
 
 #ifndef __KX_CONSTRAINTACTUATOR

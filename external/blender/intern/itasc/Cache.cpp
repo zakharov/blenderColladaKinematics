@@ -1,4 +1,7 @@
-/* $Id: Cache.cpp 23480 2009-09-25 09:33:46Z blendix $
+/** \file itasc/Cache.cpp
+ *  \ingroup itasc
+ */
+/* $Id: Cache.cpp 35155 2011-02-25 11:45:16Z jesterking $
  * Cache.cpp
  *
  *  Created on: Feb 24, 2009

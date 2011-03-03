@@ -1,5 +1,5 @@
 /*
- * $Id: KX_KetsjiEngine.h 33707 2010-12-16 10:25:41Z dfelinto $
+ * $Id: KX_KetsjiEngine.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  * ***** END GPL LICENSE BLOCK *****
  *
  */
+
+/** \file KX_KetsjiEngine.h
+ *  \ingroup ketsji
+ */
+
 #ifndef __KX_KETSJI_ENGINE
 #define __KX_KETSJI_ENGINE
 

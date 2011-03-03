@@ -1,5 +1,5 @@
-/**
- * $Id: BL_KetsjiEmbedStart.cpp 34470 2011-01-23 17:25:27Z dfelinto $
+/*
+ * $Id: BL_KetsjiEmbedStart.cpp 35166 2011-02-25 13:29:48Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  * ***** END GPL LICENSE BLOCK *****
  * Blender's Ketsji startpoint
  */
+
+/** \file gameengine/BlenderRoutines/BL_KetsjiEmbedStart.cpp
+ *  \ingroup blroutines
+ */
+
 
 #include <signal.h>
 #include <stdlib.h>

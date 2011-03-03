@@ -1,10 +1,8 @@
-/**
- * options.h
+/*
+ * $Id: options.c 35249 2011-02-27 20:43:42Z jesterking $
  *
  * This is external code. Sets some compression related options
  * (width, height quality, framerate).
- *
- * $Id: options.c 32532 2010-10-17 06:38:56Z campbellbarton $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -30,7 +28,13 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
- *  */
+ *
+ */
+
+/** \file blender/avi/intern/options.c
+ *  \ingroup avi
+ */
+
 
 #include "AVI_avi.h"
 #include "avi_intern.h"

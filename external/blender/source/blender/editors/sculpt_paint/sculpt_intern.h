@@ -1,5 +1,5 @@
 /*
- * $Id: sculpt_intern.h 34587 2011-01-31 20:02:51Z nazgul $
+ * $Id: sculpt_intern.h 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,7 +25,12 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
- */ 
+ */
+
+/** \file blender/editors/sculpt_paint/sculpt_intern.h
+ *  \ingroup edsculpt
+ */
+ 
 
 #ifndef BDR_SCULPTMODE_H
 #define BDR_SCULPTMODE_H

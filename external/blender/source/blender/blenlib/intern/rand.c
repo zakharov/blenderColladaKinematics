@@ -1,5 +1,5 @@
-/**
- * $Id: rand.c 28254 2010-04-18 10:28:37Z campbellbarton $
+/*
+ * $Id: rand.c 35246 2011-02-27 20:37:56Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/blenlib/intern/rand.c
+ *  \ingroup bli
+ */
+
 
 #include <stdlib.h>
 #include <string.h>

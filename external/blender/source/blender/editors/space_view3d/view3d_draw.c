@@ -1,5 +1,5 @@
-/**
- * $Id: view3d_draw.c 34432 2011-01-21 02:32:58Z campbellbarton $
+/*
+ * $Id: view3d_draw.c 35337 2011-03-03 17:59:04Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_view3d/view3d_draw.c
+ *  \ingroup spview3d
+ */
+
 
 #include <string.h>
 #include <stdio.h>
@@ -850,7 +855,7 @@ static void draw_selected_name(Scene *scene, Object *ob, View3D *v3d)
 	BLF_draw_default(offset,  10, 0.0f, info, sizeof(info)-1);
 }
 
-static void view3d_get_viewborder_size(Scene *scene, ARegion *ar, float size_r[2])
+void view3d_viewborder_size_get(Scene *scene, ARegion *ar, float size_r[2])
 {
 	float winmax= MAX2(ar->winx, ar->winy);
 	float aspect= (scene->r.xsch*scene->r.xasp) / (scene->r.ysch*scene->r.yasp);
@@ -869,7 +874,7 @@ void view3d_calc_camera_border(Scene *scene, ARegion *ar, RegionView3D *rv3d, Vi
 	float zoomfac, size[2];
 	float dx= 0.0f, dy= 0.0f;
 	
-	view3d_get_viewborder_size(scene, ar, size);
+	view3d_viewborder_size_get(scene, ar, size);
 	
 	if (rv3d == NULL)
 		rv3d = ar->regiondata;
@@ -915,18 +920,6 @@ void view3d_calc_camera_border(Scene *scene, ARegion *ar, RegionView3D *rv3d, Vi
 		viewborder_r->ymin+= cam->shifty*side;
 		viewborder_r->ymax+= cam->shifty*side;
 	}
-}
-
-void view3d_set_1_to_1_viewborder(Scene *scene, ARegion *ar)
-{
-	RegionView3D *rv3d= ar->regiondata;
-	float size[2];
-	int im_width= (scene->r.size*scene->r.xsch)/100;
-	
-	view3d_get_viewborder_size(scene, ar, size);
-	
-	rv3d->camzoom= (sqrt(4.0*im_width/size[0]) - M_SQRT2)*50.0;
-	rv3d->camzoom= CLAMPIS(rv3d->camzoom, RV3D_CAMZOOM_MIN, RV3D_CAMZOOM_MAX);
 }
 
 static void drawviewborder(Scene *scene, ARegion *ar, View3D *v3d)
@@ -1915,7 +1908,7 @@ static void gpu_update_lamps_shadows(Scene *scene, View3D *v3d)
 		/* this needs to be done better .. */
 		float viewmat[4][4], winmat[4][4];
 		int drawtype, lay, winsize, flag2=v3d->flag2;
-		ARegion ar= {0};
+		ARegion ar= {NULL};
 		RegionView3D rv3d= {{{0}}};
 		
 		drawtype= v3d->drawtype;
@@ -2213,8 +2206,8 @@ ImBuf *ED_view3d_draw_offscreen_imbuf(Scene *scene, View3D *v3d, ARegion *ar, in
 /* creates own 3d views, used by the sequencer */
 ImBuf *ED_view3d_draw_offscreen_imbuf_simple(Scene *scene, int width, int height, unsigned int flag, int drawtype)
 {
-	View3D v3d= {0};
-	ARegion ar= {0};
+	View3D v3d= {NULL};
+	ARegion ar= {NULL};
 	RegionView3D rv3d= {{{0}}};
 
 	/* connect data */

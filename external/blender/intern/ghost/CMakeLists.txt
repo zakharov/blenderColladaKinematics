@@ -1,4 +1,4 @@
-# $Id: CMakeLists.txt 34501 2011-01-26 12:23:02Z jesterking $
+# $Id: CMakeLists.txt 34998 2011-02-19 23:51:55Z gsrb3d $
 # ***** BEGIN GPL LICENSE BLOCK *****
 #
 # This program is free software; you can redistribute it and/or
@@ -133,6 +133,11 @@ elseif(UNIX)
 	)
 
 	add_definitions(-DPREFIX="${CMAKE_INSTALL_PREFIX}")
+
+	if(X11_XF86keysym_INCLUDE_PATH)
+		add_definitions(-DWITH_XF86KEYSYM)
+		list(APPEND INC ${X11_XF86keysym_INCLUDE_PATH})
+	endif()
 
 elseif(WIN32)
 	if(MSVC)

@@ -1,5 +1,5 @@
-/**
- * $Id: gpencil_edit.c 34291 2011-01-13 05:05:10Z campbellbarton $
+/*
+ * $Id: gpencil_edit.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/gpencil/gpencil_edit.c
+ *  \ingroup edgpencil
+ */
+
  
 
 #include <stdio.h>
@@ -64,6 +69,7 @@
 
 #include "UI_view2d.h"
 
+#include "ED_gpencil.h"
 #include "ED_view3d.h"
 
 #include "gpencil_intern.h"

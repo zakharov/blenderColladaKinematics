@@ -1,5 +1,5 @@
-/**
- * $Id: spacetypes.c 34160 2011-01-07 19:18:31Z campbellbarton $
+/*
+ * $Id: spacetypes.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,11 @@
  *
  * ***** END GPL/BL DUAL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_api/spacetypes.c
+ *  \ingroup spapi
+ */
+
 
 #include <stdlib.h>
 
@@ -225,6 +230,8 @@ void ED_region_draw_cb_draw(const bContext *C, ARegion *ar, int type)
 
 
 /* ********************* space template *********************** */
+/* forward declare */
+void ED_spacetype_xxx(void);
 
 /* allocate and init some vars */
 static SpaceLink *xxx_new(const bContext *UNUSED(C))

@@ -1,5 +1,5 @@
 /* 
- * $Id: screen.c 31364 2010-08-16 05:46:10Z campbellbarton $
+ * $Id: screen.c 35247 2011-02-27 20:40:57Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/blenkernel/intern/screen.c
+ *  \ingroup bke
+ */
+
 
 #include <string.h>
 #include <stdio.h>
@@ -109,7 +114,7 @@ ARegionType *BKE_regiontype_from_id(SpaceType *st, int regionid)
 }
 
 
-const ListBase *BKE_spacetypes_list()
+const ListBase *BKE_spacetypes_list(void)
 {
 	return &spacetypes;
 }

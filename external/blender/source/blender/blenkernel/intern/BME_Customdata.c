@@ -1,9 +1,9 @@
-/**
+/*
  * BME_customdata.c    jan 2007
  *
  *	Custom Data functions for Bmesh
  *
- * $Id: BME_Customdata.c 33448 2010-12-03 17:05:21Z campbellbarton $
+ * $Id: BME_Customdata.c 35247 2011-02-27 20:40:57Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -33,6 +33,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/blenkernel/intern/BME_Customdata.c
+ *  \ingroup bke
+ */
+
 
 #include <string.h>
 

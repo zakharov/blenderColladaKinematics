@@ -1,29 +1,29 @@
 K 25
 svn:wc:ra_dav:version-url
 V 81
-/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/blender/editors/space_api
+/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_api
 END
 spacetypes.c
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/34160/trunk/blender/source/blender/editors/space_api/spacetypes.c
+/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_api/spacetypes.c
 END
 SConscript
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/29251/trunk/blender/source/blender/editors/space_api/SConscript
+/svnroot/bf-blender/!svn/ver/35028/trunk/blender/source/blender/editors/space_api/SConscript
 END
 space.c
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/31364/trunk/blender/source/blender/editors/space_api/space.c
+/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_api/space.c
 END
 CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/editors/space_api/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/35028/trunk/blender/source/blender/editors/space_api/CMakeLists.txt
 END

@@ -1,5 +1,5 @@
-/**
- * $Id: KX_PythonInitTypes.cpp 33707 2010-12-16 10:25:41Z dfelinto $
+/*
+ * $Id: KX_PythonInitTypes.cpp 35171 2011-02-25 13:35:59Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/Ketsji/KX_PythonInitTypes.cpp
+ *  \ingroup ketsji
+ */
+
 
 
 

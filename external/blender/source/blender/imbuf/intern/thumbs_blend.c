@@ -1,5 +1,5 @@
-/**
- * $Id: thumbs_blend.c 34159 2011-01-07 18:36:47Z campbellbarton $
+/*
+ * $Id: thumbs_blend.c 35239 2011-02-27 20:23:21Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/imbuf/intern/thumbs_blend.c
+ *  \ingroup imbuf
+ */
+
 
 #include <string.h>
 

@@ -1,5 +1,5 @@
-/**
- * $Id: SkinInfo.h 32310 2010-10-05 00:49:39Z gsrb3d $
+/*
+ * $Id: SkinInfo.h 35020 2011-02-21 08:38:53Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -20,6 +20,10 @@
  * Contributor(s): Chingiz Dyussenov, Arystanbek Dyussenov, Nathan Letwory.
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file SkinInfo.h
+ *  \ingroup collada
  */
 
 #ifndef __BC_SKININFO_H__

@@ -1,5 +1,5 @@
-/**
- * $Id: rna_mesh.c 34516 2011-01-26 22:31:14Z aligorith $
+/*
+ * $Id: rna_mesh.c 35238 2011-02-27 20:20:01Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/makesrna/intern/rna_mesh.c
+ *  \ingroup RNA
+ */
+
 
 #include <stdlib.h>
 

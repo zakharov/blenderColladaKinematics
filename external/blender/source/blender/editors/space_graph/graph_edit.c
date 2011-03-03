@@ -1,5 +1,5 @@
-/**
- * $Id: graph_edit.c 34614 2011-02-01 23:51:52Z aligorith $
+/*
+ * $Id: graph_edit.c 35313 2011-03-02 23:39:08Z aligorith $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_graph/graph_edit.c
+ *  \ingroup spgraph
+ */
+
 
 #include <math.h>
 #include <stdlib.h>
@@ -54,6 +59,7 @@
 #include "BKE_report.h"
 
 #include "UI_interface.h"
+#include "UI_resources.h"
 #include "UI_view2d.h"
 
 #include "ED_anim_api.h"
@@ -400,7 +406,7 @@ void GRAPH_OT_ghost_curves_clear (wmOperatorType *ot)
 /* ******************** Insert Keyframes Operator ************************* */
 
 /* defines for insert keyframes tool */
-EnumPropertyItem prop_graphkeys_insertkey_types[] = {
+static EnumPropertyItem prop_graphkeys_insertkey_types[] = {
 	{1, "ALL", 0, "All Channels", ""},
 	{2, "SEL", 0, "Only Selected Channels", ""},
 	{0, NULL, 0, NULL, NULL}
@@ -776,7 +782,7 @@ static int graphkeys_duplicate_invoke(bContext *C, wmOperator *op, wmEvent *UNUS
 {
 	graphkeys_duplicate_exec(C, op);
 	
-	RNA_int_set(op->ptr, "mode", TFM_TRANSLATION);
+	RNA_int_set(op->ptr, "mode", TFM_TIME_DUPLICATE);
 	WM_operator_name_call(C, "TRANSFORM_OT_transform", WM_OP_INVOKE_REGION_WIN, op->ptr);
 
 	return OPERATOR_FINISHED;
@@ -1224,7 +1230,7 @@ void GRAPH_OT_sample (wmOperatorType *ot)
 /* ******************** Set Extrapolation-Type Operator *********************** */
 
 /* defines for set extrapolation-type for selected keyframes tool */
-EnumPropertyItem prop_graphkeys_expo_types[] = {
+static EnumPropertyItem prop_graphkeys_expo_types[] = {
 	{FCURVE_EXTRAPOLATE_CONSTANT, "CONSTANT", 0, "Constant Extrapolation", ""},
 	{FCURVE_EXTRAPOLATE_LINEAR, "LINEAR", 0, "Linear Extrapolation", ""},
 	{0, NULL, 0, NULL, NULL}
@@ -1637,7 +1643,7 @@ void GRAPH_OT_frame_jump (wmOperatorType *ot)
 /* ******************** Snap Keyframes Operator *********************** */
 
 /* defines for snap keyframes tool */
-EnumPropertyItem prop_graphkeys_snap_types[] = {
+static EnumPropertyItem prop_graphkeys_snap_types[] = {
 	{GRAPHKEYS_SNAP_CFRA, "CFRA", 0, "Current Frame", ""},
 	{GRAPHKEYS_SNAP_VALUE, "VALUE", 0, "Cursor Value", ""},
 	{GRAPHKEYS_SNAP_NEAREST_FRAME, "NEAREST_FRAME", 0, "Nearest Frame", ""}, // XXX as single entry?
@@ -1745,7 +1751,7 @@ void GRAPH_OT_snap (wmOperatorType *ot)
 /* ******************** Mirror Keyframes Operator *********************** */
 
 /* defines for mirror keyframes tool */
-EnumPropertyItem prop_graphkeys_mirror_types[] = {
+static EnumPropertyItem prop_graphkeys_mirror_types[] = {
 	{GRAPHKEYS_MIRROR_CFRA, "CFRA", 0, "By Times over Current Frame", ""},
 	{GRAPHKEYS_MIRROR_VALUE, "VALUE", 0, "By Values over Cursor Value", ""},
 	{GRAPHKEYS_MIRROR_YAXIS, "YAXIS", 0, "By Times over Time=0", ""},
@@ -1923,7 +1929,7 @@ static int graph_fmodifier_add_invoke (bContext *C, wmOperator *op, wmEvent *UNU
 	uiLayout *layout;
 	int i;
 	
-	pup= uiPupMenuBegin(C, "Add F-Curve Modifier", ICON_NULL);
+	pup= uiPupMenuBegin(C, "Add F-Curve Modifier", ICON_NONE);
 	layout= uiPupMenuLayout(pup);
 	
 	/* start from 1 to skip the 'Invalid' modifier type */
@@ -1936,7 +1942,7 @@ static int graph_fmodifier_add_invoke (bContext *C, wmOperator *op, wmEvent *UNU
 			continue;
 		
 		/* create operator menu item with relevant properties filled in */
-		props_ptr= uiItemFullO(layout, "GRAPH_OT_fmodifier_add", fmi->name, ICON_NULL, NULL, WM_OP_EXEC_REGION_WIN, UI_ITEM_O_RETURN_PROPS);
+		props_ptr= uiItemFullO(layout, "GRAPH_OT_fmodifier_add", fmi->name, ICON_NONE, NULL, WM_OP_EXEC_REGION_WIN, UI_ITEM_O_RETURN_PROPS);
 			/* the only thing that gets set from the menu is the type of F-Modifier to add */
 		RNA_enum_set(&props_ptr, "type", i);
 			/* the following properties are just repeats of existing ones... */

@@ -1,5 +1,5 @@
-/**
- * $Id: wm_files.h 29935 2010-07-04 15:35:23Z elubie $
+/*
+ * $Id: wm_files.h 35179 2011-02-25 14:04:21Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,12 +25,15 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/windowmanager/wm_files.h
+ *  \ingroup wm
+ */
+
 #ifndef WM_FILES_H
 #define WM_FILES_H
 
-extern void read_history(void);
-extern void delete_autosave(void);
-
+void WM_read_history(void);
 
 #endif /* WM_FILES_H */
 

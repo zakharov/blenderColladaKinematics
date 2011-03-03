@@ -1,8 +1,4 @@
- 
-//
-// actuator for global game stuff
-//
-// $Id: KX_GameActuator.h 26841 2010-02-12 13:34:04Z campbellbarton $
+// $Id: KX_GameActuator.h 35063 2011-02-22 10:33:14Z jesterking $
 //
 // ***** BEGIN GPL LICENSE BLOCK *****
 //
@@ -29,6 +25,11 @@
 //
 // ***** END GPL LICENSE BLOCK *****
 //
+
+/** \file KX_GameActuator.h
+ *  \ingroup ketsji
+ *  \brief actuator for global game stuff
+ */
 
 #ifndef __KX_GAMEACTUATOR
 #define __KX_GAMEACTUATOR

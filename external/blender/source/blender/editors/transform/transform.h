@@ -1,5 +1,5 @@
-/**
- * $Id: transform.h 34335 2011-01-15 16:14:57Z campbellbarton $
+/*
+ * $Id: transform.h 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/transform/transform.h
+ *  \ingroup edtransform
+ */
+
 
 #ifndef TRANSFORM_H
 #define TRANSFORM_H

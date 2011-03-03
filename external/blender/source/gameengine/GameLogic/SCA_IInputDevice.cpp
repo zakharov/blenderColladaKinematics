@@ -1,5 +1,5 @@
-/**
- * $Id: SCA_IInputDevice.cpp 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: SCA_IInputDevice.cpp 35169 2011-02-25 13:32:11Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/GameLogic/SCA_IInputDevice.cpp
+ *  \ingroup gamelogic
+ */
+
 
 #include <assert.h>
 #include "SCA_IInputDevice.h"

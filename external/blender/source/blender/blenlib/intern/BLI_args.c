@@ -1,7 +1,7 @@
-/**
+/*
  * A general argument parsing module
  *
- * $Id: BLI_args.c 34159 2011-01-07 18:36:47Z campbellbarton $
+ * $Id: BLI_args.c 35246 2011-02-27 20:37:56Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -29,6 +29,11 @@
  * ***** END GPL LICENSE BLOCK *****
  */
 
+/** \file blender/blenlib/intern/BLI_args.c
+ *  \ingroup bli
+ */
+
+
 #include <ctype.h> /* for tolower */
 
 #include "MEM_guardedalloc.h"
@@ -39,7 +44,7 @@
 #include "BLI_args.h"
 #include "BLI_ghash.h"
 
-char NO_DOCS[] = "NO DOCUMENTATION SPECIFIED";
+static char NO_DOCS[] = "NO DOCUMENTATION SPECIFIED";
 
 struct bArgDoc;
 typedef struct bArgDoc {
@@ -67,7 +72,7 @@ struct bArgs {
 	ListBase docs;
 	GHash  *items;
 	int 	argc;
-	char  **argv;
+	const char  **argv;
 	int	  *passes;
 };
 
@@ -113,7 +118,7 @@ static bArgument *lookUp(struct bArgs *ba, const char *arg, int pass, int case_s
 	return BLI_ghash_lookup(ba->items, &key);
 }
 
-bArgs *BLI_argsInit(int argc, char **argv)
+bArgs *BLI_argsInit(int argc, const char **argv)
 {
 	bArgs *ba = MEM_callocN(sizeof(bArgs), "bArgs");
 	ba->passes = MEM_callocN(sizeof(int) * argc, "bArgs passes");
@@ -146,7 +151,7 @@ void BLI_argsPrint(struct bArgs *ba)
 	}
 }
 
-char **BLI_argsArgv(struct bArgs *ba)
+const char **BLI_argsArgv(struct bArgs *ba)
 {
 	return ba->argv;
 }

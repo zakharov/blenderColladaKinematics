@@ -1,5 +1,5 @@
-/**
- * $Id: MOD_modifiertypes.h 32462 2010-10-14 06:29:17Z campbellbarton $
+/*
+ * $Id: MOD_modifiertypes.h 35014 2011-02-21 06:58:46Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -23,6 +23,10 @@
  * Contributor(s): Ben Batt
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file MOD_modifiertypes.h
+ *  \ingroup modifiers
  */
 
 #ifndef MOD_MODIFIERTYPES_H

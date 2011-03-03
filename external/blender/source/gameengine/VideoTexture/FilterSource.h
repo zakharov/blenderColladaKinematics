@@ -1,4 +1,4 @@
-/* $Id: FilterSource.h 19820 2009-04-20 15:06:46Z blendix $
+/* $Id: FilterSource.h 35082 2011-02-22 19:30:37Z jesterking $
 -----------------------------------------------------------------------------
 This source file is part of blendTex library
 
@@ -20,6 +20,10 @@ http://www.gnu.org/copyleft/lesser.txt.
 -----------------------------------------------------------------------------
 */
 
+/** \file FilterSource.h
+ *  \ingroup bgevideotex
+ */
+ 
 #if !defined FILTERSOURCE_H
 #define FILTERSOURCE_H
 

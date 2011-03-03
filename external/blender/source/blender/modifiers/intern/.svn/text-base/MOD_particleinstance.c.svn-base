@@ -30,6 +30,11 @@
 *
 */
 
+/** \file blender/modifiers/intern/MOD_particleinstance.c
+ *  \ingroup modifiers
+ */
+
+
 #include "DNA_meshdata_types.h"
 
 #include "MEM_guardedalloc.h"
@@ -45,6 +50,7 @@
 #include "BKE_particle.h"
 #include "BKE_pointcache.h"
 
+#include "MOD_util.h"
 
 #include "depsgraph_private.h"
 

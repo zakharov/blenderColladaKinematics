@@ -1,5 +1,5 @@
-/**
- * $Id: ED_image.h 32834 2010-11-02 09:34:32Z campbellbarton $
+/*
+ * $Id: ED_image.h 35016 2011-02-21 07:25:24Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -23,6 +23,10 @@
  * Contributor(s): Blender Foundation
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file ED_image.h
+ *  \ingroup editors
  */
 
 #ifndef ED_IMAGE_H

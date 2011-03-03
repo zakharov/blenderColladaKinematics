@@ -1,7 +1,7 @@
 /*
  * rendercore_ext.h
  *
- * $Id: rendercore.h 34656 2011-02-05 13:41:29Z blendix $
+ * $Id: rendercore.h 35233 2011-02-27 19:31:27Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/render/intern/include/rendercore.h
+ *  \ingroup render
+ */
+
 
 #ifndef RENDERCORE_H
 #define RENDERCORE_H 

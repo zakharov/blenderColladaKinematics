@@ -1,5 +1,5 @@
-/**
- * $Id: BKE_brush.h 34169 2011-01-08 01:45:02Z nicholasbishop $
+/*
+ * $Id: BKE_brush.h 34962 2011-02-18 13:05:18Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -30,6 +30,10 @@
 
 #ifndef BKE_BRUSH_H
 #define BKE_BRUSH_H
+
+/** \file BKE_brush.h
+ *  \ingroup bke
+ */
 
 struct ID;
 struct Brush;
@@ -108,6 +112,9 @@ void  brush_set_unprojected_radius(struct Brush *brush, float value);
 
 float brush_alpha(struct Brush *brush);
 void  brush_set_alpha(struct Brush *brush, float value);
+
+/* debugging only */
+void brush_debug_print_state(struct Brush *br);
 
 #endif
 

@@ -1,5 +1,5 @@
-/**
- * $Id: BIK_api.h 31891 2010-09-12 12:27:12Z campbellbarton $
+/*
+ * $Id: BIK_api.h 35240 2011-02-27 20:24:49Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/ikplugin/BIK_api.h
+ *  \ingroup ikplugin
+ */
+
 
 #ifndef BIK_API_H
 #define BIK_API_H

@@ -1,5 +1,5 @@
-/**
-* $Id: DNA_smoke_types.h 33398 2010-11-30 21:31:18Z jhk $
+/*
+* $Id: DNA_smoke_types.h 34941 2011-02-17 20:48:12Z jesterking $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -28,6 +28,10 @@
 */
 #ifndef DNA_SMOKE_TYPES_H
 #define DNA_SMOKE_TYPES_H
+
+/** \file DNA_smoke_types.h
+ *  \ingroup DNA
+ */
 
 /* flags */
 #define MOD_SMOKE_HIGHRES (1<<1) /* enable high resolution */

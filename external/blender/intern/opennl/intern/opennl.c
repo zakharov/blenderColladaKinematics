@@ -1,5 +1,8 @@
+/** \file opennl/intern/opennl.c
+ *  \ingroup opennlintern
+ */
 /*
- *  $Id: opennl.c 12741 2007-12-01 12:08:46Z blendix $
+ *  $Id: opennl.c 35142 2011-02-25 10:24:29Z jesterking $
  *
  *  OpenNL: Numerical Library
  *  Copyright (C) 2004 Bruno Levy

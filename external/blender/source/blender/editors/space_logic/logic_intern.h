@@ -1,5 +1,5 @@
-/**
- * $Id: logic_intern.h 30907 2010-07-30 15:44:26Z dingto $
+/*
+ * $Id: logic_intern.h 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_logic/logic_intern.h
+ *  \ingroup splogic
+ */
+
 
 #ifndef ED_LOGIC_INTERN_H
 #define ED_LOGIC_INTERN_H

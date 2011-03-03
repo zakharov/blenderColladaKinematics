@@ -1,4 +1,4 @@
-/* $Id: FilterBlueScreen.h 33442 2010-12-03 12:30:59Z campbellbarton $
+/* $Id: FilterBlueScreen.h 35082 2011-02-22 19:30:37Z jesterking $
 -----------------------------------------------------------------------------
 This source file is part of blendTex library
 
@@ -20,6 +20,10 @@ http://www.gnu.org/copyleft/lesser.txt.
 -----------------------------------------------------------------------------
 */
 
+/** \file FilterBlueScreen.h
+ *  \ingroup bgevideotex
+ */
+ 
 #if !defined FILTERBLUESCREEN_H
 #define FILTERBLUESCREEN_H
 

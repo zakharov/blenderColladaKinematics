@@ -1,5 +1,5 @@
-/**
- * $Id: SCA_IObject.cpp 32788 2010-10-31 04:11:39Z campbellbarton $
+/*
+ * $Id: SCA_IObject.cpp 35169 2011-02-25 13:32:11Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/GameLogic/SCA_IObject.cpp
+ *  \ingroup gamelogic
+ */
+
 #include <iostream>
 #include <algorithm>
 

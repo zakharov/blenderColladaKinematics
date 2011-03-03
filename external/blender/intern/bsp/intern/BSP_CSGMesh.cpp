@@ -1,5 +1,5 @@
-/**
- * $Id: BSP_CSGMesh.cpp 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: BSP_CSGMesh.cpp 35145 2011-02-25 10:44:20Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file bsp/intern/BSP_CSGMesh.cpp
+ *  \ingroup bsp
+ */
+
 
 
 #include "BSP_CSGMesh.h"

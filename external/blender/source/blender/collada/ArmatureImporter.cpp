@@ -1,5 +1,5 @@
-/**
- * $Id: ArmatureImporter.cpp 33832 2010-12-21 10:43:47Z jesterking $
+/*
+ * $Id: ArmatureImporter.cpp 35243 2011-02-27 20:30:35Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,14 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/collada/ArmatureImporter.cpp
+ *  \ingroup collada
+ */
+
+
+/* COLLADABU_ASSERT, may be able to remove later */
+#include "COLLADABUPlatform.h"
 
 #include <algorithm>
 

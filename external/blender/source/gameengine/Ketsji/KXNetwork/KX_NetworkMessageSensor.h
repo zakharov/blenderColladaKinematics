@@ -1,5 +1,5 @@
-/**
- * $Id: KX_NetworkMessageSensor.h 32788 2010-10-31 04:11:39Z campbellbarton $
+/*
+ * $Id: KX_NetworkMessageSensor.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,7 +25,11 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
- * Ketsji Logic Extenstion: Network Message Sensor class
+ */
+
+/** \file KX_NetworkMessageSensor.h
+ *  \ingroup ketsjinet
+ *  \brief Ketsji Logic Extenstion: Network Message Sensor class
  */
 #ifndef __KX_NETWORKMESSAGE_SENSOR_H
 #define __KX_NETWORKMESSAGE_SENSOR_H

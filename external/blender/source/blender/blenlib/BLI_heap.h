@@ -1,7 +1,5 @@
-/**
- * A heap / priority queue ADT
- * 
- * $Id: BLI_heap.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: BLI_heap.h 34966 2011-02-18 13:58:08Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -31,6 +29,11 @@
  
 #ifndef BLI_HEAP_H
 #define BLI_HEAP_H
+
+/** \file BLI_heap.h
+ *  \ingroup bli
+ *  \brief A heap / priority queue ADT
+ */
 
 struct Heap;
 struct HeapNode;

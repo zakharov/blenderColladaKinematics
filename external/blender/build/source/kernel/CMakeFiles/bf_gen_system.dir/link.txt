@@ -1,0 +1,2 @@
+/usr/bin/ar cr ../../lib/libbf_gen_system.a  CMakeFiles/bf_gen_system.dir/gen_messaging/intern/messaging.c.o CMakeFiles/bf_gen_system.dir/gen_system/GEN_HashedPtr.cpp.o CMakeFiles/bf_gen_system.dir/gen_system/SYS_SingletonSystem.cpp.o CMakeFiles/bf_gen_system.dir/gen_system/SYS_System.cpp.o
+/usr/bin/ranlib ../../lib/libbf_gen_system.a

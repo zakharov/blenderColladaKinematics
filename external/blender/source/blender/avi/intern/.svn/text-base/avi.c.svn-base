@@ -1,9 +1,7 @@
-/**
- * avi.c
+/*
+ * $Id$
  *
  * This is external code.
- *
- * $Id$ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -31,6 +29,11 @@
  * ***** END GPL LICENSE BLOCK *****
  *
  */
+
+/** \file blender/avi/intern/avi.c
+ *  \ingroup avi
+ */
+
 
 #include <stdlib.h>
 #include <string.h>

@@ -1,5 +1,5 @@
-/**
- * $Id: BKE_depsgraph.h 33719 2010-12-16 19:26:54Z campbellbarton $
+/*
+ * $Id: BKE_depsgraph.h 34962 2011-02-18 13:05:18Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,10 @@
 
 #ifndef DEPSGRAPH_API
 #define DEPSGRAPH_API
+
+/** \file BKE_depsgraph.h
+ *  \ingroup bke
+ */
 
 #ifdef __cplusplus
 extern "C" {

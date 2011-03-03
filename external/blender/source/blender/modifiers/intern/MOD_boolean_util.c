@@ -1,5 +1,5 @@
-/**
- * $Id: MOD_boolean_util.c 34159 2011-01-07 18:36:47Z campbellbarton $
+/*
+ * $Id: MOD_boolean_util.c 35178 2011-02-25 13:57:17Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,11 @@
  * CSG operations. 
  */
 
+/** \file blender/modifiers/intern/MOD_boolean_util.c
+ *  \ingroup modifiers
+ */
+
+
 #include "DNA_material_types.h"
 #include "DNA_mesh_types.h"
 #include "DNA_meshdata_types.h"
@@ -47,6 +52,8 @@
 #include "BKE_object.h"
 
 #include "CSG_BooleanOps.h"
+
+#include "MOD_boolean_util.h"
 
 /**
  * Here's the vertex iterator structure used to walk through
@@ -451,7 +458,7 @@ static void FreeMeshDescriptors(
 	FaceIt_Destruct(face_it);
 }
 
-DerivedMesh *NewBooleanDerivedMesh_intern(
+static DerivedMesh *NewBooleanDerivedMesh_intern(
 	DerivedMesh *dm, struct Object *ob, DerivedMesh *dm_select, struct Object *ob_select,
 	int int_op_type, Material **mat, int *totmat)
 {

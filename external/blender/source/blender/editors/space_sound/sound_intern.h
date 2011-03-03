@@ -1,5 +1,5 @@
-/**
- * $Id: sound_intern.h 27639 2010-03-21 01:14:04Z gsrb3d $
+/*
+ * $Id: sound_intern.h 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_sound/sound_intern.h
+ *  \ingroup spsnd
+ */
+
 #ifndef ED_SOUND_INTERN_H
 #define ED_SOUND_INTERN_H
 

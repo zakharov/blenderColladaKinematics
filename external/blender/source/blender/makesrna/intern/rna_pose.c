@@ -1,5 +1,5 @@
-/**
- * $Id: rna_pose.c 34465 2011-01-23 12:42:07Z campbellbarton $
+/*
+ * $Id: rna_pose.c 35336 2011-03-03 17:58:06Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/makesrna/intern/rna_pose.c
+ *  \ingroup RNA
+ */
+
 
 #include <stdlib.h>
 #include <string.h>
@@ -1206,7 +1211,7 @@ static void rna_def_pose(BlenderRNA *brna)
 	RNA_def_property_collection_sdna(prop, NULL, "chanbase", NULL);
 	RNA_def_property_struct_type(prop, "PoseBone");
 	RNA_def_property_ui_text(prop, "Pose Bones", "Individual pose bones for the armature");
-	RNA_def_property_collection_funcs(prop, 0, 0, 0, 0, 0, 0, "rna_PoseBones_lookup_string"); /* can be removed, only for fast lookup */
+	RNA_def_property_collection_funcs(prop, NULL, NULL, NULL, NULL, NULL, NULL, "rna_PoseBones_lookup_string"); /* can be removed, only for fast lookup */
 	/* bone groups */
 	prop= RNA_def_property(srna, "bone_groups", PROP_COLLECTION, PROP_NONE);
 	RNA_def_property_collection_sdna(prop, NULL, "agroups", NULL);

@@ -1,5 +1,5 @@
 /* 
- * $Id: group.c 34295 2011-01-13 10:14:03Z campbellbarton $
+ * $Id: group.c 35247 2011-02-27 20:40:57Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/blenkernel/intern/group.c
+ *  \ingroup bke
+ */
+
 
 #include <stdio.h>
 #include <string.h>

@@ -1,4 +1,7 @@
-/* $Id: WSDLSSolver.cpp 23512 2009-09-27 16:20:42Z ben2610 $
+/** \file itasc/WSDLSSolver.cpp
+ *  \ingroup itasc
+ */
+/* $Id: WSDLSSolver.cpp 35155 2011-02-25 11:45:16Z jesterking $
  * WDLSSolver.hpp.cpp
  *
  *  Created on: Jan 8, 2009

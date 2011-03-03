@@ -1,7 +1,5 @@
 /*
- * jitter.h
- *
- * $Id: BLI_jitter.h 26841 2010-02-12 13:34:04Z campbellbarton $
+ * $Id: BLI_jitter.h 34966 2011-02-18 13:58:08Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -32,9 +30,13 @@
 #ifndef BLI_JITTER_H
 #define BLI_JITTER_H 
 
-extern void	   BLI_initjit(float *jitarr, int num);
-extern void    BLI_jitterate1(float *jit1, float *jit2, int num, float rad1);
-extern void    BLI_jitterate2(float *jit1, float *jit2, int num, float rad2);
+/** \file BLI_jitter.h
+ *  \ingroup bli
+ */
+
+void	BLI_initjit(float *jitarr, int num);
+void    BLI_jitterate1(float *jit1, float *jit2, int num, float rad1);
+void    BLI_jitterate2(float *jit1, float *jit2, int num, float rad2);
 
 #endif
 

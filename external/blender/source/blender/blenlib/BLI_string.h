@@ -1,5 +1,5 @@
 /*
- * $Id: BLI_string.h 33466 2010-12-04 11:44:56Z campbellbarton $
+ * $Id: BLI_string.h 35215 2011-02-27 08:31:10Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,11 +26,15 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  *
- * $Id: BLI_string.h 33466 2010-12-04 11:44:56Z campbellbarton $ 
+ * $Id: BLI_string.h 35215 2011-02-27 08:31:10Z campbellbarton $ 
 */
 
 #ifndef BLI_STRING_H
 #define BLI_STRING_H
+
+/** \file BLI_string.h
+ *  \ingroup bli
+ */
 
 #ifdef __cplusplus
 extern "C" {
@@ -74,7 +78,7 @@ char *BLI_strdupcat(const char *str1, const char *str2);
 	 *   the size of dst)
 	 * @retval Returns dst
 	 */
-char *BLI_strncpy(char *dst, const char *src, int maxncpy);
+char *BLI_strncpy(char *dst, const char *src, const int maxncpy);
 
 	/* Makes a copy of the text within the "" that appear after some text 'blahblah'
 	 * i.e. for string 'pose["apples"]' with prefix 'pose[', it should grab "apples"
@@ -104,7 +108,7 @@ char *BLI_replacestr(char *str, const char *oldText, const char *newText);
 	 */
 int BLI_snprintf(char *buffer, size_t count, const char *format, ...)
 #ifdef __GNUC__
-__attribute__ ((format (printf, 3, 4)));
+__attribute__ ((format (printf, 3, 4)))
 #endif
 ;
 
@@ -114,7 +118,7 @@ __attribute__ ((format (printf, 3, 4)));
 	 */
 char *BLI_sprintfN(const char *format, ...)
 #ifdef __GNUC__
-__attribute__ ((format (printf, 1, 2)));
+__attribute__ ((format (printf, 1, 2)))
 #endif
 ;
 

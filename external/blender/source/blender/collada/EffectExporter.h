@@ -1,5 +1,5 @@
-/**
- * $Id: EffectExporter.h 32360 2010-10-07 01:20:59Z gsrb3d $
+/*
+ * $Id: EffectExporter.h 35020 2011-02-21 08:38:53Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,10 @@
  *                 Nathan Letwory
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file EffectExporter.h
+ *  \ingroup collada
  */
 
 #ifndef __EFFECTEXPORTER_H__

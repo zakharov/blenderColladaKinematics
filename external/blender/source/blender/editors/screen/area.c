@@ -1,5 +1,5 @@
-/**
- * $Id: area.c 34672 2011-02-06 17:36:42Z ton $
+/*
+ * $Id: area.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/screen/area.c
+ *  \ingroup edscr
+ */
+
 
 #include <string.h>
 #include <stdio.h>
@@ -1283,6 +1288,9 @@ void ED_region_panels(const bContext *C, ARegion *ar, int vertical, const char *
 				uiBlockLayoutResolve(block, &xco, &yco);
 				panel->labelofs= xco - triangle;
 				panel->layout= NULL;
+			}
+			else {
+				panel->labelofs= 0;
 			}
 
 			if(open) {

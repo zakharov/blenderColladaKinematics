@@ -1,5 +1,5 @@
-/**
- * $Id: time_intern.h 27639 2010-03-21 01:14:04Z gsrb3d $
+/*
+ * $Id: time_intern.h 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_time/time_intern.h
+ *  \ingroup sptime
+ */
+
 
 #ifndef ED_TIME_INTERN_H
 #define ED_TIME_INTERN_H

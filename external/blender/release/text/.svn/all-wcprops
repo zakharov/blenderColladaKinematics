@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 61
-/svnroot/bf-blender/!svn/ver/34073/trunk/blender/release/text
+/svnroot/bf-blender/!svn/ver/34984/trunk/blender/release/text
 END
 Python-license.txt
 K 25
@@ -19,7 +19,7 @@ readme.html
 K 25
 svn:wc:ra_dav:version-url
 V 73
-/svnroot/bf-blender/!svn/ver/34073/trunk/blender/release/text/readme.html
+/svnroot/bf-blender/!svn/ver/34984/trunk/blender/release/text/readme.html
 END
 copyright.txt
 K 25

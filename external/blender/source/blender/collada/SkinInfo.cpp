@@ -1,5 +1,5 @@
-/**
- * $Id: SkinInfo.cpp 34239 2011-01-10 23:31:14Z jesterking $
+/*
+ * $Id: SkinInfo.cpp 35243 2011-02-27 20:30:35Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -22,11 +22,19 @@
  * ***** END GPL LICENSE BLOCK *****
  */
 
+/** \file blender/collada/SkinInfo.cpp
+ *  \ingroup collada
+ */
+
+
 #include <algorithm>
 
 #if !defined(WIN32) || defined(FREE_WINDOWS)
 #include <stdint.h>
 #endif
+
+/* COLLADABU_ASSERT, may be able to remove later */
+#include "COLLADABUPlatform.h"
 
 #include "BKE_object.h"
 #include "DNA_armature_types.h"

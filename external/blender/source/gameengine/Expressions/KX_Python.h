@@ -1,5 +1,5 @@
-/**
- * $Id: KX_Python.h 33301 2010-11-24 21:39:07Z damien78 $
+/*
+ * $Id: KX_Python.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file KX_Python.h
+ *  \ingroup expressions
+ */
+
 #ifndef KX_PYTHON_H
 #define KX_PYTHON_H
 

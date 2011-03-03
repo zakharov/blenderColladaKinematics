@@ -1,5 +1,5 @@
-/**
- * $Id: BL_DeformableGameObject.cpp 28254 2010-04-18 10:28:37Z campbellbarton $
+/*
+ * $Id: BL_DeformableGameObject.cpp 35167 2011-02-25 13:30:41Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/Converter/BL_DeformableGameObject.cpp
+ *  \ingroup bgeconv
+ */
+
 
 #include "BL_DeformableGameObject.h"
 #include "BL_ShapeDeformer.h"

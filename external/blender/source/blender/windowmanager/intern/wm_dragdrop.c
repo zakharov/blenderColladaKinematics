@@ -1,5 +1,5 @@
-/**
- * $Id: wm_dragdrop.c 33754 2010-12-17 19:05:34Z ton $
+/*
+ * $Id: wm_dragdrop.c 35179 2011-02-25 14:04:21Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/windowmanager/intern/wm_dragdrop.c
+ *  \ingroup wm
+ */
+
 
 #include <string.h>
 

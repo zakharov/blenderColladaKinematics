@@ -1,5 +1,5 @@
-/**
- * $Id: RAS_IRenderTools.cpp 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: RAS_IRenderTools.cpp 35174 2011-02-25 13:38:24Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/Rasterizer/RAS_IRenderTools.cpp
+ *  \ingroup bgerast
+ */
+
 
 #include "RAS_IRenderTools.h"
 

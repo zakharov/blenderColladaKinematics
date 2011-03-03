@@ -1,5 +1,5 @@
-/**
- * $Id: object_add.c 34749 2011-02-10 04:48:49Z campbellbarton $
+/*
+ * $Id: object_add.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/object/object_add.c
+ *  \ingroup edobj
+ */
+
 
 #include <stdlib.h>
 #include <string.h>
@@ -533,7 +538,7 @@ static int object_metaball_add_invoke(bContext *C, wmOperator *op, wmEvent *UNUS
 
 	object_add_generic_invoke_options(C, op);
 
-	pup= uiPupMenuBegin(C, op->type->name, ICON_NULL);
+	pup= uiPupMenuBegin(C, op->type->name, ICON_NONE);
 	layout= uiPupMenuLayout(pup);
 	if(!obedit || obedit->type == OB_MBALL)
 		uiItemsEnumO(layout, op->type->idname, "type");
@@ -971,8 +976,13 @@ static void make_object_duplilist_real(bContext *C, Scene *scene, Base *base)
 		basen->lay= base->lay;
 		BLI_addhead(&scene->base, basen);	/* addhead: othwise eternal loop */
 		basen->object= ob;
-		ob->ipo= NULL;		/* make sure apply works */
-		ob->parent= ob->track= NULL;
+		
+		/* make sure apply works */
+		BKE_free_animdata(&ob->id);	
+		ob->adt = NULL;
+		
+		ob->parent= NULL;
+		ob->constraints.first= ob->constraints.last= NULL;
 		ob->disp.first= ob->disp.last= NULL;
 		ob->transflag &= ~OB_DUPLI;	
 		ob->lay= base->lay;

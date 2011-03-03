@@ -1,5 +1,5 @@
-/**
- * $Id: ED_numinput.h 27655 2010-03-22 09:30:00Z campbellbarton $
+/*
+ * $Id: ED_numinput.h 35016 2011-02-21 07:25:24Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -20,6 +20,10 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file ED_numinput.h
+ *  \ingroup editors
  */
 
 #ifndef ED_NUMINPUT_H

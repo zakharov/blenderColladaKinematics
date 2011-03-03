@@ -1,14 +1,14 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/gameengine/Expressions
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-30T15:29:22.294392Z
-34567
+2011-02-25T15:07:25.280640Z
+35183
 campbellbarton
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-01-18T22:04:23.373021Z
-1622daa194e268c5b3df8b2406a1b1b0
-2010-09-15T16:13:32.976747Z
-31950
-campbellbarton
+2011-03-03T12:26:28.830297Z
+e08f33a20f3cd21788d635d3033ba45b
+2011-02-25T13:31:23.793343Z
+35168
+jesterking
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-4764
+4842
 
 FloatValue.cpp
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-01-18T22:04:23.373021Z
-98545feb208ef2edafc60168e302c432
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:28.834297Z
+bbd41e4fb0d1004ad18ef6b8fd6ffe40
+2011-02-25T13:31:23.793343Z
+35168
+jesterking
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-7311
+7388
 
 VoidValue.h
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-01-18T22:04:23.373021Z
-2b50f994551b9a70be213b8d2d11ad98
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:28.834297Z
+ba1851101fa145cde690b7b6c83cebb3
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-2445
+2493
 
 Expression.h
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-01-18T22:04:23.373021Z
-b8628c8d497f1f9d02114208eb34d189
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:28.834297Z
+68a33c8d8301cb39df36436a3ac58e5b
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-3593
+3642
 
 EXP_C-Api.cpp
 file
@@ -168,11 +168,11 @@ file
 
 
 
-2011-01-18T22:04:23.373021Z
-012920a0edd773be4e3847b87fa5902d
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:28.838297Z
+2a9448eb0b4ca968b9a89a5c8d9b6003
+2011-02-25T13:31:23.793343Z
+35168
+jesterking
 has-props
 
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-2621
+2694
 
 StringValue.h
 file
@@ -202,11 +202,11 @@ file
 
 
 
-2011-01-18T22:04:23.373021Z
-e86f51d9eb0f0530f406f9b0272aa9b4
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:28.838297Z
+6c8b1e54462db6f2aa2c0ed897fec402
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -228,7 +228,7 @@ has-props
 
 
 
-1839
+1889
 
 ListValue.h
 file
@@ -236,11 +236,11 @@ file
 
 
 
-2011-01-18T22:04:23.373021Z
-ece9f7c639751945ea893e18229242bc
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:28.838297Z
+75c335c75ceca131b21611d8ac1b8acb
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -262,7 +262,7 @@ has-props
 
 
 
-2502
+2550
 
 Operator1Expr.h
 file
@@ -270,11 +270,11 @@ file
 
 
 
-2011-01-18T22:04:23.373021Z
-4b16933a0d237eb53139157a1944c7aa
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:28.838297Z
+67e80056377969859b202aec74f8921c
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -296,75 +296,7 @@ has-props
 
 
 
-1897
-
-InputParser.h
-file
-
-
-
-
-2011-01-18T22:04:23.373021Z
-952947e9e8db34231e49c8ee285d8d1d
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2810
-
-IdentifierExpr.cpp
-file
-
-
-
-
-2011-01-18T22:04:23.373021Z
-54bd7f7b224f8dd4faf1d8d0aadf09bd
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2091
+1949
 
 Operator2Expr.h
 file
@@ -372,11 +304,11 @@ file
 
 
 
-2011-01-18T22:04:23.373021Z
-ed9c23767c0c26505b1612ed60bd6f6a
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:28.838297Z
+b90181473e08f21d1a501ad9c69998c6
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -398,7 +330,75 @@ has-props
 
 
 
-2056
+2108
+
+InputParser.h
+file
+
+
+
+
+2011-03-03T12:26:28.838297Z
+0aa5fe20aad3dae6763f14e864266314
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2894
+
+IdentifierExpr.cpp
+file
+
+
+
+
+2011-03-03T12:26:28.838297Z
+86a8d2d0863041e85d3552a31f9cef11
+2011-02-25T13:31:23.793343Z
+35168
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2169
 
 Value.h
 file
@@ -406,11 +406,11 @@ file
 
 
 
-2011-01-18T22:04:23.383021Z
-2f86c8ba7e79d28dc2f521c0423405f6
-2011-01-16T21:12:38.636406Z
-34360
-campbellbarton
+2011-03-03T12:26:28.838297Z
+88298242ad9b4b337daccbe31e2cfc20
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -432,7 +432,7 @@ has-props
 
 
 
-13601
+13446
 
 PyObjectPlus.cpp
 file
@@ -440,10 +440,10 @@ file
 
 
 
-2011-01-18T22:04:23.383021Z
-e1aaf9c5928381fd0ca846a3a3646630
-2010-10-31T04:11:39.269118Z
-32788
+2011-03-03T12:26:28.842297Z
+e0897ed99d27ee78bdb950626b675326
+2011-02-25T15:07:25.280640Z
+35183
 campbellbarton
 has-props
 
@@ -466,7 +466,7 @@ has-props
 
 
 
-35593
+36379
 
 KX_HashedPtr.cpp
 file
@@ -474,11 +474,11 @@ file
 
 
 
-2011-01-18T22:04:23.383021Z
-cb1d70f6e1ba0477d2d2d7a259902807
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:28.842297Z
+587ab717dc87ce4046ceb92422a9e7db
+2011-02-25T13:31:23.793343Z
+35168
+jesterking
 has-props
 
 
@@ -500,7 +500,7 @@ has-props
 
 
 
-1553
+1629
 
 ErrorValue.cpp
 file
@@ -508,11 +508,11 @@ file
 
 
 
-2011-01-18T22:04:23.383021Z
-d07cf52433d4651f57d75d163b5b0a8a
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:28.842297Z
+cf5f2b7999bedc14d30943989b8b5746
+2011-02-25T13:31:23.793343Z
+35168
+jesterking
 has-props
 
 
@@ -534,7 +534,7 @@ has-props
 
 
 
-2308
+2385
 
 BoolValue.cpp
 file
@@ -542,11 +542,11 @@ file
 
 
 
-2011-01-18T22:04:23.383021Z
-5abd82a65ba65fd086173132267280a6
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:28.842297Z
+c3271c7b17ec93a1c86e0d7cc7a76ff4
+2011-02-25T13:31:23.793343Z
+35168
+jesterking
 has-props
 
 
@@ -568,7 +568,7 @@ has-props
 
 
 
-3946
+4022
 
 ConstExpr.h
 file
@@ -576,11 +576,11 @@ file
 
 
 
-2011-01-18T22:04:23.383021Z
-91151078aceccdcade64288d203ef109
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:28.842297Z
+9474eecc73a6e219fbd484da207962c9
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -602,7 +602,7 @@ has-props
 
 
 
-1664
+1712
 
 CMakeLists.txt
 file
@@ -610,7 +610,7 @@ file
 
 
 
-2011-01-18T22:04:23.383021Z
+2011-03-03T12:26:28.842297Z
 0e1c814388453c95189711383f62b58a
 2010-12-22T23:09:30.468439Z
 33864
@@ -644,11 +644,11 @@ file
 
 
 
-2011-01-18T22:04:23.383021Z
-e844537b0857058a68b81fc8078774ac
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:28.842297Z
+1d0737a228f7b5cb27d41c7b87c842e6
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -670,7 +670,7 @@ has-props
 
 
 
-1776
+1824
 
 Expression.cpp
 file
@@ -678,11 +678,11 @@ file
 
 
 
-2011-01-18T22:04:23.383021Z
-fba2c7e88d53b99bc2585c5452fa157a
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:28.842297Z
+6d351ae6e366811327a04e852cf7d177
+2011-02-25T13:31:23.793343Z
+35168
+jesterking
 has-props
 
 
@@ -704,7 +704,7 @@ has-props
 
 
 
-1492
+1569
 
 EmptyValue.h
 file
@@ -712,11 +712,11 @@ file
 
 
 
-2011-01-18T22:04:23.383021Z
-99c93ea8cbd54dc224efe580dfb89016
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:28.842297Z
+48e604ab335bc69b9b5e6067f3a53ff0
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -738,7 +738,7 @@ has-props
 
 
 
-1517
+1567
 
 IfExpr.h
 file
@@ -746,11 +746,11 @@ file
 
 
 
-2011-01-18T22:04:23.383021Z
-ba77f321a932702786c87d3749b2fcca
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:28.842297Z
+649e15b11378fe333a2d904576ef12fb
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -772,7 +772,7 @@ has-props
 
 
 
-1822
+1868
 
 StringValue.cpp
 file
@@ -780,11 +780,11 @@ file
 
 
 
-2011-01-18T22:04:23.383021Z
-d5763b60934314615d5e1dfda1d99619
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:28.842297Z
+29226a67835a2b413a2d4f69659a28d7
+2011-02-25T13:31:23.793343Z
+35168
+jesterking
 has-props
 
 
@@ -806,7 +806,7 @@ has-props
 
 
 
-3232
+3310
 
 VectorValue.h
 file
@@ -814,11 +814,11 @@ file
 
 
 
-2011-01-18T22:04:23.383021Z
-5db742a5ed390673564977ac81b8be8a
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:28.846297Z
+db4a8c0a637b4ca3e1945422c45f27f0
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -840,7 +840,7 @@ has-props
 
 
 
-2515
+2566
 
 SConscript
 file
@@ -848,7 +848,7 @@ file
 
 
 
-2011-01-18T22:04:23.383021Z
+2011-03-03T12:26:28.846297Z
 81b9b8f94b6eb0360914672a2b0253ea
 2010-11-18T11:42:05.232926Z
 33156
@@ -882,11 +882,11 @@ file
 
 
 
-2011-01-18T22:04:23.383021Z
-1d250f2e3e8530fad75c1b95d55284e4
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:28.846297Z
+a2f0a497a24fa4b3f5c6d0c52208f7e9
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -908,7 +908,7 @@ has-props
 
 
 
-1691
+1741
 
 ListValue.cpp
 file
@@ -916,11 +916,11 @@ file
 
 
 
-2011-01-18T22:04:23.383021Z
-6ba31e63f7a6394905e6c9616259bdb6
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:28.846297Z
+43fcc048e1af60d9da0c56975926d703
+2011-02-25T13:31:23.793343Z
+35168
+jesterking
 has-props
 
 
@@ -942,7 +942,7 @@ has-props
 
 
 
-15225
+15301
 
 EXP_C-Api.h
 file
@@ -950,11 +950,11 @@ file
 
 
 
-2011-01-18T22:04:23.383021Z
-41722b337071bb1c6aa36c706c18dbbd
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:28.846297Z
+6224052b331724a0ca927fe35d0a0d5d
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -976,7 +976,7 @@ has-props
 
 
 
-2116
+2164
 
 Operator1Expr.cpp
 file
@@ -984,11 +984,11 @@ file
 
 
 
-2011-01-18T22:04:23.383021Z
-15c926fb0ba51d534157f0e4d6da7647
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:28.846297Z
+a6c3664bd15ddf109806eb092f333dd5
+2011-02-25T13:31:23.793343Z
+35168
+jesterking
 has-props
 
 
@@ -1010,75 +1010,7 @@ has-props
 
 
 
-2846
-
-InputParser.cpp
-file
-
-
-
-
-2011-01-18T22:04:23.383021Z
-0962b755c84fad4a3264b800e1d4918a
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-14679
-
-Operator2Expr.cpp
-file
-
-
-
-
-2011-01-18T22:04:23.383021Z
-8be07ecfa2932efb4bd47946c22d915e
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6152
+2926
 
 Value.cpp
 file
@@ -1086,11 +1018,11 @@ file
 
 
 
-2011-01-18T22:04:23.393021Z
-347cefa4aa04ecf803577dd5cd68b083
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:28.846297Z
+8e67ad566624feb7afe3ba4cf536b84e
+2011-02-25T13:31:23.793343Z
+35168
+jesterking
 has-props
 
 
@@ -1112,7 +1044,75 @@ has-props
 
 
 
-13980
+14052
+
+InputParser.cpp
+file
+
+
+
+
+2011-03-03T12:26:28.846297Z
+27ceed1ccf786b9401387b17562a15f5
+2011-02-25T13:31:23.793343Z
+35168
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+15191
+
+Operator2Expr.cpp
+file
+
+
+
+
+2011-03-03T12:26:28.846297Z
+458bffdc268914d52371adac67d53f15
+2011-02-25T13:31:23.793343Z
+35168
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6232
 
 ConstExpr.cpp
 file
@@ -1120,11 +1120,11 @@ file
 
 
 
-2011-01-18T22:04:23.393021Z
-f37f20d7b258dee590595296b55232f7
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:28.850297Z
+6e3966182cee3eb5cc8f97004b0251f5
+2011-02-25T13:31:23.793343Z
+35168
+jesterking
 has-props
 
 
@@ -1146,7 +1146,7 @@ has-props
 
 
 
-2295
+2371
 
 IdentifierExpr.h
 file
@@ -1154,11 +1154,11 @@ file
 
 
 
-2011-01-18T22:04:23.393021Z
-c4d73816039e3038b62bb2b091dc6c48
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:28.850297Z
+ca4836ccf82549d4887d0aaac2c3e1b0
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1180,7 +1180,7 @@ has-props
 
 
 
-1890
+1943
 
 IntValue.cpp
 file
@@ -1188,11 +1188,11 @@ file
 
 
 
-2011-01-18T22:04:23.393021Z
-1237694838019ea5f0338005e0e93e4d
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:28.850297Z
+9cdb09fd93f028987c04844748bd13fc
+2011-02-25T13:31:23.793343Z
+35168
+jesterking
 has-props
 
 
@@ -1214,7 +1214,7 @@ has-props
 
 
 
-7519
+7594
 
 KX_Python.h
 file
@@ -1222,11 +1222,11 @@ file
 
 
 
-2011-01-18T22:04:23.393021Z
-1d6ea1f7ef1e7b268d70c9bb2753319c
-2010-11-24T21:39:07.474996Z
-33301
-damien78
+2011-03-03T12:26:28.850297Z
+7df29236831b36fcbac9eaaa10355d49
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1248,7 +1248,7 @@ has-props
 
 
 
-1847
+1901
 
 PyObjectPlus.h
 file
@@ -1256,10 +1256,10 @@ file
 
 
 
-2011-01-18T22:04:23.393021Z
-87466ec92c1c9cdf3590da67f5cda860
-2010-10-31T04:11:39.269118Z
-32788
+2011-03-03T12:26:28.850297Z
+1253e661adb7b1308f181ebdbbbcce12
+2011-02-25T15:07:25.280640Z
+35183
 campbellbarton
 has-props
 
@@ -1282,7 +1282,7 @@ has-props
 
 
 
-33229
+33537
 
 KX_HashedPtr.h
 file
@@ -1290,11 +1290,11 @@ file
 
 
 
-2011-01-18T22:04:23.393021Z
-9c4d1cf14f3c7406f9cac84698e1bf34
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:28.850297Z
+30dfa077e339138d2512f9e127ef8fe3
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1316,7 +1316,7 @@ has-props
 
 
 
-1652
+1703
 
 EmptyValue.cpp
 file
@@ -1324,11 +1324,11 @@ file
 
 
 
-2011-01-18T22:04:23.393021Z
-f5c17468ab53614788469bcddcab529d
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:28.850297Z
+274c6268c6a9d68ba134c1e6c3e8ca96
+2011-02-25T13:31:23.793343Z
+35168
+jesterking
 has-props
 
 
@@ -1350,7 +1350,7 @@ has-props
 
 
 
-2295
+2372
 
 ErrorValue.h
 file
@@ -1358,11 +1358,11 @@ file
 
 
 
-2011-01-18T22:04:23.393021Z
-d876993e396f2fcef7f3cb1f5547de50
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:28.850297Z
+cf35530a24e77458c4adf16b552f4543
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1384,7 +1384,7 @@ has-props
 
 
 
-1368
+1417
 
 IfExpr.cpp
 file
@@ -1392,11 +1392,11 @@ file
 
 
 
-2011-01-18T22:04:23.393021Z
-e6956e94195917b844c3ed6ee69ff120
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:28.850297Z
+2557a3651b8433f87e36b60132dc8f7c
+2011-02-25T13:31:23.793343Z
+35168
+jesterking
 has-props
 
 
@@ -1418,7 +1418,7 @@ has-props
 
 
 
-2516
+2589
 
 BoolValue.h
 file
@@ -1426,11 +1426,11 @@ file
 
 
 
-2011-01-18T22:04:23.393021Z
-cbdd22e8497587bc8b9c56f9cf8868f5
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:28.850297Z
+30a45aa0e7cd7cf5ffbaf25dacb57891
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1452,5 +1452,5 @@ has-props
 
 
 
-1818
+1867
 

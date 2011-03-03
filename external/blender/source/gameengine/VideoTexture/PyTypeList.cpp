@@ -1,4 +1,7 @@
-/* $Id: PyTypeList.cpp 33830 2010-12-21 07:35:13Z moguri $
+/** \file gameengine/VideoTexture/PyTypeList.cpp
+ *  \ingroup bgevideotex
+ */
+/* $Id: PyTypeList.cpp 35176 2011-02-25 13:39:34Z jesterking $
 -----------------------------------------------------------------------------
 This source file is part of blendTex library
 

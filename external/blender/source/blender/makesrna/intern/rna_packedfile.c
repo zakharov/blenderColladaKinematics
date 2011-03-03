@@ -1,5 +1,5 @@
-/**
- * $Id: rna_packedfile.c 27708 2010-03-24 09:51:32Z campbellbarton $
+/*
+ * $Id: rna_packedfile.c 35238 2011-02-27 20:20:01Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/makesrna/intern/rna_packedfile.c
+ *  \ingroup RNA
+ */
+
 
 #include <stdlib.h>
 

@@ -1,7 +1,7 @@
 /*
  * texture_ext.h
  *
- * $Id: texture.h 34548 2011-01-29 11:56:11Z lmg $
+ * $Id: texture.h 35233 2011-02-27 19:31:27Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/render/intern/include/texture.h
+ *  \ingroup render
+ */
+
 
 #ifndef TEXTURE_EXT_H
 #define TEXTURE_EXT_H

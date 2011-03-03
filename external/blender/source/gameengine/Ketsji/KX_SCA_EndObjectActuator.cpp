@@ -1,5 +1,5 @@
-/**
- * $Id: KX_SCA_EndObjectActuator.cpp 32788 2010-10-31 04:11:39Z campbellbarton $
+/*
+ * $Id: KX_SCA_EndObjectActuator.cpp 35171 2011-02-25 13:35:59Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/Ketsji/KX_SCA_EndObjectActuator.cpp
+ *  \ingroup ketsji
+ */
+
 
 //
 

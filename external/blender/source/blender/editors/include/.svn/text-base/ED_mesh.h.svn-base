@@ -1,4 +1,4 @@
-/**
+/*
  * $Id$
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file ED_mesh.h
+ *  \ingroup editors
+ */
+
 #ifndef ED_MESH_H
 #define ED_MESH_H
 
@@ -187,6 +192,9 @@ int do_paintface_box_select(struct ViewContext *vc, struct rcti *rect, int selec
 void paintface_deselect_all_visible(struct Object *ob, int action, short flush_flags);
 void paintface_select_linked(struct bContext *C, struct Object *ob, short mval[2], int mode);
 int paintface_minmax(struct Object *ob, float *min, float *max);
+
+void paintface_hide(struct Object *ob, const int unselected);
+void paintface_reveal(struct Object *ob);
 
 /* object_vgroup.c */
 

@@ -1,7 +1,7 @@
-/**
+/*
  * smoke.c
  *
- * $Id: smoke.c 34160 2011-01-07 19:18:31Z campbellbarton $
+ * $Id: smoke.c 35247 2011-02-27 20:40:57Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/blenkernel/intern/smoke.c
+ *  \ingroup bke
+ */
+
 
 /* Part of the code copied from elbeem fluid library, copyright by Nils Thuerey */
 
@@ -135,7 +140,7 @@ static void fill_scs_points(Object *ob, DerivedMesh *dm, SmokeCollSettings *scs)
 
 #define TRI_UVOFFSET (1./4.)
 
-int smokeModifier_init (SmokeModifierData *smd, Object *ob, Scene *scene, DerivedMesh *dm)
+static int smokeModifier_init (SmokeModifierData *smd, Object *ob, Scene *scene, DerivedMesh *dm)
 {
 	if((smd->type & MOD_SMOKE_TYPE_DOMAIN) && smd->domain && !smd->domain->fluid)
 	{

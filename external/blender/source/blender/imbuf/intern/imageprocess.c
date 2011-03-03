@@ -1,4 +1,4 @@
-/**
+/*
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -30,11 +30,16 @@
  * function remained. It should probably move to imbuf/intern/util.c,
  * but we'll keep it here for the time being. (nzc)*/
 
+/** \file blender/imbuf/intern/imageprocess.c
+ *  \ingroup imbuf
+ */
+
+
 /*  imageprocess.c        MIXED MODEL
  * 
  *  april 95
  * 
- * $Id: imageprocess.c 30446 2010-07-17 18:08:14Z campbellbarton $
+ * $Id: imageprocess.c 35239 2011-02-27 20:23:21Z jesterking $
  */
 
 #include <stdlib.h>

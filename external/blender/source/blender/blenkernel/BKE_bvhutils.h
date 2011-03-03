@@ -1,6 +1,5 @@
-/**
- *
- * $Id: BKE_bvhutils.h 33233 2010-11-22 14:16:11Z campbellbarton $
+/*
+ * $Id: BKE_bvhutils.h 34962 2011-02-18 13:05:18Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -29,6 +28,10 @@
  */
 #ifndef BKE_BVHUTILS_H
 #define BKE_BVHUTILS_H
+
+/** \file BKE_bvhutils.h
+ *  \ingroup bke
+ */
 
 #include "BLI_kdopbvh.h"
 #include "BLI_linklist.h"

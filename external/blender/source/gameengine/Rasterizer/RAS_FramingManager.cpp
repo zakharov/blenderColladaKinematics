@@ -1,5 +1,5 @@
-/**
- * $Id: RAS_FramingManager.cpp 28254 2010-04-18 10:28:37Z campbellbarton $
+/*
+ * $Id: RAS_FramingManager.cpp 35174 2011-02-25 13:38:24Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/Rasterizer/RAS_FramingManager.cpp
+ *  \ingroup bgerast
+ */
+
 
 #include "RAS_FramingManager.h"
 #include "RAS_Rect.h"

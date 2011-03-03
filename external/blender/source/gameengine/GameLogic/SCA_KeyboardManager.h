@@ -1,7 +1,5 @@
-/**
- * Manager for keyboard events
- *
- * $Id: SCA_KeyboardManager.h 29259 2010-06-06 01:15:44Z campbellbarton $
+/*
+ * $Id: SCA_KeyboardManager.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +25,12 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file SCA_KeyboardManager.h
+ *  \ingroup gamelogic
+ *  \brief Manager for keyboard events
+ *
  */
 
 #ifndef __KX_KEYBOARDMANAGER

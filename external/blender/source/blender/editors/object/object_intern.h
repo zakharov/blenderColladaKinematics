@@ -1,5 +1,5 @@
-/**
- * $Id: object_intern.h 34468 2011-01-23 14:04:31Z jhk $
+/*
+ * $Id: object_intern.h 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/object/object_intern.h
+ *  \ingroup edobj
+ */
+
 #ifndef ED_OBJECT_INTERN_H
 #define ED_OBJECT_INTERN_H
 

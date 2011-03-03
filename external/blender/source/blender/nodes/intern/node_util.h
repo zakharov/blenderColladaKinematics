@@ -1,5 +1,5 @@
-/**
- * $Id: node_util.h 34717 2011-02-08 12:54:32Z lukastoenne $
+/*
+ * $Id: node_util.h 35237 2011-02-27 20:13:22Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/nodes/intern/node_util.h
+ *  \ingroup nodes
+ */
+
 
 #ifndef NODE_UTIL_H_
 #define NODE_UTIL_H_

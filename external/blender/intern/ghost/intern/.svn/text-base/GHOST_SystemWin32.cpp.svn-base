@@ -1,4 +1,4 @@
-/**
+/*
  * $Id$
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file ghost/intern/GHOST_SystemWin32.cpp
+ *  \ingroup GHOST
+ */
+
 
 /**
 
@@ -135,6 +140,19 @@
 #ifndef VK_GR_LESS
 #define VK_GR_LESS 0xE2
 #endif // VK_GR_LESS
+
+#ifndef VK_MEDIA_NEXT_TRACK
+#define VK_MEDIA_NEXT_TRACK	0xB0
+#endif // VK_MEDIA_NEXT_TRACK
+#ifndef VK_MEDIA_PREV_TRACK
+#define VK_MEDIA_PREV_TRACK	0xB1
+#endif // VK_MEDIA_PREV_TRACK
+#ifndef VK_MEDIA_STOP
+#define VK_MEDIA_STOP	0xB2
+#endif // VK_MEDIA_STOP
+#ifndef VK_MEDIA_PLAY_PAUSE
+#define VK_MEDIA_PLAY_PAUSE	0xB3
+#endif // VK_MEDIA_PLAY_PAUSE
 
 
 GHOST_SystemWin32::GHOST_SystemWin32()
@@ -640,6 +658,10 @@ GHOST_TKey GHOST_SystemWin32::convertKey(GHOST_IWindow *window, WPARAM wParam, L
 		case VK_OEM_8:
 			key = ((GHOST_SystemWin32*)getSystem())->processSpecialKey(window, wParam, lParam);
 			break;
+		case VK_MEDIA_PLAY_PAUSE: key = GHOST_kKeyMediaPlay; break;
+		case VK_MEDIA_STOP: key = GHOST_kKeyMediaStop; break;
+		case VK_MEDIA_PREV_TRACK: key = GHOST_kKeyMediaFirst; break;
+		case VK_MEDIA_NEXT_TRACK: key = GHOST_kKeyMediaLast; break;
 		default:
 			key = GHOST_kKeyUnknown;
 			break;
@@ -730,13 +752,14 @@ GHOST_EventKey* GHOST_SystemWin32::processKeyEvent(GHOST_IWindow *window, bool k
 	if (key != GHOST_kKeyUnknown) {
 		MSG keyMsg;
 		char ascii = '\0';
-
 			/* Eat any character related messages */
-		if (::PeekMessage(&keyMsg, NULL, WM_CHAR, WM_SYSDEADCHAR, PM_REMOVE)) {
-			ascii = (char) keyMsg.wParam;
-			
-		}
 
+		if (::PeekMessage(&keyMsg, NULL, WM_CHAR, WM_DEADCHAR, PM_REMOVE) || 
+			::PeekMessage(&keyMsg, NULL, WM_SYSCHAR, WM_SYSDEADCHAR, PM_REMOVE))
+				{
+					ascii = (char) keyMsg.wParam;
+					if(ascii > 126) ascii = 0;
+				};
 		event = new GHOST_EventKey(getSystem()->getMilliSeconds(), keyDown ? GHOST_kEventKeyDown: GHOST_kEventKeyUp, window, key, ascii);
 		
 #ifdef BF_GHOST_DEBUG

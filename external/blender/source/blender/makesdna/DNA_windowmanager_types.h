@@ -1,5 +1,5 @@
-/**
- * $Id: DNA_windowmanager_types.h 34456 2011-01-22 18:15:42Z ton $
+/*
+ * $Id: DNA_windowmanager_types.h 34941 2011-02-17 20:48:12Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,10 @@
  */
 #ifndef DNA_WINDOWMANAGER_TYPES_H
 #define DNA_WINDOWMANAGER_TYPES_H
+
+/** \file DNA_windowmanager_types.h
+ *  \ingroup DNA
+ */
 
 #include "DNA_listBase.h"
 #include "DNA_vec_types.h"

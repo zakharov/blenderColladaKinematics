@@ -1,5 +1,5 @@
-/**
- * $Id: userpref_ops.c 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: userpref_ops.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_userpref/userpref_ops.c
+ *  \ingroup spuserpref
+ */
+
 
 #include <string.h>
 #include <stdio.h>

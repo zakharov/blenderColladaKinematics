@@ -1,5 +1,5 @@
-/**
- * $Id: render_types.h 34656 2011-02-05 13:41:29Z blendix $
+/*
+ * $Id: render_types.h 35233 2011-02-27 19:31:27Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/render/intern/include/render_types.h
+ *  \ingroup render
+ */
+
 
 #ifndef RENDER_TYPES_H
 #define RENDER_TYPES_H

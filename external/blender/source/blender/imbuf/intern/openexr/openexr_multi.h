@@ -1,5 +1,5 @@
-/**
- * $Id: openexr_multi.h 33448 2010-12-03 17:05:21Z campbellbarton $ 
+/*
+ * $Id: openexr_multi.h 35239 2011-02-27 20:23:21Z jesterking $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/imbuf/intern/openexr/openexr_multi.h
+ *  \ingroup openexr
+ */
+
 
 #ifndef _OPENEXR_MULTI_H
 #define _OPENEXR_MULTI_H

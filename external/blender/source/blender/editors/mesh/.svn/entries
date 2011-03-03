@@ -1,14 +1,14 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/editors/mesh
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-02-09T15:13:20.803099Z
-34741
+2011-03-03T17:59:04.039119Z
+35337
 campbellbarton
 
 
@@ -26,221 +26,17 @@ campbellbarton
 
 954f8c5b-7b00-dc11-b283-0030488c597c
 
-editmesh.c
-file
-
-
-
-
-2011-02-10T19:48:54.005667Z
-eb5a8a393ea8dd345cc6a92861225fe4
-2011-02-07T13:02:44.124555Z
-34693
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-48763
-
-editface.c
-file
-
-
-
-
-2011-01-18T22:04:54.113021Z
-e58b8d0614f8d8972aa39c585c473ff1
-2011-01-07T18:36:47.041781Z
-34159
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-18879
-
-SConscript
-file
-
-
-
-
-2011-01-18T22:04:54.113021Z
-66aa9546a3a4800a1149ec54cb1a3624
-2009-11-22T06:22:53.109926Z
-24751
-aligorith
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-638
-
-editmesh_add.c
-file
-
-
-
-
-2011-01-18T22:04:54.113021Z
-2c8df36a98b7eded4ebfbd3ff0158aad
-2011-01-07T18:36:47.041781Z
-34159
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-50226
-
-mesh_ops.c
-file
-
-
-
-
-2011-02-10T19:48:54.015667Z
-07ba7138d0cd694cc6725265cf0f7f0a
-2011-01-30T16:19:08.380132Z
-34569
-ton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-14035
-
-meshtools.c
-file
-
-
-
-
-2011-01-18T22:04:54.113021Z
-1ae96603db21efa35bf22e054959fd9e
-2011-01-13T04:53:55.701793Z
-34290
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-34920
-
 mesh_intern.h
 file
 
 
 
 
-2011-01-18T22:04:54.103021Z
-825d01fa87ca156935b7c22695d5d218
-2011-01-15T16:14:57.406996Z
-34335
-campbellbarton
+2011-03-03T12:28:01.402297Z
+5d20e5a5e21dd90b10283e1024047336
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -262,7 +58,41 @@ has-props
 
 
 
-10878
+11058
+
+editmesh.c
+file
+
+
+
+
+2011-03-03T12:28:01.406297Z
+52e24c8f15ccbe28a76b88ae666df1ce
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+48854
 
 editmesh_tools.c
 file
@@ -270,10 +100,44 @@ file
 
 
 
-2011-02-10T19:48:54.015667Z
-86139e0ad9a647f865d25a6bdc4ccc11
-2011-02-01T12:47:50.868331Z
-34604
+2011-03-03T21:53:56.156120Z
+30d2a2348a84c8b75ea9017dc62b777a
+2011-03-03T13:26:55.120839Z
+35329
+blendix
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+201064
+
+editface.c
+file
+
+
+
+
+2011-03-03T21:53:56.160120Z
+d823fabf48d7488f3e8033f3d34499cb
+2011-03-03T17:59:04.039119Z
+35337
 campbellbarton
 has-props
 
@@ -296,7 +160,7 @@ has-props
 
 
 
-199482
+18743
 
 editmesh_mods.c
 file
@@ -304,11 +168,11 @@ file
 
 
 
-2011-02-10T19:48:54.015667Z
-d67a8ff0df5eebfad1de62991328f6cb
-2011-01-30T16:19:08.380132Z
-34569
-ton
+2011-03-03T12:28:01.410297Z
+17949f578da3921f9ee010d9eb66c08a
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -330,7 +194,7 @@ has-props
 
 
 
-114276
+110163
 
 loopcut.c
 file
@@ -338,11 +202,11 @@ file
 
 
 
-2011-01-18T22:04:54.113021Z
-ca91d89151388e39e6dd63b8e855b4c2
-2011-01-15T14:07:11.596615Z
-34332
-ton
+2011-03-03T12:28:01.410297Z
+49f112f6a0d022b94a95152983605e60
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -364,7 +228,7 @@ has-props
 
 
 
-13200
+13273
 
 mesh_data.c
 file
@@ -372,11 +236,11 @@ file
 
 
 
-2011-02-10T19:48:54.015667Z
-ce1b2537cf212161bf348b531e483a0b
-2011-02-09T15:13:20.803099Z
-34741
-campbellbarton
+2011-03-03T12:28:01.414297Z
+b25dac5abaafb09ff4add4d37b25badd
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -398,7 +262,41 @@ has-props
 
 
 
-17918
+17982
+
+SConscript
+file
+
+
+
+
+2011-03-03T12:28:01.414297Z
+95f3a44efb18268904daa882f87a5b12
+2011-02-21T12:35:04.852834Z
+35028
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+655
 
 editmesh_lib.c
 file
@@ -406,11 +304,11 @@ file
 
 
 
-2011-02-10T19:48:54.015667Z
-50f7c8de7cfc0dec3e698cf832425fec
-2011-01-23T12:42:07.392212Z
-34465
-campbellbarton
+2011-03-03T12:28:01.414297Z
+48b85422a7f800077c533463609dc82f
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -432,7 +330,41 @@ has-props
 
 
 
-70207
+70295
+
+editmesh_add.c
+file
+
+
+
+
+2011-03-03T12:28:01.418297Z
+9ce160a9514cd68932cddd07b553901f
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+50342
 
 editmesh_loop.c
 file
@@ -440,11 +372,11 @@ file
 
 
 
-2011-01-18T22:04:54.113021Z
-696239ee20548f0c4ab8129d3cc408c5
-2011-01-07T18:36:47.041781Z
-34159
-campbellbarton
+2011-03-03T12:28:01.418297Z
+43755311678ba2c58dd2a358853fc274
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -466,7 +398,7 @@ has-props
 
 
 
-18599
+18567
 
 CMakeLists.txt
 file
@@ -474,11 +406,11 @@ file
 
 
 
-2011-02-10T19:48:54.015667Z
-a76b174b1d84d4c27a5e3834db03702d
-2011-02-09T02:28:11.718946Z
-34733
-campbellbarton
+2011-03-03T12:28:01.418297Z
+465f92d95e5a2de2e6b9c70277338c6c
+2011-02-21T12:35:04.852834Z
+35028
+jesterking
 has-props
 
 
@@ -500,5 +432,73 @@ has-props
 
 
 
-1298
+1316
+
+mesh_ops.c
+file
+
+
+
+
+2011-03-03T12:28:01.418297Z
+d219152e82202a6e0e79c06491dee376
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14273
+
+meshtools.c
+file
+
+
+
+
+2011-03-03T12:28:01.418297Z
+697a1f145a72cc2b2a27376913b24a3c
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+34991
 

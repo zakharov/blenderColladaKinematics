@@ -1,5 +1,5 @@
-/**	
- * $Id: BKE_suggestions.h 33442 2010-12-03 12:30:59Z campbellbarton $ 
+/*	
+ * $Id: BKE_suggestions.h 34962 2011-02-18 13:05:18Z jesterking $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,10 @@
  */
 #ifndef BKE_SUGGESTIONS_H
 #define BKE_SUGGESTIONS_H
+
+/** \file BKE_suggestions.h
+ *  \ingroup bke
+ */
 
 #ifdef __cplusplus
 extern "C" {

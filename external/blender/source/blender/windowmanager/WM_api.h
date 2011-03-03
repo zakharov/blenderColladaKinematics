@@ -1,5 +1,5 @@
-/**
- * $Id: WM_api.h 34396 2011-01-19 09:13:24Z campbellbarton $
+/*
+ * $Id: WM_api.h 34989 2011-02-19 12:05:20Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,17 @@
  */
 #ifndef WM_API_H
 #define WM_API_H
+
+/** \file WM_api.h
+ *  \ingroup wm
+ *
+ *  \page wmpage windowmanager
+ *  \section wmabout About windowmanager
+ *  \ref wm handles events received from \ref GHOST and manages
+ *  the screens, areas and input for Blender
+ *  \section wmnote NOTE
+ *  \todo document
+ */
 
 /* dna-savable wmStructs here */
 #include "DNA_windowmanager_types.h"
@@ -59,7 +70,7 @@ void		WM_setprefsize		(int stax, int stay, int sizx, int sizy);
 void		WM_setinitialstate_fullscreen(void);
 void		WM_setinitialstate_normal(void);
 
-void		WM_init				(struct bContext *C, int argc, char **argv);
+void		WM_init				(struct bContext *C, int argc, const char **argv);
 void		WM_exit				(struct bContext *C);
 void		WM_main				(struct bContext *C);
 
@@ -350,6 +361,9 @@ void		WM_progress_clear(struct wmWindow *win);
 			/* Windows System Console */
 void		WM_toggle_console(struct bContext *C, short show);
 #endif
+
+/* debugging only, convenience function to write on crash */
+int write_crash_blend(void);
 
 #ifdef __cplusplus
 }

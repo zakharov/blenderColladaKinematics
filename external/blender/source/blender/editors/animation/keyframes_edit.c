@@ -1,5 +1,5 @@
-/**
- * $Id: keyframes_edit.c 34600 2011-02-01 11:35:27Z aligorith $
+/*
+ * $Id: keyframes_edit.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -23,6 +23,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/animation/keyframes_edit.c
+ *  \ingroup edanimation
+ */
+
 
 #include <stdlib.h>
 #include <string.h>
@@ -90,7 +95,7 @@ short ANIM_fcurve_keyframes_loop(KeyframeEditData *ked, FCurve *fcu, KeyframeEdi
 {
 	BezTriple *bezt;
 	short ok = 0;
-	int i;
+	unsigned int i;
 
 	/* sanity check */
 	if (ELEM(NULL, fcu, fcu->bezt))

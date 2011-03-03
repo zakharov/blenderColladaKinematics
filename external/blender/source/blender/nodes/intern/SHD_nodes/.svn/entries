@@ -1,15 +1,15 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/nodes/intern/SHD_nodes
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-02-08T12:54:32.455710Z
-34717
-lukastoenne
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 
 
 
@@ -26,51 +26,17 @@ lukastoenne
 
 954f8c5b-7b00-dc11-b283-0030488c597c
 
-SHD_texture.c
-file
-
-
-
-
-2011-02-10T19:48:49.475667Z
-ad11bb7f571c7792e2bd7c34e575e478
-2011-02-08T09:02:16.818195Z
-34712
-lukastoenne
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4322
-
 SHD_output.c
 file
 
 
 
 
-2011-02-10T19:48:49.475667Z
-88f3e5334cd4a75446679118d32e9849
-2011-02-08T09:02:16.818195Z
-34712
-lukastoenne
+2011-03-03T12:27:34.970297Z
+86cb2acacdecbbb3ce03572ab53ab604
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -92,7 +58,41 @@ has-props
 
 
 
-2613
+2693
+
+SHD_texture.c
+file
+
+
+
+
+2011-03-03T12:27:34.970297Z
+2278efc6f96d6ac6dc569b6bcc4b3745
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4403
 
 SHD_curves.c
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-02-10T19:48:49.475667Z
-2cdd25996624bea14a9c4ac899f8ba03
-2011-02-08T09:02:16.818195Z
-34712
-lukastoenne
+2011-03-03T12:27:34.970297Z
+8b66580be6a27200e809fb6f39e948ea
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-4357
+4437
 
 SHD_invert.c
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-02-10T19:48:49.475667Z
-31bacd35dc5d87bfcb4052296237fcff
-2011-02-08T09:02:16.818195Z
-34712
-lukastoenne
+2011-03-03T12:27:34.970297Z
+54685fc1bef624723372c1f153988393
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-2528
+2608
 
 SHD_rgb.c
 file
@@ -168,11 +168,11 @@ file
 
 
 
-2011-02-10T19:48:49.475667Z
-79c6c56b8ff044c3392565a462bf36ad
-2011-02-08T09:02:16.818195Z
-34712
-lukastoenne
+2011-03-03T12:27:34.970297Z
+bf76a6f8981fcd0457bf6dacabfae488
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-2015
+2092
 
 SHD_vectMath.c
 file
@@ -202,11 +202,11 @@ file
 
 
 
-2011-02-10T19:48:49.485667Z
-463a5de2c58bb7b9f088eca5b1dc560d
-2011-02-08T12:54:32.455710Z
-34717
-lukastoenne
+2011-03-03T12:27:34.970297Z
+bfec7e227e0da370c4b81b0042866b5f
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -228,7 +228,7 @@ has-props
 
 
 
-4498
+4580
 
 SHD_value.c
 file
@@ -236,11 +236,11 @@ file
 
 
 
-2011-02-10T19:48:49.485667Z
-f471121a9e46e1e2349a43fa1f422e94
-2011-02-08T09:02:16.818195Z
-34712
-lukastoenne
+2011-03-03T12:27:34.970297Z
+e49a94513bfc678c50cc74a6fcb7c842
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -262,7 +262,7 @@ has-props
 
 
 
-2044
+2123
 
 SHD_valToRgb.c
 file
@@ -270,11 +270,11 @@ file
 
 
 
-2011-02-10T19:48:49.485667Z
-5829cedd45194855768c892a946f1095
-2011-02-08T09:02:16.818195Z
-34712
-lukastoenne
+2011-03-03T12:27:34.970297Z
+a361f67eab741b5b297b0081d8e421d3
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -296,7 +296,7 @@ has-props
 
 
 
-3795
+3877
 
 SHD_squeeze.c
 file
@@ -304,11 +304,11 @@ file
 
 
 
-2011-02-10T19:48:49.485667Z
-66a7beeaa249594313a7d5f0e6154362
-2011-02-08T09:02:16.818195Z
-34712
-lukastoenne
+2011-03-03T12:27:34.970297Z
+807ce06db667c1032046d35e7e57942b
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -330,7 +330,7 @@ has-props
 
 
 
-2496
+2577
 
 SHD_sepcombRGB.c
 file
@@ -338,11 +338,11 @@ file
 
 
 
-2011-02-10T19:48:49.485667Z
-6be2346132fa1b8d97d94b5c775be52c
-2011-02-08T09:02:16.818195Z
-34712
-lukastoenne
+2011-03-03T12:27:34.974297Z
+c04fdd52e56b2a171129c7dd5c583fe4
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -364,7 +364,7 @@ has-props
 
 
 
-3406
+3491
 
 SHD_dynamic.c
 file
@@ -372,11 +372,11 @@ file
 
 
 
-2011-02-10T19:48:49.485667Z
-82769f5df652cbd68536f57a17f87841
-2011-02-08T09:02:16.818195Z
-34712
-lukastoenne
+2011-03-03T12:27:34.974297Z
+0ae81f76ca9424d10dc623f12ff2e6f6
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -398,7 +398,7 @@ has-props
 
 
 
-19766
+19882
 
 SHD_geom.c
 file
@@ -406,11 +406,11 @@ file
 
 
 
-2011-02-10T19:48:49.485667Z
-aaabb69f1ca9c764057b992dc2caa481
-2011-02-08T09:02:16.818195Z
-34712
-lukastoenne
+2011-03-03T12:27:34.974297Z
+8d7682903183fe4799dc289603763e40
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -432,7 +432,7 @@ has-props
 
 
 
-4988
+5066
 
 SHD_camera.c
 file
@@ -440,11 +440,11 @@ file
 
 
 
-2011-02-10T19:48:49.485667Z
-93ff6ac7d9132c82896275d362d6c381
-2011-02-08T09:02:16.818195Z
-34712
-lukastoenne
+2011-03-03T12:27:34.974297Z
+10f7382825fe1959733b435d090fd59e
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -466,7 +466,7 @@ has-props
 
 
 
-2504
+2584
 
 SHD_mixRgb.c
 file
@@ -474,11 +474,11 @@ file
 
 
 
-2011-02-10T19:48:49.485667Z
-208f3034a0151b50b96eb12a4c09807b
-2011-02-08T12:54:32.455710Z
-34717
-lukastoenne
+2011-03-03T12:27:34.974297Z
+02d5cb5c045263e7d131a5ad8b028361
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -500,7 +500,7 @@ has-props
 
 
 
-2823
+2903
 
 SHD_normal.c
 file
@@ -508,11 +508,11 @@ file
 
 
 
-2011-02-10T19:48:49.485667Z
-8f7e59307e58b9e49d3c3b4376146496
-2011-02-08T09:02:16.818195Z
-34712
-lukastoenne
+2011-03-03T12:27:34.974297Z
+af2cc18d4d8e9663512532f3dec96d96
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -534,7 +534,7 @@ has-props
 
 
 
-2506
+2586
 
 SHD_math.c
 file
@@ -542,11 +542,11 @@ file
 
 
 
-2011-02-10T19:48:49.485667Z
-8a8a83973bcc6bfb0a711db7ab705354
-2011-02-08T12:54:32.455710Z
-34717
-lukastoenne
+2011-03-03T12:27:34.974297Z
+72ed4a18925d966ff761566171180f6b
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -568,7 +568,7 @@ has-props
 
 
 
-6660
+6738
 
 SHD_mapping.c
 file
@@ -576,11 +576,11 @@ file
 
 
 
-2011-02-10T19:48:49.485667Z
-8c060a781ed18014a08ead5e4f59b1aa
-2011-02-08T09:02:16.818195Z
-34712
-lukastoenne
+2011-03-03T12:27:34.974297Z
+8e5670f6ecc87991a0955396df939dc2
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -602,7 +602,7 @@ has-props
 
 
 
-3350
+3431
 
 SHD_hueSatVal.c
 file
@@ -610,11 +610,11 @@ file
 
 
 
-2011-02-10T19:48:49.485667Z
-b12ea4ecbec7e4a92a0ade1933480c3e
-2011-02-08T09:02:16.818195Z
-34712
-lukastoenne
+2011-03-03T12:27:34.974297Z
+407e0ef3c3e55892609c90de6fc661e4
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -636,7 +636,7 @@ has-props
 
 
 
-3043
+3127
 
 SHD_material.c
 file
@@ -644,11 +644,11 @@ file
 
 
 
-2011-02-10T19:48:49.495667Z
-d4e65bd35af765d639b28549fd09b37c
-2011-02-08T09:02:16.818195Z
-34712
-lukastoenne
+2011-03-03T12:27:34.974297Z
+f1cc8919e606eb8c7a1f6fb068797383
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
 has-props
 
 
@@ -670,5 +670,5 @@ has-props
 
 
 
-9360
+9442
 

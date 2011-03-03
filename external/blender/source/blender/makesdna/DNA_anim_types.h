@@ -1,5 +1,5 @@
-/**
- * $Id: DNA_anim_types.h 33917 2010-12-28 05:45:15Z aligorith $
+/*
+ * $Id: DNA_anim_types.h 34941 2011-02-17 20:48:12Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,10 @@
 
 #ifndef DNA_ANIM_TYPES_H
 #define DNA_ANIM_TYPES_H
+
+/** \file DNA_anim_types.h
+ *  \ingroup DNA
+ */
 
 #ifdef __cplusplus
 extern "C" {

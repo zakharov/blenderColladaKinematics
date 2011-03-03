@@ -1,15 +1,15 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern/iksolver
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-30T15:29:22.294392Z
-34567
-campbellbarton
+2011-02-25T11:43:19.248098Z
+35154
+jesterking
 
 
 
@@ -41,7 +41,7 @@ file
 
 
 
-2011-01-18T22:04:09.823021Z
+2011-03-03T12:25:38.694297Z
 d6d658268c158aa2dc9011086a8adfa5
 2010-08-25T04:30:47.772689Z
 31567
@@ -75,7 +75,7 @@ file
 
 
 
-2011-01-18T22:04:09.823021Z
+2011-03-03T12:25:38.694297Z
 ba48f2d8ef05ad96860370115d13ca0b
 2010-12-22T23:09:30.468439Z
 33864

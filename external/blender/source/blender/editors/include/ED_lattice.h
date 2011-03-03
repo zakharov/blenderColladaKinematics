@@ -1,5 +1,5 @@
-/**
- * $Id: ED_lattice.h 31221 2010-08-10 20:33:15Z gsrb3d $
+/*
+ * $Id: ED_lattice.h 35016 2011-02-21 07:25:24Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,10 @@
  * Contributor(s): Blender Foundation
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file ED_lattice.h
+ *  \ingroup editors
  */
 
 struct Object;

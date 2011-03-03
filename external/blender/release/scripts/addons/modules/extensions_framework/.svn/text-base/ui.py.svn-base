@@ -53,7 +53,7 @@ def _get_item_from_context(context, path):
 			context = getattr(context, p)
 	return context
 
-class property_group_renderer(object):
+class property_group_renderer(bpy.types.Panel):
 	"""Mix-in class for sub-classes of bpy.types.Panel. This class
 	will provide the draw() method which implements drawing one or
 	more property groups derived from
@@ -156,7 +156,7 @@ class property_group_renderer(object):
 						if 'type' in current_property_keys:
 							
 							if current_property['type'] in ['int', 'float',
-								'float_vector', 'enum', 'string']:
+								'float_vector', 'string']:
 								layout.prop(
 									property_group,
 									control_list_item,
@@ -183,6 +183,41 @@ class property_group_renderer(object):
 										if 'emboss' in current_property_keys \
 										else True,
 								)
+							if current_property['type'] in ['enum']:
+								if 'use_menu' in current_property_keys and \
+									current_property['use_menu']:
+									layout.prop_menu_enum(
+										property_group,
+										control_list_item,
+										text = current_property['name']
+									)
+								else:
+									layout.prop(
+										property_group,
+										control_list_item,
+										text = current_property['name'],
+										expand = current_property['expand'] \
+											if 'expand' in current_property_keys \
+											else False,
+										slider = current_property['slider'] \
+											if 'slider' in current_property_keys \
+											else False,
+										toggle = current_property['toggle'] \
+											if 'toggle' in current_property_keys \
+											else False,
+										icon_only = current_property['icon_only'] \
+											if 'icon_only' in current_property_keys \
+											else False,
+										event = current_property['event'] \
+											if 'event' in current_property_keys \
+											else False,
+										full_event = current_property['full_event'] \
+											if 'full_event' in current_property_keys \
+											else False,
+										emboss = current_property['emboss'] \
+											if 'emboss' in current_property_keys \
+											else True,
+									)
 							if current_property['type'] in ['bool']:
 								layout.prop(
 									property_group,
@@ -205,10 +240,22 @@ class property_group_renderer(object):
 										else True,
 								)
 							elif current_property['type'] in ['operator']:
-								layout.operator(current_property['operator'],
-									text = current_property['text'],
-									icon = current_property['icon']
-								)
+								args = {}
+								for optional_arg in ('text', 'icon'):
+									if optional_arg in current_property_keys:
+										args.update({
+											optional_arg: current_property[optional_arg],
+										})
+								layout.operator( current_property['operator'], **args )
+							
+							elif current_property['type'] in ['menu']:
+								args = {}
+								for optional_arg in ('text', 'icon'):
+									if optional_arg in current_property_keys:
+										args.update({
+											optional_arg: current_property[optional_arg],
+										})
+								layout.menu(current_property['menu'], **args)
 							
 							elif current_property['type'] in ['text']:
 								layout.label(

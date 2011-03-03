@@ -1,5 +1,5 @@
-/**
- * $Id: KX_ConvertPhysicsObjects.cpp 32613 2010-10-20 12:33:00Z campbellbarton $
+/*
+ * $Id: KX_ConvertPhysicsObjects.cpp 35171 2011-02-25 13:35:59Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/Ketsji/KX_ConvertPhysicsObjects.cpp
+ *  \ingroup ketsji
+ */
+
 #if defined(WIN32) && !defined(FREE_WINDOWS)
 #pragma warning (disable : 4786)
 #endif

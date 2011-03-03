@@ -1,5 +1,5 @@
-/**
- * $Id: DirectDrawSurface.h 27655 2010-03-22 09:30:00Z campbellbarton $
+/*
+ * $Id: DirectDrawSurface.h 35239 2011-02-27 20:23:21Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/imbuf/intern/dds/DirectDrawSurface.h
+ *  \ingroup imbdds
+ */
+
 
 /*
  * This file is based on a similar file from the NVIDIA texture tools

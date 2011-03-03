@@ -1,15 +1,15 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/imbuf/intern/dds
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-30T15:29:22.294392Z
-34567
-campbellbarton
+2011-02-27T20:23:21.939977Z
+35239
+jesterking
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-01-18T22:04:46.373021Z
-2e43016fd22bc3d175f24b40cc59a050
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:27:27.818297Z
+4143fb054e16436dd006a6a17a795691
+2011-02-27T20:23:21.939977Z
+35239
+jesterking
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-2758
+2827
 
 PixelFormat.h
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-01-18T22:04:46.373021Z
-48740d4ed5cd0ccd2ebb247040079541
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:27:27.818297Z
+9c360dc6791a631bc3ccb19850116b03
+2011-02-27T20:23:21.939977Z
+35239
+jesterking
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-3199
+3269
 
 Stream.h
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-01-18T22:04:46.373021Z
-459edda02e59c5477a1cccb71c771f64
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:27:27.818297Z
+f59b259ac73da4d326072093bdd96fbd
+2011-02-27T20:23:21.939977Z
+35239
+jesterking
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-1592
+1657
 
 DirectDrawSurface.cpp
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-01-18T22:04:46.373021Z
-91585fe172048d4bc48d22ac7fbe9114
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:27:27.818297Z
+e092157db557acc629836d81aef387c9
+2011-02-27T20:23:21.939977Z
+35239
+jesterking
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-31920
+31998
 
 dds_api.cpp
 file
@@ -168,11 +168,11 @@ file
 
 
 
-2011-01-18T22:04:46.373021Z
-dafec175a02efdd3c91bd26eceef1da0
-2010-11-19T02:14:18.951059Z
-33167
-campbellbarton
+2011-03-03T12:27:27.822297Z
+6b58b13192f3baef77033702f552f95e
+2011-02-27T20:23:21.939977Z
+35239
+jesterking
 has-props
 
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-3770
+3838
 
 DirectDrawSurface.h
 file
@@ -202,11 +202,11 @@ file
 
 
 
-2011-01-18T22:04:46.373021Z
-a5de291637e3473167ea5cd8215a5dd0
-2010-03-22T09:30:00.354846Z
-27655
-campbellbarton
+2011-03-03T12:27:27.822297Z
+5edf74233d307e24630f0f34f554d339
+2011-02-27T20:23:21.939977Z
+35239
+jesterking
 has-props
 
 
@@ -228,7 +228,7 @@ has-props
 
 
 
-4703
+4779
 
 SConscript
 file
@@ -236,7 +236,7 @@ file
 
 
 
-2011-01-18T22:04:46.373021Z
+2011-03-03T12:27:27.822297Z
 ce597625e10fc108689ce5773aefd905
 2010-11-18T11:42:05.232926Z
 33156
@@ -270,11 +270,11 @@ file
 
 
 
-2011-01-18T22:04:46.373021Z
-93fc2b1d6ecbcd295bd7469d823a2a86
-2010-11-19T02:14:18.951059Z
-33167
-campbellbarton
+2011-03-03T12:27:27.822297Z
+82af89ff84012a5ed66da00c96f9f3eb
+2011-02-27T20:23:21.939977Z
+35239
+jesterking
 has-props
 
 
@@ -296,7 +296,7 @@ has-props
 
 
 
-1292
+1358
 
 BlockDXT.cpp
 file
@@ -304,11 +304,11 @@ file
 
 
 
-2011-01-18T22:04:46.373021Z
-5359884172c64511a75c8cde28b337e6
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:27:27.822297Z
+0debaedd8488eab15a0d06811ff1d087
+2011-02-27T20:23:21.939977Z
+35239
+jesterking
 has-props
 
 
@@ -330,7 +330,7 @@ has-props
 
 
 
-15657
+15726
 
 BlockDXT.h
 file
@@ -338,11 +338,11 @@ file
 
 
 
-2011-01-18T22:04:46.373021Z
-3e5153db5ffad5a25d4307584475170c
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:27:27.822297Z
+0d0f8766e50db29e5cb06ff5122cb8fa
+2011-02-27T20:23:21.939977Z
+35239
+jesterking
 has-props
 
 
@@ -364,7 +364,7 @@ has-props
 
 
 
-6853
+6920
 
 Image.cpp
 file
@@ -372,11 +372,11 @@ file
 
 
 
-2011-01-18T22:04:46.373021Z
-70636ce0b675fef4f6a3bd5e0814b483
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:27:27.822297Z
+0e22f00f83c4a0b3c81ecfe3f66acac5
+2011-02-27T20:23:21.939977Z
+35239
+jesterking
 has-props
 
 
@@ -398,7 +398,7 @@ has-props
 
 
 
-2524
+2590
 
 Color.h
 file
@@ -406,11 +406,11 @@ file
 
 
 
-2011-01-18T22:04:46.373021Z
-50b53b2f31f2df0c55c1baeaf8781d08
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:27:27.822297Z
+509b1f8cc0f829dec90e441ca02cda34
+2011-02-27T20:23:21.939977Z
+35239
+jesterking
 has-props
 
 
@@ -432,7 +432,7 @@ has-props
 
 
 
-2508
+2572
 
 Image.h
 file
@@ -440,11 +440,11 @@ file
 
 
 
-2011-01-18T22:04:46.373021Z
-ee4d1dd88acae4aa68e3dca2a746a19a
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:27:27.822297Z
+6c959c28dc56d142b153599deb336bb3
+2011-02-27T20:23:21.939977Z
+35239
+jesterking
 has-props
 
 
@@ -466,7 +466,7 @@ has-props
 
 
 
-2177
+2241
 
 ColorBlock.cpp
 file
@@ -474,11 +474,11 @@ file
 
 
 
-2011-01-18T22:04:46.373021Z
-e9b06b8944d15e6d720b482ea82bd49a
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:27:27.826297Z
+7ad7ba03d5ced69be877ae71160bea67
+2011-02-27T20:23:21.939977Z
+35239
+jesterking
 has-props
 
 
@@ -500,7 +500,7 @@ has-props
 
 
 
-8842
+8913
 
 Stream.cpp
 file
@@ -508,11 +508,11 @@ file
 
 
 
-2011-01-18T22:04:46.373021Z
-336a339da7161b9c4dc3a3fda703eb99
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:27:27.826297Z
+d6cdae7b66b70ad1ea60b418da831677
+2011-02-27T20:23:21.939977Z
+35239
+jesterking
 has-props
 
 
@@ -534,7 +534,7 @@ has-props
 
 
 
-2513
+2580
 
 CMakeLists.txt
 file
@@ -542,7 +542,7 @@ file
 
 
 
-2011-01-18T22:04:46.373021Z
+2011-03-03T12:27:27.826297Z
 95849ebda4e2071427b42e24ca849049
 2010-12-31T04:29:11.127530Z
 33962
@@ -576,11 +576,11 @@ file
 
 
 
-2011-01-18T22:04:46.373021Z
-f390d7e4e25962b951534a3897ea84ef
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:27:27.826297Z
+8ae194129539fc26114e08848c3f8d7a
+2011-02-27T20:23:21.939977Z
+35239
+jesterking
 has-props
 
 
@@ -602,5 +602,5 @@ has-props
 
 
 
-1429
+1494
 

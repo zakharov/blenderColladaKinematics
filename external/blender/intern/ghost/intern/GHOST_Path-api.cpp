@@ -1,5 +1,5 @@
-/**
- * $Id: GHOST_Path-api.cpp 34106 2011-01-05 19:19:49Z gsrb3d $
+/*
+ * $Id: GHOST_Path-api.cpp 35152 2011-02-25 11:28:33Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file ghost/intern/GHOST_Path-api.cpp
+ *  \ingroup GHOST
+ */
+
 
 #include "intern/GHOST_Debug.h"
 #include "GHOST_Types.h"

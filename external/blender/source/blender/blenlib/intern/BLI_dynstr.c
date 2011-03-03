@@ -1,5 +1,5 @@
-/**
- * $Id: BLI_dynstr.c 34325 2011-01-14 19:15:06Z campbellbarton $
+/*
+ * $Id: BLI_dynstr.c 35246 2011-02-27 20:37:56Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  * ***** END GPL LICENSE BLOCK *****
  * Dynamically sized string ADT
  */
+
+/** \file blender/blenlib/intern/BLI_dynstr.c
+ *  \ingroup bli
+ */
+
 
 #include <stdarg.h>
 #include <string.h>

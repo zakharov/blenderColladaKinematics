@@ -1,5 +1,5 @@
-/**
- * $Id: RAS_GLExtensionManager.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: RAS_GLExtensionManager.h 35078 2011-02-22 16:12:12Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -26,12 +26,16 @@
  * ***** END GPL LICENSE BLOCK *****
  */
 
+/** \file RAS_GLExtensionManager.h
+ *  \ingroup bgerastogl
+ */
+
 #ifndef __RAS_GLEXTENSIONMANAGER_H__
 #define __RAS_GLEXTENSIONMANAGER_H__
 
 #include "GL/glew.h"
 
-/* Note: this used to have a lot more code, but now extension handling
+/** Note: this used to have a lot more code, but now extension handling
  * is done by GLEW, so it does mostly debug stuff */
 
 namespace bgl

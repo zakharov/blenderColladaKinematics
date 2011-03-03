@@ -1,5 +1,5 @@
-/**
- * $Id: KX_BlenderSystem.h 29259 2010-06-06 01:15:44Z campbellbarton $
+/*
+ * $Id: KX_BlenderSystem.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,12 +26,15 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file KX_BlenderSystem.h
+ *  \ingroup blroutines
+ *  \brief Blender System embedding. Needed when gameengine runs embedded within Blender.
+ */
+
 #ifndef __KX_BLENDERSYSTEM
 #define __KX_BLENDERSYSTEM
 
-/**
- * Blender System embedding. Needed when gameengine runs embedded within Blender.
- */
 #include "KX_ISystem.h"
 
 #ifdef WITH_CXX_GUARDEDALLOC
@@ -46,8 +49,6 @@ public:
 	KX_BlenderSystem();
 	virtual ~KX_BlenderSystem() {};
 	virtual double GetTimeInSeconds();
-
-
 
 #ifdef WITH_CXX_GUARDEDALLOC
 public:

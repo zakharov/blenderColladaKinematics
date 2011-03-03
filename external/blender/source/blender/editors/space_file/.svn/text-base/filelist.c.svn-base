@@ -1,4 +1,4 @@
-/**
+/*
  * $Id$
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
@@ -25,6 +25,10 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file blender/editors/space_file/filelist.c
+ *  \ingroup spfile
  */
 
 
@@ -62,6 +66,7 @@
 
 #include "DNA_space_types.h"
 
+#include "ED_fileselect.h"
 #include "ED_datafiles.h"
 
 #include "IMB_imbuf.h"
@@ -395,7 +400,7 @@ void filelist_free_icons(void)
 }
 
 //-----------------FOLDERLIST (previous/next) --------------//
-struct ListBase* folderlist_new()
+struct ListBase* folderlist_new(void)
 {
 	ListBase* p = MEM_callocN( sizeof(ListBase), "folderlist" );
 	return p;
@@ -593,7 +598,7 @@ short filelist_changed(struct FileList* filelist)
 	return filelist->changed;
 }
 
-struct ImBuf * filelist_loadimage(struct FileList* filelist, int index)
+static struct ImBuf * filelist_loadimage(struct FileList* filelist, int index)
 {
 	ImBuf *imb = NULL;
 	int fidx = 0;
@@ -807,7 +812,7 @@ int ED_file_extension_icon(char *relname)
 	return ICON_FILE_BLANK;
 }
 
-void filelist_setfiletypes(struct FileList* filelist)
+static void filelist_setfiletypes(struct FileList* filelist)
 {
 	struct direntry *file;
 	int num;
@@ -833,13 +838,13 @@ void filelist_setfiletypes(struct FileList* filelist)
 
 static void filelist_read_dir(struct FileList* filelist)
 {
-	char wdir[FILE_MAX];
+	char wdir[FILE_MAX]= "";
 	if (!filelist) return;
 
 	filelist->fidx = 0;
 	filelist->filelist = 0;
 
-	BLI_getwdN(wdir);	 
+	BLI_getwdN(wdir, sizeof(wdir));	 /* backup cwd to restore after */
 
 	BLI_cleanup_dir(G.main->name, filelist->dir);
 	filelist->numfiles = BLI_getdir(filelist->dir, &(filelist->filelist));

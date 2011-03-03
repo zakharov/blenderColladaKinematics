@@ -23,6 +23,11 @@
  * ***** END GPL LICENSE BLOCK *****
  */
 
+/** \file blender/render/intern/source/pointdensity.c
+ *  \ingroup render
+ */
+
+
 #include <math.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -50,6 +55,7 @@
 #include "render_types.h"
 #include "renderdatabase.h"
 #include "texture.h"
+#include "pointdensity.h"
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* defined in pipeline.c, is hardcopy of active dynamic allocated Render */
@@ -325,7 +331,7 @@ typedef struct PointDensityRangeData
 	int offset;
 } PointDensityRangeData;
 
-void accum_density(void *userdata, int index, float squared_dist)
+static void accum_density(void *userdata, int index, float squared_dist)
 {
 	PointDensityRangeData *pdr = (PointDensityRangeData *)userdata;
 	const float dist = (pdr->squared_radius - squared_dist) / pdr->squared_radius * 0.5f;

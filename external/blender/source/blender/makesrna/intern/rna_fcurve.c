@@ -1,5 +1,5 @@
-/**
- * $Id: rna_fcurve.c 34600 2011-02-01 11:35:27Z aligorith $
+/*
+ * $Id: rna_fcurve.c 35238 2011-02-27 20:20:01Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/makesrna/intern/rna_fcurve.c
+ *  \ingroup RNA
+ */
+
 
 #include <stdlib.h>
 

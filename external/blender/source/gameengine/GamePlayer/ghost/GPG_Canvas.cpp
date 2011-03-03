@@ -1,5 +1,5 @@
-/**
- * $Id: GPG_Canvas.cpp 28393 2010-04-23 22:48:26Z dfelinto $
+/*
+ * $Id: GPG_Canvas.cpp 35170 2011-02-25 13:35:11Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/GamePlayer/ghost/GPG_Canvas.cpp
+ *  \ingroup player
+ */
+
 
 #include "GPG_Canvas.h"
 #include <assert.h>

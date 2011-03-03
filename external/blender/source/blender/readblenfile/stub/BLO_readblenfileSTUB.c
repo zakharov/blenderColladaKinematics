@@ -1,5 +1,5 @@
-/**
- * $Id: BLO_readblenfileSTUB.c 32552 2010-10-18 06:52:10Z jesterking $
+/*
+ * $Id: BLO_readblenfileSTUB.c 35234 2011-02-27 19:59:59Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  * ***** END GPL LICENSE BLOCK *****
  *
  */
+
+/** \file blender/readblenfile/stub/BLO_readblenfileSTUB.c
+ *  \ingroup blo
+ */
+
 
 #include <stdio.h>
 #include "GEN_messaging.h"

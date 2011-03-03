@@ -1,4 +1,7 @@
-/* $Id: CopyPose.cpp 23480 2009-09-25 09:33:46Z blendix $
+/** \file itasc/CopyPose.cpp
+ *  \ingroup itasc
+ */
+/* $Id: CopyPose.cpp 35155 2011-02-25 11:45:16Z jesterking $
  * CopyPose.cpp
  *
  *  Created on: Mar 17, 2009

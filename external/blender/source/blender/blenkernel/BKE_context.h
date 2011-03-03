@@ -1,5 +1,5 @@
-/**
- * $Id: BKE_context.h 33524 2010-12-07 04:12:15Z campbellbarton $
+/*
+ * $Id: BKE_context.h 34962 2011-02-18 13:05:18Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,10 @@
 
 #ifndef BKE_CONTEXT_H
 #define BKE_CONTEXT_H
+
+/** \file BKE_context.h
+ *  \ingroup bke
+ */
 
 #include "DNA_listBase.h"
 #include "RNA_types.h"

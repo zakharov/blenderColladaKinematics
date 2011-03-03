@@ -1,4 +1,4 @@
-# $Id: CMakeLists.txt 34733 2011-02-09 02:28:11Z campbellbarton $
+# $Id: CMakeLists.txt 34861 2011-02-15 09:24:35Z jesterking $
 # ***** BEGIN GPL LICENSE BLOCK *****
 #
 # This program is free software; you can redistribute it and/or
@@ -48,6 +48,7 @@ set(INC
 	../../../intern/memutil
 	../../../intern/opennl/extern
 	../../../intern/smoke/extern
+	../../../intern/mikktspace
     ../../../source/blender/windowmanager # XXX - BAD LEVEL CALL WM_api.h
 	${ZLIB_INCLUDE_DIRS}
 )

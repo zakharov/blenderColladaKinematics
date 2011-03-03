@@ -1,5 +1,5 @@
-/**
- * $Id: ED_sound.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: ED_sound.h 35016 2011-02-21 07:25:24Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,10 @@
  * Contributor(s): Blender Foundation
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file ED_sound.h
+ *  \ingroup editors
  */
 
 #ifndef ED_SOUND_H

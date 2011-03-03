@@ -1,5 +1,5 @@
-/**
-* $Id: BKE_icons.h 33442 2010-12-03 12:30:59Z campbellbarton $
+/*
+* $Id: BKE_icons.h 34962 2011-02-18 13:05:18Z jesterking $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -30,6 +30,10 @@
 
 #ifndef BKE_ICONS_H
 #define BKE_ICONS_H
+
+/** \file BKE_icons.h
+ *  \ingroup bke
+ */
 
 /*
  Resizable Icons for Blender

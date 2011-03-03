@@ -1,5 +1,5 @@
-/**
- * $Id: brush.c 34643 2011-02-04 16:10:30Z nazgul $
+/*
+ * $Id: brush.c 35290 2011-03-01 17:58:12Z nazgul $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/blenkernel/intern/brush.c
+ *  \ingroup bke
+ */
+
 
 #include <math.h>
 #include <string.h>
@@ -186,13 +191,13 @@ void make_local_brush(Brush *brush)
 	Scene *scene;
 	int local= 0, lib= 0;
 
-	if(brush->id.lib==0) return;
+	if(brush->id.lib==NULL) return;
 
 	if(brush->clone.image) {
 		/* special case: ima always local immediately */
-		brush->clone.image->id.lib= 0;
+		brush->clone.image->id.lib= NULL;
 		brush->clone.image->id.flag= LIB_LOCAL;
-		new_id(0, (ID *)brush->clone.image, 0);
+		new_id(NULL, (ID *)brush->clone.image, NULL);
 	}
 
 	for(scene= G.main->scene.first; scene; scene=scene->id.next)
@@ -202,9 +207,9 @@ void make_local_brush(Brush *brush)
 		}
 
 	if(local && lib==0) {
-		brush->id.lib= 0;
+		brush->id.lib= NULL;
 		brush->id.flag= LIB_LOCAL;
-		new_id(0, (ID *)brush, 0);
+		new_id(NULL, (ID *)brush, NULL);
 
 		/* enable fake user by default */
 		if (!(brush->id.flag & LIB_FAKEUSER)) {
@@ -219,7 +224,7 @@ void make_local_brush(Brush *brush)
 		
 		for(scene= G.main->scene.first; scene; scene=scene->id.next)
 			if(paint_brush(&scene->toolsettings->imapaint.paint)==brush)
-				if(scene->id.lib==0) {
+				if(scene->id.lib==NULL) {
 					paint_brush_set(&scene->toolsettings->imapaint.paint, brushn);
 					brushn->id.us++;
 					brush->id.us--;
@@ -230,7 +235,7 @@ void make_local_brush(Brush *brush)
 void brush_debug_print_state(Brush *br)
 {
 	/* create a fake brush and set it to the defaults */
-	Brush def= {{0}};
+	Brush def= {{NULL}};
 	brush_set_defaults(&def);
 	
 #define BR_TEST(field, t)					\
@@ -424,7 +429,7 @@ int brush_texture_set_nr(Brush *brush, int nr)
 	id= (ID *)brush->mtex.tex;
 
 	idtest= (ID*)BLI_findlink(&G.main->tex, nr-1);
-	if(idtest==0) { /* new tex */
+	if(idtest==NULL) { /* new tex */
 		if(id) idtest= (ID *)copy_texture((Tex *)id);
 		else idtest= (ID *)add_texture("Tex");
 		idtest->us--;
@@ -588,13 +593,21 @@ void brush_imbuf_new(Brush *brush, short flt, short texfall, int bufsize, ImBuf 
 					dst[2]= FTOCHAR(rgba[2]);
 					dst[3]= FTOCHAR(rgba[3]);
 				}
-				else {
+				else if (texfall == 2) {
 					dist = sqrt(xy[0]*xy[0] + xy[1]*xy[1]);
 
 					brush_sample_tex(brush, xy, rgba, 0);
 					dst[0] = FTOCHAR(rgba[0]*brush->rgb[0]);
 					dst[1] = FTOCHAR(rgba[1]*brush->rgb[1]);
 					dst[2] = FTOCHAR(rgba[2]*brush->rgb[2]);
+					dst[3] = FTOCHAR(rgba[3]*alpha*brush_curve_strength_clamp(brush, dist, radius));
+				} else {
+					dist = sqrt(xy[0]*xy[0] + xy[1]*xy[1]);
+
+					brush_sample_tex(brush, xy, rgba, 0);
+					dst[0]= crgb[0];
+					dst[1]= crgb[1];
+					dst[2]= crgb[2];
 					dst[3] = FTOCHAR(rgba[3]*alpha*brush_curve_strength_clamp(brush, dist, radius));
 				}
 			}
@@ -865,11 +878,8 @@ static void brush_painter_refresh_cache(BrushPainter *painter, float *pos)
 		flt= cache->flt;
 		size= (cache->size)? cache->size: diameter;
 
-		if (!(mtex && mtex->tex) || (mtex->tex->type==0)) {
-			brush_imbuf_new(brush, flt, 0, size, &cache->ibuf);
-		}
-		else if (brush->flag & BRUSH_FIXED_TEX) {
-			brush_imbuf_new(brush, flt, 0, size, &cache->maskibuf);
+		if (brush->flag & BRUSH_FIXED_TEX) {
+			brush_imbuf_new(brush, flt, 3, size, &cache->maskibuf);
 			brush_painter_fixed_tex_partial_update(painter, pos);
 		}
 		else

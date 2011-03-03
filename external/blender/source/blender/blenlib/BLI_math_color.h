@@ -1,5 +1,5 @@
-/**
- * $Id: BLI_math_color.h 34335 2011-01-15 16:14:57Z campbellbarton $
+/*
+ * $Id: BLI_math_color.h 34966 2011-02-18 13:58:08Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,10 @@
 
 #ifndef BLI_MATH_COLOR_H
 #define BLI_MATH_COLOR_H
+
+/** \file BLI_math_color.h
+ *  \ingroup bli
+ */
 
 #ifdef __cplusplus
 extern "C" {

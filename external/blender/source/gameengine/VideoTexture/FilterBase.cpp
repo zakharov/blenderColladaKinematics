@@ -1,4 +1,7 @@
-/* $Id: FilterBase.cpp 19820 2009-04-20 15:06:46Z blendix $
+/** \file gameengine/VideoTexture/FilterBase.cpp
+ *  \ingroup bgevideotex
+ */
+/* $Id: FilterBase.cpp 35176 2011-02-25 13:39:34Z jesterking $
 -----------------------------------------------------------------------------
 This source file is part of VideoTexture library
 

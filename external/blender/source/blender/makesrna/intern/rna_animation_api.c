@@ -1,5 +1,5 @@
-/**
- * $Id: rna_animation_api.c 28090 2010-04-08 11:46:52Z campbellbarton $
+/*
+ * $Id: rna_animation_api.c 35238 2011-02-27 20:20:01Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/makesrna/intern/rna_animation_api.c
+ *  \ingroup RNA
+ */
+
 
 #include <stdlib.h>
 #include <stdio.h>

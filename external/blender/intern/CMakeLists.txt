@@ -1,4 +1,4 @@
-# $Id: CMakeLists.txt 33549 2010-12-08 08:43:06Z campbellbarton $
+# $Id: CMakeLists.txt 34861 2011-02-15 09:24:35Z jesterking $
 # ***** BEGIN GPL LICENSE BLOCK *****
 #
 # This program is free software; you can redistribute it and/or
@@ -33,6 +33,7 @@ add_subdirectory(memutil)
 add_subdirectory(iksolver)
 add_subdirectory(opennl)
 add_subdirectory(smoke)
+add_subdirectory(mikktspace)
 
 if(WITH_MOD_FLUID)
 	add_subdirectory(elbeem)

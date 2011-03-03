@@ -1,7 +1,7 @@
-/**
+/*
  * Jitter offset table
  *
- * $Id: gammaCorrectionTables.c 30705 2010-07-25 01:45:53Z campbellbarton $
+ * $Id: gammaCorrectionTables.c 35233 2011-02-27 19:31:27Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/render/intern/source/gammaCorrectionTables.c
+ *  \ingroup render
+ */
+
 
 #include "gammaCorrectionTables.h"
 #include <stdlib.h>

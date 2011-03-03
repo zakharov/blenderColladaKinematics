@@ -1,15 +1,15 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/editors/object
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-02-10T17:23:00.772520Z
-34762
-ton
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-01-18T22:05:01.283021Z
-901ac8a583c4a3087e9677b467ccd9ce
-2011-01-07T18:36:47.041781Z
-34159
-campbellbarton
+2011-03-03T12:28:37.666297Z
+5ace8fd74bf3c0e4ab90d7e65b3884b5
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-10087
+10158
 
 object_transform.c
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-02-10T19:48:55.165667Z
-6a9d2938fbf8219c819a4abdf7eaf3f7
-2011-02-09T15:32:39.500152Z
-34742
-campbellbarton
+2011-03-03T12:28:37.670297Z
+1a8b05b20b2fcc6813aababee0108abf
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-26926
+26093
 
 object_select.c
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-01-18T22:05:01.283021Z
-2806fb41b5269bba6ec344dab43badb2
-2011-01-07T18:36:47.041781Z
-34159
-campbellbarton
+2011-03-03T12:28:37.670297Z
+594b3fd45dcc7956769f885ed46e6ac3
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-25149
+25267
 
 SConscript
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-01-18T22:05:01.283021Z
-3895eff23d36b930220e1ed6d1c8e963
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:28:37.670297Z
+533570210e7819bb2ef50dbfe6f0f3e6
+2011-02-21T12:35:04.852834Z
+35028
+jesterking
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-713
+730
 
 object_vgroup.c
 file
@@ -168,11 +168,11 @@ file
 
 
 
-2011-02-10T19:48:55.165667Z
-d6aee024b4c05c5c86a51480c7f09d2d
-2011-02-07T22:48:23.532584Z
-34701
-campbellbarton
+2011-03-03T12:28:37.670297Z
+fb0e15601b690cce25b90e47a80eb64d
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-52631
+52721
 
 object_constraint.c
 file
@@ -202,11 +202,11 @@ file
 
 
 
-2011-02-10T19:48:55.165667Z
-a00b25866127ec93cab0b4d8ec5b54df
-2011-02-08T05:51:20.066352Z
-34710
-aligorith
+2011-03-03T12:28:37.670297Z
+31dcba68ca7748a4f21c73855cb70271
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -228,7 +228,7 @@ has-props
 
 
 
-47232
+47434
 
 object_edit.c
 file
@@ -236,11 +236,11 @@ file
 
 
 
-2011-02-10T19:48:55.165667Z
-5abc3bf43497e9babc2f91064c0f80db
-2011-02-10T17:23:00.772520Z
-34762
-ton
+2011-03-03T12:28:37.674297Z
+306972d91c4eee8fe5bab331e580b6bc
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -262,7 +262,7 @@ has-props
 
 
 
-59210
+59135
 
 object_lattice.c
 file
@@ -270,11 +270,11 @@ file
 
 
 
-2011-01-18T22:05:01.283021Z
-c8425c17547606470940bed46d48a54d
-2011-01-12T03:41:12.073182Z
-34273
-campbellbarton
+2011-03-03T12:28:37.674297Z
+922d05582a5a9115f335c09f10e04826
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -296,7 +296,7 @@ has-props
 
 
 
-9322
+9460
 
 object_add.c
 file
@@ -304,11 +304,11 @@ file
 
 
 
-2011-02-10T19:48:55.165667Z
-9cc09b2ce55f109de57038158279240c
-2011-02-10T04:48:49.961568Z
-34749
-campbellbarton
+2011-03-03T12:28:37.674297Z
+ee47b58b164d8047b7a6424f30f28a08
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -330,7 +330,7 @@ has-props
 
 
 
-47340
+47487
 
 object_group.c
 file
@@ -338,11 +338,11 @@ file
 
 
 
-2011-01-18T22:05:01.283021Z
-34b2444c005098ed676d8872cfd15f78
-2011-01-07T18:36:47.041781Z
-34159
-campbellbarton
+2011-03-03T12:28:37.674297Z
+66edbd50a2b42fa3f4983d22240b38d0
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -364,7 +364,7 @@ has-props
 
 
 
-8211
+8279
 
 object_modifier.c
 file
@@ -372,11 +372,11 @@ file
 
 
 
-2011-01-18T22:05:01.283021Z
-f3ad910137f5f593db44c2116afeeb98
-2011-01-14T19:35:59.381625Z
-34326
-campbellbarton
+2011-03-03T12:28:37.674297Z
+8f378410d003d146f6a644e1bc259fd5
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -398,7 +398,7 @@ has-props
 
 
 
-36481
+36552
 
 object_hook.c
 file
@@ -406,11 +406,11 @@ file
 
 
 
-2011-01-18T22:05:01.283021Z
-1a0fd8431e612752d53084990e337c4c
-2011-01-07T18:36:47.041781Z
-34159
-campbellbarton
+2011-03-03T12:28:37.678297Z
+d88ce546480a9007b75664139a7079f9
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -432,7 +432,7 @@ has-props
 
 
 
-20523
+20590
 
 object_relations.c
 file
@@ -440,11 +440,11 @@ file
 
 
 
-2011-02-10T19:48:55.165667Z
-699aa80b78bf0a368772f56697c1ad09
-2011-02-10T10:14:12.216792Z
-34755
-aligorith
+2011-03-03T12:28:37.678297Z
+6a7fc11283df329e70f92d4e7c50c67e
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -466,7 +466,7 @@ has-props
 
 
 
-49466
+49585
 
 object_ops.c
 file
@@ -474,11 +474,11 @@ file
 
 
 
-2011-02-10T19:48:55.165667Z
-99b2ebe13684d4e930f4893ead2afc4c
-2011-01-23T14:04:31.916180Z
-34468
-jhk
+2011-03-03T12:28:37.678297Z
+9a921e0dffe62f499e4d7b3656f96443
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -500,7 +500,7 @@ has-props
 
 
 
-18489
+18566
 
 object_bake.c
 file
@@ -508,11 +508,11 @@ file
 
 
 
-2011-01-18T22:05:01.293021Z
-c9cca669080226d5ede397ba11cedf7e
-2011-01-07T18:36:47.041781Z
-34159
-campbellbarton
+2011-03-03T12:28:37.678297Z
+880009f4c05c1d94939195799deb9159
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -534,7 +534,7 @@ has-props
 
 
 
-9085
+9187
 
 object_intern.h
 file
@@ -542,11 +542,11 @@ file
 
 
 
-2011-02-10T19:48:55.165667Z
-3820fa2e27c538db84e93f9739b09ea6
-2011-01-23T14:04:31.916180Z
-34468
-jhk
+2011-03-03T12:28:37.678297Z
+e6e6c46de3221d2b1d2dc1ff2ead88e5
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -568,7 +568,7 @@ has-props
 
 
 
-9864
+9944
 
 CMakeLists.txt
 file
@@ -576,11 +576,11 @@ file
 
 
 
-2011-01-18T22:05:01.293021Z
-b626dd9d1afb352da60b7b8de2f0788f
-2010-12-22T23:09:30.468439Z
-33864
-campbellbarton
+2011-03-03T12:28:37.678297Z
+66102aeeb48e7932780e1712112f9010
+2011-02-21T12:35:04.852834Z
+35028
+jesterking
 has-props
 
 
@@ -602,5 +602,5 @@ has-props
 
 
 
-1483
+1501
 

@@ -1,5 +1,5 @@
-/**
- * $Id: object_hook.c 34159 2011-01-07 18:36:47Z campbellbarton $
+/*
+ * $Id: object_hook.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/object/object_hook.c
+ *  \ingroup edobj
+ */
+
 
 #include <stdlib.h>
 #include <string.h>

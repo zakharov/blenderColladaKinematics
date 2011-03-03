@@ -1,5 +1,5 @@
-/**
- * $Id: paint_undo.c 34287 2011-01-12 18:00:23Z ton $
+/*
+ * $Id: paint_undo.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * Undo system for painting and sculpting.
  * 
@@ -21,6 +21,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/sculpt_paint/paint_undo.c
+ *  \ingroup edsculpt
+ */
+
 
 #include <stdlib.h>
 #include <string.h>

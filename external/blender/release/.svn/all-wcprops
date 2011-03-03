@@ -1,13 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 56
-/svnroot/bf-blender/!svn/ver/34760/trunk/blender/release
-END
-VERSION
-K 25
-svn:wc:ra_dav:version-url
-V 64
-/svnroot/bf-blender/!svn/ver/34074/trunk/blender/release/VERSION
+/svnroot/bf-blender/!svn/ver/35328/trunk/blender/release
 END
 environment-unix
 K 25

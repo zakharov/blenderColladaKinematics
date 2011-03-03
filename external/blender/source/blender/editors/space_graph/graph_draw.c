@@ -1,5 +1,5 @@
-/**
- * $Id: graph_draw.c 34731 2011-02-09 02:09:25Z aligorith $
+/*
+ * $Id: graph_draw.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -23,6 +23,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_graph/graph_draw.c
+ *  \ingroup spgraph
+ */
+
 
 #include <stdio.h>
 #include <math.h>

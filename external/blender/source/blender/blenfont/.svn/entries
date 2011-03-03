@@ -1,15 +1,15 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/blenfont
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-30T15:29:22.294392Z
-34567
-campbellbarton
+2011-02-27T20:42:42.472826Z
+35248
+jesterking
 
 
 
@@ -35,11 +35,11 @@ file
 
 
 
-2011-01-18T22:04:47.973021Z
-b7e43cca686de1e914927470c594fb51
-2010-12-09T22:27:55.615356Z
-33579
-bdiego
+2011-03-03T12:27:34.762297Z
+6d362cb0d9d532bb4c8edbf110ab5192
+2011-02-27T20:42:42.472826Z
+35248
+jesterking
 has-props
 
 
@@ -61,7 +61,7 @@ has-props
 
 
 
-6275
+6380
 
 SConscript
 file
@@ -69,7 +69,7 @@ file
 
 
 
-2011-01-18T22:04:47.973021Z
+2011-03-03T12:27:34.762297Z
 2d6ac8381e2f5a422fc59d4eb207ea53
 2010-08-29T20:52:05.030364Z
 31645
@@ -103,7 +103,7 @@ file
 
 
 
-2011-01-18T22:04:47.973021Z
+2011-03-03T12:27:34.766297Z
 c2b10e20d0c4fd56f6e23718a981a84c
 2010-12-22T23:09:30.468439Z
 33864

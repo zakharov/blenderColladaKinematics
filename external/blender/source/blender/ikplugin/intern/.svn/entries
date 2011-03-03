@@ -1,14 +1,14 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/ikplugin/intern
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-30T15:29:22.294392Z
-34567
+2011-03-03T17:58:06.695335Z
+35336
 campbellbarton
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-01-18T22:04:39.133021Z
-31c90d0ebdf78e21b22b63db8a6815f3
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:27:13.098297Z
+8606a4b7e525d46d482e72276635d836
+2011-02-27T20:24:49.678109Z
+35240
+jesterking
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-1823
+1895
 
 iksolver_plugin.h
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-01-18T22:04:39.133021Z
-95f6fd7f5de34ae3a70b9cd0df780183
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:27:13.098297Z
+4d46b093d3f347387e380d4c4b900ba0
+2011-02-27T20:24:49.678109Z
+35240
+jesterking
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-1449
+1524
 
 itasc_plugin.cpp
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-01-18T22:04:39.133021Z
-297a80ce5a0b1e84c0c3ae8ee56ca703
-2011-01-07T18:36:47.041781Z
-34159
-campbellbarton
+2011-03-03T12:27:13.102297Z
+83443551d0a00f070902b7feb69402ed
+2011-02-27T20:24:49.678109Z
+35240
+jesterking
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-58358
+58432
 
 itasc_plugin.h
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-01-18T22:04:39.133021Z
-03a26fe486c760e8f3872892ce35d04e
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:27:13.106297Z
+fe281932f193439def60c13dd2c7951d
+2011-02-27T20:24:49.678109Z
+35240
+jesterking
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-1715
+1787
 
 ikplugin_api.c
 file
@@ -168,11 +168,11 @@ file
 
 
 
-2011-01-18T22:04:39.133021Z
-c6f0e097458af465818904b595582380
-2011-01-07T19:18:31.464706Z
-34160
-campbellbarton
+2011-03-03T12:27:13.106297Z
+16ebc5ecc82f8c55ff13390f31014ead
+2011-02-27T20:24:49.678109Z
+35240
+jesterking
 has-props
 
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-3396
+3468
 
 iksolver_plugin.c
 file
@@ -202,10 +202,10 @@ file
 
 
 
-2011-01-18T22:04:39.133021Z
-679dcf37b83e013898c5479ba0df4899
-2011-01-07T19:18:31.464706Z
-34160
+2011-03-03T21:53:55.492120Z
+c8c04a923cbee4aa7cf5936b086fd687
+2011-03-03T17:58:06.695335Z
+35336
 campbellbarton
 has-props
 
@@ -228,5 +228,5 @@ has-props
 
 
 
-16530
+16624
 

@@ -1,5 +1,5 @@
-/**
- * $Id: KX_BlenderGL.cpp 34515 2011-01-26 22:16:58Z dfelinto $
+/*
+ * $Id: KX_BlenderGL.cpp 35166 2011-02-25 13:29:48Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/BlenderRoutines/KX_BlenderGL.cpp
+ *  \ingroup blroutines
+ */
+
 
 #include "KX_BlenderGL.h"
 

@@ -1,5 +1,5 @@
-/**
- * $Id: IK_QJacobianSolver.cpp 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: IK_QJacobianSolver.cpp 35154 2011-02-25 11:43:19Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file iksolver/intern/IK_QJacobianSolver.cpp
+ *  \ingroup iksolver
+ */
+
 
 #include <stdio.h>
 #include "IK_QJacobianSolver.h"

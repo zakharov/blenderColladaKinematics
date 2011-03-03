@@ -1,5 +1,5 @@
-/**
- * $Id: subsurf_ccg.c 34587 2011-01-31 20:02:51Z nazgul $
+/*
+ * $Id: subsurf_ccg.c 35336 2011-03-03 17:58:06Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/blenkernel/intern/subsurf_ccg.c
+ *  \ingroup bke
+ */
+
 
 #include <stdlib.h>
 #include <string.h>
@@ -1359,7 +1364,7 @@ static void ccgDM_drawMappedFacesGLSL(DerivedMesh *dm, int (*setMaterial)(int, v
 	CCGSubSurf *ss = ccgdm->ss;
 	CCGFaceIterator *fi = ccgSubSurf_getFaceIterator(ss);
 	GPUVertexAttribs gattribs;
-	DMVertexAttribs attribs= {{{0}}};
+	DMVertexAttribs attribs= {{{NULL}}};
 	MTFace *tf = dm->getFaceDataArray(dm, CD_MTFACE);
 	int gridSize = ccgSubSurf_getGridSize(ss);
 	int gridFaces = gridSize - 1;
@@ -1392,7 +1397,7 @@ static void ccgDM_drawMappedFacesGLSL(DerivedMesh *dm, int (*setMaterial)(int, v
 	}																			\
 	if(attribs.tottang) {														\
 		float *tang = attribs.tang.array[a*4 + vert];							\
-		glVertexAttrib3fvARB(attribs.tang.glIndex, tang);						\
+		glVertexAttrib4fvARB(attribs.tang.glIndex, tang);						\
 	}																			\
 }
 
@@ -2251,8 +2256,16 @@ static struct PBVH *ccgDM_getPBVH(Object *ob, DerivedMesh *dm)
 	if(!ob->sculpt)
 		return NULL;
 
-	if(ob->sculpt->pbvh)
+	if(ob->sculpt->pbvh) {
+	   /* pbvh's grids, gridadj and gridfaces points to data inside ccgdm
+		  but this can be freed on ccgdm release, this updates the pointers
+		  when the ccgdm gets remade, the assumption is that the topology
+		  does not change. */
+		ccgdm_create_grids(dm);
+		BLI_pbvh_grids_update(ob->sculpt->pbvh, ccgdm->gridData, ccgdm->gridAdjacency, (void**)ccgdm->gridFaces);
+
 		ccgdm->pbvh = ob->sculpt->pbvh;
+	}
 
 	if(ccgdm->pbvh)
 		return ccgdm->pbvh;

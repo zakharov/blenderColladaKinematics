@@ -1,4 +1,4 @@
-/* $Id: Texture.h 19820 2009-04-20 15:06:46Z blendix $
+/* $Id: Texture.h 35176 2011-02-25 13:39:34Z jesterking $
 -----------------------------------------------------------------------------
 This source file is part of VideoTexture library
 
@@ -20,6 +20,10 @@ http://www.gnu.org/copyleft/lesser.txt.
 -----------------------------------------------------------------------------
 */
 
+/** \file VideoTexture/Texture.h
+ *  \ingroup bgevideotex
+ */
+ 
 #if !defined TEXTURE_H
 #define TEXTURE_H
 

@@ -1,5 +1,5 @@
-/**
- * $Id: blf_internal_types.h 33579 2010-12-09 22:27:55Z bdiego $
+/*
+ * $Id: blf_internal_types.h 35248 2011-02-27 20:42:42Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/blenfont/intern/blf_internal_types.h
+ *  \ingroup blf
+ */
+
 
 #ifndef BLF_INTERNAL_TYPES_H
 #define BLF_INTERNAL_TYPES_H
@@ -182,6 +187,9 @@ typedef struct FontBLF {
 	
 	/* fast ascii lookip */
 	GlyphBLF *glyph_ascii_table[256];
+
+	/* freetype2 lib handle. */
+	FT_Library ft_lib;
 
 	/* freetype2 face. */
 	FT_Face face;

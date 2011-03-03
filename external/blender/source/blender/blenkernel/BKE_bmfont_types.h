@@ -1,9 +1,5 @@
-/**
- * blenlib/BKE_bmfont_types.h (mar-2001 nzc)
- *
- *
- *
- * $Id: BKE_bmfont_types.h 26841 2010-02-12 13:34:04Z campbellbarton $ 
+/*
+ * $Id: BKE_bmfont_types.h 34962 2011-02-18 13:05:18Z jesterking $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -33,6 +29,11 @@
 #ifndef BKE_BMFONT_TYPES_H
 #define BKE_BMFONT_TYPES_H
 
+/** \file BKE_bmfont_types.h
+ *  \ingroup bke
+ *  \since March 2001
+ *  \author nzc
+ */
 #define is_power_of_two(N) ((N ^ (N - 1)) == (2 * N - 1))
 /*
 Moved to IMB_imbuf_types.h where it will live close to the ImBuf type.

@@ -1,8 +1,8 @@
-/**
+/*
  * Manager for mouse events
  *
  *
- * $Id: SCA_MouseManager.cpp 31950 2010-09-15 16:13:32Z campbellbarton $
+ * $Id: SCA_MouseManager.cpp 35169 2011-02-25 13:32:11Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -29,6 +29,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/GameLogic/SCA_MouseManager.cpp
+ *  \ingroup gamelogic
+ */
+
 
 #if defined(WIN32) && !defined(FREE_WINDOWS)
 // This warning tells us about truncation of __long__ stl-generated names.

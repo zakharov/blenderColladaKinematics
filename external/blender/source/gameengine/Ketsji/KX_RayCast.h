@@ -1,5 +1,5 @@
-/**
- * $Id: KX_RayCast.h 29259 2010-06-06 01:15:44Z campbellbarton $
+/*
+ * $Id: KX_RayCast.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,10 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file KX_RayCast.h
+ *  \ingroup ketsji
  */
 
 #ifndef __KX_RAYCAST_H__

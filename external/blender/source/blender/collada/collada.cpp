@@ -1,5 +1,5 @@
-/**
- * $Id: collada.cpp 33668 2010-12-14 21:46:03Z jesterking $
+/*
+ * $Id: collada.cpp 35243 2011-02-27 20:30:35Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,14 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/collada/collada.cpp
+ *  \ingroup collada
+ */
+
+
+/* COLLADABU_ASSERT, may be able to remove later */
+#include "COLLADABUPlatform.h"
 
 #include "DocumentExporter.h"
 #include "DocumentImporter.h"

@@ -1,5 +1,5 @@
-/**
- * $Id: GPC_RenderTools.cpp 34079 2011-01-05 01:34:33Z moguri $
+/*
+ * $Id: GPC_RenderTools.cpp 35170 2011-02-25 13:35:11Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/GamePlayer/common/GPC_RenderTools.cpp
+ *  \ingroup player
+ */
+
 
 #include "GL/glew.h"
 

@@ -1,6 +1,6 @@
 /*  
  * 
- * $Id: bullet.c 26841 2010-02-12 13:34:04Z campbellbarton $
+ * $Id: bullet.c 35247 2011-02-27 20:40:57Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/blenkernel/intern/bullet.c
+ *  \ingroup bke
+ */
+
 
 #include "MEM_guardedalloc.h"
 

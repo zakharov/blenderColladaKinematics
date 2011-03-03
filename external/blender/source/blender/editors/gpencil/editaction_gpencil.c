@@ -1,5 +1,5 @@
-/**
- * $Id: editaction_gpencil.c 34236 2011-01-10 22:10:28Z aligorith $
+/*
+ * $Id: editaction_gpencil.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/gpencil/editaction_gpencil.c
+ *  \ingroup edgpencil
+ */
+
  
 #include <stdio.h>
 #include <string.h>

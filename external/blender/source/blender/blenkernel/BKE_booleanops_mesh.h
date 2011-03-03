@@ -1,5 +1,5 @@
-/**
- * $Id: BKE_booleanops_mesh.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: BKE_booleanops_mesh.h 34962 2011-02-18 13:05:18Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,10 @@
  */
 #ifndef BKE_PyBooleanOps_h
 #define BKE_PyBooleanOps_h
+
+/** \file BKE_booleanops_mesh.h
+ *  \ingroup bke
+ */
 
 #include "CSG_BooleanOps.h"
 

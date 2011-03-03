@@ -1,15 +1,15 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/gameengine/Physics/common
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-30T15:29:22.294392Z
-34567
-campbellbarton
+2011-02-25T13:37:23.714750Z
+35173
+jesterking
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-01-18T22:04:23.623021Z
-be800c5f1c9fc752825c0a19782af21a
-2010-08-28T20:56:54.035483Z
-31636
-ben2610
+2011-03-03T12:26:29.498297Z
+890ef0fc8be689b93ce5a6c959a8c94d
+2011-02-22T12:42:55.440226Z
+35072
+jesterking
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-3889
+3940
 
 PHY_IMotionState.cpp
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-01-18T22:04:23.623021Z
-af1ad6408715e19b9573368047bede20
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:29.502297Z
+f531719301f5bcd6697495aa5e4a9856
+2011-02-25T13:37:23.714750Z
+35173
+jesterking
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-1130
+1206
 
 PHY_IPhysicsEnvironment.cpp
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-01-18T22:04:23.623021Z
-1dbc56d03c2594dc40bdc991227efc61
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:29.502297Z
+6ae2c2ad857fe02ec4df47eabca2fc1d
+2011-02-25T13:37:23.714750Z
+35173
+jesterking
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-1394
+1477
 
 PHY_IMotionState.h
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-01-18T22:04:23.623021Z
-3259bc072071d02baf81818bcce89747
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:29.502297Z
+5386b10861388985fea61cff3c1c66f3
+2011-02-22T12:42:55.440226Z
+35072
+jesterking
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-2348
+2396
 
 PHY_IPhysicsEnvironment.h
 file
@@ -168,11 +168,11 @@ file
 
 
 
-2011-01-18T22:04:23.623021Z
-61685f917490769d54e0a41d6beeceb2
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:29.506297Z
+f918fb15a9fb7d58ce4536e0295671e6
+2011-02-22T12:42:55.440226Z
+35072
+jesterking
 has-props
 
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-7885
+7939
 
 SConscript
 file
@@ -202,7 +202,7 @@ file
 
 
 
-2011-01-18T22:04:23.623021Z
+2011-03-03T12:26:29.506297Z
 20c56ad77ddfb319544acc4c0566238f
 2010-11-18T11:42:05.232926Z
 33156
@@ -236,11 +236,11 @@ file
 
 
 
-2011-01-18T22:04:23.623021Z
-18352649d6ee1fe0d620acbaca3b64a8
-2006-01-30T20:49:41.000000Z
-6613
-erwin
+2011-03-03T12:26:29.506297Z
+d6db0c1ad58ff3d1f91b58c4c27e777c
+2011-02-25T13:37:23.714750Z
+35173
+jesterking
 has-props
 
 
@@ -262,7 +262,7 @@ has-props
 
 
 
-63
+138
 
 PHY_IGraphicController.cpp
 file
@@ -270,11 +270,11 @@ file
 
 
 
-2011-01-18T22:04:23.623021Z
-a59280e5b0da3961e3e4c13c73a1fc79
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:29.510297Z
+c06a3463593328bc932c8682b6151f61
+2011-02-25T13:37:23.714750Z
+35173
+jesterking
 has-props
 
 
@@ -296,7 +296,7 @@ has-props
 
 
 
-1155
+1237
 
 PHY_IController.cpp
 file
@@ -304,11 +304,11 @@ file
 
 
 
-2011-01-18T22:04:23.623021Z
-cda5855963fbceb7f412bdcf045b8028
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:29.510297Z
+c764fab19129663e00a3fc218d5e9b49
+2011-02-25T13:37:23.714750Z
+35173
+jesterking
 has-props
 
 
@@ -330,7 +330,7 @@ has-props
 
 
 
-1127
+1202
 
 PHY_IVehicle.h
 file
@@ -338,11 +338,11 @@ file
 
 
 
-2011-01-18T22:04:23.623021Z
-ab93a950be3ffff35992e68edfb4436a
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:29.510297Z
+486dd1cb1801f427a9e3e724a4861443
+2011-02-22T12:42:55.440226Z
+35072
+jesterking
 has-props
 
 
@@ -364,7 +364,7 @@ has-props
 
 
 
-1962
+2011
 
 PHY_IGraphicController.h
 file
@@ -372,11 +372,11 @@ file
 
 
 
-2011-01-18T22:04:23.623021Z
-0abcdee7fffcc64eaba80b4197b3853b
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:29.510297Z
+0d91c5c6412a6f2eca4875a7de727a75
+2011-02-25T13:37:23.714750Z
+35173
+jesterking
 has-props
 
 
@@ -398,7 +398,7 @@ has-props
 
 
 
-2095
+2149
 
 PHY_IPhysicsController.cpp
 file
@@ -406,11 +406,11 @@ file
 
 
 
-2011-01-18T22:04:23.623021Z
-261751cb5700c6184ecac8dd817f9daf
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:29.510297Z
+1da4c1d1b8416cb188c787ea981184e2
+2011-02-25T13:37:23.714750Z
+35173
+jesterking
 has-props
 
 
@@ -432,7 +432,7 @@ has-props
 
 
 
-1155
+1237
 
 PHY_IController.h
 file
@@ -440,11 +440,11 @@ file
 
 
 
-2011-01-18T22:04:23.623021Z
-b266bf24b7a282aaf976f9b442d8b029
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:29.510297Z
+8a727fb2229e9003ab5eb58c7bbd487d
+2011-02-22T12:42:55.440226Z
+35072
+jesterking
 has-props
 
 
@@ -466,7 +466,7 @@ has-props
 
 
 
-1945
+1992
 
 PHY_IPhysicsController.h
 file
@@ -474,11 +474,11 @@ file
 
 
 
-2011-01-18T22:04:23.623021Z
-2930547ce039b207741d619c8b215fe8
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:29.510297Z
+d7d47948f094c1c8778cdc9895405417
+2011-02-22T12:42:55.440226Z
+35072
+jesterking
 has-props
 
 
@@ -500,7 +500,7 @@ has-props
 
 
 
-4525
+4579
 
 PHY_Pro.h
 file
@@ -508,11 +508,11 @@ file
 
 
 
-2011-01-18T22:04:23.623021Z
-62b4cfb6938070af9919b39ea10ebec9
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:29.510297Z
+1bce6eff3d99f161b3b2b01300701c68
+2011-02-22T12:42:55.440226Z
+35072
+jesterking
 has-props
 
 
@@ -534,7 +534,7 @@ has-props
 
 
 
-2730
+2769
 
 CMakeLists.txt
 file
@@ -542,7 +542,7 @@ file
 
 
 
-2011-01-18T22:04:23.623021Z
+2011-03-03T12:26:29.510297Z
 99c21b29060da6995386e524ba2369a7
 2010-12-22T23:09:30.468439Z
 33864

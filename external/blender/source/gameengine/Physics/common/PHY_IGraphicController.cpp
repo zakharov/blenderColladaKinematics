@@ -1,5 +1,5 @@
-/**
- * $Id: PHY_IGraphicController.cpp 28254 2010-04-18 10:28:37Z campbellbarton $
+/*
+ * $Id: PHY_IGraphicController.cpp 35173 2011-02-25 13:37:23Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/Physics/common/PHY_IGraphicController.cpp
+ *  \ingroup phys
+ */
+
 #include "PHY_IGraphicController.h"
 
 PHY_IGraphicController::~PHY_IGraphicController()

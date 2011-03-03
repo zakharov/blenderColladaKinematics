@@ -1,9 +1,9 @@
-/**
+/*
  * BME_structure.c    jan 2007
  *
  *	Low level routines for manipulating the BMesh structure.
  *
- * $Id: BME_structure.c 34159 2011-01-07 18:36:47Z campbellbarton $
+ * $Id: BME_structure.c 35247 2011-02-27 20:40:57Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -31,6 +31,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/blenkernel/intern/BME_structure.c
+ *  \ingroup bke
+ */
+
 
 #include <limits.h>
 

@@ -1,5 +1,5 @@
-/**
- * $Id: SCA_IController.h 32788 2010-10-31 04:11:39Z campbellbarton $
+/*
+ * $Id: SCA_IController.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,13 +26,18 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file SCA_IController.h
+ *  \ingroup gamelogic
+ */
+
 #ifndef __KX_ICONTROLLER
 #define __KX_ICONTROLLER
 
 #include "SCA_ILogicBrick.h"
 #include "PyObjectPlus.h"
 
-/*
+/**
  * Use of SG_DList element: none
  * Use of SG_QList element: build ordered list of activated controller on the owner object
  *                          Head: SCA_IObject::m_activeControllers

@@ -1,5 +1,5 @@
-/**
- * $Id: GPG_System.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: GPG_System.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,7 +25,11 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
- * Blender Player system on GHOST.
+ */
+
+/** \file GPG_System.h
+ *  \ingroup player
+ *  \brief Blender Player system on GHOST.
  */
 
 #ifndef _GPG_SYSTEM_H_

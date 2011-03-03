@@ -1,7 +1,5 @@
-/**
- * A kd-tree for nearest neighbour search.
- * 
- * $Id: BLI_kdtree.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: BLI_kdtree.h 34966 2011-02-18 13:58:08Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -32,6 +30,13 @@
  
 #ifndef BLI_KDTREE_H
 #define BLI_KDTREE_H
+
+/** \file BLI_kdtree.h
+ *  \ingroup bli
+ *  \brief A kd-tree for nearest neighbour search.
+ *  \author Janne Karhu
+ *  \author Brecht van Lommel
+ */
 
 struct KDTree;
 typedef struct KDTree KDTree;

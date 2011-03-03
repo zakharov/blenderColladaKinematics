@@ -1,5 +1,5 @@
-/**
- * $Id: BIF_generate.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: BIF_generate.h 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -19,6 +19,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/armature/BIF_generate.h
+ *  \ingroup edarmature
+ */
+
  
 #ifndef BIF_GENERATE_H
 #define BIF_GENERATE_H

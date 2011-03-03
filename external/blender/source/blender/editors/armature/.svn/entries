@@ -1,14 +1,14 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/editors/armature
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-02-07T13:02:44.124555Z
-34693
+2011-03-03T17:59:04.039119Z
+35337
 campbellbarton
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-01-18T22:04:52.963021Z
-52aae2135cf72035534cc2535cf16563
-2011-01-07T19:18:31.464706Z
-34160
-campbellbarton
+2011-03-03T12:27:55.706297Z
+1e92f1147e6a966098bede301aeac1ff
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-7355
+7439
 
 armature_ops.c
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-01-18T22:04:52.973021Z
-972eeb0512f0cc8edf8481cbef0f5025
-2011-01-11T21:12:48.852143Z
-34264
-aligorith
+2011-03-03T12:27:55.706297Z
+4b509c083264c7b040d6bcb895ab694e
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-16158
+16747
 
 meshlaplacian.c
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-01-18T22:04:52.973021Z
-efae4330210df0bcacc58be8e01615d1
-2011-01-09T01:17:56.259376Z
-34183
-campbellbarton
+2011-03-03T12:27:55.706297Z
+3bb5299d7f51b6c5758ebf70a41de99b
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-50934
+51063
 
 BIF_retarget.h
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-01-18T22:04:52.973021Z
-5736e9539a76f205c77ff81063ebf35c
-2010-12-03T17:05:21.802549Z
-33448
-campbellbarton
+2011-03-03T12:27:55.706297Z
+51db1f7f2651b26fcb62888b4e92ea7c
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-3638
+3978
 
 armature_intern.h
 file
@@ -168,11 +168,11 @@ file
 
 
 
-2011-01-18T22:04:52.973021Z
-1e28ce7f46624daf319552b2e5d9c1bf
-2011-01-11T21:12:48.852143Z
-34264
-aligorith
+2011-03-03T12:27:55.706297Z
+fc978280fd740d3090a675e10e0a49cd
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-8043
+8403
 
 SConscript
 file
@@ -202,11 +202,11 @@ file
 
 
 
-2011-01-18T22:04:52.973021Z
-31692e5b630b8d0fea98cfbfec972ebb
-2010-06-22T15:12:00.240318Z
-29621
-blendix
+2011-03-03T12:27:55.706297Z
+ffd94dd5e237008b86ff9982f67c4d42
+2011-02-21T12:35:04.852834Z
+35028
+jesterking
 has-props
 
 
@@ -228,7 +228,7 @@ has-props
 
 
 
-602
+619
 
 meshlaplacian.h
 file
@@ -236,11 +236,11 @@ file
 
 
 
-2011-01-18T22:04:52.973021Z
-4cb8e66cec619eae170be15d066e2c19
-2010-12-04T13:00:28.400300Z
-33468
-campbellbarton
+2011-03-03T12:27:55.706297Z
+36e68a1f4022dafdb6ddda1342e71d38
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -262,7 +262,7 @@ has-props
 
 
 
-2524
+2600
 
 reeb.c
 file
@@ -270,11 +270,11 @@ file
 
 
 
-2011-01-18T22:04:52.983021Z
-cca97607c21dc6a03b7f07eb2fa725a6
-2011-01-13T04:53:55.701793Z
-34290
-campbellbarton
+2011-03-03T12:27:55.710297Z
+bc5bfe506881d98e8f4256a43f4ffc01
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -296,7 +296,7 @@ has-props
 
 
 
-78409
+78959
 
 BIF_generate.h
 file
@@ -304,11 +304,11 @@ file
 
 
 
-2011-01-18T22:04:52.983021Z
-8109832f12fba0e187cf10ba76b8df9d
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:27:55.710297Z
+0c0be98ca88f84438780cdfd362bf98a
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -330,7 +330,7 @@ has-props
 
 
 
-1987
+2062
 
 reeb.h
 file
@@ -338,11 +338,11 @@ file
 
 
 
-2011-01-18T22:04:52.983021Z
-7daf79d263635f6007fcfa87056715d6
-2010-12-03T12:30:59.861558Z
-33442
-campbellbarton
+2011-03-03T12:27:55.710297Z
+2c2460d086b300e90e28d0beb6c2620d
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -364,7 +364,7 @@ has-props
 
 
 
-5126
+5263
 
 editarmature_retarget.c
 file
@@ -372,11 +372,11 @@ file
 
 
 
-2011-01-18T22:04:52.983021Z
-5536e96657ffe088d574b27a8fb30fc8
-2011-01-13T04:53:55.701793Z
-34290
-campbellbarton
+2011-03-03T12:27:55.710297Z
+2ff5a5a1966206af201b856430c96cfe
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -398,7 +398,7 @@ has-props
 
 
 
-67276
+67484
 
 editarmature.c
 file
@@ -406,11 +406,11 @@ file
 
 
 
-2011-02-10T19:48:53.275667Z
-3b0b1ffdf2847c85e5d4d4cf7d166393
-2011-02-07T13:02:44.124555Z
-34693
-campbellbarton
+2011-03-03T12:27:55.714297Z
+c627d5ddf18b578e376f81fcb9572aaa
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -432,7 +432,7 @@ has-props
 
 
 
-168542
+168767
 
 editarmature_sketch.c
 file
@@ -440,11 +440,11 @@ file
 
 
 
-2011-01-18T22:04:52.983021Z
-4f153d32b6dc27931f222d784a982250
-2011-01-07T18:36:47.041781Z
-34159
-campbellbarton
+2011-03-03T12:27:55.718297Z
+e10402e633caeedf504350254671abe0
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -466,7 +466,7 @@ has-props
 
 
 
-62652
+63196
 
 poseSlide.c
 file
@@ -474,11 +474,11 @@ file
 
 
 
-2011-01-18T22:04:52.983021Z
-fbd327d566101220c5e9ac28b468712a
-2011-01-07T18:36:47.041781Z
-34159
-campbellbarton
+2011-03-03T12:27:55.718297Z
+22b6f79d4cc0cb8a14457a0372304dfe
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -500,7 +500,7 @@ has-props
 
 
 
-23499
+23571
 
 poseUtils.c
 file
@@ -508,11 +508,11 @@ file
 
 
 
-2011-01-18T22:04:52.983021Z
-2165739eecd69148a5091671d1b2dac0
-2011-01-07T18:36:47.041781Z
-34159
-campbellbarton
+2011-03-03T12:27:55.718297Z
+b13fe3682f598ae43da13911c3c40094
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -534,7 +534,7 @@ has-props
 
 
 
-8169
+8241
 
 CMakeLists.txt
 file
@@ -542,10 +542,78 @@ file
 
 
 
-2011-01-18T22:04:52.983021Z
-e5bb1c56f2685e2b07493f6153592169
-2010-12-22T23:09:30.468439Z
-33864
+2011-03-03T12:27:55.718297Z
+cb31bf4d409e6f4634712bd21ec900af
+2011-02-21T12:35:04.852834Z
+35028
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1397
+
+poseobject.c
+file
+
+
+
+
+2011-03-03T12:27:55.718297Z
+84009d5b38ebf515c2969803bc75d932
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+57880
+
+poselib.c
+file
+
+
+
+
+2011-03-03T21:53:56.144120Z
+2f84538591827e5968a03cafc426fd23
+2011-03-03T17:59:04.039119Z
+35337
 campbellbarton
 has-props
 
@@ -568,73 +636,5 @@ has-props
 
 
 
-1379
-
-poselib.c
-file
-
-
-
-
-2011-02-10T19:48:53.275667Z
-dc3ea617939b9c94c99b06a5e43042c8
-2011-02-07T01:28:47.845065Z
-34678
-aligorith
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-43067
-
-poseobject.c
-file
-
-
-
-
-2011-02-10T19:48:53.275667Z
-efcc765d8d5807694f535e1d4f3ef2dd
-2011-02-04T11:43:30.324819Z
-34639
-aligorith
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-57528
+46682
 

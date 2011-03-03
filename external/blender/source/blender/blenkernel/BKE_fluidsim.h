@@ -1,5 +1,5 @@
-/**
- * $Id: BKE_fluidsim.h 28137 2010-04-12 00:36:50Z campbellbarton $
+/*
+ * $Id: BKE_fluidsim.h 34962 2011-02-18 13:05:18Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -30,6 +30,9 @@
 #ifndef BKE_FLUIDSIM_H
 #define BKE_FLUIDSIM_H
 
+/** \file BKE_fluidsim.h
+ *  \ingroup bke
+ */
 
 struct Object;
 struct Scene;

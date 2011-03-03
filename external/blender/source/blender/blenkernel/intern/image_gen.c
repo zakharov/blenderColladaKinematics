@@ -1,6 +1,6 @@
 /*  image_gen.c	
  * 
- * $Id: image_gen.c 33579 2010-12-09 22:27:55Z bdiego $
+ * $Id: image_gen.c 35247 2011-02-27 20:40:57Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -23,8 +23,15 @@
  * ***** END GPL LICENSE BLOCK *****
  */
 
+/** \file blender/blenkernel/intern/image_gen.c
+ *  \ingroup bke
+ */
+
+
 #include <math.h>
 #include <stdlib.h>
+
+#include "BKE_image.h"
 #include "BLI_math_color.h"
 #include "BLF_api.h"
 

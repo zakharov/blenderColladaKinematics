@@ -1,4 +1,4 @@
-/**
+/*
  * $Id$
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
@@ -24,6 +24,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  * */
+
+/** \file blender/blenlib/intern/math_geom.c
+ *  \ingroup bli
+ */
+
 
 
 #include "MEM_guardedalloc.h"
@@ -2080,7 +2085,7 @@ pointers may be NULL if not needed
 
 */
 /* can't believe there is none in math utils */
-float _det_m3(float m2[3][3])
+static float _det_m3(float m2[3][3])
 {
 	float det = 0.f;
 	if (m2){

@@ -1,5 +1,5 @@
-/**
- * $Id: GPC_MouseDevice.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: GPC_MouseDevice.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,10 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file GPC_MouseDevice.h
+ *  \ingroup player
  */
 
 #ifndef __GPC_MOUSE_DEVICE_H

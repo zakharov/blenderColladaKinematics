@@ -1,5 +1,5 @@
-/**
- * $Id: RAS_OpenGLRasterizer.cpp 34701 2011-02-07 22:48:23Z campbellbarton $
+/*
+ * $Id: RAS_OpenGLRasterizer.cpp 35174 2011-02-25 13:38:24Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/Rasterizer/RAS_OpenGLRasterizer/RAS_OpenGLRasterizer.cpp
+ *  \ingroup bgerastogl
+ */
+
  
 #include <math.h>
 #include <stdlib.h>

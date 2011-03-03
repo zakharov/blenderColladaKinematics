@@ -1,5 +1,5 @@
-/**
- * $Id: reeb.h 33442 2010-12-03 12:30:59Z campbellbarton $
+/*
+ * $Id: reeb.h 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/armature/reeb.h
+ *  \ingroup edarmature
+ */
+
  
 #ifndef REEB_H_
 #define REEB_H_
@@ -172,6 +177,8 @@ void sortArcs(ReebGraph *rg);
 /*------------ Sanity check ------------*/
 void verifyBuckets(ReebGraph *rg);
 void verifyFaces(ReebGraph *rg);
+void verifyArcs(ReebGraph *rg);
+void verifyNodeDegree(ReebGraph *rg);
 
 /*********************** PUBLIC *********************************/
 

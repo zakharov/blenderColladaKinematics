@@ -1,5 +1,5 @@
-/**
- * $Id: RAS_OpenGLRasterizer.h 31950 2010-09-15 16:13:32Z campbellbarton $
+/*
+ * $Id: RAS_OpenGLRasterizer.h 35072 2011-02-22 12:42:55Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file RAS_OpenGLRasterizer.h
+ *  \ingroup bgerastogl
+ */
+
 #ifndef __RAS_OPENGLRASTERIZER
 #define __RAS_OPENGLRASTERIZER
 

@@ -1,5 +1,5 @@
-/**
- * $Id: ED_armature.h 33448 2010-12-03 17:05:21Z campbellbarton $
+/*
+ * $Id: ED_armature.h 35016 2011-02-21 07:25:24Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file ED_armature.h
+ *  \ingroup editors
+ */
+
 #ifndef ED_ARMATURE_H
 #define ED_ARMATURE_H
 

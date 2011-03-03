@@ -1,5 +1,5 @@
-/**
- * $Id: BLO_soundfile.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: BLO_soundfile.h 35245 2011-02-27 20:35:41Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,10 @@
  */
 #ifndef BLO_SOUNDFILE_H
 #define BLO_SOUNDFILE_H
+
+/** \file BLO_soundfile.h
+ *  \ingroup blenloader
+ */
 
 #include "DNA_sound_types.h"
 #include "DNA_packedFile_types.h"

@@ -1,5 +1,5 @@
 /*
-* $Id: MOD_hook.c 34587 2011-01-31 20:02:51Z nazgul $
+* $Id: MOD_hook.c 35178 2011-02-25 13:57:17Z jesterking $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -30,6 +30,11 @@
 *
 */
 
+/** \file blender/modifiers/intern/MOD_hook.c
+ *  \ingroup modifiers
+ */
+
+
 #include "DNA_mesh_types.h"
 #include "DNA_meshdata_types.h"
 #include "DNA_object_types.h"
@@ -46,6 +51,7 @@
 #include "depsgraph_private.h"
 #include "MEM_guardedalloc.h"
 
+#include "MOD_util.h"
 
 static void initData(ModifierData *md) 
 {
@@ -243,7 +249,6 @@ static void deformVerts(ModifierData *md, Object *ob,
 		}
 	}
 	else if(dvert) {	/* vertex group hook */
-		int i;
 		const float fac_orig= hmd->force;
 
 		for(i = 0; i < max_dvert; i++, dvert++) {

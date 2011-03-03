@@ -1,5 +1,5 @@
-/**
- * $Id: GeometryExporter.cpp 34533 2011-01-27 19:39:06Z jesterking $
+/*
+ * $Id: GeometryExporter.cpp 35243 2011-02-27 20:30:35Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -22,6 +22,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/collada/GeometryExporter.cpp
+ *  \ingroup collada
+ */
+
 
 #include "COLLADASWPrimitves.h"
 #include "COLLADASWSource.h"

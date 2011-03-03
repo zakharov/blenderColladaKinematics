@@ -27,6 +27,11 @@
  * ***** END GPL LICENSE BLOCK *****
  */
 
+/** \file blender/editors/physics/particle_edit.c
+ *  \ingroup edphys
+ */
+
+
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
@@ -65,6 +70,7 @@
 #include "BIF_gl.h"
 #include "BIF_glutil.h"
 
+#include "ED_physics.h"
 #include "ED_mesh.h"
 #include "ED_particle.h"
 #include "ED_view3d.h"
@@ -939,7 +945,7 @@ static void pe_deflect_emitter(Scene *scene, Object *ob, PTCacheEdit *edit)
 	}
 }
 /* force set distances between neighbouring keys */
-void PE_apply_lengths(Scene *scene, PTCacheEdit *edit)
+static void PE_apply_lengths(Scene *scene, PTCacheEdit *edit)
 {
 	
 	ParticleEditSettings *pset=PE_settings(scene);
@@ -3804,7 +3810,7 @@ static void get_PTCacheUndo(PTCacheEdit *edit, PTCacheUndo *undo)
 
 			LOOP_POINTS {
 				LOOP_KEYS {
-					if((int)key->ftime == pm->frame) {
+					if((int)key->ftime == (int)pm->frame) {
 						key->co = pm->cur[BPHYS_DATA_LOCATION];
 						key->vel = pm->cur[BPHYS_DATA_VELOCITY];
 						key->rot = pm->cur[BPHYS_DATA_ROTATION];
@@ -4028,7 +4034,7 @@ static void PE_create_particle_edit(Scene *scene, Object *ob, PointCache *cache,
 		return;
 
 	if(!edit) {
-		totpoint = psys ? psys->totpart : ((PTCacheMem*)cache->mem_cache.first)->totpoint;
+		totpoint = psys ? psys->totpart : (int)((PTCacheMem*)cache->mem_cache.first)->totpoint;
 
 		edit= MEM_callocN(sizeof(PTCacheEdit), "PE_create_particle_edit");
 		edit->points=MEM_callocN(totpoint*sizeof(PTCacheEditPoint),"PTCacheEditPoints");

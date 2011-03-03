@@ -1,4 +1,7 @@
-/* $Id: Texture.cpp 27617 2010-03-20 00:11:25Z dfelinto $
+/** \file gameengine/VideoTexture/Texture.cpp
+ *  \ingroup bgevideotex
+ */
+/* $Id: Texture.cpp 35176 2011-02-25 13:39:34Z jesterking $
 -----------------------------------------------------------------------------
 This source file is part of VideoTexture library
 

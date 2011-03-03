@@ -1,4 +1,4 @@
-# $Id: CMakeLists.txt 33864 2010-12-22 23:09:30Z campbellbarton $
+# $Id: CMakeLists.txt 35027 2011-02-21 12:18:34Z campbellbarton $
 # ***** BEGIN GPL LICENSE BLOCK *****
 #
 # This program is free software; you can redistribute it and/or
@@ -29,8 +29,8 @@ set(INC .)
 set(SRC
 	./intern/mallocn.c
 
-	BLO_sys_types.h
 	MEM_guardedalloc.h
+	MEM_sys_types.h
 )
 
 if(WIN32 AND NOT UNIX)

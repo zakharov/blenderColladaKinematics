@@ -1,5 +1,5 @@
-/**
- * $Id: ED_node.h 32483 2010-10-15 04:27:09Z campbellbarton $
+/*
+ * $Id: ED_node.h 35016 2011-02-21 07:25:24Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file ED_node.h
+ *  \ingroup editors
+ */
+
 #ifndef ED_NODE_H
 #define ED_NODE_H
 

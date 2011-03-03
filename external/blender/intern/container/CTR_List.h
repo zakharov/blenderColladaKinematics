@@ -1,5 +1,5 @@
-/**
- * $Id: CTR_List.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: CTR_List.h 35146 2011-02-25 10:45:31Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file container/CTR_List.h
+ *  \ingroup ctr
+ */
+
 
 
 #ifndef CTR_LIST_H

@@ -1,6 +1,6 @@
-/**
+/*
  * VoidValue.h: interface for the CVoidValue class.
- * $Id: VoidValue.h 29259 2010-06-06 01:15:44Z campbellbarton $
+ * $Id: VoidValue.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file VoidValue.h
+ *  \ingroup expressions
+ */
+
 #ifndef __VOIDVALUE_H__
 #define __VOIDVALUE_H__
 

@@ -1,5 +1,5 @@
-/**
- * $Id: collada_utils.cpp 32953 2010-11-08 23:34:09Z campbellbarton $
+/*
+ * $Id: collada_utils.cpp 35243 2011-02-27 20:30:35Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,14 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/collada/collada_utils.cpp
+ *  \ingroup collada
+ */
+
+
+/* COLLADABU_ASSERT, may be able to remove later */
+#include "COLLADABUPlatform.h"
 
 #include "COLLADAFWGeometry.h"
 #include "COLLADAFWMeshPrimitive.h"

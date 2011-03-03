@@ -1,5 +1,5 @@
-/**
- * $Id: BIF_gl.h 27293 2010-03-06 13:43:47Z dingto $
+/*
+ * $Id: BIF_gl.h 35016 2011-02-21 07:25:24Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,10 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  * os dependent include locations of gl.h
+ */
+
+/** \file BIF_gl.h
+ *  \ingroup editorui
  */
 
 #ifndef BIF_GL_H

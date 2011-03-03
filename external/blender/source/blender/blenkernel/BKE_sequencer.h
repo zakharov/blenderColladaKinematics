@@ -1,5 +1,5 @@
-/**
- * $Id: BKE_sequencer.h 33607 2010-12-12 01:33:12Z campbellbarton $
+/*
+ * $Id: BKE_sequencer.h 34962 2011-02-18 13:05:18Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -30,6 +30,10 @@
 
 #ifndef BKE_SEQUENCER_H
 #define BKE_SEQUENCER_H
+
+/** \file BKE_sequencer.h
+ *  \ingroup bke
+ */
 
 struct bContext;
 struct Editing;
@@ -254,6 +258,7 @@ int seq_single_check(struct Sequence *seq);
 void seq_single_fix(struct Sequence *seq);
 int seq_test_overlap(struct ListBase * seqbasep, struct Sequence *test);
 void seq_translate(struct Scene *scene, struct Sequence *seq, int delta);
+struct Sequence *seq_foreground_frame_get(struct Scene *scene, int frame);
 struct ListBase *seq_seqbase(struct ListBase *seqbase, struct Sequence *seq);
 void seq_offset_animdata(struct Scene *scene, struct Sequence *seq, int ofs);
 void seq_dupe_animdata(struct Scene *scene, char *name_from, char *name_to);

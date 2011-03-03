@@ -1,5 +1,5 @@
-/**
- * $Id: lorem.c 33435 2010-12-03 01:52:28Z campbellbarton $
+/*
+ * $Id: lorem.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -19,6 +19,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/curve/lorem.c
+ *  \ingroup edcurve
+ */
+
 
 #include "curve_intern.h"
 

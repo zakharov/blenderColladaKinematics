@@ -1,14 +1,14 @@
 10
 
 dir
-1566
+1676
 https://svn.blender.org/svnroot/bf-extensions/trunk/py/scripts/addons/io_shape_mdd
 https://svn.blender.org/svnroot/bf-extensions
 
 
 
-2011-02-08T21:36:44.718602Z
-1562
+2011-02-27T15:27:55.919470Z
+1664
 campbellbarton
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2011-02-10T19:49:03.725667Z
+2011-03-03T12:29:54.154297Z
 b9159a80f816c308584d0c37a13851cc
 2011-02-08T21:36:44.718602Z
 1562
@@ -66,11 +66,11 @@ file
 
 
 
-2011-01-18T22:05:19.833021Z
-76954c399ddcf56274357226768b0d28
-2011-01-16T00:43:40.938867Z
-1413
-gsrb3d
+2011-03-03T12:29:54.154297Z
+bd7b5a4b7ea1295207917b0a6424ee30
+2011-02-27T15:27:55.919470Z
+1664
+campbellbarton
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-4544
+4654
 
 export_mdd.py
 file
@@ -100,7 +100,7 @@ file
 
 
 
-2011-01-18T22:05:19.833021Z
+2011-03-03T12:29:54.154297Z
 28e0f356e56300ff064d66e0c556377f
 2011-01-16T00:43:40.938867Z
 1413

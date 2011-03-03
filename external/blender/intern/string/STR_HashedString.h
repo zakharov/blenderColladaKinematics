@@ -1,5 +1,5 @@
-/**
- * $Id: STR_HashedString.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: STR_HashedString.h 35160 2011-02-25 11:51:19Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -26,9 +26,14 @@
  * ***** END GPL LICENSE BLOCK *****
  */
 
+/** \file string/STR_HashedString.h
+ *  \ingroup string
+ */
+
+
 /**
 
- * $Id: STR_HashedString.h 26841 2010-02-12 13:34:04Z campbellbarton $
+ * $Id: STR_HashedString.h 35160 2011-02-25 11:51:19Z jesterking $
  * Copyright (C) 2001 NaN Technologies B.V.
  * This file was formerly known as: GEN_StdString.cpp.
  * @date	November, 14, 2001

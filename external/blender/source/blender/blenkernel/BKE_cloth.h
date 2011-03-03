@@ -1,7 +1,5 @@
-/**
- * BKE_cloth.h
- *
- * $Id: BKE_cloth.h 33448 2010-12-03 17:05:21Z campbellbarton $
+/*
+ * $Id: BKE_cloth.h 34962 2011-02-18 13:05:18Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -30,6 +28,11 @@
  */
 #ifndef BKE_CLOTH_H
 #define BKE_CLOTH_H
+
+/** \file BKE_cloth.h
+ *  \ingroup bke
+ *  \author Daniel Genrich
+ */
 
 #include <float.h>
 

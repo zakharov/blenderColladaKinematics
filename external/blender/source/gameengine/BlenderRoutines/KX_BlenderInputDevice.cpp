@@ -1,5 +1,5 @@
-/**
- * $Id: KX_BlenderInputDevice.cpp 28254 2010-04-18 10:28:37Z campbellbarton $
+/*
+ * $Id: KX_BlenderInputDevice.cpp 35166 2011-02-25 13:29:48Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,5 +26,10 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/BlenderRoutines/KX_BlenderInputDevice.cpp
+ *  \ingroup blroutines
+ */
+
 #include "KX_BlenderInputDevice.h"
 

@@ -1,5 +1,5 @@
-/**
- * $Id: DLRB_tree.c 27629 2010-03-20 18:52:03Z campbellbarton $
+/*
+ * $Id: DLRB_tree.c 35246 2011-02-27 20:37:56Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/blenlib/intern/DLRB_tree.c
+ *  \ingroup bli
+ */
+
 
 #include "MEM_guardedalloc.h"
 

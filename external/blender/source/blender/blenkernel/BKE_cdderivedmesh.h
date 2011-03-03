@@ -1,5 +1,5 @@
 /*
-* $Id: BKE_cdderivedmesh.h 27655 2010-03-22 09:30:00Z campbellbarton $
+* $Id: BKE_cdderivedmesh.h 34962 2011-02-18 13:05:18Z jesterking $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -27,9 +27,11 @@
 * ***** END GPL LICENSE BLOCK *****
 */ 
 
-/* CDDerivedMesh interface.
- * CDDerivedMesh (CD = Custom Data) is a DerivedMesh backend which stores
- * mesh elements (vertices, edges and faces) as layers of custom element data.
+/** \file BKE_cdderivedmesh.h
+ *  \ingroup bke
+ *  \section aboutcdderivedmesh CDDerivedMesh interface
+ *   CDDerivedMesh (CD = Custom Data) is a DerivedMesh backend which stores
+ *   mesh elements (vertices, edges and faces) as layers of custom element data.
  */
 
 #ifndef BKE_CDDERIVEDMESH_H

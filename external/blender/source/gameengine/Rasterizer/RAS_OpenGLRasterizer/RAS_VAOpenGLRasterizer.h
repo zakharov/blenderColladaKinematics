@@ -1,5 +1,5 @@
-/**
- * $Id: RAS_VAOpenGLRasterizer.h 29259 2010-06-06 01:15:44Z campbellbarton $
+/*
+ * $Id: RAS_VAOpenGLRasterizer.h 35072 2011-02-22 12:42:55Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file RAS_VAOpenGLRasterizer.h
+ *  \ingroup bgerastogl
+ */
+
 #ifndef __KX_VERTEXARRAYOPENGLRASTERIZER
 #define __KX_VERTEXARRAYOPENGLRASTERIZER
 

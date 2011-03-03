@@ -1,5 +1,5 @@
-/**
- * $Id: space_userpref.c 34159 2011-01-07 18:36:47Z campbellbarton $
+/*
+ * $Id: space_userpref.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  * ***** END GPL LICENSE BLOCK *****
  */
 
+/** \file blender/editors/space_userpref/space_userpref.c
+ *  \ingroup spuserpref
+ */
+
+
 #include <string.h>
 #include <stdio.h>
 
@@ -39,6 +44,7 @@
 #include "BKE_screen.h"
 
 #include "ED_screen.h"
+#include "ED_space_api.h"
 
 #include "WM_api.h"
 #include "WM_types.h"
@@ -107,11 +113,11 @@ static void userpref_main_area_draw(const bContext *C, ARegion *ar)
 	ED_region_panels(C, ar, 1, NULL, -1);
 }
 
-void userpref_operatortypes(void)
+static void userpref_operatortypes(void)
 {
 }
 
-void userpref_keymap(struct wmKeyConfig *UNUSED(keyconf))
+static void userpref_keymap(struct wmKeyConfig *UNUSED(keyconf))
 {
 	
 }

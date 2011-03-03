@@ -1,5 +1,5 @@
-/**
- * $Id: BLI_math_rotation.h 34616 2011-02-02 00:40:55Z campbellbarton $
+/*
+ * $Id: BLI_math_rotation.h 34966 2011-02-18 13:58:08Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,10 @@
 
 #ifndef BLI_MATH_ROTATION_H
 #define BLI_MATH_ROTATION_H
+
+/** \file BLI_math_rotation.h
+ *  \ingroup bli
+ */
 
 #ifdef __cplusplus
 extern "C" {

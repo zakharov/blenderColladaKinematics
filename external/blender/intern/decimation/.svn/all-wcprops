@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 66
-/svnroot/bf-blender/!svn/ver/34567/trunk/blender/intern/decimation
+/svnroot/bf-blender/!svn/ver/35147/trunk/blender/intern/decimation
 END
 SConscript
 K 25
 svn:wc:ra_dav:version-url
 V 77
-/svnroot/bf-blender/!svn/ver/31567/trunk/blender/intern/decimation/SConscript
+/svnroot/bf-blender/!svn/ver/35035/trunk/blender/intern/decimation/SConscript
 END
 CMakeLists.txt
 K 25

@@ -1,5 +1,5 @@
 /*
- * $Id: BLO_readfile.h 34701 2011-02-07 22:48:23Z campbellbarton $
+ * $Id: BLO_readfile.h 35245 2011-02-27 20:35:41Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,10 +25,14 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
- * external readfile function prototypes
  */
 #ifndef BLO_READFILE_H
 #define BLO_READFILE_H
+
+/** \file BLO_readfile.h
+ *  \ingroup blenloader
+ *  \brief external readfile function prototypes.
+ */
 
 #ifdef __cplusplus
 extern "C" {

@@ -1,5 +1,5 @@
-/**
- * $Id: SCA_LogicManager.h 32386 2010-10-09 10:45:25Z campbellbarton $
+/*
+ * $Id: SCA_LogicManager.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,7 +25,10 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
- * Regulates the top-level logic behaviour for one scene.
+ */
+/** \file SCA_IController.h
+ *  \ingroup gamelogic
+ *  \brief Regulates the top-level logic behaviour for one scene.
  */
 #ifndef __KX_LOGICMANAGER
 #define __KX_LOGICMANAGER

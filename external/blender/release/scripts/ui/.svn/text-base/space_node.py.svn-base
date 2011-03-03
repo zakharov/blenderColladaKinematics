@@ -156,9 +156,6 @@ class NODE_MT_node(bpy.types.Menu):
         layout.operator("node.preview_toggle")
         layout.operator("node.hide_socket_toggle")
 
-        # XXX
-        # layout.operator("node.rename")
-
         layout.separator()
 
         layout.operator("node.show_cyclic_dependencies")
@@ -197,11 +194,11 @@ class NODE_PT_properties(bpy.types.Panel):
 
 
 def register():
-    pass
+    bpy.utils.register_module(__name__)
 
 
 def unregister():
-    pass
+    bpy.utils.unregister_module(__name__)
 
 if __name__ == "__main__":
     register()

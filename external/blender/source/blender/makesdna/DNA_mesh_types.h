@@ -1,5 +1,5 @@
-/**
- * $Id: DNA_mesh_types.h 33799 2010-12-20 03:59:22Z campbellbarton $ 
+/*
+ * $Id: DNA_mesh_types.h 34941 2011-02-17 20:48:12Z jesterking $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,10 @@
  */
 #ifndef DNA_MESH_TYPES_H
 #define DNA_MESH_TYPES_H
+
+/** \file DNA_mesh_types.h
+ *  \ingroup DNA
+ */
 
 #include "DNA_listBase.h"
 #include "DNA_ID.h"

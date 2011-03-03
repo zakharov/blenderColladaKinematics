@@ -1,41 +1,41 @@
 K 25
 svn:wc:ra_dav:version-url
 V 67
-/svnroot/bf-blender/!svn/ver/34760/trunk/blender/source/blender/gpu
+/svnroot/bf-blender/!svn/ver/35336/trunk/blender/source/blender/gpu
 END
 GPU_material.h
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/svnroot/bf-blender/!svn/ver/33448/trunk/blender/source/blender/gpu/GPU_material.h
+/svnroot/bf-blender/!svn/ver/35014/trunk/blender/source/blender/gpu/GPU_material.h
 END
 GPU_extensions.h
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svnroot/bf-blender/!svn/ver/33448/trunk/blender/source/blender/gpu/GPU_extensions.h
+/svnroot/bf-blender/!svn/ver/35014/trunk/blender/source/blender/gpu/GPU_extensions.h
 END
 SConscript
 K 25
 svn:wc:ra_dav:version-url
 V 78
-/svnroot/bf-blender/!svn/ver/28194/trunk/blender/source/blender/gpu/SConscript
+/svnroot/bf-blender/!svn/ver/35028/trunk/blender/source/blender/gpu/SConscript
 END
 CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/gpu/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/35028/trunk/blender/source/blender/gpu/CMakeLists.txt
 END
 GPU_buffers.h
 K 25
 svn:wc:ra_dav:version-url
 V 81
-/svnroot/bf-blender/!svn/ver/33442/trunk/blender/source/blender/gpu/GPU_buffers.h
+/svnroot/bf-blender/!svn/ver/35014/trunk/blender/source/blender/gpu/GPU_buffers.h
 END
 GPU_draw.h
 K 25
 svn:wc:ra_dav:version-url
 V 78
-/svnroot/bf-blender/!svn/ver/32499/trunk/blender/source/blender/gpu/GPU_draw.h
+/svnroot/bf-blender/!svn/ver/35014/trunk/blender/source/blender/gpu/GPU_draw.h
 END

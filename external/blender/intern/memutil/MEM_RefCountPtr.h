@@ -1,5 +1,5 @@
-/**
- * $Id: MEM_RefCountPtr.h 34359 2011-01-16 20:52:15Z campbellbarton $
+/*
+ * $Id: MEM_RefCountPtr.h 35156 2011-02-25 11:47:18Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file memutil/MEM_RefCountPtr.h
+ *  \ingroup memutil
+ */
+
 /**
  * @file	MEM_RefCountPtr.h
  * Declaration of MEM_RefCounted and MEM_RefCountable classes.

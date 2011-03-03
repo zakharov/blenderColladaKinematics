@@ -1,5 +1,5 @@
-/**
- * $Id: wm_cursors.h 33435 2010-12-03 01:52:28Z campbellbarton $
+/*
+ * $Id: wm_cursors.h 35179 2011-02-25 14:04:21Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/windowmanager/wm_cursors.h
+ *  \ingroup wm
+ */
+
 
 
 

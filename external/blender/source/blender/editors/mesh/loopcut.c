@@ -1,5 +1,5 @@
-/**
- * $Id: loopcut.c 34332 2011-01-15 14:07:11Z ton $
+/*
+ * $Id: loopcut.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/mesh/loopcut.c
+ *  \ingroup edmesh
+ */
+
 
 #include <float.h>
 #include <string.h>

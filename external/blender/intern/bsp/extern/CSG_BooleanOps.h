@@ -1,5 +1,5 @@
-/**
- * $Id: CSG_BooleanOps.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: CSG_BooleanOps.h 35145 2011-02-25 10:44:20Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file bsp/extern/CSG_BooleanOps.h
+ *  \ingroup bsp
+ */
+
 
 #ifndef CSG_BOOLEANOPS_H
 #define CSG_BOOLEANOPS_H

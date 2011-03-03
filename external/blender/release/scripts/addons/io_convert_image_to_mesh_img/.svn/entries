@@ -1,14 +1,14 @@
 10
 
 dir
-1566
+1676
 https://svn.blender.org/svnroot/bf-extensions/trunk/py/scripts/addons/io_convert_image_to_mesh_img
 https://svn.blender.org/svnroot/bf-extensions
 
 
 
-2011-02-08T21:36:44.718602Z
-1562
+2011-02-11T01:29:13.146577Z
+1569
 campbellbarton
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2011-01-18T22:05:17.553021Z
-ae4674b7238cd37f97f06e219cdb9745
-2011-01-14T16:09:46.541096Z
-1397
+2011-03-03T12:29:46.686297Z
+532adbd9a4bd996058669f6e626b7151
+2011-02-11T01:29:13.146577Z
+1569
 campbellbarton
 has-props
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-5340
+5424
 
 import_img.py
 file
@@ -66,7 +66,7 @@ file
 
 
 
-2011-02-10T19:49:01.945667Z
+2011-03-03T12:29:46.686297Z
 daea273f22544345e411529a8b103ba2
 2011-02-08T21:36:44.718602Z
 1562

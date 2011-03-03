@@ -1,5 +1,5 @@
-/**
- * $Id: BL_ModifierDeformer.h 34469 2011-01-23 17:17:21Z ben2610 $
+/*
+ * $Id: BL_ModifierDeformer.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,10 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file BL_ModifierDeformer.h
+ *  \ingroup bgeconv
  */
 
 #ifndef BL_MODIFIERDEFORMER

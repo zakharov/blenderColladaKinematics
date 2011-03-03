@@ -1,4 +1,4 @@
-/**
+/*
  * $Id$
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/nodes/intern/TEX_nodes/TEX_valToRgb.c
+ *  \ingroup texnodes
+ */
+
 
 #include "../TEX_util.h"
 

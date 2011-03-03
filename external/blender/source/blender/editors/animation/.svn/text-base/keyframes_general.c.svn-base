@@ -1,4 +1,4 @@
-/**
+/*
  * $Id$
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
@@ -25,6 +25,11 @@
  * ***** END GPL LICENSE BLOCK *****
  */
 
+/** \file blender/editors/animation/keyframes_general.c
+ *  \ingroup edanimation
+ */
+
+
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
@@ -48,6 +53,7 @@
 #include "BKE_global.h"
 
 #include "RNA_access.h"
+#include "RNA_enum_types.h"
 
 #include "ED_anim_api.h"
 #include "ED_keyframing.h"
@@ -322,7 +328,7 @@ void smooth_fcurve (FCurve *fcu)
 		}
 			
 		/* calculate the new smoothed F-Curve's with weighted averages:
-		 *	- this is done with two passes
+		 *	- this is done with two passes to avoid progressive corruption errors
 		 *	- uses 5 points for each operation (which stores in the relevant handles)
 		 *	-	previous: w/a ratio = 3:5:2:1:1
 		 *	- 	next: w/a ratio = 1:1:2:5:3
@@ -452,7 +458,7 @@ void sample_fcurve (FCurve *fcu)
  */
 
 /* globals for copy/paste data (like for other copy/paste buffers) */
-ListBase animcopybuf = {NULL, NULL};
+static ListBase animcopybuf = {NULL, NULL};
 static float animcopy_firstframe= 999999999.0f;
 static float animcopy_lastframe= -999999999.0f;
 static float animcopy_cfra= 0.0;

@@ -1,5 +1,5 @@
-/**
- * $Id: RAS_VAOpenGLRasterizer.cpp 30804 2010-07-27 11:07:34Z blendix $
+/*
+ * $Id: RAS_VAOpenGLRasterizer.cpp 35174 2011-02-25 13:38:24Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/Rasterizer/RAS_OpenGLRasterizer/RAS_VAOpenGLRasterizer.cpp
+ *  \ingroup bgerastogl
+ */
+
 #include "RAS_VAOpenGLRasterizer.h"
 #include <stdlib.h>
 

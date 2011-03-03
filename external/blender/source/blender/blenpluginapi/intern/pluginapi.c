@@ -1,5 +1,5 @@
-/**
- * $Id: pluginapi.c 32517 2010-10-16 14:32:17Z campbellbarton $
+/*
+ * $Id: pluginapi.c 35244 2011-02-27 20:32:12Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  * ***** END GPL LICENSE BLOCK *****
  * Wrappers for the plugin api. This api is up for removal.
  */
+
+/** \file blender/blenpluginapi/intern/pluginapi.c
+ *  \ingroup blenpluginapi
+ */
+
 
 /* There are four headers making up the plugin api:
  * - floatpatch.h : Wraps math functions for mips platforms, no code

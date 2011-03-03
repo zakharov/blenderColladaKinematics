@@ -1,15 +1,15 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern/audaspace/sndfile
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-30T15:29:22.294392Z
-34567
-campbellbarton
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-01-18T22:04:07.333021Z
-f3a435e01892cc27cb1b3a28d797bef9
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.770297Z
+36150c022df259dbe94a3b8a05d98d3b
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-4094
+4232
 
 AUD_SndFileFactory.cpp
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-01-18T22:04:07.333021Z
-1445b8982bd2aff89fde3f42429fb2f8
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.770297Z
+367443bafcc705b40c1e87b894d84934
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-1431
+1570
 
 AUD_SndFileReader.h
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-01-18T22:04:07.333021Z
-1e1756e5746f1be3c80b7bad64dcd708
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.770297Z
+5fb28096830180db189796023b5e7a70
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-3196
+3332
 
 AUD_SndFileFactory.h
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-01-18T22:04:07.333021Z
-d92fd71fbe0cf0457f6643eae59fc498
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.770297Z
+927aa19af6b633a78d57d5ebcf384eea
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -160,5 +160,5 @@ has-props
 
 
 
-1846
+1983
 

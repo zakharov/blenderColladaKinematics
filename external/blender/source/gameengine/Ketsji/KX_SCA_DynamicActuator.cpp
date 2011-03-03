@@ -1,7 +1,10 @@
+/** \file gameengine/Ketsji/KX_SCA_DynamicActuator.cpp
+ *  \ingroup ketsji
+ */
 //
 // Adjust dynamics settins for this object
 //
-// $Id: KX_SCA_DynamicActuator.cpp 32788 2010-10-31 04:11:39Z campbellbarton $
+// $Id: KX_SCA_DynamicActuator.cpp 35171 2011-02-25 13:35:59Z jesterking $
 //
 // ***** BEGIN GPL LICENSE BLOCK *****
 //

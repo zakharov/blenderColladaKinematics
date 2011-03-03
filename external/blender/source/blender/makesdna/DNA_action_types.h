@@ -1,5 +1,5 @@
 /*  
- * $Id: DNA_action_types.h 34417 2011-01-20 15:17:02Z ton $
+ * $Id: DNA_action_types.h 35296 2011-03-02 05:05:12Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,10 @@
  * Contributor(s): Animation recode, Joshua Leung
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file DNA_action_types.h
+ *  \ingroup DNA
  */
 
 
@@ -299,8 +303,8 @@ typedef enum eRotationModes {
 		/* quaternion rotations (default, and for older Blender versions) */
 	ROT_MODE_QUAT	= 0,
 		/* euler rotations - keep in sync with enum in BLI_math.h */
-	ROT_MODE_EUL = 1,		/* Blender 'default' (classic) - must be as 1 to sync with arithb defines */
-	ROT_MODE_XYZ = 1,		/* Blender 'default' (classic) - must be as 1 to sync with arithb defines */
+	ROT_MODE_EUL = 1,		/* Blender 'default' (classic) - must be as 1 to sync with BLI_math_rotation.h defines */
+	ROT_MODE_XYZ = 1,
 	ROT_MODE_XZY,
 	ROT_MODE_YXZ,
 	ROT_MODE_YZX,

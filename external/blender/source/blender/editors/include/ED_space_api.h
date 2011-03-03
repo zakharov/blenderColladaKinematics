@@ -1,5 +1,5 @@
-/**
- * $Id: ED_space_api.h 27639 2010-03-21 01:14:04Z gsrb3d $
+/*
+ * $Id: ED_space_api.h 35016 2011-02-21 07:25:24Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,10 @@
  * Contributor(s): Blender Foundation
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file ED_space_api.h
+ *  \ingroup editors
  */
 
 #ifndef ED_SPACE_API_H

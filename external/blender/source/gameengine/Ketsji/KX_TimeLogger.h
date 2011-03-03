@@ -1,5 +1,5 @@
-/**
- * $Id: KX_TimeLogger.h 31950 2010-09-15 16:13:32Z campbellbarton $
+/*
+ * $Id: KX_TimeLogger.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,10 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file KX_TimeLogger.h
+ *  \ingroup ketsji
  */
 
 #ifndef __KX_TIME_LOGGER_H

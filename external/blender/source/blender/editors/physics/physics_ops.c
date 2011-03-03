@@ -1,5 +1,5 @@
-/**
- * $Id: physics_ops.c 30927 2010-07-31 19:26:21Z theeth $
+/*
+ * $Id: physics_ops.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/physics/physics_ops.c
+ *  \ingroup edphys
+ */
+
 
 #include <stdlib.h>
 

@@ -1,7 +1,5 @@
-/**
- * blenlib/DNA_controller_types.h (mar-2001 nzc)
- *	
- * $Id: DNA_controller_types.h 28558 2010-05-04 00:06:13Z dfelinto $ 
+/*
+ * $Id: DNA_controller_types.h 34941 2011-02-17 20:48:12Z jesterking $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -30,6 +28,10 @@
  */
 #ifndef DNA_CONTROLLER_TYPES_H
 #define DNA_CONTROLLER_TYPES_H
+
+/** \file DNA_controller_types.h
+ *  \ingroup DNA
+ */
 
 struct bActuator;
 struct Text;

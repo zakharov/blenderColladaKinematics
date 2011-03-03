@@ -1,5 +1,5 @@
-/**
- * $Id: ED_keyframes_edit.h 33660 2010-12-14 15:14:16Z campbellbarton $
+/*
+ * $Id: ED_keyframes_edit.h 35016 2011-02-21 07:25:24Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,10 @@
  * Contributor(s): Joshua Leung
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file ED_keyframes_edit.h
+ *  \ingroup editors
  */
 
 #ifndef ED_KEYFRAMES_EDIT_H

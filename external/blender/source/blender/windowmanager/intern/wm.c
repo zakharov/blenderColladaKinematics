@@ -1,5 +1,5 @@
-/**
- * $Id: wm.c 33009 2010-11-11 13:36:57Z campbellbarton $
+/*
+ * $Id: wm.c 35179 2011-02-25 14:04:21Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/windowmanager/intern/wm.c
+ *  \ingroup wm
+ */
+
 
 #include <string.h>
 #include <stddef.h>

@@ -1,5 +1,5 @@
 /*
- * $Id: NG_NetworkObject.h 29259 2010-06-06 01:15:44Z campbellbarton $
+ * $Id: NG_NetworkObject.h 35072 2011-02-22 12:42:55Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,7 +25,11 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
- * NetworkGame_NetworkObject generic Network Object class
+ */
+
+/** \file NG_NetworkObject.h
+ *  \ingroup bgenet
+ *  \brief generic Network Object class
  */
 #ifndef NG_NETWORKOBJECT_H
 #define NG_NETWORKOBJECT_H

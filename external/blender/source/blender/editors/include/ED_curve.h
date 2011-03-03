@@ -1,5 +1,5 @@
-/**
- * $Id: ED_curve.h 33822 2010-12-20 19:47:16Z nazgul $
+/*
+ * $Id: ED_curve.h 35016 2011-02-21 07:25:24Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file ED_curve.h
+ *  \ingroup editors
+ */
+
 #ifndef ED_CURVE_H
 #define ED_CURVE_H
 
@@ -84,6 +89,9 @@ void ED_curve_beztcpy(struct EditNurb *editnurb, struct BezTriple *dst, struct B
 void ED_curve_bpcpy(struct EditNurb *editnurb, struct BPoint *dst, struct BPoint *src, int count);
 
 int ED_curve_updateAnimPaths(struct Object *obedit);
+
+/* debug only */
+void printknots(struct Object *obedit);
 
 #endif /* ED_CURVE_H */
 

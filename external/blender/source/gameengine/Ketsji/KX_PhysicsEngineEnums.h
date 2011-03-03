@@ -1,5 +1,5 @@
-/**
- * $Id: KX_PhysicsEngineEnums.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: KX_PhysicsEngineEnums.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file KX_PhysicsEngineEnums.h
+ *  \ingroup ketsji
+ */
+
 #ifndef __KX_PHYSICSENGINEENUMS
 #define __KX_PHYSICSENGINEENUMS
 

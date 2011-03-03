@@ -1,5 +1,5 @@
-/**
- * $Id: RAS_IRenderTools.h 33707 2010-12-16 10:25:41Z dfelinto $
+/*
+ * $Id: RAS_IRenderTools.h 35072 2011-02-22 12:42:55Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file RAS_IRenderTools.h
+ *  \ingroup bgerast
+ */
+
 #ifndef __RAS_IRENDERTOOLS
 #define __RAS_IRENDERTOOLS
 

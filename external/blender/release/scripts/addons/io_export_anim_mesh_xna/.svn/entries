@@ -1,15 +1,15 @@
 10
 
 dir
-1566
+1676
 https://svn.blender.org/svnroot/bf-extensions/trunk/py/scripts/addons/io_export_anim_mesh_xna
 https://svn.blender.org/svnroot/bf-extensions
 
 
 
-2011-02-08T20:09:52.537201Z
-1561
-jcbdigger
+2011-02-11T03:00:59.183323Z
+1574
+campbellbarton
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-02-10T19:49:02.785667Z
-697406b6c25bb95ecb5c49457e76c806
-2011-02-08T20:09:52.537201Z
-1561
-jcbdigger
+2011-03-03T12:29:51.122297Z
+a2f1263c27b658ddef234be9be1f048e
+2011-02-11T03:00:59.183323Z
+1574
+campbellbarton
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-3355
+3412
 
 export_xna.py
 file
@@ -66,7 +66,7 @@ file
 
 
 
-2011-02-10T19:49:02.785667Z
+2011-03-03T12:29:51.126297Z
 8d6bd1b30c5b8cb31298de77ffcb74d6
 2011-02-08T20:09:52.537201Z
 1561

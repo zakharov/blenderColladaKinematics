@@ -1,5 +1,5 @@
-/**
- * $Id: EXP_C-Api.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: EXP_C-Api.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file EXP_C-Api.h
+ *  \ingroup expressions
+ */
+
 #ifndef __EXPRESSION_INCLUDE
 #define __EXPRESSION_INCLUDE
 

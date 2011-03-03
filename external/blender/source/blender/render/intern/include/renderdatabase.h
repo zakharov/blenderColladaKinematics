@@ -1,5 +1,5 @@
-/**
- * $Id: renderdatabase.h 33540 2010-12-07 12:58:25Z jhk $
+/*
+ * $Id: renderdatabase.h 35233 2011-02-27 19:31:27Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/render/intern/include/renderdatabase.h
+ *  \ingroup render
+ */
+
 
 #ifndef RENDERDATABASE_H
 #define RENDERDATABASE_H

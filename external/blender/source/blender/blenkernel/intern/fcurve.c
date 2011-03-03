@@ -1,5 +1,5 @@
-/**
- * $Id: fcurve.c 34380 2011-01-18 01:58:19Z campbellbarton $
+/*
+ * $Id: fcurve.c 35247 2011-02-27 20:40:57Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/blenkernel/intern/fcurve.c
+ *  \ingroup bke
+ */
+
  
 
 #include <math.h>
@@ -1202,7 +1207,7 @@ static float dvar_eval_transChan (ChannelDriver *driver, DriverVar *dvar)
 /* ......... */
 
 /* Table of Driver Varaiable Type Info Data */
-DriverVarTypeInfo dvar_types[MAX_DVAR_TYPES] = {
+static DriverVarTypeInfo dvar_types[MAX_DVAR_TYPES] = {
 	BEGIN_DVAR_TYPEDEF(DVAR_TYPE_SINGLE_PROP)
 		dvar_eval_singleProp, /* eval callback */
 		1, /* number of targets used */
@@ -1233,7 +1238,7 @@ DriverVarTypeInfo dvar_types[MAX_DVAR_TYPES] = {
 };
 
 /* Get driver variable typeinfo */
-DriverVarTypeInfo *get_dvar_typeinfo (int type)
+static DriverVarTypeInfo *get_dvar_typeinfo (int type)
 {
 	/* check if valid type */
 	if ((type >= 0) && (type < MAX_DVAR_TYPES))

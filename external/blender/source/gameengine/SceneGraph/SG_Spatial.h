@@ -1,5 +1,5 @@
-/**
- * $Id: SG_Spatial.h 29259 2010-06-06 01:15:44Z campbellbarton $
+/*
+ * $Id: SG_Spatial.h 35082 2011-02-22 19:30:37Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,10 @@
  * ***** END GPL LICENSE BLOCK *****
  */
 
+/** \file SG_Spatial.h
+ *  \ingroup bgesg
+ */
+ 
 #ifndef __SG_SPATIAL_H
 #define __SG_SPATIAL_H
 

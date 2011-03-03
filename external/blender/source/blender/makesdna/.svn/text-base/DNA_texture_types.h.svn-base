@@ -1,6 +1,4 @@
-/**
- * blenlib/DNA_texture_types.h (mar-2001 nzc)
- *
+/*
  * $Id$ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
@@ -30,6 +28,12 @@
  */
 #ifndef DNA_TEXTURE_TYPES_H
 #define DNA_TEXTURE_TYPES_H
+
+/** \file DNA_texture_types.h
+ *  \ingroup DNA
+ *  \since mar-2001
+ *  \author nzc
+ */
 
 #include "DNA_ID.h"
 #include "DNA_image_types.h" /* ImageUser */
@@ -77,9 +81,9 @@ typedef struct MTex {
 	float densfac, scatterfac, reflfac;
 
 	/* particles */
-	float timefac, lengthfac, clumpfac;
-	float kinkfac, roughfac, padensfac;
-	float lifefac, sizefac, ivelfac, pvelfac;
+	float timefac, lengthfac, clumpfac, dampfac;
+	float kinkfac, roughfac, padensfac, gravityfac;
+	float lifefac, sizefac, ivelfac, fieldfac;
 
 	/* lamp */
 	float shadowfac;

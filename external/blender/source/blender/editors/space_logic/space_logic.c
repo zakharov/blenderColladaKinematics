@@ -1,5 +1,5 @@
-/**
- * $Id: space_logic.c 34159 2011-01-07 18:36:47Z campbellbarton $
+/*
+ * $Id: space_logic.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  * ***** END GPL LICENSE BLOCK *****
  */
 
+/** \file blender/editors/space_logic/space_logic.c
+ *  \ingroup splogic
+ */
+
+
 #include <string.h>
 #include <stdio.h>
 
@@ -39,6 +44,7 @@
 #include "BKE_context.h"
 #include "BKE_screen.h"
 
+#include "ED_space_api.h"
 #include "ED_screen.h"
 
 #include "BIF_gl.h"
@@ -169,13 +175,13 @@ static SpaceLink *logic_duplicate(SpaceLink *sl)
 	return (SpaceLink *)slogicn;
 }
 
-void logic_operatortypes(void)
+static void logic_operatortypes(void)
 {
 	WM_operatortype_append(LOGIC_OT_properties);
 	WM_operatortype_append(LOGIC_OT_links_cut);
 }
 
-void logic_keymap(struct wmKeyConfig *keyconf)
+static void logic_keymap(struct wmKeyConfig *keyconf)
 {
 	wmKeyMap *keymap= WM_keymap_find(keyconf, "Logic Editor", SPACE_LOGIC, 0);
 	

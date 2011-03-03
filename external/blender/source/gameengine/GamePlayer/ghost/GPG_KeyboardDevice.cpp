@@ -1,5 +1,5 @@
-/**
- * $Id: GPG_KeyboardDevice.cpp 28294 2010-04-20 01:04:00Z broken $
+/*
+ * $Id: GPG_KeyboardDevice.cpp 35170 2011-02-25 13:35:11Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  * ***** END GPL LICENSE BLOCK *****
  * GHOST Blender Player keyboard device implementation.
  */
+
+/** \file gameengine/GamePlayer/ghost/GPG_KeyboardDevice.cpp
+ *  \ingroup player
+ */
+
 
 #include "GPG_KeyboardDevice.h"
 

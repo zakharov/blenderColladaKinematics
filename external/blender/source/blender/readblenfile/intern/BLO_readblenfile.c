@@ -1,5 +1,5 @@
 /*
- * $Id: BLO_readblenfile.c 33448 2010-12-03 17:05:21Z campbellbarton $
+ * $Id: BLO_readblenfile.c 35234 2011-02-27 19:59:59Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -30,7 +30,7 @@
 /**
  * \file BLO_readblenfile.c
  * \brief This file handles the loading if .blend files
- * \ingroup mainmodule
+ * \ingroup blo
  */
 #include <stdio.h>
 #include <stdlib.h>

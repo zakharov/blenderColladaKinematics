@@ -1,5 +1,5 @@
-/**
- * $Id: IMB_metadata.h 28656 2010-05-07 22:04:48Z gsrb3d $
+/*
+ * $Id: IMB_metadata.h 35239 2011-02-27 20:23:21Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/imbuf/intern/IMB_metadata.h
+ *  \ingroup imbuf
+ */
+
 
 #ifndef _IMB_IMGINFO_H
 #define _IMB_IMGINFO_H

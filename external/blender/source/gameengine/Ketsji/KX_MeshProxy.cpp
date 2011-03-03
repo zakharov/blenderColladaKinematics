@@ -1,5 +1,5 @@
-/**
- * $Id: KX_MeshProxy.cpp 34380 2011-01-18 01:58:19Z campbellbarton $
+/*
+ * $Id: KX_MeshProxy.cpp 35171 2011-02-25 13:35:59Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/Ketsji/KX_MeshProxy.cpp
+ *  \ingroup ketsji
+ */
+
 
 #ifdef WITH_PYTHON
 

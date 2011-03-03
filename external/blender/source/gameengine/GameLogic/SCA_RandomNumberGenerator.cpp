@@ -1,9 +1,12 @@
+/** \file gameengine/GameLogic/SCA_RandomNumberGenerator.cpp
+ *  \ingroup gamelogic
+ */
 /**
  * Generate random numbers that can be used by other components. We 
  * convert to different types/distributions elsewhere. This just 
  * delivers a clean, random bitvector.
  *
- * $Id: SCA_RandomNumberGenerator.cpp 28254 2010-04-18 10:28:37Z campbellbarton $
+ * $Id: SCA_RandomNumberGenerator.cpp 35169 2011-02-25 13:32:11Z jesterking $
  */
 
 /* A C-program for MT19937: Real number version                */

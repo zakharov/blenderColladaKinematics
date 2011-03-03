@@ -1,5 +1,5 @@
-/**
- * $Id: editmesh_loop.c 34159 2011-01-07 18:36:47Z campbellbarton $
+/*
+ * $Id: editmesh_loop.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/mesh/editmesh_loop.c
+ *  \ingroup edmesh
+ */
+
 
 /*
 
@@ -71,14 +76,10 @@ editmesh_loop: tools with own drawing subloops, select, knife, subdiv
 #include "mesh_intern.h"
 
 /* **** XXX ******** */
-static void BIF_undo_push(const char *UNUSED(arg)) {}
-static void BIF_undo(void) {}
 static void error(const char *UNUSED(arg)) {}
-static int qtest(void) {return 0;}
 /* **** XXX ******** */
 
-
-/* New LoopCut */
+#if 0 /* UNUSED 2.5 */
 static void edgering_sel(EditMesh *em, EditEdge *startedge, int select, int previewlines)
 {
 	EditEdge *eed;
@@ -192,7 +193,7 @@ static void edgering_sel(EditMesh *em, EditEdge *startedge, int select, int prev
 	}
 }
 
-void CutEdgeloop(Object *obedit, wmOperator *op, EditMesh *em, int numcuts)
+static void CutEdgeloop(Object *obedit, wmOperator *op, EditMesh *em, int numcuts)
 {
 	ViewContext vc; // XXX
 	EditEdge *nearest=NULL, *eed;
@@ -220,9 +221,8 @@ void CutEdgeloop(Object *obedit, wmOperator *op, EditMesh *em, int numcuts)
 			dist= 50;
 			nearest = findnearestedge(&vc, &dist);	// returns actual distance in dist
 //			scrarea_do_windraw(curarea);	// after findnearestedge, backbuf!
-			
-			sprintf(msg,"Number of Cuts: %d (S)mooth: ",numcuts);
-			strcat(msg, smooth ? "on":"off");
+
+			BLI_snprintf(msg, sizeof(msg),"Number of Cuts: %d (S)mooth: %s", numcuts, smooth ? "on":"off");
 			
 //			headerprint(msg);
 			/* Need to figure preview */
@@ -381,7 +381,7 @@ void CutEdgeloop(Object *obedit, wmOperator *op, EditMesh *em, int numcuts)
 //	DAG_id_tag_update(obedit->data, 0);
 	return;
 }
-
+#endif
 
 /* *************** LOOP SELECT ************* */
 #if 0

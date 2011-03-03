@@ -1,0 +1,2 @@
+/usr/bin/ar cr ../../../../lib/libge_oglrasterizer.a  CMakeFiles/ge_oglrasterizer.dir/RAS_GLExtensionManager.cpp.o CMakeFiles/ge_oglrasterizer.dir/RAS_ListRasterizer.cpp.o CMakeFiles/ge_oglrasterizer.dir/RAS_OpenGLRasterizer.cpp.o CMakeFiles/ge_oglrasterizer.dir/RAS_VAOpenGLRasterizer.cpp.o
+/usr/bin/ranlib ../../../../lib/libge_oglrasterizer.a

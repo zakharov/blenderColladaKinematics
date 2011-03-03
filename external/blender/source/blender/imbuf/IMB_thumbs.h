@@ -1,5 +1,5 @@
-/**
- * $Id: IMB_thumbs.h 33442 2010-12-03 12:30:59Z campbellbarton $ 
+/*
+ * $Id: IMB_thumbs.h 35239 2011-02-27 20:23:21Z jesterking $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/imbuf/IMB_thumbs.h
+ *  \ingroup imbuf
+ */
+
 
 #ifndef _IMB_THUMBS_H
 #define _IMB_THUMBS_H
@@ -75,6 +80,9 @@ void IMB_thumb_makedirs(void);
 ImBuf *IMB_loadblend_thumb(const char *path);
 void IMB_overlayblend_thumb(unsigned int *thumb, int width, int height, float aspect);
 
+#ifdef __cplusplus
+}
+#endif /* __cplusplus */
 
 #endif /* _IMB_THUMBS_H */
 

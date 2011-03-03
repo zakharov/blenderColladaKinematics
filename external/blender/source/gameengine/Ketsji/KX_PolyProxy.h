@@ -1,5 +1,5 @@
-/**
- * $Id: KX_PolyProxy.h 32788 2010-10-31 04:11:39Z campbellbarton $
+/*
+ * $Id: KX_PolyProxy.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file KX_PolyProxy.h
+ *  \ingroup ketsji
+ */
+
 #ifndef __KX_POLYROXY
 #define __KX_POLYPROXY
 

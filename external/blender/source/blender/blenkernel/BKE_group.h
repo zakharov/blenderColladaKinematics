@@ -1,7 +1,5 @@
-/**
- * blenlib/BKE_group.h (mar-2001 nzc)
- *	
- * $Id: BKE_group.h 33124 2010-11-17 09:45:45Z campbellbarton $ 
+/*
+ * $Id: BKE_group.h 34962 2011-02-18 13:05:18Z jesterking $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -30,6 +28,12 @@
  */
 #ifndef BKE_GROUP_H
 #define BKE_GROUP_H
+
+/** \file BKE_group.h
+ *  \ingroup bke
+ *  \since March 2001
+ *  \author nzc
+ */
 
 struct Base;
 struct Group;

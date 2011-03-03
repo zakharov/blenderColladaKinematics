@@ -1,5 +1,5 @@
 /*
- * $Id: readfile.h 33124 2010-11-17 09:45:45Z campbellbarton $
+ * $Id: readfile.h 35245 2011-02-27 20:35:41Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  * ***** END GPL LICENSE BLOCK *****
  * blenloader readfile private function prototypes
  */
+
+/** \file blender/blenloader/intern/readfile.h
+ *  \ingroup blenloader
+ */
+
 #ifndef READFILE_H
 #define READFILE_H
 

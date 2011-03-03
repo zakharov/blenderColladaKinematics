@@ -1,5 +1,5 @@
-/**
- * $Id: MEM_RefCountedC-Api.h 34357 2011-01-16 19:55:50Z campbellbarton $
+/*
+ * $Id: MEM_RefCountedC-Api.h 35156 2011-02-25 11:47:18Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file memutil/MEM_RefCountedC-Api.h
+ *  \ingroup memutil
+ */
+
 /**
  * @file	MEM_RefCountedC-Api.h
  * Interface for C access to functionality relating to shared objects in the foundation library.

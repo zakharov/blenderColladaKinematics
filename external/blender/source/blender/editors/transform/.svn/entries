@@ -1,15 +1,15 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/editors/transform
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-02-07T16:41:57.103334Z
-34695
-ton
+2011-03-03T17:59:04.039119Z
+35337
+campbellbarton
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-01-18T22:04:51.733021Z
-b5f65f950df9685ad9c2444ae17fe9d7
-2011-01-15T16:14:57.406996Z
-34335
-campbellbarton
+2011-03-03T12:27:50.598297Z
+c1f0e767e60d8af8c33398d7c23b69d1
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-26995
+27069
 
 transform_ndofinput.c
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-01-18T22:04:51.733021Z
-e382370aba6a456f00f00ad720008772
-2011-01-07T19:18:31.464706Z
-34160
-campbellbarton
+2011-03-03T12:27:50.598297Z
+875156b6494ae1008ae941bc204ceb25
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-2721
+2805
 
 transform_constraints.c
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-01-18T22:04:51.733021Z
-6ca0083c6ac9232a11720b03088c6860
-2011-01-07T19:18:31.464706Z
-34160
-campbellbarton
+2011-03-03T12:27:50.602297Z
+58084f12eabe8d4389ba72d5e20ff00c
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-24421
+24514
 
 transform_conversions.c
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-02-10T19:48:52.375667Z
-2ba16012fc6d18270bb60b2481df6dd4
-2011-02-04T08:33:07.469593Z
-34634
-aligorith
+2011-03-03T21:53:56.044120Z
+d6cdf52df4acf191dc8b52e0b7a85476
+2011-03-03T17:59:04.039119Z
+35337
+campbellbarton
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-151572
+149741
 
 SConscript
 file
@@ -168,11 +168,11 @@ file
 
 
 
-2011-01-18T22:04:51.733021Z
-3a65abf663b712232498d0f34ce2d385
-2010-09-03T03:30:20.436068Z
-31730
-gsrb3d
+2011-03-03T12:27:50.606297Z
+0f743e7acdb04701927a751b36c11e9e
+2011-02-21T12:35:04.852834Z
+35028
+jesterking
 has-props
 
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-391
+408
 
 transform_manipulator.c
 file
@@ -202,11 +202,11 @@ file
 
 
 
-2011-01-18T22:04:51.733021Z
-5086c2b116aee8c97ea8a411cd6c4d6c
-2011-01-09T15:12:08.700922Z
-34198
-campbellbarton
+2011-03-03T12:27:50.606297Z
+755e18ecf203e67cb311abb4bb66e51f
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -228,7 +228,7 @@ has-props
 
 
 
-42818
+42911
 
 transform_orientations.c
 file
@@ -236,11 +236,11 @@ file
 
 
 
-2011-01-18T22:04:51.733021Z
-d4fa585c67805ff12a300b64a1ec82c5
-2011-01-12T03:41:12.073182Z
-34273
-campbellbarton
+2011-03-03T12:27:50.610297Z
+315a1d58d93af9b72a7129915d9c5c4a
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -262,7 +262,7 @@ has-props
 
 
 
-21542
+21629
 
 transform_generics.c
 file
@@ -270,11 +270,11 @@ file
 
 
 
-2011-02-10T19:48:52.375667Z
-98ab78379c88d9baeff26884d2b2dbc7
-2011-02-04T08:33:07.469593Z
-34634
-aligorith
+2011-03-03T21:53:56.048120Z
+fb8dd221709ac9aa93f50c233c6700ba
+2011-03-03T17:59:04.039119Z
+35337
+campbellbarton
 has-props
 
 
@@ -296,7 +296,7 @@ has-props
 
 
 
-41289
+41391
 
 transform_input.c
 file
@@ -304,11 +304,11 @@ file
 
 
 
-2011-01-18T22:04:51.733021Z
-13ac926acb1e37bdf868a15204fff70d
-2011-01-07T18:36:47.041781Z
-34159
-campbellbarton
+2011-03-03T12:27:50.610297Z
+ee3e2104688f764ded510ba96b3ee524
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -330,7 +330,7 @@ has-props
 
 
 
-10275
+10425
 
 transform.c
 file
@@ -338,11 +338,11 @@ file
 
 
 
-2011-02-10T19:48:52.375667Z
-b7078c09dcbd5545c8acd9b80ca2fef0
-2011-02-07T16:41:57.103334Z
-34695
-ton
+2011-03-03T21:53:56.048120Z
+e31b4d3f938e97f2fbcc9e6cb9bfecc1
+2011-03-03T17:59:04.039119Z
+35337
+campbellbarton
 has-props
 
 
@@ -364,7 +364,7 @@ has-props
 
 
 
-143847
+144453
 
 CMakeLists.txt
 file
@@ -372,11 +372,11 @@ file
 
 
 
-2011-01-18T22:04:51.733021Z
-8fc7cfc708ccae690a4e37fbaf3295ed
-2010-12-22T23:09:30.468439Z
-33864
-campbellbarton
+2011-03-03T12:27:50.614297Z
+350bf67aa3789288a602c5371e68215c
+2011-02-21T12:35:04.852834Z
+35028
+jesterking
 has-props
 
 
@@ -398,7 +398,7 @@ has-props
 
 
 
-1315
+1333
 
 transform_ops.c
 file
@@ -406,11 +406,11 @@ file
 
 
 
-2011-01-18T22:04:51.743021Z
-fe9a9a9d1b1fa76f58f4d7208a6b3aca
-2011-01-13T04:53:55.701793Z
-34290
-campbellbarton
+2011-03-03T12:27:50.614297Z
+95f10998742e5bf384d8790f17492fca
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -432,7 +432,7 @@ has-props
 
 
 
-29111
+29433
 
 transform_snap.c
 file
@@ -440,11 +440,11 @@ file
 
 
 
-2011-02-10T19:48:52.385667Z
-32a8c624fdbf674f4e7ab4b902d251b0
-2011-02-07T12:07:26.652948Z
-34690
-campbellbarton
+2011-03-03T12:27:50.614297Z
+99166efcef36391f45010337ecbe4282
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -466,5 +466,5 @@ has-props
 
 
 
-47222
+47470
 

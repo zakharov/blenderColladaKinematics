@@ -1,6 +1,6 @@
-/**
+/*
  * @file KX_IPhysicsController.cpp
- * $Id: KX_IPhysicsController.cpp 28254 2010-04-18 10:28:37Z campbellbarton $
+ * $Id: KX_IPhysicsController.cpp 35171 2011-02-25 13:35:59Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/Ketsji/KX_IPhysicsController.cpp
+ *  \ingroup ketsji
+ */
+
 #include "KX_IPhysicsController.h"
 
 #include "PHY_DynamicTypes.h"

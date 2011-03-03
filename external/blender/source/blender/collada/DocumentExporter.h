@@ -1,5 +1,5 @@
-/**
- * $Id: DocumentExporter.h 32309 2010-10-05 00:05:14Z jesterking $
+/*
+ * $Id: DocumentExporter.h 35020 2011-02-21 08:38:53Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -20,6 +20,10 @@
  * Contributor(s): Chingiz Dyussenov, Arystanbek Dyussenov.
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file DocumentExporter.h
+ *  \ingroup collada
  */
 
 #ifndef __DOCUMENTEXPORTER_H__

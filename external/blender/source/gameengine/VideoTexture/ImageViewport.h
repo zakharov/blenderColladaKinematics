@@ -1,4 +1,4 @@
-/* $Id: ImageViewport.h 26689 2010-02-07 19:18:00Z ben2610 $
+/* $Id: ImageViewport.h 35082 2011-02-22 19:30:37Z jesterking $
 -----------------------------------------------------------------------------
 This source file is part of VideoTexture library
 
@@ -20,6 +20,10 @@ http://www.gnu.org/copyleft/lesser.txt.
 -----------------------------------------------------------------------------
 */
 
+/** \file ImageViewport.h
+ *  \ingroup bgevideotex
+ */
+ 
 #if !defined IMAGEVIEWPORT_H
 #define IMAGEVIEWPORT_H
 

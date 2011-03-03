@@ -1,5 +1,5 @@
-/**
- * $Id: glutil.c 34159 2011-01-07 18:36:47Z campbellbarton $
+/*
+ * $Id: glutil.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/screen/glutil.c
+ *  \ingroup edscr
+ */
+
 
 #include <stdio.h>
 #include <string.h>
@@ -765,7 +770,7 @@ void bglBegin(int mode)
 	}
 }
 
-int bglPointHack() {
+int bglPointHack(void) {
 	float value[4];
 	int pointhack_px;
 	glGetFloatv(GL_POINT_SIZE_RANGE, value);

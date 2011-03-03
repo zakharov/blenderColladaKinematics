@@ -1,5 +1,5 @@
-/**
- * $Id: wm.h 32506 2010-10-16 02:40:31Z campbellbarton $
+/*
+ * $Id: wm.h 35179 2011-02-25 14:04:21Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/windowmanager/wm.h
+ *  \ingroup wm
+ */
+
 #ifndef WM_H
 #define WM_H
 

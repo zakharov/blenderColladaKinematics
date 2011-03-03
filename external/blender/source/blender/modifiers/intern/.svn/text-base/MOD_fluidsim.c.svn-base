@@ -30,6 +30,11 @@
 *
 */
 
+/** \file blender/modifiers/intern/MOD_fluidsim.c
+ *  \ingroup modifiers
+ */
+
+
 #include "DNA_scene_types.h"
 #include "DNA_object_fluidsim.h"
 #include "DNA_object_types.h"
@@ -42,6 +47,7 @@
 
 #include "depsgraph_private.h"
 
+#include "MOD_util.h"
 #include "MOD_fluidsim_util.h"
 #include "MEM_guardedalloc.h"
 

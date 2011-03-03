@@ -1,7 +1,5 @@
-/**
- * KX_SoundActuator.h
- *
- * $Id: KX_SoundActuator.h 32788 2010-10-31 04:11:39Z campbellbarton $
+/*
+ * $Id: KX_SoundActuator.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +25,10 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file KX_SoundActuator.h
+ *  \ingroup ketsji
  */
 
 #ifndef __KX_SOUNDACTUATOR

@@ -1,5 +1,5 @@
-/**
- * $Id: rayobject_empty.cpp 34664 2011-02-06 00:49:58Z gsrb3d $
+/*
+ * $Id: rayobject_empty.cpp 35233 2011-02-27 19:31:27Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/render/intern/raytrace/rayobject_empty.cpp
+ *  \ingroup render
+ */
+
 
 #include "MEM_guardedalloc.h"
 

@@ -2,7 +2,7 @@
  *
  * Functions for struct-dna, the genetic file dot c!
  *
- * $Id: dna_genfile.c 34604 2011-02-01 12:47:50Z campbellbarton $
+ * $Id: dna_genfile.c 35140 2011-02-25 10:20:37Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -30,6 +30,11 @@
  * ***** END GPL LICENSE BLOCK *****
  * DNA handling
  */
+
+/** \file blender/makesdna/intern/dna_genfile.c
+ *  \ingroup DNA
+ */
+
 
 #include <stdio.h>
 #include <stdlib.h>

@@ -1,9 +1,5 @@
-/**
- * blenlib/DNA_curve_types.h (mar-2001 nzc)
- *
- * Curve stuff.
- *
- * $Id: DNA_curve_types.h 34600 2011-02-01 11:35:27Z aligorith $ 
+/*
+ * $Id: DNA_curve_types.h 34941 2011-02-17 20:48:12Z jesterking $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -32,6 +28,10 @@
  */
 #ifndef DNA_CURVE_TYPES_H
 #define DNA_CURVE_TYPES_H
+
+/** \file DNA_curve_types.h
+ *  \ingroup DNA
+ */
 
 #include "DNA_listBase.h"
 #include "DNA_vec_types.h"

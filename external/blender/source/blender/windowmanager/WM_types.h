@@ -1,5 +1,5 @@
-/**
- * $Id: WM_types.h 34695 2011-02-07 16:41:57Z ton $
+/*
+ * $Id: WM_types.h 35179 2011-02-25 14:04:21Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/windowmanager/WM_types.h
+ *  \ingroup wm
+ */
+
 #ifndef WM_TYPES_H
 #define WM_TYPES_H
 

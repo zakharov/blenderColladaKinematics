@@ -1,5 +1,5 @@
-/**
- * $Id: ED_datafiles.h 30723 2010-07-25 22:05:52Z nicholasbishop $
+/*
+ * $Id: ED_datafiles.h 35016 2011-02-21 07:25:24Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,10 @@
  * Contributor(s): Blender Foundation
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file ED_datafiles.h
+ *  \ingroup editors
  */
 
 #ifndef ED_DATAFILES_H

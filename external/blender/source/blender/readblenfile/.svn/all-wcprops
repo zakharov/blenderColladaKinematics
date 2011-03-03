@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/blender/readblenfile
+/svnroot/bf-blender/!svn/ver/35234/trunk/blender/source/blender/readblenfile
 END
 SConscript
 K 25
@@ -19,5 +19,5 @@ BLO_readblenfile.h
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svnroot/bf-blender/!svn/ver/33448/trunk/blender/source/blender/readblenfile/BLO_readblenfile.h
+/svnroot/bf-blender/!svn/ver/35234/trunk/blender/source/blender/readblenfile/BLO_readblenfile.h
 END

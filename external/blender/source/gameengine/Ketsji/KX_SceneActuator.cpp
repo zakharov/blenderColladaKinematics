@@ -1,7 +1,7 @@
-/**
+/*
 * Set scene/camera stuff
 *
-* $Id: KX_SceneActuator.cpp 32788 2010-10-31 04:11:39Z campbellbarton $
+* $Id: KX_SceneActuator.cpp 35171 2011-02-25 13:35:59Z jesterking $
 *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
 */
+
+/** \file gameengine/Ketsji/KX_SceneActuator.cpp
+ *  \ingroup ketsji
+ */
+
 
 #include "SCA_IActuator.h"
 #include "KX_SceneActuator.h"

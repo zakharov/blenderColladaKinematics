@@ -30,6 +30,10 @@
 #ifndef BLI_UTILDEFINES_H
 #define BLI_UTILDEFINES_H
 
+/** \file BLI_utildefines.h
+ *  \ingroup bli
+ */
+
 #ifndef FALSE
 #define FALSE 0
 #endif
@@ -169,6 +173,11 @@
 #  define UNUSED(x) UNUSED_ ## x
 #endif
 
+#ifdef __GNUC__
+#  define WARN_UNUSED  __attribute__((warn_unused_result))
+#else
+#  define WARN_UNUSED
+#endif
 
 /*little macro so inline keyword works*/
 #if defined(_MSC_VER)

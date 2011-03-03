@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 75
-/svnroot/bf-blender/!svn/ver/34567/trunk/blender/intern/itasc/kdl/utilities
+/svnroot/bf-blender/!svn/ver/35155/trunk/blender/intern/itasc/kdl/utilities
 END
 error.h
 K 25
@@ -13,7 +13,7 @@ error_stack.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svnroot/bf-blender/!svn/ver/23467/trunk/blender/intern/itasc/kdl/utilities/error_stack.cpp
+/svnroot/bf-blender/!svn/ver/35155/trunk/blender/intern/itasc/kdl/utilities/error_stack.cpp
 END
 utility_io.h
 K 25
@@ -25,7 +25,7 @@ kdl-config.h
 K 25
 svn:wc:ra_dav:version-url
 V 88
-/svnroot/bf-blender/!svn/ver/23467/trunk/blender/intern/itasc/kdl/utilities/kdl-config.h
+/svnroot/bf-blender/!svn/ver/35155/trunk/blender/intern/itasc/kdl/utilities/kdl-config.h
 END
 error_stack.h
 K 25
@@ -37,7 +37,7 @@ utility.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 87
-/svnroot/bf-blender/!svn/ver/23467/trunk/blender/intern/itasc/kdl/utilities/utility.cpp
+/svnroot/bf-blender/!svn/ver/35155/trunk/blender/intern/itasc/kdl/utilities/utility.cpp
 END
 rall1d.h
 K 25
@@ -67,11 +67,11 @@ utility_io.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/23467/trunk/blender/intern/itasc/kdl/utilities/utility_io.cpp
+/svnroot/bf-blender/!svn/ver/35155/trunk/blender/intern/itasc/kdl/utilities/utility_io.cpp
 END
 traits.h
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svnroot/bf-blender/!svn/ver/23467/trunk/blender/intern/itasc/kdl/utilities/traits.h
+/svnroot/bf-blender/!svn/ver/35155/trunk/blender/intern/itasc/kdl/utilities/traits.h
 END

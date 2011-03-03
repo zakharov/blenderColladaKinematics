@@ -1,4 +1,4 @@
-# $Id: CMakeLists.txt 34668 2011-02-06 10:18:20Z campbellbarton $
+# $Id: CMakeLists.txt 34861 2011-02-15 09:24:35Z jesterking $
 # ***** BEGIN GPL LICENSE BLOCK *****
 #
 # This program is free software; you can redistribute it and/or
@@ -38,6 +38,7 @@ set(INC
 	../imbuf
 	../../kernel/gen_messaging
 	../../../intern/smoke/extern
+	../../../intern/mikktspace
 	../../../intern/guardedalloc
 )
 

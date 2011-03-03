@@ -1,5 +1,5 @@
-/**
- * $Id: ED_fileselect.h 33754 2010-12-17 19:05:34Z ton $
+/*
+ * $Id: ED_fileselect.h 35016 2011-02-21 07:25:24Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file ED_fileselect.h
+ *  \ingroup editors
+ */
+
 #ifndef ED_FILES_H
 #define ED_FILES_H
 

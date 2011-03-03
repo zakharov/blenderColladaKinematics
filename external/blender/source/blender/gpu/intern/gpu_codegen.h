@@ -1,5 +1,5 @@
-/**
- * $Id: gpu_codegen.h 33448 2010-12-03 17:05:21Z campbellbarton $
+/*
+ * $Id: gpu_codegen.h 35241 2011-02-27 20:25:53Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -29,6 +29,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/gpu/intern/gpu_codegen.h
+ *  \ingroup gpu
+ */
+
 
 #ifndef __GPU_CODEGEN_H__
 #define __GPU_CODEGEN_H__

@@ -1,4 +1,7 @@
-/* $Id: KX_Dome.cpp 32788 2010-10-31 04:11:39Z campbellbarton $
+/** \file gameengine/Ketsji/KX_Dome.cpp
+ *  \ingroup ketsji
+ */
+/* $Id: KX_Dome.cpp 35171 2011-02-25 13:35:59Z jesterking $
 -----------------------------------------------------------------------------
 
 This program is free software; you can redistribute it and/or modify it under

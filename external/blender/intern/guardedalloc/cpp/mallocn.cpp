@@ -1,5 +1,5 @@
-/**
- * $Id: mallocn.cpp 32382 2010-10-08 20:40:42Z jesterking $
+/*
+ * $Id: mallocn.cpp 35153 2011-02-25 11:41:12Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -20,6 +20,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file guardedalloc/cpp/mallocn.cpp
+ *  \ingroup MEM
+ */
+
 
 #include <new>
 #include "../MEM_guardedalloc.h"

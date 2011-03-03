@@ -1,5 +1,5 @@
-/**
- * $Id: KX_BlenderGL.h 33707 2010-12-16 10:25:41Z dfelinto $
+/*
+ * $Id: KX_BlenderGL.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file KX_BlenderGL.h
+ *  \ingroup blroutines
+ */
+
 #ifndef __BLENDERGL
 #define __BLENDERGL
 

@@ -1,5 +1,5 @@
-/**
- * $Id: quicktime_export.c 32889 2010-11-06 16:09:12Z elubie $
+/*
+ * $Id: quicktime_export.c 35235 2011-02-27 20:01:38Z jesterking $
  *
  * quicktime_export.c
  *
@@ -27,6 +27,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/quicktime/apple/quicktime_export.c
+ *  \ingroup quicktime
+ */
+
 
 #ifdef WITH_QUICKTIME
 #if defined(_WIN32) || defined(__APPLE__)

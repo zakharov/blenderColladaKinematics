@@ -1,5 +1,5 @@
 /*
- * $Id: physics_intern.h 28519 2010-04-30 01:22:21Z broken $
+ * $Id: physics_intern.h 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -29,6 +29,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/physics/physics_intern.h
+ *  \ingroup edphys
+ */
+
 
 #ifndef ED_PHYSICS_INTERN_H
 #define ED_PHYSICS_INTERN_H

@@ -1,7 +1,10 @@
+/** \file gameengine/Ketsji/KX_SCA_ReplaceMeshActuator.cpp
+ *  \ingroup ketsji
+ */
 //
 // Replace the mesh for this actuator's parent
 //
-// $Id: KX_SCA_ReplaceMeshActuator.cpp 34520 2011-01-27 00:02:25Z campbellbarton $
+// $Id: KX_SCA_ReplaceMeshActuator.cpp 35171 2011-02-25 13:35:59Z jesterking $
 //
 // ***** BEGIN GPL LICENSE BLOCK *****
 //

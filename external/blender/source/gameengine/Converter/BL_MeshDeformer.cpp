@@ -1,5 +1,5 @@
-/**
- * $Id: BL_MeshDeformer.cpp 31950 2010-09-15 16:13:32Z campbellbarton $
+/*
+ * $Id: BL_MeshDeformer.cpp 35167 2011-02-25 13:30:41Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  * ***** END GPL LICENSE BLOCK *****
  * Simple deformation controller that restores a mesh to its rest position
  */
+
+/** \file gameengine/Converter/BL_MeshDeformer.cpp
+ *  \ingroup bgeconv
+ */
+
 
 #if defined(WIN32) && !defined(FREE_WINDOWS)
 // This warning tells us about truncation of __long__ stl-generated names.

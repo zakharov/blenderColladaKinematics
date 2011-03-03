@@ -1,7 +1,5 @@
-/**
- * BKE_cloth.h
- *
- * $Id: BKE_collision.h 32629 2010-10-21 08:32:53Z jesterking $
+/*
+ * $Id: BKE_collision.h 34962 2011-02-18 13:05:18Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -30,6 +28,11 @@
  */
 #ifndef BKE_COLLISIONS_H
 #define BKE_COLLISIONS_H
+
+/** \file BKE_collision.h
+ *  \ingroup bke
+ *  \author Daniel Genrich
+ */
 
 #include <math.h>
 #include <float.h>

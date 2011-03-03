@@ -1,5 +1,5 @@
 /*
-* $Id: BKE_customdata.h 34007 2011-01-02 17:08:25Z nazgul $
+* $Id: BKE_customdata.h 34962 2011-02-18 13:05:18Z jesterking $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -27,7 +27,11 @@
 * ***** END GPL LICENSE BLOCK *****
 */ 
 
-/* CustomData interface, see also DNA_customdata_types.h. */
+/** \file BKE_customdata.h
+ *  \ingroup bke
+ *  \author Ben Batt
+ *  \brief CustomData interface, see also DNA_customdata_types.h.
+ */
 
 #ifndef BKE_CUSTOMDATA_H
 #define BKE_CUSTOMDATA_H

@@ -1,5 +1,5 @@
-/**
- * $Id: GPC_Engine.cpp 28254 2010-04-18 10:28:37Z campbellbarton $
+/*
+ * $Id: GPC_Engine.cpp 35170 2011-02-25 13:35:11Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/GamePlayer/common/GPC_Engine.cpp
+ *  \ingroup player
+ */
+
 
 #ifdef WIN32
 	#pragma warning (disable:4786) // suppress stl-MSVC debug info warning

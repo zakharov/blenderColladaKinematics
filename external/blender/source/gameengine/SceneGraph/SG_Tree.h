@@ -1,5 +1,5 @@
-/**
- * $Id: SG_Tree.h 29259 2010-06-06 01:15:44Z campbellbarton $
+/*
+ * $Id: SG_Tree.h 35082 2011-02-22 19:30:37Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,7 +25,10 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
- * Bounding Box
+ */
+ 
+/** \file SG_Tree.h
+ *  \ingroup bgesg
  */
  
 #ifndef __SG_TREE_H__

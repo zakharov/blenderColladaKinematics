@@ -1,5 +1,5 @@
-/**
- * $Id: PHY_IPhysicsEnvironment.h 29259 2010-06-06 01:15:44Z campbellbarton $
+/*
+ * $Id: PHY_IPhysicsEnvironment.h 35072 2011-02-22 12:42:55Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,10 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file PHY_IPhysicsEnvironment.h
+ *  \ingroup phys
  */
 
 #ifndef _IPHYSICSENVIRONMENT

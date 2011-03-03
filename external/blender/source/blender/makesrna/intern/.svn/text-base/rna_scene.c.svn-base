@@ -1,4 +1,4 @@
-/**
+/*
  * $Id$
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
@@ -21,6 +21,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/makesrna/intern/rna_scene.c
+ *  \ingroup RNA
+ */
+
 
 #include <stdlib.h>
 
@@ -1949,6 +1954,7 @@ static void rna_def_scene_render_data(BlenderRNA *brna)
 		{R_OUTPUT_SCREEN, "SCREEN", 0, "Full Screen", "Images are rendered in full Screen"},
 		{R_OUTPUT_AREA, "AREA", 0, "Image Editor", "Images are rendered in Image Editor"},
 		{R_OUTPUT_WINDOW, "WINDOW", 0, "New Window", "Images are rendered in new Window"},
+		{R_OUTPUT_NONE, "NONE", 0, "No Output", "Images are rendered without drawing"},
 		{0, NULL, 0, NULL, NULL}};
 	
 	/* Bake */
@@ -2145,6 +2151,7 @@ static void rna_def_scene_render_data(BlenderRNA *brna)
 	
 	prop= RNA_def_property(srna, "resolution_percentage", PROP_INT, PROP_PERCENTAGE);
 	RNA_def_property_int_sdna(prop, NULL, "size");
+	RNA_def_property_range(prop, 1, INT_MAX);
 	RNA_def_property_ui_range(prop, 1, 100, 10, 1);
 	RNA_def_property_ui_text(prop, "Resolution %", "Percentage scale for render resolution");
 	RNA_def_property_update(prop, NC_SCENE|ND_RENDER_OPTIONS, NULL);

@@ -1,5 +1,5 @@
-/**
- * $Id: bpy_driver.c 34392 2011-01-18 21:39:50Z campbellbarton $
+/*
+ * $Id: bpy_driver.c 35236 2011-02-27 20:10:08Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/python/intern/bpy_driver.c
+ *  \ingroup pythonintern
+ */
+
 /* ****************************************** */
 /* Drivers - PyExpression Evaluation */
 
@@ -33,6 +38,8 @@
 
 #include "BKE_fcurve.h"
 #include "BKE_global.h"
+
+#include "bpy_driver.h"
 
 /* for pydrivers (drivers using one-line Python expressions to express relationships between targets) */
 PyObject *bpy_pydriver_Dict = NULL;

@@ -1,15 +1,15 @@
 10
 
 dir
-1566
+1676
 https://svn.blender.org/svnroot/bf-extensions/trunk/py/scripts/addons/io_coat3D
 https://svn.blender.org/svnroot/bf-extensions
 
 
 
-2011-02-01T11:47:29.310406Z
-1532
-jaydez
+2011-02-16T02:52:12.761991Z
+1609
+campbellbarton
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-02-10T19:49:02.115667Z
-69ff68c935fb09bc4cffb248c60ffe6e
-2011-02-01T11:47:29.310406Z
-1532
-jaydez
+2011-03-03T12:29:47.218297Z
+c7dcdb42908a2848d523e9e8c92d4f06
+2011-02-16T02:52:12.761991Z
+1609
+campbellbarton
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-7090
+7346
 
 tex.py
 file
@@ -66,7 +66,7 @@ file
 
 
 
-2011-02-10T19:49:02.115667Z
+2011-03-03T12:29:47.222297Z
 c4362807de392e0209fd4bfd5d2c71df
 2011-01-30T13:39:30.958308Z
 1526
@@ -100,11 +100,11 @@ file
 
 
 
-2011-02-10T19:49:02.115667Z
-7cb98269db88e06f11661f6e40eb05ef
-2011-01-30T13:39:30.958308Z
-1526
-haikalle
+2011-03-03T12:29:47.222297Z
+e3d04ee599a6d97492570838bf565b35
+2011-02-11T01:29:13.146577Z
+1569
+campbellbarton
 has-props
 
 
@@ -126,5 +126,5 @@ has-props
 
 
 
-18670
+18754
 

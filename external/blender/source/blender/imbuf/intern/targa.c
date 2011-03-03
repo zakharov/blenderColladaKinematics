@@ -1,4 +1,4 @@
-/**
+/*
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,8 +24,13 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
- * $Id: targa.c 33167 2010-11-19 02:14:18Z campbellbarton $
+ * $Id: targa.c 35239 2011-02-27 20:23:21Z jesterking $
  */
+
+/** \file blender/imbuf/intern/targa.c
+ *  \ingroup imbuf
+ */
+
 
 #ifdef WIN32
 #include <io.h>

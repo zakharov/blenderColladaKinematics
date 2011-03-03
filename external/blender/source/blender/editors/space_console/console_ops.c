@@ -1,5 +1,5 @@
-/**
- * $Id: console_ops.c 34178 2011-01-08 17:47:34Z ton $
+/*
+ * $Id: console_ops.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_console/console_ops.c
+ *  \ingroup spconsole
+ */
+
 
 #include <stdlib.h>
 #include <string.h>
@@ -75,7 +80,7 @@ void console_scrollback_free(SpaceConsole *sc, ConsoleLine *cl)
 	MEM_freeN(cl);
 }
 
-void console_scrollback_limit(SpaceConsole *sc)
+static void console_scrollback_limit(SpaceConsole *sc)
 {
 	int tot;
 	

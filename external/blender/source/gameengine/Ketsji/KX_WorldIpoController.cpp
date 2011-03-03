@@ -1,5 +1,5 @@
-/**
- * $Id: KX_WorldIpoController.cpp 28254 2010-04-18 10:28:37Z campbellbarton $
+/*
+ * $Id: KX_WorldIpoController.cpp 35171 2011-02-25 13:35:59Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/Ketsji/KX_WorldIpoController.cpp
+ *  \ingroup ketsji
+ */
+
 
 #include "KX_WorldIpoController.h"
 #include "KX_ScalarInterpolator.h"

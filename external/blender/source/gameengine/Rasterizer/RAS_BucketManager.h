@@ -1,5 +1,5 @@
-/**
- * $Id: RAS_BucketManager.h 29494 2010-06-16 19:07:20Z moguri $
+/*
+ * $Id: RAS_BucketManager.h 35072 2011-02-22 12:42:55Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,7 +26,10 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
-// this will be put in a class later on
+
+/** \file RAS_BucketManager.h
+ *  \ingroup bgerast
+ */
 
 #ifndef __RAS_BUCKETMANAGER
 #define __RAS_BUCKETMANAGER

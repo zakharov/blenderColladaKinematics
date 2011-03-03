@@ -1,5 +1,5 @@
-/**
- * $Id: SG_Spatial.cpp 28254 2010-04-18 10:28:37Z campbellbarton $
+/*
+ * $Id: SG_Spatial.cpp 35175 2011-02-25 13:39:04Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/SceneGraph/SG_Spatial.cpp
+ *  \ingroup bgesg
+ */
+
 
 #include "SG_Node.h"
 #include "SG_Spatial.h"

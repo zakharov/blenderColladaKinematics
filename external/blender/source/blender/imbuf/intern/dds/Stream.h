@@ -1,5 +1,5 @@
-/**
- * $Id: Stream.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: Stream.h 35239 2011-02-27 20:23:21Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/imbuf/intern/dds/Stream.h
+ *  \ingroup imbdds
+ */
+
 
 /* simple memory stream functions with buffer overflow check */
 

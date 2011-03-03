@@ -1,5 +1,5 @@
-/**
- * $Id: rna_sound.c 32536 2010-10-17 09:01:37Z nexyon $
+/*
+ * $Id: rna_sound.c 35238 2011-02-27 20:20:01Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/makesrna/intern/rna_sound.c
+ *  \ingroup RNA
+ */
+
 
 #include <stdlib.h>
 

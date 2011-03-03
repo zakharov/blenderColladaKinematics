@@ -1,4 +1,4 @@
-/**
+/*
  * $Id$
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/animation/anim_filter.c
+ *  \ingroup edanimation
+ */
+
 
 /* This file contains a system used to provide a layer of abstraction between sources
  * of animation data and tools in Animation Editors. The method used here involves 
@@ -427,7 +432,7 @@ short ANIM_animdata_get_context (const bContext *C, bAnimContext *ac)
 /* this function allocates memory for a new bAnimListElem struct for the 
  * provided animation channel-data. 
  */
-bAnimListElem *make_new_animlistelem (void *data, short datatype, void *owner, short ownertype, ID *owner_id)
+static bAnimListElem *make_new_animlistelem (void *data, short datatype, void *owner, short ownertype, ID *owner_id)
 {
 	bAnimListElem *ale= NULL;
 	

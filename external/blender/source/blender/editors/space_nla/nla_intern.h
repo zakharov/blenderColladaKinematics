@@ -1,5 +1,5 @@
-/**
- * $Id: nla_intern.h 34395 2011-01-18 23:38:36Z aligorith $
+/*
+ * $Id: nla_intern.h 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_nla/nla_intern.h
+ *  \ingroup spnla
+ */
+
 #ifndef ED_NLA_INTERN_H
 #define ED_NLA_INTERN_H
 
@@ -67,6 +72,7 @@ enum {
 
 void NLA_OT_select_all_toggle(wmOperatorType *ot);
 void NLA_OT_select_border(wmOperatorType *ot);
+void NLA_OT_select_leftright(wmOperatorType *ot);
 void NLA_OT_click_select(wmOperatorType *ot);
 
 /* **************************************** */

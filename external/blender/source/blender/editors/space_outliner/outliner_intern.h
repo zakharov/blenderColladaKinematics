@@ -1,5 +1,5 @@
-/**
- * $Id: outliner_intern.h 34179 2011-01-08 18:37:11Z ton $
+/*
+ * $Id: outliner_intern.h 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_outliner/outliner_intern.h
+ *  \ingroup spoutliner
+ */
+
 
 #ifndef ED_OUTLINER_INTERN_H
 #define ED_OUTLINER_INTERN_H

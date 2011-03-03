@@ -29,6 +29,11 @@
 * ***** END GPL LICENSE BLOCK *****
 *
 */
+
+/** \file blender/modifiers/intern/MOD_bevel.c
+ *  \ingroup modifiers
+ */
+
 #include "MEM_guardedalloc.h"
 
 #include "BLI_utildefines.h"
@@ -37,6 +42,8 @@
 #include "BKE_cdderivedmesh.h"
 #include "BKE_modifier.h"
 #include "BKE_particle.h"
+
+#include "MOD_util.h"
 
 
 static void initData(ModifierData *md)

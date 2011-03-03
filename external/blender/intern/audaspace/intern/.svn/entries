@@ -1,15 +1,15 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern/audaspace/intern
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-30T15:29:22.294392Z
-34567
-campbellbarton
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-01-18T22:04:06.253021Z
-fd5a92c22e421021288b51b84fa4ac7d
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.582297Z
+3385e1f32c5bc939702fcd80aba692d5
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-2470
+2619
 
 AUD_ConverterFunctions.h
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-01-18T22:04:06.253021Z
-cad7627c36ea444a41f4bfca47a5ab70
-2010-01-01T05:09:30.096798Z
-25643
-nexyon
+2011-03-03T12:25:17.582297Z
+9ba6e5363b3d4568547805ae13c56803
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-4506
+4651
 
 AUD_Buffer.cpp
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-01-18T22:04:06.253021Z
-1e4fdf249159db3dd9f87dcdd9838313
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.582297Z
+7e32245ba924ff0acd90ad26223dff44
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-1611
+1746
 
 AUD_SilenceFactory.cpp
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-01-18T22:04:06.253021Z
-0cea813f652e20590824c0074efcd5fb
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.586297Z
+0b0fedcc59633055f027c38686554199
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-1125
+1268
 
 AUD_SilenceReader.h
 file
@@ -168,11 +168,11 @@ file
 
 
 
-2011-01-18T22:04:06.253021Z
-a660a2a8af1102b440de1830092c26b1
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.586297Z
+5b6164f968762b8c7694dbd17ea109cd
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-1980
+2120
 
 AUD_SoftwareDevice.cpp
 file
@@ -202,11 +202,11 @@ file
 
 
 
-2011-01-18T22:04:06.253021Z
-b40db1dd3b9dd47500693f0226517d8f
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.586297Z
+1331bdfa2c18c860d1299f1bb4fa1f20
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -228,7 +228,7 @@ has-props
 
 
 
-9611
+9824
 
 AUD_FileFactory.h
 file
@@ -236,11 +236,11 @@ file
 
 
 
-2011-01-18T22:04:06.253021Z
-0062ede0c264b2eeb2b8396da5ac670c
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.586297Z
+3c46ff0556093e1780c4eb05dc9d9d73
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -262,7 +262,7 @@ has-props
 
 
 
-1837
+1975
 
 AUD_IDevice.h
 file
@@ -270,11 +270,11 @@ file
 
 
 
-2011-01-18T22:04:06.253021Z
-2048eb14db6074c8ca3539a92dcbf088
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.586297Z
+37f1df739c3c117b460cf53c946ee417
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -296,7 +296,7 @@ has-props
 
 
 
-7605
+8309
 
 AUD_SequencerReader.cpp
 file
@@ -304,11 +304,11 @@ file
 
 
 
-2011-01-18T22:04:06.253021Z
-b1be8fcf965f1131450ecdca894f64df
-2010-12-27T11:32:43.050917Z
-33904
-nexyon
+2011-03-03T12:25:17.586297Z
+e2ce05bac2ec4c303a071dc0d68d683d
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -330,7 +330,7 @@ has-props
 
 
 
-5116
+5260
 
 AUD_StreamBufferFactory.cpp
 file
@@ -338,11 +338,11 @@ file
 
 
 
-2011-01-18T22:04:06.253021Z
-f854170a3bfc2e0c547c4eb9f64bc0d9
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.586297Z
+5cba3b4c3516d3c86d3e22e9703a33df
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -364,7 +364,7 @@ has-props
 
 
 
-2069
+2217
 
 AUD_MixerFactory.h
 file
@@ -372,11 +372,11 @@ file
 
 
 
-2011-01-18T22:04:06.253021Z
-2e885703bb7737ebd9f9a5d228714da4
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.586297Z
+b8d626943f6b0185209f9f3d3f0b5521
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -398,7 +398,7 @@ has-props
 
 
 
-1953
+2092
 
 AUD_PyInit.h
 file
@@ -406,11 +406,11 @@ file
 
 
 
-2011-01-18T22:04:06.253021Z
-3683b2c3b93fcbe7f3ebd87606e4a5ab
-2010-12-03T12:30:59.861558Z
-33442
-campbellbarton
+2011-03-03T12:25:17.586297Z
+a35888dcb9857a523530f854e13c2826
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -432,7 +432,7 @@ has-props
 
 
 
-1156
+1281
 
 AUD_SinusReader.cpp
 file
@@ -440,11 +440,11 @@ file
 
 
 
-2011-01-18T22:04:06.253021Z
-362959da051fe13f926793bdb6ab08e8
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.586297Z
+26199c7d19c43e0537900765d8138705
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -466,7 +466,7 @@ has-props
 
 
 
-1950
+2090
 
 AUD_IFactory.h
 file
@@ -474,11 +474,11 @@ file
 
 
 
-2011-01-18T22:04:06.253021Z
-342c0d172cd8c9145bc3011c287e5cbe
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.586297Z
+57565fcbe205c022ae5f43a73ba4fc36
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -500,7 +500,7 @@ has-props
 
 
 
-1681
+1816
 
 AUD_LinearResampleReader.cpp
 file
@@ -508,11 +508,11 @@ file
 
 
 
-2011-01-18T22:04:06.263021Z
-221924d78f062beeaa133ccea8fa3ee9
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.590297Z
+6423d35c89ef119c4c3f0afb36779d3d
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -534,7 +534,7 @@ has-props
 
 
 
-3067
+3216
 
 AUD_SequencerFactory.h
 file
@@ -542,11 +542,11 @@ file
 
 
 
-2011-01-18T22:04:06.263021Z
-e61c1e2ac88769ac8aac553331705a8f
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.590297Z
+d629a31f20a7ae15c3a4c84c2e65310d
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -568,7 +568,7 @@ has-props
 
 
 
-2242
+2385
 
 AUD_SinusFactory.cpp
 file
@@ -576,11 +576,11 @@ file
 
 
 
-2011-01-18T22:04:06.263021Z
-4dc246ab998e928a1c5f08bbcf46882f
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.590297Z
+e4c918170bdad3d69f2f351ecc3edfad
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -602,7 +602,7 @@ has-props
 
 
 
-1302
+1443
 
 AUD_C-API.cpp
 file
@@ -610,11 +610,11 @@ file
 
 
 
-2011-01-18T22:04:06.263021Z
-f77b10b368e064884424cf7c4f6612ec
-2010-10-31T14:44:45.376755Z
-32797
-nexyon
+2011-03-03T12:25:17.590297Z
+a41a3b3b52fee3cbfd1fc88e8e2d7ae3
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -636,7 +636,7 @@ has-props
 
 
 
-17980
+18114
 
 AUD_Mixer.h
 file
@@ -644,11 +644,11 @@ file
 
 
 
-2011-01-18T22:04:06.263021Z
-0f732d430856e40785022f5b67e59f7b
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.590297Z
+c8d94719e23c91370798a587c873b17e
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -670,7 +670,7 @@ has-props
 
 
 
-2747
+2879
 
 AUD_ReadDevice.cpp
 file
@@ -678,11 +678,11 @@ file
 
 
 
-2011-01-18T22:04:06.263021Z
-65f4b937303a6dc0c0a7739875006f95
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.590297Z
+0fcea325095c91bc679856dd188ca7f0
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -704,7 +704,7 @@ has-props
 
 
 
-1528
+1667
 
 AUD_LinearResampleFactory.cpp
 file
@@ -712,11 +712,11 @@ file
 
 
 
-2011-01-18T22:04:06.263021Z
-20f6108a50d19e1431eb756cf63f3fe7
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.590297Z
+81dac663d1d18fe41b0f1107212576d5
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -738,7 +738,7 @@ has-props
 
 
 
-1372
+1522
 
 AUD_BufferReader.cpp
 file
@@ -746,11 +746,11 @@ file
 
 
 
-2011-01-18T22:04:06.263021Z
-6564c7ce7a0e4f26de85852b23696197
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.590297Z
+49ba953f8a029c1b00aa5e5c634f90dc
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -772,7 +772,7 @@ has-props
 
 
 
-1920
+2061
 
 AUD_DefaultMixer.h
 file
@@ -780,11 +780,11 @@ file
 
 
 
-2011-01-18T22:04:06.263021Z
-f2721162579e9781518c2054b7502441
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.590297Z
+2c7d860086225cd8091ac5551b1c45bb
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -806,7 +806,7 @@ has-props
 
 
 
-1572
+1711
 
 AUD_NULLDevice.h
 file
@@ -814,11 +814,11 @@ file
 
 
 
-2011-01-18T22:04:06.263021Z
-63b17d18b6654985d8ea62c56ccb2fb7
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.590297Z
+eee8dd2aaa3ae1934db33faf3c4462ba
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -840,7 +840,7 @@ has-props
 
 
 
-2160
+2364
 
 AUD_ConverterReader.h
 file
@@ -848,11 +848,11 @@ file
 
 
 
-2011-01-18T22:04:06.263021Z
-bc0b699cc2eb364676a64109b8f8fb85
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.590297Z
+fbd890ec19abf58b407db749c881a0a6
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -874,7 +874,7 @@ has-props
 
 
 
-1852
+1994
 
 AUD_Space.h
 file
@@ -882,11 +882,11 @@ file
 
 
 
-2011-01-18T22:04:06.263021Z
-88064276e1449f7b581e750f3714320b
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.594297Z
+7b9866e34b40f5b52e9650816efc98d6
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -908,7 +908,7 @@ has-props
 
 
 
-5328
+5460
 
 AUD_ConverterFunctions.cpp
 file
@@ -916,11 +916,11 @@ file
 
 
 
-2011-01-18T22:04:06.263021Z
-66dd1789b4f2a83a890e2286e236e812
-2010-01-01T11:55:56.632948Z
-25646
-nexyon
+2011-03-03T12:25:17.594297Z
+2c843fe27018a400906fd8c06a648f4f
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -942,7 +942,7 @@ has-props
 
 
 
-11091
+11238
 
 AUD_Reference.h
 file
@@ -950,11 +950,11 @@ file
 
 
 
-2011-01-18T22:04:06.263021Z
-7df2a9d13b5c87fbbd7bd26c6d56f69f
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.594297Z
+59bf720087d659f4e162605d1662068b
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -976,7 +976,7 @@ has-props
 
 
 
-2378
+2514
 
 AUD_ConverterFactory.h
 file
@@ -984,11 +984,11 @@ file
 
 
 
-2011-01-18T22:04:06.263021Z
-9ec15320bb32cc695a9f96496fdc77f8
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.594297Z
+09df04a18f51a37b4e00f03d463eb9d8
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -1010,7 +1010,7 @@ has-props
 
 
 
-1479
+1622
 
 AUD_I3DDevice.h
 file
@@ -1018,11 +1018,11 @@ file
 
 
 
-2011-01-18T22:04:06.263021Z
-1d036797e92c70f212e1a9f7b0c5cfcc
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.594297Z
+5909bbbabf824109390a65e9f5ff38ff
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -1044,41 +1044,7 @@ has-props
 
 
 
-9229
-
-AUD_ChannelMapperReader.h
-file
-
-
-
-
-2011-01-18T22:04:06.263021Z
-05563479af380a15386bdb605d880233
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2068
+9365
 
 AUD_ResampleFactory.h
 file
@@ -1086,11 +1052,11 @@ file
 
 
 
-2011-01-18T22:04:06.263021Z
-b800def024031a3ec5a0d18f90f55fb3
-2009-08-09T23:23:19.894668Z
-22328
-gsrb3d
+2011-03-03T12:25:17.594297Z
+840d0fd8a64864c268ff6b094f17fa8c
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -1112,7 +1078,41 @@ has-props
 
 
 
-1064
+1206
+
+AUD_ChannelMapperReader.h
+file
+
+
+
+
+2011-03-03T12:25:17.594297Z
+b46d6241647a52af84b01a88f6b971f2
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2214
 
 AUD_SilenceReader.cpp
 file
@@ -1120,11 +1120,11 @@ file
 
 
 
-2011-01-18T22:04:06.263021Z
-ed61397479b3615e4c8992ee3ebc05b4
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.594297Z
+fd09ac51cb8d4262e9b34c502d72ad52
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -1146,7 +1146,7 @@ has-props
 
 
 
-1730
+1872
 
 AUD_FileFactory.cpp
 file
@@ -1154,11 +1154,11 @@ file
 
 
 
-2011-01-18T22:04:06.263021Z
-31d76002149a518fb13775f1a6a7684b
-2010-08-16T15:42:29.293204Z
-31382
-nexyon
+2011-03-03T12:25:17.594297Z
+961be2e7f91e749e039ffda6b1c7f6f5
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -1180,7 +1180,7 @@ has-props
 
 
 
-1949
+2089
 
 AUD_ChannelMapperFactory.h
 file
@@ -1188,11 +1188,11 @@ file
 
 
 
-2011-01-18T22:04:06.263021Z
-a899934972caf9a5d9e56e0c16fcb421
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.594297Z
+577da4bb7e7026aea2958d478876e1df
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -1214,7 +1214,7 @@ has-props
 
 
 
-1932
+2079
 
 AUD_MixerFactory.cpp
 file
@@ -1222,11 +1222,11 @@ file
 
 
 
-2011-01-18T22:04:06.263021Z
-f4cad78585fc46688f98ed16f1dfb892
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.594297Z
+9a3351195c4bee0a42a796ce73782cfa
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -1248,7 +1248,7 @@ has-props
 
 
 
-1326
+1467
 
 AUD_Buffer.h
 file
@@ -1256,11 +1256,11 @@ file
 
 
 
-2011-01-18T22:04:06.263021Z
-1d30535b83416705dd4bf288037ce427
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.598297Z
+8cfa2a35cd37a33cd5fee2089ce668fb
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -1282,7 +1282,7 @@ has-props
 
 
 
-1946
+2079
 
 AUD_SilenceFactory.h
 file
@@ -1290,11 +1290,11 @@ file
 
 
 
-2011-01-18T22:04:06.263021Z
-f2fa20ceede6d47d342ad9f4aca1b537
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.598297Z
+2abe4c45c0ab55a81ea52323c5b59ef6
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -1316,7 +1316,7 @@ has-props
 
 
 
-1405
+1546
 
 AUD_SoftwareDevice.h
 file
@@ -1324,11 +1324,11 @@ file
 
 
 
-2011-01-18T22:04:06.263021Z
-f2fab0614bee5518720ae85c01bb3ff6
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.598297Z
+6741568e44e45bf7b26a8b5377a7d372
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -1350,7 +1350,7 @@ has-props
 
 
 
-3678
+3886
 
 AUD_IReader.h
 file
@@ -1358,11 +1358,11 @@ file
 
 
 
-2011-01-18T22:04:06.263021Z
-80dd3673a6c3dec7ff251aca4981ba88
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.598297Z
+9646402476755b38b892f8396bbcb7de
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -1384,7 +1384,7 @@ has-props
 
 
 
-3354
+3488
 
 AUD_SequencerFactory.cpp
 file
@@ -1392,11 +1392,11 @@ file
 
 
 
-2011-01-18T22:04:06.263021Z
-aa7656b2a026f7a7ec98c8feffaf3293
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.598297Z
+6568585f214deb67728968c752ef33f5
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -1418,7 +1418,7 @@ has-props
 
 
 
-2901
+3046
 
 AUD_SequencerReader.h
 file
@@ -1426,11 +1426,11 @@ file
 
 
 
-2011-01-18T22:04:06.263021Z
-3f3fafd6db08356a097556164078cff5
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.598297Z
+9bf28dd1686ffa2497deeaf39c9bbd02
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -1452,7 +1452,7 @@ has-props
 
 
 
-2516
+2658
 
 AUD_StreamBufferFactory.h
 file
@@ -1460,11 +1460,11 @@ file
 
 
 
-2011-01-18T22:04:06.263021Z
-2387536196774405c3f61efdb9f92435
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.598297Z
+3b45142c17ba09095150954cb7a8b998
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -1486,7 +1486,7 @@ has-props
 
 
 
-1966
+2112
 
 AUD_Mixer.cpp
 file
@@ -1494,11 +1494,11 @@ file
 
 
 
-2011-01-18T22:04:06.263021Z
-37a0ed8ed9a2ad3f62ec92c908741057
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.598297Z
+d8be7f818e4c6546ade626a56e1f7982
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -1520,7 +1520,7 @@ has-props
 
 
 
-2547
+2681
 
 AUD_3DMath.h
 file
@@ -1528,11 +1528,11 @@ file
 
 
 
-2011-01-18T22:04:06.263021Z
-20ab043397b29bbb5b0ee77dca9341e0
-2010-08-16T14:31:39.240258Z
-31379
-nexyon
+2011-03-03T12:25:17.598297Z
+9eaf48215876e5e98ef9702161b24739
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -1554,7 +1554,7 @@ has-props
 
 
 
-3491
+3624
 
 AUD_DefaultMixer.cpp
 file
@@ -1562,79 +1562,11 @@ file
 
 
 
-2011-01-18T22:04:06.273021Z
-7af06374fedf70c913746b8b77f0b497
-2010-11-21T14:40:50.887623Z
-33213
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1946
-
-AUD_SinusReader.h
-file
-
-
-
-
-2011-01-18T22:04:06.273021Z
-0439ed0ba231d2c4e1f47b14f4f732a7
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2257
-
-AUD_ConverterReader.cpp
-file
-
-
-
-
-2011-01-18T22:04:06.273021Z
-dbff71a28ec36bd6f0075908df0300ea
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.598297Z
+9c4ff71206ce9f96ea88e20265b81ab5
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -1658,17 +1590,17 @@ has-props
 
 2193
 
-AUD_NULLDevice.cpp
+AUD_SinusReader.h
 file
 
 
 
 
-2011-01-18T22:04:06.273021Z
-7f7a082b75e899d1ff5177d0f16c76e2
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.598297Z
+92f29fa6e5b2285998b7f9e54239c531
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -1690,7 +1622,75 @@ has-props
 
 
 
-2766
+2395
+
+AUD_ConverterReader.cpp
+file
+
+
+
+
+2011-03-03T12:25:17.598297Z
+796902a6310030a54bdf9abda47d0a22
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2337
+
+AUD_NULLDevice.cpp
+file
+
+
+
+
+2011-03-03T12:25:17.602297Z
+ab83c7d4bc47f250f60580d7591fe426
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2986
 
 AUD_LinearResampleReader.h
 file
@@ -1698,11 +1698,11 @@ file
 
 
 
-2011-01-18T22:04:06.273021Z
-064c35d98d84fa5bd77f988f34deb927
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.602297Z
+53b3aef3c6af5d79a7cdef1251565006
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -1724,7 +1724,7 @@ has-props
 
 
 
-2215
+2362
 
 AUD_C-API.h
 file
@@ -1732,11 +1732,11 @@ file
 
 
 
-2011-01-18T22:04:06.273021Z
-6dfa5c54ba3f6f8dbc67d72a3a5db8fa
-2010-12-03T12:30:59.861558Z
-33442
-campbellbarton
+2011-03-03T12:25:17.602297Z
+8731f03a707a2f23945a01c89afcfb10
+2011-02-22T23:14:27.356713Z
+35090
+jesterking
 has-props
 
 
@@ -1758,7 +1758,7 @@ has-props
 
 
 
-14344
+14445
 
 AUD_SinusFactory.h
 file
@@ -1766,11 +1766,11 @@ file
 
 
 
-2011-01-18T22:04:06.273021Z
-f9b8263e2b9f0ce4504a2ddc7e279fe1
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.602297Z
+26a9391ae280cffa6d702094a483a23c
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -1792,7 +1792,7 @@ has-props
 
 
 
-1793
+1932
 
 AUD_ConverterFactory.cpp
 file
@@ -1800,11 +1800,11 @@ file
 
 
 
-2011-01-18T22:04:06.273021Z
-b6ed54dfa2b92659e620e5072c558c67
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.602297Z
+8b9b8df6a67a63bd45ae4af5afd788ad
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -1826,7 +1826,7 @@ has-props
 
 
 
-1324
+1469
 
 AUD_LinearResampleFactory.h
 file
@@ -1834,11 +1834,11 @@ file
 
 
 
-2011-01-18T22:04:06.273021Z
-1d998c3d1590acb9e77ad0bd0b9cfcf1
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.602297Z
+e6366863fb3d64c53a1806f273e832fa
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -1860,7 +1860,7 @@ has-props
 
 
 
-1511
+1659
 
 AUD_ChannelMapperReader.cpp
 file
@@ -1868,11 +1868,11 @@ file
 
 
 
-2011-01-18T22:04:06.273021Z
-808e8a6e514419eda5a40851cc303d82
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.602297Z
+5c833fd1bf709739b0360c56a0efcd09
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -1894,7 +1894,7 @@ has-props
 
 
 
-2308
+2456
 
 AUD_ReadDevice.h
 file
@@ -1902,11 +1902,11 @@ file
 
 
 
-2011-01-18T22:04:06.273021Z
-6e08034b077c945fb45888e1c2c1c53a
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.602297Z
+74de7e2d69910926443388f91e9ad27b
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -1928,7 +1928,7 @@ has-props
 
 
 
-1938
+2075
 
 AUD_BufferReader.h
 file
@@ -1936,11 +1936,11 @@ file
 
 
 
-2011-01-18T22:04:06.273021Z
-dbefcc77800630f3ca44dc92dba60f66
-2010-08-16T11:41:07.837561Z
-31372
-nexyon
+2011-03-03T12:25:17.602297Z
+52381344ad7a91dd5ce682d302d11fe0
+2011-02-25T10:21:56.373241Z
+35141
+jesterking
 has-props
 
 
@@ -1962,5 +1962,5 @@ has-props
 
 
 
-2138
+2277
 

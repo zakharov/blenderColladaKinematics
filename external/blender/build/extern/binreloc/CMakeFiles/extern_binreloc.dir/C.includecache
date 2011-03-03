@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../extern/binreloc/include/binreloc.h
+
+/home/alexey/workspace/blender/blender/extern/binreloc/binreloc.c
+sys/types.h
+-
+sys/stat.h
+-
+unistd.h
+-
+stdio.h
+-
+stdlib.h
+-
+limits.h
+-
+string.h
+-
+binreloc.h
+/home/alexey/workspace/blender/blender/extern/binreloc/binreloc.h
+

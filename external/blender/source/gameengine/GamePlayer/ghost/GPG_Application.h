@@ -1,5 +1,5 @@
-/**
- * $Id: GPG_Application.h 29068 2010-05-29 21:31:57Z dfelinto $
+/*
+ * $Id: GPG_Application.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,7 +25,11 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
- * GHOST Blender Player application declaration file.
+ */
+
+/** \file GPG_Application.h
+ *  \ingroup player
+ *  \brief GHOST Blender Player application declaration file.
  */
 
 #include "GHOST_IEventConsumer.h"

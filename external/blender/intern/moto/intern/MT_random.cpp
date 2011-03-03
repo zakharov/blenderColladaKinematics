@@ -1,5 +1,5 @@
-/**
- * $Id: MT_random.cpp 28254 2010-04-18 10:28:37Z campbellbarton $
+/*
+ * $Id: MT_random.cpp 35158 2011-02-25 11:49:19Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file moto/intern/MT_random.cpp
+ *  \ingroup moto
+ */
+
 
 /* A C-program for MT19937: Real number version                */
 

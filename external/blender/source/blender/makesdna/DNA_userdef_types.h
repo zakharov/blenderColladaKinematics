@@ -1,7 +1,5 @@
-/**
- * blenkernel/DNA_userdef_types.h (mar-2001 nzc)
- *
- *	$Id: DNA_userdef_types.h 34634 2011-02-04 08:33:07Z aligorith $
+/*
+ *	$Id: DNA_userdef_types.h 34941 2011-02-17 20:48:12Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -31,6 +29,12 @@
 
 #ifndef DNA_USERDEF_TYPES_H
 #define DNA_USERDEF_TYPES_H
+/** \file DNA_userdef_types.h
+ *  \ingroup DNA
+ *  \since mar-2001
+ *  \author nzc
+ *
+ */
 
 #include "DNA_listBase.h"
 #include "DNA_texture_types.h" /* ColorBand */

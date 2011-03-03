@@ -1,4 +1,4 @@
-/**
+/*
  * IMB_imbuf_types.h (mar-2001 nzc)
  *
  * Types needed for using the image buffer.
@@ -11,7 +11,7 @@
  * are self-explanatory (e.g. IS_amiga tests whether the buffer
  * contains an Amiga-format file).
  *
- * $Id: IMB_imbuf_types.h 34370 2011-01-17 18:16:10Z ton $ 
+ * $Id: IMB_imbuf_types.h 34923 2011-02-17 05:57:18Z jesterking $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -54,7 +54,6 @@ struct ImMetaData;
 #define IB_FILENAME_SIZE	1023
 
 /**
- * \brief The basic imbuf type
  * \ingroup imbuf
  * This is the abstraction of an image.  ImBuf is the basic type used for all
  * imbuf operations.

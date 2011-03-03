@@ -1,5 +1,5 @@
-/**
- * $Id: PHY_IController.cpp 28254 2010-04-18 10:28:37Z campbellbarton $
+/*
+ * $Id: PHY_IController.cpp 35173 2011-02-25 13:37:23Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/Physics/common/PHY_IController.cpp
+ *  \ingroup phys
+ */
+
 #include "PHY_IController.h"
 
 PHY_IController::~PHY_IController()

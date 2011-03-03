@@ -1,5 +1,5 @@
-/**
- * $Id: IdentifierExpr.cpp 28254 2010-04-18 10:28:37Z campbellbarton $
+/*
+ * $Id: IdentifierExpr.cpp 35168 2011-02-25 13:31:23Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/Expressions/IdentifierExpr.cpp
+ *  \ingroup expressions
+ */
+
 
 #include "IdentifierExpr.h"
 

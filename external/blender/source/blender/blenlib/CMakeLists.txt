@@ -1,4 +1,4 @@
-# $Id: CMakeLists.txt 34486 2011-01-25 14:43:13Z campbellbarton $
+# $Id: CMakeLists.txt 35032 2011-02-21 13:13:08Z campbellbarton $
 # ***** BEGIN GPL LICENSE BLOCK *****
 #
 # This program is free software; you can redistribute it and/or
@@ -28,6 +28,7 @@ set(INC
 	.
 	../makesdna
 	../blenkernel
+	../blenloader
 	../gpu
 	../../../intern/ghost
 	../../../intern/guardedalloc
@@ -132,7 +133,8 @@ set(SRC
 	intern/dynamiclist.h
 )
 
-if(CMAKE_SYSTEM_NAME MATCHES "Linux")
+if(WITH_BINRELOC)
+	add_definitions(-DWITH_BINRELOC)
 	list(APPEND INC "${BINRELOC_INC}")
 endif()
 

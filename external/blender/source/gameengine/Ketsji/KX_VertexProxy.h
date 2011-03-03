@@ -1,5 +1,5 @@
-/**
- * $Id: KX_VertexProxy.h 32788 2010-10-31 04:11:39Z campbellbarton $
+/*
+ * $Id: KX_VertexProxy.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file KX_VertexProxy.h
+ *  \ingroup ketsji
+ */
+
 #ifndef __KX_VERTEXPROXY
 #define __KX_VERTEXPROXY
 

@@ -1,6 +1,6 @@
 
-/**
- * $Id: sequencer_ops.c 32768 2010-10-30 12:04:00Z jhk $
+/*
+ * $Id: sequencer_ops.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_sequencer/sequencer_ops.c
+ *  \ingroup spseq
+ */
+
 
 #include <stdlib.h>
 #include <math.h>

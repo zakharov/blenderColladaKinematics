@@ -1,5 +1,5 @@
-/**
- * $Id: sound_header.c 34160 2011-01-07 19:18:31Z campbellbarton $
+/*
+ * $Id: sound_header.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_sound/sound_header.c
+ *  \ingroup spsnd
+ */
+
 
 #include <string.h>
 #include <stdio.h>

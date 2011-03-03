@@ -1,5 +1,5 @@
 /*
-* $Id: MOD_mask.c 34587 2011-01-31 20:02:51Z nazgul $
+* $Id: MOD_mask.c 35178 2011-02-25 13:57:17Z jesterking $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -30,6 +30,11 @@
 *
 */
 
+/** \file blender/modifiers/intern/MOD_mask.c
+ *  \ingroup modifiers
+ */
+
+
 #include "MEM_guardedalloc.h"
 
 #include "BLI_utildefines.h"
@@ -47,13 +52,14 @@
 
 #include "depsgraph_private.h"
 
+#include "MOD_util.h"
 
 static void copyData(ModifierData *md, ModifierData *target)
 {
 	MaskModifierData *mmd = (MaskModifierData*) md;
 	MaskModifierData *tmmd = (MaskModifierData*) target;
 	
-	strcpy(tmmd->vgroup, mmd->vgroup);
+	BLI_strncpy(tmmd->vgroup, mmd->vgroup, sizeof(tmmd->vgroup));
 	tmmd->flag = mmd->flag;
 }
 

@@ -1,5 +1,5 @@
 /*
-* $Id: MOD_decimate.c 34587 2011-01-31 20:02:51Z nazgul $
+* $Id: MOD_decimate.c 35178 2011-02-25 13:57:17Z jesterking $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -30,6 +30,11 @@
 *
 */
 
+/** \file blender/modifiers/intern/MOD_decimate.c
+ *  \ingroup modifiers
+ */
+
+
 #include "DNA_meshdata_types.h"
 
 #include "BLI_math.h"
@@ -46,6 +51,8 @@
 #ifdef WITH_MOD_DECIMATE
 #include "LOD_decimation.h"
 #endif
+
+#include "MOD_util.h"
 
 static void initData(ModifierData *md)
 {

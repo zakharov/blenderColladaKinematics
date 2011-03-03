@@ -1,5 +1,5 @@
-/**
- * $Id: node_select.c 34427 2011-01-20 22:22:16Z aligorith $
+/*
+ * $Id: node_select.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_node/node_select.c
+ *  \ingroup spnode
+ */
+
 
 #include <stdio.h>
 
@@ -288,7 +293,7 @@ static int node_select_linked_to_exec(bContext *C, wmOperator *UNUSED(op))
 		node->flag &= ~NODE_TEST;
 
 	for (link=snode->edittree->links.first; link; link=link->next) {
-		if (link->fromnode->flag & NODE_SELECT)
+		if (link->fromnode && link->tonode && (link->fromnode->flag & NODE_SELECT))
 			link->tonode->flag |= NODE_TEST;
 	}
 	
@@ -328,7 +333,7 @@ static int node_select_linked_from_exec(bContext *C, wmOperator *UNUSED(op))
 		node->flag &= ~NODE_TEST;
 
 	for(link=snode->edittree->links.first; link; link=link->next) {
-		if(link->tonode->flag & NODE_SELECT)
+		if(link->fromnode && link->tonode && (link->tonode->flag & NODE_SELECT))
 			link->fromnode->flag |= NODE_TEST;
 	}
 	

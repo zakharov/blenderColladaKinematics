@@ -1,5 +1,5 @@
-/**
- * $Id: filesel.c 34290 2011-01-13 04:53:55Z campbellbarton $
+/*
+ * $Id: filesel.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_file/filesel.c
+ *  \ingroup spfile
+ */
+
 
 #include <string.h>
 #include <stdio.h>
@@ -347,7 +352,7 @@ float file_string_width(const char* str)
 	return BLF_width(style->widget.uifont_id, str);
 }
 
-float file_font_pointsize()
+float file_font_pointsize(void)
 {
 #if 0
 	float s;
@@ -555,7 +560,7 @@ void autocomplete_directory(struct bContext *C, char *str, void *UNUSED(arg_v))
 					char path[FILE_MAX];
 					struct stat status;
 					
-					BLI_join_dirfile(path, dirname, de->d_name);
+					BLI_join_dirfile(path, sizeof(path), dirname, de->d_name);
 
 					if (stat(path, &status) == 0) {
 						if (S_ISDIR(status.st_mode)) { /* is subdir */

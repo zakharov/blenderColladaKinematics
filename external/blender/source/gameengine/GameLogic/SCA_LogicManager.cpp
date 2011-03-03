@@ -1,5 +1,5 @@
-/**
- * $Id: SCA_LogicManager.cpp 32788 2010-10-31 04:11:39Z campbellbarton $
+/*
+ * $Id: SCA_LogicManager.cpp 35169 2011-02-25 13:32:11Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  * ***** END GPL LICENSE BLOCK *****
  * Regulates the top-level logic behaviour for one scene.
  */
+
+/** \file gameengine/GameLogic/SCA_LogicManager.cpp
+ *  \ingroup gamelogic
+ */
+
 #include "Value.h"
 #include "SCA_LogicManager.h"
 #include "SCA_ISensor.h"

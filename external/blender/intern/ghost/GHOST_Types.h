@@ -1,5 +1,5 @@
-/**
- * $Id: GHOST_Types.h 34096 2011-01-05 14:00:14Z elubie $
+/*
+ * $Id: GHOST_Types.h 35152 2011-02-25 11:28:33Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file ghost/GHOST_Types.h
+ *  \ingroup GHOST
+ */
+
 
 #ifndef _GHOST_TYPES_H_
 #define _GHOST_TYPES_H_
@@ -353,7 +358,13 @@ typedef enum {
 	GHOST_kKeyF21,
 	GHOST_kKeyF22,
 	GHOST_kKeyF23,
-	GHOST_kKeyF24
+	GHOST_kKeyF24,
+	
+	// Multimedia keypad buttons
+	GHOST_kKeyMediaPlay,
+	GHOST_kKeyMediaStop,
+	GHOST_kKeyMediaFirst,
+	GHOST_kKeyMediaLast
 } GHOST_TKey;
 
 typedef enum {

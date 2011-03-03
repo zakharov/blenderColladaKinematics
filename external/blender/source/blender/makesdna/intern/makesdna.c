@@ -1,5 +1,5 @@
-/**
- * $Id: makesdna.c 33448 2010-12-03 17:05:21Z campbellbarton $
+/*
+ * $Id: makesdna.c 35336 2011-03-03 17:58:06Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,9 +25,13 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/**  \file makesdna.c
+ *   \brief Struct muncher for making SDNA.
+ *   \ingroup DNA
  *
- * Struct muncher for making SDNA
- *
+ * \section aboutmakesdnac About makesdna tool
  * Originally by Ton, some mods by Frank, and some cleaning and
  * extension by Nzc.
  *
@@ -42,11 +46,11 @@
  * and the offsets for reaching a particular one.
  *
  * There is a facility to get verbose output from sdna. Search for
- * debugSDNA. This int can be set to 0 (no output) to some int. Higher
+ * \ref debugSDNA. This int can be set to 0 (no output) to some int. Higher
  * numbers give more output.
  * */
 
-#define DNA_VERSION_DATE "$Id: makesdna.c 33448 2010-12-03 17:05:21Z campbellbarton $"
+#define DNA_VERSION_DATE "$Id: makesdna.c 35336 2011-03-03 17:58:06Z campbellbarton $"
 
 #include <string.h>
 #include <stdlib.h>
@@ -145,7 +149,8 @@ short **structs, *structdata;	/* at sp= structs[a] is the first address of a str
 								   sp[0] is type number
 								   sp[1] is amount of elements
 								   sp[2] sp[3] is typenr,  namenr (etc) */
-/*
+/**
+ * Variable to control debug output of makesdna.
  * debugSDNA:
  *  - 0 = no output, except errors
  *  - 1 = detail actions
@@ -160,12 +165,15 @@ int additional_slen_offset;
 /* ************************************************************************** */
 
 /**
- * Add type <str> to struct indexed by <len>, if it was not yet found.
+ * Add type \c str to struct indexed by \c len, if it was not yet found.
+ * \param str char
+ * \param len int
  */
 int add_type(const char *str, int len);
 
 /**
- * Add variable <str> to 
+ * Add variable \c str to 
+ * \param str
  */
 int add_name(char *str);
 
@@ -269,7 +277,7 @@ int add_name(char *str)
 
 	additional_slen_offset = 0;
 	
-	if((str[0]==0) /*  || (str[1]==0) */) return -1;
+	if(str[0]==0 /*  || (str[1]==0) */) return -1;
 
 	if (str[0] == '(' && str[1] == '*') {
 		/* we handle function pointer and special array cases here, e.g.
@@ -281,7 +289,6 @@ int add_name(char *str)
 		if (debugSDNA > 3) printf("\t\t\t\t*** Function pointer or multidim array pointer found\n");
 		/* functionpointer: transform the type (sometimes) */
 		i = 0;
-		j = 0;
 
 		while (str[i] != ')') {
 			buf[i] = str[i];
@@ -608,7 +615,7 @@ int convert_include(char *filename)
 										sp[0]= type;
 										sp[1]= name;
 
-										if ((debugSDNA>1) && (names[name] != 0 )) printf("%s |", names[name]);
+										if ((debugSDNA>1) && (names[name] != NULL)) printf("%s |", names[name]);
 
 										structpoin[1]++;
 										sp+= 2;
@@ -623,7 +630,7 @@ int convert_include(char *filename)
 
 									sp[0]= type;
 									sp[1]= name;
-									if ((debugSDNA > 1) && (names[name] != 0 )) printf("%s ||", names[name]);
+									if ((debugSDNA > 1) && (names[name] != NULL)) printf("%s ||", names[name]);
 
 									structpoin[1]++;
 									sp+= 2;
@@ -653,7 +660,7 @@ int convert_include(char *filename)
 int arraysize(char *astr, int len)
 {
 	int a, mul=1;
-	char str[100], *cp=0;
+	char str[100], *cp=NULL;
 
 	memcpy(str, astr, len+1);
 	

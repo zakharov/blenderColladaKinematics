@@ -1,5 +1,5 @@
-/**
- * $Id: RAS_IRasterizer.h 31950 2010-09-15 16:13:32Z campbellbarton $
+/*
+ * $Id: RAS_IRasterizer.h 35072 2011-02-22 12:42:55Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file RAS_IRasterizer.h
+ *  \ingroup bgerast
+ */
+
 #ifndef __RAS_IRASTERIZER
 #define __RAS_IRASTERIZER
 

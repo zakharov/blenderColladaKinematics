@@ -1,5 +1,5 @@
-/**
- * $Id: KX_BlenderMouseDevice.h 29259 2010-06-06 01:15:44Z campbellbarton $
+/*
+ * $Id: KX_BlenderMouseDevice.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file KX_BlenderMouseDevice.h
+ *  \ingroup blroutines
+ */
+
 #ifndef __KX_BLENDERMOUSEDEVICE
 #define __KX_BLENDERMOUSEDEVICE
 

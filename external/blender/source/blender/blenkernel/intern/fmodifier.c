@@ -1,5 +1,5 @@
-/**
- * $Id: fmodifier.c 34160 2011-01-07 19:18:31Z campbellbarton $
+/*
+ * $Id: fmodifier.c 35247 2011-02-27 20:40:57Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/blenkernel/intern/fmodifier.c
+ *  \ingroup bke
+ */
+
 
 
 #include <math.h>

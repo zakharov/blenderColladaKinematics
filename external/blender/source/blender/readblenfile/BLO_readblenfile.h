@@ -1,5 +1,5 @@
-/**
- * $Id: BLO_readblenfile.h 33448 2010-12-03 17:05:21Z campbellbarton $
+/*
+ * $Id: BLO_readblenfile.h 35234 2011-02-27 19:59:59Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -30,6 +30,10 @@
 
 #ifndef BLO_READBLENFILE_H
 #define BLO_READBLENFILE_H
+
+/** \file BLO_readblenfile.h
+ *  \ingroup blo
+ */
 
 #ifdef __cplusplus
 extern "C" {

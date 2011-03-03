@@ -1,4 +1,4 @@
-/**
+/*
  * $Id$
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_graph/graph_ops.c
+ *  \ingroup spgraph
+ */
+
 
 #include <stdlib.h>
 #include <math.h>
@@ -159,7 +164,7 @@ static int graphview_cursor_modal(bContext *C, wmOperator *op, wmEvent *event)
 	return OPERATOR_RUNNING_MODAL;
 }
 
-void GRAPH_OT_cursor_set(wmOperatorType *ot)
+static void GRAPH_OT_cursor_set(wmOperatorType *ot)
 {
 	/* identifiers */
 	ot->name= "Set Cursor";
@@ -199,7 +204,7 @@ static int view_toggle_handles_exec (bContext *C, wmOperator *UNUSED(op))
 	return OPERATOR_FINISHED;
 }
 
-void GRAPH_OT_view_togglehandles (wmOperatorType *ot)
+static void GRAPH_OT_view_togglehandles (wmOperatorType *ot)
 {
 	/* identification */
 	ot->name= "Show/Hide All Handles";
@@ -235,6 +240,7 @@ void graphedit_operatortypes(void)
 	WM_operatortype_append(GRAPH_OT_select_linked);
 	WM_operatortype_append(GRAPH_OT_select_more);
 	WM_operatortype_append(GRAPH_OT_select_less);
+	WM_operatortype_append(GRAPH_OT_select_leftright);
 	
 		/* editing */
 	WM_operatortype_append(GRAPH_OT_snap);
@@ -287,13 +293,21 @@ static void graphedit_keymap_keyframes (wmKeyConfig *keyconf, wmKeyMap *keymap)
 	kmi= WM_keymap_add_item(keymap, "GRAPH_OT_clickselect", SELECTMOUSE, KM_PRESS, KM_ALT|KM_SHIFT, 0);
 		RNA_boolean_set(kmi->ptr, "extend", 1);
 		RNA_boolean_set(kmi->ptr, "column", 1);
-	kmi= WM_keymap_add_item(keymap, "GRAPH_OT_clickselect", SELECTMOUSE, KM_PRESS, KM_CTRL, 0);
-		RNA_enum_set(kmi->ptr, "left_right", GRAPHKEYS_LRSEL_TEST);
 	kmi= WM_keymap_add_item(keymap, "GRAPH_OT_clickselect", SELECTMOUSE, KM_PRESS, KM_CTRL|KM_ALT, 0);
 		RNA_boolean_set(kmi->ptr, "curves", 1);
 	kmi= WM_keymap_add_item(keymap, "GRAPH_OT_clickselect", SELECTMOUSE, KM_PRESS, KM_CTRL|KM_ALT|KM_SHIFT, 0);
 		RNA_boolean_set(kmi->ptr, "curves", 1);
 		RNA_boolean_set(kmi->ptr, "extend", 1);
+	
+	/* select left/right */
+	WM_keymap_add_item(keymap, "GRAPH_OT_select_leftright", SELECTMOUSE, KM_PRESS, KM_CTRL, 0);
+	kmi= WM_keymap_add_item(keymap, "GRAPH_OT_select_leftright", SELECTMOUSE, KM_PRESS, KM_CTRL|KM_SHIFT, 0);
+		RNA_boolean_set(kmi->ptr, "extend", 1);
+	
+	kmi= WM_keymap_add_item(keymap, "GRAPH_OT_select_leftright", LEFTBRACKETKEY, KM_PRESS, 0, 0);
+		RNA_enum_set(kmi->ptr, "mode", GRAPHKEYS_LRSEL_LEFT);
+	kmi= WM_keymap_add_item(keymap, "GRAPH_OT_select_leftright", RIGHTBRACKETKEY, KM_PRESS, 0, 0);
+		RNA_enum_set(kmi->ptr, "mode", GRAPHKEYS_LRSEL_RIGHT);
 	
 		/* deselect all */
 	WM_keymap_add_item(keymap, "GRAPH_OT_select_all_toggle", AKEY, KM_PRESS, 0, 0);

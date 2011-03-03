@@ -1,5 +1,5 @@
-/**
- * $Id: space_outliner.c 34437 2011-01-21 08:59:08Z dfelinto $
+/*
+ * $Id: space_outliner.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  * ***** END GPL LICENSE BLOCK *****
  */
 
+/** \file blender/editors/space_outliner/space_outliner.c
+ *  \ingroup spoutliner
+ */
+
+
 #include <string.h>
 #include <stdio.h>
 
@@ -39,6 +44,7 @@
 #include "BKE_context.h"
 #include "BKE_screen.h"
 
+#include "ED_space_api.h"
 #include "ED_screen.h"
 
 #include "WM_api.h"

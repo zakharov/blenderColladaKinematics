@@ -27,23 +27,23 @@ svn:wc:ra_dav:version-url
 V 60
 /svnroot/bf-blender/!svn/ver/23147/trunk/blender/po/pt_BR.po
 END
-es.po
-K 25
-svn:wc:ra_dav:version-url
-V 57
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/po/es.po
-END
 fr.po
 K 25
 svn:wc:ra_dav:version-url
 V 57
 /svnroot/bf-blender/!svn/ver/23147/trunk/blender/po/fr.po
 END
-hr.po
+es.po
 K 25
 svn:wc:ra_dav:version-url
 V 57
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/po/hr.po
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/po/es.po
+END
+nl.po
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/po/nl.po
 END
 ko.po
 K 25
@@ -51,11 +51,11 @@ svn:wc:ra_dav:version-url
 V 57
 /svnroot/bf-blender/!svn/ver/23147/trunk/blender/po/ko.po
 END
-nl.po
+hr.po
 K 25
 svn:wc:ra_dav:version-url
 V 57
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/po/nl.po
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/po/hr.po
 END
 pl.po
 K 25

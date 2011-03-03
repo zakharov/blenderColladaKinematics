@@ -1,4 +1,4 @@
-/**
+/*
  * $Id$
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/windowmanager/intern/wm_event_system.c
+ *  \ingroup wm
+ */
+
 
 #include <stdlib.h>
 #include <string.h>
@@ -645,7 +650,7 @@ static void wm_region_mouse_co(bContext *C, wmEvent *event)
 	}
 }
 
-int wm_operator_invoke(bContext *C, wmOperatorType *ot, wmEvent *event, PointerRNA *properties, ReportList *reports, short poll_only)
+static int wm_operator_invoke(bContext *C, wmOperatorType *ot, wmEvent *event, PointerRNA *properties, ReportList *reports, short poll_only)
 {
 	wmWindowManager *wm= CTX_wm_manager(C);
 	int retval= OPERATOR_PASS_THROUGH;
@@ -1934,7 +1939,7 @@ void WM_event_add_fileselect(bContext *C, wmOperator *op)
 }
 
 /* lets not expose struct outside wm? */
-void WM_event_set_handler_flag(wmEventHandler *handler, int flag)
+static void WM_event_set_handler_flag(wmEventHandler *handler, int flag)
 {
 	handler->flag= flag;
 }
@@ -2083,7 +2088,7 @@ void WM_event_remove_area_handler(ListBase *handlers, void *area)
 	}
 }
 
-void WM_event_remove_handler(ListBase *handlers, wmEventHandler *handler)
+static void WM_event_remove_handler(ListBase *handlers, wmEventHandler *handler)
 {
 	BLI_remlink(handlers, handler);
 	wm_event_free_handler(handler);
@@ -2099,21 +2104,29 @@ void WM_event_add_mousemove(bContext *C)
 /* for modal callbacks, check configuration for how to interpret exit with tweaks  */
 int WM_modal_tweak_exit(wmEvent *evt, int tweak_event)
 {
-	/* user preset or keymap? dunno... */
-	// XXX WTH is this?
-	int tweak_modal= (U.flag & USER_RELEASECONFIRM)==0;
-	
-	switch(tweak_event) {
-		case EVT_TWEAK_L:
-		case EVT_TWEAK_M:
-		case EVT_TWEAK_R:
-			if(evt->val==tweak_modal)
-				return 1;
-		default:
-			/* this case is when modal callcback didnt get started with a tweak */
-			if(evt->val)
-				return 1;
+	/* if the release-confirm userpref setting is enabled, 
+	 * tweak events can be cancelled when mouse is released
+	 */
+	if (U.flag & USER_RELEASECONFIRM) {
+		/* option on, so can exit with km-release */
+		if (evt->val == KM_RELEASE) {
+			switch (tweak_event) {
+				case EVT_TWEAK_L:
+				case EVT_TWEAK_M:
+				case EVT_TWEAK_R:
+					return 1;
+			}
+		}
 	}
+	else {
+		/* this is fine as long as not doing km-release, otherwise
+		 * some items (i.e. markers) being tweaked may end up getting
+		 * dropped all over
+		 */
+		if (evt->val != KM_RELEASE)
+			return 1;
+	}
+	
 	return 0;
 }
 
@@ -2188,7 +2201,12 @@ static int convert_key(GHOST_TKey key)
 			case GHOST_kKeyNumpadSlash:		return PADSLASHKEY;
 				
 			case GHOST_kKeyGrLess:		    return GRLESSKEY; 
-				
+			
+			case GHOST_kKeyMediaPlay:		return MEDIAPLAY;
+			case GHOST_kKeyMediaStop:		return MEDIASTOP;
+			case GHOST_kKeyMediaFirst:		return MEDIAFIRST;
+			case GHOST_kKeyMediaLast:		return MEDIALAST;
+			
 			default:
 				return UNKNOWNKEY;	/* GHOST_kKeyUnknown */
 		}

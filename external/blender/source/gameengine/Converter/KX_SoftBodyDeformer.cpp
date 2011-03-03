@@ -1,5 +1,5 @@
-/**
- * $Id: KX_SoftBodyDeformer.cpp 31950 2010-09-15 16:13:32Z campbellbarton $
+/*
+ * $Id: KX_SoftBodyDeformer.cpp 35167 2011-02-25 13:30:41Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/Converter/KX_SoftBodyDeformer.cpp
+ *  \ingroup bgeconv
+ */
+
 
 #if defined(WIN32) && !defined(FREE_WINDOWS)
 #pragma warning (disable : 4786)

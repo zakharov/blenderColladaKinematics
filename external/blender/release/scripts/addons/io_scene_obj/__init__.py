@@ -40,7 +40,7 @@ if "bpy" in locals():
 
 
 import bpy
-from bpy.props import *
+from bpy.props import BoolProperty, FloatProperty, StringProperty
 from io_utils import ExportHelper, ImportHelper
 
 
@@ -48,6 +48,7 @@ class ImportOBJ(bpy.types.Operator, ImportHelper):
     '''Load a Wavefront OBJ File'''
     bl_idname = "import_scene.obj"
     bl_label = "Import OBJ"
+    bl_options = {'PRESET'}
 
     filename_ext = ".obj"
     filter_glob = StringProperty(default="*.obj;*.mtl", options={'HIDDEN'})
@@ -124,11 +125,15 @@ def menu_func_export(self, context):
 
 
 def register():
+    bpy.utils.register_module(__name__)
+
     bpy.types.INFO_MT_file_import.append(menu_func_import)
     bpy.types.INFO_MT_file_export.append(menu_func_export)
 
 
 def unregister():
+    bpy.utils.unregister_module(__name__)
+
     bpy.types.INFO_MT_file_import.remove(menu_func_import)
     bpy.types.INFO_MT_file_export.remove(menu_func_export)
 

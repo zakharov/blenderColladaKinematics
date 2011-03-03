@@ -1,5 +1,5 @@
-/**
- * $Id: IK_QSegment.cpp 28298 2010-04-20 09:28:15Z blendix $
+/*
+ * $Id: IK_QSegment.cpp 35154 2011-02-25 11:43:19Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file iksolver/intern/IK_QSegment.cpp
+ *  \ingroup iksolver
+ */
+
 
 #include "IK_QSegment.h"
 #include <cmath>

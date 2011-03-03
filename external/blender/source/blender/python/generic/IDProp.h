@@ -1,5 +1,5 @@
-/**
- * $Id: IDProp.h 33167 2010-11-19 02:14:18Z campbellbarton $
+/*
+ * $Id: IDProp.h 35236 2011-02-27 20:10:08Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -22,7 +22,13 @@
  * ***** END GPL LICENSE BLOCK *****
  */
 
-#include <Python.h>
+/** \file blender/python/generic/IDProp.h
+ *  \ingroup pygen
+ */
+
+
+#ifndef IDPROP_H
+#define IDPROP_H
 
 struct ID;
 struct IDProperty;
@@ -62,3 +68,5 @@ void IDProp_Init_Types(void);
 
 #define IDPROP_ITER_KEYS	0
 #define IDPROP_ITER_ITEMS	1
+
+#endif /* IDPROP_H */

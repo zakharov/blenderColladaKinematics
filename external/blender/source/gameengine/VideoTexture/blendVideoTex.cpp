@@ -1,4 +1,7 @@
-/* $Id: blendVideoTex.cpp 29486 2010-06-16 08:36:18Z moguri $
+/** \file gameengine/VideoTexture/blendVideoTex.cpp
+ *  \ingroup bgevideotex
+ */
+/* $Id: blendVideoTex.cpp 35176 2011-02-25 13:39:34Z jesterking $
 -----------------------------------------------------------------------------
 This source file is part of VideoTexture library
 

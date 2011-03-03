@@ -1,5 +1,5 @@
-/**
- * $Id: NG_NetworkScene.cpp 30526 2010-07-20 10:41:08Z campbellbarton $
+/*
+ * $Id: NG_NetworkScene.cpp 35172 2011-02-25 13:36:49Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  * ***** END GPL LICENSE BLOCK *****
  * NetworkSceneManagement generic implementation
  */
+
+/** \file gameengine/Network/NG_NetworkScene.cpp
+ *  \ingroup bgenet
+ */
+
 #include <stdio.h>
 #include <MT_assert.h>
 #include <algorithm>

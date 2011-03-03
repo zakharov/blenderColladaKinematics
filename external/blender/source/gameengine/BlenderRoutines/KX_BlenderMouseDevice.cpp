@@ -1,5 +1,5 @@
-/**
- * $Id: KX_BlenderMouseDevice.cpp 31950 2010-09-15 16:13:32Z campbellbarton $
+/*
+ * $Id: KX_BlenderMouseDevice.cpp 35166 2011-02-25 13:29:48Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/BlenderRoutines/KX_BlenderMouseDevice.cpp
+ *  \ingroup blroutines
+ */
+
 
 #if defined(WIN32) && !defined(FREE_WINDOWS)
 // annoying warnings about truncated STL debug info

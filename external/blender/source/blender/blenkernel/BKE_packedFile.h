@@ -1,7 +1,5 @@
-/**
- * blenlib/BKE_packedFile.h (mar-2001 nzc)
- *	
- * $Id: BKE_packedFile.h 33167 2010-11-19 02:14:18Z campbellbarton $ 
+/*
+ * $Id: BKE_packedFile.h 34962 2011-02-18 13:05:18Z jesterking $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -31,6 +29,11 @@
 #ifndef BKE_PACKEDFILE_H
 #define BKE_PACKEDFILE_H
 
+/** \file BKE_packedFile.h
+ *  \ingroup bke
+ *  \since March 2001
+ *  \author nzc
+ */
 #define RET_OK		0
 #define RET_ERROR	1
 

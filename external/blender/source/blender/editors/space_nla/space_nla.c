@@ -1,5 +1,5 @@
-/**
- * $Id: space_nla.c 34159 2011-01-07 18:36:47Z campbellbarton $
+/*
+ * $Id: space_nla.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  * ***** END GPL LICENSE BLOCK *****
  */
 
+/** \file blender/editors/space_nla/space_nla.c
+ *  \ingroup spnla
+ */
+
+
 #include <string.h>
 #include <stdio.h>
 
@@ -44,6 +49,7 @@
 #include "BKE_main.h"
 #include "BKE_screen.h"
 
+#include "ED_space_api.h"
 #include "ED_anim_api.h"
 #include "ED_markers.h"
 #include "ED_screen.h"

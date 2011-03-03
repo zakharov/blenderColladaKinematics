@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 67
-/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/blender/avi
+/svnroot/bf-blender/!svn/ver/35249/trunk/blender/source/blender/avi
 END
 AVI_avi.h
 K 25
 svn:wc:ra_dav:version-url
 V 77
-/svnroot/bf-blender/!svn/ver/33167/trunk/blender/source/blender/avi/AVI_avi.h
+/svnroot/bf-blender/!svn/ver/35022/trunk/blender/source/blender/avi/AVI_avi.h
 END
 SConscript
 K 25

@@ -1,0 +1,2 @@
+/usr/bin/ar cr ../../../../lib/libbf_editor_space_api.a  CMakeFiles/bf_editor_space_api.dir/space.c.o CMakeFiles/bf_editor_space_api.dir/spacetypes.c.o
+/usr/bin/ranlib ../../../../lib/libbf_editor_space_api.a

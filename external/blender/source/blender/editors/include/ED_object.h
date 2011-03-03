@@ -1,5 +1,5 @@
-/**
- * $Id: ED_object.h 33468 2010-12-04 13:00:28Z campbellbarton $
+/*
+ * $Id: ED_object.h 35016 2011-02-21 07:25:24Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file ED_object.h
+ *  \ingroup editors
+ */
+
 #ifndef ED_OBJECT_H
 #define ED_OBJECT_H
 

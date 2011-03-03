@@ -1,5 +1,5 @@
-/**
- * $Id: TransformReader.cpp 32310 2010-10-05 00:49:39Z gsrb3d $
+/*
+ * $Id: TransformReader.cpp 35243 2011-02-27 20:30:35Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,13 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/collada/TransformReader.cpp
+ *  \ingroup collada
+ */
+
+/* COLLADABU_ASSERT, may be able to remove later */
+#include "COLLADABUPlatform.h"
 
 #include "TransformReader.h"
 

@@ -1,5 +1,5 @@
-/**
- * $Id: readblenentry.c 34159 2011-01-07 18:36:47Z campbellbarton $
+/*
+ * $Id: readblenentry.c 35245 2011-02-27 20:35:41Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  * ***** END GPL LICENSE BLOCK *****
  * .blend file reading entry point
  */
+
+/** \file blender/blenloader/intern/readblenentry.c
+ *  \ingroup blenloader
+ */
+
 
 #include <stddef.h>
 #include "BLI_storage.h" /* _LARGEFILE_SOURCE */

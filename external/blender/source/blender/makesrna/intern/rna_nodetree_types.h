@@ -1,5 +1,5 @@
-/**
- * $Id: rna_nodetree_types.h 33645 2010-12-13 21:17:00Z xat $
+/*
+ * $Id: rna_nodetree_types.h 35238 2011-02-27 20:20:01Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/makesrna/intern/rna_nodetree_types.h
+ *  \ingroup RNA
+ */
+
  
 /*       Tree type       Node ID                  RNA def function        Enum name         Struct name       UI Name              UI Description */
 DefNode( ShaderNode,     SH_NODE_OUTPUT,          0,                      "OUTPUT",         Output,           "Output",            ""              )

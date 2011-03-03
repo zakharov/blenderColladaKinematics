@@ -1,5 +1,5 @@
-/**
- * $Id: itasc_plugin.cpp 34159 2011-01-07 18:36:47Z campbellbarton $
+/*
+ * $Id: itasc_plugin.cpp 35240 2011-02-27 20:24:49Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/ikplugin/intern/itasc_plugin.cpp
+ *  \ingroup ikplugin
+ */
+
 
 #include <stdlib.h>
 #include <string.h>

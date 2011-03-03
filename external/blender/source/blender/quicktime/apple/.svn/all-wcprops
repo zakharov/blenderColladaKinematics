@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 79
-/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/blender/quicktime/apple
+/svnroot/bf-blender/!svn/ver/35235/trunk/blender/source/blender/quicktime/apple
 END
 qtkit_import.m
 K 25
@@ -13,7 +13,7 @@ quicktime_import.c
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/svnroot/bf-blender/!svn/ver/33167/trunk/blender/source/blender/quicktime/apple/quicktime_import.c
+/svnroot/bf-blender/!svn/ver/35235/trunk/blender/source/blender/quicktime/apple/quicktime_import.c
 END
 qtkit_export.m
 K 25
@@ -25,5 +25,5 @@ quicktime_export.c
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/svnroot/bf-blender/!svn/ver/32889/trunk/blender/source/blender/quicktime/apple/quicktime_export.c
+/svnroot/bf-blender/!svn/ver/35235/trunk/blender/source/blender/quicktime/apple/quicktime_export.c
 END

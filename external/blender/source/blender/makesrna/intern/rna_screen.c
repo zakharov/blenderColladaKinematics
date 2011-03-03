@@ -1,5 +1,5 @@
-/**
- * $Id: rna_screen.c 34613 2011-02-01 23:41:01Z aligorith $
+/*
+ * $Id: rna_screen.c 35238 2011-02-27 20:20:01Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/makesrna/intern/rna_screen.c
+ *  \ingroup RNA
+ */
+
 
 #include <stdlib.h>
 #include <stddef.h>

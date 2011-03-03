@@ -1,7 +1,5 @@
-/**
- * Senses mouse events
- *
- * $Id: SCA_MouseSensor.h 32788 2010-10-31 04:11:39Z campbellbarton $
+/*
+ * $Id: SCA_MouseSensor.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +25,11 @@
  * Contributor(s): José I. Romero (cleanup and fixes)
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file SCA_MouseSensor.h
+ *  \ingroup gamelogic
+ *  \brief Senses mouse events
  */
 
 #ifndef __KX_MOUSESENSOR

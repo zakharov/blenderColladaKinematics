@@ -1,5 +1,5 @@
-/**
- * $Id: uvedit_intern.h 34335 2011-01-15 16:14:57Z campbellbarton $
+/*
+ * $Id: uvedit_intern.h 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/uvedit/uvedit_intern.h
+ *  \ingroup eduv
+ */
+
 
 #ifndef ED_UVEDIT_INTERN_H
 #define ED_UVEDIT_INTERN_H

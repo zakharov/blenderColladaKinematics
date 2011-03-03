@@ -1,5 +1,5 @@
-/**
- * $Id: PHY_IGraphicController.h 29259 2010-06-06 01:15:44Z campbellbarton $
+/*
+ * $Id: PHY_IGraphicController.h 35173 2011-02-25 13:37:23Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file PHY_IGraphicController.h
+ *  \ingroup phys
+ */
+
 #ifndef PHY_IGRAPHICCONTROLLER_H
 #define PHY_IGRAPHICCONTROLLER_H
 

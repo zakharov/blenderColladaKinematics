@@ -1,5 +1,5 @@
-/**
-* $Id: KX_ConvertActuators.cpp 33500 2010-12-06 07:45:07Z campbellbarton $
+/*
+* $Id: KX_ConvertActuators.cpp 35167 2011-02-25 13:30:41Z jesterking $
 *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  * ***** END GPL LICENSE BLOCK *****
 * Convert Blender actuators for use in the GameEngine
 */
+
+/** \file gameengine/Converter/KX_ConvertActuators.cpp
+ *  \ingroup bgeconv
+ */
+
 
 #if defined(WIN32) && !defined(FREE_WINDOWS)
 #pragma warning (disable : 4786) 

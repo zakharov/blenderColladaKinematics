@@ -1,0 +1,2 @@
+/usr/bin/ar cr ../../lib/libbf_intern_mikktspace.a  CMakeFiles/bf_intern_mikktspace.dir/mikktspace.c.o
+/usr/bin/ranlib ../../lib/libbf_intern_mikktspace.a

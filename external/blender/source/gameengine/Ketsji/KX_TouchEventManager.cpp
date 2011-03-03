@@ -1,5 +1,5 @@
-/**
- * $Id: KX_TouchEventManager.cpp 32613 2010-10-20 12:33:00Z campbellbarton $
+/*
+ * $Id: KX_TouchEventManager.cpp 35171 2011-02-25 13:35:59Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/Ketsji/KX_TouchEventManager.cpp
+ *  \ingroup ketsji
+ */
+
 
 #include "KX_TouchEventManager.h"
 #include "SCA_ISensor.h"

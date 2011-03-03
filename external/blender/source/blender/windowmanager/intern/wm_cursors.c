@@ -1,5 +1,5 @@
-/**
-* $Id: wm_cursors.c 34455 2011-01-22 18:00:11Z ton $
+/*
+* $Id: wm_cursors.c 35179 2011-02-25 14:04:21Z jesterking $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -26,6 +26,11 @@
 *
 * ***** END GPL/BL DUAL LICENSE BLOCK *****
 */
+
+/** \file blender/windowmanager/intern/wm_cursors.c
+ *  \ingroup wm
+ */
+
 
 #include <stdio.h>
 #include <string.h>
@@ -70,7 +75,7 @@ static GHOST_TStandardCursor convert_cursor(int curs)
 	}
 }
 
-void window_set_custom_cursor(wmWindow *win, unsigned char mask[16][2], 
+static void window_set_custom_cursor(wmWindow *win, unsigned char mask[16][2], 
 							  unsigned char bitmap[16][2], int hotx, int hoty) 
 {
 	GHOST_SetCustomCursorShape(win->ghostwin, bitmap, mask, hotx, hoty);

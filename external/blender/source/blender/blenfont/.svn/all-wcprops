@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 72
-/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/blender/blenfont
+/svnroot/bf-blender/!svn/ver/35248/trunk/blender/source/blender/blenfont
 END
 BLF_api.h
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/svnroot/bf-blender/!svn/ver/33579/trunk/blender/source/blender/blenfont/BLF_api.h
+/svnroot/bf-blender/!svn/ver/35248/trunk/blender/source/blender/blenfont/BLF_api.h
 END
 SConscript
 K 25

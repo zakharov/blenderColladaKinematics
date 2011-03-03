@@ -1,5 +1,5 @@
-/**
- * $Id: KX_BlenderRenderTools.h 33707 2010-12-16 10:25:41Z dfelinto $
+/*
+ * $Id: KX_BlenderRenderTools.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,10 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file KX_BlenderRenderTools.h
+ *  \ingroup blroutines
  */
 
 #ifndef __KX_BLENDERRENDERTOOLS

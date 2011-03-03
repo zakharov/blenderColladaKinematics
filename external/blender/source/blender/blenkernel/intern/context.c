@@ -1,5 +1,5 @@
-/**
- * $Id: context.c 34081 2011-01-05 02:08:54Z campbellbarton $
+/*
+ * $Id: context.c 35247 2011-02-27 20:40:57Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/blenkernel/intern/context.c
+ *  \ingroup bke
+ */
+
 
 #include <string.h>
 #include <stddef.h>
@@ -85,7 +90,7 @@ struct bContext {
 
 /* context */
 
-bContext *CTX_create()
+bContext *CTX_create(void)
 {
 	bContext *C;
 	
@@ -788,7 +793,7 @@ static const char *data_mode_strings[] = {
 	"texturepaint",
 	"particlemode",
 	"objectmode",
-	0
+	NULL
 };
 const char *CTX_data_mode_string(const bContext *C)
 {

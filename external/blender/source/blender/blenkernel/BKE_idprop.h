@@ -1,5 +1,5 @@
-/**
- * $Id: BKE_idprop.h 34680 2011-02-07 05:05:41Z campbellbarton $
+/*
+ * $Id: BKE_idprop.h 34962 2011-02-18 13:05:18Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  
 #ifndef _BKE_IDPROP_H
 #define _BKE_IDPROP_H
+
+/** \file BKE_idprop.h
+ *  \ingroup bke
+ *  \author Joseph Eagar
+ */
 
 #include "DNA_ID.h"
 

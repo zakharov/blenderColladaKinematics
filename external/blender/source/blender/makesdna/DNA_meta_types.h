@@ -1,7 +1,5 @@
-/**
- * blenlib/DNA_meta_types.h (mar-2001 nzc)
- *
- * $Id: DNA_meta_types.h 33557 2010-12-08 13:02:16Z campbellbarton $ 
+/*
+ * $Id: DNA_meta_types.h 34941 2011-02-17 20:48:12Z jesterking $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -30,6 +28,10 @@
  */
 #ifndef DNA_META_TYPES_H
 #define DNA_META_TYPES_H
+
+/** \file DNA_meta_types.h
+ *  \ingroup DNA
+ */
 
 #include "DNA_listBase.h"
 #include "DNA_ID.h"

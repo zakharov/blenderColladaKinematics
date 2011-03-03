@@ -1,5 +1,5 @@
-/**
- * $Id: RAS_FramingManager.h 29259 2010-06-06 01:15:44Z campbellbarton $
+/*
+ * $Id: RAS_FramingManager.h 35072 2011-02-22 12:42:55Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file RAS_FramingManager.h
+ *  \ingroup bgerast
+ */
+
 #ifndef RAS_FRAMINGMANAGER_H
 #define RAS_FRAMINGMANAGER_H
 

@@ -1,6 +1,6 @@
-/**
+/*
  *
- * $Id: threads.c 32517 2010-10-16 14:32:17Z campbellbarton $
+ * $Id: threads.c 35246 2011-02-27 20:37:56Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/blenlib/intern/threads.c
+ *  \ingroup bli
+ */
+
 
 #include <errno.h>
 #include <string.h>
@@ -520,7 +525,7 @@ struct ThreadQueue {
 	int nowait;
 };
 
-ThreadQueue *BLI_thread_queue_init()
+ThreadQueue *BLI_thread_queue_init(void)
 {
 	ThreadQueue *queue;
 

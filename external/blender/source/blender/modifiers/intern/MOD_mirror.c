@@ -1,5 +1,5 @@
 /*
-* $Id: MOD_mirror.c 34748 2011-02-10 00:44:26Z mfoxdogg $
+* $Id: MOD_mirror.c 35178 2011-02-25 13:57:17Z jesterking $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -30,6 +30,11 @@
 *
 */
 
+/** \file blender/modifiers/intern/MOD_mirror.c
+ *  \ingroup modifiers
+ */
+
+
 #include "DNA_meshdata_types.h"
 #include "DNA_object_types.h"
 
@@ -44,6 +49,8 @@
 
 #include "MEM_guardedalloc.h"
 #include "depsgraph_private.h"
+
+#include "MOD_util.h"
 
 static void initData(ModifierData *md)
 {

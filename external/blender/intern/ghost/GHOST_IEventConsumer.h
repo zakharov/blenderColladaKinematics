@@ -1,5 +1,5 @@
-/**
- * $Id: GHOST_IEventConsumer.h 33536 2010-12-07 11:57:34Z campbellbarton $
+/*
+ * $Id: GHOST_IEventConsumer.h 35152 2011-02-25 11:28:33Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,8 +25,9 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
-/**
- * @file	GHOST_IEventConsumer.h
+
+/** \file ghost/GHOST_IEventConsumer.h
+ *  \ingroup GHOST
  * Declaration of GHOST_IEventConsumer interface class.
  */
 

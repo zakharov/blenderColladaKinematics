@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 72
-/svnroot/bf-extensions/!svn/ver/1562/trunk/py/scripts/addons/rigify/rigs
+/svnroot/bf-extensions/!svn/ver/1651/trunk/py/scripts/addons/rigify/rigs
 END
 palm.py
 K 25
 svn:wc:ra_dav:version-url
 V 80
-/svnroot/bf-extensions/!svn/ver/1562/trunk/py/scripts/addons/rigify/rigs/palm.py
+/svnroot/bf-extensions/!svn/ver/1609/trunk/py/scripts/addons/rigify/rigs/palm.py
 END
 copy.py
 K 25
@@ -19,7 +19,7 @@ finger.py
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/svnroot/bf-extensions/!svn/ver/1562/trunk/py/scripts/addons/rigify/rigs/finger.py
+/svnroot/bf-extensions/!svn/ver/1609/trunk/py/scripts/addons/rigify/rigs/finger.py
 END
 spine.py
 K 25

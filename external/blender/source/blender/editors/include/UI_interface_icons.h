@@ -1,5 +1,5 @@
-/**
- * $Id: UI_interface_icons.h 33442 2010-12-03 12:30:59Z campbellbarton $
+/*
+ * $Id: UI_interface_icons.h 35016 2011-02-21 07:25:24Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,10 @@
  * Contributor(s): none yet.
  * 
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file UI_interface_icons.h
+ *  \ingroup editorui
  */
 
 #ifndef UI_INTERFACE_ICONS_H

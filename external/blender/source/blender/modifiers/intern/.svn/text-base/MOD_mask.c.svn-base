@@ -30,6 +30,11 @@
 *
 */
 
+/** \file blender/modifiers/intern/MOD_mask.c
+ *  \ingroup modifiers
+ */
+
+
 #include "MEM_guardedalloc.h"
 
 #include "BLI_utildefines.h"
@@ -47,13 +52,14 @@
 
 #include "depsgraph_private.h"
 
+#include "MOD_util.h"
 
 static void copyData(ModifierData *md, ModifierData *target)
 {
 	MaskModifierData *mmd = (MaskModifierData*) md;
 	MaskModifierData *tmmd = (MaskModifierData*) target;
 	
-	strcpy(tmmd->vgroup, mmd->vgroup);
+	BLI_strncpy(tmmd->vgroup, mmd->vgroup, sizeof(tmmd->vgroup));
 	tmmd->flag = mmd->flag;
 }
 

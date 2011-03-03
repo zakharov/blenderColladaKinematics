@@ -1,6 +1,6 @@
-/**
+/*
  *
- * $Id: DNA_object_fluidsim.h 27735 2010-03-25 06:27:25Z broken $
+ * $Id: DNA_object_fluidsim.h 34941 2011-02-17 20:48:12Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -29,6 +29,10 @@
  */
 #ifndef DNA_OBJECT_FLUIDSIM_H
 #define DNA_OBJECT_FLUIDSIM_H
+
+/** \file DNA_object_fluidsim.h
+ *  \ingroup DNA
+ */
 
 #include "DNA_ID.h"
 

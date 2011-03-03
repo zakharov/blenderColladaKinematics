@@ -1,7 +1,7 @@
-/**
+/*
  * BKE_fluidsim.h 
  *	
- * $Id: ED_fluidsim.h 27735 2010-03-25 06:27:25Z broken $
+ * $Id: ED_fluidsim.h 35016 2011-02-21 07:25:24Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file ED_fluidsim.h
+ *  \ingroup editors
+ */
+
 #ifndef ED_FLUIDSIM_H
 #define ED_FLUIDSIM_H
 

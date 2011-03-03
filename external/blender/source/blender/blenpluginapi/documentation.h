@@ -1,5 +1,5 @@
-/**
- * $Id: documentation.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: documentation.h 35244 2011-02-27 20:32:12Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -66,4 +66,9 @@
  * The plugins wraps functions from IMB and BLI. In addition, they
  * define some useful variables.
  * */
+
+/** \file blender/blenpluginapi/documentation.h
+ *  \ingroup blpluginapi
+ */
+
 

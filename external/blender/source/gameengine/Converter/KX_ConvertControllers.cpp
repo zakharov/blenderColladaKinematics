@@ -1,5 +1,5 @@
-/**
- * $Id: KX_ConvertControllers.cpp 34465 2011-01-23 12:42:07Z campbellbarton $
+/*
+ * $Id: KX_ConvertControllers.cpp 35167 2011-02-25 13:30:41Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/Converter/KX_ConvertControllers.cpp
+ *  \ingroup bgeconv
+ */
+
 
 #include "MEM_guardedalloc.h"
 

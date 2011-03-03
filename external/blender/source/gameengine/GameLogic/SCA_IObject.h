@@ -1,5 +1,5 @@
-/**
- * $Id: SCA_IObject.h 32788 2010-10-31 04:11:39Z campbellbarton $
+/*
+ * $Id: SCA_IObject.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,9 +25,12 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
- * An abstract object that has some logic, python scripting and
- * reference counting Note: transformation stuff has been moved to
- * SceneGraph
+ */
+/** \file SCA_IController.h
+ *  \ingroup gamelogic
+ *  \brief An abstract object that has some logic, python scripting and
+ *   reference counting Note: transformation stuff has been moved to
+ *   SceneGraph
  */
 
 #ifndef SCA_IOBJECT_H

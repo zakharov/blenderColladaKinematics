@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svnroot/bf-blender/!svn/ver/33962/trunk/blender/source/gameengine/GamePlayer/xembed
+/svnroot/bf-blender/!svn/ver/35106/trunk/blender/source/gameengine/GamePlayer/xembed
 END
 npunix.c
 K 25
@@ -13,7 +13,7 @@ blender_plugin_types.h
 K 25
 svn:wc:ra_dav:version-url
 V 107
-/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/GamePlayer/xembed/blender_plugin_types.h
+/svnroot/bf-blender/!svn/ver/35106/trunk/blender/source/gameengine/GamePlayer/xembed/blender_plugin_types.h
 END
 blenderplayer-wrapper.c
 K 25
@@ -25,7 +25,7 @@ UnixShell.c
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/svnroot/bf-blender/!svn/ver/32552/trunk/blender/source/gameengine/GamePlayer/xembed/UnixShell.c
+/svnroot/bf-blender/!svn/ver/35106/trunk/blender/source/gameengine/GamePlayer/xembed/UnixShell.c
 END
 CMakeLists.txt
 K 25

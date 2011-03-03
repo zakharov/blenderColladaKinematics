@@ -1,3 +1,6 @@
+/** \file itasc/kdl/frameacc.cpp
+ *  \ingroup itasc
+ */
 /*****************************************************************************
  *  \author
  *  	Erwin Aertbelien, Div. PMA, Dep. of Mech. Eng., K.U.Leuven
@@ -9,7 +12,7 @@
  *		- $log$
  *
  *	\par Release
- *		$Id: frameacc.cpp 23467 2009-09-25 01:13:07Z gsrb3d $
+ *		$Id: frameacc.cpp 35155 2011-02-25 11:45:16Z jesterking $
  *		$Name:  $
  ****************************************************************************/
 

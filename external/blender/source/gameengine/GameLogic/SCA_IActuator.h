@@ -1,5 +1,5 @@
-/**
- * $Id: SCA_IActuator.h 29259 2010-06-06 01:15:44Z campbellbarton $
+/*
+ * $Id: SCA_IActuator.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,13 +26,18 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file SCA_IActuator.h
+ *  \ingroup gamelogic
+ */
+
 #ifndef __KX_IACTUATOR
 #define __KX_IACTUATOR
 
 #include "SCA_IController.h"
 #include <vector>
 
-/*
+/**
  * Use of SG_DList : None
  * Use of SG_QList : element of activated actuator list of their owner
  *                   Head: SCA_IObject::m_activeActuators

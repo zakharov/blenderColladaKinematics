@@ -1,8 +1,5 @@
 /*
- * Routines for working with singly linked lists
- * of 'links' - pointers to other data.
- * 
- * $Id: BLI_linklist.h 29623 2010-06-22 15:20:06Z blendix $
+ * $Id: BLI_linklist.h 34966 2011-02-18 13:58:08Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -32,6 +29,13 @@
  
 #ifndef BLI_LINKLIST_H
 #define BLI_LINKLIST_H
+
+/** \file BLI_linklist.h
+ *  \ingroup bli
+ *  \brief Routines for working with singly linked lists
+ *   of 'links' - pointers to other data.
+ * 
+ */
 
 struct MemArena;
 

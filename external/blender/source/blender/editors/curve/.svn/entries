@@ -1,15 +1,15 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/editors/curve
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-02-04T21:10:27.664856Z
-34645
-nazgul
+2011-03-03T17:59:04.039119Z
+35337
+campbellbarton
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-01-18T22:04:49.863021Z
-e2cbc65e7fa38efc43396c442b0acbfb
-2010-12-03T01:52:28.984834Z
-33435
-campbellbarton
+2011-03-03T12:27:44.018297Z
+814bf7ca359dd084c6304a160df62944
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-101194
+101256
 
 curve_ops.c
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-01-18T22:04:49.863021Z
-978e7c81f0f5f34e09adc1a3f61d8a67
-2011-01-10T12:50:46.782717Z
-34227
-mindrones
+2011-03-03T12:27:44.018297Z
+a20a180d5297d75b8d20c6602fb5726f
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-12092
+12184
 
 SConscript
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-01-18T22:04:49.863021Z
-c9963947ac188bfef6b4e5d315cca33f
-2009-11-22T06:22:53.109926Z
-24751
-aligorith
+2011-03-03T12:27:44.022297Z
+26b9cdeb96d63b02845611da3741a099
+2011-02-21T12:35:04.852834Z
+35028
+jesterking
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-411
+428
 
 curve_intern.h
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-01-18T22:04:49.863021Z
-51b13a2710736dfa22e4c0f67b12e294
-2010-12-03T01:52:28.984834Z
-33435
-campbellbarton
+2011-03-03T12:27:44.022297Z
+78b77bc498d64b17bf998a508e3b060d
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-5298
+5367
 
 editcurve.c
 file
@@ -168,11 +168,11 @@ file
 
 
 
-2011-02-10T19:48:50.905667Z
-6cc3241def7d46a5e9673c0c3160dc97
-2011-02-04T21:10:27.664856Z
-34645
-nazgul
+2011-03-03T21:53:55.924120Z
+9635bfdf9ca966e7d762ac1d5c11a6be
+2011-03-03T17:59:04.039119Z
+35337
+campbellbarton
 has-props
 
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-166430
+167685
 
 CMakeLists.txt
 file
@@ -202,11 +202,11 @@ file
 
 
 
-2011-01-18T22:04:49.873021Z
-3e755d0b3503758d43aac9f5df69eb97
-2010-12-22T23:09:30.468439Z
-33864
-campbellbarton
+2011-03-03T12:27:44.030297Z
+b4c4ec81a666d9ee9f7c812d30b9e537
+2011-02-21T12:35:04.852834Z
+35028
+jesterking
 has-props
 
 
@@ -228,7 +228,7 @@ has-props
 
 
 
-1148
+1166
 
 editfont.c
 file
@@ -236,11 +236,11 @@ file
 
 
 
-2011-01-18T22:04:49.873021Z
-9bfbf13e3e42e9f0cea5cdb8481474bf
-2011-01-14T21:06:28.223229Z
-34327
-campbellbarton
+2011-03-03T12:27:44.034297Z
+8d19f05d5d47d1b3e4bc95136e9f5291
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -262,5 +262,5 @@ has-props
 
 
 
-43997
+44091
 

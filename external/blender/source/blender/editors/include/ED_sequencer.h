@@ -1,5 +1,5 @@
-/**
- * $Id: ED_sequencer.h 27639 2010-03-21 01:14:04Z gsrb3d $
+/*
+ * $Id: ED_sequencer.h 35016 2011-02-21 07:25:24Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -20,6 +20,10 @@
  * The Original Code is Copyright (C) 2009, Blender Foundation
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file ED_sequencer.h
+ *  \ingroup editors
  */
 
 #ifndef ED_SEQUENCER_H

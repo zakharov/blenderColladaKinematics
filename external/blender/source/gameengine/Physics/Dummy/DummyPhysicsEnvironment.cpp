@@ -1,5 +1,5 @@
-/**
- * $Id: DummyPhysicsEnvironment.cpp 34520 2011-01-27 00:02:25Z campbellbarton $
+/*
+ * $Id: DummyPhysicsEnvironment.cpp 35173 2011-02-25 13:37:23Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/Physics/Dummy/DummyPhysicsEnvironment.cpp
+ *  \ingroup physdummy
+ */
+
 
 #include <stddef.h>
 

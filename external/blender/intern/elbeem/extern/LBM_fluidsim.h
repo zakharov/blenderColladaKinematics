@@ -1,7 +1,7 @@
-/**
+/*
  * BKE_fluidsim.h 
  *	
- * $Id: LBM_fluidsim.h 26841 2010-02-12 13:34:04Z campbellbarton $
+ * $Id: LBM_fluidsim.h 35148 2011-02-25 10:51:01Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file elbeem/extern/LBM_fluidsim.h
+ *  \ingroup elbeem
+ */
+
 #ifndef LBM_FLUIDSIM_H
 #define LBM_FLUIDSIM_H
 

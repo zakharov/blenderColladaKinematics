@@ -1,5 +1,5 @@
-/**
- * $Id: KX_PythonInitTypes.h 32788 2010-10-31 04:11:39Z campbellbarton $
+/*
+ * $Id: KX_PythonInitTypes.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,10 @@
  * Contributor(s): Campbell Barton
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file KX_PythonInitTypes.h
+ *  \ingroup ketsji
  */
 
 #ifndef _adr_py_init_types_h_				// only process once,

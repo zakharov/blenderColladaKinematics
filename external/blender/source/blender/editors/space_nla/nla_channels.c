@@ -1,5 +1,5 @@
-/**
- * $Id: nla_channels.c 34427 2011-01-20 22:22:16Z aligorith $
+/*
+ * $Id: nla_channels.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_nla/nla_channels.c
+ *  \ingroup spnla
+ */
+
 
 #include <string.h>
 #include <stdio.h>

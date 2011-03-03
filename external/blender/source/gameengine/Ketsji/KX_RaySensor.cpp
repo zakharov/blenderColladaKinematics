@@ -1,7 +1,7 @@
-/**
+/*
  * Cast a ray and feel for objects
  *
- * $Id: KX_RaySensor.cpp 33324 2010-11-26 03:37:08Z dfelinto $
+ * $Id: KX_RaySensor.cpp 35171 2011-02-25 13:35:59Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/Ketsji/KX_RaySensor.cpp
+ *  \ingroup ketsji
+ */
+
 
 #include "KX_RaySensor.h"
 #include "SCA_EventManager.h"

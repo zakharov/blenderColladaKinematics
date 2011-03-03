@@ -1,7 +1,5 @@
-/**
- * blenlib/DNA_sensor_types.h (mar-2001 nzc)
- *	
- * $Id: DNA_sensor_types.h 33324 2010-11-26 03:37:08Z dfelinto $ 
+/*
+ * $Id: DNA_sensor_types.h 34941 2011-02-17 20:48:12Z jesterking $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -30,6 +28,12 @@
  */
 #ifndef DNA_SENSOR_TYPES_H
 #define DNA_SENSOR_TYPES_H
+/** \file DNA_sensor_types.h
+ *  \ingroup DNA
+ *  \since mar-2001
+ *  \author nzc
+ *	
+ */
 
 struct Object;
 struct Material;

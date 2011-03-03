@@ -1,5 +1,5 @@
-/**
- * $Id: BL_ActionActuator.h 32788 2010-10-31 04:11:39Z campbellbarton $
+/*
+ * $Id: BL_ActionActuator.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,10 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file BL_ActionActuator.h
+ *  \ingroup bgeconv
  */
 
 #ifndef BL_ACTIONACTUATOR
@@ -121,6 +125,7 @@ public:
 
 		switch (act->m_playtype) {
 			case ACT_ACTION_PLAY:
+			case ACT_ACTION_PINGPONG:
 			case ACT_ACTION_FLIPPER:
 			case ACT_ACTION_LOOP_STOP:
 			case ACT_ACTION_LOOP_END:

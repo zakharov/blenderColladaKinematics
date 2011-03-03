@@ -1,4 +1,4 @@
-/**
+/*
  * $Id$
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
@@ -21,6 +21,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/collada/DocumentExporter.cpp
+ *  \ingroup collada
+ */
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>

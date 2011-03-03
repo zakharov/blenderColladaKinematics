@@ -1,5 +1,5 @@
-/**
- * $Id: rna_world.c 34160 2011-01-07 19:18:31Z campbellbarton $
+/*
+ * $Id: rna_world.c 35238 2011-02-27 20:20:01Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/makesrna/intern/rna_world.c
+ *  \ingroup RNA
+ */
+
 
 #include <float.h>
 #include <stdlib.h>

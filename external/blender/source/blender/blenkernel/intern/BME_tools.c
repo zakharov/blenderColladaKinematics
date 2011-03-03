@@ -1,9 +1,9 @@
-/**
+/*
  * BME_tools.c    jan 2007
  *
  *	Functions for changing the topology of a mesh.
  *
- * $Id: BME_tools.c 34159 2011-01-07 18:36:47Z campbellbarton $
+ * $Id: BME_tools.c 35247 2011-02-27 20:40:57Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -30,6 +30,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/blenkernel/intern/BME_tools.c
+ *  \ingroup bke
+ */
+
 
 #include <math.h>
 

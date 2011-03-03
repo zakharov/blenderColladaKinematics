@@ -1,5 +1,5 @@
 /*
- * $Id: BLI_utildefines.h 34198 2011-01-09 15:12:08Z campbellbarton $
+ * $Id: BLI_utildefines.h 34966 2011-02-18 13:58:08Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -29,6 +29,10 @@
 
 #ifndef BLI_UTILDEFINES_H
 #define BLI_UTILDEFINES_H
+
+/** \file BLI_utildefines.h
+ *  \ingroup bli
+ */
 
 #ifndef FALSE
 #define FALSE 0
@@ -169,6 +173,11 @@
 #  define UNUSED(x) UNUSED_ ## x
 #endif
 
+#ifdef __GNUC__
+#  define WARN_UNUSED  __attribute__((warn_unused_result))
+#else
+#  define WARN_UNUSED
+#endif
 
 /*little macro so inline keyword works*/
 #if defined(_MSC_VER)

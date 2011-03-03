@@ -1,5 +1,5 @@
-/**
- * $Id: wm_event_system.h 32544 2010-10-18 00:25:32Z campbellbarton $
+/*
+ * $Id: wm_event_system.h 35179 2011-02-25 14:04:21Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/windowmanager/wm_event_system.h
+ *  \ingroup wm
+ */
+
 #ifndef WM_EVENT_SYSTEM_H
 #define WM_EVENT_SYSTEM_H
 

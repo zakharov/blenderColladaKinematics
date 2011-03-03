@@ -1,5 +1,5 @@
-/**
- * $Id: reorganize.h 34657 2011-02-05 14:04:59Z blendix $
+/*
+ * $Id: reorganize.h 35233 2011-02-27 19:31:27Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/render/intern/raytrace/reorganize.h
+ *  \ingroup render
+ */
+
 
 #include <float.h>
 #include <math.h>

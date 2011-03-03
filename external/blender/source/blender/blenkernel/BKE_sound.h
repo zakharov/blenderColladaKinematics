@@ -1,7 +1,5 @@
-/**
- * sound.h (mar-2001 nzc)
- *
- * $Id: BKE_sound.h 33852 2010-12-22 16:07:57Z nexyon $
+/*
+ * $Id: BKE_sound.h 34989 2011-02-19 12:05:20Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -31,6 +29,12 @@
 #ifndef BKE_SOUND_H
 #define BKE_SOUND_H
 
+/** \file BKE_sound.h
+ *  \ingroup bke
+ *  \since March 2001
+ *  \author nzc
+ */
+
 struct PackedFile;
 struct bSound;
 struct bContext;
@@ -45,7 +49,7 @@ void sound_init(struct Main *main);
 void sound_exit(void);
 
 void sound_force_device(int device);
-int sound_define_from_str(char *str);
+int sound_define_from_str(const char *str);
 
 struct bSound* sound_new_file(struct Main *main, const char *filename);
 

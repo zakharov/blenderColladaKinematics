@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 101
-/svnroot/bf-blender/!svn/ver/25767/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch
+/svnroot/bf-blender/!svn/ver/35078/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch
 END
 btGhostObject.cpp
 K 25
@@ -127,7 +127,7 @@ btCollisionWorld.h
 K 25
 svn:wc:ra_dav:version-url
 V 120
-/svnroot/bf-blender/!svn/ver/25767/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btCollisionWorld.h
+/svnroot/bf-blender/!svn/ver/35078/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btCollisionWorld.h
 END
 btConvexPlaneCollisionAlgorithm.h
 K 25

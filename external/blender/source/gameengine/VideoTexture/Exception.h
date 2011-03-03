@@ -1,4 +1,4 @@
-/* $Id: Exception.h 27066 2010-02-21 22:20:00Z ben2610 $
+/* $Id: Exception.h 35082 2011-02-22 19:30:37Z jesterking $
 -----------------------------------------------------------------------------
 This source file is part of VideoTexture library
 
@@ -21,6 +21,10 @@ http://www.gnu.org/copyleft/lesser.txt.
 */
 
 
+/** \file Exception.h
+ *  \ingroup bgevideotex
+ */
+ 
 #if !defined EXCEPTION_H
 #define EXCEPTION_H
 

@@ -1,0 +1,2 @@
+/usr/bin/ar cr ../../../../lib/libbf_editor_util.a  CMakeFiles/bf_editor_util.dir/ed_util.c.o CMakeFiles/bf_editor_util.dir/editmode_undo.c.o CMakeFiles/bf_editor_util.dir/numinput.c.o CMakeFiles/bf_editor_util.dir/undo.c.o CMakeFiles/bf_editor_util.dir/crazyspace.c.o
+/usr/bin/ranlib ../../../../lib/libbf_editor_util.a

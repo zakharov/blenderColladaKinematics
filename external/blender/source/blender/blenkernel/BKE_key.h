@@ -1,7 +1,5 @@
-/**
- * blenlib/BKE_key.h (mar-2001 nzc)
- *	
- * $Id: BKE_key.h 34039 2011-01-03 14:30:59Z campbellbarton $ 
+/*
+ * $Id: BKE_key.h 34962 2011-02-18 13:05:18Z jesterking $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -31,6 +29,11 @@
 #ifndef BKE_KEY_H
 #define BKE_KEY_H
 
+/** \file BKE_key.h
+ *  \ingroup bke
+ *  \since March 2001
+ *  \author nzc
+ */
 struct Key;
 struct KeyBlock;
 struct ID;
@@ -79,9 +82,11 @@ float (*key_to_vertcos(struct Object *ob, struct KeyBlock *kb))[3];
 void vertcos_to_key(struct Object *ob, struct KeyBlock *kb, float (*vertCos)[3]);
 void offset_to_key(struct Object *ob, struct KeyBlock *kb, float (*ofs)[3]);
 
+/* key.c */
+extern int slurph_opt;
+
 #ifdef __cplusplus
 };
 #endif
 
-#endif
-
+#endif // BKE_KEY_H

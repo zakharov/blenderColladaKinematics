@@ -1,5 +1,5 @@
-/**
- * $Id: dynlib.c 33456 2010-12-03 19:42:40Z ton $
+/*
+ * $Id: dynlib.c 35246 2011-02-27 20:37:56Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/blenlib/intern/dynlib.c
+ *  \ingroup bli
+ */
+
 
 #include <stdlib.h>
 

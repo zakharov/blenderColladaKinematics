@@ -1,5 +1,5 @@
 /*
- * $Id: BLI_noise.h 26841 2010-02-12 13:34:04Z campbellbarton $
+ * $Id: BLI_noise.h 34966 2011-02-18 13:58:08Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -31,6 +31,10 @@
 #ifndef BLI_NOISE_H
 #define BLI_NOISE_H
 
+/** \file BLI_noise.h
+ *  \ingroup bli
+ */
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -56,7 +60,6 @@ void voronoi(float x, float y, float z, float* da, float* pa, float me, int dtyp
 /* newnoise: cellNoise & cellNoiseV (for vector/point/color) */
 float cellNoise(float x, float y, float z);
 void cellNoiseV(float x, float y, float z, float *ca);
-
 
 #ifdef __cplusplus
 }

@@ -1,7 +1,5 @@
-/**
- * blenlib/DNA_effect_types.h (mar-2001 nzc)
- *	
- * $Id: DNA_effect_types.h 26841 2010-02-12 13:34:04Z campbellbarton $ 
+/*
+ * $Id: DNA_effect_types.h 34941 2011-02-17 20:48:12Z jesterking $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -30,6 +28,10 @@
  */
 #ifndef DNA_EFFECT_TYPES_H
 #define DNA_EFFECT_TYPES_H
+
+/** \file DNA_effect_types.h
+ *  \ingroup DNA
+ */
 
 /* don't forget, new effects also in writefile.c for dna!!! */
 

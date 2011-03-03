@@ -1,6 +1,5 @@
-/**
- *	
- * $Id: BKE_sketch.h 33442 2010-12-03 12:30:59Z campbellbarton $ 
+/*
+ * $Id: BKE_sketch.h 34962 2011-02-18 13:05:18Z jesterking $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +23,10 @@
  */
 #ifndef BKE_SKETCH_H
 #define BKE_SKETCH_H
+
+/** \file BKE_sketch.h
+ *  \ingroup bke
+ */
 
 typedef enum SK_PType
 {

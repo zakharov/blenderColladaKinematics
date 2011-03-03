@@ -1,5 +1,5 @@
-/**
- * $Id: script_ops.c 31364 2010-08-16 05:46:10Z campbellbarton $
+/*
+ * $Id: script_ops.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_script/script_ops.c
+ *  \ingroup spscript
+ */
+
 
 #include <stdlib.h>
 #include <math.h>

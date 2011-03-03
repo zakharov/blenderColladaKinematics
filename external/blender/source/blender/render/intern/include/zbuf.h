@@ -1,5 +1,5 @@
 /*
- * $Id: zbuf.h 27655 2010-03-22 09:30:00Z campbellbarton $
+ * $Id: zbuf.h 35233 2011-02-27 19:31:27Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL/BL DUAL LICENSE BLOCK *****
  */
+
+/** \file blender/render/intern/include/zbuf.h
+ *  \ingroup render
+ */
+
 
 #ifndef ZBUF_H
 #define ZBUF_H

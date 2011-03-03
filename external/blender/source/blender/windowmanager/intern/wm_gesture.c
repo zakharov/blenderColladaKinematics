@@ -1,5 +1,5 @@
-/**
- * $Id: wm_gesture.c 34273 2011-01-12 03:41:12Z campbellbarton $
+/*
+ * $Id: wm_gesture.c 35179 2011-02-25 14:04:21Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/windowmanager/intern/wm_gesture.c
+ *  \ingroup wm
+ */
+
 
 #include "DNA_screen_types.h"
 #include "DNA_vec_types.h"

@@ -1,9 +1,7 @@
-/**
- * codecs.c
+/*
+ * $Id: codecs.c 35249 2011-02-27 20:43:42Z jesterking $
  *
  * This is external code. Identify and convert different avi-files.
- *
- * $Id: codecs.c 28254 2010-04-18 10:28:37Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -30,6 +28,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/avi/intern/codecs.c
+ *  \ingroup avi
+ */
+
 
 #include "AVI_avi.h"
 #include "avi_intern.h"

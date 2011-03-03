@@ -1,5 +1,5 @@
-/**
- * $Id: CMP_node.h 34712 2011-02-08 09:02:16Z lukastoenne $
+/*
+ * $Id: CMP_node.h 35014 2011-02-21 06:58:46Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,10 @@
  * Contributor(s): Bob Holcomb.
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file CMP_node.h
+ *  \ingroup nodes
  */
 
 #ifndef CMP_NODE_H

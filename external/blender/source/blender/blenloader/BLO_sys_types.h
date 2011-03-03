@@ -1,5 +1,5 @@
-/**
- * $Id: BLO_sys_types.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: BLO_sys_types.h 35245 2011-02-27 20:35:41Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file blenloader/BLO_sys_types.h
+ *  \ingroup blenloader
+ *
  * A platform-independent definition of [u]intXX_t
  * Plus the accompanying header include for htonl/ntohl
  *

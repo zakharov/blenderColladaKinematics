@@ -1,5 +1,5 @@
 /*
-* $Id: MOD_particleinstance.c 34587 2011-01-31 20:02:51Z nazgul $
+* $Id: MOD_particleinstance.c 35178 2011-02-25 13:57:17Z jesterking $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -30,6 +30,11 @@
 *
 */
 
+/** \file blender/modifiers/intern/MOD_particleinstance.c
+ *  \ingroup modifiers
+ */
+
+
 #include "DNA_meshdata_types.h"
 
 #include "MEM_guardedalloc.h"
@@ -45,6 +50,7 @@
 #include "BKE_particle.h"
 #include "BKE_pointcache.h"
 
+#include "MOD_util.h"
 
 #include "depsgraph_private.h"
 

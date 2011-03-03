@@ -1,5 +1,5 @@
-/**
- * $Id: buttons_header.c 34739 2011-02-09 11:03:11Z jhk $
+/*
+ * $Id: buttons_header.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_buttons/buttons_header.c
+ *  \ingroup spbuttons
+ */
+
 
 #include <string.h>
 #include <stdio.h>
@@ -65,6 +70,9 @@ static void set_texture_context(bContext *C, SpaceButs *sbuts)
 		}
 		case BCONTEXT_WORLD:
 			sbuts->texture_context = SB_TEXC_WORLD;
+			break;
+		case BCONTEXT_PARTICLE:
+			sbuts->texture_context = SB_TEXC_PARTICLES;
 			break;
 	}
 }

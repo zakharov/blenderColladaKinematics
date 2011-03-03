@@ -1,5 +1,5 @@
-/**
- * $Id: SCA_ILogicBrick.cpp 34520 2011-01-27 00:02:25Z campbellbarton $
+/*
+ * $Id: SCA_ILogicBrick.cpp 35169 2011-02-25 13:32:11Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/GameLogic/SCA_ILogicBrick.cpp
+ *  \ingroup gamelogic
+ */
+
 
 #include <stddef.h>
 

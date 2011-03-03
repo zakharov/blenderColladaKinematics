@@ -1,5 +1,5 @@
-/**
- * $Id: GPG_KeyboardDevice.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: GPG_KeyboardDevice.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,7 +25,11 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
- * GHOST Blender Player keyboard device.
+ */
+
+/** \file GPG_KeyboardDevice.h
+ *  \ingroup player
+ *  \brief GHOST Blender Player keyboard device.
  */
 
 #ifndef _GPG_KEYBOARDDEVICE_H_

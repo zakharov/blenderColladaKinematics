@@ -1,7 +1,5 @@
-/**
- * blenlib/BKE_screen.h (mar-2001 nzc)
- *	
- * $Id: BKE_screen.h 34475 2011-01-24 05:02:01Z campbellbarton $ 
+/*
+ * $Id: BKE_screen.h 34962 2011-02-18 13:05:18Z jesterking $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -30,6 +28,12 @@
  */
 #ifndef BKE_SCREEN_H
 #define BKE_SCREEN_H
+
+/** \file BKE_screen.h
+ *  \ingroup bke
+ *  \since March 2001
+ *  \author nzc
+ */
 
 struct ARegion;
 struct bContext;

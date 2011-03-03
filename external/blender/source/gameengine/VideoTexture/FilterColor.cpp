@@ -1,4 +1,7 @@
-/* $Id: FilterColor.cpp 34195 2011-01-09 14:53:18Z campbellbarton $
+/** \file gameengine/VideoTexture/FilterColor.cpp
+ *  \ingroup bgevideotex
+ */
+/* $Id: FilterColor.cpp 35176 2011-02-25 13:39:34Z jesterking $
 -----------------------------------------------------------------------------
 This source file is part of VideoTexture library
 

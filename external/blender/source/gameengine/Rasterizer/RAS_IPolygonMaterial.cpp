@@ -1,5 +1,5 @@
-/**
- * $Id: RAS_IPolygonMaterial.cpp 34469 2011-01-23 17:17:21Z ben2610 $
+/*
+ * $Id: RAS_IPolygonMaterial.cpp 35174 2011-02-25 13:38:24Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/Rasterizer/RAS_IPolygonMaterial.cpp
+ *  \ingroup bgerast
+ */
+
 
 #include "RAS_IPolygonMaterial.h"
 #include "RAS_IRasterizer.h"

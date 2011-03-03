@@ -1,7 +1,7 @@
 /*
  * radiance_hdr.c
  *
- * $Id: radiance_hdr.c 33167 2010-11-19 02:14:18Z campbellbarton $
+ * $Id: radiance_hdr.c 35239 2011-02-27 20:23:21Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
 */
+
+/** \file blender/imbuf/intern/radiance_hdr.c
+ *  \ingroup imbuf
+ */
+
 
 #ifdef WITH_HDR
 

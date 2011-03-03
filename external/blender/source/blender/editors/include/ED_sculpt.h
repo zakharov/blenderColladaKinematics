@@ -1,5 +1,5 @@
-/**
- * $Id: ED_sculpt.h 34587 2011-01-31 20:02:51Z nazgul $
+/*
+ * $Id: ED_sculpt.h 35016 2011-02-21 07:25:24Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -23,6 +23,10 @@
  * Contributor(s): Nicholas Bishop
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file ED_sculpt.h
+ *  \ingroup editors
  */
 
 #ifndef ED_SCULPT_H

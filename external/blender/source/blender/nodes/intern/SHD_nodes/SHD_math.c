@@ -1,5 +1,5 @@
-/**
- * $Id: SHD_math.c 34717 2011-02-08 12:54:32Z lukastoenne $
+/*
+ * $Id: SHD_math.c 35237 2011-02-27 20:13:22Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/nodes/intern/SHD_nodes/SHD_math.c
+ *  \ingroup shdnodes
+ */
+
 
 #include "../SHD_util.h"
 

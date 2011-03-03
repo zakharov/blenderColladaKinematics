@@ -1,5 +1,5 @@
-/**
- * $Id: GHOST_WindowCocoa.h 29143 2010-06-01 20:21:40Z damien78 $
+/*
+ * $Id: GHOST_WindowCocoa.h 35152 2011-02-25 11:28:33Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,8 +25,9 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
-/**
- * @file	GHOST_WindowCocoa.h
+
+/** \file ghost/intern/GHOST_WindowCocoa.h
+ *  \ingroup GHOST
  * Declaration of GHOST_WindowCocoa class.
  */
 

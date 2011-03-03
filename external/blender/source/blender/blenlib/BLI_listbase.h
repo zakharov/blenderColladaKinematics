@@ -1,5 +1,5 @@
 /*
- * $Id: BLI_listbase.h 33835 2010-12-21 14:49:34Z campbellbarton $
+ * $Id: BLI_listbase.h 34966 2011-02-18 13:58:08Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,12 +25,14 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
- * 
- * $Id: BLI_listbase.h 33835 2010-12-21 14:49:34Z campbellbarton $ 
 */
 
 #ifndef BLI_LISTBASE_H
 #define BLI_LISTBASE_H
+
+/** \file BLI_listbase.h
+ *  \ingroup bli
+ */
 
 #include "DNA_listBase.h"
 //struct ListBase;

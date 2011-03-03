@@ -1,5 +1,5 @@
 /*
-* $Id: MOD_cast.c 34587 2011-01-31 20:02:51Z nazgul $
+* $Id: MOD_cast.c 35178 2011-02-25 13:57:17Z jesterking $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -29,6 +29,11 @@
 * ***** END GPL LICENSE BLOCK *****
 *
 */
+
+/** \file blender/modifiers/intern/MOD_cast.c
+ *  \ingroup modifiers
+ */
+
 
 #include "DNA_meshdata_types.h"
 #include "DNA_object_types.h"

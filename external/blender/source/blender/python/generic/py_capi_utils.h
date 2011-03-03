@@ -1,5 +1,5 @@
-/**
- * $Id: py_capi_utils.h 34603 2011-02-01 12:37:53Z campbellbarton $
+/*
+ * $Id: py_capi_utils.h 35236 2011-02-27 20:10:08Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/python/generic/py_capi_utils.h
+ *  \ingroup pygen
+ */
+
  
 #ifndef PY_CAPI_UTILS_H
 #define PY_CAPI_UTILS_H

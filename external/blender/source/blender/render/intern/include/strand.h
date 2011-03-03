@@ -1,5 +1,5 @@
 /*
- * $Id: strand.h 33894 2010-12-26 17:47:17Z ton $
+ * $Id: strand.h 35233 2011-02-27 19:31:27Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/render/intern/include/strand.h
+ *  \ingroup render
+ */
+
 
 #ifndef STRAND_H
 #define STRAND_H 

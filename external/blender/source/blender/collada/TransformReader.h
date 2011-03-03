@@ -1,5 +1,5 @@
-/**
- * $Id: TransformReader.h 32310 2010-10-05 00:49:39Z gsrb3d $
+/*
+ * $Id: TransformReader.h 35020 2011-02-21 08:38:53Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -22,6 +22,10 @@
  * ***** END GPL LICENSE BLOCK *****
  */
  
+/** \file TransformReader.h
+ *  \ingroup collada
+ */
+
 #ifndef __BC_TRANSFORMREADER_H__
 #define __BC_TRANSFORMREADER_H__
 

@@ -1,5 +1,5 @@
-/**
- * $Id: rna_texture.c 34544 2011-01-28 14:51:03Z ton $
+/*
+ * $Id: rna_texture.c 35238 2011-02-27 20:20:01Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/makesrna/intern/rna_texture.c
+ *  \ingroup RNA
+ */
+
 
 #include <float.h>
 #include <stdio.h>
@@ -185,6 +190,20 @@ void rna_TextureSlot_update(Main *bmain, Scene *scene, PointerRNA *ptr)
 		case ID_BR: 
 			WM_main_add_notifier(NC_BRUSH, id);
 			break;
+		case ID_PA:
+		{
+			MTex *mtex= ptr->data;
+			int recalc = OB_RECALC_DATA;
+
+			if(mtex->mapto & PAMAP_INIT)
+				recalc |= PSYS_RECALC_RESET;
+			if(mtex->mapto & PAMAP_CHILD)
+				recalc |= PSYS_RECALC_CHILD;
+
+			DAG_id_tag_update(id, recalc);
+			WM_main_add_notifier(NC_OBJECT|ND_PARTICLE|NA_EDITED, NULL);
+			break;
+		}
 	}
 }
 

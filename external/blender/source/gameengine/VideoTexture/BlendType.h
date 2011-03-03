@@ -1,4 +1,4 @@
-/* $Id: BlendType.h 26964 2010-02-16 16:47:41Z campbellbarton $
+/* $Id: BlendType.h 35082 2011-02-22 19:30:37Z jesterking $
 -----------------------------------------------------------------------------
 This source file is part of VideoTexture library
 
@@ -20,6 +20,10 @@ http://www.gnu.org/copyleft/lesser.txt.
 -----------------------------------------------------------------------------
 */
 
+/** \file BlendType.h
+ *  \ingroup bgevideotex
+ */
+ 
 #if !defined BLENDTYPE_H
 #define BLENDTYPE_H
 

@@ -1,15 +1,15 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern/boolop/intern
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-30T15:29:22.294392Z
-34567
-campbellbarton
+2011-02-25T10:32:33.386811Z
+35143
+jesterking
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-01-18T22:04:09.033021Z
-8545084c16a77266b8f7463fa76dc264
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:24.538297Z
+2f7b1e59cfc5430da313ddb6e1c583cd
+2011-02-25T10:32:33.386811Z
+35143
+jesterking
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-10866
+10934
 
 BOP_Interface.cpp
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-01-18T22:04:09.033021Z
-425c73238a400a790f39109cb4c55676
-2010-10-18T11:21:22.542075Z
-32559
-campbellbarton
+2011-03-03T12:25:24.542297Z
+5269d9a437e700c25b2b3dacb44d73ba
+2011-02-25T10:32:33.386811Z
+35143
+jesterking
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-15674
+15747
 
 BOP_Segment.cpp
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-01-18T22:04:09.033021Z
-95804c55939b67c084e59500c7f52a64
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:24.542297Z
+baef23f5a20e36559cd9ca62d5586407
+2011-02-25T10:32:33.386811Z
+35143
+jesterking
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-6408
+6479
 
 BOP_Merge.h
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-01-18T22:04:09.033021Z
-62bee68579befdad524fe82a3011d48a
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:24.542297Z
+90f1d3d17e1aaf7dec78b6064e12e978
+2011-02-25T10:32:33.386811Z
+35143
+jesterking
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-2615
+2682
 
 BOP_Face2Face.h
 file
@@ -168,11 +168,759 @@ file
 
 
 
-2011-01-18T22:04:09.033021Z
-c3b269a3db35121f39ed19a7afa12ded
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:24.542297Z
+5f9bbbe9a376d47a834abe7b45489481
+2011-02-25T10:32:33.386811Z
+35143
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1469
+
+BOP_Splitter.cpp
+file
+
+
+
+
+2011-03-03T12:25:24.542297Z
+6f93ed2c4d16d0a5ca6c208dbd8ba0bc
+2011-02-25T10:32:33.386811Z
+35143
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4949
+
+BOP_BSPTree.h
+file
+
+
+
+
+2011-03-03T12:25:24.542297Z
+a783817cd4ed5d2a59ed722396f2e0a8
+2011-02-25T10:32:33.386811Z
+35143
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2191
+
+BOP_Edge.h
+file
+
+
+
+
+2011-03-03T12:25:24.542297Z
+c18f1f565aafbdbeeb7a91ff98bdc48a
+2011-02-25T10:32:33.386811Z
+35143
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1949
+
+BOP_Vertex.cpp
+file
+
+
+
+
+2011-03-03T12:25:24.542297Z
+9ff2ee98aa504a96aa2978bdd42cdcec
+2011-02-25T10:32:33.386811Z
+35143
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2677
+
+BOP_MathUtils.h
+file
+
+
+
+
+2011-03-03T12:25:24.542297Z
+1c5957de52aa1f1ffac57418e6963648
+2011-02-25T10:32:33.386811Z
+35143
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3362
+
+BOP_Triangulator.h
+file
+
+
+
+
+2011-03-03T12:25:24.542297Z
+200524a4854237d9e5b3d8437dbec8aa
+2011-02-25T10:32:33.386811Z
+35143
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1836
+
+BOP_Tag.h
+file
+
+
+
+
+2011-03-03T12:25:24.542297Z
+0ed023e3de323be886e2fabcbb3ceb17
+2011-02-25T10:32:33.386811Z
+35143
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4691
+
+BOP_Merge2.cpp
+file
+
+
+
+
+2011-03-03T12:25:24.546297Z
+06e5ea6b77bd1fe6f4be2cc8b812a565
+2011-02-25T10:32:33.386811Z
+35143
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+28805
+
+BOP_Chrono.h
+file
+
+
+
+
+2011-03-03T12:25:24.546297Z
+190e66ed92d313a9400e7fb425b06e04
+2011-02-25T10:32:33.386811Z
+35143
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1391
+
+BOP_Indexs.h
+file
+
+
+
+
+2011-03-03T12:25:24.546297Z
+a74682fe994a5edd81b9b35f15f7dd2a
+2011-02-25T10:32:33.386811Z
+35143
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1262
+
+BOP_Face2Face.cpp
+file
+
+
+
+
+2011-03-03T12:25:24.546297Z
+ca6d9a20f2848deb4cccb0ccfe595a42
+2011-02-25T10:32:33.386811Z
+35143
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+39571
+
+BOP_BSPNode.h
+file
+
+
+
+
+2011-03-03T12:25:24.546297Z
+6f78b90127978ea870ff429991c42f99
+2011-02-25T10:32:33.386811Z
+35143
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3386
+
+BOP_Merge.cpp
+file
+
+
+
+
+2011-03-03T12:25:24.546297Z
+ba93b4bdc72c43a090c104ea903e69b7
+2011-02-25T10:32:33.386811Z
+35143
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+27687
+
+BOP_BBox.h
+file
+
+
+
+
+2011-03-03T12:25:24.546297Z
+e84ad9b4688358e1d6a0fe0c6288eead
+2011-02-25T10:32:33.386811Z
+35143
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2786
+
+BOP_Misc.h
+file
+
+
+
+
+2011-03-03T12:25:24.546297Z
+2c4f3fbb4cc8378eea7f18a52df76be2
+2011-02-25T10:32:33.386811Z
+35143
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1942
+
+BOP_Mesh.h
+file
+
+
+
+
+2011-03-03T12:25:24.550297Z
+cc05e14c3a99f396ac3979f657c395cc
+2011-02-25T10:32:33.386811Z
+35143
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3444
+
+BOP_Face.h
+file
+
+
+
+
+2011-03-03T12:25:24.550297Z
+dbb2cd4550a1a3eea8c31135ac4f7575
+2011-02-25T10:32:33.386811Z
+35143
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3972
+
+BOP_Edge.cpp
+file
+
+
+
+
+2011-03-03T12:25:24.550297Z
+88481f8ce4e4dd2870d60eda7d19e46d
+2011-02-25T10:32:33.386811Z
+35143
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2823
+
+BOP_BSPTree.cpp
+file
+
+
+
+
+2011-03-03T12:25:24.550297Z
+9dda7a1bd67b42463f7e9c92a2d62edc
+2011-02-25T10:32:33.386811Z
+35143
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4503
+
+BOP_Segment.h
+file
+
+
+
+
+2011-03-03T12:25:24.550297Z
+6dd69aca9dd8b709c2d8bb83ed21477a
+2011-02-25T10:32:33.386811Z
+35143
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2263
+
+BOP_MathUtils.cpp
+file
+
+
+
+
+2011-03-03T12:25:24.550297Z
+9ec2216e1dca5683a4ef3e723f457890
+2011-02-25T10:32:33.386811Z
+35143
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14079
+
+BOP_Splitter.h
+file
+
+
+
+
+2011-03-03T12:25:24.550297Z
+0d06450902b5fcbc98de33c8c5f6783b
+2011-02-25T10:32:33.386811Z
+35143
+jesterking
 has-props
 
 
@@ -196,765 +944,17 @@ has-props
 
 1398
 
-BOP_Splitter.cpp
-file
-
-
-
-
-2011-01-18T22:04:09.033021Z
-ef8ac24b200ef13815503ef935e86bdc
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4877
-
-BOP_BSPTree.h
-file
-
-
-
-
-2011-01-18T22:04:09.033021Z
-83a6c81dd959920656cc0619d07af4d0
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2122
-
-BOP_Edge.h
-file
-
-
-
-
-2011-01-18T22:04:09.033021Z
-59bc802211ee5e7f633d2153f6367a98
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1883
-
-BOP_Vertex.cpp
-file
-
-
-
-
-2011-01-18T22:04:09.033021Z
-bdfcc6f3a88d9628e661d1d625989f44
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2607
-
-BOP_MathUtils.h
-file
-
-
-
-
-2011-01-18T22:04:09.033021Z
-e18fd7eaa9ca918cc85b0dc941f60795
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3295
-
-BOP_Triangulator.h
-file
-
-
-
-
-2011-01-18T22:04:09.033021Z
-68e15bf46bde84723251abd6dbe60e4e
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1762
-
-BOP_Tag.h
-file
-
-
-
-
-2011-01-18T22:04:09.033021Z
-87ca94b9a65710568a129a936d2a01bd
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4626
-
-BOP_Merge2.cpp
-file
-
-
-
-
-2011-01-18T22:04:09.033021Z
-3b674d8153b8826d55be7c8ccb5b79cf
-2010-10-18T11:21:22.542075Z
-32559
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-28739
-
-BOP_Chrono.h
-file
-
-
-
-
-2011-01-18T22:04:09.033021Z
-e6c05f12ce56af68c5a714af73e86a1e
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1323
-
-BOP_Indexs.h
-file
-
-
-
-
-2011-01-18T22:04:09.033021Z
-f475eccf41ada6d0374d7b7a000ddc21
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1194
-
-BOP_Face2Face.cpp
-file
-
-
-
-
-2011-01-18T22:04:09.033021Z
-d795bdd11d8dd79244229ec4c48e17f4
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-39502
-
-BOP_BSPNode.h
-file
-
-
-
-
-2011-01-18T22:04:09.033021Z
-36618335fde0e7835b5770957ff153fa
-2010-11-26T03:26:57.827483Z
-33322
-blendix
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3317
-
-BOP_BBox.h
-file
-
-
-
-
-2011-01-18T22:04:09.033021Z
-fae2214c872f7bf4a55698212e548300
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2720
-
-BOP_Merge.cpp
-file
-
-
-
-
-2011-01-18T22:04:09.033021Z
-9f70417c4884266fe03292a6dbec006d
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-27622
-
-BOP_Misc.h
-file
-
-
-
-
-2011-01-18T22:04:09.033021Z
-cdb3eea6c1bbca93a8105d03dfd9afcf
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1880
-
-BOP_Mesh.h
-file
-
-
-
-
-2011-01-18T22:04:09.033021Z
-5af8bdcbb1a1a7c6a01cbaa10d489a87
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3382
-
-BOP_Face.h
-file
-
-
-
-
-2011-01-18T22:04:09.033021Z
-80a2b593b19312a60ad551e47fd88158
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3906
-
-BOP_Edge.cpp
-file
-
-
-
-
-2011-01-18T22:04:09.033021Z
-f6f93dd10a4786a230758e05d1e719b0
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2755
-
-BOP_BSPTree.cpp
-file
-
-
-
-
-2011-01-18T22:04:09.033021Z
-d733130c3c7b60c7b0ebedb2a39c82cf
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4432
-
-BOP_Segment.h
-file
-
-
-
-
-2011-01-18T22:04:09.043021Z
-ae5e5ec982be95d9c47f3b28294a0723
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2194
-
-BOP_MathUtils.cpp
-file
-
-
-
-
-2011-01-18T22:04:09.043021Z
-4f91846cf3b69f6412bcf3a541f27e44
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-14010
-
-BOP_Splitter.h
-file
-
-
-
-
-2011-01-18T22:04:09.043021Z
-b6d42d60c65b62a19f3e54866143ddfa
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1328
-
 BOP_Tag.cpp
 file
 
 
 
 
-2011-01-18T22:04:09.043021Z
-0c554bf555b067ee286fce1811f5cb0b
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:24.550297Z
+95b8cbab4b4234be7cd4dea7f51f90f8
+2011-02-25T10:32:33.386811Z
+35143
+jesterking
 has-props
 
 
@@ -976,7 +976,7 @@ has-props
 
 
 
-3177
+3244
 
 BOP_Triangulator.cpp
 file
@@ -984,11 +984,11 @@ file
 
 
 
-2011-01-18T22:04:09.043021Z
-993cb3953c068b8c971ab146302dd94e
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:24.550297Z
+839a5e5ee5195a6ad600edd4f5cb8024
+2011-02-25T10:32:33.386811Z
+35143
+jesterking
 has-props
 
 
@@ -1010,7 +1010,7 @@ has-props
 
 
 
-20668
+20744
 
 BOP_Vertex.h
 file
@@ -1018,11 +1018,11 @@ file
 
 
 
-2011-01-18T22:04:09.043021Z
-642af0ef45be75063c7570d8e8f69a25
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:24.554297Z
+528e1d60bc12953887c7297d9ee0bf64
+2011-02-25T10:32:33.386811Z
+35143
+jesterking
 has-props
 
 
@@ -1044,7 +1044,7 @@ has-props
 
 
 
-1794
+1862
 
 BOP_Merge2.h
 file
@@ -1052,11 +1052,11 @@ file
 
 
 
-2011-01-18T22:04:09.043021Z
-a68122f0b7f37d7f61a44d4bbaad231f
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:24.554297Z
+15dbb73d8bb73e851e1965a728c59660
+2011-02-25T10:32:33.386811Z
+35143
+jesterking
 has-props
 
 
@@ -1078,7 +1078,7 @@ has-props
 
 
 
-3683
+3751
 
 BOP_BBox.cpp
 file
@@ -1086,11 +1086,11 @@ file
 
 
 
-2011-01-18T22:04:09.043021Z
-eb4066c2fb42e6ddbad3c5992f208b2c
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:24.554297Z
+628e717130e1a8a24c0ea8c1594aed80
+2011-02-25T10:32:33.386811Z
+35143
+jesterking
 has-props
 
 
@@ -1112,7 +1112,7 @@ has-props
 
 
 
-1746
+1814
 
 BOP_BSPNode.cpp
 file
@@ -1120,11 +1120,11 @@ file
 
 
 
-2011-01-18T22:04:09.043021Z
-23de2401f07850c69d09fc6605ce848f
-2010-11-26T03:26:57.827483Z
-33322
-blendix
+2011-03-03T12:25:24.554297Z
+2398722a3ddd82c6e33896e2b44c011f
+2011-02-25T10:32:33.386811Z
+35143
+jesterking
 has-props
 
 
@@ -1146,7 +1146,7 @@ has-props
 
 
 
-21549
+21620
 
 BOP_Mesh.cpp
 file
@@ -1154,11 +1154,11 @@ file
 
 
 
-2011-01-18T22:04:09.043021Z
-95ef9a667b27652923b9d1f33f7fc89d
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:25:24.554297Z
+05f0cd086c9f4f9f49587b55997e79fd
+2011-02-25T10:32:33.386811Z
+35143
+jesterking
 has-props
 
 
@@ -1180,5 +1180,5 @@ has-props
 
 
 
-26805
+26869
 

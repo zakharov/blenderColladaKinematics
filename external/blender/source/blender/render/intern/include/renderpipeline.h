@@ -1,5 +1,5 @@
-/**
- * $Id: renderpipeline.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: renderpipeline.h 35233 2011-02-27 19:31:27Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/render/intern/include/renderpipeline.h
+ *  \ingroup render
+ */
+
 
 #ifndef PIPELINE_H
 #define PIPELINE_H

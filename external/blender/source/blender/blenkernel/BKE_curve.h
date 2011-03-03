@@ -1,7 +1,5 @@
-/**
- * blenlib/BKE_curve.h (mar-2001 nzc)
- *	
- * $Id: BKE_curve.h 33124 2010-11-17 09:45:45Z campbellbarton $ 
+/*
+ * $Id: BKE_curve.h 34962 2011-02-18 13:05:18Z jesterking $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -31,6 +29,11 @@
 #ifndef BKE_CURVE_H
 #define BKE_CURVE_H
 
+/** \file BKE_curve.h
+ *  \ingroup bke
+ *  \since March 2001
+ *  \author nzc
+ */
 struct Curve;
 struct ListBase;
 struct Object;

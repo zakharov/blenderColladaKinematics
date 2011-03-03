@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 73
-/svnroot/bf-blender/!svn/ver/34533/trunk/blender/build_files/scons/config
+/svnroot/bf-blender/!svn/ver/35187/trunk/blender/build_files/scons/config
 END
 aix4-config.py
 K 25
 svn:wc:ra_dav:version-url
 V 88
-/svnroot/bf-blender/!svn/ver/32582/trunk/blender/build_files/scons/config/aix4-config.py
+/svnroot/bf-blender/!svn/ver/35187/trunk/blender/build_files/scons/config/aix4-config.py
 END
 win32-vc-config.py
 K 25
@@ -19,19 +19,19 @@ linuxcross-config.py
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/33442/trunk/blender/build_files/scons/config/linuxcross-config.py
+/svnroot/bf-blender/!svn/ver/35187/trunk/blender/build_files/scons/config/linuxcross-config.py
 END
 sunos5-config.py
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/32559/trunk/blender/build_files/scons/config/sunos5-config.py
+/svnroot/bf-blender/!svn/ver/35187/trunk/blender/build_files/scons/config/sunos5-config.py
 END
 openbsd3-config.py
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/33442/trunk/blender/build_files/scons/config/openbsd3-config.py
+/svnroot/bf-blender/!svn/ver/35187/trunk/blender/build_files/scons/config/openbsd3-config.py
 END
 win64-vc-config.py
 K 25
@@ -43,41 +43,41 @@ freebsd7-config.py
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/33442/trunk/blender/build_files/scons/config/freebsd7-config.py
+/svnroot/bf-blender/!svn/ver/35187/trunk/blender/build_files/scons/config/freebsd7-config.py
 END
 irix6-config.py
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/32582/trunk/blender/build_files/scons/config/irix6-config.py
+/svnroot/bf-blender/!svn/ver/35187/trunk/blender/build_files/scons/config/irix6-config.py
 END
 linux2-config.py
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/34520/trunk/blender/build_files/scons/config/linux2-config.py
+/svnroot/bf-blender/!svn/ver/35187/trunk/blender/build_files/scons/config/linux2-config.py
 END
 win32-mingw-config.py
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svnroot/bf-blender/!svn/ver/33442/trunk/blender/build_files/scons/config/win32-mingw-config.py
+/svnroot/bf-blender/!svn/ver/35187/trunk/blender/build_files/scons/config/win32-mingw-config.py
 END
 freebsd8-config.py
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/33442/trunk/blender/build_files/scons/config/freebsd8-config.py
+/svnroot/bf-blender/!svn/ver/35187/trunk/blender/build_files/scons/config/freebsd8-config.py
 END
 freebsd9-config.py
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/33442/trunk/blender/build_files/scons/config/freebsd9-config.py
+/svnroot/bf-blender/!svn/ver/35187/trunk/blender/build_files/scons/config/freebsd9-config.py
 END
 darwin-config.py
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/33442/trunk/blender/build_files/scons/config/darwin-config.py
+/svnroot/bf-blender/!svn/ver/35187/trunk/blender/build_files/scons/config/darwin-config.py
 END

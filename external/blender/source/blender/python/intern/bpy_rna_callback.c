@@ -1,5 +1,5 @@
-/**
- * $Id: bpy_rna_callback.c 34160 2011-01-07 19:18:31Z campbellbarton $
+/*
+ * $Id: bpy_rna_callback.c 35295 2011-03-02 04:51:43Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -22,13 +22,24 @@
  * ***** END GPL LICENSE BLOCK *****
  */
 
+/** \file blender/python/intern/bpy_rna_callback.c
+ *  \ingroup pythonintern
+ */
+
+
+#include <Python.h>
+
+#include "RNA_types.h"
 
 #include "bpy_rna.h"
+#include "bpy_rna_callback.h"
 #include "bpy_util.h"
 
 #include "BLI_utildefines.h"
 
 #include "DNA_screen_types.h"
+
+#include "RNA_access.h"
 
 #include "BKE_context.h"
 #include "ED_space_api.h"
@@ -37,7 +48,7 @@
 #define RNA_CAPSULE_ID "RNA_HANDLE"
 #define RNA_CAPSULE_ID_INVALID "RNA_HANDLE_REMOVED"
 
-void cb_region_draw(const bContext *C, ARegion *UNUSED(ar), void *customdata)
+static void cb_region_draw(const bContext *C, ARegion *UNUSED(ar), void *customdata)
 {
 	PyObject *cb_func, *cb_args, *result;
 	PyGILState_STATE gilstate;

@@ -1,4 +1,4 @@
-/**
+/*
  * $Id$
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
@@ -24,6 +24,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/curve/editfont.c
+ *  \ingroup edcurve
+ */
+
 
 #include <stdlib.h>
 #include <string.h>
@@ -62,6 +67,7 @@
 #include "WM_api.h"
 #include "WM_types.h"
 
+#include "ED_curve.h"
 #include "ED_object.h"
 #include "ED_screen.h"
 #include "ED_util.h"
@@ -206,7 +212,7 @@ static char findaccent(char char1, unsigned int code)
 }
 
 
-void update_string(Curve *cu)
+static void update_string(Curve *cu)
 {
 	EditFont *ef= cu->editfont;
 	int len;

@@ -1,5 +1,5 @@
-/**
- * $Id: collada_internal.cpp 33111 2010-11-16 22:27:31Z jesterking $
+/*
+ * $Id: collada_internal.cpp 35262 2011-02-28 14:24:52Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,14 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/collada/collada_internal.cpp
+ *  \ingroup collada
+ */
+
+
+/* COLLADABU_ASSERT, may be able to remove later */
+#include "COLLADABUPlatform.h"
 
 #include "collada_internal.h"
 
@@ -263,4 +271,9 @@ std::string get_joint_id(Bone *bone, Object *ob_arm)
 std::string get_camera_id(Object *ob)
 {
 	return translate_id(id_name(ob)) + "-camera";
+}
+
+std::string get_material_id(Material *mat)
+{
+	return translate_id(id_name(mat)) + "-material";
 }

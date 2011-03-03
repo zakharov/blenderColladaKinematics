@@ -1,5 +1,5 @@
-/**
- * $Id: avi_intern.h 31364 2010-08-16 05:46:10Z campbellbarton $
+/*
+ * $Id: avi_intern.h 35249 2011-02-27 20:43:42Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/avi/intern/avi_intern.h
+ *  \ingroup avi
+ */
+
 #ifndef AVI_INTERN_H
 #define AVI_INTERN_H
 

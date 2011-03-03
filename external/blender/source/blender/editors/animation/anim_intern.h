@@ -1,5 +1,5 @@
-/**
- * $Id: anim_intern.h 27738 2010-03-25 11:34:18Z aligorith $
+/*
+ * $Id: anim_intern.h 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -24,6 +24,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/animation/anim_intern.h
+ *  \ingroup edanimation
+ */
+
  
 #ifndef ANIM_INTERN_H
 #define ANIM_INTERN_H

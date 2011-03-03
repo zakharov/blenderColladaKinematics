@@ -1,5 +1,5 @@
-/**
- * $Id: bpy_props.h 31838 2010-09-09 06:29:44Z campbellbarton $
+/*
+ * $Id: bpy_props.h 35236 2011-02-27 20:10:08Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -22,10 +22,13 @@
  * ***** END GPL LICENSE BLOCK *****
  */
 
+/** \file blender/python/intern/bpy_props.h
+ *  \ingroup pythonintern
+ */
+
+
 #ifndef BPY_PROPS_H
 #define BPY_PROPS_H
-
-#include <Python.h>
 
 PyObject *BPY_rna_props( void );
 

@@ -1,14 +1,14 @@
 10
 
 dir
-1566
+1676
 https://svn.blender.org/svnroot/bf-extensions/trunk/py/scripts/addons/io_scene_fbx
 https://svn.blender.org/svnroot/bf-extensions
 
 
 
-2011-02-10T00:10:20.627607Z
-1566
+2011-02-27T15:27:55.919470Z
+1664
 campbellbarton
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2011-02-10T19:49:02.485667Z
-ec3efaf6747c214f7c90327f05dae83c
-2011-02-10T00:10:20.627607Z
-1566
+2011-03-03T12:29:49.270297Z
+d87bbb5005205d2f909e4b34704e2c04
+2011-02-27T15:27:55.919470Z
+1664
 campbellbarton
 has-props
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-6331
+6457
 
 export_fbx.py
 file
@@ -66,10 +66,10 @@ file
 
 
 
-2011-02-10T19:49:02.485667Z
-647e97a2a25e3af8f834f6f6ccf36a27
-2011-02-10T00:10:20.627607Z
-1566
+2011-03-03T12:29:49.274297Z
+a80ed3204d42080096b86b7530fe5e6e
+2011-02-16T02:26:15.968616Z
+1608
 campbellbarton
 has-props
 
@@ -92,5 +92,5 @@ has-props
 
 
 
-121036
+121028
 

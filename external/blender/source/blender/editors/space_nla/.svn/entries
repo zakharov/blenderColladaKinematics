@@ -1,15 +1,15 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/editors/space_nla
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-30T15:29:22.294392Z
-34567
-campbellbarton
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-02-10T19:48:53.545667Z
-4cf96a2a70f516d573146fe910b4df25
-2011-01-18T23:38:36.083333Z
-34395
-aligorith
+2011-03-03T12:27:58.406297Z
+7128f94dfbf37df0b99350695fc84f75
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-3831
+3955
 
 nla_edit.c
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-02-10T19:48:53.545667Z
-b270d98eea66a1322ddad8590ade847a
-2011-01-20T22:22:16.378939Z
-34427
-aligorith
+2011-03-03T12:27:58.406297Z
+3e5406098d0da0e49f3f17ac5d910d93
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-56227
+56339
 
 nla_channels.c
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-02-10T19:48:53.545667Z
-190f781097f4735fddbf81cb85b515c0
-2011-01-20T22:22:16.378939Z
-34427
-aligorith
+2011-03-03T12:27:58.406297Z
+fa1be336661a5ba5d9eeaac5c230a802
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-14242
+14318
 
 space_nla.c
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-01-18T22:04:53.473021Z
-d67deda997b63ce78b94fc97ec414b58
-2011-01-07T18:36:47.041781Z
-34159
-campbellbarton
+2011-03-03T12:27:58.406297Z
+525b408a7a70fb6fe0123cf0b861e325
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-14050
+14144
 
 SConscript
 file
@@ -168,11 +168,11 @@ file
 
 
 
-2011-01-18T22:04:53.473021Z
-e5534b485fe505a479a4d48f61e0f1cf
-2009-10-01T16:32:33.040756Z
-23587
-theeth
+2011-03-03T12:27:58.406297Z
+45afa55f99eb41d4188f955118f3ce00
+2011-02-21T12:35:04.852834Z
+35028
+jesterking
 has-props
 
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-331
+348
 
 nla_draw.c
 file
@@ -202,11 +202,11 @@ file
 
 
 
-2011-01-18T22:04:53.473021Z
-348b5d0c16537b4599d6634606fda04a
-2011-01-07T18:36:47.041781Z
-34159
-campbellbarton
+2011-03-03T12:27:58.406297Z
+fdf1cd40541422fb84386c49865c5eb8
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -228,7 +228,7 @@ has-props
 
 
 
-27656
+27723
 
 nla_buttons.c
 file
@@ -236,11 +236,11 @@ file
 
 
 
-2011-01-18T22:04:53.473021Z
-53a19aa5c325e0a922b9762f608b1250
-2011-01-09T01:17:56.259376Z
-34183
-campbellbarton
+2011-03-03T12:27:58.410297Z
+bb9413fd4eca7cc835bee103904cccfb
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -262,7 +262,7 @@ has-props
 
 
 
-15020
+15090
 
 nla_select.c
 file
@@ -270,11 +270,11 @@ file
 
 
 
-2011-02-10T19:48:53.555667Z
-a9cce9dc0550f0e3ebb95bf0d21a23df
-2011-01-20T22:22:16.378939Z
-34427
-aligorith
+2011-03-03T12:27:58.410297Z
+167e78c97979bfb31208186d35b2d4b5
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -296,7 +296,7 @@ has-props
 
 
 
-18017
+19614
 
 nla_ops.c
 file
@@ -304,11 +304,11 @@ file
 
 
 
-2011-02-10T19:48:53.555667Z
-746f9d67db860a6575ffc15273768b39
-2011-01-18T23:38:36.083333Z
-34395
-aligorith
+2011-03-03T12:27:58.410297Z
+cc9d1cd685a058c8676427d16a86df4b
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
 has-props
 
 
@@ -330,7 +330,7 @@ has-props
 
 
 
-8824
+9360
 
 CMakeLists.txt
 file
@@ -338,11 +338,11 @@ file
 
 
 
-2011-01-18T22:04:53.483021Z
-5be82254558ba50ee943b850de1cc504
-2010-12-22T23:09:30.468439Z
-33864
-campbellbarton
+2011-03-03T12:27:58.410297Z
+bae21940064649674ab153e02e364411
+2011-02-21T12:35:04.852834Z
+35028
+jesterking
 has-props
 
 
@@ -364,5 +364,5 @@ has-props
 
 
 
-1196
+1214
 

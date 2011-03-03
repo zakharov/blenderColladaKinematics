@@ -1,5 +1,5 @@
-/**
- * $Id: RAS_MaterialBucket.h 29259 2010-06-06 01:15:44Z campbellbarton $
+/*
+ * $Id: RAS_MaterialBucket.h 35072 2011-02-22 12:42:55Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file RAS_MaterialBucket.h
+ *  \ingroup bgerast
+ */
+
 #ifndef __RAS_MATERIALBUCKET
 #define __RAS_MATERIALBUCKET
 

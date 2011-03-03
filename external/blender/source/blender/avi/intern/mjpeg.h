@@ -1,5 +1,5 @@
-/**
- * $Id: mjpeg.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: mjpeg.h 35249 2011-02-27 20:43:42Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/avi/intern/mjpeg.h
+ *  \ingroup avi
+ */
+
 
 void *avi_converter_from_mjpeg (AviMovie *movie, int stream, unsigned char *buffer, int *size);
 void *avi_converter_to_mjpeg (AviMovie *movie, int stream, unsigned char *buffer, int *size);

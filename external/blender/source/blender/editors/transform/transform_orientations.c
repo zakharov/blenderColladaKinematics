@@ -1,5 +1,5 @@
-/**
- * $Id: transform_orientations.c 34273 2011-01-12 03:41:12Z campbellbarton $
+/*
+ * $Id: transform_orientations.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/transform/transform_orientations.c
+ *  \ingroup edtransform
+ */
+
 
 #include <string.h>
 #include <ctype.h>

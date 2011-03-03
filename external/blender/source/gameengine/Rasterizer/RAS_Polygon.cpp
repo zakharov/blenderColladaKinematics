@@ -1,5 +1,5 @@
-/**
- * $Id: RAS_Polygon.cpp 31950 2010-09-15 16:13:32Z campbellbarton $
+/*
+ * $Id: RAS_Polygon.cpp 35174 2011-02-25 13:38:24Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/Rasterizer/RAS_Polygon.cpp
+ *  \ingroup bgerast
+ */
+
 
 #if defined(WIN32) && !defined(FREE_WINDOWS)
 #pragma warning (disable:4786)

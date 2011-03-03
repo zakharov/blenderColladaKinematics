@@ -1,5 +1,5 @@
-/**
- * $Id: PHY_IMotionState.h 29259 2010-06-06 01:15:44Z campbellbarton $
+/*
+ * $Id: PHY_IMotionState.h 35072 2011-02-22 12:42:55Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file PHY_IMotionState.h
+ *  \ingroup phys
+ */
+
 #ifndef PHY__MOTIONSTATE_H
 #define PHY__MOTIONSTATE_H
 

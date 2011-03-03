@@ -1,4 +1,7 @@
-/* $Id: ControlledObject.cpp 23467 2009-09-25 01:13:07Z gsrb3d $
+/** \file itasc/ControlledObject.cpp
+ *  \ingroup itasc
+ */
+/* $Id: ControlledObject.cpp 35155 2011-02-25 11:45:16Z jesterking $
  * ControlledObject.cpp
  *
  *  Created on: Jan 5, 2009

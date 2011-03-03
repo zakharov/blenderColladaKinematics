@@ -1,11 +1,11 @@
 K 25
 svn:wc:ra_dav:version-url
 V 66
-/svnroot/bf-blender/!svn/ver/26841/trunk/blender/intern/bsp/extern
+/svnroot/bf-blender/!svn/ver/35145/trunk/blender/intern/bsp/extern
 END
 CSG_BooleanOps.h
 K 25
 svn:wc:ra_dav:version-url
 V 83
-/svnroot/bf-blender/!svn/ver/26841/trunk/blender/intern/bsp/extern/CSG_BooleanOps.h
+/svnroot/bf-blender/!svn/ver/35145/trunk/blender/intern/bsp/extern/CSG_BooleanOps.h
 END

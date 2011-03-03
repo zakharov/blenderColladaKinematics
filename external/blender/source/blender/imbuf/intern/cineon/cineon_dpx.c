@@ -1,4 +1,4 @@
-/**
+/*
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,8 +27,13 @@
  * cineon.c
  * contributors: joeedh
  * I hearby donate this code and all rights to the Blender Foundation.
- * $Id: cineon_dpx.c 34327 2011-01-14 21:06:28Z campbellbarton $
+ * $Id: cineon_dpx.c 35239 2011-02-27 20:23:21Z jesterking $
  */
+
+/** \file blender/imbuf/intern/cineon/cineon_dpx.c
+ *  \ingroup imbcineon
+ */
+
  
 #include <stdio.h>
 #include <string.h> /*for memcpy*/

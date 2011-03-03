@@ -1,5 +1,5 @@
-/**
- * $Id: graph_utils.c 33571 2010-12-09 16:15:51Z ton $
+/*
+ * $Id: graph_utils.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_graph/graph_utils.c
+ *  \ingroup spgraph
+ */
+
 
 #include <string.h>
 #include <stdio.h>

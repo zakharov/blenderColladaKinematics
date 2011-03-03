@@ -1,7 +1,5 @@
-/**
- * blenlib/DNA_world_types.h (mar-2001 nzc)
- *
- * $Id: DNA_world_types.h 34335 2011-01-15 16:14:57Z campbellbarton $ 
+/*
+ * $Id: DNA_world_types.h 34941 2011-02-17 20:48:12Z jesterking $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -30,6 +28,10 @@
  */
 #ifndef DNA_WORLD_TYPES_H
 #define DNA_WORLD_TYPES_H
+
+/** \file DNA_world_types.h
+ *  \ingroup DNA
+ */
 
 #include "DNA_ID.h"
 

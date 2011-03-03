@@ -1,4 +1,4 @@
-/**
+/*
  * $Id$
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
@@ -26,6 +26,11 @@
  * ***** END GPL LICENSE BLOCK *****
  */
 
+/** \file blender/editors/space_graph/space_graph.c
+ *  \ingroup spgraph
+ */
+
+
 #include <string.h>
 #include <stdio.h>
 
@@ -45,6 +50,7 @@
 #include "BKE_fcurve.h"
 #include "BKE_screen.h"
 
+#include "ED_space_api.h"
 #include "ED_screen.h"
 #include "ED_anim_api.h"
 #include "ED_markers.h"

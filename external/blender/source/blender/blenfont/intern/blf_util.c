@@ -1,5 +1,5 @@
-/**
- * $Id: blf_util.c 27641 2010-03-21 13:07:31Z campbellbarton $
+/*
+ * $Id: blf_util.c 35248 2011-02-27 20:42:42Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,10 +26,16 @@
  * ***** END GPL LICENSE BLOCK *****
  */
 
+/** \file blender/blenfont/intern/blf_util.c
+ *  \ingroup blf
+ */
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
+#include "blf_internal.h"
 
 unsigned int blf_next_p2(unsigned int x)
 {

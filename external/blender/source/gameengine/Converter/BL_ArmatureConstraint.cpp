@@ -1,5 +1,5 @@
-/**
- * $Id: BL_ArmatureConstraint.cpp 32788 2010-10-31 04:11:39Z campbellbarton $
+/*
+ * $Id: BL_ArmatureConstraint.cpp 35167 2011-02-25 13:30:41Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/Converter/BL_ArmatureConstraint.cpp
+ *  \ingroup bgeconv
+ */
+
 
 #include "DNA_constraint_types.h"
 #include "DNA_action_types.h"

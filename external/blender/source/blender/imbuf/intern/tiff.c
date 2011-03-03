@@ -1,7 +1,7 @@
 /*
  * tiff.c
  *
- * $Id: tiff.c 34290 2011-01-13 04:53:55Z campbellbarton $
+ * $Id: tiff.c 35239 2011-02-27 20:23:21Z jesterking $
  * 
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -23,6 +23,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/imbuf/intern/tiff.c
+ *  \ingroup imbuf
+ */
+
 
 /**
  * Provides TIFF file loading and saving for Blender, via libtiff.
@@ -435,9 +440,11 @@ static int imb_read_tiff_pixels(ImBuf *ibuf, TIFF *image, int premul)
 
 	if(success) {
 		ibuf->profile = (bitspersample==32)?IB_PROFILE_LINEAR_RGB:IB_PROFILE_SRGB;
-			
-		if(ENDIAN_ORDER == B_ENDIAN)
-			IMB_convert_rgba_to_abgr(tmpibuf);
+
+//		Code seems to be not needed for 16 bits tif, on PPC G5 OSX (ton)
+		if(bitspersample < 16)
+			if(ENDIAN_ORDER == B_ENDIAN)
+				IMB_convert_rgba_to_abgr(tmpibuf);
 		if(premul) {
 			IMB_premultiply_alpha(tmpibuf);
 			ibuf->flags |= IB_premul;

@@ -1,5 +1,5 @@
-/**
- * $Id: anim_ipo_utils.c 34160 2011-01-07 19:18:31Z campbellbarton $
+/*
+ * $Id: anim_ipo_utils.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  * ***** END GPL LICENSE BLOCK *****
  */
 
+/** \file blender/editors/animation/anim_ipo_utils.c
+ *  \ingroup edanimation
+ */
+
+
 /* This file contains code for presenting F-Curves and other animation data
  * in the UI (especially for use in the Animation Editors).
  *
@@ -41,9 +46,9 @@
 
 #include "DNA_anim_types.h"
 
-
-
 #include "RNA_access.h"
+
+#include "ED_anim_api.h"
 
 /* ----------------------- Getter functions ----------------------- */
 

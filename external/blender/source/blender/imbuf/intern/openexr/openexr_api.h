@@ -1,5 +1,5 @@
-/**
- * $Id: openexr_api.h 34335 2011-01-15 16:14:57Z campbellbarton $ 
+/*
+ * $Id: openexr_api.h 35239 2011-02-27 20:23:21Z jesterking $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/imbuf/intern/openexr/openexr_api.h
+ *  \ingroup openexr
+ */
+
 
 #ifndef _OPENEXR_API_H
 #define _OPENEXR_API_H

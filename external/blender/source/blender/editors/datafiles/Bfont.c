@@ -1,6 +1,6 @@
 /* DataToC output of file <Bfont> */
 /*
- * $Id: Bfont.c 33435 2010-12-03 01:52:28Z campbellbarton $
+ * $Id: Bfont.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/datafiles/Bfont.c
+ *  \ingroup eddatafiles
+ */
+
 
 
 int datatoc_Bfont_size= 25181;

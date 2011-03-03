@@ -1,5 +1,5 @@
-/**
- * $Id: transform_constraints.c 34160 2011-01-07 19:18:31Z campbellbarton $
+/*
+ * $Id: transform_constraints.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/transform/transform_constraints.c
+ *  \ingroup edtransform
+ */
+
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -69,7 +74,7 @@
 static void drawObjectConstraint(TransInfo *t);
 
 /* ************************** CONSTRAINTS ************************* */
-void constraintAutoValues(TransInfo *t, float vec[3])
+static void constraintAutoValues(TransInfo *t, float vec[3])
 {
 	int mode = t->con.mode;
 	if (mode & CON_APPLY)

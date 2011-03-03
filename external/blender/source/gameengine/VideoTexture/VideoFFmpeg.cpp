@@ -1,4 +1,7 @@
-/* $Id: VideoFFmpeg.cpp 29240 2010-06-05 15:31:55Z campbellbarton $
+/** \file gameengine/VideoTexture/VideoFFmpeg.cpp
+ *  \ingroup bgevideotex
+ */
+/* $Id: VideoFFmpeg.cpp 35176 2011-02-25 13:39:34Z jesterking $
 -----------------------------------------------------------------------------
 This source file is part of VideoTexture library
 

@@ -1,6 +1,6 @@
 /*
  * ErrorValue.h: interface for the CErrorValue class.
- * $Id: ErrorValue.h 29259 2010-06-06 01:15:44Z campbellbarton $
+ * $Id: ErrorValue.h 35063 2011-02-22 10:33:14Z jesterking $
  * Copyright (c) 1996-2000 Erwin Coumans <coockie@acm.org>
  *
  * Permission to use, copy, modify, distribute and sell this software
@@ -11,6 +11,10 @@
  * representations about the suitability of this software for any
  * purpose.  It is provided "as is" without express or implied warranty.
  *
+ */
+
+/** \file ErrorValue.h
+ *  \ingroup expressions
  */
 
 #if !defined _ERRORVALUE_H

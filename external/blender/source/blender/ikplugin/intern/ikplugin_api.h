@@ -1,5 +1,5 @@
-/**
- * $Id: ikplugin_api.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: ikplugin_api.h 35240 2011-02-27 20:24:49Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/ikplugin/intern/ikplugin_api.h
+ *  \ingroup ikplugin
+ */
+
 
 #ifndef IKPLUGIN_API_H
 #define IKPLUGIN_API_H

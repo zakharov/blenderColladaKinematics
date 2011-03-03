@@ -1,5 +1,5 @@
 /*
- * $Id: BLI_rect.h 31573 2010-08-25 08:31:52Z campbellbarton $
+ * $Id: BLI_rect.h 34966 2011-02-18 13:58:08Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -30,6 +30,10 @@
 
 #ifndef BLI_RECT_H
 #define BLI_RECT_H
+
+/** \file BLI_rect.h
+ *  \ingroup bli
+ */
 
 struct rctf;
 struct rcti;

@@ -1,5 +1,5 @@
-/**
- * $Id: render_ops.c 27821 2010-03-29 05:37:34Z broken $
+/*
+ * $Id: render_ops.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,10 +25,17 @@
  * ***** END GPL LICENSE BLOCK *****
  */
 
+/** \file blender/editors/render/render_ops.c
+ *  \ingroup edrend
+ */
+
+
 #include <stdlib.h>
 
 
 #include "WM_api.h"
+
+#include "ED_render.h"
 
 #include "render_intern.h" // own include
 

@@ -1,5 +1,5 @@
-/**
- * $Id: GHOST_WindowX11.h 29119 2010-06-01 06:18:17Z jesterking $
+/*
+ * $Id: GHOST_WindowX11.h 35152 2011-02-25 11:28:33Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,8 +25,9 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
-/**
- * @file	GHOST_WindowX11.h
+
+/** \file ghost/intern/GHOST_WindowX11.h
+ *  \ingroup GHOST
  * Declaration of GHOST_WindowX11 class.
  */
 
@@ -170,8 +171,7 @@ public:
 	 ~GHOST_WindowX11();
 
 	/**
-	 * @section 
-	 * X11 system specific calls.
+	 * @section x11specific X11 system specific calls
 	 */
 
 	/**

@@ -1,4 +1,4 @@
-/* $Id: ImageBuff.h 27158 2010-02-26 22:14:31Z ben2610 $
+/* $Id: ImageBuff.h 35082 2011-02-22 19:30:37Z jesterking $
 -----------------------------------------------------------------------------
 This source file is part of VideoTexture library
 
@@ -20,6 +20,10 @@ http://www.gnu.org/copyleft/lesser.txt.
 -----------------------------------------------------------------------------
 */
 
+/** \file ImageBuff.h
+ *  \ingroup bgevideotex
+ */
+ 
 #if !defined IMAGEBUFF_H
 #define IMAGEBUFF_H
 

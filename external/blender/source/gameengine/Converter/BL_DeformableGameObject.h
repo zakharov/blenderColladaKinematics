@@ -1,5 +1,5 @@
-/**
- * $Id: BL_DeformableGameObject.h 32705 2010-10-25 17:08:40Z campbellbarton $
+/*
+ * $Id: BL_DeformableGameObject.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,10 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file BL_DeformableGameObject.h
+ *  \ingroup bgeconv
  */
 
 #ifndef BL_DEFORMABLEGAMEOBJECT

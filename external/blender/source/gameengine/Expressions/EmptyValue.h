@@ -1,6 +1,6 @@
 /*
  * EmptyValue.h: interface for the CEmptyValue class.
- * $Id: EmptyValue.h 29259 2010-06-06 01:15:44Z campbellbarton $
+ * $Id: EmptyValue.h 35063 2011-02-22 10:33:14Z jesterking $
  * Copyright (c) 1996-2000 Erwin Coumans <coockie@acm.org>
  *
  * Permission to use, copy, modify, distribute and sell this software
@@ -12,6 +12,11 @@
  * purpose.  It is provided "as is" without express or implied warranty.
  *
  */
+
+/** \file EmptyValue.h
+ *  \ingroup expressions
+ */
+
 #if !defined _EMPTYVALUE_H
 #define _EMPTYVALUE_H
 

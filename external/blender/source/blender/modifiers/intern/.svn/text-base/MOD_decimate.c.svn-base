@@ -30,6 +30,11 @@
 *
 */
 
+/** \file blender/modifiers/intern/MOD_decimate.c
+ *  \ingroup modifiers
+ */
+
+
 #include "DNA_meshdata_types.h"
 
 #include "BLI_math.h"
@@ -46,6 +51,8 @@
 #ifdef WITH_MOD_DECIMATE
 #include "LOD_decimation.h"
 #endif
+
+#include "MOD_util.h"
 
 static void initData(ModifierData *md)
 {

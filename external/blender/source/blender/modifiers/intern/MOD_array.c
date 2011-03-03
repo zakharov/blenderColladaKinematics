@@ -1,5 +1,5 @@
 /*
-* $Id: MOD_array.c 34736 2011-02-09 04:45:53Z campbellbarton $
+* $Id: MOD_array.c 35178 2011-02-25 13:57:17Z jesterking $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -30,6 +30,11 @@
 *
 */
 
+/** \file blender/modifiers/intern/MOD_array.c
+ *  \ingroup modifiers
+ */
+
+
 /* Array modifier: duplicates the object multiple times along an axis */
 
 #include "MEM_guardedalloc.h"
@@ -50,6 +55,8 @@
 #include "BKE_object.h"
 
 #include "depsgraph_private.h"
+
+#include "MOD_util.h"
 
 static void initData(ModifierData *md)
 {

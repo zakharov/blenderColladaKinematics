@@ -1,5 +1,5 @@
 # -*- mode: cmake; indent-tabs-mode: t; -*-
-# $Id: CMakeLists.txt 34151 2011-01-07 11:08:47Z campbellbarton $
+# $Id: CMakeLists.txt 35054 2011-02-22 06:23:07Z campbellbarton $
 # ***** BEGIN GPL LICENSE BLOCK *****
 #
 # This program is free software; you can redistribute it and/or
@@ -29,6 +29,7 @@
 
 blender_include_dirs(
 	../../../../intern/guardedalloc
+	../../blenloader
 	..
 )
 
@@ -56,6 +57,9 @@ add_custom_command(
 )
 
 # Build bf_dna library
+set(INC
+)
+
 set(SRC
 	dna_genfile.c
 	dna.c

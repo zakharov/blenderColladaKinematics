@@ -1,5 +1,5 @@
-/**
- * $Id: view3d_fly.c 34159 2011-01-07 18:36:47Z campbellbarton $
+/*
+ * $Id: view3d_fly.c 35242 2011-02-27 20:29:51Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/editors/space_view3d/view3d_fly.c
+ *  \ingroup spview3d
+ */
+
 
 /* defines VIEW3D_OT_fly modal operator */
 

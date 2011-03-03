@@ -1,35 +1,35 @@
 K 25
 svn:wc:ra_dav:version-url
 V 83
-/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/blender/editors/space_sound
+/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_sound
 END
 sound_header.c
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/svnroot/bf-blender/!svn/ver/34160/trunk/blender/source/blender/editors/space_sound/sound_header.c
+/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_sound/sound_header.c
 END
 space_sound.c
 K 25
 svn:wc:ra_dav:version-url
 V 97
-/svnroot/bf-blender/!svn/ver/34159/trunk/blender/source/blender/editors/space_sound/space_sound.c
+/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_sound/space_sound.c
 END
 SConscript
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/23587/trunk/blender/source/blender/editors/space_sound/SConscript
+/svnroot/bf-blender/!svn/ver/35028/trunk/blender/source/blender/editors/space_sound/SConscript
 END
 CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/editors/space_sound/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/35028/trunk/blender/source/blender/editors/space_sound/CMakeLists.txt
 END
 sound_intern.h
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/svnroot/bf-blender/!svn/ver/27639/trunk/blender/source/blender/editors/space_sound/sound_intern.h
+/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_sound/sound_intern.h
 END

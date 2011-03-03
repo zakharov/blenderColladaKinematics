@@ -1,15 +1,15 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/gameengine/GameLogic
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-30T15:29:22.294392Z
-34567
-campbellbarton
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-01-18T22:04:27.323021Z
-28a4d591c07ead37061f8b0dd4959deb
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:35.978297Z
+06f23486e55ede0259e6a1e80399efee
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-1907
+1983
 
 SCA_RandomSensor.h
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-01-18T22:04:27.323021Z
-135685bcbd2dba3b2a99cfb9b77c4d83
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:35.978297Z
+cab4ee90b7aaac67786de06246b0da3b
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-2167
+2224
 
 SCA_IObject.cpp
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-01-18T22:04:27.323021Z
-b7e228f078d8c669c728a63f96ce281e
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:35.982297Z
+a4e7a4bfaa4360f5355ad88a3d54cd2d
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-8450
+8521
 
 SCA_RandomActuator.cpp
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-02-10T19:48:37.185667Z
-2198e137f2086482478d8e574dfa6e09
-2011-01-27T00:02:25.840105Z
-34520
-campbellbarton
+2011-03-03T12:26:35.982297Z
+abf88aa9b0179b9726e0c36d24bd4129
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-15954
+16032
 
 SCA_BasicEventManager.h
 file
@@ -168,11 +168,11 @@ file
 
 
 
-2011-01-18T22:04:27.323021Z
-557c9a41067d256c9c0458982f4c97a8
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:35.986297Z
+aaa688ad2757c70ea60dd1b93c329e69
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-1656
+1713
 
 SCA_ActuatorEventManager.h
 file
@@ -202,11 +202,11 @@ file
 
 
 
-2011-01-18T22:04:27.323021Z
-c593ad3d10810101fc067124fa76f693
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:35.986297Z
+45386d129329f0d4cad6dc05617aa760
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -228,7 +228,7 @@ has-props
 
 
 
-1731
+1792
 
 SCA_ORController.cpp
 file
@@ -236,11 +236,11 @@ file
 
 
 
-2011-01-18T22:04:27.323021Z
-5bed8b1508904b0bf4400cab6f3fe25b
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:35.986297Z
+b7a116282bddbeed51d64d4631f85ea9
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 has-props
 
 
@@ -262,7 +262,7 @@ has-props
 
 
 
-3124
+3200
 
 SCA_PropertyEventManager.h
 file
@@ -270,11 +270,11 @@ file
 
 
 
-2011-01-18T22:04:27.323021Z
-9b997aec646e925d8acea18051420737
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:35.990297Z
+c53b0dc5f4583666b8305b0926d22ac0
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -296,7 +296,7 @@ has-props
 
 
 
-1702
+1763
 
 Joystick
 dir
@@ -307,11 +307,11 @@ file
 
 
 
-2011-01-18T22:04:27.323021Z
-93cffd6e902d3b735ba735c0ac487b74
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:35.990297Z
+64985cb041aca627beea1ac515f8d77b
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -333,7 +333,7 @@ has-props
 
 
 
-2114
+2175
 
 SCA_NANDController.h
 file
@@ -341,11 +341,11 @@ file
 
 
 
-2011-01-18T22:04:27.323021Z
-fb79f100c8581ef82c469d8cc2b564a2
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:35.990297Z
+6b7af188b037c186929d19c239a6c4cf
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -367,7 +367,7 @@ has-props
 
 
 
-1725
+1752
 
 SCA_PythonController.h
 file
@@ -375,11 +375,11 @@ file
 
 
 
-2011-01-18T22:04:27.323021Z
-dc2025e92ecebdc09ec4922ceeadb95a
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:35.990297Z
+9e8899b04f9a88b4053f535243eb527d
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -401,7 +401,7 @@ has-props
 
 
 
-3655
+3716
 
 SCA_IController.cpp
 file
@@ -409,11 +409,11 @@ file
 
 
 
-2011-02-10T19:48:37.185667Z
-830663aa498b11200eab2587095b1e40
-2011-01-27T00:02:25.840105Z
-34520
-campbellbarton
+2011-03-03T12:26:35.990297Z
+b405630960590ca0a5f98595cf5ecbfa
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 has-props
 
 
@@ -435,7 +435,7 @@ has-props
 
 
 
-6143
+6218
 
 SCA_IInputDevice.h
 file
@@ -443,11 +443,11 @@ file
 
 
 
-2011-01-18T22:04:27.323021Z
-5c76c9b45828d843df42d05d30cd4936
-2010-10-20T12:33:00.885809Z
-32613
-campbellbarton
+2011-03-03T12:26:35.990297Z
+b1fd4ce8c63d627a6b2864ab1e44b223
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -469,7 +469,7 @@ has-props
 
 
 
-6239
+6300
 
 SCA_AlwaysEventManager.cpp
 file
@@ -477,11 +477,11 @@ file
 
 
 
-2011-01-18T22:04:27.323021Z
-7df1bffe3b3d4918a5cef41165b61b69
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:35.990297Z
+6cb87eb7de77fa3f74b8052d7e6c56a0
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 has-props
 
 
@@ -503,7 +503,7 @@ has-props
 
 
 
-1607
+1689
 
 SCA_KeyboardSensor.h
 file
@@ -511,11 +511,11 @@ file
 
 
 
-2011-01-18T22:04:27.323021Z
-124c970ee32740e5f0c976ee1dfdd8eb
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:35.990297Z
+529214d1f7a356cf42ea7a6157a992a6
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -537,7 +537,7 @@ has-props
 
 
 
-3831
+3893
 
 SCA_NORController.cpp
 file
@@ -545,11 +545,11 @@ file
 
 
 
-2011-01-18T22:04:27.323021Z
-7684fcb9edac835358d8852cd1970c8c
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:35.990297Z
+44a4c24290f6643eb5ab7a902aa3d21b
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 has-props
 
 
@@ -571,7 +571,7 @@ has-props
 
 
 
-3124
+3201
 
 SCA_IScene.cpp
 file
@@ -579,11 +579,11 @@ file
 
 
 
-2011-01-18T22:04:27.323021Z
-d9c21bcb794b2fac72d5d4c63fca8470
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:35.990297Z
+022a6b34c9a2c019cb4c68c3e532d852
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 has-props
 
 
@@ -605,7 +605,7 @@ has-props
 
 
 
-1836
+1906
 
 SCA_ANDController.cpp
 file
@@ -613,11 +613,11 @@ file
 
 
 
-2011-01-18T22:04:27.333021Z
-2606f429ccd098f85ee26a7298fc7d2c
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:35.990297Z
+71fb87fdc46100f5041b08e6726cfa32
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 has-props
 
 
@@ -639,7 +639,7 @@ has-props
 
 
 
-3123
+3200
 
 SCA_XORController.cpp
 file
@@ -647,11 +647,11 @@ file
 
 
 
-2011-01-18T22:04:27.333021Z
-0cd62048bd92f06c57b82122b923f113
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:35.994297Z
+760df95f5fbfdebd4c13dc343cfaa2ef
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 has-props
 
 
@@ -673,7 +673,7 @@ has-props
 
 
 
-3210
+3287
 
 SCA_ActuatorEventManager.cpp
 file
@@ -681,11 +681,11 @@ file
 
 
 
-2011-01-18T22:04:27.333021Z
-c869342b2bc18352119b375c323e246e
-2010-09-03T03:30:20.436068Z
-31730
-gsrb3d
+2011-03-03T12:26:35.994297Z
+53a1340a09da449d262efcb3586e8ee4
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 has-props
 
 
@@ -707,7 +707,7 @@ has-props
 
 
 
-1766
+1858
 
 SCA_PropertyEventManager.cpp
 file
@@ -715,147 +715,11 @@ file
 
 
 
-2011-01-18T22:04:27.333021Z
-43b60dfbb5fb0a1e495f7864ec0854b7
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1526
-
-SCA_EventManager.h
-file
-
-
-
-
-2011-01-18T22:04:27.333021Z
-6a262f69cd5e5e4acd315aa57135ee2c
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2600
-
-SCA_MouseSensor.cpp
-file
-
-
-
-
-2011-02-10T19:48:37.185667Z
-e14181e451058a124cf85e133e29ad8a
-2011-01-27T00:02:25.840105Z
-34520
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7899
-
-SCA_ISensor.cpp
-file
-
-
-
-
-2011-02-10T19:48:37.185667Z
-4529806fba6a6f0b37668f990518808c
-2011-01-27T00:02:25.840105Z
-34520
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-10895
-
-SCA_RandomEventManager.h
-file
-
-
-
-
-2011-01-18T22:04:27.333021Z
-0fae5ba6984463d9791aee87e4b00609
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:35.994297Z
+62e1592a8295afa795b321e933dcdf87
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 has-props
 
 
@@ -879,17 +743,17 @@ has-props
 
 1610
 
-SCA_MouseManager.cpp
+SCA_EventManager.h
 file
 
 
 
 
-2011-01-18T22:04:27.333021Z
-429a2d8b4673ea00880fd3a3ce154b0e
-2010-09-15T16:13:32.976747Z
-31950
-campbellbarton
+2011-03-03T12:26:35.994297Z
+9303fc45cd7f7a2c876044478608a02a
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -911,7 +775,143 @@ has-props
 
 
 
-2970
+2653
+
+SCA_MouseSensor.cpp
+file
+
+
+
+
+2011-03-03T12:26:35.994297Z
+d9e64139b1a6bf90fd97d4d11c576755
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7974
+
+SCA_ISensor.cpp
+file
+
+
+
+
+2011-03-03T12:26:35.994297Z
+adef74f681c7d132eca51001c487aee1
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10966
+
+SCA_RandomEventManager.h
+file
+
+
+
+
+2011-03-03T12:26:35.994297Z
+6932130981b8b88720b69b4ca2394d7e
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1673
+
+SCA_MouseManager.cpp
+file
+
+
+
+
+2011-03-03T12:26:35.994297Z
+715d7841b48fd34625539b6538c2c282
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3046
 
 SCA_PythonController.cpp
 file
@@ -919,11 +919,11 @@ file
 
 
 
-2011-02-10T19:48:37.185667Z
-4b1ce828b99fb88b99b4d8dc4b4c8f2c
-2011-01-27T00:02:25.840105Z
-34520
-campbellbarton
+2011-03-03T12:26:35.994297Z
+fecf6161495adbbaedfcdb2fb8024eb6
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 has-props
 
 
@@ -945,7 +945,7 @@ has-props
 
 
 
-14837
+14917
 
 SCA_LogicManager.cpp
 file
@@ -953,11 +953,11 @@ file
 
 
 
-2011-01-18T22:04:27.333021Z
-7d90b0277bb212b8d31674b4cc891f55
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:35.994297Z
+e87082c3d2231c2331f6367139776531
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 has-props
 
 
@@ -979,7 +979,7 @@ has-props
 
 
 
-8322
+8398
 
 SCA_ORController.h
 file
@@ -987,11 +987,11 @@ file
 
 
 
-2011-01-18T22:04:27.333021Z
-3a1786877bc92cf4c09e12f59db9a930
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:35.998297Z
+b440d666f82c1eb4eb96a42fe0084474
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1013,41 +1013,7 @@ has-props
 
 
 
-1478
-
-SCA_XNORController.cpp
-file
-
-
-
-
-2011-01-18T22:04:27.333021Z
-42b5f118aece2bfb30fdcc009704440f
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3203
+1505
 
 SCA_AlwaysSensor.cpp
 file
@@ -1055,11 +1021,11 @@ file
 
 
 
-2011-01-18T22:04:27.333021Z
-2fc6667e9204ea414321111c1bbba763
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:35.998297Z
+d38b31f1c21f670ce84471706d761002
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 has-props
 
 
@@ -1081,7 +1047,41 @@ has-props
 
 
 
-3277
+3353
+
+SCA_XNORController.cpp
+file
+
+
+
+
+2011-03-03T12:26:35.998297Z
+4d405a7ac6a33dff51f5629089b58337
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3281
 
 SCA_RandomNumberGenerator.cpp
 file
@@ -1089,11 +1089,11 @@ file
 
 
 
-2011-01-18T22:04:27.333021Z
-baf475c3ba944fbcf671a19f19178f52
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:35.998297Z
+e3b3e550a550ead8ee6811a5fc09babb
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 has-props
 
 
@@ -1115,7 +1115,7 @@ has-props
 
 
 
-4670
+4754
 
 SCA_IActuator.h
 file
@@ -1123,11 +1123,11 @@ file
 
 
 
-2011-01-18T22:04:27.333021Z
-0a151528da7c6ade39106b6d9c65c0bf
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:35.998297Z
+74e47465c2e9ca81db0efe6bdf3431cc
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1149,7 +1149,7 @@ has-props
 
 
 
-4260
+4311
 
 SCA_IController.h
 file
@@ -1157,11 +1157,11 @@ file
 
 
 
-2011-01-18T22:04:27.333021Z
-877f4d94ce4e2d425db387e094c01b7b
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:35.998297Z
+da5f4d7ae661d0deaaa23019d6fee5fd
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1183,7 +1183,7 @@ has-props
 
 
 
-3215
+3268
 
 SCA_NORController.h
 file
@@ -1191,11 +1191,11 @@ file
 
 
 
-2011-01-18T22:04:27.333021Z
-e1722cb78969615c9559220d5bfe05e8
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:35.998297Z
+66cc378c46180e5621036442dc520597
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1217,7 +1217,7 @@ has-props
 
 
 
-1485
+1512
 
 SCA_ANDController.h
 file
@@ -1225,11 +1225,11 @@ file
 
 
 
-2011-01-18T22:04:27.333021Z
-3a308b60bce0f042da29e988c0114714
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:35.998297Z
+c1fa33972c0bbc460480b477d4268725
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1251,7 +1251,7 @@ has-props
 
 
 
-1485
+1538
 
 SCA_IScene.h
 file
@@ -1259,11 +1259,11 @@ file
 
 
 
-2011-01-18T22:04:27.333021Z
-8c5ebcd8aa7e7d2dc7fba3b3332eab2f
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:35.998297Z
+a84c0acf060c027c7ef061981e0b6c7c
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1285,7 +1285,7 @@ has-props
 
 
 
-2443
+2490
 
 SCA_ActuatorSensor.cpp
 file
@@ -1293,11 +1293,11 @@ file
 
 
 
-2011-02-10T19:48:37.195667Z
-487efd777f48849f1d0dcb950c838787
-2011-01-27T00:02:25.840105Z
-34520
-campbellbarton
+2011-03-03T12:26:35.998297Z
+ca880a8f679aad6d651ad2ff3b55909b
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 has-props
 
 
@@ -1319,7 +1319,7 @@ has-props
 
 
 
-3958
+4036
 
 SCA_RandomEventManager.cpp
 file
@@ -1327,11 +1327,11 @@ file
 
 
 
-2011-01-18T22:04:27.333021Z
-dd29a45ef98e1ee81f270e6a4ff925b8
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:35.998297Z
+0baf22f1fadee3f03577a95e8c4f2ed2
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 has-props
 
 
@@ -1353,7 +1353,7 @@ has-props
 
 
 
-1564
+1646
 
 SCA_2DFilterActuator.cpp
 file
@@ -1361,11 +1361,11 @@ file
 
 
 
-2011-02-10T19:48:37.195667Z
-1dad3084e8d1c4b61dbb70f706146de4
-2011-01-27T00:02:25.840105Z
-34520
-campbellbarton
+2011-03-03T12:26:36.002297Z
+865c7bbebd4cdf4d514916e296d7879f
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 has-props
 
 
@@ -1387,7 +1387,7 @@ has-props
 
 
 
-3907
+3987
 
 SCA_PropertySensor.cpp
 file
@@ -1395,11 +1395,11 @@ file
 
 
 
-2011-02-10T19:48:37.195667Z
-e5457c5e5c011f06d1af91296c5a94f2
-2011-01-27T00:02:25.840105Z
-34520
-campbellbarton
+2011-03-03T12:26:36.002297Z
+0858c89e91b634d3a5a0252eed00c09f
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 has-props
 
 
@@ -1421,7 +1421,7 @@ has-props
 
 
 
-9277
+9355
 
 SCA_XORController.h
 file
@@ -1429,11 +1429,11 @@ file
 
 
 
-2011-01-18T22:04:27.333021Z
-4195333a34b166650f1da7f5e1d7989f
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:36.002297Z
+f10b559ec661ca4733d62c61b0727235
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1455,7 +1455,7 @@ has-props
 
 
 
-1485
+1512
 
 SCA_ILogicBrick.h
 file
@@ -1463,11 +1463,11 @@ file
 
 
 
-2011-01-18T22:04:27.333021Z
-51fcf254eeb075c5d05f63b174a1ab14
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:36.002297Z
+72784863b84155be1690533b62388689
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1489,7 +1489,7 @@ has-props
 
 
 
-4600
+4652
 
 SCA_ISensor.h
 file
@@ -1497,11 +1497,11 @@ file
 
 
 
-2011-01-18T22:04:27.343021Z
-573de9736c443e9bbd21dd1b4bfe8f8b
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:36.002297Z
+875369ee86c10c8b0da6b6597aa02b23
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1523,7 +1523,7 @@ has-props
 
 
 
-5738
+5799
 
 SCA_MouseSensor.h
 file
@@ -1531,11 +1531,11 @@ file
 
 
 
-2011-01-18T22:04:27.343021Z
-47a25b5787769790db97d2a1fe90ae58
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:36.002297Z
+115749317daf58e7bc4f001627e42720
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1557,7 +1557,7 @@ has-props
 
 
 
-3113
+3169
 
 SCA_DelaySensor.cpp
 file
@@ -1565,11 +1565,11 @@ file
 
 
 
-2011-02-10T19:48:37.195667Z
-c5241d748fffb718b067d14ca351b84c
-2011-01-27T00:02:25.840105Z
-34520
-campbellbarton
+2011-03-03T12:26:36.002297Z
+c9e0e15e566cc7922409b603587e87dc
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 has-props
 
 
@@ -1591,7 +1591,7 @@ has-props
 
 
 
-4137
+4212
 
 SCA_PythonMouse.cpp
 file
@@ -1599,11 +1599,11 @@ file
 
 
 
-2011-01-18T22:04:27.343021Z
-02bde35df91bd937e9e6b69923f230c9
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:36.002297Z
+d10bf05eb3c3c5cff9c720eadc10407f
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 has-props
 
 
@@ -1625,7 +1625,7 @@ has-props
 
 
 
-5165
+5240
 
 SCA_JoystickManager.cpp
 file
@@ -1633,11 +1633,11 @@ file
 
 
 
-2011-01-18T22:04:27.343021Z
-ce975a623506ce53bff33672fa628deb
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:36.002297Z
+b99c9b86e85dd33d8885ed6a627905aa
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 has-props
 
 
@@ -1659,7 +1659,7 @@ has-props
 
 
 
-2128
+2211
 
 SCA_IActuator.cpp
 file
@@ -1667,11 +1667,11 @@ file
 
 
 
-2011-01-18T22:04:27.343021Z
-18488c8dcea749bfbffa013872dc44b6
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:36.002297Z
+77ad76e81f7612da702bcf0e493e112c
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 has-props
 
 
@@ -1693,7 +1693,7 @@ has-props
 
 
 
-3378
+3451
 
 SCA_PropertyActuator.h
 file
@@ -1701,11 +1701,11 @@ file
 
 
 
-2011-01-18T22:04:27.343021Z
-5ad43378fc1789335157484e46d9c3b2
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:36.002297Z
+dd227a6d179ed4de64bd22fe9c9feceb
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1727,7 +1727,7 @@ has-props
 
 
 
-2262
+2289
 
 SCA_LogicManager.h
 file
@@ -1735,11 +1735,11 @@ file
 
 
 
-2011-01-18T22:04:27.343021Z
-5d2fc2211ec67e082cd2d8f1d3815e22
-2010-10-09T10:45:25.211998Z
-32386
-campbellbarton
+2011-03-03T12:26:36.006297Z
+d5cbf8d00d5176b1ef86bf6023035433
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1761,7 +1761,7 @@ has-props
 
 
 
-5287
+5345
 
 SCA_JoystickSensor.h
 file
@@ -1769,11 +1769,11 @@ file
 
 
 
-2011-01-18T22:04:27.343021Z
-4b83d0eacf0c5a2c7d72f05769288469
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:36.006297Z
+4c1b9ea65c1577e0ed1154dac391dcb9
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1795,7 +1795,7 @@ has-props
 
 
 
-4517
+4575
 
 SCA_XNORController.h
 file
@@ -1803,11 +1803,11 @@ file
 
 
 
-2011-01-18T22:04:27.343021Z
-ec07ff2df7cd8f6424357b8c5fc5c651
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:36.006297Z
+443db1d0a7b07f74f84c33e55cde8adb
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1829,7 +1829,7 @@ has-props
 
 
 
-1726
+1753
 
 SCA_AlwaysSensor.h
 file
@@ -1837,11 +1837,11 @@ file
 
 
 
-2011-01-18T22:04:27.343021Z
-4a65d11794fc4a763813f9ebfcfbf297
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:36.006297Z
+08054c09366025127cd86fbc38e8a9ed
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1863,7 +1863,7 @@ has-props
 
 
 
-1504
+1556
 
 SCA_TimeEventManager.h
 file
@@ -1871,11 +1871,11 @@ file
 
 
 
-2011-01-18T22:04:27.343021Z
-0729d1e54f439573872a52cdf53c8bc7
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:36.006297Z
+3e317e1a303a05efff7c92ade80c97f6
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1897,7 +1897,7 @@ has-props
 
 
 
-1942
+2033
 
 SCA_KeyboardManager.h
 file
@@ -1905,11 +1905,11 @@ file
 
 
 
-2011-01-18T22:04:27.343021Z
-3fd2b07d1a76580d82f16ce4fba4ff6c
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:36.006297Z
+433df1cf5a33fd7de4978a367e58150d
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1931,7 +1931,7 @@ has-props
 
 
 
-1851
+1914
 
 SCA_PythonKeyboard.cpp
 file
@@ -1939,11 +1939,11 @@ file
 
 
 
-2011-01-18T22:04:27.343021Z
-3cee335c7c5f7fe1c25b76a90dfbc47b
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:36.006297Z
+041575d1b8a74d298c1afb1594da82b3
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 has-props
 
 
@@ -1965,7 +1965,7 @@ has-props
 
 
 
-2950
+3028
 
 SCA_RandomNumberGenerator.h
 file
@@ -1973,11 +1973,11 @@ file
 
 
 
-2011-01-18T22:04:27.343021Z
-8cc28cff2aa50574c33ceda7ccc3b996
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:36.006297Z
+ce0097b97f1bdf2fad11aa9f5b8e38ce
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -1999,7 +1999,7 @@ has-props
 
 
 
-2381
+2447
 
 CMakeLists.txt
 file
@@ -2007,7 +2007,7 @@ file
 
 
 
-2011-01-18T22:04:27.343021Z
+2011-03-03T12:26:36.006297Z
 eb58948721aca84f46a6afab27283a6f
 2010-12-22T23:09:30.468439Z
 33864
@@ -2041,11 +2041,11 @@ file
 
 
 
-2011-01-18T22:04:27.343021Z
-3935d1f0020d5ed32530c7b16ce42fd1
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:36.006297Z
+95bb5dda6e83d53025851782899c3cff
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -2067,7 +2067,7 @@ has-props
 
 
 
-2007
+2067
 
 SCA_RandomSensor.cpp
 file
@@ -2075,11 +2075,11 @@ file
 
 
 
-2011-02-10T19:48:37.195667Z
-da9412c0ae012d874ffafd0e6f23bc74
-2011-01-27T00:02:25.840105Z
-34520
-campbellbarton
+2011-03-03T12:26:36.006297Z
+cb62f253aebf081a9e4a6b04ff392fa7
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 has-props
 
 
@@ -2101,7 +2101,7 @@ has-props
 
 
 
-5225
+5301
 
 SCA_BasicEventManager.cpp
 file
@@ -2109,11 +2109,11 @@ file
 
 
 
-2011-01-18T22:04:27.343021Z
-8fe96ed1a8eb0b7e40be6b3b46b34a79
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:36.010297Z
+edc7d297214e35646bf1a2c6cb427956
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 has-props
 
 
@@ -2135,7 +2135,7 @@ has-props
 
 
 
-1652
+1733
 
 SConscript
 file
@@ -2143,7 +2143,7 @@ file
 
 
 
-2011-01-18T22:04:27.343021Z
+2011-03-03T12:26:36.010297Z
 28714194dbfd528a4226fcd1621d6ee8
 2010-11-18T11:42:05.232926Z
 33156
@@ -2177,11 +2177,11 @@ file
 
 
 
-2011-01-18T22:04:27.343021Z
-adbb2f513036f98f714906e80af028d7
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:36.010297Z
+e3861fc8c48bc95e12e102874d5f0ad1
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -2203,7 +2203,7 @@ has-props
 
 
 
-2047
+2101
 
 SCA_ILogicBrick.cpp
 file
@@ -2211,11 +2211,11 @@ file
 
 
 
-2011-02-10T19:48:37.195667Z
-664f4cfbe925e83a15ffca79c5cf289d
-2011-01-27T00:02:25.840105Z
-34520
-campbellbarton
+2011-03-03T12:26:36.010297Z
+efeb97d0769077926b586488cac89faf
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 has-props
 
 
@@ -2237,7 +2237,7 @@ has-props
 
 
 
-5249
+5324
 
 SCA_PropertySensor.h
 file
@@ -2245,11 +2245,11 @@ file
 
 
 
-2011-01-18T22:04:27.343021Z
-b44fc6e5973cfa1f44d03e5781e405c8
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:36.010297Z
+f2458d0ac78544eca383a8cda6131033
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -2271,7 +2271,7 @@ has-props
 
 
 
-3199
+3258
 
 SCA_2DFilterActuator.h
 file
@@ -2279,11 +2279,11 @@ file
 
 
 
-2011-01-18T22:04:27.343021Z
-3f28c7ec139cc6f218d0324435dca978
-2010-03-06T21:22:09.256382Z
-27296
-ben2610
+2011-03-03T12:26:36.010297Z
+7af79911053a6c942b07cb5fc8f4fec5
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -2305,7 +2305,7 @@ has-props
 
 
 
-1853
+1916
 
 SCA_NANDController.cpp
 file
@@ -2313,11 +2313,11 @@ file
 
 
 
-2011-01-18T22:04:27.343021Z
-4f0a1d044d6605312f129ea2caa42bb1
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:36.010297Z
+063ec4fc005650072836c363e4792cc5
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 has-props
 
 
@@ -2339,7 +2339,7 @@ has-props
 
 
 
-3124
+3202
 
 SCA_IObject.h
 file
@@ -2347,11 +2347,11 @@ file
 
 
 
-2011-01-18T22:04:27.343021Z
-1785c549809a902a8672ae6766fcdeb0
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:36.010297Z
+8263945e0d86f5d48a143cebb01f5391
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -2373,7 +2373,7 @@ has-props
 
 
 
-5676
+5738
 
 SCA_PropertyActuator.cpp
 file
@@ -2381,11 +2381,11 @@ file
 
 
 
-2011-02-10T19:48:37.195667Z
-aacb0f5cee4070364cd5a522f26e1cef
-2011-01-27T00:02:25.840105Z
-34520
-campbellbarton
+2011-03-03T12:26:36.010297Z
+29ae21750c8169057028c016e44116f6
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 has-props
 
 
@@ -2407,7 +2407,7 @@ has-props
 
 
 
-6413
+6493
 
 SCA_IInputDevice.cpp
 file
@@ -2415,11 +2415,11 @@ file
 
 
 
-2011-01-18T22:04:27.343021Z
-e2dd048928e1f271f1111b803f25f83b
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:36.010297Z
+eb1b75f282ce1ed4532ccd3a3c2e1ec8
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 has-props
 
 
@@ -2441,7 +2441,7 @@ has-props
 
 
 
-3466
+3542
 
 SCA_RandomActuator.h
 file
@@ -2449,11 +2449,11 @@ file
 
 
 
-2011-01-18T22:04:27.343021Z
-48170b480ae26389e259373f8c7e657a
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:36.010297Z
+2c82acfb9b6c9f6f4a9d300b27ac5c4a
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -2475,7 +2475,7 @@ has-props
 
 
 
-3797
+3853
 
 SCA_JoystickSensor.cpp
 file
@@ -2483,11 +2483,11 @@ file
 
 
 
-2011-01-18T22:04:27.343021Z
-042261ae726112f2f50a66526732ec4c
-2011-01-18T01:58:19.206348Z
-34380
-campbellbarton
+2011-03-03T12:26:36.014297Z
+4a7497436233d65fa4175ba8d63468f6
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 has-props
 
 
@@ -2509,7 +2509,7 @@ has-props
 
 
 
-12545
+12628
 
 SCA_KeyboardSensor.cpp
 file
@@ -2517,11 +2517,11 @@ file
 
 
 
-2011-02-10T19:48:37.195667Z
-b29c9ce19fbbd6e4dc7a6d6b0021d580
-2011-01-27T00:02:25.840105Z
-34520
-campbellbarton
+2011-03-03T12:26:36.014297Z
+fd72de4626728532b6a2b745405c3117
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 has-props
 
 
@@ -2543,7 +2543,7 @@ has-props
 
 
 
-18037
+18115
 
 SCA_KeyboardManager.cpp
 file
@@ -2551,11 +2551,11 @@ file
 
 
 
-2011-01-18T22:04:27.353021Z
-94f4462881b77d4ad5cac63f0f3eb080
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:36.014297Z
+0c40b7e392ea83edc2e87fb1983093bb
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 has-props
 
 
@@ -2577,7 +2577,7 @@ has-props
 
 
 
-2002
+2081
 
 SCA_TimeEventManager.cpp
 file
@@ -2585,11 +2585,11 @@ file
 
 
 
-2011-01-18T22:04:27.353021Z
-b906ce4e58d5472913c7d0fe9a4252d5
-2010-09-15T16:13:32.976747Z
-31950
-campbellbarton
+2011-03-03T12:26:36.014297Z
+f5fe1d6cb4e298e94856be3a13981ae6
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 has-props
 
 
@@ -2611,7 +2611,7 @@ has-props
 
 
 
-2710
+2872
 
 SCA_DelaySensor.h
 file
@@ -2619,11 +2619,11 @@ file
 
 
 
-2011-01-18T22:04:27.353021Z
-fb3a7051cf34da7e44585164e2d63038
-2010-02-12T13:34:04.213317Z
-26841
-campbellbarton
+2011-03-03T12:26:36.014297Z
+611758642b34583aaa64a0d7418ff5e2
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -2645,7 +2645,7 @@ has-props
 
 
 
-1862
+1913
 
 SCA_JoystickManager.h
 file
@@ -2653,11 +2653,11 @@ file
 
 
 
-2011-01-18T22:04:27.353021Z
-1c26e30859079c74c692547d9a329941
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:36.014297Z
+c4dd1b7dbfeb47c13f0c802a4faa2579
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -2679,7 +2679,7 @@ has-props
 
 
 
-1703
+1762
 
 SCA_PythonMouse.h
 file
@@ -2687,11 +2687,11 @@ file
 
 
 
-2011-01-18T22:04:27.353021Z
-781d7a55704d26389b83502fa21e81a2
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:36.014297Z
+bf27f4ef160eae4302d6e4a9a8cd5b13
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -2713,7 +2713,7 @@ has-props
 
 
 
-1864
+1915
 
 SCA_AlwaysEventManager.h
 file
@@ -2721,11 +2721,11 @@ file
 
 
 
-2011-01-18T22:04:27.353021Z
-227c4660cd11ca73069385fdc1de472e
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:36.014297Z
+ce20e2990995b97eabb9d2a338045c9a
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -2747,7 +2747,7 @@ has-props
 
 
 
-1574
+1633
 
 SCA_ExpressionController.cpp
 file
@@ -2755,11 +2755,11 @@ file
 
 
 
-2011-01-18T22:04:27.353021Z
-40d644071ed7a0be2a443f563490cbe2
-2010-04-18T10:28:37.496249Z
-28254
-campbellbarton
+2011-03-03T12:26:36.014297Z
+8d4b904bd7c20921bd60bc6d061e96cc
+2011-02-25T13:32:11.868003Z
+35169
+jesterking
 has-props
 
 
@@ -2781,7 +2781,7 @@ has-props
 
 
 
-3786
+3870
 
 SCA_PythonKeyboard.h
 file
@@ -2789,11 +2789,11 @@ file
 
 
 
-2011-01-18T22:04:27.353021Z
-91399e474710d983fad9348e5f640dea
-2010-10-31T04:11:39.269118Z
-32788
-campbellbarton
+2011-03-03T12:26:36.014297Z
+872378c1f17faa8aac0e96f62367f28a
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
 has-props
 
 
@@ -2815,5 +2815,5 @@ has-props
 
 
 
-1389
+1443
 

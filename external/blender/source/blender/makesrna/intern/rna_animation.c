@@ -1,5 +1,5 @@
-/**
- * $Id: rna_animation.c 34601 2011-02-01 11:39:51Z aligorith $
+/*
+ * $Id: rna_animation.c 35336 2011-03-03 17:58:06Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/makesrna/intern/rna_animation.c
+ *  \ingroup RNA
+ */
+
 
 #include <stdlib.h>
 
@@ -164,9 +169,9 @@ static void rna_KeyingSetInfo_unregister(const bContext *C, StructRNA *type)
 
 static StructRNA *rna_KeyingSetInfo_register(bContext *C, ReportList *reports, void *data, const char *identifier, StructValidateFunc validate, StructCallbackFunc call, StructFreeFunc free)
 {
-	KeyingSetInfo dummyksi = {0};
+	KeyingSetInfo dummyksi = {NULL};
 	KeyingSetInfo *ksi;
-	PointerRNA dummyptr = {{0}};
+	PointerRNA dummyptr = {{NULL}};
 	int have_function[3];
 
 	/* setup dummy type info to store static properties in */

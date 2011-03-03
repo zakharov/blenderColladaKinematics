@@ -1,5 +1,5 @@
-/**
- * $Id: rgb32.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: rgb32.h 35249 2011-02-27 20:43:42Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/avi/intern/rgb32.h
+ *  \ingroup avi
+ */
+
 
 void *avi_converter_from_rgb32 (AviMovie *movie, int stream, unsigned char *buffer, int *size);
 void *avi_converter_to_rgb32 (AviMovie *movie, int stream, unsigned char *buffer, int *size);

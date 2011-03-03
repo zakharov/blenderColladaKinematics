@@ -1,5 +1,5 @@
-/**
- * $Id: GHOST_SystemPaths.h 34106 2011-01-05 19:19:49Z gsrb3d $
+/*
+ * $Id: GHOST_SystemPaths.h 35152 2011-02-25 11:28:33Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file ghost/intern/GHOST_SystemPaths.h
+ *  \ingroup GHOST
+ */
+
 #ifndef _GHOST_SYSTEMPATHS_H_
 #define _GHOST_SYSTEMPATHS_H_
 

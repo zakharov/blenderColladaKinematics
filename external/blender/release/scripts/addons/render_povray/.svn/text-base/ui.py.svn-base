@@ -19,13 +19,14 @@
 # <pep8 compliant>
 
 import bpy
+from bpy.props import EnumProperty
 
 # Use some of the existing buttons.
 import properties_render
 properties_render.RENDER_PT_render.COMPAT_ENGINES.add('POVRAY_RENDER')
 properties_render.RENDER_PT_dimensions.COMPAT_ENGINES.add('POVRAY_RENDER')
 # properties_render.RENDER_PT_antialiasing.COMPAT_ENGINES.add('POVRAY_RENDER')
-properties_render.RENDER_PT_shading.COMPAT_ENGINES.add('POVRAY_RENDER')  # We don't use it right now. Should be implemented later.
+properties_render.RENDER_PT_shading.COMPAT_ENGINES.add('POVRAY_RENDER')
 properties_render.RENDER_PT_output.COMPAT_ENGINES.add('POVRAY_RENDER')
 del properties_render
 
@@ -148,6 +149,19 @@ class CameraDataButtonsPanel():
         return cam and (rd.use_game_engine == False) and (rd.engine in cls.COMPAT_ENGINES)
 
 
+class TextButtonsPanel():
+    bl_space_type = 'TEXT_EDITOR'
+    bl_region_type = 'UI'
+    bl_label = "P.O.V-Ray"
+    # COMPAT_ENGINES must be defined in each subclass, external engines can add themselves here
+
+    @classmethod
+    def poll(cls, context):
+        text = context.space_data
+        rd = context.scene.render
+        return text and (rd.use_game_engine == False) and (rd.engine in cls.COMPAT_ENGINES)
+
+
 class RENDER_PT_povray_export_settings(RenderButtonsPanel, bpy.types.Panel):
     bl_label = "Export Settings"
     COMPAT_ENGINES = {'POVRAY_RENDER'}
@@ -189,13 +203,11 @@ class RENDER_PT_povray_export_settings(RenderButtonsPanel, bpy.types.Panel):
             col = split.column()
             col.prop(scene, "pov_indentation_character", text="Indent")
             col = split.column()
-            if scene.pov_indentation_character == "2": 
+            if scene.pov_indentation_character == "2":
                 col.prop(scene, "pov_indentation_spaces", text="Spaces")
-            split = layout.split()
-            col = split.column()
-            col.prop(scene, "pov_comments_enable", text="Comments")
-            col = split.column()
-            col.prop(scene, "pov_list_lf_enable", text="Line breaks in lists")
+            row = layout.row()
+            row.prop(scene, "pov_comments_enable", text="Comments")
+            row.prop(scene, "pov_list_lf_enable", text="Line breaks in lists")
 
 
 class RENDER_PT_povray_render_settings(RenderButtonsPanel, bpy.types.Panel):
@@ -212,7 +224,7 @@ class RENDER_PT_povray_render_settings(RenderButtonsPanel, bpy.types.Panel):
 
         split = layout.split()
         col = split.column()
-        
+
         col.label(text="Global Settings")
         col.prop(scene, "pov_max_trace_level", text="Ray Depth")
 
@@ -227,7 +239,7 @@ class RENDER_PT_povray_render_settings(RenderButtonsPanel, bpy.types.Panel):
         col = split.column()
 
         col.prop(scene, "pov_photon_adc_bailout", text="Photon ADC")
-        col.prop(scene, "pov_photon_gather_max")      
+        col.prop(scene, "pov_photon_gather_max")
 
 
 class RENDER_PT_povray_antialias(RenderButtonsPanel, bpy.types.Panel):
@@ -247,11 +259,9 @@ class RENDER_PT_povray_antialias(RenderButtonsPanel, bpy.types.Panel):
 
         layout.active = scene.pov_antialias_enable
 
-        split = layout.split()
-        col = split.column()
-        col.prop(scene, "pov_antialias_method", text="")
-        col = split.column()
-        col.prop(scene, "pov_jitter_enable", text="Jitter")
+        row = layout.row()
+        row.prop(scene, "pov_antialias_method", text="")
+        row.prop(scene, "pov_jitter_enable", text="Jitter")
 
         split = layout.split()
         col = split.column()
@@ -263,11 +273,9 @@ class RENDER_PT_povray_antialias(RenderButtonsPanel, bpy.types.Panel):
         else:
             sub.enabled = False
 
-        split = layout.split()
-        col = split.column()
-        col.prop(scene, "pov_antialias_threshold", text="AA Threshold")
-        col = split.column()
-        col.prop(scene, "pov_antialias_gamma", text="AA Gamma")
+        row = layout.row()
+        row.prop(scene, "pov_antialias_threshold", text="AA Threshold")
+        row.prop(scene, "pov_antialias_gamma", text="AA Gamma")
 
 
 class RENDER_PT_povray_radiosity(RenderButtonsPanel, bpy.types.Panel):
@@ -292,8 +300,8 @@ class RENDER_PT_povray_radiosity(RenderButtonsPanel, bpy.types.Panel):
         col = split.column()
         col.prop(scene, "pov_radio_count", text="Rays")
         col.prop(scene, "pov_radio_recursion_limit", text="Recursions")
-        col = split.column()
-        col.prop(scene, "pov_radio_error_bound", text="Error Bound")
+
+        split.prop(scene, "pov_radio_error_bound", text="Error Bound")
 
         layout.prop(scene, "pov_radio_display_advanced")
 
@@ -319,8 +327,7 @@ class RENDER_PT_povray_radiosity(RenderButtonsPanel, bpy.types.Panel):
             col.prop(scene, "pov_radio_media")
             col.prop(scene, "pov_radio_normal")
 
-            col = split.column()
-            col.prop(scene, "pov_radio_always_sample")
+            split.prop(scene, "pov_radio_always_sample")
 
 
 class RENDER_PT_povray_media(RenderButtonsPanel, bpy.types.Panel):
@@ -339,12 +346,10 @@ class RENDER_PT_povray_media(RenderButtonsPanel, bpy.types.Panel):
         rd = scene.render
 
         layout.active = scene.pov_media_enable
-        split = layout.split()
 
-        col = split.column()
-        col.prop(scene, "pov_media_samples", text="Samples")
-        col = split.column()
-        col.prop(scene, "pov_media_color", text="")
+        row = layout.row()
+        row.prop(scene, "pov_media_samples", text="Samples")
+        row.prop(scene, "pov_media_color", text="")
 
 ##class RENDER_PT_povray_baking(RenderButtonsPanel, bpy.types.Panel):
 ##    bl_label = "Baking"
@@ -419,7 +424,7 @@ class MATERIAL_PT_povray_fade_color(MaterialButtonsPanel, bpy.types.Panel):
         layout = self.layout
 
         mat = context.material
-        layout.active = mat.pov_interior_fade_color
+        #layout.active = mat.pov_interior_fade_color
 
 
 class MATERIAL_PT_povray_conserve_energy(MaterialButtonsPanel, bpy.types.Panel):
@@ -483,13 +488,13 @@ class MATERIAL_PT_povray_caustics(MaterialButtonsPanel, bpy.types.Panel):
 
             col = split.column()
             col.prop(mat, "pov_refraction_type")
-            
+
             if mat.pov_refraction_type == "1":
                 col.prop(mat, "pov_fake_caustics_power", slider=True)
             elif mat.pov_refraction_type == "2":
                 col.prop(mat, "pov_photons_dispersion", slider=True)
             col.prop(mat, "pov_photons_reflection")
-            
+
             if mat.pov_refraction_type == "0" and not mat.pov_photons_reflection:
                 split = layout.split()
                 col = split.column()
@@ -499,6 +504,20 @@ class MATERIAL_PT_povray_caustics(MaterialButtonsPanel, bpy.types.Panel):
                 row = col.row()
                 row.alignment = 'CENTER'
                 row.label(text="but you didn't chose any !")
+
+
+class MATERIAL_PT_povray_replacement_text(MaterialButtonsPanel, bpy.types.Panel):
+    bl_label = "Custom POV Code"
+    COMPAT_ENGINES = {'POVRAY_RENDER'} 
+
+    def draw(self, context):
+        layout = self.layout
+
+        mat = context.material
+
+        col = layout.column()
+        col.label(text="Replace properties with:")
+        col.prop(mat, "pov_replacement_text", text="")
 
 
 class TEXTURE_PT_povray_tex_gamma(TextureButtonsPanel, bpy.types.Panel):
@@ -516,10 +535,21 @@ class TEXTURE_PT_povray_tex_gamma(TextureButtonsPanel, bpy.types.Panel):
         tex = context.texture
 
         layout.active = tex.pov_tex_gamma_enable
-        split = layout.split()
+        layout.prop(tex, "pov_tex_gamma_value", text="Gamma Value")
 
-        col = split.column()
-        col.prop(tex, "pov_tex_gamma_value", text="Gamma Value")
+
+class TEXTURE_PT_povray_replacement_text(TextureButtonsPanel, bpy.types.Panel):
+    bl_label = "Custom POV Code"
+    COMPAT_ENGINES = {'POVRAY_RENDER'} 
+
+    def draw(self, context):
+        layout = self.layout
+
+        tex = context.texture
+
+        col = layout.column()
+        col.label(text="Replace properties with:")
+        col.prop(tex, "pov_replacement_text", text="")
 
 
 class OBJECT_PT_povray_obj_importance(ObjectButtonsPanel, bpy.types.Panel):
@@ -532,17 +562,28 @@ class OBJECT_PT_povray_obj_importance(ObjectButtonsPanel, bpy.types.Panel):
         obj = context.object
 
         layout.active = obj.pov_importance_value
-        split = layout.split()
 
-        col = split.column()
-        col.label(text="Radiosity")
+        col = layout.column()
+        col.label(text="Radiosity:")
         col.prop(obj, "pov_importance_value", text="Importance")
-        row = col.row()
-        col.label(text="Photons")
+        col.label(text="Photons:")
         col.prop(obj, "pov_collect_photons", text="Receive Photon Caustics")
 
+class OBJECT_PT_povray_replacement_text(ObjectButtonsPanel, bpy.types.Panel):
+    bl_label = "Custom POV Code"
+    COMPAT_ENGINES = {'POVRAY_RENDER'} 
 
-class Camera_PT_povray_cam_dof(CameraDataButtonsPanel, bpy.types.Panel):
+    def draw(self, context):
+        layout = self.layout
+
+        obj = context.object
+
+        col = layout.column()
+        col.label(text="Replace properties with:")
+        col.prop(obj, "pov_replacement_text", text="")
+
+
+class CAMERA_PT_povray_cam_dof(CameraDataButtonsPanel, bpy.types.Panel):
     bl_label = "POV-Ray Depth Of Field"
     COMPAT_ENGINES = {'POVRAY_RENDER'}
 
@@ -550,25 +591,52 @@ class Camera_PT_povray_cam_dof(CameraDataButtonsPanel, bpy.types.Panel):
         cam = context.camera
 
         self.layout.prop(cam, "pov_dof_enable", text="")
-        
+
     def draw(self, context):
         layout = self.layout
 
         cam = context.camera
 
         layout.active = cam.pov_dof_enable
-        
-        split = layout.split()
-        row = split.row()
-        row.prop(cam, "pov_dof_aperture")
-        
-        split = layout.split()
-        col = split.column()
 
+        layout.prop(cam, "pov_dof_aperture")
+
+        split = layout.split()
+        
+        col = split.column()
         col.prop(cam, "pov_dof_samples_min")
         col.prop(cam, "pov_dof_variance")
-        
-        col = split.column()
 
+        col = split.column()
         col.prop(cam, "pov_dof_samples_max")
         col.prop(cam, "pov_dof_confidence")
+
+
+class CAMERA_PT_povray_replacement_text(CameraDataButtonsPanel, bpy.types.Panel):
+    bl_label = "Custom POV Code"
+    COMPAT_ENGINES = {'POVRAY_RENDER'} 
+
+    def draw(self, context):
+        layout = self.layout
+
+        cam = context.camera
+
+        col = layout.column()
+        col.label(text="Replace properties with:")
+        col.prop(cam, "pov_replacement_text", text="")
+
+
+class TEXT_PT_povray_custom_code(TextButtonsPanel, bpy.types.Panel):
+    bl_label = "P.O.V-Ray"
+    COMPAT_ENGINES = {'POVRAY_RENDER'} 
+
+    def draw(self, context):
+        layout = self.layout
+
+        text = context.space_data.text
+        if text:
+            layout.prop(text, "pov_custom_code", text="Add as POV code")
+
+
+
+

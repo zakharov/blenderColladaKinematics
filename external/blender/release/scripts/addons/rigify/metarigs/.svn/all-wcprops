@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/svnroot/bf-extensions/!svn/ver/1165/trunk/py/scripts/addons/rigify/metarigs
+/svnroot/bf-extensions/!svn/ver/1652/trunk/py/scripts/addons/rigify/metarigs
 END
 human.py
 K 25
 svn:wc:ra_dav:version-url
 V 85
-/svnroot/bf-extensions/!svn/ver/1165/trunk/py/scripts/addons/rigify/metarigs/human.py
+/svnroot/bf-extensions/!svn/ver/1652/trunk/py/scripts/addons/rigify/metarigs/human.py
 END
 __init__.py
 K 25

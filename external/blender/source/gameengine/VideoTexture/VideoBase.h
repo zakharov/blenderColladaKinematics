@@ -1,4 +1,4 @@
-/* $Id: VideoBase.h 20741 2009-06-08 20:08:19Z blendix $
+/* $Id: VideoBase.h 35082 2011-02-22 19:30:37Z jesterking $
 -----------------------------------------------------------------------------
 This source file is part of VideoTexture library
 
@@ -20,6 +20,10 @@ http://www.gnu.org/copyleft/lesser.txt.
 -----------------------------------------------------------------------------
 */
 
+/** \file VideoBase.h
+ *  \ingroup bgevideotex
+ */
+ 
 #if !defined VIDEOBASE_H
 #define VIDEOBASE_H
 

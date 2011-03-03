@@ -1,5 +1,5 @@
-/**
- * $Id: SCA_PythonMouse.h 32788 2010-10-31 04:11:39Z campbellbarton $
+/*
+ * $Id: SCA_PythonMouse.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -20,6 +20,10 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file SCA_PythonMouse.h
+ *  \ingroup gamelogic
  */
 
 #ifndef __KX_PYMOUSE

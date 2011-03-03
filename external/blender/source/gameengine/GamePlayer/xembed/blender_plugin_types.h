@@ -1,5 +1,5 @@
-/**
- * $Id: blender_plugin_types.h 26841 2010-02-12 13:34:04Z campbellbarton $
+/*
+ * $Id: blender_plugin_types.h 35106 2011-02-23 10:52:22Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *

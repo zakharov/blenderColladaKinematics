@@ -1,5 +1,5 @@
 /*
- * $Id: module.c 31935 2010-09-15 06:43:36Z campbellbarton $
+ * $Id: module.c 35239 2011-02-27 20:23:21Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/imbuf/intern/module.c
+ *  \ingroup imbuf
+ */
+
 
 #include <stddef.h>
 #include "IMB_imbuf.h"

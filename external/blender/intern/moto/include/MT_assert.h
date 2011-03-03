@@ -1,5 +1,5 @@
-/**
-* $Id: MT_assert.h 32552 2010-10-18 06:52:10Z jesterking $
+/*
+* $Id: MT_assert.h 35158 2011-02-25 11:49:19Z jesterking $
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
 * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
 *
 * ***** END GPL LICENSE BLOCK *****
 */
+
+/** \file moto/include/MT_assert.h
+ *  \ingroup moto
+ */
+
 
 #ifndef MT_ASSERT_H
 #define MT_ASSERT_H

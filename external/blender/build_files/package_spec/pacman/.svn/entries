@@ -1,14 +1,14 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/build_files/package_spec/pacman
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2010-09-12T16:00:12.758684Z
-31894
+2011-02-24T14:03:29.625694Z
+35125
 campbellbarton
 
 
@@ -32,12 +32,12 @@ file
 
 
 
-2011-01-18T22:05:01.903021Z
+2011-03-03T12:28:40.542297Z
 8ab62ba411a169226f74b89102aec375
-2010-09-12T16:00:12.758684Z
-31894
-campbellbarton
-
+2011-02-11T19:36:58.420791Z
+34784
+gsrb3d
+has-props
 
 
 
@@ -66,11 +66,12 @@ file
 
 
 
-2011-01-18T22:05:01.903021Z
-8d73a18cb9e51a9f93a2e6412bd69cc1
-2010-09-12T16:00:12.758684Z
-31894
+2011-03-03T12:28:40.542297Z
+8043922df15aeb735e2d08169f23bfb0
+2011-02-24T14:03:29.625694Z
+35125
 campbellbarton
+has-props
 
 
 
@@ -91,6 +92,5 @@ campbellbarton
 
 
 
-
-1448
+2063
 

@@ -1,15 +1,15 @@
 10
 
 dir
-34763
+35339
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/gameengine/Physics/Bullet
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-30T15:29:22.294392Z
-34567
-campbellbarton
+2011-02-28T20:22:28.256571Z
+35269
+dfelinto
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-01-18T22:04:23.543021Z
-f19fe24c7a18efdb5e42136e8b6c6537
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:29.342297Z
+5cc62b741ec4e4cc86154c7f476eec5a
+2011-02-22T12:42:55.440226Z
+35072
+jesterking
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-3175
+3237
 
 CcdPhysicsController.cpp
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-02-10T19:48:36.525667Z
-63eaf7545e6e8e40b269afe6d863acb0
-2011-01-23T17:17:21.114643Z
-34469
-ben2610
+2011-03-03T12:26:29.346297Z
+2da9bca78692920c55bf1ab006c9075b
+2011-02-25T13:37:23.714750Z
+35173
+jesterking
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-60849
+60938
 
 CcdPhysicsEnvironment.cpp
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-01-18T22:04:23.543021Z
-47493a46d1fb7b95d7421c0c4663d265
-2010-10-20T12:33:00.885809Z
-32613
-campbellbarton
+2011-03-03T12:26:29.354297Z
+965c59ed66d67510543075f4827a78d3
+2011-02-28T20:22:28.256571Z
+35269
+dfelinto
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-79465
+81502
 
 CcdPhysicsController.h
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-01-18T22:04:23.543021Z
-fe99bc188b12b51defefb459a9c99eed
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:29.354297Z
+b20b92b23af742bbc3c7796c8353b0c8
+2011-02-22T12:42:55.440226Z
+35072
+jesterking
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-20216
+20278
 
 CcdPhysicsEnvironment.h
 file
@@ -168,11 +168,11 @@ file
 
 
 
-2011-01-18T22:04:23.543021Z
-008b2ac1993dee5e041126cfd3634fc0
-2010-06-06T01:15:44.640463Z
-29259
-campbellbarton
+2011-03-03T12:26:29.354297Z
+d2202a542d30852af82bff3c5097dc7b
+2011-02-22T19:30:37.531882Z
+35082
+jesterking
 has-props
 
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-9691
+9783
 
 SConscript
 file
@@ -202,7 +202,7 @@ file
 
 
 
-2011-01-18T22:04:23.553021Z
+2011-03-03T12:26:29.354297Z
 3f627acb3801709c777263df88984a25
 2010-11-18T11:42:05.232926Z
 33156
@@ -236,11 +236,11 @@ file
 
 
 
-2011-01-18T22:04:23.553021Z
-c557078f4fa821db925dbe3de55f643e
-2009-11-15T23:58:56.029930Z
-24578
-ben2610
+2011-03-03T12:26:29.354297Z
+4f7d0492f4a4fec0124c6a8f481d8f74
+2011-02-25T13:37:23.714750Z
+35173
+jesterking
 has-props
 
 
@@ -262,7 +262,7 @@ has-props
 
 
 
-5071
+5160
 
 CMakeLists.txt
 file
@@ -270,7 +270,7 @@ file
 
 
 
-2011-02-10T19:48:36.525667Z
+2011-03-03T12:26:29.354297Z
 7061cb8c439bcc92b0c1b7c023ccc954
 2011-01-25T14:43:13.999734Z
 34486

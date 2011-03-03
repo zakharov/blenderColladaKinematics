@@ -1,5 +1,5 @@
 /*
- * $Id: NG_NetworkScene.h 29259 2010-06-06 01:15:44Z campbellbarton $
+ * $Id: NG_NetworkScene.h 35072 2011-02-22 12:42:55Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,7 +25,11 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
- * NetworkSceneManagement generic class
+ */
+
+/** \file NG_NetworkScene.h
+ *  \ingroup bgenet
+ *  \brief NetworkSceneManagement generic class
  */
 #ifndef __NG_NETWORKSCENE_H
 #define __NG_NETWORKSCENE_H

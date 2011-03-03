@@ -1,3 +1,6 @@
+/** \file itasc/kdl/utilities/utility_io.cpp
+ *  \ingroup itasc
+ */
 /*****************************************************************************
  *  \author 
  *  	Erwin Aertbelien, Div. PMA, Dep. of Mech. Eng., K.U.Leuven
@@ -9,7 +12,7 @@
  *		- $log$
  *
  *	\par Release
- *		$Id: utility_io.cpp 23467 2009-09-25 01:13:07Z gsrb3d $
+ *		$Id: utility_io.cpp 35155 2011-02-25 11:45:16Z jesterking $
  *		$Name:  $ 
  * \todo
  *   make IO routines more robust against the differences between DOS/UNIX end-of-line style.

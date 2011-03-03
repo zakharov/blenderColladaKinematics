@@ -1,5 +1,5 @@
-/**
- * $Id: stubs.c 34081 2011-01-05 02:08:54Z campbellbarton $
+/*
+ * $Id: stubs.c 35236 2011-02-27 20:10:08Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/python/intern/stubs.c
+ *  \ingroup pythonintern
+ */
+
 
 /* python, will come back */
 //void BPY_script_exec(void) {}

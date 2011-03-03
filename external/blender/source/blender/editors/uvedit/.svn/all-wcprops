@@ -1,53 +1,53 @@
 K 25
 svn:wc:ra_dav:version-url
 V 78
-/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/blender/editors/uvedit
+/svnroot/bf-blender/!svn/ver/35337/trunk/blender/source/blender/editors/uvedit
 END
 uvedit_ops.c
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svnroot/bf-blender/!svn/ver/34380/trunk/blender/source/blender/editors/uvedit/uvedit_ops.c
+/svnroot/bf-blender/!svn/ver/35337/trunk/blender/source/blender/editors/uvedit/uvedit_ops.c
 END
 uvedit_intern.h
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/34335/trunk/blender/source/blender/editors/uvedit/uvedit_intern.h
+/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/uvedit/uvedit_intern.h
 END
 uvedit_parametrizer.c
 K 25
 svn:wc:ra_dav:version-url
 V 100
-/svnroot/bf-blender/!svn/ver/34465/trunk/blender/source/blender/editors/uvedit/uvedit_parametrizer.c
+/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/uvedit/uvedit_parametrizer.c
 END
 SConscript
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/23587/trunk/blender/source/blender/editors/uvedit/SConscript
+/svnroot/bf-blender/!svn/ver/35028/trunk/blender/source/blender/editors/uvedit/SConscript
 END
 uvedit_parametrizer.h
 K 25
 svn:wc:ra_dav:version-url
 V 100
-/svnroot/bf-blender/!svn/ver/33442/trunk/blender/source/blender/editors/uvedit/uvedit_parametrizer.h
+/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/uvedit/uvedit_parametrizer.h
 END
 CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/editors/uvedit/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/35028/trunk/blender/source/blender/editors/uvedit/CMakeLists.txt
 END
 uvedit_draw.c
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/34273/trunk/blender/source/blender/editors/uvedit/uvedit_draw.c
+/svnroot/bf-blender/!svn/ver/35337/trunk/blender/source/blender/editors/uvedit/uvedit_draw.c
 END
 uvedit_unwrap_ops.c
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/svnroot/bf-blender/!svn/ver/34380/trunk/blender/source/blender/editors/uvedit/uvedit_unwrap_ops.c
+/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/uvedit/uvedit_unwrap_ops.c
 END

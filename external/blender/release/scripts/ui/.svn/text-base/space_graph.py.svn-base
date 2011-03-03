@@ -130,6 +130,10 @@ class GRAPH_MT_select(bpy.types.Menu):
         layout.operator("graph.select_column", text="Between Selected Markers").mode = 'MARKERS_BETWEEN'
 
         layout.separator()
+        layout.operator("graph.select_leftright", text="Before Current Frame").mode = 'LEFT'
+        layout.operator("graph.select_leftright", text="After Current Frame").mode = 'RIGHT'
+
+        layout.separator()
         layout.operator("graph.select_more")
         layout.operator("graph.select_less")
 
@@ -242,11 +246,11 @@ class GRAPH_MT_key_transform(bpy.types.Menu):
 
 
 def register():
-    pass
+    bpy.utils.register_module(__name__)
 
 
 def unregister():
-    pass
+    bpy.utils.unregister_module(__name__)
 
 if __name__ == "__main__":
     register()

@@ -1,9 +1,5 @@
-/**
- * blenlib/BKE_library.h (mar-2001 nzc)
- *	
- * Library
- *
- * $Id: BKE_library.h 34083 2011-01-05 05:33:27Z campbellbarton $ 
+/*
+ * $Id: BKE_library.h 34962 2011-02-18 13:05:18Z jesterking $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -33,6 +29,11 @@
 #ifndef BKE_LIBRARY_TYPES_H
 #define BKE_LIBRARY_TYPES_H
 
+/** \file BKE_library.h
+ *  \ingroup bke
+ *  \since March 2001
+ *  \author nzc
+ */
 #ifdef __cplusplus
 extern "C" {
 #endif

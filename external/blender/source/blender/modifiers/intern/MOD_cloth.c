@@ -1,5 +1,5 @@
 /*
-* $Id: MOD_cloth.c 34587 2011-01-31 20:02:51Z nazgul $
+* $Id: MOD_cloth.c 35178 2011-02-25 13:57:17Z jesterking $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -30,6 +30,11 @@
 *
 */
 
+/** \file blender/modifiers/intern/MOD_cloth.c
+ *  \ingroup modifiers
+ */
+
+
 #include "DNA_cloth_types.h"
 #include "DNA_scene_types.h"
 #include "DNA_object_types.h"
@@ -47,6 +52,7 @@
 
 #include "depsgraph_private.h"
 
+#include "MOD_util.h"
 
 static void initData(ModifierData *md) 
 {

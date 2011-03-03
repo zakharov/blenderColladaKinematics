@@ -1,5 +1,5 @@
 /*
- * $Id: customdata_file.c 34160 2011-01-07 19:18:31Z campbellbarton $
+ * $Id: customdata_file.c 35247 2011-02-27 20:40:57Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -19,6 +19,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/blenkernel/intern/customdata_file.c
+ *  \ingroup bke
+ */
+
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -310,11 +315,11 @@ int cdf_read_layer(CDataFile *cdf, CDataFileLayer *blay)
 	return (fseek(cdf->readf, offset, SEEK_SET) == 0);
 }
 
-int cdf_read_data(CDataFile *cdf, int size, void *data)
+int cdf_read_data(CDataFile *cdf, unsigned int size, void *data)
 {
 	float *fdata;
-	int a;
-	
+	unsigned int a;
+
 	/* read data */
 	if(!fread(data, size, 1, cdf->readf))
 		return 0;
@@ -385,7 +390,7 @@ int cdf_write_layer(CDataFile *UNUSED(cdf), CDataFileLayer *UNUSED(blay))
 	return 1;
 }
 
-int cdf_write_data(CDataFile *cdf, int size, void *data)
+int cdf_write_data(CDataFile *cdf, unsigned int size, void *data)
 {
 	/* write data */
 	if(!fwrite(data, size, 1, cdf->writef))

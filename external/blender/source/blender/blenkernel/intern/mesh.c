@@ -3,7 +3,7 @@
  *
  *  
  * 
- * $Id: mesh.c 34753 2011-02-10 09:29:31Z campbellbarton $
+ * $Id: mesh.c 35247 2011-02-27 20:40:57Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,6 +28,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/blenkernel/intern/mesh.c
+ *  \ingroup bke
+ */
+
 
 #include <stdlib.h>
 #include <string.h>
@@ -98,11 +103,11 @@ void unlink_mesh(Mesh *me)
 {
 	int a;
 	
-	if(me==0) return;
+	if(me==NULL) return;
 	
 	for(a=0; a<me->totcol; a++) {
 		if(me->mat[a]) me->mat[a]->id.us--;
-		me->mat[a]= 0;
+		me->mat[a]= NULL;
 	}
 
 	if(me->key) {
@@ -110,9 +115,9 @@ void unlink_mesh(Mesh *me)
 		if (me->key->id.us == 0 && me->key->ipo )
 			me->key->ipo->id.us--;
 	}
-	me->key= 0;
+	me->key= NULL;
 	
-	if(me->texcomesh) me->texcomesh= 0;
+	if(me->texcomesh) me->texcomesh= NULL;
 }
 
 
@@ -255,9 +260,9 @@ void make_local_tface(Mesh *me)
 				if(tface->tpage) {
 					ima= tface->tpage;
 					if(ima->id.lib) {
-						ima->id.lib= 0;
+						ima->id.lib= NULL;
 						ima->id.flag= LIB_LOCAL;
-						new_id(0, (ID *)ima, 0);
+						new_id(NULL, (ID *)ima, NULL);
 					}
 				}
 			}
@@ -277,11 +282,11 @@ void make_local_mesh(Mesh *me)
 		* - mixed: make copy
 		*/
 	
-	if(me->id.lib==0) return;
+	if(me->id.lib==NULL) return;
 	if(me->id.us==1) {
-		me->id.lib= 0;
+		me->id.lib= NULL;
 		me->id.flag= LIB_LOCAL;
-		new_id(0, (ID *)me, 0);
+		new_id(NULL, (ID *)me, NULL);
 		
 		if(me->mtface) make_local_tface(me);
 		
@@ -298,9 +303,9 @@ void make_local_mesh(Mesh *me)
 	}
 	
 	if(local && lib==0) {
-		me->id.lib= 0;
+		me->id.lib= NULL;
 		me->id.flag= LIB_LOCAL;
-		new_id(0, (ID *)me, 0);
+		new_id(NULL, (ID *)me, NULL);
 		
 		if(me->mtface) make_local_tface(me);
 		
@@ -312,7 +317,7 @@ void make_local_mesh(Mesh *me)
 		ob= bmain->object.first;
 		while(ob) {
 			if( me==get_mesh(ob) ) {				
-				if(ob->id.lib==0) {
+				if(ob->id.lib==NULL) {
 					set_mesh(ob, men);
 				}
 			}
@@ -327,7 +332,7 @@ void boundbox_mesh(Mesh *me, float *loc, float *size)
 	float min[3], max[3];
 	float mloc[3], msize[3];
 	
-	if(me->bb==0) me->bb= MEM_callocN(sizeof(BoundBox), "boundbox");
+	if(me->bb==NULL) me->bb= MEM_callocN(sizeof(BoundBox), "boundbox");
 	bb= me->bb;
 
 	if (!loc) loc= mloc;
@@ -512,18 +517,18 @@ int test_index_face(MFace *mface, CustomData *fdata, int mfindex, int nr)
 Mesh *get_mesh(Object *ob)
 {
 	
-	if(ob==0) return 0;
+	if(ob==NULL) return NULL;
 	if(ob->type==OB_MESH) return ob->data;
-	else return 0;
+	else return NULL;
 }
 
 void set_mesh(Object *ob, Mesh *me)
 {
-	Mesh *old=0;
+	Mesh *old=NULL;
 
 	multires_force_update(ob);
 	
-	if(ob==0) return;
+	if(ob==NULL) return;
 	
 	if(ob->type==OB_MESH) {
 		old= ob->data;
@@ -730,7 +735,7 @@ void mball_to_mesh(ListBase *lb, Mesh *me)
 	int a, *index;
 	
 	dl= lb->first;
-	if(dl==0) return;
+	if(dl==NULL) return;
 
 	if(dl->type==DL_INDEX4) {
 		me->totvert= dl->nr;
@@ -832,7 +837,7 @@ int nurbs_to_mdata_customdb(Object *ob, ListBase *dispbase, MVert **allvert, int
 	}
 
 	*allvert= mvert= MEM_callocN(sizeof (MVert) * totvert, "nurbs_init mvert");
-	*allface= mface= MEM_callocN(sizeof (MVert) * totvert, "nurbs_init mface");
+	*allface= mface= MEM_callocN(sizeof (MVert) * totvlak, "nurbs_init mface");
 
 	/* verts and faces */
 	vertcount= 0;
@@ -1023,7 +1028,7 @@ void nurbs_to_mesh(Object *ob)
 
 	tex_space_mesh(me);
 
-	cu->mat= 0;
+	cu->mat= NULL;
 	cu->totcol= 0;
 
 	if(ob->data) {

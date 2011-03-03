@@ -1,5 +1,5 @@
-/**
- * $Id: KX_Scene.h 33707 2010-12-16 10:25:41Z dfelinto $
+/*
+ * $Id: KX_Scene.h 35063 2011-02-22 10:33:14Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file KX_Scene.h
+ *  \ingroup ketsji
+ */
+
 #ifndef __KX_SCENE_H
 #define __KX_SCENE_H
 

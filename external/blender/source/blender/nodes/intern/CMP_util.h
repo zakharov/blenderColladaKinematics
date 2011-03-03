@@ -1,5 +1,5 @@
-/**
- * $Id: CMP_util.h 34712 2011-02-08 09:02:16Z lukastoenne $
+/*
+ * $Id: CMP_util.h 35237 2011-02-27 20:13:22Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,6 +26,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/nodes/intern/CMP_util.h
+ *  \ingroup nodes
+ */
+
 
 #ifndef CMP_NODE_UTILS_H_
 #define CMP_NODE_UTILS_H_

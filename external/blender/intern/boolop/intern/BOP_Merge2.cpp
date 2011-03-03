@@ -1,6 +1,6 @@
-/**
+/*
  *
- * $Id: BOP_Merge2.cpp 32559 2010-10-18 11:21:22Z campbellbarton $
+ * $Id: BOP_Merge2.cpp 35143 2011-02-25 10:32:33Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file boolop/intern/BOP_Merge2.cpp
+ *  \ingroup boolopintern
+ */
+
  
 #include "BOP_Merge2.h"
 

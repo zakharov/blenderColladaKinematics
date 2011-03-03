@@ -1,5 +1,5 @@
 /*
- * $Id: NG_LoopBackNetworkDeviceInterface.cpp 29240 2010-06-05 15:31:55Z campbellbarton $
+ * $Id: NG_LoopBackNetworkDeviceInterface.cpp 35172 2011-02-25 13:36:49Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -27,6 +27,11 @@
  * ***** END GPL LICENSE BLOCK *****
  * LoopbackNetworkDeviceInterface derived from NG_NetworkDeviceInterface
  */
+
+/** \file gameengine/Network/LoopBackNetwork/NG_LoopBackNetworkDeviceInterface.cpp
+ *  \ingroup bgenetlb
+ */
+
 
 #include "NG_LoopBackNetworkDeviceInterface.h"
 #include "NG_NetworkMessage.h"

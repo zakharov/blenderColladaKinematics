@@ -1,11 +1,11 @@
 K 25
 svn:wc:ra_dav:version-url
 V 69
-/svnroot/bf-blender/!svn/ver/26841/trunk/blender/intern/boolop/extern
+/svnroot/bf-blender/!svn/ver/35106/trunk/blender/intern/boolop/extern
 END
 BOP_Interface.h
 K 25
 svn:wc:ra_dav:version-url
 V 85
-/svnroot/bf-blender/!svn/ver/26841/trunk/blender/intern/boolop/extern/BOP_Interface.h
+/svnroot/bf-blender/!svn/ver/35106/trunk/blender/intern/boolop/extern/BOP_Interface.h
 END

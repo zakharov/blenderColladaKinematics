@@ -1,5 +1,5 @@
-/**
- * $Id: AnimationImporter.cpp 32952 2010-11-08 23:13:49Z campbellbarton $
+/*
+ * $Id: AnimationImporter.cpp 35243 2011-02-27 20:30:35Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -21,6 +21,14 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file blender/collada/AnimationImporter.cpp
+ *  \ingroup collada
+ */
+
+
+/* COLLADABU_ASSERT, may be able to remove later */
+#include "COLLADABUPlatform.h"
 
 #include "DNA_armature_types.h"
 

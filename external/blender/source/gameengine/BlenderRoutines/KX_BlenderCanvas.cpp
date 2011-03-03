@@ -1,5 +1,5 @@
-/**
- * $Id: KX_BlenderCanvas.cpp 32387 2010-10-09 13:46:34Z dfelinto $
+/*
+ * $Id: KX_BlenderCanvas.cpp 35166 2011-02-25 13:29:48Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -25,6 +25,11 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  */
+
+/** \file gameengine/BlenderRoutines/KX_BlenderCanvas.cpp
+ *  \ingroup blroutines
+ */
+
 
 #include "KX_BlenderCanvas.h"
 #include "DNA_screen_types.h"

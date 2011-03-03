@@ -1,7 +1,7 @@
-/**
+/*
  * Jitter offset table
  *
- * $Id: jitter.c 27629 2010-03-20 18:52:03Z campbellbarton $
+ * $Id: jitter.c 35246 2011-02-27 20:37:56Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -29,11 +29,17 @@
  * ***** END GPL LICENSE BLOCK *****
  */
 
+/** \file blender/blenlib/intern/jitter.c
+ *  \ingroup bli
+ */
+
+
 #include <math.h>
 #include <string.h>
 #include "MEM_guardedalloc.h"
 
 #include "BLI_rand.h"
+#include "BLI_jitter.h"
 
 
 void BLI_jitterate1(float *jit1, float *jit2, int num, float rad1)
