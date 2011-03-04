@@ -1,0 +1,5 @@
+# Hashes of file build rules.
+12c7bc946d5eec0b036c84aff45c78da ../source/creator/buildinfo.h
+db48eb78e3f6ed18324f9579d7e91644 source/blender/makesdna/intern/dna.c
+274bd8ad3154dffbcbc66eb5abeb6672 source/blender/makesrna/intern/rna_modifier_gen.c
+3a10c38b9f7424185780c67abd889499 source/creator/CMakeFiles/buildinfo
