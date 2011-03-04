@@ -651,8 +651,6 @@ void MeshImporter::read_faces(COLLADAFW::Mesh *mesh, Mesh *me, int new_tris)    
 							set_face_uv(&mtface[face_index], uvs, *index_list_array[l], uv_indices);
 						}
 #endif
-
-
 						test_index_face(mface, &me->fdata, face_index, 3);
 
 						if (has_normals) {
@@ -670,7 +668,6 @@ void MeshImporter::read_faces(COLLADAFW::Mesh *mesh, Mesh *me, int new_tris)    
 					if (has_normals)
 						nind += vcount;
 				}
-
 				index += vcount;
 				indices += vcount;
 			}
