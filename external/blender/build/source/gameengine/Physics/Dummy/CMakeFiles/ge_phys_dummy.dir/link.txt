@@ -1,2 +1,0 @@
-/usr/bin/ar cr ../../../../lib/libge_phys_dummy.a  CMakeFiles/ge_phys_dummy.dir/DummyPhysicsEnvironment.cpp.o
-/usr/bin/ranlib ../../../../lib/libge_phys_dummy.a

@@ -1,2 +1,0 @@
-/usr/bin/ar cr ../../lib/libbf_intern_string.a  CMakeFiles/bf_intern_string.dir/intern/STR_String.cpp.o
-/usr/bin/ranlib ../../lib/libbf_intern_string.a

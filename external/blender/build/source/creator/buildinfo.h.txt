@@ -1,3 +1,0 @@
-#define BUILD_REV 35324
-#define BUILD_DATE 2011-03-03
-#define BUILD_TIME 22:07:50

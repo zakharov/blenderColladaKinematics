@@ -1,2 +1,0 @@
-/usr/bin/ar cr ../../lib/libbf_intern_ctr.a  CMakeFiles/bf_intern_ctr.dir/intern/CTR_List.cpp.o
-/usr/bin/ranlib ../../lib/libbf_intern_ctr.a

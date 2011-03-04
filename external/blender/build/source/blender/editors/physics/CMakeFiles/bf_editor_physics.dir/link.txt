@@ -1,2 +1,0 @@
-/usr/bin/ar cr ../../../../lib/libbf_editor_physics.a  CMakeFiles/bf_editor_physics.dir/particle_boids.c.o CMakeFiles/bf_editor_physics.dir/particle_edit.c.o CMakeFiles/bf_editor_physics.dir/particle_object.c.o CMakeFiles/bf_editor_physics.dir/physics_fluid.c.o CMakeFiles/bf_editor_physics.dir/physics_ops.c.o CMakeFiles/bf_editor_physics.dir/physics_pointcache.c.o
-/usr/bin/ranlib ../../../../lib/libbf_editor_physics.a

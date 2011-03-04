@@ -1,2 +1,0 @@
-/usr/bin/ar cr ../../../lib/libge_logic_ngnetwork.a  CMakeFiles/ge_logic_ngnetwork.dir/NG_NetworkMessage.cpp.o CMakeFiles/ge_logic_ngnetwork.dir/NG_NetworkObject.cpp.o CMakeFiles/ge_logic_ngnetwork.dir/NG_NetworkScene.cpp.o
-/usr/bin/ranlib ../../../lib/libge_logic_ngnetwork.a

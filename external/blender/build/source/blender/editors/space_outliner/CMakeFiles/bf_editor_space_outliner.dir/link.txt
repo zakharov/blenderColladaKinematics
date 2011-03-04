@@ -1,2 +1,0 @@
-/usr/bin/ar cr ../../../../lib/libbf_editor_space_outliner.a  CMakeFiles/bf_editor_space_outliner.dir/outliner.c.o CMakeFiles/bf_editor_space_outliner.dir/outliner_ops.c.o CMakeFiles/bf_editor_space_outliner.dir/space_outliner.c.o
-/usr/bin/ranlib ../../../../lib/libbf_editor_space_outliner.a

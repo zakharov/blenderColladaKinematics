@@ -1,2 +1,0 @@
-/usr/bin/ar cr ../../../../lib/libbf_editor_space_buttons.a  CMakeFiles/bf_editor_space_buttons.dir/buttons_context.c.o CMakeFiles/bf_editor_space_buttons.dir/buttons_header.c.o CMakeFiles/bf_editor_space_buttons.dir/buttons_ops.c.o CMakeFiles/bf_editor_space_buttons.dir/space_buttons.c.o
-/usr/bin/ranlib ../../../../lib/libbf_editor_space_buttons.a

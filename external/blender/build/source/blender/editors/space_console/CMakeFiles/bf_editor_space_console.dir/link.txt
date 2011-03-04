@@ -1,2 +1,0 @@
-/usr/bin/ar cr ../../../../lib/libbf_editor_space_console.a  CMakeFiles/bf_editor_space_console.dir/console_draw.c.o CMakeFiles/bf_editor_space_console.dir/console_ops.c.o CMakeFiles/bf_editor_space_console.dir/space_console.c.o
-/usr/bin/ranlib ../../../../lib/libbf_editor_space_console.a

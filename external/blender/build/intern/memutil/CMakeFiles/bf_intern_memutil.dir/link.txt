@@ -1,2 +1,0 @@
-/usr/bin/ar cr ../../lib/libbf_intern_memutil.a  CMakeFiles/bf_intern_memutil.dir/intern/MEM_CacheLimiterC-Api.cpp.o CMakeFiles/bf_intern_memutil.dir/intern/MEM_RefCountedC-Api.cpp.o
-/usr/bin/ranlib ../../lib/libbf_intern_memutil.a

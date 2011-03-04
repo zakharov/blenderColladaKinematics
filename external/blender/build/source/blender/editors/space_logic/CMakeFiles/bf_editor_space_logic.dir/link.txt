@@ -1,2 +1,0 @@
-/usr/bin/ar cr ../../../../lib/libbf_editor_space_logic.a  CMakeFiles/bf_editor_space_logic.dir/logic_buttons.c.o CMakeFiles/bf_editor_space_logic.dir/logic_ops.c.o CMakeFiles/bf_editor_space_logic.dir/logic_window.c.o CMakeFiles/bf_editor_space_logic.dir/space_logic.c.o
-/usr/bin/ranlib ../../../../lib/libbf_editor_space_logic.a

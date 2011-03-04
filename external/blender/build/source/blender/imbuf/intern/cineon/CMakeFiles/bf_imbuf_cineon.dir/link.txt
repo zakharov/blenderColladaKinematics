@@ -1,2 +1,0 @@
-/usr/bin/ar cr ../../../../../lib/libbf_imbuf_cineon.a  CMakeFiles/bf_imbuf_cineon.dir/cineon_dpx.c.o CMakeFiles/bf_imbuf_cineon.dir/cineonlib.c.o CMakeFiles/bf_imbuf_cineon.dir/dpxlib.c.o CMakeFiles/bf_imbuf_cineon.dir/logImageCore.c.o CMakeFiles/bf_imbuf_cineon.dir/logImageLib.c.o CMakeFiles/bf_imbuf_cineon.dir/logmemfile.c.o
-/usr/bin/ranlib ../../../../../lib/libbf_imbuf_cineon.a

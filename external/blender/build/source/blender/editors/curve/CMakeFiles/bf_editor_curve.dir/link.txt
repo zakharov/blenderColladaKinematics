@@ -1,2 +1,0 @@
-/usr/bin/ar cr ../../../../lib/libbf_editor_curve.a  CMakeFiles/bf_editor_curve.dir/curve_ops.c.o CMakeFiles/bf_editor_curve.dir/editcurve.c.o CMakeFiles/bf_editor_curve.dir/editfont.c.o CMakeFiles/bf_editor_curve.dir/lorem.c.o
-/usr/bin/ranlib ../../../../lib/libbf_editor_curve.a

@@ -1,2 +1,0 @@
-/usr/bin/ar cr ../../../../../lib/libbf_imbuf_dds.a  CMakeFiles/bf_imbuf_dds.dir/BlockDXT.cpp.o CMakeFiles/bf_imbuf_dds.dir/ColorBlock.cpp.o CMakeFiles/bf_imbuf_dds.dir/DirectDrawSurface.cpp.o CMakeFiles/bf_imbuf_dds.dir/Image.cpp.o CMakeFiles/bf_imbuf_dds.dir/Stream.cpp.o CMakeFiles/bf_imbuf_dds.dir/dds_api.cpp.o
-/usr/bin/ranlib ../../../../../lib/libbf_imbuf_dds.a

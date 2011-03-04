@@ -1,2 +1,0 @@
-/usr/bin/ar cr ../../../../lib/libbf_editor_space_file.a  CMakeFiles/bf_editor_space_file.dir/file_draw.c.o CMakeFiles/bf_editor_space_file.dir/file_ops.c.o CMakeFiles/bf_editor_space_file.dir/file_panels.c.o CMakeFiles/bf_editor_space_file.dir/filelist.c.o CMakeFiles/bf_editor_space_file.dir/filesel.c.o CMakeFiles/bf_editor_space_file.dir/fsmenu.c.o CMakeFiles/bf_editor_space_file.dir/space_file.c.o
-/usr/bin/ranlib ../../../../lib/libbf_editor_space_file.a
