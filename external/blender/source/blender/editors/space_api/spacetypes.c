@@ -1,5 +1,5 @@
 /*
- * $Id: spacetypes.c 35242 2011-02-27 20:29:51Z jesterking $
+ * $Id: spacetypes.c 35365 2011-03-05 14:03:29Z ton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -127,7 +127,9 @@ void ED_spacetypes_init(void)
 	ED_operatormacros_node();
 	ED_operatormacros_object();
 	ED_operatormacros_file();
-
+	ED_operatormacros_graph();
+	ED_operatormacros_action();
+	
 	/* register dropboxes (can use macros) */
 	spacetypes = BKE_spacetypes_list();
 	for(type=spacetypes->first; type; type=type->next) {

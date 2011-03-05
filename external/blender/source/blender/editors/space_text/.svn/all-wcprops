@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_text
+/svnroot/bf-blender/!svn/ver/35355/trunk/blender/source/blender/editors/space_text
 END
 space_text.c
 K 25
@@ -19,7 +19,7 @@ text_ops.c
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_text/text_ops.c
+/svnroot/bf-blender/!svn/ver/35355/trunk/blender/source/blender/editors/space_text/text_ops.c
 END
 text_python.c
 K 25

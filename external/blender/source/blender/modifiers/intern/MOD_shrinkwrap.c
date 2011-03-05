@@ -1,5 +1,5 @@
 /*
-* $Id: MOD_shrinkwrap.c 35178 2011-02-25 13:57:17Z jesterking $
+* $Id: MOD_shrinkwrap.c 35362 2011-03-05 10:29:10Z campbellbarton $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -172,18 +172,18 @@ ModifierTypeInfo modifierType_Shrinkwrap = {
 
 	/* copyData */          copyData,
 	/* deformVerts */       deformVerts,
-	/* deformMatrices */    0,
+	/* deformMatrices */    NULL,
 	/* deformVertsEM */     deformVertsEM,
-	/* deformMatricesEM */  0,
-	/* applyModifier */     0,
-	/* applyModifierEM */   0,
+	/* deformMatricesEM */  NULL,
+	/* applyModifier */     NULL,
+	/* applyModifierEM */   NULL,
 	/* initData */          initData,
 	/* requiredDataMask */  requiredDataMask,
-	/* freeData */          0,
+	/* freeData */          NULL,
 	/* isDisabled */        isDisabled,
 	/* updateDepgraph */    updateDepgraph,
-	/* dependsOnTime */     0,
-	/* dependsOnNormals */	0,
+	/* dependsOnTime */     NULL,
+	/* dependsOnNormals */	NULL,
 	/* foreachObjectLink */ foreachObjectLink,
-	/* foreachIDLink */     0,
+	/* foreachIDLink */     NULL,
 };

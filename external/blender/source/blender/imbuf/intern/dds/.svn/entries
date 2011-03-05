@@ -1,7 +1,7 @@
 10
 
 dir
-35339
+35365
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/imbuf/intern/dds
 https://svn.blender.org/svnroot/bf-blender
 
@@ -196,40 +196,6 @@ has-props
 
 3838
 
-DirectDrawSurface.h
-file
-
-
-
-
-2011-03-03T12:27:27.822297Z
-5edf74233d307e24630f0f34f554d339
-2011-02-27T20:23:21.939977Z
-35239
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4779
-
 SConscript
 file
 
@@ -263,6 +229,40 @@ has-props
 
 
 459
+
+DirectDrawSurface.h
+file
+
+
+
+
+2011-03-03T12:27:27.822297Z
+5edf74233d307e24630f0f34f554d339
+2011-02-27T20:23:21.939977Z
+35239
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4779
 
 dds_api.h
 file

@@ -1,7 +1,7 @@
 10
 
 dir
-35339
+35365
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern
 https://svn.blender.org/svnroot/bf-blender
 
@@ -29,16 +29,16 @@ campbellbarton
 container
 dir
 
-bsp
-dir
-
 ghost
 dir
 
-audaspace
+bsp
 dir
 
 guardedalloc
+dir
+
+audaspace
 dir
 
 SConscript
@@ -81,10 +81,10 @@ dir
 boolop
 dir
 
-mikktspace
+opennl
 dir
 
-opennl
+mikktspace
 dir
 
 iksolver

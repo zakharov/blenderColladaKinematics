@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 71
-/svnroot/bf-blender/!svn/ver/35336/trunk/blender/source/blender/blenlib
+/svnroot/bf-blender/!svn/ver/35358/trunk/blender/source/blender/blenlib
 END
 BLI_dlrbTree.h
 K 25
@@ -175,7 +175,7 @@ PIL_time.h
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/PIL_time.h
+/svnroot/bf-blender/!svn/ver/35358/trunk/blender/source/blender/blenlib/PIL_time.h
 END
 BLI_boxpack2d.h
 K 25

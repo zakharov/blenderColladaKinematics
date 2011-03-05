@@ -1,5 +1,5 @@
 /*
- * $Id: sculpt_intern.h 35242 2011-02-27 20:29:51Z jesterking $
+ * $Id: sculpt_intern.h 35363 2011-03-05 10:37:59Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -104,7 +104,7 @@ typedef struct SculptUndoNode {
 	float *layer_disp;
 
 	/* shape keys */
-	char *shapeName[32]; /* keep size in sync with keyblock dna */
+	char shapeName[sizeof(((KeyBlock *)0))->name];
 } SculptUndoNode;
 
 SculptUndoNode *sculpt_undo_push_node(SculptSession *ss, PBVHNode *node);

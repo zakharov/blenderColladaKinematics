@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svnroot/bf-blender/!svn/ver/35313/trunk/blender/source/blender/editors/space_action
+/svnroot/bf-blender/!svn/ver/35365/trunk/blender/source/blender/editors/space_action
 END
 action_ops.c
 K 25
 svn:wc:ra_dav:version-url
 V 97
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_action/action_ops.c
+/svnroot/bf-blender/!svn/ver/35365/trunk/blender/source/blender/editors/space_action/action_ops.c
 END
 action_intern.h
 K 25
@@ -19,7 +19,7 @@ action_edit.c
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/svnroot/bf-blender/!svn/ver/35313/trunk/blender/source/blender/editors/space_action/action_edit.c
+/svnroot/bf-blender/!svn/ver/35365/trunk/blender/source/blender/editors/space_action/action_edit.c
 END
 SConscript
 K 25
@@ -49,5 +49,5 @@ action_select.c
 K 25
 svn:wc:ra_dav:version-url
 V 100
-/svnroot/bf-blender/!svn/ver/35255/trunk/blender/source/blender/editors/space_action/action_select.c
+/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/editors/space_action/action_select.c
 END

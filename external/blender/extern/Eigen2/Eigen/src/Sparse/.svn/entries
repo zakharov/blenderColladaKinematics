@@ -1,7 +1,7 @@
 10
 
 dir
-35339
+35365
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/extern/Eigen2/Eigen/src/Sparse
 https://svn.blender.org/svnroot/bf-blender
 
@@ -60,40 +60,6 @@ has-props
 
 7128
 
-SparseUtil.h
-file
-
-
-
-
-2011-03-03T12:28:50.154297Z
-f65cb79dd2032d1fd2dc6722282c9ccd
-2009-09-24T14:33:05.237429Z
-23455
-ben2610
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5758
-
 AmbiVector.h
 file
 
@@ -128,14 +94,14 @@ has-props
 
 10267
 
-SuperLUSupport.h
+SparseUtil.h
 file
 
 
 
 
 2011-03-03T12:28:50.154297Z
-75a81ac7154c00e6f9eb0035daaf0627
+f65cb79dd2032d1fd2dc6722282c9ccd
 2009-09-24T14:33:05.237429Z
 23455
 ben2610
@@ -160,41 +126,7 @@ has-props
 
 
 
-16653
-
-SparseTranspose.h
-file
-
-
-
-
-2011-03-03T12:28:50.158297Z
-a5b7d1c3d43b3a0479e4584c09d389a4
-2009-10-20T09:50:24.969460Z
-23994
-ben2610
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3119
+5758
 
 SparseCwiseBinaryOp.h
 file
@@ -230,6 +162,74 @@ has-props
 
 18242
 
+SparseTranspose.h
+file
+
+
+
+
+2011-03-03T12:28:50.158297Z
+a5b7d1c3d43b3a0479e4584c09d389a4
+2009-10-20T09:50:24.969460Z
+23994
+ben2610
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3119
+
+SuperLUSupport.h
+file
+
+
+
+
+2011-03-03T12:28:50.154297Z
+75a81ac7154c00e6f9eb0035daaf0627
+2009-09-24T14:33:05.237429Z
+23455
+ben2610
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+16653
+
 SparseDiagonalProduct.h
 file
 
@@ -264,40 +264,6 @@ has-props
 
 7028
 
-SparseProduct.h
-file
-
-
-
-
-2011-03-03T12:28:50.162297Z
-1fe34577e4a1eda434e0faeb550e9c41
-2009-09-24T14:33:05.237429Z
-23455
-ben2610
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-16239
-
 SparseLU.h
 file
 
@@ -331,6 +297,40 @@ has-props
 
 
 5015
+
+SparseProduct.h
+file
+
+
+
+
+2011-03-03T12:28:50.162297Z
+1fe34577e4a1eda434e0faeb550e9c41
+2009-09-24T14:33:05.237429Z
+23455
+ben2610
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+16239
 
 SparseAssign.h
 file
@@ -434,40 +434,6 @@ has-props
 
 3341
 
-SparseRedux.h
-file
-
-
-
-
-2011-03-03T12:28:50.166297Z
-6f3d139f758761584ffea8f5713e390f
-2009-07-14T15:34:14.345257Z
-21578
-ben2610
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1599
-
 SparseFuzzy.h
 file
 
@@ -501,6 +467,40 @@ has-props
 
 
 1763
+
+SparseRedux.h
+file
+
+
+
+
+2011-03-03T12:28:50.166297Z
+6f3d139f758761584ffea8f5713e390f
+2009-07-14T15:34:14.345257Z
+21578
+ben2610
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1599
 
 SparseCwiseUnaryOp.h
 file

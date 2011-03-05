@@ -1,7 +1,7 @@
 10
 
 dir
-35339
+35365
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/collada
 https://svn.blender.org/svnroot/bf-blender
 
@@ -536,40 +536,6 @@ has-props
 
 2579
 
-EffectExporter.cpp
-file
-
-
-
-
-2011-03-03T12:27:16.774297Z
-dee49f3ef520286ca9d6e377599ac924
-2011-02-27T20:30:35.090096Z
-35243
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-9070
-
 SkinInfo.h
 file
 
@@ -603,6 +569,40 @@ has-props
 
 
 4377
+
+EffectExporter.cpp
+file
+
+
+
+
+2011-03-03T12:27:16.774297Z
+dee49f3ef520286ca9d6e377599ac924
+2011-02-27T20:30:35.090096Z
+35243
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9070
 
 GeometryExporter.h
 file
@@ -672,40 +672,6 @@ has-props
 
 8159
 
-CMakeLists.txt
-file
-
-
-
-
-2011-03-03T12:27:16.774297Z
-7031eb70cc199fad8d7afff5e7ae501b
-2011-02-21T12:35:04.852834Z
-35028
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2597
-
 MaterialExporter.h
 file
 
@@ -739,6 +705,40 @@ has-props
 
 
 2612
+
+CMakeLists.txt
+file
+
+
+
+
+2011-03-03T12:27:16.774297Z
+7031eb70cc199fad8d7afff5e7ae501b
+2011-02-21T12:35:04.852834Z
+35028
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2597
 
 collada.cpp
 file
@@ -910,40 +910,6 @@ has-props
 
 4968
 
-InstanceWriter.h
-file
-
-
-
-
-2011-03-03T12:27:16.778297Z
-887c3c0b11c66dfbaa2257ab04602c76
-2011-02-21T08:38:53.684863Z
-35020
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1308
-
 SConscript
 file
 
@@ -977,6 +943,40 @@ has-props
 
 
 2076
+
+InstanceWriter.h
+file
+
+
+
+
+2011-03-03T12:27:16.778297Z
+887c3c0b11c66dfbaa2257ab04602c76
+2011-02-21T08:38:53.684863Z
+35020
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1308
 
 ArmatureImporter.h
 file

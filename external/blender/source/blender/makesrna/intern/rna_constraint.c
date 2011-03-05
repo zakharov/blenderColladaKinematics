@@ -1,5 +1,5 @@
 /*
- * $Id: rna_constraint.c 35238 2011-02-27 20:20:01Z jesterking $
+ * $Id: rna_constraint.c 35343 2011-03-04 06:34:41Z aligorith $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -1122,7 +1122,7 @@ static void rna_def_constraint_stretch_to(BlenderRNA *brna)
 
 	static EnumPropertyItem volume_items[] = {
 		{VOLUME_XZ, "VOLUME_XZX", 0, "XZ", ""},
-		{VOLUME_X, "VOLUME_X", 0, "Y", ""},
+		{VOLUME_X, "VOLUME_X", 0, "X", ""},
 		{VOLUME_Z, "VOLUME_Z", 0, "Z", ""},
 		{NO_VOLUME, "NO_VOLUME", 0, "None", ""},
 		{0, NULL, 0, NULL, NULL}};

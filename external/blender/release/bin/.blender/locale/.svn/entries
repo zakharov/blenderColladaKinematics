@@ -1,7 +1,7 @@
 10
 
 dir
-35339
+35365
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/release/bin/.blender/locale
 https://svn.blender.org/svnroot/bf-blender
 
@@ -41,13 +41,13 @@ dir
 ru
 dir
 
-sv
+de
 dir
 
 bg
 dir
 
-de
+sv
 dir
 
 ja
@@ -62,10 +62,10 @@ dir
 zh_CN
 dir
 
-ar
+hr_HR
 dir
 
-hr_HR
+ar
 dir
 
 sr@Latn

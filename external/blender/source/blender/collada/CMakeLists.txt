@@ -74,6 +74,7 @@ set(SRC
 	collada.cpp
 	collada_internal.cpp
 	collada_utils.cpp
+	KinematicsImporter.cpp
 
 	AnimationImporter.h
 	ArmatureExporter.h

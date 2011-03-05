@@ -1,5 +1,5 @@
 /*
- * $Id: graph_edit.c 35313 2011-03-02 23:39:08Z aligorith $
+ * $Id: graph_edit.c 35354 2011-03-04 16:02:42Z ton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -781,9 +781,6 @@ static int graphkeys_duplicate_exec(bContext *C, wmOperator *UNUSED(op))
 static int graphkeys_duplicate_invoke(bContext *C, wmOperator *op, wmEvent *UNUSED(event))
 {
 	graphkeys_duplicate_exec(C, op);
-	
-	RNA_int_set(op->ptr, "mode", TFM_TIME_DUPLICATE);
-	WM_operator_name_call(C, "TRANSFORM_OT_transform", WM_OP_INVOKE_REGION_WIN, op->ptr);
 
 	return OPERATOR_FINISHED;
 }

@@ -1,5 +1,5 @@
 /*
-* $Id: MOD_smoke.c 35178 2011-02-25 13:57:17Z jesterking $
+* $Id: MOD_smoke.c 35362 2011-03-05 10:29:10Z campbellbarton $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -159,18 +159,18 @@ ModifierTypeInfo modifierType_Smoke = {
 
 	/* copyData */          copyData,
 	/* deformVerts */       deformVerts,
-	/* deformMatrices */    0,
-	/* deformVertsEM */     0,
-	/* deformMatricesEM */  0,
-	/* applyModifier */     0,
-	/* applyModifierEM */   0,
+	/* deformMatrices */    NULL,
+	/* deformVertsEM */     NULL,
+	/* deformMatricesEM */  NULL,
+	/* applyModifier */     NULL,
+	/* applyModifierEM */   NULL,
 	/* initData */          initData,
-	/* requiredDataMask */  0,
+	/* requiredDataMask */  NULL,
 	/* freeData */          freeData,
-	/* isDisabled */        0,
+	/* isDisabled */        NULL,
 	/* updateDepgraph */    updateDepgraph,
 	/* dependsOnTime */     dependsOnTime,
-	/* dependsOnNormals */	0,
-	/* foreachObjectLink */ 0,
-	/* foreachIDLink */     0,
+	/* dependsOnNormals */	NULL,
+	/* foreachObjectLink */ NULL,
+	/* foreachIDLink */     NULL,
 };

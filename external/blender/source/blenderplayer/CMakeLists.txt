@@ -1,5 +1,5 @@
 # -*- mode: cmake; indent-tabs-mode: t; -*-
-# $Id: CMakeLists.txt 35181 2011-02-25 14:45:45Z campbellbarton $
+# $Id: CMakeLists.txt 35361 2011-03-05 09:27:14Z dfelinto $
 # ***** BEGIN GPL LICENSE BLOCK *****
 #
 # This program is free software; you can redistribute it and/or
@@ -119,6 +119,20 @@ if(UNIX)
 		bf_blenkernel # duplicate for linking
 		bf_intern_mikktspace
 	)
+
+	if(WITH_LZMA)
+		list(APPEND BLENDER_SORTED_LIBS extern_lzma)
+	endif()
+
+	if(WITH_MOD_DECIMATE)
+		list(APPEND BLENDER_SORTED_LIBS bf_intern_decimate)
+	endif()
+
+	if(WITH_MOD_BOOLEAN)
+		list(APPEND BLENDER_SORTED_LIBS bf_intern_bsp)
+		list(APPEND BLENDER_SORTED_LIBS bf_intern_bop)
+		list(APPEND BLENDER_SORTED_LIBS bf_intern_moto)
+	endif()
 
 	if(WITH_CODEC_QUICKTIME)
 		list(APPEND BLENDER_SORTED_LIBS bf_quicktime)

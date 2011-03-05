@@ -1,5 +1,5 @@
 /*
- * $Id: rayshade.c 35233 2011-02-27 19:31:27Z jesterking $
+ * $Id: rayshade.c 35355 2011-03-04 17:01:33Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -2347,7 +2347,7 @@ static void ray_shadow_qmc(ShadeInput *shi, LampRen *lar, float *lampco, float *
 		
 		samples++;
 		
-		if ((lar->ray_samp_method == LA_SAMP_HALTON)) {
+		if (lar->ray_samp_method == LA_SAMP_HALTON) {
 		
 			/* adaptive sampling - consider samples below threshold as in shadow (or vice versa) and exit early */
 			if ((max_samples > min_adapt_samples) && (adapt_thresh > 0.0) && (samples > max_samples / 3)) {

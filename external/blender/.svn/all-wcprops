@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 48
-/svnroot/bf-blender/!svn/ver/35339/trunk/blender
+/svnroot/bf-blender/!svn/ver/35365/trunk/blender
 END
 GNUmakefile
 K 25
@@ -25,5 +25,5 @@ CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 63
-/svnroot/bf-blender/!svn/ver/35327/trunk/blender/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/35352/trunk/blender/CMakeLists.txt
 END

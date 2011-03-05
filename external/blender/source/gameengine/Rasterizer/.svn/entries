@@ -1,7 +1,7 @@
 10
 
 dir
-35339
+35365
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/gameengine/Rasterizer
 https://svn.blender.org/svnroot/bf-blender
 
@@ -539,39 +539,8 @@ has-props
 
 1364
 
-RAS_MaterialBucket.cpp
-file
-
-
-
-
-2011-03-03T12:26:43.166297Z
-93470f9c29fe19c27df325feb82d2d3c
-2011-02-25T13:38:24.865735Z
-35174
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-16732
+RAS_OpenGLFilters
+dir
 
 RAS_Polygon.h
 file
@@ -607,17 +576,14 @@ has-props
 
 2698
 
-RAS_OpenGLFilters
-dir
-
-RAS_TexVert.cpp
+RAS_MaterialBucket.cpp
 file
 
 
 
 
 2011-03-03T12:26:43.166297Z
-a7fe0b332339d3147edd53d0aaf18acf
+93470f9c29fe19c27df325feb82d2d3c
 2011-02-25T13:38:24.865735Z
 35174
 jesterking
@@ -642,7 +608,7 @@ has-props
 
 
 
-3994
+16732
 
 SConscript
 file
@@ -677,6 +643,40 @@ has-props
 
 
 675
+
+RAS_TexVert.cpp
+file
+
+
+
+
+2011-03-03T12:26:43.166297Z
+a7fe0b332339d3147edd53d0aaf18acf
+2011-02-25T13:38:24.865735Z
+35174
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3994
 
 RAS_Rect.h
 file
@@ -848,40 +848,6 @@ has-props
 
 5699
 
-RAS_FramingManager.h
-file
-
-
-
-
-2011-03-03T12:26:43.174297Z
-52ba8b816dfd4cac35cf08f573893700
-2011-02-22T12:42:55.440226Z
-35072
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5876
-
 RAS_MeshObject.cpp
 file
 
@@ -915,6 +881,40 @@ has-props
 
 
 14870
+
+RAS_FramingManager.h
+file
+
+
+
+
+2011-03-03T12:26:43.174297Z
+52ba8b816dfd4cac35cf08f573893700
+2011-02-22T12:42:55.440226Z
+35072
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5876
 
 RAS_texmatrix.cpp
 file
@@ -950,40 +950,6 @@ has-props
 
 3533
 
-RAS_CameraData.h
-file
-
-
-
-
-2011-03-03T12:26:43.174297Z
-3db4262148b537575c26ddc602beb7aa
-2011-02-22T12:42:55.440226Z
-35072
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2008
-
 RAS_Polygon.cpp
 file
 
@@ -1017,4 +983,38 @@ has-props
 
 
 3190
+
+RAS_CameraData.h
+file
+
+
+
+
+2011-03-03T12:26:43.174297Z
+3db4262148b537575c26ddc602beb7aa
+2011-02-22T12:42:55.440226Z
+35072
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2008
 

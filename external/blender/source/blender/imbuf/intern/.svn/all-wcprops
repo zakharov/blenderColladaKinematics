@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/svnroot/bf-blender/!svn/ver/35336/trunk/blender/source/blender/imbuf/intern
+/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/imbuf/intern
 END
 thumbs.c
 K 25
 svn:wc:ra_dav:version-url
 V 85
-/svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/intern/thumbs.c
+/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/imbuf/intern/thumbs.c
 END
 radiance_hdr.c
 K 25
@@ -61,7 +61,7 @@ scaling.c
 K 25
 svn:wc:ra_dav:version-url
 V 86
-/svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/intern/scaling.c
+/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/imbuf/intern/scaling.c
 END
 IMB_anim.h
 K 25
@@ -139,7 +139,7 @@ targa.c
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/intern/targa.c
+/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/imbuf/intern/targa.c
 END
 cache.c
 K 25
@@ -187,7 +187,7 @@ filetype.c
 K 25
 svn:wc:ra_dav:version-url
 V 87
-/svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/intern/filetype.c
+/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/imbuf/intern/filetype.c
 END
 module.c
 K 25

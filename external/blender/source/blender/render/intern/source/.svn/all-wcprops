@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svnroot/bf-blender/!svn/ver/35339/trunk/blender/source/blender/render/intern/source
+/svnroot/bf-blender/!svn/ver/35355/trunk/blender/source/blender/render/intern/source
 END
 occlusion.c
 K 25
@@ -19,7 +19,7 @@ rayshade.c
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svnroot/bf-blender/!svn/ver/35233/trunk/blender/source/blender/render/intern/source/rayshade.c
+/svnroot/bf-blender/!svn/ver/35355/trunk/blender/source/blender/render/intern/source/rayshade.c
 END
 volume_precache.c
 K 25

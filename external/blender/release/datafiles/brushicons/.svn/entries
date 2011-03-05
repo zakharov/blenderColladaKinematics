@@ -1,7 +1,7 @@
 10
 
 dir
-35339
+35365
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/release/datafiles/brushicons
 https://svn.blender.org/svnroot/bf-blender
 
@@ -26,16 +26,16 @@ gsrb3d
 
 954f8c5b-7b00-dc11-b283-0030488c597c
 
-draw.png
+mix.png
 file
 
 
 
 
 2011-03-03T12:26:15.626297Z
-f53987f93366f9749010ec2d990d7202
-2010-07-19T18:08:29.127550Z
-30508
+671940553337dd5020e5c0f8e9b07d44
+2010-07-21T01:34:39.738427Z
+30562
 gsrb3d
 has-props
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-11349
+10448
 
 flatten.png
 file
@@ -94,16 +94,16 @@ has-props
 
 9114
 
-mix.png
+draw.png
 file
 
 
 
 
 2011-03-03T12:26:15.626297Z
-671940553337dd5020e5c0f8e9b07d44
-2010-07-21T01:34:39.738427Z
-30562
+f53987f93366f9749010ec2d990d7202
+2010-07-19T18:08:29.127550Z
+30508
 gsrb3d
 has-props
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-10448
+11349
 
 soften.png
 file
@@ -230,40 +230,6 @@ has-props
 
 9880
 
-nudge.png
-file
-
-
-
-
-2011-03-03T12:26:15.630297Z
-0aa73d467aed2e910d9acc37c9efe456
-2010-07-19T18:08:29.127550Z
-30508
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-18012
-
 crease.png
 file
 
@@ -298,16 +264,16 @@ has-props
 
 8638
 
-blur.png
+nudge.png
 file
 
 
 
 
-2011-03-03T12:26:15.634297Z
-616dd7f7129d3a977887c733c127774b
-2010-07-21T01:34:39.738427Z
-30562
+2011-03-03T12:26:15.630297Z
+0aa73d467aed2e910d9acc37c9efe456
+2010-07-19T18:08:29.127550Z
+30508
 gsrb3d
 has-props
 
@@ -330,7 +296,7 @@ has-props
 
 
 
-9327
+18012
 
 darken.png
 file
@@ -365,6 +331,40 @@ has-props
 
 
 9653
+
+blur.png
+file
+
+
+
+
+2011-03-03T12:26:15.634297Z
+616dd7f7129d3a977887c733c127774b
+2010-07-21T01:34:39.738427Z
+30562
+gsrb3d
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9327
 
 smear.png
 file

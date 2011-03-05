@@ -1,15 +1,15 @@
 10
 
 dir
-1676
+1680
 https://svn.blender.org/svnroot/bf-extensions/trunk/py/scripts/addons
 https://svn.blender.org/svnroot/bf-extensions
 
 
 
-2011-03-03T21:00:18.423347Z
-1676
-dingto
+2011-03-04T05:30:32.190001Z
+1679
+gekko
 
 
 
@@ -486,9 +486,6 @@ dir
 io_mesh_stl
 dir
 
-space_view3d_math_vis
-dir
-
 io_import_scene_dxf.py
 file
 
@@ -523,45 +520,11 @@ has-props
 
 75371
 
+space_view3d_math_vis
+dir
+
 io_mesh_ply
 dir
-
-modules
-dir
-
-space_view3d_3d_navigation.py
-file
-
-
-
-
-2011-03-03T12:29:54.278297Z
-d8a3aa2f421007b3af7b2454dde667bd
-2011-02-11T01:29:13.146577Z
-1569
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3520
 
 io_export_directx_x.py
 file
@@ -597,14 +560,14 @@ has-props
 
 61456
 
-animation_rotobezier.py
+space_view3d_3d_navigation.py
 file
 
 
 
 
-2011-03-03T12:29:54.282297Z
-c79044dcbb4e09bc969e5c726a4b744e
+2011-03-03T12:29:54.278297Z
+d8a3aa2f421007b3af7b2454dde667bd
 2011-02-11T01:29:13.146577Z
 1569
 campbellbarton
@@ -629,7 +592,10 @@ has-props
 
 
 
-11676
+3520
+
+modules
+dir
 
 io_anim_camera.py
 file
@@ -665,14 +631,14 @@ has-props
 
 5390
 
-object_cloud_gen.py
+animation_rotobezier.py
 file
 
 
 
 
 2011-03-03T12:29:54.282297Z
-b2da7343a2bf152dd591ef254e2e6542
+c79044dcbb4e09bc969e5c726a4b744e
 2011-02-11T01:29:13.146577Z
 1569
 campbellbarton
@@ -697,7 +663,7 @@ has-props
 
 
 
-26866
+11676
 
 add_mesh_gears.py
 file
@@ -733,8 +699,39 @@ has-props
 
 25877
 
-io_scene_obj
-dir
+object_cloud_gen.py
+file
+
+
+
+
+2011-03-03T12:29:54.282297Z
+b2da7343a2bf152dd591ef254e2e6542
+2011-02-11T01:29:13.146577Z
+1569
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+26866
 
 mesh_relax.py
 file
@@ -769,6 +766,9 @@ has-props
 
 
 3914
+
+io_scene_obj
+dir
 
 add_mesh_gemstones.py
 file
@@ -1026,11 +1026,11 @@ file
 
 
 
-2011-03-03T12:29:54.290297Z
-e78dedceedbd6b3d258dff316a26cd28
-2011-02-16T02:52:12.761991Z
-1609
-campbellbarton
+2011-03-05T14:59:36.492169Z
+311886a996b00e692694409a82b6c13f
+2011-03-04T05:30:32.190001Z
+1679
+gekko
 has-props
 
 
@@ -1052,7 +1052,7 @@ has-props
 
 
 
-37757
+38881
 
 system_blend_info.py
 file

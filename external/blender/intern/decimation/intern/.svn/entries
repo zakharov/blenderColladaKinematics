@@ -1,7 +1,7 @@
 10
 
 dir
-35339
+35365
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern/decimation/intern
 https://svn.blender.org/svnroot/bf-blender
 
@@ -196,40 +196,6 @@ has-props
 
 12372
 
-LOD_ExternBufferEditor.h
-file
-
-
-
-
-2011-03-03T12:25:43.438297Z
-b5730ce46a90ab1c00b92366b1ffa0b1
-2011-02-25T10:47:28.630336Z
-35147
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4313
-
 LOD_QSDecimator.cpp
 file
 
@@ -264,14 +230,14 @@ has-props
 
 7736
 
-LOD_decimation.cpp
+LOD_ExternBufferEditor.h
 file
 
 
 
 
 2011-03-03T12:25:43.438297Z
-b89097dbeadab5ef77b8e006a5cd46b2
+b5730ce46a90ab1c00b92366b1ffa0b1
 2011-02-25T10:47:28.630336Z
 35147
 jesterking
@@ -296,7 +262,7 @@ has-props
 
 
 
-3970
+4313
 
 LOD_MeshBounds.h
 file
@@ -332,6 +298,40 @@ has-props
 
 2606
 
+LOD_decimation.cpp
+file
+
+
+
+
+2011-03-03T12:25:43.438297Z
+b89097dbeadab5ef77b8e006a5cd46b2
+2011-02-25T10:47:28.630336Z
+35147
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3970
+
 LOD_MeshPrimitives.h
 file
 
@@ -365,40 +365,6 @@ has-props
 
 
 3326
-
-LOD_EdgeCollapser.h
-file
-
-
-
-
-2011-03-03T12:25:43.438297Z
-129a56a0c1b8b49600d97151834d924f
-2011-02-25T10:47:28.630336Z
-35147
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2935
 
 LOD_FaceNormalEditor.cpp
 file
@@ -434,6 +400,40 @@ has-props
 
 6209
 
+LOD_EdgeCollapser.h
+file
+
+
+
+
+2011-03-03T12:25:43.438297Z
+129a56a0c1b8b49600d97151834d924f
+2011-02-25T10:47:28.630336Z
+35147
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2935
+
 LOD_ManMesh2.h
 file
 
@@ -468,40 +468,6 @@ has-props
 
 4916
 
-LOD_QSDecimator.h
-file
-
-
-
-
-2011-03-03T12:25:43.442297Z
-58afdf10957bc7ab40d1f98e9efcc5fc
-2011-02-25T10:47:28.630336Z
-35147
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2803
-
 LOD_MeshException.h
 file
 
@@ -535,6 +501,40 @@ has-props
 
 
 1443
+
+LOD_QSDecimator.h
+file
+
+
+
+
+2011-03-03T12:25:43.442297Z
+58afdf10957bc7ab40d1f98e9efcc5fc
+2011-02-25T10:47:28.630336Z
+35147
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2803
 
 LOD_FaceNormalEditor.h
 file

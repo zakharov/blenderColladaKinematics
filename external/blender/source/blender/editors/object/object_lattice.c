@@ -1,5 +1,5 @@
 /*
- * $Id: object_lattice.c 35242 2011-02-27 20:29:51Z jesterking $
+ * $Id: object_lattice.c 35362 2011-03-05 10:29:10Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -323,7 +323,7 @@ static BPoint *findnearestLattvert(ViewContext *vc, short mval[2], int sel)
 		/* sel==1: selected gets a disadvantage */
 		/* in nurb and bezt or bp the nearest is written */
 		/* return 0 1 2: handlepunt */
-	struct { BPoint *bp; short dist, select, mval[2]; } data = {0};
+	struct { BPoint *bp; short dist, select, mval[2]; } data = {NULL};
 
 	data.dist = 100;
 	data.select = sel;

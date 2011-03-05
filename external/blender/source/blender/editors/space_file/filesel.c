@@ -1,5 +1,5 @@
 /*
- * $Id: filesel.c 35242 2011-02-27 20:29:51Z jesterking $
+ * $Id: filesel.c 35362 2011-03-05 10:29:10Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -405,12 +405,12 @@ static void column_widths(struct FileList* files, struct FileLayout* layout)
 void ED_fileselect_init_layout(struct SpaceFile *sfile, struct ARegion *ar)
 {
 	FileSelectParams *params = ED_fileselect_get_params(sfile);
-	FileLayout *layout=0;
+	FileLayout *layout= NULL;
 	View2D *v2d= &ar->v2d;
 	int maxlen = 0;
 	int numfiles;
 	int textheight;
-	if (sfile->layout == 0) {
+	if (sfile->layout == NULL) {
 		sfile->layout = MEM_callocN(sizeof(struct FileLayout), "file_layout");
 		sfile->layout->dirty = 1;
 	} 

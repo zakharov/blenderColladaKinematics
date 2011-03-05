@@ -1,5 +1,5 @@
 /*
- * $Id: image_buttons.c 35242 2011-02-27 20:29:51Z jesterking $
+ * $Id: image_buttons.c 35362 2011-03-05 10:29:10Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -929,7 +929,7 @@ void uiTemplateImage(uiLayout *layout, bContext *C, PointerRNA *ptr, const char 
 				uiItemR(col, userptr, "frame_duration", 0, str, ICON_NONE);
 				if(ima->anim) {
 					block= uiLayoutGetBlock(row);
-					but= uiDefBut(block, BUT, 0, "Match Movie Length", 0, 0, UI_UNIT_X*2, UI_UNIT_Y, 0, 0, 0, 0, 0, "Set the number of frames to match the movie or sequence.");
+					but= uiDefBut(block, BUT, 0, "Match Movie Length", 0, 0, UI_UNIT_X*2, UI_UNIT_Y, NULL, 0, 0, 0, 0, "Set the number of frames to match the movie or sequence.");
 					uiButSetFunc(but, set_frames_cb, ima, iuser);
 				}
 

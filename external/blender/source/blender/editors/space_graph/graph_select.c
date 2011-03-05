@@ -1,5 +1,5 @@
 /*
- * $Id: graph_select.c 35255 2011-02-28 03:17:53Z campbellbarton $
+ * $Id: graph_select.c 35362 2011-03-05 10:29:10Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -91,7 +91,7 @@ static void deselect_graph_keys (bAnimContext *ac, short test, short sel)
 	int filter;
 	
 	SpaceIpo *sipo= (SpaceIpo *)ac->sa->spacedata.first;
-	KeyframeEditData ked= {{0}};
+	KeyframeEditData ked= {{NULL}};
 	KeyframeEditFunc test_cb, sel_cb;
 	
 	/* determine type-based settings */
@@ -729,7 +729,7 @@ static void graphkeys_select_leftright (bAnimContext *ac, short leftright, short
 	int filter;
 	
 	KeyframeEditFunc ok_cb, select_cb;
-	KeyframeEditData ked= {{0}};
+	KeyframeEditData ked= {{NULL}};
 	Scene *scene= ac->scene;
 	
 	/* if select mode is replace, deselect all keyframes (and channels) first */

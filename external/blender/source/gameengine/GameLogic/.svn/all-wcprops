@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/svnroot/bf-blender/!svn/ver/35169/trunk/blender/source/gameengine/GameLogic
+/svnroot/bf-blender/!svn/ver/35364/trunk/blender/source/gameengine/GameLogic
 END
 SCA_EventManager.cpp
 K 25
@@ -163,7 +163,7 @@ SCA_PythonController.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 101
-/svnroot/bf-blender/!svn/ver/35169/trunk/blender/source/gameengine/GameLogic/SCA_PythonController.cpp
+/svnroot/bf-blender/!svn/ver/35364/trunk/blender/source/gameengine/GameLogic/SCA_PythonController.cpp
 END
 SCA_LogicManager.cpp
 K 25

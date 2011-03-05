@@ -1,15 +1,15 @@
 10
 
 dir
-35339
+35365
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/editors/space_text
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-03-04T17:01:33.853060Z
+35355
+campbellbarton
 
 
 
@@ -100,11 +100,11 @@ file
 
 
 
-2011-03-03T12:27:45.282297Z
-0b3bf5fe66f8bcf179e3c876352c1767
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-03-05T14:58:43.520169Z
+d79262ff14c791e258a58caeff1e57a5
+2011-03-04T17:01:33.853060Z
+35355
+campbellbarton
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-73782
+73861
 
 text_python.c
 file

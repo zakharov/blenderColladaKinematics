@@ -1,5 +1,5 @@
 /*
- * $Id: area.c 35242 2011-02-27 20:29:51Z jesterking $
+ * $Id: area.c 35362 2011-03-05 10:29:10Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -1423,7 +1423,7 @@ void ED_region_header(const bContext *C, ARegion *ar)
 	uiBlock *block;
 	uiLayout *layout;
 	HeaderType *ht;
-	Header header = {0};
+	Header header = {NULL};
 	int maxco, xco, yco;
 
 	/* clear */	

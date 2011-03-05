@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 67
-/svnroot/bf-blender/!svn/ver/35317/trunk/blender/release/scripts/ui
+/svnroot/bf-blender/!svn/ver/35357/trunk/blender/release/scripts/ui
 END
 properties_data_bone.py
 K 25
@@ -103,7 +103,7 @@ properties_data_armature.py
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svnroot/bf-blender/!svn/ver/35201/trunk/blender/release/scripts/ui/properties_data_armature.py
+/svnroot/bf-blender/!svn/ver/35357/trunk/blender/release/scripts/ui/properties_data_armature.py
 END
 properties_game.py
 K 25

@@ -1,15 +1,15 @@
 10
 
 dir
-35339
+35365
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/editors/space_console
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-03-05T10:29:10.037531Z
+35362
+campbellbarton
 
 
 
@@ -66,11 +66,11 @@ file
 
 
 
-2011-03-03T12:27:52.826297Z
-2219aecf7c9c2275725165bc724dfc1f
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-03-05T14:58:43.780169Z
+b488b27e28b74ac81b36e27ec3956a49
+2011-03-05T10:29:10.037531Z
+35362
+campbellbarton
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-23219
+23226
 
 SConscript
 file

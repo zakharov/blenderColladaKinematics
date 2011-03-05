@@ -1,5 +1,5 @@
 /*
- * $Id: transform.c 35337 2011-03-03 17:59:04Z campbellbarton $
+ * $Id: transform.c 35356 2011-03-04 18:39:58Z ton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -1243,6 +1243,15 @@ static void drawArc(float size, float angle_start, float angle_end, int segments
 	glEnd();
 }
 
+static int helpline_poll(bContext *C)
+{
+	ARegion *ar= CTX_wm_region(C);
+	
+	if(ar && ar->regiontype==RGN_TYPE_WINDOW)
+		return 1;
+	return 0;
+}
+
 static void drawHelpline(bContext *UNUSED(C), int x, int y, void *customdata)
 {
 	TransInfo *t = (TransInfo*)customdata;
@@ -1557,7 +1566,7 @@ int initTransform(bContext *C, TransInfo *t, wmOperator *op, wmEvent *event, int
 		t->draw_handle_apply = ED_region_draw_cb_activate(t->ar->type, drawTransformApply, t, REGION_DRAW_PRE_VIEW);
 		t->draw_handle_view = ED_region_draw_cb_activate(t->ar->type, drawTransformView, t, REGION_DRAW_POST_VIEW);
 		//t->draw_handle_pixel = ED_region_draw_cb_activate(t->ar->type, drawTransformPixel, t, REGION_DRAW_POST_PIXEL);
-		t->draw_handle_cursor = WM_paint_cursor_activate(CTX_wm_manager(C), NULL, drawHelpline, t);
+		t->draw_handle_cursor = WM_paint_cursor_activate(CTX_wm_manager(C), helpline_poll, drawHelpline, t);
 	}
 	else if(t->spacetype == SPACE_IMAGE) {
 		unit_m3(t->spacemtx);

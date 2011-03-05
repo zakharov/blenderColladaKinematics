@@ -1,7 +1,7 @@
 10
 
 dir
-35339
+35365
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/render/intern/raytrace
 https://svn.blender.org/svnroot/bf-blender
 
@@ -128,40 +128,6 @@ has-props
 
 5913
 
-rayobject_rtbuild.cpp
-file
-
-
-
-
-2011-03-03T12:26:58.638297Z
-2cba03882715cef5c4c9b1ab0220adff
-2011-02-27T19:31:27.705286Z
-35233
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-12758
-
 rayobject_vbvh.cpp
 file
 
@@ -195,6 +161,40 @@ has-props
 
 
 5270
+
+rayobject_rtbuild.cpp
+file
+
+
+
+
+2011-03-03T12:26:58.638297Z
+2cba03882715cef5c4c9b1ab0220adff
+2011-02-27T19:31:27.705286Z
+35233
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12758
 
 rayobject_blibvh.cpp
 file
@@ -264,40 +264,6 @@ has-props
 
 1761
 
-vbvh.h
-file
-
-
-
-
-2011-03-03T12:26:58.646297Z
-b31710589c515ec1bf4517d7d78a507c
-2011-02-27T19:31:27.705286Z
-35233
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4508
-
 reorganize.h
 file
 
@@ -331,6 +297,40 @@ has-props
 
 
 12582
+
+vbvh.h
+file
+
+
+
+
+2011-03-03T12:26:58.646297Z
+b31710589c515ec1bf4517d7d78a507c
+2011-02-27T19:31:27.705286Z
+35233
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4508
 
 rayobject_rtbuild.h
 file
@@ -400,40 +400,6 @@ has-props
 
 13004
 
-rayobject_internal.h
-file
-
-
-
-
-2011-03-03T12:26:58.646297Z
-a3a54f3e879064664588039be073f94d
-2011-02-27T19:31:27.705286Z
-35233
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4203
-
 rayobject_octree.cpp
 file
 
@@ -467,6 +433,40 @@ has-props
 
 
 25129
+
+rayobject_internal.h
+file
+
+
+
+
+2011-03-03T12:26:58.646297Z
+a3a54f3e879064664588039be073f94d
+2011-02-27T19:31:27.705286Z
+35233
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4203
 
 bvh.h
 file

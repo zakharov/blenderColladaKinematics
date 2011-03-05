@@ -1,5 +1,5 @@
 /*
- * $Id: rna_define.c 35336 2011-03-03 17:58:06Z campbellbarton $
+ * $Id: rna_define.c 35355 2011-03-04 17:01:33Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -1815,7 +1815,7 @@ void RNA_def_property_editable_array_func(PropertyRNA *prop, const char *editabl
 void RNA_def_property_update(PropertyRNA *prop, int noteflag, const char *func)
 {
 	if(!DefRNA.preprocess) {
-		fprintf(stderr, "RNA_def_struct_refine_func: only during preprocessing.\n");
+		fprintf(stderr, "RNA_def_property_update: only during preprocessing.\n");
 		return;
 	}
 

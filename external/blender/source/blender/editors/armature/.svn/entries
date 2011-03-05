@@ -1,7 +1,7 @@
 10
 
 dir
-35339
+35365
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/editors/armature
 https://svn.blender.org/svnroot/bf-blender
 
@@ -60,40 +60,6 @@ has-props
 
 7439
 
-armature_ops.c
-file
-
-
-
-
-2011-03-03T12:27:55.706297Z
-4b509c083264c7b040d6bcb895ab694e
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-16747
-
 meshlaplacian.c
 file
 
@@ -127,6 +93,40 @@ has-props
 
 
 51063
+
+armature_ops.c
+file
+
+
+
+
+2011-03-03T12:27:55.706297Z
+4b509c083264c7b040d6bcb895ab694e
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+16747
 
 BIF_retarget.h
 file
@@ -196,40 +196,6 @@ has-props
 
 8403
 
-SConscript
-file
-
-
-
-
-2011-03-03T12:27:55.706297Z
-ffd94dd5e237008b86ff9982f67c4d42
-2011-02-21T12:35:04.852834Z
-35028
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-619
-
 meshlaplacian.h
 file
 
@@ -263,6 +229,40 @@ has-props
 
 
 2600
+
+SConscript
+file
+
+
+
+
+2011-03-03T12:27:55.706297Z
+ffd94dd5e237008b86ff9982f67c4d42
+2011-02-21T12:35:04.852834Z
+35028
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+619
 
 reeb.c
 file
@@ -434,14 +434,14 @@ has-props
 
 168767
 
-editarmature_sketch.c
+poseUtils.c
 file
 
 
 
 
 2011-03-03T12:27:55.718297Z
-e10402e633caeedf504350254671abe0
+b13fe3682f598ae43da13911c3c40094
 2011-02-27T20:29:51.598877Z
 35242
 jesterking
@@ -466,7 +466,7 @@ has-props
 
 
 
-63196
+8241
 
 poseSlide.c
 file
@@ -502,14 +502,14 @@ has-props
 
 23571
 
-poseUtils.c
+editarmature_sketch.c
 file
 
 
 
 
 2011-03-03T12:27:55.718297Z
-b13fe3682f598ae43da13911c3c40094
+e10402e633caeedf504350254671abe0
 2011-02-27T20:29:51.598877Z
 35242
 jesterking
@@ -534,7 +534,7 @@ has-props
 
 
 
-8241
+63196
 
 CMakeLists.txt
 file

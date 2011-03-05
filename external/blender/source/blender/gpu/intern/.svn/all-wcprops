@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 74
-/svnroot/bf-blender/!svn/ver/35336/trunk/blender/source/blender/gpu/intern
+/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/gpu/intern
 END
 gpu_shader_material.glsl
 K 25
@@ -55,7 +55,7 @@ gpu_extensions.c
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svnroot/bf-blender/!svn/ver/35241/trunk/blender/source/blender/gpu/intern/gpu_extensions.c
+/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/gpu/intern/gpu_extensions.c
 END
 gpu_shader_vertex.glsl
 K 25

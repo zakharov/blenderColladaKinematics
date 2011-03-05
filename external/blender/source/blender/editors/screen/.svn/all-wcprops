@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 78
-/svnroot/bf-blender/!svn/ver/35300/trunk/blender/source/blender/editors/screen
+/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/editors/screen
 END
 glutil.c
 K 25
@@ -13,7 +13,7 @@ screen_ops.c
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svnroot/bf-blender/!svn/ver/35300/trunk/blender/source/blender/editors/screen/screen_ops.c
+/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/editors/screen/screen_ops.c
 END
 screen_context.c
 K 25
@@ -31,7 +31,7 @@ screen_edit.c
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35300/trunk/blender/source/blender/editors/screen/screen_edit.c
+/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/editors/screen/screen_edit.c
 END
 screendump.c
 K 25
@@ -49,7 +49,7 @@ area.c
 K 25
 svn:wc:ra_dav:version-url
 V 85
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/screen/area.c
+/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/editors/screen/area.c
 END
 CMakeLists.txt
 K 25

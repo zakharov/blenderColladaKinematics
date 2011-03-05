@@ -1,7 +1,7 @@
 10
 
 dir
-35339
+35365
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/editors/space_view3d
 https://svn.blender.org/svnroot/bf-blender
 
@@ -94,40 +94,6 @@ has-props
 
 64085
 
-SConscript
-file
-
-
-
-
-2011-03-03T12:27:52.030297Z
-ea4fe15cf4ff4d81ebbc2496a3abff09
-2011-02-21T12:35:04.852834Z
-35028
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-720
-
 view3d_edit.c
 file
 
@@ -161,6 +127,40 @@ has-props
 
 
 88473
+
+SConscript
+file
+
+
+
+
+2011-03-03T12:27:52.030297Z
+ea4fe15cf4ff4d81ebbc2496a3abff09
+2011-02-21T12:35:04.852834Z
+35028
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+720
 
 view3d_header.c
 file
@@ -366,40 +366,6 @@ has-props
 
 44110
 
-view3d_snap.c
-file
-
-
-
-
-2011-03-03T12:27:52.038297Z
-812d2573949637837d5b1c7841cdd60c
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-24636
-
 view3d_ops.c
 file
 
@@ -433,6 +399,40 @@ has-props
 
 
 17569
+
+view3d_snap.c
+file
+
+
+
+
+2011-03-03T12:27:52.038297Z
+812d2573949637837d5b1c7841cdd60c
+2011-02-27T20:29:51.598877Z
+35242
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+24636
 
 view3d_toolbar.c
 file

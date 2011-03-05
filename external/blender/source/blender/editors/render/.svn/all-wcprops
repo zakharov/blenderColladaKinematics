@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 78
-/svnroot/bf-blender/!svn/ver/35338/trunk/blender/source/blender/editors/render
+/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/editors/render
 END
 render_ops.c
 K 25
@@ -13,7 +13,7 @@ render_preview.c
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svnroot/bf-blender/!svn/ver/35338/trunk/blender/source/blender/editors/render/render_preview.c
+/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/editors/render/render_preview.c
 END
 render_intern.h
 K 25

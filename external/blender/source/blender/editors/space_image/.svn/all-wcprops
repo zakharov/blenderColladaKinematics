@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 83
-/svnroot/bf-blender/!svn/ver/35332/trunk/blender/source/blender/editors/space_image
+/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/editors/space_image
 END
 image_draw.c
 K 25
@@ -13,7 +13,7 @@ image_buttons.c
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_image/image_buttons.c
+/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/editors/space_image/image_buttons.c
 END
 image_render.c
 K 25

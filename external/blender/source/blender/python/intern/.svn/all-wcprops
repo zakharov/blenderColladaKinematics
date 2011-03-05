@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 77
-/svnroot/bf-blender/!svn/ver/35330/trunk/blender/source/blender/python/intern
+/svnroot/bf-blender/!svn/ver/35359/trunk/blender/source/blender/python/intern
 END
 bpy_traceback.h
 K 25
@@ -121,7 +121,7 @@ bpy_rna_array.c
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/35295/trunk/blender/source/blender/python/intern/bpy_rna_array.c
+/svnroot/bf-blender/!svn/ver/35359/trunk/blender/source/blender/python/intern/bpy_rna_array.c
 END
 bpy_traceback.c
 K 25
@@ -133,7 +133,7 @@ bpy_rna.c
 K 25
 svn:wc:ra_dav:version-url
 V 87
-/svnroot/bf-blender/!svn/ver/35330/trunk/blender/source/blender/python/intern/bpy_rna.c
+/svnroot/bf-blender/!svn/ver/35349/trunk/blender/source/blender/python/intern/bpy_rna.c
 END
 bpy_app.c
 K 25

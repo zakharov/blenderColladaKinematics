@@ -1,5 +1,5 @@
 /*
- * $Id: view2d.c 35242 2011-02-27 20:29:51Z jesterking $
+ * $Id: view2d.c 35362 2011-03-05 10:29:10Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -1006,7 +1006,7 @@ void UI_view2d_view_ortho(View2D *v2d)
 	
 	/* set matrix on all appropriate axes */
 	wmOrtho2(curmasked.xmin-xofs, curmasked.xmax-xofs, curmasked.ymin-yofs, curmasked.ymax-yofs);
-	
+
 	/* XXX is this necessary? */
 	glLoadIdentity();
 }

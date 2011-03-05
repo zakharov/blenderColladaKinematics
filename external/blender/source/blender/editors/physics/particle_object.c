@@ -1,5 +1,5 @@
 /*
- * $Id: particle_object.c 35242 2011-02-27 20:29:51Z jesterking $
+ * $Id: particle_object.c 35362 2011-03-05 10:29:10Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -629,7 +629,7 @@ static void connect_hair(Scene *scene, Object *ob, ParticleSystem *psys)
 	PTCacheEditPoint *point;
 	PTCacheEditKey *ekey = NULL;
 	HairKey *key;
-	BVHTreeFromMesh bvhtree= {0};
+	BVHTreeFromMesh bvhtree= {NULL};
 	BVHTreeNearest nearest;
 	MFace *mface;
 	DerivedMesh *dm = NULL;

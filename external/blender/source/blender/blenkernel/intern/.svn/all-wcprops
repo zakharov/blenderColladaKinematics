@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 81
-/svnroot/bf-blender/!svn/ver/35338/trunk/blender/source/blender/blenkernel/intern
+/svnroot/bf-blender/!svn/ver/35350/trunk/blender/source/blender/blenkernel/intern
 END
 bvhutils.c
 K 25
@@ -493,7 +493,7 @@ node.c
 K 25
 svn:wc:ra_dav:version-url
 V 88
-/svnroot/bf-blender/!svn/ver/35338/trunk/blender/source/blender/blenkernel/intern/node.c
+/svnroot/bf-blender/!svn/ver/35350/trunk/blender/source/blender/blenkernel/intern/node.c
 END
 lattice.c
 K 25

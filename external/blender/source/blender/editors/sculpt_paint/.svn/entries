@@ -1,15 +1,15 @@
 10
 
 dir
-35339
+35365
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/editors/sculpt_paint
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-03-03T18:53:07.180518Z
-35338
-ton
+2011-03-05T10:37:59.545947Z
+35363
+campbellbarton
 has-props
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-03-03T12:27:48.038297Z
-18a65295fcbd1be58df5a7903975c5d2
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-03-05T14:58:43.620169Z
+2d46f8199635ad0e502840a856ec5414
+2011-03-05T10:37:59.545947Z
+35363
+campbellbarton
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-3564
+3552
 
 paint_intern.h
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-03-03T12:27:48.042297Z
-5ee5fc6c46894dfca290f76e36f7cd2d
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-03-05T14:58:43.624169Z
+a4914c6c44ccf6239ebdae95b704b63f
+2011-03-05T10:37:59.545947Z
+35363
+campbellbarton
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-9362
+9327
 
 paint_undo.c
 file
@@ -168,11 +168,11 @@ file
 
 
 
-2011-03-03T12:27:48.046297Z
-a6bb406cc22e126ef5eb6f48e9539892
-2011-03-01T16:26:37.032479Z
-35285
-ton
+2011-03-05T14:58:43.624169Z
+5680df37fb5a2a99ec9246217f724c7c
+2011-03-05T10:29:10.037531Z
+35362
+campbellbarton
 has-props
 
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-25312
+25315
 
 SConscript
 file
@@ -236,11 +236,11 @@ file
 
 
 
-2011-03-03T12:27:48.050297Z
-1eb8ec526d4d283e8ed38820ce7acbd5
-2011-03-01T16:26:37.032479Z
-35285
-ton
+2011-03-05T14:58:43.624169Z
+2ecaaaebca902d927c68e88d8bbecdc9
+2011-03-05T10:29:10.037531Z
+35362
+campbellbarton
 has-props
 
 
@@ -262,7 +262,7 @@ has-props
 
 
 
-51392
+51418
 
 sculpt.c
 file
@@ -406,11 +406,11 @@ file
 
 
 
-2011-03-03T21:53:55.952120Z
-05775a6b6e569315e61ccdce57d83222
-2011-03-03T18:53:07.180518Z
-35338
-ton
+2011-03-05T14:58:43.628169Z
+83b1f689d884cd342d693a2cc9fe8587
+2011-03-05T10:29:10.037531Z
+35362
+campbellbarton
 has-props
 
 
@@ -432,5 +432,5 @@ has-props
 
 
 
-174369
+174386
 

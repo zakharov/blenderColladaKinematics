@@ -1,15 +1,15 @@
 10
 
 dir
-35339
+35365
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/avi/intern
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-02-27T20:43:42.772909Z
-35249
-jesterking
+2011-03-05T10:29:10.037531Z
+35362
+campbellbarton
 
 
 
@@ -66,11 +66,11 @@ file
 
 
 
-2011-03-03T12:26:59.246297Z
-f0c055d78c93a2203d7ecb6039a64a41
-2011-02-27T20:43:42.772909Z
-35249
-jesterking
+2011-03-05T14:58:42.000169Z
+9686f460cbf332539db7cd67320b5802
+2011-03-05T10:29:10.037531Z
+35362
+campbellbarton
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-29639
+29646
 
 avirgb.h
 file

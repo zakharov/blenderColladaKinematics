@@ -1,7 +1,7 @@
 10
 
 dir
-35339
+35365
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch
 https://svn.blender.org/svnroot/bf-blender
 
@@ -570,40 +570,6 @@ has-props
 
 3249
 
-btCollisionCreateFunc.h
-file
-
-
-
-
-2011-03-03T12:29:00.318297Z
-875f44988d827325ee8a2e6a6b3e88be
-2009-03-17T21:44:58.713628Z
-19323
-blendix
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1649
-
 btBoxBoxDetector.h
 file
 
@@ -637,6 +603,40 @@ has-props
 
 
 1898
+
+btCollisionCreateFunc.h
+file
+
+
+
+
+2011-03-03T12:29:00.318297Z
+875f44988d827325ee8a2e6a6b3e88be
+2009-03-17T21:44:58.713628Z
+19323
+blendix
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1649
 
 btCollisionDispatcher.cpp
 file
@@ -740,40 +740,6 @@ has-props
 
 14271
 
-btSimulationIslandManager.cpp
-file
-
-
-
-
-2011-03-03T12:29:00.322297Z
-21c617df59da03645cd71cca80b70185
-2009-03-17T21:44:58.713628Z
-19323
-blendix
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-11278
-
 btConvexPlaneCollisionAlgorithm.h
 file
 
@@ -807,6 +773,40 @@ has-props
 
 
 3570
+
+btSimulationIslandManager.cpp
+file
+
+
+
+
+2011-03-03T12:29:00.322297Z
+21c617df59da03645cd71cca80b70185
+2009-03-17T21:44:58.713628Z
+19323
+blendix
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+11278
 
 btActivatingCollisionAlgorithm.cpp
 file
@@ -910,40 +910,6 @@ has-props
 
 1400
 
-btSphereBoxCollisionAlgorithm.cpp
-file
-
-
-
-
-2011-03-03T12:29:00.322297Z
-94778d6b2208d5800e83044c63715c21
-2009-03-17T21:44:58.713628Z
-19323
-blendix
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7780
-
 btCollisionObject.cpp
 file
 
@@ -977,6 +943,40 @@ has-props
 
 
 2194
+
+btSphereBoxCollisionAlgorithm.cpp
+file
+
+
+
+
+2011-03-03T12:29:00.322297Z
+94778d6b2208d5800e83044c63715c21
+2009-03-17T21:44:58.713628Z
+19323
+blendix
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7780
 
 btBoxBoxCollisionAlgorithm.cpp
 file
@@ -1012,40 +1012,6 @@ has-props
 
 3248
 
-btSphereSphereCollisionAlgorithm.h
-file
-
-
-
-
-2011-03-03T12:29:00.326297Z
-9f648dccefea89cf7a82b41a8158889d
-2009-03-17T21:44:58.713628Z
-19323
-blendix
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2927
-
 SphereTriangleDetector.h
 file
 
@@ -1079,6 +1045,40 @@ has-props
 
 
 2074
+
+btSphereSphereCollisionAlgorithm.h
+file
+
+
+
+
+2011-03-03T12:29:00.326297Z
+9f648dccefea89cf7a82b41a8158889d
+2009-03-17T21:44:58.713628Z
+19323
+blendix
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2927
 
 btManifoldResult.cpp
 file

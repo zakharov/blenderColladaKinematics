@@ -1,5 +1,5 @@
 /*
- * $Id: object_modifier.c 35242 2011-02-27 20:29:51Z jesterking $
+ * $Id: object_modifier.c 35362 2011-03-05 10:29:10Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -296,7 +296,7 @@ int ED_object_modifier_convert(ReportList *UNUSED(reports), Main *bmain, Scene *
 	psys=((ParticleSystemModifierData *)md)->psys;
 	part= psys->part;
 
-	if(part->ren_as != PART_DRAW_PATH || psys->pathcache == 0)
+	if(part->ren_as != PART_DRAW_PATH || psys->pathcache == NULL)
 		return 0;
 
 	totpart= psys->totcached;

@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 72
-/svnroot/bf-extensions/!svn/ver/1664/trunk/py/scripts/addons/io_mesh_stl
+/svnroot/bf-extensions/!svn/ver/1678/trunk/py/scripts/addons/io_mesh_stl
 END
 blender_utils.py
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-extensions/!svn/ver/1581/trunk/py/scripts/addons/io_mesh_stl/blender_utils.py
+/svnroot/bf-extensions/!svn/ver/1678/trunk/py/scripts/addons/io_mesh_stl/blender_utils.py
 END
 __init__.py
 K 25

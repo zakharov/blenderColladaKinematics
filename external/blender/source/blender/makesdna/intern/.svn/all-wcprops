@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 79
-/svnroot/bf-blender/!svn/ver/35336/trunk/blender/source/blender/makesdna/intern
+/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/makesdna/intern
 END
 makesdna.c
 K 25
@@ -19,7 +19,7 @@ dna_genfile.c
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/35140/trunk/blender/source/blender/makesdna/intern/dna_genfile.c
+/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/makesdna/intern/dna_genfile.c
 END
 CMakeLists.txt
 K 25

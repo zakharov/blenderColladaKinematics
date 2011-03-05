@@ -1,7 +1,7 @@
 10
 
 dir
-35339
+35365
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/nodes/intern/CMP_nodes
 https://svn.blender.org/svnroot/bf-blender
 
@@ -536,40 +536,6 @@ has-props
 
 7407
 
-CMP_normal.c
-file
-
-
-
-
-2011-03-03T12:27:37.018297Z
-8ec7c1ee3cd0081f1c7333a4ebe4dc8b
-2011-02-27T20:13:22.273372Z
-35237
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2890
-
 CMP_defocus.c
 file
 
@@ -603,6 +569,40 @@ has-props
 
 
 28135
+
+CMP_normal.c
+file
+
+
+
+
+2011-03-03T12:27:37.018297Z
+8ec7c1ee3cd0081f1c7333a4ebe4dc8b
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2890
 
 CMP_glare.c
 file
@@ -672,40 +672,6 @@ has-props
 
 2309
 
-CMP_outputFile.c
-file
-
-
-
-
-2011-03-03T12:27:37.018297Z
-0274f025b31c20b77b727df47cd94dae
-2011-02-27T20:13:22.273372Z
-35237
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3961
-
 CMP_normalize.c
 file
 
@@ -739,6 +705,40 @@ has-props
 
 
 3608
+
+CMP_outputFile.c
+file
+
+
+
+
+2011-03-03T12:27:37.018297Z
+0274f025b31c20b77b727df47cd94dae
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3961
 
 CMP_setalpha.c
 file
@@ -774,14 +774,14 @@ has-props
 
 2940
 
-CMP_vecBlur.c
+CMP_composite.c
 file
 
 
 
 
 2011-03-03T12:27:37.022297Z
-6c8f3120d5309b66b9012af124ccc36f
+b8736b9977d2654bdd604063ea575361
 2011-02-27T20:13:22.273372Z
 35237
 jesterking
@@ -806,7 +806,7 @@ has-props
 
 
 
-3392
+3506
 
 CMP_dilate.c
 file
@@ -842,14 +842,14 @@ has-props
 
 3967
 
-CMP_composite.c
+CMP_vecBlur.c
 file
 
 
 
 
 2011-03-03T12:27:37.022297Z
-b8736b9977d2654bdd604063ea575361
+6c8f3120d5309b66b9012af124ccc36f
 2011-02-27T20:13:22.273372Z
 35237
 jesterking
@@ -874,16 +874,16 @@ has-props
 
 
 
-3506
+3392
 
-CMP_tonemap.c
+CMP_channelMatte.c
 file
 
 
 
 
 2011-03-03T12:27:37.022297Z
-4f02cf2ddb29c7c3f4a06a57a0ae4151
+9c2f3c635f1aaf1f744320db6f719336
 2011-02-27T20:13:22.273372Z
 35237
 jesterking
@@ -908,41 +908,7 @@ has-props
 
 
 
-5513
-
-CMP_diffMatte.c
-file
-
-
-
-
-2011-03-03T12:27:37.022297Z
-fc6608221dae25dd982fb06546a65dd7
-2011-02-27T20:13:22.273372Z
-35237
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4273
+6003
 
 CMP_crop.c
 file
@@ -978,14 +944,14 @@ has-props
 
 3878
 
-CMP_channelMatte.c
+CMP_diffMatte.c
 file
 
 
 
 
 2011-03-03T12:27:37.022297Z
-9c2f3c635f1aaf1f744320db6f719336
+fc6608221dae25dd982fb06546a65dd7
 2011-02-27T20:13:22.273372Z
 35237
 jesterking
@@ -1010,7 +976,41 @@ has-props
 
 
 
-6003
+4273
+
+CMP_tonemap.c
+file
+
+
+
+
+2011-03-03T12:27:37.022297Z
+4f02cf2ddb29c7c3f4a06a57a0ae4151
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5513
 
 CMP_chromaMatte.c
 file

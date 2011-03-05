@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 63
-/svnroot/bf-blender/!svn/ver/35273/trunk/blender/source/creator
+/svnroot/bf-blender/!svn/ver/35353/trunk/blender/source/creator
 END
 creator.c
 K 25
@@ -25,5 +25,5 @@ CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 78
-/svnroot/bf-blender/!svn/ver/35273/trunk/blender/source/creator/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/35353/trunk/blender/source/creator/CMakeLists.txt
 END

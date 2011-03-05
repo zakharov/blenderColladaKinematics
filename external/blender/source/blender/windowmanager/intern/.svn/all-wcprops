@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svnroot/bf-blender/!svn/ver/35337/trunk/blender/source/blender/windowmanager/intern
+/svnroot/bf-blender/!svn/ver/35356/trunk/blender/source/blender/windowmanager/intern
 END
 wm_init_exit.c
 K 25
@@ -73,7 +73,7 @@ wm_event_system.c
 K 25
 svn:wc:ra_dav:version-url
 V 102
-/svnroot/bf-blender/!svn/ver/35179/trunk/blender/source/blender/windowmanager/intern/wm_event_system.c
+/svnroot/bf-blender/!svn/ver/35356/trunk/blender/source/blender/windowmanager/intern/wm_event_system.c
 END
 wm_keymap.c
 K 25

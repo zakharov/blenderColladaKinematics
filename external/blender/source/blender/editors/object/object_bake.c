@@ -1,5 +1,5 @@
 /*
- * $Id: object_bake.c 35242 2011-02-27 20:29:51Z jesterking $
+ * $Id: object_bake.c 35362 2011-03-05 10:29:10Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -315,7 +315,7 @@ static int bake_image_exec(bContext *C, wmOperator *op)
 	}
 	else {
 		ListBase threads;
-		BakeRender bkr= {0};
+		BakeRender bkr= {NULL};
 
 		init_bake_internal(&bkr, C);
 		bkr.reports= op->reports;

@@ -1,5 +1,5 @@
 /*
-* $Id: MOD_softbody.c 35178 2011-02-25 13:57:17Z jesterking $
+* $Id: MOD_softbody.c 35362 2011-03-05 10:29:10Z campbellbarton $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -34,11 +34,11 @@
  *  \ingroup modifiers
  */
 
+#include <stdio.h>
 
 #include "DNA_scene_types.h"
 
 #include "BLI_utildefines.h"
-
 
 #include "BKE_cdderivedmesh.h"
 #include "BKE_particle.h"
@@ -71,20 +71,20 @@ ModifierTypeInfo modifierType_Softbody = {
 							| eModifierTypeFlag_RequiresOriginalData
 							| eModifierTypeFlag_Single,
 
-	/* copyData */          0,
+	/* copyData */          NULL,
 	/* deformVerts */       deformVerts,
-	/* deformMatrices */    0,
-	/* deformVertsEM */     0,
-	/* deformMatricesEM */  0,
-	/* applyModifier */     0,
-	/* applyModifierEM */   0,
-	/* initData */          0,
-	/* requiredDataMask */  0,
-	/* freeData */          0,
-	/* isDisabled */        0,
-	/* updateDepgraph */    0,
+	/* deformMatrices */    NULL,
+	/* deformVertsEM */     NULL,
+	/* deformMatricesEM */  NULL,
+	/* applyModifier */     NULL,
+	/* applyModifierEM */   NULL,
+	/* initData */          NULL,
+	/* requiredDataMask */  NULL,
+	/* freeData */          NULL,
+	/* isDisabled */        NULL,
+	/* updateDepgraph */    NULL,
 	/* dependsOnTime */     dependsOnTime,
-	/* dependsOnNormals */	0,
-	/* foreachObjectLink */ 0,
-	/* foreachIDLink */     0,
+	/* dependsOnNormals */	NULL,
+	/* foreachObjectLink */ NULL,
+	/* foreachIDLink */     NULL,
 };

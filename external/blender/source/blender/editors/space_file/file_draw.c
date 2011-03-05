@@ -1,5 +1,5 @@
 /*
- * $Id: file_draw.c 35242 2011-02-27 20:29:51Z jesterking $
+ * $Id: file_draw.c 35362 2011-03-05 10:29:10Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -389,7 +389,7 @@ static void file_draw_preview(uiBlock *block, struct direntry *file, int sx, int
 		uiButSetDragImage(but, file->path, get_file_icon(file), imb, scale);
 		
 		glDisable(GL_BLEND);
-		imb = 0;
+		imb = NULL;
 	}
 }
 

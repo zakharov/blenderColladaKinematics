@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 81
-/svnroot/bf-blender/!svn/ver/35337/trunk/blender/source/blender/editors/interface
+/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/editors/interface
 END
 view2d.c
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/interface/view2d.c
+/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/editors/interface/view2d.c
 END
 interface.c
 K 25
@@ -43,7 +43,7 @@ interface_templates.c
 K 25
 svn:wc:ra_dav:version-url
 V 103
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/interface/interface_templates.c
+/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/editors/interface/interface_templates.c
 END
 interface_panel.c
 K 25
@@ -97,7 +97,7 @@ interface_regions.c
 K 25
 svn:wc:ra_dav:version-url
 V 101
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/interface/interface_regions.c
+/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/editors/interface/interface_regions.c
 END
 interface_icons.c
 K 25

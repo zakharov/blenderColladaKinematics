@@ -1,7 +1,7 @@
 10
 
 dir
-35339
+35365
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/nodes/intern/SHD_nodes
 https://svn.blender.org/svnroot/bf-blender
 
@@ -25,40 +25,6 @@ jesterking
 
 
 954f8c5b-7b00-dc11-b283-0030488c597c
-
-SHD_output.c
-file
-
-
-
-
-2011-03-03T12:27:34.970297Z
-86cb2acacdecbbb3ce03572ab53ab604
-2011-02-27T20:13:22.273372Z
-35237
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2693
 
 SHD_texture.c
 file
@@ -94,14 +60,14 @@ has-props
 
 4403
 
-SHD_curves.c
+SHD_output.c
 file
 
 
 
 
 2011-03-03T12:27:34.970297Z
-8b66580be6a27200e809fb6f39e948ea
+86cb2acacdecbbb3ce03572ab53ab604
 2011-02-27T20:13:22.273372Z
 35237
 jesterking
@@ -126,7 +92,7 @@ has-props
 
 
 
-4437
+2693
 
 SHD_invert.c
 file
@@ -161,6 +127,40 @@ has-props
 
 
 2608
+
+SHD_curves.c
+file
+
+
+
+
+2011-03-03T12:27:34.970297Z
+8b66580be6a27200e809fb6f39e948ea
+2011-02-27T20:13:22.273372Z
+35237
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4437
 
 SHD_rgb.c
 file
@@ -434,14 +434,14 @@ has-props
 
 5066
 
-SHD_camera.c
+SHD_normal.c
 file
 
 
 
 
 2011-03-03T12:27:34.974297Z
-10f7382825fe1959733b435d090fd59e
+af2cc18d4d8e9663512532f3dec96d96
 2011-02-27T20:13:22.273372Z
 35237
 jesterking
@@ -466,7 +466,7 @@ has-props
 
 
 
-2584
+2586
 
 SHD_mixRgb.c
 file
@@ -502,14 +502,14 @@ has-props
 
 2903
 
-SHD_normal.c
+SHD_camera.c
 file
 
 
 
 
 2011-03-03T12:27:34.974297Z
-af2cc18d4d8e9663512532f3dec96d96
+10f7382825fe1959733b435d090fd59e
 2011-02-27T20:13:22.273372Z
 35237
 jesterking
@@ -534,7 +534,7 @@ has-props
 
 
 
-2586
+2584
 
 SHD_math.c
 file

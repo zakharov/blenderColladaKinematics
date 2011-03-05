@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 81
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_api
+/svnroot/bf-blender/!svn/ver/35365/trunk/blender/source/blender/editors/space_api
 END
 spacetypes.c
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_api/spacetypes.c
+/svnroot/bf-blender/!svn/ver/35365/trunk/blender/source/blender/editors/space_api/spacetypes.c
 END
 SConscript
 K 25

@@ -1,5 +1,5 @@
 /*
- * $Id: ED_anim_api.h 35016 2011-02-21 07:25:24Z jesterking $
+ * $Id: ED_anim_api.h 35365 2011-03-05 14:03:29Z ton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -585,6 +585,11 @@ void ED_keymap_animchannels(struct wmKeyConfig *keyconf);
 	/* generic time editing */
 void ED_operatortypes_anim(void);
 void ED_keymap_anim(struct wmKeyConfig *keyconf);
+	
+	/* space_graph */
+void ED_operatormacros_graph(void);
+	/* space_action */
+void ED_operatormacros_action(void);
 
 /* ************************************************ */
 

@@ -1,7 +1,7 @@
 10
 
 dir
-35339
+35365
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/gameengine/VideoTexture
 https://svn.blender.org/svnroot/bf-blender
 
@@ -502,40 +502,6 @@ has-props
 
 5317
 
-BlendType.h
-file
-
-
-
-
-2011-03-03T12:26:36.646297Z
-33120d2b7d7c5d6c368cec489b14268b
-2011-02-22T19:30:37.531882Z
-35082
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2570
-
 VideoFFmpeg.cpp
 file
 
@@ -570,16 +536,16 @@ has-props
 
 39756
 
-blendVideoTex.cpp
+BlendType.h
 file
 
 
 
 
-2011-03-03T12:26:36.650297Z
-af96fa6444e0aae15ab44fc2bd8950a0
-2011-02-25T13:39:34.392106Z
-35176
+2011-03-03T12:26:36.646297Z
+33120d2b7d7c5d6c368cec489b14268b
+2011-02-22T19:30:37.531882Z
+35082
 jesterking
 has-props
 
@@ -602,7 +568,7 @@ has-props
 
 
 
-6286
+2570
 
 CMakeLists.txt
 file
@@ -637,6 +603,40 @@ has-props
 
 
 2471
+
+blendVideoTex.cpp
+file
+
+
+
+
+2011-03-03T12:26:36.650297Z
+af96fa6444e0aae15ab44fc2bd8950a0
+2011-02-25T13:39:34.392106Z
+35176
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6286
 
 Common.h
 file
@@ -774,40 +774,6 @@ has-props
 
 3440
 
-ImageMix.h
-file
-
-
-
-
-2011-03-03T12:26:36.650297Z
-cdefc064759090eeb1b97dc89ebc0474
-2011-02-22T19:30:37.531882Z
-35082
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3628
-
 Texture.h
 file
 
@@ -842,17 +808,17 @@ has-props
 
 2457
 
-SConscript
+ImageMix.h
 file
 
 
 
 
 2011-03-03T12:26:36.650297Z
-9c7d3405136f4e3419bf7d2827449b8b
-2010-11-18T11:42:05.232926Z
-33156
-campbellbarton
+cdefc064759090eeb1b97dc89ebc0474
+2011-02-22T19:30:37.531882Z
+35082
+jesterking
 has-props
 
 
@@ -874,7 +840,7 @@ has-props
 
 
 
-1205
+3628
 
 VideoBase.h
 file
@@ -909,6 +875,40 @@ has-props
 
 
 4724
+
+SConscript
+file
+
+
+
+
+2011-03-03T12:26:36.650297Z
+9c7d3405136f4e3419bf7d2827449b8b
+2010-11-18T11:42:05.232926Z
+33156
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1205
 
 FilterSource.h
 file

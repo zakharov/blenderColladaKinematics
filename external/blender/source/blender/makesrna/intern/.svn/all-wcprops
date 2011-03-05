@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 79
-/svnroot/bf-blender/!svn/ver/35336/trunk/blender/source/blender/makesrna/intern
+/svnroot/bf-blender/!svn/ver/35355/trunk/blender/source/blender/makesrna/intern
 END
 rna_object_api.c
 K 25
@@ -13,7 +13,7 @@ makesrna.c
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/35238/trunk/blender/source/blender/makesrna/intern/makesrna.c
+/svnroot/bf-blender/!svn/ver/35355/trunk/blender/source/blender/makesrna/intern/makesrna.c
 END
 rna_ui_api.c
 K 25
@@ -85,7 +85,7 @@ rna_constraint.c
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/svnroot/bf-blender/!svn/ver/35238/trunk/blender/source/blender/makesrna/intern/rna_constraint.c
+/svnroot/bf-blender/!svn/ver/35343/trunk/blender/source/blender/makesrna/intern/rna_constraint.c
 END
 rna_world.c
 K 25
@@ -211,7 +211,7 @@ rna_define.c
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35336/trunk/blender/source/blender/makesrna/intern/rna_define.c
+/svnroot/bf-blender/!svn/ver/35355/trunk/blender/source/blender/makesrna/intern/rna_define.c
 END
 rna_ID.c
 K 25
@@ -487,5 +487,5 @@ rna_scene.c
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svnroot/bf-blender/!svn/ver/35238/trunk/blender/source/blender/makesrna/intern/rna_scene.c
+/svnroot/bf-blender/!svn/ver/35355/trunk/blender/source/blender/makesrna/intern/rna_scene.c
 END

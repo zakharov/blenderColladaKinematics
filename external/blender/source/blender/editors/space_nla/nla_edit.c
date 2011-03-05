@@ -1,5 +1,5 @@
 /*
- * $Id: nla_edit.c 35242 2011-02-27 20:29:51Z jesterking $
+ * $Id: nla_edit.c 35362 2011-03-05 10:29:10Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -1423,7 +1423,7 @@ static int nlaedit_apply_scale_exec (bContext *C, wmOperator *UNUSED(op))
 	bAnimListElem *ale;
 	int filter;
 	
-	KeyframeEditData ked= {{0}};
+	KeyframeEditData ked= {{NULL}};
 	
 	/* get editor data */
 	if (ANIM_animdata_get_context(C, &ac) == 0)

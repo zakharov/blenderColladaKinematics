@@ -1,15 +1,15 @@
 10
 
 dir
-1676
+1680
 https://svn.blender.org/svnroot/bf-extensions/trunk/py/scripts/addons/render_povray
 https://svn.blender.org/svnroot/bf-extensions
 
 
 
-2011-03-03T21:00:18.423347Z
-1676
-dingto
+2011-03-04T04:39:13.119864Z
+1677
+campbellbarton
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-03-03T21:53:58.004120Z
-e755110be8854c9f35b76b8a28eaa1c9
-2011-03-03T21:00:18.423347Z
-1676
-dingto
+2011-03-05T14:59:36.400169Z
+186af5d2f0d1a28341e0c169529bf9c5
+2011-03-04T04:39:13.119864Z
+1677
+campbellbarton
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-19587
+19571
 
 __init__.py
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-03-03T12:29:46.558297Z
-c458b955a6461077945df8304a2c4d94
-2011-03-01T11:55:55.965017Z
-1669
-mauriceraybaud
+2011-03-05T14:59:36.404169Z
+4037985f2f6cfb6ce692ea9cef10ae25
+2011-03-04T04:39:13.119864Z
+1677
+campbellbarton
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-23916
+23899
 
 render.py
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-03-03T12:29:46.562297Z
-82b21935a7fb908666e3068a7e79aff1
-2011-03-01T11:55:55.965017Z
-1669
-mauriceraybaud
+2011-03-05T14:59:36.408169Z
+473ceb92762012e143ca1a0eba8ec717
+2011-03-04T04:39:13.119864Z
+1677
+campbellbarton
 has-props
 
 
@@ -126,5 +126,5 @@ has-props
 
 
 
-92308
+92342
 

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 81
-/svnroot/bf-blender/!svn/ver/35337/trunk/blender/source/blender/editors/transform
+/svnroot/bf-blender/!svn/ver/35356/trunk/blender/source/blender/editors/transform
 END
 transform.h
 K 25
@@ -61,7 +61,7 @@ transform.c
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/35337/trunk/blender/source/blender/editors/transform/transform.c
+/svnroot/bf-blender/!svn/ver/35356/trunk/blender/source/blender/editors/transform/transform.c
 END
 CMakeLists.txt
 K 25

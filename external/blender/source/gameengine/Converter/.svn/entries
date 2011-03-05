@@ -1,7 +1,7 @@
 10
 
 dir
-35339
+35365
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/gameengine/Converter
 https://svn.blender.org/svnroot/bf-blender
 
@@ -536,40 +536,6 @@ has-props
 
 3442
 
-BL_ShapeActionActuator.h
-file
-
-
-
-
-2011-03-03T12:26:34.770297Z
-d9b310f3213e0a9895aa93e1086a938b
-2011-02-22T10:33:14.427047Z
-35063
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4349
-
 KX_BlenderSceneConverter.cpp
 file
 
@@ -603,6 +569,40 @@ has-props
 
 
 39051
+
+BL_ShapeActionActuator.h
+file
+
+
+
+
+2011-03-03T12:26:34.770297Z
+d9b310f3213e0a9895aa93e1086a938b
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4349
 
 BL_ArmatureObject.h
 file
@@ -740,40 +740,6 @@ has-props
 
 3332
 
-BL_BlenderDataConversion.h
-file
-
-
-
-
-2011-03-03T12:26:34.774297Z
-e2eba7b83ee4a144cc197f3b264e8434
-2011-02-22T10:33:14.427047Z
-35063
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1823
-
 BL_ActionActuator.cpp
 file
 
@@ -808,16 +774,16 @@ has-props
 
 18858
 
-BL_ModifierDeformer.cpp
+BL_BlenderDataConversion.h
 file
 
 
 
 
 2011-03-03T12:26:34.774297Z
-8a8756bf22f47abfd25a0d027f64fefe
-2011-02-25T13:30:41.884561Z
-35167
+e2eba7b83ee4a144cc197f3b264e8434
+2011-02-22T10:33:14.427047Z
+35063
 jesterking
 has-props
 
@@ -840,7 +806,7 @@ has-props
 
 
 
-6885
+1823
 
 BlenderWorldInfo.cpp
 file
@@ -875,6 +841,40 @@ has-props
 
 
 4389
+
+BL_ModifierDeformer.cpp
+file
+
+
+
+
+2011-03-03T12:26:34.774297Z
+8a8756bf22f47abfd25a0d027f64fefe
+2011-02-25T13:30:41.884561Z
+35167
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6885
 
 BL_MeshDeformer.h
 file
@@ -944,40 +944,6 @@ has-props
 
 3297
 
-KX_ConvertSensors.h
-file
-
-
-
-
-2011-03-03T12:26:34.774297Z
-e31b073a4a3fd20d3f1e8397cd688883
-2011-02-22T10:33:14.427047Z
-35063
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1523
-
 KX_ConvertProperties.h
 file
 
@@ -1011,6 +977,40 @@ has-props
 
 
 1382
+
+KX_ConvertSensors.h
+file
+
+
+
+
+2011-03-03T12:26:34.774297Z
+e31b073a4a3fd20d3f1e8397cd688883
+2011-02-22T10:33:14.427047Z
+35063
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1523
 
 BL_ArmatureActuator.h
 file

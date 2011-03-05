@@ -1,5 +1,5 @@
 /*
- * $Id: paint_image.c 35338 2011-03-03 18:53:07Z ton $
+ * $Id: paint_image.c 35362 2011-03-05 10:29:10Z campbellbarton $
  * imagepaint.c
  *
  * Functions to paint images in 2D and 3D.
@@ -5334,7 +5334,7 @@ static int texture_paint_toggle_exec(bContext *C, wmOperator *op)
 {
 	Scene *scene= CTX_data_scene(C);
 	Object *ob= CTX_data_active_object(C);
-	Mesh *me= 0;
+	Mesh *me= NULL;
 	
 	if(ob==NULL)
 		return OPERATOR_CANCELLED;
@@ -5459,7 +5459,7 @@ static int texture_paint_camera_project_exec(bContext *C, wmOperator *op)
 {
 	Image *image= BLI_findlink(&CTX_data_main(C)->image, RNA_enum_get(op->ptr, "image"));
 	Scene *scene= CTX_data_scene(C);
-	ProjPaintState ps= {0};
+	ProjPaintState ps= {NULL};
 	int orig_brush_size;
 	IDProperty *idgroup;
 	IDProperty *view_data= NULL;

@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 85
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_buttons
+/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/editors/space_buttons
 END
 buttons_ops.c
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_buttons/buttons_ops.c
+/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/editors/space_buttons/buttons_ops.c
 END
 buttons_context.c
 K 25

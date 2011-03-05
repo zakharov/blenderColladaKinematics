@@ -1,5 +1,5 @@
 /*
- * $Id: makesrna.c 35238 2011-02-27 20:20:01Z jesterking $
+ * $Id: makesrna.c 35355 2011-03-04 17:01:33Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -42,7 +42,7 @@
 
 #include "rna_internal.h"
 
-#define RNA_VERSION_DATE "$Id: makesrna.c 35238 2011-02-27 20:20:01Z jesterking $"
+#define RNA_VERSION_DATE "$Id: makesrna.c 35355 2011-03-04 17:01:33Z campbellbarton $"
 
 #ifdef _WIN32
 #ifndef snprintf
@@ -1790,7 +1790,7 @@ static const char *rna_property_subtypename(PropertySubType type)
 	}
 }
 
-static const char *rna_property_subtype_unit(PropertyType type)
+static const char *rna_property_subtype_unit(PropertySubType type)
 {
 	switch(RNA_SUBTYPE_UNIT(type)) {
 		case PROP_UNIT_NONE:		return "PROP_UNIT_NONE";

@@ -45,10 +45,11 @@
 #include "AnimationImporter.h"
 #include "ArmatureImporter.h"
 #include "MeshImporter.h"
-
+#include "KinematicsImporter.h"
 
 struct Main;
 struct bContext;
+
 
 /** Importer class. */
 class DocumentImporter : COLLADAFW::IWriter
@@ -88,7 +89,7 @@ class DocumentImporter : COLLADAFW::IWriter
 
 	/** This method is called after the last write* method. No other methods will be called after this.*/
 	void finish();
-	
+
 	bool writeGlobalAsset(const COLLADAFW::FileInfo*);
 
 	bool writeScene(const COLLADAFW::Scene*);
@@ -122,7 +123,7 @@ class DocumentImporter : COLLADAFW::IWriter
 	bool writeKinematicsScene(const COLLADAFW::KinematicsScene*);
 
  private:
- 
+
 	/** Current import stage we're in. */
 	ImportStage mImportStage;
 	std::string mFilename;
@@ -133,6 +134,8 @@ class DocumentImporter : COLLADAFW::IWriter
     ArmatureImporter armature_importer;
     MeshImporter mesh_importer;
     AnimationImporter anim_importer;
+    KinematicsImporter kinematics_importer;
+
 
     std::map<COLLADAFW::UniqueId, Image*> uid_image_map;
     std::map<COLLADAFW::UniqueId, Material*> uid_material_map;

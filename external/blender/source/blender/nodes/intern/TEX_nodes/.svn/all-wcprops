@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 86
-/svnroot/bf-blender/!svn/ver/35237/trunk/blender/source/blender/nodes/intern/TEX_nodes
+/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/nodes/intern/TEX_nodes
 END
 TEX_decompose.c
 K 25
@@ -67,7 +67,7 @@ TEX_output.c
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svnroot/bf-blender/!svn/ver/35237/trunk/blender/source/blender/nodes/intern/TEX_nodes/TEX_output.c
+/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/nodes/intern/TEX_nodes/TEX_output.c
 END
 TEX_texture.c
 K 25

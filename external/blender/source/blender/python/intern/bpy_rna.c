@@ -1,5 +1,5 @@
 /*
- * $Id: bpy_rna.c 35330 2011-03-03 13:55:15Z campbellbarton $
+ * $Id: bpy_rna.c 35349 2011-03-04 11:08:22Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -1033,8 +1033,8 @@ int pyrna_set_to_enum_bitfield(EnumPropertyItem *items, PyObject *value, int *r_
 
 	/* set looping */
 	Py_ssize_t pos = 0;
+	Py_ssize_t hash = 0;
 	PyObject *key;
-	long hash;
 
 	*r_value= 0;
 

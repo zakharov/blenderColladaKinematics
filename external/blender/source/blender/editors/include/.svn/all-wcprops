@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 79
-/svnroot/bf-blender/!svn/ver/35313/trunk/blender/source/blender/editors/include
+/svnroot/bf-blender/!svn/ver/35365/trunk/blender/source/blender/editors/include
 END
 ED_gpencil.h
 K 25
@@ -115,7 +115,7 @@ ED_anim_api.h
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/35016/trunk/blender/source/blender/editors/include/ED_anim_api.h
+/svnroot/bf-blender/!svn/ver/35365/trunk/blender/source/blender/editors/include/ED_anim_api.h
 END
 ED_render.h
 K 25

@@ -1,5 +1,5 @@
 /*
- * $Id: node_draw.c 35277 2011-03-01 10:08:09Z lukastoenne $
+ * $Id: node_draw.c 35362 2011-03-05 10:29:10Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -464,7 +464,7 @@ static void node_draw_mute_line(View2D *v2d, SpaceNode *snode, bNode *node)
 {
 	bNodeSocket *valsock= NULL, *colsock= NULL, *vecsock= NULL;
 	bNodeSocket *sock;
-	bNodeLink link= {0};
+	bNodeLink link= {NULL};
 	int a;
 	
 	/* connect the first value buffer in with first value out */

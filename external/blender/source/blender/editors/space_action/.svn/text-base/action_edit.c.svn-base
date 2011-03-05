@@ -663,9 +663,6 @@ static int actkeys_duplicate_invoke(bContext *C, wmOperator *op, wmEvent *UNUSED
 {
 	actkeys_duplicate_exec(C, op);
 	
-	RNA_int_set(op->ptr, "mode", TFM_TIME_DUPLICATE);
-	WM_operator_name_call(C, "TRANSFORM_OT_transform", WM_OP_INVOKE_REGION_WIN, op->ptr);
-
 	return OPERATOR_FINISHED;
 }
  
@@ -1220,7 +1217,7 @@ static int actkeys_framejump_exec(bContext *C, wmOperator *UNUSED(op))
 	ListBase anim_data= {NULL, NULL};
 	bAnimListElem *ale;
 	int filter;
-	KeyframeEditData ked= {{0}};
+	KeyframeEditData ked= {{NULL}};
 	
 	/* get editor data */
 	if (ANIM_animdata_get_context(C, &ac) == 0)
@@ -1290,7 +1287,7 @@ static void snap_action_keys(bAnimContext *ac, short mode)
 	bAnimListElem *ale;
 	int filter;
 	
-	KeyframeEditData ked= {{0}};
+	KeyframeEditData ked= {{NULL}};
 	KeyframeEditFunc edit_cb;
 	
 	/* filter data */
@@ -1389,7 +1386,7 @@ static void mirror_action_keys(bAnimContext *ac, short mode)
 	bAnimListElem *ale;
 	int filter;
 	
-	KeyframeEditData ked= {{0}};
+	KeyframeEditData ked= {{NULL}};
 	KeyframeEditFunc edit_cb;
 	
 	/* get beztriple editing callbacks */

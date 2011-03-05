@@ -1,5 +1,5 @@
 /*
- * $Id: console_ops.c 35242 2011-02-27 20:29:51Z jesterking $
+ * $Id: console_ops.c 35362 2011-03-05 10:29:10Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -717,7 +717,7 @@ static int copy_exec(bContext *C, wmOperator *UNUSED(op))
 	int sel[2];
 	int offset= 0;
 
-	ConsoleLine cl_dummy= {0};
+	ConsoleLine cl_dummy= {NULL};
 
 #if 0
 	/* copy whole file */

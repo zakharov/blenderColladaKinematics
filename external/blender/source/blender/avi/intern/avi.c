@@ -1,5 +1,5 @@
 /*
- * $Id: avi.c 35249 2011-02-27 20:43:42Z jesterking $
+ * $Id: avi.c 35362 2011-03-05 10:29:10Z campbellbarton $
  *
  * This is external code.
  *
@@ -216,7 +216,7 @@ int AVI_is_avi (char *name) {
 
 int AVI_is_avi (const char *name) {
 	int temp, fcca, j;
-	AviMovie movie= {0};
+	AviMovie movie= {NULL};
 	AviMainHeader header;
 	AviBitmapInfoHeader bheader;
 	int movie_tracks = 0;

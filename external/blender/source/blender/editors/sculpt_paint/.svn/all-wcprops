@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svnroot/bf-blender/!svn/ver/35338/trunk/blender/source/blender/editors/sculpt_paint
+/svnroot/bf-blender/!svn/ver/35363/trunk/blender/source/blender/editors/sculpt_paint
 END
 sculpt_intern.h
 K 25
 svn:wc:ra_dav:version-url
 V 100
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/sculpt_paint/sculpt_intern.h
+/svnroot/bf-blender/!svn/ver/35363/trunk/blender/source/blender/editors/sculpt_paint/sculpt_intern.h
 END
 paint_intern.h
 K 25
@@ -19,7 +19,7 @@ sculpt_undo.c
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/sculpt_paint/sculpt_undo.c
+/svnroot/bf-blender/!svn/ver/35363/trunk/blender/source/blender/editors/sculpt_paint/sculpt_undo.c
 END
 paint_undo.c
 K 25
@@ -31,7 +31,7 @@ paint_stroke.c
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svnroot/bf-blender/!svn/ver/35285/trunk/blender/source/blender/editors/sculpt_paint/paint_stroke.c
+/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/editors/sculpt_paint/paint_stroke.c
 END
 SConscript
 K 25
@@ -43,7 +43,7 @@ paint_vertex.c
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svnroot/bf-blender/!svn/ver/35285/trunk/blender/source/blender/editors/sculpt_paint/paint_vertex.c
+/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/editors/sculpt_paint/paint_vertex.c
 END
 sculpt.c
 K 25
@@ -73,5 +73,5 @@ paint_image.c
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/svnroot/bf-blender/!svn/ver/35338/trunk/blender/source/blender/editors/sculpt_paint/paint_image.c
+/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/editors/sculpt_paint/paint_image.c
 END
