@@ -286,7 +286,6 @@ bool MeshImporter::is_nice_mesh(COLLADAFW::Mesh *mesh)	// checks if mesh has sup
 
 		const char *type_str = bc_primTypeToStr(type);
 
-		// OpenCollada passes POLYGONS type for <polylist>
 		if (type == COLLADAFW::MeshPrimitive::POLYLIST || type == COLLADAFW::MeshPrimitive::POLYGONS) {
 
 			COLLADAFW::Polygons *mpvc = (COLLADAFW::Polygons*)mp;
@@ -425,10 +424,9 @@ int MeshImporter::count_new_tris(COLLADAFW::Mesh *mesh, Mesh *me)
 void MeshImporter::read_faces(COLLADAFW::Mesh *mesh, Mesh *me, int new_tris)        //TODO:: Refactor. Possibly replace by iterators
 {
 	unsigned int i;
-    // allocate faces
+    	// allocate faces
 	me->totface = mesh->getFacesCount() + new_tris;
 	me->mface = (MFace*)CustomData_add_layer(&me->fdata, CD_MFACE, CD_CALLOC, NULL, me->totface);
-
 
 	// allocate UV layers
 	unsigned int totuvset = mesh->getUVCoords().getInputInfosArray().getCount();
@@ -474,9 +472,10 @@ void MeshImporter::read_faces(COLLADAFW::Mesh *mesh, Mesh *me, int new_tris)    
 		size_t prim_totface = mp->getFaceCount();
 		unsigned int *indices = mp->getPositionIndices().getData();
 		unsigned int *nind = mp->getNormalIndices().getData();
+
 		if (has_normals && mp->getPositionIndices().getCount() != mp->getNormalIndices().getCount()) {
-            fprintf(stderr, "Warning: Number of normals is different from the number of vertcies, skipping normals\n");
-            has_normals = false;
+            		fprintf(stderr, "Warning: Number of normals is different from the number of vertcies, skipping normals\n");
+            		has_normals = false;
 		}
 
 		unsigned int j, k;
@@ -498,7 +497,7 @@ void MeshImporter::read_faces(COLLADAFW::Mesh *mesh, Mesh *me, int new_tris)    
 
 		if (type == COLLADAFW::MeshPrimitive::TRIANGLES) {
 			for (j = 0; j < prim_totface; j++){
-                set_face_indices(mface, indices, false);
+                		set_face_indices(mface, indices, false);
 				indices += 3;
 
 #if 0
@@ -534,38 +533,40 @@ void MeshImporter::read_faces(COLLADAFW::Mesh *mesh, Mesh *me, int new_tris)    
 		}
 
 		// If MeshPrimitive is TRIANGLE_FANS we split it into triangles
-		// The first trifan vertex will be the first vertex in every triangle
 		if (type == COLLADAFW::MeshPrimitive::TRIANGLE_FANS) {
-		    unsigned grouped_vertex = mp->getGroupedVertexElementsCount();
-		    for (unsigned int group_index = 0; group_index < grouped_vertex; group_index++){
-		        unsigned int first_vertex = indices[0]; // Store first trifan vertex
-                unsigned int first_normal = nind[0]; // Store first trifan vertex normal
-		        unsigned int vertex_count = mp->getGroupedVerticesVertexCount(group_index);
+			unsigned grouped_vertex_count = mp->getGroupedVertexElementsCount(); // number of triangle fans
+			for (unsigned int group_index = 0; group_index < grouped_vertex_count; group_index++){
+		        	unsigned int first_vertex = indices[0]; // Store first trifan vertex
+                		unsigned int first_normal = nind[0]; // Store first trifan vertex normal
+		        	unsigned int vertex_count = mp->getGroupedVerticesVertexCount(group_index);	// number of vertices in each triangle fan
+				// If imported mesh has triangle fans with (N) vertices, they are simply converted to (N - 2) triangles.
+				// The first trifan vertex will be the first vertex in every triangle
+                		for (unsigned int vertex_index = 0; vertex_index < vertex_count - 2; vertex_index++){
+                    			// For each triangle store indeces of its 3 vertices
+                    			unsigned int triangle_vertex_indices[3]={first_vertex, indices[1], indices[2]};
+                    			set_face_indices(mface, triangle_vertex_indices, false);
+                    			test_index_face(mface, &me->fdata, face_index, 3);
 
-                for (unsigned int vertex_index = 0; vertex_index < vertex_count-2; vertex_index++){
-                    // For each triangle create a new array , which store indeces of its 3 vertices
-                    unsigned int triangle_vertex_indices[3]={first_vertex, indices[1], indices[2]};
-                    set_face_indices(mface, triangle_vertex_indices, false);
-                    test_index_face(mface, &me->fdata, face_index, 3);
+                    			if (has_normals) {  // vertex normals, same inplementation as for the triangles
+						// the same for vertces normals
+                        			unsigned int vertex_normal_indices[3]={first_normal, nind[1], nind[2]};
+                        			if (!flat_face(vertex_normal_indices, nor, 3))
+                            			mface->flag |= ME_SMOOTH;
+                        			nind++;
+                    			}
 
-                    if (has_normals) {  // the for vertex normals
-                        unsigned int vertex_normal_indices[3]={first_normal, nind[1], nind[2]};
-                        if (!flat_face(vertex_normal_indices, nor, 3))
-                            mface->flag |= ME_SMOOTH;
-                        nind++;
-                    }
+                    			mface++;	// same inplementation as for the triangles
+                    			indices++;
+                    			face_index++;
+                    			prim.totface++;
+                 		}
+                
+				// Moving cursor  to the next triangle fan.
+                		if (has_normals)
+                    			nind += 2;
 
-                    mface++;
-                    indices++;
-                    face_index++;
-                    prim.totface++;
-
-                 }
-                // Moving cursor to the next triangle fan.
-                if (has_normals)
-                    nind += 2;
-                indices +=  2;
-		    }
+                		indices +=  2;
+			}
 		}
 		else if (type == COLLADAFW::MeshPrimitive::POLYLIST || type == COLLADAFW::MeshPrimitive::POLYGONS) {
 			COLLADAFW::Polygons *mpvc =	(COLLADAFW::Polygons*)mp;
