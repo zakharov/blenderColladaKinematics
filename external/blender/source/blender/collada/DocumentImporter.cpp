@@ -999,9 +999,10 @@ private:
 
 	bool DocumentImporter::writeKinematicsScene( const COLLADAFW::KinematicsScene* kinematicsScene )
 	{
-	    kinematics_importer.write_kinematics_scene(kinematicsScene);
+	    if(mImportStage!=General)
+			return true;
 
-		return true;
+	    return kinematics_importer.write_kinematics_scene(kinematicsScene);;
 	}
 
 

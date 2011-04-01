@@ -1993,7 +1993,7 @@
 			<bind_kinematics_model node="visual1/node0">
 				<param>kscene_kmodel1_inst</param>
 			</bind_kinematics_model>
-			<bind_joint_axis target="node1/node_joint0_axis0">
+			<bind_joint_axis target="v1.node1/node_joint0_axis0">
 				<axis>
 					<param>kscene_kmodel1_inst_robot1_kinematics_kmodel1_inst_joint0.axis0</param>
 				</axis>
@@ -2001,7 +2001,7 @@
 					<param>kscene_kmodel1_inst_robot1_kinematics_kmodel1_inst_joint0.axis0_value</param>
 				</value>
 			</bind_joint_axis>
-			<bind_joint_axis target="node0/node2/node_joint1_axis0">
+			<bind_joint_axis target="v1.node2/node_joint1_axis0">
 				<axis>
 					<param>kscene_kmodel1_inst_robot1_kinematics_kmodel1_inst_joint1.axis0</param>
 				</axis>
@@ -2009,7 +2009,7 @@
 					<param>kscene_kmodel1_inst_robot1_kinematics_kmodel1_inst_joint1.axis0_value</param>
 				</value>
 			</bind_joint_axis>
-			<bind_joint_axis target="node0/node1/node3/node_joint2_axis0">
+			<bind_joint_axis target="v1.node3/node_joint2_axis0">
 				<axis>
 					<param>kscene_kmodel1_inst_robot1_kinematics_kmodel1_inst_joint2.axis0</param>
 				</axis>
@@ -2017,7 +2017,7 @@
 					<param>kscene_kmodel1_inst_robot1_kinematics_kmodel1_inst_joint2.axis0_value</param>
 				</value>
 			</bind_joint_axis>
-			<bind_joint_axis target="node0/node1/node2/node4/node_joint3_axis0">
+			<bind_joint_axis target="v1.node4/node_joint3_axis0">
 				<axis>
 					<param>kscene_kmodel1_inst_robot1_kinematics_kmodel1_inst_joint3.axis0</param>
 				</axis>
@@ -2025,7 +2025,7 @@
 					<param>kscene_kmodel1_inst_robot1_kinematics_kmodel1_inst_joint3.axis0_value</param>
 				</value>
 			</bind_joint_axis>
-			<bind_joint_axis target="node0/node1/node2/node3/node5/node_joint4_axis0">
+			<bind_joint_axis target="v1.node5/node_joint4_axis0">
 				<axis>
 					<param>kscene_kmodel1_inst_robot1_kinematics_kmodel1_inst_joint4.axis0</param>
 				</axis>
@@ -2033,7 +2033,7 @@
 					<param>kscene_kmodel1_inst_robot1_kinematics_kmodel1_inst_joint4.axis0_value</param>
 				</value>
 			</bind_joint_axis>
-			<bind_joint_axis target="node0/node1/node2/node3/node4/node6/node_joint5_axis0">
+			<bind_joint_axis target="v1.node6/node_joint5_axis0">
 				<axis>
 					<param>kscene_kmodel1_inst_robot1_kinematics_kmodel1_inst_joint5.axis0</param>
 				</axis>
@@ -2041,7 +2041,7 @@
 					<param>kscene_kmodel1_inst_robot1_kinematics_kmodel1_inst_joint5.axis0_value</param>
 				</value>
 			</bind_joint_axis>
-			<bind_joint_axis target="node0/node1/node2/node3/node4/node5/node7/node_joint6_axis0">
+			<bind_joint_axis target="v1.node5/node7/node_joint6_axis0">
 				<axis>
 					<param>kscene_kmodel1_inst_robot1_kinematics_kmodel1_inst_joint6.axis0</param>
 				</axis>
@@ -2049,7 +2049,7 @@
 					<param>kscene_kmodel1_inst_robot1_kinematics_kmodel1_inst_joint6.axis0_value</param>
 				</value>
 			</bind_joint_axis>
-			<bind_joint_axis target="node0/node1/node2/node3/node4/node5/node6/node7/node9/node_joint7_axis0">
+			<bind_joint_axis target="v1.node9/node_joint7_axis0">
 				<axis>
 					<param>kscene_kmodel1_inst_robot1_kinematics_kmodel1_inst_joint7.axis0</param>
 				</axis>
@@ -2057,7 +2057,7 @@
 					<param>kscene_kmodel1_inst_robot1_kinematics_kmodel1_inst_joint7.axis0_value</param>
 				</value>
 			</bind_joint_axis>
-			<bind_joint_axis target="node0/node1/node2/node3/node4/node5/node6/node7/node12/node_joint8_axis0">
+			<bind_joint_axis target="v1.node12/node_joint8_axis0">
 				<axis>
 					<param>kscene_kmodel1_inst_robot1_kinematics_kmodel1_inst_joint8.axis0</param>
 				</axis>
@@ -2065,7 +2065,7 @@
 					<param>kscene_kmodel1_inst_robot1_kinematics_kmodel1_inst_joint8.axis0_value</param>
 				</value>
 			</bind_joint_axis>
-			<bind_joint_axis target="node0/node1/node2/node3/node4/node5/node6/node14/node_joint9_axis0">
+			<bind_joint_axis target="v1.node14/node_joint9_axis0">
 				<axis>
 					<param>kscene_kmodel1_inst_robot1_kinematics_kmodel1_inst_joint9.axis0</param>
 				</axis>
@@ -2073,7 +2073,7 @@
 					<param>kscene_kmodel1_inst_robot1_kinematics_kmodel1_inst_joint9.axis0_value</param>
 				</value>
 			</bind_joint_axis>
-			<bind_joint_axis target="node0/node1/node2/node3/node4/node5/node6/node8/node_joint10_axis0">
+			<bind_joint_axis target="v1.node8/node_joint10_axis0">
 				<axis>
 					<param>kscene_kmodel1_inst_robot1_kinematics_kmodel1_inst_joint10.axis0</param>
 				</axis>
@@ -2081,7 +2081,7 @@
 					<param>kscene_kmodel1_inst_robot1_kinematics_kmodel1_inst_joint10.axis0_value</param>
 				</value>
 			</bind_joint_axis>
-			<bind_joint_axis target="node0/node1/node2/node3/node4/node5/node6/node7/node8/node10/node_joint11_axis0">
+			<bind_joint_axis target="v1.node10/node_joint11_axis0">
 				<axis>
 					<param>kscene_kmodel1_inst_robot1_kinematics_kmodel1_inst_joint11.axis0</param>
 				</axis>
@@ -2089,7 +2089,7 @@
 					<param>kscene_kmodel1_inst_robot1_kinematics_kmodel1_inst_joint11.axis0_value</param>
 				</value>
 			</bind_joint_axis>
-			<bind_joint_axis target="node0/node1/node2/node3/node4/node5/node6/node7/node11/node13/node_joint12_axis0">
+			<bind_joint_axis target="v1.node11/node13/node_joint12_axis0">
 				<axis>
 					<param>kscene_kmodel1_inst_robot1_kinematics_kmodel1_inst_joint12.axis0</param>
 				</axis>
@@ -2097,7 +2097,7 @@
 					<param>kscene_kmodel1_inst_robot1_kinematics_kmodel1_inst_joint12.axis0_value</param>
 				</value>
 			</bind_joint_axis>
-			<bind_joint_axis target="node0/node1/node2/node3/node4/node5/node6/node7/node15/node_joint13_axis0">
+			<bind_joint_axis target="v1.node15/node_joint13_axis0">
 				<axis>
 					<param>kscene_kmodel1_inst_robot1_kinematics_kmodel1_inst_joint13.axis0</param>
 				</axis>
@@ -2105,7 +2105,7 @@
 					<param>kscene_kmodel1_inst_robot1_kinematics_kmodel1_inst_joint13.axis0_value</param>
 				</value>
 			</bind_joint_axis>
-			<bind_joint_axis target="node0/node1/node2/node3/node4/node5/node6/node11/node_joint14_axis0">
+			<bind_joint_axis target="v1.node11/node_joint14_axis0">
 				<axis>
 					<param>kscene_kmodel1_inst_robot1_kinematics_kmodel1_inst_joint14.axis0</param>
 				</axis>

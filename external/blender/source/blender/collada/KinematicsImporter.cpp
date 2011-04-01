@@ -192,6 +192,8 @@ bool KinematicsImporter::write_kinematics_scene(const COLLADAFW::KinematicsScene
     COLLADAFW::InstanceKinematicsSceneArray instances = kinematicsScene->getInstanceKinematicsScenes();
     COLLADAFW::KinematicsModelArray kinModels = kinematicsScene->getKinematicsModels();
 
+
+
     for (int i = 0; i < instances.getCount(); i++)
     {
         COLLADAFW::InstanceKinematicsScene* kinScene = instances[i];
@@ -205,6 +207,7 @@ bool KinematicsImporter::write_kinematics_scene(const COLLADAFW::KinematicsScene
         cout << linkBindings[0].linkNumber << endl;
         size_t kinModelId = linkBindings[0].kinematicsModelId;
         const COLLADAFW::KinematicsModel* kinModel = kinModels[kinModelId];
+
 
         bones = build_kinematics_model(kinModel); //Buildling kinematics model here;
         for (int a = 0; a < linkBindings.getCount(); a++)
