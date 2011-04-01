@@ -1,2 +1,0 @@
-/usr/bin/ar cr ../../../lib/libbf_blenfont.a  CMakeFiles/bf_blenfont.dir/intern/blf.c.o CMakeFiles/bf_blenfont.dir/intern/blf_dir.c.o CMakeFiles/bf_blenfont.dir/intern/blf_font.c.o CMakeFiles/bf_blenfont.dir/intern/blf_glyph.c.o CMakeFiles/bf_blenfont.dir/intern/blf_lang.c.o CMakeFiles/bf_blenfont.dir/intern/blf_util.c.o
-/usr/bin/ranlib ../../../lib/libbf_blenfont.a

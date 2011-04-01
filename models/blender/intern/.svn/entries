@@ -1,147 +1,0 @@
-10
-
-dir
-34913
-https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern
-https://svn.blender.org/svnroot/bf-blender
-
-
-
-2011-02-16T08:49:27.559922Z
-34894
-lmg
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-954f8c5b-7b00-dc11-b283-0030488c597c
-
-container
-dir
-
-ghost
-dir
-
-bsp
-dir
-
-guardedalloc
-dir
-
-audaspace
-dir
-
-SConscript
-file
-
-
-
-
-2011-02-16T19:25:00.066843Z
-14895bdf316b124ae09207ac24458669
-2011-02-15T09:24:35.932934Z
-34861
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-849
-
-elbeem
-dir
-
-boolop
-dir
-
-opennl
-dir
-
-mikktspace
-dir
-
-iksolver
-dir
-
-tools
-dir
-
-itasc
-dir
-
-string
-dir
-
-memutil
-dir
-
-decimation
-dir
-
-CMakeLists.txt
-file
-
-
-
-
-2011-02-16T19:25:00.066843Z
-3f67256578c523c50302eeeb28aafc2a
-2011-02-15T09:24:35.932934Z
-34861
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1552
-
-moto
-dir
-
-smoke
-dir
-

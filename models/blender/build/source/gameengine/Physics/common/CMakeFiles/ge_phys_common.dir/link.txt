@@ -1,2 +1,0 @@
-/usr/bin/ar cr ../../../../lib/libge_phys_common.a  CMakeFiles/ge_phys_common.dir/PHY_IMotionState.cpp.o CMakeFiles/ge_phys_common.dir/PHY_IController.cpp.o CMakeFiles/ge_phys_common.dir/PHY_IPhysicsController.cpp.o CMakeFiles/ge_phys_common.dir/PHY_IGraphicController.cpp.o CMakeFiles/ge_phys_common.dir/PHY_IPhysicsEnvironment.cpp.o CMakeFiles/ge_phys_common.dir/PHY_IVehicle.cpp.o
-/usr/bin/ranlib ../../../../lib/libge_phys_common.a

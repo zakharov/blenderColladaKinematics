@@ -1,2 +1,0 @@
-/usr/bin/ar cr ../../../../lib/libbf_editor_space_action.a  CMakeFiles/bf_editor_space_action.dir/action_draw.c.o CMakeFiles/bf_editor_space_action.dir/action_edit.c.o CMakeFiles/bf_editor_space_action.dir/action_ops.c.o CMakeFiles/bf_editor_space_action.dir/action_select.c.o CMakeFiles/bf_editor_space_action.dir/space_action.c.o
-/usr/bin/ranlib ../../../../lib/libbf_editor_space_action.a

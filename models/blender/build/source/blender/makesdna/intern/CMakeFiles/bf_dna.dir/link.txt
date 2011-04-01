@@ -1,2 +1,0 @@
-/usr/bin/ar cr ../../../../lib/libbf_dna.a  CMakeFiles/bf_dna.dir/dna_genfile.c.o CMakeFiles/bf_dna.dir/dna.c.o
-/usr/bin/ranlib ../../../../lib/libbf_dna.a

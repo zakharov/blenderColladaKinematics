@@ -1,2 +1,0 @@
-/usr/bin/ar cr ../../../../lib/libbf_editor_metaball.a  CMakeFiles/bf_editor_metaball.dir/mball_edit.c.o CMakeFiles/bf_editor_metaball.dir/mball_ops.c.o
-/usr/bin/ranlib ../../../../lib/libbf_editor_metaball.a

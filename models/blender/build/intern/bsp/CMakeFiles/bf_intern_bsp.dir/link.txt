@@ -1,2 +1,0 @@
-/usr/bin/ar cr ../../lib/libbf_intern_bsp.a  CMakeFiles/bf_intern_bsp.dir/intern/BSP_CSGMesh.cpp.o CMakeFiles/bf_intern_bsp.dir/intern/BSP_MeshPrimitives.cpp.o CMakeFiles/bf_intern_bsp.dir/intern/CSG_BooleanOps.cpp.o
-/usr/bin/ranlib ../../lib/libbf_intern_bsp.a

@@ -1,2 +1,0 @@
-/usr/bin/ar cr ../../../lib/libbf_readblenfile.a  CMakeFiles/bf_readblenfile.dir/intern/BLO_readblenfile.c.o
-/usr/bin/ranlib ../../../lib/libbf_readblenfile.a

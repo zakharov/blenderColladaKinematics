@@ -1,9 +1,0 @@
-K 10
-svn:ignore
-V 30
-*.pyc
-README*
-SC2_models
-.git
-
-END

@@ -1,2 +1,0 @@
-/usr/bin/ar cr ../../../../lib/libge_phys_bullet.a  CMakeFiles/ge_phys_bullet.dir/CcdPhysicsEnvironment.cpp.o CMakeFiles/ge_phys_bullet.dir/CcdPhysicsController.cpp.o CMakeFiles/ge_phys_bullet.dir/CcdGraphicController.cpp.o
-/usr/bin/ranlib ../../../../lib/libge_phys_bullet.a

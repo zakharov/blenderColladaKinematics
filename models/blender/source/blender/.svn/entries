@@ -1,156 +1,0 @@
-10
-
-dir
-34913
-https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender
-https://svn.blender.org/svnroot/bf-blender
-
-
-
-2011-02-16T18:04:03.699180Z
-34912
-ton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-954f8c5b-7b00-dc11-b283-0030488c597c
-
-avi
-dir
-
-render
-dir
-
-modifiers
-dir
-
-blenkernel
-dir
-
-python
-dir
-
-ikplugin
-dir
-
-makesdna
-dir
-
-SConscript
-file
-
-
-
-
-2011-02-16T19:25:31.922843Z
-15b48b82eb4e8de69aaabbce335c4927
-2010-08-03T11:25:34.806551Z
-31006
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1080
-
-blenpluginapi
-dir
-
-gpu
-dir
-
-quicktime
-dir
-
-collada
-dir
-
-makesrna
-dir
-
-imbuf
-dir
-
-windowmanager
-dir
-
-blenloader
-dir
-
-blenlib
-dir
-
-blenfont
-dir
-
-nodes
-dir
-
-editors
-dir
-
-readblenfile
-dir
-
-CMakeLists.txt
-file
-
-
-
-
-2011-02-16T19:25:31.926843Z
-61e03a8a6968608266a0a12d38a238f7
-2010-12-08T08:43:06.510519Z
-33549
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1856
-

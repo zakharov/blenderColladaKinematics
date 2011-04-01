@@ -1,2 +1,0 @@
-/usr/bin/ar cr ../../lib/libextern_lzma.a  CMakeFiles/extern_lzma.dir/Alloc.c.o CMakeFiles/extern_lzma.dir/LzFind.c.o CMakeFiles/extern_lzma.dir/LzmaDec.c.o CMakeFiles/extern_lzma.dir/LzmaEnc.c.o CMakeFiles/extern_lzma.dir/LzmaLib.c.o
-/usr/bin/ranlib ../../lib/libextern_lzma.a

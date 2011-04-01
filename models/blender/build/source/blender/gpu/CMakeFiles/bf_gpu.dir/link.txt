@@ -1,2 +1,0 @@
-/usr/bin/ar cr ../../../lib/libbf_gpu.a  CMakeFiles/bf_gpu.dir/intern/gpu_buffers.c.o CMakeFiles/bf_gpu.dir/intern/gpu_codegen.c.o CMakeFiles/bf_gpu.dir/intern/gpu_draw.c.o CMakeFiles/bf_gpu.dir/intern/gpu_extensions.c.o CMakeFiles/bf_gpu.dir/intern/gpu_material.c.o CMakeFiles/bf_gpu.dir/intern/gpu_shader_material.glsl.c.o CMakeFiles/bf_gpu.dir/intern/gpu_shader_vertex.glsl.c.o
-/usr/bin/ranlib ../../../lib/libbf_gpu.a

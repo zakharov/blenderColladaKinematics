@@ -1,2 +1,0 @@
-/usr/bin/ar cr ../../../../lib/libbf_editor_sound.a  CMakeFiles/bf_editor_sound.dir/sound_ops.c.o
-/usr/bin/ranlib ../../../../lib/libbf_editor_sound.a

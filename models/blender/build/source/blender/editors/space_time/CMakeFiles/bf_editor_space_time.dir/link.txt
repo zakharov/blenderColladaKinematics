@@ -1,2 +1,0 @@
-/usr/bin/ar cr ../../../../lib/libbf_editor_space_time.a  CMakeFiles/bf_editor_space_time.dir/space_time.c.o CMakeFiles/bf_editor_space_time.dir/time_ops.c.o
-/usr/bin/ranlib ../../../../lib/libbf_editor_space_time.a

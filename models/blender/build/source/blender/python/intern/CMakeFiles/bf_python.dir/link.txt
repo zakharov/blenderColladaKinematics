@@ -1,2 +1,0 @@
-/usr/bin/ar cr ../../../../lib/libbf_python.a  CMakeFiles/bf_python.dir/bpy.c.o CMakeFiles/bf_python.dir/bpy_app.c.o CMakeFiles/bf_python.dir/bpy_driver.c.o CMakeFiles/bf_python.dir/bpy_interface.c.o CMakeFiles/bf_python.dir/bpy_operator.c.o CMakeFiles/bf_python.dir/bpy_operator_wrap.c.o CMakeFiles/bf_python.dir/bpy_props.c.o CMakeFiles/bf_python.dir/bpy_rna.c.o CMakeFiles/bf_python.dir/bpy_rna_array.c.o CMakeFiles/bf_python.dir/bpy_rna_callback.c.o CMakeFiles/bf_python.dir/bpy_util.c.o CMakeFiles/bf_python.dir/stubs.c.o
-/usr/bin/ranlib ../../../../lib/libbf_python.a
