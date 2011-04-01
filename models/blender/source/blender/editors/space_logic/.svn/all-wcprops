@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/bf-blender/!svn/ver/34851/trunk/blender/source/blender/editors/space_logic
+END
+logic_ops.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/34851/trunk/blender/source/blender/editors/space_logic/logic_ops.c
+END
+logic_intern.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/bf-blender/!svn/ver/30907/trunk/blender/source/blender/editors/space_logic/logic_intern.h
+END
+logic_window.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/bf-blender/!svn/ver/34851/trunk/blender/source/blender/editors/space_logic/logic_window.c
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/32787/trunk/blender/source/blender/editors/space_logic/SConscript
+END
+space_logic.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/34851/trunk/blender/source/blender/editors/space_logic/space_logic.c
+END
+logic_buttons.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/34159/trunk/blender/source/blender/editors/space_logic/logic_buttons.c
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/editors/space_logic/CMakeLists.txt
+END

@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../intern/string/STR_String.h
+vector
+-
+limits.h
+-
+cstring
+-
+cstdlib
+-
+MEM_guardedalloc.h
+../intern/string/MEM_guardedalloc.h
+
+/home/anton/workspace/blender/intern/string/intern/STR_String.cpp
+stdio.h
+-
+stdarg.h
+-
+stdlib.h
+-
+ctype.h
+-
+string.h
+-
+strings.h
+-
+STR_String.h
+/home/anton/workspace/blender/intern/string/intern/STR_String.h
+

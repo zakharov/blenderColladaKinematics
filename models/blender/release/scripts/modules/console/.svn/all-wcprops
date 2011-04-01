@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/bf-blender/!svn/ver/34703/trunk/blender/release/scripts/modules/console
+END
+intellisense.py
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/34703/trunk/blender/release/scripts/modules/console/intellisense.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/34703/trunk/blender/release/scripts/modules/console/__init__.py
+END
+complete_calltip.py
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/bf-blender/!svn/ver/34703/trunk/blender/release/scripts/modules/console/complete_calltip.py
+END
+complete_import.py
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/34703/trunk/blender/release/scripts/modules/console/complete_import.py
+END
+complete_namespace.py
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/bf-blender/!svn/ver/34703/trunk/blender/release/scripts/modules/console/complete_namespace.py
+END

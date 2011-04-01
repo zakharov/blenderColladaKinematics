@@ -1,0 +1,2 @@
+/usr/bin/ar cr ../../../../lib/libbf_editor_uvedit.a  CMakeFiles/bf_editor_uvedit.dir/uvedit_draw.c.o CMakeFiles/bf_editor_uvedit.dir/uvedit_ops.c.o CMakeFiles/bf_editor_uvedit.dir/uvedit_parametrizer.c.o CMakeFiles/bf_editor_uvedit.dir/uvedit_unwrap_ops.c.o
+/usr/bin/ranlib ../../../../lib/libbf_editor_uvedit.a

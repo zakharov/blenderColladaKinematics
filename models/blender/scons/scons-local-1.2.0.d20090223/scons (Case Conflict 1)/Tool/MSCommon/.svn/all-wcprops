@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Tool/MSCommon
+END
+common.py
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Tool/MSCommon/common.py
+END
+vs.py
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Tool/MSCommon/vs.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Tool/MSCommon/__init__.py
+END
+sdk.py
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Tool/MSCommon/sdk.py
+END
+netframework.py
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Tool/MSCommon/netframework.py
+END

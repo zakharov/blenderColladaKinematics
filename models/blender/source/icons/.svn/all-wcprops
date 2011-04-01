@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/icons
+END
+winblender.ico
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/bf-blender/!svn/ver/31761/trunk/blender/source/icons/winblender.ico
+END
+winblender.rcscons
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/icons/winblender.rcscons
+END
+winblenderfile.ico
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/icons/winblenderfile.ico
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/bf-blender/!svn/ver/31645/trunk/blender/source/icons/SConscript
+END
+winblender.rc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/icons/winblender.rc
+END
+linuxcrossblender.rcscons
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/27003/trunk/blender/source/icons/linuxcrossblender.rcscons
+END

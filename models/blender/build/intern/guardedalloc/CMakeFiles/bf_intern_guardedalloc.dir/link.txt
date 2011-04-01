@@ -1,0 +1,2 @@
+/usr/bin/ar cr ../../lib/libbf_intern_guardedalloc.a  CMakeFiles/bf_intern_guardedalloc.dir/intern/mallocn.c.o
+/usr/bin/ranlib ../../lib/libbf_intern_guardedalloc.a

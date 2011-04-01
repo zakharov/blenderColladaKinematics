@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/bf-extensions/!svn/ver/1609/trunk/py/scripts/addons/io_coat3D
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/bf-extensions/!svn/ver/1609/trunk/py/scripts/addons/io_coat3D/__init__.py
+END
+tex.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/bf-extensions/!svn/ver/1526/trunk/py/scripts/addons/io_coat3D/tex.py
+END
+coat.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/bf-extensions/!svn/ver/1569/trunk/py/scripts/addons/io_coat3D/coat.py
+END

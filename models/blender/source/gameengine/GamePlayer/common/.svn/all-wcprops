@@ -1,0 +1,155 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/gameengine/GamePlayer/common
+END
+GPC_Engine.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/source/gameengine/GamePlayer/common/GPC_Engine.cpp
+END
+GPC_RenderTools.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/bf-blender/!svn/ver/33707/trunk/blender/source/gameengine/GamePlayer/common/GPC_RenderTools.h
+END
+GPC_MouseDevice.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/source/gameengine/GamePlayer/common/GPC_MouseDevice.cpp
+END
+GPC_RawLoadDotBlendArray.h
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/GamePlayer/common/GPC_RawLoadDotBlendArray.h
+END
+logo_blender.raw
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/gameengine/GamePlayer/common/logo_blender.raw
+END
+GPC_Engine.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/GamePlayer/common/GPC_Engine.h
+END
+logo_nan.raw
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/gameengine/GamePlayer/common/logo_nan.raw
+END
+GPC_Canvas.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/source/gameengine/GamePlayer/common/GPC_Canvas.cpp
+END
+GPC_MouseDevice.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/GamePlayer/common/GPC_MouseDevice.h
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/33707/trunk/blender/source/gameengine/GamePlayer/common/SConscript
+END
+GPC_KeyboardDevice.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/GamePlayer/common/GPC_KeyboardDevice.cpp
+END
+GPC_Canvas.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/GamePlayer/common/GPC_Canvas.h
+END
+GPC_System.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/source/gameengine/GamePlayer/common/GPC_System.cpp
+END
+GPC_KeyboardDevice.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/GamePlayer/common/GPC_KeyboardDevice.h
+END
+load.blend
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/gameengine/GamePlayer/common/load.blend
+END
+GPC_System.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/GamePlayer/common/GPC_System.h
+END
+GPC_RawLogoArrays.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/source/gameengine/GamePlayer/common/GPC_RawLogoArrays.cpp
+END
+GPC_RawImage.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/source/gameengine/GamePlayer/common/GPC_RawImage.cpp
+END
+bmfont.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/source/gameengine/GamePlayer/common/bmfont.cpp
+END
+GPC_RenderTools.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/bf-blender/!svn/ver/34079/trunk/blender/source/gameengine/GamePlayer/common/GPC_RenderTools.cpp
+END
+logo_blender3d.raw
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/gameengine/GamePlayer/common/logo_blender3d.raw
+END
+GPC_RawLogoArrays.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/GamePlayer/common/GPC_RawLogoArrays.h
+END
+GPC_RawImage.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/GamePlayer/common/GPC_RawImage.h
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/34486/trunk/blender/source/gameengine/GamePlayer/common/CMakeLists.txt
+END
+GPC_RawLoadDotBlendArray.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/source/gameengine/GamePlayer/common/GPC_RawLoadDotBlendArray.cpp
+END

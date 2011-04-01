@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/blender/ikplugin
+END
+BIK_api.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/bf-blender/!svn/ver/31891/trunk/blender/source/blender/ikplugin/BIK_api.h
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/bf-blender/!svn/ver/31891/trunk/blender/source/blender/ikplugin/SConscript
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/ikplugin/CMakeLists.txt
+END

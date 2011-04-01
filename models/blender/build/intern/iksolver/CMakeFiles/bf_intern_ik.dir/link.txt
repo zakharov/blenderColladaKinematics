@@ -1,0 +1,2 @@
+/usr/bin/ar cr ../../lib/libbf_intern_ik.a  CMakeFiles/bf_intern_ik.dir/intern/IK_QJacobian.cpp.o CMakeFiles/bf_intern_ik.dir/intern/IK_QJacobianSolver.cpp.o CMakeFiles/bf_intern_ik.dir/intern/IK_QSegment.cpp.o CMakeFiles/bf_intern_ik.dir/intern/IK_QTask.cpp.o CMakeFiles/bf_intern_ik.dir/intern/IK_Solver.cpp.o CMakeFiles/bf_intern_ik.dir/intern/MT_ExpMap.cpp.o
+/usr/bin/ranlib ../../lib/libbf_intern_ik.a

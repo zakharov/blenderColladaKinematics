@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletDynamics/Vehicle
+END
+btRaycastVehicle.h
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletDynamics/Vehicle/btRaycastVehicle.h
+END
+btWheelInfo.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletDynamics/Vehicle/btWheelInfo.cpp
+END
+btVehicleRaycaster.h
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletDynamics/Vehicle/btVehicleRaycaster.h
+END
+btWheelInfo.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletDynamics/Vehicle/btWheelInfo.h
+END
+btRaycastVehicle.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletDynamics/Vehicle/btRaycastVehicle.cpp
+END

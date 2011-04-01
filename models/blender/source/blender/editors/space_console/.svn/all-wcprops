@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/bf-blender/!svn/ver/34851/trunk/blender/source/blender/editors/space_console
+END
+console_draw.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/bf-blender/!svn/ver/34821/trunk/blender/source/blender/editors/space_console/console_draw.c
+END
+console_ops.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/34851/trunk/blender/source/blender/editors/space_console/console_ops.c
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/blender/editors/space_console/SConscript
+END
+console_intern.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/bf-blender/!svn/ver/33400/trunk/blender/source/blender/editors/space_console/console_intern.h
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/editors/space_console/CMakeLists.txt
+END
+space_console.c
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/bf-blender/!svn/ver/34851/trunk/blender/source/blender/editors/space_console/space_console.c
+END

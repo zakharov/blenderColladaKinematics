@@ -1,0 +1,2 @@
+/usr/bin/ar cr ../../../../lib/libbf_editor_text.a  CMakeFiles/bf_editor_text.dir/space_text.c.o CMakeFiles/bf_editor_text.dir/text_draw.c.o CMakeFiles/bf_editor_text.dir/text_header.c.o CMakeFiles/bf_editor_text.dir/text_ops.c.o CMakeFiles/bf_editor_text.dir/text_python.c.o
+/usr/bin/ranlib ../../../../lib/libbf_editor_text.a

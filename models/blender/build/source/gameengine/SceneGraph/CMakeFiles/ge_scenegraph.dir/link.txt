@@ -1,0 +1,2 @@
+/usr/bin/ar cr ../../../lib/libge_scenegraph.a  CMakeFiles/ge_scenegraph.dir/SG_BBox.cpp.o CMakeFiles/ge_scenegraph.dir/SG_Controller.cpp.o CMakeFiles/ge_scenegraph.dir/SG_IObject.cpp.o CMakeFiles/ge_scenegraph.dir/SG_Node.cpp.o CMakeFiles/ge_scenegraph.dir/SG_Spatial.cpp.o CMakeFiles/ge_scenegraph.dir/SG_Tree.cpp.o
+/usr/bin/ranlib ../../../lib/libge_scenegraph.a

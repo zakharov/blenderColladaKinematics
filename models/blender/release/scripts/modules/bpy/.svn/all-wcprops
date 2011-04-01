@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/bf-blender/!svn/ver/34841/trunk/blender/release/scripts/modules/bpy
+END
+path.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/bf-blender/!svn/ver/34596/trunk/blender/release/scripts/modules/bpy/path.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/bf-blender/!svn/ver/33978/trunk/blender/release/scripts/modules/bpy/__init__.py
+END
+utils.py
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/bf-blender/!svn/ver/34841/trunk/blender/release/scripts/modules/bpy/utils.py
+END
+ops.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/bf-blender/!svn/ver/33978/trunk/blender/release/scripts/modules/bpy/ops.py
+END

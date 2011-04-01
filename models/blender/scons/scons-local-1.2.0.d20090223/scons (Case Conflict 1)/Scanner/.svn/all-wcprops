@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Scanner
+END
+IDL.py
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Scanner/IDL.py
+END
+Fortran.py
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Scanner/Fortran.py
+END
+LaTeX.py
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Scanner/LaTeX.py
+END
+Dir.py
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Scanner/Dir.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Scanner/__init__.py
+END
+C.py
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Scanner/C.py
+END
+D.py
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Scanner/D.py
+END
+RC.py
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Scanner/RC.py
+END
+Prog.py
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Scanner/Prog.py
+END

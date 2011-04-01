@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/anton/workspace/blender/intern/mikktspace/mikktspace.c
+assert.h
+-
+stdio.h
+-
+math.h
+-
+string.h
+-
+float.h
+-
+stdlib.h
+-
+malloc.h
+-
+mikktspace.h
+/home/anton/workspace/blender/intern/mikktspace/mikktspace.h
+
+/home/anton/workspace/blender/intern/mikktspace/mikktspace.h
+

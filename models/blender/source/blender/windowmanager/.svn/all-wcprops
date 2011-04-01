@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/bf-blender/!svn/ver/34853/trunk/blender/source/blender/windowmanager
+END
+wm_window.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/bf-blender/!svn/ver/34701/trunk/blender/source/blender/windowmanager/wm_window.h
+END
+WM_api.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-blender/!svn/ver/34834/trunk/blender/source/blender/windowmanager/WM_api.h
+END
+wm_draw.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/27657/trunk/blender/source/blender/windowmanager/wm_draw.h
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/blender/windowmanager/SConscript
+END
+wm.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/bf-blender/!svn/ver/32506/trunk/blender/source/blender/windowmanager/wm.h
+END
+wm_cursors.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/33435/trunk/blender/source/blender/windowmanager/wm_cursors.h
+END
+wm_subwindow.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/windowmanager/wm_subwindow.h
+END
+wm_files.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/bf-blender/!svn/ver/34853/trunk/blender/source/blender/windowmanager/wm_files.h
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/34486/trunk/blender/source/blender/windowmanager/CMakeLists.txt
+END
+WM_types.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/bf-blender/!svn/ver/34695/trunk/blender/source/blender/windowmanager/WM_types.h
+END
+wm_event_system.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/32544/trunk/blender/source/blender/windowmanager/wm_event_system.h
+END
+wm_event_types.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/33694/trunk/blender/source/blender/windowmanager/wm_event_types.h
+END

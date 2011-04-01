@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Platform
+END
+irix.py
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Platform/irix.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Platform/__init__.py
+END
+cygwin.py
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Platform/cygwin.py
+END
+aix.py
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Platform/aix.py
+END
+posix.py
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Platform/posix.py
+END
+win32.py
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Platform/win32.py
+END
+os2.py
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Platform/os2.py
+END
+darwin.py
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Platform/darwin.py
+END
+hpux.py
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Platform/hpux.py
+END
+sunos.py
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Platform/sunos.py
+END

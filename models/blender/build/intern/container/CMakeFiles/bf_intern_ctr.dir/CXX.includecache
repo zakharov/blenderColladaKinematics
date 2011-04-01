@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../intern/container/CTR_List.h
+
+/home/anton/workspace/blender/intern/container/intern/CTR_List.cpp
+CTR_List.h
+/home/anton/workspace/blender/intern/container/intern/CTR_List.h
+

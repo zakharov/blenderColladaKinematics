@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/gameengine/GameLogic/Joystick
+END
+SCA_Joystick.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/GameLogic/Joystick/SCA_Joystick.cpp
+END
+SCA_JoystickPrivate.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/GameLogic/Joystick/SCA_JoystickPrivate.h
+END
+SCA_JoystickDefines.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/GameLogic/Joystick/SCA_JoystickDefines.h
+END
+SCA_Joystick.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/GameLogic/Joystick/SCA_Joystick.h
+END
+SCA_JoystickEvents.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/gameengine/GameLogic/Joystick/SCA_JoystickEvents.cpp
+END

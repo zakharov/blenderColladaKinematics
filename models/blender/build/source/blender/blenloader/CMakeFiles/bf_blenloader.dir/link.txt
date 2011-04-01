@@ -1,0 +1,2 @@
+/usr/bin/ar cr ../../../lib/libbf_blenloader.a  CMakeFiles/bf_blenloader.dir/intern/readblenentry.c.o CMakeFiles/bf_blenloader.dir/intern/readfile.c.o CMakeFiles/bf_blenloader.dir/intern/undofile.c.o CMakeFiles/bf_blenloader.dir/intern/writefile.c.o
+/usr/bin/ranlib ../../../lib/libbf_blenloader.a

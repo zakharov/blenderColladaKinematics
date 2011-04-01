@@ -1,0 +1,203 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/intern/itasc
+END
+Distance.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/intern/itasc/Distance.hpp
+END
+ConstraintSet.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/bf-blender/!svn/ver/23480/trunk/blender/intern/itasc/ConstraintSet.cpp
+END
+Scene.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/intern/itasc/Scene.hpp
+END
+WDLSSolver.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/bf-blender/!svn/ver/23512/trunk/blender/intern/itasc/WDLSSolver.cpp
+END
+ConstraintSet.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/intern/itasc/ConstraintSet.hpp
+END
+WDLSSolver.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/bf-blender/!svn/ver/23512/trunk/blender/intern/itasc/WDLSSolver.hpp
+END
+MovingFrame.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/bf-blender/!svn/ver/30526/trunk/blender/intern/itasc/MovingFrame.cpp
+END
+Object.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/intern/itasc/Object.hpp
+END
+MovingFrame.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/intern/itasc/MovingFrame.hpp
+END
+WSDLSSolver.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/bf-blender/!svn/ver/23512/trunk/blender/intern/itasc/WSDLSSolver.cpp
+END
+WSDLSSolver.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/bf-blender/!svn/ver/23512/trunk/blender/intern/itasc/WSDLSSolver.hpp
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/bf-blender/!svn/ver/33864/trunk/blender/intern/itasc/CMakeLists.txt
+END
+ControlledObject.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/bf-blender/!svn/ver/23467/trunk/blender/intern/itasc/ControlledObject.cpp
+END
+UncontrolledObject.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/bf-blender/!svn/ver/23467/trunk/blender/intern/itasc/UncontrolledObject.cpp
+END
+ublas_types.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/intern/itasc/ublas_types.hpp
+END
+ControlledObject.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/intern/itasc/ControlledObject.hpp
+END
+CopyPose.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/bf-blender/!svn/ver/23480/trunk/blender/intern/itasc/CopyPose.cpp
+END
+Cache.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/bf-blender/!svn/ver/23480/trunk/blender/intern/itasc/Cache.cpp
+END
+UncontrolledObject.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/intern/itasc/UncontrolledObject.hpp
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/bf-blender/!svn/ver/31567/trunk/blender/intern/itasc/SConscript
+END
+CopyPose.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/intern/itasc/CopyPose.hpp
+END
+Cache.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/intern/itasc/Cache.hpp
+END
+eigen_types.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/bf-blender/!svn/ver/23467/trunk/blender/intern/itasc/eigen_types.cpp
+END
+WorldObject.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/bf-blender/!svn/ver/23467/trunk/blender/intern/itasc/WorldObject.cpp
+END
+Solver.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/intern/itasc/Solver.hpp
+END
+eigen_types.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/intern/itasc/eigen_types.hpp
+END
+Armature.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/bf-blender/!svn/ver/27371/trunk/blender/intern/itasc/Armature.cpp
+END
+WorldObject.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/intern/itasc/WorldObject.hpp
+END
+Armature.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/intern/itasc/Armature.hpp
+END
+FixedObject.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/bf-blender/!svn/ver/23467/trunk/blender/intern/itasc/FixedObject.cpp
+END
+Distance.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/bf-blender/!svn/ver/23479/trunk/blender/intern/itasc/Distance.cpp
+END
+FixedObject.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/bf-blender/!svn/ver/23463/trunk/blender/intern/itasc/FixedObject.hpp
+END
+Scene.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/bf-blender/!svn/ver/23467/trunk/blender/intern/itasc/Scene.cpp
+END

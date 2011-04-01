@@ -1,0 +1,2 @@
+/usr/bin/ar cr ../../lib/libextern_binreloc.a  CMakeFiles/extern_binreloc.dir/binreloc.c.o
+/usr/bin/ranlib ../../lib/libextern_binreloc.a

@@ -1,0 +1,2 @@
+/usr/bin/ar cr ../../../../lib/libbf_editor_sculpt_paint.a  CMakeFiles/bf_editor_sculpt_paint.dir/paint_image.c.o CMakeFiles/bf_editor_sculpt_paint.dir/paint_ops.c.o CMakeFiles/bf_editor_sculpt_paint.dir/paint_stroke.c.o CMakeFiles/bf_editor_sculpt_paint.dir/paint_undo.c.o CMakeFiles/bf_editor_sculpt_paint.dir/paint_utils.c.o CMakeFiles/bf_editor_sculpt_paint.dir/paint_vertex.c.o CMakeFiles/bf_editor_sculpt_paint.dir/sculpt.c.o CMakeFiles/bf_editor_sculpt_paint.dir/sculpt_undo.c.o
+/usr/bin/ranlib ../../../../lib/libbf_editor_sculpt_paint.a

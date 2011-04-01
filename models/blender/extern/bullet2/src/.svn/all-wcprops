@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/extern/bullet2/src
+END
+Bullet-C-Api.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/bf-blender/!svn/ver/33445/trunk/blender/extern/bullet2/src/Bullet-C-Api.h
+END
+btBulletDynamicsCommon.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/btBulletDynamicsCommon.h
+END
+Jamfile
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/Jamfile
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/bf-blender/!svn/ver/25017/trunk/blender/extern/bullet2/src/SConscript
+END
+btBulletCollisionCommon.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/btBulletCollisionCommon.h
+END

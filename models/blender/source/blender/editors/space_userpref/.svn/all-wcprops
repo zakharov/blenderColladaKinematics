@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-blender/!svn/ver/34851/trunk/blender/source/blender/editors/space_userpref
+END
+userpref_intern.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/bf-blender/!svn/ver/27639/trunk/blender/source/blender/editors/space_userpref/userpref_intern.h
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/29224/trunk/blender/source/blender/editors/space_userpref/SConscript
+END
+space_userpref.c
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/bf-blender/!svn/ver/34851/trunk/blender/source/blender/editors/space_userpref/space_userpref.c
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/editors/space_userpref/CMakeLists.txt
+END
+userpref_ops.c
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/editors/space_userpref/userpref_ops.c
+END

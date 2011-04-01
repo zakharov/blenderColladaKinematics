@@ -1,0 +1,2 @@
+/usr/bin/ar cr ../../../../lib/libbf_editor_space_info.a  CMakeFiles/bf_editor_space_info.dir/info_ops.c.o CMakeFiles/bf_editor_space_info.dir/info_stats.c.o CMakeFiles/bf_editor_space_info.dir/info_draw.c.o CMakeFiles/bf_editor_space_info.dir/info_report.c.o CMakeFiles/bf_editor_space_info.dir/textview.c.o CMakeFiles/bf_editor_space_info.dir/space_info.c.o
+/usr/bin/ranlib ../../../../lib/libbf_editor_space_info.a

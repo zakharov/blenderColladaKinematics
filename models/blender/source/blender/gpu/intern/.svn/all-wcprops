@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/bf-blender/!svn/ver/34878/trunk/blender/source/blender/gpu/intern
+END
+gpu_shader_material.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/34852/trunk/blender/source/blender/gpu/intern/gpu_shader_material.glsl
+END
+gpu_shader_vertex.glsl.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/34852/trunk/blender/source/blender/gpu/intern/gpu_shader_vertex.glsl.c
+END
+gpu_codegen.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/bf-blender/!svn/ver/34852/trunk/blender/source/blender/gpu/intern/gpu_codegen.c
+END
+gpu_shader_material.glsl.c
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/bf-blender/!svn/ver/34852/trunk/blender/source/blender/gpu/intern/gpu_shader_material.glsl.c
+END
+gpu_codegen.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/bf-blender/!svn/ver/33448/trunk/blender/source/blender/gpu/intern/gpu_codegen.h
+END
+gpu_buffers.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/bf-blender/!svn/ver/34878/trunk/blender/source/blender/gpu/intern/gpu_buffers.c
+END
+gpu_draw.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/bf-blender/!svn/ver/34824/trunk/blender/source/blender/gpu/intern/gpu_draw.c
+END
+gpu_material.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/bf-blender/!svn/ver/34852/trunk/blender/source/blender/gpu/intern/gpu_material.c
+END
+gpu_extensions.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/34826/trunk/blender/source/blender/gpu/intern/gpu_extensions.c
+END
+gpu_shader_vertex.glsl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/34852/trunk/blender/source/blender/gpu/intern/gpu_shader_vertex.glsl
+END
