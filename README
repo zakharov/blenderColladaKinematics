@@ -8,5 +8,6 @@ Installation process
  
 * Download OpenCOLLADA library: svn checkout http://opencollada.googlecode.com/svn/trunk/ opencollada-read-only
 * Configure and build OpenCOLLADA using cmake
-* Configure and build current project using cmake, don't forget to set OPENCOLLADA_DIR variable.
+* Configure and build current project using cmake, don't forget to set OPENCOLLADA_ROOT_DIR variable.
+	export OPENCOLLADA_ROOT_DIR = your root dir
 
