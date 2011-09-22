@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+   <FileVersion major="1" minor="6" />
+   <Project>
+      <Option title="COLLADABlender" />
+      <Option makefile_is_custom="1" />
+      <Option compiler="gcc" />
+      <Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\share\;CMake Files\..\..\..\..\usr\share\cmake-2.8\;CMake Files\..\..\..\..\usr\share\cmake-2.8\Modules\;CMake Files\..\..\..\..\usr\share\cmake-2.8\Modules\Platform\;CMake Files\..\..\..\..\usr\share\cmake-2.8\Modules\Compiler\;CMake Files\external\;CMake Files\external\cmake-modules\;CMake Files\src\;CMake Files\src\COLLADAValidator\;CMake Files\src\COLLADABlender\;CMake Files\tests\;" />
+      <Build>
+      <Target title="all">
+         <Option working_dir="/home/alexey/workspace/blenderColladaKinematics/build/src/COLLADABlender" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/alexey/workspace/blenderColladaKinematics/build/src/COLLADABlender/Makefile&quot; all" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/alexey/workspace/blenderColladaKinematics/build/src/COLLADABlender/Makefile&quot; &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/alexey/workspace/blenderColladaKinematics/build/src/COLLADABlender/Makefile&quot; clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/alexey/workspace/blenderColladaKinematics/build/src/COLLADABlender/Makefile&quot; clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="COLLADABlender">
+         <Option output="/home/alexey/workspace/blenderColladaKinematics/lib/libCOLLADABlender.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/alexey/workspace/blenderColladaKinematics/build/src/COLLADABlender" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/home/alexey/workspace/blenderColladaKinematics/src/COLLADABlender" />
+            <Add directory="/home/alexey/workspace/blenderColladaKinematics/external/blender/source/blender/blenkernel" />
+            <Add directory="/home/alexey/workspace/blenderColladaKinematics/external/blender/source/blender/makesdna" />
+            <Add directory="/home/alexey/workspace/blenderColladaKinematics/external/blender/source/blender/makesrna" />
+            <Add directory="/home/alexey/workspace/blenderColladaKinematics/external/blender/source/blender/blenloader" />
+            <Add directory="/usr/local/opencollada/COLLADAStreamWriter/include" />
+            <Add directory="/usr/local/opencollada/COLLADABaseUtils/include" />
+            <Add directory="/usr/local/opencollada/COLLADAFramework/include" />
+            <Add directory="/usr/local/opencollada/COLLADASaxFrameworkLoader/include" />
+            <Add directory="/usr/local/opencollada/GeneratedSaxParser/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/alexey/workspace/blenderColladaKinematics/build/src/COLLADABlender/Makefile&quot; COLLADABlender" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/alexey/workspace/blenderColladaKinematics/build/src/COLLADABlender/Makefile&quot; &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/alexey/workspace/blenderColladaKinematics/build/src/COLLADABlender/Makefile&quot; clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/alexey/workspace/blenderColladaKinematics/build/src/COLLADABlender/Makefile&quot; clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="COLLADABlender/fast">
+         <Option output="/home/alexey/workspace/blenderColladaKinematics/lib/libCOLLADABlender.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/alexey/workspace/blenderColladaKinematics/build/src/COLLADABlender" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/home/alexey/workspace/blenderColladaKinematics/src/COLLADABlender" />
+            <Add directory="/home/alexey/workspace/blenderColladaKinematics/external/blender/source/blender/blenkernel" />
+            <Add directory="/home/alexey/workspace/blenderColladaKinematics/external/blender/source/blender/makesdna" />
+            <Add directory="/home/alexey/workspace/blenderColladaKinematics/external/blender/source/blender/makesrna" />
+            <Add directory="/home/alexey/workspace/blenderColladaKinematics/external/blender/source/blender/blenloader" />
+            <Add directory="/usr/local/opencollada/COLLADAStreamWriter/include" />
+            <Add directory="/usr/local/opencollada/COLLADABaseUtils/include" />
+            <Add directory="/usr/local/opencollada/COLLADAFramework/include" />
+            <Add directory="/usr/local/opencollada/COLLADASaxFrameworkLoader/include" />
+            <Add directory="/usr/local/opencollada/GeneratedSaxParser/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/alexey/workspace/blenderColladaKinematics/build/src/COLLADABlender/Makefile&quot; COLLADABlender/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/alexey/workspace/blenderColladaKinematics/build/src/COLLADABlender/Makefile&quot; &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/alexey/workspace/blenderColladaKinematics/build/src/COLLADABlender/Makefile&quot; clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/alexey/workspace/blenderColladaKinematics/build/src/COLLADABlender/Makefile&quot; clean" />
+         </MakeCommands>
+      </Target>
+      </Build>
+      <Unit filename="/home/alexey/workspace/blenderColladaKinematics/src/COLLADABlender/DocumentImporter.cpp">
+      </Unit>
+      <Unit filename="/home/alexey/workspace/blenderColladaKinematics/src/COLLADABlender/DocumentImporter.h">
+      </Unit>
+      <Unit filename="/home/alexey/workspace/blenderColladaKinematics/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\" />
+      </Unit>
+      <Unit filename="/home/alexey/workspace/blenderColladaKinematics/../../../../usr/share/cmake-2.8/Modules/CMakeSystemSpecificInformation.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\share\cmake-2.8\Modules\" />
+      </Unit>
+      <Unit filename="/home/alexey/workspace/blenderColladaKinematics/../../../../usr/share/cmake-2.8/Modules/CMakeGenericSystem.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\share\cmake-2.8\Modules\" />
+      </Unit>
+      <Unit filename="/home/alexey/workspace/blenderColladaKinematics/../../../../usr/share/cmake-2.8/Modules/CMakeFindCodeBlocks.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\share\cmake-2.8\Modules\" />
+      </Unit>
+      <Unit filename="/home/alexey/workspace/blenderColladaKinematics/../../../../usr/share/cmake-2.8/Modules/CMakeCInformation.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\share\cmake-2.8\Modules\" />
+      </Unit>
+      <Unit filename="/home/alexey/workspace/blenderColladaKinematics/../../../../usr/share/cmake-2.8/Modules/CMakeCommonLanguageInclude.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\share\cmake-2.8\Modules\" />
+      </Unit>
+      <Unit filename="/home/alexey/workspace/blenderColladaKinematics/../../../../usr/share/cmake-2.8/Modules/CMakeCXXInformation.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\share\cmake-2.8\Modules\" />
+      </Unit>
+      <Unit filename="/home/alexey/workspace/blenderColladaKinematics/../../../../usr/share/cmake-2.8/Modules/CMakeCommonLanguageInclude.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\share\cmake-2.8\Modules\" />
+      </Unit>
+      <Unit filename="/home/alexey/workspace/blenderColladaKinematics/../../../../usr/share/cmake-2.8/Modules/FindLibXml2.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\share\cmake-2.8\Modules\" />
+      </Unit>
+      <Unit filename="/home/alexey/workspace/blenderColladaKinematics/../../../../usr/share/cmake-2.8/Modules/FindPkgConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\share\cmake-2.8\Modules\" />
+      </Unit>
+      <Unit filename="/home/alexey/workspace/blenderColladaKinematics/../../../../usr/share/cmake-2.8/Modules/FindPackageHandleStandardArgs.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\share\cmake-2.8\Modules\" />
+      </Unit>
+      <Unit filename="/home/alexey/workspace/blenderColladaKinematics/../../../../usr/share/cmake-2.8/Modules/FindPackageMessage.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\share\cmake-2.8\Modules\" />
+      </Unit>
+      <Unit filename="/home/alexey/workspace/blenderColladaKinematics/../../../../usr/share/cmake-2.8/Modules/CMakeParseArguments.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\share\cmake-2.8\Modules\" />
+      </Unit>
+      <Unit filename="/home/alexey/workspace/blenderColladaKinematics/../../../../usr/share/cmake-2.8/Modules/FindPkgConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\share\cmake-2.8\Modules\" />
+      </Unit>
+      <Unit filename="/home/alexey/workspace/blenderColladaKinematics/../../../../usr/share/cmake-2.8/Modules/FindPackageHandleStandardArgs.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\share\cmake-2.8\Modules\" />
+      </Unit>
+      <Unit filename="/home/alexey/workspace/blenderColladaKinematics/../../../../usr/share/cmake-2.8/Modules/FindPackageMessage.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\share\cmake-2.8\Modules\" />
+      </Unit>
+      <Unit filename="/home/alexey/workspace/blenderColladaKinematics/../../../../usr/share/cmake-2.8/Modules/CMakeParseArguments.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\share\cmake-2.8\Modules\" />
+      </Unit>
+      <Unit filename="/home/alexey/workspace/blenderColladaKinematics/../../../../usr/share/cmake-2.8/Modules/Platform/Linux.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\share\cmake-2.8\Modules\Platform\" />
+      </Unit>
+      <Unit filename="/home/alexey/workspace/blenderColladaKinematics/../../../../usr/share/cmake-2.8/Modules/Platform/UnixPaths.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\share\cmake-2.8\Modules\Platform\" />
+      </Unit>
+      <Unit filename="/home/alexey/workspace/blenderColladaKinematics/../../../../usr/share/cmake-2.8/Modules/Platform/Linux-GNU-C.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\share\cmake-2.8\Modules\Platform\" />
+      </Unit>
+      <Unit filename="/home/alexey/workspace/blenderColladaKinematics/../../../../usr/share/cmake-2.8/Modules/Platform/Linux-GNU.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\share\cmake-2.8\Modules\Platform\" />
+      </Unit>
+      <Unit filename="/home/alexey/workspace/blenderColladaKinematics/../../../../usr/share/cmake-2.8/Modules/Platform/Linux-GNU-CXX.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\share\cmake-2.8\Modules\Platform\" />
+      </Unit>
+      <Unit filename="/home/alexey/workspace/blenderColladaKinematics/../../../../usr/share/cmake-2.8/Modules/Platform/Linux-GNU.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\share\cmake-2.8\Modules\Platform\" />
+      </Unit>
+      <Unit filename="/home/alexey/workspace/blenderColladaKinematics/../../../../usr/share/cmake-2.8/Modules/Compiler/GNU-C.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\share\cmake-2.8\Modules\Compiler\" />
+      </Unit>
+      <Unit filename="/home/alexey/workspace/blenderColladaKinematics/../../../../usr/share/cmake-2.8/Modules/Compiler/GNU.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\share\cmake-2.8\Modules\Compiler\" />
+      </Unit>
+      <Unit filename="/home/alexey/workspace/blenderColladaKinematics/../../../../usr/share/cmake-2.8/Modules/Compiler/GNU-CXX.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\share\cmake-2.8\Modules\Compiler\" />
+      </Unit>
+      <Unit filename="/home/alexey/workspace/blenderColladaKinematics/../../../../usr/share/cmake-2.8/Modules/Compiler/GNU.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\share\cmake-2.8\Modules\Compiler\" />
+      </Unit>
+      <Unit filename="/home/alexey/workspace/blenderColladaKinematics/external/cmake-modules/FindCppUnit.cmake">
+          <Option virtualFolder="CMake Files\external\cmake-modules\" />
+      </Unit>
+      <Unit filename="/home/alexey/workspace/blenderColladaKinematics/external/cmake-modules/MacroEnsureVersion.cmake">
+          <Option virtualFolder="CMake Files\external\cmake-modules\" />
+      </Unit>
+      <Unit filename="/home/alexey/workspace/blenderColladaKinematics/external/cmake-modules/FindPCRE.cmake">
+          <Option virtualFolder="CMake Files\external\cmake-modules\" />
+      </Unit>
+      <Unit filename="/home/alexey/workspace/blenderColladaKinematics/src/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\src\" />
+      </Unit>
+      <Unit filename="/home/alexey/workspace/blenderColladaKinematics/src/COLLADAValidator/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\src\COLLADAValidator\" />
+      </Unit>
+      <Unit filename="/home/alexey/workspace/blenderColladaKinematics/src/COLLADAValidator/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\src\COLLADAValidator\" />
+      </Unit>
+      <Unit filename="/home/alexey/workspace/blenderColladaKinematics/src/COLLADABlender/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\src\COLLADABlender\" />
+      </Unit>
+      <Unit filename="/home/alexey/workspace/blenderColladaKinematics/src/COLLADABlender/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\src\COLLADABlender\" />
+      </Unit>
+      <Unit filename="/home/alexey/workspace/blenderColladaKinematics/tests/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\tests\" />
+      </Unit>
+   </Project>
+</CodeBlocks_project_file>

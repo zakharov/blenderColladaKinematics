@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/bf-blender/!svn/ver/33442/trunk/blender/extern/glew/include/GL
+END
+glew.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/bf-blender/!svn/ver/33442/trunk/blender/extern/glew/include/GL/glew.h
+END
+wglew.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/bf-blender/!svn/ver/24733/trunk/blender/extern/glew/include/GL/wglew.h
+END
+glxew.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/bf-blender/!svn/ver/24733/trunk/blender/extern/glew/include/GL/glxew.h
+END

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/bf-extensions/!svn/ver/1609/trunk/py/scripts/addons/modules/extensions_framework
+END
+validate.py
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/bf-extensions/!svn/ver/1270/trunk/py/scripts/addons/modules/extensions_framework/validate.py
+END
+ui.py
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-extensions/!svn/ver/1270/trunk/py/scripts/addons/modules/extensions_framework/ui.py
+END
+util.py
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-extensions/!svn/ver/1292/trunk/py/scripts/addons/modules/extensions_framework/util.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/bf-extensions/!svn/ver/1609/trunk/py/scripts/addons/modules/extensions_framework/__init__.py
+END

@@ -1,0 +1,2 @@
+/usr/bin/ar cr ../../../../lib/libbf_editor_space_sound.a  CMakeFiles/bf_editor_space_sound.dir/sound_header.c.o CMakeFiles/bf_editor_space_sound.dir/space_sound.c.o
+/usr/bin/ranlib ../../../../lib/libbf_editor_space_sound.a

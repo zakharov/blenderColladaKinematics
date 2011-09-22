@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/bf-blender/!svn/ver/34786/trunk/blender/source/blender/makesdna/intern
+END
+makesdna.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/34786/trunk/blender/source/blender/makesdna/intern/makesdna.c
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/31645/trunk/blender/source/blender/makesdna/intern/SConscript
+END
+dna_genfile.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/34604/trunk/blender/source/blender/makesdna/intern/dna_genfile.c
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/34151/trunk/blender/source/blender/makesdna/intern/CMakeLists.txt
+END

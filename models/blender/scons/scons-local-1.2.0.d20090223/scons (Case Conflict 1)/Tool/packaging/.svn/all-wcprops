@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Tool/packaging
+END
+msi.py
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Tool/packaging/msi.py
+END
+src_zip.py
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Tool/packaging/src_zip.py
+END
+src_tarbz2.py
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Tool/packaging/src_tarbz2.py
+END
+rpm.py
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Tool/packaging/rpm.py
+END
+src_targz.py
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Tool/packaging/src_targz.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Tool/packaging/__init__.py
+END
+zip.py
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Tool/packaging/zip.py
+END
+ipk.py
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Tool/packaging/ipk.py
+END
+tarbz2.py
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Tool/packaging/tarbz2.py
+END
+targz.py
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Tool/packaging/targz.py
+END

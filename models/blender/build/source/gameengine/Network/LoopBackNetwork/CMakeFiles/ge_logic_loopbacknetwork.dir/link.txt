@@ -1,0 +1,2 @@
+/usr/bin/ar cr ../../../../lib/libge_logic_loopbacknetwork.a  CMakeFiles/ge_logic_loopbacknetwork.dir/NG_LoopBackNetworkDeviceInterface.cpp.o
+/usr/bin/ranlib ../../../../lib/libge_logic_loopbacknetwork.a

@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/24364/trunk/blender/extern/bullet2/src/BulletDynamics/Dynamics
+END
+Bullet-C-API.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svnroot/bf-blender/!svn/ver/24364/trunk/blender/extern/bullet2/src/BulletDynamics/Dynamics/Bullet-C-API.cpp
+END
+btSimpleDynamicsWorld.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletDynamics/Dynamics/btSimpleDynamicsWorld.cpp
+END
+btContinuousDynamicsWorld.h
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletDynamics/Dynamics/btContinuousDynamicsWorld.h
+END
+btRigidBody.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletDynamics/Dynamics/btRigidBody.cpp
+END
+btSimpleDynamicsWorld.h
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletDynamics/Dynamics/btSimpleDynamicsWorld.h
+END
+btRigidBody.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletDynamics/Dynamics/btRigidBody.h
+END
+btDiscreteDynamicsWorld.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletDynamics/Dynamics/btDiscreteDynamicsWorld.cpp
+END
+btActionInterface.h
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletDynamics/Dynamics/btActionInterface.h
+END
+btDynamicsWorld.h
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletDynamics/Dynamics/btDynamicsWorld.h
+END
+btContinuousDynamicsWorld.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletDynamics/Dynamics/btContinuousDynamicsWorld.cpp
+END
+btDiscreteDynamicsWorld.h
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h
+END

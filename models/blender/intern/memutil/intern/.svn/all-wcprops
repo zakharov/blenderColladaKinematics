@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/intern/memutil/intern
+END
+MEM_CacheLimiterC-Api.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/34525/trunk/blender/intern/memutil/intern/MEM_CacheLimiterC-Api.cpp
+END
+MEM_RefCountedC-Api.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/intern/memutil/intern/MEM_RefCountedC-Api.cpp
+END

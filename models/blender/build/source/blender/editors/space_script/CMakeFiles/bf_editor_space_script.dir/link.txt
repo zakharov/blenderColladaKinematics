@@ -1,0 +1,2 @@
+/usr/bin/ar cr ../../../../lib/libbf_editor_space_script.a  CMakeFiles/bf_editor_space_script.dir/script_edit.c.o CMakeFiles/bf_editor_space_script.dir/script_header.c.o CMakeFiles/bf_editor_space_script.dir/script_ops.c.o CMakeFiles/bf_editor_space_script.dir/space_script.c.o
+/usr/bin/ranlib ../../../../lib/libbf_editor_space_script.a

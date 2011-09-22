@@ -1,0 +1,137 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-blender/!svn/ver/34717/trunk/blender/source/blender/nodes/intern/TEX_nodes
+END
+TEX_decompose.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/bf-blender/!svn/ver/34712/trunk/blender/source/blender/nodes/intern/TEX_nodes/TEX_decompose.c
+END
+TEX_valToRgb.c
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/bf-blender/!svn/ver/34712/trunk/blender/source/blender/nodes/intern/TEX_nodes/TEX_valToRgb.c
+END
+TEX_image.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/bf-blender/!svn/ver/34712/trunk/blender/source/blender/nodes/intern/TEX_nodes/TEX_image.c
+END
+TEX_scale.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/bf-blender/!svn/ver/34712/trunk/blender/source/blender/nodes/intern/TEX_nodes/TEX_scale.c
+END
+TEX_mixRgb.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/34717/trunk/blender/source/blender/nodes/intern/TEX_nodes/TEX_mixRgb.c
+END
+TEX_math.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/34717/trunk/blender/source/blender/nodes/intern/TEX_nodes/TEX_math.c
+END
+TEX_distance.c
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/bf-blender/!svn/ver/34712/trunk/blender/source/blender/nodes/intern/TEX_nodes/TEX_distance.c
+END
+TEX_hueSatVal.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/bf-blender/!svn/ver/34712/trunk/blender/source/blender/nodes/intern/TEX_nodes/TEX_hueSatVal.c
+END
+TEX_translate.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/bf-blender/!svn/ver/34712/trunk/blender/source/blender/nodes/intern/TEX_nodes/TEX_translate.c
+END
+TEX_rotate.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/34712/trunk/blender/source/blender/nodes/intern/TEX_nodes/TEX_rotate.c
+END
+TEX_output.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/34712/trunk/blender/source/blender/nodes/intern/TEX_nodes/TEX_output.c
+END
+TEX_texture.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/bf-blender/!svn/ver/34712/trunk/blender/source/blender/nodes/intern/TEX_nodes/TEX_texture.c
+END
+TEX_viewer.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/34712/trunk/blender/source/blender/nodes/intern/TEX_nodes/TEX_viewer.c
+END
+TEX_proc.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/34712/trunk/blender/source/blender/nodes/intern/TEX_nodes/TEX_proc.c
+END
+TEX_checker.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/bf-blender/!svn/ver/34712/trunk/blender/source/blender/nodes/intern/TEX_nodes/TEX_checker.c
+END
+TEX_at.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/34712/trunk/blender/source/blender/nodes/intern/TEX_nodes/TEX_at.c
+END
+TEX_valToNor.c
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/bf-blender/!svn/ver/34712/trunk/blender/source/blender/nodes/intern/TEX_nodes/TEX_valToNor.c
+END
+TEX_compose.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/bf-blender/!svn/ver/34712/trunk/blender/source/blender/nodes/intern/TEX_nodes/TEX_compose.c
+END
+TEX_coord.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/bf-blender/!svn/ver/34712/trunk/blender/source/blender/nodes/intern/TEX_nodes/TEX_coord.c
+END
+TEX_invert.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/34712/trunk/blender/source/blender/nodes/intern/TEX_nodes/TEX_invert.c
+END
+TEX_curves.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/34712/trunk/blender/source/blender/nodes/intern/TEX_nodes/TEX_curves.c
+END
+TEX_bricks.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/34712/trunk/blender/source/blender/nodes/intern/TEX_nodes/TEX_bricks.c
+END

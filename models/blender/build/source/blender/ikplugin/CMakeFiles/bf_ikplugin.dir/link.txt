@@ -1,0 +1,2 @@
+/usr/bin/ar cr ../../../lib/libbf_ikplugin.a  CMakeFiles/bf_ikplugin.dir/intern/ikplugin_api.c.o CMakeFiles/bf_ikplugin.dir/intern/iksolver_plugin.c.o CMakeFiles/bf_ikplugin.dir/intern/itasc_plugin.cpp.o
+/usr/bin/ranlib ../../../lib/libbf_ikplugin.a

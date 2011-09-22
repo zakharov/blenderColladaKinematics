@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/intern/decimation/test/decimate_glut_test/intern/ply
+END
+plyfile.c
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/intern/decimation/test/decimate_glut_test/intern/ply/plyfile.c
+END
+ply.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/intern/decimation/test/decimate_glut_test/intern/ply/ply.h
+END

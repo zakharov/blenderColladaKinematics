@@ -1,0 +1,2 @@
+/usr/bin/ar cr ../../../../lib/libge_logic_network.a  CMakeFiles/ge_logic_network.dir/KX_NetworkEventManager.cpp.o CMakeFiles/ge_logic_network.dir/KX_NetworkMessageActuator.cpp.o CMakeFiles/ge_logic_network.dir/KX_NetworkMessageSensor.cpp.o CMakeFiles/ge_logic_network.dir/KX_NetworkObjectActuator.cpp.o CMakeFiles/ge_logic_network.dir/KX_NetworkObjectSensor.cpp.o
+/usr/bin/ranlib ../../../../lib/libge_logic_network.a

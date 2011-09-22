@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/bf-blender/!svn/ver/33864/trunk/blender/extern/libredcode
+END
+debayer.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/bf-blender/!svn/ver/23425/trunk/blender/extern/libredcode/debayer.h
+END
+AUTHOR
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/libredcode/AUTHOR
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/libredcode/LICENSE
+END
+codec.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/bf-blender/!svn/ver/23425/trunk/blender/extern/libredcode/codec.h
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/bf-blender/!svn/ver/23595/trunk/blender/extern/libredcode/SConscript
+END
+NOTES
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/libredcode/NOTES
+END
+format.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/bf-blender/!svn/ver/23425/trunk/blender/extern/libredcode/format.c
+END
+debayer.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/bf-blender/!svn/ver/23425/trunk/blender/extern/libredcode/debayer.c
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/bf-blender/!svn/ver/33864/trunk/blender/extern/libredcode/CMakeLists.txt
+END
+codec.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/bf-blender/!svn/ver/23425/trunk/blender/extern/libredcode/codec.c
+END
+format.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/bf-blender/!svn/ver/23425/trunk/blender/extern/libredcode/format.h
+END

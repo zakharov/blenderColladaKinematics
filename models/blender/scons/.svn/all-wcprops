@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons
+END
+scons-README
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-README
+END
+scons-LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-LICENSE
+END
+scons-time.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons-time.py
+END
+sconsign.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/sconsign.py
+END
+scons.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/bf-blender/!svn/ver/23147/trunk/blender/scons/scons.py
+END

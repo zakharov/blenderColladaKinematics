@@ -1,0 +1,2 @@
+/usr/bin/ar cr ../../lib/libextern_glew.a  CMakeFiles/extern_glew.dir/src/glew.c.o
+/usr/bin/ranlib ../../lib/libextern_glew.a

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/bf-blender/!svn/ver/34912/trunk/blender/source/blender/makesrna
+END
+RNA_define.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/bf-blender/!svn/ver/34298/trunk/blender/source/blender/makesrna/RNA_define.h
+END
+RNA_access.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/bf-blender/!svn/ver/34890/trunk/blender/source/blender/makesrna/RNA_access.h
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/bf-blender/!svn/ver/34026/trunk/blender/source/blender/makesrna/SConscript
+END
+RNA_types.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/bf-blender/!svn/ver/34834/trunk/blender/source/blender/makesrna/RNA_types.h
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/33549/trunk/blender/source/blender/makesrna/CMakeLists.txt
+END
+RNA_enum_types.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/bf-blender/!svn/ver/34717/trunk/blender/source/blender/makesrna/RNA_enum_types.h
+END

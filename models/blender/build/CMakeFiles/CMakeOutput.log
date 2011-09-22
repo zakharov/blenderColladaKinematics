@@ -1,0 +1,676 @@
+The system is: Linux - 2.6.35-25-generic - i686
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/gcc 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /usr/bin/c++ 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+CMakeCXXCompilerId.cpp:79: warning: deprecated conversion from string constant to ‘char*’
+CMakeCXXCompilerId.cpp:192: warning: deprecated conversion from string constant to ‘char*’
+CMakeCXXCompilerId.cpp:193: warning: deprecated conversion from string constant to ‘char*’
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/testCCompiler.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec.dir/testCCompiler.c.o   -c /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc        CMakeFiles/cmTryCompileExec.dir/testCCompiler.c.o  -o cmTryCompileExec -rdynamic 
+make[1]: Leaving directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CMakeCCompilerABI.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc       -v CMakeFiles/cmTryCompileExec.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec -rdynamic  
+Using built-in specs.
+Target: i686-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 4.4.4-14ubuntu5' --with-bugurl=file:///usr/share/doc/gcc-4.4/README.Bugs --enable-languages=c,c++,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.4 --enable-shared --enable-multiarch --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.4 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-objc-gc --enable-targets=all --disable-werror --with-arch-32=i686 --with-tune=generic --enable-checking=release --build=i686-linux-gnu --host=i686-linux-gnu --target=i686-linux-gnu
+Thread model: posix
+gcc version 4.4.5 (Ubuntu/Linaro 4.4.4-14ubuntu5) 
+COMPILER_PATH=/usr/lib/gcc/i686-linux-gnu/4.4.5/:/usr/lib/gcc/i686-linux-gnu/4.4.5/:/usr/lib/gcc/i686-linux-gnu/:/usr/lib/gcc/i686-linux-gnu/4.4.5/:/usr/lib/gcc/i686-linux-gnu/:/usr/lib/gcc/i686-linux-gnu/4.4.5/:/usr/lib/gcc/i686-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/i686-linux-gnu/4.4.5/:/usr/lib/gcc/i686-linux-gnu/4.4.5/:/usr/lib/gcc/i686-linux-gnu/4.4.5/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/i686-linux-gnu/4.4.5/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec' '-rdynamic' '-mtune=generic' '-march=i686'
+ /usr/lib/gcc/i686-linux-gnu/4.4.5/collect2 --build-id --eh-frame-hdr -m elf_i386 --hash-style=gnu -export-dynamic -dynamic-linker /lib/ld-linux.so.2 -o cmTryCompileExec -z relro /usr/lib/gcc/i686-linux-gnu/4.4.5/../../../../lib/crt1.o /usr/lib/gcc/i686-linux-gnu/4.4.5/../../../../lib/crti.o /usr/lib/gcc/i686-linux-gnu/4.4.5/crtbegin.o -L/usr/lib/gcc/i686-linux-gnu/4.4.5 -L/usr/lib/gcc/i686-linux-gnu/4.4.5 -L/usr/lib/gcc/i686-linux-gnu/4.4.5/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/i686-linux-gnu/4.4.5/../../.. CMakeFiles/cmTryCompileExec.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/i686-linux-gnu/4.4.5/crtend.o /usr/lib/gcc/i686-linux-gnu/4.4.5/../../../../lib/crtn.o
+make[1]: Leaving directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build]
+  ignore line: [make[1]: Entering directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building C object CMakeFiles/cmTryCompileExec.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTryCompileExec]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/gcc       -v CMakeFiles/cmTryCompileExec.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec -rdynamic  ]
+  ignore line: [Using built-in specs.]
+  ignore line: [Target: i686-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 4.4.4-14ubuntu5' --with-bugurl=file:///usr/share/doc/gcc-4.4/README.Bugs --enable-languages=c,c++,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.4 --enable-shared --enable-multiarch --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.4 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-objc-gc --enable-targets=all --disable-werror --with-arch-32=i686 --with-tune=generic --enable-checking=release --build=i686-linux-gnu --host=i686-linux-gnu --target=i686-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 4.4.5 (Ubuntu/Linaro 4.4.4-14ubuntu5) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/i686-linux-gnu/4.4.5/:/usr/lib/gcc/i686-linux-gnu/4.4.5/:/usr/lib/gcc/i686-linux-gnu/:/usr/lib/gcc/i686-linux-gnu/4.4.5/:/usr/lib/gcc/i686-linux-gnu/:/usr/lib/gcc/i686-linux-gnu/4.4.5/:/usr/lib/gcc/i686-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/i686-linux-gnu/4.4.5/:/usr/lib/gcc/i686-linux-gnu/4.4.5/:/usr/lib/gcc/i686-linux-gnu/4.4.5/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/i686-linux-gnu/4.4.5/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec' '-rdynamic' '-mtune=generic' '-march=i686']
+  link line: [ /usr/lib/gcc/i686-linux-gnu/4.4.5/collect2 --build-id --eh-frame-hdr -m elf_i386 --hash-style=gnu -export-dynamic -dynamic-linker /lib/ld-linux.so.2 -o cmTryCompileExec -z relro /usr/lib/gcc/i686-linux-gnu/4.4.5/../../../../lib/crt1.o /usr/lib/gcc/i686-linux-gnu/4.4.5/../../../../lib/crti.o /usr/lib/gcc/i686-linux-gnu/4.4.5/crtbegin.o -L/usr/lib/gcc/i686-linux-gnu/4.4.5 -L/usr/lib/gcc/i686-linux-gnu/4.4.5 -L/usr/lib/gcc/i686-linux-gnu/4.4.5/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/i686-linux-gnu/4.4.5/../../.. CMakeFiles/cmTryCompileExec.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/i686-linux-gnu/4.4.5/crtend.o /usr/lib/gcc/i686-linux-gnu/4.4.5/../../../../lib/crtn.o]
+    arg [/usr/lib/gcc/i686-linux-gnu/4.4.5/collect2] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_i386] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib/ld-linux.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTryCompileExec] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [/usr/lib/gcc/i686-linux-gnu/4.4.5/../../../../lib/crt1.o] ==> ignore
+    arg [/usr/lib/gcc/i686-linux-gnu/4.4.5/../../../../lib/crti.o] ==> ignore
+    arg [/usr/lib/gcc/i686-linux-gnu/4.4.5/crtbegin.o] ==> ignore
+    arg [-L/usr/lib/gcc/i686-linux-gnu/4.4.5] ==> dir [/usr/lib/gcc/i686-linux-gnu/4.4.5]
+    arg [-L/usr/lib/gcc/i686-linux-gnu/4.4.5] ==> dir [/usr/lib/gcc/i686-linux-gnu/4.4.5]
+    arg [-L/usr/lib/gcc/i686-linux-gnu/4.4.5/../../../../lib] ==> dir [/usr/lib/gcc/i686-linux-gnu/4.4.5/../../../../lib]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/i686-linux-gnu/4.4.5/../../..] ==> dir [/usr/lib/gcc/i686-linux-gnu/4.4.5/../../..]
+    arg [CMakeFiles/cmTryCompileExec.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/usr/lib/gcc/i686-linux-gnu/4.4.5/crtend.o] ==> ignore
+    arg [/usr/lib/gcc/i686-linux-gnu/4.4.5/../../../../lib/crtn.o] ==> ignore
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  collapse dir [/usr/lib/gcc/i686-linux-gnu/4.4.5] ==> [/usr/lib/gcc/i686-linux-gnu/4.4.5]
+  collapse dir [/usr/lib/gcc/i686-linux-gnu/4.4.5] ==> [/usr/lib/gcc/i686-linux-gnu/4.4.5]
+  collapse dir [/usr/lib/gcc/i686-linux-gnu/4.4.5/../../../../lib] ==> [/usr/lib]
+  collapse dir [/lib/../lib] ==> [/lib]
+  collapse dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse dir [/usr/lib/gcc/i686-linux-gnu/4.4.5/../../..] ==> [/usr/lib]
+  implicit libs: [c]
+  implicit dirs: [/usr/lib/gcc/i686-linux-gnu/4.4.5;/usr/lib;/lib]
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTryCompileExec.dir/testCXXCompiler.cxx.o -c /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/c++         CMakeFiles/cmTryCompileExec.dir/testCXXCompiler.cxx.o  -o cmTryCompileExec -rdynamic 
+make[1]: Leaving directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTryCompileExec.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/c++        -v CMakeFiles/cmTryCompileExec.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec -rdynamic  
+Using built-in specs.
+Target: i686-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 4.4.4-14ubuntu5' --with-bugurl=file:///usr/share/doc/gcc-4.4/README.Bugs --enable-languages=c,c++,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.4 --enable-shared --enable-multiarch --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.4 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-objc-gc --enable-targets=all --disable-werror --with-arch-32=i686 --with-tune=generic --enable-checking=release --build=i686-linux-gnu --host=i686-linux-gnu --target=i686-linux-gnu
+Thread model: posix
+gcc version 4.4.5 (Ubuntu/Linaro 4.4.4-14ubuntu5) 
+COMPILER_PATH=/usr/lib/gcc/i686-linux-gnu/4.4.5/:/usr/lib/gcc/i686-linux-gnu/4.4.5/:/usr/lib/gcc/i686-linux-gnu/:/usr/lib/gcc/i686-linux-gnu/4.4.5/:/usr/lib/gcc/i686-linux-gnu/:/usr/lib/gcc/i686-linux-gnu/4.4.5/:/usr/lib/gcc/i686-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/i686-linux-gnu/4.4.5/:/usr/lib/gcc/i686-linux-gnu/4.4.5/:/usr/lib/gcc/i686-linux-gnu/4.4.5/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/i686-linux-gnu/4.4.5/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=i686'
+ /usr/lib/gcc/i686-linux-gnu/4.4.5/collect2 --build-id --eh-frame-hdr -m elf_i386 --hash-style=gnu -export-dynamic -dynamic-linker /lib/ld-linux.so.2 -o cmTryCompileExec -z relro /usr/lib/gcc/i686-linux-gnu/4.4.5/../../../../lib/crt1.o /usr/lib/gcc/i686-linux-gnu/4.4.5/../../../../lib/crti.o /usr/lib/gcc/i686-linux-gnu/4.4.5/crtbegin.o -L/usr/lib/gcc/i686-linux-gnu/4.4.5 -L/usr/lib/gcc/i686-linux-gnu/4.4.5 -L/usr/lib/gcc/i686-linux-gnu/4.4.5/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/i686-linux-gnu/4.4.5/../../.. CMakeFiles/cmTryCompileExec.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/i686-linux-gnu/4.4.5/crtend.o /usr/lib/gcc/i686-linux-gnu/4.4.5/../../../../lib/crtn.o
+make[1]: Leaving directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build]
+  ignore line: [make[1]: Entering directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building CXX object CMakeFiles/cmTryCompileExec.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTryCompileExec.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTryCompileExec]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++        -v CMakeFiles/cmTryCompileExec.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec -rdynamic  ]
+  ignore line: [Using built-in specs.]
+  ignore line: [Target: i686-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 4.4.4-14ubuntu5' --with-bugurl=file:///usr/share/doc/gcc-4.4/README.Bugs --enable-languages=c,c++,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.4 --enable-shared --enable-multiarch --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.4 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-objc-gc --enable-targets=all --disable-werror --with-arch-32=i686 --with-tune=generic --enable-checking=release --build=i686-linux-gnu --host=i686-linux-gnu --target=i686-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 4.4.5 (Ubuntu/Linaro 4.4.4-14ubuntu5) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/i686-linux-gnu/4.4.5/:/usr/lib/gcc/i686-linux-gnu/4.4.5/:/usr/lib/gcc/i686-linux-gnu/:/usr/lib/gcc/i686-linux-gnu/4.4.5/:/usr/lib/gcc/i686-linux-gnu/:/usr/lib/gcc/i686-linux-gnu/4.4.5/:/usr/lib/gcc/i686-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/i686-linux-gnu/4.4.5/:/usr/lib/gcc/i686-linux-gnu/4.4.5/:/usr/lib/gcc/i686-linux-gnu/4.4.5/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/i686-linux-gnu/4.4.5/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=i686']
+  link line: [ /usr/lib/gcc/i686-linux-gnu/4.4.5/collect2 --build-id --eh-frame-hdr -m elf_i386 --hash-style=gnu -export-dynamic -dynamic-linker /lib/ld-linux.so.2 -o cmTryCompileExec -z relro /usr/lib/gcc/i686-linux-gnu/4.4.5/../../../../lib/crt1.o /usr/lib/gcc/i686-linux-gnu/4.4.5/../../../../lib/crti.o /usr/lib/gcc/i686-linux-gnu/4.4.5/crtbegin.o -L/usr/lib/gcc/i686-linux-gnu/4.4.5 -L/usr/lib/gcc/i686-linux-gnu/4.4.5 -L/usr/lib/gcc/i686-linux-gnu/4.4.5/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/i686-linux-gnu/4.4.5/../../.. CMakeFiles/cmTryCompileExec.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/i686-linux-gnu/4.4.5/crtend.o /usr/lib/gcc/i686-linux-gnu/4.4.5/../../../../lib/crtn.o]
+    arg [/usr/lib/gcc/i686-linux-gnu/4.4.5/collect2] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_i386] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib/ld-linux.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTryCompileExec] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [/usr/lib/gcc/i686-linux-gnu/4.4.5/../../../../lib/crt1.o] ==> ignore
+    arg [/usr/lib/gcc/i686-linux-gnu/4.4.5/../../../../lib/crti.o] ==> ignore
+    arg [/usr/lib/gcc/i686-linux-gnu/4.4.5/crtbegin.o] ==> ignore
+    arg [-L/usr/lib/gcc/i686-linux-gnu/4.4.5] ==> dir [/usr/lib/gcc/i686-linux-gnu/4.4.5]
+    arg [-L/usr/lib/gcc/i686-linux-gnu/4.4.5] ==> dir [/usr/lib/gcc/i686-linux-gnu/4.4.5]
+    arg [-L/usr/lib/gcc/i686-linux-gnu/4.4.5/../../../../lib] ==> dir [/usr/lib/gcc/i686-linux-gnu/4.4.5/../../../../lib]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/i686-linux-gnu/4.4.5/../../..] ==> dir [/usr/lib/gcc/i686-linux-gnu/4.4.5/../../..]
+    arg [CMakeFiles/cmTryCompileExec.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/usr/lib/gcc/i686-linux-gnu/4.4.5/crtend.o] ==> ignore
+    arg [/usr/lib/gcc/i686-linux-gnu/4.4.5/../../../../lib/crtn.o] ==> ignore
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  collapse dir [/usr/lib/gcc/i686-linux-gnu/4.4.5] ==> [/usr/lib/gcc/i686-linux-gnu/4.4.5]
+  collapse dir [/usr/lib/gcc/i686-linux-gnu/4.4.5] ==> [/usr/lib/gcc/i686-linux-gnu/4.4.5]
+  collapse dir [/usr/lib/gcc/i686-linux-gnu/4.4.5/../../../../lib] ==> [/usr/lib]
+  collapse dir [/lib/../lib] ==> [/lib]
+  collapse dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse dir [/usr/lib/gcc/i686-linux-gnu/4.4.5/../../..] ==> [/usr/lib]
+  implicit libs: [stdc++;m;c]
+  implicit dirs: [/usr/lib/gcc/i686-linux-gnu/4.4.5;/usr/lib;/lib]
+
+
+Performing C SOURCE FILE Test SUPPORT_SSE_BUILD succeded with the following output:
+Change Dir: /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/src.c.o
+/usr/bin/gcc   -DSUPPORT_SSE_BUILD -msse -msse2   -o CMakeFiles/cmTryCompileExec.dir/src.c.o   -c /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc     -DSUPPORT_SSE_BUILD -msse -msse2   CMakeFiles/cmTryCompileExec.dir/src.c.o  -o cmTryCompileExec -rdynamic 
+make[1]: Leaving directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+
+Return value: 1
+Source file was:
+
+			#include <xmmintrin.h>
+			int main() { __m128 v = _mm_setzero_ps(); return 0; }
+Performing C SOURCE FILE Test SUPPORT_SSE2_BUILD succeded with the following output:
+Change Dir: /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/src.c.o
+/usr/bin/gcc   -DSUPPORT_SSE2_BUILD -msse -msse2   -o CMakeFiles/cmTryCompileExec.dir/src.c.o   -c /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc     -DSUPPORT_SSE2_BUILD -msse -msse2   CMakeFiles/cmTryCompileExec.dir/src.c.o  -o cmTryCompileExec -rdynamic 
+make[1]: Leaving directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+
+Return value: 1
+Source file was:
+
+			#include <emmintrin.h>
+			int main() { __m128d v = _mm_setzero_pd(); return 0; }
+Determining if files pthread.h exist passed with the following output:
+Change Dir: /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -msse -msse2   -o CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o   -c /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc     -msse -msse2   CMakeFiles/cmTryCompileExec.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec -rdynamic 
+make[1]: Leaving directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=pthread_create -msse -msse2   -o CMakeFiles/cmTryCompileExec.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=pthread_create -msse -msse2   CMakeFiles/cmTryCompileExec.dir/CheckFunctionExists.c.o  -o cmTryCompileExec -rdynamic -lpthread 
+make[1]: Leaving directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+
+
+Determining if the function XOpenDisplay exists in the /usr/lib/libX11.so;/usr/lib/libXext.so passed with the following output:
+Change Dir: /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay -msse -msse2   -o CMakeFiles/cmTryCompileExec.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=XOpenDisplay -msse -msse2   CMakeFiles/cmTryCompileExec.dir/CheckFunctionExists.c.o  -o cmTryCompileExec -rdynamic -lX11 -lXext 
+make[1]: Leaving directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+
+
+Determining if the function gethostbyname exists passed with the following output:
+Change Dir: /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=gethostbyname -msse -msse2   -o CMakeFiles/cmTryCompileExec.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=gethostbyname -msse -msse2   CMakeFiles/cmTryCompileExec.dir/CheckFunctionExists.c.o  -o cmTryCompileExec -rdynamic 
+make[1]: Leaving directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+
+
+Determining if the function connect exists passed with the following output:
+Change Dir: /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=connect -msse -msse2   -o CMakeFiles/cmTryCompileExec.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=connect -msse -msse2   CMakeFiles/cmTryCompileExec.dir/CheckFunctionExists.c.o  -o cmTryCompileExec -rdynamic 
+make[1]: Leaving directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+
+
+Determining if the function remove exists passed with the following output:
+Change Dir: /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=remove -msse -msse2   -o CMakeFiles/cmTryCompileExec.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=remove -msse -msse2   CMakeFiles/cmTryCompileExec.dir/CheckFunctionExists.c.o  -o cmTryCompileExec -rdynamic 
+make[1]: Leaving directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+
+
+Determining if the function shmat exists passed with the following output:
+Change Dir: /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=shmat -msse -msse2   -o CMakeFiles/cmTryCompileExec.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=shmat -msse -msse2   CMakeFiles/cmTryCompileExec.dir/CheckFunctionExists.c.o  -o cmTryCompileExec -rdynamic 
+make[1]: Leaving directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+
+
+Determining if the function IceConnectionNumber exists in the ICE passed with the following output:
+Change Dir: /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -msse -msse2   -o CMakeFiles/cmTryCompileExec.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -msse -msse2   CMakeFiles/cmTryCompileExec.dir/CheckFunctionExists.c.o  -o cmTryCompileExec -rdynamic -lICE 
+make[1]: Leaving directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED succeded with the following output:
+Change Dir: /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/src.c.o
+/usr/bin/gcc   -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DOpenMP_FLAG_DETECTED -fopenmp   -o CMakeFiles/cmTryCompileExec.dir/src.c.o   -c /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc    -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DOpenMP_FLAG_DETECTED -fopenmp   CMakeFiles/cmTryCompileExec.dir/src.c.o  -o cmTryCompileExec -rdynamic 
+make[1]: Leaving directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+#include <omp.h>
+int main() { 
+#ifdef _OPENMP
+  return 0; 
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED succeded with the following output:
+Change Dir: /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/src.cxx.o
+/usr/bin/c++    -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DOpenMP_FLAG_DETECTED -fopenmp   -o CMakeFiles/cmTryCompileExec.dir/src.cxx.o -c /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/c++     -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE  -DOpenMP_FLAG_DETECTED -fopenmp   CMakeFiles/cmTryCompileExec.dir/src.cxx.o  -o cmTryCompileExec -rdynamic 
+make[1]: Leaving directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+#include <omp.h>
+int main() { 
+#ifdef _OPENMP
+  return 0; 
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test C_WARN_ALL succeded with the following output:
+Change Dir: /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/src.c.o
+/usr/bin/gcc   -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -fopenmp  -DC_WARN_ALL -msse -msse2   -Wall -o CMakeFiles/cmTryCompileExec.dir/src.c.o   -c /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc    -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -fopenmp  -DC_WARN_ALL -msse -msse2   CMakeFiles/cmTryCompileExec.dir/src.c.o  -o cmTryCompileExec -rdynamic 
+make[1]: Leaving directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main(void) { return 0;}
+Performing C SOURCE FILE Test C_WARN_CAST_ALIGN succeded with the following output:
+Change Dir: /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/src.c.o
+/usr/bin/gcc   -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -fopenmp  -DC_WARN_CAST_ALIGN -msse -msse2   -Wcast-align -o CMakeFiles/cmTryCompileExec.dir/src.c.o   -c /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc    -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -fopenmp  -DC_WARN_CAST_ALIGN -msse -msse2   CMakeFiles/cmTryCompileExec.dir/src.c.o  -o cmTryCompileExec -rdynamic 
+make[1]: Leaving directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main(void) { return 0;}
+Performing C SOURCE FILE Test C_WARN_ERROR_DECLARATION_AFTER_STATEMENT succeded with the following output:
+Change Dir: /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/src.c.o
+/usr/bin/gcc   -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -fopenmp  -DC_WARN_ERROR_DECLARATION_AFTER_STATEMENT -msse -msse2   -Werror=declaration-after-statement -o CMakeFiles/cmTryCompileExec.dir/src.c.o   -c /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc    -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -fopenmp  -DC_WARN_ERROR_DECLARATION_AFTER_STATEMENT -msse -msse2   CMakeFiles/cmTryCompileExec.dir/src.c.o  -o cmTryCompileExec -rdynamic 
+make[1]: Leaving directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main(void) { return 0;}
+Performing C SOURCE FILE Test C_WARN_ERROR_IMPLICIT_FUNCTION_DECLARATION succeded with the following output:
+Change Dir: /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/src.c.o
+/usr/bin/gcc   -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -fopenmp  -DC_WARN_ERROR_IMPLICIT_FUNCTION_DECLARATION -msse -msse2   -Werror=implicit-function-declaration -o CMakeFiles/cmTryCompileExec.dir/src.c.o   -c /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc    -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -fopenmp  -DC_WARN_ERROR_IMPLICIT_FUNCTION_DECLARATION -msse -msse2   CMakeFiles/cmTryCompileExec.dir/src.c.o  -o cmTryCompileExec -rdynamic 
+make[1]: Leaving directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main(void) { return 0;}
+Performing C SOURCE FILE Test C_WARN_ERROR_RETURN_TYPE succeded with the following output:
+Change Dir: /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/src.c.o
+/usr/bin/gcc   -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -fopenmp  -DC_WARN_ERROR_RETURN_TYPE -msse -msse2   -Werror=return-type -o CMakeFiles/cmTryCompileExec.dir/src.c.o   -c /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc    -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -fopenmp  -DC_WARN_ERROR_RETURN_TYPE -msse -msse2   CMakeFiles/cmTryCompileExec.dir/src.c.o  -o cmTryCompileExec -rdynamic 
+make[1]: Leaving directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main(void) { return 0;}
+Performing C SOURCE FILE Test C_WARN_ERROR_STRICT_PROTOTYPES succeded with the following output:
+Change Dir: /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/src.c.o
+/usr/bin/gcc   -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -fopenmp  -DC_WARN_ERROR_STRICT_PROTOTYPES -msse -msse2   -Werror=strict-prototypes -o CMakeFiles/cmTryCompileExec.dir/src.c.o   -c /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc    -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -fopenmp  -DC_WARN_ERROR_STRICT_PROTOTYPES -msse -msse2   CMakeFiles/cmTryCompileExec.dir/src.c.o  -o cmTryCompileExec -rdynamic 
+make[1]: Leaving directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main(void) { return 0;}
+Performing C SOURCE FILE Test C_WARN_NO_CHAR_SUBSCRIPTS succeded with the following output:
+Change Dir: /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/src.c.o
+/usr/bin/gcc   -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -fopenmp  -DC_WARN_NO_CHAR_SUBSCRIPTS -msse -msse2   -Wno-char-subscripts -o CMakeFiles/cmTryCompileExec.dir/src.c.o   -c /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc    -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -fopenmp  -DC_WARN_NO_CHAR_SUBSCRIPTS -msse -msse2   CMakeFiles/cmTryCompileExec.dir/src.c.o  -o cmTryCompileExec -rdynamic 
+make[1]: Leaving directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main(void) { return 0;}
+Performing C SOURCE FILE Test C_WARN_NO_UNKNOWN_PRAGMAS succeded with the following output:
+Change Dir: /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/src.c.o
+/usr/bin/gcc   -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -fopenmp  -DC_WARN_NO_UNKNOWN_PRAGMAS -msse -msse2   -Wno-unknown-pragmas -o CMakeFiles/cmTryCompileExec.dir/src.c.o   -c /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc    -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -fopenmp  -DC_WARN_NO_UNKNOWN_PRAGMAS -msse -msse2   CMakeFiles/cmTryCompileExec.dir/src.c.o  -o cmTryCompileExec -rdynamic 
+make[1]: Leaving directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main(void) { return 0;}
+Performing C SOURCE FILE Test C_WARN_POINTER_ARITH succeded with the following output:
+Change Dir: /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/src.c.o
+/usr/bin/gcc   -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -fopenmp  -DC_WARN_POINTER_ARITH -msse -msse2   -Wpointer-arith -o CMakeFiles/cmTryCompileExec.dir/src.c.o   -c /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc    -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -fopenmp  -DC_WARN_POINTER_ARITH -msse -msse2   CMakeFiles/cmTryCompileExec.dir/src.c.o  -o cmTryCompileExec -rdynamic 
+make[1]: Leaving directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main(void) { return 0;}
+Performing C SOURCE FILE Test C_WARN_UNUSED_PARAMETER succeded with the following output:
+Change Dir: /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/src.c.o
+/usr/bin/gcc   -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -fopenmp  -DC_WARN_UNUSED_PARAMETER -msse -msse2   -Wunused-parameter -o CMakeFiles/cmTryCompileExec.dir/src.c.o   -c /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc    -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -fopenmp  -DC_WARN_UNUSED_PARAMETER -msse -msse2   CMakeFiles/cmTryCompileExec.dir/src.c.o  -o cmTryCompileExec -rdynamic 
+make[1]: Leaving directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main(void) { return 0;}
+Performing C SOURCE FILE Test C_WARN_WRITE_STRINGS succeded with the following output:
+Change Dir: /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/src.c.o
+/usr/bin/gcc   -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -fopenmp  -DC_WARN_WRITE_STRINGS -msse -msse2   -Wwrite-strings -o CMakeFiles/cmTryCompileExec.dir/src.c.o   -c /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc    -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -fopenmp  -DC_WARN_WRITE_STRINGS -msse -msse2   CMakeFiles/cmTryCompileExec.dir/src.c.o  -o cmTryCompileExec -rdynamic 
+make[1]: Leaving directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main(void) { return 0;}
+Performing C++ SOURCE FILE Test CXX_WARN_ALL succeded with the following output:
+Change Dir: /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/src.cxx.o
+/usr/bin/c++    -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -fopenmp  -DCXX_WARN_ALL -msse -msse2   -Wall -o CMakeFiles/cmTryCompileExec.dir/src.cxx.o -c /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/c++     -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -fopenmp  -DCXX_WARN_ALL -msse -msse2   CMakeFiles/cmTryCompileExec.dir/src.cxx.o  -o cmTryCompileExec -rdynamic 
+make[1]: Leaving directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0;}
+Performing C++ SOURCE FILE Test CXX_WARN_NO_INVALID_OFFSETOF succeded with the following output:
+Change Dir: /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/src.cxx.o
+/usr/bin/c++    -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -fopenmp  -DCXX_WARN_NO_INVALID_OFFSETOF -msse -msse2   -Wno-invalid-offsetof -o CMakeFiles/cmTryCompileExec.dir/src.cxx.o -c /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/c++     -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -fopenmp  -DCXX_WARN_NO_INVALID_OFFSETOF -msse -msse2   CMakeFiles/cmTryCompileExec.dir/src.cxx.o  -o cmTryCompileExec -rdynamic 
+make[1]: Leaving directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0;}
+Performing C++ SOURCE FILE Test CXX_WARN_NO_SIGN_COMPARE succeded with the following output:
+Change Dir: /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/src.cxx.o
+/usr/bin/c++    -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -fopenmp  -DCXX_WARN_NO_SIGN_COMPARE -msse -msse2   -Wno-sign-compare -o CMakeFiles/cmTryCompileExec.dir/src.cxx.o -c /home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/c++     -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -fopenmp  -DCXX_WARN_NO_SIGN_COMPARE -msse -msse2   CMakeFiles/cmTryCompileExec.dir/src.cxx.o  -o cmTryCompileExec -rdynamic 
+make[1]: Leaving directory `/home/alexey/Dropbox/collada/models/blender/build/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0;}

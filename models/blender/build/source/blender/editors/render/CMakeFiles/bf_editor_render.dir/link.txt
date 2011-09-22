@@ -1,0 +1,2 @@
+/usr/bin/ar cr ../../../../lib/libbf_editor_render.a  CMakeFiles/bf_editor_render.dir/render_internal.c.o CMakeFiles/bf_editor_render.dir/render_opengl.c.o CMakeFiles/bf_editor_render.dir/render_ops.c.o CMakeFiles/bf_editor_render.dir/render_preview.c.o CMakeFiles/bf_editor_render.dir/render_shading.c.o
+/usr/bin/ranlib ../../../../lib/libbf_editor_render.a

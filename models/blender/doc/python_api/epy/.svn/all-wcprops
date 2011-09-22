@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/bf-blender/!svn/ver/33991/trunk/blender/doc/python_api/epy
+END
+IDProp.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/epy/IDProp.py
+END
+BGL.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/epy/BGL.py
+END
+testbgl.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/epy/testbgl.py
+END

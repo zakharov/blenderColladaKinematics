@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/blender/avi/intern
+END
+endian.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/bf-blender/!svn/ver/32517/trunk/blender/source/blender/avi/intern/endian.c
+END
+avi.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/bf-blender/!svn/ver/33250/trunk/blender/source/blender/avi/intern/avi.c
+END
+avirgb.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/avi/intern/avirgb.h
+END
+rgb32.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/bf-blender/!svn/ver/32532/trunk/blender/source/blender/avi/intern/rgb32.c
+END
+codecs.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/bf-blender/!svn/ver/28254/trunk/blender/source/blender/avi/intern/codecs.c
+END
+mjpeg.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/bf-blender/!svn/ver/32532/trunk/blender/source/blender/avi/intern/mjpeg.c
+END
+avi_intern.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/31364/trunk/blender/source/blender/avi/intern/avi_intern.h
+END
+endian.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/avi/intern/endian.h
+END
+rgb32.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/avi/intern/rgb32.h
+END
+mjpeg.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/bf-blender/!svn/ver/26841/trunk/blender/source/blender/avi/intern/mjpeg.h
+END
+avirgb.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/bf-blender/!svn/ver/32532/trunk/blender/source/blender/avi/intern/avirgb.c
+END
+options.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/bf-blender/!svn/ver/32532/trunk/blender/source/blender/avi/intern/options.c
+END

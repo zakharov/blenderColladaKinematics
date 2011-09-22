@@ -1,0 +1,2 @@
+/usr/bin/ar cr ../../../../lib/libbf_editor_space_userpref.a  CMakeFiles/bf_editor_space_userpref.dir/space_userpref.c.o CMakeFiles/bf_editor_space_userpref.dir/userpref_ops.c.o
+/usr/bin/ranlib ../../../../lib/libbf_editor_space_userpref.a

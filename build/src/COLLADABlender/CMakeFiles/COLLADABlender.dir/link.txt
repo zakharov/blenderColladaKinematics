@@ -1,0 +1,2 @@
+/usr/bin/ar cr ../../../lib/libCOLLADABlender.a  CMakeFiles/COLLADABlender.dir/DocumentImporter.cpp.o
+/usr/bin/ranlib ../../../lib/libCOLLADABlender.a
