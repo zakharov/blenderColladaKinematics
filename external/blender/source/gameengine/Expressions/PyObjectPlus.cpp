@@ -52,6 +52,7 @@
 #include "STR_String.h"
 #include "MT_Vector3.h"
 #include "MEM_guardedalloc.h"
+#include <stddef.h>
 
 PyObjectPlus::~PyObjectPlus()
 {

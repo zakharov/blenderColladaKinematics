@@ -53,6 +53,7 @@
 #include "MaterialExporter.h"
 
 #include <algorithm>
+#include <stddef.h>
 
 // first try node name, if not available (since is optional), fall back to original id
 template<class T>
