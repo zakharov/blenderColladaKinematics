@@ -120,6 +120,8 @@ extern char build_rev[];
 #include "ImageExporter.h"
 #include "LightExporter.h"
 #include "MaterialExporter.h"
+#include "KinematicsExporter.h"
+
 
 #include <vector>
 #include <algorithm> // std::find
@@ -1013,6 +1015,10 @@ void DocumentExporter::exportCurrentScene(Scene *sce, const char* filename)
 	// <library_animations>
 	AnimationExporter ae(&sw);
 	ae.exportAnimations(sce);
+
+        // <library_kinematics_models>
+        KinematicsExporter kin_exporter;
+        kin_exporter.exportKinematics();
 
 	// <library_controllers>
 	ArmatureExporter arm_exporter(&sw);

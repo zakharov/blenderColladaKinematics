@@ -51,6 +51,7 @@
 #include "ArmatureImporter.h"
 
 #include <algorithm>
+#include <stddef.h>
 
 // use this for retrieving bone names, since these must be unique
 template<class T>

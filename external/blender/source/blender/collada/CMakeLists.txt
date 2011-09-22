@@ -65,6 +65,7 @@ set(SRC
 	GeometryExporter.cpp
 	ImageExporter.cpp
 	InstanceWriter.cpp
+        KinematicsExporter.cpp
 	LightExporter.cpp
 	MaterialExporter.cpp
 	MeshImporter.cpp
@@ -85,6 +86,7 @@ set(SRC
 	GeometryExporter.h
 	ImageExporter.h
 	InstanceWriter.h
+        KinematicsExporter.h
 	LightExporter.h
 	MaterialExporter.h
 	MeshImporter.h
