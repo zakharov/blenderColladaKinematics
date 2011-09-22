@@ -1,3 +1,0 @@
-/home/alexey/workspace/blenderColladaKinematics/build/src/COLLADABlender/CMakeFiles/COLLADABlender.dir
-/home/alexey/workspace/blenderColladaKinematics/build/src/COLLADAValidator/CMakeFiles/COLLADAValidator.dir
-/home/alexey/workspace/blenderColladaKinematics/build/tests/CMakeFiles/run_unit_tests.dir

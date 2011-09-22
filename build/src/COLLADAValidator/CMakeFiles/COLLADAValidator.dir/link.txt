@@ -1,2 +1,0 @@
-/usr/bin/ar cr ../../../lib/libCOLLADAValidator.a  CMakeFiles/COLLADAValidator.dir/ValidationErrorHandler.cpp.o
-/usr/bin/ranlib ../../../lib/libCOLLADAValidator.a
