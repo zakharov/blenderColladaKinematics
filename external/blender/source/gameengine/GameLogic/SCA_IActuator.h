@@ -1,5 +1,5 @@
 /*
- * $Id: SCA_IActuator.h 35063 2011-02-22 10:33:14Z jesterking $
+ * $Id: SCA_IActuator.h 40080 2011-09-09 21:28:56Z ben2610 $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -90,6 +90,7 @@ public:
 		KX_ACT_SHAPEACTION,
 		KX_ACT_STATE,
 		KX_ACT_ARMATURE,
+		KX_ACT_STEERING,
 	};
 
 	SCA_IActuator(SCA_IObject* gameobj, KX_ACTUATOR_TYPE type); 

@@ -1,5 +1,5 @@
 /*
- * $Id: rayobject_qbvh.cpp 35233 2011-02-27 19:31:27Z jesterking $
+ * $Id: rayobject_qbvh.cpp 35477 2011-03-11 22:27:06Z blendix $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -80,9 +80,12 @@ void bvh_done<QBVHTree>(QBVHTree *obj)
 		return;
 	}
 	
-	pushup_simd<VBVHNode,4>(root);
-
-	obj->root = Reorganize_SVBVH<VBVHNode>(arena2).transform(root);
+	if(root) {
+		pushup_simd<VBVHNode,4>(root);
+		obj->root = Reorganize_SVBVH<VBVHNode>(arena2).transform(root);
+	}
+	else
+		obj->root = NULL;
 	
 	//Free data
 	BLI_memarena_free(arena1);

@@ -1,5 +1,5 @@
 /*
- * $Id: quicktime_import.c 35235 2011-02-27 20:01:38Z jesterking $
+ * $Id: quicktime_import.c 36243 2011-04-20 12:04:07Z jesterking $
  *
  * quicktime_import.c
  *
@@ -101,7 +101,6 @@ void quicktime_init(void)
 	nerr = InitializeQTML(0);
 	if (nerr != noErr) {
 		G.have_quicktime = FALSE;
-		printf("Error initializing quicktime\n");
 	}
 	else
 		G.have_quicktime = TRUE;

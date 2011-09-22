@@ -1,7 +1,7 @@
 /** \file gameengine/VideoTexture/ImageMix.cpp
  *  \ingroup bgevideotex
  */
-/* $Id: ImageMix.cpp 35176 2011-02-25 13:39:34Z jesterking $
+/* $Id: ImageMix.cpp 39815 2011-08-31 01:07:55Z campbellbarton $
 -----------------------------------------------------------------------------
 This source file is part of VideoTexture library
 
@@ -135,7 +135,7 @@ PyObject * setWeight (PyImage * self, PyObject * args)
 		if (!getImageMix(self)->setWeight(id, weight))
 		{
 			// if not set, report error
-			PyErr_SetString(PyExc_RuntimeError, "Invalid id of source");;
+			PyErr_SetString(PyExc_RuntimeError, "Invalid id of source");
 			return NULL;
 		}
 	// return none

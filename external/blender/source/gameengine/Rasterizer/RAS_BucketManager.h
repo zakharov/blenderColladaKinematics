@@ -1,5 +1,5 @@
 /*
- * $Id: RAS_BucketManager.h 35072 2011-02-22 12:42:55Z jesterking $
+ * $Id: RAS_BucketManager.h 36523 2011-05-06 20:18:42Z blendix $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -36,7 +36,7 @@
 
 #include "MT_Transform.h"
 #include "RAS_MaterialBucket.h"
-#include "GEN_Map.h"
+#include "CTR_Map.h"
 
 #include <vector>
 

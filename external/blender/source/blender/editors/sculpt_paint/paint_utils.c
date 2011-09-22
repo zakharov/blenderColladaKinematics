@@ -1,3 +1,32 @@
+/*
+ * $Id: paint_utils.c 40370 2011-09-19 17:27:33Z gsrb3d $
+ *
+ * ***** BEGIN GPL LICENSE BLOCK *****
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software Foundation,
+ * Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+ *
+ * The Original Code is Copyright (C) 2001-2002 by NaN Holding BV.
+ * All rights reserved.
+ *
+ * The Original Code is: all of this file.
+ *
+ * Contributor(s): none yet.
+ *
+ * ***** END GPL LICENSE BLOCK *****
+ */
+
 /** \file blender/editors/sculpt_paint/paint_utils.c
  *  \ingroup edsculpt
  */
@@ -58,11 +87,15 @@ float paint_calc_object_space_radius(ViewContext *vc, float center[3],
 {
 	Object *ob = vc->obact;
 	float delta[3], scale, loc[3];
+	float mval_f[2];
 
 	mul_v3_m4v3(loc, ob->obmat, center);
 
 	initgrabz(vc->rv3d, loc[0], loc[1], loc[2]);
-	window_to_3d_delta(vc->ar, delta, pixel_radius, 0);
+
+	mval_f[0]= pixel_radius;
+	mval_f[1]= 0.0f;
+	ED_view3d_win_to_delta(vc->ar, mval_f, delta);
 
 	scale= fabsf(mat4_to_scale(ob->obmat));
 	scale= (scale == 0.0f)? 1.0f: scale;
@@ -84,7 +117,7 @@ float paint_get_tex_pixel(Brush* br, float u, float v)
 	hasrgb = multitex_ext(br->mtex.tex, co, NULL, NULL, 0, &texres);
 
 	if (hasrgb & TEX_RGB)
-		texres.tin = (0.35*texres.tr + 0.45*texres.tg + 0.2*texres.tb)*texres.ta;
+		texres.tin = (0.35f*texres.tr + 0.45f*texres.tg + 0.2f*texres.tb)*texres.ta;
 
 	return texres.tin;
 }
@@ -144,7 +177,7 @@ static void imapaint_tri_weights(Object *ob, float *v1, float *v2, float *v3, fl
 }
 
 /* compute uv coordinates of mouse in face */
-void imapaint_pick_uv(Scene *scene, Object *ob, unsigned int faceindex, int *xy, float *uv)
+void imapaint_pick_uv(Scene *scene, Object *ob, unsigned int faceindex, const int xy[2], float uv[2])
 {
 	DerivedMesh *dm = mesh_get_derived_final(scene, ob, CD_MASK_BAREMESH);
 	const int *index = dm->getFaceDataArray(dm, CD_ORIGINDEX);
@@ -210,7 +243,7 @@ void imapaint_pick_uv(Scene *scene, Object *ob, unsigned int faceindex, int *xy,
 }
 
 ///* returns 0 if not found, otherwise 1 */
-int imapaint_pick_face(ViewContext *vc, Mesh *me, int *mval, unsigned int *index)
+int imapaint_pick_face(ViewContext *vc, Mesh *me, const int mval[2], unsigned int *index)
 {
 	if(!me || me->totface==0)
 		return 0;
@@ -354,6 +387,49 @@ void PAINT_OT_face_select_all(wmOperatorType *ot)
 	WM_operator_properties_select_all(ot);
 }
 
+
+static int vert_select_all_exec(bContext *C, wmOperator *op)
+{
+	Object *ob= CTX_data_active_object(C);
+	paintvert_deselect_all_visible(ob, RNA_enum_get(op->ptr, "action"), TRUE);
+	ED_region_tag_redraw(CTX_wm_region(C));
+	return OPERATOR_FINISHED;
+}
+
+
+void PAINT_OT_vert_select_all(wmOperatorType *ot)
+{
+	ot->name= "Vertex Selection";
+	ot->description= "Change selection for all vertices";
+	ot->idname= "PAINT_OT_vert_select_all";
+
+	ot->exec= vert_select_all_exec;
+	ot->poll= vert_paint_poll;
+
+	ot->flag= OPTYPE_REGISTER|OPTYPE_UNDO;
+
+	WM_operator_properties_select_all(ot);
+}
+
+static int vert_select_inverse_exec(bContext *C, wmOperator *UNUSED(op))
+{
+	Object *ob= CTX_data_active_object(C);
+	paintvert_deselect_all_visible(ob, SEL_INVERT, TRUE);
+	ED_region_tag_redraw(CTX_wm_region(C));
+	return OPERATOR_FINISHED;
+}
+
+void PAINT_OT_vert_select_inverse(wmOperatorType *ot)
+{
+	ot->name= "Vertex Select Invert";
+	ot->description= "Invert selection of vertices";
+	ot->idname= "PAINT_OT_vert_select_inverse";
+
+	ot->exec= vert_select_inverse_exec;
+	ot->poll= vert_paint_poll;
+
+	ot->flag= OPTYPE_REGISTER|OPTYPE_UNDO;
+}
 static int face_select_inverse_exec(bContext *C, wmOperator *UNUSED(op))
 {
 	Object *ob= CTX_data_active_object(C);
@@ -395,7 +471,7 @@ void PAINT_OT_face_select_hide(wmOperatorType *ot)
 
 	ot->flag= OPTYPE_REGISTER|OPTYPE_UNDO;
 
-	RNA_def_boolean(ot->srna, "unselected", 0, "Unselected", "Hide unselected rather than selected objects.");
+	RNA_def_boolean(ot->srna, "unselected", 0, "Unselected", "Hide unselected rather than selected objects");
 }
 
 static int face_select_reveal_exec(bContext *C, wmOperator *UNUSED(op))
@@ -417,5 +493,5 @@ void PAINT_OT_face_select_reveal(wmOperatorType *ot)
 
 	ot->flag= OPTYPE_REGISTER|OPTYPE_UNDO;
 
-	RNA_def_boolean(ot->srna, "unselected", 0, "Unselected", "Hide unselected rather than selected objects.");
+	RNA_def_boolean(ot->srna, "unselected", 0, "Unselected", "Hide unselected rather than selected objects");
 }

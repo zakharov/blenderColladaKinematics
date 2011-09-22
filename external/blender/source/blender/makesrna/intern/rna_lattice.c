@@ -1,5 +1,5 @@
 /*
- * $Id: rna_lattice.c 35238 2011-02-27 20:20:01Z jesterking $
+ * $Id: rna_lattice.c 37031 2011-05-31 02:14:25Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -92,7 +92,7 @@ static void rna_Lattice_points_begin(CollectionPropertyIterator *iter, PointerRN
 		rna_iterator_array_begin(iter, NULL, 0, 0, 0, NULL);
 }
 
-static void rna_Lattice_update_data(Main *bmain, Scene *scene, PointerRNA *ptr)
+static void rna_Lattice_update_data(Main *UNUSED(bmain), Scene *UNUSED(scene), PointerRNA *ptr)
 {
 	ID *id= ptr->id.data;
 

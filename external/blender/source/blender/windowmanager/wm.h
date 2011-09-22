@@ -1,5 +1,5 @@
 /*
- * $Id: wm.h 35179 2011-02-25 14:04:21Z jesterking $
+ * $Id: wm.h 36736 2011-05-18 06:27:32Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -78,7 +78,7 @@ void wm_autosave_timer(const bContext *C, wmWindowManager *wm, wmTimer *wt);
 void wm_autosave_timer_ended(wmWindowManager *wm);
 void wm_autosave_delete(void);
 void wm_autosave_read(bContext *C, struct ReportList *reports);
-void wm_autosave_location(char *filename);
+void wm_autosave_location(char *filepath);
 
 /* hack to store circle select size - campbell, must replace with nice operator memory */
 #define GESTURE_MEMORY

@@ -1,11 +1,11 @@
 K 25
 svn:wc:ra_dav:version-url
 V 69
-/svnroot/bf-blender/!svn/ver/35160/trunk/blender/intern/string/intern
+/svnroot/bf-blender/!svn/ver/40341/trunk/blender/intern/string/intern
 END
 STR_String.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svnroot/bf-blender/!svn/ver/35160/trunk/blender/intern/string/intern/STR_String.cpp
+/svnroot/bf-blender/!svn/ver/40341/trunk/blender/intern/string/intern/STR_String.cpp
 END

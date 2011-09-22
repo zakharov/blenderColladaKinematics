@@ -202,6 +202,20 @@ char *WM_jobs_name(wmWindowManager *wm, void *owner)
 	return NULL;
 }
 
+int WM_jobs_is_running(wmJob *steve)
+{
+	return steve->running;
+}
+
+void* WM_jobs_get_customdata(wmJob * steve)
+{
+	if (!steve->customdata) {
+		return steve->run_customdata;
+	} else {
+		return steve->customdata;
+	}
+}
+
 void WM_jobs_customdata(wmJob *steve, void *customdata, void (*free)(void *))
 {
 	/* pending job? just free */
@@ -270,8 +284,8 @@ static void wm_jobs_test_suspend_stop(wmWindowManager *wm, wmJob *test)
 			
 			/* if new job is render, any render job should be stopped */
 			if(test->flag & WM_JOB_EXCL_RENDER)
-			   if(0==(steve->flag & WM_JOB_EXCL_RENDER)) 
-				   continue;
+				if(0==(steve->flag & WM_JOB_EXCL_RENDER))
+					continue;
 
 			suspend= 1;
 

@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/release/bin/.blender/locale/ko/LC_MESSAGES
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2008-11-12T21:16:53.478104Z
-17433
-blendix
+2011-09-20T13:41:43.050547Z
+40395
+nazgul
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-03-03T12:26:06.638297Z
-c71bfc1e75336def40650dd534706f30
-2008-11-12T21:16:53.478104Z
-17433
-blendix
+2011-09-21T18:15:55.807742Z
+2d3d4ed2928199918bf913c771a7a38e
+2011-09-20T13:41:43.050547Z
+40395
+nazgul
 has-props
 
 
@@ -58,5 +58,5 @@ has-props
 
 
 
-490548
+45441
 

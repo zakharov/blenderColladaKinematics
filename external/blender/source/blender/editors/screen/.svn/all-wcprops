@@ -1,25 +1,25 @@
 K 25
 svn:wc:ra_dav:version-url
 V 78
-/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/editors/screen
+/svnroot/bf-blender/!svn/ver/40419/trunk/blender/source/blender/editors/screen
 END
 glutil.c
 K 25
 svn:wc:ra_dav:version-url
 V 87
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/screen/glutil.c
+/svnroot/bf-blender/!svn/ver/40419/trunk/blender/source/blender/editors/screen/glutil.c
 END
 screen_ops.c
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/editors/screen/screen_ops.c
+/svnroot/bf-blender/!svn/ver/40351/trunk/blender/source/blender/editors/screen/screen_ops.c
 END
 screen_context.c
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/screen/screen_context.c
+/svnroot/bf-blender/!svn/ver/40197/trunk/blender/source/blender/editors/screen/screen_context.c
 END
 screen_intern.h
 K 25
@@ -31,29 +31,29 @@ screen_edit.c
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/editors/screen/screen_edit.c
+/svnroot/bf-blender/!svn/ver/39694/trunk/blender/source/blender/editors/screen/screen_edit.c
 END
 screendump.c
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/screen/screendump.c
+/svnroot/bf-blender/!svn/ver/36770/trunk/blender/source/blender/editors/screen/screendump.c
 END
 SConscript
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/31646/trunk/blender/source/blender/editors/screen/SConscript
+/svnroot/bf-blender/!svn/ver/39584/trunk/blender/source/blender/editors/screen/SConscript
 END
 area.c
 K 25
 svn:wc:ra_dav:version-url
 V 85
-/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/editors/screen/area.c
+/svnroot/bf-blender/!svn/ver/40395/trunk/blender/source/blender/editors/screen/area.c
 END
 CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/35030/trunk/blender/source/blender/editors/screen/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/38443/trunk/blender/source/blender/editors/screen/CMakeLists.txt
 END

@@ -1,5 +1,5 @@
 /*
- * $Id: BLI_string.h 35215 2011-02-27 08:31:10Z campbellbarton $
+ * $Id: BLI_string.h 40222 2011-09-15 11:49:36Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,7 +26,7 @@
  *
  * ***** END GPL LICENSE BLOCK *****
  *
- * $Id: BLI_string.h 35215 2011-02-27 08:31:10Z campbellbarton $ 
+ * $Id: BLI_string.h 40222 2011-09-15 11:49:36Z campbellbarton $ 
 */
 
 #ifndef BLI_STRING_H
@@ -58,7 +58,7 @@ char *BLI_strdup(const char *str);
 	 * @param len The number of bytes to duplicate
 	 * @retval Returns the duplicated string
 	 */
-char *BLI_strdupn(const char *str, int len);
+char *BLI_strdupn(const char *str, const size_t len);
 
 	/**
 	 * Appends the two strings, and returns new mallocN'ed string
@@ -78,7 +78,7 @@ char *BLI_strdupcat(const char *str1, const char *str2);
 	 *   the size of dst)
 	 * @retval Returns dst
 	 */
-char *BLI_strncpy(char *dst, const char *src, const int maxncpy);
+char *BLI_strncpy(char *dst, const char *src, const size_t maxncpy);
 
 	/* Makes a copy of the text within the "" that appear after some text 'blahblah'
 	 * i.e. for string 'pose["apples"]' with prefix 'pose[', it should grab "apples"
@@ -106,7 +106,7 @@ char *BLI_replacestr(char *str, const char *oldText, const char *newText);
 	/* 
 	 * Replacement for snprintf
 	 */
-int BLI_snprintf(char *buffer, size_t count, const char *format, ...)
+size_t BLI_snprintf(char *buffer, size_t len, const char *format, ...)
 #ifdef __GNUC__
 __attribute__ ((format (printf, 3, 4)))
 #endif
@@ -122,12 +122,7 @@ __attribute__ ((format (printf, 1, 2)))
 #endif
 ;
 
-	/**
-	 * Compare two strings
-	 * 
-	 * @retval True if the strings are equal, false otherwise.
-	 */
-int BLI_streq(const char *a, const char *b);
+size_t BLI_strescape(char *dst, const char *src, const size_t maxlen);
 
 	/**
 	 * Compare two strings without regard to case.
@@ -138,12 +133,18 @@ int BLI_strcaseeq(const char *a, const char *b);
 
 char *BLI_strcasestr(const char *s, const char *find);
 int BLI_strcasecmp(const char *s1, const char *s2);
-int BLI_strncasecmp(const char *s1, const char *s2, int n);
+int BLI_strncasecmp(const char *s1, const char *s2, size_t len);
 int BLI_natstrcmp(const char *s1, const char *s2);
 size_t BLI_strnlen(const char *str, size_t maxlen);
 
 void BLI_timestr(double _time, char *str); /* time var is global */
 
+void BLI_ascii_strtolower(char *str, int len);
+void BLI_ascii_strtoupper(char *str, int len);
+
+
+/* string_utf8.c - may move these into their own header some day - campbell */
+char *BLI_strncpy_utf8(char *dst, const char *src, size_t maxncpy);
 int BLI_utf8_invalid_byte(const char *str, int length);
 int BLI_utf8_invalid_strip(char *str, int length);
 

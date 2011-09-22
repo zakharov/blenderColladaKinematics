@@ -1,5 +1,5 @@
 /*
- * $Id: UnixShell.c 35106 2011-02-23 10:52:22Z jesterking $
+ * $Id: UnixShell.c 36276 2011-04-21 15:53:30Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,7 +28,7 @@
  * NS api template, adapted to link to our own internals.
  */
 
-#define UNIXSH_VERSION "$Id: UnixShell.c 35106 2011-02-23 10:52:22Z jesterking $"
+#define UNIXSH_VERSION "$Id: UnixShell.c 36276 2011-04-21 15:53:30Z campbellbarton $"
 #define MOZ_X11 1
 
 /* -*- Mode: C; tab-width: 8; c-set-style: bsd -*- */
@@ -353,7 +353,7 @@ NPP_WriteReady(
 	BlenderPluginInstance* This = NULL;
 	int acceptable = 0;
 	
- 	log_entry("NPP_WriteReady"); 
+	log_entry("NPP_WriteReady");
 
 	if (instance == NULL)	
 		return NPERR_INVALID_INSTANCE_ERROR;
@@ -386,7 +386,7 @@ NPP_Write(
 	BlenderPluginInstance* This = NULL;
 	int accepted = 0;
 	
- 	log_entry("NPP_Write"); 
+	log_entry("NPP_Write");
 
 	if (instance == NULL)	
 		return NPERR_INVALID_INSTANCE_ERROR;
@@ -539,7 +539,7 @@ log_entry(char* msg)
 #ifdef NZC_GENERATE_LOG 
 	FILE* fp = fopen("/tmp/plugin_log","a");
 	if (!fp) return;
-  	fprintf(fp, "--> Unixshell:: %s\n", 
+	fprintf(fp, "--> Unixshell:: %s\n",
 		msg); 
 	fflush(fp);
 	fclose (fp);

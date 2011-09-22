@@ -1,5 +1,5 @@
 /*
- * $Id: rayobject_vbvh.cpp 35233 2011-02-27 19:31:27Z jesterking $
+ * $Id: rayobject_vbvh.cpp 35477 2011-03-11 22:27:06Z blendix $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -98,13 +98,17 @@ void bvh_done<VBVHTree>(VBVHTree *obj)
 			return;
 		}
 
-		reorganize(root);
-		remove_useless(root, &root);
-		bvh_refit(root);
-	
-		pushup(root);
-		pushdown(root);
-		obj->root = root;
+		if(root) {
+			reorganize(root);
+			remove_useless(root, &root);
+			bvh_refit(root);
+		
+			pushup(root);
+			pushdown(root);
+			obj->root = root;
+		}
+		else
+			obj->root = NULL;
 	}
 	else
 	{

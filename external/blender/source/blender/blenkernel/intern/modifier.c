@@ -1,5 +1,5 @@
 /*
-* $Id: modifier.c 35247 2011-02-27 20:40:57Z jesterking $
+* $Id: modifier.c 39342 2011-08-12 18:11:22Z blendix $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -192,6 +192,18 @@ void modifiers_foreachIDLink(Object *ob, IDWalkFunc walk, void *userData)
 			ObjectWalkFunc fp = (ObjectWalkFunc)walk;
 			mti->foreachObjectLink(md, ob, fp, userData);
 		}
+	}
+}
+
+void modifiers_foreachTexLink(Object *ob, TexWalkFunc walk, void *userData)
+{
+	ModifierData *md = ob->modifiers.first;
+
+	for (; md; md=md->next) {
+		ModifierTypeInfo *mti = modifierType_getInfo(md->type);
+
+		if(mti->foreachTexLink)
+			mti->foreachTexLink(md, ob, walk, userData);
 	}
 }
 

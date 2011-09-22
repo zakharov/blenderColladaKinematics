@@ -1,5 +1,5 @@
 /*
- * $Id: math_base.c 35246 2011-02-27 20:37:56Z jesterking $
+ * $Id: math_base.c 36815 2011-05-22 04:25:31Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -34,7 +34,7 @@
 #include "BLI_math.h"
 
 /* WARNING: MSVC compiling hack for double_round() */
-#if (WIN32 || WIN64) && !(FREE_WINDOWS)
+#if (defined(WIN32) || defined(WIN64)) && !(defined(FREE_WINDOWS))
 
 /* from python 3.1 pymath.c */
 double copysign(double x, double y)

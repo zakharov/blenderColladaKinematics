@@ -81,6 +81,7 @@ static void ui_add_link(bContext *C, uiBut *from, uiBut *to);
 
 #define BUTTON_TOOLTIP_DELAY		0.500
 #define BUTTON_FLASH_DELAY			0.020
+#define MENU_SCROLL_INTERVAL		0.1
 #define BUTTON_AUTO_OPEN_THRESH		0.3
 #define BUTTON_MOUSE_TOWARDS_THRESH	1.0
 
@@ -144,11 +145,11 @@ typedef struct uiHandleButtonData {
 	float dragf, dragfstart;
 	CBData *dragcbd;
 
-	/* menu open */
+	/* menu open (watch uiFreeActiveButtons) */
 	uiPopupBlockHandle *menu;
 	int menuretval;
 	
-	/* search box */
+	/* search box (watch uiFreeActiveButtons) */
 	ARegion *searchbox;
 
 	/* post activate */
@@ -262,14 +263,12 @@ static int ui_is_a_warp_but(uiBut *but)
 static int ui_is_utf8_but(uiBut *but)
 {
 	if (but->rnaprop) {
-		int subtype= RNA_property_subtype(but->rnaprop);
-		
-		if(ELEM3(subtype, PROP_FILEPATH, PROP_DIRPATH, PROP_FILENAME)) {
-			return TRUE;
-		}
+		const int subtype= RNA_property_subtype(but->rnaprop);
+		return !(ELEM3(subtype, PROP_FILEPATH, PROP_DIRPATH, PROP_FILENAME));
 	}
-
-	return !(but->flag & UI_BUT_NO_UTF8);
+	else {
+		return !(but->flag & UI_BUT_NO_UTF8);
+	}
 }
 
 /* ********************** button apply/revert ************************/
@@ -300,7 +299,7 @@ static void ui_apply_but_func(bContext *C, uiBut *but)
 		after->func_arg3= but->func_arg3;
 
 		after->funcN= but->funcN;
-		after->func_argN= but->func_argN;
+		after->func_argN= MEM_dupallocN(but->func_argN);
 
 		after->rename_func= but->rename_func;
 		after->rename_arg1= but->rename_arg1;
@@ -404,6 +403,8 @@ static void ui_apply_but_funcs_after(bContext *C)
 			after.func(C, after.func_arg1, after.func_arg2);
 		if(after.funcN)
 			after.funcN(C, after.func_argN, after.func_arg2);
+		if(after.func_argN)
+			MEM_freeN(after.func_argN);
 		
 		if(after.handle_func)
 			after.handle_func(C, after.handle_func_arg, after.retval);
@@ -799,8 +800,7 @@ static void ui_add_smart_controller(bContext *C, uiBut *from, uiBut *to)
 	if(!act_iter) return;
 
 	/* (3) add a new controller */
-	if (WM_operator_name_call(C, "LOGIC_OT_controller_add", WM_OP_EXEC_DEFAULT, NULL) & OPERATOR_FINISHED)
-	{
+	if (WM_operator_name_call(C, "LOGIC_OT_controller_add", WM_OP_EXEC_DEFAULT, NULL) & OPERATOR_FINISHED) {
 		cont = (bController *)ob->controllers.last;
 
 		/* (4) link the sensor->controller->actuator */
@@ -1164,6 +1164,10 @@ static void ui_but_copy_paste(bContext *C, uiBut *but, uiHandleButtonData *data,
 		else {
 			button_activate_state(C, but, BUTTON_STATE_TEXT_EDITING);
 			BLI_strncpy(active_data->str, buf, active_data->maxlen);
+			if(but->type == SEARCH_MENU) {
+				/* else uiSearchboxData.active member is not updated [#26856] */
+				ui_searchbox_update(C, data->searchbox, but, 1);
+			}
 			button_activate_state(C, but, BUTTON_STATE_EXIT);
 		}
 	}
@@ -1231,7 +1235,7 @@ static short test_special_char(char ch)
 		case ':':
 		case ';':
 		case '\'':
-		case '\"':
+		case '\"': // " - an extra closing one for Aligorith's text editor
 		case '<':
 		case '>':
 		case ',':
@@ -1254,7 +1258,7 @@ static int ui_textedit_delete_selection(uiBut *but, uiHandleButtonData *data)
 	int len= strlen(str);
 	int change= 0;
 	if(but->selsta != but->selend && len) {
-		memmove( str+but->selsta, str+but->selend, len-but->selsta+1 );
+		memmove( str+but->selsta, str+but->selend, (len - but->selend) + 1 );
 		change= 1;
 	}
 	
@@ -1265,7 +1269,7 @@ static int ui_textedit_delete_selection(uiBut *but, uiHandleButtonData *data)
 /* note, but->block->aspect is used here, when drawing button style is getting scaled too */
 static void ui_textedit_set_cursor_pos(uiBut *but, uiHandleButtonData *data, short x)
 {
-	uiStyle *style= U.uistyles.first;	// XXX pass on as arg
+	uiStyle *style= UI_GetStyle();	// XXX pass on as arg
 	uiFontStyle *fstyle = &style->widget;
 	int startx= but->x1;
 	char *origstr;
@@ -1285,7 +1289,7 @@ static void ui_textedit_set_cursor_pos(uiBut *but, uiHandleButtonData *data, sho
 	else if(ELEM(but->type, TEX, SEARCH_MENU)) {
 		startx += 5;
 		if (but->flag & UI_HAS_ICON)
-			startx += 16;
+			startx += UI_DPI_ICON_SIZE;
 	}
 	
 	/* mouse dragged outside the widget to the left */
@@ -1296,7 +1300,7 @@ static void ui_textedit_set_cursor_pos(uiBut *but, uiHandleButtonData *data, sho
 		
 		while (i > 0) {
 			i--;
-			if (BLF_width(fstyle->uifont_id, origstr+i) > (startx - x)*0.25) break;	// 0.25 == scale factor for less sensitivity
+			if (BLF_width(fstyle->uifont_id, origstr+i) > (startx - x)*0.25f) break;	// 0.25 == scale factor for less sensitivity
 		}
 		but->ofs = i;
 		but->pos = but->ofs;
@@ -1675,7 +1679,7 @@ static void ui_textedit_begin(bContext *C, uiBut *but, uiHandleButtonData *data)
 static void ui_textedit_end(bContext *C, uiBut *but, uiHandleButtonData *data)
 {
 	if(but) {
-		if(!ui_is_utf8_but(but)) {
+		if(ui_is_utf8_but(but)) {
 			int strip= BLI_utf8_invalid_strip(but->editstr, strlen(but->editstr));
 			/* not a file?, strip non utf-8 chars */
 			if(strip) {
@@ -1874,7 +1878,6 @@ static void ui_do_but_textedit(bContext *C, uiBlock *block, uiBut *but, uiHandle
 				if(but->autocomplete_func || data->searchbox) {
 					changed= ui_textedit_autocomplete(C, but, data);
 					update= 1; /* do live update for tab key */
-					retval= WM_UI_HANDLER_BREAK;
 				}
 				/* the hotkey here is not well defined, was G.qual so we check all */
 				else if(event->shift || event->ctrl || event->alt || event->oskey) {
@@ -1890,7 +1893,15 @@ static void ui_do_but_textedit(bContext *C, uiBlock *block, uiBut *but, uiHandle
 		}
 
 		if(event->ascii && (retval == WM_UI_HANDLER_CONTINUE)) {
-			changed= ui_textedit_type_ascii(but, data, event->ascii);
+			char ascii = event->ascii;
+
+			/* exception that's useful for number buttons, some keyboard
+			   numpads have a comma instead of a period */
+			if(ELEM3(but->type, NUM, NUMABS, NUMSLI))
+				if(event->type == PADPERIOD && ascii == ',')
+					ascii = '.';
+
+			changed= ui_textedit_type_ascii(but, data, ascii);
 			retval= WM_UI_HANDLER_BREAK;
 			
 		}
@@ -1968,7 +1979,7 @@ static void ui_numedit_begin(uiBut *but, uiHandleButtonData *data)
 		softmax= but->softmax;
 		softrange= softmax - softmin;
 
-		data->dragfstart= (softrange == 0.0)? 0.0: (data->value - softmin)/softrange;
+		data->dragfstart= (softrange == 0.0f)? 0.0f: ((float)data->value - softmin)/softrange;
 		data->dragf= data->dragfstart;
 	}
 
@@ -2298,13 +2309,13 @@ static float ui_numedit_apply_snapf(uiBut *but, float tempf, float softmin, floa
 		float fac= 1.0f;
 		
 		if(ui_is_but_unit(but)) {
-			Scene *scene= CTX_data_scene((bContext *)but->block->evil_C);
+			UnitSettings *unit= but->block->unit;
 			int unit_type= uiButGetUnitType(but)>>16;
 
-			if(bUnit_IsValid(scene->unit.system, unit_type)) {
-				fac= (float)bUnit_BaseScalar(scene->unit.system, unit_type);
+			if(bUnit_IsValid(unit->system, unit_type)) {
+				fac= (float)bUnit_BaseScalar(unit->system, unit_type);
 				if(ELEM3(unit_type, B_UNIT_LENGTH, B_UNIT_AREA, B_UNIT_VOLUME)) {
-					fac /= scene->unit.scale_length;
+					fac /= unit->scale_length;
 				}
 			}
 		}
@@ -2312,19 +2323,19 @@ static float ui_numedit_apply_snapf(uiBut *but, float tempf, float softmin, floa
 		if(fac != 1.0f) {
 			/* snap in unit-space */
 			tempf /= fac;
-			softmin /= fac;
-			softmax /= fac;
+			/* softmin /= fac; */ /* UNUSED */
+			/* softmax /= fac; */ /* UNUSED */
 			softrange /= fac;
 		}
 
 		if(snap==1) {
-			if(softrange < 2.10) tempf= 0.1*floor(10*tempf);
-			else if(softrange < 21.0) tempf= floor(tempf);
-			else tempf= 10.0*floor(tempf/10.0);
+			if(softrange < 2.10f) tempf= 0.1f*floorf(10.0f*tempf);
+			else if(softrange < 21.0f) tempf= floorf(tempf);
+			else tempf= 10.0f*floorf(tempf/10.0f);
 		}
 		else if(snap==2) {
-			if(softrange < 2.10) tempf= 0.01*floor(100.0*tempf);
-			else if(softrange < 21.0) tempf= 0.1*floor(10.0*tempf);
+			if(softrange < 2.10f) tempf= 0.01f*floorf(100.0f*tempf);
+			else if(softrange < 21.0f) tempf= 0.1f*floorf(10.0f*tempf);
 			else tempf= floor(tempf);
 		}
 		
@@ -2380,8 +2391,8 @@ static int ui_numedit_but_NUM(uiBut *but, uiHandleButtonData *data, float fac, i
 		/* Mouse location isn't screen clamped to the screen so use a linear mapping
 		 * 2px == 1-int, or 1px == 1-ClickStep */
 		if(ui_is_but_float(but)) {
-			fac *= 0.01*but->a1;
-			tempf = data->startvalue + ((mx - data->dragstartx) * fac);
+			fac *= 0.01f*but->a1;
+			tempf = (float)data->startvalue + ((float)(mx - data->dragstartx) * fac);
 			tempf= ui_numedit_apply_snapf(but, tempf, softmin, softmax, softrange, snap);
 
 #if 1		/* fake moving the click start, nicer for dragging back after passing the limit */
@@ -2396,7 +2407,7 @@ static int ui_numedit_but_NUM(uiBut *but, uiHandleButtonData *data, float fac, i
 			CLAMP(tempf, softmin, softmax);
 #endif
 
-			if(tempf != data->value) {
+			if(tempf != (float)data->value) {
 				data->dragchange= 1;
 				data->value= tempf;
 				changed= 1;
@@ -2407,7 +2418,7 @@ static int ui_numedit_but_NUM(uiBut *but, uiHandleButtonData *data, float fac, i
 			else if(softrange > 32)	fac= 1.0/2.0;	/* 2px == 1 */
 			else					fac= 1.0/16.0;	/* 16px == 1? */
 
-			temp= data->startvalue + ((mx - data->dragstartx) * fac);
+			temp= data->startvalue + (((double)mx - data->dragstartx) * (double)fac);
 			temp= ui_numedit_apply_snap(temp, softmin, softmax, snap);
 
 #if 1		/* fake moving the click start, nicer for dragging back after passing the limit */
@@ -2445,22 +2456,22 @@ static int ui_numedit_but_NUM(uiBut *but, uiHandleButtonData *data, float fac, i
 
 		if(softrange > 11) {
 			/* non linear change in mouse input- good for high precicsion */
-			data->dragf+= (((float)(mx-data->draglastx))/deler) * (fabs(data->dragstartx-mx)*0.002);
+			data->dragf+= (((float)(mx-data->draglastx))/deler) * (fabsf(data->dragstartx-mx)*0.002f);
 		} else if (softrange > 129) { /* only scale large int buttons */
 			/* non linear change in mouse input- good for high precicsionm ints need less fine tuning */
-			data->dragf+= (((float)(mx-data->draglastx))/deler) * (fabs(data->dragstartx-mx)*0.004);
+			data->dragf+= (((float)(mx-data->draglastx))/deler) * (fabsf(data->dragstartx-mx)*0.004f);
 		} else {
 			/*no scaling */
 			data->dragf+= ((float)(mx-data->draglastx))/deler ;
 		}
 	
-		CLAMP(data->dragf, 0.0, 1.0);
+		CLAMP(data->dragf, 0.0f, 1.0f);
 		data->draglastx= mx;
 		tempf= (softmin + data->dragf*softrange);
 
 
 		if(!ui_is_but_float(but)) {
-			temp= floor(tempf+.5);
+			temp= floorf(tempf + 0.5f);
 
 			temp= ui_numedit_apply_snap(temp, softmin, softmax, snap);
 
@@ -2479,7 +2490,7 @@ static int ui_numedit_but_NUM(uiBut *but, uiHandleButtonData *data, float fac, i
 
 			CLAMP(tempf, softmin, softmax);
 
-			if(tempf != data->value) {
+			if(tempf != (float)data->value) {
 				data->dragchange= 1;
 				data->value= tempf;
 				changed= 1;
@@ -2609,7 +2620,7 @@ static int ui_do_but_NUM(bContext *C, uiBlock *block, uiBut *but, uiHandleButton
 			if(mx < (but->x1 + (but->x2 - but->x1)/3 - 3)) {
 				button_activate_state(C, but, BUTTON_STATE_NUM_EDITING);
 
-				tempf= data->value - 0.01*but->a1;
+				tempf= (float)data->value - 0.01f * but->a1;
 				if (tempf < softmin) tempf = softmin;
 				data->value= tempf;
 
@@ -2618,7 +2629,7 @@ static int ui_do_but_NUM(bContext *C, uiBlock *block, uiBut *but, uiHandleButton
 			else if(mx > but->x1 + (2*((but->x2 - but->x1)/3) + 3)) {
 				button_activate_state(C, but, BUTTON_STATE_NUM_EDITING);
 
-				tempf= data->value + 0.01*but->a1;
+				tempf= (float)data->value + 0.01f * but->a1;
 				if (tempf > softmax) tempf = softmax;
 				data->value= tempf;
 
@@ -2643,23 +2654,23 @@ static int ui_numedit_but_SLI(uiBut *but, uiHandleButtonData *data, int shift, i
 	softmax= but->softmax;
 	softrange= softmax - softmin;
 
-	if(but->type==NUMSLI) deler= ((but->x2-but->x1) - 5.0*but->aspect);
-	else if(but->type==HSVSLI) deler= ((but->x2-but->x1)/2 - 5.0*but->aspect);
+	if(but->type==NUMSLI) deler= ((but->x2-but->x1) - 5.0f*but->aspect);
+	else if(but->type==HSVSLI) deler= ((but->x2-but->x1)/2.0f - 5.0f*but->aspect);
 	else if(but->type==SCROLL) {
 		int horizontal= (but->x2 - but->x1 > but->y2 - but->y1);
 		float size= (horizontal)? (but->x2-but->x1): -(but->y2-but->y1);
 		deler= size*(but->softmax - but->softmin)/(but->softmax - but->softmin + but->a1);
 	}
-	else deler= (but->x2-but->x1- 5.0*but->aspect);
+	else deler= (but->x2-but->x1- 5.0f*but->aspect);
 
 	f= (float)(mx-data->dragstartx)/deler + data->dragfstart;
 	
 	if(shift)
-		f= (f-data->dragfstart)/10.0 + data->dragfstart;
+		f= (f-data->dragfstart)/10.0f + data->dragfstart;
 
-	CLAMP(f, 0.0, 1.0);
+	CLAMP(f, 0.0f, 1.0f);
 	tempf= softmin + f*softrange;
-	temp= floor(tempf+.5);
+	temp= floorf(tempf+0.5f);
 
 	if(ctrl) {
 		if(tempf==softmin || tempf==softmax);
@@ -2667,14 +2678,14 @@ static int ui_numedit_but_SLI(uiBut *but, uiHandleButtonData *data, int shift, i
 
 			if(shift) {
 				if(tempf==softmin || tempf==softmax);
-				else if(softmax-softmin < 2.10) tempf= 0.01*floor(100.0*tempf);
-				else if(softmax-softmin < 21.0) tempf= 0.1*floor(10.0*tempf);
-				else tempf= floor(tempf);
+				else if(softmax-softmin < 2.10f) tempf= 0.01f * floorf(100.0f*tempf);
+				else if(softmax-softmin < 21.0f) tempf= 0.1f * floorf(10.0f*tempf);
+				else tempf= floorf(tempf);
 			}
 			else {
-				if(softmax-softmin < 2.10) tempf= 0.1*floor(10*tempf);
-				else if(softmax-softmin < 21.0) tempf= floor(tempf);
-				else tempf= 10.0*floor(tempf/10.0);
+				if(softmax-softmin < 2.10f) tempf= 0.1f * floorf(10.0f*tempf);
+				else if(softmax-softmin < 21.0f) tempf= floorf(tempf);
+				else tempf= 10.0f*floorf(tempf/10.0f);
 			}
 		}
 		else {
@@ -2697,7 +2708,7 @@ static int ui_numedit_but_SLI(uiBut *but, uiHandleButtonData *data, int shift, i
 	else {
 		CLAMP(tempf, softmin, softmax);
 
-		if(tempf != data->value) {
+		if(tempf != (float)data->value) {
 			data->value= tempf;
 			data->dragchange= 1;
 			changed= 1;
@@ -2797,10 +2808,16 @@ static int ui_do_but_SLI(bContext *C, uiBlock *block, uiBut *but, uiHandleButton
 			
 			tempf= data->value;
 			temp= (int)data->value;
-			
-			/* XXX useles "if", same result for f, uh??? */
-			if(but->type==SLI) f= (float)(mx-but->x1)/(but->x2-but->x1);
-			else f= (float)(mx- but->x1)/(but->x2-but->x1);
+
+#if 0
+			if(but->type==SLI) {
+				f= (float)(mx-but->x1)/(but->x2-but->x1); /* same as below */
+			}
+			else
+#endif
+			{
+				f= (float)(mx- but->x1)/(but->x2-but->x1);
+			}
 			
 			f= softmin + f*softrange;
 			
@@ -2814,8 +2831,8 @@ static int ui_do_but_SLI(bContext *C, uiBlock *block, uiBut *but, uiHandleButton
 					data->cancel= 1;
 			} 
 			else {
-				if(f<tempf) tempf-=.01;
-				else tempf+=.01;
+				if(f<tempf) tempf -= 0.01f;
+				else tempf += 0.01f;
 				
 				if(tempf>=softmin && tempf<=softmax)
 					data->value= tempf;
@@ -2838,7 +2855,7 @@ static int ui_do_but_SLI(bContext *C, uiBlock *block, uiBut *but, uiHandleButton
 
 static int ui_do_but_SCROLL(bContext *C, uiBlock *block, uiBut *but, uiHandleButtonData *data, wmEvent *event)
 {
-	int mx, my, click= 0;
+	int mx, my /*, click= 0 */;
 	int retval= WM_UI_HANDLER_CONTINUE;
 	int horizontal= (but->x2 - but->x1 > but->y2 - but->y1);
 	
@@ -2860,8 +2877,10 @@ static int ui_do_but_SCROLL(bContext *C, uiBlock *block, uiBut *but, uiHandleBut
 				button_activate_state(C, but, BUTTON_STATE_NUM_EDITING);
 				retval= WM_UI_HANDLER_BREAK;
 			}
-			else if(ELEM(event->type, PADENTER, RETKEY) && event->val==KM_PRESS)
+			/* UNUSED - otherwise code is ok, add back if needed */
+			/* else if(ELEM(event->type, PADENTER, RETKEY) && event->val==KM_PRESS)
 				click= 1;
+			*/
 		}
 	}
 	else if(data->state == BUTTON_STATE_NUM_EDITING) {
@@ -2983,7 +3002,7 @@ static int ui_numedit_but_NORMAL(uiBut *but, uiHandleButtonData *data, int mx, i
 		mdy= (rad*fp[1]);
 	}
 	else if(fp[2]> -1.0f) {
-		mrad= rad/sqrt(fp[0]*fp[0] + fp[1]*fp[1]);
+		mrad= rad/sqrtf(fp[0]*fp[0] + fp[1]*fp[1]);
 		
 		mdx= 2.0f*mrad*fp[0] - (rad*fp[0]);
 		mdy= 2.0f*mrad*fp[1] - (rad*fp[1]);
@@ -3002,7 +3021,7 @@ static int ui_numedit_but_NORMAL(uiBut *but, uiHandleButtonData *data, int mx, i
 	}
 	else {	/* outer circle */
 		
-		mrad= rad/sqrt(mrad);	// veclen
+		mrad= rad/sqrtf(mrad);	// veclen
 		
 		dx*= (2.0f*mrad - 1.0f);
 		dy*= (2.0f*mrad - 1.0f);
@@ -3081,8 +3100,8 @@ static int ui_numedit_but_HSVCUBE(uiBut *but, uiHandleButtonData *data, int mx, 
 	/* relative position within box */
 	x= ((float)mx-but->x1)/(but->x2-but->x1);
 	y= ((float)my-but->y1)/(but->y2-but->y1);
-	CLAMP(x, 0.0, 1.0);
-	CLAMP(y, 0.0, 1.0);
+	CLAMP(x, 0.0f, 1.0f);
+	CLAMP(y, 0.0f, 1.0f);
 
 	switch((int)but->a1) {
 	case UI_GRAD_SV:
@@ -3226,7 +3245,7 @@ static int ui_numedit_but_HSVCIRCLE(uiBut *but, uiHandleButtonData *data, int mx
 	}
 
 	if(U.uiflag & USER_CONTINUOUS_MOUSE) {
-		float fac= shift ? 0.05 : 1.0f;
+		float fac= shift ? 0.05f : 1.0f;
 		/* slow down the mouse, this is fairly picky */
 		mx = (data->dragstartx*(1.0f-fac) + mx*fac);
 		my = (data->dragstarty*(1.0f-fac) + my*fac);
@@ -3374,7 +3393,7 @@ static int ui_numedit_but_COLORBAND(uiBut *but, uiHandleButtonData *data, int mx
 
 	dx= ((float)(mx - data->draglastx))/(but->x2-but->x1);
 	data->dragcbd->pos += dx;
-	CLAMP(data->dragcbd->pos, 0.0, 1.0);
+	CLAMP(data->dragcbd->pos, 0.0f, 1.0f);
 	
 	ui_colorband_update(data->coba);
 	data->dragcbd= data->coba->data + data->coba->cur;	/* because qsort */
@@ -3450,13 +3469,13 @@ static int ui_numedit_but_CURVE(uiBut *but, uiHandleButtonData *data, int snap, 
 	CurveMapping *cumap= (CurveMapping*)but->poin;
 	CurveMap *cuma= cumap->cm+cumap->cur;
 	CurveMapPoint *cmp= cuma->curve;
-	float fx, fy, zoomx, zoomy, offsx, offsy;
+	float fx, fy, zoomx, zoomy /*, offsx, offsy */ /* UNUSED */;
 	int a, changed= 0;
 
 	zoomx= (but->x2-but->x1)/(cumap->curr.xmax-cumap->curr.xmin);
 	zoomy= (but->y2-but->y1)/(cumap->curr.ymax-cumap->curr.ymin);
-	offsx= cumap->curr.xmin;
-	offsy= cumap->curr.ymin;
+	/* offsx= cumap->curr.xmin; */
+	/* offsy= cumap->curr.ymin; */
 
 	if(snap) {
 		float d[2];
@@ -3479,8 +3498,8 @@ static int ui_numedit_but_CURVE(uiBut *but, uiHandleButtonData *data, int snap, 
 				cmp[a].x+= fx;
 				cmp[a].y+= fy;
 				if(snap) {
-					cmp[a].x= 0.125f*floor(0.5f + 8.0f*cmp[a].x);
-					cmp[a].y= 0.125f*floor(0.5f + 8.0f*cmp[a].y);
+					cmp[a].x= 0.125f*floorf(0.5f + 8.0f*cmp[a].x);
+					cmp[a].y= 0.125f*floorf(0.5f + 8.0f*cmp[a].y);
 				}
 				if(cmp[a].x!=origx || cmp[a].y!=origy)
 					moved_point= 1;
@@ -3659,6 +3678,9 @@ static int ui_do_but_CURVE(bContext *C, uiBlock *block, uiBut *but, uiHandleButt
 		return WM_UI_HANDLER_BREAK;
 	}
 
+	/* UNUSED but keep for now */
+	(void)changed;
+
 	return WM_UI_HANDLER_CONTINUE;
 }
 
@@ -3671,14 +3693,14 @@ static int in_scope_resize_zone(uiBut *but, int UNUSED(x), int y)
 static int ui_numedit_but_HISTOGRAM(uiBut *but, uiHandleButtonData *data, int mx, int my)
 {
 	Histogram *hist = (Histogram *)but->poin;
-	rcti rect;
+	/* rcti rect; */
 	int changed= 1;
-	float dx, dy, yfac=1.f;
+	float /* dx, */ dy, yfac=1.f; /* UNUSED */
 	
-	rect.xmin= but->x1; rect.xmax= but->x2;
-	rect.ymin= but->y1; rect.ymax= but->y2;
+	/* rect.xmin= but->x1; rect.xmax= but->x2; */
+	/* rect.ymin= but->y1; rect.ymax= but->y2; */
 	
-	dx = mx - data->draglastx;
+	/* dx = mx - data->draglastx; */ /* UNUSED */
 	dy = my - data->draglasty;
 	
 	
@@ -3687,7 +3709,7 @@ static int ui_numedit_but_HISTOGRAM(uiBut *but, uiHandleButtonData *data, int mx
 		hist->height = (but->y2 - but->y1) + (data->dragstarty - my);
 	} else {
 		/* scale histogram values */
-		yfac = MIN2(powf(hist->ymax, 2.f), 1.f) * 0.5;
+		yfac = MIN2(powf(hist->ymax, 2.f), 1.f) * 0.5f;
 		hist->ymax += dy * yfac;
 	
 		CLAMP(hist->ymax, 1.f, 100.f);
@@ -3754,14 +3776,14 @@ static int ui_do_but_HISTOGRAM(bContext *C, uiBlock *block, uiBut *but, uiHandle
 static int ui_numedit_but_WAVEFORM(uiBut *but, uiHandleButtonData *data, int mx, int my)
 {
 	Scopes *scopes = (Scopes *)but->poin;
-	rcti rect;
+	/* rcti rect; */
 	int changed= 1;
-	float dx, dy, yfac=1.f;
+	float /* dx, */ dy /* , yfac=1.f */; /* UNUSED */
 
-	rect.xmin= but->x1; rect.xmax= but->x2;
-	rect.ymin= but->y1; rect.ymax= but->y2;
+	/* rect.xmin= but->x1; rect.xmax= but->x2; */
+	/* rect.ymin= but->y1; rect.ymax= but->y2; */
 
-	dx = mx - data->draglastx;
+	/* dx = mx - data->draglastx; */ /* UNUSED */
 	dy = my - data->draglasty;
 
 
@@ -3770,7 +3792,7 @@ static int ui_numedit_but_WAVEFORM(uiBut *but, uiHandleButtonData *data, int mx,
 		scopes->wavefrm_height = (but->y2 - but->y1) + (data->dragstarty - my);
 	} else {
 		/* scale waveform values */
-		yfac = scopes->wavefrm_yfac;
+		/* yfac = scopes->wavefrm_yfac; */ /* UNUSED */
 		scopes->wavefrm_yfac += dy/200.0f;
 
 		CLAMP(scopes->wavefrm_yfac, 0.5f, 2.f);
@@ -3837,12 +3859,12 @@ static int ui_do_but_WAVEFORM(bContext *C, uiBlock *block, uiBut *but, uiHandleB
 static int ui_numedit_but_VECTORSCOPE(uiBut *but, uiHandleButtonData *data, int mx, int my)
 {
 	Scopes *scopes = (Scopes *)but->poin;
-	rcti rect;
+	/* rcti rect; */
 	int changed= 1;
 	/* float dx, dy; */
 
-	rect.xmin= but->x1; rect.xmax= but->x2;
-	rect.ymin= but->y1; rect.ymax= but->y2;
+	/* rect.xmin= but->x1; rect.xmax= but->x2; */
+	/* rect.ymin= but->y1; rect.ymax= but->y2; */
 
 	/* dx = mx - data->draglastx; */
 	/* dy = my - data->draglasty; */
@@ -4012,12 +4034,9 @@ static int ui_do_but_CHARTAB(bContext *UNUSED(C), uiBlock *UNUSED(block), uiBut 
 
 
 static int ui_do_but_LINK(bContext *C, uiBut *but, uiHandleButtonData *data, wmEvent *event)
-{
-	ARegion *ar= CTX_wm_region(C);
-	
-	but->linkto[0]= event->x-ar->winrct.xmin;
-	but->linkto[1]= event->y-ar->winrct.ymin;
-	
+{	
+	VECCOPY2D(but->linkto, event->mval);
+
 	if(data->state == BUTTON_STATE_HIGHLIGHT) {
 		if(event->type == LEFTMOUSE && event->val==KM_PRESS) {
 			button_activate_state(C, but, BUTTON_STATE_WAIT_RELEASE);
@@ -4052,7 +4071,6 @@ static void but_shortcut_name_func(bContext *C, void *arg1, int UNUSED(event))
 		
 		/* complex code to change name of button */
 		if(WM_key_event_operator_string(C, but->optype->idname, but->opcontext, prop, buf, sizeof(buf))) {
-			wmKeyMap *km= NULL;
 			char *butstr_orig;
 
 			// XXX but->str changed... should not, remove the hotkey from it
@@ -4065,10 +4083,6 @@ static void but_shortcut_name_func(bContext *C, void *arg1, int UNUSED(event))
 			but->str= but->strdata;
 
 			ui_check_but(but);
-
-			/* set the keymap editable else the key wont save */
-			WM_key_event_operator_id(C, but->optype->idname, but->opcontext, prop, 1, &km);
-			WM_keymap_copy_to_user(km);
 		}
 		else {
 			/* shortcut was removed */
@@ -4080,19 +4094,20 @@ static void but_shortcut_name_func(bContext *C, void *arg1, int UNUSED(event))
 
 static uiBlock *menu_change_shortcut(bContext *C, ARegion *ar, void *arg)
 {
+	wmWindowManager *wm= CTX_wm_manager(C);
 	uiBlock *block;
 	uiBut *but = (uiBut *)arg;
 	wmKeyMap *km;
 	wmKeyMapItem *kmi;
 	PointerRNA ptr;
 	uiLayout *layout;
-	uiStyle *style= U.uistyles.first;
+	uiStyle *style= UI_GetStyle();
 	IDProperty *prop= (but->opptr)? but->opptr->data: NULL;
 	int kmi_id = WM_key_event_operator_id(C, but->optype->idname, but->opcontext, prop, 1, &km);
 
 	kmi = WM_keymap_item_find_id(km, kmi_id);
 	
-	RNA_pointer_create(NULL, &RNA_KeyMapItem, kmi, &ptr);
+	RNA_pointer_create(&wm->id, &RNA_KeyMapItem, kmi, &ptr);
 	
 	block= uiBeginBlock(C, ar, "_popup", UI_EMBOSS);
 	uiBlockSetHandleFunc(block, but_shortcut_name_func, but);
@@ -4111,27 +4126,34 @@ static uiBlock *menu_change_shortcut(bContext *C, ARegion *ar, void *arg)
 
 static uiBlock *menu_add_shortcut(bContext *C, ARegion *ar, void *arg)
 {
+	wmWindowManager *wm= CTX_wm_manager(C);
 	uiBlock *block;
 	uiBut *but = (uiBut *)arg;
 	wmKeyMap *km;
 	wmKeyMapItem *kmi;
 	PointerRNA ptr;
 	uiLayout *layout;
-	uiStyle *style= U.uistyles.first;
+	uiStyle *style= UI_GetStyle();
 	IDProperty *prop= (but->opptr)? but->opptr->data: NULL;
+	int kmi_id;
 	
 	/* XXX this guess_opname can potentially return a different keymap than being found on adding later... */
 	km = WM_keymap_guess_opname(C, but->optype->idname);		
 	kmi = WM_keymap_add_item(km, but->optype->idname, AKEY, KM_PRESS, 0, 0);
+	kmi_id = kmi->id;
 
-	if (prop) {
+	/* copy properties, prop can be NULL for reset */	
+	if(prop)
 		prop= IDP_CopyProperty(prop);
-	}
-
-	/* prop can be NULL */	
 	WM_keymap_properties_reset(kmi, prop);
 
-	RNA_pointer_create(NULL, &RNA_KeyMapItem, kmi, &ptr);
+	/* update and get pointers again */
+	WM_keyconfig_update(wm);
+
+	km = WM_keymap_guess_opname(C, but->optype->idname);		
+	kmi = WM_keymap_item_find_id(km, kmi_id);
+
+	RNA_pointer_create(&wm->id, &RNA_KeyMapItem, kmi, &ptr);
 
 	block= uiBeginBlock(C, ar, "_popup", UI_EMBOSS);
 	uiBlockSetHandleFunc(block, but_shortcut_name_func, but);
@@ -4212,6 +4234,7 @@ static int ui_but_menu(bContext *C, uiBut *but)
 		
 		/* Keyframes */
 		if(but->flag & UI_BUT_ANIMATED_KEY) {
+			/* replace/delete keyfraemes */
 			if(length) {
 				uiItemBooleanO(layout, "Replace Keyframes", ICON_NONE, "ANIM_OT_keyframe_insert_button", "all", 1);
 				uiItemBooleanO(layout, "Replace Single Keyframe", ICON_NONE, "ANIM_OT_keyframe_insert_button", "all", 0);
@@ -4222,6 +4245,11 @@ static int ui_but_menu(bContext *C, uiBut *but)
 				uiItemBooleanO(layout, "Replace Keyframe", ICON_NONE, "ANIM_OT_keyframe_insert_button", "all", 0);
 				uiItemBooleanO(layout, "Delete Keyframe", ICON_NONE, "ANIM_OT_keyframe_delete_button", "all", 0);
 			}
+			
+			/* keyframe settings */
+			uiItemS(layout);
+			
+			
 		}
 		else if(but->flag & UI_BUT_DRIVEN);
 		else if(is_anim) {
@@ -4264,6 +4292,7 @@ static int ui_but_menu(bContext *C, uiBut *but)
 		}
 		
 		/* Keying Sets */
+		// TODO: check on modifyability of Keying Set when doing this
 		if(is_anim) {
 			uiItemS(layout);
 
@@ -4435,10 +4464,10 @@ static int ui_do_button(bContext *C, uiBlock *block, uiBut *but, wmEvent *event)
 		}
 		/* reset to default */
 		/* XXX hardcoded keymap check.... */
-		else if(ELEM(event->type, ZEROKEY, PAD0) && event->val == KM_PRESS) {
-			/* ctrl-0 = for arrays, only the active one gets done (vs whole array for just 0) */
+		else if(ELEM(event->type, DELKEY, PADPERIOD) && event->val == KM_PRESS) {
+			/* ctrl+del - reset active button; del - reset a whole array*/
 			if (!(ELEM3(but->type, HSVCIRCLE, HSVCUBE, HISTOGRAM)))
-				ui_set_but_default(C, but, !event->ctrl);
+				ui_set_but_default(C, !event->ctrl);
 		}
 		/* handle menu */
 		else if(event->type == RIGHTMOUSE && event->val == KM_PRESS) {
@@ -4595,6 +4624,28 @@ int ui_button_is_active(ARegion *ar)
 	return (ui_but_find_activated(ar) != NULL);
 }
 
+/* is called by notifier */
+void uiFreeActiveButtons(const bContext *C, bScreen *screen)
+{
+	ScrArea *sa= screen->areabase.first;
+	
+	for(;sa; sa= sa->next) {
+		ARegion *ar= sa->regionbase.first;
+		for(;ar; ar= ar->next) {
+			uiBut *but= ui_but_find_activated(ar);
+			if(but) {
+				uiHandleButtonData *data= but->active;
+				
+				if(data->menu==NULL && data->searchbox==NULL)
+					if(data->state == BUTTON_STATE_HIGHLIGHT)
+						ui_button_active_free(C, but);
+			}
+		}
+	}
+}
+
+
+
 /* returns TRUE if highlighted button allows drop of names */
 /* called in region context */
 int UI_but_active_drop_name(bContext *C)
@@ -4713,6 +4764,8 @@ static uiBut *ui_but_find_mouse_over(ARegion *ar, int x, int y)
 			if(ELEM3(but->type, ROUNDBOX, SEPR, LISTBOX))
 				continue;
 			if(but->flag & UI_HIDDEN)
+				continue;
+			if(but->flag & UI_SCROLLED)
 				continue;
 			if(ui_but_contains_pt(but, mx, my))
 				butover= but;
@@ -4872,7 +4925,7 @@ static void button_activate_state(bContext *C, uiBut *but, uiHandleButtonState s
 		}
 		else {
 			if(button_modal_state(data->state))
-				WM_event_remove_ui_handler(&data->window->modalhandlers, ui_handler_region_menu, NULL, data);
+				WM_event_remove_ui_handler(&data->window->modalhandlers, ui_handler_region_menu, NULL, data, 1); /* 1 = postpone free */
 		}
 	}
 	
@@ -5502,10 +5555,6 @@ static int ui_mouse_motion_towards_check(uiBlock *block, uiPopupBlockHandle *men
 	int closer;
 
 	if(!menu->dotowards) return 0;
-	if((block->direction & UI_TOP) || (block->direction & UI_DOWN)) {
-		menu->dotowards= 0;
-		return menu->dotowards;
-	}
 
 	/* verify that we are moving towards one of the edges of the
 	 * menu block, in other words, in the triangle formed by the
@@ -5547,6 +5596,76 @@ static int ui_mouse_motion_towards_check(uiBlock *block, uiPopupBlockHandle *men
 	return menu->dotowards;
 }
 
+static char ui_menu_scroll_test(uiBlock *block, int my)
+{
+	if(block->flag & (UI_BLOCK_CLIPTOP|UI_BLOCK_CLIPBOTTOM)) {
+		if(block->flag & UI_BLOCK_CLIPTOP) 
+			if(my > block->maxy-14)
+				return 't';
+		if(block->flag & UI_BLOCK_CLIPBOTTOM)
+			if(my < block->miny+14)
+				return 'b';
+	}
+	return 0;
+}
+
+static int ui_menu_scroll(ARegion *ar, uiBlock *block, int my)
+{
+	char test= ui_menu_scroll_test(block, my);
+	
+	if(test) {
+		uiBut *b1= block->buttons.first;
+		uiBut *b2= block->buttons.last;
+		uiBut *bnext;
+		uiBut *bprev;
+		int dy= 0;
+		
+		/* get first and last visible buttons */
+		while(b1 && ui_but_next(b1) && (b1->flag & UI_SCROLLED))
+			b1= ui_but_next(b1);
+		while(b2 && ui_but_prev(b2) && (b2->flag & UI_SCROLLED))
+			b2= ui_but_prev(b2);
+		/* skips separators */
+		bnext= ui_but_next(b1);
+		bprev= ui_but_prev(b2);
+		
+		if(bnext==NULL || bprev==NULL)
+			return 0;
+		
+		if(test=='t') {
+			/* bottom button is first button */
+			if(b1->y1 < b2->y1)
+				dy= bnext->y1 - b1->y1;
+			/* bottom button is last button */
+			else 
+				dy= bprev->y1 - b2->y1;
+		}
+		else if(test=='b') {
+			/* bottom button is first button */
+			if(b1->y1 < b2->y1)
+				dy= b1->y1 - bnext->y1;
+			/* bottom button is last button */
+			else 
+				dy= b2->y1 - bprev->y1;
+		}
+		if(dy) {
+			
+			for(b1= block->buttons.first; b1; b1= b1->next) {
+				b1->y1 -= dy;
+				b1->y2 -= dy;
+			}
+			/* set flags again */
+			ui_popup_block_scrolltest(block);
+			
+			ED_region_tag_redraw(ar);
+			
+			return 1;
+		}
+	}
+	
+	return 0;
+}
+
 static int ui_handle_menu_event(bContext *C, wmEvent *event, uiPopupBlockHandle *menu, int UNUSED(topmenu))
 {
 	ARegion *ar;
@@ -5578,11 +5697,22 @@ static int ui_handle_menu_event(bContext *C, wmEvent *event, uiPopupBlockHandle 
 		 * and don't handle events */
 		ui_mouse_motion_towards_init(menu, mx, my, 1);
 	}
-	else if(event->type != TIMER) {
+	else if(event->type == TIMER) {
+		if(event->customdata == menu->scrolltimer)
+			ui_menu_scroll(ar, block, my);
+	}
+	else {
 		/* for ui_mouse_motion_towards_block */
-		if(event->type == MOUSEMOVE)
+		if(event->type == MOUSEMOVE) {
 			ui_mouse_motion_towards_init(menu, mx, my, 0);
-
+			
+			/* add menu scroll timer, if needed */
+			if(ui_menu_scroll_test(block, my))
+				if(menu->scrolltimer==NULL)
+					menu->scrolltimer= 
+					WM_event_add_timer(CTX_wm_manager(C), CTX_wm_window(C), TIMER, MENU_SCROLL_INTERVAL);
+		}
+		
 		/* first block own event func */
 		if(block->block_event_func && block->block_event_func(C, block, event));
 		/* events not for active search menu button */
@@ -6128,7 +6258,7 @@ static void ui_handler_remove_popup(bContext *C, void *userdata)
 
 void UI_add_region_handlers(ListBase *handlers)
 {
-	WM_event_remove_ui_handler(handlers, ui_handler_region, ui_handler_remove_region, NULL);
+	WM_event_remove_ui_handler(handlers, ui_handler_region, ui_handler_remove_region, NULL, 0);
 	WM_event_add_ui_handler(NULL, handlers, ui_handler_region, ui_handler_remove_region, NULL);
 }
 
@@ -6139,7 +6269,7 @@ void UI_add_popup_handlers(bContext *C, ListBase *handlers, uiPopupBlockHandle *
 
 void UI_remove_popup_handlers(ListBase *handlers, uiPopupBlockHandle *popup)
 {
-	WM_event_remove_ui_handler(handlers, ui_handler_popup, ui_handler_remove_popup, popup);
+	WM_event_remove_ui_handler(handlers, ui_handler_popup, ui_handler_remove_popup, popup, 0);
 }
 
 

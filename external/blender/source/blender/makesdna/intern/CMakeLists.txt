@@ -1,5 +1,5 @@
 # -*- mode: cmake; indent-tabs-mode: t; -*-
-# $Id: CMakeLists.txt 35054 2011-02-22 06:23:07Z campbellbarton $
+# $Id: CMakeLists.txt 39568 2011-08-20 14:23:43Z campbellbarton $
 # ***** BEGIN GPL LICENSE BLOCK *****
 #
 # This program is free software; you can redistribute it and/or
@@ -27,12 +27,17 @@
 
 # message(STATUS "Configuring makesdna")
 
+# add_definitions(-DWITH_DNA_GHASH)
+
 blender_include_dirs(
 	../../../../intern/guardedalloc
 	../../blenloader
+	../../blenlib
 	..
 )
 
+
+# -----------------------------------------------------------------------------
 # Build makesdna executable
 set(SRC
 	makesdna.c
@@ -56,8 +61,15 @@ add_custom_command(
 	DEPENDS makesdna
 )
 
+
+# -----------------------------------------------------------------------------
 # Build bf_dna library
 set(INC
+
+)
+
+set(INC_SYS
+
 )
 
 set(SRC
@@ -66,4 +78,23 @@ set(SRC
 	${SRC_DNA_INC}
 )
 
-blender_add_lib(bf_dna "${SRC}" "${INC}")
+blender_add_lib(bf_dna "${SRC}" "${INC}" "${INC_SYS}")
+
+
+# -----------------------------------------------------------------------------
+# Build bf_dna_blenlib library
+set(INC
+
+)
+
+set(INC_SYS
+
+)
+
+set(SRC
+	../../blenlib/intern/BLI_mempool.c
+	../../blenlib/intern/listbase.c
+	../../blenlib/intern/BLI_ghash.c
+)
+
+blender_add_lib(bf_dna_blenlib "${SRC}" "${INC}" "${INC_SYS}")

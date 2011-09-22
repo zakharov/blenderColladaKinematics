@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_SinusFactory.h 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_SinusFactory.h 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -68,7 +68,7 @@ public:
 	 */
 	float getFrequency() const;
 
-	virtual AUD_IReader* createReader() const;
+	virtual AUD_Reference<AUD_IReader> createReader();
 };
 
 #endif //AUD_SINUSFACTORY

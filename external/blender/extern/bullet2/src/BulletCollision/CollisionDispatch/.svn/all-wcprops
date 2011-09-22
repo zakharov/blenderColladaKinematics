@@ -1,7 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 101
-/svnroot/bf-blender/!svn/ver/35078/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch
+/svnroot/bf-blender/!svn/ver/36980/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch
+END
+btConvex2dConvex2dAlgorithm.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svnroot/bf-blender/!svn/ver/35504/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btConvex2dConvex2dAlgorithm.cpp
 END
 btGhostObject.cpp
 K 25
@@ -25,7 +31,7 @@ SphereTriangleDetector.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 128
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/SphereTriangleDetector.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/SphereTriangleDetector.cpp
 END
 btSphereSphereCollisionAlgorithm.cpp
 K 25
@@ -43,7 +49,7 @@ btConvexConcaveCollisionAlgorithm.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 139
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btConvexConcaveCollisionAlgorithm.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btConvexConcaveCollisionAlgorithm.cpp
 END
 btEmptyCollisionAlgorithm.h
 K 25
@@ -55,7 +61,7 @@ btCollisionObject.h
 K 25
 svn:wc:ra_dav:version-url
 V 121
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btCollisionObject.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btCollisionObject.h
 END
 btSphereBoxCollisionAlgorithm.h
 K 25
@@ -67,7 +73,7 @@ btDefaultCollisionConfiguration.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 137
-/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btDefaultCollisionConfiguration.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btDefaultCollisionConfiguration.cpp
 END
 btBoxBoxCollisionAlgorithm.h
 K 25
@@ -75,29 +81,41 @@ svn:wc:ra_dav:version-url
 V 130
 /svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btBoxBoxCollisionAlgorithm.h
 END
+btInternalEdgeUtility.h
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svnroot/bf-blender/!svn/ver/35504/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btInternalEdgeUtility.h
+END
 btConvexConvexAlgorithm.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 129
-/svnroot/bf-blender/!svn/ver/24364/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btConvexConvexAlgorithm.cpp
+/svnroot/bf-blender/!svn/ver/36980/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btConvexConvexAlgorithm.cpp
 END
 btManifoldResult.h
 K 25
 svn:wc:ra_dav:version-url
 V 120
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btManifoldResult.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btManifoldResult.h
 END
 btUnionFind.h
 K 25
 svn:wc:ra_dav:version-url
 V 115
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btUnionFind.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btUnionFind.h
 END
 btSphereTriangleCollisionAlgorithm.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 140
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btSphereTriangleCollisionAlgorithm.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btSphereTriangleCollisionAlgorithm.cpp
+END
+btBox2dBox2dCollisionAlgorithm.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svnroot/bf-blender/!svn/ver/35504/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btBox2dBox2dCollisionAlgorithm.cpp
 END
 btBoxBoxDetector.h
 K 25
@@ -115,31 +133,31 @@ btCollisionDispatcher.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 127
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btCollisionDispatcher.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btCollisionDispatcher.cpp
 END
 btCompoundCollisionAlgorithm.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 134
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btCompoundCollisionAlgorithm.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btCompoundCollisionAlgorithm.cpp
 END
 btCollisionWorld.h
 K 25
 svn:wc:ra_dav:version-url
 V 120
-/svnroot/bf-blender/!svn/ver/35078/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btCollisionWorld.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btCollisionWorld.h
 END
 btConvexPlaneCollisionAlgorithm.h
 K 25
 svn:wc:ra_dav:version-url
 V 135
-/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btConvexPlaneCollisionAlgorithm.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btConvexPlaneCollisionAlgorithm.h
 END
 btSimulationIslandManager.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 131
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btSimulationIslandManager.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btSimulationIslandManager.cpp
 END
 btActivatingCollisionAlgorithm.cpp
 K 25
@@ -147,11 +165,17 @@ svn:wc:ra_dav:version-url
 V 136
 /svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btActivatingCollisionAlgorithm.cpp
 END
+btConvex2dConvex2dAlgorithm.h
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svnroot/bf-blender/!svn/ver/35504/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btConvex2dConvex2dAlgorithm.h
+END
 btGhostObject.h
 K 25
 svn:wc:ra_dav:version-url
 V 117
-/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btGhostObject.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btGhostObject.h
 END
 btEmptyCollisionAlgorithm.cpp
 K 25
@@ -163,7 +187,7 @@ btCollisionObject.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 123
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btCollisionObject.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btCollisionObject.cpp
 END
 btSphereBoxCollisionAlgorithm.cpp
 K 25
@@ -175,13 +199,19 @@ btBoxBoxCollisionAlgorithm.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 132
-/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btBoxBoxCollisionAlgorithm.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btBoxBoxCollisionAlgorithm.cpp
 END
 SphereTriangleDetector.h
 K 25
 svn:wc:ra_dav:version-url
 V 126
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/SphereTriangleDetector.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/SphereTriangleDetector.h
+END
+btInternalEdgeUtility.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svnroot/bf-blender/!svn/ver/35504/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btInternalEdgeUtility.cpp
 END
 btSphereSphereCollisionAlgorithm.h
 K 25
@@ -189,17 +219,17 @@ svn:wc:ra_dav:version-url
 V 136
 /svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btSphereSphereCollisionAlgorithm.h
 END
-btManifoldResult.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 122
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btManifoldResult.cpp
-END
 btCollisionConfiguration.h
 K 25
 svn:wc:ra_dav:version-url
 V 128
 /svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btCollisionConfiguration.h
+END
+btManifoldResult.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btManifoldResult.cpp
 END
 btConvexConcaveCollisionAlgorithm.h
 K 25
@@ -211,31 +241,31 @@ btUnionFind.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 117
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btUnionFind.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btUnionFind.cpp
 END
 btBoxBoxDetector.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 122
-/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btBoxBoxDetector.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btBoxBoxDetector.cpp
 END
 btDefaultCollisionConfiguration.h
 K 25
 svn:wc:ra_dav:version-url
 V 135
-/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btDefaultCollisionConfiguration.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btDefaultCollisionConfiguration.h
 END
 btConvexConvexAlgorithm.h
 K 25
 svn:wc:ra_dav:version-url
 V 127
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btConvexConvexAlgorithm.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btConvexConvexAlgorithm.h
 END
 btCollisionWorld.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 122
-/svnroot/bf-blender/!svn/ver/25767/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btCollisionWorld.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btCollisionWorld.cpp
 END
 btSphereTriangleCollisionAlgorithm.h
 K 25
@@ -247,11 +277,17 @@ btConvexPlaneCollisionAlgorithm.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 137
-/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btConvexPlaneCollisionAlgorithm.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btConvexPlaneCollisionAlgorithm.cpp
+END
+btBox2dBox2dCollisionAlgorithm.h
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svnroot/bf-blender/!svn/ver/35504/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btBox2dBox2dCollisionAlgorithm.h
 END
 btCollisionDispatcher.h
 K 25
 svn:wc:ra_dav:version-url
 V 125
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btCollisionDispatcher.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch/btCollisionDispatcher.h
 END

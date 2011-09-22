@@ -44,12 +44,6 @@
 #include <stdio.h>
 #include <string.h>
 
-#ifdef _WIN32
-#ifndef vsnprintf
-#define vsnprintf _vsnprintf
-#endif
-#endif
-
 static const char *report_type_str(int type)
 {
 	switch(type) {
@@ -101,7 +95,7 @@ void BKE_report(ReportList *reports, ReportType type, const char *message)
 	Report *report;
 	int len;
 
-    /* in background mode always print otherwise there are cases the errors wont be displayed,
+	/* in background mode always print otherwise there are cases the errors wont be displayed,
 	 * but still add to the report list since this is used for python exception handling */
 	if(G.background || !reports || ((reports->flag & RPT_PRINT) && (type >= reports->printlevel))) {
 		printf("%s: %s\n", report_type_str(type), message);

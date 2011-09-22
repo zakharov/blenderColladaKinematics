@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 74
-/svnroot/bf-blender/!svn/ver/35172/trunk/blender/source/gameengine/Network
+/svnroot/bf-blender/!svn/ver/39883/trunk/blender/source/gameengine/Network
 END
 NG_NetworkScene.h
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35072/trunk/blender/source/gameengine/Network/NG_NetworkScene.h
+/svnroot/bf-blender/!svn/ver/36523/trunk/blender/source/gameengine/Network/NG_NetworkScene.h
 END
 NG_NetworkMessage.cpp
 K 25
@@ -19,7 +19,7 @@ NG_NetworkDeviceInterface.h
 K 25
 svn:wc:ra_dav:version-url
 V 102
-/svnroot/bf-blender/!svn/ver/35072/trunk/blender/source/gameengine/Network/NG_NetworkDeviceInterface.h
+/svnroot/bf-blender/!svn/ver/39883/trunk/blender/source/gameengine/Network/NG_NetworkDeviceInterface.h
 END
 NG_NetworkObject.cpp
 K 25
@@ -31,7 +31,7 @@ SConscript
 K 25
 svn:wc:ra_dav:version-url
 V 85
-/svnroot/bf-blender/!svn/ver/33156/trunk/blender/source/gameengine/Network/SConscript
+/svnroot/bf-blender/!svn/ver/36523/trunk/blender/source/gameengine/Network/SConscript
 END
 NG_NetworkMessage.h
 K 25
@@ -55,5 +55,5 @@ CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/gameengine/Network/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/38443/trunk/blender/source/gameengine/Network/CMakeLists.txt
 END

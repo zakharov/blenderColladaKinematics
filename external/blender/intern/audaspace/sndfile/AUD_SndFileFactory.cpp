@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_SndFileFactory.cpp 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_SndFileFactory.cpp 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -31,7 +31,6 @@
 
 #include "AUD_SndFileFactory.h"
 #include "AUD_SndFileReader.h"
-#include "AUD_Buffer.h"
 
 #include <cstring>
 
@@ -43,13 +42,13 @@ AUD_SndFileFactory::AUD_SndFileFactory(std::string filename) :
 AUD_SndFileFactory::AUD_SndFileFactory(const data_t* buffer, int size) :
 	m_buffer(new AUD_Buffer(size))
 {
-	memcpy(m_buffer.get()->getBuffer(), buffer, size);
+	memcpy(m_buffer->getBuffer(), buffer, size);
 }
 
-AUD_IReader* AUD_SndFileFactory::createReader() const
+AUD_Reference<AUD_IReader> AUD_SndFileFactory::createReader()
 {
-	if(m_buffer.get())
-		return new AUD_SndFileReader(m_buffer);
-	else
+	if(m_buffer.isNull())
 		return new AUD_SndFileReader(m_filename);
+	else
+		return new AUD_SndFileReader(m_buffer);
 }

@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_ChannelMapperFactory.h 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_ChannelMapperFactory.h 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -41,33 +41,19 @@
 class AUD_ChannelMapperFactory : public AUD_MixerFactory
 {
 private:
-	/**
-	 * The mapping specification.
-	 */
-	float **m_mapping[9];
-
 	// hide copy constructor and operator=
 	AUD_ChannelMapperFactory(const AUD_ChannelMapperFactory&);
 	AUD_ChannelMapperFactory& operator=(const AUD_ChannelMapperFactory&);
 
 public:
-	AUD_ChannelMapperFactory(AUD_IFactory* factory, AUD_DeviceSpecs specs);
-
-	virtual ~AUD_ChannelMapperFactory();
-
 	/**
-	 * Returns the mapping array for editing.
-	 * \param ic The count of input channels the array should have.
-	 * \note The count of output channels is read of the desired output specs.
+	 * Creates a new factory.
+	 * \param factory The input factory.
+	 * \param specs The target specifications.
 	 */
-	float** getMapping(int ic);
+	AUD_ChannelMapperFactory(AUD_Reference<AUD_IFactory> factory, AUD_DeviceSpecs specs);
 
-	/**
-	 * Deletes the current channel mapping.
-	 */
-	void deleteMapping(int ic);
-
-	virtual AUD_IReader* createReader() const;
+	virtual AUD_Reference<AUD_IReader> createReader();
 };
 
 #endif //AUD_CHANNELMAPPERFACTORY

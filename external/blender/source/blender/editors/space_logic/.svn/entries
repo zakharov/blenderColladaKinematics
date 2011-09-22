@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/editors/space_logic
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-03-03T01:47:17.839439Z
-35315
-dfelinto
+2011-09-20T18:29:19.809825Z
+40413
+campbellbarton
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-03-03T12:28:38.566297Z
-cbbd03d9f8c10732e0e820ea906d0132
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:58.828055Z
+62d622f303cae29f7a6cc5d8fa08d915
+2011-09-19T19:55:59.989496Z
+40372
+dfelinto
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-18398
+19473
 
 logic_intern.h
 file
@@ -66,7 +66,7 @@ file
 
 
 
-2011-03-03T12:28:38.566297Z
+2011-09-21T18:16:58.828055Z
 71082a45c2c914462c4007e9eafe49be
 2011-02-27T20:29:51.598877Z
 35242
@@ -100,11 +100,11 @@ file
 
 
 
-2011-03-03T12:28:38.570297Z
-e0f70264d065e8a389e01ab7a194244f
-2011-03-03T01:47:17.839439Z
-35315
-dfelinto
+2011-09-21T18:16:58.832055Z
+3b5bc22a3e71bc00568f1ec7feb0b739
+2011-09-20T13:41:43.050547Z
+40395
+nazgul
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-179330
+180200
 
 SConscript
 file
@@ -134,7 +134,7 @@ file
 
 
 
-2011-03-03T12:28:38.570297Z
+2011-09-21T18:16:58.832055Z
 d4142be7e0a780badf8378d17c0dbfb3
 2011-02-21T12:35:04.852834Z
 35028
@@ -168,11 +168,11 @@ file
 
 
 
-2011-03-03T12:28:38.570297Z
-dc0b9cedf8798151841bcdc2345d025e
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:58.832055Z
+1642c8217692d583f64470abb40875e3
+2011-05-20T05:27:31.167986Z
+36788
+campbellbarton
 has-props
 
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-9043
+8972
 
 logic_buttons.c
 file
@@ -202,11 +202,11 @@ file
 
 
 
-2011-03-03T12:28:38.574297Z
-b9af47c9560fab255238848eca3b7f9e
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:58.832055Z
+8a74127ef7a2efb97d9fd49cf9c48f05
+2011-06-06T11:04:54.047619Z
+37246
+nazgul
 has-props
 
 
@@ -228,7 +228,7 @@ has-props
 
 
 
-5363
+5397
 
 CMakeLists.txt
 file
@@ -236,11 +236,11 @@ file
 
 
 
-2011-03-03T12:28:38.574297Z
-c0cabc2cc01ee54137a919c835a608a0
-2011-02-21T12:35:04.852834Z
-35028
-jesterking
+2011-09-21T18:16:58.836055Z
+4003d2dbbe93bbbac16c9ad5c9021557
+2011-09-20T18:29:19.809825Z
+40413
+campbellbarton
 has-props
 
 
@@ -262,5 +262,5 @@ has-props
 
 
 
-1276
+1331
 

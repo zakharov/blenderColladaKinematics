@@ -2,7 +2,7 @@
  *  \ingroup bke
  */
 /*
- * $Id: writeframeserver.c 35247 2011-02-27 20:40:57Z jesterking $
+ * $Id: writeframeserver.c 38594 2011-07-21 23:06:51Z campbellbarton $
  *
  * Frameserver
  * Makes Blender accessible from TMPGenc directly using VFAPI (you can
@@ -22,6 +22,7 @@
  *
  */
 
+#ifdef WITH_FRAMESERVER
 
 #include <string.h>
 #include <stdio.h>
@@ -381,3 +382,4 @@ void end_frameserver(void)
 	shutdown_socket_system();
 }
 
+#endif /* WITH_FRAMESERVER */

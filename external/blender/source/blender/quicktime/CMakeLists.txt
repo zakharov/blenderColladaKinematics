@@ -1,4 +1,4 @@
-# $Id: CMakeLists.txt 33864 2010-12-22 23:09:30Z campbellbarton $
+# $Id: CMakeLists.txt 38443 2011-07-17 09:11:13Z campbellbarton $
 # ***** BEGIN GPL LICENSE BLOCK *****
 #
 # This program is free software; you can redistribute it and/or
@@ -24,6 +24,25 @@
 #
 # ***** END GPL LICENSE BLOCK *****
 
+set(INC 
+	.
+	../avi
+	../blenkernel
+	../blenlib
+	../blenloader
+	../imbuf
+	../imbuf/intern
+	../makesdna
+	../makesrna
+	../render/extern/include
+	../windowmanager
+	../../../intern/guardedalloc
+)
+
+set(INC_SYS
+	${QUICKTIME_INCLUDE_DIRS}
+)
+
 if(USE_QTKIT)
 	set(SRC
 		apple/qtkit_import.m
@@ -42,25 +61,13 @@ else()
 	)
 endif()
 
-set(INC 
-	.
-	../quicktime
-	../makesdna
-	../makesrna
-	../blenlib
-	../blenkernel
-	../avi
-	../imbuf
-	../imbuf/intern
-	../blenloader
-	../render/extern/include
-	../include
-	../windowmanager
-	../../../intern/audaspace/intern
-	../../../intern/guardedalloc
-	${QUICKTIME_INC}
-)
-
 add_definitions(-DWITH_QUICKTIME)
 
-blender_add_lib(bf_quicktime "${SRC}" "${INC}")
+if(WITH_AUDASPACE)
+	list(APPEND INC
+		../../../intern/audaspace/intern
+	)
+	add_definitions(-DWITH_AUDASPACE)
+endif()
+
+blender_add_lib(bf_quicktime "${SRC}" "${INC}" "${INC_SYS}")

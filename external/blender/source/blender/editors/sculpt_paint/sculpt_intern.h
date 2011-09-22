@@ -1,5 +1,5 @@
 /*
- * $Id: sculpt_intern.h 35363 2011-03-05 10:37:59Z campbellbarton $
+ * $Id: sculpt_intern.h 40193 2011-09-14 00:37:27Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -64,10 +64,10 @@ struct Brush *sculptmode_brush(void);
 void sculpt(Sculpt *sd);
 
 int sculpt_poll(struct bContext *C);
-void sculpt_update_mesh_elements(struct Scene *scene, struct Object *ob, int need_fmap);
+void sculpt_update_mesh_elements(struct Scene *scene, struct Sculpt *sd, struct Object *ob, int need_fmap);
 
 /* Deformed mesh sculpt */
-void sculpt_free_deformMats(struct SculptSession *ss);
+void free_sculptsession_deformMats(struct SculptSession *ss);
 
 /* Stroke */
 struct SculptStroke *sculpt_stroke_new(const int max);
@@ -107,12 +107,11 @@ typedef struct SculptUndoNode {
 	char shapeName[sizeof(((KeyBlock *)0))->name];
 } SculptUndoNode;
 
-SculptUndoNode *sculpt_undo_push_node(SculptSession *ss, PBVHNode *node);
+SculptUndoNode *sculpt_undo_push_node(Object *ob, PBVHNode *node);
 SculptUndoNode *sculpt_undo_get_node(PBVHNode *node);
 void sculpt_undo_push_begin(const char *name);
 void sculpt_undo_push_end(void);
 
-int sculpt_modifiers_active(Scene *scene, Object *ob);
 void sculpt_vertcos_to_key(Object *ob, KeyBlock *kb, float (*vertCos)[3]);
 
 #endif

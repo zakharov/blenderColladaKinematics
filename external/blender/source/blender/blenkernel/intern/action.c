@@ -1,6 +1,4 @@
 /*
- * $Id: action.c 35247 2011-02-27 20:40:57Z jesterking $
- *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -85,64 +83,83 @@ bAction *add_empty_action(const char name[])
 	bAction *act;
 	
 	act= alloc_libblock(&G.main->action, ID_AC, name);
-	act->id.flag |= LIB_FAKEUSER; // XXX this is nasty for new users... maybe we don't want this anymore
-	act->id.us++;
 	
 	return act;
 }	
 
+/* .................................. */
+
+/* temp data for make_local_action */
+typedef struct tMakeLocalActionContext {
+	bAction *act;    /* original action */
+	bAction *actn;   /* new action */
+	
+	int lib;         /* some action users were libraries */
+	int local;       /* some action users were not libraries */
+} tMakeLocalActionContext;
+
+/* helper function for make_local_action() - local/lib init step */
+static void make_localact_init_cb(ID *id, AnimData *adt, void *mlac_ptr)
+{
+	tMakeLocalActionContext *mlac = (tMakeLocalActionContext *)mlac_ptr;
+	
+	if (adt->action == mlac->act) {
+		if (id->lib) 
+			mlac->lib = 1;
+		else 
+			mlac->local = 1;
+	}
+}
+
+/* helper function for make_local_action() - change references */
+static void make_localact_apply_cb(ID *id, AnimData *adt, void *mlac_ptr)
+{
+	tMakeLocalActionContext *mlac = (tMakeLocalActionContext *)mlac_ptr;
+	
+	if (adt->action == mlac->act) {
+		if (id->lib == NULL) {
+			adt->action = mlac->actn;
+			
+			id_us_plus(&mlac->actn->id);
+			id_us_min(&mlac->act->id);
+		}
+	}
+}
+
 // does copy_fcurve...
 void make_local_action(bAction *act)
 {
-	// Object *ob;
-	bAction *actn;
-	int local=0, lib=0;
+	tMakeLocalActionContext mlac = {act, NULL, 0, 0};
+	Main *bmain= G.main;
 	
-	if (act->id.lib==NULL) return;
-	if (act->id.us==1) {
+	if (act->id.lib==NULL) 
+		return;
+	
+	// XXX: double-check this; it used to be just single-user check, but that was when fake-users were still default
+	if ((act->id.flag & LIB_FAKEUSER) && (act->id.us<=1)) {
 		act->id.lib= NULL;
 		act->id.flag= LIB_LOCAL;
-		new_id(NULL, (ID *)act, NULL);
+		new_id(&bmain->action, (ID *)act, NULL);
 		return;
 	}
 	
-#if 0	// XXX old animation system
-	ob= G.main->object.first;
-	while(ob) {
-		if(ob->action==act) {
-			if(ob->id.lib) lib= 1;
-			else local= 1;
-		}
-		ob= ob->id.next;
-	}
-#endif
+	BKE_animdata_main_cb(bmain, make_localact_init_cb, &mlac);
 	
-	if(local && lib==0) {
+	if (mlac.local && mlac.lib==0) {
 		act->id.lib= NULL;
 		act->id.flag= LIB_LOCAL;
 		//make_local_action_channels(act);
-		new_id(NULL, (ID *)act, NULL);
+		new_id(&bmain->action, (ID *)act, NULL);
 	}
-	else if(local && lib) {
-		actn= copy_action(act);
-		actn->id.us= 0;
+	else if (mlac.local && mlac.lib) {
+		mlac.actn= copy_action(act);
+		mlac.actn->id.us= 0;
 		
-#if 0	// XXX old animation system
-		ob= G.main->object.first;
-		while(ob) {
-			if(ob->action==act) {
-				
-				if(ob->id.lib==0) {
-					ob->action = actn;
-					actn->id.us++;
-					act->id.us--;
-				}
-			}
-			ob= ob->id.next;
-		}
-#endif	// XXX old animation system
+		BKE_animdata_main_cb(bmain, make_localact_apply_cb, &mlac);
 	}
 }
+
+/* .................................. */
 
 void free_action (bAction *act)
 {
@@ -161,6 +178,8 @@ void free_action (bAction *act)
 	if (act->markers.first)
 		BLI_freelistN(&act->markers);
 }
+
+/* .................................. */
 
 bAction *copy_action (bAction *src)
 {
@@ -198,9 +217,6 @@ bAction *copy_action (bAction *src)
 			}
 		}
 	}
-	
-	dst->id.flag |= LIB_FAKEUSER; // XXX this is nasty for new users... maybe we don't want this anymore
-	dst->id.us++;
 	
 	return dst;
 }
@@ -419,11 +435,11 @@ bPoseChannel *verify_pose_channel(bPose *pose, const char *name)
 		return NULL;
 	
 	/* See if this channel exists */
-	for (chan=pose->chanbase.first; chan; chan=chan->next) {
-		if (!strcmp (name, chan->name))
-			return chan;
+	chan= BLI_findstring(&pose->chanbase, name, offsetof(bPoseChannel, name));
+	if(chan) {
+		return chan;
 	}
-	
+
 	/* If not, create it and add it */
 	chan = MEM_callocN(sizeof(bPoseChannel), "verifyPoseChannel");
 	
@@ -508,7 +524,6 @@ void copy_pose (bPose **dst, bPose *src, int copycon)
 		if (copycon) {
 			copy_constraints(&listb, &pchan->constraints, TRUE);  // copy_constraints NULLs listb
 			pchan->constraints= listb;
-			pchan->path= NULL; // XXX remove this line when the new motionpaths are ready... (depreceated code)
 			pchan->mpath= NULL; /* motion paths should not get copied yet... */
 		}
 		
@@ -579,17 +594,12 @@ void free_pose_channels_hash(bPose *pose)
 
 void free_pose_channel(bPoseChannel *pchan)
 {
-	// XXX this case here will need to be removed when the new motionpaths are ready
-	if (pchan->path) {
-		MEM_freeN(pchan->path);
-		pchan->path= NULL;
-	}
-	
+
 	if (pchan->mpath) {
 		animviz_free_motionpath(pchan->mpath);
 		pchan->mpath= NULL;
 	}
-	
+
 	free_constraints(&pchan->constraints);
 	
 	if (pchan->prop) {
@@ -830,7 +840,10 @@ void pose_remove_group (Object *ob)
 		
 		/* now, remove it from the pose */
 		BLI_freelinkN(&pose->agroups, grp);
-		pose->active_group= 0;
+		pose->active_group--;
+		if(pose->active_group < 0 || pose->agroups.first == NULL) {
+			pose->active_group= 0;
+		}
 	}
 }
 
@@ -867,7 +880,8 @@ void calc_action_range(const bAction *act, float *start, float *end, short incl_
 				float nmin, nmax;
 				
 				/* get extents for this curve */
-				calc_fcurve_range(fcu, &nmin, &nmax);
+				// TODO: allow enabling/disabling this?
+				calc_fcurve_range(fcu, &nmin, &nmax, FALSE);
 				
 				/* compare to the running tally */
 				min= MIN2(min, nmin);
@@ -973,6 +987,11 @@ short action_get_item_transforms (bAction *act, Object *ob, bPoseChannel *pchan,
 		bPtr= strstr(fcu->rna_path, basePath);
 		
 		if (bPtr) {
+			/* we must add len(basePath) bytes to the match so that we are at the end of the 
+			 * base path so that we don't get false positives with these strings in the names
+			 */
+			bPtr += strlen(basePath);
+			
 			/* step 2: check for some property with transforms 
 			 *	- to speed things up, only check for the ones not yet found 
 			 * 	  unless we're getting the curves too
@@ -981,8 +1000,8 @@ short action_get_item_transforms (bAction *act, Object *ob, bPoseChannel *pchan,
 			 *	- once a match has been found, the curve cannot possibly be any other one
 			 */
 			if ((curves) || (flags & ACT_TRANS_LOC) == 0) {
-				pPtr= strstr(fcu->rna_path, "location");
-				if ((pPtr) && (pPtr >= bPtr)) {
+				pPtr= strstr(bPtr, "location");
+				if (pPtr) {
 					flags |= ACT_TRANS_LOC;
 					
 					if (curves) 
@@ -992,8 +1011,8 @@ short action_get_item_transforms (bAction *act, Object *ob, bPoseChannel *pchan,
 			}
 			
 			if ((curves) || (flags & ACT_TRANS_SCALE) == 0) {
-				pPtr= strstr(fcu->rna_path, "scale");
-				if ((pPtr) && (pPtr >= bPtr)) {
+				pPtr= strstr(bPtr, "scale");
+				if (pPtr) {
 					flags |= ACT_TRANS_SCALE;
 					
 					if (curves) 
@@ -1003,11 +1022,23 @@ short action_get_item_transforms (bAction *act, Object *ob, bPoseChannel *pchan,
 			}
 			
 			if ((curves) || (flags & ACT_TRANS_ROT) == 0) {
-				pPtr= strstr(fcu->rna_path, "rotation");
-				if ((pPtr) && (pPtr >= bPtr)) {
+				pPtr= strstr(bPtr, "rotation");
+				if (pPtr) {
 					flags |= ACT_TRANS_ROT;
 					
 					if (curves) 
+						BLI_addtail(curves, BLI_genericNodeN(fcu));
+					continue;
+				}
+			}
+			
+			if ((curves) || (flags & ACT_TRANS_PROP) == 0) {
+				/* custom properties only */
+				pPtr= strstr(bPtr, "[\""); /* extra '"' comment here to keep my texteditor functionlist working :) */  
+				if (pPtr) {
+					flags |= ACT_TRANS_PROP;
+					
+					if (curves)
 						BLI_addtail(curves, BLI_genericNodeN(fcu));
 					continue;
 				}
@@ -1106,7 +1137,7 @@ void copy_pose_result(bPose *to, bPose *from)
 /* For the calculation of the effects of an Action at the given frame on an object 
  * This is currently only used for the Action Constraint 
  */
-void what_does_obaction (Scene *UNUSED(scene), Object *ob, Object *workob, bPose *pose, bAction *act, char groupname[], float cframe)
+void what_does_obaction (Object *ob, Object *workob, bPose *pose, bAction *act, char groupname[], float cframe)
 {
 	bActionGroup *agrp= action_groups_find_named(act, groupname);
 	
@@ -1158,7 +1189,7 @@ void what_does_obaction (Scene *UNUSED(scene), Object *ob, Object *workob, bPose
 		adt.action= act;
 		
 		/* execute effects of Action on to workob (or it's PoseChannels) */
-		BKE_animsys_evaluate_animdata(&workob->id, &adt, cframe, ADT_RECALC_ANIM);
+		BKE_animsys_evaluate_animdata(NULL, &workob->id, &adt, cframe, ADT_RECALC_ANIM);
 	}
 }
 

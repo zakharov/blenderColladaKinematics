@@ -1,5 +1,5 @@
 /*
- * $Id: AVI_avi.h 35022 2011-02-21 09:23:34Z jesterking $ 
+ * $Id: AVI_avi.h 38302 2011-07-11 09:47:13Z blendix $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -55,6 +55,7 @@
 #ifndef __AVI_H__
 #define __AVI_H__
 
+#include "MEM_sys_types.h"
 #include <stdio.h> /* for FILE */
 
 typedef struct _AviChunk {
@@ -185,16 +186,16 @@ typedef struct _AviMovie {
 #define AVI_MOVIE_READ  0
 #define AVI_MOVIE_WRITE 1
 	
-	unsigned long size;
+	int64_t size;
 
 	AviMainHeader *header;
 	AviStreamRec *streams;
 	AviIndexEntry *entries;
 	int index_entries;
 	
-	int movi_offset;
-	int read_offset;
-	long *offset_table;
+	int64_t movi_offset;
+	int64_t read_offset;
+	int64_t *offset_table;
 	
 	/* Local data goes here */
 	int interlace;

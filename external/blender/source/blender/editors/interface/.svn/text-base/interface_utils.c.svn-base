@@ -37,6 +37,8 @@
 
 #include "BLI_utildefines.h"
 
+#include "BLF_translation.h"
+
 #include "BKE_context.h"
 
 
@@ -51,56 +53,53 @@
 uiBut *uiDefAutoButR(uiBlock *block, PointerRNA *ptr, PropertyRNA *prop, int index, const char *name, int icon, int x1, int y1, int x2, int y2)
 {
 	uiBut *but=NULL;
-	const char *propname= RNA_property_identifier(prop);
-	char prop_item[sizeof(((IDProperty *)NULL)->name)+4]; /* size of the ID prop name + room for [""] */
-	int arraylen= RNA_property_array_length(ptr, prop);
-
-	/* support for custom props */
-	if(RNA_property_is_idprop(prop)) {
-		sprintf(prop_item, "[\"%s\"]", propname);
-		propname= prop_item;
-	}
 
 	switch(RNA_property_type(prop)) {
-		case PROP_BOOLEAN: {
+		case PROP_BOOLEAN:
+		{
+			int arraylen= RNA_property_array_length(ptr, prop);
 
 			if(arraylen && index == -1)
 				return NULL;
 			
 			if(icon && name && name[0] == '\0')
-				but= uiDefIconButR(block, ICONTOG, 0, icon, x1, y1, x2, y2, ptr, propname, index, 0, 0, -1, -1, NULL);
+				but= uiDefIconButR_prop(block, ICONTOG, 0, icon, x1, y1, x2, y2, ptr, prop, index, 0, 0, -1, -1, NULL);
 			else if(icon)
-				but= uiDefIconTextButR(block, ICONTOG, 0, icon, name, x1, y1, x2, y2, ptr, propname, index, 0, 0, -1, -1, NULL);
+				but= uiDefIconTextButR_prop(block, ICONTOG, 0, icon, name, x1, y1, x2, y2, ptr, prop, index, 0, 0, -1, -1, NULL);
 			else
-				but= uiDefButR(block, OPTION, 0, name, x1, y1, x2, y2, ptr, propname, index, 0, 0, -1, -1, NULL);
+				but= uiDefButR_prop(block, OPTION, 0, name, x1, y1, x2, y2, ptr, prop, index, 0, 0, -1, -1, NULL);
 			break;
 		}
 		case PROP_INT:
 		case PROP_FLOAT:
+		{
+			int arraylen= RNA_property_array_length(ptr, prop);
+
 			if(arraylen && index == -1) {
 				if(ELEM(RNA_property_subtype(prop), PROP_COLOR, PROP_COLOR_GAMMA))
-					but= uiDefButR(block, COL, 0, name, x1, y1, x2, y2, ptr, propname, 0, 0, 0, -1, -1, NULL);
+					but= uiDefButR_prop(block, COL, 0, name, x1, y1, x2, y2, ptr, prop, 0, 0, 0, -1, -1, NULL);
 			}
 			else if(RNA_property_subtype(prop) == PROP_PERCENTAGE || RNA_property_subtype(prop) == PROP_FACTOR)
-				but= uiDefButR(block, NUMSLI, 0, name, x1, y1, x2, y2, ptr, propname, index, 0, 0, -1, -1, NULL);
+				but= uiDefButR_prop(block, NUMSLI, 0, name, x1, y1, x2, y2, ptr, prop, index, 0, 0, -1, -1, NULL);
 			else
-				but= uiDefButR(block, NUM, 0, name, x1, y1, x2, y2, ptr, propname, index, 0, 0, -1, -1, NULL);
+				but= uiDefButR_prop(block, NUM, 0, name, x1, y1, x2, y2, ptr, prop, index, 0, 0, -1, -1, NULL);
 			break;
+		}
 		case PROP_ENUM:
 			if(icon && name && name[0] == '\0')
-				but= uiDefIconButR(block, MENU, 0, icon, x1, y1, x2, y2, ptr, propname, index, 0, 0, -1, -1, NULL);
+				but= uiDefIconButR_prop(block, MENU, 0, icon, x1, y1, x2, y2, ptr, prop, index, 0, 0, -1, -1, NULL);
 			else if(icon)
-				but= uiDefIconTextButR(block, MENU, 0, icon, NULL, x1, y1, x2, y2, ptr, propname, index, 0, 0, -1, -1, NULL);
+				but= uiDefIconTextButR_prop(block, MENU, 0, icon, NULL, x1, y1, x2, y2, ptr, prop, index, 0, 0, -1, -1, NULL);
 			else
-				but= uiDefButR(block, MENU, 0, NULL, x1, y1, x2, y2, ptr, propname, index, 0, 0, -1, -1, NULL);
+				but= uiDefButR_prop(block, MENU, 0, NULL, x1, y1, x2, y2, ptr, prop, index, 0, 0, -1, -1, NULL);
 			break;
 		case PROP_STRING:
 			if(icon && name && name[0] == '\0')
-				but= uiDefIconButR(block, TEX, 0, icon, x1, y1, x2, y2, ptr, propname, index, 0, 0, -1, -1, NULL);
+				but= uiDefIconButR_prop(block, TEX, 0, icon, x1, y1, x2, y2, ptr, prop, index, 0, 0, -1, -1, NULL);
 			else if(icon)
-				but= uiDefIconTextButR(block, TEX, 0, icon, name, x1, y1, x2, y2, ptr, propname, index, 0, 0, -1, -1, NULL);
+				but= uiDefIconTextButR_prop(block, TEX, 0, icon, name, x1, y1, x2, y2, ptr, prop, index, 0, 0, -1, -1, NULL);
 			else
-				but= uiDefButR(block, TEX, 0, name, x1, y1, x2, y2, ptr, propname, index, 0, 0, -1, -1, NULL);
+				but= uiDefButR_prop(block, TEX, 0, name, x1, y1, x2, y2, ptr, prop, index, 0, 0, -1, -1, NULL);
 			break;
 		case PROP_POINTER: {
 			PointerRNA pptr;
@@ -112,12 +111,12 @@ uiBut *uiDefAutoButR(uiBlock *block, PointerRNA *ptr, PropertyRNA *prop, int ind
 			if(icon == ICON_DOT)
 				icon= 0;
 
-			but= uiDefIconTextButR(block, IDPOIN, 0, icon, name, x1, y1, x2, y2, ptr, propname, index, 0, 0, -1, -1, NULL);
+			but= uiDefIconTextButR_prop(block, IDPOIN, 0, icon, name, x1, y1, x2, y2, ptr, prop, index, 0, 0, -1, -1, NULL);
 			break;
 		}
 		case PROP_COLLECTION: {
 			char text[256];
-			sprintf(text, "%d items", RNA_property_collection_length(ptr, prop));
+			sprintf(text, UI_translate_do_iface(N_("%d items")), RNA_property_collection_length(ptr, prop));
 			but= uiDefBut(block, LABEL, 0, text, x1, y1, x2, y2, NULL, 0, 0, 0, 0, NULL);
 			uiButSetFlag(but, UI_BUT_DISABLED);
 			break;
@@ -145,16 +144,22 @@ int uiDefAutoButsRNA(uiLayout *layout, PointerRNA *ptr, int (*check_prop)(Proper
 			continue;
 
 		if(label_align != '\0') {
+			PropertyType type = RNA_property_type(prop);
+			int is_boolean = (type == PROP_BOOLEAN && !RNA_property_array_check(prop));
+
 			name= RNA_property_ui_name(prop);
 
 			if(label_align=='V') {
 				col= uiLayoutColumn(layout, 1);
-				uiItemL(col, name, ICON_NONE);
+
+				if(!is_boolean)
+					uiItemL(col, name, ICON_NONE);
 			}
 			else if(label_align=='H') {
 				split = uiLayoutSplit(layout, 0.5f, 0);
 
-				uiItemL(uiLayoutColumn(split, 0), name, ICON_NONE);
+				col= uiLayoutColumn(split, 0);
+				uiItemL(col, (is_boolean)? "": name, ICON_NONE);
 				col= uiLayoutColumn(split, 0);
 			}
 			else {
@@ -163,12 +168,9 @@ int uiDefAutoButsRNA(uiLayout *layout, PointerRNA *ptr, int (*check_prop)(Proper
 
 			/* may meed to add more cases here.
 			 * don't override enum flag names */
-			if(flag & PROP_ENUM_FLAG) {
-				name= NULL;
-			}
-			else {
-				name= ""; /* name is shown above, empty name for button below */
-			}
+
+			/* name is shown above, empty name for button below */
+			name= (flag & PROP_ENUM_FLAG || is_boolean)? NULL: "";
 		}
 		else {
 			col= layout;

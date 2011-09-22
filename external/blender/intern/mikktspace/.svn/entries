@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern/mikktspace
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-02-25T11:47:49.633208Z
-35157
-jesterking
+2011-07-16T06:55:45.634575Z
+38427
+campbellbarton
 
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2011-03-03T12:25:24.742297Z
+2011-09-21T18:15:48.551706Z
 fa84ab7e9dd8e8bed90cf9d78e4f7749
 2011-02-25T11:47:49.633208Z
 35157
@@ -66,7 +66,7 @@ file
 
 
 
-2011-03-03T12:25:24.742297Z
+2011-09-21T18:15:48.551706Z
 496168132f4c838cf027e9b47220e614
 2011-02-15T09:24:35.932934Z
 34861
@@ -100,44 +100,10 @@ file
 
 
 
-2011-03-03T12:25:24.746297Z
-0c9cbf2bd9477552aeff820a8bb7805f
-2011-02-25T11:47:49.633208Z
-35157
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-56516
-
-CMakeLists.txt
-file
-
-
-
-
-2011-03-03T12:25:24.746297Z
-0d55a892df0761562fbe06478bb945ba
-2011-02-21T12:18:34.705376Z
-35027
+2011-09-21T18:15:48.551706Z
+1ca87adb8e3258766bf23933ff5305b5
+2011-07-16T06:55:45.634575Z
+38427
 campbellbarton
 has-props
 
@@ -160,5 +126,39 @@ has-props
 
 
 
-1127
+56498
+
+CMakeLists.txt
+file
+
+
+
+
+2011-09-21T18:15:48.555706Z
+99b6affa549c28c451c028f4a709d1d1
+2011-05-31T01:15:44.429162Z
+37030
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1157
 

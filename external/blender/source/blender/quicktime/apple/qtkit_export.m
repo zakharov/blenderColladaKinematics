@@ -1,5 +1,5 @@
 /**
- * $Id: qtkit_export.m 33610 2010-12-12 13:45:35Z ton $
+ * $Id: qtkit_export.m 37750 2011-06-23 09:27:56Z campbellbarton $
  *
  * qtkit_export.m
  *
@@ -38,7 +38,9 @@
 #include "DNA_scene_types.h"
 #include "DNA_userdef_types.h"
 
-#include "AUD_C-API.h"
+#ifdef WITH_AUDASPACE
+#  include "AUD_C-API.h"
+#endif
 
 #include "BKE_global.h"
 #include "BKE_main.h"

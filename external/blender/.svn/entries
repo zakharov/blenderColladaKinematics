@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-03-05T14:03:29.184090Z
-35365
-ton
+2011-09-22T07:01:28.873912Z
+40447
+campbellbarton
 has-props
 
 
@@ -53,10 +53,10 @@ file
 
 
 
-2011-03-03T12:29:44.970297Z
-16d9e03a2c99e86fff1274239535e0d0
-2011-02-22T05:49:21.259339Z
-35052
+2011-09-21T18:17:42.936273Z
+83bcd641c4666e9aef17cfd508e340c9
+2011-09-20T17:44:45.927995Z
+40410
 campbellbarton
 has-props
 
@@ -79,7 +79,7 @@ has-props
 
 
 
-2685
+7584
 
 SConstruct
 file
@@ -87,11 +87,11 @@ file
 
 
 
-2011-03-03T12:29:44.970297Z
-1156d2fcd315ba807ce048bee0ddb1da
-2011-02-18T09:39:15.592263Z
-34956
-jesterking
+2011-09-21T18:17:42.936273Z
+2e2fd55b66d242c98aedfe39fdd2efe1
+2011-09-20T14:41:01.419343Z
+40398
+nazgul
 has-props
 
 
@@ -113,7 +113,7 @@ has-props
 
 
 
-24651
+27835
 
 COPYING
 file
@@ -121,7 +121,7 @@ file
 
 
 
-2011-03-03T12:29:44.970297Z
+2011-09-21T18:17:42.936273Z
 dd99c6ca487917191f8eac60da0d136c
 2010-10-13T14:44:22.741163Z
 32452
@@ -155,11 +155,11 @@ file
 
 
 
-2011-03-05T14:58:44.684169Z
-8c623e21b315b5748a6a53d96b667bc1
-2011-03-04T14:15:46.411394Z
-35352
-jesterking
+2011-09-21T18:17:42.940273Z
+d655ecc6b1b4979d765e475eda40619f
+2011-09-19T08:02:17.513712Z
+40341
+campbellbarton
 has-props
 
 
@@ -181,7 +181,7 @@ has-props
 
 
 
-36311
+47283
 
 po
 dir

@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_DelayFactory.h 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_DelayFactory.h 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -55,14 +55,14 @@ public:
 	 * \param factory The input factory.
 	 * \param delay The desired delay in seconds.
 	 */
-	AUD_DelayFactory(AUD_IFactory* factory, float delay = 0);
+	AUD_DelayFactory(AUD_Reference<AUD_IFactory> factory, float delay = 0);
 
 	/**
 	 * Returns the delay in seconds.
 	 */
 	float getDelay() const;
 
-	virtual AUD_IReader* createReader() const;
+	virtual AUD_Reference<AUD_IReader> createReader();
 };
 
 #endif //AUD_DELAYFACTORY

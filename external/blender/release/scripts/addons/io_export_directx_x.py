@@ -16,13 +16,13 @@
 #  ***** GPL LICENSE BLOCK *****
 
 bl_info = {
-    "name": "Export DirectX Model Format (.x)",
+    "name": "DirectX Model Format (.x)",
     "author": "Chris Foster (Kira Vakaan)",
-    "version": (2, 1),
-    "blender": (2, 5, 6),
-    "api": 34736,
-    "location": "File > Export",
-    "description": "Export to the DirectX Model Format (.x)",
+    "version": (2, 1, 2),
+    "blender": (2, 5, 8),
+    "api": 37702,
+    "location": "File > Export > DirectX (.x)",
+    "description": "Export DirectX Model Format (.x)",
     "warning": "",
     "wiki_url": "http://wiki.blender.org/index.php/Extensions:2.5/Py/"\
         "Scripts/Import-Export/DirectX_Exporter",
@@ -66,8 +66,15 @@ class DirectXExporterSettings:
 
 
 def LegalName(Name):
-    NewName = Name.replace(".", "_")
-    NewName = NewName.replace(" ", "_")
+    
+    def ReplaceSet(String, OldSet, NewChar):
+        for OldChar in OldSet:
+            String = String.replace(OldChar, NewChar)
+        return String
+    
+    import string
+    
+    NewName = ReplaceSet(Name, string.punctuation + " ", "_")
     if NewName[0].isdigit() or NewName in ["ARRAY",
                                            "DWORD",
                                            "UCHAR",
@@ -97,18 +104,18 @@ def ExportDirectX(Config):
         print("Done")
 
     if Config.Verbose:
-        print("Generating Object list for export...")
+        print("Generating Object list for export... (Root parents only)")
     if Config.ExportMode == 1:
         Config.ExportList = [Object for Object in Config.context.scene.objects
-                             if Object.type in ("ARMATURE", "EMPTY", "MESH")
+                             if Object.type in {'ARMATURE', 'EMPTY', 'MESH'}
                              and Object.parent is None]
     else:
         ExportList = [Object for Object in Config.context.selected_objects
-                      if Object.type in ("ARMATURE", "EMPTY", "MESH")]
+                      if Object.type in {'ARMATURE', 'EMPTY', 'MESH'}]
         Config.ExportList = [Object for Object in ExportList
                              if Object.parent not in ExportList]
     if Config.Verbose:
-        print("Done")
+        print("  List: {}\nDone".format(Config.ExportList))
 
     if Config.Verbose:
         print("Setting up...")
@@ -146,6 +153,9 @@ def ExportDirectX(Config):
     
     Config.Whitespace -= 1
     Config.File.write("{}}} //End of Root Frame\n".format("  " * Config.Whitespace))
+    
+    if Config.Verbose:
+        print("Objects Exported: {}".format(Config.ExportList))
 
     if Config.ExportAnimation:
         if Config.IncludeFrameRate:
@@ -174,7 +184,7 @@ def ExportDirectX(Config):
 
 def GetObjectChildren(Parent):
     return [Object for Object in Parent.children
-            if Object.type in ("ARMATURE", "EMPTY", "MESH")]
+            if Object.type in {'ARMATURE', 'EMPTY', 'MESH'}]
 
 #Returns the vertex count of Mesh, counting each vertex for every face.
 def GetMeshVertexCount(Mesh):
@@ -189,7 +199,7 @@ def GetMaterialTexture(Material):
         #Create a list of Textures that have type "IMAGE"
         ImageTextures = [Material.texture_slots[TextureSlot].texture for TextureSlot in Material.texture_slots.keys() if Material.texture_slots[TextureSlot].texture.type == "IMAGE"]
         #Refine a new list with only image textures that have a file source
-        ImageFiles = [os.path.basename(Texture.image.filepath) for Texture in ImageTextures if Texture.image.source == "FILE"]
+        ImageFiles = [bpy.path.basename(Texture.image.filepath) for Texture in ImageTextures if getattr(Texture.image, "source", "") == "FILE"]
         if ImageFiles:
             return ImageFiles[0]
     return None
@@ -256,8 +266,11 @@ def WriteObjects(Config, ObjectList):
             WriteArmatureBones(Config, Object, ParentList)
             if Config.Verbose:
                 print("    Done")
-
+        
         ChildList = GetObjectChildren(Object)
+        if Config.ExportMode == 2: #Selected Objects Only
+            ChildList = [Child for Child in ChildList
+                         if Child in Config.context.selected_objects]
         if Config.Verbose:
             print("    Writing Children...")
         WriteObjects(Config, ChildList)
@@ -274,11 +287,11 @@ def WriteObjects(Config, ObjectList):
                     Object2 = Object.copy()
                     for Modifier in [Modifier for Modifier in Object2.modifiers if Modifier.type == "ARMATURE"]:
                         Object2.modifiers.remove(Modifier)
-                    Mesh = Object2.create_mesh(bpy.context.scene, True, "PREVIEW")
+                    Mesh = Object2.to_mesh(bpy.context.scene, True, "PREVIEW")
                 else:
-                    Mesh = Object.create_mesh(bpy.context.scene, True, "PREVIEW")
+                    Mesh = Object.to_mesh(bpy.context.scene, True, "PREVIEW")
             else:
-                Mesh = Object.create_mesh(bpy.context.scene, False, "PREVIEW")
+                Mesh = Object.to_mesh(bpy.context.scene, False, "PREVIEW")
             if Config.Verbose:
                 print("    Done")
                 print("    Writing Mesh...")
@@ -489,20 +502,20 @@ def WriteMaterial(Config, Material=None):
         Config.File.write("{}Material {} {{\n".format("  " * Config.Whitespace, LegalName(Material.name)))
         Config.Whitespace += 1
 
-        Diffuse = list(Material.diffuse_color)
+        Diffuse = list(Vector(Material.diffuse_color) * Material.diffuse_intensity)
         Diffuse.append(Material.alpha)
-        Specularity = Material.specular_intensity
-        Specular = list(Material.specular_color)
+        Specularity = 1000 * (Material.specular_hardness - 1.0) / (511.0 - 1.0) # Map Blender's range of 1 - 511 to 0 - 1000
+        Specular = list(Vector(Material.specular_color) * Material.specular_intensity)
 
         Config.File.write("{}{:9f};{:9f};{:9f};{:9f};;\n".format("  " * Config.Whitespace, Diffuse[0], Diffuse[1], Diffuse[2], Diffuse[3]))
-        Config.File.write("{}{:9f};\n".format("  " * Config.Whitespace, 2 * (1.0 - Specularity)))
+        Config.File.write("{} {:9f};\n".format("  " * Config.Whitespace, Specularity))
         Config.File.write("{}{:9f};{:9f};{:9f};;\n".format("  " * Config.Whitespace, Specular[0], Specular[1], Specular[2]))
     else:
         Config.File.write("{}Material Default_Material {{\n".format("  " * Config.Whitespace))
         Config.Whitespace += 1
-        Config.File.write("{} 1.000000; 1.000000; 1.000000; 1.000000;;\n".format("  " * Config.Whitespace))
-        Config.File.write("{} 1.500000;\n".format("  " * Config.Whitespace))
-        Config.File.write("{} 1.000000; 1.000000; 1.000000;;\n".format("  " * Config.Whitespace))
+        Config.File.write("{} 0.800000; 0.800000; 0.800000; 0.800000;;\n".format("  " * Config.Whitespace))
+        Config.File.write("{} 96.078431;\n".format("  " * Config.Whitespace)) # 1000 * (50 - 1) / (511 - 1)
+        Config.File.write("{} 0.500000; 0.500000; 0.500000;;\n".format("  " * Config.Whitespace))
     Config.File.write("{} 0.000000; 0.000000; 0.000000;;\n".format("  " * Config.Whitespace))
     if Config.ExportTextures:
         Texture = GetMaterialTexture(Material)
@@ -555,10 +568,14 @@ def WriteMeshSkinWeights(Config, Object, Mesh):
         UsedBones = set()
         #Maps bones to a list of vertices they affect
         VertexGroups = {}
-        
+        ObjectVertexGroups = {i: Group.name for (i, Group) in enumerate(Object.vertex_groups)}
         for Vertex in Mesh.vertices:
             #BoneInfluences contains the bones of the armature that affect the current vertex
-            BoneInfluences = [PoseBones[Object.vertex_groups[Group.group].name] for Group in Vertex.groups if Object.vertex_groups[Group.group].name in PoseBones]
+            BoneInfluences = [PoseBone for Group in Vertex.groups
+                              for PoseBone in (PoseBones.get(ObjectVertexGroups.get(Group.group, "")), )
+                              if PoseBone is not None
+                              ]
+
             if len(BoneInfluences) > MaxInfluences:
                 MaxInfluences = len(BoneInfluences)
             for Bone in BoneInfluences:
@@ -598,10 +615,12 @@ def WriteMeshSkinWeights(Config, Object, Mesh):
                     if Vertex in VertexIndexes:
                         Config.File.write("{}{}".format("  " * Config.Whitespace, Index))
 
-                        GroupIndexes = {Object.vertex_groups[Group.group].name: Index for Index, Group in enumerate(Mesh.vertices[Vertex].groups) if Object.vertex_groups[Group.group].name in PoseBones}
+                        GroupIndexes = {ObjectVertexGroups.get(Group.group): Index
+                                        for Index, Group in enumerate(Mesh.vertices[Vertex].groups)
+                                        if ObjectVertexGroups.get(Group.group, "") in PoseBones}
 
                         WeightTotal = 0.0
-                        for Weight in [Group.weight for Group in Mesh.vertices[Vertex].groups if Object.vertex_groups[Group.group].name in PoseBones]:
+                        for Weight in (Group.weight for Group in Mesh.vertices[Vertex].groups if ObjectVertexGroups.get(Group.group, "") in PoseBones):
                             WeightTotal += Weight
 
                         if WeightTotal:
@@ -1151,20 +1170,26 @@ def CloseFile(Config):
     if Config.Verbose:
         print("Done")
 
-CoordinateSystems = []
-CoordinateSystems.append(("1", "Left-Handed", ""))
-CoordinateSystems.append(("2", "Right-Handed", ""))
 
-AnimationModes = []
-AnimationModes.append(("0", "None", ""))
-AnimationModes.append(("1", "Keyframes Only", ""))
-AnimationModes.append(("2", "Full Animation", ""))
+CoordinateSystems = (
+    ("1", "Left-Handed", ""),
+    ("2", "Right-Handed", ""),
+    )
 
-ExportModes = []
-ExportModes.append(("1", "All Objects", ""))
-ExportModes.append(("2", "Selected Objects", ""))
 
-from bpy.props import *
+AnimationModes = (
+    ("0", "None", ""),
+    ("1", "Keyframes Only", ""),
+    ("2", "Full Animation", ""),
+    )
+
+ExportModes = (
+    ("1", "All Objects", ""),
+    ("2", "Selected Objects", ""),
+    )
+
+
+from bpy.props import StringProperty, EnumProperty, BoolProperty
 
 
 class DirectXExporter(bpy.types.Operator):
@@ -1176,27 +1201,62 @@ class DirectXExporter(bpy.types.Operator):
     filepath = StringProperty(subtype='FILE_PATH')
 
     #Coordinate System
-    CoordinateSystem = EnumProperty(name="System", description="Select a coordinate system to export to", items=CoordinateSystems, default="1")
+    CoordinateSystem = EnumProperty(
+        name="System",
+        description="Select a coordinate system to export to",
+        items=CoordinateSystems,
+        default="1")
 
     #General Options
-    RotateX = BoolProperty(name="Rotate X 90 Degrees", description="Rotate the entire scene 90 degrees around the X axis so Y is up.", default=True)
-    FlipNormals = BoolProperty(name="Flip Normals", description="", default=False)
-    ApplyModifiers = BoolProperty(name="Apply Modifiers", description="Apply object modifiers before export.", default=False)
-    IncludeFrameRate = BoolProperty(name="Include Frame Rate", description="Include the AnimTicksPerSecond template which is used by some engines to control animation speed.", default=False)
-    ExportTextures = BoolProperty(name="Export Textures", description="Reference external image files to be used by the model.", default=True)
-    ExportArmatures = BoolProperty(name="Export Armatures", description="Export the bones of any armatures to deform meshes.", default=False)
-    ExportAnimation = EnumProperty(name="Animations", description="Select the type of animations to export.  Only object and armature bone animations can be exported.  Full Animation exports every frame.", items=AnimationModes, default="0")
+    RotateX = BoolProperty(
+        name="Rotate X 90 Degrees",
+        description="Rotate the entire scene 90 degrees around the X axis so Y is up",
+        default=True)
+    FlipNormals = BoolProperty(
+        name="Flip Normals",
+        description="",
+        default=False)
+    ApplyModifiers = BoolProperty(
+        name="Apply Modifiers",
+        description="Apply object modifiers before export",
+        default=False)
+    IncludeFrameRate = BoolProperty(
+        name="Include Frame Rate",
+        description="Include the AnimTicksPerSecond template which is used by " \
+                    "some engines to control animation speed",
+        default=False)
+    ExportTextures = BoolProperty(
+        name="Export Textures",
+        description="Reference external image files to be used by the model",
+        default=True)
+    ExportArmatures = BoolProperty(
+        name="Export Armatures",
+        description="Export the bones of any armatures to deform meshes",
+        default=False)
+    ExportAnimation = EnumProperty(
+        name="Animations",
+        description="Select the type of animations to export. Only object " \
+                    "and armature bone animations can be exported. Full " \
+                    "Animation exports every frame",
+        items=AnimationModes,
+        default="0")
 
     #Export Mode
-    ExportMode = EnumProperty(name="Export", description="Select which objects to export.  Only Mesh, Empty, and Armature objects will be exported.", items=ExportModes, default="1")
+    ExportMode = EnumProperty(
+        name="Export",
+        description="Select which objects to export. Only Mesh, Empty, " \
+                    "and Armature objects will be exported",
+        items=ExportModes,
+        default="1")
 
-    Verbose = BoolProperty(name="Verbose", description="Run the exporter in debug mode.  Check the console for output.", default=False)
+    Verbose = BoolProperty(
+        name="Verbose",
+        description="Run the exporter in debug mode. Check the console for output",
+        default=False)
 
     def execute(self, context):
-        #Append .x if needed
-        FilePath = self.filepath
-        if not FilePath.lower().endswith(".x"):
-            FilePath += ".x"
+        #Append .x
+        FilePath = bpy.path.ensure_ext(self.filepath, ".x")
 
         Config = DirectXExporterSettings(context,
                                          FilePath,
@@ -1210,18 +1270,20 @@ class DirectXExporter(bpy.types.Operator):
                                          ExportAnimation=self.ExportAnimation,
                                          ExportMode=self.ExportMode,
                                          Verbose=self.Verbose)
+
         ExportDirectX(Config)
         return {"FINISHED"}
 
     def invoke(self, context, event):
+        if not self.filepath:
+            self.filepath = bpy.path.ensure_ext(bpy.data.filepath, ".x")
         WindowManager = context.window_manager
         WindowManager.fileselect_add(self)
         return {"RUNNING_MODAL"}
 
 
 def menu_func(self, context):
-    default_path = os.path.splitext(bpy.data.filepath)[0] + ".x"
-    self.layout.operator(DirectXExporter.bl_idname, text="DirectX (.x)").filepath = default_path
+    self.layout.operator(DirectXExporter.bl_idname, text="DirectX (.x)")
 
 
 def register():

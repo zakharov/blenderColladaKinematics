@@ -1,11 +1,35 @@
 K 25
 svn:wc:ra_dav:version-url
 V 68
-/svnroot/bf-extensions/!svn/ver/1673/trunk/py/scripts/addons/modules
+/svnroot/bf-extensions/!svn/ver/2315/trunk/py/scripts/addons/modules
 END
 add_utils.py
 K 25
 svn:wc:ra_dav:version-url
 V 81
 /svnroot/bf-extensions/!svn/ver/1586/trunk/py/scripts/addons/modules/add_utils.py
+END
+geometry_utils.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-extensions/!svn/ver/2257/trunk/py/scripts/addons/modules/geometry_utils.py
+END
+constants_utils.py
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-extensions/!svn/ver/1931/trunk/py/scripts/addons/modules/constants_utils.py
+END
+cursor_utils.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/bf-extensions/!svn/ver/1931/trunk/py/scripts/addons/modules/cursor_utils.py
+END
+curve_utils.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/bf-extensions/!svn/ver/2114/trunk/py/scripts/addons/modules/curve_utils.py
 END

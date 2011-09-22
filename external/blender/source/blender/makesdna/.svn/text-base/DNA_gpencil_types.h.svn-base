@@ -1,6 +1,4 @@
 /*
- * $Id$
- *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -119,6 +117,8 @@ typedef struct bGPDlayer {
 #define GP_LAYER_SELECT		(1<<5)
 	/* current frame for layer can't be changed */
 #define GP_LAYER_FRAMELOCK	(1<<6)
+	/* don't render xray (which is default) */
+#define GP_LAYER_NO_XRAY	(1<<7)
 
 
 /* Grease-Pencil Annotations - 'DataBlock' */

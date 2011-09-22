@@ -1,5 +1,5 @@
 /*
- * $Id: GHOST_SystemCarbon.cpp 35152 2011-02-25 11:28:33Z jesterking $
+ * $Id: GHOST_SystemCarbon.cpp 39828 2011-09-01 00:03:20Z dfelinto $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -33,7 +33,7 @@
 
 /**
 
- * $Id: GHOST_SystemCarbon.cpp 35152 2011-02-25 11:28:33Z jesterking $
+ * $Id: GHOST_SystemCarbon.cpp 39828 2011-09-01 00:03:20Z dfelinto $
  * Copyright (C) 2001 NaN Technologies B.V.
  * @author	Maarten Gribnau
  * @date	May 7, 2001
@@ -48,7 +48,9 @@
 #include "GHOST_EventButton.h"
 #include "GHOST_EventCursor.h"
 #include "GHOST_EventWheel.h"
+#ifdef WITH_INPUT_NDOF
 #include "GHOST_EventNDOF.h"
+#endif
 
 #include "GHOST_TimerManager.h"
 #include "GHOST_TimerTask.h"
@@ -1101,7 +1103,9 @@ OSStatus GHOST_SystemCarbon::sEventHandlerProc(EventHandlerCallRef handler, Even
 	GHOST_SystemCarbon* sys = (GHOST_SystemCarbon*) userData;
     OSStatus err = eventNotHandledErr;
 	GHOST_IWindow* window;
+#ifdef WITH_INPUT_NDOF
 	GHOST_TEventNDOFData data;
+#endif
 	UInt32 kind;
 	
     switch (::GetEventClass(event))
@@ -1122,6 +1126,7 @@ OSStatus GHOST_SystemCarbon::sEventHandlerProc(EventHandlerCallRef handler, Even
 			err = sys->handleKeyEvent(event);
 			break;
  		case kEventClassBlender :
+#ifdef WITH_INPUT_NDOF
 			window = sys->m_windowManager->getActiveWindow();
 			sys->m_ndofManager->GHOST_NDOFGetDatas(data);
 			kind = ::GetEventKind(event);
@@ -1137,6 +1142,7 @@ OSStatus GHOST_SystemCarbon::sEventHandlerProc(EventHandlerCallRef handler, Even
 //					printf("button\n");
 					break;
 			}
+#endif
 			err = noErr;
 			break;
 		default : 

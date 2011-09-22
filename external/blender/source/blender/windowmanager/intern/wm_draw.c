@@ -1,5 +1,5 @@
 /*
- * $Id: wm_draw.c 35179 2011-02-25 14:04:21Z jesterking $
+ * $Id: wm_draw.c 36563 2011-05-09 08:01:48Z blendix $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -814,13 +814,5 @@ void wm_draw_region_clear(wmWindow *win, ARegion *ar)
 		wm_flush_regions_down(win->screen, &ar->winrct);
 
 	win->screen->do_draw= 1;
-}
-
-static void wm_draw_region_modified(wmWindow *win, ARegion *ar)
-{
-	int drawmethod= wm_automatic_draw_method(win);
-
-	if(ELEM(drawmethod, USER_DRAW_OVERLAP, USER_DRAW_OVERLAP_FLIP))
-		ED_region_tag_redraw(ar);
 }
 

@@ -1,5 +1,5 @@
 /*
- * $Id: BLI_math_base.h 34970 2011-02-18 14:50:49Z jesterking $
+ * $Id: BLI_math_base.h 38126 2011-07-05 19:04:38Z blendix $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -38,6 +38,10 @@
 
 #include <math.h>
 #include "BLI_math_inline.h"
+
+#ifdef __sun__
+#include <ieeefp.h> /* for finite() */
+#endif
 
 #ifndef M_PI
 #define M_PI        3.14159265358979323846

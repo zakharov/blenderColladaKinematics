@@ -60,7 +60,7 @@ void project_from_camera(float target[2], float source[3], UvCameraInfo *uci)
 	mul_m4_v4(uci->caminv, pv4);
 
 	if(uci->do_pano) {
-		float angle= atan2f(pv4[0], -pv4[2]) / (M_PI * 2.0); /* angle around the camera */
+		float angle= atan2f(pv4[0], -pv4[2]) / ((float)M_PI * 2.0f); /* angle around the camera */
 		if (uci->do_persp==0) {
 			target[0]= angle; /* no correct method here, just map to  0-1 */
 			target[1]= pv4[1] / uci->camsize;
@@ -69,8 +69,8 @@ void project_from_camera(float target[2], float source[3], UvCameraInfo *uci)
 			float vec2d[2]; /* 2D position from the camera */
 			vec2d[0]= pv4[0];
 			vec2d[1]= pv4[2];
-			target[0]= angle * (M_PI / uci->camangle);
-			target[1]= pv4[1] / (len_v2(vec2d) * uci->camsize);
+			target[0]= angle * ((float)M_PI / uci->camangle);
+			target[1]= pv4[1] / (len_v2(vec2d) * (uci->camsize * 2.0f));
 		}
 	}
 	else {
@@ -109,23 +109,23 @@ void project_from_view(float target[2], float source[3], float persmat[4][4], fl
 
 	/* almost project_short */
 	mul_m4_v4(persmat, pv4);
-	if(fabs(pv4[3]) > 0.00001) { /* avoid division by zero */
-		target[0] = winx/2.0 + (winx/2.0) * pv4[0] / pv4[3];
-		target[1] = winy/2.0 + (winy/2.0) * pv4[1] / pv4[3];
+	if(fabsf(pv4[3]) > 0.00001f) { /* avoid division by zero */
+		target[0] = winx/2.0f + (winx/2.0f) * pv4[0] / pv4[3];
+		target[1] = winy/2.0f + (winy/2.0f) * pv4[1] / pv4[3];
 	}
 	else {
 		/* scaling is lost but give a valid result */
-		target[0] = winx/2.0 + (winx/2.0) * pv4[0];
-		target[1] = winy/2.0 + (winy/2.0) * pv4[1];
+		target[0] = winx/2.0f + (winx/2.0f) * pv4[0];
+		target[1] = winy/2.0f + (winy/2.0f) * pv4[1];
 	}
 
 	/* v3d->persmat seems to do this funky scaling */ 
 	if(winx > winy) {
-		y= (winx - winy)/2.0;
+		y= (winx - winy)/2.0f;
 		winy = winx;
 	}
 	else {
-		x= (winy - winx)/2.0;
+		x= (winy - winx)/2.0f;
 		winx = winy;
 	}
 
@@ -146,7 +146,11 @@ UvCameraInfo *project_camera_info(Object *ob, float (*rotmat)[4], float winx, fl
 	uci.camangle= lens_to_angle(camera->lens) / 2.0f;
 	uci.camsize= uci.do_persp ? tanf(uci.camangle) : camera->ortho_scale;
 
-	if (invert_m4_m4(uci.caminv, ob->obmat)) {
+	/* account for scaled cameras */
+	copy_m4_m4(uci.caminv, ob->obmat);
+	normalize_m4(uci.caminv);
+
+	if (invert_m4(uci.caminv)) {
 		UvCameraInfo *uci_pt;
 
 		/* normal projection */
@@ -169,8 +173,8 @@ UvCameraInfo *project_camera_info(Object *ob, float (*rotmat)[4], float winx, fl
 		}
 		
 		/* include 0.5f here to move the UVs into the center */
-		uci.shiftx = 0.5f - camera->shiftx;
-		uci.shifty = 0.5f - camera->shifty;
+		uci.shiftx = 0.5f - (camera->shiftx * uci.xasp);
+		uci.shifty = 0.5f - (camera->shifty * uci.yasp);
 		
 		uci_pt= MEM_mallocN(sizeof(UvCameraInfo), "UvCameraInfo");
 		*uci_pt= uci;

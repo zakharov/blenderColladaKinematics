@@ -1,5 +1,5 @@
 /*
- * $Id: bpy_props.h 35236 2011-02-27 20:10:08Z jesterking $
+ * $Id: bpy_props.h 37088 2011-06-02 08:29:16Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -30,7 +30,7 @@
 #ifndef BPY_PROPS_H
 #define BPY_PROPS_H
 
-PyObject *BPY_rna_props( void );
+PyObject *BPY_rna_props(void);
 
 #define PYRNA_STACK_ARRAY 32
 

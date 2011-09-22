@@ -1,15 +1,15 @@
 10
 
 dir
-1680
+2344
 https://svn.blender.org/svnroot/bf-extensions/trunk/py/scripts/addons/light_field_tools
 https://svn.blender.org/svnroot/bf-extensions
 
 
 
-2011-02-21T21:51:11.569371Z
-1638
-aurel
+2011-08-27T13:38:53.418496Z
+2279
+dingto
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-03-03T12:29:49.922297Z
-bb5399da5f9bca663d36a3f796b340f3
-2011-02-21T21:51:11.569371Z
-1638
-aurel
+2011-09-21T18:17:46.384291Z
+95aa4e8d2ebb1d0aeb90d5fb7bda0cbe
+2011-08-27T13:38:53.418496Z
+2279
+dingto
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-13530
+13515
 
 __init__.py
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-03-03T12:29:49.922297Z
-281d4578bd56ec1307e9e21440ffbebc
-2011-02-21T17:53:59.668410Z
-1634
-gsrb3d
+2011-09-21T18:17:46.384291Z
+d806f7b2fac4d376c323c0668c11452e
+2011-07-10T22:57:27.956301Z
+2116
+campbellbarton
 has-props
 
 
@@ -92,5 +92,5 @@ has-props
 
 
 
-3962
+3961
 

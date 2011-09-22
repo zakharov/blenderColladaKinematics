@@ -1,25 +1,43 @@
 K 25
 svn:wc:ra_dav:version-url
 V 86
-/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/editors/space_outliner
+/svnroot/bf-blender/!svn/ver/40390/trunk/blender/source/blender/editors/space_outliner
 END
-outliner.c
+outliner_draw.c
 K 25
 svn:wc:ra_dav:version-url
-V 97
-/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/editors/space_outliner/outliner.c
+V 102
+/svnroot/bf-blender/!svn/ver/40268/trunk/blender/source/blender/editors/space_outliner/outliner_draw.c
+END
+outliner_select.c
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/bf-blender/!svn/ver/40351/trunk/blender/source/blender/editors/space_outliner/outliner_select.c
+END
+outliner_tree.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/bf-blender/!svn/ver/40390/trunk/blender/source/blender/editors/space_outliner/outliner_tree.c
+END
+outliner_tools.c
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/bf-blender/!svn/ver/40351/trunk/blender/source/blender/editors/space_outliner/outliner_tools.c
 END
 outliner_ops.c
 K 25
 svn:wc:ra_dav:version-url
 V 101
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_outliner/outliner_ops.c
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/source/blender/editors/space_outliner/outliner_ops.c
 END
 outliner_intern.h
 K 25
 svn:wc:ra_dav:version-url
 V 104
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_outliner/outliner_intern.h
+/svnroot/bf-blender/!svn/ver/40066/trunk/blender/source/blender/editors/space_outliner/outliner_intern.h
 END
 SConscript
 K 25
@@ -27,15 +45,21 @@ svn:wc:ra_dav:version-url
 V 97
 /svnroot/bf-blender/!svn/ver/35028/trunk/blender/source/blender/editors/space_outliner/SConscript
 END
+outliner_edit.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/bf-blender/!svn/ver/40390/trunk/blender/source/blender/editors/space_outliner/outliner_edit.c
+END
 CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 101
-/svnroot/bf-blender/!svn/ver/35028/trunk/blender/source/blender/editors/space_outliner/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/39291/trunk/blender/source/blender/editors/space_outliner/CMakeLists.txt
 END
 space_outliner.c
 K 25
 svn:wc:ra_dav:version-url
 V 103
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_outliner/space_outliner.c
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/source/blender/editors/space_outliner/space_outliner.c
 END

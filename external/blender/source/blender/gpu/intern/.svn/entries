@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/gpu/intern
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-03-05T10:29:10.037531Z
-35362
-campbellbarton
+2011-09-22T05:36:52.865488Z
+40446
+mmikkelsen
 
 
 
@@ -32,11 +32,12 @@ file
 
 
 
-2011-03-03T12:27:16.070297Z
-7ac5ec58d1505c71fc857f5d1e408e9d
-2011-02-23T11:58:36.266586Z
-35107
-lmg
+2011-09-21T18:16:32.099922Z
+75c827c01ecccb00f8c2fc1f09051d71
+2011-09-09T11:55:38.207467Z
+40061
+ben2610
+has-props
 
 
 
@@ -57,8 +58,7 @@ lmg
 
 
 
-
-38950
+39910
 
 gpu_shader_vertex.glsl.c
 file
@@ -66,7 +66,7 @@ file
 
 
 
-2011-03-03T12:27:16.070297Z
+2011-09-21T18:16:32.099922Z
 0d86a82faea2910d4ef4a4ad1a308cde
 2011-02-27T20:25:53.780928Z
 35241
@@ -100,11 +100,11 @@ file
 
 
 
-2011-03-03T12:27:16.074297Z
-d0210d425dde6092b9a080bb4a437c7a
-2011-02-27T20:25:53.780928Z
-35241
-jesterking
+2011-09-21T18:16:32.103922Z
+e131b66c588edb447f7923aa457fea1c
+2011-09-12T09:47:28.430638Z
+40158
+nazgul
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-35345
+33141
 
 gpu_shader_material.glsl.c
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-03-03T12:27:16.082297Z
-52820793743617f75951a3ab1cec6f48
-2011-02-27T20:25:53.780928Z
-35241
-jesterking
+2011-09-21T18:16:32.111922Z
+4ccb63b885e2e0b6639e7ea0c08fa549
+2011-09-12T09:47:28.430638Z
+40158
+nazgul
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-157252
+161045
 
 gpu_codegen.h
 file
@@ -168,11 +168,11 @@ file
 
 
 
-2011-03-03T12:27:16.082297Z
-36b880fdbe1b1c75c39844493e251ce2
-2011-02-27T20:25:53.780928Z
-35241
-jesterking
+2011-09-21T18:16:32.111922Z
+8038ccb75357d45f5237b56fa1b7a9e0
+2011-09-09T11:55:38.207467Z
+40061
+ben2610
 has-props
 
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-2626
+4870
 
 gpu_buffers.c
 file
@@ -202,11 +202,11 @@ file
 
 
 
-2011-03-03T12:27:16.082297Z
-786105e75c05d8a34b3d021ed4afdc6a
-2011-02-27T20:25:53.780928Z
-35241
-jesterking
+2011-09-21T18:16:32.115922Z
+234e3e56e19df7449909e7aa58e1e69d
+2011-09-16T08:20:21.007205Z
+40255
+campbellbarton
 has-props
 
 
@@ -228,7 +228,7 @@ has-props
 
 
 
-45151
+44176
 
 gpu_draw.c
 file
@@ -236,11 +236,11 @@ file
 
 
 
-2011-03-03T21:53:55.528120Z
-88337bd39197365d5775a7aa1fa75265
-2011-03-03T17:58:06.695335Z
-35336
-campbellbarton
+2011-09-21T18:16:32.115922Z
+c2dea828b895096dff0526d33c924d16
+2011-09-19T19:55:59.989496Z
+40372
+dfelinto
 has-props
 
 
@@ -262,7 +262,7 @@ has-props
 
 
 
-57078
+58426
 
 gpu_material.c
 file
@@ -270,11 +270,11 @@ file
 
 
 
-2011-03-03T21:53:55.528120Z
-0aaa33627523d2da9e719d10b90a06d0
-2011-03-03T17:58:06.695335Z
-35336
-campbellbarton
+2011-09-22T08:02:12.428240Z
+ab5ed544ec88da8ca4a97a7f463083aa
+2011-09-22T05:36:52.865488Z
+40446
+mmikkelsen
 has-props
 
 
@@ -296,7 +296,7 @@ has-props
 
 
 
-48351
+55453
 
 gpu_extensions.c
 file
@@ -304,10 +304,10 @@ file
 
 
 
-2011-03-05T14:58:42.892169Z
-86275182482bb1d73ec2a2073f4ef40d
-2011-03-05T10:29:10.037531Z
-35362
+2011-09-21T18:16:32.119922Z
+36f1d1cedb8fc44bb57c2cf872af21e9
+2011-09-16T06:47:01.874393Z
+40252
 campbellbarton
 has-props
 
@@ -330,7 +330,7 @@ has-props
 
 
 
-30618
+31053
 
 gpu_shader_vertex.glsl
 file
@@ -338,12 +338,12 @@ file
 
 
 
-2011-03-03T12:27:16.086297Z
+2011-09-21T18:16:32.119922Z
 4b67faf63fed90e4030d374b575c3e3d
-2011-02-14T18:18:46.440581Z
-34852
-lmg
-
+2011-05-09T08:15:38.241902Z
+36564
+campbellbarton
+has-props
 
 
 

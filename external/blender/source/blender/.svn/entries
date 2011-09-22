@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-03-05T14:03:29.184090Z
-35365
-ton
+2011-09-22T05:36:52.865488Z
+40446
+mmikkelsen
 has-props
 
 
@@ -53,11 +53,11 @@ file
 
 
 
-2011-03-03T12:28:39.890297Z
-15b48b82eb4e8de69aaabbce335c4927
-2010-08-03T11:25:34.806551Z
-31006
-campbellbarton
+2011-09-21T18:16:59.324057Z
+13996cae43ff5298ad3cc0499567ed0d
+2011-05-11T19:29:23.288320Z
+36620
+blendix
 has-props
 
 
@@ -79,7 +79,7 @@ has-props
 
 
 
-1080
+1041
 
 blenpluginapi
 dir
@@ -117,20 +117,17 @@ dir
 editors
 dir
 
-readblenfile
-dir
-
 CMakeLists.txt
 file
 
 
 
 
-2011-03-03T12:28:39.890297Z
-1b2eaf6bfe44e2af0732d4e25a065ed4
-2011-02-22T06:23:07.381111Z
-35054
-campbellbarton
+2011-09-21T18:16:59.324057Z
+0e43c1c01924f4e8c6c6361010916cfa
+2011-08-30T09:15:55.930526Z
+39792
+nexyon
 has-props
 
 
@@ -152,5 +149,5 @@ has-props
 
 
 
-5118
+5135
 

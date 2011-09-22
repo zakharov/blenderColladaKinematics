@@ -20,7 +20,6 @@ import bpy
 from bpy.props import *
 import os
 import random
-import mathutils
 from mathutils import *
 
 
@@ -39,10 +38,8 @@ def create_cutter(context, crack_type, scale, roughness):
                 False, False, False, False))
 
         for v in context.scene.objects.active.data.vertices:
-            v.co[0] += 1
-            v.co[0] *= scale
-            v.co[1] *= scale
-            v.co[2] *= scale
+            v.co[0] += 1.0
+            v.co *= scale
 
         bpy.ops.object.editmode_toggle()
         bpy.ops.mesh.faces_shade_smooth()
@@ -69,9 +66,6 @@ def create_cutter(context, crack_type, scale, roughness):
                 False, False, False, False,
                 False, False, False, False,
                 False, False, False, False,
-                False, False, False, False,
-                False, False, False, False,
-                False, False, False, False,
                 False, False, False, False))
 
         bpy.ops.object.editmode_toggle()
@@ -80,10 +74,8 @@ def create_cutter(context, crack_type, scale, roughness):
 
         bpy.ops.object.editmode_toggle()
         for v in context.scene.objects.active.data.vertices:
-            v.co[0] += 1
-            v.co[0] *= scale
-            v.co[1] *= scale
-            v.co[2] *= scale
+            v.co[0] += 1.0
+            v.co *= scale
 
         if crack_type == 'SPHERE_ROUGH':
             for v in context.scene.objects.active.data.vertices:
@@ -119,7 +111,6 @@ def getsizefrommesh(ob):
 
 def getIslands(shard):
     sm = shard.data
-    islands = []
     vgroups = []
     fgroups = []
 
@@ -161,7 +152,7 @@ def getIslands(shard):
             bpy.ops.object.select_all(action='DESELECT')
             bpy.context.scene.objects.active = shard
             shard.select = True
-            bpy.ops.object.duplicate(linked=False, mode=1)
+            bpy.ops.object.duplicate(linked=False, mode='DUMMY')
             a = bpy.context.scene.objects.active
             sm = a.data
             print (a.name)
@@ -210,11 +201,11 @@ def boolop(ob, cutter, op):
     a.modifiers['Boolean'].object = cutter
     a.modifiers['Boolean'].operation = op
 
-    nmesh = a.create_mesh(sce, apply_modifiers=True, settings='PREVIEW')
+    nmesh = a.to_mesh(sce, apply_modifiers=True, settings='PREVIEW')
 
     if len(nmesh.vertices) > 0:
         a.modifiers.remove(a.modifiers['Boolean'])
-        bpy.ops.object.duplicate(linked=False, mode=1)
+        bpy.ops.object.duplicate(linked=False, mode='DUMMY')
 
         new_shard = sce.objects.active
         new_shard.data = nmesh
@@ -231,8 +222,11 @@ def boolop(ob, cutter, op):
             fault = 1
             #print ('boolop: sizeerror')
 
-        elif min(nmesh.edge_face_count) < 2:    # Manifold check
-            fault = 1
+         # This checks whether returned shards are non-manifold.
+         # Problem is, if org mesh is non-manifold, it will always fail (e.g. with Suzanne).
+         # And disabling it does not seem to cause any problem...
+#        elif min(mesh_utils.edge_face_count(nmesh)) < 2:    # Manifold check
+#            fault = 1
 
         if not fault:
             new_shards = getIslands(new_shard)
@@ -366,11 +360,11 @@ class FractureSimple(bpy.types.Operator):
 
     hierarchy = BoolProperty(name="Generate hierarchy",
         description="Hierarchy is usefull for simulation of objects" \
-            " breaking in motion.",
+                    " breaking in motion",
         default=False)
 
     nshards = IntProperty(name="Number of shards",
-        description="Number of shards the object should be split into.",
+        description="Number of shards the object should be split into",
         min=2,
         default=5)
 
@@ -407,25 +401,31 @@ class FractureGroup(bpy.types.Operator):
     bl_options = {'REGISTER', 'UNDO'}
 
     exe = BoolProperty(name="Execute",
-        description="If it shall actually run, for optimal performance...",
-        default=False)
+                       description="If it shall actually run, for optimal performance...",
+                       default=False)
 
-    e = []
-    for i, g in enumerate(bpy.data.groups):
-        e.append((g.name, g.name, ''))
+    group = StringProperty(name="Group",
+                           description="Specify the group used for fracturing")
 
-    group = EnumProperty(name='Group (hit F8 to refresh list)',
-        items=e,
-        description='Specify the group used for fracturing')
+#    e = []
+#    for i, g in enumerate(bpy.data.groups):
+#        e.append((g.name, g.name, ''))
+#    group = EnumProperty(name='Group (hit F8 to refresh list)',
+#                         items=e,
+#                         description='Specify the group used for fracturing')
 
     def execute(self, context):
         #getIslands(context.object)
 
-        if self.exe:
+        if self.exe and self.group:
             fracture_group(context, self.group)
 
         return {'FINISHED'}
 
+    def draw(self, context):
+        layout = self.layout
+        layout.prop(self, "exe")
+        layout.prop_search(self, "group", bpy.data, "groups")
 
 #####################################################################
 # Import Functions

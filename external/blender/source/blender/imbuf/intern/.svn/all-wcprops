@@ -1,25 +1,31 @@
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/imbuf/intern
+/svnroot/bf-blender/!svn/ver/40443/trunk/blender/source/blender/imbuf/intern
+END
+indexer.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-blender/!svn/ver/40255/trunk/blender/source/blender/imbuf/intern/indexer.c
 END
 thumbs.c
 K 25
 svn:wc:ra_dav:version-url
 V 85
-/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/imbuf/intern/thumbs.c
+/svnroot/bf-blender/!svn/ver/39749/trunk/blender/source/blender/imbuf/intern/thumbs.c
 END
 radiance_hdr.c
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/intern/radiance_hdr.c
+/svnroot/bf-blender/!svn/ver/40340/trunk/blender/source/blender/imbuf/intern/radiance_hdr.c
 END
 iris.c
 K 25
 svn:wc:ra_dav:version-url
 V 83
-/svnroot/bf-blender/!svn/ver/35336/trunk/blender/source/blender/imbuf/intern/iris.c
+/svnroot/bf-blender/!svn/ver/40252/trunk/blender/source/blender/imbuf/intern/iris.c
 END
 thumbs_blend.c
 K 25
@@ -49,7 +55,7 @@ util.c
 K 25
 svn:wc:ra_dav:version-url
 V 83
-/svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/intern/util.c
+/svnroot/bf-blender/!svn/ver/39749/trunk/blender/source/blender/imbuf/intern/util.c
 END
 readimage.c
 K 25
@@ -57,17 +63,17 @@ svn:wc:ra_dav:version-url
 V 88
 /svnroot/bf-blender/!svn/ver/35336/trunk/blender/source/blender/imbuf/intern/readimage.c
 END
-scaling.c
-K 25
-svn:wc:ra_dav:version-url
-V 86
-/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/imbuf/intern/scaling.c
-END
 IMB_anim.h
 K 25
 svn:wc:ra_dav:version-url
 V 87
-/svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/intern/IMB_anim.h
+/svnroot/bf-blender/!svn/ver/40341/trunk/blender/source/blender/imbuf/intern/IMB_anim.h
+END
+scaling.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-blender/!svn/ver/36895/trunk/blender/source/blender/imbuf/intern/scaling.c
 END
 IMB_filter.h
 K 25
@@ -79,67 +85,73 @@ anim_movie.c
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/35336/trunk/blender/source/blender/imbuf/intern/anim_movie.c
+/svnroot/bf-blender/!svn/ver/40419/trunk/blender/source/blender/imbuf/intern/anim_movie.c
 END
 png.c
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/svnroot/bf-blender/!svn/ver/35336/trunk/blender/source/blender/imbuf/intern/png.c
-END
-md5.c
-K 25
-svn:wc:ra_dav:version-url
-V 82
-/svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/intern/md5.c
+/svnroot/bf-blender/!svn/ver/36777/trunk/blender/source/blender/imbuf/intern/png.c
 END
 jpeg.c
 K 25
 svn:wc:ra_dav:version-url
 V 83
-/svnroot/bf-blender/!svn/ver/35336/trunk/blender/source/blender/imbuf/intern/jpeg.c
+/svnroot/bf-blender/!svn/ver/40443/trunk/blender/source/blender/imbuf/intern/jpeg.c
+END
+md5.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/bf-blender/!svn/ver/40342/trunk/blender/source/blender/imbuf/intern/md5.c
+END
+indexer_dv.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/bf-blender/!svn/ver/39833/trunk/blender/source/blender/imbuf/intern/indexer_dv.c
 END
 md5.h
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/intern/md5.h
+/svnroot/bf-blender/!svn/ver/36815/trunk/blender/source/blender/imbuf/intern/md5.h
 END
 jp2.c
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/intern/jp2.c
+/svnroot/bf-blender/!svn/ver/40340/trunk/blender/source/blender/imbuf/intern/jp2.c
 END
 divers.c
 K 25
 svn:wc:ra_dav:version-url
 V 85
-/svnroot/bf-blender/!svn/ver/35336/trunk/blender/source/blender/imbuf/intern/divers.c
+/svnroot/bf-blender/!svn/ver/37783/trunk/blender/source/blender/imbuf/intern/divers.c
 END
 rectop.c
 K 25
 svn:wc:ra_dav:version-url
 V 85
-/svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/intern/rectop.c
+/svnroot/bf-blender/!svn/ver/39814/trunk/blender/source/blender/imbuf/intern/rectop.c
 END
 writeimage.c
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/intern/writeimage.c
-END
-rotate.c
-K 25
-svn:wc:ra_dav:version-url
-V 85
-/svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/intern/rotate.c
+/svnroot/bf-blender/!svn/ver/39810/trunk/blender/source/blender/imbuf/intern/writeimage.c
 END
 targa.c
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/imbuf/intern/targa.c
+/svnroot/bf-blender/!svn/ver/37158/trunk/blender/source/blender/imbuf/intern/targa.c
+END
+rotate.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/bf-blender/!svn/ver/35586/trunk/blender/source/blender/imbuf/intern/rotate.c
 END
 cache.c
 K 25
@@ -151,13 +163,13 @@ imbuf.h
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/intern/imbuf.h
+/svnroot/bf-blender/!svn/ver/40341/trunk/blender/source/blender/imbuf/intern/imbuf.h
 END
 allocimbuf.c
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/35336/trunk/blender/source/blender/imbuf/intern/allocimbuf.c
+/svnroot/bf-blender/!svn/ver/39749/trunk/blender/source/blender/imbuf/intern/allocimbuf.c
 END
 bmp.c
 K 25
@@ -177,17 +189,17 @@ svn:wc:ra_dav:version-url
 V 87
 /svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/intern/metadata.c
 END
-imageprocess.c
-K 25
-svn:wc:ra_dav:version-url
-V 91
-/svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/intern/imageprocess.c
-END
 filetype.c
 K 25
 svn:wc:ra_dav:version-url
 V 87
 /svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/imbuf/intern/filetype.c
+END
+imageprocess.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/36980/trunk/blender/source/blender/imbuf/intern/imageprocess.c
 END
 module.c
 K 25
@@ -199,11 +211,17 @@ filter.c
 K 25
 svn:wc:ra_dav:version-url
 V 85
-/svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/intern/filter.c
+/svnroot/bf-blender/!svn/ver/40252/trunk/blender/source/blender/imbuf/intern/filter.c
 END
 tiff.c
 K 25
 svn:wc:ra_dav:version-url
 V 83
-/svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/intern/tiff.c
+/svnroot/bf-blender/!svn/ver/40340/trunk/blender/source/blender/imbuf/intern/tiff.c
+END
+IMB_indexer.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/40340/trunk/blender/source/blender/imbuf/intern/IMB_indexer.h
 END

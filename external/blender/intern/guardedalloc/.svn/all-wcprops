@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 68
-/svnroot/bf-blender/!svn/ver/35336/trunk/blender/intern/guardedalloc
+/svnroot/bf-blender/!svn/ver/40419/trunk/blender/intern/guardedalloc
 END
 MEM_sys_types.h
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svnroot/bf-blender/!svn/ver/35025/trunk/blender/intern/guardedalloc/MEM_sys_types.h
+/svnroot/bf-blender/!svn/ver/40419/trunk/blender/intern/guardedalloc/MEM_sys_types.h
 END
 SConscript
 K 25
@@ -19,13 +19,13 @@ MEM_guardedalloc.h
 K 25
 svn:wc:ra_dav:version-url
 V 87
-/svnroot/bf-blender/!svn/ver/35078/trunk/blender/intern/guardedalloc/MEM_guardedalloc.h
+/svnroot/bf-blender/!svn/ver/35417/trunk/blender/intern/guardedalloc/MEM_guardedalloc.h
 END
 CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 83
-/svnroot/bf-blender/!svn/ver/35027/trunk/blender/intern/guardedalloc/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/37030/trunk/blender/intern/guardedalloc/CMakeLists.txt
 END
 mmap_win.h
 K 25

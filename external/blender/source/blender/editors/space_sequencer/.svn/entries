@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/editors/space_sequencer
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-20T08:48:48.910969Z
+40390
+campbellbarton
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-03-03T12:27:46.338297Z
-671c44db399006c4ff92f10254ce3a2b
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:43.999981Z
+e1c42227167a60bf5ae02520a4b00f62
+2011-08-28T14:46:03.431450Z
+39749
+schlaile
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-6290
+6703
 
 sequencer_edit.c
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-03-03T12:27:46.346297Z
-aa0f885c5bbe148947824a6b3cdde51c
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:44.003981Z
+19a9b220645a9f5a2cf2b946bffe29dd
+2011-09-20T08:48:48.910969Z
+40390
+campbellbarton
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-69796
+76069
 
 sequencer_add.c
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-03-03T12:27:46.346297Z
-3315f81ecf3e49fcd38e78bbe88c6823
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:44.015981Z
+ae518c2aa623780b3a89b6ff32bd82b3
+2011-09-19T12:26:20.076486Z
+40351
+mont29
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-20957
+22058
 
 space_sequencer.c
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-03-03T12:27:46.346297Z
-19dfcb0ff8cd729a8520cce5f39a011b
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:44.015981Z
+64ddb46453bb9cfe3dc98ef7be0948f1
+2011-09-19T13:12:54.963349Z
+40353
+nazgul
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-15961
+16635
 
 SConscript
 file
@@ -168,11 +168,11 @@ file
 
 
 
-2011-03-03T12:27:46.346297Z
-23382a14348a9d4ea78be944c40323f5
-2011-02-21T12:35:04.852834Z
-35028
-jesterking
+2011-09-21T18:16:44.015981Z
+6e30a4d0b066a9673a460e5064ea293a
+2011-08-28T14:46:03.431450Z
+39749
+schlaile
 has-props
 
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-418
+540
 
 sequencer_scopes.c
 file
@@ -202,11 +202,11 @@ file
 
 
 
-2011-03-03T12:27:46.346297Z
-03089f27bf499a845db1db95b6d87f0e
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:44.015981Z
+7ed3e5fbc3171ce03f9537a7ff2eeb12
+2011-04-03T10:04:16.296493Z
+35971
+campbellbarton
 has-props
 
 
@@ -228,7 +228,7 @@ has-props
 
 
 
-15770
+15851
 
 sequencer_draw.c
 file
@@ -236,11 +236,11 @@ file
 
 
 
-2011-03-03T12:27:46.346297Z
-5788770028c73a9f28ee9f845a280835
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:44.019981Z
+31d1f306ced9aa94b744800ab176d58a
+2011-09-11T06:41:09.253185Z
+40114
+campbellbarton
 has-props
 
 
@@ -262,7 +262,7 @@ has-props
 
 
 
-30571
+32290
 
 sequencer_buttons.c
 file
@@ -270,7 +270,7 @@ file
 
 
 
-2011-03-03T12:27:46.346297Z
+2011-09-21T18:16:44.019981Z
 82c16944ffc213eaa820dbecee84dca8
 2011-02-27T20:29:51.598877Z
 35242
@@ -304,11 +304,11 @@ file
 
 
 
-2011-03-03T12:27:46.350297Z
-0e03f4b137a3967142a74fd8c0fc1dcb
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:44.019981Z
+92dd0ef8ff80448af7ed04768f0a6015
+2011-09-19T12:26:20.076486Z
+40351
+mont29
 has-props
 
 
@@ -330,7 +330,7 @@ has-props
 
 
 
-22391
+22221
 
 sequencer_ops.c
 file
@@ -338,11 +338,11 @@ file
 
 
 
-2011-03-03T12:27:46.350297Z
-576029bbbf6953e6e0da68b349287a00
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:44.019981Z
+e78959d2ccec47d2cee9ee840a7bdcf3
+2011-08-28T14:46:03.431450Z
+39749
+schlaile
 has-props
 
 
@@ -364,7 +364,7 @@ has-props
 
 
 
-12361
+12451
 
 CMakeLists.txt
 file
@@ -372,11 +372,11 @@ file
 
 
 
-2011-03-03T12:27:46.350297Z
-b71538415727f6eb584d6331969ea1c0
-2011-02-21T12:35:04.852834Z
-35028
-jesterking
+2011-09-21T18:16:44.019981Z
+9a5e5580a1d502952a4eed36d3ecaaa4
+2011-07-17T09:11:13.810557Z
+38443
+campbellbarton
 has-props
 
 
@@ -398,5 +398,5 @@ has-props
 
 
 
-1333
+1467
 

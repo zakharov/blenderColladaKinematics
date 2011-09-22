@@ -1,5 +1,5 @@
 /*
- * $Id: text_intern.h 35242 2011-02-27 20:29:51Z jesterking $
+ * $Id: text_intern.h 39868 2011-09-02 09:39:21Z nazgul $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -55,6 +55,7 @@ int text_font_width(struct SpaceText *st, const char *str);
 void text_update_line_edited(struct TextLine *line);
 void text_update_edited(struct Text *text);
 void text_update_character_width(struct SpaceText *st);
+void text_scroll_to_cursor(struct SpaceText *st, struct ScrArea *sa);
 void text_update_cursor_moved(struct bContext *C);
 
 	/* TXT_OFFSET used to be 35 when the scrollbar was on the left... */

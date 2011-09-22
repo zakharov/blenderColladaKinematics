@@ -1,15 +1,15 @@
 10
 
 dir
-1680
+2344
 https://svn.blender.org/svnroot/bf-extensions/trunk/py/scripts/addons/object_fracture
 https://svn.blender.org/svnroot/bf-extensions
 
 
 
-2011-02-11T01:29:13.146577Z
-1569
-campbellbarton
+2011-09-19T15:08:06.568619Z
+2334
+mont29
 
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2011-03-03T12:29:53.682297Z
+2011-09-21T18:17:47.696297Z
 0bd9d91a14af57f82472e3d1907935aa
 2010-08-19T17:33:42.133009Z
 927
@@ -66,11 +66,11 @@ file
 
 
 
-2011-03-03T12:29:53.682297Z
-9bb697e5acd9cd860c62375f084c2d1a
-2010-09-19T14:26:41.465750Z
-1067
-campbellbarton
+2011-09-21T18:17:47.696297Z
+1b164684846854b7d15815a18726bf4c
+2011-09-19T15:08:06.568619Z
+2334
+mont29
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-14432
+14759
 
 __init__.py
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-03-03T12:29:53.686297Z
-eaa67aef2bdbf223c9dece78e2aaaaec
-2011-02-11T01:29:13.146577Z
-1569
-campbellbarton
+2011-09-21T18:17:47.700297Z
+1c2f1dc470d6e15a985bb426d35f9139
+2011-04-15T12:15:02.508604Z
+1838
+mont29
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-2533
+2514
 
 data.blend
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-03-03T12:29:53.686297Z
-f2d93f5f3124883b2c98e1290423a188
-2010-04-13T12:01:21.136621Z
-562
-pontiac
+2011-09-21T18:17:47.700297Z
+8287ca98094580f656eb6ac01e89bc1c
+2011-04-15T11:50:16.486892Z
+1837
+michaelw
 has-props
 
 
@@ -160,5 +160,5 @@ has-props
 
 
 
-232271
+253684
 

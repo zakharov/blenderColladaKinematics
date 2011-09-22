@@ -88,7 +88,7 @@ static void rna_GameProperty_type_set(PointerRNA *ptr, int value)
 static void rna_GameProperty_name_set(PointerRNA *ptr, const char *value)
 {
 	bProperty *prop= (bProperty*)(ptr->data);
-	BLI_strncpy(prop->name, value, sizeof(prop->name));
+	BLI_strncpy_utf8(prop->name, value, sizeof(prop->name));
 	unique_property(NULL, prop, 1);
 }
 
@@ -101,11 +101,11 @@ void RNA_def_gameproperty(BlenderRNA *brna)
 	PropertyRNA *prop;
 
 	static EnumPropertyItem gameproperty_type_items[] ={
-		{GPROP_BOOL, "BOOL", 0, "Boolean", ""},
-		{GPROP_INT, "INT", 0, "Integer", ""},
-		{GPROP_FLOAT, "FLOAT", 0, "Float", ""},
-		{GPROP_STRING, "STRING", 0, "String", ""},
-		{GPROP_TIME, "TIMER", 0, "Timer", ""},
+		{GPROP_BOOL, "BOOL", 0, "Boolean", "Boolean Property"},
+		{GPROP_INT, "INT", 0, "Integer", "Integer Property"},
+		{GPROP_FLOAT, "FLOAT", 0, "Float", "Floating-Point Property"},
+		{GPROP_STRING, "STRING", 0, "String", "String Property"},
+		{GPROP_TIME, "TIMER", 0, "Timer", "Timer Property"},
 		{0, NULL, 0, NULL, NULL}};
 
 	/* Base Struct for GameProperty */

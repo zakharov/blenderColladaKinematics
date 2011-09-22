@@ -1,5 +1,5 @@
 /*
-* $Id: MOD_cast.c 35362 2011-03-05 10:29:10Z campbellbarton $
+* $Id: MOD_cast.c 39342 2011-08-12 18:11:22Z blendix $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -177,10 +177,7 @@ static void sphere_do(
 
 	/* 3) if we were given a vertex group name,
 	* only those vertices should be affected */
-	defgrp_index = defgroup_name_index(ob, cmd->defgrp_name);
-
-	if ((ob->type == OB_MESH) && dm && defgrp_index >= 0)
-		dvert = dm->getVertDataArray(dm, CD_MDEFORMVERT);
+	modifier_get_vgroup(ob, dm, cmd->defgrp_name, &dvert, &defgrp_index);
 
 	if(flag & MOD_CAST_SIZE_FROM_RADIUS) {
 		len = cmd->radius;
@@ -335,10 +332,7 @@ static void cuboid_do(
 
 	/* 3) if we were given a vertex group name,
 	* only those vertices should be affected */
-	defgrp_index = defgroup_name_index(ob, cmd->defgrp_name);
-
-	if ((ob->type == OB_MESH) && dm && defgrp_index >= 0)
-		dvert = dm->getVertDataArray(dm, CD_MDEFORMVERT);
+	modifier_get_vgroup(ob, dm, cmd->defgrp_name, &dvert, &defgrp_index);
 
 	if (ctrl_ob) {
 		if(flag & MOD_CAST_USE_OB_TRANSFORM) {
@@ -427,9 +421,9 @@ static void cuboid_do(
 			}
 
 			if (has_radius) {
-				if (fabs(tmp_co[0]) > cmd->radius ||
-								fabs(tmp_co[1]) > cmd->radius ||
-								fabs(tmp_co[2]) > cmd->radius) continue;
+				if (fabsf(tmp_co[0]) > cmd->radius ||
+								fabsf(tmp_co[1]) > cmd->radius ||
+								fabsf(tmp_co[2]) > cmd->radius) continue;
 			}
 
 			for (j = 0; j < dvert[i].totweight; ++j) {
@@ -479,7 +473,7 @@ static void cuboid_do(
 
 			/* ok, now we know which coordinate of the vertex to use */
 
-			if (fabs(tmp_co[coord]) < FLT_EPSILON) /* avoid division by zero */
+			if (fabsf(tmp_co[coord]) < FLT_EPSILON) /* avoid division by zero */
 				continue;
 
 			/* finally, this is the factor we wanted, to project the vertex
@@ -523,9 +517,9 @@ static void cuboid_do(
 		}
 
 		if (has_radius) {
-			if (fabs(tmp_co[0]) > cmd->radius ||
-						 fabs(tmp_co[1]) > cmd->radius ||
-						 fabs(tmp_co[2]) > cmd->radius) continue;
+			if (fabsf(tmp_co[0]) > cmd->radius ||
+						 fabsf(tmp_co[1]) > cmd->radius ||
+						 fabsf(tmp_co[2]) > cmd->radius) continue;
 		}
 
 		octant = 0;
@@ -550,7 +544,7 @@ static void cuboid_do(
 			coord = 2;
 		}
 
-		if (fabs(tmp_co[coord]) < FLT_EPSILON)
+		if (fabsf(tmp_co[coord]) < FLT_EPSILON)
 			continue;
 
 		fbb = apex[coord] / tmp_co[coord];
@@ -638,4 +632,5 @@ ModifierTypeInfo modifierType_Cast = {
 	/* dependsOnNormals */	NULL,
 	/* foreachObjectLink */ foreachObjectLink,
 	/* foreachIDLink */     NULL,
+	/* foreachTexLink */    NULL,
 };

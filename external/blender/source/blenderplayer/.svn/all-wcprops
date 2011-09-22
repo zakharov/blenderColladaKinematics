@@ -1,11 +1,11 @@
 K 25
 svn:wc:ra_dav:version-url
 V 69
-/svnroot/bf-blender/!svn/ver/35361/trunk/blender/source/blenderplayer
+/svnroot/bf-blender/!svn/ver/40431/trunk/blender/source/blenderplayer
 END
 CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svnroot/bf-blender/!svn/ver/35361/trunk/blender/source/blenderplayer/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/40117/trunk/blender/source/blenderplayer/CMakeLists.txt
 END

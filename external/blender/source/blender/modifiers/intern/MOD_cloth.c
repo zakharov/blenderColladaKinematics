@@ -1,5 +1,5 @@
 /*
-* $Id: MOD_cloth.c 35362 2011-03-05 10:29:10Z campbellbarton $
+* $Id: MOD_cloth.c 39342 2011-08-12 18:11:22Z blendix $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -190,6 +190,19 @@ static void freeData(ModifierData *md)
 	}
 }
 
+static void foreachIDLink(ModifierData *md, Object *ob,
+					   IDWalkFunc walk, void *userData)
+{
+	ClothModifierData *clmd = (ClothModifierData*) md;
+
+	if(clmd->coll_parms) {
+		walk(userData, ob, (ID **)&clmd->coll_parms->group);
+	}
+
+	if(clmd->sim_parms && clmd->sim_parms->effector_weights) {
+		walk(userData, ob, (ID **)&clmd->sim_parms->effector_weights->group);
+	}
+}
 
 ModifierTypeInfo modifierType_Cloth = {
 	/* name */              "Cloth",
@@ -215,5 +228,6 @@ ModifierTypeInfo modifierType_Cloth = {
 	/* dependsOnTime */     dependsOnTime,
 	/* dependsOnNormals */	NULL,
 	/* foreachObjectLink */ NULL,
-	/* foreachIDLink */     NULL,
+	/* foreachIDLink */     foreachIDLink,
+	/* foreachTexLink */    NULL,
 };

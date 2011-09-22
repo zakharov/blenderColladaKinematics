@@ -17,7 +17,7 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with this program; if not, write to the Free Software Foundation,
-#  Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+#  Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 #
 # ##### END GPL LICENSE BLOCK #####
 
@@ -25,8 +25,8 @@ bl_info = {
     "name": "3D Navigation",
     "author": "Demohero, uriel",
     "version": (1, 2),
-    "blender": (2, 5, 4),
-    "api": 32411,
+    "blender": (2, 5, 7),
+    "api": 35853,
     "location": "View3D > Tool Shelf > 3D Nav",
     "description": "Navigate the Camera & 3D View from the Toolshelf",
     "warning": "",
@@ -51,12 +51,9 @@ class VIEW3D_PT_3dnavigationPanel(bpy.types.Panel):
 
 # Triple boutons        
         col = layout.column(align=True)
-        row = col.row()
-        row.operator("view3d.viewnumpad", text="View Camera", icon='CAMERA_DATA').type='CAMERA'
-        row = col.row()
-        row.operator("view3d.localview", text="View Global/Local")
-        row = col.row()
-        row.operator("view3d.view_persportho", text="View Persp/Ortho")  
+        col.operator("view3d.viewnumpad", text="View Camera", icon='CAMERA_DATA').type='CAMERA'
+        col.operator("view3d.localview", text="View Global/Local")
+        col.operator("view3d.view_persportho", text="View Persp/Ortho")  
 
 # group of 6 buttons
         col = layout.column(align=True)
@@ -70,21 +67,21 @@ class VIEW3D_PT_3dnavigationPanel(bpy.types.Panel):
         row = col.row()
         row.operator("view3d.viewnumpad", text="Top").type='TOP'
         row.operator("view3d.viewnumpad", text="Bottom").type='BOTTOM'
-        row = col.row()
 
 # group of 2 buttons
         col = layout.column(align=True)
         col.label(text="View to Object:")
         col.prop(view, "lock_object", text="")
-        row = col.row()
-        row.operator("view3d.view_selected", text="View to Selected") 
+        col.operator("view3d.view_selected", text="View to Selected") 
+        
         col = layout.column(align=True)
         col.label(text="Cursor:")
+        
         row = col.row()
         row.operator("view3d.snap_cursor_to_center", text="Center")
         row.operator("view3d.view_center_cursor", text="View")
-        row = col.row()
-        row.operator("view3d.snap_cursor_to_selected", text="Cursor to Selected")
+        
+        col.operator("view3d.snap_cursor_to_selected", text="Cursor to Selected")
 
 # register the class
 def register():

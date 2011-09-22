@@ -38,6 +38,8 @@
 #include "COLLADAFWController.h"
 #include "COLLADAFWMorphController.h"
 #include "COLLADAFWSkinController.h"
+#include "COLLADAFWEffectCommon.h"
+
 
 #include "BKE_object.h"
 
@@ -47,13 +49,14 @@
 #include "MeshImporter.h"
 
 
+
 struct Main;
 struct bContext;
 
 /** Importer class. */
 class DocumentImporter : COLLADAFW::IWriter
 {
- public:
+public:
 	//! Enumeration to denote the stage of import
 	enum ImportStage {
 		General,		//!< First pass to collect all data except controller
@@ -71,15 +74,15 @@ class DocumentImporter : COLLADAFW::IWriter
 	/** these should not be here */
 	Object* create_camera_object(COLLADAFW::InstanceCamera*, Scene*);
 	Object* create_lamp_object(COLLADAFW::InstanceLight*, Scene*);
-	Object* create_instance_node(Object*, COLLADAFW::Node*, COLLADAFW::Node*, Scene*, bool);
+	Object* create_instance_node(Object*, COLLADAFW::Node*, COLLADAFW::Node*, Scene*, Object*, bool);
 	void write_node(COLLADAFW::Node*, COLLADAFW::Node*, Scene*, Object*, bool);
 	MTex* create_texture(COLLADAFW::EffectCommon*, COLLADAFW::Texture&, Material*, int, TexIndexTextureArrayMap&);
 	void write_profile_COMMON(COLLADAFW::EffectCommon*, Material*);
 	void translate_anim_recursive(COLLADAFW::Node*, COLLADAFW::Node*, Object*);
 
 	/** This method will be called if an error in the loading process occurred and the loader cannot
-	    continue to load. The writer should undo all operations that have been performed.
-            @param errorMessage A message containing informations about the error that occurred.
+	continue to load. The writer should undo all operations that have been performed.
+	@param errorMessage A message containing informations about the error that occurred.
 	*/
 	void cancel(const COLLADAFW::String& errorMessage);
 
@@ -88,7 +91,7 @@ class DocumentImporter : COLLADAFW::IWriter
 
 	/** This method is called after the last write* method. No other methods will be called after this.*/
 	void finish();
-	
+
 	bool writeGlobalAsset(const COLLADAFW::FileInfo*);
 
 	bool writeScene(const COLLADAFW::Scene*);
@@ -121,31 +124,42 @@ class DocumentImporter : COLLADAFW::IWriter
 
 	bool writeKinematicsScene(const COLLADAFW::KinematicsScene*);
 
- private:
- 
+	/** Add element and data for UniqueId */
+	bool addExtraTags(const COLLADAFW::UniqueId &uid, ExtraTags *extra_tags);
+	/** Get an extisting ExtraTags for uid */
+	ExtraTags* getExtraTags(const COLLADAFW::UniqueId &uid);
+
+private:
+
 	/** Current import stage we're in. */
 	ImportStage mImportStage;
 	std::string mFilename;
 
-    bContext *mContext;
+	bContext *mContext;
 
-    UnitConverter unit_converter;
-    ArmatureImporter armature_importer;
-    MeshImporter mesh_importer;
-    AnimationImporter anim_importer;
+	UnitConverter unit_converter;
+	ArmatureImporter armature_importer;
+	MeshImporter mesh_importer;
+	AnimationImporter anim_importer;
+	
+	/** TagsMap typedef for uid_tags_map. */
+	typedef std::map<std::string, ExtraTags*> TagsMap;
+	/** Tags map of unique id as a string and ExtraTags instance. */
+	TagsMap uid_tags_map;
 
-    std::map<COLLADAFW::UniqueId, Image*> uid_image_map;
-    std::map<COLLADAFW::UniqueId, Material*> uid_material_map;
-    std::map<COLLADAFW::UniqueId, Material*> uid_effect_map;
-    std::map<COLLADAFW::UniqueId, Camera*> uid_camera_map;
-    std::map<COLLADAFW::UniqueId, Lamp*> uid_lamp_map;
-    std::map<Material*, TexIndexTextureArrayMap> material_texture_mapping_map;
-    std::map<COLLADAFW::UniqueId, Object*> object_map;
-    std::map<COLLADAFW::UniqueId, COLLADAFW::Node*> node_map;
-    std::vector<const COLLADAFW::VisualScene*> vscenes;
-    std::vector<Object*> libnode_ob;
-
-    std::map<COLLADAFW::UniqueId, COLLADAFW::Node*> root_map; // find root joint by child joint uid, for bone tree evaluation during resampling
+	std::map<COLLADAFW::UniqueId, Image*> uid_image_map;
+	std::map<COLLADAFW::UniqueId, Material*> uid_material_map;
+	std::map<COLLADAFW::UniqueId, Material*> uid_effect_map;
+	std::map<COLLADAFW::UniqueId, Camera*> uid_camera_map;
+	std::map<COLLADAFW::UniqueId, Lamp*> uid_lamp_map;
+	std::map<Material*, TexIndexTextureArrayMap> material_texture_mapping_map;
+	std::map<COLLADAFW::UniqueId, Object*> object_map;
+	std::map<COLLADAFW::UniqueId, COLLADAFW::Node*> node_map;
+	std::vector<const COLLADAFW::VisualScene*> vscenes;
+	std::vector<Object*> libnode_ob;
+	
+	std::map<COLLADAFW::UniqueId, COLLADAFW::Node*> root_map; // find root joint by child joint uid, for bone tree evaluation during resampling
+	std::map<COLLADAFW::UniqueId, const COLLADAFW::Object*> FW_object_map;
 
 };
 

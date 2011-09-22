@@ -50,7 +50,7 @@
 #include "KX_PolygonMaterial.h"
 
 
-#include "SYS_System.h"
+#include "BL_System.h"
 
 #include "DummyPhysicsEnvironment.h"
 
@@ -385,6 +385,12 @@ void KX_BlenderSceneConverter::ConvertScene(class KX_Scene* destinationscene,
 	//This cache mecanism is buggy so I leave it disable and the memory leak
 	//that would result from this is fixed in RemoveScene()
 	m_map_mesh_to_gamemesh.clear();
+
+#ifndef USE_BULLET
+	/* quiet compiler warning */
+	(void)useDbvtCulling;
+#endif
+
 }
 
 // This function removes all entities stored in the converter for that scene
@@ -566,18 +572,18 @@ void KX_BlenderSceneConverter::RegisterPolyMaterial(RAS_IPolyMaterial *polymat)
 
 
 void KX_BlenderSceneConverter::RegisterInterpolatorList(
-									BL_InterpolatorList *adtList,
-									struct AnimData *for_adt)
+									BL_InterpolatorList *actList,
+									struct bAction *for_act)
 {
-	m_map_blender_to_gameAdtList.insert(CHashedPtr(for_adt), adtList);
+	m_map_blender_to_gameAdtList.insert(CHashedPtr(for_act), actList);
 }
 
 
 
 BL_InterpolatorList *KX_BlenderSceneConverter::FindInterpolatorList(
-									struct AnimData *for_adt)
+									struct bAction *for_act)
 {
-	BL_InterpolatorList **listp = m_map_blender_to_gameAdtList[CHashedPtr(for_adt)];
+	BL_InterpolatorList **listp = m_map_blender_to_gameAdtList[CHashedPtr(for_act)];
 		
 	return listp?*listp:NULL;
 }
@@ -679,7 +685,7 @@ void	KX_BlenderSceneConverter::ResetPhysicsObjectsAnimationIpo(bool clearIpo)
 								MEM_freeN( tmpicu );
 								localDel_ipoCurve( tmpicu );
 							}
-					  	}
+						}
 					} else
 					{	ipo = NULL; // XXX add_ipo(blenderObject->id.name+2, ID_OB);
 						blenderObject->ipo = ipo;
@@ -778,12 +784,12 @@ void	KX_BlenderSceneConverter::WritePhysicsObjectToAnimationIpo(int frameNumber)
 					float tmat[3][3];
 					for (int r=0;r<3;r++)
 						for (int c=0;c<3;c++)
-							tmat[r][c] = orn[c][r];
+							tmat[r][c] = (float)orn[c][r];
 
 					mat3_to_compatible_eul(blenderObject->rot, blenderObject->rot, tmat);
 
-					insert_keyframe(NULL, &blenderObject->id, NULL, NULL, "location", -1, frameNumber, INSERTKEY_FAST);
-					insert_keyframe(NULL, &blenderObject->id, NULL, NULL, "rotation_euler", -1, frameNumber, INSERTKEY_FAST);
+					insert_keyframe(NULL, &blenderObject->id, NULL, NULL, "location", -1, (float)frameNumber, INSERTKEY_FAST);
+					insert_keyframe(NULL, &blenderObject->id, NULL, NULL, "rotation_euler", -1, (float)frameNumber, INSERTKEY_FAST);
 
 #if 0
 					const MT_Point3& position = gameObj->NodeGetWorldPosition();
@@ -926,31 +932,30 @@ vector<Main*> &KX_BlenderSceneConverter::GetMainDynamic()
 Main* KX_BlenderSceneConverter::GetMainDynamicPath(const char *path)
 {
 	for (vector<Main*>::iterator it=m_DynamicMaggie.begin(); !(it==m_DynamicMaggie.end()); it++)
-		if(strcmp((*it)->name, path)==0)
+		if(BLI_path_cmp((*it)->name, path) == 0)
 			return *it;
 	
 	return NULL;
 }
 
-bool KX_BlenderSceneConverter::LinkBlendFileMemory(void *data, int length, const char *path, char *group, KX_Scene *scene_merge, char **err_str)
+bool KX_BlenderSceneConverter::LinkBlendFileMemory(void *data, int length, const char *path, char *group, KX_Scene *scene_merge, char **err_str, short options)
 {
 	BlendHandle *bpy_openlib = BLO_blendhandle_from_memory(data, length);
 
 	// Error checking is done in LinkBlendFile
-	return LinkBlendFile(bpy_openlib, path, group, scene_merge, err_str);
+	return LinkBlendFile(bpy_openlib, path, group, scene_merge, err_str, options);
 }
 
-bool KX_BlenderSceneConverter::LinkBlendFilePath(const char *path, char *group, KX_Scene *scene_merge, char **err_str)
+bool KX_BlenderSceneConverter::LinkBlendFilePath(const char *path, char *group, KX_Scene *scene_merge, char **err_str, short options)
 {
-	BlendHandle *bpy_openlib = BLO_blendhandle_from_file( (char *)path );
+	BlendHandle *bpy_openlib = BLO_blendhandle_from_file((char *)path, NULL);
 
 	// Error checking is done in LinkBlendFile
-	return LinkBlendFile(bpy_openlib, path, group, scene_merge, err_str);
+	return LinkBlendFile(bpy_openlib, path, group, scene_merge, err_str, options);
 }
 
-bool KX_BlenderSceneConverter::LinkBlendFile(BlendHandle *bpy_openlib, const char *path, char *group, KX_Scene *scene_merge, char **err_str)
+bool KX_BlenderSceneConverter::LinkBlendFile(BlendHandle *bpy_openlib, const char *path, char *group, KX_Scene *scene_merge, char **err_str, short options)
 {
-	bContext *C;
 	Main *main_newlib; /* stored as a dynamic 'main' until we free it */
 	Main *main_tmp= NULL; /* created only for linking, then freed */
 	LinkNode *names = NULL;
@@ -962,12 +967,15 @@ bool KX_BlenderSceneConverter::LinkBlendFile(BlendHandle *bpy_openlib, const cha
 	/* only scene and mesh supported right now */
 	if(idcode!=ID_SCE && idcode!=ID_ME &&idcode!=ID_AC) {
 		snprintf(err_local, sizeof(err_local), "invalid ID type given \"%s\"\n", group);
+		*err_str= err_local;
+		BLO_blendhandle_close(bpy_openlib);
 		return false;
 	}
 	
 	if(GetMainDynamicPath(path)) {
 		snprintf(err_local, sizeof(err_local), "blend file already open \"%s\"\n", path);
 		*err_str= err_local;
+		BLO_blendhandle_close(bpy_openlib);
 		return false;
 	}
 
@@ -978,28 +986,46 @@ bool KX_BlenderSceneConverter::LinkBlendFile(BlendHandle *bpy_openlib, const cha
 	}
 	
 	main_newlib= (Main *)MEM_callocN( sizeof(Main), "BgeMain");
-	C= CTX_create();
-	CTX_data_main_set(C, main_newlib);
 	BKE_reports_init(&reports, RPT_STORE);	
 
 	/* here appending/linking starts */
-	main_tmp = BLO_library_append_begin(C, &bpy_openlib, (char *)path);
-	
-	names = BLO_blendhandle_get_datablock_names( bpy_openlib, idcode);
+	main_tmp = BLO_library_append_begin(main_newlib, &bpy_openlib, (char *)path);
+
+	int totnames_dummy;
+	names = BLO_blendhandle_get_datablock_names( bpy_openlib, idcode, &totnames_dummy);
 	
 	int i=0;
 	LinkNode *n= names;
 	while(n) {
-		BLO_library_append_named_part(C, main_tmp, &bpy_openlib, (char *)n->link, idcode, 0);
+		BLO_library_append_named_part(main_tmp, &bpy_openlib, (char *)n->link, idcode);
 		n= (LinkNode *)n->next;
 		i++;
 	}
 	BLI_linklist_free(names, free);	/* free linklist *and* each node's data */
 	
-	BLO_library_append_end(C, main_tmp, &bpy_openlib, idcode, flag);
-	BLO_blendhandle_close(bpy_openlib);
+	BLO_library_append_end(NULL, main_tmp, &bpy_openlib, idcode, flag);
+
+	/* now do another round of linking for Scenes so all actions are properly loaded */
+	if (idcode==ID_SCE && options & LIB_LOAD_LOAD_ACTIONS) {
+		main_tmp = BLO_library_append_begin(main_newlib, &bpy_openlib, (char *)path);
+
+		int totnames_dummy;
+		names = BLO_blendhandle_get_datablock_names( bpy_openlib, ID_AC, &totnames_dummy);
 	
-	CTX_free(C);
+		int i=0;
+		LinkNode *n= names;
+		while(n) {
+			BLO_library_append_named_part(main_tmp, &bpy_openlib, (char *)n->link, ID_AC);
+			n= (LinkNode *)n->next;
+			i++;
+		}
+		BLI_linklist_free(names, free);	/* free linklist *and* each node's data */
+	
+		BLO_library_append_end(NULL, main_tmp, &bpy_openlib, ID_AC, flag);
+	}
+	
+	BLO_blendhandle_close(bpy_openlib);
+
 	BKE_reports_clear(&reports);
 	/* done linking */	
 	
@@ -1011,28 +1037,30 @@ bool KX_BlenderSceneConverter::LinkBlendFile(BlendHandle *bpy_openlib, const cha
 	if(idcode==ID_ME) {
 		/* Convert all new meshes into BGE meshes */
 		ID* mesh;
-		KX_Scene *kx_scene= m_currentScene;
 	
 		for(mesh= (ID *)main_newlib->mesh.first; mesh; mesh= (ID *)mesh->next ) {
+			if (options & LIB_LOAD_VERBOSE)
+				printf("MeshName: %s\n", mesh->name+2);
 			RAS_MeshObject *meshobj = BL_ConvertMesh((Mesh *)mesh, NULL, scene_merge, this);
-			kx_scene->GetLogicManager()->RegisterMeshName(meshobj->GetName(),meshobj);
+			scene_merge->GetLogicManager()->RegisterMeshName(meshobj->GetName(),meshobj);
 		}
 	}
 	else if(idcode==ID_AC) {
 		/* Convert all actions */
 		ID *action;
-		KX_Scene *kx_scene= m_currentScene;
 
 		for(action= (ID *)main_newlib->action.first; action; action= (ID *)action->next) {
-			printf("ActionName: %s\n", action->name);
-			kx_scene->GetLogicManager()->RegisterActionName(action->name+2, action);
+			if (options & LIB_LOAD_VERBOSE)
+				printf("ActionName: %s\n", action->name+2);
+			scene_merge->GetLogicManager()->RegisterActionName(action->name+2, action);
 		}
 	}
 	else if(idcode==ID_SCE) {		
 		/* Merge all new linked in scene into the existing one */
 		ID *scene;
 		for(scene= (ID *)main_newlib->scene.first; scene; scene= (ID *)scene->next ) {
-			printf("SceneName: %s\n", scene->name);
+			if (options & LIB_LOAD_VERBOSE)
+				printf("SceneName: %s\n", scene->name+2);
 			
 			/* merge into the base  scene */
 			KX_Scene* other= m_ketsjiEngine->CreateScene((Scene *)scene);
@@ -1040,6 +1068,17 @@ bool KX_BlenderSceneConverter::LinkBlendFile(BlendHandle *bpy_openlib, const cha
 			
 			// RemoveScene(other); // Dont run this, it frees the entire scene converter data, just delete the scene
 			delete other;
+		}
+
+		/* Now handle all the actions */
+		if (options & LIB_LOAD_LOAD_ACTIONS) {
+			ID *action;
+
+			for(action= (ID *)main_newlib->action.first; action; action= (ID *)action->next) {
+				if (options & LIB_LOAD_VERBOSE)
+					printf("ActionName: %s\n", action->name+2);
+				scene_merge->GetLogicManager()->RegisterActionName(action->name+2, action);
+			}
 		}
 	}
 	
@@ -1050,7 +1089,7 @@ bool KX_BlenderSceneConverter::LinkBlendFile(BlendHandle *bpy_openlib, const cha
  * most are temp and NewRemoveObject frees m_map_gameobject_to_blender */
 bool KX_BlenderSceneConverter::FreeBlendFile(struct Main *maggie)
 {
-	int maggie_index;
+	int maggie_index= -1;
 	int i=0;
 
 	if(maggie==NULL)
@@ -1067,6 +1106,10 @@ bool KX_BlenderSceneConverter::FreeBlendFile(struct Main *maggie)
 		}
 		i++;
 	}
+
+	/* should never happen but just to be safe */
+	if(maggie_index == -1)
+		return false;
 
 	m_DynamicMaggie.erase(m_DynamicMaggie.begin() + maggie_index);
 	tag_main(maggie, 1);
@@ -1089,7 +1132,7 @@ bool KX_BlenderSceneConverter::FreeBlendFile(struct Main *maggie)
 			
 			/* incase the mesh might be refered to later */
 			{
-				GEN_Map<STR_HashedString,void*> &mapStringToMeshes = scene->GetLogicManager()->GetMeshMap();
+				CTR_Map<STR_HashedString,void*> &mapStringToMeshes = scene->GetLogicManager()->GetMeshMap();
 				
 				for(int i=0; i<mapStringToMeshes.size(); i++)
 				{
@@ -1098,6 +1141,7 @@ bool KX_BlenderSceneConverter::FreeBlendFile(struct Main *maggie)
 					{	
 						STR_HashedString mn = meshobj->GetName();
 						mapStringToMeshes.remove(mn);
+						m_map_mesh_to_gamemesh.remove(CHashedPtr(meshobj->GetMesh()));
 						i--;
 					}
 				}
@@ -1105,7 +1149,7 @@ bool KX_BlenderSceneConverter::FreeBlendFile(struct Main *maggie)
 
 			/* Now unregister actions */
 			{
-				GEN_Map<STR_HashedString,void*> &mapStringToActions = scene->GetLogicManager()->GetActionMap();
+				CTR_Map<STR_HashedString,void*> &mapStringToActions = scene->GetLogicManager()->GetActionMap();
 
 				for(int i=0; i<mapStringToActions.size(); i++)
 				{
@@ -1157,7 +1201,7 @@ bool KX_BlenderSceneConverter::FreeBlendFile(struct Main *maggie)
 						}
 
 						/* make sure action actuators are not referencing tagged actions */
-						for (int act_idx=0; act_idx<gameobj->GetActuators().size(); act_idx++)
+						for (unsigned int act_idx=0; act_idx<gameobj->GetActuators().size(); act_idx++)
 						{
 							if (gameobj->GetActuators()[act_idx]->IsType(SCA_IActuator::KX_ACT_ACTION))
 							{

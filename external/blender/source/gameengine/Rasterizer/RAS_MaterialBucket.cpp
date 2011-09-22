@@ -1,5 +1,5 @@
 /*
- * $Id: RAS_MaterialBucket.cpp 35174 2011-02-25 13:38:24Z jesterking $
+ * $Id: RAS_MaterialBucket.cpp 39683 2011-08-24 20:28:54Z moguri $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -586,6 +586,9 @@ bool RAS_MaterialBucket::ActivateMaterial(const MT_Transform& cameratrans, RAS_I
 	RAS_IRenderTools *rendertools)
 {
 	bool uselights;
+	
+	if(rasty->GetDrawingMode() == RAS_IRasterizer::KX_SHADOW && !m_material->CastsShadows())
+		return false;
 
 	if(!rasty->SetMaterial(*m_material))
 		return false;

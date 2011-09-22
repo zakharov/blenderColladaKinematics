@@ -1,5 +1,5 @@
 /*
- * $Id: CTR_TaggedIndex.h 35146 2011-02-25 10:45:31Z jesterking $
+ * $Id: CTR_TaggedIndex.h 36860 2011-05-24 11:19:11Z blendix $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -33,7 +33,7 @@
 
 /**
 
- * $Id: CTR_TaggedIndex.h 35146 2011-02-25 10:45:31Z jesterking $
+ * $Id: CTR_TaggedIndex.h 36860 2011-05-24 11:19:11Z blendix $
  * Copyright (C) 2001 NaN Technologies B.V.
  * Simple tagged index class.
  */
@@ -51,6 +51,8 @@
  */
 
 #include <functional>
+
+#include "MEM_sys_types.h"
 
 enum {
 
@@ -100,9 +102,9 @@ public:
 
 #if defined(_WIN64)
 	CTR_TaggedIndex(
-		const unsigned __int64 val
+		const uint64_t val
 	) :
-		m_val ( ((unsigned __int64)val & index_mask)
+		m_val ( ((uint64_t)val & index_mask)
 				| ( (empty_tag << tag_shift)
 					& (~index_mask) ) ) {
 	}
@@ -140,8 +142,8 @@ public:
 	}
 
 #if defined(_WIN64)
-	operator unsigned __int64 () const {
-			return (unsigned __int64)(m_val & index_mask);
+	operator uint64_t () const {
+			return (uint64_t)(m_val & index_mask);
 		}
 #endif
 

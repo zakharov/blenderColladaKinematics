@@ -22,8 +22,8 @@ bl_info = {
     "name": "Dynamic Spacebar Menu",
     "author": "JayDez, sim88, meta-androcto, sam",
     "version": (1, 7, 2),
-    "blender": (2, 5, 6),
-    "api": 34860,
+    "blender": (2, 5, 9),
+    "api": 39685,
     "location": "View3D > Spacebar Key",
     "description": "Context Sensitive Spacebar Menu",
     "warning": "",
@@ -68,8 +68,6 @@ v0.1 through 0.9 - various tests/contributions by various people and scripts
 
 import bpy
 from bpy import *
-from mathutils import Vector, Matrix
-import math
 
 # Dynamic Menu
 class VIEW3D_MT_Space_Dynamic_Menu(bpy.types.Menu):
@@ -90,7 +88,6 @@ class VIEW3D_MT_Space_Dynamic_Menu(bpy.types.Menu):
 
             # Add Menu block
             layout.menu("VIEW3D_MT_AddMenu", icon='OBJECT_DATAMODE')
-            layout.separator()
 
             # Transform block
             layout.menu("VIEW3D_MT_TransformMenu", icon='MANIPUL')
@@ -100,45 +97,39 @@ class VIEW3D_MT_Space_Dynamic_Menu(bpy.types.Menu):
 
             # Cursor Block
             layout.menu("VIEW3D_MT_CursorMenu", icon='CURSOR')
-            layout.separator()
 
             # Parent block
             layout.menu("VIEW3D_MT_ParentMenu", icon='ROTACTIVE')
 
             # Group block
             layout.menu("VIEW3D_MT_GroupMenu", icon='GROUP')
-            layout.separator()
 
             # Modifier block
             layout.operator_menu_enum("object.modifier_add", "type",
-                icon='MODIFIER')
-            layout.separator()
+                                      icon='MODIFIER')
 
             # Align block
             layout.menu("VIEW3D_MT_AlignMenu", icon='ALIGN')
-            layout.separator()
 
             # Select block
             layout.menu("VIEW3D_MT_SelectMenu", icon='RESTRICT_SELECT_OFF')
 
             # Toolshelf block
             layout.operator("view3d.toolshelf", icon='MENU_PANEL')
-            layout.separator()
 
             # Properties block
             layout.operator("view3d.properties", icon='MENU_PANEL')
-            layout.separator()
 
             #TODO: Add if statement to test whether editmode switch needs to
             #be added to the menu, since certain object can't enter edit mode
             #In which case we don't need the toggle
             # Toggle Editmode
             layout.operator("object.editmode_toggle", text="Enter Edit Mode",
-                icon='EDITMODE_HLT')
+                            icon='EDITMODE_HLT')
 
             # Delete block
             layout.operator("object.delete", text="Delete Object",
-                icon='CANCEL')
+                            icon='CANCEL')
 
 
         elif ob.mode == 'EDIT_MESH':
@@ -150,8 +141,7 @@ class VIEW3D_MT_Space_Dynamic_Menu(bpy.types.Menu):
 
             # Add block
             layout.menu("INFO_MT_mesh_add", text="Add Mesh",
-                icon='OUTLINER_OB_MESH')
-            layout.separator()
+                        icon='OUTLINER_OB_MESH')
 
             # Transform block
             layout.menu("VIEW3D_MT_TransformMenu", icon='MANIPUL')
@@ -161,47 +151,41 @@ class VIEW3D_MT_Space_Dynamic_Menu(bpy.types.Menu):
 
             # Cursor block
             layout.menu("VIEW3D_MT_EditCursorMenu", icon='CURSOR')
-            layout.separator()
 
             # Proportional block
             layout.prop_menu_enum(settings, "proportional_edit",
-                icon="PROP_CON")
+                                  icon="PROP_CON")
             layout.prop_menu_enum(settings, "proportional_edit_falloff",
-                icon="SMOOTHCURVE")
-            layout.separator()
+                                  icon="SMOOTHCURVE")
 
             # Edit block
             layout.menu("VIEW3D_MT_edit_TK", icon='EDITMODE_HLT')
-            layout.separator()
 
             # Multi Select
             layout.menu("VIEW3D_MT_edit_multi", icon='VERTEXSEL')
-            layout.separator()
 
             # Extrude block
             layout.menu("VIEW3D_MT_edit_mesh_extrude", icon='EDIT_VEC')
-            layout.separator()
 
             # Tools block
             layout.menu("VIEW3D_MT_edit_mesh_specials", icon='MODIFIER')
+
+			# UV Map block
             layout.menu("VIEW3D_MT_uv_map", icon='MOD_UVPROJECT')
 
             # Select block
             layout.menu("VIEW3D_MT_SelectEditMenu",
-                icon='RESTRICT_SELECT_OFF')
-            layout.separator()
+                        icon='RESTRICT_SELECT_OFF')
 
             # Toolshelf block
             layout.operator("view3d.toolshelf", icon='MENU_PANEL')
-            layout.separator()
 
             # Properties block
             layout.operator("view3d.properties", icon='MENU_PANEL')
-            layout.separator()
 
             # Toggle Object Mode
             layout.operator("object.editmode_toggle",
-                text="Enter Object Mode", icon='OBJECT_DATAMODE')
+                            text="Enter Object Mode", icon='OBJECT_DATAMODE')
 
             # Delete Block
             layout.operator("mesh.delete", icon='CANCEL')
@@ -215,8 +199,7 @@ class VIEW3D_MT_Space_Dynamic_Menu(bpy.types.Menu):
 
             # Add block
             layout.menu("INFO_MT_curve_add", text="Add Curve",
-                icon='OUTLINER_OB_CURVE')
-            layout.separator()
+                        icon='OUTLINER_OB_CURVE')
 
             # Transform block
             layout.menu("VIEW3D_MT_TransformMenu", icon='MANIPUL')
@@ -226,47 +209,41 @@ class VIEW3D_MT_Space_Dynamic_Menu(bpy.types.Menu):
 
             # Cursor block
             layout.menu("VIEW3D_MT_CursorMenu", icon='CURSOR')
-            layout.separator()
 
             # Proportional block
             layout.prop_menu_enum(settings, "proportional_edit",
-                icon="PROP_CON")
+                                  icon="PROP_CON")
             layout.prop_menu_enum(settings, "proportional_edit_falloff",
-                icon="SMOOTHCURVE")
-            layout.separator()
+                                  icon="SMOOTHCURVE")
 
             # Edit Control Points
             layout.menu("VIEW3D_MT_EditCurveCtrlpoints",
-                icon='CURVE_BEZCURVE')
-            layout.separator()
+                        icon='CURVE_BEZCURVE')
 
             # Edit Curve Specials
             layout.menu("VIEW3D_MT_EditCurveSpecials",
-                icon='MODIFIER')
-            layout.separator()
+                        icon='MODIFIER')
 
             # Select Curve Block
             #Could use: VIEW3D_MT_select_edit_curve
             #Which is the default, instead of a hand written one, left it alone
             #for now though.
             layout.menu("VIEW3D_MT_SelectCurveMenu",
-                icon='RESTRICT_SELECT_OFF')
+                        icon='RESTRICT_SELECT_OFF')
 
             # Toolshelf block
             layout.operator("view3d.toolshelf", icon='MENU_PANEL')
-            layout.separator()
 
             # Properties block
             layout.operator("view3d.properties", icon='MENU_PANEL')
-            layout.separator()
 
             # Toggle Objectmode
             layout.operator("object.editmode_toggle", text="Enter Object Mode",
-                icon='OBJECT_DATA')
+                            icon='OBJECT_DATA')
 
             # Delete block
             layout.operator("curve.delete", text="Delete Object",
-                icon='CANCEL')
+                            icon='CANCEL')
 
         if ob.mode == 'EDIT_SURFACE':
             # Surface menu
@@ -277,8 +254,7 @@ class VIEW3D_MT_Space_Dynamic_Menu(bpy.types.Menu):
 
             # Add block
             layout.menu("INFO_MT_surface_add", text="Add Surface",
-                icon='OUTLINER_OB_SURFACE')
-            layout.separator()
+                        icon='OUTLINER_OB_SURFACE')
 
             # Transform block
             layout.menu("VIEW3D_MT_TransformMenu", icon='MANIPUL')
@@ -288,38 +264,34 @@ class VIEW3D_MT_Space_Dynamic_Menu(bpy.types.Menu):
 
             # Cursor block
             layout.menu("VIEW3D_MT_CursorMenu", icon='CURSOR')
-            layout.separator()
 
             # Proportional block
             layout.prop_menu_enum(settings, "proportional_edit",
-                icon="PROP_CON")
+                                  icon="PROP_CON")
             layout.prop_menu_enum(settings, "proportional_edit_falloff",
-                icon="SMOOTHCURVE")
-            layout.separator()
+                                  icon="SMOOTHCURVE")
 
             # Edit Curve Specials
             layout.menu("VIEW3D_MT_EditCurveSpecials",
-                icon='MODIFIER')
-            layout.separator()
+                        icon='MODIFIER')
 
             # Select Surface
             layout.menu("VIEW3D_MT_SelectSurface", icon='RESTRICT_SELECT_OFF')
 
             # Toolshelf block
             layout.operator("view3d.toolshelf", icon='MENU_PANEL')
-            layout.separator()
+
 
             # Properties block
             layout.operator("view3d.properties", icon='MENU_PANEL')
-            layout.separator()
 
             # Toggle Objectmode
             layout.operator("object.editmode_toggle", text="Enter Object Mode",
-                icon='OBJECT_DATA')
+                            icon='OBJECT_DATA')
 
             # Delete block
             layout.operator("curve.delete", text="Delete Object",
-                icon='CANCEL')
+                            icon='CANCEL')
 
         if ob.mode == 'EDIT_METABALL':
             # Metaball menu
@@ -330,10 +302,10 @@ class VIEW3D_MT_Space_Dynamic_Menu(bpy.types.Menu):
 
             # Add block
             #layout.menu("INFO_MT_metaball_add", text="Add Metaball",
-            #    icon='OUTLINER_OB_META')
+            #            icon='OUTLINER_OB_META')
             layout.operator_menu_enum("object.metaball_add", "type",
-                text="Add Metaball", icon='OUTLINER_OB_META')
-            layout.separator()
+                                      text="Add Metaball",
+                                      icon='OUTLINER_OB_META')
 
             # Transform block
             layout.menu("VIEW3D_MT_TransformMenu", icon='MANIPUL')
@@ -343,33 +315,29 @@ class VIEW3D_MT_Space_Dynamic_Menu(bpy.types.Menu):
 
             # Cursor block
             layout.menu("VIEW3D_MT_CursorMenu", icon='CURSOR')
-            layout.separator()
 
             # Proportional block
             layout.prop_menu_enum(settings, "proportional_edit",
-                icon="PROP_CON")
+                                  icon="PROP_CON")
             layout.prop_menu_enum(settings, "proportional_edit_falloff",
-                icon="SMOOTHCURVE")
-            layout.separator()
+                                  icon="SMOOTHCURVE")
 
             #Select Metaball
             layout.menu("VIEW3D_MT_SelectMetaball", icon='RESTRICT_SELECT_OFF')
 
             # Toolshelf block
             layout.operator("view3d.toolshelf", icon='MENU_PANEL')
-            layout.separator()
 
             # Properties block
             layout.operator("view3d.properties", icon='MENU_PANEL')
-            layout.separator()
 
             # Toggle Objectmode
             layout.operator("object.editmode_toggle", text="Enter Object Mode",
-                icon='OBJECT_DATA') 
+                            icon='OBJECT_DATA')
 
             # Delete block
             layout.operator("mball.delete_metaelems", text="Delete Object",
-                icon='CANCEL')
+                            icon='CANCEL')
 
         elif ob.mode == 'EDIT_LATTICE':
             # Lattice menu
@@ -386,37 +354,31 @@ class VIEW3D_MT_Space_Dynamic_Menu(bpy.types.Menu):
 
             # Cursor block
             layout.menu("VIEW3D_MT_CursorMenu", icon='CURSOR')
-            layout.separator()
 
             # Proportional block
             layout.prop_menu_enum(settings, "proportional_edit",
-                icon= "PROP_CON")
+                                  icon= "PROP_CON")
             layout.prop_menu_enum(settings, "proportional_edit_falloff",
-                icon= "SMOOTHCURVE")
-            layout.separator()
-
+                                  icon= "SMOOTHCURVE")
             layout.operator("lattice.make_regular")
-            layout.separator()
 
             #Select Lattice
             layout.menu("VIEW3D_MT_select_edit_lattice",
-                icon='RESTRICT_SELECT_OFF')
+                        icon='RESTRICT_SELECT_OFF')
 
             # Toolshelf block
             layout.operator("view3d.toolshelf", icon='MENU_PANEL')
-            layout.separator()
 
             # Properties block
             layout.operator("view3d.properties", icon='MENU_PANEL')
-            layout.separator()
 
             # Toggle Objectmode
             layout.operator("object.editmode_toggle", text="Enter Object Mode",
-                icon='OBJECT_DATA')
+                            icon='OBJECT_DATA')
 
             # Delete block - Can't delete any lattice stuff so not needed
             #layout.operator("object.delete", text="Delete Object",
-            #    icon='CANCEL')				
+            #                icon='CANCEL')
 
         if  context.mode == 'PARTICLE':
             # Particle menu
@@ -433,41 +395,36 @@ class VIEW3D_MT_Space_Dynamic_Menu(bpy.types.Menu):
 
             # Cursor block
             layout.menu("VIEW3D_MT_CursorMenu", icon='CURSOR')
-            layout.separator()
 
             # Proportional block
             layout.prop_menu_enum(settings, "proportional_edit",
-                icon= "PROP_CON")
+                                  icon= "PROP_CON")
             layout.prop_menu_enum(settings, "proportional_edit_falloff",
-                icon= "SMOOTHCURVE")
-            layout.separator()
+                                  icon= "SMOOTHCURVE")
 
             # Particle block
             layout.menu("VIEW3D_MT_particle", icon='PARTICLEMODE')
-            layout.separator()
 
             #Select Particle
             layout.menu("VIEW3D_MT_select_particle",
-                icon='RESTRICT_SELECT_OFF')
+                        icon='RESTRICT_SELECT_OFF')
 
             # History/Cursor Block
             layout.menu("VIEW3D_MT_undoS", icon='ARROW_LEFTRIGHT')
 
             # Toolshelf block
             layout.operator("view3d.toolshelf", icon='MENU_PANEL')
-            layout.separator()
 
             # Properties block
             layout.operator("view3d.properties", icon='MENU_PANEL')
-            layout.separator()
 
             # Toggle Objectmode
             layout.operator("object.mode_set", text="Enter Object Mode",
-                icon='OBJECT_DATA')
+                            icon='OBJECT_DATA')
 
             # Delete block
             layout.operator("object.delete", text="Delete Object",
-                icon='CANCEL')
+                            icon='CANCEL')
 
         ob = context
         if ob.mode == 'PAINT_WEIGHT':
@@ -482,26 +439,22 @@ class VIEW3D_MT_Space_Dynamic_Menu(bpy.types.Menu):
 
             # Cursor block
             layout.menu("VIEW3D_MT_CursorMenu", icon='CURSOR')
-            layout.separator()
 
             # Weight Paint block
             layout.menu("VIEW3D_MT_paint_weight", icon='WPAINT_HLT')
-            layout.separator()
 
             # History/Cursor Block
             layout.menu("VIEW3D_MT_undoS", icon='ARROW_LEFTRIGHT')
 
             # Toolshelf block
             layout.operator("view3d.toolshelf", icon='MENU_PANEL')
-            layout.separator()
 
             # Properties block
             layout.operator("view3d.properties", icon='MENU_PANEL')
-            layout.separator()
 
             # Toggle Objectmode
             layout.operator("object.mode_set", text="Enter Object Mode",
-                icon='OBJECT_DATA')
+                            icon='OBJECT_DATA')
 
         elif ob.mode == 'PAINT_VERTEX':
             # Vertex paint menu
@@ -515,26 +468,22 @@ class VIEW3D_MT_Space_Dynamic_Menu(bpy.types.Menu):
 
             # Cursor block
             layout.menu("VIEW3D_MT_CursorMenu", icon='CURSOR')
-            layout.separator()
 
             # Vertex Paint block
             layout.operator("paint.vertex_color_set", icon='VPAINT_HLT')
-            layout.separator()
 
             # History/Cursor Block
             layout.menu("VIEW3D_MT_undoS", icon='ARROW_LEFTRIGHT')
 
             # Toolshelf block
             layout.operator("view3d.toolshelf", icon='MENU_PANEL')
-            layout.separator()
 
             # Properties block
             layout.operator("view3d.properties", icon='MENU_PANEL')
-            layout.separator()
 
             # Toggle Objectmode
             layout.operator("object.mode_set", text="Enter Object Mode",
-                icon='OBJECT_DATA')
+                            icon='OBJECT_DATA')
 
         elif ob.mode == 'PAINT_TEXTURE':
             # Texture paint menu
@@ -548,22 +497,19 @@ class VIEW3D_MT_Space_Dynamic_Menu(bpy.types.Menu):
 
             # Cursor block
             layout.menu("VIEW3D_MT_CursorMenu", icon='CURSOR')
-            layout.separator()
 
             # History/Cursor Block
             layout.menu("VIEW3D_MT_undoS", icon='ARROW_LEFTRIGHT')
 
             # Toolshelf block
             layout.operator("view3d.toolshelf", icon='MENU_PANEL')
-            layout.separator()
 
             # Properties block
             layout.operator("view3d.properties", icon='MENU_PANEL')
-            layout.separator()
 
             # Toggle Objectmode
             layout.operator("object.mode_set", text="Enter Object Mode",
-                icon='OBJECT_DATA')
+                            icon='OBJECT_DATA')
 
         elif ob.mode == 'SCULPT':
             # Sculpt menu
@@ -580,26 +526,22 @@ class VIEW3D_MT_Space_Dynamic_Menu(bpy.types.Menu):
 
             # Cursor block
             layout.menu("VIEW3D_MT_CursorMenu", icon='CURSOR')
-            layout.separator()
 
             # Sculpt block
             layout.menu("VIEW3D_MT_sculpt", icon='SCULPTMODE_HLT')
-            layout.separator()
 
             # History/Cursor Block
             layout.menu("VIEW3D_MT_undoS", icon='ARROW_LEFTRIGHT')
 
             # Toolshelf block
             layout.operator("view3d.toolshelf", icon='MENU_PANEL')
-            layout.separator()
 
             # Properties block
             layout.operator("view3d.properties", icon='MENU_PANEL')
-            layout.separator()
 
             # Toggle Objectmode
             layout.operator("object.mode_set", text="Enter Object Mode",
-                icon='OBJECT_DATA')
+                            icon='OBJECT_DATA')
 
         elif ob.mode == 'EDIT_ARMATURE':
             # Armature menu
@@ -616,65 +558,57 @@ class VIEW3D_MT_Space_Dynamic_Menu(bpy.types.Menu):
 
             # Cursor block
             layout.menu("VIEW3D_MT_CursorMenu", icon='CURSOR')
-            layout.separator()
 
             # Proportional block
             layout.prop_menu_enum(settings, "proportional_edit",
-                icon="PROP_CON")
+                                  icon="PROP_CON")
             layout.prop_menu_enum(settings, "proportional_edit_falloff",
-                icon="SMOOTHCURVE")
+                                  icon="SMOOTHCURVE")
             layout.separator()
 
             # Edit Armature roll
             layout.menu("VIEW3D_MT_edit_armature_roll",
-                icon='BONE_DATA')
-            layout.separator()
+                        icon='BONE_DATA')
 
             # Edit Armature Toolkit
             layout.menu("VIEW3D_MT_EditArmatureTK",
-			    icon='ARMATURE_DATA')
-            layout.separator()
+                        icon='ARMATURE_DATA')
 
             # Edit Armature Name
             layout.menu("VIEW3D_MT_ArmatureName",
-			    icon='NEW')
-            layout.separator()
- 
+                        icon='NEW')
+
             # Parent block
             layout.menu("VIEW3D_MT_ParentMenu", icon='ROTACTIVE')
 
-            layout.separator()
-            layout.operator_menu_enum("armature.flags_set", "mode",
-                text="Bone Settings")
+            # bone options block
+            layout.menu("VIEW3D_MT_bone_options_toggle",
+                        text="Bone Settings")
 
             # Edit Armature Specials
             layout.menu("VIEW3D_MT_armature_specials", icon='MODIFIER')
-            layout.separator()
 
             # Edit Armature Select
             layout.menu("VIEW3D_MT_SelectArmatureMenu",
-                icon='RESTRICT_SELECT_OFF')
+                        icon='RESTRICT_SELECT_OFF')
 
             # Toolshelf block
             layout.operator("view3d.toolshelf", icon='MENU_PANEL')
-            layout.separator()
 
             # Properties block
             layout.operator("view3d.properties", icon='MENU_PANEL')
-            layout.separator()
 
             # Toggle Posemode
             layout.operator("object.posemode_toggle", text="Enter Pose Mode",
-                icon='POSE_HLT')
+                            icon='POSE_HLT')
 
             # Toggle Posemode
             layout.operator("object.editmode_toggle", text="Enter Object Mode",
-                icon='OBJECT_DATA')
+                            icon='OBJECT_DATA')
 
             # Delete block
             layout.operator("armature.delete", text="Delete Object",
-                icon='CANCEL')
-
+                            icon='CANCEL')
 
         if context.mode == 'POSE':
             # Pose mode menu
@@ -687,75 +621,54 @@ class VIEW3D_MT_Space_Dynamic_Menu(bpy.types.Menu):
             # Transform Menu
             layout.menu("VIEW3D_MT_TransformMenu", icon='MANIPUL')
 
-			# Clear Transform
+            # Clear Transform
             layout.menu("VIEW3D_MT_pose_transform")
 
-			# Cursor Menu
+            # Cursor Menu
             layout.menu("VIEW3D_MT_CursorMenu", icon='CURSOR')
-            layout.separator()
 
-			# Pose Copy Block
+            # Pose Copy Block
             layout.menu("VIEW3D_MT_PoseCopy", icon='FILE')
-            layout.separator()
-			
 
-            if arm.draw_type in ('BBONE', 'ENVELOPE'):
+            if arm.draw_type in {'BBONE', 'ENVELOPE'}:
                 layout.operator("transform.transform",
-                    text="Scale Envelope Distance").mode = 'BONE_SIZE'
+                                text="Scale Envelope Distance").mode = 'BONE_SIZE'
 
             layout.menu("VIEW3D_MT_pose_apply")
-            layout.separator()
-
             layout.operator("pose.relax")
-            layout.separator()
-
             layout.menu("VIEW3D_MT_KeyframeMenu")
-            layout.separator()
-
             layout.menu("VIEW3D_MT_pose_pose")
             layout.menu("VIEW3D_MT_pose_motion")
             layout.menu("VIEW3D_MT_pose_group")
-            layout.separator()
-
             layout.menu("VIEW3D_MT_pose_ik")
             layout.menu("VIEW3D_MT_PoseNames")
-            layout.separator()
-
             layout.menu("VIEW3D_MT_pose_constraints")
-            layout.separator()
-
             layout.operator("pose.quaternions_flip")
-            layout.separator()
 
             layout.operator_context = 'INVOKE_AREA'
             layout.operator("pose.armature_layers",
-                text="Change Armature Layers...")
+                            text="Change Armature Layers...")
             layout.operator("pose.bone_layers", text="Change Bone Layers...")
-            layout.separator()
 
             layout.menu("VIEW3D_MT_pose_showhide")
-            layout.operator_menu_enum("pose.flags_set", 'mode',
-                text="Bone Settings")
-            layout.separator()
+            layout.menu("VIEW3D_MT_bone_options_toggle",
+                        text="Bone Settings")
 
-			# Select Pose Block
+            # Select Pose Block
             layout.menu("VIEW3D_MT_SelectPoseMenu", icon='RESTRICT_SELECT_OFF')
 
             # Toolshelf block
             layout.operator("view3d.toolshelf", icon='MENU_PANEL')
-            layout.separator()
 
             # Properties block
             layout.operator("view3d.properties", icon='MENU_PANEL')
-            layout.separator()
 
             # Toggle Editmode
             layout.operator("object.editmode_toggle", text="Enter Edit Mode",
-                icon='EDITMODE_HLT')
+                            icon='EDITMODE_HLT')
 
             layout.operator("object.mode_set", text="Enter Object Mode",
-                icon='OBJECT_DATA').mode='OBJECT'
-
+                            icon='OBJECT_DATA').mode='OBJECT'
 
 class VIEW3D_MT_AddMenu(bpy.types.Menu):
     bl_label = "Add Object Menu"
@@ -765,37 +678,37 @@ class VIEW3D_MT_AddMenu(bpy.types.Menu):
         layout.operator_context = 'INVOKE_REGION_WIN'
 
         layout.menu("INFO_MT_mesh_add", text="Add Mesh",
-            icon='OUTLINER_OB_MESH')
+                    icon='OUTLINER_OB_MESH')
         layout.menu("INFO_MT_curve_add", text="Add Curve",
-            icon='OUTLINER_OB_CURVE')
+                    icon='OUTLINER_OB_CURVE')
         layout.menu("INFO_MT_surface_add", text="Add Surface",
-            icon='OUTLINER_OB_SURFACE')
+                    icon='OUTLINER_OB_SURFACE')
         layout.operator_menu_enum("object.metaball_add", "type",
-            icon='OUTLINER_OB_META')
+                                  icon='OUTLINER_OB_META')
         layout.operator("object.text_add", text="Add Text",
-            icon='OUTLINER_OB_FONT')
+                        icon='OUTLINER_OB_FONT')
         layout.separator()
         layout.menu("INFO_MT_armature_add", text="Add Armature",
-            icon='OUTLINER_OB_ARMATURE')
+                    icon='OUTLINER_OB_ARMATURE')
         layout.operator("object.add", text="Lattice",
-            icon='OUTLINER_OB_LATTICE').type = 'LATTICE'
+                        icon='OUTLINER_OB_LATTICE').type = 'LATTICE'
         layout.separator()
         layout.operator("object.add", text="Add Empty",
-            icon='OUTLINER_OB_EMPTY')
+                        icon='OUTLINER_OB_EMPTY')
         layout.separator()
 
         layout.operator("object.camera_add", text="Camera",
-            icon='OUTLINER_OB_CAMERA')
+                        icon='OUTLINER_OB_CAMERA')
         layout.operator_menu_enum("object.lamp_add", "type",
-            icon="OUTLINER_OB_LAMP")
+                                  icon="OUTLINER_OB_LAMP")
         layout.separator()
 
         layout.operator_menu_enum("object.effector_add", "type",
-            text="Force Field",
-            icon='OUTLINER_OB_EMPTY')
+                                  text="Force Field",
+                                  icon='OUTLINER_OB_EMPTY')
         layout.operator_menu_enum("object.group_instance_add", "group",
-            text="Group Instance",
-            icon='OUTLINER_OB_EMPTY')
+                                  text="Group Instance",
+                                  icon='OUTLINER_OB_EMPTY')
 
 
 class VIEW3D_MT_TransformMenu(bpy.types.Menu):
@@ -823,17 +736,17 @@ class VIEW3D_MT_TransformMenu(bpy.types.Menu):
             layout.operator_context = 'EXEC_REGION_WIN'
             # @todo vvv See alignmenu() in edit.c of b2.4x to get this working.
             layout.operator("transform.transform",
-                text="Align to Transform Orientation").mode = 'ALIGN'
+                            text="Align to Transform Orientation").mode = 'ALIGN'
         layout.separator()
 
         layout.operator_context = 'EXEC_AREA'
 
         layout.operator("object.origin_set",
-            text="Geometry to Origin").type = 'GEOMETRY_ORIGIN'
+                        text="Geometry to Origin").type = 'GEOMETRY_ORIGIN'
         layout.operator("object.origin_set",
-            text="Origin to Geometry").type = 'ORIGIN_GEOMETRY'
+                        text="Origin to Geometry").type = 'ORIGIN_GEOMETRY'
         layout.operator("object.origin_set",
-            text="Origin to 3D Cursor").type = 'ORIGIN_CURSOR'
+                        text="Origin to 3D Cursor").type = 'ORIGIN_CURSOR'
 
 
 class VIEW3D_MT_MirrorMenu(bpy.types.Menu):
@@ -907,9 +820,9 @@ class VIEW3D_MT_AlignMenu(bpy.types.Menu):
         layout.separator()
 
         layout.operator("view3d.view_all",
-            text="Center Cursor and View All").center = True
+                        text="Center Cursor and View All").center = True
         layout.operator("view3d.camera_to_view",
-            text="Align Active Camera to View")
+                        text="Align Active Camera to View")
         layout.operator("view3d.view_selected")
         layout.operator("view3d.view_center_cursor")
 
@@ -930,14 +843,14 @@ class VIEW3D_MT_SelectMenu(bpy.types.Menu):
         layout.operator("object.select_mirror", text="Mirror")
         layout.operator("object.select_by_layer", text="Select All by Layer")
         layout.operator_menu_enum("object.select_by_type", "type",
-            text="Select All by Type...")
+                                  text="Select All by Type...")
         layout.operator("object.select_camera", text="Select Camera")
         layout.separator()
 
         layout.operator_menu_enum("object.select_grouped", "type",
-            text="Grouped")
+                                  text="Grouped")
         layout.operator_menu_enum("object.select_linked", "type",
-            text="Linked")
+                                  text="Linked")
         layout.operator("object.select_pattern", text="Select Pattern...")
 
 class VIEW3D_MT_SelectEditMenu(bpy.types.Menu):
@@ -958,20 +871,20 @@ class VIEW3D_MT_SelectEditMenu(bpy.types.Menu):
         layout.operator("mesh.select_nth", text="Every N Number of Verts")
         layout.operator("mesh.edges_select_sharp", text="Sharp Edges")
         layout.operator("mesh.faces_select_linked_flat",
-            text="Linked Flat Faces")
+                        text="Linked Flat Faces")
         layout.operator("mesh.faces_select_interior", text="Interior Faces")
         layout.operator("mesh.select_axis", text="Side of Active")
         layout.separator()
 
         layout.operator("mesh.select_by_number_vertices",
-            text="Triangles").type = 'TRIANGLES'
+                        text="Triangles").type = 'TRIANGLES'
         layout.operator("mesh.select_by_number_vertices",
-            text="Quads").type = 'QUADS'
+                        text="Quads").type = 'QUADS'
         if context.scene.tool_settings.mesh_select_mode[2] == False:
                 layout.operator("mesh.select_non_manifold",
-            text="Non Manifold")
+                                text="Non Manifold")
         layout.operator("mesh.select_by_number_vertices",
-            text="Loose Verts/Edges").type = 'OTHER'
+                        text="Loose Verts/Edges").type = 'OTHER'
         layout.operator("mesh.select_similar", text="Similar")
         layout.separator()
 
@@ -1029,18 +942,18 @@ class VIEW3D_MT_SelectArmatureMenu(bpy.types.Menu):
         layout.separator()
 
         layout.operator("armature.select_hierarchy",
-            text="Parent").direction = 'PARENT'
+                        text="Parent").direction = 'PARENT'
         layout.operator("armature.select_hierarchy",
-            text="Child").direction = 'CHILD'
+                        text="Child").direction = 'CHILD'
         layout.separator()
 
         props = layout.operator("armature.select_hierarchy",
-            text="Extend Parent")
+                                text="Extend Parent")
         props.extend = True
         props.direction = 'PARENT'
 
         props = layout.operator("armature.select_hierarchy",
-            text="Extend Child")
+                                text="Extend Child")
         props.extend = True
         props.direction = 'CHILD'
 
@@ -1059,14 +972,14 @@ class VIEW3D_MT_SelectPoseMenu(bpy.types.Menu):
         layout.operator("pose.select_all", text="Select/Deselect All")
         layout.operator("pose.select_inverse", text="Inverse")
         layout.operator("pose.select_constraint_target",
-            text="Constraint Target")
+                        text="Constraint Target")
         layout.operator("pose.select_linked", text="Linked")
         layout.separator()
 
         layout.operator("pose.select_hierarchy",
-            text="Parent").direction = 'PARENT'
+                        text="Parent").direction = 'PARENT'
         layout.operator("pose.select_hierarchy",
-            text="Child").direction = 'CHILD'
+                        text="Child").direction = 'CHILD'
         layout.separator()
 
         props = layout.operator("pose.select_hierarchy", text="Extend Parent")
@@ -1079,7 +992,7 @@ class VIEW3D_MT_SelectPoseMenu(bpy.types.Menu):
         layout.separator()
 
         layout.operator_menu_enum("pose.select_grouped", "type",
-            text="Grouped")
+                                  text="Grouped")
         layout.operator("object.select_pattern", text="Select Pattern...")
 
 class VIEW3D_MT_PoseCopy(bpy.types.Menu):
@@ -1087,11 +1000,11 @@ class VIEW3D_MT_PoseCopy(bpy.types.Menu):
 
     def draw(self, context):
         layout = self.layout
-		 
+
         layout.operator("pose.copy")
         layout.operator("pose.paste")
         layout.operator("pose.paste",
-           text="Paste X-Flipped Pose").flipped = True
+                        text="Paste X-Flipped Pose").flipped = True
         layout.separator()
 
 class VIEW3D_MT_PoseNames(bpy.types.Menu):
@@ -1099,14 +1012,14 @@ class VIEW3D_MT_PoseNames(bpy.types.Menu):
 
     def draw(self, context):
         layout = self.layout
-		 
+
         layout.operator_context = 'EXEC_AREA'
         layout.operator("pose.autoside_names",
-            text="AutoName Left/Right").axis = 'XAXIS'
+                        text="AutoName Left/Right").axis = 'XAXIS'
         layout.operator("pose.autoside_names",
-            text="AutoName Front/Back").axis = 'YAXIS'
+                        text="AutoName Front/Back").axis = 'YAXIS'
         layout.operator("pose.autoside_names",
-            text="AutoName Top/Bottom").axis = 'ZAXIS'
+                        text="AutoName Top/Bottom").axis = 'ZAXIS'
 
         layout.operator("pose.flip_names")
 
@@ -1155,7 +1068,7 @@ class VIEW3D_MT_edit_TK(bpy.types.Menu):
 
     def draw(self, context):
         layout = self.layout
-        row = layout.row()
+        layout.row()  # XXX, is this needed?
 
         layout.operator_context = 'INVOKE_REGION_WIN'
 
@@ -1165,7 +1078,7 @@ class VIEW3D_MT_edit_TK(bpy.types.Menu):
         layout.separator()
         layout.menu("VIEW3D_MT_edit_mesh_normals", icon='META_DATA')
         layout.operator("mesh.loopcut_slide",
-            text="Loopcut", icon='EDIT_VEC')
+                        text="Loopcut", icon='EDIT_VEC')
 
 
 
@@ -1178,39 +1091,43 @@ class VIEW3D_MT_edit_multi(bpy.types.Menu):
 
         layout.separator()
         prop = layout.operator("wm.context_set_value", text="Vertex Select",
-            icon='VERTEXSEL')
+                               icon='VERTEXSEL')
         prop.value = "(True, False, False)"
         prop.data_path = "tool_settings.mesh_select_mode"
 
         prop = layout.operator("wm.context_set_value", text="Edge Select",
-            icon='EDGESEL')
+                               icon='EDGESEL')
         prop.value = "(False, True, False)"
         prop.data_path = "tool_settings.mesh_select_mode"
 
         prop = layout.operator("wm.context_set_value", text="Face Select",
-            icon='FACESEL')
+                               icon='FACESEL')
         prop.value = "(False, False, True)"
         prop.data_path = "tool_settings.mesh_select_mode"
         layout.separator()
 
         prop = layout.operator("wm.context_set_value",
-            text="Vertex & Edge Select", icon='EDITMODE_HLT')
+                               text="Vertex & Edge Select",
+                               icon='EDITMODE_HLT')
         prop.value = "(True, True, False)"
         prop.data_path = "tool_settings.mesh_select_mode"
 
         prop = layout.operator("wm.context_set_value",
-            text="Vertex & Face Select", icon='ORTHO')
+                               text="Vertex & Face Select",
+                               icon='ORTHO')
         prop.value = "(True, False, True)"
         prop.data_path = "tool_settings.mesh_select_mode"
 
         prop = layout.operator("wm.context_set_value",
-            text="Edge & Face Select", icon='SNAP_FACE')
+                               text="Edge & Face Select",
+                               icon='SNAP_FACE')
         prop.value = "(False, True, True)"
         prop.data_path = "tool_settings.mesh_select_mode"
         layout.separator()
 
         prop = layout.operator("wm.context_set_value",
-            text="Vertex & Edge & Face Select", icon='SNAP_VOLUME')
+                               text="Vertex & Edge & Face Select",
+                               icon='SNAP_VOLUME')
         prop.value = "(True, True, True)"
         prop.data_path = "tool_settings.mesh_select_mode"
 
@@ -1231,9 +1148,9 @@ class VIEW3D_MT_editM_Edge(bpy.types.Menu):
         layout.separator()
 
         layout.operator("mesh.edge_rotate",
-            text="Rotate Edge CW").direction = 'CW'
+                        text="Rotate Edge CW").direction = 'CW'
         layout.operator("mesh.edge_rotate",
-            text="Rotate Edge CCW").direction = 'CCW'
+                        text="Rotate Edge CCW").direction = 'CCW'
         layout.separator()
 
         layout.operator("TFM_OT_edge_slide", text="Edge Slide")
@@ -1296,10 +1213,10 @@ class VIEW3D_MT_EditArmatureTK(bpy.types.Menu):
         # Edit Armature
 
         layout.operator("transform.transform",
-            text="Scale Envelope Distance").mode = 'BONE_SIZE'
+                        text="Scale Envelope Distance").mode = 'BONE_SIZE'
 
         layout.operator("transform.transform",
-            text="Scale B-Bone Width").mode = 'BONE_SIZE'
+                        text="Scale B-Bone Width").mode = 'BONE_SIZE'
         layout.separator()
 
         layout.operator("armature.extrude_move")
@@ -1325,11 +1242,11 @@ class VIEW3D_MT_ArmatureName(bpy.types.Menu):
 
         layout.operator_context = 'EXEC_AREA'
         layout.operator("armature.autoside_names",
-            text="AutoName Left/Right").type = 'XAXIS'
+                        text="AutoName Left/Right").type = 'XAXIS'
         layout.operator("armature.autoside_names",
-            text="AutoName Front/Back").type = 'YAXIS'
+                        text="AutoName Front/Back").type = 'YAXIS'
         layout.operator("armature.autoside_names",
-            text="AutoName Top/Bottom").type = 'ZAXIS'
+                        text="AutoName Top/Bottom").type = 'ZAXIS'
         layout.operator("armature.flip_names")
         layout.separator()
 
@@ -1341,11 +1258,11 @@ class VIEW3D_MT_KeyframeMenu(bpy.types.Menu):
 
         # Keyframe Bleck
         layout.operator("anim.keyframe_insert_menu",
-            text="Insert Keyframe...")
+                        text="Insert Keyframe...")
         layout.operator("anim.keyframe_delete_v3d",
-            text="Delete Keyframe...")
+                        text="Delete Keyframe...")
         layout.operator("anim.keying_set_active_set",
-            text="Change Keying Set...")
+                        text="Change Keying Set...")
         layout.separator()
 
 # Classes for VIEW3D_MT_CursorMenu()
@@ -1384,23 +1301,23 @@ class VIEW3D_MT_CursorMenu(bpy.types.Menu):
         layout = self.layout
         layout.operator_context = 'INVOKE_REGION_WIN'
         layout.operator("view3d.snap_cursor_to_selected",
-            text="Cursor to Selected")
+                        text="Cursor to Selected")
         layout.operator("view3d.snap_cursor_to_center",
-            text="Cursor to Center")
+                        text="Cursor to Center")
         layout.operator("view3d.snap_cursor_to_grid",
-            text="Cursor to Grid")
+                        text="Cursor to Grid")
         layout.operator("view3d.snap_cursor_to_active",
-            text="Cursor to Active")
+                        text="Cursor to Active")
         layout.separator()
         layout.operator("view3d.snap_selected_to_cursor",
-            text="Selection to Cursor")
+                        text="Selection to Cursor")
         layout.operator("view3d.snap_selected_to_grid",
-            text="Selection to Grid")
+                        text="Selection to Grid")
         layout.separator()
         layout.operator("view3d.pivot_cursor",
-            text="Set Cursor as Pivot Point")
+                        text="Set Cursor as Pivot Point")
         layout.operator("view3d.revert_pivot",
-            text="Revert Pivot Point")
+                        text="Revert Pivot Point")
 
 class VIEW3D_MT_EditCursorMenu(bpy.types.Menu):
     bl_label = "Snap Cursor Menu"
@@ -1410,76 +1327,42 @@ class VIEW3D_MT_EditCursorMenu(bpy.types.Menu):
         layout = self.layout
         layout.operator_context = 'INVOKE_REGION_WIN'
         layout.operator("view3d.snap_cursor_to_selected",
-            text="Cursor to Selected")
+                        text="Cursor to Selected")
         layout.operator("view3d.snap_cursor_to_center",
-            text="Cursor to Center")
+                        text="Cursor to Center")
         layout.operator("view3d.snap_cursor_to_grid",
-            text="Cursor to Grid")
+                        text="Cursor to Grid")
         layout.operator("view3d.snap_cursor_to_active",
-            text="Cursor to Active")
+                        text="Cursor to Active")
         layout.separator()
         layout.operator("view3d.snap_selected_to_cursor",
-            text="Selection to Cursor")
+                        text="Selection to Cursor")
         layout.operator("view3d.snap_selected_to_grid",
-            text="Selection to Grid")
+                        text="Selection to Grid")
         layout.separator()
         layout.operator("view3d.pivot_cursor",
-            text="Set Cursor as Pivot Point")
+                        text="Set Cursor as Pivot Point")
         layout.operator("view3d.revert_pivot",
-            text="Revert Pivot Point")
+                        text="Revert Pivot Point")
         layout.operator("view3d.snap_cursor_to_edge_intersection",
-            text="Cursor to Edge Intersection")
+                        text="Cursor to Edge Intersection")
         layout.operator("transform.snap_type", text="Snap Tools",
-            icon='SNAP_ON')
+                        icon='SNAP_ON')
 
 def abs(val):
     if val > 0:
         return val
     return -val
 
-def LineLineIntersect(p1, p2, p3, p4):
-    # based on Paul Bourke's Shortest Line Between 2 lines
-
-    min = 0.0000001
-    
-    v1 = Vector((p1.x - p3.x, p1.y - p3.y, p1.z - p3.z))
-    v2 = Vector((p4.x - p3.x, p4.y - p3.y, p4.z - p3.z))
-    
-    if abs(v2.x) < min and abs(v2.y) < min and abs(v2.z)  < min:
-        return None
-        
-    v3 = Vector((p2.x - p1.x, p2.y - p1.y, p2.z - p1.z))
-    
-    if abs(v3.x) < min and abs(v3.y) < min and abs(v3.z) < min:
-        return None
-
-    d1 = v1.dot(v2)
-    d2 = v2.dot(v3)
-    d3 = v1.dot(v3)
-    d4 = v2.dot(v2)
-    d5 = v3.dot(v3)
-
-    d = d5 * d4 - d2 * d2
-    
-    if abs(d) < min:
-        return None
-        
-    n = d1 * d2 - d3 * d4
-
-    mua = n / d
-    mub = (d1 + d2 * (mua)) / d4
-
-    return [Vector((p1.x + mua * v3.x, p1.y + mua * v3.y, p1.z + mua * v3.z)), 
-        Vector((p3.x + mub * v2.x, p3.y + mub * v2.y, p3.z + mub * v2.z))]
-
 def edgeIntersect(context, operator):
-    
+    from mathutils.geometry import intersect_line_line
+
     obj = context.active_object
-    
+
     if (obj.type != "MESH"):
         operator.report({'ERROR'}, "Object must be a mesh")
         return None
-    
+
     edges = []
     mesh = obj.data
     verts = mesh.vertices
@@ -1487,36 +1370,37 @@ def edgeIntersect(context, operator):
     is_editmode = (obj.mode == 'EDIT')
     if is_editmode:
         bpy.ops.object.mode_set(mode='OBJECT')
-    
+
     for e in mesh.edges:
         if e.select:
             edges.append(e)
 
+            if len(edges) > 2:
+                break
+
     if is_editmode:
         bpy.ops.object.mode_set(mode='EDIT')
-            
+
     if len(edges) != 2:
         operator.report({'ERROR'},
-            "Operator requires exactly 2 edges to be selected.")
-        return
-        
-    line = LineLineIntersect(verts[edges[0].vertices[0]].co,
-        verts[edges[0].vertices[1]].co, verts[edges[1].vertices[0]].co,
-        verts[edges[1].vertices[1]].co)
-
-    if (line is None):
-        operator.report({'ERROR'}, "Selected edges do not intersect.")
+                        "Operator requires exactly 2 edges to be selected")
         return
 
-    point = ((line[0] + line[1]) / 2)
+    line = intersect_line_line(verts[edges[0].vertices[0]].co,
+                               verts[edges[0].vertices[1]].co,
+                               verts[edges[1].vertices[0]].co,
+                               verts[edges[1].vertices[1]].co)
 
-    context.scene.cursor_location = point
-            
-    return point
-    
+    if line is None:
+        operator.report({'ERROR'}, "Selected edges do not intersect")
+        return
+
+    point = line[0].lerp(line[1], 0.5)
+    context.scene.cursor_location = obj.matrix_world * point
+
 class VIEW3D_OT_CursorToEdgeIntersection(bpy.types.Operator):
     "Finds the mid-point of the shortest distance between two edges"
-    
+
     bl_idname = "view3d.snap_cursor_to_edge_intersection"
     bl_label = "Cursor to Edge Intersection"
 
@@ -1541,19 +1425,20 @@ class VIEW3D_MT_undoS(bpy.types.Menu):
 def register():
     bpy.utils.register_module(__name__)
 
-    km = bpy.context.window_manager.keyconfigs.default.keymaps['3D View']
-    kmi = km.items.new('wm.call_menu', 'SPACE', 'PRESS')
+    wm = bpy.context.window_manager
+    km = wm.keyconfigs.addon.keymaps.new(name='3D View', space_type='VIEW_3D')
+    kmi = km.keymap_items.new('wm.call_menu', 'SPACE', 'PRESS')
     kmi.properties.name = "VIEW3D_MT_Space_Dynamic_Menu"
-
 
 def unregister():
     bpy.utils.unregister_module(__name__)
 
-    km = bpy.context.window_manager.keyconfigs.default.keymaps['3D View']
-    for kmi in km.items:
+    wm = bpy.context.window_manager
+    km = wm.keyconfigs.addon.keymaps['3D View']
+    for kmi in km.keymap_items:
         if kmi.idname == 'wm.call_menu':
             if kmi.properties.name == "VIEW3D_MT_Space_Dynamic_Menu":
-                km.items.remove(kmi)
+                km.keymap_items.remove(kmi)
                 break
 
 if __name__ == "__main__":

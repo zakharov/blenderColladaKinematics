@@ -17,13 +17,13 @@
 # ##### END GPL LICENSE BLOCK #####
 
 bl_info = {
-    "name": "Import GIMP Image to Scene (.xcf, .xjt)",
+    "name": "Import GIMP Image to Scene (.xcf/.xjt)",
     "author": "Daniel Salazar (ZanQdo)",
     "version": (2, 0, 0),
-    "blender": (2, 5, 5),
-    "api": 33419,
-    "location": "File > Import > GIMP Image to Scene(.xcf, .xjt)",
-    "description": "Imports GIMP multilayer image files into 3D Layers",
+    "blender": (2, 5, 7),
+    "api": 36079,
+    "location": "File > Import > GIMP Image to Scene(.xcf/.xjt)",
+    "description": "Imports GIMP multilayer image files as a series of multiple planes",
     "warning": "XCF import requires xcftools installed",
     "wiki_url": "http://wiki.blender.org/index.php/Extensions:2.5/Py/"\
         "Scripts/Import-Export/GIMPImageToScene",
@@ -44,7 +44,7 @@ def main(File, Path, LayerViewers, MixerViewers, LayerOffset,\
     #Folder = '['+File.rstrip(Ext)+']'+'_images/'
     Folder = 'images_'+'['+File.rstrip(Ext)+']/'
     
-    if bpy.data.is_dirty:
+    if not bpy.data.is_saved:
         PathSaveRaw = Path+Folder
         PathSave = PathSaveRaw.replace(' ', '\ ')
         try: os.mkdir(PathSaveRaw)
@@ -250,9 +250,9 @@ def main(File, Path, LayerViewers, MixerViewers, LayerOffset,\
     
     for Area in Areas:
         if Area.type == 'VIEW_3D':
-            Area.active_space.viewport_shade = 'TEXTURED'
-            Area.active_space.show_textured_solid = True
-            Area.active_space.show_floor = False
+            Area.spaces.active.viewport_shade = 'TEXTURED'
+            Area.spaces.active.show_textured_solid = True
+            Area.spaces.active.show_floor = False
     
     #-------------------------------------------------
     # 3D LAYERS
@@ -293,7 +293,8 @@ def main(File, Path, LayerViewers, MixerViewers, LayerOffset,\
         enter_editmode=False,\
         rotation=(0, 0, pi))
         
-        bpy.ops.object.rotation_apply()
+        bpy.ops.object.transform_apply(location=False, rotation=True, scale=False)
+
         
         Active = bpy.context.active_object
         
@@ -310,7 +311,7 @@ def main(File, Path, LayerViewers, MixerViewers, LayerOffset,\
             
         Active.dimensions = float(Coords[0])*LayerScale, float(Coords[1])*LayerScale, 0
         
-        bpy.ops.object.scale_apply()
+        bpy.ops.object.transform_apply(location=False, rotation=False, scale=True)
         
         bpy.ops.object.origin_set(type='ORIGIN_GEOMETRY', center='MEDIAN')
         
@@ -605,6 +606,7 @@ class GIMPImageToScene(bpy.types.Operator):
     
     def draw(self, context):
         layout = self.layout
+        
         box = layout.box()
         box.label('3D Layers:', icon='SORTSIZE')
         box.prop(self, 'SetCamera', icon='OUTLINER_DATA_CAMERA')
@@ -615,6 +617,7 @@ class GIMPImageToScene(bpy.types.Operator):
         box.prop(self, 'ShadelessMats', icon='SOLID')
         box.prop(self, 'LayerOffset')
         box.prop(self, 'LayerScale')
+        
         box = layout.box()
         box.label('Compositing:', icon='RENDERLAYERS')
         box.prop(self, 'SetupCompo', icon='NODETREE')

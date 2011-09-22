@@ -1,17 +1,17 @@
 K 25
 svn:wc:ra_dav:version-url
 V 78
-/svnroot/bf-extensions/!svn/ver/1638/trunk/py/scripts/addons/light_field_tools
+/svnroot/bf-extensions/!svn/ver/2279/trunk/py/scripts/addons/light_field_tools
 END
 light_field_tools.py
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svnroot/bf-extensions/!svn/ver/1638/trunk/py/scripts/addons/light_field_tools/light_field_tools.py
+/svnroot/bf-extensions/!svn/ver/2279/trunk/py/scripts/addons/light_field_tools/light_field_tools.py
 END
 __init__.py
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-extensions/!svn/ver/1634/trunk/py/scripts/addons/light_field_tools/__init__.py
+/svnroot/bf-extensions/!svn/ver/2116/trunk/py/scripts/addons/light_field_tools/__init__.py
 END

@@ -20,11 +20,12 @@
 
 from _bpy import types as bpy_types
 import _bpy
-from mathutils import Vector
 
 StructRNA = bpy_types.Struct.__bases__[0]
 StructMetaPropGroup = _bpy.StructMetaPropGroup
 # StructRNA = bpy_types.Struct
+
+bpy_types.BlendDataLibraries.load = _bpy._library_load
 
 
 class Context(StructRNA):
@@ -56,7 +57,7 @@ class Library(bpy_types.ID):
                 "curves", "grease_pencil", "groups", "images", \
                 "lamps", "lattices", "materials", "metaballs", \
                 "meshes", "node_groups", "objects", "scenes", \
-                "sounds", "textures", "texts", "fonts", "worlds"
+                "sounds", "speakers", "textures", "texts", "fonts", "worlds"
 
         return tuple(id_block for attr in attr_links for id_block in getattr(bpy.data, attr) if id_block.library == self)
 
@@ -142,19 +143,22 @@ class _GenericBone:
     def x_axis(self):
         """ Vector pointing down the x-axis of the bone.
         """
-        return Vector((1.0, 0.0, 0.0)) * self.matrix.to_3x3()
+        from mathutils import Vector
+        return self.matrix.to_3x3() * Vector((1.0, 0.0, 0.0))
 
     @property
     def y_axis(self):
         """ Vector pointing down the x-axis of the bone.
         """
-        return Vector((0.0, 1.0, 0.0)) * self.matrix.to_3x3()
+        from mathutils import Vector
+        return self.matrix.to_3x3() * Vector((0.0, 1.0, 0.0))
 
     @property
     def z_axis(self):
         """ Vector pointing down the x-axis of the bone.
         """
-        return Vector((0.0, 0.0, 1.0)) * self.matrix.to_3x3()
+        from mathutils import Vector
+        return self.matrix.to_3x3() * Vector((0.0, 0.0, 1.0))
 
     @property
     def basename(self):
@@ -202,7 +206,7 @@ class _GenericBone:
 
     @property
     def children_recursive(self):
-        """a list of all children from this bone."""
+        """A list of all children from this bone."""
         bones_children = []
         for bone in self._other_bones:
             index = bone.parent_index(self)
@@ -237,7 +241,7 @@ class _GenericBone:
                 chain.append(child)
             else:
                 if len(children_basename):
-                    print("multiple basenames found, this is probably not what you want!", bone.name, children_basename)
+                    print("multiple basenames found, this is probably not what you want!", self.name, children_basename)
 
                 break
 
@@ -283,16 +287,16 @@ class EditBone(StructRNA, _GenericBone, metaclass=StructMetaPropGroup):
         Transform the the bones head, tail, roll and envalope (when the matrix has a scale component).
 
         :arg matrix: 3x3 or 4x4 transformation matrix.
-        :type matrix: :class:`Matrix`
+        :type matrix: :class:`mathutils.Matrix`
         :arg scale: Scale the bone envalope by the matrix.
         :type scale: bool
         :arg roll: Correct the roll to point in the same relative direction to the head and tail.
         :type roll: bool
         """
         from mathutils import Vector
-        z_vec = Vector((0.0, 0.0, 1.0)) * self.matrix.to_3x3()
-        self.tail = self.tail * matrix
-        self.head = self.head * matrix
+        z_vec = self.matrix.to_3x3() * Vector((0.0, 0.0, 1.0))
+        self.tail = matrix * self.tail
+        self.head = matrix * self.head
 
         if scale:
             scalar = matrix.median_scale
@@ -300,7 +304,7 @@ class EditBone(StructRNA, _GenericBone, metaclass=StructMetaPropGroup):
             self.tail_radius *= scalar
 
         if roll:
-            self.align_roll(z_vec * matrix)
+            self.align_roll(matrix * z_vec)
 
 
 def ord_ind(i1, i2):
@@ -352,164 +356,7 @@ class Mesh(bpy_types.ID):
 
     @property
     def edge_keys(self):
-        return [edge_key for face in self.faces for edge_key in face.edge_keys]
-
-    @property
-    def edge_face_count_dict(self):
-        face_edge_keys = [face.edge_keys for face in self.faces]
-        face_edge_count = {}
-        for face_keys in face_edge_keys:
-            for key in face_keys:
-                try:
-                    face_edge_count[key] += 1
-                except:
-                    face_edge_count[key] = 1
-
-        return face_edge_count
-
-    @property
-    def edge_face_count(self):
-        edge_face_count_dict = self.edge_face_count_dict
-        return [edge_face_count_dict.get(ed.key, 0) for ed in self.edges]
-
-    def edge_loops_from_faces(self, faces=None, seams=()):
-        """
-        Edge loops defined by faces
-
-        Takes me.faces or a list of faces and returns the edge loops
-        These edge loops are the edges that sit between quads, so they dont touch
-        1 quad, note: not connected will make 2 edge loops, both only containing 2 edges.
-
-        return a list of edge key lists
-        [ [(0,1), (4, 8), (3,8)], ...]
-
-        return a list of edge vertex index lists
-        """
-
-        OTHER_INDEX = 2, 3, 0, 1  # opposite face index
-
-        if faces is None:
-            faces = self.faces
-
-        edges = {}
-
-        for f in faces:
-#            if len(f) == 4:
-            if f.vertices_raw[3] != 0:
-                edge_keys = f.edge_keys
-                for i, edkey in enumerate(f.edge_keys):
-                    edges.setdefault(edkey, []).append(edge_keys[OTHER_INDEX[i]])
-
-        for edkey in seams:
-            edges[edkey] = []
-
-        # Collect edge loops here
-        edge_loops = []
-
-        for edkey, ed_adj in edges.items():
-            if 0 < len(ed_adj) < 3:  # 1 or 2
-                # Seek the first edge
-                context_loop = [edkey, ed_adj[0]]
-                edge_loops.append(context_loop)
-                if len(ed_adj) == 2:
-                    other_dir = ed_adj[1]
-                else:
-                    other_dir = None
-
-                ed_adj[:] = []
-
-                flipped = False
-
-                while 1:
-                    # from knowing the last 2, look for th next.
-                    ed_adj = edges[context_loop[-1]]
-                    if len(ed_adj) != 2:
-
-                        if other_dir and flipped == False:  # the original edge had 2 other edges
-                            flipped = True  # only flip the list once
-                            context_loop.reverse()
-                            ed_adj[:] = []
-                            context_loop.append(other_dir)  # save 1 lookiup
-
-                            ed_adj = edges[context_loop[-1]]
-                            if len(ed_adj) != 2:
-                                ed_adj[:] = []
-                                break
-                        else:
-                            ed_adj[:] = []
-                            break
-
-                    i = ed_adj.index(context_loop[-2])
-                    context_loop.append(ed_adj[not  i])
-
-                    # Dont look at this again
-                    ed_adj[:] = []
-
-        return edge_loops
-
-    def edge_loops_from_edges(self, edges=None):
-        """
-        Edge loops defined by edges
-
-        Takes me.edges or a list of edges and returns the edge loops
-
-        return a list of vertex indices.
-        [ [1, 6, 7, 2], ...]
-
-        closed loops have matching start and end values.
-        """
-        line_polys = []
-
-        # Get edges not used by a face
-        if edges is None:
-            edges = self.edges
-
-        if not hasattr(edges, "pop"):
-            edges = edges[:]
-
-        edge_dict = {ed.key: ed for ed in self.edges if ed.select}
-
-        while edges:
-            current_edge = edges.pop()
-            vert_end, vert_start = current_edge.vertices[:]
-            line_poly = [vert_start, vert_end]
-
-            ok = True
-            while ok:
-                ok = False
-                #for i, ed in enumerate(edges):
-                i = len(edges)
-                while i:
-                    i -= 1
-                    ed = edges[i]
-                    v1, v2 = ed.vertices
-                    if v1 == vert_end:
-                        line_poly.append(v2)
-                        vert_end = line_poly[-1]
-                        ok = 1
-                        del edges[i]
-                        # break
-                    elif v2 == vert_end:
-                        line_poly.append(v1)
-                        vert_end = line_poly[-1]
-                        ok = 1
-                        del edges[i]
-                        #break
-                    elif v1 == vert_start:
-                        line_poly.insert(0, v2)
-                        vert_start = line_poly[0]
-                        ok = 1
-                        del edges[i]
-                        # break
-                    elif v2 == vert_start:
-                        line_poly.insert(0, v1)
-                        vert_start = line_poly[0]
-                        ok = 1
-                        del edges[i]
-                        #break
-            line_polys.append(line_poly)
-
-        return line_polys
+        return [ed.key for ed in self.edges]
 
 
 class MeshEdge(StructRNA):
@@ -529,17 +376,31 @@ class MeshFace(StructRNA):
         face_verts = self.vertices[:]
         mesh_verts = self.id_data.vertices
         if len(face_verts) == 3:
-            return (mesh_verts[face_verts[0]].co + mesh_verts[face_verts[1]].co + mesh_verts[face_verts[2]].co) / 3.0
+            return (mesh_verts[face_verts[0]].co +
+                    mesh_verts[face_verts[1]].co +
+                    mesh_verts[face_verts[2]].co
+                    ) / 3.0
         else:
-            return (mesh_verts[face_verts[0]].co + mesh_verts[face_verts[1]].co + mesh_verts[face_verts[2]].co + mesh_verts[face_verts[3]].co) / 4.0
+            return (mesh_verts[face_verts[0]].co +
+                    mesh_verts[face_verts[1]].co +
+                    mesh_verts[face_verts[2]].co +
+                    mesh_verts[face_verts[3]].co
+                    ) / 4.0
 
     @property
     def edge_keys(self):
         verts = self.vertices[:]
         if len(verts) == 3:
-            return ord_ind(verts[0], verts[1]), ord_ind(verts[1], verts[2]), ord_ind(verts[2], verts[0])
-
-        return ord_ind(verts[0], verts[1]), ord_ind(verts[1], verts[2]), ord_ind(verts[2], verts[3]), ord_ind(verts[3], verts[0])
+            return (ord_ind(verts[0], verts[1]),
+                    ord_ind(verts[1], verts[2]),
+                    ord_ind(verts[2], verts[0]),
+                    )
+        else:
+            return (ord_ind(verts[0], verts[1]),
+                    ord_ind(verts[1], verts[2]),
+                    ord_ind(verts[2], verts[3]),
+                    ord_ind(verts[3], verts[0]),
+                    )
 
 
 class Text(bpy_types.ID):
@@ -562,6 +423,16 @@ class Text(bpy_types.ID):
 
 # values are module: [(cls, path, line), ...]
 TypeMap = {}
+
+
+class Sound(bpy_types.ID):
+    __slots__ = ()
+
+    @property
+    def factory(self):
+        """The aud.Factory object of the sound."""
+        import aud
+        return aud._sound_from_pointer(self.as_pointer())
 
 
 class RNAMeta(type):
@@ -604,6 +475,10 @@ class RNAMetaPropGroup(RNAMeta, StructMetaPropGroup):
 
 
 class OrderedMeta(RNAMeta):
+    def __init__(cls, name, bases, attributes):
+        if attributes.__class__ is OrderedDictMini:
+            cls.order = attributes.order
+
     def __prepare__(name, bases, **kwargs):
         return OrderedDictMini()  # collections.OrderedDict()
 
@@ -674,6 +549,9 @@ class _GenericUI:
         if draw_funcs is None:
 
             def draw_ls(self, context):
+                # ensure menus always get default context
+                operator_context_default = self.layout.operator_context
+
                 for func in draw_ls._draw_funcs:
                     # so bad menu functions dont stop the entire menu from drawing.
                     try:
@@ -681,6 +559,8 @@ class _GenericUI:
                     except:
                         import traceback
                         traceback.print_exc()
+
+                    self.layout.operator_context = operator_context_default
 
             draw_funcs = draw_ls._draw_funcs = [cls.draw]
             cls.draw = draw_ls

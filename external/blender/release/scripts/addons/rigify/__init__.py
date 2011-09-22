@@ -19,11 +19,10 @@
 bl_info = {
     "name": "Rigify",
     "author": "Nathan Vegdahl",
-    "version": (0, 5),
-    "blender": (2, 5, 6),
+    "blender": (2, 5, 7),
+    "api": 35622,
     "location": "View3D > Add > Armature",
     "description": "Adds various Rig Templates",
-    "api": 35119,
     "location": "Armature properties",
     "wiki_url": "http://wiki.blender.org/index.php/Extensions:2.5/Py/"\
         "Scripts/Rigging/Rigify",
@@ -42,7 +41,6 @@ else:
     from . import generate, ui, utils, metarig_menu
 
 import bpy
-import bpy_types
 import os
 
 
@@ -58,7 +56,7 @@ def get_rig_list(path):
 
     for f in files:
         is_dir = os.path.isdir(os.path.join(SEARCH_DIR_ABS, f))  # Whether the file is a directory
-        if f[0] in (".", "_"):
+        if f[0] in {".", "_"}:
             pass
         elif f.count(".") >= 2 or (is_dir and "." in f):
             print("Warning: %r, filename contains a '.', skipping" % os.path.join(SEARCH_DIR_ABS, f))
@@ -116,6 +114,10 @@ class RigifyParameters(bpy.types.PropertyGroup):
     name = bpy.props.StringProperty()
 
 
+class RigifyArmatureLayer(bpy.types.PropertyGroup):
+    name = bpy.props.StringProperty(name="Layer Name", default=" ")
+    row = bpy.props.IntProperty(name="Layer Row", default=1, min=1, max=32)
+
 
 ##### REGISTER #####
 
@@ -125,14 +127,17 @@ def register():
 
     bpy.utils.register_class(RigifyName)
     bpy.utils.register_class(RigifyParameters)
+    bpy.utils.register_class(RigifyArmatureLayer)
 
-    bpy.types.PoseBone.rigify_type = bpy.props.StringProperty(name="Rigify Type", description="Rig type for this bone.")
+    bpy.types.PoseBone.rigify_type = bpy.props.StringProperty(name="Rigify Type", description="Rig type for this bone")
     bpy.types.PoseBone.rigify_parameters = bpy.props.CollectionProperty(type=RigifyParameters)
+
+    bpy.types.Armature.rigify_layers = bpy.props.CollectionProperty(type=RigifyArmatureLayer)
 
     IDStore = bpy.types.WindowManager
     IDStore.rigify_collection = bpy.props.EnumProperty(items=col_enum_list, default="All", name="Rigify Active Collection", description="The selected rig collection")
     IDStore.rigify_types = bpy.props.CollectionProperty(type=RigifyName)
-    IDStore.rigify_active_type = bpy.props.IntProperty(name="Rigify Active Type", description="The selected rig type.")
+    IDStore.rigify_active_type = bpy.props.IntProperty(name="Rigify Active Type", description="The selected rig type")
 
     # Add rig parameters
     for rig in rig_list:
@@ -141,6 +146,7 @@ def register():
             r.add_parameters(RigifyParameters)
         except AttributeError:
             pass
+
 
 def unregister():
     del bpy.types.PoseBone.rigify_type
@@ -153,6 +159,7 @@ def unregister():
 
     bpy.utils.unregister_class(RigifyName)
     bpy.utils.unregister_class(RigifyParameters)
+    bpy.utils.unregister_class(RigifyArmatureLayer)
 
     metarig_menu.unregister()
     ui.unregister()

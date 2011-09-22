@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_Buffer.cpp 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_Buffer.cpp 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -73,4 +73,10 @@ void AUD_Buffer::resize(int size, bool keep)
 		m_buffer = (data_t*) realloc(m_buffer, size + 16);
 
 	m_size = size;
+}
+
+void AUD_Buffer::assureSize(int size, bool keep)
+{
+	if(m_size < size)
+		resize(size, keep);
 }

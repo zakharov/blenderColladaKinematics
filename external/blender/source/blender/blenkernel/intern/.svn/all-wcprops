@@ -1,19 +1,19 @@
 K 25
 svn:wc:ra_dav:version-url
 V 81
-/svnroot/bf-blender/!svn/ver/35350/trunk/blender/source/blender/blenkernel/intern
+/svnroot/bf-blender/!svn/ver/40443/trunk/blender/source/blender/blenkernel/intern
 END
 bvhutils.c
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/bvhutils.c
+/svnroot/bf-blender/!svn/ver/37787/trunk/blender/source/blender/blenkernel/intern/bvhutils.c
 END
 boids.c
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/boids.c
+/svnroot/bf-blender/!svn/ver/40147/trunk/blender/source/blender/blenkernel/intern/boids.c
 END
 script.c
 K 25
@@ -25,61 +25,61 @@ fmodifier.c
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/fmodifier.c
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/source/blender/blenkernel/intern/fmodifier.c
 END
 mesh_validate.c
 K 25
 svn:wc:ra_dav:version-url
 V 97
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/mesh_validate.c
+/svnroot/bf-blender/!svn/ver/40193/trunk/blender/source/blender/blenkernel/intern/mesh_validate.c
 END
 cdderivedmesh.c
 K 25
 svn:wc:ra_dav:version-url
 V 97
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/cdderivedmesh.c
+/svnroot/bf-blender/!svn/ver/40390/trunk/blender/source/blender/blenkernel/intern/cdderivedmesh.c
 END
 font.c
 K 25
 svn:wc:ra_dav:version-url
 V 88
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/font.c
+/svnroot/bf-blender/!svn/ver/36403/trunk/blender/source/blender/blenkernel/intern/font.c
 END
 blender.c
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/blender.c
+/svnroot/bf-blender/!svn/ver/40443/trunk/blender/source/blender/blenkernel/intern/blender.c
 END
 icons.c
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/icons.c
+/svnroot/bf-blender/!svn/ver/36757/trunk/blender/source/blender/blenkernel/intern/icons.c
 END
 action.c
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/action.c
+/svnroot/bf-blender/!svn/ver/40255/trunk/blender/source/blender/blenkernel/intern/action.c
 END
 unit.c
 K 25
 svn:wc:ra_dav:version-url
 V 88
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/unit.c
+/svnroot/bf-blender/!svn/ver/40258/trunk/blender/source/blender/blenkernel/intern/unit.c
 END
 gpencil.c
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/gpencil.c
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/source/blender/blenkernel/intern/gpencil.c
 END
 image.c
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/image.c
+/svnroot/bf-blender/!svn/ver/40372/trunk/blender/source/blender/blenkernel/intern/image.c
 END
 BME_structure.c
 K 25
@@ -91,19 +91,19 @@ BME_tools.c
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/BME_tools.c
+/svnroot/bf-blender/!svn/ver/38110/trunk/blender/source/blender/blenkernel/intern/BME_tools.c
 END
 constraint.c
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/constraint.c
+/svnroot/bf-blender/!svn/ver/40289/trunk/blender/source/blender/blenkernel/intern/constraint.c
 END
 text.c
 K 25
 svn:wc:ra_dav:version-url
 V 88
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/text.c
+/svnroot/bf-blender/!svn/ver/38751/trunk/blender/source/blender/blenkernel/intern/text.c
 END
 BME_Customdata.c
 K 25
@@ -115,67 +115,67 @@ world.c
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/35336/trunk/blender/source/blender/blenkernel/intern/world.c
+/svnroot/bf-blender/!svn/ver/36777/trunk/blender/source/blender/blenkernel/intern/world.c
 END
 seqeffects.c
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/seqeffects.c
+/svnroot/bf-blender/!svn/ver/40289/trunk/blender/source/blender/blenkernel/intern/seqeffects.c
 END
 writeavi.c
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/writeavi.c
+/svnroot/bf-blender/!svn/ver/38597/trunk/blender/source/blender/blenkernel/intern/writeavi.c
 END
 writeframeserver.c
 K 25
 svn:wc:ra_dav:version-url
 V 100
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/writeframeserver.c
+/svnroot/bf-blender/!svn/ver/38594/trunk/blender/source/blender/blenkernel/intern/writeframeserver.c
 END
 modifier.c
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/modifier.c
+/svnroot/bf-blender/!svn/ver/39342/trunk/blender/source/blender/blenkernel/intern/modifier.c
 END
 material.c
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/material.c
+/svnroot/bf-blender/!svn/ver/40382/trunk/blender/source/blender/blenkernel/intern/material.c
 END
 multires.c
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/multires.c
+/svnroot/bf-blender/!svn/ver/40443/trunk/blender/source/blender/blenkernel/intern/multires.c
 END
 subsurf_ccg.c
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svnroot/bf-blender/!svn/ver/35336/trunk/blender/source/blender/blenkernel/intern/subsurf_ccg.c
+/svnroot/bf-blender/!svn/ver/40382/trunk/blender/source/blender/blenkernel/intern/subsurf_ccg.c
 END
 CCGSubSurf.c
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/CCGSubSurf.c
+/svnroot/bf-blender/!svn/ver/35888/trunk/blender/source/blender/blenkernel/intern/CCGSubSurf.c
 END
 particle_system.c
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/particle_system.c
+/svnroot/bf-blender/!svn/ver/39795/trunk/blender/source/blender/blenkernel/intern/particle_system.c
 END
 cloth.c
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/cloth.c
+/svnroot/bf-blender/!svn/ver/39558/trunk/blender/source/blender/blenkernel/intern/cloth.c
 END
 CCGSubSurf.h
 K 25
@@ -187,7 +187,7 @@ report.c
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/report.c
+/svnroot/bf-blender/!svn/ver/39795/trunk/blender/source/blender/blenkernel/intern/report.c
 END
 fluidsim.c
 K 25
@@ -199,13 +199,13 @@ smoke.c
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/smoke.c
+/svnroot/bf-blender/!svn/ver/38372/trunk/blender/source/blender/blenkernel/intern/smoke.c
 END
 anim.c
 K 25
 svn:wc:ra_dav:version-url
 V 88
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/anim.c
+/svnroot/bf-blender/!svn/ver/40253/trunk/blender/source/blender/blenkernel/intern/anim.c
 END
 bullet.c
 K 25
@@ -217,7 +217,7 @@ idcode.c
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/idcode.c
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/source/blender/blenkernel/intern/idcode.c
 END
 packedFile.c
 K 25
@@ -229,19 +229,19 @@ shrinkwrap.c
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/35336/trunk/blender/source/blender/blenkernel/intern/shrinkwrap.c
+/svnroot/bf-blender/!svn/ver/40108/trunk/blender/source/blender/blenkernel/intern/shrinkwrap.c
 END
 key.c
 K 25
 svn:wc:ra_dav:version-url
 V 87
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/key.c
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/source/blender/blenkernel/intern/key.c
 END
 sequencer.c
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/sequencer.c
+/svnroot/bf-blender/!svn/ver/40136/trunk/blender/source/blender/blenkernel/intern/sequencer.c
 END
 BME_conversions.c
 K 25
@@ -249,47 +249,47 @@ svn:wc:ra_dav:version-url
 V 99
 /svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/BME_conversions.c
 END
-exotic.c
-K 25
-svn:wc:ra_dav:version-url
-V 90
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/exotic.c
-END
 mesh.c
 K 25
 svn:wc:ra_dav:version-url
 V 88
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/mesh.c
+/svnroot/bf-blender/!svn/ver/40382/trunk/blender/source/blender/blenkernel/intern/mesh.c
 END
 DerivedMesh.c
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/DerivedMesh.c
+/svnroot/bf-blender/!svn/ver/40406/trunk/blender/source/blender/blenkernel/intern/DerivedMesh.c
 END
 texture.c
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svnroot/bf-blender/!svn/ver/35338/trunk/blender/source/blender/blenkernel/intern/texture.c
+/svnroot/bf-blender/!svn/ver/39975/trunk/blender/source/blender/blenkernel/intern/texture.c
 END
 customdata_file.c
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/customdata_file.c
+/svnroot/bf-blender/!svn/ver/39991/trunk/blender/source/blender/blenkernel/intern/customdata_file.c
 END
 particle.c
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/particle.c
+/svnroot/bf-blender/!svn/ver/40289/trunk/blender/source/blender/blenkernel/intern/particle.c
+END
+navmesh_conversion.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/bf-blender/!svn/ver/40408/trunk/blender/source/blender/blenkernel/intern/navmesh_conversion.c
 END
 object.c
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/35336/trunk/blender/source/blender/blenkernel/intern/object.c
+/svnroot/bf-blender/!svn/ver/40406/trunk/blender/source/blender/blenkernel/intern/object.c
 END
 suggestions.c
 K 25
@@ -301,31 +301,31 @@ implicit.c
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/implicit.c
+/svnroot/bf-blender/!svn/ver/36423/trunk/blender/source/blender/blenkernel/intern/implicit.c
 END
 nla.c
 K 25
 svn:wc:ra_dav:version-url
 V 87
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/nla.c
+/svnroot/bf-blender/!svn/ver/39861/trunk/blender/source/blender/blenkernel/intern/nla.c
 END
 paint.c
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/paint.c
+/svnroot/bf-blender/!svn/ver/40368/trunk/blender/source/blender/blenkernel/intern/paint.c
 END
 deform.c
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/deform.c
+/svnroot/bf-blender/!svn/ver/37239/trunk/blender/source/blender/blenkernel/intern/deform.c
 END
 depsgraph.c
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/depsgraph.c
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/source/blender/blenkernel/intern/depsgraph.c
 END
 booleanops_mesh.c
 K 25
@@ -337,7 +337,7 @@ screen.c
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/screen.c
+/svnroot/bf-blender/!svn/ver/40284/trunk/blender/source/blender/blenkernel/intern/screen.c
 END
 BME_mesh.c
 K 25
@@ -355,7 +355,7 @@ brush.c
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/35290/trunk/blender/source/blender/blenkernel/intern/brush.c
+/svnroot/bf-blender/!svn/ver/40108/trunk/blender/source/blender/blenkernel/intern/brush.c
 END
 property.c
 K 25
@@ -367,7 +367,7 @@ curve.c
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/curve.c
+/svnroot/bf-blender/!svn/ver/40289/trunk/blender/source/blender/blenkernel/intern/curve.c
 END
 bmfont.c
 K 25
@@ -379,25 +379,25 @@ mball.c
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/mball.c
+/svnroot/bf-blender/!svn/ver/36332/trunk/blender/source/blender/blenkernel/intern/mball.c
 END
 ipo.c
 K 25
 svn:wc:ra_dav:version-url
 V 87
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/ipo.c
+/svnroot/bf-blender/!svn/ver/40224/trunk/blender/source/blender/blenkernel/intern/ipo.c
 END
 sound.c
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/sound.c
+/svnroot/bf-blender/!svn/ver/40370/trunk/blender/source/blender/blenkernel/intern/sound.c
 END
 softbody.c
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/softbody.c
+/svnroot/bf-blender/!svn/ver/38235/trunk/blender/source/blender/blenkernel/intern/softbody.c
 END
 group.c
 K 25
@@ -409,7 +409,7 @@ idprop.c
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/idprop.c
+/svnroot/bf-blender/!svn/ver/36403/trunk/blender/source/blender/blenkernel/intern/idprop.c
 END
 bmesh_private.h
 K 25
@@ -421,113 +421,119 @@ colortools.c
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/colortools.c
+/svnroot/bf-blender/!svn/ver/40108/trunk/blender/source/blender/blenkernel/intern/colortools.c
 END
 library.c
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svnroot/bf-blender/!svn/ver/35276/trunk/blender/source/blender/blenkernel/intern/library.c
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/source/blender/blenkernel/intern/library.c
 END
 customdata.c
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/customdata.c
+/svnroot/bf-blender/!svn/ver/40372/trunk/blender/source/blender/blenkernel/intern/customdata.c
 END
 sca.c
 K 25
 svn:wc:ra_dav:version-url
 V 87
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/sca.c
+/svnroot/bf-blender/!svn/ver/40080/trunk/blender/source/blender/blenkernel/intern/sca.c
 END
 image_gen.c
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/image_gen.c
+/svnroot/bf-blender/!svn/ver/36271/trunk/blender/source/blender/blenkernel/intern/image_gen.c
 END
 seqcache.c
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/seqcache.c
+/svnroot/bf-blender/!svn/ver/36197/trunk/blender/source/blender/blenkernel/intern/seqcache.c
 END
 pointcache.c
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/35336/trunk/blender/source/blender/blenkernel/intern/pointcache.c
+/svnroot/bf-blender/!svn/ver/39795/trunk/blender/source/blender/blenkernel/intern/pointcache.c
 END
 writeffmpeg.c
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/writeffmpeg.c
+/svnroot/bf-blender/!svn/ver/39795/trunk/blender/source/blender/blenkernel/intern/writeffmpeg.c
 END
 armature.c
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/armature.c
+/svnroot/bf-blender/!svn/ver/40368/trunk/blender/source/blender/blenkernel/intern/armature.c
 END
 sketch.c
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/sketch.c
+/svnroot/bf-blender/!svn/ver/40147/trunk/blender/source/blender/blenkernel/intern/sketch.c
 END
 anim_sys.c
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/anim_sys.c
+/svnroot/bf-blender/!svn/ver/40390/trunk/blender/source/blender/blenkernel/intern/anim_sys.c
 END
 context.c
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/context.c
+/svnroot/bf-blender/!svn/ver/36442/trunk/blender/source/blender/blenkernel/intern/context.c
 END
 node.c
 K 25
 svn:wc:ra_dav:version-url
 V 88
-/svnroot/bf-blender/!svn/ver/35350/trunk/blender/source/blender/blenkernel/intern/node.c
+/svnroot/bf-blender/!svn/ver/40390/trunk/blender/source/blender/blenkernel/intern/node.c
 END
 lattice.c
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/lattice.c
+/svnroot/bf-blender/!svn/ver/36980/trunk/blender/source/blender/blenkernel/intern/lattice.c
 END
 fcurve.c
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/fcurve.c
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/source/blender/blenkernel/intern/fcurve.c
+END
+speaker.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/source/blender/blenkernel/intern/speaker.c
 END
 displist.c
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/displist.c
+/svnroot/bf-blender/!svn/ver/40193/trunk/blender/source/blender/blenkernel/intern/displist.c
 END
 collision.c
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/collision.c
+/svnroot/bf-blender/!svn/ver/40258/trunk/blender/source/blender/blenkernel/intern/collision.c
 END
 effect.c
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/effect.c
+/svnroot/bf-blender/!svn/ver/40289/trunk/blender/source/blender/blenkernel/intern/effect.c
 END
 scene.c
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/35247/trunk/blender/source/blender/blenkernel/intern/scene.c
+/svnroot/bf-blender/!svn/ver/40080/trunk/blender/source/blender/blenkernel/intern/scene.c
 END

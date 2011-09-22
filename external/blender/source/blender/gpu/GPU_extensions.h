@@ -1,5 +1,5 @@
 /*
- * $Id: GPU_extensions.h 35014 2011-02-21 06:58:46Z jesterking $
+ * $Id: GPU_extensions.h 40061 2011-09-09 11:55:38Z ben2610 $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -108,10 +108,10 @@ int GPU_type_matches(GPUDeviceType device, GPUOSType os, GPUDriverType driver);
 	- if created with from_blender, will not free the texture
 */
 
-GPUTexture *GPU_texture_create_1D(int w, float *pixels);
-GPUTexture *GPU_texture_create_2D(int w, int h, float *pixels);
+GPUTexture *GPU_texture_create_1D(int w, float *pixels, char err_out[256]);
+GPUTexture *GPU_texture_create_2D(int w, int h, float *pixels, char err_out[256]);
 GPUTexture *GPU_texture_create_3D(int w, int h, int depth, float *fpixels);
-GPUTexture *GPU_texture_create_depth(int w, int h);
+GPUTexture *GPU_texture_create_depth(int w, int h, char err_out[256]);
 GPUTexture *GPU_texture_from_blender(struct Image *ima,
 	struct ImageUser *iuser, double time, int mipmap);
 void GPU_texture_free(GPUTexture *tex);
@@ -126,6 +126,7 @@ GPUFrameBuffer *GPU_texture_framebuffer(GPUTexture *tex);
 int GPU_texture_target(GPUTexture *tex);
 int GPU_texture_opengl_width(GPUTexture *tex);
 int GPU_texture_opengl_height(GPUTexture *tex);
+int GPU_texture_opengl_bindcode(GPUTexture *tex);
 
 /* GPU Framebuffer
    - this is a wrapper for an OpenGL framebuffer object (FBO). in practice
@@ -135,7 +136,7 @@ int GPU_texture_opengl_height(GPUTexture *tex);
 	 be called before rendering to the window framebuffer again */
 
 GPUFrameBuffer *GPU_framebuffer_create(void);
-int GPU_framebuffer_texture_attach(GPUFrameBuffer *fb, GPUTexture *tex);
+int GPU_framebuffer_texture_attach(GPUFrameBuffer *fb, GPUTexture *tex, char err_out[256]);
 void GPU_framebuffer_texture_detach(GPUFrameBuffer *fb, GPUTexture *tex);
 void GPU_framebuffer_texture_bind(GPUFrameBuffer *fb, GPUTexture *tex);
 void GPU_framebuffer_texture_unbind(GPUFrameBuffer *fb, GPUTexture *tex);
@@ -147,7 +148,7 @@ void GPU_framebuffer_restore(void);
    - wrapper around framebuffer and texture for simple offscreen drawing 
    - changes size if graphics card can't support it */
 
-GPUOffScreen *GPU_offscreen_create(int *width, int *height);
+GPUOffScreen *GPU_offscreen_create(int *width, int *height, char err_out[256]);
 void GPU_offscreen_free(GPUOffScreen *ofs);
 void GPU_offscreen_bind(GPUOffScreen *ofs);
 void GPU_offscreen_unbind(GPUOffScreen *ofs);
@@ -178,6 +179,8 @@ typedef struct GPUVertexAttribs {
 	struct {
 		int type;
 		int glindex;
+		int gltexco;
+		int attribid;
 		char name[32];
 	} layer[GPU_MAX_ATTRIB];
 

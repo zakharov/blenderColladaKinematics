@@ -1,5 +1,5 @@
 /*
- * $Id: KX_SoftBodyDeformer.h 35063 2011-02-22 10:33:14Z jesterking $
+ * $Id: KX_SoftBodyDeformer.h 36523 2011-05-06 20:18:42Z blendix $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -60,7 +60,7 @@ public:
 	{
 		//printf("~KX_SoftBodyDeformer\n");
 	};
-	virtual void Relink(GEN_Map<class GEN_HashedPtr, void*>*map);
+	virtual void Relink(CTR_Map<class CTR_HashedPtr, void*>*map);
 	virtual bool Apply(class RAS_IPolyMaterial *polymat);
 	virtual bool Update(void)
 	{

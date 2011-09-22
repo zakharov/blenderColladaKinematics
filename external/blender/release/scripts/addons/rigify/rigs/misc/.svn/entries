@@ -1,15 +1,15 @@
 10
 
 dir
-1680
+2344
 https://svn.blender.org/svnroot/bf-extensions/trunk/py/scripts/addons/rigify/rigs/misc
 https://svn.blender.org/svnroot/bf-extensions
 
 
 
-2011-02-05T07:08:34.456132Z
-1539
-campbellbarton
+2011-09-19T15:08:06.568619Z
+2334
+mont29
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-03-03T12:29:49.794297Z
-df050a79834c46de1048b9df5c0a63de
-2011-02-05T07:08:34.456132Z
-1539
-campbellbarton
+2011-09-21T18:17:49.480306Z
+1b4d9f5126aece2cbca28fa330e94c0c
+2011-09-19T15:08:06.568619Z
+2334
+mont29
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-5779
+5789
 
 __init__.py
 file
@@ -66,7 +66,7 @@ file
 
 
 
-2011-03-03T12:29:49.798297Z
+2011-09-21T18:17:49.480306Z
 d41d8cd98f00b204e9800998ecf8427e
 2010-11-17T18:12:18.841214Z
 1165

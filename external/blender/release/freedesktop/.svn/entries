@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/release/freedesktop
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-05T23:23:09.260413Z
-34109
-mindrones
+2011-05-09T08:15:38.241902Z
+36564
+campbellbarton
 
 
 
@@ -32,11 +32,12 @@ file
 
 
 
-2011-03-03T12:26:12.214297Z
-dab70fa361f3e61177ed4040015aaeee
-2010-09-05T15:15:27.113546Z
-31767
+2011-09-21T18:16:03.827782Z
+c8da55103a25e8baa8a7cd4a7579b23d
+2011-05-09T08:15:38.241902Z
+36564
 campbellbarton
+has-props
 
 
 
@@ -57,8 +58,7 @@ campbellbarton
 
 
 
-
-448
+444
 
 icons
 dir

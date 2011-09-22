@@ -1,14 +1,14 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/imbuf
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-03-05T10:29:10.037531Z
-35362
+2011-09-22T03:14:50.821873Z
+40443
 campbellbarton
 
 
@@ -35,11 +35,11 @@ file
 
 
 
-2011-03-03T12:27:28.266297Z
-d392c2eeabe9e9bf162e8ae5f8b0dda1
-2011-02-27T20:23:21.939977Z
-35239
-jesterking
+2011-09-21T18:16:37.223948Z
+8f0322a827057d3457a833fa9daf2e3d
+2011-08-31T01:05:40.137827Z
+39814
+campbellbarton
 has-props
 
 
@@ -61,7 +61,7 @@ has-props
 
 
 
-11399
+13852
 
 IMB_thumbs.h
 file
@@ -69,11 +69,11 @@ file
 
 
 
-2011-03-03T12:27:28.266297Z
-63fa1b036181a5986dd2a94ca76bbb9f
-2011-02-27T20:23:21.939977Z
-35239
-jesterking
+2011-09-21T18:16:37.223948Z
+b2843d550bd807b462547f301fab6769
+2011-05-02T10:22:49.143179Z
+36433
+campbellbarton
 has-props
 
 
@@ -95,7 +95,7 @@ has-props
 
 
 
-2512
+2621
 
 IMB_imbuf_types.h
 file
@@ -103,11 +103,11 @@ file
 
 
 
-2011-03-03T12:27:28.266297Z
-9477fc129c6ceb6e2f4f1360a33c0bc2
-2011-02-17T05:57:18.978861Z
-34923
-jesterking
+2011-09-21T18:16:37.223948Z
+ff47cdb36a609677e5b8da8e93f5da44
+2011-05-16T13:34:42.344232Z
+36715
+blendix
 has-props
 
 
@@ -129,7 +129,7 @@ has-props
 
 
 
-7378
+7258
 
 SConscript
 file
@@ -137,11 +137,11 @@ file
 
 
 
-2011-03-03T12:27:28.266297Z
-fb6bef53c4d06a1e43bed618f97c6cd4
-2011-02-21T12:35:04.852834Z
-35028
-jesterking
+2011-09-21T18:16:37.223948Z
+df35dea3ebaafef38fe3a4fb09c05b72
+2011-09-19T15:18:58.943086Z
+40364
+campbellbarton
 has-props
 
 
@@ -163,7 +163,7 @@ has-props
 
 
 
-1297
+1508
 
 readme.txt
 file
@@ -171,7 +171,7 @@ file
 
 
 
-2011-03-03T12:27:28.266297Z
+2011-09-21T18:16:37.223948Z
 b9b2db75402c4ce0955c056205ced2cf
 2009-04-20T15:06:46.913736Z
 19820
@@ -205,11 +205,11 @@ file
 
 
 
-2011-03-03T12:27:28.266297Z
-1c7f61f795002259d8c186d5409c70d3
-2011-02-21T12:35:04.852834Z
-35028
-jesterking
+2011-09-21T18:16:37.223948Z
+196279a8bacc27a40dbc9f539c5ac0bd
+2011-09-19T06:32:19.912550Z
+40340
+campbellbarton
 has-props
 
 
@@ -231,5 +231,5 @@ has-props
 
 
 
-3164
+3639
 

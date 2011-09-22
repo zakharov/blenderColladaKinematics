@@ -1,5 +1,5 @@
 /*
- * $Id: object_group.c 35242 2011-02-27 20:29:51Z jesterking $
+ * $Id: object_group.c 39991 2011-09-07 06:33:29Z mont29 $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -238,8 +238,8 @@ static int group_add_exec(bContext *C, wmOperator *UNUSED(op))
 	if(ob == NULL)
 		return OPERATOR_CANCELLED;
 
-    group= add_group("Group");
-    add_to_group(group, ob, scene, NULL);
+	group= add_group("Group");
+	add_to_group(group, ob, scene, NULL);
 
 	WM_event_add_notifier(C, NC_OBJECT|ND_DRAW, ob);
 
@@ -264,12 +264,12 @@ static int group_link_exec(bContext *C, wmOperator *op)
 {
 	Scene *scene= CTX_data_scene(C);
 	Object *ob= CTX_data_pointer_get_type(C, "object", &RNA_Object).data;
-    Group *group= BLI_findlink(&CTX_data_main(C)->group, RNA_enum_get(op->ptr, "group"));
+	Group *group= BLI_findlink(&CTX_data_main(C)->group, RNA_enum_get(op->ptr, "group"));
 
 	if(ELEM(NULL, ob, group))
 		return OPERATOR_CANCELLED;
 
-    add_to_group(group, ob, scene, NULL);
+	add_to_group(group, ob, scene, NULL);
 
 	WM_event_add_notifier(C, NC_OBJECT|ND_DRAW, ob);
 

@@ -16,14 +16,12 @@
 #
 # ##### END GPL LICENSE BLOCK #####
 
-# <pep8 compliant>
-
 bl_info= {
     "name": "Import LightWave Objects",
     "author": "Ken Nign (Ken9)",
     "version": (1, 2),
-    "blender": (2, 5, 3),
-    "api": 31847,
+    "blender": (2, 5, 7),
+    "api": 35622,
     "location": "File > Import > LightWave Object (.lwo)",
     "description": "Imports a LWO file including any UV, Morph and Color maps. "\
         "Can convert Skelegons to an Armature.",
@@ -37,7 +35,7 @@ bl_info= {
 # Copyright (c) Ken Nign 2010
 # ken@virginpi.com
 #
-# Version 1.2 - Sep 7, 2010
+# Version 1.3 - Aug 11, 2011
 #
 # Loads a LightWave .lwo object file, including the vertex maps such as
 # UV, Morph, Color and Weight maps.
@@ -58,14 +56,14 @@ bl_info= {
 #
 # History:
 #
+# 1.3 Fixed CC Edge Weight loading.
+#
 # 1.2 Added Absolute Morph and CC Edge Weight support.
 #     Made edge creation safer.
 # 1.0 First Release
 
 
 import os
-import io
-import time
 import struct
 import chunk
 
@@ -613,37 +611,33 @@ def read_weight_vmad(ew_bytes, object_layers):
         return  # We just want the Catmull-Clark edge weights
 
     offset+= name_len
-    prev_pol= -1
-    prev_pnt= -1
-    prev_weight= 0.0
-    first_pnt= -1
-    poly_pnts= 0
+    # Some info: LW stores a face's points in a clock-wize order (with the
+    # normal pointing at you). This gives edges a 'direction' which is used
+    # when it comes to storing CC edge weight values. The weight is given
+    # to the point preceeding the edge that the weight belongs to.
     while offset < chunk_len:
-        pnt_id, pnt_id_len= read_vx(ew_bytes[offset:offset+4])
+        pnt_id, pnt_id_len = read_vx(ew_bytes[offset:offset+4])
         offset+= pnt_id_len
         pol_id, pol_id_len= read_vx(ew_bytes[offset:offset+4])
         offset+= pol_id_len
-
         weight,= struct.unpack(">f", ew_bytes[offset:offset+4])
         offset+= 4
-        if prev_pol == pol_id:
-            # Points on the same poly should define an edge.
-            object_layers[-1].edge_weights["{0} {1}".format(prev_pnt, pnt_id)]= weight
-            poly_pnts += 1
+        
+        face_pnts= object_layers[-1].pols[pol_id]
+        try:
+            # Find the point's location in the polygon's point list
+            first_idx= face_pnts.index(pnt_id)
+        except:
+            continue
+        
+        # Then get the next point in the list, or wrap around to the first
+        if first_idx == len(face_pnts) - 1:
+            second_pnt= face_pnts[0]
         else:
-            if poly_pnts > 2:
-                # Make an edge from the first and last points.
-                object_layers[-1].edge_weights["{0} {1}".format(first_pnt, prev_pnt)]= prev_weight
-            first_pnt= pnt_id
-            prev_pol= pol_id
-            poly_pnts= 1
-
-        prev_pnt= pnt_id
-        prev_weight= weight
-
-    if poly_pnts > 2:
-        object_layers[-1].edge_weights["{0} {1}".format(first_pnt, prev_pnt)]= prev_weight
-
+            second_pnt= face_pnts[first_idx + 1]
+        
+        object_layers[-1].edge_weights["{0} {1}".format(second_pnt, pnt_id)]= weight
+        
 
 def read_pols(pol_bytes, object_layers):
     '''Read the layer's polygons, each one is just a list of point indexes.'''
@@ -1197,6 +1191,12 @@ def build_objects(object_layers, object_surfs, object_tags, object_name, add_sub
         layer_data.morphs.clear()
         layer_data.surf_tags.clear()
 
+        # We may have some invalid mesh data, See: [#27916]
+        # keep this last!
+        print("validating mesh: %r..." % me.name)
+        me.validate(verbose=1)
+        print("done!")
+
     # With the objects made, setup the parents and re-adjust the locations.
     for ob_key in ob_dict:
         if ob_dict[ob_key][1] != -1 and ob_dict[ob_key][1] in ob_dict:
@@ -1216,7 +1216,7 @@ class IMPORT_OT_lwo(bpy.types.Operator):
     '''Import LWO Operator.'''
     bl_idname= "import_scene.lwo"
     bl_label= "Import LWO"
-    bl_description= "Import a LightWave Object file."
+    bl_description= "Import a LightWave Object file"
     bl_options= {'REGISTER', 'UNDO'}
 
     filepath= StringProperty(name="File Path", description="Filepath used for importing the LWO file", maxlen=1024, default="")

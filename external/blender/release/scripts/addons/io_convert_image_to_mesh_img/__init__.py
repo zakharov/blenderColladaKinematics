@@ -20,8 +20,8 @@ bl_info = {
     "name": "HiRISE DTM from PDS IMG",
     "author": "Tim Spriggs (tims@uahirise.org)",
     "version": (0, 1, 2),
-    "blender": (2, 5, 3),
-    "api": 31998,
+    "blender": (2, 5, 7),
+    "api": 35622,
     "location": "File > Import > HiRISE DTM from PDS IMG (.IMG)",
     "description": "Import a HiRISE DTM formatted as a PDS IMG file",
     "warning": "May consume a lot of memory",
@@ -50,13 +50,14 @@ else:
 
 import bpy
 from bpy.props import *
-from io_utils import ImportHelper
+from bpy_extras.io_utils import ImportHelper
 
 
 class ImportHiRISEIMGDTM(bpy.types.Operator, ImportHelper):
     '''Import a HiRISE DTM formatted as a PDS IMG file'''
     bl_idname = "import_shape.img"
     bl_label  = "Import HiRISE DTM from PDS IMG"
+    bl_options = {'UNDO'}
 
     filename_ext = ".IMG"
     filter_glob = StringProperty(default="*.IMG", options={'HIDDEN'})
@@ -78,7 +79,7 @@ class ImportHiRISEIMGDTM(bpy.types.Operator, ImportHelper):
                                    ('BIN12-FAST', "12x12 Fast", "use one sample per 12x12 region"),
                                   ),
                             name="Binning",
-                            description="Import Binning.",
+                            description="Import Binning",
                             default='BIN12-FAST'
                             )
 

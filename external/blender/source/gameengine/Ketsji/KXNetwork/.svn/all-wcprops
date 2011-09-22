@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 83
-/svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/KXNetwork
+/svnroot/bf-blender/!svn/ver/39883/trunk/blender/source/gameengine/Ketsji/KXNetwork
 END
 KX_NetworkMessageSensor.h
 K 25
@@ -19,7 +19,7 @@ KX_NetworkMessageActuator.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 113
-/svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/KXNetwork/KX_NetworkMessageActuator.cpp
+/svnroot/bf-blender/!svn/ver/39834/trunk/blender/source/gameengine/Ketsji/KXNetwork/KX_NetworkMessageActuator.cpp
 END
 KX_NetworkObjectActuator.cpp
 K 25
@@ -31,13 +31,13 @@ SConscript
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/gameengine/Ketsji/KXNetwork/SConscript
+/svnroot/bf-blender/!svn/ver/36523/trunk/blender/source/gameengine/Ketsji/KXNetwork/SConscript
 END
 KX_NetworkEventManager.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 110
-/svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/KXNetwork/KX_NetworkEventManager.cpp
+/svnroot/bf-blender/!svn/ver/39834/trunk/blender/source/gameengine/Ketsji/KXNetwork/KX_NetworkEventManager.cpp
 END
 KX_NetworkMessageActuator.h
 K 25
@@ -49,7 +49,7 @@ KX_NetworkMessageSensor.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 111
-/svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/KXNetwork/KX_NetworkMessageSensor.cpp
+/svnroot/bf-blender/!svn/ver/39834/trunk/blender/source/gameengine/Ketsji/KXNetwork/KX_NetworkMessageSensor.cpp
 END
 KX_NetworkObjectActuator.h
 K 25
@@ -61,7 +61,7 @@ CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/gameengine/Ketsji/KXNetwork/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/38443/trunk/blender/source/gameengine/Ketsji/KXNetwork/CMakeLists.txt
 END
 KX_NetworkObjectSensor.cpp
 K 25
@@ -73,5 +73,5 @@ KX_NetworkEventManager.h
 K 25
 svn:wc:ra_dav:version-url
 V 108
-/svnroot/bf-blender/!svn/ver/35063/trunk/blender/source/gameengine/Ketsji/KXNetwork/KX_NetworkEventManager.h
+/svnroot/bf-blender/!svn/ver/39883/trunk/blender/source/gameengine/Ketsji/KXNetwork/KX_NetworkEventManager.h
 END

@@ -1,4 +1,4 @@
-# $Id: CMakeLists.txt 33864 2010-12-22 23:09:30Z campbellbarton $
+# $Id: CMakeLists.txt 40127 2011-09-11 14:13:04Z ben2610 $
 # ***** BEGIN GPL LICENSE BLOCK *****
 #
 # This program is free software; you can redistribute it and/or
@@ -26,36 +26,44 @@
 
 set(INC
 	.
-	../../../source/kernel/gen_system
-	../../../intern/string
+	KXNetwork
+	../BlenderRoutines
+	../Converter
+	../Expressions
+	../GameLogic
+	../Network
+	../Network/LoopBackNetwork
+	../Physics/common
+	../Rasterizer
+	../Rasterizer/RAS_OpenGLRasterizer
+	../SceneGraph
+	../../blender
+	../../blender/blenfont
+	../../blender/blenkernel
+	../../blender/blenlib
+	../../blender/blenloader
+	../../blender/gpu
+	../../blender/imbuf
+	../../blender/makesdna
+	../../blender/makesrna
+	../../blender/python
+	../../blender/python/generic
+	../../blender/python/mathutils
+	../../../intern/container
 	../../../intern/guardedalloc
-	../../../source/gameengine/Rasterizer/RAS_OpenGLRasterizer 
-	../../../source/gameengine/Converter
-	../../../source/blender/imbuf
 	../../../intern/moto/include
-	../../../source/gameengine/Ketsji 
-	../../../source/blender/blenlib
-	../../../source/blender/blenfont
-	../../../source/blender/blenkernel
-	../../../source/blender/python
-	../../../source/blender/python/generic
-	../../../source/blender 
-	../../../source/blender/makesdna 
-	../../../source/gameengine/Rasterizer 
-	../../../source/gameengine/GameLogic
-	../../../source/gameengine/Expressions 
-	../../../source/gameengine/Ketsji/KXNetwork
-	../../../source/gameengine/Network
-	../../../source/gameengine/SceneGraph 
-	../../../source/gameengine/Physics/common
-	../../../source/gameengine/Network/LoopBackNetwork
-	../../../intern/audaspace/intern
-	../../../source/blender/blenloader
-	../../../source/blender/gpu
-	../../../extern/glew/include
+	../../../intern/string
+)
+
+set(INC_SYS
+	${GLEW_INCLUDE_PATH}
+	../../../extern/recastnavigation/Recast/Include
+	../../../extern/recastnavigation/Detour/Include
 )
 
 set(SRC
+	BL_Action.cpp
+	BL_ActionManager.cpp
 	BL_BlenderShader.cpp
 	BL_Material.cpp
 	BL_Shader.cpp
@@ -84,9 +92,11 @@ set(SRC
 	KX_MeshProxy.cpp
 	KX_MotionState.cpp
 	KX_MouseFocusSensor.cpp
+	KX_NavMeshObject.cpp
 	KX_NearSensor.cpp
 	KX_ObColorIpoSGController.cpp
 	KX_ObjectActuator.cpp
+	KX_ObstacleSimulation.cpp
 	KX_OrientationInterpolator.cpp
 	KX_ParentActuator.cpp
 	KX_PhysicsObjectWrapper.cpp
@@ -114,6 +124,7 @@ set(SRC
 	KX_SceneActuator.cpp
 	KX_SoundActuator.cpp
 	KX_StateActuator.cpp
+	KX_SteeringActuator.cpp
 	KX_TimeCategoryLogger.cpp
 	KX_TimeLogger.cpp
 	KX_TouchEventManager.cpp
@@ -125,6 +136,12 @@ set(SRC
 	KX_WorldInfo.cpp
 	KX_WorldIpoController.cpp
 
+	BL_Action.h
+	BL_ActionManager.h
+	BL_BlenderShader.h
+	BL_Material.h
+	BL_Shader.h
+	BL_Texture.h
 	KX_ArmatureSensor.h
 	KX_BlenderMaterial.h
 	KX_BulletPhysicsController.h
@@ -155,9 +172,11 @@ set(SRC
 	KX_MeshProxy.h
 	KX_MotionState.h
 	KX_MouseFocusSensor.h
+	KX_NavMeshObject.h
 	KX_NearSensor.h
 	KX_ObColorIpoSGController.h
 	KX_ObjectActuator.h
+	KX_ObstacleSimulation.h
 	KX_OrientationInterpolator.h
 	KX_ParentActuator.h
 	KX_PhysicsEngineEnums.h
@@ -187,6 +206,7 @@ set(SRC
 	KX_SceneActuator.h
 	KX_SoundActuator.h
 	KX_StateActuator.h
+	KX_SteeringActuator.h
 	KX_TimeCategoryLogger.h
 	KX_TimeLogger.h
 	KX_TouchEventManager.h
@@ -197,16 +217,14 @@ set(SRC
 	KX_VisibilityActuator.h
 	KX_WorldInfo.h
 	KX_WorldIpoController.h
-	BL_BlenderShader.h
-	BL_Material.h
-	BL_Shader.h
-	BL_Texture.h
 )
 
 add_definitions(-DGLEW_STATIC)
 
 if(WITH_SDL)
-	set(INC ${INC} ${SDL_INCLUDE_DIR})  
+	list(APPEND INC_SYS
+		${SDL_INCLUDE_DIR}
+	)
 else()
 	add_definitions(-DDISABLE_SDL)
 endif()
@@ -215,10 +233,20 @@ if(WITH_CODEC_FFMPEG)
 	add_definitions(-DWITH_FFMPEG)
 endif()
 
-if(WITH_BULLET)
-	add_definitions(-DUSE_BULLET)
-	list(APPEND INC ../../../extern/bullet2/src)
-	list(APPEND INC ../../../source/gameengine/Physics/Bullet )
+if(WITH_AUDASPACE)
+	list(APPEND INC
+		../../../intern/audaspace/intern
+		../../../intern/audaspace/FX
+	)
+	add_definitions(-DWITH_AUDASPACE)
 endif()
 
-blender_add_lib(ge_logic_ketsji "${SRC}" "${INC}")
+if(WITH_BULLET)
+	list(APPEND INC
+		../../../extern/bullet2/src
+		../Physics/Bullet
+	)
+	add_definitions(-DUSE_BULLET)
+endif()
+
+blender_add_lib(ge_logic_ketsji "${SRC}" "${INC}" "${INC_SYS}")

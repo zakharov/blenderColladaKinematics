@@ -1,5 +1,5 @@
 /*
- * $Id: EffectExporter.h 35020 2011-02-21 08:38:53Z jesterking $
+ * $Id: EffectExporter.h 40164 2011-09-12 13:20:24Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -43,10 +43,12 @@
 #include "DNA_object_types.h"
 #include "DNA_scene_types.h"
 
+#include "ExportSettings.h"
+
 class EffectsExporter: COLLADASW::LibraryEffects
 {
 public:
-	EffectsExporter(COLLADASW::StreamWriter *sw);
+	EffectsExporter(COLLADASW::StreamWriter *sw, const ExportSettings *export_settings);
 	void exportEffects(Scene *sce);
 
 	void operator()(Material *ma, Object *ob);
@@ -57,10 +59,19 @@ public:
 											/*COLLADASW::Surface *surface*/);
 	
 	COLLADASW::ColorOrTexture getcol(float r, float g, float b, float a);
-	
-	//returns the array of mtex indices which have image 
-	//need this for exporting textures
+private:
+	/** Fills the array of mtex indices which have image. Used for exporting images. */
 	void createTextureIndices(Material *ma, std::vector<int> &indices);
+	
+	void writeBlinn(COLLADASW::EffectProfile &ep, Material *ma);
+	void writeLambert(COLLADASW::EffectProfile &ep, Material *ma);
+	void writePhong(COLLADASW::EffectProfile &ep, Material *ma);
+	
+	bool hasEffects(Scene *sce);
+	
+	const ExportSettings *export_settings;
+	
+	Scene *scene;
 };
 
 #endif

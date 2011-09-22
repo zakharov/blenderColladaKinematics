@@ -1,6 +1,6 @@
 
 /*
- * $Id: IK_QJacobian.h 35154 2011-02-25 11:43:19Z jesterking $
+ * $Id: IK_QJacobian.h 38232 2011-07-08 12:18:54Z blendix $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -56,7 +56,7 @@ public:
 
 	// Iteratively called
 	void SetBetas(int id, int size, const MT_Vector3& v);
-	void SetDerivatives(int id, int dof_id, const MT_Vector3& v);
+	void SetDerivatives(int id, int dof_id, const MT_Vector3& v, MT_Scalar norm_weight);
 
 	void Invert();
 
@@ -89,6 +89,7 @@ private:
 
 	/// the vector of computed angle changes
 	TVector m_d_theta;
+	TVector m_d_norm_weight;
 
 	/// space required for SVD computation
 

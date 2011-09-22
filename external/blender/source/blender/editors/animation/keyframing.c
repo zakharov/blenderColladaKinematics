@@ -1,6 +1,4 @@
 /*
- * $Id: keyframing.c 35242 2011-02-27 20:29:51Z jesterking $
- *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -174,7 +172,7 @@ FCurve *verify_fcurve (bAction *act, const char group[], const char rna_path[], 
 		/* use default settings to make a F-Curve */
 		fcu= MEM_callocN(sizeof(FCurve), "FCurve");
 		
-		fcu->flag = (FCURVE_VISIBLE|FCURVE_AUTO_HANDLES|FCURVE_SELECTED);
+		fcu->flag = (FCURVE_VISIBLE|FCURVE_SELECTED);
 		if (act->curves.first==NULL) 
 			fcu->flag |= FCURVE_ACTIVE;	/* first one added active */
 			
@@ -403,14 +401,14 @@ static short new_key_needed (FCurve *fcu, float cFrame, float nValue)
 			prevVal= prev->vec[1][1];
 			
 			/* keyframe to be added at point where there are already two similar points? */
-			if (IS_EQ(prevPosi, cFrame) && IS_EQ(beztPosi, cFrame) && IS_EQ(beztPosi, prevPosi)) {
+			if (IS_EQF(prevPosi, cFrame) && IS_EQF(beztPosi, cFrame) && IS_EQF(beztPosi, prevPosi)) {
 				return KEYNEEDED_DONTADD;
 			}
 			
 			/* keyframe between prev+current points ? */
 			if ((prevPosi <= cFrame) && (cFrame <= beztPosi)) {
 				/* is the value of keyframe to be added the same as keyframes on either side ? */
-				if (IS_EQ(prevVal, nValue) && IS_EQ(beztVal, nValue) && IS_EQ(prevVal, beztVal)) {
+				if (IS_EQF(prevVal, nValue) && IS_EQF(beztVal, nValue) && IS_EQF(prevVal, beztVal)) {
 					return KEYNEEDED_DONTADD;
 				}
 				else {
@@ -420,7 +418,7 @@ static short new_key_needed (FCurve *fcu, float cFrame, float nValue)
 					realVal= evaluate_fcurve(fcu, cFrame);
 					
 					/* compare whether it's the same as proposed */
-					if (IS_EQ(realVal, nValue)) 
+					if (IS_EQF(realVal, nValue))
 						return KEYNEEDED_DONTADD;
 					else 
 						return KEYNEEDED_JUSTADD;
@@ -433,7 +431,7 @@ static short new_key_needed (FCurve *fcu, float cFrame, float nValue)
 				 * stays around or not depends on whether the values of previous/current
 				 * beztriples and new keyframe are the same.
 				 */
-				if (IS_EQ(prevVal, nValue) && IS_EQ(beztVal, nValue) && IS_EQ(prevVal, beztVal))
+				if (IS_EQF(prevVal, nValue) && IS_EQF(beztVal, nValue) && IS_EQF(prevVal, beztVal))
 					return KEYNEEDED_DELNEXT;
 				else 
 					return KEYNEEDED_JUSTADD;
@@ -471,7 +469,7 @@ static short new_key_needed (FCurve *fcu, float cFrame, float nValue)
 	else 
 		valB= bezt->vec[1][1] + 1.0f; 
 		
-	if (IS_EQ(valA, nValue) && IS_EQ(valA, valB)) 
+	if (IS_EQF(valA, nValue) && IS_EQF(valA, valB))
 		return KEYNEEDED_DELPREV;
 	else 
 		return KEYNEEDED_JUSTADD;
@@ -532,7 +530,8 @@ static short visualkey_can_use (PointerRNA *ptr, PropertyRNA *prop)
 {
 	bConstraint *con= NULL;
 	short searchtype= VISUALKEY_NONE;
-	char *identifier= NULL;
+	short has_parent = FALSE;
+	const char *identifier= NULL;
 	
 	/* validate data */
 	// TODO: this check is probably not needed, but it won't hurt
@@ -549,33 +548,46 @@ static short visualkey_can_use (PointerRNA *ptr, PropertyRNA *prop)
 		Object *ob= (Object *)ptr->data;
 		
 		con= ob->constraints.first;
-		identifier= (char *)RNA_property_identifier(prop);
+		identifier= RNA_property_identifier(prop);
+		has_parent= (ob->parent != NULL);
 	}
 	else if (ptr->type == &RNA_PoseBone) {
 		/* Pose Channel */
 		bPoseChannel *pchan= (bPoseChannel *)ptr->data;
 		
 		con= pchan->constraints.first;
-		identifier= (char *)RNA_property_identifier(prop);
+		identifier= RNA_property_identifier(prop);
+		has_parent= (pchan->parent != NULL);
 	}
 	
 	/* check if any data to search using */
-	if (ELEM(NULL, con, identifier))
+	if (ELEM(NULL, con, identifier) && (has_parent == FALSE))
 		return 0;
 		
 	/* location or rotation identifiers only... */
-	if (strstr(identifier, "location"))
+	if(identifier == NULL) {
+		printf("%s failed: NULL identifier\n", __func__);
+		return 0;
+	}
+	else if (strstr(identifier, "location")) {
 		searchtype= VISUALKEY_LOC;
-	else if (strstr(identifier, "rotation"))
+	}
+	else if (strstr(identifier, "rotation")) {
 		searchtype= VISUALKEY_ROT;
+	}
 	else {
-		printf("visualkey_can_use() failed: identifier - '%s' \n", identifier);
+		printf("%s failed: identifier - '%s' \n", __func__, identifier);
 		return 0;
 	}
 	
 	
 	/* only search if a searchtype and initial constraint are available */
-	if (searchtype && con) {
+	if (searchtype) {
+		/* parent is always matching */
+		if (has_parent)
+			return 1;
+		
+		/* constraints */
 		for (; con; con= con->next) {
 			/* only consider constraint if it is not disabled, and has influence */
 			if (con->flag & CONSTRAINT_DISABLE) continue;
@@ -647,55 +659,81 @@ static float visualkey_get_value (PointerRNA *ptr, PropertyRNA *prop, int array_
 	if (ptr->type == &RNA_Object) {
 		Object *ob= (Object *)ptr->data;
 		
-		/* parented objects are not supported, as the effects of the parent
-		 * are included in the matrix, which kindof beats the point
-		 */
-		if (ob->parent == NULL) {
-			/* only Location or Rotation keyframes are supported now */
-			if (strstr(identifier, "location")) {
-				return ob->obmat[3][array_index];
-			}
-			else if (strstr(identifier, "rotation_euler")) {
-				float eul[3];
-				
-				mat4_to_eulO(eul, ob->rotmode, ob->obmat);
-				return eul[array_index];
-			}
-			// FIXME: other types of rotation don't work
+		/* only Location or Rotation keyframes are supported now */
+		if (strstr(identifier, "location")) {
+			return ob->obmat[3][array_index];
+		}
+		else if (strstr(identifier, "rotation_euler")) {
+			float eul[3];
+			
+			mat4_to_eulO(eul, ob->rotmode, ob->obmat);
+			return eul[array_index];
+		}
+		else if (strstr(identifier, "rotation_quaternion")) {
+			float trimat[3][3], quat[4];
+			
+			copy_m3_m4(trimat, ob->obmat);
+			mat3_to_quat_is_ok(quat, trimat);
+			
+			return quat[array_index];
+		}
+		else if (strstr(identifier, "rotation_axis_angle")) {
+			float axis[3], angle;
+			
+			mat4_to_axis_angle(axis, &angle, ob->obmat);
+			
+			/* w = 0, x,y,z = 1,2,3 */
+			if (array_index == 0)
+				return angle;
+			else
+				return axis[array_index - 1];
 		}
 	}
 	else if (ptr->type == &RNA_PoseBone) {
+		Object *ob = (Object *)ptr->id.data; /* we assume that this is always set, and is an object */
 		bPoseChannel *pchan= (bPoseChannel *)ptr->data;
-		bPoseChannel tchan;
+		float tmat[4][4];
 		
-		/* make a copy of pchan so that we can apply and decompose its chan_mat, thus getting the 
-		 * rest-pose to pose-mode transform that got stored there at the end of posing calculations
-		 * for B-Bone deforms to use
-		 *	- it should be safe to just make a local copy like this, since we're not doing anything with the copied pointers
+		/* Although it is not strictly required for this particular space conversion, 
+		 * arg1 must not be null, as there is a null check for the other conversions to
+		 * be safe. Therefore, the active object is passed here, and in many cases, this
+		 * will be what owns the pose-channel that is getting this anyway.
 		 */
-		memcpy(&tchan, pchan, sizeof(bPoseChannel));
-		pchan_apply_mat4(&tchan, pchan->chan_mat, TRUE);
+		copy_m4_m4(tmat, pchan->pose_mat);
+		constraint_mat_convertspace(ob, pchan, tmat, CONSTRAINT_SPACE_POSE, CONSTRAINT_SPACE_LOCAL);
 		
 		/* Loc, Rot/Quat keyframes are supported... */
 		if (strstr(identifier, "location")) {
 			/* only use for non-connected bones */
 			if ((pchan->bone->parent) && !(pchan->bone->flag & BONE_CONNECTED))
-				return tchan.loc[array_index];
+				return tmat[3][array_index];
 			else if (pchan->bone->parent == NULL)
-				return tchan.loc[array_index];
+				return tmat[3][array_index];
 		}
 		else if (strstr(identifier, "rotation_euler")) {
-			return tchan.eul[array_index];
+			float eul[3];
+			
+			mat4_to_eulO(eul, pchan->rotmode, tmat);
+			return eul[array_index];
 		}
 		else if (strstr(identifier, "rotation_quaternion")) {
-			return tchan.quat[array_index];
+			float trimat[3][3], quat[4];
+			
+			copy_m3_m4(trimat, tmat);
+			mat3_to_quat_is_ok(quat, trimat);
+			
+			return quat[array_index];
 		}
-		else if (strstr(identifier, "rotation_axisangle")) {
+		else if (strstr(identifier, "rotation_axis_angle")) {
+			float axis[3], angle;
+			
+			mat4_to_axis_angle(axis, &angle, tmat);
+			
 			/* w = 0, x,y,z = 1,2,3 */
 			if (array_index == 0)
-				return tchan.rotAngle;
+				return angle;
 			else
-				return tchan.rotAxis[array_index - 1];
+				return axis[array_index - 1];
 		}
 	}
 	
@@ -725,7 +763,7 @@ short insert_keyframe_direct (ReportList *reports, PointerRNA ptr, PropertyRNA *
 	/* F-Curve not editable? */
 	if (fcurve_is_keyframable(fcu) == 0) {
 		BKE_reportf(reports, RPT_ERROR, 
-			"F-Curve with path = '%s' [%d] cannot be keyframed. Ensure that it is not locked or sampled. Also, try removing F-Modifiers.",
+			"F-Curve with path = '%s' [%d] cannot be keyframed. Ensure that it is not locked or sampled. Also, try removing F-Modifiers",
 			fcu->rna_path, fcu->array_index);
 		return 0;
 	}
@@ -916,7 +954,7 @@ short insert_keyframe (ReportList *reports, ID *id, bAction *act, const char gro
 				/* for Loc/Rot/Scale and also Color F-Curves, the color of the F-Curve in the Graph Editor,
 				 * is determined by the array index for the F-Curve
 				 */
-				if (ELEM4(RNA_property_subtype(prop), PROP_TRANSLATION, PROP_XYZ, PROP_EULER, PROP_COLOR)) {
+				if (ELEM5(RNA_property_subtype(prop), PROP_TRANSLATION, PROP_XYZ, PROP_EULER, PROP_COLOR, PROP_COORDS)) {
 					fcu->color_mode= FCURVE_COLOR_AUTO_RGB;
 				}
 			}
@@ -1287,7 +1325,7 @@ void ANIM_OT_keyframe_delete (wmOperatorType *ot)
 	PropertyRNA *prop;
 	
 	/* identifiers */
-	ot->name= "Delete Keyframe";
+	ot->name= "Delete Keying-Set Keyframe";
 	ot->idname= "ANIM_OT_keyframe_delete";
 	ot->description= "Delete keyframes on the current frame for all properties in the specified Keying Set";
 	
@@ -1332,7 +1370,7 @@ static int delete_key_v3d_exec (bContext *C, wmOperator *op)
 		short success= 0;
 		
 		/* loop through all curves in animdata and delete keys on this frame */
-		if (ob->adt) {
+		if ((ob->adt) && (ob->adt->action)) {
 			AnimData *adt= ob->adt;
 			bAction *act= adt->action;
 			
@@ -1342,7 +1380,7 @@ static int delete_key_v3d_exec (bContext *C, wmOperator *op)
 			}
 		}
 		
-		BKE_reportf(op->reports, RPT_INFO, "Ob '%s' - Successfully removed %d keyframes \n", id->name+2, success);
+		BKE_reportf(op->reports, RPT_INFO, "Ob '%s' - Successfully had %d keyframes removed", id->name+2, success);
 		
 		ob->recalc |= OB_RECALC_OB;
 	}
@@ -1360,6 +1398,7 @@ void ANIM_OT_keyframe_delete_v3d (wmOperatorType *ot)
 {
 	/* identifiers */
 	ot->name= "Delete Keyframe";
+	ot->description= "Remove keyframes on current frame for selected object";
 	ot->idname= "ANIM_OT_keyframe_delete_v3d";
 	
 	/* callbacks */
@@ -1421,7 +1460,7 @@ static int insert_key_button_exec (bContext *C, wmOperator *op)
 		else {
 			if (G.f & G_DEBUG)
 				printf("Button Insert-Key: no path to property \n");
-			BKE_report(op->reports, RPT_WARNING, "Failed to resolve path to property. Try using a Keying Set instead.");
+			BKE_report(op->reports, RPT_WARNING, "Failed to resolve path to property. Try using a Keying Set instead");
 		}
 	}
 	else if (G.f & G_DEBUG) {
@@ -1459,7 +1498,7 @@ void ANIM_OT_keyframe_insert_button (wmOperatorType *ot)
 	ot->flag= OPTYPE_UNDO;
 
 	/* properties */
-	RNA_def_boolean(ot->srna, "all", 1, "All", "Insert a keyframe for all element of the array.");
+	RNA_def_boolean(ot->srna, "all", 1, "All", "Insert a keyframe for all element of the array");
 }
 
 /* Delete Key Button Operator ------------------------ */
@@ -1531,7 +1570,7 @@ void ANIM_OT_keyframe_delete_button (wmOperatorType *ot)
 	ot->flag= OPTYPE_UNDO;
 
 	/* properties */
-	RNA_def_boolean(ot->srna, "all", 1, "All", "Delete keyfames from all elements of the array.");
+	RNA_def_boolean(ot->srna, "all", 1, "All", "Delete keyfames from all elements of the array");
 }
 
 /* ******************************************* */

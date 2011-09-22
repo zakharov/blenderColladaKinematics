@@ -22,8 +22,8 @@ bl_info = {
     'author': 'Aurel Wildfellner',
     'description': 'Tools to create a light field camera and projector',
     'version': (0, 2, 1),
-    'blender': (2, 5, 6),
-    'api': 35001,
+    'blender': (2, 5, 7),
+    'api': 36103,
     'location': 'View3D > Tool Shelf > Light Field Tools',
     'url': 'http://www.jku.at/cg/',
     "wiki_url": "http://wiki.blender.org/index.php/Extensions:2.5/Py/Scripts/Render/Light_Field_Tools",
@@ -116,4 +116,3 @@ def unregister():
 
 if __name__ == "__main__":
     register()
-

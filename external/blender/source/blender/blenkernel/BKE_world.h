@@ -1,5 +1,5 @@
 /*
- * $Id: BKE_world.h 34962 2011-02-18 13:05:18Z jesterking $ 
+ * $Id: BKE_world.h 36772 2011-05-19 11:21:37Z blendix $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -40,6 +40,7 @@ struct World;
 void free_world(struct World *sc); 
 struct World *add_world(const char *name);
 struct World *copy_world(struct World *wrld);
+struct World *localize_world(struct World *wrld);
 void make_local_world(struct World *wrld);
 
 #endif

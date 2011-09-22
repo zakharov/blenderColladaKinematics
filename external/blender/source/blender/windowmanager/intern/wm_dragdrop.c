@@ -1,5 +1,5 @@
 /*
- * $Id: wm_dragdrop.c 35179 2011-02-25 14:04:21Z jesterking $
+ * $Id: wm_dragdrop.c 40114 2011-09-11 06:41:09Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -256,7 +256,7 @@ static void wm_drop_operator_draw(char *name, int x, int y)
 	
 	glColor4ub(0, 0, 0, 50);
 	
-	uiSetRoundBox(15+16);	
+	uiSetRoundBox(UI_CNR_ALL | UI_RB_ALPHA);
 	uiRoundBox(x, y, x + width + 8, y + 15, 4);
 	
 	glColor4ub(255, 255, 255, 255);

@@ -1,5 +1,5 @@
 /*
- * $Id: SCA_ILogicBrick.cpp 35169 2011-02-25 13:32:11Z jesterking $
+ * $Id: SCA_ILogicBrick.cpp 36523 2011-05-06 20:18:42Z blendix $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -78,7 +78,7 @@ void SCA_ILogicBrick::ReParent(SCA_IObject* parent)
 	m_gameobj = parent;
 }
 
-void SCA_ILogicBrick::Relink(GEN_Map<GEN_HashedPtr, void*> *obj_map)
+void SCA_ILogicBrick::Relink(CTR_Map<CTR_HashedPtr, void*> *obj_map)
 {
 	// nothing to do
 }

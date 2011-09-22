@@ -1,5 +1,5 @@
 /*
- * $Id: rna_pose_api.c 35238 2011-02-27 20:20:01Z jesterking $
+ * $Id: rna_pose_api.c 40354 2011-09-19 13:23:58Z mont29 $
  * 
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -70,8 +70,9 @@ void RNA_api_pose_channel(StructRNA *srna)
 	FunctionRNA *func;
 
 	func= RNA_def_function(srna, "evaluate_envelope", "rna_PoseBone_do_envelope");
-	RNA_def_function_ui_description(func, "Calculate bone envelope at given point.");
-	parm= RNA_def_float_vector_xyz(func, "point", 3, NULL, -FLT_MAX, FLT_MAX, "Point", "Position in 3d space to evaluate", -FLT_MAX, FLT_MAX);
+	RNA_def_function_ui_description(func, "Calculate bone envelope at given point");
+	parm= RNA_def_float_vector_xyz(func, "point", 3, NULL, -FLT_MAX, FLT_MAX, "Point",
+	                               "Position in 3d space to evaluate", -FLT_MAX, FLT_MAX);
 	RNA_def_property_flag(parm, PROP_REQUIRED);
 	/* return value */
 	parm= RNA_def_float(func, "factor", 0, -FLT_MAX, FLT_MAX, "Factor", "Envelope factor", -FLT_MAX, FLT_MAX);

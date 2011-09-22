@@ -1,6 +1,4 @@
 /*
- * $Id$
- *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -79,8 +77,6 @@ void ARMATURE_OT_separate(struct wmOperatorType *ot);
 void ARMATURE_OT_autoside_names(struct wmOperatorType *ot);
 void ARMATURE_OT_flip_names(struct wmOperatorType *ot);
 
-void ARMATURE_OT_flags_set(struct wmOperatorType *ot);
-
 void ARMATURE_OT_layers_show_all(struct wmOperatorType *ot);
 void ARMATURE_OT_armature_layers(struct wmOperatorType *ot);
 void ARMATURE_OT_bone_layers(struct wmOperatorType *ot);
@@ -97,6 +93,7 @@ void POSE_OT_rot_clear(struct wmOperatorType *ot);
 void POSE_OT_loc_clear(struct wmOperatorType *ot);
 void POSE_OT_scale_clear(struct wmOperatorType *ot);
 void POSE_OT_transforms_clear(struct wmOperatorType *ot);
+void POSE_OT_user_transforms_clear(struct wmOperatorType *ot);
 
 void POSE_OT_copy(struct wmOperatorType *ot);
 void POSE_OT_paste(struct wmOperatorType *ot);
@@ -112,6 +109,8 @@ void POSE_OT_select_flip_active(struct wmOperatorType *ot);
 
 void POSE_OT_group_add(struct wmOperatorType *ot);
 void POSE_OT_group_remove(struct wmOperatorType *ot);
+void POSE_OT_group_move(struct wmOperatorType *ot);
+void POSE_OT_group_sort(struct wmOperatorType *ot);
 void POSE_OT_group_assign(struct wmOperatorType *ot);
 void POSE_OT_group_unassign(struct wmOperatorType *ot);
 void POSE_OT_group_select(struct wmOperatorType *ot);
@@ -123,9 +122,9 @@ void POSE_OT_paths_clear(struct wmOperatorType *ot);
 void POSE_OT_autoside_names(struct wmOperatorType *ot);
 void POSE_OT_flip_names(struct wmOperatorType *ot);
 
-void POSE_OT_quaternions_flip(struct wmOperatorType *ot);
+void POSE_OT_rotation_mode_set(struct wmOperatorType *ot);
 
-void POSE_OT_flags_set(struct wmOperatorType *ot);
+void POSE_OT_quaternions_flip(struct wmOperatorType *ot);
 
 void POSE_OT_armature_layers(struct wmOperatorType *ot);
 void POSE_OT_bone_layers(struct wmOperatorType *ot);
@@ -150,16 +149,19 @@ void SKETCH_OT_select(struct wmOperatorType *ot);
 typedef struct tPChanFCurveLink {
 	struct tPChanFCurveLink *next, *prev;
 	
-	ListBase fcurves;			/* F-Curves for this PoseChannel (wrapped with LinkData) */
-	struct bPoseChannel *pchan;	/* Pose Channel which data is attached to */
+	ListBase fcurves;				/* F-Curves for this PoseChannel (wrapped with LinkData) */
+	struct bPoseChannel *pchan;		/* Pose Channel which data is attached to */
 	
-	char *pchan_path;			/* RNA Path to this Pose Channel (needs to be freed when we're done) */
+	char *pchan_path;				/* RNA Path to this Pose Channel (needs to be freed when we're done) */
 	
-		// TODO: need to include axis-angle here at some stage
-	float oldloc[3];			/* transform values at start of operator (to be restored before each modal step) */
+	float oldloc[3];				/* transform values at start of operator (to be restored before each modal step) */
 	float oldrot[3];
 	float oldscale[3];
 	float oldquat[4];
+	float oldangle;
+	float oldaxis[3];
+	
+	struct IDProperty *oldprops;	/* copy of custom properties at start of operator (to be restored before each modal step) */	
 } tPChanFCurveLink;
 
 /* ----------- */
@@ -197,11 +199,13 @@ void POSE_OT_push(struct wmOperatorType *ot);
 void POSE_OT_relax(struct wmOperatorType *ot);
 void POSE_OT_breakdown(struct wmOperatorType *ot);
 
+void POSE_OT_propagate(struct wmOperatorType *ot);
+
 /* ******************************************************* */
 /* editarmature.c */
 
 EditBone *make_boneList(struct ListBase *edbo, struct ListBase *bones, struct EditBone *parent, struct Bone *actBone);
-void BIF_sk_selectStroke(struct bContext *C, short mval[2], short extend);
+void BIF_sk_selectStroke(struct bContext *C, const int mval[2], short extend);
 
 /* duplicate method */
 void preEditBoneDuplicate(struct ListBase *editbones);

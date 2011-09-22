@@ -19,9 +19,9 @@
 bl_info = {
     "name": "Renderfarm.fi",
     "author": "Nathan Letwory <nathan@letworyinteractive.com>, Jesse Kaukonen <jesse.kaukonen@gmail.com>",
-    "version": (6,),
-    "blender": (2, 5, 6),
-    "api": 35342,
+    "version": (8,),
+    "blender": (2, 5, 7),
+    "api": 36487,
     "location": "Render > Engine > Renderfarm.fi",
     "description": "Send .blend as session to http://www.renderfarm.fi to render",
     "warning": "",
@@ -41,7 +41,7 @@ import hashlib
 import http.client
 import xmlrpc.client
 import math
-from os.path import abspath, isabs, join, isfile
+from os.path import isabs, isfile
 
 from bpy.props import PointerProperty, StringProperty, BoolProperty, EnumProperty, IntProperty, CollectionProperty
 
@@ -115,28 +115,28 @@ class ORESettings(bpy.types.PropertyGroup):
 
 # all panels, except render panel
 # Example of wrapping every class 'as is'
-import properties_scene
+from bl_ui import properties_scene
 for member in dir(properties_scene):
     subclass = getattr(properties_scene, member)
     try:        subclass.COMPAT_ENGINES.add('RENDERFARMFI_RENDER')
     except:    pass
 del properties_scene
 
-import properties_world
+from bl_ui import properties_world
 for member in dir(properties_world):
     subclass = getattr(properties_world, member)
     try:        subclass.COMPAT_ENGINES.add('RENDERFARMFI_RENDER')
     except:    pass
 del properties_world
 
-import properties_material
+from bl_ui import properties_material
 for member in dir(properties_material):
     subclass = getattr(properties_material, member)
     try:        subclass.COMPAT_ENGINES.add('RENDERFARMFI_RENDER')
     except:    pass
 del properties_material
 
-import properties_object
+from bl_ui import properties_object
 for member in dir(properties_object):
     subclass = getattr(properties_object, member)
     try:        subclass.COMPAT_ENGINES.add('RENDERFARMFI_RENDER')
@@ -317,7 +317,6 @@ class CHECK_PT_RenderfarmFi(RenderButtonsPanel, bpy.types.Panel):
 
     def draw(self, context):
         layout = self.layout
-        ore = context.scene.ore_render
 
         if bpy.found_newer_version == True:
             layout.operator('ore.open_download_location')
@@ -352,6 +351,31 @@ class SESSIONS_PT_RenderfarmFi(RenderButtonsPanel, bpy.types.Panel):
         if bpy.queue_selected == 3:
             layout.operator('ore.cancel_session')
 
+class CONDITIONS_PT_RenderfarmFi(RenderButtonsPanel, bpy.types.Panel):
+    bl_label = "IMPORTANT: Rendering on Renderfarm.fi"
+    COMPAT_ENGINES = set(['RENDERFARMFI_RENDER'])
+    
+    @classmethod
+    def poll(cls, context):
+        rd = context.scene.render
+        return (rd.use_game_engine==False) and (rd.engine in cls.COMPAT_ENGINES)
+    
+    def draw(self, context):
+        layout = self.layout
+        
+        layout.label(text='- The render must take more than 50 seconds / frame')
+        layout.label(text='- The animation must be at least 20 frames long')
+        layout.label(text='- No still renders')
+        layout.label(text='- All external data must be included:')
+        layout.label(text='  * Linked files: L in object mode')
+        layout.label(text='  * Textures: File menu -> External Data')
+        layout.label(text='- No Python scripts')
+        layout.label(text='- Memory usage max 3GB')
+        layout.label(text='- If your render takes more than an hour / frame:')
+        layout.label(text='   * No filter type composite nodes (blur, glare etc.)')
+        layout.label(text='   * No SSS')
+        layout.label(text='   * No Motion Blur')
+
 class RENDER_PT_RenderfarmFi(RenderButtonsPanel, bpy.types.Panel):
     bl_label = "Scene Settings"
     COMPAT_ENGINES = set(['RENDERFARMFI_RENDER'])
@@ -368,7 +392,6 @@ class RENDER_PT_RenderfarmFi(RenderButtonsPanel, bpy.types.Panel):
         
         if ore.prepared and ore.hash!='':
             layout.prop(ore, 'memusage')
-            
             layout.separator()
             row = layout.row()
             
@@ -419,7 +442,6 @@ def encode_multipart_data(data, files):
                 '', str(data[field_name]))
 
     def encode_file(field_name):
-        import codecs
         filename = files [field_name]
         return ('--' + boundary,
                 'Content-Disposition: form-data; name="%s"; filename="%s"' % (field_name, filename),
@@ -543,7 +565,7 @@ def checkStatus(ore):
     if ore.hash=='' and (ore.username=='' or ore.password==''):
         bpy.errors.append('missing_creds')
     
-    if '' in (ore.title, ore.longdesc, ore.shortdesc):
+    if '' in {ore.title, ore.longdesc, ore.shortdesc}:
         bpy.errors.append('missing_desc')
     
     setStatus('username', ore.hash=='' and ore.username=='')
@@ -580,9 +602,9 @@ def xmlSessionsToOreSessions(sessions, queue):
     completed = sessions[queue]
     for sid in completed:
         s = completed[sid]['title']
-        t = completed[sid]['timestamps']
+        # t = completed[sid]['timestamps']  # UNUSED
         sinfo = OreSession(sid, s) 
-        if queue in ('completed', 'active'):
+        if queue in {'completed', 'active'}:
             sinfo.frames = completed[sid]['framesRendered']
         sinfo.startframe = completed[sid]['startFrame']
         sinfo.endframe = completed[sid]['endFrame']
@@ -617,7 +639,7 @@ class ORE_CancelSession(bpy.types.Operator):
         if len(bpy.ore_sessions)>0:
             s = bpy.ore_sessions[ore.selected_session]
             try:
-                res = userproxy.user.cancelSession(ore.username, ore.hash, int(s.id))
+                userproxy.user.cancelSession(ore.username, ore.hash, int(s.id))
                 self.report(set(['INFO']), 'Session ' + s.title + ' with id ' + s.id + ' cancelled')
             except:
                 self.report(set(['ERROR']), 'Could not cancel session ' + s.title + ' with id ' + s.id)
@@ -701,8 +723,6 @@ class ORE_CheckUpdate(bpy.types.Operator):
     bl_label = 'Check for new version'
 
     def execute(self, context):
-        sce = context.scene
-        ore = sce.ore_render
         blenderproxy = xmlrpc.client.ServerProxy(r'http://xmlrpc.renderfarm.fi/blender')
         try:
             self.report(set(['INFO']), 'Checking for newer version on Renderfarm.fi')
@@ -785,7 +805,7 @@ class ORE_PrepareOp(bpy.types.Operator):
             return hasSimulation(bpy.types.SoftBodyModifier)
 
         def hasUnsupportedSimulation():
-            return hasSoftbodySimulation() or hasCollisionSimulation() or hasClothSimulation() or hasSmokeSimulation or hasFluidSimulation() or hasParticleSystem()
+            return hasSoftbodySimulation() or hasCollisionSimulation() or hasClothSimulation() or hasSmokeSimulation() or hasFluidSimulation()
 
         def isFilterNode(node):
             t = type(node)
@@ -832,37 +852,50 @@ class ORE_PrepareOp(bpy.types.Operator):
         rd.resolution_percentage = 100
         if rd.file_format != 'PNG':
             print("Renderfarm.fi always uses PNG for output. Changing to PNG.")
-            self.report({'WARNING'}, "Renderfarm.fi always uses PNG for output. Changing to PNG.")
+            self.report({'WARNING'}, "Renderfarm.fi always uses PNG for " \
+                                     "output, changing to PNG")
         rd.file_format = 'PNG'
         if (rd.use_sss == True or hasSSSMaterial()) and ore.parts > 1:
-            print("Subsurface Scattering is not supported when rendering with parts > 1. Disabling")
-            self.report({'WARNING'}, "Subsurface Scattering is not supported when rendering with parts > 1. Disabling")
+            print("Subsurface Scattering is not supported when rendering " \
+                  "with parts > 1. Disabling")
+            self.report({'WARNING'}, "Subsurface Scattering is not " \
+                                     "supported when rendering with " \
+                                     "parts > 1, disabling")
             rd.use_sss = False # disabling because ore.parts > 1. It's ok to use SSS with 1part/frame
         if hasUnsupportedSimulation() == True:
-            print("An unsupported simulation was detected. Please check your settings and remove them")
-            self.report({'WARNING'}, "An unsupported simulation was detected. Please check your settings and remove them")
+            print("An unsupported simulation was detected. Please " \
+                  "check your settings and remove them")
+            self.report({'WARNING'}, "An unsupported simulation was " \
+                                     "detected. Please check your settings " \
+                                     "and remove them")
             ore.hasUnsupportedSimulation = True
             errors = True
         else:
             ore.hasUnsupportedSimulation = False
         if (rd.use_full_sample == True and rd.use_save_buffers == True):
-            print("Save Buffers is not supported. As you also have Full Sample on, I'm turning both of the settings off")
-            self.report({'WARNING'}, "Save Buffers is not supported. As you also have Full Sample on, I'm turning both of the settings off")
+            print("Save Buffers is not supported. As you also have Full " \
+                  "Sample on, I'm turning both of the settings off")
+            self.report({'WARNING'}, "Save Buffers is not supported; as you " \
+                                     "also have Full Sample on, I'm turning " \
+                                     "both of the settings off")
         if (rd.use_full_sample == False and rd.use_save_buffers == True):
             print("Save buffers needs to be turned off. Changing to off")
-            self.report({'WARNING'}, "Save buffers needs to be turned off. Changing to off")
+            self.report({'WARNING'}, "Save buffers needs to be turned off, " \
+                                     "changing to off")
         rd.use_full_sample = False
         rd.use_save_buffers = False
         rd.use_free_image_textures = True
         if (rd.use_border == True):
             print("Border render is not supported. Turning it off")
-            self.report({'WARNING'}, "Border render is not supported. Turning it off")
+            self.report({'WARNING'}, "Border render is not supported, " \
+                                     "turning it off")
         rd.use_border = False
         if rd.use_compositing:
             if hasCompositingErrors(sce.use_nodes, sce.node_tree, ore.parts):
                 print("Found disallowed nodes or problematic setup")
                 rd.use_compositing = False
-                self.report({'WARNING'}, "Found disallowed nodes or problematic setup")
+                self.report({'WARNING'}, "Found disallowed nodes or " \
+                                         "problematic setup")
         print("Done checking the scene. Now do a test render")
         self.report({'INFO'}, "Done checking the scene. Now do a test render")
         print("=============================================")
@@ -872,7 +905,9 @@ class ORE_PrepareOp(bpy.types.Operator):
         # Errors is only True if there is a setting that could not be changed to the correct setting
         # In short, unsupported simulations
         if errors:
-            self.report({'WARNING'}, "Some issues found. Check console and do a test render to make sure everything works.")
+            self.report({'WARNING'}, "Some issues found, check console and " \
+                                     "do a test render to make sure " \
+                                     "everything works")
             ore.prepared = False
         else:
             ore.prepared = True
@@ -952,22 +987,27 @@ class RenderfarmFi(bpy.types.RenderEngine):
     def render(self, scene):
         print('Do test renders with Blender Render')
 
-def menu_export(self, context):
-    import os
-    default_path = os.path.splitext(bpy.data.filepath)[0] + ".py"
-    self.layout.operator(RenderfarmFi.bl_idname, text=RenderfarmFi.bl_label)
+
+#~ def menu_export(self, context):
+    #~ import os
+    #~ default_path = os.path.splitext(bpy.data.filepath)[0] + ".py"
+    #~ self.layout.operator(RenderfarmFi.bl_idname, text=RenderfarmFi.bl_label)
+
 
 def register():
     bpy.utils.register_module(__name__)
 
-    bpy.types.Scene.ore_render = PointerProperty(type=ORESettings, name='ORE Render', description='ORE Render Settings')
+    bpy.types.Scene.ore_render = PointerProperty(
+            type=ORESettings,
+            name='ORE Render',
+            description='ORE Render Settings')
 
-    bpy.types.INFO_MT_render.append(menu_export)
+    #~ bpy.types.INFO_MT_render.append(menu_export)
 
 def unregister():
     bpy.utils.unregister_module(__name__)
 
-    bpy.types.INFO_MT_render.remove(menu_export)
+    #~ bpy.types.INFO_MT_render.remove(menu_export)
 
 if __name__ == "__main__":
     register()

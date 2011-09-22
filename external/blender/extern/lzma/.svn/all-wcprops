@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 60
-/svnroot/bf-blender/!svn/ver/34567/trunk/blender/extern/lzma
+/svnroot/bf-blender/!svn/ver/37030/trunk/blender/extern/lzma
 END
 history.txt
 K 25
@@ -97,5 +97,5 @@ CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 75
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/extern/lzma/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/37030/trunk/blender/extern/lzma/CMakeLists.txt
 END

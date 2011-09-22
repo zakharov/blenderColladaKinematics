@@ -21,14 +21,19 @@
 
 set(INC
 	../include
+	../interface
+	../../blenfont
 	../../blenkernel
-	../../blenloader
 	../../blenlib
+	../../blenloader
 	../../makesdna
 	../../makesrna
 	../../windowmanager
-	../../editors/interface
 	../../../../intern/guardedalloc
+)
+
+set(INC_SYS
+	${GLEW_INCLUDE_PATH}
 )
 
 set(SRC
@@ -44,4 +49,4 @@ if(WITH_GAMEENGINE)
 	add_definitions(-DWITH_GAMEENGINE)
 endif()
 
-blender_add_lib(bf_editor_space_logic "${SRC}" "${INC}")
+blender_add_lib(bf_editor_space_logic "${SRC}" "${INC}" "${INC_SYS}")

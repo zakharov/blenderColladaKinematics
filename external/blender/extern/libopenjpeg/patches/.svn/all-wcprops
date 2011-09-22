@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 75
-/svnroot/bf-blender/!svn/ver/28444/trunk/blender/extern/libopenjpeg/patches
+/svnroot/bf-blender/!svn/ver/36564/trunk/blender/extern/libopenjpeg/patches
 END
 osx.patch
 K 25
@@ -13,5 +13,5 @@ fbsd.patch
 K 25
 svn:wc:ra_dav:version-url
 V 86
-/svnroot/bf-blender/!svn/ver/28444/trunk/blender/extern/libopenjpeg/patches/fbsd.patch
+/svnroot/bf-blender/!svn/ver/36564/trunk/blender/extern/libopenjpeg/patches/fbsd.patch
 END

@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_SinusFactory.cpp 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_SinusFactory.cpp 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -44,7 +44,7 @@ float AUD_SinusFactory::getFrequency() const
 	return m_frequency;
 }
 
-AUD_IReader* AUD_SinusFactory::createReader() const
+AUD_Reference<AUD_IReader> AUD_SinusFactory::createReader()
 {
 	return new AUD_SinusReader(m_frequency, m_sampleRate);
 }

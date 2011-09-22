@@ -17,11 +17,10 @@
 #======================= END GPL LICENSE BLOCK ========================
 
 import bpy
-import math
 from rigify.utils import MetarigError
-from rigify.utils import copy_bone, flip_bone, put_bone
+from rigify.utils import copy_bone
 from rigify.utils import connected_children_names
-from rigify.utils import strip_org, make_mechanism_name, make_deformer_name
+from rigify.utils import strip_org, make_mechanism_name
 from rigify.utils import get_layers
 from rigify.utils import create_widget, create_limb_widget
 from rna_prop_ui import rna_idprop_ui_prop_get
@@ -46,10 +45,10 @@ class Rig:
         self.org_bones = [bone] + connected_children_names(self.obj, bone)[:2]
 
         if len(self.org_bones) != 3:
-            raise MetarigError("RIGIFY ERROR: Bone '%s': input to rig type must be a chain of 3 bones." % (strip_org(bone)))
+            raise MetarigError("RIGIFY ERROR: Bone '%s': input to rig type must be a chain of 3 bones" % (strip_org(bone)))
 
         # Get (optional) parent
-        if self.obj.data.bones[bone].parent == None:
+        if self.obj.data.bones[bone].parent is None:
             self.org_parent = None
         else:
             self.org_parent = self.obj.data.bones[bone].parent.name
@@ -120,9 +119,11 @@ class Rig:
         uarm_p = pb[uarm]
         farm_p = pb[farm]
         hand_p = pb[hand]
+        if self.org_parent != None:
+            hinge_p = pb[hinge]
 
         if self.org_parent != None:
-            socket1_p = pb[socket1]
+            # socket1_p = pb[socket1]  # UNUSED
             socket2_p = pb[socket2]
 
         # Set the elbow to only bend on the x-axis.
@@ -133,6 +134,13 @@ class Rig:
             farm_p.lock_rotation = (True, False, True)
         else:
             farm_p.lock_rotation = (True, True, False)
+
+        # Hinge transforms are locked, for auto-ik
+        if self.org_parent != None:
+            hinge_p.lock_location = True, True, True
+            hinge_p.lock_rotation = True, True, True
+            hinge_p.lock_rotation_w = True
+            hinge_p.lock_scale = True, True, True
 
         # Set up custom properties
         if self.org_parent != None:

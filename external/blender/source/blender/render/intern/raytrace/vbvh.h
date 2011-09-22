@@ -1,5 +1,5 @@
 /*
- * $Id: vbvh.h 35233 2011-02-27 19:31:27Z jesterking $
+ * $Id: vbvh.h 35477 2011-03-11 22:27:06Z blendix $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -157,9 +157,12 @@ struct BuildBinaryVBVH
 	
 	Node *_transform(RTBuilder *builder)
 	{
-		
 		int size = rtbuild_size(builder);
-		if(size == 1)
+
+		if(size == 0) {
+			return NULL;
+		}
+		else if(size == 1)
 		{
 			Node *node = create_node();
 			INIT_MINMAX(node->bb, node->bb+3);

@@ -1,5 +1,5 @@
 /*
- * $Id: GHOST_Path-api.cpp 35152 2011-02-25 11:28:33Z jesterking $
+ * $Id: GHOST_Path-api.cpp 39815 2011-08-31 01:07:55Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -39,7 +39,7 @@
 
 GHOST_TSuccess GHOST_CreateSystemPaths(void)
 {
-	return GHOST_ISystemPaths::create();;
+	return GHOST_ISystemPaths::create();
 }
 
 GHOST_TSuccess GHOST_DisposeSystemPaths(void)

@@ -1,5 +1,5 @@
 /**
- * $Id: memtest.c 28254 2010-04-18 10:28:37Z campbellbarton $
+ * $Id: memtest.c 36276 2011-04-21 15:53:30Z campbellbarton $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -28,7 +28,7 @@
 
 /**
 
- * $Id: memtest.c 28254 2010-04-18 10:28:37Z campbellbarton $
+ * $Id: memtest.c 36276 2011-04-21 15:53:30Z campbellbarton $
  * Copyright (C) 2001 NaN Technologies B.V.
  * Simple test of memory.
  */
@@ -60,7 +60,7 @@ int main (int argc, char *argv[])
 	int i = 0;
 
 	/* ----------------------------------------------------------------- */
-   	switch (argc) {
+	switch (argc) {
 	case 2:		
 		verbose = atoi(argv[1]);
 		if (verbose < 0) verbose = 0;

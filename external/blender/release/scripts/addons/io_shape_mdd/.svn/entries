@@ -1,15 +1,15 @@
 10
 
 dir
-1680
+2344
 https://svn.blender.org/svnroot/bf-extensions/trunk/py/scripts/addons/io_shape_mdd
 https://svn.blender.org/svnroot/bf-extensions
 
 
 
-2011-02-27T15:27:55.919470Z
-1664
-campbellbarton
+2011-09-03T11:11:01.607030Z
+2294
+nazgul
 
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2011-03-03T12:29:54.154297Z
-b9159a80f816c308584d0c37a13851cc
-2011-02-08T21:36:44.718602Z
-1562
+2011-09-21T18:17:50.128309Z
+034ae944c97b13c06b8d4e59027d9a3e
+2011-08-29T00:11:36.536961Z
+2283
 campbellbarton
 has-props
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-3332
+3420
 
 __init__.py
 file
@@ -66,10 +66,44 @@ file
 
 
 
-2011-03-03T12:29:54.154297Z
-bd7b5a4b7ea1295207917b0a6424ee30
-2011-02-27T15:27:55.919470Z
-1664
+2011-09-21T18:17:50.128309Z
+d402642e3bfc14a3a53c4d4d870c70ae
+2011-09-03T11:11:01.607030Z
+2294
+nazgul
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5154
+
+export_mdd.py
+file
+
+
+
+
+2011-09-21T18:17:50.128309Z
+5032d6a53f0cb2e5c882464e670f8af3
+2011-07-25T08:48:58.612045Z
+2179
 campbellbarton
 has-props
 
@@ -92,39 +126,5 @@ has-props
 
 
 
-4654
-
-export_mdd.py
-file
-
-
-
-
-2011-03-03T12:29:54.154297Z
-28e0f356e56300ff064d66e0c556377f
-2011-01-16T00:43:40.938867Z
-1413
-gsrb3d
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3941
+3860
 

@@ -1,5 +1,5 @@
 /*
- * $Id: Stream.cpp 35239 2011-02-27 20:23:21Z jesterking $
+ * $Id: Stream.cpp 36541 2011-05-07 20:53:49Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -17,7 +17,7 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  *
- * Contributors: Amorilia (amorilia@gamebox.net)
+ * Contributors: Amorilia (amorilia@users.sourceforge.net)
  *
  * ***** END GPL LICENSE BLOCK *****
  */

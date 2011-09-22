@@ -1,15 +1,15 @@
 10
 
 dir
-1680
+2344
 https://svn.blender.org/svnroot/bf-extensions/trunk/py/scripts/addons/io_mesh_raw
 https://svn.blender.org/svnroot/bf-extensions
 
 
 
-2011-02-21T22:57:53.721946Z
-1642
-aurel
+2011-09-19T15:08:06.568619Z
+2334
+mont29
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-03-03T12:29:50.326297Z
-f82daac7d1bd2ce02bd9698c39be606b
-2011-02-21T22:57:53.721946Z
-1642
-aurel
+2011-09-21T18:17:49.724307Z
+8d37ba222e40c3b2cdc4b3e428ee02d3
+2011-07-25T08:48:58.612045Z
+2179
+campbellbarton
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-3672
+2876
 
 __init__.py
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-03-03T12:29:50.330297Z
-b80595f0db29790f481fbdf92cbd8399
-2011-02-21T22:57:53.721946Z
-1642
-aurel
+2011-09-21T18:17:49.724307Z
+276240b2d894c399d7c871abca6e7c61
+2011-09-19T15:08:06.568619Z
+2334
+mont29
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-2250
+4257
 
 import_raw.py
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-03-03T12:29:50.330297Z
-12cb4afb11cfd2cf811140c2b7542606
-2011-02-21T22:57:53.721946Z
-1642
-aurel
+2011-09-21T18:17:49.728307Z
+a516a4fe3557a9fcce4fd8d66ff2f851
+2011-07-29T06:26:13.630432Z
+2195
+campbellbarton
 has-props
 
 
@@ -126,5 +126,5 @@ has-props
 
 
 
-4176
+3283
 

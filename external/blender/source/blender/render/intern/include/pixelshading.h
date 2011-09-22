@@ -1,5 +1,5 @@
 /*
- * $Id: pixelshading.h 35233 2011-02-27 19:31:27Z jesterking $
+ * $Id: pixelshading.h 40162 2011-09-12 13:00:24Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -58,10 +58,10 @@ int shadeHaloFloat(HaloRen *har,
 /**
  * Render the sky at pixel (x, y).
  */
-void shadeSkyPixel(float *collector, float fx, float fy, short thread);
-void shadeSkyView(float *colf, float *rco, float *view, float *dxyview, short thread);
+void shadeSkyPixel(float collector[4], float fx, float fy, short thread);
+void shadeSkyView(float col_r[3], const float rco[3], const float view[3], const float dxyview[2], short thread);
 void shadeAtmPixel(struct SunSky *sunsky, float *collector, float fx, float fy, float distance);
-void shadeSunView(float *colf, float *view);
+void shadeSunView(float col_r[3], const float view[3]);
 /* ------------------------------------------------------------------------- */
 
 #endif

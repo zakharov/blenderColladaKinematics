@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_SquareFactory.h 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_SquareFactory.h 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -33,6 +33,7 @@
 #define AUD_SQUAREFACTORY
 
 #include "AUD_EffectFactory.h"
+class AUD_CallbackIIRFilterReader;
 
 /**
  * This factory Transforms any signal to a square signal.
@@ -55,14 +56,17 @@ public:
 	 * \param factory The input factory.
 	 * \param threshold The threshold.
 	 */
-	AUD_SquareFactory(AUD_IFactory* factory, float threshold = 0.0f);
+	AUD_SquareFactory(AUD_Reference<AUD_IFactory> factory, float threshold = 0.0f);
 
 	/**
 	 * Returns the threshold.
 	 */
 	float getThreshold() const;
 
-	virtual AUD_IReader* createReader() const;
+	virtual AUD_Reference<AUD_IReader> createReader();
+
+	static sample_t squareFilter(AUD_CallbackIIRFilterReader* reader, float* threshold);
+	static void endSquareFilter(float* threshold);
 };
 
 #endif //AUD_SQUAREFACTORY

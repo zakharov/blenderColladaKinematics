@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/build_files
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-03-04T10:19:02.196122Z
-35347
-lusque
+2011-09-22T04:41:12.678623Z
+40444
+campbellbarton
 
 
 
@@ -27,6 +27,9 @@ lusque
 954f8c5b-7b00-dc11-b283-0030488c597c
 
 cmake
+dir
+
+buildbot
 dir
 
 package_spec

@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/gameengine/Rasterizer/RAS_OpenGLFilters
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-02-22T12:42:55.440226Z
-35072
-jesterking
+2011-09-03T02:15:49.389436Z
+39883
+campbellbarton
 
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2011-03-03T12:26:41.718297Z
+2011-09-21T18:16:15.883842Z
 b33ce454ca9920b43525baedea112cbb
 2011-02-22T12:42:55.440226Z
 35072
@@ -66,11 +66,11 @@ file
 
 
 
-2011-03-03T12:26:41.718297Z
-6d901ec2648c26de4cdd6404e4b2cc59
-2011-02-22T12:42:55.440226Z
-35072
-jesterking
+2011-09-21T18:16:15.887842Z
+61bc23e86ecc4682ce6e7c15fc0fa2b4
+2011-09-03T02:15:49.389436Z
+39883
+campbellbarton
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-1576
+1559
 
 RAS_Prewitt2DFilter.h
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-03-03T12:26:41.718297Z
-c96fabf60ab95ec57ecb60bd57f4a318
-2011-02-22T12:42:55.440226Z
-35072
-jesterking
+2011-09-21T18:16:15.887842Z
+b1f09288f5f046940b1b34c7f4d2d355
+2011-09-03T02:15:49.389436Z
+39883
+campbellbarton
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-1852
+1788
 
 RAS_Sharpen2DFilter.h
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-03-03T12:26:41.722297Z
-f67380626b7ea9297d10d711a2b23ad1
-2011-02-22T12:42:55.440226Z
-35072
-jesterking
+2011-09-21T18:16:15.887842Z
+5ec17723e6e8fd16180cb124f06de0fc
+2011-09-03T02:15:49.389436Z
+39883
+campbellbarton
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-1673
+1609
 
 RAS_Sepia2DFilter.h
 file
@@ -168,7 +168,7 @@ file
 
 
 
-2011-03-03T12:26:41.722297Z
+2011-09-21T18:16:15.887842Z
 4424fdee66a0dcb968247af6090e1cb2
 2011-02-22T12:42:55.440226Z
 35072
@@ -202,11 +202,11 @@ file
 
 
 
-2011-03-03T12:26:41.722297Z
-3b3557537b9388ee6040d15e36d0b612
-2011-02-22T12:42:55.440226Z
-35072
-jesterking
+2011-09-21T18:16:15.887842Z
+6a07da7c4da7c4de9c564524113f74c9
+2011-09-03T02:15:49.389436Z
+39883
+campbellbarton
 has-props
 
 
@@ -228,7 +228,7 @@ has-props
 
 
 
-1581
+1544
 
 RAS_Blur2DFilter.h
 file
@@ -236,11 +236,11 @@ file
 
 
 
-2011-03-03T12:26:41.726297Z
-5f60e78b447fd61954fe8596fdf7f7d9
-2011-02-22T12:42:55.440226Z
-35072
-jesterking
+2011-09-21T18:16:15.887842Z
+6bcd10d8f60fafacd5489128e10ca3e7
+2011-09-03T02:15:49.389436Z
+39883
+campbellbarton
 has-props
 
 
@@ -262,7 +262,7 @@ has-props
 
 
 
-1661
+1625
 
 RAS_Laplacian2DFilter.h
 file
@@ -270,11 +270,11 @@ file
 
 
 
-2011-03-03T12:26:41.726297Z
-a5fe38d2ab393df26759112e4ee37b8d
-2011-02-22T12:42:55.440226Z
-35072
-jesterking
+2011-09-21T18:16:15.887842Z
+b42d840c33c3cde61c51937ab2ac7812
+2011-09-03T02:15:49.389436Z
+39883
+campbellbarton
 has-props
 
 
@@ -296,7 +296,7 @@ has-props
 
 
 
-1726
+1662
 
 RAS_Sobel2DFilter.h
 file
@@ -304,11 +304,11 @@ file
 
 
 
-2011-03-03T12:26:41.726297Z
-65acd7254d873bc9ad9607f833e0f2a3
-2011-02-22T12:42:55.440226Z
-35072
-jesterking
+2011-09-21T18:16:15.887842Z
+21fbc1640c7aa5ce34c7a460f0002f43
+2011-09-03T02:15:49.389436Z
+39883
+campbellbarton
 has-props
 
 
@@ -330,7 +330,7 @@ has-props
 
 
 
-1867
+1803
 
 RAS_Invert2DFilter.h
 file
@@ -338,7 +338,7 @@ file
 
 
 
-2011-03-03T12:26:41.726297Z
+2011-09-21T18:16:15.887842Z
 82279000723a364cb23b0db155ff0019
 2011-02-22T12:42:55.440226Z
 35072

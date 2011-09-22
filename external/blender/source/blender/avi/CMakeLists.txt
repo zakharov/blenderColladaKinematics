@@ -1,4 +1,4 @@
-# $Id: CMakeLists.txt 34486 2011-01-25 14:43:13Z campbellbarton $
+# $Id: CMakeLists.txt 38443 2011-07-17 09:11:13Z campbellbarton $
 # ***** BEGIN GPL LICENSE BLOCK *****
 #
 # This program is free software; you can redistribute it and/or
@@ -26,7 +26,11 @@
 
 set(INC 
 	.
+	../blenlib
 	../../../intern/guardedalloc
+)
+
+set(INC_SYS
 	${JPEG_INCLUDE_DIR}
 )
 
@@ -47,4 +51,4 @@ set(SRC
 	intern/rgb32.h
 )
 
-blender_add_lib(bf_avi "${SRC}" "${INC}")
+blender_add_lib(bf_avi "${SRC}" "${INC}" "${INC_SYS}")

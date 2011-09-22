@@ -1,5 +1,5 @@
 /*
- * $Id: zbuf.h 35233 2011-02-27 19:31:27Z jesterking $
+ * $Id: zbuf.h 40108 2011-09-11 02:50:01Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -51,9 +51,9 @@ void fillrect(int *rect, int x, int y, int val);
  * Converts a world coordinate into a homogenous coordinate in view
  * coordinates. 
  */
-void projectvert(float *v1, float winmat[][4], float *adr);
-void projectverto(float *v1, float winmat[][4], float *adr);
-int testclip(float *v); 
+void projectvert(const float v1[3], float winmat[][4], float adr[4]);
+void projectverto(const float v1[3], float winmat[][4], float adr[4]);
+int testclip(const float v[3]);
 
 void zbuffer_shadow(struct Render *re, float winmat[][4], struct LampRen *lar, int *rectz, int size, float jitx, float jity);
 void zbuffer_abuf_shadow(struct Render *re, struct LampRen *lar, float winmat[][4], struct APixstr *APixbuf, struct APixstrand *apixbuf, struct ListBase *apsmbase, int size, int samples, float (*jit)[2]);

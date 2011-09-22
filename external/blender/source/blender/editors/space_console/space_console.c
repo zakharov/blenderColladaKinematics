@@ -1,5 +1,5 @@
 /*
- * $Id: space_console.c 35242 2011-02-27 20:29:51Z jesterking $
+ * $Id: space_console.c 40311 2011-09-18 01:34:53Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -138,7 +138,16 @@ static void console_main_area_init(wmWindowManager *wm, ARegion *ar)
 	wmKeyMap *keymap;
 	ListBase *lb;
 
+	const int prev_y_min= ar->v2d.cur.ymin; /* so resizing keeps the cursor visible */
+
 	UI_view2d_region_reinit(&ar->v2d, V2D_COMMONVIEW_CUSTOM, ar->winx, ar->winy);
+
+	/* always keep the bottom part of the view aligned, less annoying */
+	if(prev_y_min != ar->v2d.cur.ymin) {
+		const float cur_y_range= ar->v2d.cur.ymax - ar->v2d.cur.ymin;
+		ar->v2d.cur.ymin= prev_y_min;
+		ar->v2d.cur.ymax= prev_y_min + cur_y_range;
+	}
 
 	/* own keymap */
 	keymap= WM_keymap_find(wm->defaultconf, "Console", SPACE_CONSOLE, 0);
@@ -165,8 +174,11 @@ static void id_drop_copy(wmDrag *drag, wmDropBox *drop)
 {
 	char text[64];
 	ID *id= drag->poin;
+	char id_esc[(sizeof(id->name) - 2) * 2];
 
-	snprintf(text, sizeof(text), "bpy.data.%s['%s']", BKE_idcode_to_name_plural(GS(id->name)), id->name+2);	
+	BLI_strescape(id_esc, id->name+2, sizeof(id_esc));
+
+	BLI_snprintf(text, sizeof(text), "bpy.data.%s[\"%s\"]", BKE_idcode_to_name_plural(GS(id->name)), id_esc);
 
 	/* copy drag path to properties */
 	RNA_string_set(drop->ptr, "text", text);
@@ -182,8 +194,8 @@ static int path_drop_poll(bContext *UNUSED(C), wmDrag *drag, wmEvent *UNUSED(eve
 
 static void path_drop_copy(wmDrag *drag, wmDropBox *drop)
 {
-    char pathname[FILE_MAXDIR+FILE_MAXFILE+2];
-    snprintf(pathname, sizeof(pathname), "\"%s\"", drag->path);
+	char pathname[FILE_MAXDIR+FILE_MAXFILE+2];
+	BLI_snprintf(pathname, sizeof(pathname), "\"%s\"", drag->path);
 	RNA_string_set(drop->ptr, "text", pathname);
 }
 
@@ -304,6 +316,7 @@ static void console_keymap(struct wmKeyConfig *keyconf)
 	
 	RNA_enum_set(WM_keymap_add_item(keymap, "CONSOLE_OT_delete", DELKEY, KM_PRESS, 0, 0)->ptr, "type", DEL_NEXT_CHAR);
 	RNA_enum_set(WM_keymap_add_item(keymap, "CONSOLE_OT_delete", BACKSPACEKEY, KM_PRESS, 0, 0)->ptr, "type", DEL_PREV_CHAR);
+	RNA_enum_set(WM_keymap_add_item(keymap, "CONSOLE_OT_delete", BACKSPACEKEY, KM_PRESS, KM_SHIFT, 0)->ptr, "type", DEL_PREV_CHAR);  /* same as above [#26623] */
 
 #ifdef WITH_PYTHON
 	WM_keymap_add_item(keymap, "CONSOLE_OT_execute", RETKEY, KM_PRESS, 0, 0); /* python operator - space_text.py */

@@ -1,5 +1,5 @@
 /*
- * $Id: InstanceWriter.cpp 35262 2011-02-28 14:24:52Z jesterking $
+ * $Id: InstanceWriter.cpp 35711 2011-03-22 22:51:02Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -29,6 +29,7 @@
 
 
 #include <string>
+#include <sstream>
 
 #include "COLLADASWInstanceMaterial.h"
 
@@ -52,7 +53,9 @@ void InstanceWriter::add_material_bindings(COLLADASW::BindMaterial& bind_materia
 		if (ma) {
 			std::string matid(get_material_id(ma));
 			matid = translate_id(matid);
-			COLLADASW::InstanceMaterial im(matid, COLLADASW::URI(COLLADABU::Utils::EMPTY_STRING, matid));
+			std::ostringstream ostr;
+			ostr << translate_id(id_name(ma)) << a+1;
+			COLLADASW::InstanceMaterial im(ostr.str(), COLLADASW::URI(COLLADABU::Utils::EMPTY_STRING, matid));
 			
 			// create <bind_vertex_input> for each uv layer
 			Mesh *me = (Mesh*)ob->data;

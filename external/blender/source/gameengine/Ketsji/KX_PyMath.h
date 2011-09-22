@@ -1,5 +1,5 @@
 /*
- * $Id: KX_PyMath.h 35267 2011-02-28 18:42:41Z campbellbarton $
+ * $Id: KX_PyMath.h 38409 2011-07-15 04:01:47Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -49,7 +49,7 @@
 #ifdef WITH_PYTHON
 #ifdef USE_MATHUTILS
 extern "C" {
-#include "../../blender/python/generic/mathutils.h" /* so we can have mathutils callbacks */
+#include "../../blender/python/mathutils/mathutils.h" /* so we can have mathutils callbacks */
 }
 #endif
 

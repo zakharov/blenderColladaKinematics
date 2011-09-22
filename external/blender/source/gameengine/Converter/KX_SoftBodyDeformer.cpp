@@ -1,5 +1,5 @@
 /*
- * $Id: KX_SoftBodyDeformer.cpp 35167 2011-02-25 13:30:41Z jesterking $
+ * $Id: KX_SoftBodyDeformer.cpp 36523 2011-05-06 20:18:42Z blendix $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -41,8 +41,8 @@
 #include "KX_ConvertPhysicsObject.h"
 #include "KX_SoftBodyDeformer.h"
 #include "RAS_MeshObject.h"
-#include "GEN_Map.h"
-#include "GEN_HashedPtr.h"
+#include "CTR_Map.h"
+#include "CTR_HashedPtr.h"
 
 #ifdef USE_BULLET
 
@@ -53,7 +53,7 @@
 #include "KX_BulletPhysicsController.h"
 #include "btBulletDynamicsCommon.h"
 
-void KX_SoftBodyDeformer::Relink(GEN_Map<class GEN_HashedPtr, void*>*map)
+void KX_SoftBodyDeformer::Relink(CTR_Map<class CTR_HashedPtr, void*>*map)
 {
 	void **h_obj = (*map)[m_gameobj];
 

@@ -1,5 +1,5 @@
 /*
- * $Id: MOD_none.c 35362 2011-03-05 10:29:10Z campbellbarton $
+ * $Id: MOD_none.c 39342 2011-08-12 18:11:22Z blendix $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -57,7 +57,7 @@ ModifierTypeInfo modifierType_None = {
 	/* name */              "None",
 	/* structName */        "ModifierData",
 	/* structSize */        sizeof(ModifierData),
-	/* type */              eModifierType_None,
+	/* type */              eModifierTypeType_None,
 	/* flags */             eModifierTypeFlag_AcceptsMesh
 							| eModifierTypeFlag_AcceptsCVs,
 
@@ -77,4 +77,5 @@ ModifierTypeInfo modifierType_None = {
 	/* dependsOnNormals */	NULL,
 	/* foreachObjectLink */ NULL,
 	/* foreachIDLink */     NULL,
+	/* foreachTexLink */    NULL,
 };

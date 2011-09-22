@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_StreamBufferFactory.h 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_StreamBufferFactory.h 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -34,7 +34,7 @@
 
 #include "AUD_IFactory.h"
 #include "AUD_Reference.h"
-class AUD_Buffer;
+#include "AUD_Buffer.h"
 
 /**
  * This factory creates a buffer out of a reader. This way normally streamed
@@ -64,9 +64,9 @@ public:
 	 * \param factory The factory that creates the reader for buffering.
 	 * \exception AUD_Exception Thrown if the reader cannot be created.
 	 */
-	AUD_StreamBufferFactory(AUD_IFactory* factory);
+	AUD_StreamBufferFactory(AUD_Reference<AUD_IFactory> factory);
 
-	virtual AUD_IReader* createReader() const;
+	virtual AUD_Reference<AUD_IReader> createReader();
 };
 
 #endif //AUD_STREAMBUFFERFACTORY

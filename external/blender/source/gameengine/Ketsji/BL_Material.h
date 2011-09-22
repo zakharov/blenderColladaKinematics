@@ -68,7 +68,7 @@ public:
 
 	float matcolor[4];
 	float speccolor[3];
-	short transp, pad;
+	short alphablend, pad;
 
 	float hard, spec_f;
 	float alpha, emit, color_blend[MAXTEX], ref;
@@ -76,7 +76,6 @@ public:
 
 	int blend_mode[MAXTEX];
 
-	int	 mode;
 	int num_enabled;
 	
 	BL_Mapping	mapping[MAXTEX];
@@ -144,20 +143,23 @@ enum BL_flag
 	USEALPHA=4,		// use actual alpha channel
 	TEXALPHA=8,		// use alpha combiner functions
 	TEXNEG=16,		// negate blending
-	HASIPO=32,
+	/*HASIPO=32,*/	// unused, commeted for now.
 	USENEGALPHA=64
 };
 
 // BL_Material::ras_mode
 enum BL_ras_mode
 {
-	POLY_VIS=1,
+	// POLY_VIS=1,
 	COLLIDER=2,
 	ZSORT=4,
 	ALPHA=8,
 	// TRIANGLE=16,
 	USE_LIGHT=32,
-	WIRE=64
+	WIRE=64,
+	CAST_SHADOW=128,
+	TEX=256,
+	TWOSIDED=512
 };
 
 // -------------------------------------

@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_LoopReader.h 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_LoopReader.h 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -43,11 +43,6 @@ class AUD_LoopReader : public AUD_EffectReader
 {
 private:
 	/**
-	 * The playback buffer.
-	 */
-	AUD_Buffer m_buffer;
-
-	/**
 	 * The loop count.
 	 */
 	const int m_count;
@@ -68,12 +63,12 @@ public:
 	 * \param loop The desired loop count, negative values result in endless
 	 *        looping.
 	 */
-	AUD_LoopReader(AUD_IReader* reader, int loop);
+	AUD_LoopReader(AUD_Reference<AUD_IReader> reader, int loop);
 
 	virtual void seek(int position);
 	virtual int getLength() const;
 	virtual int getPosition() const;
-	virtual void read(int & length, sample_t* & buffer);
+	virtual void read(int& length, bool& eos, sample_t* buffer);
 };
 
 #endif //AUD_LOOPREADER

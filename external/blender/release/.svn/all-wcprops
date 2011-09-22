@@ -1,23 +1,23 @@
 K 25
 svn:wc:ra_dav:version-url
 V 56
-/svnroot/bf-blender/!svn/ver/35357/trunk/blender/release
+/svnroot/bf-blender/!svn/ver/40447/trunk/blender/release
 END
 environment-unix
 K 25
 svn:wc:ra_dav:version-url
 V 73
-/svnroot/bf-blender/!svn/ver/23979/trunk/blender/release/environment-unix
+/svnroot/bf-blender/!svn/ver/36564/trunk/blender/release/environment-unix
 END
 environment-macosx
 K 25
 svn:wc:ra_dav:version-url
 V 75
-/svnroot/bf-blender/!svn/ver/23979/trunk/blender/release/environment-macosx
+/svnroot/bf-blender/!svn/ver/36564/trunk/blender/release/environment-macosx
 END
 environment-mswindows
 K 25
 svn:wc:ra_dav:version-url
 V 78
-/svnroot/bf-blender/!svn/ver/23979/trunk/blender/release/environment-mswindows
+/svnroot/bf-blender/!svn/ver/36564/trunk/blender/release/environment-mswindows
 END

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 68
-/svnroot/bf-blender/!svn/ver/35159/trunk/blender/intern/smoke/intern
+/svnroot/bf-blender/!svn/ver/39947/trunk/blender/intern/smoke/intern
 END
 FLUID_3D.h
 K 25
@@ -13,7 +13,7 @@ WTURBULENCE.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svnroot/bf-blender/!svn/ver/35159/trunk/blender/intern/smoke/intern/WTURBULENCE.cpp
+/svnroot/bf-blender/!svn/ver/39947/trunk/blender/intern/smoke/intern/WTURBULENCE.cpp
 END
 FLUID_3D_STATIC.cpp
 K 25
@@ -61,13 +61,19 @@ WAVELET_NOISE.h
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svnroot/bf-blender/!svn/ver/35159/trunk/blender/intern/smoke/intern/WAVELET_NOISE.h
+/svnroot/bf-blender/!svn/ver/38121/trunk/blender/intern/smoke/intern/WAVELET_NOISE.h
 END
 Makefile.FFT
 K 25
 svn:wc:ra_dav:version-url
 V 81
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/smoke/intern/Makefile.FFT
+/svnroot/bf-blender/!svn/ver/36564/trunk/blender/intern/smoke/intern/Makefile.FFT
+END
+main.cpp_disabled
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-blender/!svn/ver/36583/trunk/blender/intern/smoke/intern/main.cpp_disabled
 END
 LU_HELPER.cpp
 K 25
@@ -85,19 +91,13 @@ FFT_NOISE.h
 K 25
 svn:wc:ra_dav:version-url
 V 80
-/svnroot/bf-blender/!svn/ver/35159/trunk/blender/intern/smoke/intern/FFT_NOISE.h
+/svnroot/bf-blender/!svn/ver/39947/trunk/blender/intern/smoke/intern/FFT_NOISE.h
 END
 EIGENVALUE_HELPER.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 90
 /svnroot/bf-blender/!svn/ver/35159/trunk/blender/intern/smoke/intern/EIGENVALUE_HELPER.cpp
-END
-main.cpp.back
-K 25
-svn:wc:ra_dav:version-url
-V 82
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/smoke/intern/main.cpp.back
 END
 LU_HELPER.h
 K 25
@@ -133,13 +133,13 @@ Makefile.linux
 K 25
 svn:wc:ra_dav:version-url
 V 83
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/smoke/intern/Makefile.linux
+/svnroot/bf-blender/!svn/ver/36564/trunk/blender/intern/smoke/intern/Makefile.linux
 END
 Makefile.cygwin
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/smoke/intern/Makefile.cygwin
+/svnroot/bf-blender/!svn/ver/36564/trunk/blender/intern/smoke/intern/Makefile.cygwin
 END
 INTERPOLATE.h
 K 25
@@ -151,7 +151,7 @@ Makefile.mac
 K 25
 svn:wc:ra_dav:version-url
 V 81
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/smoke/intern/Makefile.mac
+/svnroot/bf-blender/!svn/ver/36564/trunk/blender/intern/smoke/intern/Makefile.mac
 END
 SPHERE.h
 K 25

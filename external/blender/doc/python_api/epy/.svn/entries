@@ -1,14 +1,14 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/doc/python_api/epy
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-01T23:53:48.045911Z
-33991
+2011-07-01T11:13:26.829176Z
+38010
 campbellbarton
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2011-03-03T12:28:44.558297Z
+2011-09-21T18:17:01.356067Z
 28fedf3240dd5f81c7833002c6d28d04
 2010-09-03T03:30:20.436068Z
 31730
@@ -60,47 +60,13 @@ has-props
 
 3266
 
-BGL.py
-file
-
-
-
-
-2011-03-03T12:28:44.558297Z
-8f3cb1fa01af74afb0073a4c2056ebb4
-2010-03-28T10:20:26.021988Z
-27797
-dfelinto
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-70892
-
 testbgl.py
 file
 
 
 
 
-2011-03-03T12:28:44.558297Z
+2011-09-21T18:17:01.356067Z
 550dd4e507af689922e1b1075193261e
 2010-01-24T12:58:38.517929Z
 26227

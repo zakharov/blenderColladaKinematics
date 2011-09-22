@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 65
-/svnroot/bf-blender/!svn/ver/35155/trunk/blender/intern/itasc/kdl
+/svnroot/bf-blender/!svn/ver/40322/trunk/blender/intern/itasc/kdl
 END
 jntarray.hpp
 K 25
@@ -55,7 +55,7 @@ frames_io.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 79
-/svnroot/bf-blender/!svn/ver/35155/trunk/blender/intern/itasc/kdl/frames_io.cpp
+/svnroot/bf-blender/!svn/ver/39731/trunk/blender/intern/itasc/kdl/frames_io.cpp
 END
 tree.hpp
 K 25
@@ -205,7 +205,7 @@ frames.hpp
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/svnroot/bf-blender/!svn/ver/26841/trunk/blender/intern/itasc/kdl/frames.hpp
+/svnroot/bf-blender/!svn/ver/40322/trunk/blender/intern/itasc/kdl/frames.hpp
 END
 joint.cpp
 K 25

@@ -293,7 +293,7 @@
 							</attachment_full>
 							<attachment_full joint="KIN_GREIFER/j3">
 								<translate>525 0 0</translate>
-								<rotate>1 0 0 180</rotate>
+								<rotate>0 1 0 60</rotate>
 								<link/>
 							</attachment_full>
 						</link>

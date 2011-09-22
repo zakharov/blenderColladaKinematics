@@ -3,7 +3,7 @@
  *
  * 04-10-2000 frank
  *
- * $Id: bmfont.cpp 35170 2011-02-25 13:35:11Z jesterking $
+ * $Id: bmfont.cpp 39834 2011-09-01 02:12:53Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -190,7 +190,7 @@ void detectBitmapFont(ImBuf *ibuf)
 	long i;
 	
 	if (ibuf != NULL) {
-	        // bitmap must have an x size that is a power of two
+		// bitmap must have an x size that is a power of two
 		if (is_power_of_two(ibuf->x)) {
 			rect = (unsigned char *) (ibuf->rect + (ibuf->x * (ibuf->y - 1)));
 			// printf ("starts with: %s %c %c %c %c\n", rect, rect[0], rect[1], rect[2], rect[3]);

@@ -1,5 +1,5 @@
 /*
- * $Id: BKE_main.h 34962 2011-02-18 13:05:18Z jesterking $ 
+ * $Id: BKE_main.h 39792 2011-08-30 09:15:55Z nexyon $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -77,6 +77,7 @@ typedef struct Main {
 	ListBase script;
 	ListBase vfont;
 	ListBase text;
+	ListBase speaker;
 	ListBase sound;
 	ListBase group;
 	ListBase armature;

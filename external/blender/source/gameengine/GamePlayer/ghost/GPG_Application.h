@@ -1,5 +1,5 @@
 /*
- * $Id: GPG_Application.h 35063 2011-02-22 10:33:14Z jesterking $
+ * $Id: GPG_Application.h 40113 2011-09-11 05:54:07Z dfelinto $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -39,6 +39,8 @@
 #include <wtypes.h>
 #endif
 
+#include "KX_KetsjiEngine.h"
+
 class KX_KetsjiEngine;
 class KX_ISceneConverter;
 class NG_LoopBackNetworkDeviceInterface;
@@ -61,19 +63,20 @@ public:
 	GPG_Application(GHOST_ISystem* system);
 	~GPG_Application(void);
 
-			bool SetGameEngineData(struct Main* maggie, struct Scene* scene, int argc, char** argv);
+			bool SetGameEngineData(struct Main* maggie, struct Scene* scene, GlobalSettings* gs, int argc, char** argv);
 			bool startWindow(STR_String& title, int windowLeft, int windowTop, int windowWidth, int windowHeight,
-			const bool stereoVisual, const int stereoMode);
-			bool startFullScreen(int width, int height, int bpp, int frequency, const bool stereoVisual, const int stereoMode);
-			bool startEmbeddedWindow(STR_String& title, const GHOST_TEmbedderWindowID parent_window, const bool stereoVisual, const int stereoMode);
+			const bool stereoVisual, const int stereoMode, const GHOST_TUns16 samples=0);
+			bool startFullScreen(int width, int height, int bpp, int frequency, const bool stereoVisual, const int stereoMode, const GHOST_TUns16 samples=0);
+			bool startEmbeddedWindow(STR_String& title, const GHOST_TEmbedderWindowID parent_window, const bool stereoVisual, const int stereoMode, const GHOST_TUns16 samples=0);
 #ifdef WIN32
-			bool startScreenSaverFullScreen(int width, int height, int bpp, int frequency, const bool stereoVisual, const int stereoMode);
-			bool startScreenSaverPreview(HWND parentWindow,	const bool stereoVisual, const int stereoMode);
+			bool startScreenSaverFullScreen(int width, int height, int bpp, int frequency, const bool stereoVisual, const int stereoMode, const GHOST_TUns16 samples=0);
+			bool startScreenSaverPreview(HWND parentWindow,	const bool stereoVisual, const int stereoMode, const GHOST_TUns16 samples=0);
 #endif
 
 	virtual	bool processEvent(GHOST_IEvent* event);
 			int getExitRequested(void);
 			const STR_String& getExitString(void);
+			GlobalSettings* getGlobalSettings(void);
 			bool StartGameEngine(int stereoMode);
 			void StopGameEngine();
 
@@ -111,6 +114,8 @@ protected:
 	/* Exit state. */
 	int						m_exitRequested;
 	STR_String				m_exitString;
+	GlobalSettings*	m_globalSettings;
+
 	/* GHOST system abstraction. */
 	GHOST_ISystem*			m_system;
 	/* Main window. */

@@ -1,5 +1,5 @@
 /*
- * $Id: BLI_winstuff.h 35296 2011-03-02 05:05:12Z campbellbarton $ 
+ * $Id: BLI_winstuff.h 38142 2011-07-06 10:19:04Z blendix $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -98,6 +98,15 @@ extern "C" {
 typedef unsigned int mode_t;
 #endif
 
+/* use functions that take a 64 bit offset for files larger than 4GB */
+#ifndef FREE_WINDOWS
+#include <stdio.h>
+#define fseek(stream, offset, origin) _fseeki64(stream, offset, origin)
+#define ftell(stream) _ftelli64(stream)
+#define lseek(fd, offset, origin) _lseeki64(fd, offset, origin)
+#define tell(fd) _telli64(fd)
+#endif
+
 /* mingw using _SSIZE_T_ to declare ssize_t type */
 #ifndef _SSIZE_T_
 #define _SSIZE_T_
@@ -127,7 +136,7 @@ typedef struct _DIR {
 	struct dirent direntry;
 } DIR;
 
-void RegisterBlendExtension(char * str);
+void RegisterBlendExtension(void);
 DIR *opendir (const char *path);
 struct dirent *readdir(DIR *dp);
 int closedir (DIR *dp);

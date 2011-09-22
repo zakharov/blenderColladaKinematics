@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_VolumeFactory.h 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_VolumeFactory.h 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -57,14 +57,15 @@ public:
 	 * \param factory The input factory.
 	 * \param volume The desired volume.
 	 */
-	AUD_VolumeFactory(AUD_IFactory* factory, float volume);
+	AUD_VolumeFactory(AUD_Reference<AUD_IFactory> factory, float volume);
 
 	/**
 	 * Returns the volume.
+	 * \return The current volume.
 	 */
 	float getVolume() const;
 
-	virtual AUD_IReader* createReader() const;
+	virtual AUD_Reference<AUD_IReader> createReader();
 };
 
 #endif //AUD_VOLUMEFACTORY

@@ -22,8 +22,8 @@ bl_info = {
     "name": "Object Property Chart",
     "author": "Campbell Barton (ideasman42)",
     "version": (0, 1),
-    "blender": (2, 5, 3),
-    "api": 32411,
+    "blender": (2, 5, 7),
+    "api": 35622,
     "location": "Tool Shelf",
     "description": "Edit arbitrary selected properties for objects of the same type",
     "warning": "",
@@ -228,7 +228,8 @@ def register():
                 cls._PROP_STORAGE_ID,
                 StringProperty(
                     name="Scene Name",
-                    description="Name of POV-Ray scene to create. Empty name will use the name of the blend file.",
+                    description="Name of POV-Ray scene to create. Empty " \
+                                "name will use the name of the blend file",
                     default=cls._PROP_STORAGE_DEFAULT, maxlen=1024),
                 )
 

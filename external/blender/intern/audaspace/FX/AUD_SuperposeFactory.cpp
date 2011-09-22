@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_SuperposeFactory.cpp 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_SuperposeFactory.cpp 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -32,24 +32,15 @@
 #include "AUD_SuperposeFactory.h"
 #include "AUD_SuperposeReader.h"
 
-AUD_SuperposeFactory::AUD_SuperposeFactory(AUD_IFactory* factory1, AUD_IFactory* factory2) :
+AUD_SuperposeFactory::AUD_SuperposeFactory(AUD_Reference<AUD_IFactory> factory1, AUD_Reference<AUD_IFactory> factory2) :
 		m_factory1(factory1), m_factory2(factory2)
 {
 }
 
-AUD_IReader* AUD_SuperposeFactory::createReader() const
+AUD_Reference<AUD_IReader> AUD_SuperposeFactory::createReader()
 {
-	AUD_IReader* reader1 = m_factory1->createReader();
-	AUD_IReader* reader2;
-	try
-	{
-		reader2 = m_factory2->createReader();
-	}
-	catch(AUD_Exception&)
-	{
-		delete reader1;
-		throw;
-	}
+	AUD_Reference<AUD_IReader> reader1 = m_factory1->createReader();
+	AUD_Reference<AUD_IReader> reader2 = m_factory2->createReader();
 
 	return new AUD_SuperposeReader(reader1, reader2);
 }

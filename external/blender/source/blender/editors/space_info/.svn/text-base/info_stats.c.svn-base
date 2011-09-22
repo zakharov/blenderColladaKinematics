@@ -42,6 +42,7 @@
 #include "BLI_utildefines.h"
 
 #include "BKE_anim.h"
+#include "BKE_curve.h"
 #include "BKE_displist.h"
 #include "BKE_DerivedMesh.h"
 #include "BKE_key.h"
@@ -51,7 +52,6 @@
 #include "ED_info.h"
 #include "ED_armature.h"
 #include "ED_mesh.h"
-#include "ED_curve.h" /* for ED_curve_editnurbs */
 
 #include "BLI_editVert.h"
 
@@ -193,7 +193,7 @@ static void stats_object_edit(Object *obedit, SceneStats *stats)
 		BezTriple *bezt;
 		BPoint *bp;
 		int a;
-		ListBase *nurbs= ED_curve_editnurbs(cu);
+		ListBase *nurbs= curve_editnurbs(cu);
 
 		for(nu=nurbs->first; nu; nu=nu->next) {
 			if(nu->type == CU_BEZIER) {
@@ -357,13 +357,14 @@ static void stats_update(Scene *scene)
 	}
 
 	if(!scene->stats)
-		scene->stats= MEM_mallocN(sizeof(SceneStats), "SceneStats");
+		scene->stats= MEM_callocN(sizeof(SceneStats), "SceneStats");
 
 	*(scene->stats)= stats;
 }
 
 static void stats_string(Scene *scene)
 {
+	extern char versionstr[]; /* from blender.c */
 	SceneStats *stats= scene->stats;
 	Object *ob= (scene->basact)? scene->basact->object: NULL;
 	uintptr_t mem_in_use, mmap_in_use;
@@ -379,6 +380,8 @@ static void stats_string(Scene *scene)
 		sprintf(s, " (%.2fM)", (double)((mmap_in_use)>>10)/1024.0);
 
 	s= stats->infostr;
+	
+	s+= sprintf(s, "%s | ", versionstr);
 
 	if(scene->obedit) {
 		if(ob_get_keyblock(scene->obedit))

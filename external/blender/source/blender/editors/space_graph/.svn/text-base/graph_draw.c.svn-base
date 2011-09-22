@@ -1,6 +1,4 @@
 /*
- * $Id$
- *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -320,7 +318,9 @@ static int draw_fcurve_handles_check(SpaceIpo *sipo, FCurve *fcu)
 	/* don't draw handle lines if handles are not to be shown */
 	if (	(sipo->flag & SIPO_NOHANDLES) || /* handles shouldn't be shown anywhere */
 			(fcu->flag & FCURVE_PROTECTED) || /* keyframes aren't editable */
+#if 0		/* handles can still be selected and handle types set, better draw - campbell */
 			(fcu->flag & FCURVE_INT_VALUES) || /* editing the handles here will cause weird/incorrect interpolation issues */
+#endif
 			((fcu->grp) && (fcu->grp->flag & AGRP_PROTECTED)) || /* group that curve belongs to is not editable */
 			(fcu->totvert <= 1) /* do not show handles if there is only 1 keyframe, otherwise they all clump together in an ugly ball */
 		) 
@@ -354,10 +354,6 @@ static void draw_fcurve_handles (SpaceIpo *sipo, FCurve *fcu)
 		float *fp;
 		unsigned char col[4];
 		
-		/* if only selected keyframes have handles shown, skip the first round */
-		if ((sel == 0) && (sipo->flag & SIPO_SELVHANDLESONLY))
-			continue;
-		
 		for (b= 0; b < fcu->totvert; b++, prevbezt=bezt, bezt++) {
 			/* if only selected keyframes can get their handles shown, 
 			 * check that keyframe is selected
@@ -370,7 +366,7 @@ static void draw_fcurve_handles (SpaceIpo *sipo, FCurve *fcu)
 			/* draw handle with appropriate set of colors if selection is ok */
 			if ((bezt->f2 & SELECT)==sel) {
 				fp= bezt->vec[0];
-
+				
 				/* only draw first handle if previous segment had handles */
 				if ( (!prevbezt && (bezt->ipo==BEZT_IPO_BEZ)) || (prevbezt && (prevbezt->ipo==BEZT_IPO_BEZ)) ) 
 				{
@@ -380,14 +376,14 @@ static void draw_fcurve_handles (SpaceIpo *sipo, FCurve *fcu)
 					
 					glVertex2fv(fp); glVertex2fv(fp+3); 
 				}
-
+				
 				/* only draw second handle if this segment is bezier */
 				if (bezt->ipo == BEZT_IPO_BEZ) 
 				{
 					UI_GetThemeColor3ubv(basecol + bezt->h2, col);
 					col[3]= drawFCurveFade(fcu) * 255;
 					glColor4ubv((GLubyte *)col);
-
+					
 					glVertex2fv(fp+3); glVertex2fv(fp+6); 
 				}
 			}
@@ -400,7 +396,7 @@ static void draw_fcurve_handles (SpaceIpo *sipo, FCurve *fcu)
 					UI_GetThemeColor3ubv(basecol + bezt->h1, col);
 					col[3]= drawFCurveFade(fcu) * 255;
 					glColor4ubv((GLubyte *)col);
-
+					
 					glVertex2fv(fp); glVertex2fv(fp+3); 
 				}
 				
@@ -682,6 +678,7 @@ static void draw_fcurve_curve_bezts (bAnimContext *ac, ID *id, FCurve *fcu, View
 	}
 	
 	/* draw curve between first and last keyframe (if there are enough to do so) */
+	// TODO: optimise this to not have to calc stuff out of view too?
 	while (b--) {
 		if (prevbezt->ipo==BEZT_IPO_CONST) {
 			/* Constant-Interpolation: draw segment between previous keyframe and next, but holding same value */
@@ -704,12 +701,12 @@ static void draw_fcurve_curve_bezts (bAnimContext *ac, ID *id, FCurve *fcu, View
 			 *	- resol determines number of points to sample in between keyframes
 			 */
 			
-			/* resol not depending on horizontal resolution anymore, drivers for example... */
-			// TODO: would be nice to make this depend on the scale of the graph too...
+			/* resol depends on distance between points (not just horizontal) OR is a fixed high res */
+			// TODO: view scale should factor into this someday too...
 			if (fcu->driver) 
 				resol= 32;
 			else 
-				resol= (int)(3.0*sqrt(bezt->vec[1][0] - prevbezt->vec[1][0]));
+				resol= (int)(5.0f*len_v2v2(bezt->vec[1], prevbezt->vec[1]));
 			
 			if (resol < 2) {
 				/* only draw one */
@@ -719,6 +716,7 @@ static void draw_fcurve_curve_bezts (bAnimContext *ac, ID *id, FCurve *fcu, View
 			}
 			else {
 				/* clamp resolution to max of 32 */
+				// NOTE: higher values will crash
 				if (resol > 32) resol= 32;
 				
 				v1[0]= prevbezt->vec[1][0];
@@ -832,7 +830,7 @@ void graph_draw_curves (bAnimContext *ac, SpaceIpo *sipo, ARegion *ar, View2DGri
 	int filter;
 	
 	/* build list of curves to draw */
-	filter= (ANIMFILTER_VISIBLE|ANIMFILTER_CURVESONLY|ANIMFILTER_CURVEVISIBLE);
+	filter= (ANIMFILTER_DATA_VISIBLE|ANIMFILTER_CURVE_VISIBLE);
 	filter |= ((sel) ? (ANIMFILTER_SEL) : (ANIMFILTER_UNSEL));
 	ANIM_animdata_filter(ac, &anim_data, filter, ac->data, ac->datatype);
 		
@@ -875,6 +873,11 @@ void graph_draw_curves (bAnimContext *ac, SpaceIpo *sipo, ARegion *ar, View2DGri
 				glColor4f(fcu->color[0], fcu->color[1], fcu->color[2], drawFCurveFade(fcu));
 			}
 			
+			/* draw active F-Curve thicker than the rest to make it stand out */
+			if (fcu->flag & FCURVE_ACTIVE) {
+				glLineWidth(2.0);
+			}
+			
 			/* anti-aliased lines for less jagged appearance */
 			if ((sipo->flag & SIPO_BEAUTYDRAW_OFF)==0) glEnable(GL_LINE_SMOOTH);
 			glEnable(GL_BLEND);
@@ -896,6 +899,7 @@ void graph_draw_curves (bAnimContext *ac, SpaceIpo *sipo, ARegion *ar, View2DGri
 			
 			/* restore settings */
 			setlinestyle(0);
+			glLineWidth(1.0);
 			
 			if ((sipo->flag & SIPO_BEAUTYDRAW_OFF)==0) glDisable(GL_LINE_SMOOTH);
 			glDisable(GL_BLEND);
@@ -962,10 +966,11 @@ void graph_draw_channel_names(bContext *C, bAnimContext *ac, ARegion *ar)
 	
 	View2D *v2d= &ar->v2d;
 	float y= 0.0f, height;
-	int items, i=0;
+	size_t items;
+	int i=0;
 	
 	/* build list of channels to draw */
-	filter= (ANIMFILTER_VISIBLE|ANIMFILTER_CHANNELS);
+	filter= (ANIMFILTER_DATA_VISIBLE | ANIMFILTER_LIST_VISIBLE | ANIMFILTER_LIST_CHANNELS);
 	items= ANIM_animdata_filter(ac, &anim_data, filter, ac->data, ac->datatype);
 	
 	/* Update max-extent of channels here (taking into account scrollers):
@@ -999,6 +1004,7 @@ void graph_draw_channel_names(bContext *C, bAnimContext *ac, ARegion *ar)
 	}
 	{	/* second pass: widgets */
 		uiBlock *block= uiBeginBlock(C, ar, "graph channel buttons", UI_EMBOSS);
+		size_t channel_index = 0;
 		
 		y= (float)ACHANNEL_FIRST;
 		
@@ -1015,11 +1021,12 @@ void graph_draw_channel_names(bContext *C, bAnimContext *ac, ARegion *ar)
 				 IN_RANGE(ymaxc, v2d->cur.ymin, v2d->cur.ymax) ) 
 			{
 				/* draw all channels using standard channel-drawing API */
-				ANIM_channel_draw_widgets(ac, ale, block, yminc, ymaxc);
+				ANIM_channel_draw_widgets(C, ac, ale, block, yminc, ymaxc, channel_index);
 			}
 			
 			/* adjust y-position for next one */
 			y -= ACHANNEL_STEP;
+			channel_index++;
 		}
 		
 		uiEndBlock(C, block);

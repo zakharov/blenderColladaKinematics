@@ -1,5 +1,5 @@
 /*
- * $Id: wm_gesture.c 35179 2011-02-25 14:04:21Z jesterking $
+ * $Id: wm_gesture.c 40390 2011-09-20 08:48:48Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -134,7 +134,7 @@ int wm_gesture_evaluate(wmGesture *gesture)
 		int dx= rect->xmax - rect->xmin;
 		int dy= rect->ymax - rect->ymin;
 		if(ABS(dx)+ABS(dy) > TWEAK_THRESHOLD) {
-			int theta= (int)floor(4.0f*atan2((float)dy, (float)dx)/M_PI + 0.5);
+			int theta= (int)floor(4.0f*atan2f((float)dy, (float)dx)/(float)M_PI + 0.5f);
 			int val= EVT_GESTURE_W;
 			
 			if(theta==0) val= EVT_GESTURE_E;
@@ -232,7 +232,7 @@ static void wm_gesture_draw_circle(wmGesture *gt)
 static void draw_filled_lasso(wmGesture *gt)
 {
 	EditVert *v=NULL, *lastv=NULL, *firstv=NULL;
-	EditEdge *e;
+	/* EditEdge *e; */ /* UNUSED */
 	EditFace *efa;
 	short *lasso= (short *)gt->customdata;
 	int i;
@@ -246,7 +246,7 @@ static void draw_filled_lasso(wmGesture *gt)
 
 		v = BLI_addfillvert(co);
 		if (lastv)
-			e = BLI_addfilledge(lastv, v);
+			/* e = */ /* UNUSED */ BLI_addfilledge(lastv, v);
 		lastv = v;
 		if (firstv==NULL) firstv = v;
 	}

@@ -4,7 +4,7 @@ Import ('env')
 sources = env.Glob('*.cpp')
 defs = []
 
-incs = '. #source/kernel/gen_system #intern/string #intern/guardedalloc'
+incs = '. #intern/string #intern/guardedalloc #intern/container'
 incs += ' #source/gameengine/Rasterizer/RAS_OpenGLRasterizer'
 incs += ' #intern/audaspace/intern #source/gameengine/Converter'
 incs += ' #source/gameengine/BlenderRoutines #source/blender/imbuf'
@@ -20,6 +20,8 @@ incs += ' #source/blender/misc #source/blender/blenloader #source/blender/gpu'
 incs += ' #source/blender/windowmanager'
 incs += ' #source/blender/makesrna'
 incs += ' #source/blender/ikplugin'
+incs += ' #extern/recastnavigation/Detour/Include'
+incs += ' #extern/Eigen2'
 
 incs += ' ' + env['BF_BULLET_INC']
 

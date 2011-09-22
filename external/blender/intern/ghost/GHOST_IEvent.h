@@ -1,5 +1,5 @@
 /*
- * $Id: GHOST_IEvent.h 35152 2011-02-25 11:28:33Z jesterking $
+ * $Id: GHOST_IEvent.h 35904 2011-03-30 16:14:54Z campbellbarton $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -34,6 +34,7 @@
 #ifndef _GHOST_IEVENT_H_
 #define _GHOST_IEVENT_H_
 
+#include <stddef.h>
 #include "GHOST_Types.h"
 
 class GHOST_IWindow;

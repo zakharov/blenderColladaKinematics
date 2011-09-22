@@ -42,7 +42,7 @@
 #include "bpy_driver.h"
 
 /* for pydrivers (drivers using one-line Python expressions to express relationships between targets) */
-PyObject *bpy_pydriver_Dict = NULL;
+PyObject *bpy_pydriver_Dict= NULL;
 
 /* For faster execution we keep a special dictionary for pydrivers, with
  * the needed modules and aliases.
@@ -54,16 +54,16 @@ int bpy_pydriver_create_dict(void)
 	/* validate namespace for driver evaluation */
 	if (bpy_pydriver_Dict) return -1;
 
-	d = PyDict_New();
+	d= PyDict_New();
 	if (d == NULL)
 		return -1;
 	else
-		bpy_pydriver_Dict = d;
+		bpy_pydriver_Dict= d;
 
-	/* import some modules: builtins, bpy, math, (Blender.noise )*/
+	/* import some modules: builtins, bpy, math, (Blender.noise)*/
 	PyDict_SetItemString(d, "__builtins__", PyEval_GetBuiltins());
 
-	mod = PyImport_ImportModule("math");
+	mod= PyImport_ImportModule("math");
 	if (mod) {
 		PyDict_Merge(d, PyModule_GetDict(mod), 0); /* 0 - dont overwrite existing values */
 		Py_DECREF(mod);
@@ -73,6 +73,13 @@ int bpy_pydriver_create_dict(void)
 	mod= PyImport_ImportModuleLevel((char *)"bpy", NULL, NULL, NULL, 0);
 	if (mod) {
 		PyDict_SetItemString(bpy_pydriver_Dict, "bpy", mod);
+		Py_DECREF(mod);
+	}
+
+	/* add noise to global namespace */
+	mod= PyImport_ImportModuleLevel((char *)"noise", NULL, NULL, NULL, 0);
+	if (mod) {
+		PyDict_SetItemString(bpy_pydriver_Dict, "noise", mod);
 		Py_DECREF(mod);
 	}
 
@@ -87,15 +94,15 @@ int bpy_pydriver_create_dict(void)
 void BPY_driver_reset(void)
 {
 	PyGILState_STATE gilstate;
-	int use_gil= 1; // (PyThreadState_Get()==NULL);
+	int use_gil= 1; /* !PYC_INTERPRETER_ACTIVE; */
 
 	if(use_gil)
-		gilstate = PyGILState_Ensure();
+		gilstate= PyGILState_Ensure();
 
 	if (bpy_pydriver_Dict) { /* free the global dict used by pydrivers */
 		PyDict_Clear(bpy_pydriver_Dict);
 		Py_DECREF(bpy_pydriver_Dict);
-		bpy_pydriver_Dict = NULL;
+		bpy_pydriver_Dict= NULL;
 	}
 
 	if(use_gil)
@@ -118,9 +125,14 @@ static void pydriver_error(ChannelDriver *driver)
 /* This evals py driver expressions, 'expr' is a Python expression that
  * should evaluate to a float number, which is returned.
  *
- * note: PyGILState_Ensure() isnt always called because python can call the
- * bake operator which intern starts a thread which calls scene update which
- * does a driver update. to avoid a deadlock check PyThreadState_Get() if PyGILState_Ensure() is needed.
+ * (old)note: PyGILState_Ensure() isnt always called because python can call
+ * the bake operator which intern starts a thread which calls scene update
+ * which does a driver update. to avoid a deadlock check PYC_INTERPRETER_ACTIVE
+ * if PyGILState_Ensure() is needed - see [#27683]
+ *
+ * (new)note: checking if python is running is not threadsafe [#28114]
+ * now release the GIL on python operator execution instead, using
+ * PyEval_SaveThread() / PyEval_RestoreThread() so we dont lock up blender.
  */
 float BPY_driver_exec(ChannelDriver *driver)
 {
@@ -132,13 +144,13 @@ float BPY_driver_exec(ChannelDriver *driver)
 	int use_gil;
 
 	DriverVar *dvar;
-	double result = 0.0; /* default return */
-	char *expr = NULL;
+	double result= 0.0; /* default return */
+	char *expr= NULL;
 	short targets_ok= 1;
 	int i;
 
 	/* get the py expression to be evaluated */
-	expr = driver->expression;
+	expr= driver->expression;
 	if ((expr == NULL) || (expr[0]=='\0'))
 		return 0.0f;
 
@@ -147,10 +159,10 @@ float BPY_driver_exec(ChannelDriver *driver)
 		return 0.0f;
 	}
 
-	use_gil= 1; //(PyThreadState_Get()==NULL);
+	use_gil= 1; /* !PYC_INTERPRETER_ACTIVE; */
 
 	if(use_gil)
-		gilstate = PyGILState_Ensure();
+		gilstate= PyGILState_Ensure();
 
 	/* init global dictionary for py-driver evaluation settings */
 	if (!bpy_pydriver_Dict) {
@@ -185,12 +197,11 @@ float BPY_driver_exec(ChannelDriver *driver)
 		expr_vars= PyTuple_GET_ITEM(((PyObject *)driver->expr_comp), 1);
 		Py_XDECREF(expr_vars);
 
-		/* intern the arg names so creating the namespace for every run is faster */
 		expr_vars= PyTuple_New(BLI_countlist(&driver->variables));
 		PyTuple_SET_ITEM(((PyObject *)driver->expr_comp), 1, expr_vars);
 
 		for (dvar= driver->variables.first, i=0; dvar; dvar= dvar->next) {
-			PyTuple_SET_ITEM(expr_vars, i++, PyUnicode_InternFromString(dvar->name));
+			PyTuple_SET_ITEM(expr_vars, i++, PyUnicode_FromString(dvar->name));
 		}
 		
 		driver->flag &= ~DRIVER_FLAG_RENAMEVAR;
@@ -200,10 +211,10 @@ float BPY_driver_exec(ChannelDriver *driver)
 	}
 
 	/* add target values to a dict that will be used as '__locals__' dict */
-	driver_vars = PyDict_New(); // XXX do we need to decref this?
+	driver_vars= PyDict_New(); // XXX do we need to decref this?
 	for (dvar= driver->variables.first, i=0; dvar; dvar= dvar->next) {
-		PyObject *driver_arg = NULL;
-		float tval = 0.0f;
+		PyObject *driver_arg= NULL;
+		float tval= 0.0f;
 		
 		/* try to get variable value */
 		tval= driver_get_variable_value(driver, dvar);
@@ -211,7 +222,7 @@ float BPY_driver_exec(ChannelDriver *driver)
 		
 		/* try to add to dictionary */
 		/* if (PyDict_SetItemString(driver_vars, dvar->name, driver_arg)) { */
-		if (PyDict_SetItem(driver_vars, PyTuple_GET_ITEM(expr_vars, i++), driver_arg) < 0) { /* use string interning for faster namespace creation */
+		if (PyDict_SetItem(driver_vars, PyTuple_GET_ITEM(expr_vars, i++), driver_arg) < 0) {
 			/* this target failed - bad name */
 			if (targets_ok) {
 				/* first one - print some extra info for easier identification */
@@ -228,7 +239,7 @@ float BPY_driver_exec(ChannelDriver *driver)
 
 #if 0 // slow, with this can avoid all Py_CompileString above.
 	/* execute expression to get a value */
-	retval = PyRun_String(expr, Py_eval_input, bpy_pydriver_Dict, driver_vars);
+	retval= PyRun_String(expr, Py_eval_input, bpy_pydriver_Dict, driver_vars);
 #else
 	/* evaluate the compiled expression */
 	if (expr_code)
@@ -241,10 +252,11 @@ float BPY_driver_exec(ChannelDriver *driver)
 	/* process the result */
 	if (retval == NULL) {
 		pydriver_error(driver);
-	} else if((result= PyFloat_AsDouble(retval)) == -1.0 && PyErr_Occurred()) {
+	}
+	else if((result= PyFloat_AsDouble(retval)) == -1.0 && PyErr_Occurred()) {
 		pydriver_error(driver);
 		Py_DECREF(retval);
-		result = 0.0;
+		result= 0.0;
 	}
 	else {
 		/* all fine, make sure the "invalid expression" flag is cleared */
@@ -254,7 +266,7 @@ float BPY_driver_exec(ChannelDriver *driver)
 
 	if(use_gil)
 		PyGILState_Release(gilstate);
-    
+
 	if(finite(result)) {
 		return (float)result;
 	}

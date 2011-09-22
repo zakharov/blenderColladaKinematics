@@ -1,5 +1,5 @@
 /*
- * $Id: wm_event_system.h 35179 2011-02-25 14:04:21Z jesterking $
+ * $Id: wm_event_system.h 36242 2011-04-20 11:15:58Z ton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -78,6 +78,8 @@ typedef struct wmEventHandler {
 /* handler flag */
 		/* after this handler all others are ignored */
 #define WM_HANDLER_BLOCKING		1
+		/* handler tagged to be freed in wm_handlers_do() */
+#define WM_HANDLER_DO_FREE		2
 
 
 

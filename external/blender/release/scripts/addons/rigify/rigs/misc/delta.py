@@ -39,10 +39,10 @@ class Rig:
         """
         bb = obj.data.bones
 
-        if bb[bone].children == None:
-            raise MetarigError("RIGIFY ERROR: bone '%s': rig type requires one child." % org_name(bone.name))
+        if bb[bone].children is None:
+            raise MetarigError("RIGIFY ERROR: bone '%s': rig type requires one child" % org_name(bone.name))
         if bb[bone].use_connect == True:
-            raise MetarigError("RIGIFY ERROR: bone '%s': rig type cannot be connected to parent." % org_name(bone.name))
+            raise MetarigError("RIGIFY ERROR: bone '%s': rig type cannot be connected to parent" % org_name(bone.name))
 
         self.obj = obj
         self.org_bones = {"delta": bone, "child": bb[bone].children[0].name}
@@ -59,7 +59,7 @@ class Rig:
 
         org_delta = self.org_bones["delta"]
         org_delta_e = eb[self.org_bones["delta"]]
-        org_child = self.org_bones["child"]
+        # org_child = self.org_bones["child"]  # UNUSED
         org_child_e = eb[self.org_bones["child"]]
 
         # Calculate the matrix for achieving the delta

@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 78
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/release/windows/contrib/vfapi
+/svnroot/bf-blender/!svn/ver/36271/trunk/blender/release/windows/contrib/vfapi
 END
 vfapi-plugin.c
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/release/windows/contrib/vfapi/vfapi-plugin.c
+/svnroot/bf-blender/!svn/ver/36271/trunk/blender/release/windows/contrib/vfapi/vfapi-plugin.c
 END
 README
 K 25

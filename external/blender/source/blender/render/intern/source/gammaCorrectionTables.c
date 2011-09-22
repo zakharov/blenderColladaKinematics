@@ -1,7 +1,7 @@
 /*
  * Jitter offset table
  *
- * $Id: gammaCorrectionTables.c 35233 2011-02-27 19:31:27Z jesterking $
+ * $Id: gammaCorrectionTables.c 39570 2011-08-20 17:39:13Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -107,7 +107,7 @@ void makeGammaTables(float gamma)
 	int i;
 
 	valid_gamma        = gamma;
-	valid_inv_gamma    = 1.0 / gamma;
+	valid_inv_gamma    = 1.0f / gamma;
 	color_step        = 1.0 / RE_GAMMA_TABLE_SIZE;
 	inv_color_step    = (float) RE_GAMMA_TABLE_SIZE; 
 

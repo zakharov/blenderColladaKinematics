@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 73
-/svnroot/bf-blender/!svn/ver/35235/trunk/blender/source/blender/quicktime
+/svnroot/bf-blender/!svn/ver/38443/trunk/blender/source/blender/quicktime
 END
 quicktime_export.h
 K 25
@@ -25,5 +25,5 @@ CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 88
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/quicktime/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/38443/trunk/blender/source/blender/quicktime/CMakeLists.txt
 END

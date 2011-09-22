@@ -26,7 +26,7 @@
  * ***** END GPL LICENSE BLOCK *****
  * rotate.c
  *
- * $Id: rotate.c 35239 2011-02-27 20:23:21Z jesterking $
+ * $Id: rotate.c 35586 2011-03-17 05:15:54Z campbellbarton $
  */
 
 /** \file blender/imbuf/intern/rotate.c
@@ -101,7 +101,7 @@ void IMB_flipy(struct ImBuf * ibuf)
 
 void IMB_flipx(struct ImBuf * ibuf)
 {
-	short x, y, xr, xl, yi;
+	int x, y, xr, xl, yi;
 	float px_f[4];
 	
 	if (ibuf == NULL) return;

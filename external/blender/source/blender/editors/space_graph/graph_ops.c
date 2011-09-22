@@ -1,5 +1,5 @@
 /*
- * $Id: graph_ops.c 35354 2011-03-04 16:02:42Z ton $
+ * $Id: graph_ops.c 39937 2011-09-05 19:34:27Z blendix $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -41,10 +41,13 @@
 #include "BLI_utildefines.h"
 
 #include "BKE_context.h"
+#include "BKE_main.h"
 #include "BKE_sound.h"
 
 #include "UI_view2d.h"
 
+#include "ED_anim_api.h"
+#include "ED_markers.h"
 #include "ED_screen.h"
 #include "ED_transform.h"
 
@@ -68,6 +71,7 @@
 /* Set the new frame number */
 static void graphview_cursor_apply(bContext *C, wmOperator *op)
 {
+	Main *bmain= CTX_data_main(C);
 	Scene *scene= CTX_data_scene(C);
 	SpaceIpo *sipo= CTX_wm_space_graph(C);
 	
@@ -76,7 +80,7 @@ static void graphview_cursor_apply(bContext *C, wmOperator *op)
 	 */
 	CFRA= RNA_int_get(op->ptr, "frame");
 	SUBFRA=0.f;
-	sound_seek_scene(C);
+	sound_seek_scene(bmain, scene);
 	
 	/* set the cursor value */
 	sipo->cursorVal= RNA_float_get(op->ptr, "value");
@@ -101,18 +105,13 @@ static void graphview_cursor_setprops(bContext *C, wmOperator *op, wmEvent *even
 {
 	ARegion *ar= CTX_wm_region(C);
 	float viewx, viewy;
-	int x, y;
-	
+
 	/* abort if not active region (should not really be possible) */
 	if (ar == NULL)
 		return;
-	
-	/* convert screen coordinates to region coordinates */
-	x= event->x - ar->winrct.xmin;
-	y= event->y - ar->winrct.ymin;
-	
+
 	/* convert from region coordinates to View2D 'tot' space */
-	UI_view2d_region_to_view(&ar->v2d, x, y, &viewx, &viewy);
+	UI_view2d_region_to_view(&ar->v2d, event->mval[0], event->mval[1], &viewx, &viewy);
 	
 	/* store the values in the operator properties */
 		/* frame is rounded to the nearest int, since frames are ints */
@@ -226,6 +225,7 @@ void graphedit_operatortypes(void)
 	
 	WM_operatortype_append(GRAPH_OT_previewrange_set);
 	WM_operatortype_append(GRAPH_OT_view_all);
+	WM_operatortype_append(GRAPH_OT_view_selected);
 	WM_operatortype_append(GRAPH_OT_properties);
 	
 	WM_operatortype_append(GRAPH_OT_ghost_curves_create);
@@ -254,6 +254,7 @@ void graphedit_operatortypes(void)
 	WM_operatortype_append(GRAPH_OT_sound_bake);
 	WM_operatortype_append(GRAPH_OT_smooth);
 	WM_operatortype_append(GRAPH_OT_clean);
+	WM_operatortype_append(GRAPH_OT_euler_filter);
 	WM_operatortype_append(GRAPH_OT_delete);
 	WM_operatortype_append(GRAPH_OT_duplicate);
 	
@@ -275,10 +276,11 @@ void ED_operatormacros_graph(void)
 	wmOperatorTypeMacro *otmacro;
 	
 	ot= WM_operatortype_append_macro("GRAPH_OT_duplicate_move", "Duplicate", OPTYPE_UNDO|OPTYPE_REGISTER);
-	WM_operatortype_macro_define(ot, "GRAPH_OT_duplicate");
-	otmacro= WM_operatortype_macro_define(ot, "TRANSFORM_OT_transform");
-	RNA_int_set(otmacro->ptr, "mode", TFM_TIME_DUPLICATE);
-
+	if (ot) {
+		WM_operatortype_macro_define(ot, "GRAPH_OT_duplicate");
+		otmacro= WM_operatortype_macro_define(ot, "TRANSFORM_OT_transform");
+		RNA_enum_set(otmacro->ptr, "mode", TFM_TIME_DUPLICATE);
+	}
 }
 
 
@@ -362,7 +364,7 @@ static void graphedit_keymap_keyframes (wmKeyConfig *keyconf, wmKeyMap *keymap)
 	
 	WM_keymap_add_item(keymap, "GRAPH_OT_handle_type", VKEY, KM_PRESS, 0, 0);
 
-	WM_keymap_add_item(keymap, "GRAPH_OT_interpolation_type", TKEY, KM_PRESS, KM_SHIFT, 0);
+	WM_keymap_add_item(keymap, "GRAPH_OT_interpolation_type", TKEY, KM_PRESS, 0, 0);
 	
 		/* destructive */
 	WM_keymap_add_item(keymap, "GRAPH_OT_clean", OKEY, KM_PRESS, 0, 0);
@@ -387,6 +389,7 @@ static void graphedit_keymap_keyframes (wmKeyConfig *keyconf, wmKeyMap *keymap)
 		/* auto-set range */
 	WM_keymap_add_item(keymap, "GRAPH_OT_previewrange_set", PKEY, KM_PRESS, KM_CTRL|KM_ALT, 0);
 	WM_keymap_add_item(keymap, "GRAPH_OT_view_all", HOMEKEY, KM_PRESS, 0, 0);
+	WM_keymap_add_item(keymap, "GRAPH_OT_view_selected", PADPERIOD, KM_PRESS, 0, 0);
 	
 		/* F-Modifiers */
 	RNA_boolean_set(WM_keymap_add_item(keymap, "GRAPH_OT_fmodifier_add", MKEY, KM_PRESS, KM_CTRL|KM_SHIFT, 0)->ptr, "only_active", 0);
@@ -399,6 +402,9 @@ static void graphedit_keymap_keyframes (wmKeyConfig *keyconf, wmKeyMap *keymap)
 	
 	/* transform system */
 	transform_keymap_for_space(keyconf, keymap, SPACE_IPO);
+	
+	/* special markers hotkeys for anim editors: see note in definition of this function */
+	ED_marker_keymap_animedit_conflictfree(keymap);
 }
 
 /* --------------- */

@@ -199,7 +199,7 @@ struct FCurve *list_find_fcurve(ListBase *list, const char rna_path[], const int
 struct FCurve *iter_step_fcurve (struct FCurve *fcu_iter, const char rna_path[]);
 
 /* high level function to get an fcurve from C without having the rna */
-struct FCurve *id_data_find_fcurve(ID *id, void *data, struct StructRNA *type, const char *prop_name, int index);
+struct FCurve *id_data_find_fcurve(ID *id, void *data, struct StructRNA *type, const char *prop_name, int index, char *driven);
 
 /* Get list of LinkData's containing pointers to the F-Curves which control the types of data indicated 
  *	e.g.  numMatches = list_find_data_fcurves(matches, &act->curves, "pose.bones[", "MyFancyBone");
@@ -215,10 +215,10 @@ struct FCurve *rna_get_fcurve(struct PointerRNA *ptr, struct PropertyRNA *prop, 
 int binarysearch_bezt_index(struct BezTriple array[], float frame, int arraylen, short *replace);
 
 /* get the time extents for F-Curve */
-void calc_fcurve_range(struct FCurve *fcu, float *min, float *max);
+void calc_fcurve_range(struct FCurve *fcu, float *min, float *max, const short selOnly);
 
 /* get the bounding-box extents for F-Curve */
-void calc_fcurve_bounds(struct FCurve *fcu, float *xmin, float *xmax, float *ymin, float *ymax);
+void calc_fcurve_bounds(struct FCurve *fcu, float *xmin, float *xmax, float *ymin, float *ymax, const short selOnly);
 
 /* .............. */
 

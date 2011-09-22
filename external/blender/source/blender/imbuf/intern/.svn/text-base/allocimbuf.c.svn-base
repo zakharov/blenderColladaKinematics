@@ -84,17 +84,13 @@ void imb_freerectfloatImBuf(ImBuf *ibuf)
 void imb_freerectImBuf(ImBuf *ibuf)
 {
 	if(ibuf==NULL) return;
-	
-	if(ibuf->crect)
-		MEM_freeN(ibuf->crect);
 
 	if(ibuf->rect && (ibuf->mall & IB_rect))
 		MEM_freeN(ibuf->rect);
+	ibuf->rect= NULL;
 	
 	imb_freemipmapImBuf(ibuf);
-	
-	ibuf->rect= NULL;
-	ibuf->crect= NULL;
+
 	ibuf->mall &= ~IB_rect;
 }
 
@@ -179,6 +175,19 @@ void IMB_freeImBuf(ImBuf *ibuf)
 void IMB_refImBuf(ImBuf *ibuf)
 {
 	ibuf->refcounter++;
+}
+
+ImBuf * IMB_makeSingleUser(ImBuf *ibuf)
+{
+	ImBuf * rval;
+
+	if (!ibuf || ibuf->refcounter == 0) { return ibuf; }
+
+	rval = IMB_dupImBuf(ibuf);
+
+	IMB_freeImBuf(ibuf);
+
+	return rval;
 }
 
 short addzbufImBuf(ImBuf *ibuf)
@@ -346,6 +355,7 @@ ImBuf *IMB_allocImBuf(unsigned int x, unsigned int y, uchar d, unsigned int flag
 		ibuf->depth= d;
 		ibuf->ftype= TGA;
 		ibuf->channels= 4;	/* float option, is set to other values when buffers get assigned */
+		ibuf->ppm[0]= ibuf->ppm[1]= 150.0 / 0.0254; /* 150dpi -> pixels-per-meter */
 		
 		if(flags & IB_rect) {
 			if(imb_addrectImBuf(ibuf)==FALSE) {

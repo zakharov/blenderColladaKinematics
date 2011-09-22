@@ -1,7 +1,7 @@
 /*
  * Execute Python scripts
  *
- * $Id: SCA_PythonController.cpp 35364 2011-03-05 11:08:22Z campbellbarton $
+ * $Id: SCA_PythonController.cpp 36999 2011-05-29 11:17:25Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -357,14 +357,7 @@ bool SCA_PythonController::Import()
 	
 	m_function_argc = 0; /* rare cases this could be a function that isnt defined in python, assume zero args */
 	if (PyFunction_Check(m_function)) {
-		PyObject *py_arg_count = PyObject_GetAttrString(PyFunction_GET_CODE(m_function), "co_argcount");
-		if(py_arg_count) {
-			m_function_argc = PyLong_AsLong(py_arg_count);
-			Py_DECREF(py_arg_count);
-		}
-		else {
-			PyErr_Clear(); /* unlikely to fail but just incase */
-		}
+		m_function_argc= ((PyCodeObject *)PyFunction_GET_CODE(m_function))->co_argcount;
 	}
 	
 	if(m_function_argc > 1) {
@@ -415,11 +408,7 @@ void SCA_PythonController::Trigger(SCA_LogicManager* logicmgr)
 
 		excdict= PyDict_Copy(m_pythondictionary);
 
-#if PY_VERSION_HEX >=  0x03020000
 		resultobj = PyEval_EvalCode((PyObject *)m_bytecode, excdict, excdict);
-#else
-		resultobj = PyEval_EvalCode((PyCodeObject *)m_bytecode, excdict, excdict);
-#endif
 
 		/* PyRun_SimpleString(m_scriptText.Ptr()); */
 		break;

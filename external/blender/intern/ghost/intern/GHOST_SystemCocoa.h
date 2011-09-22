@@ -1,5 +1,5 @@
 /*
- * $Id: GHOST_SystemCocoa.h 35152 2011-02-25 11:28:33Z jesterking $
+ * $Id: GHOST_SystemCocoa.h 38908 2011-08-02 04:28:05Z merwin $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -119,14 +119,6 @@ public:
 		const GHOST_TEmbedderWindowID parentWindow = 0 
 	);
 	
-	virtual GHOST_TSuccess beginFullScreen(
-		const GHOST_DisplaySetting& setting, 
-		GHOST_IWindow** window,
-		const bool stereoVisual
-	);
-	
-	virtual GHOST_TSuccess endFullScreen( void );
-	
 	/***************************************************************************************
 	 ** Event management functionality
 	 ***************************************************************************************/
@@ -227,6 +219,16 @@ public:
      * @return Indication whether the event was handled. 
      */
     GHOST_TSuccess handleApplicationBecomeActiveEvent();
+
+	/**
+	 * External objects should call this when they send an event outside processEvents.
+	 */
+	void notifyExternalEventProcessed();
+
+	/**
+	 * @see GHOST_ISystem
+	 */
+	int toggleConsole(int action) { return 0; }
 	
 	
 protected:
@@ -270,7 +272,7 @@ protected:
 	/** Start time at initialization. */
 	GHOST_TUns64 m_start_time;
 	
-	/** Event has been processed directly by Cocoa and has sent a ghost event to be dispatched */
+	/** Event has been processed directly by Cocoa (or NDOF manager) and has sent a ghost event to be dispatched */
 	bool m_outsideLoopEventProcessed;
 	
 	/** Raised window is not yet known by the window manager, so delay application become active event handling */

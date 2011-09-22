@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_HighpassFactory.h 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_HighpassFactory.h 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -32,16 +32,16 @@
 #ifndef AUD_HIGHPASSFACTORY
 #define AUD_HIGHPASSFACTORY
 
-#include "AUD_EffectFactory.h"
+#include "AUD_DynamicIIRFilterFactory.h"
 
 /**
  * This factory creates a highpass filter reader.
  */
-class AUD_HighpassFactory : public AUD_EffectFactory
+class AUD_HighpassFactory : public AUD_DynamicIIRFilterFactory
 {
 private:
 	/**
-	 * The attack value in seconds.
+	 * The cutoff frequency.
 	 */
 	const float m_frequency;
 
@@ -61,9 +61,9 @@ public:
 	 * \param frequency The cutoff frequency.
 	 * \param Q The Q factor.
 	 */
-	AUD_HighpassFactory(AUD_IFactory* factory, float frequency, float Q = 1.0f);
+	AUD_HighpassFactory(AUD_Reference<AUD_IFactory> factory, float frequency, float Q = 1.0f);
 
-	virtual AUD_IReader* createReader() const;
+	virtual void recalculateCoefficients(AUD_SampleRate rate, std::vector<float> &b, std::vector<float> &a);
 };
 
 #endif //AUD_HIGHPASSFACTORY

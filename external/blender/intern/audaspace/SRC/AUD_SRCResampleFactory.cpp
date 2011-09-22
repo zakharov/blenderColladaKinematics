@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_SRCResampleFactory.cpp 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_SRCResampleFactory.cpp 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -32,18 +32,13 @@
 #include "AUD_SRCResampleFactory.h"
 #include "AUD_SRCResampleReader.h"
 
-AUD_SRCResampleFactory::AUD_SRCResampleFactory(AUD_IFactory* factory,
+AUD_SRCResampleFactory::AUD_SRCResampleFactory(AUD_Reference<AUD_IFactory> factory,
 											   AUD_DeviceSpecs specs) :
-		AUD_ResampleFactory(factory, specs)
+		AUD_MixerFactory(factory, specs)
 {
 }
 
-AUD_IReader* AUD_SRCResampleFactory::createReader() const
+AUD_Reference<AUD_IReader> AUD_SRCResampleFactory::createReader()
 {
-	AUD_IReader* reader = getReader();
-
-	if(reader->getSpecs().rate != m_specs.rate)
-		reader = new AUD_SRCResampleReader(reader, m_specs.specs);
-
-	return reader;
+	return new AUD_SRCResampleReader(getReader(), m_specs.specs);
 }

@@ -1,5 +1,5 @@
 /*
- * $Id: KX_OrientationInterpolator.cpp 35171 2011-02-25 13:35:59Z jesterking $
+ * $Id: KX_OrientationInterpolator.cpp 39883 2011-09-03 02:15:49Z campbellbarton $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -51,6 +51,6 @@ void KX_OrientationInterpolator::Execute(float currentTime) const {
 	MT_Scalar ss = si*sh;
 
 	m_target.setValue(cj*ch, sj*sc-cs, sj*cc+ss,
-					  cj*sh, sj*ss+cc, sj*cs-sc, 
-					    -sj,    cj*si,    cj*ci);
+	                  cj*sh, sj*ss+cc, sj*cs-sc,
+	                  -sj,    cj*si,    cj*ci);
 }

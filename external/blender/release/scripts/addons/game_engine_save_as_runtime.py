@@ -12,16 +12,16 @@
 #
 #  You should have received a copy of the GNU General Public License
 #  along with this program; if not, write to the Free Software Foundation,
-#  Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+#  Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 #
 # ##### END GPL LICENSE BLOCK #####
 
 bl_info = {
-    'name': 'Save As Runtime',
+    'name': 'Save As Game Engine Runtime',
     'author': 'Mitchell Stokes (Moguri)',
-    'version': (0, 3, 0),
-    'blender': (2, 5, 6),
-    'api': 34057,
+    'version': (0, 3, 1),
+    "blender": (2, 5, 8),
+    "api": 37846,
     'location': 'File > Export',
     'description': 'Bundle a .blend file with the Blenderplayer',
     'warning': '',
@@ -35,6 +35,33 @@ import bpy
 import os
 import sys
 import shutil
+import tempfile
+
+
+def CopyPythonLibs(dst, overwrite_lib, report=print):
+    import platform
+
+    # use python module to find pytohn's libpath
+    src = os.path.dirname(platform.__file__)
+
+    # dst points to lib/, but src points to current python's library path, eg:
+    #  '/usr/lib/python3.2' vs '/usr/lib'
+    # append python's library dir name to destination, so only python's
+    # libraries would be copied
+    dst = os.path.join(dst, os.path.basename(src))
+
+    if os.path.exists(src):
+        write = False
+        if os.path.exists(dst):
+            if overwrite_lib:
+                shutil.rmtree(dst)
+                write = True
+        else:
+            write = True
+        if write:
+            shutil.copytree(src, dst, ignore=lambda dir, contents: [i for i in contents if i == '__pycache__'])
+    else:
+        report({'WARNING'}, "Python not found in %r, skipping pythn copy" % src)
 
 
 def WriteAppleRuntime(player_path, output_path, copy_python, overwrite_lib):
@@ -45,32 +72,21 @@ def WriteAppleRuntime(player_path, output_path, copy_python, overwrite_lib):
     # Use the system's cp command to preserve some meta-data
     os.system('cp -R "%s" "%s"' % (player_path, output_path))
     
-    bpy.ops.wm.save_as_mainfile(filepath=output_path+"/Contents/Resources/game.blend", copy=True)
+    bpy.ops.wm.save_as_mainfile(filepath=os.path.join(output_path, "Contents/Resources/game.blend"),
+                                relative_remap=False,
+                                compress=False,
+                                copy=True,
+                                )
     
-    # Copy bundled Python
-    blender_dir = os.path.dirname(bpy.app.binary_path)
-    
-    if copy_python:
-        print("Copying Python files...", end=" ")
-        src = os.path.join(blender_dir, bpy.app.version_string.split()[0], "python", "lib")
-        dst = os.path.join(output_path, "Contents", "MacOS", "lib")
-        
-        if os.path.exists(dst):
-            if overwrite_lib:
-                shutil.rmtree(dst)
-                shutil.copytree(src, dst, ignore=lambda dir, contents: [i for i in contents if i.endswith('.pyc')])
-        else:
-            shutil.copytree(src, dst, ignore=lambda dir, contents: [i for i in contents if i.endswith('.pyc')])
-        
-        print("done")
+    # Python doesn't need to be copied for OS X since it's already inside blenderplayer.app
 
 
-def WriteRuntime(player_path, output_path, copy_python, overwrite_lib, copy_dlls):
+def WriteRuntime(player_path, output_path, copy_python, overwrite_lib, copy_dlls, report=print):
     import struct
 
     # Check the paths
     if not os.path.isfile(player_path) and not(os.path.exists(player_path) and player_path.endswith('.app')):
-        print("The player could not be found! Runtime not saved.")
+        report({'ERROR'}, "The player could not be found! Runtime not saved")
         return
     
     # Check if we're bundling a .app
@@ -89,8 +105,13 @@ def WriteRuntime(player_path, output_path, copy_python, overwrite_lib, copy_dlls
     file.close()
     
     # Create a tmp blend file (Blenderplayer doesn't like compressed blends)
-    blend_path = bpy.path.clean_name(output_path)
-    bpy.ops.wm.save_as_mainfile(filepath=blend_path, compress=False, copy=True)
+    tempdir = tempfile.mkdtemp()
+    blend_path = os.path.join(tempdir, bpy.path.clean_name(output_path))
+    bpy.ops.wm.save_as_mainfile(filepath=blend_path,
+                                relative_remap=False,
+                                compress=False,
+                                copy=True,
+                                )
     blend_path += '.blend'
     
     # Get the blend data
@@ -100,6 +121,7 @@ def WriteRuntime(player_path, output_path, copy_python, overwrite_lib, copy_dlls
 
     # Get rid of the tmp blend, we're done with it
     os.remove(blend_path)
+    os.rmdir(tempdir)
     
     # Create a new file for the bundled runtime
     output = open(output_path, 'wb')
@@ -131,22 +153,15 @@ def WriteRuntime(player_path, output_path, copy_python, overwrite_lib, copy_dlls
     
     if copy_python:
         print("Copying Python files...", end=" ")
-        src = os.path.join(blender_dir, bpy.app.version_string.split()[0], "python", "lib")
-        dst = os.path.join(runtime_dir, "lib")
-        
-        if os.path.exists(dst):
-            if overwrite_lib:
-                shutil.rmtree(dst)
-                shutil.copytree(src, dst, ignore=lambda dir, contents: [i for i in contents if i.endswith('.pyc')])
-        else:
-            shutil.copytree(src, dst, ignore=lambda dir, contents: [i for i in contents if i.endswith('.pyc')])
-        
+        py_folder = os.path.join(bpy.app.version_string.split()[0], "python", "lib")
+        dst = os.path.join(runtime_dir, py_folder)
+        CopyPythonLibs(dst, overwrite_lib, report)
         print("done")
 
     # And DLLs
     if copy_dlls:
         print("Copying DLLs...", end=" ")
-        for file in [i for i in os.listdir(blender_dir) if i.endswith('.dll')]:
+        for file in [i for i in os.listdir(blender_dir) if i.lower().endswith('.dll')]:
             src = os.path.join(blender_dir, file)
             dst = os.path.join(runtime_dir, file)
             shutil.copy2(src, dst)
@@ -158,26 +173,48 @@ from bpy.props import *
 
 class SaveAsRuntime(bpy.types.Operator):
     bl_idname = "wm.save_as_runtime"
-    bl_label = "Save As Runtime"
+    bl_label = "Save As Game Engine Runtime"
     bl_options = {'REGISTER'}
     
     if sys.platform == 'darwin':
-        blender_bin_dir = '/'+os.path.join(*bpy.app.binary_path.split('/')[0:-4])
+        # XXX, this line looks suspicious, could be done better?
+        blender_bin_dir = '/' + os.path.join(*bpy.app.binary_path.split('/')[0:-4])
         ext = '.app'
     else:
         blender_bin_path = bpy.app.binary_path
         blender_bin_dir = os.path.dirname(blender_bin_path)
-        ext = os.path.splitext(blender_bin_path)[-1]
-    
+        ext = os.path.splitext(blender_bin_path)[-1].lower()
+
     default_player_path = os.path.join(blender_bin_dir, 'blenderplayer' + ext)
-    player_path = StringProperty(name="Player Path", description="The path to the player to use", default=default_player_path)
-    filepath = StringProperty(name="Output Path", description="Where to save the runtime", default="")
-    copy_python = BoolProperty(name="Copy Python", description="Copy bundle Python with the runtime", default=True)
-    overwrite_lib = BoolProperty(name="Overwrite 'lib' folder", description="Overwrites the lib folder (if one exists) with the bundled Python lib folder", default=False)
+    player_path = StringProperty(
+            name="Player Path",
+            description="The path to the player to use",
+            default=default_player_path,
+            subtype='FILE_PATH',
+            )
+    filepath = StringProperty(
+            name="Output Path",
+            description="Where to save the runtime",
+            subtype='FILE_PATH',
+            )
+    copy_python = BoolProperty(
+            name="Copy Python",
+            description="Copy bundle Python with the runtime",
+            default=True,
+            )
+    overwrite_lib = BoolProperty(
+            name="Overwrite 'lib' folder",
+            description="Overwrites the lib folder (if one exists) with the bundled Python lib folder",
+            default=False,
+            )
 
     # Only Windows has dlls to copy
     if ext == '.exe':
-        copy_dlls = BoolProperty(name="Copy DLLs", description="Copy all needed DLLs with the runtime", default=True)
+        copy_dlls = BoolProperty(
+                name="Copy DLLs",
+                description="Copy all needed DLLs with the runtime",
+                default=True,
+                )
     else:
         copy_dlls = False
     
@@ -189,21 +226,24 @@ class SaveAsRuntime(bpy.types.Operator):
                     self.properties.filepath,
                     self.properties.copy_python,
                     self.properties.overwrite_lib,
-                    self.copy_dlls)
+                    self.copy_dlls,
+                    self.report,
+                    )
         print("Finished in %.4fs" % (time.clock()-start_time))
         return {'FINISHED'}
-                    
+
     def invoke(self, context, event):
+        if not self.filepath:
+            ext = '.app' if sys.platform == 'darwin' else os.path.splitext(bpy.app.binary_path)[-1]
+            self.filepath = bpy.path.ensure_ext(bpy.data.filepath, ext)
+
         wm = context.window_manager
         wm.fileselect_add(self)
         return {'RUNNING_MODAL'}
 
 
 def menu_func(self, context):
-
-    ext = '.app' if sys.platform == 'darwin' else os.path.splitext(bpy.app.binary_path)[-1]
-    default_blend_path = bpy.data.filepath.replace(".blend", ext)
-    self.layout.operator(SaveAsRuntime.bl_idname, text=SaveAsRuntime.bl_label).filepath = default_blend_path
+    self.layout.operator(SaveAsRuntime.bl_idname)
 
 
 def register():

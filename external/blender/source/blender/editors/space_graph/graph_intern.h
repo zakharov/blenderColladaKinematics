@@ -1,5 +1,5 @@
 /*
- * $Id: graph_intern.h 35242 2011-02-27 20:29:51Z jesterking $
+ * $Id: graph_intern.h 35765 2011-03-25 03:58:21Z aligorith $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -92,10 +92,11 @@ enum {
 /* ***************************************** */
 /* graph_edit.c */
 
-void get_graph_keyframe_extents (struct bAnimContext *ac, float *xmin, float *xmax, float *ymin, float *ymax);
+void get_graph_keyframe_extents (struct bAnimContext *ac, float *xmin, float *xmax, float *ymin, float *ymax, const short do_selected);
 
 void GRAPH_OT_previewrange_set(struct wmOperatorType *ot);
 void GRAPH_OT_view_all(struct wmOperatorType *ot);
+void GRAPH_OT_view_selected(struct wmOperatorType *ot);
 
 void GRAPH_OT_click_insert(struct wmOperatorType *ot);
 void GRAPH_OT_keyframe_insert(struct wmOperatorType *ot);
@@ -110,6 +111,7 @@ void GRAPH_OT_sample(struct wmOperatorType *ot);
 void GRAPH_OT_bake(struct wmOperatorType *ot);
 void GRAPH_OT_sound_bake(struct wmOperatorType *ot);
 void GRAPH_OT_smooth(struct wmOperatorType *ot);
+void GRAPH_OT_euler_filter(struct wmOperatorType *ot);
 
 void GRAPH_OT_handle_type(struct wmOperatorType *ot);
 void GRAPH_OT_interpolation_type(struct wmOperatorType *ot);

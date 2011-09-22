@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 66
-/svnroot/bf-blender/!svn/ver/35157/trunk/blender/intern/mikktspace
+/svnroot/bf-blender/!svn/ver/38427/trunk/blender/intern/mikktspace
 END
 mikktspace.h
 K 25
@@ -19,11 +19,11 @@ mikktspace.c
 K 25
 svn:wc:ra_dav:version-url
 V 79
-/svnroot/bf-blender/!svn/ver/35157/trunk/blender/intern/mikktspace/mikktspace.c
+/svnroot/bf-blender/!svn/ver/38427/trunk/blender/intern/mikktspace/mikktspace.c
 END
 CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 81
-/svnroot/bf-blender/!svn/ver/35027/trunk/blender/intern/mikktspace/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/37030/trunk/blender/intern/mikktspace/CMakeLists.txt
 END

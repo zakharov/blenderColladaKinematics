@@ -1,5 +1,5 @@
 /*
- * $Id: collada.h 35020 2011-02-21 08:38:53Z jesterking $
+ * $Id: collada.h 38079 2011-07-04 08:59:28Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -39,7 +39,7 @@ extern "C" {
 	 * both return 1 on success, 0 on error
 	 */
 	int collada_import(bContext *C, const char *filepath);
-	int collada_export(Scene *sce, const char *filepath);
+	int collada_export(Scene *sce, const char *filepath, int selected);
 #ifdef __cplusplus
 }
 #endif

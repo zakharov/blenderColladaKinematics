@@ -45,9 +45,9 @@ void hsv_to_rgb(float h, float s, float v, float *r, float *g, float *b)
 		*b = v;
 	}
 	else {
-		h= (h - floor(h))*6.0f;
+		h= (h - floorf(h))*6.0f;
 
-		i = (int)floor(h);
+		i = (int)floorf(h);
 		f = h - i;
 		p = v*(1.0f-s);
 		q = v*(1.0f-(s*f));
@@ -194,6 +194,10 @@ void hex_to_rgb(char *hexcol, float *r, float *g, float *b)
 		CLAMP(*g, 0.0f, 1.0f);
 		CLAMP(*b, 0.0f, 1.0f);
 	}
+	else {
+		/* avoid using un-initialized vars */
+		*r= *g= *b= 0.0f;
+	}
 }
 
 void rgb_to_hsv(float r, float g, float b, float *lh, float *ls, float *lv)
@@ -308,11 +312,11 @@ unsigned int rgb_to_cpack(float r, float g, float b)
 {
 	int ir, ig, ib;
 	
-	ir= (int)floor(255.0*r);
+	ir= (int)floor(255.0f*r);
 	if(ir<0) ir= 0; else if(ir>255) ir= 255;
-	ig= (int)floor(255.0*g);
+	ig= (int)floor(255.0f*g);
 	if(ig<0) ig= 0; else if(ig>255) ig= 255;
-	ib= (int)floor(255.0*b);
+	ib= (int)floor(255.0f*b);
 	if(ib<0) ib= 0; else if(ib>255) ib= 255;
 	
 	return (ir+ (ig*256) + (ib*256*256));
@@ -342,9 +346,9 @@ void rgb_float_to_byte(const float *in, unsigned char *out)
 {
 	int r, g, b;
 	
-	r= (int)(in[0] * 255.0);
-	g= (int)(in[1] * 255.0); 
-	b= (int)(in[2] * 255.0); 
+	r= (int)(in[0] * 255.0f);
+	g= (int)(in[1] * 255.0f);
+	b= (int)(in[2] * 255.0f);
 	
 	out[0]= (char)((r <= 0)? 0 : (r >= 255)? 255 : r);
 	out[1]= (char)((g <= 0)? 0 : (g >= 255)? 255 : g);
@@ -463,14 +467,14 @@ int constrain_rgb(float *r, float *g, float *b)
 	float w;
 
 	/* Amount of white needed is w = - min(0, *r, *g, *b) */
-    
+
 	w = (0 < *r) ? 0 : *r;
 	w = (w < *g) ? w : *g;
 	w = (w < *b) ? w : *b;
 	w = -w;
 
 	/* Add just enough white to make r, g, b all positive. */
-    
+
 	if (w > 0) {
 		*r += w;  *g += w; *b += w;
 		return 1;                     /* Color modified to fit RGB gamut */
@@ -482,6 +486,11 @@ int constrain_rgb(float *r, float *g, float *b)
 float rgb_to_grayscale(float rgb[3])
 {
 	return 0.3f*rgb[0] + 0.58f*rgb[1] + 0.12f*rgb[2];
+}
+
+unsigned char rgb_to_grayscale_byte(unsigned char rgb[3])
+{
+	return (76*(unsigned short)rgb[0] + 148*(unsigned short)rgb[1] + 31*(unsigned short)rgb[2]) / 255;
 }
 
 /* ********************************* lift/gamma/gain / ASC-CDL conversion ********************************* */
@@ -509,8 +518,8 @@ void rgb_float_set_hue_float_offset(float rgb[3], float hue_offset)
 	rgb_to_hsv(rgb[0], rgb[1], rgb[2], hsv, hsv+1, hsv+2);
 	
 	hsv[0]+= hue_offset;
-	if(hsv[0]>1.0)		hsv[0]-=1.0;
-	else if(hsv[0]<0.0)	hsv[0]+= 1.0;
+	if(hsv[0] > 1.0f)		hsv[0] -= 1.0f;
+	else if(hsv[0] < 0.0f)	hsv[0] += 1.0f;
 	
 	hsv_to_rgb(hsv[0], hsv[1], hsv[2], rgb, rgb+1, rgb+2);
 }

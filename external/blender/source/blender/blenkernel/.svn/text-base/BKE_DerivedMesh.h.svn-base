@@ -206,7 +206,7 @@ struct DerivedMesh {
 	/* Fill the array (of length .getNumVerts()) with all vertex locations */
 	void (*getVertCos)(DerivedMesh *dm, float (*cos_r)[3]);
 
-	/* Get vertex normal, undefined if index is not valid */
+	/* Get smooth vertex normal, undefined if index is not valid */
 	void (*getVertNo)(DerivedMesh *dm, int index, float no_r[3]);
 
 	/* Get a map of vertices to faces
@@ -283,7 +283,8 @@ struct DerivedMesh {
 							int (*setDrawOptions)(void *userData, int index,
 												  int *drawSmooth_r),
 							void *userData, int useColors,
-							int (*setMaterial)(int, void *attribs));
+							int (*setMaterial)(int, void *attribs),
+							int (*compareDrawOptions)(void *userData, int cur_index, int next_index));
 
 	/* Draw mapped faces using MTFace 
 	 *  o Drawing options too complicated to enumerate, look at code.
@@ -526,7 +527,7 @@ void weight_to_rgb(float input, float *fr, float *fg, float *fb);
 typedef struct DMVertexAttribs {
 	struct {
 		struct MTFace *array;
-		int emOffset, glIndex;
+		int emOffset, glIndex, glTexco;
 	} tface[MAX_MTFACE];
 
 	struct {
@@ -541,7 +542,7 @@ typedef struct DMVertexAttribs {
 
 	struct {
 		float (*array)[3];
-		int emOffset, glIndex;
+		int emOffset, glIndex, glTexco;
 	} orco;
 
 	int tottface, totmcol, tottang, totorco;

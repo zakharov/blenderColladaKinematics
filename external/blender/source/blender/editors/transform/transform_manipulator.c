@@ -1,5 +1,5 @@
 /*
-* $Id: transform_manipulator.c 35242 2011-02-27 20:29:51Z jesterking $
+* $Id: transform_manipulator.c 40390 2011-09-20 08:48:48Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -57,6 +57,7 @@
 
 #include "BKE_action.h"
 #include "BKE_context.h"
+#include "BKE_curve.h"
 #include "BKE_global.h"
 #include "BKE_mesh.h"
 #include "BKE_particle.h"
@@ -75,7 +76,6 @@
 #include "ED_mesh.h"
 #include "ED_particle.h"
 #include "ED_view3d.h"
-#include "ED_curve.h" /* for ED_curve_editnurbs */
 
 #include "UI_resources.h"
 
@@ -278,6 +278,7 @@ int calc_manipulator_stats(const bContext *C)
 	ARegion *ar= CTX_wm_region(C);
 	Scene *scene= CTX_data_scene(C);
 	Object *obedit= CTX_data_edit_object(C);
+	ToolSettings *ts = CTX_data_tool_settings(C);
 	View3D *v3d= sa->spacedata.first;
 	RegionView3D *rv3d= ar->regiondata;
 	Base *base;
@@ -309,11 +310,63 @@ int calc_manipulator_stats(const bContext *C)
 				calc_tw_center(scene, vec);
 				totsel= 1;
 			} else {
-				/* do vertices for center, and if still no normal found, use vertex normals */
-				for(eve= em->verts.first; eve; eve= eve->next) {
-					if(eve->f & SELECT) {
-						totsel++;
-						calc_tw_center(scene, eve->co);
+				/* do vertices/edges/faces for center depending on selection
+				   mode. note we can't use just vertex selection flag because
+				   it is not flush down on changes */
+				if(ts->selectmode & SCE_SELECT_VERTEX) {
+					for(eve= em->verts.first; eve; eve= eve->next) {
+						if(eve->f & SELECT) {
+							totsel++;
+							calc_tw_center(scene, eve->co);
+						}
+					}
+				}
+				else if(ts->selectmode & SCE_SELECT_EDGE) {
+					EditEdge *eed;
+
+					for(eve= em->verts.first; eve; eve= eve->next) eve->f1= 0;
+					for(eed= em->edges.first; eed; eed= eed->next) {
+						if(eed->h==0 && (eed->f & SELECT)) {
+							if(!eed->v1->f1) {
+								eed->v1->f1= 1;
+								totsel++;
+								calc_tw_center(scene, eed->v1->co);
+							}
+							if(!eed->v2->f1) {
+								eed->v2->f1= 1;
+								totsel++;
+								calc_tw_center(scene, eed->v2->co);
+							}
+						}
+					}
+				}
+				else {
+					EditFace *efa;
+
+					for(eve= em->verts.first; eve; eve= eve->next) eve->f1= 0;
+					for(efa= em->faces.first; efa; efa= efa->next) {
+						if(efa->h==0 && (efa->f & SELECT)) {
+							if(!efa->v1->f1) {
+								efa->v1->f1= 1;
+								totsel++;
+								calc_tw_center(scene, efa->v1->co);
+							}
+							if(!efa->v2->f1) {
+								efa->v2->f1= 1;
+								totsel++;
+								calc_tw_center(scene, efa->v2->co);
+							}
+							if(!efa->v3->f1) {
+								efa->v3->f1= 1;
+								totsel++;
+								calc_tw_center(scene, efa->v3->co);
+							}
+							if(efa->v4 && !efa->v4->f1) {
+								efa->v4->f1= 1;
+								totsel++;
+								calc_tw_center(scene, efa->v4->co);
+							}
+						}
 					}
 				}
 			}
@@ -342,7 +395,7 @@ int calc_manipulator_stats(const bContext *C)
 			Nurb *nu;
 			BezTriple *bezt;
 			BPoint *bp;
-			ListBase *nurbs= ED_curve_editnurbs(cu);
+			ListBase *nurbs= curve_editnurbs(cu);
 
 			nu= nurbs->first;
 			while(nu) {
@@ -393,13 +446,13 @@ int calc_manipulator_stats(const bContext *C)
 		}
 		else if(obedit->type==OB_MBALL) {
 			MetaBall *mb = (MetaBall*)obedit->data;
-			MetaElem *ml, *ml_sel=NULL;
+			MetaElem *ml /* , *ml_sel=NULL */ /* UNUSED */;
 
 			ml= mb->editelems->first;
 			while(ml) {
 				if(ml->flag & SELECT) {
 					calc_tw_center(scene, &ml->x);
-					ml_sel = ml;
+					/* ml_sel = ml; */ /* UNUSED */
 					totsel++;
 				}
 				ml= ml->next;
@@ -557,32 +610,32 @@ static void test_manipulator_axis(const bContext *C)
 	float angle;
 	float vec[3];
 
-	viewvector(rv3d, rv3d->twmat[3], vec);
+	ED_view3d_global_to_vector(rv3d, rv3d->twmat[3], vec);
 
 	angle = fabs(angle_v3v3(rv3d->twmat[0], vec));
-	if (angle > M_PI / 2) {
-		angle = M_PI - angle;
+	if (angle > (float)M_PI / 2.0f) {
+		angle = (float)M_PI - angle;
 	}
-	angle = rv3d->twangle[0] = 180.0f * angle / M_PI;
-	if (angle < 5) {
+	angle = rv3d->twangle[0] = RAD2DEGF(angle);
+	if (angle < 5.0f) {
 		rv3d->twdrawflag &= ~(MAN_TRANS_X|MAN_SCALE_X);
 	}
 
 	angle = fabs(angle_v3v3(rv3d->twmat[1], vec));
-	if (angle > M_PI / 2) {
-		angle = M_PI - angle;
+	if (angle > (float)M_PI / 2.0f) {
+		angle = (float)M_PI - angle;
 	}
-	angle = rv3d->twangle[1] = 180.0f * angle / M_PI;
-	if (angle < 5) {
+	angle = rv3d->twangle[1] = RAD2DEGF(angle);
+	if (angle < 5.0f) {
 		rv3d->twdrawflag &= ~(MAN_TRANS_Y|MAN_SCALE_Y);
 	}
 
 	angle = fabs(angle_v3v3(rv3d->twmat[2], vec));
-	if (angle > M_PI / 2) {
-		angle = M_PI - angle;
+	if (angle > (float)M_PI / 2.0f) {
+		angle = (float)M_PI - angle;
 	}
-	angle = rv3d->twangle[2] = 180.0f * angle / M_PI;
-	if (angle < 5) {
+	angle = rv3d->twangle[2] = RAD2DEGF(angle);
+	if (angle < 5.0f) {
 		rv3d->twdrawflag &= ~(MAN_TRANS_Z|MAN_SCALE_Z);
 	}
 }
@@ -831,8 +884,8 @@ static void draw_manipulator_rotate(View3D *v3d, RegionView3D *rv3d, int moving,
 
 	if(arcs) {
 		/* clipplane makes nice handles, calc here because of multmatrix but with translate! */
-		VECCOPY(plane, rv3d->viewinv[2]);
-		plane[3]= -0.02*size; // clip just a bit more
+		VECCOPY(plane, rv3d->viewinv[2]); /* float -> double */
+		plane[3]= -0.02f*size; // clip just a bit more
 		glClipPlane(GL_CLIP_PLANE0, plane);
 	}
 	/* sets view screen aligned */
@@ -1445,19 +1498,19 @@ void BIF_draw_manipulator(const bContext *C)
 			if(v3d->around==V3D_ACTIVE && scene->obedit==NULL) {
 				Object *ob= OBACT;
 				if(ob && !(ob->mode & OB_MODE_POSE))
-					VECCOPY(rv3d->twmat[3], ob->obmat[3]);
+					copy_v3_v3(rv3d->twmat[3], ob->obmat[3]);
 			}
 			break;
 		case V3D_LOCAL:
 		case V3D_CENTROID:
-			VECCOPY(rv3d->twmat[3], scene->twcent);
+			copy_v3_v3(rv3d->twmat[3], scene->twcent);
 			break;
 		case V3D_CURSOR:
-			VECCOPY(rv3d->twmat[3], give_cursor(scene, v3d));
+			copy_v3_v3(rv3d->twmat[3], give_cursor(scene, v3d));
 			break;
 		}
 
-		mul_mat3_m4_fl(rv3d->twmat, view3d_pixel_size(rv3d, rv3d->twmat[3]) * U.tw_size * 5.0f);
+		mul_mat3_m4_fl(rv3d->twmat, ED_view3d_pixel_size(rv3d, rv3d->twmat[3]) * U.tw_size * 5.0f);
 	}
 
 	test_manipulator_axis(C);
@@ -1487,7 +1540,7 @@ void BIF_draw_manipulator(const bContext *C)
 	}
 }
 
-static int manipulator_selectbuf(ScrArea *sa, ARegion *ar, short *mval, float hotspot)
+static int manipulator_selectbuf(ScrArea *sa, ARegion *ar, const int mval[2], float hotspot)
 {
 	View3D *v3d= sa->spacedata.first;
 	RegionView3D *rv3d= ar->regiondata;
@@ -1566,7 +1619,6 @@ static int manipulator_selectbuf(ScrArea *sa, ARegion *ar, short *mval, float ho
 	return 0;
 }
 
-int wm_operator_invoke(bContext *C, wmOperatorType *ot, wmEvent *event, PointerRNA *properties, ReportList *reports);
 
 /* return 0; nothing happened */
 int BIF_do_manipulator(bContext *C, struct wmEvent *event, wmOperator *op)
@@ -1623,7 +1675,7 @@ int BIF_do_manipulator(bContext *C, struct wmEvent *event, wmOperator *op)
 			}
 			RNA_boolean_set_array(op->ptr, "constraint_axis", constraint_axis);
 			WM_operator_name_call(C, "TRANSFORM_OT_translate", WM_OP_INVOKE_DEFAULT, op->ptr);
-			//wm_operator_invoke(C, WM_operatortype_find("TRANSFORM_OT_translate", 0), event, op->ptr, NULL);
+			//wm_operator_invoke(C, WM_operatortype_find("TRANSFORM_OT_translate", 0), event, op->ptr, NULL, FALSE);
 		}
 		else if (drawflags & MAN_SCALE_C) {
 			switch(drawflags) {
@@ -1654,11 +1706,11 @@ int BIF_do_manipulator(bContext *C, struct wmEvent *event, wmOperator *op)
 			}
 			RNA_boolean_set_array(op->ptr, "constraint_axis", constraint_axis);
 			WM_operator_name_call(C, "TRANSFORM_OT_resize", WM_OP_INVOKE_DEFAULT, op->ptr);
-			//wm_operator_invoke(C, WM_operatortype_find("TRANSFORM_OT_resize", 0), event, op->ptr, NULL);
+			//wm_operator_invoke(C, WM_operatortype_find("TRANSFORM_OT_resize", 0), event, op->ptr, NULL, FALSE);
 		}
 		else if (drawflags == MAN_ROT_T) { /* trackball need special case, init is different */
-			//wm_operator_invoke(C, WM_operatortype_find("TRANSFORM_OT_trackball", 0), event, op->ptr, NULL);
 			WM_operator_name_call(C, "TRANSFORM_OT_trackball", WM_OP_INVOKE_DEFAULT, op->ptr);
+			//wm_operator_invoke(C, WM_operatortype_find("TRANSFORM_OT_trackball", 0), event, op->ptr, NULL, FALSE);
 		}
 		else if (drawflags & MAN_ROT_C) {
 			switch(drawflags) {
@@ -1674,7 +1726,7 @@ int BIF_do_manipulator(bContext *C, struct wmEvent *event, wmOperator *op)
 			}
 			RNA_boolean_set_array(op->ptr, "constraint_axis", constraint_axis);
 			WM_operator_name_call(C, "TRANSFORM_OT_rotate", WM_OP_INVOKE_DEFAULT, op->ptr);
-			//wm_operator_invoke(C, WM_operatortype_find("TRANSFORM_OT_rotate", 0), event, op->ptr, NULL);
+			//wm_operator_invoke(C, WM_operatortype_find("TRANSFORM_OT_rotate", 0), event, op->ptr, NULL, FALSE);
 		}
 	}
 	/* after transform, restore drawflags */

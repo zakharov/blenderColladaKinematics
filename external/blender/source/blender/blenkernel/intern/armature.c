@@ -1,6 +1,4 @@
 /*
- * $Id: armature.c 35247 2011-02-27 20:40:57Z jesterking $
- *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -137,39 +135,42 @@ void free_armature(bArmature *arm)
 
 void make_local_armature(bArmature *arm)
 {
+	Main *bmain= G.main;
 	int local=0, lib=0;
 	Object *ob;
-	bArmature *newArm;
-	
-	if (arm->id.lib==NULL)
-		return;
+
+	if (arm->id.lib==NULL) return;
 	if (arm->id.us==1) {
 		arm->id.lib= NULL;
 		arm->id.flag= LIB_LOCAL;
-		new_id(NULL, (ID*)arm, NULL);
+		new_id(&bmain->armature, (ID*)arm, NULL);
 		return;
 	}
-	
+
+	for(ob= bmain->object.first; ob && ELEM(0, lib, local); ob= ob->id.next) {
+		if(ob->data == arm) {
+			if(ob->id.lib) lib= 1;
+			else local= 1;
+		}
+	}
+
 	if(local && lib==0) {
 		arm->id.lib= NULL;
 		arm->id.flag= LIB_LOCAL;
-		new_id(NULL, (ID *)arm, NULL);
+		new_id(&bmain->armature, (ID *)arm, NULL);
 	}
 	else if(local && lib) {
-		newArm= copy_armature(arm);
-		newArm->id.us= 0;
+		bArmature *armn= copy_armature(arm);
+		armn->id.us= 0;
 		
-		ob= G.main->object.first;
-		while(ob) {
-			if(ob->data==arm) {
-				
+		for(ob= bmain->object.first; ob; ob= ob->id.next) {
+			if(ob->data == arm) {
 				if(ob->id.lib==NULL) {
-					ob->data= newArm;
-					newArm->id.us++;
+					ob->data= armn;
+					armn->id.us++;
 					arm->id.us--;
 				}
 			}
-			ob= ob->id.next;
 		}
 	}
 }
@@ -214,6 +215,11 @@ bArmature *copy_armature(bArmature *arm)
 	};
 	
 	newArm->act_bone= newActBone;
+
+	newArm->edbo= NULL;
+	newArm->act_edbone= NULL;
+	newArm->sketch= NULL;
+
 	return newArm;
 }
 
@@ -438,7 +444,7 @@ Mat4 *b_bone_spline_setup(bPoseChannel *pchan, int rest)
 		scale[1]= len_v3(pchan->pose_mat[1]);
 		scale[2]= len_v3(pchan->pose_mat[2]);
 
-		if(fabs(scale[0] - scale[1]) > 1e-6f || fabs(scale[1] - scale[2]) > 1e-6f) {
+		if(fabsf(scale[0] - scale[1]) > 1e-6f || fabsf(scale[1] - scale[2]) > 1e-6f) {
 			unit_m4(scalemat);
 			scalemat[0][0]= scale[0];
 			scalemat[1][1]= scale[1];
@@ -734,11 +740,11 @@ static float dist_bone_deform(bPoseChannel *pchan, bPoseChanDeform *pdef_info, f
 
 	fac= distfactor_to_bone(cop, bone->arm_head, bone->arm_tail, bone->rad_head, bone->rad_tail, bone->dist);
 	
-	if (fac>0.0) {
+	if (fac > 0.0f) {
 		
 		fac*=bone->weight;
 		contrib= fac;
-		if(contrib>0.0) {
+		if(contrib > 0.0f) {
 			if(vec) {
 				if(bone->segments>1)
 					// applies on cop and bbonemat
@@ -1226,10 +1232,10 @@ void pchan_apply_mat4(bPoseChannel *pchan, float mat[][4], short use_compat)
  */
 void armature_mat_pose_to_delta(float delta_mat[][4], float pose_mat[][4], float arm_mat[][4])
 {
-	 float imat[4][4];
- 
-	 invert_m4_m4(imat, arm_mat);
-	 mul_m4_m4m4(delta_mat, pose_mat, imat);
+	float imat[4][4];
+	
+	invert_m4_m4(imat, arm_mat);
+	mul_m4_m4m4(delta_mat, pose_mat, imat);
 }
 
 /* **************** Rotation Mode Conversions ****************************** */
@@ -1277,7 +1283,7 @@ void BKE_rotMode_change_values (float quat[4], float eul[3], float axis[3], floa
 		}
 		
 		/* when converting to axis-angle, we need a special exception for the case when there is no axis */
-		if (IS_EQ(axis[0], axis[1]) && IS_EQ(axis[1], axis[2])) {
+		if (IS_EQF(axis[0], axis[1]) && IS_EQF(axis[1], axis[2])) {
 			/* for now, rotate around y-axis then (so that it simply becomes the roll) */
 			axis[1]= 1.0f;
 		}
@@ -1335,8 +1341,12 @@ void vec_roll_to_mat3(float *vec, float roll, float mat[][3])
 	cross_v3_v3v3(axis,target,nor);
 
 	/* was 0.0000000000001, caused bug [#23954], smaller values give unstable
-	 * roll when toggling editmode */
-	if (dot_v3v3(axis,axis) > 0.00001) {
+	 * roll when toggling editmode.
+	 *
+	 * was 0.00001, causes bug [#27675], with 0.00000495,
+	 * so a value inbetween these is needed.
+	 */
+	if (dot_v3v3(axis,axis) > 0.000001f) {
 		/* if nor is *not* a multiple of target ... */
 		normalize_v3(axis);
 		
@@ -1379,7 +1389,7 @@ void where_is_armature_bone(Bone *bone, Bone *prevbone)
 	bone->length= len_v3v3(bone->head, bone->tail);
 	
 	/* this is called on old file reading too... */
-	if(bone->xwidth==0.0) {
+	if(bone->xwidth==0.0f) {
 		bone->xwidth= 0.1f;
 		bone->zwidth= 0.1f;
 		bone->segments= 1;
@@ -1473,7 +1483,6 @@ static void pose_proxy_synchronize(Object *ob, Object *from, int layer_protected
 			pchanw.next= pchan->next;
 			pchanw.parent= pchan->parent;
 			pchanw.child= pchan->child;
-			pchanw.path= NULL;
 			
 			/* this is freed so copy a copy, else undo crashes */
 			if(pchanw.prop) {
@@ -1970,12 +1979,12 @@ static void splineik_evaluate_bone(tSplineIK_Tree *tree, Scene *scene, Object *o
 				/* calculate volume preservation factor which is 
 				 * basically the inverse of the y-scaling factor 
 				 */
-				if (fabs(scaleFac) != 0.0f) {
-					scale= 1.0 / fabs(scaleFac);
+				if (fabsf(scaleFac) != 0.0f) {
+					scale= 1.0f / fabsf(scaleFac);
 					
 					/* we need to clamp this within sensible values */
 					// NOTE: these should be fine for now, but should get sanitised in future
-					scale= MIN2(MAX2(scale, 0.0001) , 100000);
+					CLAMP(scale, 0.0001f, 100000.0f);
 				}
 				else
 					scale= 1.0f;
@@ -2454,4 +2463,34 @@ void where_is_pose (Scene *scene, Object *ob)
 			mul_m4_m4m4(pchan->chan_mat, imat, pchan->pose_mat);
 		}
 	}
+}
+
+
+/* Returns total selected vgroups,
+ * wpi.defbase_sel is assumed malloc'd, all values are set */
+int get_selected_defgroups(Object *ob, char *dg_selection, int defbase_len)
+{
+	bDeformGroup *defgroup;
+	unsigned int i;
+	Object *armob= object_pose_armature_get(ob);
+	int dg_flags_sel_tot= 0;
+
+	if(armob) {
+		bPose *pose= armob->pose;
+		for (i= 0, defgroup= ob->defbase.first; i < defbase_len && defgroup; defgroup = defgroup->next, i++) {
+			bPoseChannel *pchan= get_pose_channel(pose, defgroup->name);
+			if(pchan && (pchan->bone->flag & BONE_SELECTED)) {
+				dg_selection[i]= TRUE;
+				dg_flags_sel_tot++;
+			}
+			else {
+				dg_selection[i]= FALSE;
+			}
+		}
+	}
+	else {
+		memset(dg_selection, FALSE, sizeof(char) * defbase_len);
+	}
+
+	return dg_flags_sel_tot;
 }

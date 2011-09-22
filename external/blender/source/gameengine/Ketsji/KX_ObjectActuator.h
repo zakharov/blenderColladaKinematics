@@ -1,5 +1,5 @@
 /*
- * $Id: KX_ObjectActuator.h 35063 2011-02-22 10:33:14Z jesterking $
+ * $Id: KX_ObjectActuator.h 36523 2011-05-06 20:18:42Z blendix $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -144,7 +144,7 @@ public:
 	CValue* GetReplica();
 	void ProcessReplica();
 	bool UnlinkObject(SCA_IObject* clientobj);
-	void Relink(GEN_Map<GEN_HashedPtr, void*> *obj_map);
+	void Relink(CTR_Map<CTR_HashedPtr, void*> *obj_map);
 
 	void SetForceLoc(const double force[3])	{ /*m_force=force;*/ }
 	void UpdateFuzzyFlags()

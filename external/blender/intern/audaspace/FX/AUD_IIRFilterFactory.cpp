@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_IIRFilterFactory.cpp 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_IIRFilterFactory.cpp 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -32,14 +32,14 @@
 #include "AUD_IIRFilterFactory.h"
 #include "AUD_IIRFilterReader.h"
 
-AUD_IIRFilterFactory::AUD_IIRFilterFactory(AUD_IFactory* factory,
+AUD_IIRFilterFactory::AUD_IIRFilterFactory(AUD_Reference<AUD_IFactory> factory,
 										   std::vector<float> b,
 										   std::vector<float> a) :
 		AUD_EffectFactory(factory), m_a(a), m_b(b)
 {
 }
 
-AUD_IReader* AUD_IIRFilterFactory::createReader() const
+AUD_Reference<AUD_IReader> AUD_IIRFilterFactory::createReader()
 {
 	return new AUD_IIRFilterReader(getReader(), m_b, m_a);
 }

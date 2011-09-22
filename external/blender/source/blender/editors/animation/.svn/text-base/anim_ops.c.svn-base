@@ -1,6 +1,4 @@
 /*
- * $Id$
- *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -42,6 +40,8 @@
 #include "DNA_scene_types.h"
 
 #include "BKE_context.h"
+#include "BKE_global.h"
+#include "BKE_main.h"
 #include "BKE_sound.h"
 
 #include "UI_view2d.h"
@@ -64,6 +64,9 @@ static int change_frame_poll(bContext *C)
 {
 	ScrArea *curarea= CTX_wm_area(C);
 	
+	/* XXX temp? prevent changes during render */
+	if(G.rendering) return 0;
+	
 	/* as long as there is an active area, and it isn't a Graph Editor 
 	 * (since the Graph Editor has its own version which does extra stuff),
 	 * we're fine
@@ -74,6 +77,7 @@ static int change_frame_poll(bContext *C)
 /* Set the new frame number */
 static void change_frame_apply(bContext *C, wmOperator *op)
 {
+	Main *bmain= CTX_data_main(C);
 	Scene *scene= CTX_data_scene(C);
 	
 	/* set the new frame number */
@@ -82,7 +86,7 @@ static void change_frame_apply(bContext *C, wmOperator *op)
 	SUBFRA = 0.f;
 	
 	/* do updates */
-	sound_seek_scene(C);
+	sound_seek_scene(bmain, scene);
 	WM_event_add_notifier(C, NC_SCENE|ND_FRAME, scene);
 }
 
@@ -103,14 +107,9 @@ static int frame_from_event(bContext *C, wmEvent *event)
 {
 	ARegion *region= CTX_wm_region(C);
 	float viewx;
-	int x, y;
-	
-	/* convert screen coordinates to region coordinates */
-	x= event->x - region->winrct.xmin;
-	y= event->y - region->winrct.ymin;
-	
+
 	/* convert from region coordinates to View2D 'tot' space */
-	UI_view2d_region_to_view(&region->v2d, x, y, &viewx, NULL);
+	UI_view2d_region_to_view(&region->v2d, event->mval[0], event->mval[1], &viewx, NULL);
 	
 	/* round result to nearest int (frames are ints!) */
 	return (int)floor(viewx+0.5f);
@@ -200,8 +199,8 @@ static int previewrange_define_exec(bContext *C, wmOperator *op)
 	 *	- must clamp within allowable limits
 	 *	- end must not be before start (though this won't occur most of the time)
 	 */
-	if (sfra < 1) sfra = 1.0f;
-	if (efra < 1) efra = 1.0f;
+	FRAMENUMBER_MIN_CLAMP(sfra);
+	FRAMENUMBER_MIN_CLAMP(efra);
 	if (efra < sfra) efra= sfra;
 	
 	scene->r.flag |= SCER_PRV_RANGE;
@@ -225,6 +224,7 @@ static void ANIM_OT_previewrange_set(wmOperatorType *ot)
 	ot->invoke= WM_border_select_invoke;
 	ot->exec= previewrange_define_exec;
 	ot->modal= WM_border_select_modal;
+	ot->cancel= WM_border_select_cancel;
 	
 	ot->poll= ED_operator_animview_active;
 	

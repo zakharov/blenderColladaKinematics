@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_FFMPEGFactory.cpp 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_FFMPEGFactory.cpp 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -36,7 +36,6 @@
 
 #include "AUD_FFMPEGFactory.h"
 #include "AUD_FFMPEGReader.h"
-#include "AUD_Buffer.h"
 
 AUD_FFMPEGFactory::AUD_FFMPEGFactory(std::string filename) :
 		m_filename(filename)
@@ -46,13 +45,13 @@ AUD_FFMPEGFactory::AUD_FFMPEGFactory(std::string filename) :
 AUD_FFMPEGFactory::AUD_FFMPEGFactory(const data_t* buffer, int size) :
 		m_buffer(new AUD_Buffer(size))
 {
-	memcpy(m_buffer.get()->getBuffer(), buffer, size);
+	memcpy(m_buffer->getBuffer(), buffer, size);
 }
 
-AUD_IReader* AUD_FFMPEGFactory::createReader() const
+AUD_Reference<AUD_IReader> AUD_FFMPEGFactory::createReader()
 {
-	if(m_buffer.get())
-		return new AUD_FFMPEGReader(m_buffer);
-	else
+	if(m_buffer.isNull())
 		return new AUD_FFMPEGReader(m_filename);
+	else
+		return new AUD_FFMPEGReader(m_buffer);
 }

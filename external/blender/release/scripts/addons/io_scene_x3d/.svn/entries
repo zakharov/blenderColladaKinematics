@@ -1,14 +1,14 @@
 10
 
 dir
-1680
+2344
 https://svn.blender.org/svnroot/bf-extensions/trunk/py/scripts/addons/io_scene_x3d
 https://svn.blender.org/svnroot/bf-extensions
 
 
 
-2011-02-27T15:27:55.919470Z
-1664
+2011-09-22T06:11:42.630014Z
+2344
 campbellbarton
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2011-03-03T12:29:47.102297Z
-dd241381c12120ebc05edf5c5f6245f8
-2011-02-11T12:09:15.999338Z
-1581
+2011-09-21T18:17:48.472301Z
+30419de310e837ba4d0df2a4408fb6a7
+2011-09-10T04:12:48.836029Z
+2320
 campbellbarton
 has-props
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-88808
+88990
 
 __init__.py
 file
@@ -66,10 +66,10 @@ file
 
 
 
-2011-03-03T12:29:47.102297Z
-f59999b8eee70b10eb539c1dd7ef52b0
-2011-02-27T15:27:55.919470Z
-1664
+2011-09-21T18:17:48.472301Z
+976744a83d0063b2d48a3d5bb909c0a3
+2011-09-13T14:31:42.978870Z
+2324
 campbellbarton
 has-props
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-3598
+6953
 
 export_x3d.py
 file
@@ -100,10 +100,10 @@ file
 
 
 
-2011-03-03T12:29:47.106297Z
-93b2d83864de0b9e58e1def52354f213
-2011-02-26T15:41:49.164867Z
-1659
+2011-09-22T08:02:16.124258Z
+2b27121dee6290cb2326a65f36f8cc3a
+2011-09-22T06:11:42.630014Z
+2344
 campbellbarton
 has-props
 
@@ -126,5 +126,5 @@ has-props
 
 
 
-38672
+65475
 

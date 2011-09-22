@@ -27,9 +27,24 @@
 # External project, better not fix warnings.
 remove_strict_flags()
 
+# remove debug flag here since this is not a blender maintained library
+# and debug gives a lot of prints on UV unwrapping. developers can enable if they need to.
+remove_flag("-DDEBUG")
+
+
+# quiet compiler warnings about undefined defines
+add_definitions(
+	-DDEBUGlevel=0
+	-DPRNTlevel=0
+)
+
 set(INC
 	extern
 	superlu
+)
+
+set(INC_SYS
+
 )
 
 set(SRC
@@ -75,4 +90,4 @@ set(SRC
 	superlu/util.h
 )
 
-blender_add_lib(bf_intern_opennl "${SRC}" "${INC}")
+blender_add_lib(bf_intern_opennl "${SRC}" "${INC}" "${INC_SYS}")

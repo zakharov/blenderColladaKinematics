@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 67
-/svnroot/bf-blender/!svn/ver/34567/trunk/blender/extern/libopenjpeg
+/svnroot/bf-blender/!svn/ver/37672/trunk/blender/extern/libopenjpeg
 END
 dwt.c
 K 25
@@ -97,7 +97,7 @@ CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/extern/libopenjpeg/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/37672/trunk/blender/extern/libopenjpeg/CMakeLists.txt
 END
 jpt.c
 K 25

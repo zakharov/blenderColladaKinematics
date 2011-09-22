@@ -1,5 +1,5 @@
 /*
- * $Id: interface_ops.c 35242 2011-02-27 20:29:51Z jesterking $
+ * $Id: interface_ops.c 40351 2011-09-19 12:26:20Z mont29 $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -97,7 +97,7 @@ static int eyedropper_cancel(bContext *C, wmOperator *op)
 	return OPERATOR_CANCELLED;
 }
 
-static void eyedropper_sample(bContext *C, Eyedropper *eye, short mx, short my)
+static void eyedropper_sample(bContext *C, Eyedropper *eye, int mx, int my)
 {
 	if(RNA_property_type(eye->prop) == PROP_FLOAT) {
 		const int color_manage = CTX_data_scene(C)->r.color_mgt_flag & R_COLOR_MANAGEMENT;
@@ -317,7 +317,7 @@ static void UI_OT_reset_default_button(wmOperatorType *ot)
 	ot->flag= OPTYPE_REGISTER|OPTYPE_UNDO;
 	
 	/* properties */
-	RNA_def_boolean(ot->srna, "all", 1, "All", "Reset to default values all elements of the array.");
+	RNA_def_boolean(ot->srna, "all", 1, "All", "Reset to default values all elements of the array");
 }
 
 /* Copy To Selected Operator ------------------------ */
@@ -409,7 +409,7 @@ static void UI_OT_copy_to_selected_button(wmOperatorType *ot)
 	ot->flag= OPTYPE_REGISTER|OPTYPE_UNDO;
 
 	/* properties */
-	RNA_def_boolean(ot->srna, "all", 1, "All", "Reset to default values all elements of the array.");
+	RNA_def_boolean(ot->srna, "all", 1, "All", "Reset to default values all elements of the array");
 }
 
 /* Reports to Textblock Operator ------------------------ */

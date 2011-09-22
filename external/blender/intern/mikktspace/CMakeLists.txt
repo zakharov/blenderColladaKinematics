@@ -1,4 +1,4 @@
-# $Id: CMakeLists.txt 35027 2011-02-21 12:18:34Z campbellbarton $
+# $Id: CMakeLists.txt 37030 2011-05-31 01:15:44Z campbellbarton $
 # ***** BEGIN GPL LICENSE BLOCK *****
 #
 # This program is free software; you can redistribute it and/or
@@ -28,11 +28,15 @@ set(INC
 	.
 )
 
+set(INC_SYS
+	
+)
+
 set(SRC
 	mikktspace.c
 
 	mikktspace.h
 )
 
-blender_add_lib(bf_intern_mikktspace "${SRC}" "${INC}")
+blender_add_lib(bf_intern_mikktspace "${SRC}" "${INC}" "${INC_SYS}")
 

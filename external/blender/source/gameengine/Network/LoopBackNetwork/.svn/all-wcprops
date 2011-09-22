@@ -1,19 +1,19 @@
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/35172/trunk/blender/source/gameengine/Network/LoopBackNetwork
+/svnroot/bf-blender/!svn/ver/39883/trunk/blender/source/gameengine/Network/LoopBackNetwork
 END
 NG_LoopBackNetworkDeviceInterface.h
 K 25
 svn:wc:ra_dav:version-url
 V 126
-/svnroot/bf-blender/!svn/ver/35072/trunk/blender/source/gameengine/Network/LoopBackNetwork/NG_LoopBackNetworkDeviceInterface.h
+/svnroot/bf-blender/!svn/ver/39883/trunk/blender/source/gameengine/Network/LoopBackNetwork/NG_LoopBackNetworkDeviceInterface.h
 END
 SConscript
 K 25
 svn:wc:ra_dav:version-url
 V 101
-/svnroot/bf-blender/!svn/ver/33156/trunk/blender/source/gameengine/Network/LoopBackNetwork/SConscript
+/svnroot/bf-blender/!svn/ver/36523/trunk/blender/source/gameengine/Network/LoopBackNetwork/SConscript
 END
 NG_LoopBackNetworkDeviceInterface.cpp
 K 25
@@ -25,5 +25,5 @@ CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 105
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/gameengine/Network/LoopBackNetwork/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/38443/trunk/blender/source/gameengine/Network/LoopBackNetwork/CMakeLists.txt
 END

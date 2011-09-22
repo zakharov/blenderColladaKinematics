@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/extern/bullet2/src/BulletDynamics/Vehicle
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2009-03-17T21:44:58.713628Z
-19323
-blendix
+2011-03-29T18:44:18.010695Z
+35884
+erwin
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-03-03T12:28:51.990297Z
-f01c35c77d13eac68b42b997678eccdb
-2009-03-17T21:44:58.713628Z
-19323
-blendix
+2011-09-21T18:17:08.312102Z
+d7b020fc6ceaceed682b741fdee0f704
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-5477
+5643
 
 btWheelInfo.cpp
 file
@@ -66,7 +66,7 @@ file
 
 
 
-2011-03-03T12:28:51.990297Z
+2011-09-21T18:17:08.312102Z
 0d45e234ee959f9698a8bf236ccb49fd
 2007-06-23T05:28:07.314061Z
 11027
@@ -100,7 +100,7 @@ file
 
 
 
-2011-03-03T12:28:51.994297Z
+2011-09-21T18:17:08.312102Z
 6557100ff9fbd6311b82e9426a671765
 2008-11-12T21:16:53.478104Z
 17433
@@ -134,11 +134,11 @@ file
 
 
 
-2011-03-03T12:28:51.994297Z
-490375ec8717be93ccce58f79fbf91e4
-2008-11-12T21:16:53.478104Z
-17433
-blendix
+2011-09-21T18:17:08.312102Z
+e45dd161be8a75ab440e6db17c692426
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-3301
+3416
 
 btRaycastVehicle.cpp
 file
@@ -168,11 +168,11 @@ file
 
 
 
-2011-03-03T12:28:51.998297Z
-3a2c194591b427fb0e1cc8e393f3d33e
-2009-03-17T21:44:58.713628Z
-19323
-blendix
+2011-09-21T18:17:08.316102Z
+e3a30ea28680fb838df989648e824c86
+2011-03-29T18:44:18.010695Z
+35884
+erwin
 has-props
 
 
@@ -194,5 +194,5 @@ has-props
 
 
 
-20995
+21501
 

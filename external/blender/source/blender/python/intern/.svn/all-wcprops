@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 77
-/svnroot/bf-blender/!svn/ver/35359/trunk/blender/source/blender/python/intern
+/svnroot/bf-blender/!svn/ver/40427/trunk/blender/source/blender/python/intern
 END
 bpy_traceback.h
 K 25
@@ -13,31 +13,7 @@ bpy_rna_anim.c
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35298/trunk/blender/source/blender/python/intern/bpy_rna_anim.c
-END
-bpy_operator_wrap.c
-K 25
-svn:wc:ra_dav:version-url
-V 97
-/svnroot/bf-blender/!svn/ver/35295/trunk/blender/source/blender/python/intern/bpy_operator_wrap.c
-END
-bpy.h
-K 25
-svn:wc:ra_dav:version-url
-V 83
-/svnroot/bf-blender/!svn/ver/35236/trunk/blender/source/blender/python/intern/bpy.h
-END
-bpy_app.h
-K 25
-svn:wc:ra_dav:version-url
-V 87
-/svnroot/bf-blender/!svn/ver/35236/trunk/blender/source/blender/python/intern/bpy_app.h
-END
-bpy_rna.h
-K 25
-svn:wc:ra_dav:version-url
-V 87
-/svnroot/bf-blender/!svn/ver/35327/trunk/blender/source/blender/python/intern/bpy_rna.h
+/svnroot/bf-blender/!svn/ver/39390/trunk/blender/source/blender/python/intern/bpy_rna_anim.c
 END
 stubs.c
 K 25
@@ -51,41 +27,23 @@ svn:wc:ra_dav:version-url
 V 92
 /svnroot/bf-blender/!svn/ver/35297/trunk/blender/source/blender/python/intern/bpy_rna_anim.h
 END
-bpy_operator_wrap.h
-K 25
-svn:wc:ra_dav:version-url
-V 97
-/svnroot/bf-blender/!svn/ver/35236/trunk/blender/source/blender/python/intern/bpy_operator_wrap.h
-END
-bpy_driver.c
-K 25
-svn:wc:ra_dav:version-url
-V 90
-/svnroot/bf-blender/!svn/ver/35236/trunk/blender/source/blender/python/intern/bpy_driver.c
-END
 bpy_operator.c
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35295/trunk/blender/source/blender/python/intern/bpy_operator.c
+/svnroot/bf-blender/!svn/ver/39703/trunk/blender/source/blender/python/intern/bpy_operator.c
 END
 bpy_rna_callback.c
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/svnroot/bf-blender/!svn/ver/35295/trunk/blender/source/blender/python/intern/bpy_rna_callback.c
-END
-bpy_driver.h
-K 25
-svn:wc:ra_dav:version-url
-V 90
-/svnroot/bf-blender/!svn/ver/35236/trunk/blender/source/blender/python/intern/bpy_driver.h
+/svnroot/bf-blender/!svn/ver/35624/trunk/blender/source/blender/python/intern/bpy_rna_callback.c
 END
 bpy_interface.c
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/35295/trunk/blender/source/blender/python/intern/bpy_interface.c
+/svnroot/bf-blender/!svn/ver/40401/trunk/blender/source/blender/python/intern/bpy_interface.c
 END
 bpy_operator.h
 K 25
@@ -103,59 +61,149 @@ bpy_props.c
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/35295/trunk/blender/source/blender/python/intern/bpy_props.c
+/svnroot/bf-blender/!svn/ver/40427/trunk/blender/source/blender/python/intern/bpy_props.c
 END
 bpy_props.h
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/35236/trunk/blender/source/blender/python/intern/bpy_props.h
+/svnroot/bf-blender/!svn/ver/37088/trunk/blender/source/blender/python/intern/bpy_props.h
 END
 bpy_util.c
 K 25
 svn:wc:ra_dav:version-url
 V 88
-/svnroot/bf-blender/!svn/ver/35236/trunk/blender/source/blender/python/intern/bpy_util.c
+/svnroot/bf-blender/!svn/ver/37579/trunk/blender/source/blender/python/intern/bpy_util.c
 END
 bpy_rna_array.c
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/35359/trunk/blender/source/blender/python/intern/bpy_rna_array.c
-END
-bpy_traceback.c
-K 25
-svn:wc:ra_dav:version-url
-V 93
-/svnroot/bf-blender/!svn/ver/35236/trunk/blender/source/blender/python/intern/bpy_traceback.c
+/svnroot/bf-blender/!svn/ver/39233/trunk/blender/source/blender/python/intern/bpy_rna_array.c
 END
 bpy_rna.c
 K 25
 svn:wc:ra_dav:version-url
 V 87
-/svnroot/bf-blender/!svn/ver/35349/trunk/blender/source/blender/python/intern/bpy_rna.c
-END
-bpy_app.c
-K 25
-svn:wc:ra_dav:version-url
-V 87
-/svnroot/bf-blender/!svn/ver/35236/trunk/blender/source/blender/python/intern/bpy_app.c
+/svnroot/bf-blender/!svn/ver/40427/trunk/blender/source/blender/python/intern/bpy_rna.c
 END
 bpy.c
 K 25
 svn:wc:ra_dav:version-url
 V 83
-/svnroot/bf-blender/!svn/ver/35295/trunk/blender/source/blender/python/intern/bpy.c
+/svnroot/bf-blender/!svn/ver/38409/trunk/blender/source/blender/python/intern/bpy.c
 END
-CMakeLists.txt
+bpy_app.c
 K 25
 svn:wc:ra_dav:version-url
-V 92
-/svnroot/bf-blender/!svn/ver/35327/trunk/blender/source/blender/python/intern/CMakeLists.txt
+V 87
+/svnroot/bf-blender/!svn/ver/37795/trunk/blender/source/blender/python/intern/bpy_app.c
+END
+gpu.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/bf-blender/!svn/ver/40255/trunk/blender/source/blender/python/intern/gpu.c
 END
 bpy_util.h
 K 25
 svn:wc:ra_dav:version-url
 V 88
-/svnroot/bf-blender/!svn/ver/35236/trunk/blender/source/blender/python/intern/bpy_util.h
+/svnroot/bf-blender/!svn/ver/39567/trunk/blender/source/blender/python/intern/bpy_util.h
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/40427/trunk/blender/source/blender/python/intern/CMakeLists.txt
+END
+bpy_operator_wrap.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/36576/trunk/blender/source/blender/python/intern/bpy_operator_wrap.c
+END
+bpy_rna.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/39075/trunk/blender/source/blender/python/intern/bpy_rna.h
+END
+bpy.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/bf-blender/!svn/ver/40401/trunk/blender/source/blender/python/intern/bpy.h
+END
+bpy_app.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/37088/trunk/blender/source/blender/python/intern/bpy_app.h
+END
+bpy_intern_string.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/39815/trunk/blender/source/blender/python/intern/bpy_intern_string.c
+END
+gpu.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/bf-blender/!svn/ver/40061/trunk/blender/source/blender/python/intern/gpu.h
+END
+bpy_operator_wrap.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/35236/trunk/blender/source/blender/python/intern/bpy_operator_wrap.h
+END
+bpy_intern_string.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/37626/trunk/blender/source/blender/python/intern/bpy_intern_string.h
+END
+bpy_driver.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/39919/trunk/blender/source/blender/python/intern/bpy_driver.c
+END
+bpy_app_handlers.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/40255/trunk/blender/source/blender/python/intern/bpy_app_handlers.c
+END
+bpy_driver.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/35236/trunk/blender/source/blender/python/intern/bpy_driver.h
+END
+bpy_library.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/39044/trunk/blender/source/blender/python/intern/bpy_library.c
+END
+bpy_app_handlers.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/37799/trunk/blender/source/blender/python/intern/bpy_app_handlers.h
+END
+bpy_interface_atexit.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/bf-blender/!svn/ver/40406/trunk/blender/source/blender/python/intern/bpy_interface_atexit.c
+END
+bpy_traceback.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/39714/trunk/blender/source/blender/python/intern/bpy_traceback.c
 END

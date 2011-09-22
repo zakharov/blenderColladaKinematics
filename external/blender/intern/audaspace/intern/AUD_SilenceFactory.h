@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_SilenceFactory.h 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_SilenceFactory.h 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -35,7 +35,7 @@
 #include "AUD_IFactory.h"
 
 /**
- * This factory creates a reader that plays a sine tone.
+ * This factory creates a reader that plays silence.
  */
 class AUD_SilenceFactory : public AUD_IFactory
 {
@@ -50,7 +50,7 @@ public:
 	 */
 	AUD_SilenceFactory();
 
-	virtual AUD_IReader* createReader() const;
+	virtual AUD_Reference<AUD_IReader> createReader();
 };
 
 #endif //AUD_SILENCEFACTORY

@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_IIRFilterFactory.h 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_IIRFilterFactory.h 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -63,10 +63,10 @@ public:
 	 * \param b The input filter coefficients.
 	 * \param a The output filter coefficients.
 	 */
-	AUD_IIRFilterFactory(AUD_IFactory* factory, std::vector<float> b,
+	AUD_IIRFilterFactory(AUD_Reference<AUD_IFactory> factory, std::vector<float> b,
 						 std::vector<float> a);
 
-	virtual AUD_IReader* createReader() const;
+	virtual AUD_Reference<AUD_IReader> createReader();
 };
 
 #endif //AUD_IIRFILTERFACTORY

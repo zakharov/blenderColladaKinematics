@@ -1,5 +1,5 @@
 /*
- * $Id: GHOST_ISystemPaths.cpp 35152 2011-02-25 11:28:33Z jesterking $
+ * $Id: GHOST_ISystemPaths.cpp 39828 2011-09-01 00:03:20Z dfelinto $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -33,7 +33,7 @@
 
 /**
 
- * $Id: GHOST_ISystemPaths.cpp 35152 2011-02-25 11:28:33Z jesterking $
+ * $Id: GHOST_ISystemPaths.cpp 39828 2011-09-01 00:03:20Z dfelinto $
  * Copyright (C) 2001 NaN Technologies B.V.
  * @author	Maarten Gribnau
  * @date	May 7, 2001
@@ -70,7 +70,7 @@ GHOST_TSuccess GHOST_ISystemPaths::create()
 #		ifdef GHOST_COCOA
 			m_systemPaths = new GHOST_SystemPathsCocoa ();
 #		else
-			m_systemPaths = new GHOST_SystemPathsarbon ();
+			m_systemPaths = new GHOST_SystemPathsCarbon ();
 #		endif
 #	else 
 		m_systemPaths = new GHOST_SystemPathsX11 ();

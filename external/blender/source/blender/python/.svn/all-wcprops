@@ -1,19 +1,19 @@
 K 25
 svn:wc:ra_dav:version-url
 V 70
-/svnroot/bf-blender/!svn/ver/35359/trunk/blender/source/blender/python
+/svnroot/bf-blender/!svn/ver/40442/trunk/blender/source/blender/python
 END
 BPY_extern.h
 K 25
 svn:wc:ra_dav:version-url
 V 83
-/svnroot/bf-blender/!svn/ver/35276/trunk/blender/source/blender/python/BPY_extern.h
+/svnroot/bf-blender/!svn/ver/37795/trunk/blender/source/blender/python/BPY_extern.h
 END
 SConscript
 K 25
 svn:wc:ra_dav:version-url
 V 81
-/svnroot/bf-blender/!svn/ver/35327/trunk/blender/source/blender/python/SConscript
+/svnroot/bf-blender/!svn/ver/40442/trunk/blender/source/blender/python/SConscript
 END
 rna_dump.py
 K 25
@@ -25,7 +25,7 @@ CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 85
-/svnroot/bf-blender/!svn/ver/33549/trunk/blender/source/blender/python/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/38409/trunk/blender/source/blender/python/CMakeLists.txt
 END
 simple_enum_gen.py
 K 25

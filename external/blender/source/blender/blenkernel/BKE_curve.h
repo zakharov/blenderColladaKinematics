@@ -1,5 +1,5 @@
 /*
- * $Id: BKE_curve.h 34962 2011-02-18 13:05:18Z jesterking $ 
+ * $Id: BKE_curve.h 40193 2011-09-14 00:37:27Z campbellbarton $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -34,14 +34,16 @@
  *  \since March 2001
  *  \author nzc
  */
+
+struct BevList;
+struct BezTriple;
 struct Curve;
+struct EditNurb;
 struct ListBase;
+struct ListBase;
+struct Nurb;
 struct Object;
 struct Scene;
-struct Nurb;
-struct ListBase;
-struct BezTriple;
-struct BevList;
 
 #define KNOTSU(nu)	    ( (nu)->orderu+ (nu)->pntsu+ (((nu)->flagu & CU_NURB_CYCLIC) ? ((nu)->orderu-1) : 0) )
 #define KNOTSV(nu)	    ( (nu)->orderv+ (nu)->pntsv+ (((nu)->flagv & CU_NURB_CYCLIC) ? ((nu)->orderv-1) : 0) )
@@ -51,15 +53,18 @@ struct BevList;
 #define SEGMENTSV(nu)	    ( ((nu)->flagv & CU_NURB_CYCLIC) ? (nu)->pntsv : (nu)->pntsv-1 )
 
 #define CU_DO_TILT(cu, nu) (((nu->flag & CU_2D) && (cu->flag & CU_3D)==0) ? 0 : 1)
-#define CU_DO_RADIUS(cu, nu) ((CU_DO_TILT(cu, nu) || ((cu)->flag & CU_PATH_RADIUS) || (cu)->bevobj || (cu)->ext1!=0.0 || (cu)->ext2!=0.0) ? 1:0)
+#define CU_DO_RADIUS(cu, nu) ((CU_DO_TILT(cu, nu) || ((cu)->flag & CU_PATH_RADIUS) || (cu)->bevobj || (cu)->ext1!=0.0f || (cu)->ext2!=0.0f) ? 1:0)
 
 
 void unlink_curve( struct Curve *cu);
+void free_curve_editNurb_keyIndex(struct EditNurb *editnurb);
+void free_curve_editNurb(struct Curve *cu);
 void free_curve( struct Curve *cu);
 void BKE_free_editfont(struct Curve *cu);
 struct Curve *add_curve(const char *name, int type);
 struct Curve *copy_curve( struct Curve *cu);
 void make_local_curve( struct Curve *cu);
+struct ListBase *curve_editnurbs(struct Curve *cu);
 short curve_type( struct Curve *cu);
 void test_curve_type( struct Object *ob);
 void tex_space_curve( struct Curve *cu);
@@ -115,5 +120,6 @@ int minmax_curve(struct Curve *cu, float min[3], float max[3]);
 int curve_center_median(struct Curve *cu, float cent[3]);
 int curve_center_bounds(struct Curve *cu, float cent[3]);
 void curve_translate(struct Curve *cu, float offset[3], int do_keys);
+void curve_delete_material_index(struct Curve *cu, int index);
 #endif
 

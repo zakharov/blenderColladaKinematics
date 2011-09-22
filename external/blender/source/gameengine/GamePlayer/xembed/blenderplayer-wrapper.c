@@ -1,5 +1,5 @@
 /*
- * $Id: blenderplayer-wrapper.c 26841 2010-02-12 13:34:04Z campbellbarton $
+ * $Id: blenderplayer-wrapper.c 36276 2011-04-21 15:53:30Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -80,7 +80,7 @@ void sigterm_handler(int signum) {
 
 */
 int  main(int argc, char *argv[]) {
-  
+
 	uid_t privid = geteuid();
 	uid_t caller_id = getuid();
 

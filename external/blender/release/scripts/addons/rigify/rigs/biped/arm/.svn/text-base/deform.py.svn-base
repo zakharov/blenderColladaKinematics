@@ -17,10 +17,10 @@
 #======================= END GPL LICENSE BLOCK ========================
 
 import bpy
-from math import acos, degrees
+from math import acos
 from mathutils import Vector, Matrix
 from rigify.utils import MetarigError
-from rigify.utils import copy_bone, flip_bone, put_bone
+from rigify.utils import copy_bone, put_bone
 from rigify.utils import connected_children_names
 from rigify.utils import strip_org, make_mechanism_name, make_deformer_name
 
@@ -48,7 +48,7 @@ def align_roll(obj, bone1, bone2):
     rot_mat = Matrix.Rotation(angle, 3, axis)
 
     # Roll factor
-    x3 = x1 * rot_mat
+    x3 = rot_mat * x1
     dot = x2 * x3
     if dot > 1.0:
         dot = 1.0
@@ -60,7 +60,7 @@ def align_roll(obj, bone1, bone2):
     bone1_e.roll = roll
 
     # Check if we rolled in the right direction
-    x3 = bone1_e.x_axis * rot_mat
+    x3 = rot_mat * bone1_e.x_axis
     check = x2 * x3
 
     # If not, reverse
@@ -87,7 +87,7 @@ class Rig:
         self.org_bones = [bone] + connected_children_names(self.obj, bone)[:2]
 
         if len(self.org_bones) != 3:
-            raise MetarigError("RIGIFY ERROR: Bone '%s': input to rig type must be a chain of 3 bones." % (strip_org(bone)))
+            raise MetarigError("RIGIFY ERROR: Bone '%s': input to rig type must be a chain of 3 bones" % (strip_org(bone)))
 
         # Get rig parameters
         self.use_upper_arm_twist = params.use_upper_arm_twist
@@ -197,7 +197,7 @@ class Rig:
             uarm1_p = pb[uarm1]
         if self.use_forearm_twist:
             farm2_p = pb[farm2]
-        hand_p = pb[hand]
+        # hand_p = pb[hand]  # UNUSED
 
         # Upper arm constraints
         if self.use_upper_arm_twist:

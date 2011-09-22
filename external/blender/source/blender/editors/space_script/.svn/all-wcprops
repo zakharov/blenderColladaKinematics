@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_script
+/svnroot/bf-blender/!svn/ver/38443/trunk/blender/source/blender/editors/space_script
 END
 space_script.c
 K 25
@@ -37,11 +37,11 @@ CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svnroot/bf-blender/!svn/ver/35028/trunk/blender/source/blender/editors/space_script/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/38443/trunk/blender/source/blender/editors/space_script/CMakeLists.txt
 END
 script_header.c
 K 25
 svn:wc:ra_dav:version-url
 V 100
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_script/script_header.c
+/svnroot/bf-blender/!svn/ver/37185/trunk/blender/source/blender/editors/space_script/script_header.c
 END

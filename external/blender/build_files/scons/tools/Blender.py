@@ -20,7 +20,7 @@ import string
 import glob
 import time
 import sys
-import zipfile
+import tarfile
 import shutil
 import cStringIO
 import platform
@@ -148,8 +148,6 @@ def setup_staticlibs(lenv):
         libincs += Split(lenv['BF_OPENEXR_LIBPATH'])
         if lenv['WITH_BF_STATICOPENEXR']:
             statlibs += Split(lenv['BF_OPENEXR_LIB_STATIC'])
-    if lenv['WITH_BF_LCMS']:
-        libincs += Split(lenv['BF_LCMS_LIBPATH'])
     if lenv['WITH_BF_TIFF']:
         libincs += Split(lenv['BF_TIFF_LIBPATH'])
         if lenv['WITH_BF_STATICTIFF']:
@@ -203,6 +201,17 @@ def setup_staticlibs(lenv):
     if lenv['OURPLATFORM'] not in ('win32-vc', 'win32-mingw', 'win64-vc', 'linuxcross'):
         libincs.append('/usr/lib')
 
+    if lenv['WITH_BF_JEMALLOC']:
+        libincs += Split(lenv['BF_JEMALLOC_LIBPATH'])
+        if lenv['WITH_BF_STATICJEMALLOC']:
+            statlibs += Split(lenv['BF_JEMALLOC_LIB_STATIC'])
+
+    if lenv['OURPLATFORM']=='linux':
+        if lenv['WITH_BF_3DMOUSE']:
+            libincs += Split(lenv['BF_3DMOUSE_LIBPATH'])
+            if lenv['WITH_BF_STATIC3DMOUSE']:
+                statlibs += Split(lenv['BF_3DMOUSE_LIB_STATIC'])
+
     return statlibs, libincs
 
 def setup_syslibs(lenv):
@@ -253,16 +262,25 @@ def setup_syslibs(lenv):
         syslibs += Split(lenv['BF_OPENGL_LIB'])
     if lenv['OURPLATFORM'] in ('win32-vc', 'win32-mingw','linuxcross', 'win64-vc'):
         syslibs += Split(lenv['BF_PTHREADS_LIB'])
-    if lenv['WITH_BF_LCMS']:
-        syslibs.append(lenv['BF_LCMS_LIB'])
     if lenv['WITH_BF_COLLADA']:
         syslibs.append(lenv['BF_PCRE_LIB'])
-        syslibs += Split(lenv['BF_OPENCOLLADA_LIB'])
+        if lenv['BF_DEBUG']:
+            syslibs += [colladalib+'_d' for colladalib in Split(lenv['BF_OPENCOLLADA_LIB'])]
+        else:
+            syslibs += Split(lenv['BF_OPENCOLLADA_LIB'])
         syslibs.append(lenv['BF_EXPAT_LIB'])
 
     if not lenv['WITH_BF_STATICLIBSAMPLERATE']:
         syslibs += Split(lenv['BF_LIBSAMPLERATE_LIB'])
 
+    if lenv['WITH_BF_JEMALLOC']:
+        if not lenv['WITH_BF_STATICJEMALLOC']:
+            syslibs += Split(lenv['BF_JEMALLOC_LIB'])
+
+    if lenv['OURPLATFORM']=='linux':
+        if lenv['WITH_BF_3DMOUSE']:
+            if not lenv['WITH_BF_STATIC3DMOUSE']:
+                syslibs += Split(lenv['BF_3DMOUSE_LIB'])
 
     syslibs += lenv['LLIBS']
 
@@ -282,6 +300,46 @@ def propose_priorities():
             #for p,v in sorted(libs[t].iteritems()):
             print "\t\t",new_priority, v
             new_priority += 5
+
+# emits the necessary file objects for creator.c, to be used in creating
+# the final blender executable
+def creator(env):
+    sources = ['creator.c']# + Blender.buildinfo(env, "dynamic") + Blender.resources
+
+    incs = ['#/intern/guardedalloc', '#/source/blender/blenlib', '#/source/blender/blenkernel', '#/source/blender/editors/include', '#/source/blender/blenloader', '#/source/blender/imbuf', '#/source/blender/renderconverter', '#/source/blender/render/extern/include', '#/source/blender/windowmanager', '#/source/blender/makesdna', '#/source/blender/makesrna', '#/source/gameengine/BlenderRoutines', '#/extern/glew/include', '#/source/blender/gpu', env['BF_OPENGL_INC']]
+
+    defs = []
+    if env['WITH_BF_QUICKTIME']:
+        incs.append(env['BF_QUICKTIME_INC'])
+        defs.append('WITH_QUICKTIME')
+
+    if env['WITH_BF_BINRELOC']:
+        incs.append('#/extern/binreloc/include')
+        defs.append('WITH_BINRELOC')
+
+    if env['WITH_BF_OPENEXR']:
+        defs.append('WITH_OPENEXR')
+
+    if env['WITH_BF_TIFF']:
+        defs.append('WITH_TIFF')
+
+    if not env['WITH_BF_SDL']:
+        defs.append('DISABLE_SDL')
+
+    if env['WITH_BF_PYTHON']:
+        incs.append('#/source/blender/python')
+        defs.append('WITH_PYTHON')
+        if env['BF_DEBUG']:
+            defs.append('_DEBUG')
+
+    if env['OURPLATFORM'] in ('win32-vc', 'win32-mingw', 'linuxcross', 'win64-vc'):
+        incs.append(env['BF_PTHREADS_INC'])
+
+    env.Append(CPPDEFINES=defs)
+    env.Append(CPPPATH=incs)
+    obj = [env.Object(root_build_dir+'source/creator/creator/creator', ['#source/creator/creator.c'])]
+
+    return obj
 
 ## TODO: see if this can be made in an emitter
 def buildinfo(lenv, build_type):
@@ -306,21 +364,21 @@ def buildinfo(lenv, build_type):
 
     obj = []
     if lenv['BF_BUILDINFO']:
-        lenv.Append (CPPDEFINES = ['BUILD_TIME="%s"'%(build_time),
-                                    'BUILD_DATE="%s"'%(build_date),
-                                    'BUILD_TYPE="%s"'%(build_type),
-                                    'BUILD_REV="%s"'%(build_rev),
-                                    'NAN_BUILDINFO',
-                                    'BUILD_PLATFORM="%s:%s"'%(platform.system(), platform.architecture()[0]),
+        lenv.Append (CPPDEFINES = ['BUILD_TIME=\\"%s\\"'%(build_time),
+                                    'BUILD_DATE=\\"%s\\"'%(build_date),
+                                    'BUILD_TYPE=\\"%s\\"'%(build_type),
+                                    'BUILD_REV=\\"%s\\"'%(build_rev),
+                                    'WITH_BUILDINFO',
+                                    'BUILD_PLATFORM=\\"%s:%s\\"'%(platform.system(), platform.architecture()[0]),
                                     'BUILD_CFLAGS=\\"%s\\"'%(build_cflags),
                                     'BUILD_CXXFLAGS=\\"%s\\"'%(build_cxxflags),
                                     'BUILD_LINKFLAGS=\\"%s\\"'%(build_linkflags),
-                                    'BUILD_SYSTEM="SCons"'
+                                    'BUILD_SYSTEM=\\"SCons\\"'
                     ])
 
         lenv.Append (CPPPATH = [root_build_dir+'source/blender/blenkernel'])
 
-        obj = [lenv.Object (root_build_dir+'source/creator/%s_buildinfo'%build_type, [root_build_dir+'source/creator/buildinfo.c'])]
+        obj = [lenv.Object (root_build_dir+'source/creator/%s_buildinfo'%build_type, ['#source/creator/buildinfo.c'])]
 
     return obj
 
@@ -399,89 +457,13 @@ def set_quiet_output(env):
     if env['BF_LINE_OVERWRITE']:
         SCons.Action._ActionAction.print_cmd_line = my_print_cmd_line
 
-    
-class CompZipFile(zipfile.ZipFile):
-    """Partial copy of python2.6's zipfile.ZipFile (see http://www.python.org)
-    to get a extractall() that works on py2.5 and probably earlier distributions."""
-    def __init__(self, file, mode="r", compression=zipfile.ZIP_STORED, allowZip64=False):
-        if sys.version_info < (2, 6):
-            zipfile.ZipFile.__init__(self, file, mode, compression)
-        else:
-            zipfile.ZipFile.__init__(self, file, mode, compression, allowZip64)
-
-        if not hasattr(self,"extractall"): # use our method 
-            print "Debug: Using comp_extractall!"
-            self.extractall= self.comp_extractall
-
-    def comp_extractall(self, path=None, members=None, pwd=None): #renamed method
-        """Extract all members from the archive to the current working
-            directory. `path' specifies a different directory to extract to.
-            `members' is optional and must be a subset of the list returned
-            by namelist().
-        """
-        if members is None:
-            members = self.namelist()
-
-        for zipinfo in members:
-            self.comp_extract(zipinfo, path, pwd) # use our method 
-
-    def comp_extract(self, member, path=None, pwd=None): #renamed method
-        """Extract a member from the archive to the current working directory,
-            using its full name. Its file information is extracted as accurately
-            as possible. `member' may be a filename or a ZipInfo object. You can
-            specify a different directory using `path'.
-        """
-        if not isinstance(member, zipfile.ZipInfo):
-            member = self.getinfo(member)
-
-        if path is None:
-            path = os.getcwd()
-
-        return self.comp_extract_member(member, path, pwd) # use our method 
-
-    def comp_extract_member(self, member, targetpath, pwd): #renamed method
-        """Extract the ZipInfo object 'member' to a physical
-            file on the path targetpath.
-        """
-        # build the destination pathname, replacing
-        # forward slashes to platform specific separators.
-        if targetpath[-1:] in (os.path.sep, os.path.altsep):
-            targetpath = targetpath[:-1]
-
-        # don't include leading "/" from file name if present
-        if member.filename[0] == '/':
-            targetpath = os.path.join(targetpath, member.filename[1:])
-        else:
-            targetpath = os.path.join(targetpath, member.filename)
-
-        targetpath = os.path.normpath(targetpath)
-
-        # Create all upper directories if necessary.
-        upperdirs = os.path.dirname(targetpath)
-        if upperdirs and not os.path.exists(upperdirs):
-            os.makedirs(upperdirs)
-
-        if member.filename[-1] == '/':
-            os.mkdir(targetpath)
-            return targetpath
-
-        #use StrinIO instead so we don't have to reproduce more functionality.
-        source = cStringIO.StringIO(self.read(member.filename))
-        target = file(targetpath, "wb")
-        shutil.copyfileobj(source, target)
-        source.close()
-        target.close()
-
-        return targetpath
-
-def unzip_pybundle(from_zip,to_dir,exclude_re):
-    
-    zip= CompZipFile(from_zip, mode='r')
+def untar_pybundle(from_tar,to_dir,exclude_re):
+    tar= tarfile.open(from_tar, mode='r')
     exclude_re= list(exclude_re) #single re object or list of re objects
     debug= 0 #list files instead of unpacking
     good= []
     if debug: print '\nFiles not being unpacked:\n'
-    for name in zip.namelist():
+    for name in tar.getnames():
         is_bad= 0
         for r in exclude_re:
             if r.match(name):
@@ -489,26 +471,26 @@ def unzip_pybundle(from_zip,to_dir,exclude_re):
                 if debug: print name
                 break
         if not is_bad:
-            good.append(name)
+            good.append(tar.getmember(name))
     if debug:
         print '\nFiles being unpacked:\n'
         for g in good:
             print g
     else:
-        zip.extractall(to_dir, good)
+        tar.extractall(to_dir, good)
 
 def my_winpybundle_print(target, source, env):
     pass
 
 def WinPyBundle(target=None, source=None, env=None):
     import re
-    py_zip= env.subst( env['LCGDIR'] )
-    if py_zip[0]=='#':
-        py_zip= py_zip[1:]
+    py_tar= env.subst( env['LCGDIR'] )
+    if py_tar[0]=='#':
+        py_tar= py_tar[1:]
     if env['BF_DEBUG']:
-        py_zip+= '/release/python' + env['BF_PYTHON_VERSION'].replace('.','') + '_d.zip'
+        py_tar+= '/release/python' + env['BF_PYTHON_VERSION'].replace('.','') + '_d.tar.gz'
     else:
-        py_zip+= '/release/python' + env['BF_PYTHON_VERSION'].replace('.','') + '.zip'
+        py_tar+= '/release/python' + env['BF_PYTHON_VERSION'].replace('.','') + '.tar.gz'
 
     py_target = env.subst( env['BF_INSTALLDIR'] )
     if py_target[0]=='#':
@@ -521,12 +503,18 @@ def WinPyBundle(target=None, source=None, env=None):
     shutil.rmtree(py_target, False, printexception)
     exclude_re=[re.compile('.*/test/.*'),
                 re.compile('^config/.*'),
+                re.compile('^config-*/.*'),
                 re.compile('^distutils/.*'),
                 re.compile('^idlelib/.*'),
                 re.compile('^lib2to3/.*'),
-                re.compile('^tkinter/.*')]
-    print "Unpacking '" + py_zip + "' to '" + py_target + "'"
-    unzip_pybundle(py_zip,py_target,exclude_re)
+                re.compile('^tkinter/.*'),
+                re.compile('^_tkinter_d.pyd'),
+                re.compile('^turtledemo'),
+                re.compile('^turtle.py'),
+                ]
+
+    print "Unpacking '" + py_tar + "' to '" + py_target + "'"
+    untar_pybundle(py_tar,py_target,exclude_re)
 
 def  my_appit_print(target, source, env):
     a = '%s' % (target[0])
@@ -546,8 +534,12 @@ def AppIt(target=None, source=None, env=None):
     installdir = env['BF_INSTALLDIR']
     print("compiled architecture: %s"%(osxarch))
     print("Installing to %s"%(installdir))
+    # TODO, use tar.
     python_zip = 'python_' + osxarch + '.zip' # set specific python_arch.zip
-    print("unzipping to app-bundle: %s"%(python_zip))
+    if env['WITH_OSX_STATICPYTHON']:
+        print("unzipping to app-bundle: %s"%(python_zip))
+    else:
+        print("dynamic build - make sure to have python3.x-framework installed")
     bldroot = env.Dir('.').abspath
     binary = env['BINARYKIND']
      
@@ -563,7 +555,8 @@ def AppIt(target=None, source=None, env=None):
     if os.path.isdir(cmd):
         shutil.rmtree(cmd)
     shutil.copytree(sourcedir, cmd)
-    cmd = "cat %s | sed s/VERSION/`cat release/VERSION`/ | sed s/DATE/`date +'%%Y-%%b-%%d'`/ > %s"%(sourceinfo,targetinfo)
+    cmd = "cat %s | sed s/\$\{MACOSX_BUNDLE_SHORT_VERSION_STRING\}/%s/ | "%(sourceinfo,VERSION)
+    cmd += "sed s/\$\{MACOSX_BUNDLE_LONG_VERSION_STRING\}/%s,\ %s/g > %s"%(VERSION,time.strftime("%Y-%b-%d"),targetinfo)
     commands.getoutput(cmd)
     cmd = 'cp %s/%s %s/%s.app/Contents/MacOS/%s'%(builddir, binary,installdir, binary, binary)
     commands.getoutput(cmd)
@@ -571,24 +564,24 @@ def AppIt(target=None, source=None, env=None):
 #    print cmd
     commands.getoutput(cmd)
     cmd = installdir + '/%s.app/Contents/MacOS/%s'%(binary,VERSION)
-    shutil.copy(bldroot + '/release/bin/.blender/.bfont.ttf', cmd)
-    shutil.copy(bldroot + '/release/bin/.blender/.Blanguages', cmd)
-    cmd = 'cp -R %s/release/bin/%s/locale %s/%s.app/Contents/Resources/'%(bldroot,VERSION,installdir,binary)
+    cmd = 'mkdir %s/%s.app/Contents/MacOS/%s/datafiles'%(installdir, binary, VERSION)
     commands.getoutput(cmd)
-    cmd = 'cp -R %s/release/bin/%s/locale %s/%s.app/Contents/MacOS/%s/'%(bldroot,VERSION,installdir,binary,VERSION)
+    cmd = 'cp -R %s/release/bin/.blender/locale %s/%s.app/Contents/MacOS/%s/datafiles/'%(bldroot,installdir,binary,VERSION)
+    commands.getoutput(cmd)
+    cmd = 'cp -R %s/release/bin/.blender/fonts %s/%s.app/Contents/MacOS/%s/datafiles/'%(bldroot,installdir,binary,VERSION)
     commands.getoutput(cmd)
     cmd = 'cp %s/release/bin/%s/.Blanguages %s/%s.app/Contents/Resources/'%(bldroot,VERSION,installdir,binary)
     commands.getoutput(cmd)
-    cmd = 'mkdir %s/%s.app/Contents/MacOS/%s/python/'%(installdir,binary, VERSION)
-    commands.getoutput(cmd)
-    cmd = 'unzip -q %s/release/%s -d %s/%s.app/Contents/MacOS/%s/python/'%(libdir,python_zip,installdir,binary,VERSION)
-    commands.getoutput(cmd) 
-    cmd = 'cp -R %s/release/scripts %s/%s.app/Contents/MacOS/%s/'%(bldroot,installdir,binary,VERSION)
-    commands.getoutput(cmd)
-    cmd = 'cp -R %s/release/ui %s/%s.app/Contents/MacOS/%s/'%(bldroot,installdir,binary,VERSION)
-    commands.getoutput(cmd)
-    cmd = 'cp -R %s/release/io %s/%s.app/Contents/MacOS/%s/'%(bldroot,installdir,binary,VERSION)
-    commands.getoutput(cmd)
+    if env['WITH_OSX_STATICPYTHON']:
+        cmd = 'mkdir %s/%s.app/Contents/MacOS/%s/python/'%(installdir,binary, VERSION)
+        commands.getoutput(cmd)
+        cmd = 'unzip -q %s/release/%s -d %s/%s.app/Contents/MacOS/%s/python/'%(libdir,python_zip,installdir,binary,VERSION)
+        commands.getoutput(cmd) 
+
+    if binary == 'blender':#not copy everything for blenderplayer
+        cmd = 'cp -R %s/release/scripts %s/%s.app/Contents/MacOS/%s/'%(bldroot,installdir,binary,VERSION)
+        commands.getoutput(cmd)
+
     cmd = 'chmod +x  %s/%s.app/Contents/MacOS/%s'%(installdir,binary, binary)
     commands.getoutput(cmd)
     cmd = 'find %s/%s.app -name .svn -prune -exec rm -rf {} \;'%(installdir, binary)
@@ -639,17 +632,17 @@ def UnixPyBundle(target=None, source=None, env=None):
     run("cp -R '%s' '%s'" % (py_src, os.path.dirname(py_target)))
     run("rm -rf '%s/distutils'" % py_target)
     run("rm -rf '%s/lib2to3'" % py_target)
-    run("rm -rf '%s/idlelib'" % py_target)
-    run("rm -rf '%s/tkinter'" % py_target)
     run("rm -rf '%s/config'" % py_target)
-
+    run("rm -rf '%s/config-*'" % py_target)
     run("rm -rf '%s/site-packages'" % py_target)
     run("mkdir '%s/site-packages'" % py_target)    # python needs it.'
-
+    run("rm -rf '%s/idlelib'" % py_target)
+    run("rm -rf '%s/tkinter'" % py_target)
+    run("rm -rf '%s/turtledemo'" % py_target)
+    run("rm -r '%s/turtle.py'" % py_target)
     run("rm -f '%s/lib-dynload/_tkinter.so'" % py_target)
+
     run("find '%s' -type d -name 'test' -prune -exec rm -rf {} ';'" % py_target)
-    run("find '%s' -type d -name 'config-*' -prune -exec rm -rf {} ';'" % py_target)
-    run("find '%s' -type d -name 'turtledemo' -prune -exec rm -rf {} ';'" % py_target)
     run("find '%s' -type d -name '__pycache__' -exec rm -rf {} ';'" % py_target)
     run("find '%s' -name '*.py[co]' -exec rm -rf {} ';'" % py_target)
     run("find '%s' -name '*.so' -exec strip -s {} ';'" % py_target)
@@ -778,23 +771,19 @@ class BlenderEnvironment(SConsEnvironment):
         global vcp
         print bc.HEADER+'Configuring program '+bc.ENDC+bc.OKGREEN+progname+bc.ENDC
         lenv = self.Clone()
+        lenv.Append(LINKFLAGS = lenv['PLATFORM_LINKFLAGS'])
         if lenv['OURPLATFORM'] in ('win32-vc', 'cygwin', 'win64-vc'):
-            lenv.Append(LINKFLAGS = lenv['PLATFORM_LINKFLAGS'])
-            lenv.Append(LINKFLAGS = ['/FORCE:MULTIPLE'])
             if lenv['BF_DEBUG']:
-                lenv.Prepend(LINKFLAGS = ['/DEBUG','/PDB:'+progname+'.pdb'])
-        if  lenv['OURPLATFORM']=='linux2':
-            lenv.Append(LINKFLAGS = lenv['PLATFORM_LINKFLAGS'])
+                lenv.Prepend(LINKFLAGS = ['/DEBUG','/PDB:'+progname+'.pdb','/NODEFAULTLIB:libcmt'])
+        if  lenv['OURPLATFORM']=='linux':
             if lenv['WITH_BF_PYTHON']:
                 lenv.Append(LINKFLAGS = lenv['BF_PYTHON_LINKFLAGS'])
         if  lenv['OURPLATFORM']=='sunos5':
-            lenv.Append(LINKFLAGS = lenv['PLATFORM_LINKFLAGS'])
             if lenv['WITH_BF_PYTHON']:
                 lenv.Append(LINKFLAGS = lenv['BF_PYTHON_LINKFLAGS'])
             if lenv['CXX'].endswith('CC'):
                  lenv.Replace(LINK = '$CXX')
         if  lenv['OURPLATFORM']=='darwin':
-            lenv.Append(LINKFLAGS = lenv['PLATFORM_LINKFLAGS'])
             if lenv['WITH_BF_PYTHON']:
                 lenv.Append(LINKFLAGS = lenv['BF_PYTHON_LINKFLAGS'])
             lenv.Append(LINKFLAGS = lenv['BF_OPENGL_LINKFLAGS'])

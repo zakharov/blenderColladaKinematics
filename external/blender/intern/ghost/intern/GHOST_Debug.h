@@ -1,5 +1,5 @@
 /*
- * $Id: GHOST_Debug.h 35152 2011-02-25 11:28:33Z jesterking $
+ * $Id: GHOST_Debug.h 38351 2011-07-13 06:04:54Z campbellbarton $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -41,9 +41,9 @@
 	#endif // DEBUG
 #endif // WIN32
 
-#ifdef BF_GHOST_DEBUG 
+#ifdef WITH_GHOST_DEBUG 
 	#define GHOST_DEBUG // spit ghost events to stdout
-#endif // BF_GHOST_DEBUG 
+#endif // WITH_GHOST_DEBUG 
 
 #ifdef GHOST_DEBUG
 	#include <iostream>
@@ -53,10 +53,10 @@
 
 #ifdef GHOST_DEBUG
 	#define GHOST_PRINT(x) { std::cout << x; }
-	//#define GHOST_PRINTF(x) { printf(x); }
+	#define GHOST_PRINTF(x, ...) { printf(x, __VA_ARGS__); }
 #else  // GHOST_DEBUG
 	#define GHOST_PRINT(x)
-	//#define GHOST_PRINTF(x)
+	#define GHOST_PRINTF(x, ...)
 #endif // GHOST_DEBUG
 
 

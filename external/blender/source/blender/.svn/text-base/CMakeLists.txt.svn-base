@@ -73,6 +73,7 @@ set(SRC_DNA_INC
 	${CMAKE_CURRENT_SOURCE_DIR}/makesdna/DNA_smoke_types.h
 	${CMAKE_CURRENT_SOURCE_DIR}/makesdna/DNA_sound_types.h
 	${CMAKE_CURRENT_SOURCE_DIR}/makesdna/DNA_space_types.h
+	${CMAKE_CURRENT_SOURCE_DIR}/makesdna/DNA_speaker_types.h
 	${CMAKE_CURRENT_SOURCE_DIR}/makesdna/DNA_text_types.h
 	${CMAKE_CURRENT_SOURCE_DIR}/makesdna/DNA_texture_types.h
 	${CMAKE_CURRENT_SOURCE_DIR}/makesdna/DNA_userdef_types.h
@@ -91,7 +92,6 @@ add_subdirectory(blenlib)
 add_subdirectory(render)
 add_subdirectory(blenfont)
 add_subdirectory(blenloader)
-add_subdirectory(readblenfile)
 add_subdirectory(blenpluginapi)
 add_subdirectory(ikplugin)
 add_subdirectory(gpu)
@@ -123,6 +123,5 @@ if(WITH_PYTHON)
 endif()
 
 if(WITH_OPENCOLLADA)
-  add_subdirectory(collada)
+	add_subdirectory(collada)
 endif()
-

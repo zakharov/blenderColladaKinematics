@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern/audaspace/ffmpeg
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-02-25T10:21:56.373241Z
-35141
-jesterking
+2011-08-30T09:15:55.930526Z
+39792
+nexyon
 
 
 
@@ -26,17 +26,17 @@ jesterking
 
 954f8c5b-7b00-dc11-b283-0030488c597c
 
-AUD_FFMPEGReader.cpp
+AUD_FFMPEGWriter.h
 file
 
 
 
 
-2011-03-03T12:25:17.750297Z
-074afe12213978a70bc1a19c75afb168
-2011-02-25T10:21:56.373241Z
-35141
-jesterking
+2011-09-21T18:15:46.363695Z
+2ea6add67d49b6994432719dc8343501
+2011-08-30T09:15:55.930526Z
+39792
+nexyon
 has-props
 
 
@@ -58,7 +58,41 @@ has-props
 
 
 
-10038
+3367
+
+AUD_FFMPEGReader.cpp
+file
+
+
+
+
+2011-09-21T18:15:46.363695Z
+7687bb1f58190b2856c47c97d59976b6
+2011-08-30T09:15:55.930526Z
+39792
+nexyon
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10701
 
 AUD_FFMPEGFactory.cpp
 file
@@ -66,11 +100,11 @@ file
 
 
 
-2011-03-03T12:25:17.750297Z
-40d4b08629bc14b56eb317f5eb48a9ff
-2011-02-25T10:21:56.373241Z
-35141
-jesterking
+2011-09-21T18:15:46.363695Z
+863eb5f2ed026707c372966e035c3190
+2011-08-30T09:15:55.930526Z
+39792
+nexyon
 has-props
 
 
@@ -92,7 +126,7 @@ has-props
 
 
 
-1631
+1608
 
 AUD_FFMPEGReader.h
 file
@@ -100,11 +134,11 @@ file
 
 
 
-2011-03-03T12:25:17.750297Z
-65ff67d75702f673f1a64a96ec9000c3
-2011-02-25T10:21:56.373241Z
-35141
-jesterking
+2011-09-21T18:15:46.367695Z
+0040db405de8777b5928ea6ecba9b493
+2011-08-30T09:15:55.930526Z
+39792
+nexyon
 has-props
 
 
@@ -126,7 +160,7 @@ has-props
 
 
 
-3856
+3917
 
 AUD_FFMPEGFactory.h
 file
@@ -134,11 +168,11 @@ file
 
 
 
-2011-03-03T12:25:17.750297Z
-85d650e988d4b0caab0b4c316c4deab8
-2011-02-25T10:21:56.373241Z
-35141
-jesterking
+2011-09-21T18:15:46.367695Z
+a4bb697bb5aae9aa73925e4d1808cbfc
+2011-08-30T09:15:55.930526Z
+39792
+nexyon
 has-props
 
 
@@ -160,5 +194,39 @@ has-props
 
 
 
-2092
+2102
+
+AUD_FFMPEGWriter.cpp
+file
+
+
+
+
+2011-09-21T18:15:46.367695Z
+e682363cf2b063ad73690202a54492c8
+2011-08-30T09:15:55.930526Z
+39792
+nexyon
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8360
 

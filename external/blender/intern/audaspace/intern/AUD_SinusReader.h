@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_SinusReader.h 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_SinusReader.h 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -37,11 +37,7 @@
 
 /**
  * This class is used for sine tone playback.
- * The output format is in the 16 bit format and stereo, the sample rate can be
- * specified.
- * As the two channels both play the same the output could also be mono, but
- * in most cases this will result in having to resample for output, so stereo
- * sound is created directly.
+ * The sample rate can be specified, the signal is mono.
  */
 class AUD_SinusReader : public AUD_IReader
 {
@@ -55,11 +51,6 @@ private:
 	 * The current position in samples.
 	 */
 	int m_position;
-
-	/**
-	 * The playback buffer.
-	 */
-	AUD_Buffer m_buffer;
 
 	/**
 	 * The sample rate for the output.
@@ -83,7 +74,7 @@ public:
 	virtual int getLength() const;
 	virtual int getPosition() const;
 	virtual AUD_Specs getSpecs() const;
-	virtual void read(int & length, sample_t* & buffer);
+	virtual void read(int& length, bool& eos, sample_t* buffer);
 };
 
 #endif //AUD_SINUSREADER

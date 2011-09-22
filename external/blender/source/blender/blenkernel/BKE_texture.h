@@ -1,5 +1,5 @@
 /*
- * $Id: BKE_texture.h 35338 2011-03-03 18:53:07Z ton $ 
+ * $Id: BKE_texture.h 37078 2011-06-01 16:17:38Z blendix $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -102,6 +102,8 @@ void set_current_world_texture(struct World *wo, struct Tex *tex);
 void set_current_material_texture(struct Material *ma, struct Tex *tex);
 void set_current_lamp_texture(struct Lamp *la, struct Tex *tex);
 void set_current_particle_texture(struct ParticleSettings *part, struct Tex *tex);
+
+int has_current_material_texture(struct Material *ma);
 
 struct TexMapping *add_mapping(void);
 void init_mapping(struct TexMapping *texmap);

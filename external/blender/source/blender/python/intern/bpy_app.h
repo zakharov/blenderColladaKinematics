@@ -1,5 +1,5 @@
 /*
- * $Id: bpy_app.h 35236 2011-02-27 20:10:08Z jesterking $
+ * $Id: bpy_app.h 37088 2011-06-02 08:29:16Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -29,6 +29,6 @@
 #ifndef BPY_APP_H
 #define BPY_APP_H
 
-PyObject *BPY_app_struct( void );
+PyObject *BPY_app_struct(void);
 
 #endif // BPY_APP_H

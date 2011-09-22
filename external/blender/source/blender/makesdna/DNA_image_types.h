@@ -1,5 +1,5 @@
 /*
- * $Id: DNA_image_types.h 34941 2011-02-17 20:48:12Z jesterking $ 
+ * $Id: DNA_image_types.h 38551 2011-07-21 00:41:00Z campbellbarton $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -102,7 +102,8 @@ typedef struct Image {
 	short animspeed;
 	
 	/* for generated images */
-	short gen_x, gen_y, gen_type;
+	short gen_x, gen_y;
+	char gen_type, gen_flag;
 	
 	/* display aspect - for UV editing images resized for faster openGL display */
 	float aspx, aspy;
@@ -135,6 +136,9 @@ typedef struct Image {
 /* render */
 #define IMA_MAX_RENDER_TEXT		512
 #define IMA_MAX_RENDER_SLOT		8
+
+/* gen_flag */
+#define IMA_GEN_FLOAT		1
 
 #endif
 

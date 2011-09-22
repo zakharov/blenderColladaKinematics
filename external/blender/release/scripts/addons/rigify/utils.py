@@ -18,9 +18,9 @@
 
 import bpy
 import imp
-from random import randint
+import random
+import time
 from mathutils import Vector
-from math import ceil, floor
 from rna_prop_ui import rna_idprop_ui_prop_get
 
 RIG_DIR = "rigs"  # Name of the directory where rig types are kept
@@ -128,7 +128,7 @@ def new_bone(obj, bone_name):
         bpy.ops.object.mode_set(mode='EDIT')
         return name
     else:
-        raise MetarigError("Can't add new bone '%s' outside of edit mode." % bone_name)
+        raise MetarigError("Can't add new bone '%s' outside of edit mode" % bone_name)
 
 
 def copy_bone(obj, bone_name, assign_name=''):
@@ -136,7 +136,7 @@ def copy_bone(obj, bone_name, assign_name=''):
         Returns the resulting bone's name.
     """
     if bone_name not in obj.data.bones:
-        raise MetarigError("copy_bone(): bone '%s' not found, cannot copy it." % bone_name)
+        raise MetarigError("copy_bone(): bone '%s' not found, cannot copy it" % bone_name)
 
     if obj == bpy.context.active_object and bpy.context.mode == 'EDIT_ARMATURE':
         if assign_name == '':
@@ -184,18 +184,29 @@ def copy_bone(obj, bone_name, assign_name=''):
         pose_bone_2.lock_rotation_w = pose_bone_1.lock_rotation_w
         pose_bone_2.lock_rotations_4d = pose_bone_1.lock_rotations_4d
 
+        # Copy custom properties
+        for key in pose_bone_1.keys():
+            if key != "_RNA_UI" \
+            and key != "rigify_parameters" \
+            and key != "rigify_type":
+                prop1 = rna_idprop_ui_prop_get(pose_bone_1, key, create=False)
+                prop2 = rna_idprop_ui_prop_get(pose_bone_2, key, create=True)
+                pose_bone_2[key] = pose_bone_1[key]
+                for key in prop1.keys():
+                    prop2[key] = prop1[key]
+
         bpy.ops.object.mode_set(mode='EDIT')
 
         return bone_name_2
     else:
-        raise MetarigError("Cannot copy bones outside of edit mode.")
+        raise MetarigError("Cannot copy bones outside of edit mode")
 
 
 def flip_bone(obj, bone_name):
     """ Flips an edit bone.
     """
     if bone_name not in obj.data.bones:
-        raise MetarigError("flip_bone(): bone '%s' not found, cannot copy it." % bone_name)
+        raise MetarigError("flip_bone(): bone '%s' not found, cannot copy it" % bone_name)
 
     if obj == bpy.context.active_object and bpy.context.mode == 'EDIT_ARMATURE':
         bone = obj.data.edit_bones[bone_name]
@@ -205,14 +216,14 @@ def flip_bone(obj, bone_name):
         bone.head = tail
         bone.tail = head
     else:
-        raise MetarigError("Cannot flip bones outside of edit mode.")
+        raise MetarigError("Cannot flip bones outside of edit mode")
 
 
 def put_bone(obj, bone_name, pos):
     """ Places a bone at the given position.
     """
     if bone_name not in obj.data.bones:
-        raise MetarigError("put_bone(): bone '%s' not found, cannot copy it." % bone_name)
+        raise MetarigError("put_bone(): bone '%s' not found, cannot copy it" % bone_name)
 
     if obj == bpy.context.active_object and bpy.context.mode == 'EDIT_ARMATURE':
         bone = obj.data.edit_bones[bone_name]
@@ -220,7 +231,7 @@ def put_bone(obj, bone_name, pos):
         delta = pos - bone.head
         bone.translate(delta)
     else:
-        raise MetarigError("Cannot 'put' bones outside of edit mode.")
+        raise MetarigError("Cannot 'put' bones outside of edit mode")
 
 
 #=============================================
@@ -231,7 +242,7 @@ def obj_to_bone(obj, rig, bone_name):
     """ Places an object at the location/rotation/scale of the given bone.
     """
     if bpy.context.mode == 'EDIT_ARMATURE':
-        raise MetarigError("obj_to_bone(): does not work while in edit mode.")
+        raise MetarigError("obj_to_bone(): does not work while in edit mode")
 
     bone = rig.data.bones[bone_name]
 
@@ -278,7 +289,7 @@ def create_line_widget(rig, bone_name):
         mesh.update()
 
 
-def create_circle_widget(rig, bone_name, radius=1.0, head_tail=0.0):
+def create_circle_widget(rig, bone_name, radius=1.0, head_tail=0.0, with_line=False):
     """ Creates a basic circle widget, a circle around the y-axis.
         radius: the radius of the circle
         head_tail: where along the length of the bone the circle is (0.0=head, 1.0=tail)
@@ -287,7 +298,10 @@ def create_circle_widget(rig, bone_name, radius=1.0, head_tail=0.0):
     if obj != None:
         v = [(0.7071068286895752, 2.980232238769531e-07, -0.7071065306663513), (0.8314696550369263, 2.980232238769531e-07, -0.5555699467658997), (0.9238795042037964, 2.682209014892578e-07, -0.3826831877231598), (0.9807852506637573, 2.5331974029541016e-07, -0.19509011507034302), (1.0, 2.365559055306221e-07, 1.6105803979371558e-07), (0.9807853698730469, 2.2351741790771484e-07, 0.19509044289588928), (0.9238796234130859, 2.086162567138672e-07, 0.38268351554870605), (0.8314696550369263, 1.7881393432617188e-07, 0.5555704236030579), (0.7071068286895752, 1.7881393432617188e-07, 0.7071070075035095), (0.5555702447891235, 1.7881393432617188e-07, 0.8314698934555054), (0.38268327713012695, 1.7881393432617188e-07, 0.923879861831665), (0.19509008526802063, 1.7881393432617188e-07, 0.9807855486869812), (-3.2584136988589307e-07, 1.1920928955078125e-07, 1.000000238418579), (-0.19509072601795197, 1.7881393432617188e-07, 0.9807854294776917), (-0.3826838731765747, 1.7881393432617188e-07, 0.9238795638084412), (-0.5555707216262817, 1.7881393432617188e-07, 0.8314695358276367), (-0.7071071863174438, 1.7881393432617188e-07, 0.7071065902709961), (-0.8314700126647949, 1.7881393432617188e-07, 0.5555698871612549), (-0.923879861831665, 2.086162567138672e-07, 0.3826829195022583), (-0.9807853698730469, 2.2351741790771484e-07, 0.1950896978378296), (-1.0, 2.365559907957504e-07, -7.290432222362142e-07), (-0.9807850122451782, 2.5331974029541016e-07, -0.195091113448143), (-0.9238790273666382, 2.682209014892578e-07, -0.38268423080444336), (-0.831468939781189, 2.980232238769531e-07, -0.5555710196495056), (-0.7071058750152588, 2.980232238769531e-07, -0.707107424736023), (-0.555569052696228, 2.980232238769531e-07, -0.8314701318740845), (-0.38268208503723145, 2.980232238769531e-07, -0.923879861831665), (-0.19508881866931915, 2.980232238769531e-07, -0.9807853102684021), (1.6053570561780361e-06, 2.980232238769531e-07, -0.9999997615814209), (0.19509197771549225, 2.980232238769531e-07, -0.9807847142219543), (0.3826850652694702, 2.980232238769531e-07, -0.9238786101341248), (0.5555717945098877, 2.980232238769531e-07, -0.8314683437347412)]
         verts = [(a[0] * radius, head_tail, a[2] * radius) for a in v]
-        edges = [(0, 1), (1, 2), (2, 3), (3, 4), (4, 5), (5, 6), (6, 7), (7, 8), (8, 9), (9, 10), (10, 11), (11, 12), (12, 13), (13, 14), (14, 15), (15, 16), (16, 17), (17, 18), (18, 19), (19, 20), (20, 21), (21, 22), (22, 23), (23, 24), (24, 25), (25, 26), (26, 27), (27, 28), (28, 29), (29, 30), (30, 31), (0, 31)]
+        if with_line:
+            edges = [(28, 12), (0, 1), (1, 2), (2, 3), (3, 4), (4, 5), (5, 6), (6, 7), (7, 8), (8, 9), (9, 10), (10, 11), (11, 12), (12, 13), (13, 14), (14, 15), (15, 16), (16, 17), (17, 18), (18, 19), (19, 20), (20, 21), (21, 22), (22, 23), (23, 24), (24, 25), (25, 26), (26, 27), (27, 28), (28, 29), (29, 30), (30, 31), (0, 31)]
+        else:
+            edges = [(0, 1), (1, 2), (2, 3), (3, 4), (4, 5), (5, 6), (6, 7), (7, 8), (8, 9), (9, 10), (10, 11), (11, 12), (12, 13), (13, 14), (14, 15), (15, 16), (16, 17), (17, 18), (18, 19), (19, 20), (20, 21), (21, 22), (22, 23), (23, 24), (24, 25), (25, 26), (26, 27), (27, 28), (28, 29), (29, 30), (30, 31), (0, 31)]
         mesh = obj.data
         mesh.from_pydata(verts, edges, [])
         mesh.update()
@@ -333,6 +347,17 @@ def create_bone_widget(rig, bone_name):
         mesh.update()
 
 
+def create_compass_widget(rig, bone_name):
+    """ Creates a compass-shaped widget.
+    """
+    obj = create_widget(rig, bone_name)
+    if obj != None:
+        verts = [(0.0, 1.2000000476837158, 0.0), (0.19509032368659973, 0.9807852506637573, 0.0), (0.3826834559440613, 0.9238795042037964, 0.0), (0.5555702447891235, 0.8314695954322815, 0.0), (0.7071067690849304, 0.7071067690849304, 0.0), (0.8314696550369263, 0.5555701851844788, 0.0), (0.9238795042037964, 0.3826834261417389, 0.0), (0.9807852506637573, 0.19509035348892212, 0.0), (1.2000000476837158, 7.549790126404332e-08, 0.0), (0.9807853102684021, -0.19509020447731018, 0.0), (0.9238795638084412, -0.38268327713012695, 0.0), (0.8314696550369263, -0.5555701851844788, 0.0), (0.7071067690849304, -0.7071067690849304, 0.0), (0.5555701851844788, -0.8314696550369263, 0.0), (0.38268327713012695, -0.9238796234130859, 0.0), (0.19509008526802063, -0.9807853102684021, 0.0), (-3.2584136988589307e-07, -1.2999999523162842, 0.0), (-0.19509072601795197, -0.9807851910591125, 0.0), (-0.3826838731765747, -0.9238793253898621, 0.0), (-0.5555707216262817, -0.8314692974090576, 0.0), (-0.7071072459220886, -0.707106351852417, 0.0), (-0.8314700126647949, -0.5555696487426758, 0.0), (-0.923879861831665, -0.3826826810836792, 0.0), (-0.9807854294776917, -0.1950894594192505, 0.0), (-1.2000000476837158, 9.655991561885457e-07, 0.0), (-0.980785071849823, 0.1950913518667221, 0.0), (-0.923879086971283, 0.38268446922302246, 0.0), (-0.831468939781189, 0.5555712580680847, 0.0), (-0.7071058750152588, 0.707107663154602, 0.0), (-0.5555691123008728, 0.8314703702926636, 0.0), (-0.38268208503723145, 0.9238801002502441, 0.0), (-0.19508881866931915, 0.9807855486869812, 0.0)]
+        edges = [(0, 1), (1, 2), (2, 3), (3, 4), (4, 5), (5, 6), (6, 7), (7, 8), (8, 9), (9, 10), (10, 11), (11, 12), (12, 13), (13, 14), (14, 15), (15, 16), (16, 17), (17, 18), (18, 19), (19, 20), (20, 21), (21, 22), (22, 23), (23, 24), (24, 25), (25, 26), (26, 27), (27, 28), (28, 29), (29, 30), (30, 31), (0, 31)]
+        mesh = obj.data
+        mesh.from_pydata(verts, edges, [])
+        mesh.update()
+
 def create_root_widget(rig, bone_name):
     """ Creates a widget for the root bone.
     """
@@ -348,6 +373,20 @@ def create_root_widget(rig, bone_name):
 #=============================================
 # Misc
 #=============================================
+
+def copy_attributes(a, b):
+    keys = dir(a)
+    for key in keys:
+        if not key.startswith("_") \
+        and not key.startswith("error_") \
+        and key != "group" \
+        and key != "is_valid" \
+        and key != "rna_type" \
+        and key != "bl_rna":
+            try:
+                setattr(b, key, getattr(a, key))
+            except AttributeError:
+                pass
 
 
 def get_rig_type(rig_type):
@@ -497,10 +536,16 @@ def write_metarig(obj, layers=False, func_name="create_sample"):
     return "\n".join(code)
 
 
-def random_string(length):
+def random_id(length = 8):
+    """ Generates a random alphanumeric id string.
+    """
+    tlength = int(length / 2)
+    rlength = int(length / 2) + int(length % 2)
+
     chars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
     text = ""
-    for i in range(0, length):
-        text += chars[randint(0, 35)]
+    for i in range(0, rlength):
+        text += random.choice(chars)
+    text += str(hex(int(time.time())))[2:][-tlength:].rjust(tlength, '0')[::-1]
     return text
 

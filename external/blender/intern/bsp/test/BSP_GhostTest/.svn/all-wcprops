@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 78
-/svnroot/bf-blender/!svn/ver/34567/trunk/blender/intern/bsp/test/BSP_GhostTest
+/svnroot/bf-blender/!svn/ver/36578/trunk/blender/intern/bsp/test/BSP_GhostTest
 END
 BSP_GhostTest3D.cpp
 K 25
@@ -19,7 +19,7 @@ BSP_GhostTest.dsw
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/bsp/test/BSP_GhostTest/BSP_GhostTest.dsw
+/svnroot/bf-blender/!svn/ver/36578/trunk/blender/intern/bsp/test/BSP_GhostTest/BSP_GhostTest.dsw
 END
 BSP_GhostTest3D.h
 K 25
@@ -85,5 +85,5 @@ BSP_GhostTest.dsp
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/intern/bsp/test/BSP_GhostTest/BSP_GhostTest.dsp
+/svnroot/bf-blender/!svn/ver/36578/trunk/blender/intern/bsp/test/BSP_GhostTest/BSP_GhostTest.dsp
 END

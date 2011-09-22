@@ -1,49 +1,49 @@
 K 25
 svn:wc:ra_dav:version-url
 V 87
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_sequencer
+/svnroot/bf-blender/!svn/ver/40390/trunk/blender/source/blender/editors/space_sequencer
 END
 sequencer_intern.h
 K 25
 svn:wc:ra_dav:version-url
 V 106
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_sequencer/sequencer_intern.h
+/svnroot/bf-blender/!svn/ver/39749/trunk/blender/source/blender/editors/space_sequencer/sequencer_intern.h
 END
 sequencer_edit.c
 K 25
 svn:wc:ra_dav:version-url
 V 104
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_sequencer/sequencer_edit.c
+/svnroot/bf-blender/!svn/ver/40390/trunk/blender/source/blender/editors/space_sequencer/sequencer_edit.c
 END
 sequencer_add.c
 K 25
 svn:wc:ra_dav:version-url
 V 103
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_sequencer/sequencer_add.c
+/svnroot/bf-blender/!svn/ver/40351/trunk/blender/source/blender/editors/space_sequencer/sequencer_add.c
 END
 space_sequencer.c
 K 25
 svn:wc:ra_dav:version-url
 V 105
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_sequencer/space_sequencer.c
+/svnroot/bf-blender/!svn/ver/40353/trunk/blender/source/blender/editors/space_sequencer/space_sequencer.c
 END
 SConscript
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/svnroot/bf-blender/!svn/ver/35028/trunk/blender/source/blender/editors/space_sequencer/SConscript
+/svnroot/bf-blender/!svn/ver/39749/trunk/blender/source/blender/editors/space_sequencer/SConscript
 END
 sequencer_scopes.c
 K 25
 svn:wc:ra_dav:version-url
 V 106
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_sequencer/sequencer_scopes.c
+/svnroot/bf-blender/!svn/ver/35971/trunk/blender/source/blender/editors/space_sequencer/sequencer_scopes.c
 END
 sequencer_draw.c
 K 25
 svn:wc:ra_dav:version-url
 V 104
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_sequencer/sequencer_draw.c
+/svnroot/bf-blender/!svn/ver/40114/trunk/blender/source/blender/editors/space_sequencer/sequencer_draw.c
 END
 sequencer_buttons.c
 K 25
@@ -55,17 +55,17 @@ sequencer_select.c
 K 25
 svn:wc:ra_dav:version-url
 V 106
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_sequencer/sequencer_select.c
+/svnroot/bf-blender/!svn/ver/40351/trunk/blender/source/blender/editors/space_sequencer/sequencer_select.c
 END
 sequencer_ops.c
 K 25
 svn:wc:ra_dav:version-url
 V 103
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_sequencer/sequencer_ops.c
+/svnroot/bf-blender/!svn/ver/39749/trunk/blender/source/blender/editors/space_sequencer/sequencer_ops.c
 END
 CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 102
-/svnroot/bf-blender/!svn/ver/35028/trunk/blender/source/blender/editors/space_sequencer/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/38443/trunk/blender/source/blender/editors/space_sequencer/CMakeLists.txt
 END

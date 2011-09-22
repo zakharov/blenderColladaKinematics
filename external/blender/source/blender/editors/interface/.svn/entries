@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/editors/interface
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-03-05T10:29:10.037531Z
-35362
-campbellbarton
+2011-09-21T15:15:30.873518Z
+40431
+blendix
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-03-05T14:58:44.388169Z
-3cbf19003d1a434b6e3e3fd7af17256f
-2011-03-05T10:29:10.037531Z
-35362
-campbellbarton
+2011-09-21T18:16:58.132051Z
+9aba02ec4f36b134deda4afa474b1613
+2011-09-20T13:41:43.050547Z
+40395
+nazgul
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-65305
+65356
 
 interface.c
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-03-03T21:53:56.192120Z
-62ef22a1cd0935fec9247dc40f9c67d0
-2011-03-03T17:59:04.039119Z
-35337
-campbellbarton
+2011-09-21T18:16:58.132051Z
+ebe1cc9f21f0bd601772683dff128d6d
+2011-09-21T15:15:30.873518Z
+40431
+blendix
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-91348
+96595
 
 interface_anim.c
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-03-03T12:28:35.746297Z
-5f68f5228290a502f4e35536105b4c78
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:58.132051Z
+4888cd1b0f450b69e861f557c1375251
+2011-08-30T09:15:55.930526Z
+39792
+nexyon
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-4044
+7110
 
 SConscript
 file
@@ -134,7 +134,7 @@ file
 
 
 
-2011-03-03T12:28:35.746297Z
+2011-09-21T18:16:58.132051Z
 f317e1ef1a238a29db29651942cb77c7
 2011-02-21T12:35:04.852834Z
 35028
@@ -168,11 +168,11 @@ file
 
 
 
-2011-03-03T12:28:35.750297Z
-4442d97d207e26d7d44fa243f662039d
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:58.136051Z
+fa920f858d4a2c4ca3640f9939e5b4d3
+2011-09-11T04:31:09.291328Z
+40109
+campbellbarton
 has-props
 
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-48221
+51256
 
 interface_draw.c
 file
@@ -202,11 +202,11 @@ file
 
 
 
-2011-03-03T12:28:35.750297Z
-02d970c73d98e0f0beb3824fed72acc8
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:58.136051Z
+7904dd59037c4cf83ecebcfa6aa5d25f
+2011-09-17T16:57:37.013904Z
+40304
+campbellbarton
 has-props
 
 
@@ -228,7 +228,7 @@ has-props
 
 
 
-44985
+45109
 
 interface_templates.c
 file
@@ -236,11 +236,11 @@ file
 
 
 
-2011-03-05T14:58:44.388169Z
-fe631259cd2af2c040d1de3b0b1a0188
-2011-03-05T10:29:10.037531Z
-35362
-campbellbarton
+2011-09-21T18:16:58.136051Z
+658d269678e3c4970cf395547acf1495
+2011-09-21T15:15:30.873518Z
+40431
+blendix
 has-props
 
 
@@ -262,7 +262,7 @@ has-props
 
 
 
-76232
+81405
 
 interface_panel.c
 file
@@ -270,11 +270,11 @@ file
 
 
 
-2011-03-03T12:28:35.754297Z
-6befd1e2a6d21ba94987420bf8aab57a
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:58.140051Z
+4cde82cfa3c0b01f1bdf1d5a34ac01fe
+2011-09-20T13:41:43.050547Z
+40395
+nazgul
 has-props
 
 
@@ -296,7 +296,7 @@ has-props
 
 
 
-33132
+33436
 
 interface_handlers.c
 file
@@ -304,11 +304,11 @@ file
 
 
 
-2011-03-03T21:53:56.196120Z
-4825e258b6ea4178a2808607d375813f
-2011-03-03T17:59:04.039119Z
-35337
-campbellbarton
+2011-09-21T18:16:58.140051Z
+b2455015034ee902d2cf1f06d63e7a05
+2011-09-20T13:41:43.050547Z
+40395
+nazgul
 has-props
 
 
@@ -330,7 +330,7 @@ has-props
 
 
 
-161438
+164945
 
 interface_style.c
 file
@@ -338,11 +338,11 @@ file
 
 
 
-2011-03-03T12:28:35.754297Z
-7157c0822c9bf448a7470b940f36bfbe
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:58.144051Z
+ff13d7bfa6dfcf233e0f753e1537534c
+2011-09-21T15:15:30.873518Z
+40431
+blendix
 has-props
 
 
@@ -364,7 +364,7 @@ has-props
 
 
 
-10064
+11063
 
 interface_utils.c
 file
@@ -372,11 +372,11 @@ file
 
 
 
-2011-03-03T12:28:35.758297Z
-0a5ba59f6e2e5fccf6d2373d8b68c16d
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:58.144051Z
+0c845380f28385da999ac265974eaefc
+2011-09-20T13:41:43.050547Z
+40395
+nazgul
 has-props
 
 
@@ -398,7 +398,7 @@ has-props
 
 
 
-6201
+6207
 
 view2d_ops.c
 file
@@ -406,11 +406,11 @@ file
 
 
 
-2011-03-03T12:28:35.758297Z
-94191ee37ac97f0b00656d68f3a09b56
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:58.144051Z
+675e9b73b024290b702fe0c7df6b5cfb
+2011-09-20T13:41:43.050547Z
+40395
+nazgul
 has-props
 
 
@@ -432,7 +432,7 @@ has-props
 
 
 
-53148
+53677
 
 interface_ops.c
 file
@@ -440,11 +440,11 @@ file
 
 
 
-2011-03-03T12:28:35.758297Z
-9e8b91992333cc22abea21a8dda6ee18
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:58.144051Z
+b57f98b6aa28a2fe881ed637fde1a90e
+2011-09-19T12:26:20.076486Z
+40351
+mont29
 has-props
 
 
@@ -466,7 +466,7 @@ has-props
 
 
 
-11962
+11952
 
 interface_intern.h
 file
@@ -474,11 +474,11 @@ file
 
 
 
-2011-03-03T12:28:35.758297Z
-89ebe9f71d7cb4f7246295cfd6c97227
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:58.144051Z
+94f0eada02b84749142622695d8bf277
+2011-09-20T13:41:43.050547Z
+40395
+nazgul
 has-props
 
 
@@ -500,7 +500,7 @@ has-props
 
 
 
-14788
+15362
 
 interface_regions.c
 file
@@ -508,10 +508,44 @@ file
 
 
 
-2011-03-05T14:58:44.392169Z
-3866bfdc202af33d3723140f949c529f
-2011-03-05T10:29:10.037531Z
-35362
+2011-09-21T18:16:58.148051Z
+1d23357b641d744c1cc54113888ed462
+2011-09-20T13:41:43.050547Z
+40395
+nazgul
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+69667
+
+interface_widgets.c
+file
+
+
+
+
+2011-09-21T18:16:58.148051Z
+a0cc48fb31076c84d83549e07f259700
+2011-09-14T01:48:55.145129Z
+40197
 campbellbarton
 has-props
 
@@ -534,41 +568,7 @@ has-props
 
 
 
-65131
-
-interface_widgets.c
-file
-
-
-
-
-2011-03-03T12:28:35.762297Z
-e8fe04bbef83f2ed553539019e8cb975
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-75888
+80946
 
 interface_icons.c
 file
@@ -576,11 +576,11 @@ file
 
 
 
-2011-03-03T12:28:35.762297Z
-777f07b463876fd8191a48c3e88dac16
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:58.148051Z
+7d6b973af72aac1fdd75a83b704e71f4
+2011-08-25T15:49:52.373760Z
+39694
+campbellbarton
 has-props
 
 
@@ -602,7 +602,7 @@ has-props
 
 
 
-28211
+28603
 
 CMakeLists.txt
 file
@@ -610,11 +610,11 @@ file
 
 
 
-2011-03-03T12:28:35.762297Z
-2f2b7b7399f16d145ba36a7bfc40c4f4
-2011-02-21T12:35:04.852834Z
-35028
-jesterking
+2011-09-21T18:16:58.148051Z
+cec220efbfdb3a0a3a01f04be532ba29
+2011-07-17T09:11:13.810557Z
+38443
+campbellbarton
 has-props
 
 
@@ -636,7 +636,7 @@ has-props
 
 
 
-1590
+1701
 
 interface_layout.c
 file
@@ -644,11 +644,11 @@ file
 
 
 
-2011-03-03T12:28:35.762297Z
-44c4e79604ad104fb7265c4db4f4164d
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:58.152051Z
+0ad41f03e71729ed7e5f3246196e4400
+2011-09-20T13:41:43.050547Z
+40395
+nazgul
 has-props
 
 
@@ -670,5 +670,5 @@ has-props
 
 
 
-68037
+70610
 

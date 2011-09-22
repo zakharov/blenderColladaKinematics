@@ -1,5 +1,5 @@
 /*
- * $Id: wm_window.c 35179 2011-02-25 14:04:21Z jesterking $
+ * $Id: wm_window.c 40395 2011-09-20 13:41:43Z nazgul $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -48,6 +48,8 @@
 #include "BLI_blenlib.h"
 #include "BLI_utildefines.h"
 
+#include "BLF_translation.h"
+
 #include "BKE_blender.h"
 #include "BKE_context.h"
 #include "BKE_library.h"
@@ -72,6 +74,8 @@
 
 #include "GPU_draw.h"
 #include "GPU_extensions.h"
+
+#include "UI_interface.h"
 
 /* the global to talk to ghost */
 static GHOST_SystemHandle g_system= NULL;
@@ -238,6 +242,8 @@ wmWindow *wm_window_copy(bContext *C, wmWindow *winorig)
 /* this is event from ghost, or exit-blender op */
 void wm_window_close(bContext *C, wmWindowManager *wm, wmWindow *win)
 {
+	bScreen *screen= win->screen;
+	
 	BLI_remlink(&wm->windows, win);
 	
 	wm_draw_window_clear(win);
@@ -246,13 +252,13 @@ void wm_window_close(bContext *C, wmWindowManager *wm, wmWindow *win)
 	WM_event_remove_handlers(C, &win->modalhandlers);
 	ED_screen_exit(C, win, win->screen); 
 	
-	/* if temp screen, delete it */
-	if(win->screen->temp) {
-		Main *bmain= CTX_data_main(C);
-		free_libblock(&bmain->screen, win->screen);
-	}
-	
 	wm_window_free(C, wm, win);
+	
+	/* if temp screen, delete it after window free (it stops jobs that can access it) */
+	if(screen->temp) {
+		Main *bmain= CTX_data_main(C);
+		free_libblock(&bmain->screen, screen);
+	}
 	
 	/* check remaining windows */
 	if(wm->windows.first) {
@@ -269,9 +275,11 @@ void wm_window_close(bContext *C, wmWindowManager *wm, wmWindow *win)
 
 void wm_window_title(wmWindowManager *wm, wmWindow *win)
 {
-	/* handle the 'temp' window */
+	/* handle the 'temp' window, only set title when not set before */
 	if(win->screen && win->screen->temp) {
-		GHOST_SetTitle(win->ghostwin, "Blender");
+		char *title= GHOST_GetTitle(win->ghostwin);
+		if(title==NULL || title[0]==0)
+			GHOST_SetTitle(win->ghostwin, "Blender");
 	}
 	else {
 		
@@ -500,11 +508,11 @@ void WM_window_open_temp(bContext *C, rcti *position, int type)
 	ED_screen_set(C, win->screen);
 	
 	if(sa->spacetype==SPACE_IMAGE)
-		GHOST_SetTitle(win->ghostwin, "Blender Render");
+		GHOST_SetTitle(win->ghostwin, UI_translate_do_iface(N_("Blender Render")));
 	else if(ELEM(sa->spacetype, SPACE_OUTLINER, SPACE_USERPREF))
-		GHOST_SetTitle(win->ghostwin, "Blender User Preferences");
+		GHOST_SetTitle(win->ghostwin, UI_translate_do_iface(N_("Blender User Preferences")));
 	else if(sa->spacetype==SPACE_FILE)
-		GHOST_SetTitle(win->ghostwin, "Blender File View");
+		GHOST_SetTitle(win->ghostwin, UI_translate_do_iface(N_("Blender File View")));
 	else
 		GHOST_SetTitle(win->ghostwin, "Blender");
 }
@@ -528,7 +536,12 @@ int wm_window_duplicate_exec(bContext *C, wmOperator *UNUSED(op))
 int wm_window_fullscreen_toggle_exec(bContext *C, wmOperator *UNUSED(op))
 {
 	wmWindow *window= CTX_wm_window(C);
-	GHOST_TWindowState state = GHOST_GetWindowState(window->ghostwin);
+	GHOST_TWindowState state;
+
+	if(G.background)
+		return OPERATOR_CANCELLED;
+
+	state= GHOST_GetWindowState(window->ghostwin);
 	if(state!=GHOST_kWindowStateFullScreen)
 		GHOST_SetWindowState(window->ghostwin, GHOST_kWindowStateFullScreen);
 	else
@@ -612,12 +625,12 @@ static int ghost_event_proc(GHOST_EventHandle evt, GHOST_TUserDataPtr private)
 		if (!ghostwin) {
 			// XXX - should be checked, why are we getting an event here, and
 			//	what is it?
-			
+			puts("<!> event has no window");
 			return 1;
 		} else if (!GHOST_ValidWindow(g_system, ghostwin)) {
 			// XXX - should be checked, why are we getting an event here, and
 			//	what is it?
-			
+			puts("<!> event has invalid window");			
 			return 1;
 		} else {
 			win= GHOST_GetWindowUserData(ghostwin);
@@ -664,13 +677,7 @@ static int ghost_event_proc(GHOST_EventHandle evt, GHOST_TUserDataPtr private)
 				
 				GHOST_ScreenToClient(win->ghostwin, wx, wy, &cx, &cy);
 				win->eventstate->x= cx;
-
-#if defined(__APPLE__) && defined(GHOST_COCOA)
-				//Cocoa already uses coordinates with y=0 at bottom
-				win->eventstate->y= cy;
-#else
 				win->eventstate->y= (win->sizey-1) - cy;
-#endif
 				
 				win->addmousemove= 1;	/* enables highlighted buttons */
 				
@@ -787,20 +794,13 @@ static int ghost_event_proc(GHOST_EventHandle evt, GHOST_TUserDataPtr private)
 				wmEvent event;
 				GHOST_TEventDragnDropData *ddd= GHOST_GetEventData(evt);
 				int cx, cy, wx, wy;
-
 				
 				/* entering window, update mouse pos */
 				GHOST_GetCursorPosition(g_system, &wx, &wy);
 				
 				GHOST_ScreenToClient(win->ghostwin, wx, wy, &cx, &cy);
 				win->eventstate->x= cx;
-				
-#if defined(__APPLE__) && defined(GHOST_COCOA)
-				//Cocoa already uses coordinates with y=0 at bottom
-				win->eventstate->y= cy;
-#else
 				win->eventstate->y= (win->sizey-1) - cy;
-#endif
 				
 				event= *(win->eventstate);	/* copy last state, like mouse coords */
 				
@@ -1002,6 +1002,8 @@ void WM_event_remove_timer(wmWindowManager *wm, wmWindow *UNUSED(win), wmTimer *
 		if(wt==timer)
 			break;
 	if(wt) {
+		if(wm->reports.reporttimer == wt)
+			wm->reports.reporttimer= NULL;
 		
 		BLI_remlink(&wm->timers, wt);
 		if(wt->customdata)
@@ -1138,12 +1140,7 @@ void wm_get_cursor_position(wmWindow *win, int *x, int *y)
 {
 	GHOST_GetCursorPosition(g_system, x, y);
 	GHOST_ScreenToClient(win->ghostwin, *x, *y, x, y);
-#if defined(__APPLE__) && defined(GHOST_COCOA)
-	//Cocoa has silly exception that should be fixed at the ghost level
-	//(ghost is an allegory for an invisible system specific code)
-#else
 	*y = (win->sizey-1) - *y;
-#endif
 }
 
 /* ******************* exported api ***************** */
@@ -1176,9 +1173,8 @@ void WM_cursor_warp(wmWindow *win, int x, int y)
 	if (win && win->ghostwin) {
 		int oldx=x, oldy=y;
 
-#if !defined(__APPLE__) || !defined(GHOST_COCOA)
 		y= win->sizey -y - 1;
-#endif
+
 		GHOST_ClientToScreen(win->ghostwin, x, y, &x, &y);
 		GHOST_SetCursorPosition(g_system, x, y);
 

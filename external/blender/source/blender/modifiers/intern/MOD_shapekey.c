@@ -1,5 +1,5 @@
 /*
-* $Id: MOD_shapekey.c 35178 2011-02-25 13:57:17Z jesterking $
+* $Id: MOD_shapekey.c 39342 2011-08-12 18:11:22Z blendix $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -148,5 +148,6 @@ ModifierTypeInfo modifierType_ShapeKey = {
 	/* dependsOnTime */     NULL,
 	/* dependsOnNormals */	NULL,
 	/* foreachObjectLink */ NULL,
-	/* foreachIDLink */     NULL
+	/* foreachIDLink */     NULL,
+	/* foreachTexLink */    NULL,
 };

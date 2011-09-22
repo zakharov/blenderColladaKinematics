@@ -1,5 +1,5 @@
 /*
- * $Id: wm_apple.c 35179 2011-02-25 14:04:21Z jesterking $
+ * $Id: wm_apple.c 37030 2011-05-31 01:15:44Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -30,8 +30,7 @@
  *  \ingroup wm
  */
 
-
-#ifdef __APPLE__
+/* note, this file builds on apple-carbon only! */
 
 #include "BKE_context.h"
 #include "BKE_global.h"
@@ -137,8 +136,3 @@ void wm_set_apple_prefsize(int scr_x, int scr_y)
 		G.windowstate= 0;
 	}
 }
-
-
-#endif /* __APPLE__ */
-
-

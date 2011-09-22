@@ -1,5 +1,5 @@
 /*
- * $Id: BKE_object.h 34962 2011-02-18 13:05:18Z jesterking $
+ * $Id: BKE_object.h 40197 2011-09-14 01:48:55Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -83,6 +83,7 @@ float dof_camera(struct Object *ob);
 	
 void *add_lamp(const char *name);
 struct Lamp *copy_lamp(struct Lamp *la);
+struct Lamp *localize_lamp(struct Lamp *la);
 void make_local_lamp(struct Lamp *la);
 void free_camera(struct Camera *ca);
 void free_lamp(struct Lamp *la);
@@ -91,7 +92,6 @@ struct Object *add_only_object(int type, const char *name);
 struct Object *add_object(struct Scene *scene, int type);
 
 struct Object *copy_object(struct Object *ob);
-void expand_local_object(struct Object *ob);
 void make_local_object(struct Object *ob);
 int object_is_libdata(struct Object *ob);
 int object_data_is_libdata(struct Object *ob);
@@ -108,6 +108,7 @@ void object_to_mat4(struct Object *ob, float mat[][4]);
 void object_apply_mat4(struct Object *ob, float mat[][4], const short use_compat, const short use_parent);
 
 void set_no_parent_ipo(int val);
+struct Object *object_pose_armature_get(struct Object *ob);
 
 void where_is_object_time(struct Scene *scene, struct Object *ob, float ctime);
 void where_is_object(struct Scene *scene, struct Object *ob);
@@ -128,6 +129,7 @@ void *object_tfm_backup(struct Object *ob);
 void object_tfm_restore(struct Object *ob, void *obtfm_pt);
 
 void object_handle_update(struct Scene *scene, struct Object *ob);
+void object_sculpt_modifiers_changed(struct Object *ob);
 
 float give_timeoffset(struct Object *ob);
 int give_obdata_texspace(struct Object *ob, short **texflag, float **loc, float **size, float **rot);
@@ -136,10 +138,15 @@ int object_insert_ptcache(struct Object *ob);
 // void object_delete_ptcache(struct Object *ob, int index);
 struct KeyBlock *object_insert_shape_key(struct Scene *scene, struct Object *ob, const char *name, int from_mix);
 
+int object_is_modified(struct Scene *scene, struct Object *ob);
+
+void object_camera_mode(struct RenderData *rd, struct Object *camera);
 void object_camera_matrix(
 		struct RenderData *rd, struct Object *camera, int winx, int winy, short field_second,
 		float winmat[][4], struct rctf *viewplane, float *clipsta, float *clipend, float *lens, float *ycor,
 		float *viewdx, float *viewdy);
+
+void object_relink(struct Object *ob);
 
 #ifdef __cplusplus
 }

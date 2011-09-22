@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/release/text
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-02-19T00:58:46.451918Z
-34984
-campbellbarton
+2011-08-09T07:33:51.615454Z
+39204
+dingto
 
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2011-03-03T12:25:48.586297Z
+2011-09-21T18:15:52.291725Z
 546e26a7c4049c6ff875f4a1fd49e26c
 2009-04-20T15:06:46.913736Z
 19820
@@ -66,10 +66,10 @@ file
 
 
 
-2011-03-03T12:25:48.586297Z
-f0557968e638bf4afe022bc6ad27eab8
-2010-02-12T13:34:04.213317Z
-26841
+2011-09-21T18:15:52.295725Z
+9a29899ee4f02fbca39e8446b3d38187
+2011-06-21T05:01:54.682189Z
+37689
 campbellbarton
 has-props
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-17992
+17997
 
 readme.html
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-03-03T12:25:48.590297Z
-226f74b2fe2ad7e6a6f0932090c422a2
-2011-02-19T00:58:46.451918Z
-34984
-campbellbarton
+2011-09-21T18:15:52.295725Z
+e01d76ce0c53bed5f0308fd35c025f1f
+2011-08-09T07:33:51.615454Z
+39204
+dingto
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-6309
+6166
 
 copyright.txt
 file
@@ -134,7 +134,7 @@ file
 
 
 
-2011-03-03T12:25:48.590297Z
+2011-09-21T18:15:52.299725Z
 b1d2379bd7f3cd17e7d09fe83071b5b2
 2010-08-02T13:31:43.088462Z
 30981

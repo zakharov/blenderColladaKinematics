@@ -54,16 +54,16 @@
 
 
 KX_TrackToActuator::KX_TrackToActuator(SCA_IObject *gameobj, 
-								       SCA_IObject *ob,
-									   int time,
-									   bool allow3D,
-									   int trackflag,
-									   int upflag)
-									   : SCA_IActuator(gameobj, KX_ACT_TRACKTO)
+                                       SCA_IObject *ob,
+                                       int time,
+                                       bool allow3D,
+                                       int trackflag,
+                                       int upflag)
+    : SCA_IActuator(gameobj, KX_ACT_TRACKTO)
 {
-    m_time = time;
-    m_allow3D = allow3D;
-    m_object = ob;
+	m_time = time;
+	m_allow3D = allow3D;
+	m_object = ob;
 	m_trackflag = trackflag;
 	m_upflag = upflag;
 	m_parentobj = 0;
@@ -219,7 +219,7 @@ bool KX_TrackToActuator::UnlinkObject(SCA_IObject* clientobj)
 	return false;
 }
 
-void KX_TrackToActuator::Relink(GEN_Map<GEN_HashedPtr, void*> *obj_map)
+void KX_TrackToActuator::Relink(CTR_Map<CTR_HashedPtr, void*> *obj_map)
 {
 	void **h_obj = (*obj_map)[m_object];
 	if (h_obj) {

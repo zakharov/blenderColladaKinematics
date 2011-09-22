@@ -52,11 +52,10 @@ Notes:<br>
 """
 
 import bpy
-import mathutils
 import struct
 import os.path
 from bpy.props import *
-from io_utils import load_image
+from bpy_extras.image_utils import load_image
 
 ##################
 ## Struct setup ##
@@ -342,6 +341,7 @@ class M3Importer(bpy.types.Operator):
     '''Import from M3 file format (.m3)'''
     bl_idname = "import_mesh.blizzard_m3"
     bl_label = 'Import M3'
+    bl_options = {'UNDO'}
 
     # List of operator properties, the attributes will be assigned
     # to the class instance from the operator settings before calling.

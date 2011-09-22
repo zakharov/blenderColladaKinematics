@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_CallbackIIRFilterReader.cpp 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_CallbackIIRFilterReader.cpp 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -31,7 +31,7 @@
 
 #include "AUD_CallbackIIRFilterReader.h"
 
-AUD_CallbackIIRFilterReader::AUD_CallbackIIRFilterReader(AUD_IReader* reader,
+AUD_CallbackIIRFilterReader::AUD_CallbackIIRFilterReader(AUD_Reference<AUD_IReader> reader,
 														 int in, int out,
 														 doFilterIIR doFilter,
 														 endFilterIIR endFilter,

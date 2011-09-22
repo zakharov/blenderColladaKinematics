@@ -1,5 +1,5 @@
 /*
-* $Id: DNA_cloth_types.h 34941 2011-02-17 20:48:12Z jesterking $
+* $Id: DNA_cloth_types.h 36419 2011-05-01 21:39:13Z joeedh $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -96,6 +96,7 @@ typedef struct ClothCollSettings
 	float	self_friction;		/* Fiction/damping with self contact.		 	*/
 	float	friction;		/* Friction/damping applied on contact with other object.*/
 	float 	selfepsilon; 		/* for selfcollision */
+	float repel_force, distance_repel;
 	int	flags;			/* collision flags defined in BKE_cloth.h */
 	short	self_loop_count;	/* How many iterations for the selfcollision loop	*/
 	short	loop_count;		/* How many iterations for the collision loop.		*/

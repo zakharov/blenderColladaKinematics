@@ -1,4 +1,4 @@
-# $Id: CMakeLists.txt 34486 2011-01-25 14:43:13Z campbellbarton $
+# $Id: CMakeLists.txt 38443 2011-07-17 09:11:13Z campbellbarton $
 # ***** BEGIN GPL LICENSE BLOCK *****
 #
 # This program is free software; you can redistribute it and/or
@@ -26,15 +26,18 @@
 
 set(INC
 	.
-	../../../source/kernel/gen_system
-	../../../source/blender/makesdna
-	../../../source/gameengine/SceneGraph
-	../../../source/gameengine/Ketsji
-	../../../intern/string
-	../../../intern/moto/include
-	../../../extern/glew/include
-	../../../intern/guardedalloc
 	../Expressions
+	../Ketsji
+	../SceneGraph
+	../../blender/makesdna
+	../../../intern/container
+	../../../intern/guardedalloc
+	../../../intern/moto/include
+	../../../intern/string
+)
+
+set(INC_SYS
+	${GLEW_INCLUDE_PATH}
 	${PYTHON_INCLUDE_DIRS}
 )
 
@@ -81,4 +84,4 @@ set(SRC
 
 add_definitions(-DGLEW_STATIC)
 
-blender_add_lib(ge_rasterizer "${SRC}" "${INC}")
+blender_add_lib(ge_rasterizer "${SRC}" "${INC}" "${INC_SYS}")

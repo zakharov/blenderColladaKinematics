@@ -1,5 +1,5 @@
 /*
- * $Id: loopcut.c 35242 2011-02-27 20:29:51Z jesterking $
+ * $Id: loopcut.c 36490 2011-05-04 20:34:30Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *

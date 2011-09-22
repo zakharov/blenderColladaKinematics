@@ -1,5 +1,5 @@
 /*
- * $Id: STR_String.cpp 35160 2011-02-25 11:51:19Z jesterking $
+ * $Id: STR_String.cpp 40341 2011-09-19 08:02:17Z campbellbarton $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -33,7 +33,7 @@
 
 /**
 
- * $Id: STR_String.cpp 35160 2011-02-25 11:51:19Z jesterking $
+ * $Id: STR_String.cpp 40341 2011-09-19 08:02:17Z campbellbarton $
  * Copyright (C) 2001 NaN Technologies B.V.
  * This file was formerly known as: GEN_StdString.cpp.
  * @date	April, 25, 2001
@@ -45,7 +45,7 @@
 #include <ctype.h>
 #include <string.h>
 #if defined(__sun__) || defined( __sun ) || defined (__sparc) || defined (__sparc__) || defined (_AIX)
-#include <strings.h>
+#  include <strings.h>
 #endif
 #include "STR_String.h"
 

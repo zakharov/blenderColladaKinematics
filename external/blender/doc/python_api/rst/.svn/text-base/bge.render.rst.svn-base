@@ -1,6 +1,6 @@
 
-Game Engine bge.render Module
-=============================
+Rasterizer (bge.render)
+=======================
 
 *****
 Intro
@@ -16,8 +16,8 @@ Intro
    import bge.render
    import bge.logic
 
-   # SCALE sets the speed of motion
-   SCALE=[1, 0.5]
+   # scale sets the speed of motion
+   scale = 1.0, 0.5
    
    co = bge.logic.getCurrentController()
    obj = co.getOwner()
@@ -27,8 +27,8 @@ Intro
    
    # Transform the mouse coordinates to see how far the mouse has moved.
    def mousePos():
-      x = (bge.render.getWindowWidth()/2 - mouse.getXPosition())*SCALE[0]
-      y = (bge.render.getWindowHeight()/2 - mouse.getYPosition())*SCALE[1]
+      x = (bge.render.getWindowWidth() / 2 - mouse.getXPosition()) * scale[0]
+      y = (bge.render.getWindowHeight() / 2 - mouse.getYPosition()) * scale[1]
       return (x, y)
    
    pos = mousePos()
@@ -43,7 +43,7 @@ Intro
    bge.logic.addActiveActuator(wmotion, True)
    
    # Centre the mouse
-   bge.render.setMousePosition(bge.render.getWindowWidth()/2, bge.render.getWindowHeight()/2)
+   bge.render.setMousePosition(bge.render.getWindowWidth() / 2, bge.render.getWindowHeight() / 2)
 
 *********
 Constants
@@ -215,7 +215,19 @@ Functions
    :type setting: string (lights, shaders, shadows, ramps, nodes, extra_textures)
    :rtype: boolean
 
+.. function:: setAnisotropicFiltering(level)
 
+   Set the anisotropic filtering level for textures.
+   
+   :arg level: The new anisotropic filtering level to use
+   :type level: integer (must be one of 1, 2, 4, 8, 16)
+   
+.. function:: getAnisotropicFiltering()
+
+   Get the anisotropic filtering level used for textures.
+   
+   :rtype: integer (one of 1, 2, 4, 8, 16)
+   
 .. function:: drawLine(fromVec,toVec,color)
 
    Draw a line in the 3D scene.

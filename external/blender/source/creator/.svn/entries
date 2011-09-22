@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/creator
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-03-04T14:16:43.240816Z
-35353
-jesterking
+2011-09-21T08:40:30.090958Z
+40419
+campbellbarton
 has-props
 
 
@@ -32,44 +32,10 @@ file
 
 
 
-2011-03-03T12:26:27.142297Z
-189a8424de84fa8e2bf853ec8ed03d7c
-2011-02-25T10:58:04.755871Z
-35149
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-38456
-
-SConscript
-file
-
-
-
-
-2011-03-03T12:26:27.142297Z
-b3a224e2ebebd7316cf62e39a5e0249f
-2010-10-31T04:11:39.269118Z
-32788
+2011-09-21T18:16:08.355804Z
+51aa55de95de0e7ac5184ff275b7b408
+2011-09-21T08:40:30.090958Z
+40419
 campbellbarton
 has-props
 
@@ -92,7 +58,41 @@ has-props
 
 
 
-1511
+38668
+
+SConscript
+file
+
+
+
+
+2011-09-21T18:16:08.355804Z
+bf8c54f47ee8c073bad100479514c616
+2011-06-08T11:53:07.659469Z
+37316
+jesterking
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+69
 
 buildinfo.c
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-03-03T12:26:27.142297Z
-468df346b4dddad51a90cd8ed5fa2f04
-2011-02-25T10:01:33.193768Z
-35139
-jesterking
+2011-09-21T18:16:08.355804Z
+8e1c18f1607ab4bfd116c2fb8205cd55
+2011-08-22T12:24:14.369064Z
+39614
+campbellbarton
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-2031
+1835
 
 CMakeLists.txt
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-03-05T14:58:41.776169Z
-d22573ca8075e2c678b7ad6f987c90f3
-2011-03-04T14:16:43.240816Z
-35353
-jesterking
+2011-09-21T18:16:08.355804Z
+0de28e65275b3ee64ec63cc10e7a9919
+2011-09-20T13:41:43.050547Z
+40395
+nazgul
 has-props
 
 
@@ -160,5 +160,5 @@ has-props
 
 
 
-22863
+22170
 

@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_SndFileReader.h 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_SndFileReader.h 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -68,11 +68,6 @@ private:
 	AUD_Specs m_specs;
 
 	/**
-	 * The playback buffer.
-	 */
-	AUD_Buffer m_buffer;
-
-	/**
 	 * The sndfile.
 	 */
 	SNDFILE* m_sndfile;
@@ -129,7 +124,7 @@ public:
 	virtual int getLength() const;
 	virtual int getPosition() const;
 	virtual AUD_Specs getSpecs() const;
-	virtual void read(int & length, sample_t* & buffer);
+	virtual void read(int& length, bool& eos, sample_t* buffer);
 };
 
 #endif //AUD_SNDFILEREADER

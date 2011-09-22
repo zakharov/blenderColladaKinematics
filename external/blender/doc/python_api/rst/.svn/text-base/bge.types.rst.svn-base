@@ -1,6 +1,6 @@
 
-Game Engine  bge.types Module
-=============================
+Game Types (bge.types)
+======================
 
 .. module:: bge.types
 
@@ -710,6 +710,12 @@ Game Engine  bge.types Module
 
    Applies changes to a camera.
 
+   .. attribute:: damping
+
+      strength of of the camera following movement.
+
+      :type: float
+   
    .. attribute:: min
 
       minimum distance to the target object maintained by the actuator.
@@ -1532,6 +1538,67 @@ Game Engine  bge.types Module
 
       Return the value matching key, or the default value if its not found.
       :return: The key value or a default.
+
+   .. method:: playAction(name, start_frame, end_frame, layer=0, priority=0, blendin=0, play_mode=ACT_MODE_PLAY, layer_weight=0.0, ipo_flags=0, speed=1.0)
+
+      Plays an action.
+      
+      :arg name: the name of the action
+      :type name: string
+      :arg start: the start frame of the action
+      :type start: float
+      :arg end: the end frame of the action
+      :type end: float
+      :arg layer: the layer the action will play in (actions in different layers are added/blended together)
+      :type layer: integer
+      :arg priority: only play this action if there isn't an action currently playing in this layer with a higher (lower number) priority
+      :type priority: integer
+      :arg blendin: the amount of blending between this animation and the previous one on this layer
+      :type blendin: float
+      :arg play_mode: the play mode
+      :type play_mode: KX_ACTION_MODE_PLAY, KX_ACTION_MODE_LOOP, or KX_ACTION_MODE_PING_PONG
+      :arg layer_weight: how much of the previous layer to use for blending (0 = add)
+      :type layer_weight: float
+      :arg ipo_flags: flags for the old IPO behaviors (force, etc)
+      :type ipo_flags: int bitfield
+      :arg speed: the playback speed of the action as a factor (1.0 = normal speed, 2.0 = 2x speed, etc)
+      :type speed: float
+
+   .. method:: stopAction(layer=0)
+      
+      Stop playing the action on the given layer.
+      
+      :arg layer: The layer to stop playing.
+      :type layer: integer
+      
+   .. method:: getActionFrame(layer=0)
+   
+      Gets the current frame of the action playing in the supplied layer.
+      
+      :arg layer: The layer that you want to get the frame from.
+      :type layer: integer
+      
+      :return: The current frame of the action
+      :rtype: float
+      
+   .. method:: setActionFrame(frame, layer=0)
+   
+      Set the current frame of the action playing in the supplied layer.
+      
+      :arg layer: The layer where you want to set the frame
+      :type layer: integer
+      :arg frame: The frame to set the action to
+      :type frame: float
+
+   .. method:: isPlayingAction(layer=0)
+   
+       Checks to see if there is an action playing in the given layer.
+       
+       :arg layer: The layer to check for a playing action.
+       :type layer: integer
+       
+       :return: Whether or not the action is playing
+       :rtype: boolean
 
 .. class:: KX_IpoActuator(SCA_IActuator)
 

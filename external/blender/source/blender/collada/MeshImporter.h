@@ -1,5 +1,5 @@
-/**
- * $Id: MeshImporter.h 34533 2011-01-27 19:39:06Z jesterking $
+/*
+ * $Id: MeshImporter.h 40382 2011-09-20 06:25:15Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -20,6 +20,10 @@
  * Contributor(s): Chingiz Dyussenov, Arystanbek Dyussenov, Nathan Letwory.
  *
  * ***** END GPL LICENSE BLOCK *****
+ */
+
+/** \file MeshImporter.h
+ *  \ingroup collada
  */
 
 #ifndef __BC__MESHIMPORTER_H__
@@ -65,7 +69,7 @@ public:
 	void print();
 #endif
 
-	void getUV(int uv_index[2], float *uv);
+	void getUV(int uv_index, float *uv);
 };
 
 class MeshImporter : public MeshImporterBase
@@ -87,6 +91,7 @@ private:
 	};
 	typedef std::map<COLLADAFW::MaterialId, std::vector<Primitive> > MaterialIdPrimitiveArrayMap;
 	std::map<COLLADAFW::UniqueId, MaterialIdPrimitiveArrayMap> geom_uid_mat_mapping_map; // crazy name!
+	std::multimap<COLLADAFW::UniqueId, COLLADAFW::UniqueId> materials_mapped_to_geom; //< materials that have already been mapped to a geometry. A pair of geom uid and mat uid, one geometry can have several materials
 	
 
 	void set_face_indices(MFace *mface, unsigned int *indices, bool quad);
@@ -136,7 +141,7 @@ public:
 									std::map<COLLADAFW::UniqueId, Material*>& uid_material_map,
 									Object *ob, const COLLADAFW::UniqueId *geom_uid, 
 									MTex **color_texture, char *layername, MTFace *texture_face,
-									std::map<Material*, TexIndexTextureArrayMap>& material_texture_mapping_map, int mat_index);
+									std::map<Material*, TexIndexTextureArrayMap>& material_texture_mapping_map, short mat_index);
 	
 	
 	Object *create_mesh_object(COLLADAFW::Node *node, COLLADAFW::InstanceGeometry *geom,

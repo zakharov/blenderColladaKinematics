@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern/iksolver
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-02-25T11:43:19.248098Z
-35154
-jesterking
+2011-09-03T15:36:36.072906Z
+39893
+campbellbarton
 
 
 
@@ -41,7 +41,7 @@ file
 
 
 
-2011-03-03T12:25:38.694297Z
+2011-09-21T18:15:48.963708Z
 d6d658268c158aa2dc9011086a8adfa5
 2010-08-25T04:30:47.772689Z
 31567
@@ -75,10 +75,10 @@ file
 
 
 
-2011-03-03T12:25:38.694297Z
-ba48f2d8ef05ad96860370115d13ca0b
-2010-12-22T23:09:30.468439Z
-33864
+2011-09-21T18:15:48.963708Z
+e062c4cee7fce95537a11c16ea6f1790
+2011-05-31T01:15:44.429162Z
+37030
 campbellbarton
 has-props
 
@@ -101,5 +101,5 @@ has-props
 
 
 
-1910
+1939
 

@@ -16,7 +16,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software Foundation,
-# Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+# Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 #
 # ***** END GPL LICENCE BLOCK *****
 
@@ -24,8 +24,8 @@ bl_info = {
     "name": "Scene Information",
     "author": "uselessdreamer",
     "version": (0,3),
-    "blender": (2, 5, 3),
-    "api": 32411,
+    "blender": (2, 5, 9),
+    "api": 39685,
     "location": "Properties > Scene > Blend Info Panel",
     "description": "Show information about the .blend",
     "warning": "",
@@ -66,10 +66,8 @@ class OBJECT_PT_blendinfo(bpy.types.Panel):
     bl_context = "scene"
 
     def draw(self, context):
-        amount = 2
         ob_cols = []
         db_cols = []
-        etc_cols = []
 
         objects = bpy.data.objects
 
@@ -129,7 +127,7 @@ class OBJECT_PT_blendinfo(bpy.types.Panel):
         row.label(text=quantity_string(num, "Empty", "Empties"),
             icon='EMPTY_DATA')
 
-        l_row_sep = layout.separator()
+        layout.separator()
         
         # DATABLOCKS
 

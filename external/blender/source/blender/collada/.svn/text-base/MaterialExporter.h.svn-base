@@ -44,13 +44,18 @@
 
 #include "GeometryExporter.h"
 #include "collada_internal.h"
+#include "ExportSettings.h"
 
 class MaterialsExporter: COLLADASW::LibraryMaterials
 {
 public:
-	MaterialsExporter(COLLADASW::StreamWriter *sw);
+	MaterialsExporter(COLLADASW::StreamWriter *sw, const ExportSettings *export_settings);
 	void exportMaterials(Scene *sce);
 	void operator()(Material *ma, Object *ob);
+
+private:
+	bool hasMaterials(Scene *sce);
+	const ExportSettings *export_settings;
 };
 
 // used in forEachMaterialInScene
@@ -86,11 +91,11 @@ struct MaterialFunctor {
 	// f should have
 	// void operator()(Material* ma)
 	template<class Functor>
-	void forEachMaterialInScene(Scene *sce, Functor &f)
+	void forEachMaterialInScene(Scene *sce, Functor &f, bool export_selected)
 	{
 		ForEachMaterialFunctor<Functor> matfunc(&f);
 		GeometryFunctor gf;
-		gf.forEachMeshObjectInScene<ForEachMaterialFunctor<Functor> >(sce, matfunc);
+		gf.forEachMeshObjectInScene<ForEachMaterialFunctor<Functor> >(sce, matfunc, export_selected);
 	}
 };
 

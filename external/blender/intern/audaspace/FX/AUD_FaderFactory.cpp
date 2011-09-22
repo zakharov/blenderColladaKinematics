@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_FaderFactory.cpp 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_FaderFactory.cpp 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -32,7 +32,7 @@
 #include "AUD_FaderFactory.h"
 #include "AUD_FaderReader.h"
 
-AUD_FaderFactory::AUD_FaderFactory(AUD_IFactory* factory, AUD_FadeType type,
+AUD_FaderFactory::AUD_FaderFactory(AUD_Reference<AUD_IFactory> factory, AUD_FadeType type,
 								   float start, float length) :
 		AUD_EffectFactory(factory),
 		m_type(type),
@@ -56,7 +56,7 @@ float AUD_FaderFactory::getLength() const
 	return m_length;
 }
 
-AUD_IReader* AUD_FaderFactory::createReader() const
+AUD_Reference<AUD_IReader> AUD_FaderFactory::createReader()
 {
 	return new AUD_FaderReader(getReader(), m_type, m_start, m_length);
 }

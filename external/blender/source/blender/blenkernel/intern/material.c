@@ -2,7 +2,7 @@
 /*  material.c
  *
  * 
- * $Id: material.c 35247 2011-02-27 20:40:57Z jesterking $
+ * $Id: material.c 40382 2011-09-20 06:25:15Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -37,12 +37,16 @@
 
 #include <string.h>
 #include <math.h>
+#include <stddef.h>
 
 #include "MEM_guardedalloc.h"
 
 #include "DNA_curve_types.h"
 #include "DNA_material_types.h"
 #include "DNA_mesh_types.h"
+#include "DNA_meshdata_types.h"
+#include "DNA_customdata_types.h"
+#include "DNA_ID.h"
 #include "DNA_meta_types.h"
 #include "DNA_node_types.h"
 #include "DNA_object_types.h"
@@ -56,12 +60,13 @@
 #include "BKE_displist.h"
 #include "BKE_global.h"
 #include "BKE_icons.h"
+#include "BKE_image.h"
 #include "BKE_library.h"
 #include "BKE_main.h"
 #include "BKE_material.h"
 #include "BKE_mesh.h"
 #include "BKE_node.h"
-
+#include "BKE_curve.h"
 
 #include "GPU_material.h"
 
@@ -188,6 +193,10 @@ void init_material(Material *ma)
 	ma->vol.ms_diff = 1.f;
 	ma->vol.ms_intensity = 1.f;
 	
+	ma->game.flag=0;
+	ma->game.alpha_blend=0;
+	ma->game.face_orientation=0;
+	
 	ma->mode= MA_TRACEBLE|MA_SHADBUF|MA_SHADOW|MA_RAYBIAS|MA_TANGENT_STR|MA_ZTRANSP;
 	ma->shade_flag= MA_APPROX_OCCLUSION;
 	ma->preview = NULL;
@@ -245,12 +254,11 @@ Material *localize_material(Material *ma)
 	man= copy_libblock(ma);
 	BLI_remlink(&G.main->mat, man);
 
+	/* no increment for texture ID users, in previewrender.c it prevents decrement */
 	for(a=0; a<MAX_MTEX; a++) {
 		if(ma->mtex[a]) {
 			man->mtex[a]= MEM_mallocN(sizeof(MTex), "copymaterial");
 			memcpy(man->mtex[a], ma->mtex[a], sizeof(MTex));
-			/* free_material decrements! */
-			id_us_plus((ID *)man->mtex[a]->tex);
 		}
 	}
 	
@@ -259,13 +267,20 @@ Material *localize_material(Material *ma)
 	
 	man->preview = NULL;
 	
-	if(ma->nodetree) {
+	if(ma->nodetree)
 		man->nodetree= ntreeLocalize(ma->nodetree);
-	}
 	
 	man->gpumaterial.first= man->gpumaterial.last= NULL;
 	
 	return man;
+}
+
+static void extern_local_material(Material *ma)
+{
+	int i;
+	for(i=0; i < MAX_MTEX; i++) {
+		if(ma->mtex[i]) id_lib_extern((ID *)ma->mtex[i]->tex);
+	}
 }
 
 void make_local_material(Material *ma)
@@ -287,11 +302,9 @@ void make_local_material(Material *ma)
 	if(ma->id.us==1) {
 		ma->id.lib= NULL;
 		ma->id.flag= LIB_LOCAL;
-		new_id(NULL, (ID *)ma, NULL);
-		for(a=0; a<MAX_MTEX; a++) {
-			if(ma->mtex[a]) id_lib_extern((ID *)ma->mtex[a]->tex);
-		}
-		
+
+		new_id(&bmain->mat, (ID *)ma, NULL);
+		extern_local_material(ma);
 		return;
 	}
 	
@@ -351,12 +364,9 @@ void make_local_material(Material *ma)
 	if(local && lib==0) {
 		ma->id.lib= NULL;
 		ma->id.flag= LIB_LOCAL;
-		
-		for(a=0; a<MAX_MTEX; a++) {
-			if(ma->mtex[a]) id_lib_extern((ID *)ma->mtex[a]->tex);
-		}
-		
-		new_id(NULL, (ID *)ma, NULL);
+
+		new_id(&bmain->mat, (ID *)ma, NULL);
+		extern_local_material(ma);
 	}
 	else if(local && lib) {
 		
@@ -427,6 +437,15 @@ void make_local_material(Material *ma)
 			}
 			mb= mb->id.next;
 		}
+	}
+}
+
+/* for curve, mball, mesh types */
+void extern_local_matarar(struct Material **matar, short totcol)
+{
+	short i;
+	for(i= 0; i < totcol; i++) {
+		id_lib_extern((ID *)matar[i]);
 	}
 }
 
@@ -505,6 +524,21 @@ short *give_totcolp_id(ID *id)
 	return NULL;
 }
 
+static void data_delete_material_index_id(ID *id, short index)
+{
+	switch(GS(id->name)) {
+	case ID_ME:
+		mesh_delete_material_index((Mesh *)id, index);
+		break;
+	case ID_CU:
+		curve_delete_material_index((Curve *)id, index);
+		break;
+	case ID_MB:
+		/* meta-elems dont have materials atm */
+		break;
+	}
+}
+
 void material_append_id(ID *id, Material *ma)
 {
 	Material ***matar;
@@ -522,42 +556,52 @@ void material_append_id(ID *id, Material *ma)
 	}
 }
 
-Material *material_pop_id(ID *id, int index)
+Material *material_pop_id(ID *id, int index_i, int remove_material_slot)
 {
+	short index= (short)index_i;
 	Material *ret= NULL;
 	Material ***matar;
 	if((matar= give_matarar_id(id))) {
 		short *totcol= give_totcolp_id(id);
 		if(index >= 0 && index < (*totcol)) {
 			ret= (*matar)[index];
-			id_us_min((ID *)ret);			
-			if(*totcol <= 1) {
-				*totcol= 0;
-				MEM_freeN(*matar);
-				*matar= NULL;
+			id_us_min((ID *)ret);
+
+			if (remove_material_slot) {
+				if(*totcol <= 1) {
+					*totcol= 0;
+					MEM_freeN(*matar);
+					*matar= NULL;
+				}
+				else {
+					Material **mat;
+					if(index + 1 != (*totcol))
+						memmove((*matar)+index, (*matar)+(index+1), sizeof(void *) * ((*totcol) - (index + 1)));
+
+					(*totcol)--;
+					
+					mat= MEM_callocN(sizeof(void *) * (*totcol), "newmatar");
+					memcpy(mat, *matar, sizeof(void *) * (*totcol));
+					MEM_freeN(*matar);
+
+					*matar= mat;
+					test_object_materials(id);
+				}
+
+				/* decrease mat_nr index */
+				data_delete_material_index_id(id, index);
 			}
-			else {
-				Material **mat;
 
-				if(index + 1 != (*totcol))
-					memmove((*matar), (*matar) + 1, (*totcol) - (index + 1));
-
-				(*totcol)--;
-				
-				mat= MEM_callocN(sizeof(void *) * (*totcol), "newmatar");
-				memcpy(mat, *matar, sizeof(void *) * (*totcol));
-				MEM_freeN(*matar);
-
-				*matar= mat;
-				test_object_materials(id);
-			}
+			/* don't remove material slot, only clear it*/
+			else
+				(*matar)[index]= NULL;
 		}
 	}
 	
 	return ret;
 }
 
-Material *give_current_material(Object *ob, int act)
+Material *give_current_material(Object *ob, short act)
 {
 	Material ***matarar, *ma;
 	short *totcolp;
@@ -595,7 +639,7 @@ Material *give_current_material(Object *ob, int act)
 	return ma;
 }
 
-ID *material_from(Object *ob, int act)
+ID *material_from(Object *ob, short act)
 {
 
 	if(ob==NULL) return NULL;
@@ -679,7 +723,7 @@ void test_object_materials(ID *id)
 	}
 }
 
-void assign_material(Object *ob, Material *ma, int act)
+void assign_material(Object *ob, Material *ma, short act)
 {
 	Material *mao, **matar, ***matarar;
 	char *matbits;
@@ -687,6 +731,10 @@ void assign_material(Object *ob, Material *ma, int act)
 
 	if(act>MAXMAT) return;
 	if(act<1) act= 1;
+	
+	/* prevent crashing when using accidentally */
+	BLI_assert(ob->id.lib == NULL);
+	if(ob->id.lib) return;
 	
 	/* test arraylens */
 	
@@ -746,9 +794,10 @@ void assign_material(Object *ob, Material *ma, int act)
 }
 
 /* XXX - this calls many more update calls per object then are needed, could be optimized */
-void assign_matarar(struct Object *ob, struct Material ***matar, int totcol)
+void assign_matarar(struct Object *ob, struct Material ***matar, short totcol)
 {
-	int i, actcol_orig= ob->actcol;
+	int actcol_orig= ob->actcol;
+	short i;
 
 	while(object_remove_material_slot(ob)) {};
 
@@ -763,7 +812,7 @@ void assign_matarar(struct Object *ob, struct Material ***matar, int totcol)
 }
 
 
-int find_material_index(Object *ob, Material *ma)
+short find_material_index(Object *ob, Material *ma)
 {
 	Material ***matarar;
 	short a, *totcolp;
@@ -785,21 +834,10 @@ int find_material_index(Object *ob, Material *ma)
 
 int object_add_material_slot(Object *ob)
 {
-	Material *ma;
-	
 	if(ob==NULL) return FALSE;
 	if(ob->totcol>=MAXMAT) return FALSE;
 	
-	ma= give_current_material(ob, ob->actcol);
-
-    if(ma == NULL)
-		ma= add_material("Material");
-	else
-		ma= copy_material(ma);
-
-	id_us_min(&ma->id);
-
-	assign_material(ob, ma, ob->totcol+1);
+	assign_material(ob, NULL, ob->totcol+1);
 	ob->actcol= ob->totcol;
 	return TRUE;
 }
@@ -864,6 +902,10 @@ static void do_init_render_material(Material *ma, int r_mode, float *amb)
 
 	if(ma->strand_surfnor > 0.0f)
 		ma->mode_l |= MA_STR_SURFDIFF;
+
+	/* parses the geom+tex nodes */
+	if(ma->nodetree && ma->use_nodes)
+		ntreeShaderGetTexcoMode(ma->nodetree, r_mode, &ma->texco, &ma->mode_l);
 }
 
 static void init_render_nodetree(bNodeTree *ntree, Material *basemat, int r_mode, float *amb)
@@ -884,8 +926,6 @@ static void init_render_nodetree(bNodeTree *ntree, Material *basemat, int r_mode
 				init_render_nodetree((bNodeTree *)node->id, basemat, r_mode, amb);
 		}
 	}
-	/* parses the geom+tex nodes */
-	ntreeShaderGetTexcoMode(ntree, r_mode, &basemat->texco, &basemat->mode_l);
 }
 
 void init_render_material(Material *mat, int r_mode, float *amb)
@@ -896,7 +936,8 @@ void init_render_material(Material *mat, int r_mode, float *amb)
 	if(mat->nodetree && mat->use_nodes) {
 		init_render_nodetree(mat->nodetree, mat, r_mode, amb);
 		
-		ntreeBeginExecTree(mat->nodetree); /* has internal flag to detect it only does it once */
+		if (!mat->nodetree->execdata)
+			mat->nodetree->execdata = ntreeShaderBeginExecTree(mat->nodetree, 1);
 	}
 }
 
@@ -928,8 +969,10 @@ void init_render_materials(Main *bmain, int r_mode, float *amb)
 /* only needed for nodes now */
 void end_render_material(Material *mat)
 {
-	if(mat && mat->nodetree && mat->use_nodes)
-		ntreeEndExecTree(mat->nodetree); /* has internal flag to detect it only does it once */
+	if(mat && mat->nodetree && mat->use_nodes) {
+		if (mat->nodetree->execdata)
+			ntreeShaderEndExecTree(mat->nodetree->execdata, 1);
+	}
 }
 
 void end_render_materials(Main *bmain)
@@ -1006,9 +1049,9 @@ void automatname(Material *ma)
 	if(ma->mode & MA_SHLESS) ref= 1.0;
 	else ref= ma->ref;
 	
-	r= (int)(4.99*(ref*ma->r));
-	g= (int)(4.99*(ref*ma->g));
-	b= (int)(4.99*(ref*ma->b));
+	r= (int)(4.99f*(ref*ma->r));
+	g= (int)(4.99f*(ref*ma->g));
+	b= (int)(4.99f*(ref*ma->b));
 	nr= r + 5*g + 25*b;
 	if(nr>124) nr= 124;
 	new_id(&G.main->mat, (ID *)ma, colname_array[nr]);
@@ -1020,10 +1063,8 @@ int object_remove_material_slot(Object *ob)
 {
 	Material *mao, ***matarar;
 	Object *obt;
-	Curve *cu;
-	Nurb *nu;
 	short *totcolp;
-	int a, actcol;
+	short a, actcol;
 	
 	if(ob==NULL || ob->totcol==0) return FALSE;
 	
@@ -1081,23 +1122,8 @@ int object_remove_material_slot(Object *ob)
 	}
 
 	/* check indices from mesh */
-
-	if(ob->type==OB_MESH) {
-		Mesh *me= get_mesh(ob);
-		mesh_delete_material_index(me, actcol-1);
-		freedisplist(&ob->disp);
-	}
-	else if ELEM(ob->type, OB_CURVE, OB_SURF) {
-		cu= ob->data;
-		nu= cu->nurb.first;
-		
-		while(nu) {
-			if(nu->mat_nr && nu->mat_nr>=actcol-1) {
-				nu->mat_nr--;
-				if (ob->type == OB_CURVE) nu->charidx--;
-			}
-			nu= nu->next;
-		}
+	if (ELEM4(ob->type, OB_MESH, OB_CURVE, OB_SURF, OB_FONT)) {
+		data_delete_material_index_id((ID *)ob->data, actcol-1);
 		freedisplist(&ob->disp);
 	}
 
@@ -1107,7 +1133,7 @@ int object_remove_material_slot(Object *ob)
 
 /* r g b = current value, col = new value, fac==0 is no change */
 /* if g==NULL, it only does r channel */
-void ramp_blend(int type, float *r, float *g, float *b, float fac, float *col)
+void ramp_blend(int type, float *r, float *g, float *b, float fac, const float col[3])
 {
 	float tmp, facm= 1.0f-fac;
 	
@@ -1174,10 +1200,10 @@ void ramp_blend(int type, float *r, float *g, float *b, float fac, float *col)
 			}
 				break;
 		case MA_RAMP_DIFF:
-			*r = facm*(*r) + fac*fabs(*r-col[0]);
+			*r = facm*(*r) + fac*fabsf(*r-col[0]);
 			if(g) {
-				*g = facm*(*g) + fac*fabs(*g-col[1]);
-				*b = facm*(*b) + fac*fabs(*b-col[2]);
+				*g = facm*(*g) + fac*fabsf(*g-col[1]);
+				*b = facm*(*b) + fac*fabsf(*b-col[2]);
 			}
 				break;
 		case MA_RAMP_DARK:
@@ -1322,12 +1348,12 @@ void ramp_blend(int type, float *r, float *g, float *b, float fac, float *col)
 		case MA_RAMP_SOFT: 
 			if (g){ 
 				float scr, scg, scb; 
-                 
+
 				/* first calculate non-fac based Screen mix */ 
 				scr = 1.0f - (1.0f - col[0]) * (1.0f - *r); 
 				scg = 1.0f - (1.0f - col[1]) * (1.0f - *g); 
 				scb = 1.0f - (1.0f - col[2]) * (1.0f - *b); 
-                 
+
 				*r = facm*(*r) + fac*(((1.0f - *r) * col[0] * (*r)) + (*r * scr)); 
 				*g = facm*(*g) + fac*(((1.0f - *g) * col[1] * (*g)) + (*g * scg)); 
 				*b = facm*(*b) + fac*(((1.0f - *b) * col[2] * (*b)) + (*b * scb)); 
@@ -1353,7 +1379,7 @@ void ramp_blend(int type, float *r, float *g, float *b, float fac, float *col)
 }
 
 /* copy/paste buffer, if we had a propper py api that would be better */
-Material matcopybuf;
+static Material matcopybuf;
 static short matcopied= 0;
 
 void clear_matcopybuf(void)
@@ -1453,3 +1479,482 @@ void paste_matcopybuf(Material *ma)
 
 	ma->nodetree= ntreeCopyTree(matcopybuf.nodetree);
 }
+
+
+/*********************** texface to material convert functions **********************/
+/* encode all the TF information into a single int */
+static int encode_tfaceflag(MTFace *tf, int convertall)
+{
+	/* calculate the flag */
+	int flag = tf->mode;
+
+	/* options that change the material offline render */	
+	if (!convertall) {
+		flag &= ~TF_OBCOL;
+	}
+
+	/* clean flags that are not being converted */
+	flag &= ~TF_TEX;
+	flag &= ~TF_SHAREDVERT;
+	flag &= ~TF_SHAREDCOL;
+	flag &= ~TF_CONVERTED;
+
+	/* light tface flag is ignored in GLSL mode */
+	flag &= ~TF_LIGHT;
+	
+	/* 15 is how big the flag can be - hardcoded here and in decode_tfaceflag() */
+	flag |= tf->transp << 15;
+	
+	/* increase 1 so flag 0 is different than no flag yet */
+	return flag + 1;
+}
+
+/* set the material options based in the tface flag */
+static void decode_tfaceflag(Material *ma, int flag, int convertall)
+{
+	int alphablend;	
+	GameSettings *game= &ma->game;
+
+	/* flag is shifted in 1 to make 0 != no flag yet (see encode_tfaceflag) */
+	flag -= 1;
+
+	alphablend = flag >> 15; //encoded in the encode_tfaceflag function
+	(*game).flag = 0;
+	
+	/* General Material Options */
+	if ((flag & TF_DYNAMIC)==0) (*game).flag	|= GEMAT_NOPHYSICS;
+	
+	/* Material Offline Rendering Properties */
+	if (convertall) {
+		if (flag & TF_OBCOL) ma->shade_flag |= MA_OBCOLOR;
+	}
+	
+	/* Special Face Properties */
+	if ((flag & TF_TWOSIDE)==0) (*game).flag |= GEMAT_BACKCULL;
+	if (flag & TF_INVISIBLE)(*game).flag |= GEMAT_INVISIBLE;
+	if (flag & TF_BMFONT) (*game).flag |= GEMAT_TEXT;
+	
+	/* Face Orientation */
+	if (flag & TF_BILLBOARD) (*game).face_orientation |= GEMAT_HALO;
+	else if (flag & TF_BILLBOARD2) (*game).face_orientation |= GEMAT_BILLBOARD;
+	else if (flag & TF_SHADOW) (*game).face_orientation |= GEMAT_SHADOW;
+	
+	/* Alpha Blend */
+	if (flag & TF_ALPHASORT && ELEM(alphablend, TF_ALPHA, TF_ADD)) (*game).alpha_blend = GEMAT_ALPHA_SORT;
+	else if (alphablend & TF_ALPHA) (*game).alpha_blend = GEMAT_ALPHA;
+	else if (alphablend & TF_ADD) (*game).alpha_blend = GEMAT_ADD;
+	else if (alphablend & TF_CLIP) (*game).alpha_blend = GEMAT_CLIP;
+}
+
+/* boolean check to see if the mesh needs a material */
+static int check_tfaceneedmaterial(int flag)
+{
+	// check if the flags we have are not deprecated != than default material options
+	// also if only flags are visible and collision see if all objects using this mesh have this option in physics
+
+	/* flag is shifted in 1 to make 0 != no flag yet (see encode_tfaceflag) */
+	flag -=1;
+
+	// deprecated flags
+	flag &= ~TF_OBCOL;
+	flag &= ~TF_SHAREDVERT;
+	flag &= ~TF_SHAREDCOL;
+
+	/* light tface flag is ignored in GLSL mode */
+	flag &= ~TF_LIGHT;
+	
+	// automatic detected if tex image has alpha
+	flag &= ~(TF_ALPHA << 15);
+	// automatic detected if using texture
+	flag &= ~TF_TEX;
+
+	// settings for the default NoMaterial
+	if (flag == TF_DYNAMIC)
+		return 0;
+
+	else
+		return 1;
+}
+
+/* return number of digits of an integer */
+// XXX to be optmized or replaced by an equivalent blender internal function
+static int integer_getdigits(int number)
+{
+	int i=0;
+	if (number == 0) return 1;
+
+	while (number != 0){
+		number = (int)(number/10);
+		i++;
+	}
+	return i;
+}
+
+static void calculate_tface_materialname(char *matname, char *newname, int flag)
+{
+	// if flag has only light and collision and material matches those values
+	// you can do strcpy(name, mat_name);
+	// otherwise do:
+	int digits = integer_getdigits(flag);
+	/* clamp the old name, remove the MA prefix and add the .TF.flag suffix
+	e.g. matname = "MALoooooooooooooongName"; newname = "Loooooooooooooon.TF.2" */
+	sprintf(newname, "%.*s.TF.%0*d", MAX_ID_NAME-(digits+5), matname, digits, flag);
+}
+
+/* returns -1 if no match */
+static short mesh_getmaterialnumber(Mesh *me, Material *ma)
+{
+	short a;
+
+	for (a=0; a<me->totcol; a++) {
+		if (me->mat[a] == ma) {
+			return a;
+		}
+	}
+
+	return -1;
+}
+
+/* append material */
+static short mesh_addmaterial(Mesh *me, Material *ma)
+{
+	material_append_id(&me->id, NULL);
+	me->mat[me->totcol-1]= ma;
+
+	id_us_plus(&ma->id);
+
+	return me->totcol-1;
+}
+
+static void set_facetexture_flags(Material *ma, Image *image)
+{
+	if(image) {
+		ma->mode |= MA_FACETEXTURE;
+		/* we could check if the texture has alpha, but then more meshes sharing the same
+		 * material may need it. Let's make it simple. */
+		if(BKE_image_has_alpha(image))
+			ma->mode |= MA_FACETEXTURE_ALPHA;
+	}
+}
+
+/* returns material number */
+static short convert_tfacenomaterial(Main *main, Mesh *me, MTFace *tf, int flag)
+{
+	Material *ma;
+	char idname[MAX_ID_NAME];
+	short mat_nr= -1;
+	
+	/* new material, the name uses the flag*/
+	sprintf(idname, "MAMaterial.TF.%0*d", integer_getdigits(flag), flag);
+	
+	if ((ma= BLI_findstring(&main->mat, idname+2, offsetof(ID, name)+2))) {
+		mat_nr= mesh_getmaterialnumber(me, ma);
+		/* assign the material to the mesh */
+		if(mat_nr == -1) mat_nr= mesh_addmaterial(me, ma);
+
+		/* if needed set "Face Textures [Alpha]" Material options */
+		set_facetexture_flags(ma, tf->tpage);
+	}
+	/* create a new material */
+	else {
+		ma= add_material(idname+2);
+
+		if(ma){
+			printf("TexFace Convert: Material \"%s\" created.\n", idname+2);
+			mat_nr= mesh_addmaterial(me, ma);
+			
+			/* if needed set "Face Textures [Alpha]" Material options */
+			set_facetexture_flags(ma, tf->tpage);
+
+			decode_tfaceflag(ma, flag, 1);
+			// the final decoding will happen after, outside the main loop
+			// for now store the flag into the material and change light/tex/collision 
+			// store the flag as a negative number
+			ma->game.flag = -flag;
+			id_us_min((ID *)ma);	
+		}
+		else printf("Error: Unable to create Material \"%s\" for Mesh \"%s\".", idname+2, me->id.name+2);
+	}
+
+	/* set as converted, no need to go bad to this face */
+	tf->mode |= TF_CONVERTED;	
+	return mat_nr;
+}
+
+/* Function to fully convert materials */
+static void convert_tfacematerial(Main *main, Material *ma)
+{
+	Mesh *me;
+	Material *mat_new;
+	MFace *mf;
+	MTFace *tf;
+	int flag, index;
+	int a;
+	short mat_nr;
+	CustomDataLayer *cdl;
+	char idname[MAX_ID_NAME];
+
+	for(me=main->mesh.first; me; me=me->id.next){
+		/* check if this mesh uses this material */
+		for(a=0;a<me->totcol;a++)
+			if(me->mat[a] == ma) break;
+			
+		/* no material found */
+		if (a == me->totcol) continue;
+
+		/* get the active tface layer */
+		index= CustomData_get_active_layer_index(&me->fdata, CD_MTFACE);
+		cdl= (index == -1)? NULL: &me->fdata.layers[index];
+		if (!cdl) continue;
+
+		/* loop over all the faces and stop at the ones that use the material*/
+		for(a=0, mf=me->mface; a<me->totface; a++, mf++) {
+			if(me->mat[mf->mat_nr] != ma) continue;
+
+			/* texface data for this face */
+			tf = ((MTFace*)cdl->data) + a;
+			flag = encode_tfaceflag(tf, 1);
+
+			/* the name of the new material */
+			calculate_tface_materialname(ma->id.name, (char *)&idname, flag);
+
+			if ((mat_new= BLI_findstring(&main->mat, idname+2, offsetof(ID, name)+2))) {
+				/* material already existent, see if the mesh has it */
+				mat_nr = mesh_getmaterialnumber(me, mat_new);
+				/* material is not in the mesh, add it */
+				if(mat_nr == -1) mat_nr= mesh_addmaterial(me, mat_new);
+			}
+			/* create a new material */
+			else {
+				mat_new=copy_material(ma);
+				if(mat_new){
+					/* rename the material*/
+					strcpy(mat_new->id.name, idname);
+					id_us_min((ID *)mat_new);	
+
+					mat_nr= mesh_addmaterial(me, mat_new);
+					decode_tfaceflag(mat_new, flag, 1);
+				}
+				else {
+					printf("Error: Unable to create Material \"%s\" for Mesh \"%s.", idname+2, me->id.name+2);
+					mat_nr = mf->mat_nr;
+					continue;
+				}
+			}
+			
+			/* if the material has a texture but no texture channel
+			 * set "Face Textures [Alpha]" Material options 
+			 * actually we need to run it always, because of old behavior
+			 * of using face texture if any texture channel was present (multitex) */
+			//if((!mat_new->mtex[0]) && (!mat_new->mtex[0]->tex))
+			set_facetexture_flags(mat_new, tf->tpage);
+
+			/* set the material number to the face*/
+			mf->mat_nr = mat_nr;
+		}
+		/* remove material from mesh */
+		for(a=0;a<me->totcol;)
+			if(me->mat[a] == ma) material_pop_id(&me->id, a, 1);else a++;
+	}
+}
+
+
+#define MAT_BGE_DISPUTED -99999
+
+int do_version_tface(Main *main, int fileload)
+{
+	Mesh *me;
+	Material *ma;
+	MFace *mf;
+	MTFace *tf;
+	CustomDataLayer *cdl;
+	int a;
+	int flag;
+	int index;
+
+ 	/* sometimes mesh has no materials but will need a new one. In those
+	 * cases we need to ignore the mf->mat_nr and only look at the face
+	 * mode because it can be zero as uninitialized or the 1st created material
+	 */
+	int nomaterialslots;
+
+	/* alert to user to check the console */
+	int nowarning = 1;
+
+	/* mark all the materials to conversion with a flag
+	 * if there is tface create a complete flag for that storing in flag
+	 * if there is tface and flag > 0: creates a new flag based on this face
+	 * if flags are different set flag to -1  
+	 */
+	
+	/* 1st part: marking mesh materials to update */
+	for(me=main->mesh.first; me; me=me->id.next){
+		if (me->id.lib) continue;
+
+		/* get the active tface layer */
+		index= CustomData_get_active_layer_index(&me->fdata, CD_MTFACE);
+		cdl= (index == -1)? NULL: &me->fdata.layers[index];
+		if (!cdl) continue;
+
+		nomaterialslots = (me->totcol==0?1:0);
+		
+		/* loop over all the faces*/
+		for(a=0, mf=me->mface; a<me->totface; a++, mf++) {
+			/* texface data for this face */
+			tf = ((MTFace*)cdl->data) + a;
+
+			/* conversion should happen only once */
+			if (fileload)
+				tf->mode &= ~TF_CONVERTED;
+			else {
+				if((tf->mode & TF_CONVERTED)) continue;
+				else tf->mode |= TF_CONVERTED;
+			}
+			
+			/* no material slots */
+			if(nomaterialslots) {
+				flag = encode_tfaceflag(tf, 1);
+				
+				/* create/find a new material and assign to the face */
+				if (check_tfaceneedmaterial(flag)) {
+					mf->mat_nr= convert_tfacenomaterial(main, me, tf, flag);
+				}
+				/* else mark them as no-material to be reverted to 0 later */
+				else {
+					mf->mat_nr = -1;
+				}
+			}
+			else if(mf->mat_nr < me->totcol) {
+				ma= me->mat[mf->mat_nr];
+				
+				/* no material create one if necessary */
+				if(!ma) {
+					/* find a new material and assign to the face */
+					flag = encode_tfaceflag(tf, 1);
+
+					/* create/find a new material and assign to the face */
+					if (check_tfaceneedmaterial(flag))
+						mf->mat_nr= convert_tfacenomaterial(main, me, tf, flag);
+
+					continue;
+				}
+
+				/* we can't read from this if it comes from a library,
+				 * at doversion time: direct_link might not have happened on it,
+				 * so ma->mtex is not pointing to valid memory yet.
+				 * later we could, but it's better not */
+				else if(ma->id.lib)
+					continue;
+				
+				/* material already marked as disputed */
+				else if(ma->game.flag == MAT_BGE_DISPUTED)
+					continue;
+
+				/* found a material */
+				else {
+					flag = encode_tfaceflag(tf, ((fileload)?0:1));
+
+					/* first time changing this material */
+					if (ma->game.flag == 0)
+						ma->game.flag= -flag;
+			
+					/* mark material as disputed */
+					else if (ma->game.flag != -flag) {
+						ma->game.flag = MAT_BGE_DISPUTED;
+						continue;
+					}
+			
+					/* material ok so far */
+					else {
+						ma->game.flag = -flag;
+						
+						/* some people uses multitexture with TexFace by creating a texture
+						 * channel which not neccessarly the tf->tpage image. But the game engine
+						 * was enabling it. Now it's required to set "Face Texture [Alpha] in the
+						 * material settings. */
+						if(!fileload)
+							set_facetexture_flags(ma, tf->tpage);
+					}
+				}
+			}
+			else
+				continue;
+		}
+
+		/* if we didn't have material slot and now we do, we need to
+		 * make sure the materials are correct */
+		if(nomaterialslots) {
+			if (me->totcol>0) {
+				for(a=0, mf=me->mface; a<me->totface; a++, mf++) {
+					if (mf->mat_nr == -1) {
+						/* texface data for this face */
+						tf = ((MTFace*)cdl->data) + a;
+						mf->mat_nr= convert_tfacenomaterial(main, me, tf, encode_tfaceflag(tf, 1));
+					}
+				}
+			}
+			else {
+				for(a=0, mf=me->mface; a<me->totface; a++, mf++) {
+					mf->mat_nr=0;
+				}
+			}
+		}
+
+	}
+	
+	/* 2nd part - conversion */
+	/* skip library files */
+
+	/* we shouldn't loop through the materials created in the loop. make the loop stop at its original length) */
+	for (ma= main->mat.first, a=0; ma; ma= ma->id.next, a++) {
+		if (ma->id.lib) continue;
+
+		/* disputed material */
+		if (ma->game.flag == MAT_BGE_DISPUTED) {
+			ma->game.flag = 0;
+			if (fileload) {
+				printf("Warning: material \"%s\" skipped - to convert old game texface to material go to the Help menu.\n", ma->id.name+2);
+				nowarning = 0;
+			}
+			else
+				convert_tfacematerial(main, ma);
+			continue;	
+		}
+	
+		/* no conflicts in this material - 90% of cases
+		 * convert from tface system to material */
+		else if (ma->game.flag < 0) {
+			decode_tfaceflag(ma, -(ma->game.flag), 1);
+
+			/* material is good make sure all faces using
+			 * this material are set to converted */
+			if (fileload) {
+				for(me=main->mesh.first; me; me=me->id.next){
+					/* check if this mesh uses this material */
+					for(a=0;a<me->totcol;a++)
+						if(me->mat[a] == ma) break;
+						
+					/* no material found */
+					if (a == me->totcol) continue;
+			
+					/* get the active tface layer */
+					index= CustomData_get_active_layer_index(&me->fdata, CD_MTFACE);
+					cdl= (index == -1)? NULL: &me->fdata.layers[index];
+					if (!cdl) continue;
+			
+					/* loop over all the faces and stop at the ones that use the material*/
+					for (a=0, mf=me->mface; a<me->totface; a++, mf++) {
+						if (me->mat[mf->mat_nr] == ma) {
+							/* texface data for this face */
+							tf = ((MTFace*)cdl->data) + a;
+							tf->mode |= TF_CONVERTED;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	return nowarning;
+}
+

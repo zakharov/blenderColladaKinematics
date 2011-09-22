@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 81
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/datafiles
+/svnroot/bf-blender/!svn/ver/39991/trunk/blender/source/blender/editors/datafiles
 END
 blob.png.c
 K 25
@@ -37,7 +37,7 @@ splash.png.c
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/datafiles/splash.png.c
+/svnroot/bf-blender/!svn/ver/39262/trunk/blender/source/blender/editors/datafiles/splash.png.c
 END
 vertexdraw.png.c
 K 25
@@ -115,7 +115,7 @@ CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/editors/datafiles/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/38375/trunk/blender/source/blender/editors/datafiles/CMakeLists.txt
 END
 grab.png.c
 K 25
@@ -151,7 +151,7 @@ preview.blend.c
 K 25
 svn:wc:ra_dav:version-url
 V 97
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/datafiles/preview.blend.c
+/svnroot/bf-blender/!svn/ver/38374/trunk/blender/source/blender/editors/datafiles/preview.blend.c
 END
 bfont.ttf.c
 K 25
@@ -211,13 +211,13 @@ startup.blend.c
 K 25
 svn:wc:ra_dav:version-url
 V 97
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/datafiles/startup.blend.c
+/svnroot/bf-blender/!svn/ver/39991/trunk/blender/source/blender/editors/datafiles/startup.blend.c
 END
 blenderbuttons.c
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/datafiles/blenderbuttons.c
+/svnroot/bf-blender/!svn/ver/39991/trunk/blender/source/blender/editors/datafiles/blenderbuttons.c
 END
 bmonofont.ttf.c
 K 25

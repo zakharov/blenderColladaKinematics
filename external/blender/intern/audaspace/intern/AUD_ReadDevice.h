@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_ReadDevice.h 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_ReadDevice.h 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -60,6 +60,12 @@ public:
 	AUD_ReadDevice(AUD_DeviceSpecs specs);
 
 	/**
+	 * Creates a new read device.
+	 * \param specs The wanted audio specification.
+	 */
+	AUD_ReadDevice(AUD_Specs specs);
+
+	/**
 	 * Closes the device.
 	 */
 	virtual ~AUD_ReadDevice();
@@ -73,6 +79,12 @@ public:
 	 *         silence.
 	 */
 	bool read(data_t* buffer, int length);
+
+	/**
+	 * Changes the output specification.
+	 * \param specs The new audio data specification.
+	 */
+	void changeSpecs(AUD_Specs specs);
 };
 
 #endif //AUD_READDEVICE

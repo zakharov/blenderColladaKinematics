@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_LoopFactory.h 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_LoopFactory.h 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -57,14 +57,14 @@ public:
 	 * \param loop The desired loop count, negative values result in endless
 	 *        looping.
 	 */
-	AUD_LoopFactory(AUD_IFactory* factory, int loop = -1);
+	AUD_LoopFactory(AUD_Reference<AUD_IFactory> factory, int loop = -1);
 
 	/**
 	 * Returns the loop count.
 	 */
 	int getLoop() const;
 
-	virtual AUD_IReader* createReader() const;
+	virtual AUD_Reference<AUD_IReader> createReader();
 };
 
 #endif //AUD_LOOPFACTORY

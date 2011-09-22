@@ -3,7 +3,7 @@
  *
  *	Functions for changing the topology of a mesh.
  *
- * $Id: BME_tools.c 35247 2011-02-27 20:40:57Z jesterking $
+ * $Id: BME_tools.c 38110 2011-07-05 08:28:54Z blendix $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -1002,7 +1002,7 @@ static BME_Mesh *BME_bevel_initialize(BME_Mesh *bm, int options, int UNUSED(defg
 	}
 
 	/* edge pass */
-	threshold = (float)cos((angle + 0.00001) * M_PI / 180.0);
+	threshold = (float)cos((angle + 0.001) * M_PI / 180.0);
 	for (e=bm->edges.first; e; e=e->next) {
 		e->tflag1 = BME_BEVEL_ORIG;
 		weight = 0.0;

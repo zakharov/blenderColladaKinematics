@@ -1,5 +1,5 @@
 /*
- * $Id: BL_ArmatureConstraint.cpp 35167 2011-02-25 13:30:41Z jesterking $
+ * $Id: BL_ArmatureConstraint.cpp 36523 2011-05-06 20:18:42Z blendix $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -147,7 +147,7 @@ void BL_ArmatureConstraint::ReParent(BL_ArmatureObject* armature)
 	}
 }
 
-void BL_ArmatureConstraint::Relink(GEN_Map<GEN_HashedPtr, void*> *obj_map)
+void BL_ArmatureConstraint::Relink(CTR_Map<CTR_HashedPtr, void*> *obj_map)
 {
 	void **h_obj = (*obj_map)[m_target];
 	if (h_obj) {

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 66
-/svnroot/bf-blender/!svn/ver/35265/trunk/blender/release/datafiles
+/svnroot/bf-blender/!svn/ver/39991/trunk/blender/release/datafiles
 END
 LICENSE-bfont.ttf.txt
 K 25
@@ -51,17 +51,11 @@ svn:wc:ra_dav:version-url
 V 77
 /svnroot/bf-blender/!svn/ver/33435/trunk/blender/release/datafiles/datatoc.py
 END
-.Bfs
-K 25
-svn:wc:ra_dav:version-url
-V 71
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/release/datafiles/.Bfs
-END
 blenderbuttons
 K 25
 svn:wc:ra_dav:version-url
 V 81
-/svnroot/bf-blender/!svn/ver/35225/trunk/blender/release/datafiles/blenderbuttons
+/svnroot/bf-blender/!svn/ver/39991/trunk/blender/release/datafiles/blenderbuttons
 END
 bmonofont.ttf
 K 25
@@ -73,5 +67,5 @@ splash.png
 K 25
 svn:wc:ra_dav:version-url
 V 77
-/svnroot/bf-blender/!svn/ver/33942/trunk/blender/release/datafiles/splash.png
+/svnroot/bf-blender/!svn/ver/39262/trunk/blender/release/datafiles/splash.png
 END

@@ -1,5 +1,5 @@
 /*
-* $Id: MOD_bevel.c 35362 2011-03-05 10:29:10Z campbellbarton $
+* $Id: MOD_bevel.c 39342 2011-08-12 18:11:22Z blendix $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -150,4 +150,5 @@ ModifierTypeInfo modifierType_Bevel = {
 	/* dependsOnNormals */	NULL,
 	/* foreachObjectLink */ NULL,
 	/* foreachIDLink */     NULL,
+	/* foreachTexLink */    NULL,
 };

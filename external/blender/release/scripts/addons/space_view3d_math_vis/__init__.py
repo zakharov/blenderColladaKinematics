@@ -1,4 +1,4 @@
-#====================== BEGIN GPL LICENSE BLOCK ======================
+# ##### BEGIN GPL LICENSE BLOCK #####
 #
 #  This program is free software; you can redistribute it and/or
 #  modify it under the terms of the GNU General Public License
@@ -14,14 +14,16 @@
 #  along with this program; if not, write to the Free Software Foundation,
 #  Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 #
-#======================= END GPL LICENSE BLOCK ========================
+# ##### END GPL LICENSE BLOCK #####
+
+# <pep8 compliant>
 
 bl_info = {
     "name": "Math Vis (Console)",
     "author": "Campbell Barton",
     "version": (0, 1),
-    "blender": (2, 5, 6),
-    "api": 33110,
+    "blender": (2, 5, 7),
+    "api": 35622,
     "location": "View3D > Tool Shelf or Console",
     "description": "Display console defined mathutils variables in the 3D view",
     "wiki_url": "http://wiki.blender.org/index.php/Extensions:2.5/Py/"\
@@ -47,11 +49,6 @@ class VIEW3D_PT_math_vis(bpy.types.Panel):
     bl_label = "Math View"
 
     def draw(self, context):
-        layout = self.layout
-        view = context.space_data
-
-        col = layout.column(align=True) 
-
         callbacks = draw.callbacks
         ok = False
         for region in context.area.regions:
@@ -59,12 +56,11 @@ class VIEW3D_PT_math_vis(bpy.types.Panel):
                 ok = True
                 break
 
-        col.operator("view3d.math_vis_toggle", emboss=False, icon='CHECKBOX_HLT' if ok else 'CHECKBOX_DEHLT')
-
+        self.layout.operator("view3d.math_vis_toggle", emboss=False, icon='CHECKBOX_HLT' if ok else 'CHECKBOX_DEHLT')
 
 
 class SetupMathView(bpy.types.Operator):
-    '''Draw a line with the mouse'''
+    '''Visualize mathutils type python variables from the interactive console, see addon docs'''
     bl_idname = "view3d.math_vis_toggle"
     bl_label = "Use Math Vis"
 
@@ -96,6 +92,7 @@ def register():
 
     import console_python
     console_python.execute.hooks.append((console_hook, ()))
+
 
 def unregister():
     bpy.utils.unregister_module(__name__)

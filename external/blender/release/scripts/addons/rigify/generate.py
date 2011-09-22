@@ -17,6 +17,7 @@
 #======================= END GPL LICENSE BLOCK ========================
 
 import bpy
+import re
 import time
 import traceback
 import sys
@@ -25,7 +26,8 @@ from rigify.utils import MetarigError, new_bone, get_rig_type
 from rigify.utils import ORG_PREFIX, MCH_PREFIX, DEF_PREFIX, WGT_PREFIX, ROOT_NAME, make_original_name
 from rigify.utils import RIG_DIR
 from rigify.utils import create_root_widget
-from rigify.utils import random_string
+from rigify.utils import random_id
+from rigify.utils import copy_attributes
 from rigify.rig_ui_template import UI_SLIDERS, layers_ui, UI_REGISTER
 from rigify import rigs
 
@@ -52,12 +54,13 @@ def generate_rig(context, metarig):
 
     """
     t = Timer()
-    rig_id = random_string(12)  # Random so that different rigs don't collide id's
+
+    # Random string with time appended so that
+    # different rigs don't collide id's
+    rig_id = random_id(16)
 
     # Initial configuration
-    use_global_undo = context.user_preferences.edit.use_global_undo
-    context.user_preferences.edit.use_global_undo = False
-    mode_orig = context.mode
+    # mode_orig = context.mode  # UNUSED
     rest_backup = metarig.data.pose_position
     metarig.data.pose_position = 'REST'
 
@@ -129,6 +132,15 @@ def generate_rig(context, metarig):
     obj.select = True
     scene.objects.active = obj
 
+    # Copy over bone properties
+    for bone in metarig.data.bones:
+        bone_gen = obj.data.bones[bone.name]
+
+        # B-bone stuff
+        bone_gen.bbone_segments = bone.bbone_segments
+        bone_gen.bbone_in = bone.bbone_in
+        bone_gen.bbone_out = bone.bbone_out
+
     # Copy over the pose_bone properties
     for bone in metarig.pose.bones:
         bone_gen = obj.pose.bones[bone.name]
@@ -145,14 +157,57 @@ def generate_rig(context, metarig):
         for prop in bone.keys():
             bone_gen[prop] = bone[prop]
 
-    # Copy over bone properties
-    for bone in metarig.data.bones:
-        bone_gen = obj.data.bones[bone.name]
+        # Constraints
+        for con1 in bone.constraints:
+            con2 = bone_gen.constraints.new(type=con1.type)
+            copy_attributes(con1, con2)
 
-        # B-bone stuff
-        bone_gen.bbone_segments = bone.bbone_segments
-        bone_gen.bbone_in = bone.bbone_in
-        bone_gen.bbone_out = bone.bbone_out
+            # Set metarig target to rig target
+            if "target" in dir(con2):
+                if con2.target == metarig:
+                    con2.target = obj
+
+    # Copy drivers
+    if metarig.animation_data:
+        for d1 in metarig.animation_data.drivers:
+            d2 = obj.driver_add(d1.data_path)
+            copy_attributes(d1, d2)
+            copy_attributes(d1.driver, d2.driver)
+
+            # Remove default modifiers, variables, etc.
+            for m in d2.modifiers:
+                d2.modifiers.remove(m)
+            for v in d2.driver.variables:
+                d2.driver.variables.remove(v)
+
+            # Copy modifiers
+            for m1 in d1.modifiers:
+                m2 = d2.modifiers.new(type=m1.type)
+                copy_attributes(m1, m2)
+
+            # Copy variables
+            for v1 in d1.driver.variables:
+                v2 = d2.driver.variables.new()
+                copy_attributes(v1, v2)
+                for i in range(len(v1.targets)):
+                    copy_attributes(v1.targets[i], v2.targets[i])
+                    # Switch metarig targets to rig targets
+                    if v2.targets[i].id == metarig:
+                        v2.targets[i].id = obj
+
+                    # Mark targets that may need to be altered after rig generation
+                    tar = v2.targets[i]
+                    # If a custom property
+                    if v2.type == 'SINGLE_PROP' \
+                    and re.match('^pose.bones\["[^"\]]*"\]\["[^"\]]*"\]$', tar.data_path):
+                        tar.data_path = "RIGIFY-" + tar.data_path
+
+            # Copy key frames
+            for i in range(len(d1.keyframe_points)):
+                d2.keyframe_points.add()
+                k1 = d1.keyframe_points[i]
+                k2 = d2.keyframe_points[i]
+                copy_attributes(k1, k2)
 
     t.tick("Duplicate rig: ")
     #----------------------------------
@@ -214,7 +269,6 @@ def generate_rig(context, metarig):
     except Exception as e:
         # Cleanup if something goes wrong
         print("Rigify: failed to generate rig.")
-        context.user_preferences.edit.use_global_undo = use_global_undo
         metarig.data.pose_position = rest_backup
         obj.data.pose_position = 'POSE'
         bpy.ops.object.mode_set(mode='OBJECT')
@@ -231,7 +285,7 @@ def generate_rig(context, metarig):
     # Parent any free-floating bones to the root.
     bpy.ops.object.mode_set(mode='EDIT')
     for bone in bones:
-        if obj.data.edit_bones[bone].parent == None:
+        if obj.data.edit_bones[bone].parent is None:
             obj.data.edit_bones[bone].use_connect = False
             obj.data.edit_bones[bone].parent = obj.data.edit_bones[root_bone]
     bpy.ops.object.mode_set(mode='OBJECT')
@@ -243,6 +297,18 @@ def generate_rig(context, metarig):
             obj.data.bones[bone].use_deform = True
         else:
             obj.data.bones[bone].use_deform = False
+
+    # Alter marked driver targets
+    for d in obj.animation_data.drivers:
+        for v in d.driver.variables:
+            for tar in v.targets:
+                if tar.data_path.startswith("RIGIFY-"):
+                    temp, bone, prop = tuple([x.strip('"]') for x in tar.data_path.split('["')])
+                    if bone in obj.data.bones \
+                    and prop in obj.pose.bones[bone].keys():
+                        tar.data_path = tar.data_path[7:]
+                    else:
+                        tar.data_path = 'pose.bones["%s"]["%s"]' % (make_original_name(bone), prop)
 
     # Move all the original bones to their layer.
     for bone in original_bones:
@@ -282,6 +348,15 @@ def generate_rig(context, metarig):
         vis_layers[i] = vis_layers[i] and not (ORG_LAYER[i] or MCH_LAYER[i] or DEF_LAYER[i])
     obj.data.layers = vis_layers
 
+    # Ensure the collection of layer names exists
+    for i in range(1 + len(metarig.data.rigify_layers), 29):
+        metarig.data.rigify_layers.add()
+
+    # Create list of layer name/row pairs
+    layer_layout = []
+    for l in metarig.data.rigify_layers:
+        layer_layout += [(l.name, l.row)]
+
     # Generate the UI script
     if "rig_ui.py" in bpy.data.texts:
         script = bpy.data.texts["rig_ui.py"]
@@ -291,9 +366,12 @@ def generate_rig(context, metarig):
     script.write(UI_SLIDERS % rig_id)
     for s in ui_scripts:
         script.write("\n        " + s.replace("\n", "\n        ") + "\n")
-    script.write(layers_ui(vis_layers))
+    script.write(layers_ui(vis_layers, layer_layout))
     script.write(UI_REGISTER)
     script.use_module = True
+
+    # Run UI script
+    exec(script.as_string(), {})
 
     t.tick("The rest: ")
     #----------------------------------
@@ -301,7 +379,6 @@ def generate_rig(context, metarig):
     bpy.ops.object.mode_set(mode='OBJECT')
     metarig.data.pose_position = rest_backup
     obj.data.pose_position = 'POSE'
-    context.user_preferences.edit.use_global_undo = use_global_undo
 
 
 def get_bone_rigs(obj, bone_name, halt_on_missing=False):
@@ -324,7 +401,7 @@ def get_bone_rigs(obj, bone_name, halt_on_missing=False):
         try:
             rig = get_rig_type(rig_type).Rig(obj, bone_name, params)
         except ImportError:
-            message = "Rig Type Missing: python module for type '%s' not found (bone: %s)" % (t, bone_name)
+            message = "Rig Type Missing: python module for type '%s' not found (bone: %s)" % (rig_type, bone_name)
             if halt_on_missing:
                 raise MetarigError(message)
             else:
@@ -349,4 +426,3 @@ def param_name(param_name, rig_type):
     """ Get the actual parameter name, sans-rig-type.
     """
     return param_name[len(rig_type) + 1:]
-

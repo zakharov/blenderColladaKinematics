@@ -1,419 +1,449 @@
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svnroot/bf-blender/!svn/ver/34347/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes
+/svnroot/bf-blender/!svn/ver/35504/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes
 END
 btConvexHullShape.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 121
-/svnroot/bf-blender/!svn/ver/31731/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btConvexHullShape.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btConvexHullShape.cpp
 END
 btSphereShape.h
 K 25
 svn:wc:ra_dav:version-url
 V 115
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btSphereShape.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btSphereShape.h
 END
 btScaledBvhTriangleMeshShape.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 132
-/svnroot/bf-blender/!svn/ver/34347/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btScaledBvhTriangleMeshShape.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btScaledBvhTriangleMeshShape.cpp
 END
 btEmptyShape.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 116
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btEmptyShape.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btEmptyShape.cpp
 END
 btConvexShape.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 117
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btConvexShape.cpp
-END
-btTriangleMesh.h
-K 25
-svn:wc:ra_dav:version-url
-V 116
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btTriangleMesh.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btConvexShape.cpp
 END
 btMultiSphereShape.h
 K 25
 svn:wc:ra_dav:version-url
 V 120
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btMultiSphereShape.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btMultiSphereShape.h
 END
 btHeightfieldTerrainShape.h
 K 25
 svn:wc:ra_dav:version-url
 V 127
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btHeightfieldTerrainShape.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btHeightfieldTerrainShape.h
+END
+btTriangleMesh.h
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btTriangleMesh.h
 END
 btStaticPlaneShape.h
 K 25
 svn:wc:ra_dav:version-url
 V 120
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btStaticPlaneShape.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btStaticPlaneShape.h
 END
 btTriangleIndexVertexArray.h
 K 25
 svn:wc:ra_dav:version-url
 V 128
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btTriangleIndexVertexArray.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btTriangleIndexVertexArray.h
 END
 btConcaveShape.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 118
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btConcaveShape.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btConcaveShape.cpp
 END
 btUniformScalingShape.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 125
-/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btUniformScalingShape.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btUniformScalingShape.cpp
 END
 btMultimaterialTriangleMeshShape.h
 K 25
 svn:wc:ra_dav:version-url
 V 134
-/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btMultimaterialTriangleMeshShape.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btMultimaterialTriangleMeshShape.h
 END
 btMaterial.h
 K 25
 svn:wc:ra_dav:version-url
 V 112
-/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btMaterial.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btMaterial.h
 END
 btOptimizedBvh.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 118
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btOptimizedBvh.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btOptimizedBvh.cpp
+END
+btBox2dShape.h
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svnroot/bf-blender/!svn/ver/35504/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btBox2dShape.h
 END
 btSphereShape.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 117
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btSphereShape.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btSphereShape.cpp
 END
 btTriangleMeshShape.h
 K 25
 svn:wc:ra_dav:version-url
 V 121
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btTriangleMeshShape.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btTriangleMeshShape.h
 END
 btConeShape.h
 K 25
 svn:wc:ra_dav:version-url
 V 113
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btConeShape.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btConeShape.h
 END
 btConvexHullShape.h
 K 25
 svn:wc:ra_dav:version-url
 V 119
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btConvexHullShape.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btConvexHullShape.h
 END
 btTriangleIndexVertexMaterialArray.h
 K 25
 svn:wc:ra_dav:version-url
 V 136
-/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btTriangleIndexVertexMaterialArray.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btTriangleIndexVertexMaterialArray.h
 END
 btConvexInternalShape.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 125
-/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btConvexInternalShape.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btConvexInternalShape.cpp
 END
 btTriangleCallback.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 122
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btTriangleCallback.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btTriangleCallback.cpp
 END
 btConvexPointCloudShape.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 127
-/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btConvexPointCloudShape.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btConvexPointCloudShape.cpp
 END
 btShapeHull.h
 K 25
 svn:wc:ra_dav:version-url
 V 113
-/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btShapeHull.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btShapeHull.h
 END
 btCylinderShape.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 119
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btCylinderShape.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btCylinderShape.cpp
 END
 btTriangleShape.h
 K 25
 svn:wc:ra_dav:version-url
 V 117
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btTriangleShape.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btTriangleShape.h
 END
 btMultimaterialTriangleMeshShape.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 136
-/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btMultimaterialTriangleMeshShape.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btMultimaterialTriangleMeshShape.cpp
+END
+btBox2dShape.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svnroot/bf-blender/!svn/ver/35504/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btBox2dShape.cpp
 END
 btTetrahedronShape.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 122
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btTetrahedronShape.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btTetrahedronShape.cpp
 END
 btTriangleMeshShape.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 123
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btTriangleMeshShape.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btTriangleMeshShape.cpp
 END
 btTriangleBuffer.h
 K 25
 svn:wc:ra_dav:version-url
 V 118
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btTriangleBuffer.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btTriangleBuffer.h
 END
 btConeShape.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 115
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btConeShape.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btConeShape.cpp
 END
 btBvhTriangleMeshShape.h
 K 25
 svn:wc:ra_dav:version-url
 V 124
-/svnroot/bf-blender/!svn/ver/26593/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btBvhTriangleMeshShape.h
-END
-btTriangleIndexVertexMaterialArray.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 138
-/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btTriangleIndexVertexMaterialArray.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btBvhTriangleMeshShape.h
 END
 btOptimizedBvh.h
 K 25
 svn:wc:ra_dav:version-url
 V 116
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btOptimizedBvh.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btOptimizedBvh.h
+END
+btTriangleIndexVertexMaterialArray.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btTriangleIndexVertexMaterialArray.cpp
 END
 btCollisionShape.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 120
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btCollisionShape.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btCollisionShape.cpp
 END
 btBoxShape.h
 K 25
 svn:wc:ra_dav:version-url
 V 112
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btBoxShape.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btBoxShape.h
+END
+btConvex2dShape.h
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svnroot/bf-blender/!svn/ver/35504/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btConvex2dShape.h
 END
 btCapsuleShape.h
 K 25
 svn:wc:ra_dav:version-url
 V 116
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btCapsuleShape.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btCapsuleShape.h
 END
 btShapeHull.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 115
-/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btShapeHull.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btShapeHull.cpp
 END
 btConvexInternalShape.h
 K 25
 svn:wc:ra_dav:version-url
 V 123
-/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btConvexInternalShape.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btConvexInternalShape.h
 END
 btStridingMeshInterface.h
 K 25
 svn:wc:ra_dav:version-url
 V 125
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btStridingMeshInterface.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btStridingMeshInterface.h
 END
 btMinkowskiSumShape.h
 K 25
 svn:wc:ra_dav:version-url
 V 121
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btMinkowskiSumShape.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btMinkowskiSumShape.h
 END
 btConvexTriangleMeshShape.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 129
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btConvexTriangleMeshShape.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btConvexTriangleMeshShape.cpp
 END
 btTriangleCallback.h
 K 25
 svn:wc:ra_dav:version-url
 V 120
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btTriangleCallback.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btTriangleCallback.h
 END
 btConvexPointCloudShape.h
 K 25
 svn:wc:ra_dav:version-url
 V 125
-/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btConvexPointCloudShape.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btConvexPointCloudShape.h
 END
 btCollisionMargin.h
 K 25
 svn:wc:ra_dav:version-url
 V 119
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btCollisionMargin.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btCollisionMargin.h
 END
 btTriangleBuffer.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 120
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btTriangleBuffer.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btTriangleBuffer.cpp
 END
 btCylinderShape.h
 K 25
 svn:wc:ra_dav:version-url
 V 117
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btCylinderShape.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btCylinderShape.h
 END
 btBvhTriangleMeshShape.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 126
-/svnroot/bf-blender/!svn/ver/26593/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btBvhTriangleMeshShape.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btBvhTriangleMeshShape.cpp
 END
 btTetrahedronShape.h
 K 25
 svn:wc:ra_dav:version-url
 V 120
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btTetrahedronShape.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btTetrahedronShape.h
 END
 btBoxShape.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 114
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btBoxShape.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btBoxShape.cpp
+END
+btConvex2dShape.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svnroot/bf-blender/!svn/ver/35504/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btConvex2dShape.cpp
 END
 btCompoundShape.h
 K 25
 svn:wc:ra_dav:version-url
 V 117
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btCompoundShape.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btCompoundShape.h
 END
 btPolyhedralConvexShape.h
 K 25
 svn:wc:ra_dav:version-url
 V 125
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btPolyhedralConvexShape.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btPolyhedralConvexShape.h
 END
 btCapsuleShape.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 118
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btCapsuleShape.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btCapsuleShape.cpp
 END
 btStridingMeshInterface.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 127
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btStridingMeshInterface.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btStridingMeshInterface.cpp
 END
 btMinkowskiSumShape.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 123
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btMinkowskiSumShape.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btMinkowskiSumShape.cpp
 END
 btCollisionShape.h
 K 25
 svn:wc:ra_dav:version-url
 V 118
-/svnroot/bf-blender/!svn/ver/24972/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btCollisionShape.h
-END
-btTriangleMesh.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 118
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btTriangleMesh.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btCollisionShape.h
 END
 btMultiSphereShape.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 122
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btMultiSphereShape.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btMultiSphereShape.cpp
 END
 btHeightfieldTerrainShape.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 129
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btHeightfieldTerrainShape.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btHeightfieldTerrainShape.cpp
+END
+btTriangleMesh.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btTriangleMesh.cpp
 END
 btScaledBvhTriangleMeshShape.h
 K 25
 svn:wc:ra_dav:version-url
 V 130
-/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btScaledBvhTriangleMeshShape.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btScaledBvhTriangleMeshShape.h
 END
 btEmptyShape.h
 K 25
 svn:wc:ra_dav:version-url
 V 114
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btEmptyShape.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btEmptyShape.h
+END
+btTriangleInfoMap.h
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svnroot/bf-blender/!svn/ver/35504/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btTriangleInfoMap.h
 END
 btStaticPlaneShape.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 122
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btStaticPlaneShape.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btStaticPlaneShape.cpp
 END
 btConvexShape.h
 K 25
 svn:wc:ra_dav:version-url
 V 115
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btConvexShape.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btConvexShape.h
 END
 btTriangleIndexVertexArray.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 130
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btTriangleIndexVertexArray.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btTriangleIndexVertexArray.cpp
 END
 btConvexTriangleMeshShape.h
 K 25
 svn:wc:ra_dav:version-url
 V 127
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btConvexTriangleMeshShape.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btConvexTriangleMeshShape.h
 END
 btConcaveShape.h
 K 25
 svn:wc:ra_dav:version-url
 V 116
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btConcaveShape.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btConcaveShape.h
 END
 btCompoundShape.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 119
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btCompoundShape.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btCompoundShape.cpp
 END
 btUniformScalingShape.h
 K 25
 svn:wc:ra_dav:version-url
 V 123
-/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btUniformScalingShape.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btUniformScalingShape.h
 END
 btPolyhedralConvexShape.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 127
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btPolyhedralConvexShape.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletCollision/CollisionShapes/btPolyhedralConvexShape.cpp
 END

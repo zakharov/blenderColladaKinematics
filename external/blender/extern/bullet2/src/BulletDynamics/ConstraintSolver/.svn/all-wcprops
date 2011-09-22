@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svnroot/bf-blender/!svn/ver/30446/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver
+/svnroot/bf-blender/!svn/ver/35504/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver
 END
 btSequentialImpulseConstraintSolver.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 139
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.cpp
 END
 btSolve2LinearConstraint.cpp
 K 25
@@ -15,17 +15,41 @@ svn:wc:ra_dav:version-url
 V 128
 /svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btSolve2LinearConstraint.cpp
 END
+btUniversalConstraint.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svnroot/bf-blender/!svn/ver/35504/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btUniversalConstraint.cpp
+END
 btSequentialImpulseConstraintSolver.h
 K 25
 svn:wc:ra_dav:version-url
 V 137
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.h
 END
 btSolve2LinearConstraint.h
 K 25
 svn:wc:ra_dav:version-url
 V 126
 /svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btSolve2LinearConstraint.h
+END
+btHinge2Constraint.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svnroot/bf-blender/!svn/ver/35504/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btHinge2Constraint.cpp
+END
+btUniversalConstraint.h
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svnroot/bf-blender/!svn/ver/35504/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btUniversalConstraint.h
+END
+btGeneric6DofSpringConstraint.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svnroot/bf-blender/!svn/ver/35504/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btGeneric6DofSpringConstraint.cpp
 END
 btConstraintSolver.h
 K 25
@@ -37,107 +61,119 @@ btConeTwistConstraint.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 125
-/svnroot/bf-blender/!svn/ver/30446/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btConeTwistConstraint.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btConeTwistConstraint.cpp
 END
 btSolverConstraint.h
 K 25
 svn:wc:ra_dav:version-url
 V 120
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btSolverConstraint.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btSolverConstraint.h
+END
+btHinge2Constraint.h
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svnroot/bf-blender/!svn/ver/35504/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btHinge2Constraint.h
 END
 btSliderConstraint.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 122
-/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btSliderConstraint.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btSliderConstraint.cpp
+END
+btGeneric6DofSpringConstraint.h
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svnroot/bf-blender/!svn/ver/35504/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btGeneric6DofSpringConstraint.h
 END
 btConeTwistConstraint.h
 K 25
 svn:wc:ra_dav:version-url
 V 123
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btConeTwistConstraint.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btConeTwistConstraint.h
 END
 btPoint2PointConstraint.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 127
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btPoint2PointConstraint.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btPoint2PointConstraint.cpp
 END
 btTypedConstraint.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 121
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btTypedConstraint.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btTypedConstraint.cpp
 END
 btSliderConstraint.h
 K 25
 svn:wc:ra_dav:version-url
 V 120
-/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btSliderConstraint.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btSliderConstraint.h
 END
 btJacobianEntry.h
 K 25
 svn:wc:ra_dav:version-url
 V 117
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btJacobianEntry.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btJacobianEntry.h
 END
 btSolverBody.h
 K 25
 svn:wc:ra_dav:version-url
 V 114
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btSolverBody.h
-END
-btPoint2PointConstraint.h
-K 25
-svn:wc:ra_dav:version-url
-V 125
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btPoint2PointConstraint.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btSolverBody.h
 END
 btHingeConstraint.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 121
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btHingeConstraint.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btHingeConstraint.cpp
+END
+btPoint2PointConstraint.h
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btPoint2PointConstraint.h
 END
 btTypedConstraint.h
 K 25
 svn:wc:ra_dav:version-url
 V 119
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btTypedConstraint.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btTypedConstraint.h
 END
 btGeneric6DofConstraint.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 127
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btGeneric6DofConstraint.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btGeneric6DofConstraint.cpp
 END
 btContactConstraint.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 123
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btContactConstraint.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btContactConstraint.cpp
 END
 btHingeConstraint.h
 K 25
 svn:wc:ra_dav:version-url
 V 119
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btHingeConstraint.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btHingeConstraint.h
 END
 btGeneric6DofConstraint.h
 K 25
 svn:wc:ra_dav:version-url
 V 125
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btGeneric6DofConstraint.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btGeneric6DofConstraint.h
 END
 btContactConstraint.h
 K 25
 svn:wc:ra_dav:version-url
 V 121
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btContactConstraint.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btContactConstraint.h
 END
 btContactSolverInfo.h
 K 25
 svn:wc:ra_dav:version-url
 V 121
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btContactSolverInfo.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletDynamics/ConstraintSolver/btContactSolverInfo.h
 END

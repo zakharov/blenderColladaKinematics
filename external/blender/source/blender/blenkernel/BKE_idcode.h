@@ -1,5 +1,5 @@
 /*
- * $Id: BKE_idcode.h 34962 2011-02-18 13:05:18Z jesterking $
+ * $Id: BKE_idcode.h 35493 2011-03-12 14:38:00Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -75,5 +75,13 @@ int BKE_idcode_is_linkable(int code);
  * @return Boolean, 0 when invalid.
  */
 int BKE_idcode_is_valid(int code);
+
+/**
+ * Return an ID code and steps the index forward 1.
+ *
+ * @param index, start as 0.
+ * @return the code, 0 when all codes have been returned.
+ */
+int BKE_idcode_iter_step(int *index);
 
 #endif

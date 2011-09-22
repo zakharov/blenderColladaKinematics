@@ -1,15 +1,15 @@
 10
 
 dir
-1680
+2344
 https://svn.blender.org/svnroot/bf-extensions/trunk/py/scripts/addons/io_anim_bvh
 https://svn.blender.org/svnroot/bf-extensions
 
 
 
-2011-02-27T15:27:55.919470Z
-1664
-campbellbarton
+2011-09-19T15:08:06.568619Z
+2334
+mont29
 
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2011-03-03T12:29:54.038297Z
-8ee4c5b2ebbb4ea57e38a26654915cf2
-2011-02-21T00:11:50.538528Z
-1626
+2011-09-21T18:17:50.120309Z
+e6e7201ed688dc1e95470b2cbeed2d92
+2011-08-26T06:39:29.476756Z
+2269
 campbellbarton
 has-props
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-21499
+22268
 
 __init__.py
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-03-03T12:29:54.038297Z
-55b16a5224b331e7506f6f400105fea2
-2011-02-27T15:27:55.919470Z
-1664
-campbellbarton
+2011-09-21T18:17:50.124309Z
+bce9f0eb26fbe9691ca2a666cc0ca352
+2011-09-19T15:08:06.568619Z
+2334
+mont29
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-5291
+8272
 
 export_bvh.py
 file
@@ -100,10 +100,10 @@ file
 
 
 
-2011-03-03T12:29:54.038297Z
-ab6fc1ac899e40260b6a2942cdb6d38e
-2011-02-05T07:08:34.456132Z
-1539
+2011-09-21T18:17:50.124309Z
+3cee75c32a5bb5e771afb56281698900
+2011-08-15T11:56:36.456920Z
+2247
 campbellbarton
 has-props
 
@@ -126,5 +126,5 @@ has-props
 
 
 
-8402
+9876
 

@@ -1,4 +1,4 @@
-/* $Id: BKE_subsurf.h 34962 2011-02-18 13:05:18Z jesterking $ 
+/* $Id: BKE_subsurf.h 36773 2011-05-19 11:24:56Z blendix $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -54,7 +54,7 @@ struct DerivedMesh *subsurf_make_derived_from_derived(
 						struct DerivedMesh *dm,
 						struct SubsurfModifierData *smd,
 						int useRenderParams, float (*vertCos)[3],
-						int isFinalCalc, int editMode);
+						int isFinalCalc, int forEditMode, int inEditMode);
 
 void subsurf_calculate_limit_positions(struct Mesh *me, float (*positions_r)[3]);
 

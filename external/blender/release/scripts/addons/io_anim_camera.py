@@ -22,10 +22,10 @@ bl_info = {
     "name": "Export Camera Animation",
     "author": "Campbell Barton",
     "version": (0, 1),
-    "blender": (2, 5, 3),
-    "api": 31847,
-    "location": "File > Export > Camera Animation",
-    "description": "Export Cameras & Markers",
+    "blender": (2, 5, 7),
+    "api": 36079,
+    "location": "File > Export > Cameras & Markers (.py)",
+    "description": "Export Cameras & Markers (.py)",
     "warning": "",
     "wiki_url": "http://wiki.blender.org/index.php/Extensions:2.5/Py/"\
         "Scripts/Import-Export/Camera_Animation",
@@ -115,7 +115,7 @@ def writeCameras(context, filepath, frame_start, frame_end, only_selected=False)
 
 
 from bpy.props import StringProperty, IntProperty, BoolProperty
-from io_utils import ExportHelper
+from bpy_extras.io_utils import ExportHelper
 
 
 class CameraExporter(bpy.types.Operator, ExportHelper):

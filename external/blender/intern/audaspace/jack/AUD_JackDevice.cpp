@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_JackDevice.cpp 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_JackDevice.cpp 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -28,8 +28,6 @@
  *  \ingroup audjack
  */
 
-
-#include "AUD_Mixer.h"
 #include "AUD_JackDevice.h"
 #include "AUD_IReader.h"
 

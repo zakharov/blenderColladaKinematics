@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/quicktime/apple
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-02-27T20:01:38.970644Z
-35235
-jesterking
+2011-06-23T09:27:56.831973Z
+37750
+campbellbarton
 
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2011-03-03T12:27:15.202297Z
+2011-09-21T18:16:31.795921Z
 dc10578b81e36e6e8b8b921f40af6592
 2010-11-19T02:14:18.951059Z
 33167
@@ -66,10 +66,10 @@ file
 
 
 
-2011-03-03T12:27:15.206297Z
-60c25af91032bd80c20820ce97c2b502
-2011-02-27T20:01:38.970644Z
-35235
+2011-09-21T18:16:31.799921Z
+79070b6bac1b8ee396b7f6c5c14a1126
+2011-04-20T12:04:07.495370Z
+36243
 jesterking
 has-props
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-19466
+19422
 
 qtkit_export.m
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-03-03T12:27:15.206297Z
-de8da73b533c79ce9f79c43522d8b324
-2010-12-12T13:45:35.556114Z
-33610
-ton
+2011-09-21T18:16:31.799921Z
+5632d3381e24356dd96ec5572a7f8243
+2011-06-23T09:27:56.831973Z
+37750
+campbellbarton
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-27837
+27879
 
 quicktime_export.c
 file
@@ -134,7 +134,7 @@ file
 
 
 
-2011-03-03T12:27:15.206297Z
+2011-09-21T18:16:31.803921Z
 d1025a5218a19a32c5de26cf4c83c666
 2011-02-27T20:01:38.970644Z
 35235

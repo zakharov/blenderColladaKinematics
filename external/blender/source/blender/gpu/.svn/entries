@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/gpu
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-03-05T10:29:10.037531Z
-35362
-campbellbarton
+2011-09-22T05:36:52.865488Z
+40446
+mmikkelsen
 
 
 
@@ -35,11 +35,11 @@ file
 
 
 
-2011-03-03T12:27:16.094297Z
-5378c0c005e3d1ea3e1bb09b42b9f21e
-2011-02-21T06:58:46.816603Z
-35014
-jesterking
+2011-09-21T18:16:32.123922Z
+ab06ee8cdc4c9e6325a55d9e5c7fe402
+2011-09-19T19:55:59.989496Z
+40372
+dfelinto
 has-props
 
 
@@ -61,7 +61,7 @@ has-props
 
 
 
-5040
+7396
 
 GPU_extensions.h
 file
@@ -69,11 +69,11 @@ file
 
 
 
-2011-03-03T12:27:16.094297Z
-2f5ad3b47a857011d35824e049b5b452
-2011-02-21T06:58:46.816603Z
-35014
-jesterking
+2011-09-21T18:16:32.123922Z
+54b534f6c4a4326394faba22879c65a4
+2011-09-09T11:55:38.207467Z
+40061
+ben2610
 has-props
 
 
@@ -95,7 +95,7 @@ has-props
 
 
 
-6106
+6279
 
 SConscript
 file
@@ -103,11 +103,11 @@ file
 
 
 
-2011-03-03T12:27:16.094297Z
-7e5ee864e85cff0636fc61644162bdc9
-2011-02-21T12:35:04.852834Z
-35028
-jesterking
+2011-09-21T18:16:32.123922Z
+3c550383ee42a2bb38c5163df77a6215
+2011-09-05T21:01:50.523009Z
+39941
+lukastoenne
 has-props
 
 
@@ -129,7 +129,7 @@ has-props
 
 
 
-523
+585
 
 CMakeLists.txt
 file
@@ -137,11 +137,11 @@ file
 
 
 
-2011-03-03T12:27:16.094297Z
-874b120ff4ca2b68995c98f061a5ff2d
-2011-02-21T12:35:04.852834Z
-35028
-jesterking
+2011-09-21T18:16:32.123922Z
+356874373ee74ed41a9ad0095f87bba3
+2011-07-17T09:11:13.810557Z
+38443
+campbellbarton
 has-props
 
 
@@ -163,7 +163,7 @@ has-props
 
 
 
-1539
+1618
 
 GPU_buffers.h
 file
@@ -171,11 +171,11 @@ file
 
 
 
-2011-03-03T12:27:16.094297Z
-e47fed8d754614467b655696448c54a5
-2011-02-21T06:58:46.816603Z
-35014
-jesterking
+2011-09-21T18:16:32.123922Z
+e7a5a51f6ffdde80e111ecd3e2ffb596
+2011-09-07T06:33:29.061260Z
+39991
+mont29
 has-props
 
 
@@ -197,7 +197,7 @@ has-props
 
 
 
-5853
+5826
 
 GPU_draw.h
 file
@@ -205,11 +205,11 @@ file
 
 
 
-2011-03-03T12:27:16.094297Z
-394f5d03fea2acef626db04a5f9cbc80
-2011-02-21T06:58:46.816603Z
-35014
-jesterking
+2011-09-21T18:16:32.123922Z
+dca882ae14e20bbc0124560d3942b155
+2011-09-19T19:55:59.989496Z
+40372
+dfelinto
 has-props
 
 
@@ -231,5 +231,5 @@ has-props
 
 
 
-4257
+4421
 

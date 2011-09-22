@@ -265,7 +265,7 @@ std::string get_light_id(Object *ob)
 
 std::string get_joint_id(Bone *bone, Object *ob_arm)
 {
-	return translate_id(id_name(ob_arm) + "_" + bone->name);
+	return translate_id(/*id_name(ob_arm) + "_" +*/ bone->name);
 }
 
 std::string get_camera_id(Object *ob)
@@ -276,4 +276,18 @@ std::string get_camera_id(Object *ob)
 std::string get_material_id(Material *mat)
 {
 	return translate_id(id_name(mat)) + "-material";
+}
+
+bool has_object_type(Scene *sce, short obtype)
+{
+	Base *base= (Base*) sce->base.first;
+	while(base) {
+		Object *ob = base->object;
+			
+		if (ob->type == obtype && ob->data) {
+			return true;
+		}
+		base= base->next;
+	}
+	return false;
 }

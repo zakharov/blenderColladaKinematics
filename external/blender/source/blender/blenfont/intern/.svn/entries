@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/blenfont/intern
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-02-27T20:42:42.472826Z
-35248
-jesterking
+2011-09-21T15:14:47.304242Z
+40430
+blendix
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-03-03T12:27:34.682297Z
-5ac409540ee926a1245e4a45253a0757
-2011-02-27T20:42:42.472826Z
-35248
-jesterking
+2011-09-21T18:16:39.315958Z
+3e39c7537f134c9482cd6f112dbddb25
+2011-09-18T10:34:13.504268Z
+40321
+campbellbarton
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-2984
+2993
 
 blf_dir.c
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-03-03T12:27:34.682297Z
-e5a136a21e1e030d8383c71ba5c22061
-2011-02-27T20:42:42.472826Z
-35248
-jesterking
+2011-09-21T18:16:39.315958Z
+00c153f84c22a496710be405d6b08bd6
+2011-09-19T14:09:13.308721Z
+40358
+blendix
 has-props
 
 
@@ -92,7 +92,41 @@ has-props
 
 
 
-3954
+4006
+
+blf_translation.c
+file
+
+
+
+
+2011-09-21T18:16:39.319958Z
+85a8ff5755410405d3299ec4f1033c91
+2011-09-20T15:30:18.476948Z
+40402
+gsrb3d
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2127
 
 blf.c
 file
@@ -100,11 +134,11 @@ file
 
 
 
-2011-03-03T12:27:34.682297Z
-b04a5d9c7369088f4f3aaad9aca40d83
-2011-02-27T20:42:42.472826Z
-35248
-jesterking
+2011-09-21T18:16:39.319958Z
+a8362b40b7fd0117627da240f3c15660
+2011-09-21T15:14:47.304242Z
+40430
+blendix
 has-props
 
 
@@ -126,7 +160,7 @@ has-props
 
 
 
-12914
+13853
 
 blf_internal.h
 file
@@ -134,11 +168,11 @@ file
 
 
 
-2011-03-03T12:27:34.682297Z
-859e4a9bcfc69b3d168e5bb059c1b9c5
-2011-02-27T20:42:42.472826Z
-35248
-jesterking
+2011-09-21T18:16:39.319958Z
+3e54679d0197ba1537feafc15a375eb1
+2011-09-11T08:12:16.595598Z
+40116
+campbellbarton
 has-props
 
 
@@ -160,7 +194,7 @@ has-props
 
 
 
-3044
+3070
 
 blf_lang.c
 file
@@ -168,11 +202,11 @@ file
 
 
 
-2011-03-03T12:27:34.682297Z
-2cdab60b30a12ee714d1c27ba9939b63
-2011-02-27T20:42:42.472826Z
-35248
-jesterking
+2011-09-21T18:16:39.319958Z
+9a5cb99021f79d7a34a88960b75df831
+2011-09-21T15:07:19.324452Z
+40429
+nazgul
 has-props
 
 
@@ -194,7 +228,7 @@ has-props
 
 
 
-3162
+5193
 
 blf_glyph.c
 file
@@ -202,11 +236,11 @@ file
 
 
 
-2011-03-03T12:27:34.686297Z
-8cd5b71aa5054b01cf7791f9a5dcf154
-2011-02-27T20:42:42.472826Z
-35248
-jesterking
+2011-09-21T18:16:39.319958Z
+63bd20f5e5075dad79a8c6cd1e537b8f
+2011-09-19T14:09:13.308721Z
+40358
+blendix
 has-props
 
 
@@ -228,7 +262,7 @@ has-props
 
 
 
-12361
+12571
 
 blf_internal_types.h
 file
@@ -236,11 +270,11 @@ file
 
 
 
-2011-03-03T12:27:34.686297Z
-a1828ec837995d68973eef4bf8528932
-2011-02-27T20:42:42.472826Z
-35248
-jesterking
+2011-09-21T18:16:39.319958Z
+8c4c60290ada2bd330c184788b8d69db
+2011-09-17T10:45:20.780974Z
+40292
+campbellbarton
 has-props
 
 
@@ -262,7 +296,7 @@ has-props
 
 
 
-4514
+4712
 
 blf_font.c
 file
@@ -270,11 +304,11 @@ file
 
 
 
-2011-03-03T12:27:34.686297Z
-b2a30763d193ad7b4837d863be6d5baa
-2011-02-27T20:42:42.472826Z
-35248
-jesterking
+2011-09-21T18:16:39.319958Z
+2e898b70befc00c09301cf48a6fd4692
+2011-09-19T14:09:13.308721Z
+40358
+blendix
 has-props
 
 
@@ -296,5 +330,5 @@ has-props
 
 
 
-13467
+14658
 

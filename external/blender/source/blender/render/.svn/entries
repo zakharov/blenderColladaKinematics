@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/render
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-03-04T17:01:33.853060Z
-35355
-campbellbarton
+2011-09-22T05:36:52.865488Z
+40446
+mmikkelsen
 
 
 
@@ -38,11 +38,11 @@ file
 
 
 
-2011-03-03T12:26:58.838297Z
-4dc4cdf55df71b651467217b483b741b
-2011-02-15T09:24:35.932934Z
-34861
-jesterking
+2011-09-21T18:16:22.627875Z
+c4474bba3ee96e8e55a648a80c3e2082
+2011-08-21T13:31:46.436851Z
+39584
+nazgul
 has-props
 
 
@@ -64,7 +64,7 @@ has-props
 
 
 
-2720
+2769
 
 CMakeLists.txt
 file
@@ -72,11 +72,11 @@ file
 
 
 
-2011-03-03T12:26:58.838297Z
-60cb0f825e32c234db566a4a2808a582
-2011-02-15T09:24:35.932934Z
-34861
-jesterking
+2011-09-21T18:16:22.627875Z
+fbb903efca58e01fbf18d3356b060bc3
+2011-07-17T09:11:13.810557Z
+38443
+campbellbarton
 has-props
 
 
@@ -98,5 +98,5 @@ has-props
 
 
 
-3906
+3942
 

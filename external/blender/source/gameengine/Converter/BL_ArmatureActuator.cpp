@@ -1,5 +1,5 @@
 /*
- * $Id: BL_ArmatureActuator.cpp 35167 2011-02-25 13:30:41Z jesterking $
+ * $Id: BL_ArmatureActuator.cpp 36523 2011-05-06 20:18:42Z blendix $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -115,7 +115,7 @@ bool BL_ArmatureActuator::UnlinkObject(SCA_IObject* clientobj)
 	return res;
 }
 
-void BL_ArmatureActuator::Relink(GEN_Map<GEN_HashedPtr, void*> *obj_map)
+void BL_ArmatureActuator::Relink(CTR_Map<CTR_HashedPtr, void*> *obj_map)
 {
 	void **h_obj = (*obj_map)[m_gametarget];
 	if (h_obj) {

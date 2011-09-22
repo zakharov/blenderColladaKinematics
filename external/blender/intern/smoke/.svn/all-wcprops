@@ -1,17 +1,17 @@
 K 25
 svn:wc:ra_dav:version-url
 V 61
-/svnroot/bf-blender/!svn/ver/35159/trunk/blender/intern/smoke
+/svnroot/bf-blender/!svn/ver/40390/trunk/blender/intern/smoke
 END
 SConscript
 K 25
 svn:wc:ra_dav:version-url
 V 72
-/svnroot/bf-blender/!svn/ver/31567/trunk/blender/intern/smoke/SConscript
+/svnroot/bf-blender/!svn/ver/39947/trunk/blender/intern/smoke/SConscript
 END
 CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/svnroot/bf-blender/!svn/ver/34486/trunk/blender/intern/smoke/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/40390/trunk/blender/intern/smoke/CMakeLists.txt
 END

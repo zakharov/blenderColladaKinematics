@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 68
-/svnroot/bf-blender/!svn/ver/35283/trunk/blender/intern/ghost/intern
+/svnroot/bf-blender/!svn/ver/40419/trunk/blender/intern/ghost/intern
 END
 GHOST_DisplayManagerX11.cpp
 K 25
@@ -13,13 +13,13 @@ GHOST_EventPrinter.h
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_EventPrinter.h
+/svnroot/bf-blender/!svn/ver/38351/trunk/blender/intern/ghost/intern/GHOST_EventPrinter.h
 END
 GHOST_DisplayManagerCocoa.mm
 K 25
 svn:wc:ra_dav:version-url
 V 97
-/svnroot/bf-blender/!svn/ver/26841/trunk/blender/intern/ghost/intern/GHOST_DisplayManagerCocoa.mm
+/svnroot/bf-blender/!svn/ver/37861/trunk/blender/intern/ghost/intern/GHOST_DisplayManagerCocoa.mm
 END
 GHOST_Rect.cpp
 K 25
@@ -31,7 +31,7 @@ GHOST_WindowWin32.h
 K 25
 svn:wc:ra_dav:version-url
 V 88
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_WindowWin32.h
+/svnroot/bf-blender/!svn/ver/38908/trunk/blender/intern/ghost/intern/GHOST_WindowWin32.h
 END
 GHOST_WindowCarbon.h
 K 25
@@ -43,7 +43,7 @@ GHOST_Window.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 85
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_Window.cpp
+/svnroot/bf-blender/!svn/ver/37765/trunk/blender/intern/ghost/intern/GHOST_Window.cpp
 END
 GHOST_WindowManager.h
 K 25
@@ -51,11 +51,11 @@ svn:wc:ra_dav:version-url
 V 90
 /svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_WindowManager.h
 END
-GHOST_TimerManager.cpp
+GHOST_NDOFManagerWin32.h
 K 25
 svn:wc:ra_dav:version-url
-V 91
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_TimerManager.cpp
+V 93
+/svnroot/bf-blender/!svn/ver/39007/trunk/blender/intern/ghost/intern/GHOST_NDOFManagerWin32.h
 END
 GHOST_EventWheel.h
 K 25
@@ -63,17 +63,29 @@ svn:wc:ra_dav:version-url
 V 87
 /svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_EventWheel.h
 END
-GHOST_SystemWin32.h
+GHOST_TimerManager.cpp
 K 25
 svn:wc:ra_dav:version-url
-V 88
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_SystemWin32.h
+V 91
+/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_TimerManager.cpp
 END
 GHOST_SystemPathsWin32.h
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_SystemPathsWin32.h
+/svnroot/bf-blender/!svn/ver/38908/trunk/blender/intern/ghost/intern/GHOST_SystemPathsWin32.h
+END
+GHOST_SystemWin32.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/bf-blender/!svn/ver/39110/trunk/blender/intern/ghost/intern/GHOST_SystemWin32.h
+END
+GHOST_NDOFManagerCocoa.mm
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/39495/trunk/blender/intern/ghost/intern/GHOST_NDOFManagerCocoa.mm
 END
 GHOST_EventString.h
 K 25
@@ -93,23 +105,23 @@ svn:wc:ra_dav:version-url
 V 89
 /svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_EventManager.h
 END
-GHOST_SystemX11.h
-K 25
-svn:wc:ra_dav:version-url
-V 86
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_SystemX11.h
-END
 GHOST_SystemPathsX11.h
 K 25
 svn:wc:ra_dav:version-url
 V 91
 /svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_SystemPathsX11.h
 END
+GHOST_SystemX11.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-blender/!svn/ver/38908/trunk/blender/intern/ghost/intern/GHOST_SystemX11.h
+END
 GHOST_EventPrinter.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_EventPrinter.cpp
+/svnroot/bf-blender/!svn/ver/38351/trunk/blender/intern/ghost/intern/GHOST_EventPrinter.cpp
 END
 GHOST_DisplayManagerWin32.h
 K 25
@@ -127,7 +139,13 @@ GHOST_Debug.h
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_Debug.h
+/svnroot/bf-blender/!svn/ver/38351/trunk/blender/intern/ghost/intern/GHOST_Debug.h
+END
+GHOST_SystemSDL.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-blender/!svn/ver/38349/trunk/blender/intern/ghost/intern/GHOST_SystemSDL.h
 END
 GHOST_Buttons.cpp
 K 25
@@ -139,7 +157,7 @@ GHOST_DropTargetWin32.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_DropTargetWin32.cpp
+/svnroot/bf-blender/!svn/ver/38908/trunk/blender/intern/ghost/intern/GHOST_DropTargetWin32.cpp
 END
 GHOST_DisplayManagerX11.h
 K 25
@@ -147,17 +165,29 @@ svn:wc:ra_dav:version-url
 V 94
 /svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_DisplayManagerX11.h
 END
-GHOST_SystemWin32.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 90
-/svnroot/bf-blender/!svn/ver/35283/trunk/blender/intern/ghost/intern/GHOST_SystemWin32.cpp
-END
 GHOST_SystemPathsWin32.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_SystemPathsWin32.cpp
+/svnroot/bf-blender/!svn/ver/38908/trunk/blender/intern/ghost/intern/GHOST_SystemPathsWin32.cpp
+END
+GHOST_SystemWin32.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/39007/trunk/blender/intern/ghost/intern/GHOST_SystemWin32.cpp
+END
+GHOST_DisplayManagerSDL.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/38349/trunk/blender/intern/ghost/intern/GHOST_DisplayManagerSDL.h
+END
+GHOST_WindowSDL.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/bf-blender/!svn/ver/38349/trunk/blender/intern/ghost/intern/GHOST_WindowSDL.cpp
 END
 GHOST_SystemPathsCarbon.h
 K 25
@@ -169,31 +199,31 @@ GHOST_SystemCarbon.h
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_SystemCarbon.h
+/svnroot/bf-blender/!svn/ver/36429/trunk/blender/intern/ghost/intern/GHOST_SystemCarbon.h
 END
 GHOST_TaskbarWin32.h
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_TaskbarWin32.h
+/svnroot/bf-blender/!svn/ver/38908/trunk/blender/intern/ghost/intern/GHOST_TaskbarWin32.h
 END
 GHOST_DisplayManagerWin32.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_DisplayManagerWin32.cpp
+/svnroot/bf-blender/!svn/ver/38908/trunk/blender/intern/ghost/intern/GHOST_DisplayManagerWin32.cpp
 END
 GHOST_System.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 85
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_System.cpp
+/svnroot/bf-blender/!svn/ver/38926/trunk/blender/intern/ghost/intern/GHOST_System.cpp
 END
 GHOST_NDOFManager.h
 K 25
 svn:wc:ra_dav:version-url
 V 88
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_NDOFManager.h
+/svnroot/bf-blender/!svn/ver/38922/trunk/blender/intern/ghost/intern/GHOST_NDOFManager.h
 END
 GHOST_Event.h
 K 25
@@ -201,23 +231,29 @@ svn:wc:ra_dav:version-url
 V 82
 /svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_Event.h
 END
+GHOST_SystemSDL.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/bf-blender/!svn/ver/39444/trunk/blender/intern/ghost/intern/GHOST_SystemSDL.cpp
+END
 GHOST_DisplayManagerCarbon.h
 K 25
 svn:wc:ra_dav:version-url
 V 97
 /svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_DisplayManagerCarbon.h
 END
-GHOST_EventNDOF.h
-K 25
-svn:wc:ra_dav:version-url
-V 86
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_EventNDOF.h
-END
 GHOST_ISystem.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 86
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_ISystem.cpp
+/svnroot/bf-blender/!svn/ver/38351/trunk/blender/intern/ghost/intern/GHOST_ISystem.cpp
+END
+GHOST_EventNDOF.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-blender/!svn/ver/38908/trunk/blender/intern/ghost/intern/GHOST_EventNDOF.h
 END
 GHOST_ModifierKeys.h
 K 25
@@ -231,17 +267,23 @@ svn:wc:ra_dav:version-url
 V 85
 /svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_EventKey.h
 END
+GHOST_EventTrackpad.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_EventTrackpad.h
+END
 GHOST_DisplayManager.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 93
 /svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_DisplayManager.cpp
 END
-GHOST_EventTrackpad.h
+GHOST_DisplayManagerSDL.cpp
 K 25
 svn:wc:ra_dav:version-url
-V 90
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_EventTrackpad.h
+V 96
+/svnroot/bf-blender/!svn/ver/38349/trunk/blender/intern/ghost/intern/GHOST_DisplayManagerSDL.cpp
 END
 GHOST_Buttons.h
 K 25
@@ -253,19 +295,19 @@ GHOST_DropTargetWin32.h
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_DropTargetWin32.h
+/svnroot/bf-blender/!svn/ver/38908/trunk/blender/intern/ghost/intern/GHOST_DropTargetWin32.h
 END
 GHOST_WindowCocoa.mm
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/34391/trunk/blender/intern/ghost/intern/GHOST_WindowCocoa.mm
+/svnroot/bf-blender/!svn/ver/37861/trunk/blender/intern/ghost/intern/GHOST_WindowCocoa.mm
 END
 GHOST_WindowX11.h
 K 25
 svn:wc:ra_dav:version-url
 V 86
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_WindowX11.h
+/svnroot/bf-blender/!svn/ver/36985/trunk/blender/intern/ghost/intern/GHOST_WindowX11.h
 END
 GHOST_SystemPathsCarbon.cpp
 K 25
@@ -277,25 +319,43 @@ GHOST_SystemCarbon.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_SystemCarbon.cpp
+/svnroot/bf-blender/!svn/ver/39828/trunk/blender/intern/ghost/intern/GHOST_SystemCarbon.cpp
+END
+GHOST_WindowSDL.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-blender/!svn/ver/38349/trunk/blender/intern/ghost/intern/GHOST_WindowSDL.h
+END
+GHOST_NDOFManagerX11.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/39153/trunk/blender/intern/ghost/intern/GHOST_NDOFManagerX11.h
 END
 GHOST_NDOFManager.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_NDOFManager.cpp
+/svnroot/bf-blender/!svn/ver/39945/trunk/blender/intern/ghost/intern/GHOST_NDOFManager.cpp
 END
 GHOST_WindowCocoa.h
 K 25
 svn:wc:ra_dav:version-url
 V 88
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_WindowCocoa.h
+/svnroot/bf-blender/!svn/ver/37861/trunk/blender/intern/ghost/intern/GHOST_WindowCocoa.h
 END
 GHOST_EventButton.h
 K 25
 svn:wc:ra_dav:version-url
 V 88
 /svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_EventButton.h
+END
+GHOST_SystemNULL.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/37194/trunk/blender/intern/ghost/intern/GHOST_SystemNULL.h
 END
 GHOST_DisplayManagerCarbon.cpp
 K 25
@@ -313,31 +373,37 @@ GHOST_System.h
 K 25
 svn:wc:ra_dav:version-url
 V 83
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_System.h
+/svnroot/bf-blender/!svn/ver/38926/trunk/blender/intern/ghost/intern/GHOST_System.h
 END
 GHOST_C-api.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_C-api.cpp
+/svnroot/bf-blender/!svn/ver/38908/trunk/blender/intern/ghost/intern/GHOST_C-api.cpp
 END
 GHOST_WindowWin32.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_WindowWin32.cpp
+/svnroot/bf-blender/!svn/ver/39808/trunk/blender/intern/ghost/intern/GHOST_WindowWin32.cpp
+END
+GHOST_NDOFManagerCocoa.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/39495/trunk/blender/intern/ghost/intern/GHOST_NDOFManagerCocoa.h
 END
 GHOST_WindowCarbon.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_WindowCarbon.cpp
+/svnroot/bf-blender/!svn/ver/37765/trunk/blender/intern/ghost/intern/GHOST_WindowCarbon.cpp
 END
 GHOST_ISystemPaths.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_ISystemPaths.cpp
+/svnroot/bf-blender/!svn/ver/39828/trunk/blender/intern/ghost/intern/GHOST_ISystemPaths.cpp
 END
 GHOST_SystemPathsCocoa.h
 K 25
@@ -349,13 +415,19 @@ GHOST_SystemCocoa.h
 K 25
 svn:wc:ra_dav:version-url
 V 88
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_SystemCocoa.h
+/svnroot/bf-blender/!svn/ver/38908/trunk/blender/intern/ghost/intern/GHOST_SystemCocoa.h
+END
+GHOST_DisplayManagerNULL.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/37194/trunk/blender/intern/ghost/intern/GHOST_DisplayManagerNULL.h
 END
 GHOST_WindowX11.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 88
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_WindowX11.cpp
+/svnroot/bf-blender/!svn/ver/37765/trunk/blender/intern/ghost/intern/GHOST_WindowX11.cpp
 END
 GHOST_WindowManager.cpp
 K 25
@@ -367,13 +439,25 @@ GHOST_Path-api.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 87
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_Path-api.cpp
+/svnroot/bf-blender/!svn/ver/39815/trunk/blender/intern/ghost/intern/GHOST_Path-api.cpp
+END
+GHOST_NDOFManagerWin32.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/39007/trunk/blender/intern/ghost/intern/GHOST_NDOFManagerWin32.cpp
 END
 GHOST_DisplayManager.h
 K 25
 svn:wc:ra_dav:version-url
 V 91
 /svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_DisplayManager.h
+END
+GHOST_WindowNULL.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/38022/trunk/blender/intern/ghost/intern/GHOST_WindowNULL.h
 END
 GHOST_TimerTask.h
 K 25
@@ -393,35 +477,35 @@ svn:wc:ra_dav:version-url
 V 100
 /svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_CallbackEventConsumer.cpp
 END
-GHOST_Window.h
+GHOST_NDOFManagerX11.cpp
 K 25
 svn:wc:ra_dav:version-url
-V 83
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_Window.h
+V 93
+/svnroot/bf-blender/!svn/ver/39153/trunk/blender/intern/ghost/intern/GHOST_NDOFManagerX11.cpp
 END
 GHOST_EventManager.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_EventManager.cpp
+/svnroot/bf-blender/!svn/ver/38908/trunk/blender/intern/ghost/intern/GHOST_EventManager.cpp
 END
-GHOST_SystemX11.cpp
+GHOST_Window.h
 K 25
 svn:wc:ra_dav:version-url
-V 88
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_SystemX11.cpp
+V 83
+/svnroot/bf-blender/!svn/ver/37765/trunk/blender/intern/ghost/intern/GHOST_Window.h
 END
 GHOST_SystemPathsX11.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/35198/trunk/blender/intern/ghost/intern/GHOST_SystemPathsX11.cpp
+/svnroot/bf-blender/!svn/ver/39160/trunk/blender/intern/ghost/intern/GHOST_SystemPathsX11.cpp
 END
-GHOST_TimerManager.h
+GHOST_SystemX11.cpp
 K 25
 svn:wc:ra_dav:version-url
-V 89
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_TimerManager.h
+V 88
+/svnroot/bf-blender/!svn/ver/40419/trunk/blender/intern/ghost/intern/GHOST_SystemX11.cpp
 END
 GHOST_SystemPathsCocoa.mm
 K 25
@@ -433,7 +517,13 @@ GHOST_SystemCocoa.mm
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/34391/trunk/blender/intern/ghost/intern/GHOST_SystemCocoa.mm
+/svnroot/bf-blender/!svn/ver/39153/trunk/blender/intern/ghost/intern/GHOST_SystemCocoa.mm
+END
+GHOST_TimerManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/intern/GHOST_TimerManager.h
 END
 GHOST_EventCursor.h
 K 25

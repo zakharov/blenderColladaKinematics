@@ -1,5 +1,5 @@
 /*
- * $Id: NG_NetworkDeviceInterface.h 35072 2011-02-22 12:42:55Z jesterking $
+ * $Id: NG_NetworkDeviceInterface.h 39883 2011-09-03 02:15:49Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -64,7 +64,7 @@ public:
 	bool IsOnline(void) { return m_online; }
 
 	virtual bool Connect(char *address, unsigned int port, char *password,
-		     unsigned int localport, unsigned int timeout)=0;
+	                     unsigned int localport, unsigned int timeout)=0;
 	virtual bool Disconnect(void)=0;
 
 	virtual void SendNetworkMessage(NG_NetworkMessage* msg)=0;

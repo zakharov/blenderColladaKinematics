@@ -1,5 +1,5 @@
 /*
- * $Id: DNA_screen_types.h 35300 2011-03-02 14:09:54Z ton $ 
+ * $Id: DNA_screen_types.h 37185 2011-06-04 17:03:46Z ton $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -187,7 +187,6 @@ typedef struct ARegion {
 #define AREA_FLAG_DRAWSPLIT_H	16
 #define AREA_FLAG_DRAWSPLIT_V	32
 
-/* If you change EDGEWIDTH, also do the global arrat edcol[]  */
 #define EDGEWIDTH	1
 #define AREAGRID	4
 #define AREAMINX	32

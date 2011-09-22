@@ -1,5 +1,5 @@
 /*
- * $Id: RAS_BucketManager.cpp 35174 2011-02-25 13:38:24Z jesterking $
+ * $Id: RAS_BucketManager.cpp 36523 2011-05-06 20:18:42Z blendix $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -36,7 +36,7 @@
 #pragma warning (disable:4786)
 #endif
 
-#include "GEN_Map.h"
+#include "CTR_Map.h"
 #include "RAS_MaterialBucket.h"
 #include "STR_HashedString.h"
 #include "RAS_MeshObject.h"

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 60
-/svnroot/bf-blender/!svn/ver/34509/trunk/blender/doc/manpage
+/svnroot/bf-blender/!svn/ver/37158/trunk/blender/doc/manpage
 END
 blender.1.py
 K 25
@@ -13,5 +13,5 @@ blender.1
 K 25
 svn:wc:ra_dav:version-url
 V 70
-/svnroot/bf-blender/!svn/ver/34509/trunk/blender/doc/manpage/blender.1
+/svnroot/bf-blender/!svn/ver/37158/trunk/blender/doc/manpage/blender.1
 END

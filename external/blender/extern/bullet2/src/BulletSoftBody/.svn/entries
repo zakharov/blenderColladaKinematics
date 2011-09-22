@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/extern/bullet2/src/BulletSoftBody
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2010-12-22T22:54:48.259649Z
-33863
-campbellbarton
+2011-03-22T16:30:46.173342Z
+35706
+erwin
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-03-03T12:28:53.450297Z
-708dcc0c2c1253a66f16e4abfd22a188
-2009-09-14T14:45:32.818085Z
-23221
-sirdude
+2011-09-21T18:17:08.860104Z
+f4553086f6031e7f81da7f71dbfa46b3
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-12870
+12827
 
 btSoftBodyHelpers.cpp
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-03-03T12:28:53.450297Z
-aaf3ca32b9d29aee336ced6a86645fd2
-2009-12-22T19:52:14.257486Z
-25527
-ben2610
+2011-09-21T18:17:08.860104Z
+c64aaa00466c9f536a67c01ad2288432
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 has-props
 
 
@@ -92,7 +92,41 @@ has-props
 
 
 
-23587
+27217
+
+btSoftBodySolvers.h
+file
+
+
+
+
+2011-09-21T18:17:08.860104Z
+14cffd7958dbece9f4caeae531be82a0
+2011-03-13T00:26:46.012847Z
+35504
+gsrb3d
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4437
 
 btSoftRigidCollisionAlgorithm.cpp
 file
@@ -100,11 +134,11 @@ file
 
 
 
-2011-03-03T12:28:53.450297Z
-2953766eda29c7470d79946b166adc14
-2009-09-14T14:45:32.818085Z
-23221
-sirdude
+2011-09-21T18:17:08.864104Z
+b22aaa9e8031299be5aec1b7beaea65f
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 has-props
 
 
@@ -126,7 +160,7 @@ has-props
 
 
 
-2921
+2992
 
 btSoftBodyInternals.h
 file
@@ -134,11 +168,11 @@ file
 
 
 
-2011-03-03T12:28:53.450297Z
-2fc7a4efab5e479104bbca2fa3133c8d
-2009-09-14T14:45:32.818085Z
-23221
-sirdude
+2011-09-21T18:17:08.864104Z
+5b01c7f3836f52d5e8f3ddf8d58539b7
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 has-props
 
 
@@ -160,7 +194,7 @@ has-props
 
 
 
-24194
+24711
 
 btSoftBodyConcaveCollisionAlgorithm.h
 file
@@ -168,7 +202,7 @@ file
 
 
 
-2011-03-03T12:28:53.450297Z
+2011-09-21T18:17:08.864104Z
 cde0c3a4e6f24ff33b8d1aaa4245fb54
 2009-09-14T14:45:32.818085Z
 23221
@@ -202,11 +236,11 @@ file
 
 
 
-2011-03-03T12:28:53.450297Z
-99cd9a0ee296c24120e6c9a7e325f810
-2009-12-22T19:52:14.257486Z
-25527
-ben2610
+2011-09-21T18:17:08.864104Z
+064546d14dcb0ad088eb800b22e25cba
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 has-props
 
 
@@ -228,7 +262,41 @@ has-props
 
 
 
-3768
+4574
+
+btSoftBodySolverVertexBuffer.h
+file
+
+
+
+
+2011-09-21T18:17:08.864104Z
+6873a2391e181417ac74eb2f86b3849a
+2011-03-13T00:26:46.012847Z
+35504
+gsrb3d
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3809
 
 btSoftRigidCollisionAlgorithm.h
 file
@@ -236,7 +304,7 @@ file
 
 
 
-2011-03-03T12:28:53.450297Z
+2011-09-21T18:17:08.864104Z
 da78f1de9c59a4c69a561d9e5b87f5df
 2009-09-14T14:45:32.818085Z
 23221
@@ -264,17 +332,17 @@ has-props
 
 3007
 
-btSoftBody.cpp
+btSoftBodyData.h
 file
 
 
 
 
-2011-03-03T12:28:53.454297Z
-0e8164544a5cab16b3726ec35a93cd21
-2009-09-14T14:45:32.818085Z
-23221
-sirdude
+2011-09-21T18:17:08.864104Z
+31349b86769461c9f229609abece7299
+2011-03-13T00:26:46.012847Z
+35504
+gsrb3d
 has-props
 
 
@@ -296,7 +364,75 @@ has-props
 
 
 
-62588
+6776
+
+btDefaultSoftBodySolver.cpp
+file
+
+
+
+
+2011-09-21T18:17:08.864104Z
+1d0a5467c357c94d4e8d586e9e7f0d78
+2011-03-13T00:26:46.012847Z
+35504
+gsrb3d
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5241
+
+btSoftBody.cpp
+file
+
+
+
+
+2011-09-21T18:17:08.868104Z
+ad4ff36d527a2463a8c9349a23c7ede4
+2011-03-12T20:34:17.682024Z
+35500
+erwin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+84662
 
 btSoftSoftCollisionAlgorithm.cpp
 file
@@ -304,11 +440,11 @@ file
 
 
 
-2011-03-03T12:28:53.454297Z
-d258fa0bc49c5a3bd281952423da27bf
-2009-09-14T14:45:32.818085Z
-23221
-sirdude
+2011-09-21T18:17:08.868104Z
+970c1b93d8bd4e82651b7c6d48e10641
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 has-props
 
 
@@ -330,7 +466,7 @@ has-props
 
 
 
-2101
+2168
 
 btSoftRigidDynamicsWorld.cpp
 file
@@ -338,11 +474,11 @@ file
 
 
 
-2011-03-03T12:28:53.454297Z
-575cd365ea2cadfe5f7ebbfba556930d
-2010-01-06T08:46:04.276664Z
-25767
-ben2610
+2011-09-21T18:17:08.868104Z
+7dc768b01fd9270494a08397d518b670
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 has-props
 
 
@@ -364,7 +500,7 @@ has-props
 
 
 
-9042
+11176
 
 btSoftBodyRigidBodyCollisionConfiguration.cpp
 file
@@ -372,7 +508,7 @@ file
 
 
 
-2011-03-03T12:28:53.454297Z
+2011-09-21T18:17:08.868104Z
 76c2d09427fffd9db2e686647ed787ad
 2009-09-14T14:45:32.818085Z
 23221
@@ -406,11 +542,11 @@ file
 
 
 
-2011-03-03T12:28:53.454297Z
-248422a3d116c70f64b26d0e23e5659e
-2009-09-14T14:45:32.818085Z
-23221
-sirdude
+2011-09-21T18:17:08.868104Z
+a7f8ce0dcee15303958a07cfbddcec7a
+2011-03-22T16:30:46.173342Z
+35706
+erwin
 has-props
 
 
@@ -432,19 +568,19 @@ has-props
 
 
 
-26293
+29758
 
-btSoftRigidDynamicsWorld.h
+btDefaultSoftBodySolver.h
 file
 
 
 
 
-2011-03-03T12:28:53.454297Z
-e071a0a745ba0618d5c3d1536f41192b
-2010-01-06T08:46:04.276664Z
-25767
-ben2610
+2011-09-21T18:17:08.868104Z
+dff3b9dffc4033a1d4cdd0ae03b6191e
+2011-03-13T00:26:46.012847Z
+35504
+gsrb3d
 has-props
 
 
@@ -466,7 +602,7 @@ has-props
 
 
 
-3001
+2137
 
 btSoftBodyRigidBodyCollisionConfiguration.h
 file
@@ -474,7 +610,7 @@ file
 
 
 
-2011-03-03T12:28:53.454297Z
+2011-09-21T18:17:08.868104Z
 790d67c435fc46523fe10347e9a5ba6a
 2009-09-14T14:45:32.818085Z
 23221
@@ -502,17 +638,17 @@ has-props
 
 2266
 
-btSparseSDF.h
+btSoftRigidDynamicsWorld.h
 file
 
 
 
 
-2011-03-03T12:28:53.454297Z
-458ac407ded31ce6b70613a1a6cd4f85
-2009-09-14T14:45:32.818085Z
-23221
-sirdude
+2011-09-21T18:17:08.868104Z
+0cde08e28b36030979d552615dafbd22
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 has-props
 
 
@@ -534,7 +670,7 @@ has-props
 
 
 
-6937
+3644
 
 btSoftSoftCollisionAlgorithm.h
 file
@@ -542,7 +678,7 @@ file
 
 
 
-2011-03-03T12:28:53.454297Z
+2011-09-21T18:17:08.868104Z
 605208b3e690fdbe0b604ee188724c00
 2009-09-14T14:45:32.818085Z
 23221
@@ -570,13 +706,47 @@ has-props
 
 2824
 
+btSparseSDF.h
+file
+
+
+
+
+2011-09-21T18:17:08.868104Z
+458ac407ded31ce6b70613a1a6cd4f85
+2009-09-14T14:45:32.818085Z
+23221
+sirdude
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6937
+
 Jamfile
 file
 
 
 
 
-2011-03-03T12:28:53.454297Z
+2011-09-21T18:17:08.872105Z
 cb15dab10f9b26ce5be0ba8226014870
 2009-09-14T14:45:32.818085Z
 23221

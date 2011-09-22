@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/gameengine/Converter
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-02-28T20:22:28.256571Z
-35269
-dfelinto
+2011-09-21T08:40:30.090958Z
+40419
+campbellbarton
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-03-03T12:26:34.762297Z
-44ef53d2910bfd2988887096dc702594
-2011-02-25T13:30:41.884561Z
-35167
-jesterking
+2011-09-21T18:16:11.583820Z
+6d47c8283d6b4cb59b9209f5e67a68ff
+2011-08-30T09:15:55.930526Z
+39792
+nexyon
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-3039
+3074
 
 KX_ConvertProperties.cpp
 file
@@ -66,7 +66,7 @@ file
 
 
 
-2011-03-03T12:26:34.762297Z
+2011-09-21T18:16:11.583820Z
 50abe6017972c1461b3c329e150cd8cb
 2011-02-25T13:30:41.884561Z
 35167
@@ -100,11 +100,11 @@ file
 
 
 
-2011-03-03T12:26:34.766297Z
-24cc38203017310c1a849f43ae6b5369
-2011-02-25T13:30:41.884561Z
-35167
-jesterking
+2011-09-21T18:16:11.587820Z
+fb6acb2b86271101ba96c8ba622aff71
+2011-09-01T02:12:53.636201Z
+39834
+campbellbarton
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-32503
+32540
 
 KX_IpoConvert.h
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-03-03T12:26:34.766297Z
-18d203286b14b76b59bb3b5b827bbd0c
-2011-02-22T10:33:14.427047Z
-35063
-jesterking
+2011-09-21T18:16:11.587820Z
+edf98f52bc04f9c8d14d0ac95666de9a
+2011-08-30T09:15:55.930526Z
+39792
+nexyon
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-1831
+2245
 
 BL_ArmatureActuator.cpp
 file
@@ -168,11 +168,11 @@ file
 
 
 
-2011-03-03T12:26:34.766297Z
-62453acd117121f22850228c4429d628
-2011-02-25T13:30:41.884561Z
-35167
-jesterking
+2011-09-21T18:16:11.587820Z
+467a7e658d9ec3597618dd968b42e50f
+2011-05-06T20:18:42.924506Z
+36523
+blendix
 has-props
 
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-7610
+7607
 
 BL_ShapeDeformer.cpp
 file
@@ -202,11 +202,11 @@ file
 
 
 
-2011-03-03T12:26:34.766297Z
-156350c268321f66c5dc99212afb1996
-2011-02-25T13:30:41.884561Z
-35167
-jesterking
+2011-09-21T18:16:11.587820Z
+8559e9af90e42712e5e2f8c64e0283bf
+2011-09-01T02:12:53.636201Z
+39834
+campbellbarton
 has-props
 
 
@@ -228,7 +228,7 @@ has-props
 
 
 
-5381
+5806
 
 BL_ActionActuator.h
 file
@@ -236,11 +236,11 @@ file
 
 
 
-2011-03-03T12:26:34.766297Z
-eb03045c7a1b435d8e8a6de2b7ed5810
-2011-02-22T10:33:14.427047Z
-35063
-jesterking
+2011-09-21T18:16:11.587820Z
+2a91ea6658e86edfd20e2731a352baf1
+2011-09-01T21:47:46.986807Z
+39853
+moguri
 has-props
 
 
@@ -262,7 +262,7 @@ has-props
 
 
 
-4720
+4550
 
 BL_ArmatureConstraint.cpp
 file
@@ -270,11 +270,11 @@ file
 
 
 
-2011-03-03T12:26:34.766297Z
-5d9e49013ba646fb471170608afbf549
-2011-02-25T13:30:41.884561Z
-35167
-jesterking
+2011-09-21T18:16:11.587820Z
+16adad5fcf0c0c4f110c5fade4e05cb9
+2011-05-06T20:18:42.924506Z
+36523
+blendix
 has-props
 
 
@@ -296,7 +296,7 @@ has-props
 
 
 
-14088
+14085
 
 BlenderWorldInfo.h
 file
@@ -304,7 +304,7 @@ file
 
 
 
-2011-03-03T12:26:34.766297Z
+2011-09-21T18:16:11.587820Z
 8b732c5aaafe64bc2721be24bac4da58
 2011-02-22T10:33:14.427047Z
 35063
@@ -338,7 +338,7 @@ file
 
 
 
-2011-03-03T12:26:34.766297Z
+2011-09-21T18:16:11.587820Z
 620b61b578bb4c34939790dd0ec67606
 2011-02-22T10:33:14.427047Z
 35063
@@ -372,11 +372,11 @@ file
 
 
 
-2011-03-03T12:26:34.770297Z
-006d99a3301fee0ce100e51c71b7b148
-2011-02-25T13:30:41.884561Z
-35167
-jesterking
+2011-09-21T18:16:11.587820Z
+68be494dc0722225bff3d19beab759e5
+2011-09-12T04:29:35.697935Z
+40148
+campbellbarton
 has-props
 
 
@@ -398,7 +398,7 @@ has-props
 
 
 
-6537
+8829
 
 KX_BlenderScalarInterpolator.cpp
 file
@@ -406,11 +406,11 @@ file
 
 
 
-2011-03-03T12:26:34.770297Z
-84a676117b5592584a74ef73a3a5d3bb
-2011-02-25T13:30:41.884561Z
-35167
-jesterking
+2011-09-21T18:16:11.591820Z
+1340dab08c699a5b6a21f2d203334bb8
+2011-08-30T09:15:55.930526Z
+39792
+nexyon
 has-props
 
 
@@ -432,7 +432,7 @@ has-props
 
 
 
-2359
+2340
 
 KX_ConvertActuators.cpp
 file
@@ -440,11 +440,11 @@ file
 
 
 
-2011-03-03T12:26:34.770297Z
-f4ee87df1357fba9a62ee4834b4d53b2
-2011-02-25T13:30:41.884561Z
-35167
-jesterking
+2011-09-21T18:16:11.591820Z
+73f9cd6e0b740c5a1233bf10bf743887
+2011-09-09T21:28:56.572940Z
+40080
+ben2610
 has-props
 
 
@@ -466,7 +466,7 @@ has-props
 
 
 
-30916
+33640
 
 KX_ConvertControllers.h
 file
@@ -474,7 +474,7 @@ file
 
 
 
-2011-03-03T12:26:34.770297Z
+2011-09-21T18:16:11.591820Z
 96ec5b49756b284d4cd166e471db4f0b
 2011-02-22T10:33:14.427047Z
 35063
@@ -508,11 +508,11 @@ file
 
 
 
-2011-03-03T12:26:34.770297Z
-d3ab39eb26be33fedd964d5d75b12b84
-2011-02-25T13:30:41.884561Z
-35167
-jesterking
+2011-09-21T18:16:11.591820Z
+4407411b50bf38783c4cb659e221abc8
+2011-05-06T20:18:42.924506Z
+36523
+blendix
 has-props
 
 
@@ -534,41 +534,7 @@ has-props
 
 
 
-3442
-
-KX_BlenderSceneConverter.cpp
-file
-
-
-
-
-2011-03-03T12:26:34.770297Z
-cdafcba2985be6211e30eee05c83c90c
-2011-02-25T13:30:41.884561Z
-35167
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-39051
+3439
 
 BL_ShapeActionActuator.h
 file
@@ -576,11 +542,11 @@ file
 
 
 
-2011-03-03T12:26:34.770297Z
-d9b310f3213e0a9895aa93e1086a938b
-2011-02-22T10:33:14.427047Z
-35063
-jesterking
+2011-09-21T18:16:11.591820Z
+c57bbd878b832d0ae31718e60c3938ca
+2011-08-30T09:15:55.930526Z
+39792
+nexyon
 has-props
 
 
@@ -602,120 +568,18 @@ has-props
 
 
 
-4349
+3953
 
-BL_ArmatureObject.h
+KX_BlenderSceneConverter.cpp
 file
 
 
 
 
-2011-03-03T12:26:34.770297Z
-348baf60167355ad588c47c3cb0c3790
-2011-02-22T10:33:14.427047Z
-35063
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4959
-
-KX_IpoConvert.cpp
-file
-
-
-
-
-2011-03-03T12:26:34.774297Z
-a0fffa8f08c48ddaffda2211ca412c51
-2011-02-25T13:30:41.884561Z
-35167
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-15831
-
-BL_ArmatureChannel.h
-file
-
-
-
-
-2011-03-03T12:26:34.774297Z
-6f9a2ec8d30b6eb6fd2c12901be4c57a
-2011-02-25T13:30:41.884561Z
-35167
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3083
-
-CMakeLists.txt
-file
-
-
-
-
-2011-03-03T12:26:34.774297Z
-895f161549bd5d0183ead8a1148014ae
-2010-12-22T23:09:30.468439Z
-33864
+2011-09-21T18:16:11.591820Z
+caef8ff3daa027f7e8828f7a3ec5f1e8
+2011-09-05T23:40:52.902791Z
+39946
 campbellbarton
 has-props
 
@@ -738,19 +602,19 @@ has-props
 
 
 
-3332
+40549
 
-BL_ActionActuator.cpp
+BL_ArmatureObject.h
 file
 
 
 
 
-2011-03-03T12:26:34.774297Z
-068444e62d1931ed45cd1b8a19c51869
-2011-02-25T13:30:41.884561Z
-35167
-jesterking
+2011-09-21T18:16:11.591820Z
+f73425ac6dd0fdbf7ec31c96f47b0424
+2011-08-30T09:15:55.930526Z
+39792
+nexyon
 has-props
 
 
@@ -772,7 +636,109 @@ has-props
 
 
 
-18858
+5060
+
+KX_IpoConvert.cpp
+file
+
+
+
+
+2011-09-21T18:16:11.595820Z
+65d34ec1176f0bfa564a096ad7b4e1be
+2011-09-04T01:27:16.242066Z
+39900
+moguri
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+16040
+
+BL_ArmatureChannel.h
+file
+
+
+
+
+2011-09-21T18:16:11.595820Z
+69aa428c7fe64e0f9ae23dfe77190b0b
+2011-05-06T20:18:42.924506Z
+36523
+blendix
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3080
+
+CMakeLists.txt
+file
+
+
+
+
+2011-09-21T18:16:11.595820Z
+5d7f95bab8b86ad8ebc3cb170c02077d
+2011-09-09T21:28:56.572940Z
+40080
+ben2610
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3029
 
 BL_BlenderDataConversion.h
 file
@@ -780,11 +746,11 @@ file
 
 
 
-2011-03-03T12:26:34.774297Z
-e2eba7b83ee4a144cc197f3b264e8434
-2011-02-22T10:33:14.427047Z
-35063
-jesterking
+2011-09-21T18:16:11.595820Z
+4ffcd1f3fa6c316e589a3dd6b2127694
+2011-05-06T20:18:42.924506Z
+36523
+blendix
 has-props
 
 
@@ -806,19 +772,19 @@ has-props
 
 
 
-1823
+1820
 
-BlenderWorldInfo.cpp
+BL_ActionActuator.cpp
 file
 
 
 
 
-2011-03-03T12:26:34.774297Z
-1dcd4d0dde85782b8b938c7b31ab2851
-2011-02-25T13:30:41.884561Z
-35167
-jesterking
+2011-09-21T18:16:11.595820Z
+a1eb8f4f7a6be43e8877428186e0e849
+2011-09-04T01:42:47.380180Z
+39901
+moguri
 has-props
 
 
@@ -840,7 +806,7 @@ has-props
 
 
 
-4389
+18062
 
 BL_ModifierDeformer.cpp
 file
@@ -848,11 +814,11 @@ file
 
 
 
-2011-03-03T12:26:34.774297Z
-8a8756bf22f47abfd25a0d027f64fefe
-2011-02-25T13:30:41.884561Z
-35167
-jesterking
+2011-09-21T18:16:11.595820Z
+8e39e91548f7ac96a686dd9bc7dd964f
+2011-05-06T20:18:42.924506Z
+36523
+blendix
 has-props
 
 
@@ -874,7 +840,41 @@ has-props
 
 
 
-6885
+6882
+
+BlenderWorldInfo.cpp
+file
+
+
+
+
+2011-09-21T18:16:11.595820Z
+ee6c0e6393b5ae31ab9fd6d2cea3e9fd
+2011-09-01T02:12:53.636201Z
+39834
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4383
 
 BL_MeshDeformer.h
 file
@@ -882,11 +882,11 @@ file
 
 
 
-2011-03-03T12:26:34.774297Z
-41695dfad9627e8a255044e21559e3ce
-2011-02-22T10:33:14.427047Z
-35063
-jesterking
+2011-09-21T18:16:11.595820Z
+a772b0a1dea7d0f214d9e9b913cc8d5f
+2011-09-03T02:15:49.389436Z
+39883
+campbellbarton
 has-props
 
 
@@ -908,7 +908,7 @@ has-props
 
 
 
-3050
+3053
 
 BL_DeformableGameObject.h
 file
@@ -916,11 +916,11 @@ file
 
 
 
-2011-03-03T12:26:34.774297Z
-ee0c194ab8af6d65a6642b5bdbbc1149
-2011-02-22T10:33:14.427047Z
-35063
-jesterking
+2011-09-21T18:16:11.595820Z
+090c5d00e229f5787fac463eea1c0da9
+2011-08-30T09:15:55.930526Z
+39792
+nexyon
 has-props
 
 
@@ -942,41 +942,7 @@ has-props
 
 
 
-3297
-
-KX_ConvertProperties.h
-file
-
-
-
-
-2011-03-03T12:26:34.778297Z
-e154514251b4f501ec5939257e3c8863
-2011-02-22T10:33:14.427047Z
-35063
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1382
+2831
 
 KX_ConvertSensors.h
 file
@@ -984,7 +950,7 @@ file
 
 
 
-2011-03-03T12:26:34.774297Z
+2011-09-21T18:16:11.595820Z
 e31b073a4a3fd20d3f1e8397cd688883
 2011-02-22T10:33:14.427047Z
 35063
@@ -1012,14 +978,14 @@ has-props
 
 1523
 
-BL_ArmatureActuator.h
+KX_ConvertProperties.h
 file
 
 
 
 
-2011-03-03T12:26:34.778297Z
-ae9b9e627b821c56b7750d2b89fa91a9
+2011-09-21T18:16:11.595820Z
+e154514251b4f501ec5939257e3c8863
 2011-02-22T10:33:14.427047Z
 35063
 jesterking
@@ -1044,7 +1010,41 @@ has-props
 
 
 
-3009
+1382
+
+BL_ArmatureActuator.h
+file
+
+
+
+
+2011-09-21T18:16:11.599821Z
+5c4d6a69db8a09a2cb83b0712f9797e5
+2011-05-06T20:18:42.924506Z
+36523
+blendix
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3006
 
 SConscript
 file
@@ -1052,10 +1052,44 @@ file
 
 
 
-2011-03-03T12:26:34.778297Z
-3669a44b4854f572eff0a0c30ceb269e
-2010-11-18T11:42:05.232926Z
-33156
+2011-09-21T18:16:11.599821Z
+9efe8d11186dececc42aae22b2ffd98c
+2011-09-09T21:28:56.572940Z
+40080
+ben2610
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1782
+
+BL_ShapeDeformer.h
+file
+
+
+
+
+2011-09-21T18:16:11.599821Z
+3a6ce16ff9bfb0751d5614b7be06f9fb
+2011-09-03T02:15:49.389436Z
+39883
 campbellbarton
 has-props
 
@@ -1078,41 +1112,7 @@ has-props
 
 
 
-1713
-
-BL_ShapeDeformer.h
-file
-
-
-
-
-2011-03-03T12:26:34.778297Z
-fe20cc48104e2d81758d28c8a7497ef0
-2011-02-22T10:33:14.427047Z
-35063
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2698
+2509
 
 BL_ArmatureConstraint.h
 file
@@ -1120,11 +1120,11 @@ file
 
 
 
-2011-03-03T12:26:34.778297Z
-7ff9281a0bf397cf2db8a6c92ea134f3
-2011-02-22T10:33:14.427047Z
-35063
-jesterking
+2011-09-21T18:16:11.599821Z
+ef5272abd8b9787e962568e5f3b04008
+2011-05-06T20:18:42.924506Z
+36523
+blendix
 has-props
 
 
@@ -1146,7 +1146,7 @@ has-props
 
 
 
-3408
+3405
 
 KX_ConvertControllers.cpp
 file
@@ -1154,11 +1154,11 @@ file
 
 
 
-2011-03-03T12:26:34.778297Z
-ed9f31494e6c365a1d67c63694072191
-2011-02-25T13:30:41.884561Z
-35167
-jesterking
+2011-09-21T18:16:11.599821Z
+167fb3c1fd91dec29f239214f4901ea9
+2011-08-29T03:20:15.712467Z
+39767
+dfelinto
 has-props
 
 
@@ -1180,7 +1180,7 @@ has-props
 
 
 
-6554
+6881
 
 BL_SkinDeformer.h
 file
@@ -1188,11 +1188,11 @@ file
 
 
 
-2011-03-03T12:26:34.778297Z
-b9551456ce1a0d9de3784d8798d554ac
-2011-02-22T10:33:14.427047Z
-35063
-jesterking
+2011-09-21T18:16:11.599821Z
+576156ee10f0cd39336781de047cbcdd
+2011-08-30T09:15:55.930526Z
+39792
+nexyon
 has-props
 
 
@@ -1214,7 +1214,7 @@ has-props
 
 
 
-3344
+3550
 
 KX_BlenderScalarInterpolator.h
 file
@@ -1222,11 +1222,11 @@ file
 
 
 
-2011-03-03T12:26:34.778297Z
-bb11a0d31c52730c339f30bfb7c1959f
-2011-02-22T10:33:14.427047Z
-35063
-jesterking
+2011-09-21T18:16:11.599821Z
+61c4856dda0fbf485b0e25bf8484304c
+2011-08-30T09:15:55.930526Z
+39792
+nexyon
 has-props
 
 
@@ -1248,7 +1248,7 @@ has-props
 
 
 
-2343
+2341
 
 KX_ConvertActuators.h
 file
@@ -1256,7 +1256,7 @@ file
 
 
 
-2011-03-03T12:26:34.778297Z
+2011-09-21T18:16:11.599821Z
 37315e16605cdfb4390b41f5dd19f309
 2011-02-22T10:33:14.427047Z
 35063
@@ -1290,11 +1290,11 @@ file
 
 
 
-2011-03-03T12:26:34.778297Z
-da832d0daf58bad51c3a2100f84549b8
-2011-02-25T13:30:41.884561Z
-35167
-jesterking
+2011-09-21T18:16:11.599821Z
+4c9fc48e4dff4a880f1c49d3bf677d51
+2011-09-21T08:40:30.090958Z
+40419
+campbellbarton
 has-props
 
 
@@ -1316,7 +1316,7 @@ has-props
 
 
 
-13215
+14395
 
 BL_ArmatureObject.cpp
 file
@@ -1324,11 +1324,11 @@ file
 
 
 
-2011-03-03T12:26:34.778297Z
-c687ca1708d8a66d5d2f24c8d08a30e3
-2011-02-25T13:30:41.884561Z
-35167
-jesterking
+2011-09-21T18:16:11.599821Z
+8331124e1e2a4f8a8a51c9b5dffc8545
+2011-09-16T02:42:50.547502Z
+40248
+campbellbarton
 has-props
 
 
@@ -1350,7 +1350,7 @@ has-props
 
 
 
-19083
+19166
 
 KX_SoftBodyDeformer.h
 file
@@ -1358,11 +1358,11 @@ file
 
 
 
-2011-03-03T12:26:34.782297Z
-07dedf836b4c4e9badf34136040c72d8
-2011-02-22T10:33:14.427047Z
-35063
-jesterking
+2011-09-21T18:16:11.603821Z
+864129ffe9ad82dca26b6315e3b26603
+2011-05-06T20:18:42.924506Z
+36523
+blendix
 has-props
 
 
@@ -1384,7 +1384,7 @@ has-props
 
 
 
-2821
+2818
 
 BL_ArmatureChannel.cpp
 file
@@ -1392,11 +1392,11 @@ file
 
 
 
-2011-03-03T12:26:34.782297Z
-642bd437388802a8cfb14b4ba83df969
-2011-02-25T13:30:41.884561Z
-35167
-jesterking
+2011-09-21T18:16:11.603821Z
+a64fd99bd1aa68ff4dcca702d091ceb3
+2011-03-30T16:14:54.639366Z
+35904
+campbellbarton
 has-props
 
 
@@ -1418,7 +1418,7 @@ has-props
 
 
 
-14199
+14223
 
 KX_BlenderSceneConverter.h
 file
@@ -1426,11 +1426,11 @@ file
 
 
 
-2011-03-03T12:26:34.782297Z
-852bd59609b7085e05dbb50a9ca9f1a3
-2011-02-22T10:33:14.427047Z
-35063
-jesterking
+2011-09-21T18:16:11.603821Z
+ab86660b0ea9bb632c990a0d8a42bf15
+2011-08-30T09:15:55.930526Z
+39792
+nexyon
 has-props
 
 
@@ -1452,7 +1452,7 @@ has-props
 
 
 
-7034
+7165
 
 BL_BlenderDataConversion.cpp
 file
@@ -1460,10 +1460,10 @@ file
 
 
 
-2011-03-03T12:26:34.782297Z
-852e5034d05793fabee6a691ef184666
-2011-02-28T20:22:28.256571Z
-35269
+2011-09-21T18:16:11.603821Z
+00660d7b671e25d14be861b34bfc1031
+2011-09-19T19:55:59.989496Z
+40372
 dfelinto
 has-props
 
@@ -1486,7 +1486,7 @@ has-props
 
 
 
-85066
+87687
 
 BL_MeshDeformer.cpp
 file
@@ -1494,11 +1494,11 @@ file
 
 
 
-2011-03-03T12:26:34.782297Z
-f712db64a0876ab6a08244670e940e46
-2011-02-25T13:30:41.884561Z
-35167
-jesterking
+2011-09-21T18:16:11.603821Z
+5bc3e4abd4a8ef7a0ffbc853a5ef52ee
+2011-05-06T20:18:42.924506Z
+36523
+blendix
 has-props
 
 
@@ -1520,5 +1520,5 @@ has-props
 
 
 
-6593
+6590
 

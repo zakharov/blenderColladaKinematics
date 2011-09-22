@@ -1,5 +1,5 @@
 /*
- * $Id: BL_ArmatureChannel.cpp 35167 2011-02-25 13:30:41Z jesterking $
+ * $Id: BL_ArmatureChannel.cpp 35904 2011-03-30 16:14:54Z campbellbarton $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -37,6 +37,7 @@
 #include "BL_ArmatureConstraint.h"
 #include "BLI_math.h"
 #include "BLI_string.h"
+#include <stddef.h>
 
 #ifdef WITH_PYTHON
 

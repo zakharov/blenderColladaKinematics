@@ -1,14 +1,14 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/build_files/package_spec
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-03-03T16:12:32.432899Z
-35334
+2011-08-24T18:23:21.620896Z
+39680
 campbellbarton
 
 
@@ -32,13 +32,47 @@ dir
 debian
 dir
 
+build_archive.py
+file
+
+
+
+
+2011-09-22T08:02:13.064243Z
+c69d3c38a1bc4c7b7e4828da50a4ed7a
+2011-03-27T05:23:14.616254Z
+35810
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1844
+
 build_debian.sh
 file
 
 
 
 
-2011-03-03T12:28:40.610297Z
+2011-09-22T08:02:13.064243Z
 3544312af201888194afbd3f7afff270
 2011-02-24T14:03:29.625694Z
 35125
@@ -65,4 +99,7 @@ has-props
 
 
 1298
+
+rpm
+dir
 

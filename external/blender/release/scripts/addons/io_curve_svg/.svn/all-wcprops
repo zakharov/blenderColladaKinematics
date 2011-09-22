@@ -1,19 +1,19 @@
 K 25
 svn:wc:ra_dav:version-url
 V 73
-/svnroot/bf-extensions/!svn/ver/1664/trunk/py/scripts/addons/io_curve_svg
+/svnroot/bf-extensions/!svn/ver/2294/trunk/py/scripts/addons/io_curve_svg
 END
 import_svg.py
 K 25
 svn:wc:ra_dav:version-url
 V 87
-/svnroot/bf-extensions/!svn/ver/1661/trunk/py/scripts/addons/io_curve_svg/import_svg.py
+/svnroot/bf-extensions/!svn/ver/2176/trunk/py/scripts/addons/io_curve_svg/import_svg.py
 END
 __init__.py
 K 25
 svn:wc:ra_dav:version-url
 V 85
-/svnroot/bf-extensions/!svn/ver/1664/trunk/py/scripts/addons/io_curve_svg/__init__.py
+/svnroot/bf-extensions/!svn/ver/2294/trunk/py/scripts/addons/io_curve_svg/__init__.py
 END
 svg_colors.py
 K 25

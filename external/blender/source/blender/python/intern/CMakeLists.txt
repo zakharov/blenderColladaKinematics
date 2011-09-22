@@ -25,23 +25,31 @@
 
 set(INC 
 	..
+	../../blenkernel
 	../../blenlib
+	../../blenloader
+	../../editors/include
 	../../makesdna
 	../../makesrna
-	../../blenkernel
-	../../blenloader
 	../../windowmanager
-	../../editors/include
+    ../../gpu
 	../../../../intern/guardedalloc
-	../../../../intern/audaspace/intern
+)
+
+set(INC_SYS
 	${PYTHON_INCLUDE_DIRS}
 )
 
 set(SRC
+    gpu.c
 	bpy.c
 	bpy_app.c
+	bpy_app_handlers.c
 	bpy_driver.c
 	bpy_interface.c
+	bpy_interface_atexit.c
+	bpy_intern_string.c
+	bpy_library.c
 	bpy_operator.c
 	bpy_operator_wrap.c
 	bpy_props.c
@@ -53,9 +61,12 @@ set(SRC
 	bpy_util.c
 	stubs.c
 
+    gpu.h
 	bpy.h
 	bpy_app.h
+	bpy_app_handlers.h
 	bpy_driver.h
+	bpy_intern_string.h
 	bpy_operator.h
 	bpy_operator_wrap.h
 	bpy_props.h
@@ -80,4 +91,12 @@ if(WITH_PYTHON_SAFETY)
 	add_definitions(-DWITH_PYTHON_SAFETY)
 endif()
 
-blender_add_lib(bf_python "${SRC}" "${INC}")
+if(WITH_AUDASPACE)
+	add_definitions(-DWITH_AUDASPACE)
+endif()
+
+if(WITH_INTERNATIONAL)
+        add_definitions(-DINTERNATIONAL)
+endif()
+
+blender_add_lib(bf_python "${SRC}" "${INC}" "${INC_SYS}")

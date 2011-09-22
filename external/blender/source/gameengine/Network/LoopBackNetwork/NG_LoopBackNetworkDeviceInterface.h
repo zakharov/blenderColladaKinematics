@@ -1,5 +1,5 @@
 /*
- * $Id: NG_LoopBackNetworkDeviceInterface.h 35072 2011-02-22 12:42:55Z jesterking $
+ * $Id: NG_LoopBackNetworkDeviceInterface.h 39883 2011-09-03 02:15:49Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -52,8 +52,8 @@ public:
 	virtual void NextFrame();
 
 	bool Connect(char *address, unsigned int port, char *password,
-		     unsigned int localport, unsigned int timeout) {
-	    return true;}
+	             unsigned int localport, unsigned int timeout) {
+		return true;}
 	bool Disconnect(void) {return true;}
 
 	virtual void SendNetworkMessage(class NG_NetworkMessage* msg);

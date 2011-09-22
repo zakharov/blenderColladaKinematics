@@ -19,19 +19,41 @@
 import bpy
 import imp
 from . import fk, ik, deform
-from rigify.utils import MetarigError, get_layers
 
 imp.reload(fk)
 imp.reload(ik)
 imp.reload(deform)
 
 script = """
-fk_leg = ["%s", "%s", "%s"]
-ik_leg = ["%s", "%s", "%s"]
+fk_leg = ["%s", "%s", "%s", "%s"]
+ik_leg = ["%s", "%s", "%s", "%s", "%s", "%s"]
 if is_selected(fk_leg+ik_leg):
-    layout.prop(pose_bones[ik_leg[0]], '["ikfk_switch"]', text="FK / IK (" + ik_leg[0] + ")", slider=True)
+    layout.prop(pose_bones[ik_leg[2]], '["ikfk_switch"]', text="FK / IK (" + ik_leg[2] + ")", slider=True)
 if is_selected(fk_leg):
-    layout.prop(pose_bones[fk_leg[0]], '["isolate"]', text="Isolate Rotation (" + fk_leg[0] + ")", slider=True)
+    try:
+        pose_bones[fk_leg[0]]["isolate"]
+        layout.prop(pose_bones[fk_leg[0]], '["isolate"]', text="Isolate Rotation (" + fk_leg[0] + ")", slider=True)
+    except KeyError:
+        pass
+if is_selected(fk_leg+ik_leg):
+    p = layout.operator("pose.rigify_leg_fk2ik_" + rig_id, text="Snap FK->IK (" + fk_leg[0] + ")")
+    p.thigh_fk = fk_leg[0]
+    p.shin_fk  = fk_leg[1]
+    p.foot_fk  = fk_leg[2]
+    p.mfoot_fk = fk_leg[3]
+    p.thigh_ik = ik_leg[0]
+    p.shin_ik  = ik_leg[1]
+    p.mfoot_ik = ik_leg[5]
+    p = layout.operator("pose.rigify_leg_ik2fk_" + rig_id, text="Snap IK->FK (" + fk_leg[0] + ")")
+    p.thigh_fk  = fk_leg[0]
+    p.shin_fk   = fk_leg[1]
+    p.mfoot_fk  = fk_leg[3]
+    p.thigh_ik  = ik_leg[0]
+    p.shin_ik   = ik_leg[1]
+    p.foot_ik   = ik_leg[2]
+    p.pole      = ik_leg[3]
+    p.footroll  = ik_leg[4]
+    p.mfoot_ik  = ik_leg[5]
 """
 
 
@@ -64,7 +86,7 @@ class Rig:
         self.deform_rig.generate()
         fk_controls = self.fk_rig.generate()
         ik_controls = self.ik_rig.generate()
-        return [script % (fk_controls[0], fk_controls[1], fk_controls[2], ik_controls[0], ik_controls[1], ik_controls[2])]
+        return [script % (fk_controls[0], fk_controls[1], fk_controls[2], fk_controls[3], ik_controls[0], ik_controls[1], ik_controls[2], ik_controls[3], ik_controls[4], ik_controls[5])]
 
     @classmethod
     def add_parameters(self, group):
@@ -75,11 +97,13 @@ class Rig:
         items = [('X', 'X', ''), ('Y', 'Y', ''), ('Z', 'Z', ''), ('-X', '-X', ''), ('-Y', '-Y', ''), ('-Z', '-Z', '')]
         group.primary_rotation_axis = bpy.props.EnumProperty(items=items, name="Primary Rotation Axis", default='X')
 
-        group.separate_ik_layers = bpy.props.BoolProperty(name="Separate IK Control Layers:", default=False, description="Enable putting the ik controls on a separate layer from the fk controls.")
-        group.ik_layers = bpy.props.BoolVectorProperty(size=32, description="Layers for the ik controls to be on.")
+        group.bend_hint = bpy.props.BoolProperty(name="Bend Hint", default=True, description="Give IK chain a hint about which way to bend (useful for perfectly straight chains)")
 
-        group.use_thigh_twist = bpy.props.BoolProperty(name="Thigh Twist", default=True, description="Generate the dual-bone twist setup for the thigh.")
-        group.use_shin_twist = bpy.props.BoolProperty(name="Shin Twist", default=True, description="Generate the dual-bone twist setup for the shin.")
+        group.separate_ik_layers = bpy.props.BoolProperty(name="Separate IK Control Layers:", default=False, description="Enable putting the ik controls on a separate layer from the fk controls")
+        group.ik_layers = bpy.props.BoolVectorProperty(size=32, description="Layers for the ik controls to be on")
+
+        group.use_thigh_twist = bpy.props.BoolProperty(name="Thigh Twist", default=True, description="Generate the dual-bone twist setup for the thigh")
+        group.use_shin_twist = bpy.props.BoolProperty(name="Shin Twist", default=True, description="Generate the dual-bone twist setup for the shin")
 
     @classmethod
     def parameters_ui(self, layout, obj, bone):
@@ -137,6 +161,9 @@ class Rig:
         r = layout.row()
         r.label(text="Knee rotation axis:")
         r.prop(params, "primary_rotation_axis", text="")
+
+        r = layout.row()
+        r.prop(params, "bend_hint")
 
         col = layout.column()
         col.prop(params, "use_thigh_twist")

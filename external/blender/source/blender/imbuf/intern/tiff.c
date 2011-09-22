@@ -1,7 +1,7 @@
 /*
  * tiff.c
  *
- * $Id: tiff.c 35239 2011-02-27 20:23:21Z jesterking $
+ * $Id: tiff.c 40340 2011-09-19 06:32:19Z campbellbarton $
  * 
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -44,8 +44,6 @@
  * 8 bits per channel in all cases.  The "deflate" compression algorithm is
  * used to compress images.
  */
-
-#ifdef WITH_TIFF
 
 #include <string.h>
 
@@ -336,7 +334,7 @@ static void scanline_contig_32bit(float *rectf, float *fbuf, int scanline_w, int
 		rectf[i*4 + 0] = fbuf[i*spp + 0];
 		rectf[i*4 + 1] = fbuf[i*spp + 1];
 		rectf[i*4 + 2] = fbuf[i*spp + 2];
-		rectf[i*4 + 3] = (spp==4)?fbuf[i*spp + 3]:1.0;
+		rectf[i*4 + 3] = (spp==4)?fbuf[i*spp + 3]:1.0f;
 	}
 }
 
@@ -354,6 +352,25 @@ static void scanline_separate_32bit(float *rectf, float *fbuf, int scanline_w, i
 		rectf[i*4 + chan] = fbuf[i];
 }
 
+static void imb_read_tiff_resolution(ImBuf *ibuf, TIFF *image)
+{
+	uint16 unit;
+	float xres;
+	float yres;
+
+	TIFFGetFieldDefaulted(image, TIFFTAG_RESOLUTIONUNIT, &unit);
+	TIFFGetFieldDefaulted(image, TIFFTAG_XRESOLUTION, &xres);
+	TIFFGetFieldDefaulted(image, TIFFTAG_YRESOLUTION, &yres);
+
+	if(unit == RESUNIT_CENTIMETER) {
+		ibuf->ppm[0]= (double)xres * 100.0;
+		ibuf->ppm[1]= (double)yres * 100.0;
+	}
+	else {
+		ibuf->ppm[0]= (double)xres / 0.0254;
+		ibuf->ppm[1]= (double)yres / 0.0254;
+	}
+}
 
 /* 
  * Use the libTIFF scanline API to read a TIFF image.
@@ -369,10 +386,13 @@ static int imb_read_tiff_pixels(ImBuf *ibuf, TIFF *image, int premul)
 	int ib_flag=0, row, chan;
 	float *fbuf=NULL;
 	unsigned short *sbuf=NULL;
-	
+
 	TIFFGetField(image, TIFFTAG_BITSPERSAMPLE, &bitspersample);
 	TIFFGetField(image, TIFFTAG_SAMPLESPERPIXEL, &spp);		/* number of 'channels' */
 	TIFFGetField(image, TIFFTAG_PLANARCONFIG, &config);
+
+	imb_read_tiff_resolution(ibuf, image);
+
 	scanline = TIFFScanlineSize(image);
 	
 	if (bitspersample == 32) {
@@ -605,8 +625,7 @@ void imb_loadtiletiff(ImBuf *ibuf, unsigned char *mem, size_t size, int tx, int 
 		return;
 	}
 
-   	if(TIFFSetDirectory(image, ibuf->miplevel)) {
-		/* allocate the image buffer */
+	if(TIFFSetDirectory(image, ibuf->miplevel)) { /* allocate the image buffer */
 		TIFFGetField(image, TIFFTAG_IMAGEWIDTH,  &width);
 		TIFFGetField(image, TIFFTAG_IMAGELENGTH, &height);
 
@@ -625,7 +644,7 @@ void imb_loadtiletiff(ImBuf *ibuf, unsigned char *mem, size_t size, int tx, int 
 			}
 		}
 		else
-			printf("imb_loadtiff: mipmap level %d has unexpected size %dx%d instead of %dx%d\n", ibuf->miplevel, width, height, ibuf->x, ibuf->y);
+			printf("imb_loadtiff: mipmap level %d has unexpected size %ux%u instead of %dx%d\n", ibuf->miplevel, width, height, ibuf->x, ibuf->y);
 	}
 	else
 		printf("imb_loadtiff: could not find mipmap level %d\n", ibuf->miplevel);
@@ -659,6 +678,7 @@ int imb_savetiff(ImBuf *ibuf, const char *name, int flags)
 	unsigned char *from = NULL, *to = NULL;
 	unsigned short *pixels16 = NULL, *to16 = NULL;
 	float *fromf = NULL;
+	float xres, yres;
 	int x, y, from_i, to_i, i;
 	int extraSampleTypes[1] = { EXTRASAMPLE_ASSOCALPHA };
 	
@@ -784,8 +804,18 @@ int imb_savetiff(ImBuf *ibuf, const char *name, int flags)
 	TIFFSetField(image, TIFFTAG_COMPRESSION, COMPRESSION_DEFLATE);
 	TIFFSetField(image, TIFFTAG_FILLORDER, FILLORDER_MSB2LSB);
 	TIFFSetField(image, TIFFTAG_PLANARCONFIG, PLANARCONFIG_CONTIG);
-	TIFFSetField(image, TIFFTAG_XRESOLUTION,     150.0);
-	TIFFSetField(image, TIFFTAG_YRESOLUTION,     150.0);
+
+
+	if(ibuf->ppm[0] > 0.0 && ibuf->ppm[1] > 0.0) {
+		xres= (float)(ibuf->ppm[0] * 0.0254);
+		yres= (float)(ibuf->ppm[1] * 0.0254);
+	}
+	else {
+		xres= yres= 150.0f;
+	}
+
+	TIFFSetField(image, TIFFTAG_XRESOLUTION,     xres);
+	TIFFSetField(image, TIFFTAG_YRESOLUTION,     yres);
 	TIFFSetField(image, TIFFTAG_RESOLUTIONUNIT,  RESUNIT_INCH);
 	if(TIFFWriteEncodedStrip(image, 0,
 			(bitspersample == 16)? (unsigned char*)pixels16: pixels,
@@ -804,5 +834,3 @@ int imb_savetiff(ImBuf *ibuf, const char *name, int flags)
 	if(pixels16) _TIFFfree(pixels16);
 	return (1);
 }
-
-#endif /* WITH_TIFF */

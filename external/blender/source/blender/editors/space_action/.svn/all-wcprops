@@ -1,25 +1,25 @@
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svnroot/bf-blender/!svn/ver/35365/trunk/blender/source/blender/editors/space_action
+/svnroot/bf-blender/!svn/ver/40390/trunk/blender/source/blender/editors/space_action
 END
 action_ops.c
 K 25
 svn:wc:ra_dav:version-url
 V 97
-/svnroot/bf-blender/!svn/ver/35365/trunk/blender/source/blender/editors/space_action/action_ops.c
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/source/blender/editors/space_action/action_ops.c
 END
 action_intern.h
 K 25
 svn:wc:ra_dav:version-url
 V 100
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_action/action_intern.h
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/source/blender/editors/space_action/action_intern.h
 END
 action_edit.c
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/svnroot/bf-blender/!svn/ver/35365/trunk/blender/source/blender/editors/space_action/action_edit.c
+/svnroot/bf-blender/!svn/ver/40287/trunk/blender/source/blender/editors/space_action/action_edit.c
 END
 SConscript
 K 25
@@ -31,23 +31,23 @@ space_action.c
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_action/space_action.c
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/source/blender/editors/space_action/space_action.c
 END
 action_draw.c
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_action/action_draw.c
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/source/blender/editors/space_action/action_draw.c
 END
 CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svnroot/bf-blender/!svn/ver/35028/trunk/blender/source/blender/editors/space_action/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/38443/trunk/blender/source/blender/editors/space_action/CMakeLists.txt
 END
 action_select.c
 K 25
 svn:wc:ra_dav:version-url
 V 100
-/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/editors/space_action/action_select.c
+/svnroot/bf-blender/!svn/ver/40390/trunk/blender/source/blender/editors/space_action/action_select.c
 END

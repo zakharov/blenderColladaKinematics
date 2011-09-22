@@ -1,5 +1,5 @@
 /*
- * $Id: BLO_writefile.h 35245 2011-02-27 20:35:41Z jesterking $
+ * $Id: BLO_writefile.h 36736 2011-05-18 06:27:32Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -39,7 +39,7 @@ struct MemFile;
 struct Main;
 struct ReportList;
 
-extern int BLO_write_file(struct Main *mainvar, char *dir, int write_flags, struct ReportList *reports, int *thumb);
+extern int BLO_write_file(struct Main *mainvar, const char *filepath, int write_flags, struct ReportList *reports, int *thumb);
 extern int BLO_write_file_mem(struct Main *mainvar, struct MemFile *compare, struct MemFile *current, int write_flags);
 extern int BLO_write_runtime(struct Main *mainvar, const char *file, char *exename, struct ReportList *reports);
 

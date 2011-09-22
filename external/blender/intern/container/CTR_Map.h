@@ -1,5 +1,5 @@
 /*
- * $Id: CTR_Map.h 35146 2011-02-25 10:45:31Z jesterking $
+ * $Id: CTR_Map.h 36523 2011-05-06 20:18:42Z blendix $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -55,6 +55,19 @@ public:
             m_buckets[i] = 0;
         }
     }
+
+	CTR_Map(const CTR_Map& map)
+	{
+		m_num_buckets = map.m_num_buckets;
+		m_buckets = new Entry *[m_num_buckets];
+
+		for (int i = 0; i < m_num_buckets; ++i) {
+			m_buckets[i] = 0;
+
+			for(Entry *entry = map.m_buckets[i]; entry; entry=entry->m_next)
+				insert(entry->m_key, entry->m_value);
+		}
+	}
     
     int size() { 
         int count=0;
@@ -80,6 +93,24 @@ public:
                 if (count==index)
                 {
                     return &bucket->m_value;
+                }
+                bucket = bucket->m_next;
+                count++;
+            }
+        }
+        return 0;
+    }
+
+    Key* getKey(int index) {
+        int count=0;
+        for (int i=0;i<m_num_buckets;i++)
+        {
+            Entry* bucket = m_buckets[i];
+            while(bucket)
+            {
+                if (count==index)
+                {
+                    return &bucket->m_key;
                 }
                 bucket = bucket->m_next;
                 count++;

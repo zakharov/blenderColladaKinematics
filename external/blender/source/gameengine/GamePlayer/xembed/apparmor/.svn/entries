@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/gameengine/GamePlayer/xembed/apparmor
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2008-11-12T21:16:53.478104Z
-17433
-blendix
+2011-05-09T08:15:38.241902Z
+36564
+campbellbarton
 
 
 
@@ -32,12 +32,12 @@ file
 
 
 
-2011-03-03T12:26:30.138297Z
+2011-09-21T18:16:09.455810Z
 c3700fe77a22a4c95685a9813a39691b
-2008-11-12T21:16:53.478104Z
-17433
-blendix
-
+2011-05-09T08:15:38.241902Z
+36564
+campbellbarton
+has-props
 
 
 
@@ -66,12 +66,12 @@ file
 
 
 
-2011-03-03T12:26:30.138297Z
+2011-09-21T18:16:09.455810Z
 356e568d6a798b14347a9edcd4a9e60b
-2008-11-12T21:16:53.478104Z
-17433
-blendix
-
+2011-05-09T08:15:38.241902Z
+36564
+campbellbarton
+has-props
 
 
 

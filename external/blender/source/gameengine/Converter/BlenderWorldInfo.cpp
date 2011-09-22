@@ -1,5 +1,5 @@
 /*
- * $Id: BlenderWorldInfo.cpp 35167 2011-02-25 13:30:41Z jesterking $
+ * $Id: BlenderWorldInfo.cpp 39834 2011-09-01 02:12:53Z campbellbarton $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can [0]istribute it and/or
@@ -170,10 +170,10 @@ float BlenderWorldInfo::getMistStart()
 float BlenderWorldInfo::getMistDistance()
 {
 	return m_mistdistance;
-}  
-    
+}
 
-    
+
+
 float BlenderWorldInfo::getMistColorRed()
 {
 	return m_mistcolor[0];

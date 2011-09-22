@@ -1,5 +1,5 @@
 /*
- * $Id: ED_transform.h 35313 2011-03-02 23:39:08Z aligorith $
+ * $Id: ED_transform.h 39991 2011-09-07 06:33:29Z mont29 $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -148,6 +148,7 @@ void BIF_selectOrientation(void);
 #define P_ALIGN_SNAP	(P_GEO_SNAP|(1 << 5))
 #define P_CONSTRAINT	(1 << 6)
 #define P_OPTIONS		(1 << 7)
+#define P_CORRECT_UV 	(1 << 8)
 
 void Transform_Properties(struct wmOperatorType *ot, int flags);
 

@@ -1,5 +1,5 @@
 /*
- * $Id: RAS_OpenGLRasterizer.cpp 35174 2011-02-25 13:38:24Z jesterking $
+ * $Id: RAS_OpenGLRasterizer.cpp 40372 2011-09-19 19:55:59Z dfelinto $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -55,6 +55,10 @@
 
 #include "BKE_DerivedMesh.h"
 
+#ifndef M_PI
+#define M_PI		3.14159265358979323846
+#endif
+
 /**
  *  32x32 bit masks for vinterlace stereo mode
  */
@@ -85,7 +89,7 @@ RAS_OpenGLRasterizer::RAS_OpenGLRasterizer(RAS_ICanvas* canvas)
 	m_motionblurvalue(-1.0),
 	m_texco_num(0),
 	m_attrib_num(0),
-	//m_last_blendmode(GPU_BLEND_SOLID),
+	//m_last_alphablend(GPU_BLEND_SOLID),
 	m_last_frontface(true),
 	m_materialCachingInfo(0)
 {
@@ -99,12 +103,16 @@ RAS_OpenGLRasterizer::RAS_OpenGLRasterizer(RAS_ICanvas* canvas)
 		hinterlace_mask[i] = (i&1)*0xFFFFFFFF;
 	}
 	hinterlace_mask[32] = 0;
+
+	m_prevafvalue = GPU_get_anisotropic();
 }
 
 
 
 RAS_OpenGLRasterizer::~RAS_OpenGLRasterizer()
 {
+	// Restore the previous AF value
+	GPU_set_anisotropic(m_prevafvalue);
 }
 
 bool RAS_OpenGLRasterizer::Init()
@@ -118,21 +126,21 @@ bool RAS_OpenGLRasterizer::Init()
 
 	glDisable(GL_BLEND);
 	glDisable(GL_ALPHA_TEST);
-	//m_last_blendmode = GPU_BLEND_SOLID;
-	GPU_set_material_blend_mode(GPU_BLEND_SOLID);
+	//m_last_alphablend = GPU_BLEND_SOLID;
+	GPU_set_material_alpha_blend(GPU_BLEND_SOLID);
 
 	glFrontFace(GL_CCW);
 	m_last_frontface = true;
-
-	glClearColor(m_redback,m_greenback,m_blueback,m_alphaback);
-	glColorMask(GL_TRUE, GL_TRUE, GL_TRUE, GL_TRUE);
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
 
 	m_redback = 0.4375;
 	m_greenback = 0.4375;
 	m_blueback = 0.4375;
 	m_alphaback = 0.0;
+
+	glClearColor(m_redback,m_greenback,m_blueback,m_alphaback);
+	glColorMask(GL_TRUE, GL_TRUE, GL_TRUE, GL_TRUE);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
 
 	glShadeModel(GL_SMOOTH);
 
@@ -295,13 +303,15 @@ bool RAS_OpenGLRasterizer::BeginFrame(int drawingmode, double time)
 
 	glDisable(GL_BLEND);
 	glDisable(GL_ALPHA_TEST);
-	//m_last_blendmode = GPU_BLEND_SOLID;
-	GPU_set_material_blend_mode(GPU_BLEND_SOLID);
+	//m_last_alphablend = GPU_BLEND_SOLID;
+	GPU_set_material_alpha_blend(GPU_BLEND_SOLID);
 
 	glFrontFace(GL_CCW);
 	m_last_frontface = true;
 
 	glShadeModel(GL_SMOOTH);
+
+	glEnable(GL_MULTISAMPLE_ARB);
 
 	m_2DCanvas->BeginFrame();
 	
@@ -348,9 +358,9 @@ void RAS_OpenGLRasterizer::ClearCachingInfo(void)
 	m_materialCachingInfo = 0;
 }
 
-void RAS_OpenGLRasterizer::FlushDebugLines()
+void RAS_OpenGLRasterizer::FlushDebugShapes()
 {
-	if(!m_debugLines.size())
+	if(!m_debugShapes.size())
 		return;
 
 	// DrawDebugLines
@@ -362,31 +372,72 @@ void RAS_OpenGLRasterizer::FlushDebugLines()
 	if(light) glDisable(GL_LIGHTING);
 	if(tex) glDisable(GL_TEXTURE_2D);
 
+	//draw lines
 	glBegin(GL_LINES);
-	for (unsigned int i=0;i<m_debugLines.size();i++)
+	for (unsigned int i=0;i<m_debugShapes.size();i++)
 	{
-		glColor4f(m_debugLines[i].m_color[0],m_debugLines[i].m_color[1],m_debugLines[i].m_color[2],1.f);
-		const MT_Scalar* fromPtr = &m_debugLines[i].m_from.x();
-		const MT_Scalar* toPtr= &m_debugLines[i].m_to.x();
-
+		if (m_debugShapes[i].m_type != OglDebugShape::LINE)
+			continue;
+		glColor4f(m_debugShapes[i].m_color[0],m_debugShapes[i].m_color[1],m_debugShapes[i].m_color[2],1.f);
+		const MT_Scalar* fromPtr = &m_debugShapes[i].m_pos.x();
+		const MT_Scalar* toPtr= &m_debugShapes[i].m_param.x();
 		glVertex3dv(fromPtr);
 		glVertex3dv(toPtr);
 	}
 	glEnd();
 
+	//draw circles
+	for (unsigned int i=0;i<m_debugShapes.size();i++)
+	{
+		if (m_debugShapes[i].m_type != OglDebugShape::CIRCLE)
+			continue;
+		glBegin(GL_LINE_LOOP);
+		glColor4f(m_debugShapes[i].m_color[0],m_debugShapes[i].m_color[1],m_debugShapes[i].m_color[2],1.f);
+
+		static const MT_Vector3 worldUp(0.,0.,1.);
+		MT_Vector3 norm = m_debugShapes[i].m_param;
+		MT_Matrix3x3 tr;
+		if (norm.fuzzyZero() || norm == worldUp)
+		{
+			tr.setIdentity();
+		}
+		else
+		{
+			MT_Vector3 xaxis, yaxis;
+			xaxis = MT_cross(norm, worldUp);
+			yaxis = MT_cross(xaxis, norm);
+			tr.setValue(xaxis.x(), xaxis.y(), xaxis.z(),
+				yaxis.x(), yaxis.y(), yaxis.z(),
+				norm.x(), norm.y(), norm.z());
+		}
+		MT_Scalar rad = m_debugShapes[i].m_param2.x();
+		int n = (int) m_debugShapes[i].m_param2.y();
+		for (int j = 0; j<n; j++)
+		{
+			MT_Scalar theta = j*M_PI*2/n;
+			MT_Vector3 pos(cos(theta)*rad, sin(theta)*rad, 0.);
+			pos = pos*tr;
+			pos += m_debugShapes[i].m_pos;
+			const MT_Scalar* posPtr = &pos.x();
+			glVertex3dv(posPtr);
+		}
+		glEnd();
+	}
+
 	if(light) glEnable(GL_LIGHTING);
 	if(tex) glEnable(GL_TEXTURE_2D);
 
-	m_debugLines.clear();
+	m_debugShapes.clear();
 }
 
 void RAS_OpenGLRasterizer::EndFrame()
 {
-	
-
-	FlushDebugLines();
+	FlushDebugShapes();
 
 	glColorMask(GL_TRUE, GL_TRUE, GL_TRUE, GL_TRUE);
+
+	glDisable(GL_MULTISAMPLE_ARB);
+
 	m_2DCanvas->EndFrame();
 }	
 
@@ -822,10 +873,10 @@ void RAS_OpenGLRasterizer::IndexPrimitivesInternal(RAS_MeshSlot& ms, bool multi)
 		// MCol *mcol = (MCol*)ms.m_pDerivedMesh->getFaceDataArray(ms.m_pDerivedMesh, CD_MCOL); /* UNUSED */
 
 		// handle two-side
-		if (current_polymat->GetDrawingMode() & RAS_IRasterizer::KX_TWOSIDE)
-			this->SetCullFace(false);
-		else
+		if (current_polymat->GetDrawingMode() & RAS_IRasterizer::KX_BACKCULL)
 			this->SetCullFace(true);
+		else
+			this->SetCullFace(false);
 
 		if (current_polymat->GetFlag() & RAS_BLENDERGLSL) {
 			// GetMaterialIndex return the original mface material index, 
@@ -839,9 +890,9 @@ void RAS_OpenGLRasterizer::IndexPrimitivesInternal(RAS_MeshSlot& ms, bool multi)
 			else
 				memset(&current_gpu_attribs, 0, sizeof(current_gpu_attribs));
 			// DM draw can mess up blending mode, restore at the end
-			int current_blend_mode = GPU_get_material_blend_mode();
+			int current_blend_mode = GPU_get_material_alpha_blend();
 			ms.m_pDerivedMesh->drawFacesGLSL(ms.m_pDerivedMesh, CheckMaterialDM);
-			GPU_set_material_blend_mode(current_blend_mode);
+			GPU_set_material_alpha_blend(current_blend_mode);
 		} else {
 			//ms.m_pDerivedMesh->drawMappedFacesTex(ms.m_pDerivedMesh, CheckTexfaceDM, mcol);
 			current_blmat_nr = current_polymat->GetMaterialIndex();
@@ -1153,36 +1204,36 @@ void RAS_OpenGLRasterizer::DisableMotionBlur()
 	m_motionblurvalue = -1.0;
 }
 
-void RAS_OpenGLRasterizer::SetBlendingMode(int blendmode)
+void RAS_OpenGLRasterizer::SetAlphaBlend(int alphablend)
 {
-	GPU_set_material_blend_mode(blendmode);
+	GPU_set_material_alpha_blend(alphablend);
 /*
-	if(blendmode == m_last_blendmode)
+	if(alphablend == m_last_alphablend)
 		return;
 
-	if(blendmode == GPU_BLEND_SOLID) {
+	if(alphablend == GPU_BLEND_SOLID) {
 		glDisable(GL_BLEND);
 		glDisable(GL_ALPHA_TEST);
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	}
-	else if(blendmode == GPU_BLEND_ADD) {
+	else if(alphablend == GPU_BLEND_ADD) {
 		glBlendFunc(GL_ONE, GL_ONE);
 		glEnable(GL_BLEND);
 		glDisable(GL_ALPHA_TEST);
 	}
-	else if(blendmode == GPU_BLEND_ALPHA) {
+	else if(alphablend == GPU_BLEND_ALPHA) {
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 		glEnable(GL_BLEND);
 		glEnable(GL_ALPHA_TEST);
 		glAlphaFunc(GL_GREATER, 0.0f);
 	}
-	else if(blendmode == GPU_BLEND_CLIP) {
+	else if(alphablend == GPU_BLEND_CLIP) {
 		glDisable(GL_BLEND); 
 		glEnable(GL_ALPHA_TEST);
 		glAlphaFunc(GL_GREATER, 0.5f);
 	}
 
-	m_last_blendmode = blendmode;
+	m_last_alphablend = alphablend;
 */
 }
 
@@ -1199,3 +1250,12 @@ void RAS_OpenGLRasterizer::SetFrontFace(bool ccw)
 	m_last_frontface = ccw;
 }
 
+void RAS_OpenGLRasterizer::SetAnisotropicFiltering(short level)
+{
+	GPU_set_anisotropic((float)level);
+}
+
+short RAS_OpenGLRasterizer::GetAnisotropicFiltering()
+{
+	return (short)GPU_get_anisotropic();
+}

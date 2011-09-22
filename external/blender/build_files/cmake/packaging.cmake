@@ -31,16 +31,21 @@ set(BUILD_REV ${MY_WC_REVISION})
 
 
 # Force Package Name
-set(CPACK_PACKAGE_FILE_NAME ${PROJECT_NAME}-${BLENDER_VERSION}-r${BUILD_REV}-${CPACK_SYSTEM_NAME}-${CMAKE_SYSTEM_PROCESSOR})
+set(CPACK_PACKAGE_FILE_NAME ${PROJECT_NAME}-${BLENDER_VERSION}-r${BUILD_REV}-${CMAKE_SYSTEM_PROCESSOR})
 
-# RPM packages
-include(build_files/cmake/RpmBuild.cmake)
-if(RPMBUILD_FOUND AND NOT WIN32)
-	set(CPACK_GENERATOR "RPM")
-	set(CPACK_SET_DESTDIR TRUE)
-	set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "${PROJECT_DESCRIPTION}")
-	set(CPACK_RPM_PACKAGE_LICENSE "GPLv2")
-	set(CPACK_RPM_PACKAGE_GROUP "Amusements/Graphics")
+if(CMAKE_SYSTEM_NAME MATCHES "Linux")
+	# RPM packages
+	include(build_files/cmake/RpmBuild.cmake)
+	if(RPMBUILD_FOUND AND NOT WIN32)
+		set(CPACK_GENERATOR "RPM")
+		set(CPACK_RPM_PACKAGE_RELEASE "1.r${BUILD_REV}")
+		set(CPACK_SET_DESTDIR "true")
+		set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "${PROJECT_DESCRIPTION}")
+		set(CPACK_PACKAGE_RELOCATABLE "false")
+		set(CPACK_RPM_PACKAGE_LICENSE "GPLv2")
+		set(CPACK_RPM_PACKAGE_GROUP "Amusements/Multimedia")
+		set(CPACK_RPM_USER_BINARY_SPECFILE "${CMAKE_SOURCE_DIR}/build_files/package_spec/rpm/blender.spec.in")
+	endif()
 endif()
 
 # Mac Bundle
@@ -49,13 +54,35 @@ if(APPLE)
 
 	# Libraries are bundled directly
 	set(CPACK_COMPONENT_LIBRARIES_HIDDEN TRUE)
-
-	# Bundle Properties
-	set(MACOSX_BUNDLE_BUNDLE_NAME blender)
-	set(MACOSX_BUNDLE_BUNDLE_VERSION ${BLENDER_VERSION})
-	set(MACOSX_BUNDLE_SHORT_VERSION_STRING ${BLENDER_VERSION})
-	set(MACOSX_BUNDLE_LONG_VERSION_STRING "Version ${BLENDER_VERSION}-r${BUILD_REV}")
-endif(APPLE)
+endif()
 
 set(CPACK_PACKAGE_EXECUTABLES "blender")
 include(CPack)
+
+# Target for build_archive.py script, to automatically pass along
+# version, revision, platform, build directory
+macro(add_package_archive packagename extension)
+	set(build_archive python ${CMAKE_SOURCE_DIR}/build_files/package_spec/build_archive.py)
+	set(package_output ${CMAKE_BINARY_DIR}/release/${packagename}.${extension})
+
+	add_custom_target(package_archive DEPENDS ${package_output})
+
+	add_custom_command(
+		OUTPUT ${package_output}
+		COMMAND ${build_archive} ${packagename} ${extension} bin release
+		WORKING_DIRECTORY ${CMAKE_BINARY_DIR})
+endmacro()
+
+if(APPLE)
+	add_package_archive(
+		"${PROJECT_NAME}-${BLENDER_VERSION}-r${BUILD_REV}-OSX-${CMAKE_OSX_ARCHITECTURES}"
+		"zip")
+elseif(UNIX)
+	# platform name could be tweaked, to include glibc, and ensure processor is correct (i386 vs i686)
+	string(TOLOWER ${CMAKE_SYSTEM_NAME} PACKAGE_SYSTEM_NAME)
+
+	add_package_archive(
+		"${PROJECT_NAME}-${BLENDER_VERSION}-r${BUILD_REV}-${PACKAGE_SYSTEM_NAME}-${CMAKE_SYSTEM_PROCESSOR}"
+		"tar.bz2")
+endif()
+

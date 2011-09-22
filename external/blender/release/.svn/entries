@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/release
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-03-04T19:57:05.499457Z
-35357
-dingto
+2011-09-22T07:01:28.873912Z
+40447
+campbellbarton
 
 
 
@@ -29,9 +29,6 @@ dingto
 plugins
 dir
 
-irix-6.2-mips
-dir
-
 text
 dir
 
@@ -41,11 +38,11 @@ file
 
 
 
-2011-03-03T12:26:26.886297Z
+2011-09-21T18:16:08.279804Z
 846c5824b4a01671a0d3729a69ed1d63
-2009-10-19T18:44:09.380562Z
-23979
-gsrb3d
+2011-05-09T08:15:38.241902Z
+36564
+campbellbarton
 has-props
 
 
@@ -90,11 +87,11 @@ file
 
 
 
-2011-03-03T12:26:26.886297Z
+2011-09-21T18:16:08.279804Z
 914323972c77c634da6f806ad363e023
-2009-10-19T18:44:09.380562Z
-23979
-gsrb3d
+2011-05-09T08:15:38.241902Z
+36564
+campbellbarton
 has-props
 
 
@@ -124,11 +121,11 @@ file
 
 
 
-2011-03-03T12:26:26.886297Z
-a4ef4d81dd8f1a58520ad707bc8302ea
-2009-10-19T18:44:09.380562Z
-23979
-gsrb3d
+2011-09-21T18:16:08.279804Z
+df4634bc21376a853d68035666af9200
+2011-05-09T08:15:38.241902Z
+36564
+campbellbarton
 has-props
 
 
@@ -150,5 +147,5 @@ has-props
 
 
 
-1141
+1123
 

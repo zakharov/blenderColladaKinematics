@@ -1,4 +1,4 @@
-/* $Id: FilterColor.h 35082 2011-02-22 19:30:37Z jesterking $
+/* $Id: FilterColor.h 39815 2011-08-31 01:07:55Z campbellbarton $
 -----------------------------------------------------------------------------
 This source file is part of blendTex library
 
@@ -141,7 +141,7 @@ protected:
 	/// calculate one color component
 	unsigned int calcColor (unsigned int val, short idx)
 	{
-		unsigned int col = VT_C(val,idx);;
+		unsigned int col = VT_C(val,idx);
 		if (col <= levels[idx][0]) col = 0;
 		else if (col >= levels[idx][1]) col = 0xFF;
 		else col = (((col - levels[idx][0]) << 8) / levels[idx][2]) & 0xFF;

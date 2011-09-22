@@ -1,5 +1,5 @@
 /*
- * $Id: edgehash.c 35246 2011-02-27 20:37:56Z jesterking $
+ * $Id: edgehash.c 36826 2011-05-23 08:14:29Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -96,7 +96,7 @@ void BLI_edgehash_insert(EdgeHash *eh, int v0, int v1, void *val) {
 	eh->buckets[hash]= e;
 	
 	if (++eh->nentries>eh->nbuckets*3) {
-		Entry *e, **old= eh->buckets;
+		Entry **old= eh->buckets;
 		int i, nold= eh->nbuckets;
 		
 		eh->nbuckets= hashsizes[++eh->cursize];

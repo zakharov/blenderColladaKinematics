@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_BufferReader.h 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_BufferReader.h 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -76,7 +76,7 @@ public:
 	virtual int getLength() const;
 	virtual int getPosition() const;
 	virtual AUD_Specs getSpecs() const;
-	virtual void read(int & length, sample_t* & buffer);
+	virtual void read(int& length, bool& eos, sample_t* buffer);
 };
 
 #endif //AUD_BUFFERREADER

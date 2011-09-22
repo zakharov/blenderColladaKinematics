@@ -1,29 +1,41 @@
 K 25
 svn:wc:ra_dav:version-url
 V 73
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/sndfile
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/sndfile
+END
+AUD_SndFileWriter.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/sndfile/AUD_SndFileWriter.h
 END
 AUD_SndFileReader.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/sndfile/AUD_SndFileReader.cpp
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/sndfile/AUD_SndFileReader.cpp
 END
 AUD_SndFileFactory.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/sndfile/AUD_SndFileFactory.cpp
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/sndfile/AUD_SndFileFactory.cpp
 END
 AUD_SndFileReader.h
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/sndfile/AUD_SndFileReader.h
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/sndfile/AUD_SndFileReader.h
 END
 AUD_SndFileFactory.h
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/sndfile/AUD_SndFileFactory.h
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/sndfile/AUD_SndFileFactory.h
+END
+AUD_SndFileWriter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/sndfile/AUD_SndFileWriter.cpp
 END

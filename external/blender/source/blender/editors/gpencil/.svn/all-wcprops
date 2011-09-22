@@ -1,37 +1,37 @@
 K 25
 svn:wc:ra_dav:version-url
 V 79
-/svnroot/bf-blender/!svn/ver/35337/trunk/blender/source/blender/editors/gpencil
+/svnroot/bf-blender/!svn/ver/40351/trunk/blender/source/blender/editors/gpencil
 END
 drawgpencil.c
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/35337/trunk/blender/source/blender/editors/gpencil/drawgpencil.c
+/svnroot/bf-blender/!svn/ver/39960/trunk/blender/source/blender/editors/gpencil/drawgpencil.c
 END
 gpencil_buttons.c
 K 25
 svn:wc:ra_dav:version-url
 V 97
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/gpencil/gpencil_buttons.c
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/source/blender/editors/gpencil/gpencil_buttons.c
 END
 gpencil_ops.c
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/gpencil/gpencil_ops.c
+/svnroot/bf-blender/!svn/ver/39962/trunk/blender/source/blender/editors/gpencil/gpencil_ops.c
 END
 editaction_gpencil.c
 K 25
 svn:wc:ra_dav:version-url
 V 100
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/gpencil/editaction_gpencil.c
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/source/blender/editors/gpencil/editaction_gpencil.c
 END
 gpencil_intern.h
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/gpencil/gpencil_intern.h
+/svnroot/bf-blender/!svn/ver/39962/trunk/blender/source/blender/editors/gpencil/gpencil_intern.h
 END
 SConscript
 K 25
@@ -43,17 +43,23 @@ gpencil_edit.c
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/gpencil/gpencil_edit.c
+/svnroot/bf-blender/!svn/ver/40351/trunk/blender/source/blender/editors/gpencil/gpencil_edit.c
+END
+gpencil_undo.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/39971/trunk/blender/source/blender/editors/gpencil/gpencil_undo.c
 END
 CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/35028/trunk/blender/source/blender/editors/gpencil/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/39960/trunk/blender/source/blender/editors/gpencil/CMakeLists.txt
 END
 gpencil_paint.c
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/gpencil/gpencil_paint.c
+/svnroot/bf-blender/!svn/ver/40351/trunk/blender/source/blender/editors/gpencil/gpencil_paint.c
 END

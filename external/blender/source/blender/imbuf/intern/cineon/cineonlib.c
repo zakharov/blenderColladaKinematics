@@ -36,6 +36,9 @@
 #include <netinet/in.h>	 /* htonl() */
 #endif
 #include <string.h>			 /* memset */
+
+#include "BLI_utildefines.h"
+
 #include "cin_debug_stuff.h"
 #include "logmemfile.h"
 
@@ -276,7 +279,7 @@ dumpCineonOriginationInfo(CineonOriginationInformation* originInfo) {
 	d_printf("Input device gamma %f\n", ntohf(originInfo->input_device_gamma));
 }
 
-int
+static int
 initCineonGenericHeader(CineonFile* cineon, CineonGenericHeader* header, const char* imagename) {
 
 	fillCineonFileInfo(cineon, &header->fileInfo, imagename);
@@ -287,8 +290,8 @@ initCineonGenericHeader(CineonFile* cineon, CineonGenericHeader* header, const c
 	return 0;
 }
 
-void
-dumpCineonGenericHeader(CineonGenericHeader* header) {
+static void
+UNUSED_FUNCTION(dumpCineonGenericHeader)(CineonGenericHeader* header) {
 	dumpCineonFileInfo(&header->fileInfo);
 	dumpCineonImageInfo(&header->imageInfo);
 	dumpCineonFormatInfo(&header->formatInfo);
@@ -606,7 +609,6 @@ CineonFile*
 cineonOpenFromMem(unsigned char *mem, unsigned int size) {
 
 	CineonGenericHeader header;
-	int i;
 	
 	CineonFile* cineon = (CineonFile* )malloc(sizeof(CineonFile));
 	if (cineon == 0) {
@@ -670,8 +672,6 @@ cineonOpenFromMem(unsigned char *mem, unsigned int size) {
 		return 0;
 	}
 	cineon->pixelBufferUsed = 0;
-
-	i = cineon->imageOffset;
 	
 	if (logimage_fseek(cineon, cineon->imageOffset, SEEK_SET) != 0) {
 		if (verbose) d_printf("Couldn't seek to image data at %d\n", cineon->imageOffset);

@@ -21,16 +21,17 @@
 bl_info = {
     "name": "NewTek MDD format",
     "author": "Bill L.Nieuwendorp",
+    "blender": (2, 5, 7),
+    "api": 35622,
     "location": "File > Import-Export",
     "description": "Import-Export MDD as mesh shape keys",
     "warning": "",
-    "wiki_url": "http://wiki.blender.org/index.php/Extensions:2.5/Py/"\
-        "Scripts/Import-Export/NewTek_OBJ",
+    "wiki_url": "http://wiki.blender.org/index.php/Extensions:2.5/Py/"
+                "Scripts/Import-Export/NewTek_OBJ",
     "tracker_url": "",
     "support": 'OFFICIAL',
     "category": "Import-Export"}
 
-# To support reload properly, try to access a package var, if it's there, reload everything
 if "bpy" in locals():
     import imp
     if "import_mdd" in locals():
@@ -41,19 +42,32 @@ if "bpy" in locals():
 
 import bpy
 from bpy.props import StringProperty, IntProperty
-from io_utils import ExportHelper, ImportHelper
+from bpy_extras.io_utils import ExportHelper, ImportHelper
 
 
 class ImportMDD(bpy.types.Operator, ImportHelper):
     '''Import MDD vertex keyframe file to shape keys'''
     bl_idname = "import_shape.mdd"
     bl_label = "Import MDD"
+    bl_options = {'UNDO'}
 
     filename_ext = ".mdd"
-    filter_glob = StringProperty(default="*.mdd", options={'HIDDEN'})
 
-    frame_start = IntProperty(name="Start Frame", description="Start frame for inserting animation", min=-300000, max=300000, default=0)
-    frame_step = IntProperty(name="Step", min=1, max=1000, default=1)
+    filter_glob = StringProperty(
+            default="*.mdd",
+            options={'HIDDEN'},
+            )
+    frame_start = IntProperty(
+            name="Start Frame",
+            description="Start frame for inserting animation",
+            min=-300000, max=300000,
+            default=0,
+            )
+    frame_step = IntProperty(
+            name="Step",
+            min=1, max=1000,
+            default=1,
+            )
 
     @classmethod
     def poll(cls, context):
@@ -67,8 +81,10 @@ class ImportMDD(bpy.types.Operator, ImportHelper):
         if not self.frame_start:
             self.frame_start = scene.frame_current
 
+        keywords = self.as_keywords(ignore=("filter_glob",))
+
         from . import import_mdd
-        return import_mdd.load(self, context, **self.as_keywords(ignore=("filter_glob",)))
+        return import_mdd.load(self, context, **keywords)
 
 
 class ExportMDD(bpy.types.Operator, ExportHelper):
@@ -88,9 +104,24 @@ class ExportMDD(bpy.types.Operator, ExportHelper):
 
     # List of operator properties, the attributes will be assigned
     # to the class instance from the operator settings before calling.
-    fps = IntProperty(name="Frames Per Second", description="Number of frames/second", min=minfps, max=maxfps, default=25)
-    frame_start = IntProperty(name="Start Frame", description="Start frame for baking", min=minframe, max=maxframe, default=1)
-    frame_end = IntProperty(name="End Frame", description="End frame for baking", min=minframe, max=maxframe, default=250)
+    fps = IntProperty(
+            name="Frames Per Second",
+            description="Number of frames/second",
+            min=minfps, max=maxfps,
+            default=25,
+            )
+    frame_start = IntProperty(
+            name="Start Frame",
+            description="Start frame for baking",
+            min=minframe, max=maxframe,
+            default=1,
+            )
+    frame_end = IntProperty(
+            name="End Frame",
+            description="End frame for baking",
+            min=minframe, max=maxframe,
+            default=250,
+            )
 
     @classmethod
     def poll(cls, context):
@@ -107,16 +138,22 @@ class ExportMDD(bpy.types.Operator, ExportHelper):
         if not self.fps:
             self.fps = scene.render.fps
 
+        keywords = self.as_keywords(ignore=("check_existing", "filter_glob"))
+
         from . import export_mdd
-        return export_mdd.save(self, context, **self.as_keywords(ignore=("check_existing", "filter_glob")))
+        return export_mdd.save(self, context, **keywords)
 
 
 def menu_func_import(self, context):
-    self.layout.operator(ImportMDD.bl_idname, text="Lightwave Point Cache (.mdd)")
+    self.layout.operator(ImportMDD.bl_idname,
+                         text="Lightwave Point Cache (.mdd)",
+                         )
 
 
 def menu_func_export(self, context):
-    self.layout.operator(ExportMDD.bl_idname, text="Lightwave Point Cache (.mdd)")
+    self.layout.operator(ExportMDD.bl_idname,
+                         text="Lightwave Point Cache (.mdd)",
+                         )
 
 
 def register():

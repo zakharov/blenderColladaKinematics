@@ -1,5 +1,5 @@
 /* 
- * $Id: bgl.h 35236 2011-02-27 20:10:08Z jesterking $
+ * $Id: bgl.h 37088 2011-06-02 08:29:16Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -55,7 +55,7 @@ int BGL_typeSize( int type );
 /*@ For Python access to OpenGL functions requiring a pointer. */
 typedef struct _Buffer {
 	PyObject_VAR_HEAD 
-	PyObject * parent;
+	PyObject *parent;
 
 	int type;		/* GL_BYTE, GL_SHORT, GL_INT, GL_FLOAT */
 	int ndimensions;

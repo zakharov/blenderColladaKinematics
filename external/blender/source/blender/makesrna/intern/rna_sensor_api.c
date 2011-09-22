@@ -1,5 +1,5 @@
 /*
- * $Id: rna_sensor_api.c 35238 2011-02-27 20:20:01Z jesterking $
+ * $Id: rna_sensor_api.c 40354 2011-09-19 13:23:58Z mont29 $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -61,14 +61,14 @@ void RNA_api_sensor(StructRNA *srna)
 	PropertyRNA *parm;
 
 	func= RNA_def_function(srna, "link", "rna_Sensor_link");
-	RNA_def_function_ui_description(func, "Link the sensor to a controller.");
-	parm= RNA_def_pointer(func, "controller", "Controller", "", "Controller to link to."); 
+	RNA_def_function_ui_description(func, "Link the sensor to a controller");
+	parm= RNA_def_pointer(func, "controller", "Controller", "", "Controller to link to"); 
 	RNA_def_property_flag(parm, PROP_REQUIRED);
 	RNA_def_property_update(parm, NC_LOGIC, NULL);
 
 	func= RNA_def_function(srna, "unlink", "rna_Sensor_unlink");
-	RNA_def_function_ui_description(func, "Unlink the sensor from a controller.");
-	parm= RNA_def_pointer(func, "controller", "Controller", "", "Controller to unlink from."); 
+	RNA_def_function_ui_description(func, "Unlink the sensor from a controller");
+	parm= RNA_def_pointer(func, "controller", "Controller", "", "Controller to unlink from"); 
 	RNA_def_property_flag(parm, PROP_REQUIRED);
 	RNA_def_property_update(parm, NC_LOGIC, NULL);
 }

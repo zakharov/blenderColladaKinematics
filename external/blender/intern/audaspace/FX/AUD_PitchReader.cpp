@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_PitchReader.cpp 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_PitchReader.cpp 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -31,7 +31,7 @@
 
 #include "AUD_PitchReader.h"
 
-AUD_PitchReader::AUD_PitchReader(AUD_IReader* reader, float pitch) :
+AUD_PitchReader::AUD_PitchReader(AUD_Reference<AUD_IReader> reader, float pitch) :
 		AUD_EffectReader(reader), m_pitch(pitch)
 {
 }
@@ -39,6 +39,16 @@ AUD_PitchReader::AUD_PitchReader(AUD_IReader* reader, float pitch) :
 AUD_Specs AUD_PitchReader::getSpecs() const
 {
 	AUD_Specs specs = m_reader->getSpecs();
-	specs.rate = (AUD_SampleRate)((int)(specs.rate * m_pitch));
+	specs.rate *= m_pitch;
 	return specs;
+}
+
+float AUD_PitchReader::getPitch() const
+{
+	return m_pitch;
+}
+
+void AUD_PitchReader::setPitch(float pitch)
+{
+	m_pitch = pitch;
 }

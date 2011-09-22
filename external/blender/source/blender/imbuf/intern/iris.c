@@ -26,7 +26,7 @@
  * ***** END GPL LICENSE BLOCK *****
  * iris.c
  *
- * $Id: iris.c 35336 2011-03-03 17:58:06Z campbellbarton $
+ * $Id: iris.c 40252 2011-09-16 06:47:01Z campbellbarton $
  */
 
 /** \file blender/imbuf/intern/iris.c
@@ -515,14 +515,15 @@ struct ImBuf *imb_loadiris(unsigned char *mem, size_t size, int flags)
 		
 	}
 
-	ibuf->ftype = IMAGIC;
-	ibuf->profile = IB_PROFILE_SRGB;
-	
-	test_endian_zbuf(ibuf);
-	
 	if (ibuf) {
-		if (ibuf->rect) 
+		ibuf->ftype = IMAGIC;
+		ibuf->profile = IB_PROFILE_SRGB;
+
+		test_endian_zbuf(ibuf);
+
+		if (ibuf->rect) {
 			IMB_convert_rgba_to_abgr(ibuf);
+		}
 	}
 
 	return(ibuf);

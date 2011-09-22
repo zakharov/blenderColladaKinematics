@@ -1,5 +1,5 @@
 /*
- * $Id: rna_render.c 35336 2011-03-03 17:58:06Z campbellbarton $
+ * $Id: rna_render.c 40428 2011-09-21 14:10:26Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -32,6 +32,7 @@
 #include "DNA_scene_types.h"
 
 #include "RNA_define.h"
+#include "RNA_enum_types.h"
 
 #include "rna_internal.h"
 
@@ -101,7 +102,7 @@ static void engine_render(RenderEngine *engine, struct Scene *scene)
 	RNA_parameter_list_free(&list);
 }
 
-static void rna_RenderEngine_unregister(const bContext *C, StructRNA *type)
+static void rna_RenderEngine_unregister(Main *UNUSED(bmain), StructRNA *type)
 {
 	RenderEngineType *et= RNA_struct_blender_type_get(type);
 
@@ -113,7 +114,7 @@ static void rna_RenderEngine_unregister(const bContext *C, StructRNA *type)
 	RNA_struct_free(&BLENDER_RNA, type);
 }
 
-static StructRNA *rna_RenderEngine_register(bContext *C, ReportList *reports, void *data, const char *identifier, StructValidateFunc validate, StructCallbackFunc call, StructFreeFunc free)
+static StructRNA *rna_RenderEngine_register(Main *bmain, ReportList *reports, void *data, const char *identifier, StructValidateFunc validate, StructCallbackFunc call, StructFreeFunc free)
 {
 	RenderEngineType *et, dummyet = {NULL};
 	RenderEngine dummyengine= {NULL};
@@ -129,7 +130,8 @@ static StructRNA *rna_RenderEngine_register(bContext *C, ReportList *reports, vo
 		return NULL;
 
 	if(strlen(identifier) >= sizeof(dummyet.idname)) {
-		BKE_reportf(reports, RPT_ERROR, "registering render engine class: '%s' is too long, maximum length is %d.", identifier, (int)sizeof(dummyet.idname));
+		BKE_reportf(reports, RPT_ERROR, "registering render engine class: '%s' is too long, maximum length is %d",
+		                                identifier, (int)sizeof(dummyet.idname));
 		return NULL;
 	}
 
@@ -137,7 +139,7 @@ static StructRNA *rna_RenderEngine_register(bContext *C, ReportList *reports, vo
 	for(et=R_engines.first; et; et=et->next) {
 		if(strcmp(et->idname, dummyet.idname) == 0) {
 			if(et->ext.srna)
-				rna_RenderEngine_unregister(C, et->ext.srna);
+				rna_RenderEngine_unregister(bmain, et->ext.srna);
 			break;
 		}
 	}
@@ -233,11 +235,11 @@ static void rna_def_render_engine(BlenderRNA *brna)
 	RNA_def_struct_sdna(srna, "RenderEngine");
 	RNA_def_struct_ui_text(srna, "Render Engine", "Render engine");
 	RNA_def_struct_refine_func(srna, "rna_RenderEngine_refine");
-	RNA_def_struct_register_funcs(srna, "rna_RenderEngine_register", "rna_RenderEngine_unregister");
+	RNA_def_struct_register_funcs(srna, "rna_RenderEngine_register", "rna_RenderEngine_unregister", NULL);
 
 	/* render */
 	func= RNA_def_function(srna, "render", NULL);
-	RNA_def_function_ui_description(func, "Render scene into an image.");
+	RNA_def_function_ui_description(func, "Render scene into an image");
 	RNA_def_function_flag(func, FUNC_REGISTER);
 	RNA_def_pointer(func, "scene", "Scene", "", "");
 
@@ -271,6 +273,12 @@ static void rna_def_render_engine(BlenderRNA *brna)
 	prop= RNA_def_string(func, "info", "", 0, "Info", "");
 	RNA_def_property_flag(prop, PROP_REQUIRED);
 
+	func= RNA_def_function(srna, "report", "RE_engine_report");
+	prop= RNA_def_enum_flag(func, "type", wm_report_items, 0, "Type", "");
+	RNA_def_property_flag(prop, PROP_REQUIRED);
+	prop= RNA_def_string(func, "message", "", 0, "Report Message", "");
+	RNA_def_property_flag(prop, PROP_REQUIRED);
+
 	/* registration */
 	RNA_define_verify_sdna(0);
 
@@ -278,7 +286,7 @@ static void rna_def_render_engine(BlenderRNA *brna)
 	RNA_def_property_string_sdna(prop, NULL, "type->idname");
 	RNA_def_property_flag(prop, PROP_REGISTER|PROP_NEVER_CLAMP);
 
-	prop= RNA_def_property(srna, "bl_label", PROP_STRING, PROP_NONE);
+	prop= RNA_def_property(srna, "bl_label", PROP_STRING, PROP_TRANSLATE);
 	RNA_def_property_string_sdna(prop, NULL, "type->name");
 	RNA_def_property_flag(prop, PROP_REGISTER);
 
@@ -303,9 +311,10 @@ static void rna_def_render_result(BlenderRNA *brna)
 	RNA_def_struct_ui_text(srna, "Render Result", "Result of rendering, including all layers and passes");
 
 	func= RNA_def_function(srna, "load_from_file", "RE_result_load_from_file");
-	RNA_def_function_ui_description(func, "Copies the pixels of this render result from an image file.");
+	RNA_def_function_ui_description(func, "Copies the pixels of this render result from an image file");
 	RNA_def_function_flag(func, FUNC_USE_REPORTS);
-	parm= RNA_def_string_file_name(func, "filename", "", FILE_MAX, "File Name", "Filename to load into this render tile, must be no smaller then the render result");
+	parm= RNA_def_string_file_name(func, "filename", "", FILE_MAX, "File Name",
+	                               "Filename to load into this render tile, must be no smaller than the render result");
 	RNA_def_property_flag(parm, PROP_REQUIRED);
 
 	RNA_define_verify_sdna(0);
@@ -320,7 +329,8 @@ static void rna_def_render_result(BlenderRNA *brna)
 
 	parm= RNA_def_property(srna, "layers", PROP_COLLECTION, PROP_NONE);
 	RNA_def_property_struct_type(parm, "RenderLayer");
-	RNA_def_property_collection_funcs(parm, "rna_RenderResult_layers_begin", "rna_iterator_listbase_next", "rna_iterator_listbase_end", "rna_iterator_listbase_get", 0, 0, 0);
+	RNA_def_property_collection_funcs(parm, "rna_RenderResult_layers_begin", "rna_iterator_listbase_next",
+	                                  "rna_iterator_listbase_end", "rna_iterator_listbase_get", 0, 0, 0);
 
 	RNA_define_verify_sdna(1);
 }
@@ -335,12 +345,15 @@ static void rna_def_render_layer(BlenderRNA *brna)
 	RNA_def_struct_ui_text(srna, "Render Layer", "");
 
 	func= RNA_def_function(srna, "load_from_file", "RE_layer_load_from_file");
-	RNA_def_function_ui_description(func, "Copies the pixels of this renderlayer from an image file.");
+	RNA_def_function_ui_description(func, "Copies the pixels of this renderlayer from an image file");
 	RNA_def_function_flag(func, FUNC_USE_REPORTS);
-	prop= RNA_def_string(func, "filename", "", 0, "Filename", "Filename to load into this render tile, must be no smaller then the renderlayer");
+	prop= RNA_def_string(func, "filename", "", 0, "Filename",
+	                     "Filename to load into this render tile, must be no smaller than the renderlayer");
 	RNA_def_property_flag(prop, PROP_REQUIRED);
-	prop= RNA_def_int(func, "x", 0, 0, INT_MAX, "Offset X", "Offset the position to copy from if the image is larger then the render layer", 0, INT_MAX);
-	prop= RNA_def_int(func, "y", 0, 0, INT_MAX, "Offset Y", "Offset the position to copy from if the image is larger then the render layer", 0, INT_MAX);
+	RNA_def_int(func, "x", 0, 0, INT_MAX, "Offset X",
+	            "Offset the position to copy from if the image is larger than the render layer", 0, INT_MAX);
+	RNA_def_int(func, "y", 0, 0, INT_MAX, "Offset Y",
+	            "Offset the position to copy from if the image is larger than the render layer", 0, INT_MAX);
 
 	RNA_define_verify_sdna(0);
 
@@ -348,7 +361,8 @@ static void rna_def_render_layer(BlenderRNA *brna)
 
 	prop= RNA_def_property(srna, "passes", PROP_COLLECTION, PROP_NONE);
 	RNA_def_property_struct_type(prop, "RenderPass");
-	RNA_def_property_collection_funcs(prop, "rna_RenderLayer_passes_begin", "rna_iterator_listbase_next", "rna_iterator_listbase_end", "rna_iterator_listbase_get", 0, 0, 0);
+	RNA_def_property_collection_funcs(prop, "rna_RenderLayer_passes_begin", "rna_iterator_listbase_next",
+	                                  "rna_iterator_listbase_end", "rna_iterator_listbase_get", 0, 0, 0);
 
 	prop= RNA_def_property(srna, "rect", PROP_FLOAT, PROP_NONE);
 	RNA_def_property_flag(prop, PROP_DYNAMIC);
@@ -381,6 +395,7 @@ static void rna_def_render_pass(BlenderRNA *brna)
 		{SCE_PASS_MIST, "MIST", 0, "Mist", ""},
 		{SCE_PASS_EMIT, "EMIT", 0, "Emit", ""},
 		{SCE_PASS_ENVIRONMENT, "ENVIRONMENT", 0, "Environment", ""},
+		{SCE_PASS_INDEXMA, "MATERIAL_INDEX", 0, "Material Index", ""},
 		{0, NULL, 0, NULL, NULL}};
 	
 	srna= RNA_def_struct(brna, "RenderPass", NULL);

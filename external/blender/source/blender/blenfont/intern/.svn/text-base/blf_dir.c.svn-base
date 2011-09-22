@@ -51,6 +51,7 @@
 
 #include "BLF_api.h"
 #include "blf_internal_types.h"
+#include "blf_internal.h"
 
 static ListBase global_font_dir= { NULL, NULL };
 
@@ -60,11 +61,11 @@ static DirBLF *blf_dir_find(const char *path)
 	
 	p= global_font_dir.first;
 	while (p) {
-		if (!strcmp(p->path, path))
-			return(p);
+		if (BLI_path_cmp(p->path, path) == 0)
+			return p;
 		p= p->next;
 	}
-	return(NULL);
+	return NULL;
 }
 
 void BLF_dir_add(const char *path)
@@ -75,7 +76,7 @@ void BLF_dir_add(const char *path)
 	if (dir) /* already in the list ? just return. */
 		return;
 	
-	dir= (DirBLF *)MEM_mallocN(sizeof(DirBLF), "BLF_dir_add");
+	dir= (DirBLF *)MEM_callocN(sizeof(DirBLF), "BLF_dir_add");
 	dir->path= BLI_strdup(path);
 	BLI_addhead(&global_font_dir, dir);
 }
@@ -101,9 +102,9 @@ char **BLF_dir_get(int *ndir)
 	
 	count= BLI_countlist(&global_font_dir);
 	if (!count)
-		return(NULL);
+		return NULL;
 	
-	dirs= (char **)MEM_mallocN(sizeof(char *) * count, "BLF_dir_get");
+	dirs= (char **)MEM_callocN(sizeof(char *) * count, "BLF_dir_get");
 	p= global_font_dir.first;
 	i= 0;
 	while (p) {
@@ -112,7 +113,7 @@ char **BLF_dir_get(int *ndir)
 		p= p->next;
 	}
 	*ndir= i;
-	return(dirs);
+	return dirs;
 }
 
 void BLF_dir_free(char **dirs, int count)
@@ -146,10 +147,11 @@ char *blf_dir_search(const char *file)
 		if (BLI_exist(file))
 			s= BLI_strdup(file);
 	}
-	
-	return(s);
+
+	return s;
 }
 
+#if 0 // UNUSED
 int blf_dir_split(const char *str, char *file, int *size)
 {
 	int i, len;
@@ -169,10 +171,11 @@ int blf_dir_split(const char *str, char *file, int *size)
 		file[i+4]= '\0';
 		s++;
 		*size= atoi(s);
-		return(1);
+		return 1;
 	}
-	return(0);
+	return 0;
 }
+#endif
 
 /* Some font have additional file with metrics information,
  * in general, the extension of the file is: .afm or .pfm
@@ -185,9 +188,9 @@ char *blf_dir_metrics_search(const char *filename)
 	mfile= BLI_strdup(filename);
 	s= strrchr(mfile, '.');
 	if (s) {
-		if (strlen(s) < 4) {
+		if (BLI_strnlen(s, 4) < 4) {
 			MEM_freeN(mfile);
-			return(NULL);
+			return NULL;
 		}
 		s++;
 		s[0]= 'a';
@@ -196,14 +199,14 @@ char *blf_dir_metrics_search(const char *filename)
 
 		/* first check .afm */
 		if (BLI_exist(s))
-			return(s);
+			return s;
 
 		/* and now check .pfm */
 		s[0]= 'p';
 
 		if (BLI_exist(s))
-			return(s);
+			return s;
 	}
 	MEM_freeN(mfile);
-	return(NULL);
+	return NULL;
 }

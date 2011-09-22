@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/editors/animation
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-03-02T23:40:32.487578Z
-35314
-aligorith
+2011-09-19T12:26:20.076486Z
+40351
+mont29
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-03-03T12:27:40.402297Z
-f47b2f45550b9a052684bd512dcc742d
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:41.707970Z
+daa09eb7c2bc82b5a0ebc283879658a3
+2011-08-30T09:15:55.930526Z
+39792
+nexyon
 has-props
 
 
@@ -58,41 +58,7 @@ has-props
 
 
 
-8235
-
-fmodifier_ui.c
-file
-
-
-
-
-2011-03-03T12:27:40.406297Z
-591b6f7c37277940cc3ed3157e21adf1
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-24022
+8201
 
 anim_draw.c
 file
@@ -100,11 +66,11 @@ file
 
 
 
-2011-03-03T12:27:40.406297Z
-9794c2897bc8c52ffada17cbb85eecf4
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:41.707970Z
+3f377782fc240f77a1a4b439d4a04bc0
+2011-09-17T09:43:51.153028Z
+40289
+campbellbarton
 has-props
 
 
@@ -126,7 +92,41 @@ has-props
 
 
 
-14976
+15210
+
+fmodifier_ui.c
+file
+
+
+
+
+2011-09-21T18:16:41.707970Z
+8bd29c0f409b3bea67e41ffb81a15e91
+2011-09-19T12:26:20.076486Z
+40351
+mont29
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+25263
 
 keyframes_draw.c
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-03-03T12:27:40.406297Z
-e9460a4e78ad33e480adf67da94f2f83
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:41.711970Z
+37bfa1a613285eced15c7887554a0fa4
+2011-08-30T09:15:55.930526Z
+39792
+nexyon
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-27607
+25989
 
 anim_channels_edit.c
 file
@@ -168,11 +168,11 @@ file
 
 
 
-2011-03-03T12:27:40.406297Z
-65ca30ef300374b227697b75c324ac8f
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:41.711970Z
+f5f2d473c82d6ac6d621ef0083d0cd75
+2011-08-30T09:50:31.306690Z
+39794
+campbellbarton
 has-props
 
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-68473
+74727
 
 anim_ops.c
 file
@@ -202,11 +202,11 @@ file
 
 
 
-2011-03-03T12:27:40.406297Z
-17b81e98ca0fac4af18fcba5fc329313
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:41.711970Z
+adb87bf90e7741d4d816ac58e1fc0cdd
+2011-09-05T19:34:27.229129Z
+39937
+blendix
 has-props
 
 
@@ -228,7 +228,7 @@ has-props
 
 
 
-11013
+11042
 
 SConscript
 file
@@ -236,7 +236,7 @@ file
 
 
 
-2011-03-03T12:27:40.410297Z
+2011-09-21T18:16:41.711970Z
 1ff4a861d64d17cbffd7bae46caa0eeb
 2011-02-21T12:35:04.852834Z
 35028
@@ -264,51 +264,17 @@ has-props
 
 349
 
-anim_markers.c
-file
-
-
-
-
-2011-03-03T12:27:40.410297Z
-9e1f2c237e56044e787239efe0ddf692
-2011-03-02T23:40:32.487578Z
-35314
-aligorith
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-39684
-
 anim_intern.h
 file
 
 
 
 
-2011-03-03T12:27:40.410297Z
-af821976192ac3477d501085c02ee2c6
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:41.711970Z
+78016f86ad0e1efa0187da4b7850f3b8
+2011-08-30T09:15:55.930526Z
+39792
+nexyon
 has-props
 
 
@@ -330,7 +296,41 @@ has-props
 
 
 
-3062
+2997
+
+anim_markers.c
+file
+
+
+
+
+2011-09-21T18:16:41.711970Z
+58347cfd72f48cd422ed1ea659f95af9
+2011-08-30T09:15:55.930526Z
+39792
+nexyon
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+41750
 
 anim_ipo_utils.c
 file
@@ -338,11 +338,11 @@ file
 
 
 
-2011-03-03T12:27:40.410297Z
-938bf78f0f302a30f587fbec9dba6554
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:41.715970Z
+1927111ec6fc81a2d8c57ba462931521
+2011-08-30T09:15:55.930526Z
+39792
+nexyon
 has-props
 
 
@@ -364,7 +364,7 @@ has-props
 
 
 
-7410
+7651
 
 drivers.c
 file
@@ -372,11 +372,11 @@ file
 
 
 
-2011-03-03T12:27:40.410297Z
-77bcb50941d01fa47148f71ca0a6fea4
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:41.715970Z
+340e9b2775b082998c1994be3028e7d5
+2011-09-19T12:26:20.076486Z
+40351
+mont29
 has-props
 
 
@@ -398,7 +398,7 @@ has-props
 
 
 
-20485
+20203
 
 keyframes_general.c
 file
@@ -406,11 +406,11 @@ file
 
 
 
-2011-03-03T12:27:40.410297Z
-e611ea71d6de938c4e2bb047773956e5
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:41.715970Z
+51388682c2e7a1ff622c822d1579c3ad
+2011-09-19T12:26:20.076486Z
+40351
+mont29
 has-props
 
 
@@ -432,7 +432,7 @@ has-props
 
 
 
-25793
+25795
 
 keyingsets.c
 file
@@ -440,11 +440,11 @@ file
 
 
 
-2011-03-03T12:27:40.414297Z
-5cae538d9ac83bae0e0dc222bc59e24d
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:41.715970Z
+e18796ed67e3bde916ea1de8bef0f67a
+2011-09-19T12:26:20.076486Z
+40351
+mont29
 has-props
 
 
@@ -466,7 +466,7 @@ has-props
 
 
 
-28833
+29494
 
 anim_filter.c
 file
@@ -474,11 +474,11 @@ file
 
 
 
-2011-03-03T12:27:40.414297Z
-49392af9f1911adf7150348c2263f825
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:41.715970Z
+bd7f7962dcc6cb9aa472bdd60b5f7b6b
+2011-09-16T08:20:21.007205Z
+40255
+campbellbarton
 has-props
 
 
@@ -500,7 +500,7 @@ has-props
 
 
 
-84328
+71263
 
 keyframes_edit.c
 file
@@ -508,11 +508,11 @@ file
 
 
 
-2011-03-03T12:27:40.414297Z
-380c3163c9c32a87ece493cc4eabada2
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:41.719970Z
+e120f757e0d2c47a50fac9a9395fe142
+2011-09-16T08:20:21.007205Z
+40255
+campbellbarton
 has-props
 
 
@@ -534,7 +534,7 @@ has-props
 
 
 
-34170
+31825
 
 anim_channels_defines.c
 file
@@ -542,11 +542,11 @@ file
 
 
 
-2011-03-03T12:27:40.418297Z
-83a9dab1c1e81143e7429ae0c5f974c8
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:41.723970Z
+24ffda1c20db35c3ff47166e9b74fccc
+2011-09-19T12:26:20.076486Z
+40351
+mont29
 has-props
 
 
@@ -568,7 +568,7 @@ has-props
 
 
 
-93340
+93442
 
 CMakeLists.txt
 file
@@ -576,11 +576,11 @@ file
 
 
 
-2011-03-03T12:27:40.418297Z
-80383dd3025e9fbfca9d44cc17aa4082
-2011-02-21T12:35:04.852834Z
-35028
-jesterking
+2011-09-21T18:16:41.723970Z
+b0277947c736695fe6fc168e418fa1e2
+2011-07-17T09:11:13.810557Z
+38443
+campbellbarton
 has-props
 
 
@@ -602,7 +602,7 @@ has-props
 
 
 
-1368
+1418
 
 keyframing.c
 file
@@ -610,11 +610,11 @@ file
 
 
 
-2011-03-03T12:27:40.418297Z
-f45a530e7df678def65b4b4ecf8c6444
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:41.723970Z
+7e94b7375e3181b6dbe08aaee0e619b4
+2011-09-19T12:26:20.076486Z
+40351
+mont29
 has-props
 
 
@@ -636,5 +636,5 @@ has-props
 
 
 
-52778
+53672
 

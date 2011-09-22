@@ -1,28 +1,24 @@
+# ***** BEGIN GPL LICENSE BLOCK *****
+#
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.    See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software Foundation,
+# Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+#
+# ***** END GPL LICENCE BLOCK *****
+
 import bpy
 import os
-import filecmp
-
-
-def objname(path):
-
-    path2 = os.path.dirname(path) + os.sep
-    pituus = len(path2)
-    nimi = path[pituus:]
-
-    return nimi
-
-def justname(name):
-    monesko = name.rfind('.')
-    justname = name[:monesko]
-    return justname
-
-def setgallery():
-    newname =''
-    tex_name =[]
-    index_tex = 0
-    for tt in bpy.data.textures:
-        tex_name.append(tt.name)
-    return tex_name
 
 def find_index(objekti):
         luku = 0
@@ -30,31 +26,26 @@ def find_index(objekti):
                 if(not(hasattr(tex,'texture'))):
                         break
                 luku = luku +1
-                
-
         return luku
 
 def gettex(mat_list, objekti, scene,export):
 
     coat3D = bpy.context.scene.coat3D
     
-    
     if(bpy.context.scene.render.engine == 'VRAY_RENDER' or bpy.context.scene.render.engine == 'VRAY_RENDER_PREVIEW'):
         vray = True
     else:
         vray = False
     
-        
+    take_color = 0
+    take_spec = 0
+    take_normal = 0
+    take_disp = 0
     
-    take_color = 0;
-    take_spec = 0;
-    take_normal = 0;
-    take_disp = 0;
-    
-    bring_color = 1;
-    bring_spec = 1;
-    bring_normal = 1;
-    bring_disp = 1;
+    bring_color = 1
+    bring_spec = 1
+    bring_normal = 1
+    bring_disp = 1
 
     texcoat = {}
     texcoat['color'] = []
@@ -65,25 +56,24 @@ def gettex(mat_list, objekti, scene,export):
 
     if(export):
         objekti.coat3D.objpath = export
-        nimi = objname(export)
+        nimi = os.path.split(export)[1]
         osoite = os.path.dirname(export) + os.sep
         for mate in objekti.material_slots:
             for tex_slot in mate.material.texture_slots:
                 if(hasattr(tex_slot,'texture')):
                     if(tex_slot.texture.type == 'IMAGE'):
-                                                tex_slot.texture.image.reload()
+                        if tex_slot.texture.image is not None:
+                            tex_slot.texture.image.reload()
     else:
-        coa = bpy.context.scene.objects.active.coat3D
-        nimi = objname(coa.objectdir)
+        coa = objekti.coat3D
+        nimi = os.path.split(coa.objectdir)[1]
         if(coa.texturefolder):
             osoite = os.path.dirname(coa.texturefolder) + os.sep
         else:
             osoite = os.path.dirname(coa.objectdir) + os.sep
-    just_nimi = justname(nimi)
-    just_nimi += '_'
+    just_nimi = os.path.splitext(nimi)[0] + '_'
     just_nimi_len = len(just_nimi)
         
-    
     if(len(objekti.material_slots) != 0):
         for obj_tex in objekti.active_material.texture_slots:
             if(hasattr(obj_tex,'texture')):
@@ -111,50 +101,40 @@ def gettex(mat_list, objekti, scene,export):
         koko += osoite
         koko += yy
         texcoat[tex_name].append(koko)
-        #date = os.path.getmtime(texcoat[tex_name][0])
 
     if((texcoat['color'] or texcoat['nmap'] or texcoat['disp'] or texcoat['specular']) and (len(objekti.material_slots)) == 0):
-        new_mat = ("%s_Material"%(objekti.name))
-        bpy.data.materials.new(new_mat)
+        materials_old = bpy.data.materials.keys()
+        bpy.ops.material.new()
+        materials_new = bpy.data.materials.keys()
+        new_ma = list(set(materials_new).difference(set(materials_old)))
+        new_mat = new_ma[0]
         ki = bpy.data.materials[new_mat]
         objekti.data.materials.append(ki)
         
-        
-            
     if(bring_color == 1 and texcoat['color']):
-        name_tex ='Color_'
-        num = []
-
         index = find_index(objekti)
-        
-
         tex = bpy.ops.Texture
         objekti.active_material.texture_slots.create(index)
         total_mat = len(objekti.active_material.texture_slots.items())
         useold = ''
         
         for seekco in bpy.data.textures:
-            if((seekco.name[:6] == 'Color_') and (seekco.users_material == ())):
+            if((seekco.name[:5] == 'Color') and (seekco.users_material == ())):
                 useold = seekco
-
 
 
         if(useold == ''):
 
-            tex_name = setgallery()
-
-            for num_tex in tex_name:
-                if(num_tex[:6] == 'Color_'):
-                    num.append(num_tex)
-            luku_tex = len(num)
-            name_tex = ('Color_%s'%(luku_tex))
+            textures_old = bpy.data.textures.keys()
+            bpy.data.textures.new('Color',type='IMAGE')
+            textures_new = bpy.data.textures.keys()
+            name_te = list(set(textures_new).difference(set(textures_old)))
+            name_tex = name_te[0]
 
             bpy.ops.image.new(name=name_tex)
             bpy.data.images[name_tex].filepath = texcoat['color'][0]
             bpy.data.images[name_tex].source = 'FILE'
             
-
-            bpy.data.textures.new(name_tex,type='IMAGE')
             objekti.active_material.texture_slots[index].texture = bpy.data.textures[name_tex]
             objekti.active_material.texture_slots[index].texture.image = bpy.data.images[name_tex]
         
@@ -166,53 +146,45 @@ def gettex(mat_list, objekti, scene,export):
             
 
         elif(useold != ''):
-            
+                        
             objekti.active_material.texture_slots[index].texture = useold
+            objekti.active_material.texture_slots[index].texture.image = bpy.data.images[useold.name]
             objekti.active_material.texture_slots[index].texture.image.filepath = texcoat['color'][0]
             if(objekti.data.uv_textures.active):
                 objekti.active_material.texture_slots[index].texture_coords = 'UV'
                 objekti.active_material.texture_slots[index].uv_layer = objekti.data.uv_textures.active.name
+
     
     if(bring_normal == 1 and texcoat['nmap']):
-        name_tex ='Normal_'
-        num = []
-        
         index = find_index(objekti)
-        
-
         tex = bpy.ops.Texture
         objekti.active_material.texture_slots.create(index)
         total_mat = len(objekti.active_material.texture_slots.items())
         useold = ''
         
         for seekco in bpy.data.textures:
-            if((seekco.name[:7] == 'Normal_') and (seekco.users_material == ())):
+            if((seekco.name[:6] == 'Normal') and (seekco.users_material == ())):
                 useold = seekco
-
-        
 
         if(useold == ''):
 
-            tex_name = setgallery()
-
-            for num_tex in tex_name:
-                if(num_tex[:7] == 'Normal_'):
-                    num.append(num_tex)
-            luku_tex = len(num)
-            name_tex = ('Normal_%s'%(luku_tex))
+            textures_old = bpy.data.textures.keys()
+            bpy.data.textures.new('Normal',type='IMAGE')
+            textures_new = bpy.data.textures.keys()
+            name_te = list(set(textures_new).difference(set(textures_old)))
+            name_tex = name_te[0]
 
             bpy.ops.image.new(name=name_tex)
             bpy.data.images[name_tex].filepath = texcoat['nmap'][0]
             bpy.data.images[name_tex].source = 'FILE'
             
-
-            bpy.data.textures.new(name_tex,type='IMAGE')
             objekti.active_material.texture_slots[index].texture = bpy.data.textures[name_tex]
             objekti.active_material.texture_slots[index].texture.image = bpy.data.images[name_tex]
         
             if(objekti.data.uv_textures.active):
                 objekti.active_material.texture_slots[index].texture_coords = 'UV'
                 objekti.active_material.texture_slots[index].uv_layer = objekti.data.uv_textures.active.name
+
             objekti.active_material.texture_slots[index].use_map_color_diffuse = False
             objekti.active_material.texture_slots[index].use_map_normal = True
 
@@ -223,63 +195,53 @@ def gettex(mat_list, objekti, scene,export):
             else:
                 bpy.data.textures[name_tex].use_normal_map = True
                 objekti.active_material.texture_slots[index].normal_map_space = 'TANGENT'
-                objekti.active_material.texture_slots[index].normal_factor = -1
+                objekti.active_material.texture_slots[index].normal_factor = 1
 
             
 
         elif(useold != ''):
             
             objekti.active_material.texture_slots[index].texture = useold
+            objekti.active_material.texture_slots[index].texture.image = bpy.data.images[useold.name]
             objekti.active_material.texture_slots[index].texture.image.filepath = texcoat['nmap'][0]
             if(objekti.data.uv_textures.active):
                 objekti.active_material.texture_slots[index].texture_coords = 'UV'
                 objekti.active_material.texture_slots[index].uv_layer = objekti.data.uv_textures.active.name
             objekti.active_material.texture_slots[index].use_map_color_diffuse = False
             objekti.active_material.texture_slots[index].use_map_normal = True
-            objekti.active_material.texture_slots[index].normal_factor = -1
+            objekti.active_material.texture_slots[index].normal_factor = 1
 
 
     if(bring_spec == 1 and texcoat['specular']):
-        name_tex ='Specular_'
-        num = []
 
         index = find_index(objekti)
         
-
-        tex = bpy.ops.Texture
         objekti.active_material.texture_slots.create(index)
-        total_mat = len(objekti.active_material.texture_slots.items())
         useold = ''
         
         for seekco in bpy.data.textures:
-            if((seekco.name[:9] == 'Specular_') and (seekco.users_material == ())):
+            if((seekco.name[:8] == 'Specular') and (seekco.users_material == ())):
                 useold = seekco
-
-        
-
 
         if(useold == ''):
 
-            tex_name = setgallery()
-
-            for num_tex in tex_name:
-                if(num_tex[:9] == 'Specular_'):
-                    num.append(num_tex)
-            luku_tex = len(num)
-            name_tex = ('Specular_%s'%(luku_tex))
+            textures_old = bpy.data.textures.keys()
+            bpy.data.textures.new('Specular',type='IMAGE')
+            textures_new = bpy.data.textures.keys()
+            name_te = list(set(textures_new).difference(set(textures_old)))
+            name_tex = name_te[0]
 
             bpy.ops.image.new(name=name_tex)
             bpy.data.images[name_tex].filepath = texcoat['specular'][0]
             bpy.data.images[name_tex].source = 'FILE'
-            
 
-            bpy.data.textures.new(name_tex,type='IMAGE')
             objekti.active_material.texture_slots[index].texture = bpy.data.textures[name_tex]
             objekti.active_material.texture_slots[index].texture.image = bpy.data.images[name_tex]
         
             if(objekti.data.uv_textures.active):
                 objekti.active_material.texture_slots[index].texture_coords = 'UV'
                 objekti.active_material.texture_slots[index].uv_layer = objekti.data.uv_textures.active.name
+
             objekti.active_material.texture_slots[index].use_map_color_diffuse = False
             objekti.active_material.texture_slots[index].use_map_specular = True
 
@@ -289,6 +251,7 @@ def gettex(mat_list, objekti, scene,export):
         elif(useold != ''):
             
             objekti.active_material.texture_slots[index].texture = useold
+            objekti.active_material.texture_slots[index].texture.image = bpy.data.images[useold.name]
             objekti.active_material.texture_slots[index].texture.image.filepath = texcoat['specular'][0]
             if(objekti.data.uv_textures.active):
                 objekti.active_material.texture_slots[index].texture_coords = 'UV'
@@ -297,46 +260,36 @@ def gettex(mat_list, objekti, scene,export):
             objekti.active_material.texture_slots[index].use_map_specular = True
 
     if(bring_disp == 1 and texcoat['disp']):
-        name_tex ='Displacement_'
-        num = []
 
         index = find_index(objekti)
         
 
-        tex = bpy.ops.Texture
         objekti.active_material.texture_slots.create(index)
-        total_mat = len(objekti.active_material.texture_slots.items())
         useold = ''
         
         for seekco in bpy.data.textures:
-            if((seekco.name[:13] == 'Displacement_') and (seekco.users_material == ())):
+            if((seekco.name[:12] == 'Displacement') and (seekco.users_material == ())):
                 useold = seekco
 
-        
+        if useold == "":
 
-
-        if(useold == ''):
-
-            tex_name = setgallery()
-
-            for num_tex in tex_name:
-                if(num_tex[:13] == 'Displacement_'):
-                    num.append(num_tex)
-            luku_tex = len(num)
-            name_tex = ('Displacement_%s'%(luku_tex))
+            textures_old = bpy.data.textures.keys()
+            bpy.data.textures.new('Displacement',type='IMAGE')
+            textures_new = bpy.data.textures.keys()
+            name_te = list(set(textures_new).difference(set(textures_old)))
+            name_tex = name_te[0]
 
             bpy.ops.image.new(name=name_tex)
             bpy.data.images[name_tex].filepath = texcoat['disp'][0]
             bpy.data.images[name_tex].source = 'FILE'
             
-
-            bpy.data.textures.new(name_tex,type='IMAGE')
             objekti.active_material.texture_slots[index].texture = bpy.data.textures[name_tex]
             objekti.active_material.texture_slots[index].texture.image = bpy.data.images[name_tex]
         
             if(objekti.data.uv_textures.active):
                 objekti.active_material.texture_slots[index].texture_coords = 'UV'
                 objekti.active_material.texture_slots[index].uv_layer = objekti.data.uv_textures.active.name
+
             objekti.active_material.texture_slots[index].use_map_color_diffuse = False
             objekti.active_material.texture_slots[index].use_map_displacement = True
 
@@ -346,6 +299,7 @@ def gettex(mat_list, objekti, scene,export):
         elif(useold != ''):
             
             objekti.active_material.texture_slots[index].texture = useold
+            objekti.active_material.texture_slots[index].texture.image = bpy.data.images[useold.name]
             objekti.active_material.texture_slots[index].texture.image.filepath = texcoat['disp'][0]
             if(objekti.data.uv_textures.active):
                 objekti.active_material.texture_slots[index].texture_coords = 'UV'

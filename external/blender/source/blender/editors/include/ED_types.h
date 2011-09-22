@@ -1,5 +1,5 @@
 /*
- * $Id: ED_types.h 35016 2011-02-21 07:25:24Z jesterking $
+ * $Id: ED_types.h 37185 2011-06-04 17:03:46Z ton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -39,10 +39,6 @@
 #define DESELECT 0
 #define SELECT	 1
 #define ACTIVE	 2
-
-/* buttons */
-#define XIC 20
-#define YIC 20
 
 /* proposal = put scene pointers on function calls? */
 // #define BASACT                    (scene->basact)

@@ -21,13 +21,18 @@
 
 set(INC
 	../include
+	../../blenfont
 	../../blenkernel
-	../../blenloader
 	../../blenlib
+	../../blenloader
 	../../makesdna
 	../../makesrna
 	../../windowmanager
 	../../../../intern/guardedalloc
+)
+
+set(INC_SYS
+	${GLEW_INCLUDE_PATH}
 )
 
 set(SRC
@@ -37,7 +42,6 @@ set(SRC
 	transform_generics.c
 	transform_input.c
 	transform_manipulator.c
-	transform_ndofinput.c
 	transform_ops.c
 	transform_orientations.c
 	transform_snap.c
@@ -45,4 +49,4 @@ set(SRC
 	transform.h
 )
 
-blender_add_lib(bf_editor_transform "${SRC}" "${INC}")
+blender_add_lib(bf_editor_transform "${SRC}" "${INC}" "${INC_SYS}")

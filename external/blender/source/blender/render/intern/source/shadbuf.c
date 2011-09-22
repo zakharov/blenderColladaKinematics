@@ -61,16 +61,16 @@
 
 /* XXX, could be better implemented... this is for endian issues
 */
-#if defined(__sgi) || defined(__sparc) || defined(__sparc__) || defined (__PPC__) || defined (__ppc__) || defined (__hppa__) || defined (__BIG_ENDIAN__)
-#define RCOMP	3
-#define GCOMP	2
-#define BCOMP	1
-#define ACOMP	0
+#ifdef __BIG_ENDIAN__
+#  define RCOMP	3
+#  define GCOMP	2
+#  define BCOMP	1
+#  define ACOMP	0
 #else
-#define RCOMP	0
-#define GCOMP	1
-#define BCOMP	2
-#define ACOMP	3
+#  define RCOMP	0
+#  define GCOMP	1
+#  define BCOMP	2
+#  define ACOMP	3
 #endif
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -260,7 +260,7 @@ static int compress_deepsamples(DeepSample *dsample, int tot, float epsilon)
 		}
 		else {
 			/* compute visibility at center between slopes at z */
-			slope= (slopemin+slopemax)*0.5;
+			slope= (slopemin+slopemax)*0.5f;
 			v= newds->v + slope*((z - newds->z)/(double)0x7FFFFFFF);
 		}
 
@@ -774,7 +774,7 @@ void makeshadowbuf(Render *re, LampRen *lar)
 	angle= saacos(lar->spotsi);
 	temp= 0.5f*shb->size*cos(angle)/sin(angle);
 	shb->pixsize= (shb->d)/temp;
-	wsize= shb->pixsize*(shb->size/2.0);
+	wsize= shb->pixsize*(shb->size/2.0f);
 	
 	perspective_m4( shb->winmat,-wsize, wsize, -wsize, wsize, shb->d, shb->clipend);
 	mul_m4_m4m4(shb->persmat, shb->viewmat, shb->winmat);
@@ -952,7 +952,7 @@ static int firstreadshadbuf(ShadBuf *shb, ShadSampleBuf *shsample, int **rz, int
 	/* always test borders of shadowbuffer */
 	if(xs<0) xs= 0; else if(xs>=shb->size) xs= shb->size-1;
 	if(ys<0) ys= 0; else if(ys>=shb->size) ys= shb->size-1;
-   
+
 	/* calc z */
 	ofs= (ys>>4)*(shb->size>>4) + (xs>>4);
 	ct= shsample->cbuf+ofs;
@@ -1094,12 +1094,12 @@ static float readshadowbuf(ShadBuf *shb, ShadSampleBuf *shsample, int bias, int 
 	else {					/* soft area */
 		
 		temp=  ( (float)(zs- zsamp) )/(float)bias;
-		return 1.0 - temp*temp;
+		return 1.0f - temp*temp;
 			
 	}
 }
 
-static void shadowbuf_project_co(float *x, float *y, float *z, ShadBuf *shb, float co[3])
+static void shadowbuf_project_co(float *x, float *y, float *z, ShadBuf *shb, const float co[3])
 {
 	float hco[4], size= 0.5f*(float)shb->size;
 
@@ -1115,7 +1115,7 @@ static void shadowbuf_project_co(float *x, float *y, float *z, ShadBuf *shb, flo
 
 /* the externally called shadow testing (reading) function */
 /* return 1.0: no shadow at all */
-float testshadowbuf(Render *re, ShadBuf *shb, float *co, float *dxco, float *dyco, float inp, float mat_bias)
+float testshadowbuf(Render *re, ShadBuf *shb, const float co[3], const float dxco[3], const float dyco[3], float inp, float mat_bias)
 {
 	ShadSampleBuf *shsample;
 	float fac, dco[3], dx[3], dy[3], shadfac=0.0f;
@@ -1287,11 +1287,11 @@ static float readshadowbuf_halo(ShadBuf *shb, ShadSampleBuf *shsample, int xs, i
 	/* soft area */
 	
 	temp=  ( (float)(zs- zsamp) )/(float)bias;
-	return 1.0 - temp*temp;
+	return 1.0f - temp*temp;
 }
 
 
-float shadow_halo(LampRen *lar, float *p1, float *p2)
+float shadow_halo(LampRen *lar, const float p1[3], const float p2[3])
 {
 	/* p1 p2 already are rotated in spot-space */
 	ShadBuf *shb= lar->shb;
@@ -1303,15 +1303,15 @@ float shadow_halo(LampRen *lar, float *p1, float *p2)
 	int x, y, z, xs1, ys1;
 	int dx = 0, dy = 0;
 	
-	siz= 0.5*(float)shb->size;
+	siz= 0.5f*(float)shb->size;
 	
 	co[0]= p1[0];
 	co[1]= p1[1];
 	co[2]= p1[2]/lar->sh_zfac;
 	co[3]= 1.0;
 	mul_m4_v4(shb->winmat, co);	/* rational hom co */
-	xf1= siz*(1.0+co[0]/co[3]);
-	yf1= siz*(1.0+co[1]/co[3]);
+	xf1= siz*(1.0f+co[0]/co[3]);
+	yf1= siz*(1.0f+co[1]/co[3]);
 	zf1= (co[2]/co[3]);
 
 
@@ -1320,8 +1320,8 @@ float shadow_halo(LampRen *lar, float *p1, float *p2)
 	co[2]= p2[2]/lar->sh_zfac;
 	co[3]= 1.0;
 	mul_m4_v4(shb->winmat, co);	/* rational hom co */
-	xf2= siz*(1.0+co[0]/co[3]);
-	yf2= siz*(1.0+co[1]/co[3]);
+	xf2= siz*(1.0f+co[0]/co[3]);
+	yf2= siz*(1.0f+co[1]/co[3]);
 	zf2= (co[2]/co[3]);
 
 	/* the 2dda (a pixel line formula) */
@@ -1330,8 +1330,8 @@ float shadow_halo(LampRen *lar, float *p1, float *p2)
 	ys1= (int)yf1;
 
 	if(xf1 != xf2) {
-		if(xf2-xf1 > 0.0) {
-			labdax= (xf1-xs1-1.0)/(xf1-xf2);
+		if(xf2-xf1 > 0.0f) {
+			labdax= (xf1-xs1-1.0f)/(xf1-xf2);
 			ldx= -shb->shadhalostep/(xf1-xf2);
 			dx= shb->shadhalostep;
 		}
@@ -1347,8 +1347,8 @@ float shadow_halo(LampRen *lar, float *p1, float *p2)
 	}
 
 	if(yf1 != yf2) {
-		if(yf2-yf1 > 0.0) {
-			labday= (yf1-ys1-1.0)/(yf1-yf2);
+		if(yf2-yf1 > 0.0f) {
+			labday= (yf1-ys1-1.0f)/(yf1-yf2);
 			ldy= -shb->shadhalostep/(yf1-yf2);
 			dy= shb->shadhalostep;
 		}
@@ -1389,16 +1389,16 @@ float shadow_halo(LampRen *lar, float *p1, float *p2)
 		}
 		
 		labda= MIN2(labdax, labday);
-		if(labda==labdao || labda>=1.0) break;
+		if(labda==labdao || labda>=1.0f) break;
 		
 		zf= zf1 + labda*(zf2-zf1);
 		count+= (float)shb->totbuf;
 
-		if(zf<= -1.0) lightcount += 1.0;	/* close to the spot */
+		if(zf<= -1.0f) lightcount += 1.0f;	/* close to the spot */
 		else {
 		
 			/* make sure, behind the clipend we extend halolines. */
-			if(zf>=1.0) z= 0x7FFFF000;
+			if(zf>=1.0f) z= 0x7FFFF000;
 			else z= (int)(0x7FFFF000*zf);
 			
 			for(shsample= shb->buffers.first; shsample; shsample= shsample->next)
@@ -1407,8 +1407,8 @@ float shadow_halo(LampRen *lar, float *p1, float *p2)
 		}
 	}
 	
-	if(count!=0.0) return (lightcount/count);
-	return 0.0;
+	if(count!=0.0f) return (lightcount/count);
+	return 0.0f;
 	
 }
 
@@ -1469,7 +1469,7 @@ static void init_box(Boxf *box)
 }
 
 /* use v1 to calculate boundbox */
-static void bound_boxf(Boxf *box, float *v1)
+static void bound_boxf(Boxf *box, const float v1[3])
 {
 	if(v1[0] < box->xmin) box->xmin= v1[0];
 	if(v1[0] > box->xmax) box->xmax= v1[0];
@@ -1480,7 +1480,7 @@ static void bound_boxf(Boxf *box, float *v1)
 }
 
 /* use v1 to calculate boundbox */
-static void bound_rectf(rctf *box, float *v1)
+static void bound_rectf(rctf *box, const float v1[2])
 {
 	if(v1[0] < box->xmin) box->xmin= v1[0];
 	if(v1[0] > box->xmax) box->xmax= v1[0];
@@ -1639,24 +1639,17 @@ static int isb_bsp_insert(ISBBranch *root, MemArena *memarena, ISBSample *sample
 	return 0;
 }
 
-static float VecLen2f( float *v1, float *v2)
-{
-	float x= v1[0]-v2[0];
-	float y= v1[1]-v2[1];
-	return (float)sqrt(x*x+y*y);
-}
-
 /* initialize vars in face, for optimal point-in-face test */
 static void bspface_init_strand(BSPFace *face) 
 {
 	
-	face->radline= 0.5f*VecLen2f(face->v1, face->v2);
+	face->radline= 0.5f* len_v2v2(face->v1, face->v2);
 	
 	mid_v3_v3v3(face->vec1, face->v1, face->v2);
 	if(face->v4)
 		mid_v3_v3v3(face->vec2, face->v3, face->v4);
 	else
-		VECCOPY(face->vec2, face->v3);
+		copy_v3_v3(face->vec2, face->v3);
 	
 	face->rc[0]= face->vec2[0]-face->vec1[0];
 	face->rc[1]= face->vec2[1]-face->vec1[1];
@@ -1671,7 +1664,7 @@ static void bspface_init_strand(BSPFace *face)
 }
 
 /* brought back to a simple 2d case */
-static int point_behind_strand(float *p, BSPFace *face)
+static int point_behind_strand(const float p[3], BSPFace *face)
 {
 	/* v1 - v2 is radius, v1 - v3 length */
 	float dist, rc[2], pt[2];
@@ -1712,7 +1705,7 @@ static int point_behind_strand(float *p, BSPFace *face)
 
 
 /* return 1 if inside. code derived from src/parametrizer.c */
-static int point_behind_tria2d(float *p, float *v1, float *v2, float *v3)
+static int point_behind_tria2d(const float p[3], const float v1[3], const float v2[3], const float v3[3])
 {
 	float a[2], c[2], h[2], div;
 	float u, v;
@@ -1751,7 +1744,7 @@ static int point_behind_tria2d(float *p, float *v1, float *v2, float *v3)
 /* tested these calls, but it gives inaccuracy, 'side' cannot be found reliably using v3 */
 
 /* check if line v1-v2 has all rect points on other side of point v3 */
-static int rect_outside_line(rctf *rect, float *v1, float *v2, float *v3)
+static int rect_outside_line(rctf *rect, const float v1[3], const float v2[3], const float v3[3])
 {
 	float a, b, c;
 	int side;
@@ -1772,7 +1765,7 @@ static int rect_outside_line(rctf *rect, float *v1, float *v2, float *v3)
 }
 
 /* check if one of the triangle edges separates all rect points on 1 side */
-static int rect_isect_tria(rctf *rect, float *v1, float *v2, float *v3)
+static int rect_isect_tria(rctf *rect, const float v1[3], const float v2[3], const float v3[3])
 {
 	if(rect_outside_line(rect, v1, v2, v3))
 		return 0;
@@ -1935,7 +1928,7 @@ static void isb_bsp_test_face(ZSpan *zspan, int obi, int zvlnr, float *v1, float
 	isb_bsp_face_inside((ISBBranch *)zspan->rectz, &face);
 }
 
-static int testclip_minmax(float *ho, float *minmax)
+static int testclip_minmax(const float ho[4], const float minmax[4])
 {
 	float wco= ho[3];
 	int flag= 0;
@@ -2064,7 +2057,7 @@ static void isb_bsp_fillfaces(Render *re, LampRen *lar, ISBBranch *root)
 }
 
 /* returns 1 when the viewpixel is visible in lampbuffer */
-static int viewpixel_to_lampbuf(ShadBuf *shb, ObjectInstanceRen *obi, VlakRen *vlr, float x, float y, float *co)
+static int viewpixel_to_lampbuf(ShadBuf *shb, ObjectInstanceRen *obi, VlakRen *vlr, float x, float y, float co_r[3])
 {
 	float hoco[4], v1[3], nor[3];
 	float dface, fac, siz;
@@ -2081,11 +2074,11 @@ static int viewpixel_to_lampbuf(ShadBuf *shb, ObjectInstanceRen *obi, VlakRen *v
 	/* ortho viewplane cannot intersect using view vector originating in (0,0,0) */
 	if(R.r.mode & R_ORTHO) {
 		/* x and y 3d coordinate can be derived from pixel coord and winmat */
-		float fx= 2.0/(R.winx*R.winmat[0][0]);
-		float fy= 2.0/(R.winy*R.winmat[1][1]);
+		float fx= 2.0f/(R.winx*R.winmat[0][0]);
+		float fy= 2.0f/(R.winy*R.winmat[1][1]);
 		
-		hoco[0]= (x - 0.5*R.winx)*fx - R.winmat[3][0]/R.winmat[0][0];
-		hoco[1]= (y - 0.5*R.winy)*fy - R.winmat[3][1]/R.winmat[1][1];
+		hoco[0]= (x - 0.5f*R.winx)*fx - R.winmat[3][0]/R.winmat[0][0];
+		hoco[1]= (y - 0.5f*R.winy)*fy - R.winmat[3][1]/R.winmat[1][1];
 		
 		/* using a*x + b*y + c*z = d equation, (a b c) is normal */
 		if(nor[2]!=0.0f)
@@ -2123,12 +2116,12 @@ static int viewpixel_to_lampbuf(ShadBuf *shb, ObjectInstanceRen *obi, VlakRen *v
 		return 0;
 	
 	siz= 0.5f*(float)shb->size;
-	co[0]= siz*(1.0f+hoco[0]/hoco[3]) -0.5f;
-	co[1]= siz*(1.0f+hoco[1]/hoco[3]) -0.5f;
-	co[2]= ((float)0x7FFFFFFF)*(hoco[2]/hoco[3]);
+	co_r[0]= siz*(1.0f+hoco[0]/hoco[3]) -0.5f;
+	co_r[1]= siz*(1.0f+hoco[1]/hoco[3]) -0.5f;
+	co_r[2]= ((float)0x7FFFFFFF)*(hoco[2]/hoco[3]);
 	
 	/* XXXX bias, much less than normal shadbuf, or do we need a constant? */
-	co[2] -= 0.05f*shb->bias;
+	co_r[2] -= 0.05f*shb->bias;
 	
 	return 1;
 }
@@ -2141,9 +2134,9 @@ static void isb_add_shadfac(ISBShadfacA **isbsapp, MemArena *mem, int obi, int f
 	
 	/* in osa case, the samples were filled in with factor 1.0/R.osa. if fewer samples we have to correct */
 	if(R.osa)
-		shadfacf= ((float)shadfac*R.osa)/(4096.0*samples);
+		shadfacf= ((float)shadfac*R.osa)/(4096.0f*samples);
 	else
-		shadfacf= ((float)shadfac)/(4096.0);
+		shadfacf= ((float)shadfac)/(4096.0f);
 	
 	new= BLI_memarena_alloc(mem, sizeof(ISBShadfacA));
 	new->obi= obi;
@@ -2640,4 +2633,3 @@ void ISB_free(RenderPart *pa)
 		}
 	}
 }
-

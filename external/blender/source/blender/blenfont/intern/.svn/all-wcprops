@@ -1,53 +1,59 @@
 K 25
 svn:wc:ra_dav:version-url
 V 79
-/svnroot/bf-blender/!svn/ver/35248/trunk/blender/source/blender/blenfont/intern
+/svnroot/bf-blender/!svn/ver/40430/trunk/blender/source/blender/blenfont/intern
 END
 blf_util.c
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/35248/trunk/blender/source/blender/blenfont/intern/blf_util.c
+/svnroot/bf-blender/!svn/ver/40321/trunk/blender/source/blender/blenfont/intern/blf_util.c
 END
 blf_dir.c
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/35248/trunk/blender/source/blender/blenfont/intern/blf_dir.c
+/svnroot/bf-blender/!svn/ver/40358/trunk/blender/source/blender/blenfont/intern/blf_dir.c
+END
+blf_translation.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/40402/trunk/blender/source/blender/blenfont/intern/blf_translation.c
 END
 blf.c
 K 25
 svn:wc:ra_dav:version-url
 V 85
-/svnroot/bf-blender/!svn/ver/35248/trunk/blender/source/blender/blenfont/intern/blf.c
+/svnroot/bf-blender/!svn/ver/40430/trunk/blender/source/blender/blenfont/intern/blf.c
 END
 blf_internal.h
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/35248/trunk/blender/source/blender/blenfont/intern/blf_internal.h
+/svnroot/bf-blender/!svn/ver/40116/trunk/blender/source/blender/blenfont/intern/blf_internal.h
 END
 blf_lang.c
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/35248/trunk/blender/source/blender/blenfont/intern/blf_lang.c
+/svnroot/bf-blender/!svn/ver/40429/trunk/blender/source/blender/blenfont/intern/blf_lang.c
 END
 blf_glyph.c
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svnroot/bf-blender/!svn/ver/35248/trunk/blender/source/blender/blenfont/intern/blf_glyph.c
+/svnroot/bf-blender/!svn/ver/40358/trunk/blender/source/blender/blenfont/intern/blf_glyph.c
 END
 blf_internal_types.h
 K 25
 svn:wc:ra_dav:version-url
 V 100
-/svnroot/bf-blender/!svn/ver/35248/trunk/blender/source/blender/blenfont/intern/blf_internal_types.h
+/svnroot/bf-blender/!svn/ver/40292/trunk/blender/source/blender/blenfont/intern/blf_internal_types.h
 END
 blf_font.c
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/35248/trunk/blender/source/blender/blenfont/intern/blf_font.c
+/svnroot/bf-blender/!svn/ver/40358/trunk/blender/source/blender/blenfont/intern/blf_font.c
 END

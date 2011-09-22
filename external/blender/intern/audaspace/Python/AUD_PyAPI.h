@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_PyAPI.h 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_PyAPI.h 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -36,35 +36,38 @@
 
 #ifdef __cplusplus
 extern "C" {
-#include "AUD_IDevice.h"
 #else
 typedef void AUD_IFactory;
 typedef void AUD_IDevice;
-typedef void AUD_Handle;
+typedef void AUD_IHandle;
 #endif
+
+typedef void AUD_Reference_AUD_IFactory;
+typedef void AUD_Reference_AUD_IDevice;
+typedef void AUD_Reference_AUD_IHandle;
 
 typedef struct {
 	PyObject_HEAD
 	PyObject* child_list;
-	AUD_IFactory* factory;
+	AUD_Reference_AUD_IFactory* factory;
 } Factory;
 
 typedef struct {
 	PyObject_HEAD
-	AUD_Handle* handle;
-	PyObject* device;
+	AUD_Reference_AUD_IHandle* handle;
 } Handle;
 
 typedef struct {
 	PyObject_HEAD
-	AUD_IDevice* device;
+	AUD_Reference_AUD_IDevice* device;
 } Device;
 
 PyMODINIT_FUNC
 PyInit_aud(void);
 
-extern PyObject *
-Device_empty();
+extern PyObject* Device_empty();
+extern PyObject* Factory_empty();
+extern Factory* checkFactory(PyObject* factory);
 
 #ifdef __cplusplus
 }

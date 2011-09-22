@@ -1,89 +1,89 @@
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svnroot/bf-blender/!svn/ver/35356/trunk/blender/source/blender/windowmanager/intern
+/svnroot/bf-blender/!svn/ver/40438/trunk/blender/source/blender/windowmanager/intern
 END
 wm_init_exit.c
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svnroot/bf-blender/!svn/ver/35337/trunk/blender/source/blender/windowmanager/intern/wm_init_exit.c
+/svnroot/bf-blender/!svn/ver/40396/trunk/blender/source/blender/windowmanager/intern/wm_init_exit.c
 END
 wm_draw.c
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/35179/trunk/blender/source/blender/windowmanager/intern/wm_draw.c
+/svnroot/bf-blender/!svn/ver/36563/trunk/blender/source/blender/windowmanager/intern/wm_draw.c
 END
 wm_jobs.c
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/35179/trunk/blender/source/blender/windowmanager/intern/wm_jobs.c
+/svnroot/bf-blender/!svn/ver/39749/trunk/blender/source/blender/windowmanager/intern/wm_jobs.c
 END
 wm_gesture.c
 K 25
 svn:wc:ra_dav:version-url
 V 97
-/svnroot/bf-blender/!svn/ver/35179/trunk/blender/source/blender/windowmanager/intern/wm_gesture.c
+/svnroot/bf-blender/!svn/ver/40390/trunk/blender/source/blender/windowmanager/intern/wm_gesture.c
 END
 wm_operators.c
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svnroot/bf-blender/!svn/ver/35337/trunk/blender/source/blender/windowmanager/intern/wm_operators.c
+/svnroot/bf-blender/!svn/ver/40438/trunk/blender/source/blender/windowmanager/intern/wm_operators.c
 END
 wm.c
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/35179/trunk/blender/source/blender/windowmanager/intern/wm.c
+/svnroot/bf-blender/!svn/ver/39293/trunk/blender/source/blender/windowmanager/intern/wm.c
 END
 wm_cursors.c
 K 25
 svn:wc:ra_dav:version-url
 V 97
-/svnroot/bf-blender/!svn/ver/35179/trunk/blender/source/blender/windowmanager/intern/wm_cursors.c
+/svnroot/bf-blender/!svn/ver/35388/trunk/blender/source/blender/windowmanager/intern/wm_cursors.c
 END
 wm_apple.c
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svnroot/bf-blender/!svn/ver/35179/trunk/blender/source/blender/windowmanager/intern/wm_apple.c
+/svnroot/bf-blender/!svn/ver/37030/trunk/blender/source/blender/windowmanager/intern/wm_apple.c
 END
 wm_subwindow.c
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svnroot/bf-blender/!svn/ver/35179/trunk/blender/source/blender/windowmanager/intern/wm_subwindow.c
+/svnroot/bf-blender/!svn/ver/39358/trunk/blender/source/blender/windowmanager/intern/wm_subwindow.c
 END
 wm_dragdrop.c
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/svnroot/bf-blender/!svn/ver/35179/trunk/blender/source/blender/windowmanager/intern/wm_dragdrop.c
+/svnroot/bf-blender/!svn/ver/40114/trunk/blender/source/blender/windowmanager/intern/wm_dragdrop.c
 END
 wm_files.c
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svnroot/bf-blender/!svn/ver/35179/trunk/blender/source/blender/windowmanager/intern/wm_files.c
+/svnroot/bf-blender/!svn/ver/40395/trunk/blender/source/blender/windowmanager/intern/wm_files.c
 END
 wm_event_system.c
 K 25
 svn:wc:ra_dav:version-url
 V 102
-/svnroot/bf-blender/!svn/ver/35356/trunk/blender/source/blender/windowmanager/intern/wm_event_system.c
+/svnroot/bf-blender/!svn/ver/40406/trunk/blender/source/blender/windowmanager/intern/wm_event_system.c
 END
 wm_keymap.c
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/svnroot/bf-blender/!svn/ver/35188/trunk/blender/source/blender/windowmanager/intern/wm_keymap.c
+/svnroot/bf-blender/!svn/ver/40043/trunk/blender/source/blender/windowmanager/intern/wm_keymap.c
 END
 wm_window.c
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/svnroot/bf-blender/!svn/ver/35179/trunk/blender/source/blender/windowmanager/intern/wm_window.c
+/svnroot/bf-blender/!svn/ver/40395/trunk/blender/source/blender/windowmanager/intern/wm_window.c
 END

@@ -1,5 +1,5 @@
 /*
- * $Id: RAS_Deformer.h 35072 2011-02-22 12:42:55Z jesterking $
+ * $Id: RAS_Deformer.h 36523 2011-05-06 20:18:42Z blendix $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -39,7 +39,7 @@
 #endif //WIN32
 
 #include <stdlib.h>
-#include "GEN_Map.h"
+#include "CTR_Map.h"
 
 #ifdef WITH_CXX_GUARDEDALLOC
 #include "MEM_guardedalloc.h"
@@ -53,7 +53,7 @@ class RAS_Deformer
 public:
 	RAS_Deformer() : m_pMesh(NULL), m_bDynamic(false) {};
 	virtual ~RAS_Deformer(){};
-	virtual void Relink(GEN_Map<class GEN_HashedPtr, void*>*map)=0;
+	virtual void Relink(CTR_Map<class CTR_HashedPtr, void*>*map)=0;
 	virtual bool Apply(class RAS_IPolyMaterial *polymat)=0;
 	virtual bool Update(void)=0;
 	virtual bool UpdateBuckets(void)=0;

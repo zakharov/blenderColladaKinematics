@@ -1,5 +1,5 @@
 /*
- * $Id: rayobject_octree.cpp 35233 2011-02-27 19:31:27Z jesterking $
+ * $Id: rayobject_octree.cpp 40253 2011-09-16 06:56:50Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -264,7 +264,7 @@ static int face_in_node(RayFace *face, short x, short y, short z, float rtf[][3]
 	return 0;
 }
 
-static void ocwrite(Octree *oc, RayFace *face, int quad, short x, short y, short z, float rtf[][3])
+static void ocwrite(Octree *oc, RayFace *face, int quad, short x, short y, short z, float rtf[4][3])
 {
 	Branch *br;
 	Node *no;

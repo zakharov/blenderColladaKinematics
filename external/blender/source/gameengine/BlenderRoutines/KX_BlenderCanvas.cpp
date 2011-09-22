@@ -1,5 +1,5 @@
 /*
- * $Id: KX_BlenderCanvas.cpp 35166 2011-02-25 13:29:48Z jesterking $
+ * $Id: KX_BlenderCanvas.cpp 35417 2011-03-09 01:25:59Z campbellbarton $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -33,7 +33,7 @@
 
 #include "KX_BlenderCanvas.h"
 #include "DNA_screen_types.h"
-#include "stdio.h"
+#include <stdio.h>
 
 
 KX_BlenderCanvas::KX_BlenderCanvas(struct wmWindow *win, RAS_Rect &rect, struct ARegion *ar) :

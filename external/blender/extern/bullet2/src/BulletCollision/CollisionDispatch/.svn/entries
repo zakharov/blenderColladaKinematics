@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/extern/bullet2/src/BulletCollision/CollisionDispatch
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-02-22T16:12:12.853823Z
-35078
-jesterking
+2011-05-28T13:11:24.424015Z
+36980
+lmg
 
 
 
@@ -26,13 +26,47 @@ jesterking
 
 954f8c5b-7b00-dc11-b283-0030488c597c
 
+btConvex2dConvex2dAlgorithm.cpp
+file
+
+
+
+
+2011-09-21T18:17:10.480112Z
+021c7efa8efef6c74f9da3c3a0c3a27b
+2011-03-13T00:26:46.012847Z
+35504
+gsrb3d
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8657
+
 btGhostObject.cpp
 file
 
 
 
 
-2011-03-03T12:29:00.310297Z
+2011-09-21T18:17:10.480112Z
 972effe626762e53e08cb1219c69909e
 2009-09-14T14:45:32.818085Z
 23221
@@ -66,7 +100,7 @@ file
 
 
 
-2011-03-03T12:29:00.314297Z
+2011-09-21T18:17:10.480112Z
 e1eb8e276ad8ad3639a8fecd3d149f4d
 2009-03-17T21:44:58.713628Z
 19323
@@ -100,7 +134,7 @@ file
 
 
 
-2011-03-03T12:29:00.314297Z
+2011-09-21T18:17:10.480112Z
 7fe42d60f61d732062a6d80a928fe111
 2009-03-17T21:44:58.713628Z
 19323
@@ -134,11 +168,11 @@ file
 
 
 
-2011-03-03T12:29:00.314297Z
-824bf96eb9082a3ede1bc18981507778
-2009-03-17T21:44:58.713628Z
-19323
-blendix
+2011-09-21T18:17:10.484113Z
+92dda6f1e7c41cc766dceab61aba090c
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 has-props
 
 
@@ -160,7 +194,7 @@ has-props
 
 
 
-6418
+6167
 
 btSphereSphereCollisionAlgorithm.cpp
 file
@@ -168,7 +202,7 @@ file
 
 
 
-2011-03-03T12:29:00.314297Z
+2011-09-21T18:17:10.484113Z
 165dfafb025af559c02e82ca5a25273c
 2009-03-17T21:44:58.713628Z
 19323
@@ -202,7 +236,7 @@ file
 
 
 
-2011-03-03T12:29:00.314297Z
+2011-09-21T18:17:10.484113Z
 fb7b6a5cb29689fbe6833e6b588d929e
 2009-09-14T14:45:32.818085Z
 23221
@@ -236,11 +270,11 @@ file
 
 
 
-2011-03-03T12:29:00.314297Z
-2cf952359949dc7e91087dc2a88bc0da
-2009-03-17T21:44:58.713628Z
-19323
-blendix
+2011-09-21T18:17:10.484113Z
+5a9febe61c1d7b2ad45f366325a5e5e5
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 has-props
 
 
@@ -262,7 +296,7 @@ has-props
 
 
 
-11336
+11148
 
 btEmptyCollisionAlgorithm.h
 file
@@ -270,7 +304,7 @@ file
 
 
 
-2011-03-03T12:29:00.314297Z
+2011-09-21T18:17:10.484113Z
 0627fbd3ff293729b588116b46526702
 2008-11-12T21:16:53.478104Z
 17433
@@ -304,11 +338,11 @@ file
 
 
 
-2011-03-03T12:29:00.314297Z
-67e181d1addba1921d94e6cf1e28ad95
-2009-03-17T21:44:58.713628Z
-19323
-blendix
+2011-09-21T18:17:10.484113Z
+6d0e0b05b2afd079c9eba6fda5f5287b
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 has-props
 
 
@@ -330,7 +364,7 @@ has-props
 
 
 
-10987
+14386
 
 btSphereBoxCollisionAlgorithm.h
 file
@@ -338,7 +372,7 @@ file
 
 
 
-2011-03-03T12:29:00.318297Z
+2011-09-21T18:17:10.484113Z
 d37ef0fc4205ace904cb63ee1c441a3a
 2009-03-17T21:44:58.713628Z
 19323
@@ -372,11 +406,11 @@ file
 
 
 
-2011-03-03T12:29:00.318297Z
-86dea6e4b7953dc4b767130b1e52b8d1
-2009-09-14T14:45:32.818085Z
-23221
-sirdude
+2011-09-21T18:17:10.484113Z
+9422edcce42f3282bd83d0ed42c32fe9
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 has-props
 
 
@@ -398,7 +432,7 @@ has-props
 
 
 
-11209
+11358
 
 btBoxBoxCollisionAlgorithm.h
 file
@@ -406,7 +440,7 @@ file
 
 
 
-2011-03-03T12:29:00.318297Z
+2011-09-21T18:17:10.484113Z
 87acc8f3a7f9a39fefd3181829f04702
 2009-09-14T14:45:32.818085Z
 23221
@@ -434,17 +468,17 @@ has-props
 
 2718
 
-btConvexConvexAlgorithm.cpp
+btInternalEdgeUtility.h
 file
 
 
 
 
-2011-03-03T12:29:00.318297Z
-d191362dd769a4a96053f60899f4a8e4
-2009-11-05T19:06:29.630424Z
-24364
-blendix
+2011-09-21T18:17:10.484113Z
+640695d890587f49e25e16edb9926ae9
+2011-03-13T00:26:46.012847Z
+35504
+gsrb3d
 has-props
 
 
@@ -466,7 +500,41 @@ has-props
 
 
 
-13490
+1784
+
+btConvexConvexAlgorithm.cpp
+file
+
+
+
+
+2011-09-21T18:17:10.488113Z
+7c40597f49c11ac28c07687c25a4de7a
+2011-05-28T13:11:24.424015Z
+36980
+lmg
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+18535
 
 btManifoldResult.h
 file
@@ -474,11 +542,11 @@ file
 
 
 
-2011-03-03T12:29:00.318297Z
-0bdf07b07f5ca05ed27c2f67115154a6
-2009-03-17T21:44:58.713628Z
-19323
-blendix
+2011-09-21T18:17:10.488113Z
+17215abd0a9858edf42912f055836c45
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 has-props
 
 
@@ -500,7 +568,7 @@ has-props
 
 
 
-2959
+3305
 
 btUnionFind.h
 file
@@ -508,11 +576,11 @@ file
 
 
 
-2011-03-03T12:29:00.318297Z
-99ab070a15983c157bd26a3ab8e4f382
-2009-03-17T21:44:58.713628Z
-19323
-blendix
+2011-09-21T18:17:10.488113Z
+47b47d65298af30b7abdc3764f040741
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 has-props
 
 
@@ -534,7 +602,7 @@ has-props
 
 
 
-3205
+3455
 
 btSphereTriangleCollisionAlgorithm.cpp
 file
@@ -542,11 +610,11 @@ file
 
 
 
-2011-03-03T12:29:00.318297Z
-1c8da8d43ee5e4ab776fce1f928ccbfb
-2009-03-17T21:44:58.713628Z
-19323
-blendix
+2011-09-21T18:17:10.488113Z
+3221157e399b75b6408aef7b268ba9aa
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 has-props
 
 
@@ -568,41 +636,7 @@ has-props
 
 
 
-3249
-
-btBoxBoxDetector.h
-file
-
-
-
-
-2011-03-03T12:29:00.318297Z
-ccc6af260ae0e67f1473d2243d76fefa
-2009-09-14T14:45:32.818085Z
-23221
-sirdude
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1898
+3259
 
 btCollisionCreateFunc.h
 file
@@ -610,7 +644,7 @@ file
 
 
 
-2011-03-03T12:29:00.318297Z
+2011-09-21T18:17:10.488113Z
 875f44988d827325ee8a2e6a6b3e88be
 2009-03-17T21:44:58.713628Z
 19323
@@ -638,116 +672,14 @@ has-props
 
 1649
 
-btCollisionDispatcher.cpp
+btBoxBoxDetector.h
 file
 
 
 
 
-2011-03-03T12:29:00.318297Z
-be0e8c42041b29dee47d15aca99a42ae
-2009-03-17T21:44:58.713628Z
-19323
-blendix
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8973
-
-btCompoundCollisionAlgorithm.cpp
-file
-
-
-
-
-2011-03-03T12:29:00.322297Z
-c97a07cfcf95d234a4f04b95486b4fa4
-2009-03-17T21:44:58.713628Z
-19323
-blendix
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-12347
-
-btCollisionWorld.h
-file
-
-
-
-
-2011-03-03T12:29:00.322297Z
-fce879da0741f3d2a87ff550bbef6d16
-2011-02-22T16:12:12.853823Z
-35078
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-14271
-
-btConvexPlaneCollisionAlgorithm.h
-file
-
-
-
-
-2011-03-03T12:29:00.322297Z
-2ff37284facf7ecaaaa679b90728d9c4
+2011-09-21T18:17:10.488113Z
+ccc6af260ae0e67f1473d2243d76fefa
 2009-09-14T14:45:32.818085Z
 23221
 sirdude
@@ -772,19 +704,19 @@ has-props
 
 
 
-3570
+1898
 
-btSimulationIslandManager.cpp
+btBox2dBox2dCollisionAlgorithm.cpp
 file
 
 
 
 
-2011-03-03T12:29:00.322297Z
-21c617df59da03645cd71cca80b70185
-2009-03-17T21:44:58.713628Z
-19323
-blendix
+2011-09-21T18:17:10.488113Z
+289b513e8a6e2b518ca4e6caecad7477
+2011-03-13T00:26:46.012847Z
+35504
+gsrb3d
 has-props
 
 
@@ -806,7 +738,177 @@ has-props
 
 
 
-11278
+12221
+
+btCollisionDispatcher.cpp
+file
+
+
+
+
+2011-09-21T18:17:10.488113Z
+de2723c165667c59e4cda95230e18a30
+2011-03-12T20:34:17.682024Z
+35500
+erwin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9083
+
+btCompoundCollisionAlgorithm.cpp
+file
+
+
+
+
+2011-09-21T18:17:10.488113Z
+f8cd14fc2806d1589c18e0ba27b016eb
+2011-03-12T20:34:17.682024Z
+35500
+erwin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12816
+
+btCollisionWorld.h
+file
+
+
+
+
+2011-09-21T18:17:10.492113Z
+c83696dd80c7d2f5b7727e5cf383b84b
+2011-03-12T20:34:17.682024Z
+35500
+erwin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+17383
+
+btSimulationIslandManager.cpp
+file
+
+
+
+
+2011-09-21T18:17:10.492113Z
+fabe43f4c2dd40e6850c5eb1772fc373
+2011-03-12T20:34:17.682024Z
+35500
+erwin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12856
+
+btConvexPlaneCollisionAlgorithm.h
+file
+
+
+
+
+2011-09-21T18:17:10.492113Z
+5bad5555c0c0528515b28332eb90b3ef
+2011-03-12T20:34:17.682024Z
+35500
+erwin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3570
 
 btActivatingCollisionAlgorithm.cpp
 file
@@ -814,7 +916,7 @@ file
 
 
 
-2011-03-03T12:29:00.322297Z
+2011-09-21T18:17:10.492113Z
 43561ac271fd5480b5e44b2f600e9d75
 2009-09-14T14:45:32.818085Z
 23221
@@ -842,17 +944,17 @@ has-props
 
 1759
 
-btGhostObject.h
+btConvex2dConvex2dAlgorithm.h
 file
 
 
 
 
-2011-03-03T12:29:00.322297Z
-588197c60903eea119f4deb5e6af9c38
-2009-09-14T14:45:32.818085Z
-23221
-sirdude
+2011-09-21T18:17:10.492113Z
+ff9b6b4ce33e7d50231b3346c3426a18
+2011-03-13T00:26:46.012847Z
+35504
+gsrb3d
 has-props
 
 
@@ -874,7 +976,41 @@ has-props
 
 
 
-5626
+4049
+
+btGhostObject.h
+file
+
+
+
+
+2011-09-21T18:17:10.492113Z
+96e0b46ac9676b6272f41352ecd52b9c
+2011-03-12T20:34:17.682024Z
+35500
+erwin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5636
 
 btEmptyCollisionAlgorithm.cpp
 file
@@ -882,7 +1018,7 @@ file
 
 
 
-2011-03-03T12:29:00.322297Z
+2011-09-21T18:17:10.492113Z
 f80f231674b6546ab04445c494f9846f
 2007-06-23T05:28:07.314061Z
 11027
@@ -910,47 +1046,13 @@ has-props
 
 1400
 
-btCollisionObject.cpp
-file
-
-
-
-
-2011-03-03T12:29:00.322297Z
-6529ea544e32c2a1652eac8594b8d7b5
-2009-03-17T21:44:58.713628Z
-19323
-blendix
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2194
-
 btSphereBoxCollisionAlgorithm.cpp
 file
 
 
 
 
-2011-03-03T12:29:00.322297Z
+2011-09-21T18:17:10.492113Z
 94778d6b2208d5800e83044c63715c21
 2009-03-17T21:44:58.713628Z
 19323
@@ -978,17 +1080,17 @@ has-props
 
 7780
 
-btBoxBoxCollisionAlgorithm.cpp
+btCollisionObject.cpp
 file
 
 
 
 
-2011-03-03T12:29:00.326297Z
-511073aa2e73b83e6fef3453fd58ed8c
-2009-09-14T14:45:32.818085Z
-23221
-sirdude
+2011-09-21T18:17:10.492113Z
+762e9d86ec2662227f77d24832bc71f2
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 has-props
 
 
@@ -1010,7 +1112,41 @@ has-props
 
 
 
-3248
+4332
+
+btBoxBoxCollisionAlgorithm.cpp
+file
+
+
+
+
+2011-09-21T18:17:10.492113Z
+409711378aa3f513332a3d2b4e5ec4c3
+2011-03-12T20:34:17.682024Z
+35500
+erwin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3257
 
 SphereTriangleDetector.h
 file
@@ -1018,11 +1154,11 @@ file
 
 
 
-2011-03-03T12:29:00.326297Z
-a846d45be7ee1b320f6a3f0d08935456
-2009-03-17T21:44:58.713628Z
-19323
-blendix
+2011-09-21T18:17:10.492113Z
+59331c7d1a82256a607a921d0a0186aa
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 has-props
 
 
@@ -1044,7 +1180,41 @@ has-props
 
 
 
-2074
+2077
+
+btInternalEdgeUtility.cpp
+file
+
+
+
+
+2011-09-21T18:17:10.496113Z
+1c0c19fbc98045898dd7d049558bb06b
+2011-03-13T00:26:46.012847Z
+35504
+gsrb3d
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+23592
 
 btSphereSphereCollisionAlgorithm.h
 file
@@ -1052,7 +1222,7 @@ file
 
 
 
-2011-03-03T12:29:00.326297Z
+2011-09-21T18:17:10.496113Z
 9f648dccefea89cf7a82b41a8158889d
 2009-03-17T21:44:58.713628Z
 19323
@@ -1080,47 +1250,13 @@ has-props
 
 2927
 
-btManifoldResult.cpp
-file
-
-
-
-
-2011-03-03T12:29:00.326297Z
-b737c9445b828c280a9da1a7dd1ec3ad
-2009-03-17T21:44:58.713628Z
-19323
-blendix
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4250
-
 btCollisionConfiguration.h
 file
 
 
 
 
-2011-03-03T12:29:00.326297Z
+2011-09-21T18:17:10.496113Z
 28302d716f80e8a0a0eae5844083dbb1
 2009-09-14T14:45:32.818085Z
 23221
@@ -1148,13 +1284,47 @@ has-props
 
 1720
 
+btManifoldResult.cpp
+file
+
+
+
+
+2011-09-21T18:17:10.496113Z
+ac869a93d57750d50827697a4a7a8107
+2011-03-12T20:34:17.682024Z
+35500
+erwin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4600
+
 btConvexConcaveCollisionAlgorithm.h
 file
 
 
 
 
-2011-03-03T12:29:00.326297Z
+2011-09-21T18:17:10.496113Z
 8ba98b04415768d10a618f49fa26b699
 2009-03-17T21:44:58.713628Z
 19323
@@ -1188,11 +1358,11 @@ file
 
 
 
-2011-03-03T12:29:00.326297Z
-6deee5c212a9437145147e356ded0b91
-2009-03-17T21:44:58.713628Z
-19323
-blendix
+2011-09-21T18:17:10.496113Z
+87de67f92391c7cccea800dfd125234f
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 has-props
 
 
@@ -1214,7 +1384,7 @@ has-props
 
 
 
-2061
+2153
 
 btBoxBoxDetector.cpp
 file
@@ -1222,11 +1392,11 @@ file
 
 
 
-2011-03-03T12:29:00.326297Z
-73821d03cc4f67d871d7a31650d89dc3
-2009-09-14T14:45:32.818085Z
-23221
-sirdude
+2011-09-21T18:17:10.496113Z
+8cb91590f2308d62593aad9e97bdbec3
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 has-props
 
 
@@ -1248,7 +1418,7 @@ has-props
 
 
 
-20927
+21466
 
 btDefaultCollisionConfiguration.h
 file
@@ -1256,11 +1426,11 @@ file
 
 
 
-2011-03-03T12:29:00.326297Z
-e8765ad1a872bb96e1a6ebfdeba508e9
-2009-09-14T14:45:32.818085Z
-23221
-sirdude
+2011-09-21T18:17:10.496113Z
+140743778758df2b9ffcc34a4fe081c1
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 has-props
 
 
@@ -1282,7 +1452,7 @@ has-props
 
 
 
-4863
+5123
 
 btConvexConvexAlgorithm.h
 file
@@ -1290,11 +1460,11 @@ file
 
 
 
-2011-03-03T12:29:00.326297Z
-6dfbcc5ad3d710cc8e23bc9fcd7643fe
-2009-03-17T21:44:58.713628Z
-19323
-blendix
+2011-09-21T18:17:10.496113Z
+d71c1a965a2bd6c3a2717c6805f0dfc7
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 has-props
 
 
@@ -1324,11 +1494,11 @@ file
 
 
 
-2011-03-03T12:29:00.330297Z
-90038745f248c018d22c1ac6afb3720d
-2010-01-06T08:46:04.276664Z
-25767
-ben2610
+2011-09-21T18:17:10.500113Z
+8af7580f4d84d6e9216d69b45cc7a18c
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 has-props
 
 
@@ -1350,7 +1520,7 @@ has-props
 
 
 
-30495
+50400
 
 btSphereTriangleCollisionAlgorithm.h
 file
@@ -1358,7 +1528,7 @@ file
 
 
 
-2011-03-03T12:29:00.330297Z
+2011-09-21T18:17:10.500113Z
 c8d3c45b90bf24313d90d7bf68b6d50d
 2009-03-17T21:44:58.713628Z
 19323
@@ -1392,11 +1562,11 @@ file
 
 
 
-2011-03-03T12:29:00.330297Z
-94755b87c237019058212f0c5eaec8d0
-2009-09-14T14:45:32.818085Z
-23221
-sirdude
+2011-09-21T18:17:10.500113Z
+a551f2bfec7138f4147b7f3b2ae22630
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 has-props
 
 
@@ -1418,7 +1588,41 @@ has-props
 
 
 
-6181
+6157
+
+btBox2dBox2dCollisionAlgorithm.h
+file
+
+
+
+
+2011-09-21T18:17:10.500113Z
+b2a2a81e68381628b0c869dc3eedaeea
+2011-03-13T00:26:46.012847Z
+35504
+gsrb3d
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2794
 
 btCollisionDispatcher.h
 file
@@ -1426,11 +1630,11 @@ file
 
 
 
-2011-03-03T12:29:00.330297Z
-f3b0c4df980b3f9889ceddc5a5985fff
-2008-11-12T21:16:53.478104Z
-17433
-blendix
+2011-09-21T18:17:10.500113Z
+cdf22100c2bc418610b9c2fdcdabb706
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 has-props
 
 
@@ -1452,5 +1656,5 @@ has-props
 
 
 
-4661
+4879
 

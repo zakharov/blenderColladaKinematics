@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/blenfont
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-02-27T20:42:42.472826Z
-35248
-jesterking
+2011-09-21T15:14:47.304242Z
+40430
+blendix
 
 
 
@@ -35,11 +35,11 @@ file
 
 
 
-2011-03-03T12:27:34.762297Z
-6d362cb0d9d532bb4c8edbf110ab5192
-2011-02-27T20:42:42.472826Z
-35248
-jesterking
+2011-09-21T18:16:39.355958Z
+50be0349eff71961208d02315ddbf42c
+2011-09-21T15:14:47.304242Z
+40430
+blendix
 has-props
 
 
@@ -61,7 +61,41 @@ has-props
 
 
 
-6380
+6279
+
+BLF_translation.h
+file
+
+
+
+
+2011-09-21T18:16:39.355958Z
+2bd90448061d8b5733923cd9ea097602
+2011-09-20T15:30:18.476948Z
+40402
+gsrb3d
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1778
 
 SConscript
 file
@@ -69,11 +103,11 @@ file
 
 
 
-2011-03-03T12:27:34.762297Z
-2d6ac8381e2f5a422fc59d4eb207ea53
-2010-08-29T20:52:05.030364Z
-31645
-jesterking
+2011-09-21T18:16:39.355958Z
+77617480b344366d7143ecb0102be5e6
+2011-09-20T13:41:43.050547Z
+40395
+nazgul
 has-props
 
 
@@ -95,7 +129,7 @@ has-props
 
 
 
-604
+569
 
 CMakeLists.txt
 file
@@ -103,11 +137,11 @@ file
 
 
 
-2011-03-03T12:27:34.766297Z
-c2b10e20d0c4fd56f6e23718a981a84c
-2010-12-22T23:09:30.468439Z
-33864
-campbellbarton
+2011-09-21T18:16:39.355958Z
+6d5679afad9fdf6894abc6da66410852
+2011-09-20T13:41:43.050547Z
+40395
+nazgul
 has-props
 
 
@@ -129,5 +163,5 @@ has-props
 
 
 
-1482
+1487
 

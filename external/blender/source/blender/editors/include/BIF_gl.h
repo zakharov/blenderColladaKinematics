@@ -1,5 +1,5 @@
 /*
- * $Id: BIF_gl.h 35016 2011-02-21 07:25:24Z jesterking $
+ * $Id: BIF_gl.h 36025 2011-04-05 23:55:52Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -35,7 +35,7 @@
 #ifndef BIF_GL_H
 #define BIF_GL_H
 
-#include "../../../../extern/glew/include/GL/glew.h"
+#include "GL/glew.h"
 
 	/*
 	 * these should be phased out. cpack should be replaced in

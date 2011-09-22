@@ -1,14 +1,14 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Tool/MSCommon
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2009-09-05T02:30:42.308240Z
-23016
+2011-05-12T09:17:03.717331Z
+36639
 jesterking
 
 
@@ -32,12 +32,12 @@ file
 
 
 
-2011-03-03T12:29:17.442297Z
+2011-09-21T18:17:15.724138Z
 0251264af552cd5735d300faf2b48108
-2009-09-05T02:30:42.308240Z
-23016
-jesterking
-
+2011-05-09T08:15:38.241902Z
+36564
+campbellbarton
+has-props
 
 
 
@@ -66,11 +66,12 @@ file
 
 
 
-2011-03-03T12:29:17.442297Z
-38d087b66b7f9525ee33d1e0d48823f9
-2009-09-05T02:30:42.308240Z
-23016
+2011-09-21T18:17:15.724138Z
+cec87509b15c1dc9be2ef6df26ce2254
+2011-05-12T09:17:03.717331Z
+36639
 jesterking
+has-props
 
 
 
@@ -91,8 +92,7 @@ jesterking
 
 
 
-
-18854
+18863
 
 __init__.py
 file
@@ -100,12 +100,12 @@ file
 
 
 
-2011-03-03T12:29:17.442297Z
+2011-09-21T18:17:15.724138Z
 bc383f000d3792747e3fe80f87f7e564
-2009-09-05T02:30:42.308240Z
-23016
-jesterking
-
+2011-05-09T08:15:38.241902Z
+36564
+campbellbarton
+has-props
 
 
 
@@ -134,12 +134,12 @@ file
 
 
 
-2011-03-03T12:29:17.442297Z
+2011-09-21T18:17:15.724138Z
 c43b204d9db2aeedb4acc652b9ddf0f5
-2009-09-05T02:30:42.308240Z
-23016
-jesterking
-
+2011-05-09T08:15:38.241902Z
+36564
+campbellbarton
+has-props
 
 
 
@@ -168,12 +168,12 @@ file
 
 
 
-2011-03-03T12:29:17.442297Z
+2011-09-21T18:17:15.724138Z
 5bdb3ffdb69d07e88ec3c1e88c8523cf
-2009-09-05T02:30:42.308240Z
-23016
-jesterking
-
+2011-05-09T08:15:38.241902Z
+36564
+campbellbarton
+has-props
 
 
 

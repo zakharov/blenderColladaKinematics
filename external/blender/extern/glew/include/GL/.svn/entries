@@ -1,14 +1,14 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/extern/glew/include/GL
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2010-12-03T12:30:59.861558Z
-33442
+2011-09-19T06:32:19.912550Z
+40340
 campbellbarton
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2011-03-03T12:29:05.018297Z
-4c9320d431eadf8fef2a1cbc7f57a7b1
-2010-12-03T12:30:59.861558Z
-33442
+2011-09-21T18:17:13.128126Z
+3a2a1c76355cf802a1ac34a3cc585901
+2011-09-19T06:32:19.912550Z
+40340
 campbellbarton
 has-props
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-624111
+837251
 
 wglew.h
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-03-03T12:29:05.018297Z
-1198b023ee9dd5ef2e835977509fbf4c
-2009-11-21T20:36:03.035276Z
-24733
-dfelinto
+2011-09-21T18:17:13.128126Z
+32830945fc0f1702f09b624df8ab76c4
+2011-09-18T15:37:36.605996Z
+40333
+campbellbarton
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-49484
+59403
 
 glxew.h
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-03-03T12:29:05.018297Z
-b568f583ffd8a82063533a489a825e12
-2009-11-21T20:36:03.035276Z
-24733
-dfelinto
+2011-09-21T18:17:13.128126Z
+692ee775241834f7a3e039cfd2812d05
+2011-09-18T15:37:36.605996Z
+40333
+campbellbarton
 has-props
 
 
@@ -126,5 +126,5 @@ has-props
 
 
 
-55352
+62741
 

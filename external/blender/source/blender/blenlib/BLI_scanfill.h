@@ -1,5 +1,5 @@
 /*
- * $Id: BLI_scanfill.h 34966 2011-02-18 13:58:08Z jesterking $
+ * $Id: BLI_scanfill.h 36672 2011-05-13 16:04:20Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -53,7 +53,7 @@ extern "C" {
 /* scanfill.c: used in displist only... */
 struct EditVert *BLI_addfillvert(float *vec);
 struct EditEdge *BLI_addfilledge(struct EditVert *v1, struct EditVert *v2);
-int BLI_edgefill(int mat_nr);
+int BLI_edgefill(short mat_nr);
 void BLI_end_edgefill(void);
 
 /* These callbacks are needed to make the lib finction properly */

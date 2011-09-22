@@ -1,5 +1,5 @@
 /*
- * $Id: BL_ArmatureConstraint.h 35063 2011-02-22 10:33:14Z jesterking $
+ * $Id: BL_ArmatureConstraint.h 36523 2011-05-06 20:18:42Z blendix $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -35,8 +35,8 @@
 #define __BL_ARMATURECONSTRAINT
 
 #include "DNA_constraint_types.h"
-#include "GEN_HashedPtr.h"
-#include "GEN_Map.h"
+#include "CTR_HashedPtr.h"
+#include "CTR_Map.h"
 #include "PyObjectPlus.h"
 
 class SCA_IObject;
@@ -80,7 +80,7 @@ public:
 
 	BL_ArmatureConstraint* GetReplica() const;
 	void ReParent(BL_ArmatureObject* armature);
-	void Relink(GEN_Map<GEN_HashedPtr, void*> *map);
+	void Relink(CTR_Map<CTR_HashedPtr, void*> *map);
 	bool UnlinkObject(SCA_IObject* clientobj);
 
 	void UpdateTarget();

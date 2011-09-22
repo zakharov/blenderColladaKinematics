@@ -1,7 +1,7 @@
 /*
  * Do translation/rotation actions
  *
- * $Id: KX_ObjectActuator.cpp 35323 2011-03-03 08:01:11Z campbellbarton $
+ * $Id: KX_ObjectActuator.cpp 39883 2011-09-03 02:15:49Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -237,9 +237,9 @@ bool KX_ObjectActuator::Update()
 						if (m_current_linear_factor > 1.0)
 							m_current_linear_factor = 1.0;
 						linV = m_current_linear_factor * m_linear_velocity;
-	 					parent->setLinearVelocity(linV,(m_bitLocalFlag.LinearVelocity) != 0);
+						parent->setLinearVelocity(linV,(m_bitLocalFlag.LinearVelocity) != 0);
 					} else {
-	 					parent->setLinearVelocity(m_linear_velocity,(m_bitLocalFlag.LinearVelocity) != 0);
+						parent->setLinearVelocity(m_linear_velocity,(m_bitLocalFlag.LinearVelocity) != 0);
 					}
 				}
 			}
@@ -260,7 +260,7 @@ bool KX_ObjectActuator::Update()
 					if (m_current_angular_factor > 1.0)
 						m_current_angular_factor = 1.0;
 					angV = m_current_angular_factor * m_angular_velocity;
-	 				parent->setAngularVelocity(angV,(m_bitLocalFlag.AngularVelocity) != 0);
+					parent->setAngularVelocity(angV,(m_bitLocalFlag.AngularVelocity) != 0);
 				} else {
 					parent->setAngularVelocity(m_angular_velocity,(m_bitLocalFlag.AngularVelocity) != 0);
 				}
@@ -299,7 +299,7 @@ bool KX_ObjectActuator::UnlinkObject(SCA_IObject* clientobj)
 	return false;
 }
 
-void KX_ObjectActuator::Relink(GEN_Map<GEN_HashedPtr, void*> *obj_map)
+void KX_ObjectActuator::Relink(CTR_Map<CTR_HashedPtr, void*> *obj_map)
 {
 	void **h_obj = (*obj_map)[m_reference];
 	if (h_obj) {

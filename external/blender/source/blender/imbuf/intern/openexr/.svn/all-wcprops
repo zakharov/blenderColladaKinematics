@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/intern/openexr
+/svnroot/bf-blender/!svn/ver/39810/trunk/blender/source/blender/imbuf/intern/openexr
 END
 openexr_api.h
 K 25
@@ -13,7 +13,7 @@ openexr_multi.h
 K 25
 svn:wc:ra_dav:version-url
 V 100
-/svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/intern/openexr/openexr_multi.h
+/svnroot/bf-blender/!svn/ver/39810/trunk/blender/source/blender/imbuf/intern/openexr/openexr_multi.h
 END
 SConscript
 K 25
@@ -25,11 +25,11 @@ openexr_api.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 100
-/svnroot/bf-blender/!svn/ver/35239/trunk/blender/source/blender/imbuf/intern/openexr/openexr_api.cpp
+/svnroot/bf-blender/!svn/ver/39810/trunk/blender/source/blender/imbuf/intern/openexr/openexr_api.cpp
 END
 CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svnroot/bf-blender/!svn/ver/33962/trunk/blender/source/blender/imbuf/intern/openexr/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/38443/trunk/blender/source/blender/imbuf/intern/openexr/CMakeLists.txt
 END

@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/extern/bullet2/src/BulletDynamics/Dynamics
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2009-11-05T19:06:29.630424Z
-24364
-blendix
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-03-03T12:28:52.554297Z
-d14c559dd55543fd735738d941571d89
-2009-11-05T19:06:29.630424Z
-24364
-blendix
+2011-09-21T18:17:08.444102Z
+385e242f6a3f72a36606baee9f951c33
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-13474
+13616
 
 btSimpleDynamicsWorld.cpp
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-03-03T12:28:52.554297Z
-f4ceb5c0c35f9b43fbb5540667d85d1d
-2009-03-17T21:44:58.713628Z
-19323
-blendix
+2011-09-21T18:17:08.444102Z
+e836baba4eddfcb161ffa83938093c48
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-6479
+7201
 
 btContinuousDynamicsWorld.h
 file
@@ -100,7 +100,7 @@ file
 
 
 
-2011-03-03T12:28:52.554297Z
+2011-09-21T18:17:08.448102Z
 e32670fb9d7554da3a317bb3a5e8ffc7
 2009-09-14T14:45:32.818085Z
 23221
@@ -134,11 +134,11 @@ file
 
 
 
-2011-03-03T12:28:52.554297Z
-1be2c4bdbff6b2dc3a686b80b412d848
-2009-03-17T21:44:58.713628Z
-19323
-blendix
+2011-09-21T18:17:08.448102Z
+e0675bf98c87e1f9d718cceca65d051b
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-10272
+13051
 
 btSimpleDynamicsWorld.h
 file
@@ -168,11 +168,11 @@ file
 
 
 
-2011-03-03T12:28:52.554297Z
-1e24f947eae621599bcce2cfdc42110d
-2009-03-17T21:44:58.713628Z
-19323
-blendix
+2011-09-21T18:17:08.448102Z
+6e6aab9320cba1db56ed8e48124e6d7e
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 has-props
 
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-2723
+3164
 
 btRigidBody.h
 file
@@ -202,11 +202,11 @@ file
 
 
 
-2011-03-03T12:28:52.554297Z
-27bc98efeaacfd8b62738200e04a048c
-2009-03-17T21:44:58.713628Z
-19323
-blendix
+2011-09-21T18:17:08.448102Z
+f263351341876582e99ec8fc37658ae9
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 has-props
 
 
@@ -228,7 +228,7 @@ has-props
 
 
 
-14894
+19888
 
 btDiscreteDynamicsWorld.cpp
 file
@@ -236,11 +236,11 @@ file
 
 
 
-2011-03-03T12:28:52.558297Z
-59eb45f24a5cd50d04368bb577783299
-2009-04-20T15:06:46.913736Z
-19820
-blendix
+2011-09-21T18:17:08.448102Z
+2fdefacbcf9a37fe895f587f10714212
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 has-props
 
 
@@ -262,7 +262,7 @@ has-props
 
 
 
-44028
+34373
 
 btActionInterface.h
 file
@@ -270,11 +270,11 @@ file
 
 
 
-2011-03-03T12:28:52.558297Z
-cd0d07e31b9bd87581e5b2320fa03d00
-2009-09-14T14:45:32.818085Z
-23221
-sirdude
+2011-09-21T18:17:08.448102Z
+6dede9798cbefb5fb160cb18e02c5f86
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 has-props
 
 
@@ -296,7 +296,7 @@ has-props
 
 
 
-1453
+1532
 
 btDynamicsWorld.h
 file
@@ -304,11 +304,11 @@ file
 
 
 
-2011-03-03T12:28:52.558297Z
-e50a6b73f290405bf3d2ce7861d87ff4
-2009-03-17T21:44:58.713628Z
-19323
-blendix
+2011-09-21T18:17:08.448102Z
+436f8a6596328234ec1a98acd329af89
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 has-props
 
 
@@ -330,7 +330,7 @@ has-props
 
 
 
-5000
+5260
 
 btContinuousDynamicsWorld.cpp
 file
@@ -338,11 +338,11 @@ file
 
 
 
-2011-03-03T12:28:52.558297Z
-62fe4005cfe8027f34af88c4ab76597f
-2009-09-14T14:45:32.818085Z
-23221
-sirdude
+2011-09-21T18:17:08.448102Z
+6fcb73b0109325b81d7a254147e8694f
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 has-props
 
 
@@ -364,7 +364,7 @@ has-props
 
 
 
-6015
+6105
 
 btDiscreteDynamicsWorld.h
 file
@@ -372,11 +372,11 @@ file
 
 
 
-2011-03-03T12:28:52.558297Z
-94bf7e7bddd52c3c555d538f0461a7f9
-2009-03-17T21:44:58.713628Z
-19323
-blendix
+2011-09-21T18:17:08.452102Z
+6230477acaaf75e98336ae4a64dc4681
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 has-props
 
 
@@ -398,5 +398,5 @@ has-props
 
 
 
-5361
+6128
 

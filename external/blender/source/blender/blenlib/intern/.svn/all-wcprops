@@ -1,43 +1,43 @@
 K 25
 svn:wc:ra_dav:version-url
 V 78
-/svnroot/bf-blender/!svn/ver/35336/trunk/blender/source/blender/blenlib/intern
+/svnroot/bf-blender/!svn/ver/40419/trunk/blender/source/blender/blenlib/intern
 END
 math_geom_inline.c
 K 25
 svn:wc:ra_dav:version-url
 V 97
-/svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/intern/math_geom_inline.c
+/svnroot/bf-blender/!svn/ver/36235/trunk/blender/source/blender/blenlib/intern/math_geom_inline.c
 END
 pbvh.c
 K 25
 svn:wc:ra_dav:version-url
 V 85
-/svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/intern/pbvh.c
+/svnroot/bf-blender/!svn/ver/38867/trunk/blender/source/blender/blenlib/intern/pbvh.c
 END
 jitter.c
 K 25
 svn:wc:ra_dav:version-url
 V 87
-/svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/intern/jitter.c
+/svnroot/bf-blender/!svn/ver/39558/trunk/blender/source/blender/blenlib/intern/jitter.c
 END
 fileops.c
 K 25
 svn:wc:ra_dav:version-url
 V 88
-/svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/intern/fileops.c
+/svnroot/bf-blender/!svn/ver/40399/trunk/blender/source/blender/blenlib/intern/fileops.c
 END
 string.c
 K 25
 svn:wc:ra_dav:version-url
 V 87
-/svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/intern/string.c
+/svnroot/bf-blender/!svn/ver/40216/trunk/blender/source/blender/blenlib/intern/string.c
 END
 math_rotation.c
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/intern/math_rotation.c
+/svnroot/bf-blender/!svn/ver/40352/trunk/blender/source/blender/blenlib/intern/math_rotation.c
 END
 BLI_dynstr.c
 K 25
@@ -49,55 +49,61 @@ math_vector_inline.c
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/intern/math_vector_inline.c
+/svnroot/bf-blender/!svn/ver/40147/trunk/blender/source/blender/blenlib/intern/math_vector_inline.c
 END
 freetypefont.c
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/intern/freetypefont.c
+/svnroot/bf-blender/!svn/ver/35953/trunk/blender/source/blender/blenlib/intern/freetypefont.c
 END
 math_vector.c
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/intern/math_vector.c
+/svnroot/bf-blender/!svn/ver/39941/trunk/blender/source/blender/blenlib/intern/math_vector.c
 END
 math_matrix.c
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/intern/math_matrix.c
+/svnroot/bf-blender/!svn/ver/40162/trunk/blender/source/blender/blenlib/intern/math_matrix.c
 END
 boxpack2d.c
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/intern/boxpack2d.c
+/svnroot/bf-blender/!svn/ver/36276/trunk/blender/source/blender/blenlib/intern/boxpack2d.c
+END
+callbacks.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/39744/trunk/blender/source/blender/blenlib/intern/callbacks.c
 END
 BLI_ghash.c
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/intern/BLI_ghash.c
+/svnroot/bf-blender/!svn/ver/39744/trunk/blender/source/blender/blenlib/intern/BLI_ghash.c
 END
 uvproject.c
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/intern/uvproject.c
+/svnroot/bf-blender/!svn/ver/38054/trunk/blender/source/blender/blenlib/intern/uvproject.c
 END
 BLI_args.c
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/intern/BLI_args.c
+/svnroot/bf-blender/!svn/ver/38847/trunk/blender/source/blender/blenlib/intern/BLI_args.c
 END
 BLI_kdopbvh.c
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/intern/BLI_kdopbvh.c
+/svnroot/bf-blender/!svn/ver/40108/trunk/blender/source/blender/blenlib/intern/BLI_kdopbvh.c
 END
 cpu.c
 K 25
@@ -109,25 +115,13 @@ threads.c
 K 25
 svn:wc:ra_dav:version-url
 V 88
-/svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/intern/threads.c
+/svnroot/bf-blender/!svn/ver/40419/trunk/blender/source/blender/blenlib/intern/threads.c
 END
 scanfill.c
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/intern/scanfill.c
-END
-time.c
-K 25
-svn:wc:ra_dav:version-url
-V 85
-/svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/intern/time.c
-END
-bpath.c
-K 25
-svn:wc:ra_dav:version-url
-V 86
-/svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/intern/bpath.c
+/svnroot/bf-blender/!svn/ver/39558/trunk/blender/source/blender/blenlib/intern/scanfill.c
 END
 BLI_mempool.c
 K 25
@@ -135,17 +129,29 @@ svn:wc:ra_dav:version-url
 V 92
 /svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/intern/BLI_mempool.c
 END
+bpath.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-blender/!svn/ver/36781/trunk/blender/source/blender/blenlib/intern/bpath.c
+END
+time.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/intern/time.c
+END
 math_geom.c
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/intern/math_geom.c
+/svnroot/bf-blender/!svn/ver/39833/trunk/blender/source/blender/blenlib/intern/math_geom.c
 END
 graph.c
 K 25
 svn:wc:ra_dav:version-url
 V 86
-/svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/intern/graph.c
+/svnroot/bf-blender/!svn/ver/40147/trunk/blender/source/blender/blenlib/intern/graph.c
 END
 DLRB_tree.c
 K 25
@@ -159,41 +165,35 @@ svn:wc:ra_dav:version-url
 V 89
 /svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/intern/BLI_heap.c
 END
-storage.c
-K 25
-svn:wc:ra_dav:version-url
-V 88
-/svnroot/bf-blender/!svn/ver/35336/trunk/blender/source/blender/blenlib/intern/storage.c
-END
 BLI_kdtree.c
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/intern/BLI_kdtree.c
+/svnroot/bf-blender/!svn/ver/39794/trunk/blender/source/blender/blenlib/intern/BLI_kdtree.c
+END
+storage.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/bf-blender/!svn/ver/40419/trunk/blender/source/blender/blenlib/intern/storage.c
 END
 winstuff.c
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/intern/winstuff.c
+/svnroot/bf-blender/!svn/ver/36426/trunk/blender/source/blender/blenlib/intern/winstuff.c
 END
 listbase.c
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/intern/listbase.c
+/svnroot/bf-blender/!svn/ver/36442/trunk/blender/source/blender/blenlib/intern/listbase.c
 END
 edgehash.c
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/intern/edgehash.c
-END
-BLI_callbacks.h
-K 25
-svn:wc:ra_dav:version-url
-V 94
-/svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/intern/BLI_callbacks.h
+/svnroot/bf-blender/!svn/ver/36826/trunk/blender/source/blender/blenlib/intern/edgehash.c
 END
 BLI_memarena.c
 K 25
@@ -201,11 +201,17 @@ svn:wc:ra_dav:version-url
 V 93
 /svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/intern/BLI_memarena.c
 END
+string_utf8.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/40255/trunk/blender/source/blender/blenlib/intern/string_utf8.c
+END
 noise.c
 K 25
 svn:wc:ra_dav:version-url
 V 86
-/svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/intern/noise.c
+/svnroot/bf-blender/!svn/ver/39931/trunk/blender/source/blender/blenlib/intern/noise.c
 END
 gsqueue.c
 K 25
@@ -229,25 +235,25 @@ math_base_inline.c
 K 25
 svn:wc:ra_dav:version-url
 V 97
-/svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/intern/math_base_inline.c
+/svnroot/bf-blender/!svn/ver/37336/trunk/blender/source/blender/blenlib/intern/math_base_inline.c
 END
 dynlib.c
 K 25
 svn:wc:ra_dav:version-url
 V 87
-/svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/intern/dynlib.c
+/svnroot/bf-blender/!svn/ver/36519/trunk/blender/source/blender/blenlib/intern/dynlib.c
 END
 math_base.c
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/intern/math_base.c
+/svnroot/bf-blender/!svn/ver/36815/trunk/blender/source/blender/blenlib/intern/math_base.c
 END
 rand.c
 K 25
 svn:wc:ra_dav:version-url
 V 85
-/svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/intern/rand.c
+/svnroot/bf-blender/!svn/ver/36596/trunk/blender/source/blender/blenlib/intern/rand.c
 END
 dynamiclist.h
 K 25
@@ -259,23 +265,23 @@ math_color.c
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/intern/math_color.c
+/svnroot/bf-blender/!svn/ver/37783/trunk/blender/source/blender/blenlib/intern/math_color.c
 END
 rct.c
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/intern/rct.c
+/svnroot/bf-blender/!svn/ver/39558/trunk/blender/source/blender/blenlib/intern/rct.c
 END
 path_util.c
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/35335/trunk/blender/source/blender/blenlib/intern/path_util.c
+/svnroot/bf-blender/!svn/ver/40419/trunk/blender/source/blender/blenlib/intern/path_util.c
 END
 voxel.c
 K 25
 svn:wc:ra_dav:version-url
 V 86
-/svnroot/bf-blender/!svn/ver/35246/trunk/blender/source/blender/blenlib/intern/voxel.c
+/svnroot/bf-blender/!svn/ver/40286/trunk/blender/source/blender/blenlib/intern/voxel.c
 END

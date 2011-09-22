@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 66
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/extern/libredcode
+/svnroot/bf-blender/!svn/ver/37030/trunk/blender/extern/libredcode
 END
 debayer.h
 K 25
@@ -13,13 +13,13 @@ AUTHOR
 K 25
 svn:wc:ra_dav:version-url
 V 73
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/libredcode/AUTHOR
+/svnroot/bf-blender/!svn/ver/36564/trunk/blender/extern/libredcode/AUTHOR
 END
 LICENSE
 K 25
 svn:wc:ra_dav:version-url
 V 74
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/libredcode/LICENSE
+/svnroot/bf-blender/!svn/ver/36564/trunk/blender/extern/libredcode/LICENSE
 END
 codec.h
 K 25
@@ -37,7 +37,7 @@ NOTES
 K 25
 svn:wc:ra_dav:version-url
 V 72
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/extern/libredcode/NOTES
+/svnroot/bf-blender/!svn/ver/36564/trunk/blender/extern/libredcode/NOTES
 END
 format.c
 K 25
@@ -55,7 +55,7 @@ CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 81
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/extern/libredcode/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/37030/trunk/blender/extern/libredcode/CMakeLists.txt
 END
 codec.c
 K 25

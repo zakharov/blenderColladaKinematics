@@ -1,5 +1,5 @@
 /*
- * $Id: bvh.h 35233 2011-02-27 19:31:27Z jesterking $
+ * $Id: bvh.h 35477 2011-03-11 22:27:06Z blendix $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -129,7 +129,8 @@ static void bvh_free(Tree *obj)
 template<class Tree>
 static void bvh_bb(Tree *obj, float *min, float *max)
 {
-	bvh_node_merge_bb(obj->root, min, max);
+	if(obj->root)
+		bvh_node_merge_bb(obj->root, min, max);
 }
 
 

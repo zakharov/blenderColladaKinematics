@@ -1,5 +1,5 @@
 /*
- * $Id: DNA_sdna_types.h 34936 2011-02-17 16:17:40Z jesterking $ 
+ * $Id: DNA_sdna_types.h 39568 2011-08-20 14:23:43Z campbellbarton $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -54,7 +54,10 @@ typedef struct SDNA {
 
 						   (sp[2], sp[3]), (sp[4], sp[5]), .. are the member
 						   type and name numbers respectively */
-	
+
+	struct GHash *structs_map; /* ghash for faster lookups,
+								  requires WITH_DNA_GHASH to be used for now */
+
 		/* wrong place for this really, its a simple
 		 * cache for findstruct_nr.
 		 */

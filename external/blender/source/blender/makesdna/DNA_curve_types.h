@@ -1,5 +1,5 @@
 /*
- * $Id: DNA_curve_types.h 34941 2011-02-17 20:48:12Z jesterking $ 
+ * $Id: DNA_curve_types.h 39792 2011-08-30 09:15:55Z nexyon $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -314,7 +314,7 @@ typedef enum eBezTriple_Handle {
 	HD_AUTO,
 	HD_VECT,
 	HD_ALIGN,
-	HD_AUTO_ANIM	/* not real handle type, but is just used as dummy item for anim code */
+	HD_AUTO_ANIM 	/* auto-clamped handles for animation */
 } eBezTriple_Handle;
 
 /* interpolation modes (used only for BezTriple->ipo) */

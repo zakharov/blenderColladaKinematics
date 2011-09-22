@@ -41,7 +41,6 @@ from math import *
 from bpy.props import IntProperty, FloatProperty ,EnumProperty
 from itertools import * 
 
-NARROW_UI = 180
 MAX_INPUT_NUMBER = 50
 
 #Global_Scale = 0.001    #1 blender unit = X mm
@@ -65,7 +64,7 @@ def unpack_face_list(list_of_tuples):
         face = [i for i in t]
 
         if len(face) != 3 and len(face) != 4:
-            raise RuntimeError("{0} vertices in face.".format(len(face)))
+            raise RuntimeError("{0} vertices in face".format(len(face)))
         
         # rotate indices if the 4th is 0
         if len(face) == 4 and face[3] == 0:
@@ -2453,8 +2452,8 @@ def Dispaly_Preset_Tab(layout,context):
     row = layout.row()
     row.operator("custom.Preset_Button")
     
-    #Preset_Menu = Draw.Menu(name,No_Event,9,Y_POS-BUTTON_Y_OFFSET,50,18, Preset_Menu.val, "Predefined metric screw sizes.")
-    #Draw.Button("Apply",On_Preset_Click,150,Y_POS-BUTTON_Y_OFFSET,55,18,"Apply the preset screw sizes.")
+    #Preset_Menu = Draw.Menu(name,No_Event,9,Y_POS-BUTTON_Y_OFFSET,50,18, Preset_Menu.val, "Predefined metric screw sizes")
+    #Draw.Button("Apply",On_Preset_Click,150,Y_POS-BUTTON_Y_OFFSET,55,18,"Apply the preset screw sizes")
  
 
 
@@ -2548,7 +2547,6 @@ class ObjectButtonsPanel(bpy.types.Panel):
  
         ob = context.object
         sc = context.scene
-        wide_ui = context.region.width > NARROW_UI
         
         layout.prop(sc, "bf_Model_Type", expand=True)
         
@@ -2560,9 +2558,8 @@ class ObjectButtonsPanel(bpy.types.Panel):
             
         Dispaly_Thread_Tab(layout,sc)
         Dispaly_Preset_Tab(layout,sc)
-        row = layout.row()
         
-        row.operator("custom.Create_Button")
+        layout.operator("custom.Create_Button")
 
 
        

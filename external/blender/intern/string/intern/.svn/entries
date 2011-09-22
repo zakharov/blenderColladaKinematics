@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern/string/intern
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-02-25T11:51:19.443245Z
-35160
-jesterking
+2011-09-19T08:02:17.513712Z
+40341
+campbellbarton
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-03-03T12:25:42.266297Z
-273b13475d0a55be6987229d2fc8b9e6
-2011-02-25T11:51:19.443245Z
-35160
-jesterking
+2011-09-21T18:15:49.987713Z
+71c8bfd3eb49c82309c9abfbeabc34e4
+2011-09-19T08:02:17.513712Z
+40341
+campbellbarton
 has-props
 
 
@@ -58,5 +58,5 @@ has-props
 
 
 
-14389
+14399
 

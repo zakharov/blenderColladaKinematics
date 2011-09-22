@@ -1,31 +1,37 @@
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/svnroot/bf-blender/!svn/ver/33863/trunk/blender/extern/bullet2/src/BulletSoftBody
+/svnroot/bf-blender/!svn/ver/35706/trunk/blender/extern/bullet2/src/BulletSoftBody
 END
 btSoftBodyConcaveCollisionAlgorithm.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 122
-/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletSoftBody/btSoftBodyConcaveCollisionAlgorithm.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletSoftBody/btSoftBodyConcaveCollisionAlgorithm.cpp
+END
+btSoftBodySolvers.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/bf-blender/!svn/ver/35504/trunk/blender/extern/bullet2/src/BulletSoftBody/btSoftBodySolvers.h
 END
 btSoftBodyHelpers.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 104
-/svnroot/bf-blender/!svn/ver/25527/trunk/blender/extern/bullet2/src/BulletSoftBody/btSoftBodyHelpers.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletSoftBody/btSoftBodyHelpers.cpp
 END
 btSoftRigidCollisionAlgorithm.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 116
-/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletSoftBody/btSoftRigidCollisionAlgorithm.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletSoftBody/btSoftRigidCollisionAlgorithm.cpp
 END
 btSoftBodyInternals.h
 K 25
 svn:wc:ra_dav:version-url
 V 104
-/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletSoftBody/btSoftBodyInternals.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletSoftBody/btSoftBodyInternals.h
 END
 btSoftBodyConcaveCollisionAlgorithm.h
 K 25
@@ -33,11 +39,17 @@ svn:wc:ra_dav:version-url
 V 120
 /svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletSoftBody/btSoftBodyConcaveCollisionAlgorithm.h
 END
+btSoftBodySolverVertexBuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svnroot/bf-blender/!svn/ver/35504/trunk/blender/extern/bullet2/src/BulletSoftBody/btSoftBodySolverVertexBuffer.h
+END
 btSoftBodyHelpers.h
 K 25
 svn:wc:ra_dav:version-url
 V 102
-/svnroot/bf-blender/!svn/ver/25527/trunk/blender/extern/bullet2/src/BulletSoftBody/btSoftBodyHelpers.h
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletSoftBody/btSoftBodyHelpers.h
 END
 btSoftRigidCollisionAlgorithm.h
 K 25
@@ -45,23 +57,23 @@ svn:wc:ra_dav:version-url
 V 114
 /svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletSoftBody/btSoftRigidCollisionAlgorithm.h
 END
+btSoftBodyData.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/35504/trunk/blender/extern/bullet2/src/BulletSoftBody/btSoftBodyData.h
+END
 btSoftBody.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 97
-/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletSoftBody/btSoftBody.cpp
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletSoftBody/btSoftBody.cpp
 END
-btSoftSoftCollisionAlgorithm.cpp
+btDefaultSoftBodySolver.cpp
 K 25
 svn:wc:ra_dav:version-url
-V 115
-/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletSoftBody/btSoftSoftCollisionAlgorithm.cpp
-END
-btSoftRigidDynamicsWorld.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 111
-/svnroot/bf-blender/!svn/ver/25767/trunk/blender/extern/bullet2/src/BulletSoftBody/btSoftRigidDynamicsWorld.cpp
+V 110
+/svnroot/bf-blender/!svn/ver/35504/trunk/blender/extern/bullet2/src/BulletSoftBody/btDefaultSoftBodySolver.cpp
 END
 btSoftBodyRigidBodyCollisionConfiguration.cpp
 K 25
@@ -69,29 +81,47 @@ svn:wc:ra_dav:version-url
 V 128
 /svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletSoftBody/btSoftBodyRigidBodyCollisionConfiguration.cpp
 END
+btSoftRigidDynamicsWorld.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletSoftBody/btSoftRigidDynamicsWorld.cpp
+END
+btSoftSoftCollisionAlgorithm.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletSoftBody/btSoftSoftCollisionAlgorithm.cpp
+END
 btSoftBody.h
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletSoftBody/btSoftBody.h
+/svnroot/bf-blender/!svn/ver/35706/trunk/blender/extern/bullet2/src/BulletSoftBody/btSoftBody.h
 END
-btSoftSoftCollisionAlgorithm.h
+btDefaultSoftBodySolver.h
 K 25
 svn:wc:ra_dav:version-url
-V 113
-/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletSoftBody/btSoftSoftCollisionAlgorithm.h
-END
-btSoftRigidDynamicsWorld.h
-K 25
-svn:wc:ra_dav:version-url
-V 109
-/svnroot/bf-blender/!svn/ver/25767/trunk/blender/extern/bullet2/src/BulletSoftBody/btSoftRigidDynamicsWorld.h
+V 108
+/svnroot/bf-blender/!svn/ver/35504/trunk/blender/extern/bullet2/src/BulletSoftBody/btDefaultSoftBodySolver.h
 END
 btSoftBodyRigidBodyCollisionConfiguration.h
 K 25
 svn:wc:ra_dav:version-url
 V 126
 /svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletSoftBody/btSoftBodyRigidBodyCollisionConfiguration.h
+END
+btSoftRigidDynamicsWorld.h
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svnroot/bf-blender/!svn/ver/35500/trunk/blender/extern/bullet2/src/BulletSoftBody/btSoftRigidDynamicsWorld.h
+END
+btSoftSoftCollisionAlgorithm.h
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svnroot/bf-blender/!svn/ver/23221/trunk/blender/extern/bullet2/src/BulletSoftBody/btSoftSoftCollisionAlgorithm.h
 END
 btSparseSDF.h
 K 25

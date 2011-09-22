@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/render/intern/source
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-03-04T17:01:33.853060Z
-35355
-campbellbarton
+2011-09-22T05:36:52.865488Z
+40446
+mmikkelsen
 
 
 
@@ -32,78 +32,10 @@ file
 
 
 
-2011-03-03T12:26:57.010297Z
-4afeaf476d4e5516fc2b8dbff6748936
-2011-02-27T19:31:27.705286Z
-35233
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-46050
-
-render_texture.c
-file
-
-
-
-
-2011-03-03T12:26:57.014297Z
-a3ffa5bd4545722b0a9b8ac6255cd243
-2011-02-28T15:42:15.814074Z
-35266
-jhk
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-97339
-
-rayshade.c
-file
-
-
-
-
-2011-03-05T14:58:41.952169Z
-890d661f6eed27bf30c504f539e643f8
-2011-03-04T17:01:33.853060Z
-35355
+2011-09-21T18:16:22.211873Z
+5732902e8ad9f059092c63ca15107bf8
+2011-09-12T04:14:12.436678Z
+40147
 campbellbarton
 has-props
 
@@ -126,7 +58,75 @@ has-props
 
 
 
-67198
+46137
+
+render_texture.c
+file
+
+
+
+
+2011-09-22T08:02:12.388240Z
+fafbe0cda26fc8dc46e5a6ec4f3a7e0d
+2011-09-22T05:36:52.865488Z
+40446
+mmikkelsen
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+99554
+
+rayshade.c
+file
+
+
+
+
+2011-09-21T18:16:22.215873Z
+8a254841b51529f4b6f5b51821dbf486
+2011-08-20T17:39:13.495697Z
+39570
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+68014
 
 volume_precache.c
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-03-03T12:26:57.014297Z
-566238f1cbf4599f3c04f57b0b66e13c
-2011-02-27T19:31:27.705286Z
-35233
-jesterking
+2011-09-21T18:16:22.219873Z
+ff1f45a3f5eda19c8cfba8a76a6aebc7
+2011-09-12T09:55:04.748183Z
+40159
+miikah
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-22773
+22839
 
 imagetexture.c
 file
@@ -168,11 +168,11 @@ file
 
 
 
-2011-03-03T12:26:57.018297Z
-fd92f8bf85d262a9eb6313ab02311d2c
-2011-02-27T19:31:27.705286Z
-35233
-jesterking
+2011-09-21T18:16:22.219873Z
+4fd27b6ccae399e06f510852c606749a
+2011-09-12T13:00:24.356736Z
+40162
+campbellbarton
 has-props
 
 
@@ -194,7 +194,7 @@ has-props
 
 
 
-52011
+53092
 
 initrender.c
 file
@@ -202,11 +202,11 @@ file
 
 
 
-2011-03-03T12:26:57.018297Z
-14a98496d4016a1d49c37aac30077e45
-2011-02-27T19:31:27.705286Z
-35233
-jesterking
+2011-09-21T18:16:22.219873Z
+717fd19c4f1dcd537b7490850664209d
+2011-08-20T17:39:13.495697Z
+39570
+campbellbarton
 has-props
 
 
@@ -228,7 +228,7 @@ has-props
 
 
 
-13116
+13330
 
 renderdatabase.c
 file
@@ -236,11 +236,11 @@ file
 
 
 
-2011-03-03T12:26:57.018297Z
-454fe5161dcb0b42d818573a7be508fe
-2011-02-28T15:42:15.814074Z
-35266
-jhk
+2011-09-21T18:16:22.219873Z
+61161f96382d33470c30a99ed106002d
+2011-09-12T04:14:12.436678Z
+40147
+campbellbarton
 has-props
 
 
@@ -262,7 +262,7 @@ has-props
 
 
 
-35570
+35676
 
 shadeinput.c
 file
@@ -270,11 +270,11 @@ file
 
 
 
-2011-03-03T12:26:57.018297Z
-383b4452e6bd31e599c48d7d5bd2d9ac
-2011-02-27T19:31:27.705286Z
-35233
-jesterking
+2011-09-21T18:16:22.219873Z
+20fa4175b5cb4d405f6acb36f7fad548
+2011-09-16T06:47:01.874393Z
+40252
+campbellbarton
 has-props
 
 
@@ -296,7 +296,7 @@ has-props
 
 
 
-39791
+39707
 
 shadeoutput.c
 file
@@ -304,11 +304,11 @@ file
 
 
 
-2011-03-03T12:26:57.018297Z
-66b3a97a07e1883ebe5049b819722804
-2011-02-27T19:31:27.705286Z
-35233
-jesterking
+2011-09-22T08:02:12.388240Z
+5cb4553cf322f82deca8e700527d5fcd
+2011-09-22T03:14:50.821873Z
+40443
+campbellbarton
 has-props
 
 
@@ -330,7 +330,7 @@ has-props
 
 
 
-49258
+51117
 
 gammaCorrectionTables.c
 file
@@ -338,11 +338,11 @@ file
 
 
 
-2011-03-03T12:26:57.022297Z
-ac0743ba8df50dfbaea6932ff5f4beed
-2011-02-27T19:31:27.705286Z
-35233
-jesterking
+2011-09-21T18:16:22.223873Z
+da6d73e2d71008e653809429883b2721
+2011-08-20T17:39:13.495697Z
+39570
+campbellbarton
 has-props
 
 
@@ -364,7 +364,7 @@ has-props
 
 
 
-5229
+5234
 
 pipeline.c
 file
@@ -372,11 +372,11 @@ file
 
 
 
-2011-03-03T12:26:57.022297Z
-21cb572db768b74f66356d187f500cfa
-2011-02-27T19:31:27.705286Z
-35233
-jesterking
+2011-09-21T18:16:22.227873Z
+029f5ed626635e3baab248ecb4e08657
+2011-09-16T08:20:21.007205Z
+40255
+campbellbarton
 has-props
 
 
@@ -398,7 +398,7 @@ has-props
 
 
 
-89802
+94112
 
 zbuf.c
 file
@@ -406,11 +406,11 @@ file
 
 
 
-2011-03-03T12:26:57.022297Z
-519dc24b5e8f5c8375cb411f2dc353f6
-2011-02-27T19:31:27.705286Z
-35233
-jesterking
+2011-09-21T18:16:22.227873Z
+b9ab419531c3e003834bc7e19c33934a
+2011-09-20T08:48:48.910969Z
+40390
+campbellbarton
 has-props
 
 
@@ -432,7 +432,7 @@ has-props
 
 
 
-105247
+105661
 
 sss.c
 file
@@ -440,11 +440,11 @@ file
 
 
 
-2011-03-03T12:26:57.026297Z
-d3267339e8422031559b65d3e455bb64
-2011-02-27T19:31:27.705286Z
-35233
-jesterking
+2011-09-21T18:16:22.231873Z
+d2fe49a7b97f6e54368fc827baabfbf9
+2011-09-11T02:50:01.504929Z
+40108
+campbellbarton
 has-props
 
 
@@ -466,7 +466,7 @@ has-props
 
 
 
-26783
+26838
 
 convertblender.c
 file
@@ -474,11 +474,11 @@ file
 
 
 
-2011-03-03T21:53:54.956120Z
-9b0e819608decda993b685236347d9d7
-2011-03-03T19:07:27.016049Z
-35339
-jhk
+2011-09-21T18:16:22.231873Z
+2daf68f47d38351fb21d4d10e183bcb3
+2011-09-20T06:25:15.120328Z
+40382
+campbellbarton
 has-props
 
 
@@ -500,7 +500,7 @@ has-props
 
 
 
-159385
+162040
 
 shadbuf.c
 file
@@ -508,11 +508,11 @@ file
 
 
 
-2011-03-03T12:26:57.030297Z
-e695ab6a263067d531a79dcde6676350
-2011-02-27T19:31:27.705286Z
-35233
-jesterking
+2011-09-21T18:16:22.235873Z
+61d10539aa461bec2c1e7602b7c94aff
+2011-09-19T08:02:17.513712Z
+40341
+campbellbarton
 has-props
 
 
@@ -534,7 +534,7 @@ has-props
 
 
 
-67385
+67347
 
 pixelshading.c
 file
@@ -542,11 +542,11 @@ file
 
 
 
-2011-03-03T12:26:57.030297Z
-c40666bcda6574634f70874cbffb236e
-2011-02-27T19:31:27.705286Z
-35233
-jesterking
+2011-09-22T08:02:12.392240Z
+0b935447b8a83251d97891f5320a01bf
+2011-09-22T03:14:50.821873Z
+40443
+campbellbarton
 has-props
 
 
@@ -568,7 +568,7 @@ has-props
 
 
 
-15691
+15367
 
 pixelblending.c
 file
@@ -576,11 +576,11 @@ file
 
 
 
-2011-03-03T12:26:57.030297Z
-0e135d046370a852153655fe6585ad73
-2011-02-27T19:31:27.705286Z
-35233
-jesterking
+2011-09-21T18:16:22.235873Z
+1a7ff14f9eb7d9837d62a93b8fec3338
+2011-08-20T17:39:13.495697Z
+39570
+campbellbarton
 has-props
 
 
@@ -602,7 +602,7 @@ has-props
 
 
 
-9408
+9409
 
 envmap.c
 file
@@ -610,11 +610,11 @@ file
 
 
 
-2011-03-03T12:26:57.030297Z
-df6abd752893b79a698910fe2356548e
-2011-02-27T19:31:27.705286Z
-35233
-jesterking
+2011-09-21T18:16:22.235873Z
+343a87450e3a7ef02802db4b4a93c9b3
+2011-09-16T08:20:21.007205Z
+40255
+campbellbarton
 has-props
 
 
@@ -636,7 +636,7 @@ has-props
 
 
 
-18620
+18952
 
 voxeldata.c
 file
@@ -644,11 +644,11 @@ file
 
 
 
-2011-03-03T12:26:57.030297Z
-3997f9007f99a77257186dba13e3f3d4
-2011-02-27T19:31:27.705286Z
-35233
-jesterking
+2011-09-21T18:16:22.235873Z
+81890ee203f22e94437bb9b389de82f9
+2011-09-17T08:14:43.604292Z
+40286
+campbellbarton
 has-props
 
 
@@ -670,7 +670,7 @@ has-props
 
 
 
-10424
+11214
 
 rendercore.c
 file
@@ -678,11 +678,11 @@ file
 
 
 
-2011-03-03T12:26:57.034297Z
-5dbb53075951ded62d62b295575dff78
-2011-02-28T15:42:15.814074Z
-35266
-jhk
+2011-09-21T18:16:22.239873Z
+69ce5a3372e76fb30389b56e253e9a21
+2011-09-20T08:48:48.910969Z
+40390
+campbellbarton
 has-props
 
 
@@ -704,7 +704,7 @@ has-props
 
 
 
-67818
+66540
 
 pointdensity.c
 file
@@ -712,11 +712,11 @@ file
 
 
 
-2011-03-03T12:26:57.034297Z
-156a2975115582c7f6c63646e3fdac2a
-2011-02-27T19:31:27.705286Z
-35233
-jesterking
+2011-09-21T18:16:22.239873Z
+bc3c70882171fa9a346ee7da4b6c7895
+2011-09-20T08:48:48.910969Z
+40390
+campbellbarton
 has-props
 
 
@@ -738,7 +738,7 @@ has-props
 
 
 
-12838
+13865
 
 volumetric.c
 file
@@ -746,11 +746,11 @@ file
 
 
 
-2011-03-03T12:26:57.034297Z
-7a8e77ca49c26cc8fc501fe3ab54b540
-2011-02-27T19:31:27.705286Z
-35233
-jesterking
+2011-09-21T18:16:22.239873Z
+6637f0e45651d40dec3775edb548ee72
+2011-09-17T07:28:19.089366Z
+40285
+campbellbarton
 has-props
 
 
@@ -772,7 +772,7 @@ has-props
 
 
 
-24985
+25306
 
 strand.c
 file
@@ -780,11 +780,11 @@ file
 
 
 
-2011-03-03T12:26:57.034297Z
-dce03be9deaf90f5c8f7af2c88d6777c
-2011-02-27T19:31:27.705286Z
-35233
-jesterking
+2011-09-21T18:16:22.239873Z
+40ed996c905d819084ab9d23ae3b0cf1
+2011-08-20T17:39:13.495697Z
+39570
+campbellbarton
 has-props
 
 
@@ -806,7 +806,7 @@ has-props
 
 
 
-29616
+29803
 
 sunsky.c
 file
@@ -814,11 +814,11 @@ file
 
 
 
-2011-03-03T12:26:57.034297Z
-d5d896a3840b1cf4aeac2968acdabe2b
-2011-02-27T19:31:27.705286Z
-35233
-jesterking
+2011-09-21T18:16:22.239873Z
+9ddd609f422c87238b9f1f6c6167dcd6
+2011-08-20T17:39:13.495697Z
+39570
+campbellbarton
 has-props
 
 
@@ -840,5 +840,5 @@ has-props
 
 
 
-14531
+14699
 

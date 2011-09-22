@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/editors/metaball
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-19T12:26:20.076486Z
+40351
+mont29
 
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2011-03-03T12:27:55.730297Z
+2011-09-21T18:16:47.603999Z
 d954e8d8dad379eb5d756a5ab37e0f5c
 2011-02-21T12:35:04.852834Z
 35028
@@ -66,11 +66,11 @@ file
 
 
 
-2011-03-03T12:27:55.730297Z
-e1df7b90ddd2d7dda483c87f5a9c3921
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:47.603999Z
+a2a133cd293fb8408ac5fddce532c335
+2011-03-22T12:53:36.109232Z
+35694
+campbellbarton
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-2598
+2605
 
 mball_intern.h
 file
@@ -100,7 +100,7 @@ file
 
 
 
-2011-03-03T12:27:55.730297Z
+2011-09-21T18:16:47.603999Z
 c03145c2a5394c9757515ca0a1fabe63
 2011-02-27T20:29:51.598877Z
 35242
@@ -134,11 +134,11 @@ file
 
 
 
-2011-03-03T12:27:55.730297Z
-2125f5b4b9579b2440edbe84320f845a
-2011-02-21T12:35:04.852834Z
-35028
-jesterking
+2011-09-21T18:16:47.603999Z
+71be05c89c9ed69dcc2478c7f2deb0fc
+2011-07-17T09:11:13.810557Z
+38443
+campbellbarton
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-1178
+1207
 
 mball_edit.c
 file
@@ -168,11 +168,11 @@ file
 
 
 
-2011-03-03T12:27:55.730297Z
-8a7dd8627e8d7bf9db33e24c646bd6dc
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:47.603999Z
+d99dcb064c20ed684b03ad786e45c56b
+2011-09-19T12:26:20.076486Z
+40351
+mont29
 has-props
 
 
@@ -194,5 +194,5 @@ has-props
 
 
 
-14267
+14307
 

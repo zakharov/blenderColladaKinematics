@@ -1,4 +1,4 @@
-# $Id: CMakeLists.txt 33864 2010-12-22 23:09:30Z campbellbarton $
+# $Id: CMakeLists.txt 37030 2011-05-31 01:15:44Z campbellbarton $
 # ***** BEGIN GPL LICENSE BLOCK *****
 #
 # This program is free software; you can redistribute it and/or
@@ -26,11 +26,17 @@
 
 set(INC
 	.
+	../guardedalloc
+)
+
+set(INC_SYS
+
 )
 
 set(SRC
 	intern/CTR_List.cpp
 
+	CTR_HashedPtr.h
 	CTR_List.h
 	CTR_Map.h
 	CTR_TaggedIndex.h
@@ -38,4 +44,4 @@ set(SRC
 	CTR_UHeap.h
 )
 
-blender_add_lib(bf_intern_ctr "${SRC}" "${INC}")
+blender_add_lib(bf_intern_ctr "${SRC}" "${INC}" "${INC_SYS}")

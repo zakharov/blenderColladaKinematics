@@ -1,47 +1,53 @@
 K 25
 svn:wc:ra_dav:version-url
 V 67
-/svnroot/bf-extensions/!svn/ver/1653/trunk/py/scripts/addons/rigify
+/svnroot/bf-extensions/!svn/ver/2337/trunk/py/scripts/addons/rigify
 END
 rig_ui_template.py
 K 25
 svn:wc:ra_dav:version-url
 V 86
-/svnroot/bf-extensions/!svn/ver/1650/trunk/py/scripts/addons/rigify/rig_ui_template.py
+/svnroot/bf-extensions/!svn/ver/2337/trunk/py/scripts/addons/rigify/rig_ui_template.py
 END
 generate.py
 K 25
 svn:wc:ra_dav:version-url
 V 79
-/svnroot/bf-extensions/!svn/ver/1650/trunk/py/scripts/addons/rigify/generate.py
+/svnroot/bf-extensions/!svn/ver/2116/trunk/py/scripts/addons/rigify/generate.py
 END
 metarig_menu.py
 K 25
 svn:wc:ra_dav:version-url
 V 83
-/svnroot/bf-extensions/!svn/ver/1578/trunk/py/scripts/addons/rigify/metarig_menu.py
+/svnroot/bf-extensions/!svn/ver/2116/trunk/py/scripts/addons/rigify/metarig_menu.py
 END
 ui.py
 K 25
 svn:wc:ra_dav:version-url
 V 73
-/svnroot/bf-extensions/!svn/ver/1578/trunk/py/scripts/addons/rigify/ui.py
+/svnroot/bf-extensions/!svn/ver/2279/trunk/py/scripts/addons/rigify/ui.py
 END
 __init__.py
 K 25
 svn:wc:ra_dav:version-url
 V 79
-/svnroot/bf-extensions/!svn/ver/1653/trunk/py/scripts/addons/rigify/__init__.py
+/svnroot/bf-extensions/!svn/ver/2334/trunk/py/scripts/addons/rigify/__init__.py
 END
 utils.py
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/svnroot/bf-extensions/!svn/ver/1651/trunk/py/scripts/addons/rigify/utils.py
+/svnroot/bf-extensions/!svn/ver/2334/trunk/py/scripts/addons/rigify/utils.py
+END
+CREDITS
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/bf-extensions/!svn/ver/2036/trunk/py/scripts/addons/rigify/CREDITS
 END
 README
 K 25
 svn:wc:ra_dav:version-url
 V 74
-/svnroot/bf-extensions/!svn/ver/1636/trunk/py/scripts/addons/rigify/README
+/svnroot/bf-extensions/!svn/ver/2036/trunk/py/scripts/addons/rigify/README
 END

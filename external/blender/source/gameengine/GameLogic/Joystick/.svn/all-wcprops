@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 85
-/svnroot/bf-blender/!svn/ver/35169/trunk/blender/source/gameengine/GameLogic/Joystick
+/svnroot/bf-blender/!svn/ver/38697/trunk/blender/source/gameengine/GameLogic/Joystick
 END
 SCA_Joystick.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 102
-/svnroot/bf-blender/!svn/ver/35169/trunk/blender/source/gameengine/GameLogic/Joystick/SCA_Joystick.cpp
+/svnroot/bf-blender/!svn/ver/38697/trunk/blender/source/gameengine/GameLogic/Joystick/SCA_Joystick.cpp
 END
 SCA_JoystickPrivate.h
 K 25

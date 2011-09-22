@@ -1,5 +1,5 @@
 /*
- * $Id: image_buttons.c 35362 2011-03-05 10:29:10Z campbellbarton $
+ * $Id: image_buttons.c 40351 2011-09-19 12:26:20Z mont29 $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -63,8 +63,6 @@
 #include "ED_gpencil.h"
 #include "ED_image.h"
 #include "ED_screen.h"
-#include "ED_uvedit.h"
-
 
 #include "RNA_access.h"
 
@@ -78,7 +76,6 @@
 
 #define B_REDR				1
 #define B_IMAGECHANGED		2
-#define B_TRANS_IMAGE		3
 #define B_NOP				0
 #define B_TWINANIM			5
 #define B_SIMAGETILE		6
@@ -100,72 +97,63 @@
 #define B_SIMACLONEDELETE	26
 
 /* proto */
-static void image_editvertex_buts(const bContext *C, uiBlock *block);
 
-
-static void do_image_panel_events(bContext *C, void *UNUSED(arg), int event)
-{
-	SpaceImage *sima= CTX_wm_space_image(C);
-	
-	switch(event) {
-		case B_REDR:
-			break;
-		case B_TRANS_IMAGE:
-			image_editvertex_buts(C, NULL);
-			break;
-	}
-
-	/* all events now */
-	WM_event_add_notifier(C, NC_IMAGE, sima->image);
-}
-
-static void image_info(Image *ima, ImBuf *ibuf, char *str)
+static void image_info(Scene *scene, ImageUser *iuser, Image *ima, ImBuf *ibuf, char *str)
 {
 	int ofs= 0;
-	
+
 	str[0]= 0;
 	
 	if(ima==NULL) return;
+
 	if(ibuf==NULL) {
-		sprintf(str, "Can not get an image");
-		return;
-	}
-	
-	if(ima->source==IMA_SRC_MOVIE) {
-		ofs= sprintf(str, "Movie");
-		if(ima->anim) 
-			ofs+= sprintf(str+ofs, "%d frs", IMB_anim_get_duration(ima->anim));
-	}
-	else
-		 ofs= sprintf(str, "Image");
-	
-	ofs+= sprintf(str+ofs, ": size %d x %d,", ibuf->x, ibuf->y);
-	
-	if(ibuf->rect_float) {
-		if(ibuf->channels!=4) {
-			ofs+= sprintf(str+ofs, "%d float channel(s)", ibuf->channels);
-		}
-		else if(ibuf->depth==32)
-			ofs+= sprintf(str+ofs, " RGBA float");
-		else
-			ofs+= sprintf(str+ofs, " RGB float");
+		ofs+= sprintf(str, "Can't Load Image");
 	}
 	else {
-		if(ibuf->depth==32)
-			ofs+= sprintf(str+ofs, " RGBA byte");
+		if(ima->source==IMA_SRC_MOVIE) {
+			ofs+= sprintf(str, "Movie");
+			if(ima->anim)
+				ofs+= sprintf(str+ofs, "%d frs", IMB_anim_get_duration(ima->anim, IMB_TC_RECORD_RUN));
+		}
 		else
-			ofs+= sprintf(str+ofs, " RGB byte");
-	}
-	if(ibuf->zbuf || ibuf->zbuf_float)
-		ofs+= sprintf(str+ofs, " + Z");
+			ofs+= sprintf(str, "Image");
 
-	if(ima->source==IMA_SRC_SEQUENCE) {
-		char *file= BLI_last_slash(ibuf->name);
-		if(file==NULL)	file= ibuf->name;
-		else			file++;
-		sprintf(str+ofs, ", %s", file);
+		ofs+= sprintf(str+ofs, ": size %d x %d,", ibuf->x, ibuf->y);
+
+		if(ibuf->rect_float) {
+			if(ibuf->channels!=4) {
+				ofs+= sprintf(str+ofs, "%d float channel(s)", ibuf->channels);
+			}
+			else if(ibuf->depth==32)
+				ofs+= sprintf(str+ofs, " RGBA float");
+			else
+				ofs+= sprintf(str+ofs, " RGB float");
+		}
+		else {
+			if(ibuf->depth==32)
+				ofs+= sprintf(str+ofs, " RGBA byte");
+			else
+				ofs+= sprintf(str+ofs, " RGB byte");
+		}
+		if(ibuf->zbuf || ibuf->zbuf_float)
+			ofs+= sprintf(str+ofs, " + Z");
+
+		if(ima->source==IMA_SRC_SEQUENCE) {
+			char *file= BLI_last_slash(ibuf->name);
+			if(file==NULL)	file= ibuf->name;
+			else			file++;
+			ofs+= sprintf(str+ofs, ", %s", file);
+		}
 	}
-	
+
+	/* the frame number, even if we cant */
+	if(ima->source==IMA_SRC_SEQUENCE) {
+		/* don't use iuser->framenr directly because it may not be updated if auto-refresh is off */
+		const int framenr= BKE_image_user_get_frame(iuser, CFRA, 0);
+		ofs+= sprintf(str+ofs, ", Frame: %d", framenr);
+	}
+
+	(void)ofs;
 }
 
 /* gets active viewer user */
@@ -183,133 +171,6 @@ struct ImageUser *ntree_get_active_iuser(bNodeTree *ntree)
 
 
 /* ************ panel stuff ************* */
-
-/* this function gets the values for cursor and vertex number buttons */
-static void image_transform_but_attr(SpaceImage *sima, int *imx, int *imy, int *step, int *digits) /*, float *xcoord, float *ycoord)*/
-{
-	ED_space_image_size(sima, imx, imy);
-	
-	if (sima->flag & SI_COORDFLOATS) {
-		*step= 1;
-		*digits= 3;
-	}
-	else {
-		*step= 100;
-		*digits= 2;
-	}
-}
-
-
-/* is used for both read and write... */
-static void image_editvertex_buts(const bContext *C, uiBlock *block)
-{
-	Scene *scene= CTX_data_scene(C);
-	SpaceImage *sima= CTX_wm_space_image(C);
-	Image *ima= sima->image;
-	Object *obedit= CTX_data_edit_object(C);
-	static float ocent[2];
-	float cent[2]= {0.0, 0.0};
-	int imx= 256, imy= 256;
-	int nactive= 0, step, digits;
-	EditMesh *em;
-	EditFace *efa;
-	MTFace *tf;
-	
-	image_transform_but_attr(sima, &imx, &imy, &step, &digits);
-	
-	em= BKE_mesh_get_editmesh((Mesh *)obedit->data);
-	for (efa= em->faces.first; efa; efa= efa->next) {
-		tf= CustomData_em_get(&em->fdata, efa->data, CD_MTFACE);
-		if (uvedit_face_visible(scene, ima, efa, tf)) {
-			
-			if (uvedit_uv_selected(scene, efa, tf, 0)) {
-				cent[0]+= tf->uv[0][0];
-				cent[1]+= tf->uv[0][1];
-				nactive++;
-			}
-			if (uvedit_uv_selected(scene, efa, tf, 1)) {
-				cent[0]+= tf->uv[1][0];
-				cent[1]+= tf->uv[1][1];
-				nactive++;
-			}
-			if (uvedit_uv_selected(scene, efa, tf, 2)) {
-				cent[0]+= tf->uv[2][0];
-				cent[1]+= tf->uv[2][1];
-				nactive++;
-			}
-			if (efa->v4 && uvedit_uv_selected(scene, efa, tf, 3)) {
-				cent[0]+= tf->uv[3][0];
-				cent[1]+= tf->uv[3][1];
-				nactive++;
-			}
-		}
-	}
-		
-	if(block) {	// do the buttons
-		if (nactive) {
-			ocent[0]= cent[0]/nactive;
-			ocent[1]= cent[1]/nactive;
-			if (sima->flag & SI_COORDFLOATS) {
-			} else {
-				ocent[0] *= imx;
-				ocent[1] *= imy;
-			}
-			
-			//uiBlockBeginAlign(block);
-			if(nactive==1) {
-				uiDefButF(block, NUM, B_TRANS_IMAGE, "Vertex X:",	10, 10, 145, 19, &ocent[0], -10*imx, 10.0*imx, step, digits, "");
-				uiDefButF(block, NUM, B_TRANS_IMAGE, "Vertex Y:",	165, 10, 145, 19, &ocent[1], -10*imy, 10.0*imy, step, digits, "");
-			}
-			else {
-				uiDefButF(block, NUM, B_TRANS_IMAGE, "Median X:",	10, 10, 145, 19, &ocent[0], -10*imx, 10.0*imx, step, digits, "");
-				uiDefButF(block, NUM, B_TRANS_IMAGE, "Median Y:",	165, 10, 145, 19, &ocent[1], -10*imy, 10.0*imy, step, digits, "");
-			}
-			//uiBlockEndAlign(block);
-		}
-	}
-	else {	// apply event
-		float delta[2];
-		
-		cent[0]= cent[0]/nactive;
-		cent[1]= cent[1]/nactive;
-			
-		if (sima->flag & SI_COORDFLOATS) {
-			delta[0]= ocent[0]-cent[0];
-			delta[1]= ocent[1]-cent[1];
-		}
-		else {
-			delta[0]= ocent[0]/imx - cent[0];
-			delta[1]= ocent[1]/imy - cent[1];
-		}
-
-		for (efa= em->faces.first; efa; efa= efa->next) {
-			tf= CustomData_em_get(&em->fdata, efa->data, CD_MTFACE);
-			if (uvedit_face_visible(scene, ima, efa, tf)) {
-				if (uvedit_uv_selected(scene, efa, tf, 0)) {
-					tf->uv[0][0]+= delta[0];
-					tf->uv[0][1]+= delta[1];
-				}
-				if (uvedit_uv_selected(scene, efa, tf, 1)) {
-					tf->uv[1][0]+= delta[0];
-					tf->uv[1][1]+= delta[1];
-				}
-				if (uvedit_uv_selected(scene, efa, tf, 2)) {
-					tf->uv[2][0]+= delta[0];
-					tf->uv[2][1]+= delta[1];
-				}
-				if (efa->v4 && uvedit_uv_selected(scene, efa, tf, 3)) {
-					tf->uv[3][0]+= delta[0];
-					tf->uv[3][1]+= delta[1];
-				}
-			}
-		}
-		
-		WM_event_add_notifier(C, NC_IMAGE, sima->image);
-	}
-
-	BKE_mesh_end_editmesh(obedit->data, em);
-}
-
 
 /* is used for both read and write... */
 
@@ -346,7 +207,7 @@ static void image_panel_curves(const bContext *C, Panel *pa)
 		levels= (ibuf->channels==4);
 
 		RNA_pointer_create(&sc->id, &RNA_SpaceImageEditor, sima, &simaptr);
-		uiTemplateCurveMapping(pa->layout, &simaptr, "curves", 'c', levels, 0);
+		uiTemplateCurveMapping(pa->layout, &simaptr, "curve", 'c', levels, 0);
 	}
 
 	ED_space_image_release_buffer(sima, lock);
@@ -407,7 +268,7 @@ static void preview_cb(struct ScrArea *sa, struct uiBlock *block)
 	rcti *disprect= &G.scene->r.disprect;
 	int winx= (G.scene->r.size*G.scene->r.xsch)/100;
 	int winy= (G.scene->r.size*G.scene->r.ysch)/100;
-	short mval[2];
+	int mval[2];
 	
 	if(G.scene->r.mode & R_BORDER) {
 		winx*= (G.scene->r.border.xmax - G.scene->r.border.xmin);
@@ -453,7 +314,7 @@ static int is_preview_allowed(ScrArea *cur)
 	for(sa=G.curscreen->areabase.first; sa; sa= sa->next) {
 		if(sa!=cur && sa->spacetype==SPACE_IMAGE) {
 			if(image_preview_active(sa, NULL, NULL))
-			   return 0;
+				return 0;
 		}
 	}
 	/* check image type */
@@ -567,7 +428,7 @@ static void set_frames_cb(bContext *C, void *ima_v, void *iuser_v)
 	ImageUser *iuser= iuser_v;
 	
 	if(ima->anim) {
-		iuser->frames = IMB_anim_get_duration(ima->anim);
+		iuser->frames = IMB_anim_get_duration(ima->anim, IMB_TC_RECORD_RUN);
 		BKE_image_user_calc_frame(iuser, scene->r.cfra, 0);
 	}
 }
@@ -649,7 +510,7 @@ static void image_pack_cb(bContext *C, void *ima_v, void *iuser_v)
 			else {
 				ImBuf *ibuf= BKE_image_get_ibuf(ima, iuser_v);
 				if (ibuf && (ibuf->userflags & IB_BITMAPDIRTY)) {
-					// XXX error("Can't pack painted image. Save image or use Repack as PNG.");
+					// XXX error("Can't pack painted image. Save image or use Repack as PNG");
 				} else {
 					ima->packedfile = newPackedFile(NULL, ima->name); /* XXX report errors */
 					ED_undo_push(C, "Pack image");
@@ -695,20 +556,20 @@ static void uiblock_layer_pass_buttons(uiLayout *layout, RenderResult *rr, Image
 	/* menu buts */
 	if(render_slot) {
 		strp= slot_menu();
-		but= uiDefButS(block, MENU, 0, strp,					0, 0, wmenu1, 20, render_slot, 0,0,0,0, "Select Slot");
+		but= uiDefButS(block, MENU, 0, strp,					0, 0, wmenu1, UI_UNIT_Y, render_slot, 0,0,0,0, "Select Slot");
 		uiButSetFunc(but, image_multi_cb, rr, iuser);
 		MEM_freeN(strp);
 	}
 
 	if(rr) {
 		strp= layer_menu(rr, &iuser->layer);
-		but= uiDefButS(block, MENU, 0, strp,					0, 0, wmenu2, 20, &iuser->layer, 0,0,0,0, "Select Layer");
+		but= uiDefButS(block, MENU, 0, strp,					0, 0, wmenu2, UI_UNIT_Y, &iuser->layer, 0,0,0,0, "Select Layer");
 		uiButSetFunc(but, image_multi_cb, rr, iuser);
 		MEM_freeN(strp);
 		
 		rl= BLI_findlink(&rr->layers, iuser->layer - (rr->rectf?1:0)); /* fake compo layer, return NULL is meant to be */
 		strp= pass_menu(rl, &iuser->pass);
-		but= uiDefButS(block, MENU, 0, strp,					0, 0, wmenu3, 20, &iuser->pass, 0,0,0,0, "Select Pass");
+		but= uiDefButS(block, MENU, 0, strp,					0, 0, wmenu3, UI_UNIT_Y, &iuser->pass, 0,0,0,0, "Select Pass");
 		uiButSetFunc(but, image_multi_cb, rr, iuser);
 		MEM_freeN(strp);	
 	}
@@ -719,13 +580,14 @@ static void uiblock_layer_pass_arrow_buttons(uiLayout *layout, RenderResult *rr,
 	uiBlock *block= uiLayoutGetBlock(layout);
 	uiLayout *row;
 	uiBut *but;
+	const float dpi_fac= UI_DPI_FAC;
 	
 	row= uiLayoutRow(layout, 1);
 
 	if(rr==NULL || iuser==NULL)
 		return;
 	if(rr->layers.first==NULL) {
-		uiItemL(row, "No Layers in Render Result.", ICON_NONE);
+		uiItemL(row, "No Layers in Render Result", ICON_NONE);
 		return;
 	}
 
@@ -735,7 +597,7 @@ static void uiblock_layer_pass_arrow_buttons(uiLayout *layout, RenderResult *rr,
 	but= uiDefIconBut(block, BUT, 0, ICON_TRIA_RIGHT,	0,0,18,20, NULL, 0, 0, 0, 0, "Next Layer");
 	uiButSetFunc(but, image_multi_inclay_cb, rr, iuser);
 
-	uiblock_layer_pass_buttons(row, rr, iuser, 230, render_slot);
+	uiblock_layer_pass_buttons(row, rr, iuser, 230 * dpi_fac, render_slot);
 
 	/* decrease, increase arrows */
 	but= uiDefIconBut(block, BUT, 0, ICON_TRIA_LEFT,	0,0,17,20, NULL, 0, 0, 0, 0, "Previous Pass");
@@ -800,7 +662,6 @@ void uiTemplateImage(uiLayout *layout, bContext *C, PointerRNA *ptr, const char 
 
 	block= uiLayoutGetBlock(layout);
 
-
 	imaptr= RNA_property_pointer_get(ptr, prop);
 	ima= imaptr.data;
 	iuser= userptr->data;
@@ -822,7 +683,7 @@ void uiTemplateImage(uiLayout *layout, bContext *C, PointerRNA *ptr, const char 
 
 		if(ima->source == IMA_SRC_VIEWER) {
 			ibuf= BKE_image_acquire_ibuf(ima, iuser, &lock);
-			image_info(ima, ibuf, str);
+			image_info(scene, iuser, ima, ibuf, str);
 			BKE_image_release_ibuf(ima, lock);
 
 			uiItemL(layout, ima->id.name+2, ICON_NONE);
@@ -857,21 +718,17 @@ void uiTemplateImage(uiLayout *layout, bContext *C, PointerRNA *ptr, const char 
 			}
 		}
 		else {
-			row= uiLayoutRow(layout, 0);
-			uiItemR(row, &imaptr, "source", 0, NULL, ICON_NONE);
+			uiItemR(layout, &imaptr, "source", 0, NULL, ICON_NONE);
 
 			if(ima->source != IMA_SRC_GENERATED) {
 				row= uiLayoutRow(layout, 1);
-				split = uiLayoutSplit(row, 0.0, 0);
 				if (ima->packedfile)
-					uiItemO(split, "", ICON_PACKAGE, "image.unpack");
+					uiItemO(row, "", ICON_PACKAGE, "image.unpack");
 				else
-					uiItemO(split, "", ICON_UGLYPACKAGE, "image.pack");
+					uiItemO(row, "", ICON_UGLYPACKAGE, "image.pack");
 				
-				split = uiLayoutSplit(row, 0.0, 0);
-				row= uiLayoutRow(split, 1);
+				row= uiLayoutRow(row, 0);
 				uiLayoutSetEnabled(row, ima->packedfile==NULL);
-				
 				uiItemR(row, &imaptr, "filepath", 0, "", ICON_NONE);
 				uiItemO(row, "", ICON_FILE_REFRESH, "image.reload");
 			}
@@ -894,7 +751,7 @@ void uiTemplateImage(uiLayout *layout, bContext *C, PointerRNA *ptr, const char 
 			else if(ima->source != IMA_SRC_GENERATED) {
 				if(compact == 0) {
 					ibuf= BKE_image_acquire_ibuf(ima, iuser, &lock);
-					image_info(ima, ibuf, str);
+					image_info(scene, iuser, ima, ibuf, str);
 					BKE_image_release_ibuf(ima, lock);
 					uiItemL(layout, str, ICON_NONE);
 				}
@@ -909,11 +766,10 @@ void uiTemplateImage(uiLayout *layout, bContext *C, PointerRNA *ptr, const char 
 					col= uiLayoutColumn(split, 0);
 					uiItemR(col, &imaptr, "use_fields", 0, NULL, ICON_NONE);
 					row= uiLayoutRow(col, 0);
-					uiItemR(row, &imaptr, "field_order", UI_ITEM_R_EXPAND, NULL, ICON_NONE);
 					uiLayoutSetActive(row, RNA_boolean_get(&imaptr, "use_fields"));
-
-					col= uiLayoutColumn(split, 0);
-					uiItemR(col, &imaptr, "use_premultiply", 0, NULL, ICON_NONE);
+					uiItemR(row, &imaptr, "field_order", UI_ITEM_R_EXPAND, NULL, ICON_NONE);
+					
+					uiItemR(split, &imaptr, "use_premultiply", 0, NULL, ICON_NONE);
 				}
 			}
 
@@ -925,11 +781,10 @@ void uiTemplateImage(uiLayout *layout, bContext *C, PointerRNA *ptr, const char 
 				col= uiLayoutColumn(split, 0);
 				 
 				sprintf(str, "(%d) Frames", iuser->framenr);
-				row= uiLayoutRow(col, 1);
 				uiItemR(col, userptr, "frame_duration", 0, str, ICON_NONE);
 				if(ima->anim) {
-					block= uiLayoutGetBlock(row);
-					but= uiDefBut(block, BUT, 0, "Match Movie Length", 0, 0, UI_UNIT_X*2, UI_UNIT_Y, NULL, 0, 0, 0, 0, "Set the number of frames to match the movie or sequence.");
+					block= uiLayoutGetBlock(col);
+					but= uiDefBut(block, BUT, 0, "Match Movie Length", 0, 0, UI_UNIT_X*2, UI_UNIT_Y, NULL, 0, 0, 0, 0, "Set the number of frames to match the movie or sequence");
 					uiButSetFunc(but, set_frames_cb, ima, iuser);
 				}
 
@@ -937,7 +792,9 @@ void uiTemplateImage(uiLayout *layout, bContext *C, PointerRNA *ptr, const char 
 				uiItemR(col, userptr, "frame_offset", 0, NULL, ICON_NONE);
 
 				col= uiLayoutColumn(split, 0);
-				uiItemR(col, userptr, "fields_per_frame", 0, "Fields", ICON_NONE);
+				row= uiLayoutRow(col, 0);
+				uiLayoutSetActive(row, RNA_boolean_get(&imaptr, "use_fields"));
+				uiItemR(row, userptr, "fields_per_frame", 0, "Fields", ICON_NONE);
 				uiItemR(col, userptr, "use_auto_refresh", 0, NULL, ICON_NONE);
 				uiItemR(col, userptr, "use_cyclic", 0, NULL, ICON_NONE);
 			}
@@ -947,9 +804,9 @@ void uiTemplateImage(uiLayout *layout, bContext *C, PointerRNA *ptr, const char 
 				col= uiLayoutColumn(split, 1);
 				uiItemR(col, &imaptr, "generated_width", 0, "X", ICON_NONE);
 				uiItemR(col, &imaptr, "generated_height", 0, "Y", ICON_NONE);
+				uiItemR(col, &imaptr, "use_generated_float", 0, NULL, ICON_NONE);
 
-				col= uiLayoutColumn(split, 0);
-				uiItemR(col, &imaptr, "generated_type", UI_ITEM_R_EXPAND, NULL, ICON_NONE);
+				uiItemR(split, &imaptr, "generated_type", UI_ITEM_R_EXPAND, NULL, ICON_NONE);
 			}
 
 					}
@@ -967,41 +824,16 @@ void uiTemplateImageLayers(uiLayout *layout, bContext *C, Image *ima, ImageUser 
 
 	/* render layers and passes */
 	if(ima && iuser) {
+		const float dpi_fac= UI_DPI_FAC;
 		rr= BKE_image_acquire_renderresult(scene, ima);
-		uiblock_layer_pass_buttons(layout, rr, iuser, 160, (ima->type==IMA_TYPE_R_RESULT)? &ima->render_slot: NULL);
+		uiblock_layer_pass_buttons(layout, rr, iuser, 160 * dpi_fac, (ima->type==IMA_TYPE_R_RESULT)? &ima->render_slot: NULL);
 		BKE_image_release_renderresult(scene, ima);
 	}
 }
 
-static int image_panel_uv_poll(const bContext *C, PanelType *UNUSED(pt))
-{
-	Object *obedit= CTX_data_edit_object(C);
-	return ED_uvedit_test(obedit);
-}
-
-static void image_panel_uv(const bContext *C, Panel *pa)
-{
-	uiBlock *block;
-	
-	block= uiLayoutAbsoluteBlock(pa->layout);
-	uiBlockSetHandleFunc(block, do_image_panel_events, NULL);
-
-	image_editvertex_buts(C, block);
-}	
-
 void image_buttons_register(ARegionType *art)
 {
 	PanelType *pt;
-
-	/* editvertex_buts not working atm */
-	if(0) {
-		pt= MEM_callocN(sizeof(PanelType), "spacetype image panel uv");
-		strcpy(pt->idname, "IMAGE_PT_uv");
-		strcpy(pt->label, "UV");
-		pt->draw= image_panel_uv;
-		pt->poll= image_panel_uv_poll;
-		BLI_addtail(&art->paneltypes, pt);
-	}
 
 	pt= MEM_callocN(sizeof(PanelType), "spacetype image panel curves");
 	strcpy(pt->idname, "IMAGE_PT_curves");

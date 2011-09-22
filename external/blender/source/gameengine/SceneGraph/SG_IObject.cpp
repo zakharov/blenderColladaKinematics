@@ -1,5 +1,5 @@
 /*
- * $Id: SG_IObject.cpp 35175 2011-02-25 13:39:04Z jesterking $
+ * $Id: SG_IObject.cpp 39792 2011-08-30 09:15:55Z nexyon $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -33,6 +33,8 @@
 
 #include "SG_IObject.h"
 #include "SG_Controller.h"
+
+#include <algorithm>
 
 SG_Stage gSG_Stage = SG_STAGE_UNKNOWN;
 
@@ -70,6 +72,16 @@ AddSGController(
 }
 
 	void				
+SG_IObject::
+RemoveSGController(
+	SG_Controller* cont
+) {
+	SGControllerList::iterator contit;
+
+	m_SGcontrollers.erase(std::remove(m_SGcontrollers.begin(), m_SGcontrollers.end(), cont));
+}
+
+	void
 SG_IObject::
 RemoveAllControllers(
 ) { 

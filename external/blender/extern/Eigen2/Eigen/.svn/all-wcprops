@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 68
-/svnroot/bf-blender/!svn/ver/34524/trunk/blender/extern/Eigen2/Eigen
+/svnroot/bf-blender/!svn/ver/36564/trunk/blender/extern/Eigen2/Eigen
 END
 LU
 K 25
@@ -61,7 +61,7 @@ SVD
 K 25
 svn:wc:ra_dav:version-url
 V 72
-/svnroot/bf-blender/!svn/ver/23463/trunk/blender/extern/Eigen2/Eigen/SVD
+/svnroot/bf-blender/!svn/ver/36564/trunk/blender/extern/Eigen2/Eigen/SVD
 END
 Sparse
 K 25

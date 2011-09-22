@@ -308,22 +308,22 @@ void normal(vec3 dir, vec3 nor, out vec3 outnor, out float outdot)
 	outdot = -dot(dir, nor);
 }
 
-void curves_vec(float fac, vec3 vec, sampler1D curvemap, out vec3 outvec)
+void curves_vec(float fac, vec3 vec, sampler2D curvemap, out vec3 outvec)
 {
-	outvec.x = texture1D(curvemap, (vec.x + 1.0)*0.5).x;
-	outvec.y = texture1D(curvemap, (vec.y + 1.0)*0.5).y;
-	outvec.z = texture1D(curvemap, (vec.z + 1.0)*0.5).z;
+	outvec.x = texture2D(curvemap, vec2((vec.x + 1.0)*0.5, 0.0)).x;
+	outvec.y = texture2D(curvemap, vec2((vec.y + 1.0)*0.5, 0.0)).y;
+	outvec.z = texture2D(curvemap, vec2((vec.z + 1.0)*0.5, 0.0)).z;
 
 	if (fac != 1.0)
 		outvec = (outvec*fac) + (vec*(1.0-fac));
 
 }
 
-void curves_rgb(float fac, vec4 col, sampler1D curvemap, out vec4 outcol)
+void curves_rgb(float fac, vec4 col, sampler2D curvemap, out vec4 outcol)
 {
-	outcol.r = texture1D(curvemap, texture1D(curvemap, col.r).a).r;
-	outcol.g = texture1D(curvemap, texture1D(curvemap, col.g).a).g;
-	outcol.b = texture1D(curvemap, texture1D(curvemap, col.b).a).b;
+	outcol.r = texture2D(curvemap, vec2(texture2D(curvemap, vec2(col.r, 0.0)).a, 0.0)).r;
+	outcol.g = texture2D(curvemap, vec2(texture2D(curvemap, vec2(col.g, 0.0)).a, 0.0)).g;
+	outcol.b = texture2D(curvemap, vec2(texture2D(curvemap, vec2(col.b, 0.0)).a, 0.0)).b;
 
 	if (fac != 1.0)
 		outcol = (outcol*fac) + (col*(1.0-fac));
@@ -635,9 +635,9 @@ void mix_linear(float fac, vec4 col1, vec4 col2, out vec4 outcol)
 		outcol.b= col1.b + fac*(2.0*(col2.b) - 1.0);
 }
 
-void valtorgb(float fac, sampler1D colormap, out vec4 outcol, out float outalpha)
+void valtorgb(float fac, sampler2D colormap, out vec4 outcol, out float outalpha)
 {
-	outcol = texture1D(colormap, fac);
+	outcol = texture2D(colormap, vec2(fac, 0.0));
 	outalpha = outcol.a;
 }
 
@@ -1226,6 +1226,22 @@ void mtex_bump_tap5( vec3 texco, sampler2D ima, float hScale,
 	dBt = hScale * (Hu - Hd);
 }
 
+void mtex_bump_deriv( vec3 texco, sampler2D ima, float ima_x, float ima_y, float hScale, 
+                     out float dBs, out float dBt ) 
+{
+	float s = 1.0;		// negate this if flipped texture coordinate
+	vec2 TexDx = dFdx(texco.xy);
+	vec2 TexDy = dFdy(texco.xy);
+	
+	// this variant using a derivative map is described here
+	// http://mmikkelsen3d.blogspot.com/2011/07/derivative-maps.html
+	vec2 dim = vec2(ima_x, ima_y);
+	vec2 dBduv = hScale*dim*(2.0*texture2D(ima, texco.xy).xy-1.0);
+	
+	dBs = dBduv.x*TexDx.x + s*dBduv.y*TexDx.y;
+	dBt = dBduv.x*TexDy.x + s*dBduv.y*TexDy.y;
+}
+
 void mtex_bump_apply( float fDet, float dBs, float dBt, vec3 vR1, vec3 vR2, vec3 vNacc_in,
 					  out vec3 vNacc_out, out vec3 perturbed_norm ) 
 {
@@ -1304,9 +1320,9 @@ void lamp_falloff_sliders(float lampdist, float ld1, float ld2, float dist, out 
 	visifac *= lampdistkw/(lampdistkw + ld2*dist*dist);
 }
 
-void lamp_falloff_curve(float lampdist, sampler1D curvemap, float dist, out float visifac)
+void lamp_falloff_curve(float lampdist, sampler2D curvemap, float dist, out float visifac)
 {
-	visifac = texture1D(curvemap, dist/lampdist).x;
+	visifac = texture2D(curvemap, vec2(dist/lampdist, 0.0)).x;
 }
 
 void lamp_visibility_sphere(float lampdist, float dist, float visifac, out float outvisifac)
@@ -1684,6 +1700,16 @@ void shade_add(vec4 col1, vec4 col2, out vec4 outcol)
 void shade_madd(vec4 col, vec4 col1, vec4 col2, out vec4 outcol)
 {
 	outcol = col + col1*col2;
+}
+
+void shade_add_clamped(vec4 col1, vec4 col2, out vec4 outcol)
+{
+	outcol = col1 + max(col2, vec4(0.0, 0.0, 0.0, 0.0));
+}
+
+void shade_madd_clamped(vec4 col, vec4 col1, vec4 col2, out vec4 outcol)
+{
+	outcol = col + max(col1*col2, vec4(0.0, 0.0, 0.0, 0.0));
 }
 
 void shade_maddf(vec4 col, float f, vec4 col1, out vec4 outcol)

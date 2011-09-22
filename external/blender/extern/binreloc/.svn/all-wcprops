@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 64
-/svnroot/bf-blender/!svn/ver/34567/trunk/blender/extern/binreloc
+/svnroot/bf-blender/!svn/ver/38443/trunk/blender/extern/binreloc
 END
 SConscript
 K 25
@@ -13,7 +13,7 @@ CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 79
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/extern/binreloc/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/38443/trunk/blender/extern/binreloc/CMakeLists.txt
 END
 binreloc.c
 K 25

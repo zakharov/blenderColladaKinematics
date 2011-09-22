@@ -68,7 +68,7 @@ static SpaceLink *buttons_new(const bContext *UNUSED(C))
 	
 	sbuts= MEM_callocN(sizeof(SpaceButs), "initbuts");
 	sbuts->spacetype= SPACE_BUTS;
-	sbuts->align= BUT_AUTO;
+	sbuts->align= BUT_VERTICAL;
 
 	/* header */
 	ar= MEM_callocN(sizeof(ARegion), "header for buts");
@@ -187,6 +187,7 @@ static void buttons_operatortypes(void)
 {
 	WM_operatortype_append(BUTTONS_OT_toolbox);
 	WM_operatortype_append(BUTTONS_OT_file_browse);
+	WM_operatortype_append(BUTTONS_OT_directory_browse);
 }
 
 static void buttons_keymap(struct wmKeyConfig *keyconf)
@@ -268,6 +269,7 @@ static void buttons_area_listener(ScrArea *sa, wmNotifier *wmn)
 					buttons_area_redraw(sa, BCONTEXT_DATA);	/* autotexpace flag */
 					break;
 				case ND_POSE:
+					buttons_area_redraw(sa, BCONTEXT_DATA);
 				case ND_BONE_ACTIVE:
 				case ND_BONE_SELECT:
 					buttons_area_redraw(sa, BCONTEXT_BONE);
@@ -356,8 +358,12 @@ static void buttons_area_listener(ScrArea *sa, wmNotifier *wmn)
 			}
 			break;
 		case NC_NODE:
-			if(wmn->action==NA_SELECTED)
+			if(wmn->action==NA_SELECTED) {
 				ED_area_tag_redraw(sa);
+				/* new active node, update texture preview */
+				if(sbuts->mainb == BCONTEXT_TEXTURE)
+					sbuts->preview= 1;
+			}
 			break;
 		/* Listener for preview render, when doing an global undo. */
 		case NC_WINDOW:
@@ -401,7 +407,7 @@ void ED_spacetype_buttons(void)
 	/* regions: header */
 	art= MEM_callocN(sizeof(ARegionType), "spacetype buttons region");
 	art->regionid = RGN_TYPE_HEADER;
-	art->prefsizey= BUTS_HEADERY;
+	art->prefsizey= HEADERY;
 	art->keymapflag= ED_KEYMAP_UI|ED_KEYMAP_VIEW2D|ED_KEYMAP_FRAMES|ED_KEYMAP_HEADER;
 	
 	art->init= buttons_header_area_init;

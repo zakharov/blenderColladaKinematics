@@ -2,7 +2,7 @@
  * @file PIL_time.h
  * 
  * Platform independant time functions.
- * $Id: PIL_time.h 35358 2011-03-05 04:35:36Z campbellbarton $
+ * $Id: PIL_time.h 35587 2011-03-17 06:57:12Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -73,7 +73,7 @@ void	PIL_sleep_ms				(int ms);
 
 #define TIMEIT_END(var)														\
 	}																		\
-	printf("time end   (" #var "): %.6f" "  " AT "\n",	TIMEIT_VAL(var));	\
+	printf("time end   (" #var "): %.6f" "  " AT "\n",	TIMEIT_VALUE(var));	\
 	fflush(stdout);															\
 }																			\
 

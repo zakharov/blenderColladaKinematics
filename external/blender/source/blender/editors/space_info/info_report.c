@@ -1,5 +1,5 @@
 /*
- * $Id: info_report.c 35242 2011-02-27 20:29:51Z jesterking $
+ * $Id: info_report.c 40351 2011-09-19 12:26:20Z mont29 $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -160,7 +160,7 @@ void INFO_OT_select_pick(wmOperatorType *ot)
 	/* ot->flag= OPTYPE_REGISTER; */
 
 	/* properties */
-	RNA_def_int(ot->srna, "report_index", 0, 0, INT_MAX, "Report", "The index of the report.", 0, INT_MAX);
+	RNA_def_int(ot->srna, "report_index", 0, 0, INT_MAX, "Report", "The index of the report", 0, INT_MAX);
 }
 
 
@@ -230,7 +230,7 @@ static int borderselect_exec(bContext *C, wmOperator *op)
 	rcti rect;
 	//rctf rectf, rq;
 	short selecting= (RNA_int_get(op->ptr, "gesture_mode")==GESTURE_MODAL_SELECT);
-	//short mval[2];
+	//int mval[2];
 
 	rect.xmin= RNA_int_get(op->ptr, "xmin");
 	rect.ymin= RNA_int_get(op->ptr, "ymin");
@@ -302,6 +302,7 @@ void INFO_OT_select_border(wmOperatorType *ot)
 	ot->invoke= WM_border_select_invoke;
 	ot->exec= borderselect_exec;
 	ot->modal= WM_border_select_modal;
+	ot->cancel= WM_border_select_cancel;
 
 	ot->poll= ED_operator_info_active;
 

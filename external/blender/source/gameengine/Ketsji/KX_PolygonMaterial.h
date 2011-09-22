@@ -1,5 +1,5 @@
 /*
- * $Id: KX_PolygonMaterial.h 35063 2011-02-22 10:33:14Z jesterking $
+ * $Id: KX_PolygonMaterial.h 40372 2011-09-19 19:55:59Z dfelinto $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -78,10 +78,10 @@ public:
 		int tile,
 		int tilexrep,
 		int tileyrep,
-		int mode,
-		int transp,
+		int alphablend,
 		bool alpha,
 		bool zsort,
+		bool light,
 		int lightlayer,
 		struct MTFace* tface,
 		unsigned int* mcol);

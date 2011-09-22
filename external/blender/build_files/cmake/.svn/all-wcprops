@@ -1,37 +1,79 @@
 K 25
 svn:wc:ra_dav:version-url
 V 66
-/svnroot/bf-blender/!svn/ver/35335/trunk/blender/build_files/cmake
+/svnroot/bf-blender/!svn/ver/40444/trunk/blender/build_files/cmake
 END
 cmake_qtcreator_project.py
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/35333/trunk/blender/build_files/cmake/cmake_qtcreator_project.py
+/svnroot/bf-blender/!svn/ver/38869/trunk/blender/build_files/cmake/cmake_qtcreator_project.py
 END
 macros.cmake
 K 25
 svn:wc:ra_dav:version-url
 V 79
-/svnroot/bf-blender/!svn/ver/35335/trunk/blender/build_files/cmake/macros.cmake
+/svnroot/bf-blender/!svn/ver/40165/trunk/blender/build_files/cmake/macros.cmake
 END
 packaging.cmake
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/svnroot/bf-blender/!svn/ver/35192/trunk/blender/build_files/cmake/packaging.cmake
+/svnroot/bf-blender/!svn/ver/39680/trunk/blender/build_files/cmake/packaging.cmake
+END
+cmake_static_check_splint.py
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/40444/trunk/blender/build_files/cmake/cmake_static_check_splint.py
 END
 cmake_consistency_check.py
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/34922/trunk/blender/build_files/cmake/cmake_consistency_check.py
+/svnroot/bf-blender/!svn/ver/38869/trunk/blender/build_files/cmake/cmake_consistency_check.py
+END
+cmake_static_check_sparse.py
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/40444/trunk/blender/build_files/cmake/cmake_static_check_sparse.py
+END
+project_source_info.py
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/bf-blender/!svn/ver/40444/trunk/blender/build_files/cmake/project_source_info.py
+END
+project_info.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/bf-blender/!svn/ver/36910/trunk/blender/build_files/cmake/project_info.py
 END
 buildinfo.cmake
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/svnroot/bf-blender/!svn/ver/35137/trunk/blender/build_files/cmake/buildinfo.cmake
+/svnroot/bf-blender/!svn/ver/39614/trunk/blender/build_files/cmake/buildinfo.cmake
+END
+cmake_consistency_check_config.py
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/bf-blender/!svn/ver/37724/trunk/blender/build_files/cmake/cmake_consistency_check_config.py
+END
+cmake_static_check_cppcheck.py
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/40444/trunk/blender/build_files/cmake/cmake_static_check_cppcheck.py
+END
+cmake_netbeans_project.py
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/38869/trunk/blender/build_files/cmake/cmake_netbeans_project.py
 END
 RpmBuild.cmake
 K 25

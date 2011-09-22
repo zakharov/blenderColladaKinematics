@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/blender-org/static
+/svnroot/bf-blender/!svn/ver/38964/trunk/blender/doc/python_api/blender-org/static
 END
 jquery.sidebar.js
 K 25
 svn:wc:ra_dav:version-url
 V 100
-/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/blender-org/static/jquery.sidebar.js
+/svnroot/bf-blender/!svn/ver/36564/trunk/blender/doc/python_api/blender-org/static/jquery.sidebar.js
 END
 rndbl.png
 K 25
@@ -43,7 +43,7 @@ default.css_t
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/svnroot/bf-blender/!svn/ver/32445/trunk/blender/doc/python_api/blender-org/static/default.css_t
+/svnroot/bf-blender/!svn/ver/38964/trunk/blender/doc/python_api/blender-org/static/default.css_t
 END
 favicon.ico
 K 25

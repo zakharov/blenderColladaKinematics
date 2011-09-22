@@ -1,5 +1,5 @@
 /*
-* $Id: MOD_particleinstance.c 35362 2011-03-05 10:29:10Z campbellbarton $
+* $Id: MOD_particleinstance.c 39342 2011-08-12 18:11:22Z blendix $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -236,7 +236,7 @@ static DerivedMesh * applyModifier(ModifierData *md, Object *ob,
 			normalize_v3(state.vel);
 
 			/* TODO: incremental rotations somehow */
-			if(state.vel[axis] < -0.9999 || state.vel[axis] > 0.9999) {
+			if(state.vel[axis] < -0.9999f || state.vel[axis] > 0.9999f) {
 				state.rot[0] = 1;
 				state.rot[1] = state.rot[2] = state.rot[3] = 0.0f;
 			}
@@ -350,4 +350,5 @@ ModifierTypeInfo modifierType_ParticleInstance = {
 	/* dependsOnNormals */	NULL,
 	/* foreachObjectLink */ foreachObjectLink,
 	/* foreachIDLink */     NULL,
+	/* foreachTexLink */    NULL,
 };

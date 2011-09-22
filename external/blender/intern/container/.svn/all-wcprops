@@ -1,7 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 65
-/svnroot/bf-blender/!svn/ver/35146/trunk/blender/intern/container
+/svnroot/bf-blender/!svn/ver/37030/trunk/blender/intern/container
+END
+CTR_HashedPtr.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/bf-blender/!svn/ver/36523/trunk/blender/intern/container/CTR_HashedPtr.h
 END
 CTR_UHeap.h
 K 25
@@ -13,7 +19,7 @@ CTR_TaggedIndex.h
 K 25
 svn:wc:ra_dav:version-url
 V 83
-/svnroot/bf-blender/!svn/ver/35146/trunk/blender/intern/container/CTR_TaggedIndex.h
+/svnroot/bf-blender/!svn/ver/36860/trunk/blender/intern/container/CTR_TaggedIndex.h
 END
 CTR_TaggedSetOps.h
 K 25
@@ -25,7 +31,7 @@ SConscript
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/svnroot/bf-blender/!svn/ver/31567/trunk/blender/intern/container/SConscript
+/svnroot/bf-blender/!svn/ver/36523/trunk/blender/intern/container/SConscript
 END
 CTR_List.h
 K 25
@@ -37,11 +43,11 @@ CTR_Map.h
 K 25
 svn:wc:ra_dav:version-url
 V 75
-/svnroot/bf-blender/!svn/ver/35146/trunk/blender/intern/container/CTR_Map.h
+/svnroot/bf-blender/!svn/ver/36523/trunk/blender/intern/container/CTR_Map.h
 END
 CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 80
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/intern/container/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/37030/trunk/blender/intern/container/CMakeLists.txt
 END

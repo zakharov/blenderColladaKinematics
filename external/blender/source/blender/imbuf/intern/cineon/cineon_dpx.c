@@ -27,7 +27,7 @@
  * cineon.c
  * contributors: joeedh
  * I hearby donate this code and all rights to the Blender Foundation.
- * $Id: cineon_dpx.c 35239 2011-02-27 20:23:21Z jesterking $
+ * $Id: cineon_dpx.c 36594 2011-05-10 13:11:36Z campbellbarton $
  */
 
 /** \file blender/imbuf/intern/cineon/cineon_dpx.c
@@ -44,6 +44,7 @@
 
 #include "IMB_imbuf_types.h"
 #include "IMB_imbuf.h"
+#include "IMB_filetype.h"
 
 #include "BKE_global.h"
 
@@ -192,7 +193,7 @@ static int imb_save_dpx_cineon(ImBuf *ibuf, const char *filename, int use_cineon
 	return 1;
 }
 
-short imb_savecineon(struct ImBuf *buf, const char *myfile, int flags)
+int imb_savecineon(struct ImBuf *buf, const char *myfile, int flags)
 {
 	return imb_save_dpx_cineon(buf, myfile, 1, flags);
 }
@@ -203,14 +204,14 @@ int imb_is_cineon(unsigned char *buf)
 	return cineonIsMemFileCineon(buf);
 }
 
-ImBuf *imb_loadcineon(unsigned char *mem, int size, int flags)
+ImBuf *imb_loadcineon(unsigned char *mem, size_t size, int flags)
 {
 	if(imb_is_cineon(mem))
 		return imb_load_dpx_cineon(mem, 1, size, flags);
 	return NULL;
 }
 
-short imb_save_dpx(struct ImBuf *buf, const char *myfile, int flags)
+int imb_save_dpx(struct ImBuf *buf, const char *myfile, int flags)
 {
 	return imb_save_dpx_cineon(buf, myfile, 0, flags);
 }
@@ -220,7 +221,7 @@ int imb_is_dpx(unsigned char *buf)
 	return dpxIsMemFileCineon(buf);
 }
 
-ImBuf *imb_loaddpx(unsigned char *mem, int size, int flags)
+ImBuf *imb_loaddpx(unsigned char *mem, size_t size, int flags)
 {
 	if(imb_is_dpx(mem))
 		return imb_load_dpx_cineon(mem, 0, size, flags);

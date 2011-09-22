@@ -1,5 +1,5 @@
 /*
- * $Id: BKE_cloth.h 34962 2011-02-18 13:05:18Z jesterking $
+ * $Id: BKE_cloth.h 36419 2011-05-01 21:39:13Z joeedh $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -35,6 +35,7 @@
  */
 
 #include <float.h>
+#include "BLI_math_inline.h"
 
 struct Object;
 struct ListBase;
@@ -44,16 +45,7 @@ struct DerivedMesh;
 struct ClothModifierData;
 struct CollisionTree;
 
-// this is needed for inlining behaviour
-#if defined _WIN32
-#   define DO_INLINE __inline
-#elif defined (__sgi)
-#   define DO_INLINE
-#elif defined (__sun) || defined (__sun__)
-#   define DO_INLINE
-#else
-#   define DO_INLINE static inline
-#endif
+#define DO_INLINE MALWAYS_INLINE
 
 #define CLOTH_MAX_THREAD 2
 

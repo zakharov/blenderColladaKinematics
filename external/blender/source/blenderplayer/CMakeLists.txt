@@ -1,5 +1,5 @@
 # -*- mode: cmake; indent-tabs-mode: t; -*-
-# $Id: CMakeLists.txt 35361 2011-03-05 09:27:14Z dfelinto $
+# $Id: CMakeLists.txt 40117 2011-09-11 08:21:26Z dfelinto $
 # ***** BEGIN GPL LICENSE BLOCK *****
 #
 # This program is free software; you can redistribute it and/or
@@ -40,6 +40,28 @@ add_custom_command(
 )
 
 if(WIN32 AND NOT UNIX)
+	string(SUBSTRING ${BLENDER_VERSION} 0 1 bver1)
+	string(SUBSTRING ${BLENDER_VERSION} 2 1 bver2)
+	string(SUBSTRING ${BLENDER_VERSION} 3 1 bver3)
+	if(MINGW)
+		add_definitions(
+			-DWINDRES
+			-DBLEN_VER_RC_STR_M=${BLENDER_VERSION}
+			-DBLEN_VER_RC_1=${bver1}
+			-DBLEN_VER_RC_2=${bver2}
+			-DBLEN_VER_RC_3=${bver3}
+			-DBLEN_VER_RC_4=0
+		)
+	else()
+		add_definitions(
+			-DBLEN_VER_RC_STR=${BLENDER_VERSION}
+			-DBLEN_VER_RC_1=${bver1}
+			-DBLEN_VER_RC_2=${bver2}
+			-DBLEN_VER_RC_3=${bver3}
+			-DBLEN_VER_RC_4=0
+		)
+	endif()
+
 	add_executable(blenderplayer ${EXETYPE} ${CMAKE_CURRENT_BINARY_DIR}/dna.c ../icons/winblender.rc)
 else()
 	add_executable(blenderplayer ${CMAKE_CURRENT_BINARY_DIR}/dna.c)
@@ -59,7 +81,7 @@ if(CMAKE_SYSTEM_NAME MATCHES "Linux")
 	list(APPEND BLENDER_LINK_LIBS extern_binreloc)
 endif()
 
-if(UNIX)
+# if(UNIX)
 	# Sort libraries
 	set(BLENDER_SORTED_LIBS
 		ge_player_ghost 
@@ -88,7 +110,6 @@ if(UNIX)
 		bf_intern_smoke
 		bf_modifiers
 		bf_intern_moto 
-		bf_gen_system 
 		bf_nodes
 		bf_gpu
 		bf_imbuf
@@ -99,26 +120,34 @@ if(UNIX)
 		extern_bullet 
 		bf_intern_guardedalloc 
 		bf_intern_memutil 
-		bf_python
 		bf_python_ext
+		bf_python_mathutils
 		bf_blenlib 
 		bf_imbuf_cineon
 		bf_imbuf_openexr 
-		extern_openjpeg 
+		extern_openjpeg
+		extern_redcode
 		bf_imbuf_dds
-		bf_readblenfile 
 		bf_dna
 		ge_videotex
 		bf_blenfont
 		bf_intern_audaspace
 		blenkernel_blc
 		extern_binreloc
-		extern_glew
 		extern_minilzo
 		bf_intern_ghost # duplicate for linking
 		bf_blenkernel # duplicate for linking
 		bf_intern_mikktspace
+		extern_recastnavigation
 	)
+
+	if(WITH_MOD_CLOTH_ELTOPO)
+		list(APPEND BLENDER_SORTED_LIBS extern_eltopo)
+	endif()
+
+	if(WITH_BUILTIN_GLEW)
+		list(APPEND BLENDER_SORTED_LIBS extern_glew)
+	endif()
 
 	if(WITH_LZMA)
 		list(APPEND BLENDER_SORTED_LIBS extern_lzma)
@@ -160,9 +189,15 @@ if(UNIX)
 		message(STATUS "Player Skipping: (${REM_MSG})")
 	endif()
 	target_link_libraries(blenderplayer ${BLENDER_SORTED_LIBS})
-else()
-	target_link_libraries(blenderplayer ${BLENDER_LINK_LIBS})
-endif()
+
+	unset(SEARCHLIB)
+	unset(SORTLIB)
+	unset(REMLIB)
+	unset(REM_MSG)
+
+# else()
+# 	target_link_libraries(blenderplayer ${BLENDER_LINK_LIBS})
+# endif()
 
 if(WITH_PLAYER)
 	add_subdirectory(bad_level_call_stubs)

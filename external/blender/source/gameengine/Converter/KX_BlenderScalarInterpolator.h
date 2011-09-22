@@ -1,5 +1,5 @@
 /*
- * $Id: KX_BlenderScalarInterpolator.h 35063 2011-02-22 10:33:14Z jesterking $
+ * $Id: KX_BlenderScalarInterpolator.h 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -66,7 +66,7 @@ public:
 
 class BL_InterpolatorList : public std::vector<KX_IScalarInterpolator *> {
 public:
-	BL_InterpolatorList(struct AnimData *adt);
+	BL_InterpolatorList(struct bAction *action);
 	~BL_InterpolatorList();
 
 	KX_IScalarInterpolator *GetScalarInterpolator(const char *rna_path, int array_index);	

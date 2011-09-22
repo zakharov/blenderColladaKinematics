@@ -1,5 +1,5 @@
 /*
- * $Id: BKE_deform.h 34962 2011-02-18 13:05:18Z jesterking $
+ * $Id: BKE_deform.h 37239 2011-06-06 06:40:09Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -59,9 +59,9 @@ float  defvert_array_find_weight_safe(const struct MDeformVert *dvert, int index
 
 void defvert_copy(struct MDeformVert *dvert_r, const struct MDeformVert *dvert);
 void defvert_sync(struct MDeformVert *dvert_r, const struct MDeformVert *dvert, int use_verify);
-void defvert_sync_mapped(struct MDeformVert *dvert_r, const struct MDeformVert *dvert, int *flip_map, int use_verify);
+void defvert_sync_mapped(struct MDeformVert *dvert_r, const struct MDeformVert *dvert, const int *flip_map, int use_verify);
 void defvert_remap (struct MDeformVert *dvert, int *map);
-void defvert_flip(struct MDeformVert *dvert, int *flip_map);
+void defvert_flip(struct MDeformVert *dvert, const int *flip_map);
 void defvert_normalize(struct MDeformVert *dvert);
 
 /* utility function, note that 32 chars is the maximum string length since its only

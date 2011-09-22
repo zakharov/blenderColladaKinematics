@@ -1,25 +1,37 @@
 K 25
 svn:wc:ra_dav:version-url
 V 61
-/svnroot/bf-blender/!svn/ver/35223/trunk/blender/source/tests
+/svnroot/bf-blender/!svn/ver/40413/trunk/blender/source/tests
 END
 batch_import.py
 K 25
 svn:wc:ra_dav:version-url
 V 77
-/svnroot/bf-blender/!svn/ver/34889/trunk/blender/source/tests/batch_import.py
+/svnroot/bf-blender/!svn/ver/35639/trunk/blender/source/tests/batch_import.py
+END
+bl_load_py_modules.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/bf-blender/!svn/ver/40413/trunk/blender/source/tests/bl_load_py_modules.py
 END
 bl_test.py
 K 25
 svn:wc:ra_dav:version-url
 V 72
-/svnroot/bf-blender/!svn/ver/34465/trunk/blender/source/tests/bl_test.py
+/svnroot/bf-blender/!svn/ver/36012/trunk/blender/source/tests/bl_test.py
 END
 pep8.py
 K 25
 svn:wc:ra_dav:version-url
 V 69
-/svnroot/bf-blender/!svn/ver/35223/trunk/blender/source/tests/pep8.py
+/svnroot/bf-blender/!svn/ver/36084/trunk/blender/source/tests/pep8.py
+END
+check_deprecated.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/bf-blender/!svn/ver/39858/trunk/blender/source/tests/check_deprecated.py
 END
 rna_array.py
 K 25
@@ -27,15 +39,27 @@ svn:wc:ra_dav:version-url
 V 74
 /svnroot/bf-blender/!svn/ver/34463/trunk/blender/source/tests/rna_array.py
 END
+bl_run_operators.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/bf-blender/!svn/ver/39170/trunk/blender/source/tests/bl_run_operators.py
+END
 rna_info_dump.py
 K 25
 svn:wc:ra_dav:version-url
 V 78
 /svnroot/bf-blender/!svn/ver/34463/trunk/blender/source/tests/rna_info_dump.py
 END
+bl_load_addons.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/bf-blender/!svn/ver/35633/trunk/blender/source/tests/bl_load_addons.py
+END
 CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/svnroot/bf-blender/!svn/ver/34749/trunk/blender/source/tests/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/39168/trunk/blender/source/tests/CMakeLists.txt
 END

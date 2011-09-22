@@ -1,5 +1,5 @@
 /*
- * $Id: ED_curve.h 35016 2011-02-21 07:25:24Z jesterking $
+ * $Id: ED_curve.h 40193 2011-09-14 00:37:27Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -58,7 +58,7 @@ void CU_select_swap(struct Object *obedit);
 
 
 void	undo_push_curve	(struct bContext *C, const char *name);
-ListBase *curve_get_editcurve(struct Object *ob);
+ListBase *object_editcurve_get(struct Object *ob);
 
 void	load_editNurb	(struct Object *obedit);
 void	make_editNurb	(struct Object *obedit);
@@ -66,11 +66,12 @@ void	free_editNurb	(struct Object *obedit);
 
 void	free_curve_editNurb	(struct Curve *cu);
 
-int 	mouse_nurb		(struct bContext *C, short mval[2], int extend);
+int 	mouse_nurb		(struct bContext *C, const int mval[2], int extend);
 
 struct Nurb *add_nurbs_primitive(struct bContext *C, float mat[4][4], int type, int newob);
 
 int		isNurbsel		(struct Nurb *nu);
+void	ED_nurb_set_spline_type(struct Nurb *nu, int type);
 
 int		join_curve_exec	(struct bContext *C, struct wmOperator *op);
 

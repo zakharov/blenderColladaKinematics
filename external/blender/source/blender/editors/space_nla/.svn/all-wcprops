@@ -1,65 +1,65 @@
 K 25
 svn:wc:ra_dav:version-url
 V 81
-/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/editors/space_nla
+/svnroot/bf-blender/!svn/ver/40395/trunk/blender/source/blender/editors/space_nla
 END
 nla_intern.h
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_nla/nla_intern.h
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/source/blender/editors/space_nla/nla_intern.h
 END
 nla_edit.c
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/editors/space_nla/nla_edit.c
+/svnroot/bf-blender/!svn/ver/40351/trunk/blender/source/blender/editors/space_nla/nla_edit.c
 END
 nla_channels.c
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_nla/nla_channels.c
+/svnroot/bf-blender/!svn/ver/40351/trunk/blender/source/blender/editors/space_nla/nla_channels.c
 END
 space_nla.c
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_nla/space_nla.c
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/source/blender/editors/space_nla/space_nla.c
 END
 SConscript
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35028/trunk/blender/source/blender/editors/space_nla/SConscript
+/svnroot/bf-blender/!svn/ver/40395/trunk/blender/source/blender/editors/space_nla/SConscript
 END
 nla_draw.c
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_nla/nla_draw.c
+/svnroot/bf-blender/!svn/ver/40114/trunk/blender/source/blender/editors/space_nla/nla_draw.c
 END
 nla_buttons.c
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_nla/nla_buttons.c
+/svnroot/bf-blender/!svn/ver/40395/trunk/blender/source/blender/editors/space_nla/nla_buttons.c
 END
 nla_select.c
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_nla/nla_select.c
+/svnroot/bf-blender/!svn/ver/40390/trunk/blender/source/blender/editors/space_nla/nla_select.c
 END
 nla_ops.c
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_nla/nla_ops.c
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/source/blender/editors/space_nla/nla_ops.c
 END
 CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/svnroot/bf-blender/!svn/ver/35028/trunk/blender/source/blender/editors/space_nla/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/40395/trunk/blender/source/blender/editors/space_nla/CMakeLists.txt
 END

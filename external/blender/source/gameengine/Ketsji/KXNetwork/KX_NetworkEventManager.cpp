@@ -1,5 +1,5 @@
 /*
- * $Id: KX_NetworkEventManager.cpp 35171 2011-02-25 13:35:59Z jesterking $
+ * $Id: KX_NetworkEventManager.cpp 39834 2011-09-01 02:12:53Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -66,8 +66,8 @@ void KX_NetworkEventManager::NextFrame()
 	for (it.begin();!it.end();++it)
 	{
 //	    printf("KX_NetworkEventManager::proceed sensor %.2f\n", curtime);
-	    // process queue
-	    (*it)->Activate(m_logicmgr);
+		// process queue
+		(*it)->Activate(m_logicmgr);
 	}
 
 	// now a list of triggerer sensors has been built

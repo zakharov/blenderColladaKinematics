@@ -17,10 +17,10 @@
 #======================= END GPL LICENSE BLOCK ========================
 
 import bpy
-from math import sin, cos, pi
+from math import cos, pi
 from rigify.utils import MetarigError
 from rigify.utils import copy_bone
-from rigify.utils import strip_org, deformer, mch
+from rigify.utils import strip_org, deformer
 from rigify.utils import create_widget
 import re
 
@@ -32,7 +32,7 @@ def bone_siblings(obj, bone):
     """
     parent = obj.data.bones[bone].parent
 
-    if parent == None:
+    if parent is None:
         return []
 
     bones = []
@@ -66,7 +66,7 @@ class Rig:
         siblings = bone_siblings(obj, bone)
 
         if len(siblings) == 0:
-            raise MetarigError("RIGIFY ERROR: Bone '%s': must have a parent and at least one sibling." % (strip_org(bone)))
+            raise MetarigError("RIGIFY ERROR: Bone '%s': must have a parent and at least one sibling" % (strip_org(bone)))
 
         # Sort list by name and distance
         siblings.sort()

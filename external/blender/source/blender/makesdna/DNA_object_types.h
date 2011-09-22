@@ -1,5 +1,5 @@
 /*
- * $Id: DNA_object_types.h 35266 2011-02-28 15:42:15Z jhk $ 
+ * $Id: DNA_object_types.h 40368 2011-09-19 16:13:34Z jason_hays22 $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -62,8 +62,13 @@ struct bGPdata;
 typedef struct bDeformGroup {
 	struct bDeformGroup *next, *prev;
 	char name[32];
+	/* need this flag for locking weights */
+	char flag, pad[7];
 } bDeformGroup;
 #define MAX_VGROUP_NAME 32
+
+/* bDeformGroup->flag */
+#define DG_LOCK_WEIGHT 1
 
 /**
  * The following illustrates the orientation of the 
@@ -189,6 +194,8 @@ typedef struct Object {
 	float max_vel; /* clamp the maximum velocity 0.0 is disabled */
 	float min_vel; /* clamp the maximum velocity 0.0 is disabled */
 	float m_contactProcessingThreshold;
+	float obstacleRad;
+	char pad0[4];
 	
 	short rotmode;		/* rotation mode - uses defines set out in DNA_action_types.h for PoseChannel rotations... */
 	
@@ -250,15 +257,17 @@ typedef struct Object {
 	struct FluidsimSettings *fluidsimSettings; /* if fluidsim enabled, store additional settings */
 
 	struct DerivedMesh *derivedDeform, *derivedFinal;
-	int lastDataMask;			/* the custom data layer mask that was last used to calculate derivedDeform and derivedFinal */
+	unsigned int lastDataMask;   /* the custom data layer mask that was last used to calculate derivedDeform and derivedFinal */
+	unsigned int customdata_mask; /* (extra) custom data layer mask to use for creating derivedmesh, set by depsgraph */
 	unsigned int state;			/* bit masks of game controllers that are active */
 	unsigned int init_state;	/* bit masks of initial state as recorded by the users */
-
-	int pad2;
 
 	ListBase gpulamp;		/* runtime, for lamps only */
 	ListBase pc_ids;
 	ListBase *duplilist;	/* for temporary dupli list storage, only for use by RNA API */
+
+	float ima_ofs[2];		/* offset for image empties */
+	char pad3[8];
 } Object;
 
 /* Warning, this is not used anymore because hooks are now modifiers */
@@ -288,10 +297,6 @@ typedef struct DupliObject {
 	float orco[3], uv[2];
 } DupliObject;
 
-/* this work object is defined in object.c */
-extern Object workob;
-
-
 /* **************** OBJECT ********************* */
 
 /* used many places... should be specialized  */
@@ -307,6 +312,8 @@ extern Object workob;
 
 #define OB_LAMP			10
 #define OB_CAMERA		11
+
+#define OB_SPEAKER		12
 
 // #define OB_WAVE			21
 #define OB_LATTICE		22
@@ -399,6 +406,7 @@ extern Object workob;
 #define OB_CUBE			5
 #define OB_EMPTY_SPHERE	6
 #define OB_EMPTY_CONE	7
+#define OB_EMPTY_IMAGE	8
 
 /* boundtype */
 #define OB_BOUND_BOX		0
@@ -472,6 +480,8 @@ extern Object workob;
 #define OB_SOFT_BODY	0x20000
 #define OB_OCCLUDER		0x40000
 #define OB_SENSOR		0x80000
+#define OB_NAVMESH		0x100000
+#define OB_HASOBSTACLE	0x200000
 
 /* ob->gameflag2 */
 #define OB_NEVER_DO_ACTIVITY_CULLING	1
@@ -492,6 +502,7 @@ extern Object workob;
 #define OB_BODY_TYPE_SOFT			4
 #define OB_BODY_TYPE_OCCLUDER		5
 #define OB_BODY_TYPE_SENSOR			6
+#define OB_BODY_TYPE_NAVMESH		7
 
 /* ob->scavisflag */
 #define OB_VIS_SENS		1

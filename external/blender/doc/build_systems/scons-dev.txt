@@ -1,4 +1,4 @@
-$Id: scons-dev.txt 32452 2010-10-13 14:44:22Z mindrones $
+$Id: scons-dev.txt 39584 2011-08-21 13:31:46Z nazgul $
 
 
     Internals of Blenders SCons scripts
@@ -27,7 +27,7 @@ $Id: scons-dev.txt 32452 2010-10-13 14:44:22Z mindrones $
     filenames have the form (platform)-config.py, where platform one of:
 
         * darwin
-        * linux2
+        * linux
         * win32-mingw
         * win32-vc
 

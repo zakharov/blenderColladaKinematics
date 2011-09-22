@@ -1,5 +1,5 @@
 /*
- * $Id: DNA_outliner_types.h 34941 2011-02-17 20:48:12Z jesterking $ 
+ * $Id: DNA_outliner_types.h 40066 2011-09-09 12:46:07Z aligorith $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -51,6 +51,8 @@ typedef struct TreeStore {
 #define TSE_CLOSED		1
 #define TSE_SELECTED	2
 #define TSE_TEXTBUT		4
+#define TSE_CHILDSEARCH 8
+#define TSE_SEARCHMATCH 16
 
 /* TreeStoreElem types in BIF_outliner.h */
 

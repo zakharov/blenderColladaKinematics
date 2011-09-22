@@ -1,5 +1,5 @@
 /*
- * $Id: sound_intern.h 35242 2011-02-27 20:29:51Z jesterking $
+ * $Id: sound_intern.h 40255 2011-09-16 08:20:21Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -35,8 +35,6 @@
 #define ED_SOUND_INTERN_H
 
 struct wmOperatorType;
-
-void SOUND_OT_open(wmOperatorType *ot);
 
 #endif /* ED_SOUND_INTERN_H */
 

@@ -1,5 +1,5 @@
 /* 
- * $Id: occlusion.c 35233 2011-02-27 19:31:27Z jesterking $
+ * $Id: occlusion.c 40147 2011-09-12 04:14:12Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -194,6 +194,7 @@ static void occ_shade(ShadeSample *ssamp, ObjectInstanceRen *obi, VlakRen *vlr, 
 	if(shi->obr->ob && shi->obr->ob->transflag & OB_NEG_SCALE) {
 		negate_v3(shi->vn);
 		negate_v3(shi->vno);
+		negate_v3(shi->nmapnorm);
 	}
 
 	/* init material vars */
@@ -613,7 +614,8 @@ static void occ_build_recursive(OcclusionTree *tree, OccNode *node, int begin, i
 
 	/* compute maximum distance from center */
 	node->dco= 0.0f;
-	occ_build_dco(tree, node, node->co, &node->dco);
+	if(node->area > 0.0f)
+		occ_build_dco(tree, node, node->co, &node->dco);
 }
 
 static void occ_build_sh_normalize(OccNode *node)
@@ -1412,7 +1414,7 @@ static void sample_occ_tree(Render *re, OcclusionTree *tree, OccFace *exclude, f
 	if(env) {
 		/* sky shading using bent normal */
 		if(ELEM(envcolor, WO_AOSKYCOL, WO_AOSKYTEX)) {
-			fac= 0.5*(1.0f+bn[0]*re->grvec[0]+ bn[1]*re->grvec[1]+ bn[2]*re->grvec[2]);
+			fac= 0.5f*(1.0f+bn[0]*re->grvec[0]+ bn[1]*re->grvec[1]+ bn[2]*re->grvec[2]);
 			env[0]= (1.0f-fac)*re->wrld.horr + fac*re->wrld.zenr;
 			env[1]= (1.0f-fac)*re->wrld.horg + fac*re->wrld.zeng;
 			env[2]= (1.0f-fac)*re->wrld.horb + fac*re->wrld.zenb;
@@ -1775,11 +1777,11 @@ void sample_occ(Render *re, ShadeInput *shi)
 
 				if(cache->sample && cache->step) {
 					sample= &cache->sample[(shi->ys-cache->y)*cache->w + (shi->xs-cache->x)];
-					VECCOPY(sample->co, shi->co);
-					VECCOPY(sample->n, shi->vno);
-					VECCOPY(sample->ao, shi->ao);
-					VECCOPY(sample->env, shi->env);
-					VECCOPY(sample->indirect, shi->indirect);
+					copy_v3_v3(sample->co, shi->co);
+					copy_v3_v3(sample->n, shi->vno);
+					copy_v3_v3(sample->ao, shi->ao);
+					copy_v3_v3(sample->env, shi->env);
+					copy_v3_v3(sample->indirect, shi->indirect);
 					sample->intensity= MAX3(sample->ao[0], sample->ao[1], sample->ao[2]);
 					sample->intensity= MAX2(sample->intensity, MAX3(sample->env[0], sample->env[1], sample->env[2]));
 					sample->intensity= MAX2(sample->intensity, MAX3(sample->indirect[0], sample->indirect[1], sample->indirect[2]));
@@ -1870,11 +1872,11 @@ void cache_occ_samples(Render *re, RenderPart *pa, ShadeSample *ssamp)
 				exclude.facenr= shi->vlr->index;
 				sample_occ_tree(re, tree, &exclude, shi->co, shi->vno, shi->thread, onlyshadow, shi->ao, shi->env, shi->indirect);
 
-				VECCOPY(sample->co, shi->co);
-				VECCOPY(sample->n, shi->vno);
-				VECCOPY(sample->ao, shi->ao);
-				VECCOPY(sample->env, shi->env);
-				VECCOPY(sample->indirect, shi->indirect);
+				copy_v3_v3(sample->co, shi->co);
+				copy_v3_v3(sample->n, shi->vno);
+				copy_v3_v3(sample->ao, shi->ao);
+				copy_v3_v3(sample->env, shi->env);
+				copy_v3_v3(sample->indirect, shi->indirect);
 				sample->intensity= MAX3(sample->ao[0], sample->ao[1], sample->ao[2]);
 				sample->intensity= MAX2(sample->intensity, MAX3(sample->env[0], sample->env[1], sample->env[2]));
 				sample->intensity= MAX2(sample->intensity, MAX3(sample->indirect[0], sample->indirect[1], sample->indirect[2]));

@@ -1,5 +1,5 @@
 /*
- * $Id: BL_ArmatureActuator.h 35063 2011-02-22 10:33:14Z jesterking $
+ * $Id: BL_ArmatureActuator.h 36523 2011-05-06 20:18:42Z blendix $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -67,7 +67,7 @@ public:
 	};
 	virtual void ProcessReplica();
 	virtual bool UnlinkObject(SCA_IObject* clientobj);
-	virtual void Relink(GEN_Map<GEN_HashedPtr, void*> *obj_map);
+	virtual void Relink(CTR_Map<CTR_HashedPtr, void*> *obj_map);
 	virtual bool Update(double curtime, bool frame);
 	virtual void ReParent(SCA_IObject* parent);
 	

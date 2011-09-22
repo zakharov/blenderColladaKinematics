@@ -24,12 +24,15 @@
 
 set(INC
 	.
-	../blenlib
-	../makesdna
-	../editors/include
 	../blenkernel
+	../blenlib
+	../editors/include
+	../makesdna
 	../../../intern/guardedalloc
-	../../../extern/glew/include
+)
+
+set(INC_SYS
+	${GLEW_INCLUDE_PATH}
 	${FREETYPE_INCLUDE_DIRS}
 )
 
@@ -39,21 +42,21 @@ set(SRC
 	intern/blf_font.c
 	intern/blf_glyph.c
 	intern/blf_lang.c
+	intern/blf_translation.c
 	intern/blf_util.c
 
 	BLF_api.h
+	BLF_translation.h
 	intern/blf_internal.h
 	intern/blf_internal_types.h
 )
 
 if(WITH_INTERNATIONAL)
-	list(APPEND INC ${GETTEXT_INC})
+	list(APPEND INC_SYS
+		${GETTEXT_INC}
+	)
 	add_definitions(-DINTERNATIONAL)
 endif()
 
-if(WIN32 AND NOT UNIX)
-	add_definitions(-DUSE_GETTEXT_DLL)
-endif()
-
-blender_add_lib(bf_blenfont "${SRC}" "${INC}")
+blender_add_lib(bf_blenfont "${SRC}" "${INC}" "${INC_SYS}")
 

@@ -1,5 +1,5 @@
 /*
- * $Id: rna_rna.c 35336 2011-03-03 17:58:06Z campbellbarton $
+ * $Id: rna_rna.c 40427 2011-09-21 13:53:35Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -44,6 +44,43 @@ EnumPropertyItem property_type_items[] = {
 	{PROP_ENUM, "ENUM", 0, "Enumeration", ""},
 	{PROP_POINTER, "POINTER", 0, "Pointer", ""},
 	{PROP_COLLECTION, "COLLECTION", 0, "Collection", ""},
+	{0, NULL, 0, NULL, NULL}};
+
+EnumPropertyItem property_subtype_items[] = {
+	{PROP_NONE, "NONE", 0, "None", ""},
+
+	/* strings */
+	{PROP_FILEPATH, "FILEPATH", 0, "File Path", ""},
+	{PROP_DIRPATH, "DIRPATH", 0, "Directory Path", ""},
+	{PROP_FILENAME, "FILENAME", 0, "File Name", ""},
+	{PROP_TRANSLATE, "TRANSLATE", 0, "Translate", ""},
+
+	/* numbers */
+	{PROP_UNSIGNED, "UNSIGNED", 0, "Unsigned", ""},
+	{PROP_PERCENTAGE, "PERCENTAGE", 0, "Percentage", ""},
+	{PROP_FACTOR, "FACTOR", 0, "Factor", ""},
+	{PROP_ANGLE, "ANGLE", 0, "Angle", ""},
+	{PROP_TIME, "TIME", 0, "Time", ""},
+	{PROP_DISTANCE, "DISTANCE", 0, "Distance", ""},
+
+	/* number arrays */
+	{PROP_COLOR, "COLOR", 0, "Color", ""},
+	{PROP_TRANSLATION, "TRANSLATION", 0, "Translation", ""},
+	{PROP_DIRECTION, "DIRECTION", 0, "Direction", ""},
+	{PROP_VELOCITY, "VELOCITY", 0, "Velocity", ""},
+	{PROP_ACCELERATION, "ACCELERATION", 0, "Acceleration", ""},
+	{PROP_MATRIX, "MATRIX", 0, "Matrix", ""},
+	{PROP_EULER, "EULER", 0, "Euler Angles", ""},
+	{PROP_QUATERNION, "QUATERNION", 0, "Quaternion", ""},
+	{PROP_AXISANGLE, "AXISANGLE", 0, "Axis-Angle", ""},
+	{PROP_XYZ, "XYZ", 0, "XYZ", ""},
+	{PROP_XYZ_LENGTH, "XYZ_LENGTH", 0, "XYZ Length", ""},
+	{PROP_COLOR_GAMMA, "COLOR_GAMMA", 0, "Color", ""},
+	{PROP_COORDS, "COORDS", 0, "Coordinates", ""},
+
+	/* booleans */
+	{PROP_LAYER, "LAYER", 0, "Layer", ""},
+	{PROP_LAYER_MEMBER, "LAYER_MEMBER", 0, "Layer Member", ""},
 	{0, NULL, 0, NULL, NULL}};
 
 EnumPropertyItem property_unit_items[] = {
@@ -341,7 +378,7 @@ int rna_builtin_properties_lookup_string(PointerRNA *ptr, const char *key, Point
 
 	/* this was used pre 2.5beta0, now ID property access uses python's
 	 * getitem style access
-	 * - ob["foo"] rather then ob.foo */
+	 * - ob["foo"] rather than ob.foo */
 #if 0
 	if(ptr->data) {
 		IDProperty *group, *idp;
@@ -492,6 +529,13 @@ static int rna_Property_is_hidden_get(PointerRNA *ptr)
 	PropertyRNA *prop= (PropertyRNA*)ptr->data;
 	return prop->flag & PROP_HIDDEN ? 1:0;
 }
+
+static int rna_Property_is_skip_save_get(PointerRNA *ptr)
+{
+	PropertyRNA *prop= (PropertyRNA*)ptr->data;
+	return prop->flag & PROP_SKIP_SAVE ? 1:0;
+}
+
 
 static int rna_Property_is_enum_flag_get(PointerRNA *ptr)
 {
@@ -697,7 +741,7 @@ static int rna_StringProperty_max_length_get(PointerRNA *ptr)
 	return ((StringPropertyRNA*)prop)->maxlength;
 }
 
-static EnumPropertyItem *rna_EnumProperty_default_itemf(bContext *C, PointerRNA *ptr, int *free)
+static EnumPropertyItem *rna_EnumProperty_default_itemf(bContext *C, PointerRNA *ptr, PropertyRNA *UNUSED(prop), int *free)
 {
 	PropertyRNA *prop= (PropertyRNA*)ptr->data;
 	EnumPropertyRNA *eprop;
@@ -713,7 +757,7 @@ static EnumPropertyItem *rna_EnumProperty_default_itemf(bContext *C, PointerRNA 
 		return eprop->item;
 	}
 
-	return eprop->itemf(C, ptr, free);
+	return eprop->itemf(C, ptr, prop, free);
 }
 
 /* XXX - not sure this is needed? */
@@ -734,12 +778,12 @@ static int rna_enum_check_separator(CollectionPropertyIterator *iter, void *data
 static void rna_EnumProperty_items_begin(CollectionPropertyIterator *iter, PointerRNA *ptr)
 {
 	PropertyRNA *prop= (PropertyRNA*)ptr->data;
-	EnumPropertyRNA *eprop;
+	// EnumPropertyRNA *eprop; // UNUSED
 	EnumPropertyItem *item= NULL;
 	int totitem, free= 0;
 	
 	rna_idproperty_check(&prop, ptr);
-	eprop= (EnumPropertyRNA*)prop;
+	// eprop= (EnumPropertyRNA*)prop;
 	
 	RNA_property_enum_items(NULL, ptr, prop, &item, &totitem, &free);
 	rna_iterator_array_begin(iter, (void*)item, sizeof(EnumPropertyItem), totitem, free, rna_enum_check_separator);
@@ -967,6 +1011,7 @@ static void rna_def_property(BlenderRNA *brna)
 		{PROP_QUATERNION, "QUATERNION", 0, "Quaternion", ""},
 		{PROP_XYZ, "XYZ", 0, "XYZ", ""},
 		{PROP_COLOR_GAMMA, "COLOR_GAMMA", 0, "Gamma Corrected Color", ""},
+		{PROP_COORDS, "COORDINATES", 0, "Vector Coordinates", ""},
 		{PROP_LAYER, "LAYER", 0, "Layer", ""},
 		{PROP_LAYER_MEMBER, "LAYER_MEMBERSHIP", 0, "Layer Membership", ""},
 		{0, NULL, 0, NULL, NULL}};
@@ -1036,6 +1081,11 @@ static void rna_def_property(BlenderRNA *brna)
 	RNA_def_property_boolean_funcs(prop, "rna_Property_is_hidden_get", NULL);
 	RNA_def_property_ui_text(prop, "Hidden", "True when the property is hidden");
 
+	prop= RNA_def_property(srna, "is_skip_save", PROP_BOOLEAN, PROP_NONE);
+	RNA_def_property_clear_flag(prop, PROP_EDITABLE);
+	RNA_def_property_boolean_funcs(prop, "rna_Property_is_skip_save_get", NULL);
+	RNA_def_property_ui_text(prop, "Skip Save", "True when the property is not saved in presets");
+
 	prop= RNA_def_property(srna, "is_output", PROP_BOOLEAN, PROP_NONE);
 	RNA_def_property_clear_flag(prop, PROP_EDITABLE);
 	RNA_def_property_boolean_funcs(prop, "rna_Property_use_output_get", NULL);
@@ -1054,7 +1104,7 @@ static void rna_def_property(BlenderRNA *brna)
 	prop= RNA_def_property(srna, "is_runtime", PROP_BOOLEAN, PROP_NONE);
 	RNA_def_property_clear_flag(prop, PROP_EDITABLE);
 	RNA_def_property_boolean_funcs(prop, "rna_Property_runtime_get", NULL);
-	RNA_def_property_ui_text(prop, "Read Only", "Property is editable through RNA");
+	RNA_def_property_ui_text(prop, "Runtime", "Property has been dynamically created at runtime");
 
 	prop= RNA_def_property(srna, "is_enum_flag", PROP_BOOLEAN, PROP_NONE);
 	RNA_def_property_clear_flag(prop, PROP_EDITABLE);
@@ -1233,7 +1283,7 @@ static void rna_def_enum_property(BlenderRNA *brna, StructRNA *srna)
 	RNA_def_property_enum_funcs(prop, "rna_EnumProperty_default_get", NULL, "rna_EnumProperty_default_itemf");
 	RNA_def_property_ui_text(prop, "Default", "Default value for this enum");
 
-	prop= RNA_def_property(srna, "items", PROP_COLLECTION, PROP_NONE);
+	prop= RNA_def_property(srna, "enum_items", PROP_COLLECTION, PROP_NONE);
 	RNA_def_property_clear_flag(prop, PROP_EDITABLE);
 	RNA_def_property_struct_type(prop, "EnumPropertyItem");
 	RNA_def_property_collection_funcs(prop, "rna_EnumProperty_items_begin", "rna_iterator_array_next", "rna_iterator_array_end", "rna_iterator_array_get", 0, 0, 0);

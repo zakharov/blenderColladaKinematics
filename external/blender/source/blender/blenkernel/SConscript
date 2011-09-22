@@ -1,9 +1,10 @@
 #!/usr/bin/python
 Import ('env')
+import os
 
 sources = env.Glob('intern/*.c')
 
-incs = '. #/intern/guardedalloc #/intern/memutil ../editors/include'
+incs = '. #/intern/guardedalloc #/intern/memutil'
 incs += ' ../blenlib ../blenfont ../makesdna ../windowmanager'
 incs += ' ../render/extern/include #/intern/decimation/extern ../makesrna'
 incs += ' ../imbuf ../ikplugin ../avi #/intern/elbeem/extern ../nodes ../modifiers'
@@ -14,11 +15,15 @@ incs += ' ../gpu #/extern/glew/include'
 incs += ' #/intern/smoke/extern'
 incs += ' #/intern/mikktspace'
 incs += ' #/intern/audaspace/intern'
+incs += ' #/intern/ffmpeg'
 
 incs += ' ' + env['BF_OPENGL_INC']
 incs += ' ' + env['BF_ZLIB_INC']
 
 defs = [ 'GLEW_STATIC' ]
+
+defs.append('WITH_SMOKE')  # TODO, make optional
+defs.append('WITH_FRAMESERVER')  # TODO, make optional
 
 if env['WITH_BF_PYTHON']:
     incs += ' ../python'
@@ -27,6 +32,10 @@ if env['WITH_BF_PYTHON']:
     if env['BF_DEBUG']:
         defs.append('DEBUG')
 
+if env['WITH_BF_ELTOPO']:
+    incs += ' ../../../extern/eltopo'
+    defs.append('WITH_ELTOPO')
+        
 if env['WITH_BF_QUICKTIME']:
     incs += ' ../quicktime'
 
@@ -74,10 +83,6 @@ if env['OURPLATFORM'] == 'darwin':
 if env['BF_NO_ELBEEM']:
     defs.append('DISABLE_ELBEEM')
 
-if env['WITH_BF_LCMS']:
-    defs.append('WITH_LCMS')
-    incs += ' ' + env['BF_LCMS_INC']
-
 if env['WITH_BF_LZO']:
     incs += ' #/extern/lzo/minilzo'
     defs.append('WITH_LZO')
@@ -85,6 +90,12 @@ if env['WITH_BF_LZO']:
 if env['WITH_BF_LZMA']:
     incs += ' #/extern/lzma'
     defs.append('WITH_LZMA')
+
+if env['WITH_BF_GAMEENGINE']:
+    incs += ' #/extern/recastnavigation'
+    defs.append('WITH_GAMEENGINE')
+else:
+    sources.remove('intern' + os.sep + 'navmesh_conversion.c')
 
 if env['OURPLATFORM'] in ('win32-vc', 'win32-mingw', 'linuxcross', 'win64-vc'):
     incs += ' ' + env['BF_PTHREADS_INC']

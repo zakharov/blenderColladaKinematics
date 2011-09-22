@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 79
-/svnroot/bf-blender/!svn/ver/35176/trunk/blender/source/gameengine/VideoTexture
+/svnroot/bf-blender/!svn/ver/40095/trunk/blender/source/gameengine/VideoTexture
 END
 FilterNormal.cpp
 K 25
@@ -19,13 +19,13 @@ ImageMix.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35176/trunk/blender/source/gameengine/VideoTexture/ImageMix.cpp
+/svnroot/bf-blender/!svn/ver/39815/trunk/blender/source/gameengine/VideoTexture/ImageMix.cpp
 END
 VideoFFmpeg.h
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/35082/trunk/blender/source/gameengine/VideoTexture/VideoFFmpeg.h
+/svnroot/bf-blender/!svn/ver/36960/trunk/blender/source/gameengine/VideoTexture/VideoFFmpeg.h
 END
 VideoBase.cpp
 K 25
@@ -37,7 +37,7 @@ Exception.h
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svnroot/bf-blender/!svn/ver/35082/trunk/blender/source/gameengine/VideoTexture/Exception.h
+/svnroot/bf-blender/!svn/ver/39883/trunk/blender/source/gameengine/VideoTexture/Exception.h
 END
 FilterSource.cpp
 K 25
@@ -55,13 +55,13 @@ ImageViewport.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 97
-/svnroot/bf-blender/!svn/ver/35176/trunk/blender/source/gameengine/VideoTexture/ImageViewport.cpp
+/svnroot/bf-blender/!svn/ver/39834/trunk/blender/source/gameengine/VideoTexture/ImageViewport.cpp
 END
 ImageRender.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svnroot/bf-blender/!svn/ver/35176/trunk/blender/source/gameengine/VideoTexture/ImageRender.cpp
+/svnroot/bf-blender/!svn/ver/39883/trunk/blender/source/gameengine/VideoTexture/ImageRender.cpp
 END
 ImageBase.h
 K 25
@@ -85,7 +85,7 @@ FilterColor.h
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/35082/trunk/blender/source/gameengine/VideoTexture/FilterColor.h
+/svnroot/bf-blender/!svn/ver/39815/trunk/blender/source/gameengine/VideoTexture/FilterColor.h
 END
 BlendType.h
 K 25
@@ -97,19 +97,19 @@ VideoFFmpeg.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svnroot/bf-blender/!svn/ver/35176/trunk/blender/source/gameengine/VideoTexture/VideoFFmpeg.cpp
+/svnroot/bf-blender/!svn/ver/39834/trunk/blender/source/gameengine/VideoTexture/VideoFFmpeg.cpp
 END
 CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/gameengine/VideoTexture/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/39936/trunk/blender/source/gameengine/VideoTexture/CMakeLists.txt
 END
 blendVideoTex.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 97
-/svnroot/bf-blender/!svn/ver/35176/trunk/blender/source/gameengine/VideoTexture/blendVideoTex.cpp
+/svnroot/bf-blender/!svn/ver/40095/trunk/blender/source/gameengine/VideoTexture/blendVideoTex.cpp
 END
 Common.h
 K 25
@@ -121,7 +121,7 @@ Exception.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/35176/trunk/blender/source/gameengine/VideoTexture/Exception.cpp
+/svnroot/bf-blender/!svn/ver/39834/trunk/blender/source/gameengine/VideoTexture/Exception.cpp
 END
 FilterBlueScreen.h
 K 25
@@ -157,7 +157,7 @@ SConscript
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/33156/trunk/blender/source/gameengine/VideoTexture/SConscript
+/svnroot/bf-blender/!svn/ver/36960/trunk/blender/source/gameengine/VideoTexture/SConscript
 END
 FilterSource.h
 K 25
@@ -169,7 +169,7 @@ ImageBase.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/35176/trunk/blender/source/gameengine/VideoTexture/ImageBase.cpp
+/svnroot/bf-blender/!svn/ver/39883/trunk/blender/source/gameengine/VideoTexture/ImageBase.cpp
 END
 FilterColor.cpp
 K 25

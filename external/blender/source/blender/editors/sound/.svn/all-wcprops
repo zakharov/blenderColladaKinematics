@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 77
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/sound
+/svnroot/bf-blender/!svn/ver/40378/trunk/blender/source/blender/editors/sound
 END
 SConscript
 K 25
@@ -13,17 +13,17 @@ sound_ops.c
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/sound/sound_ops.c
+/svnroot/bf-blender/!svn/ver/40378/trunk/blender/source/blender/editors/sound/sound_ops.c
 END
 CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35028/trunk/blender/source/blender/editors/sound/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/source/blender/editors/sound/CMakeLists.txt
 END
 sound_intern.h
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/sound/sound_intern.h
+/svnroot/bf-blender/!svn/ver/40255/trunk/blender/source/blender/editors/sound/sound_intern.h
 END

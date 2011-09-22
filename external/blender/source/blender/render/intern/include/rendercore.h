@@ -1,7 +1,7 @@
 /*
  * rendercore_ext.h
  *
- * $Id: rendercore.h 35233 2011-02-27 19:31:27Z jesterking $
+ * $Id: rendercore.h 40108 2011-09-11 02:50:01Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -81,8 +81,8 @@ float   mistfactor(float zcor, float *co);	/* dist and height, return alpha */
 void	renderspothalo(struct ShadeInput *shi, float *col, float alpha);
 void	add_halo_flare(Render *re);
 
-void calc_renderco_zbuf(float *co, float *view, int z);
-void calc_renderco_ortho(float *co, float x, float y, int z);
+void calc_renderco_zbuf(float co[3], float *view, int z);
+void calc_renderco_ortho(float co[3], float x, float y, int z);
 
 int count_mask(unsigned short mask);
 

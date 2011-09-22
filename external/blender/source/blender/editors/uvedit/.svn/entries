@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/editors/uvedit
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-03-03T17:59:04.039119Z
-35337
-campbellbarton
+2011-09-21T08:02:26.065191Z
+40417
+mont29
 
 
 
@@ -26,17 +26,17 @@ campbellbarton
 
 954f8c5b-7b00-dc11-b283-0030488c597c
 
-uvedit_ops.c
+uvedit_buttons.c
 file
 
 
 
 
-2011-03-03T21:53:56.212120Z
-7683d82ac37204574c06227cf13b1197
-2011-03-03T17:59:04.039119Z
-35337
-campbellbarton
+2011-09-21T18:16:58.276052Z
+e323011cb21b9ff24b0112d86835e04d
+2011-09-07T06:33:29.061260Z
+39991
+mont29
 has-props
 
 
@@ -58,7 +58,41 @@ has-props
 
 
 
-90500
+5735
+
+uvedit_ops.c
+file
+
+
+
+
+2011-09-21T18:16:58.284052Z
+cfff32c9e97b19312ce49ab41bb25509
+2011-09-21T08:02:26.065191Z
+40417
+mont29
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+95701
 
 uvedit_intern.h
 file
@@ -66,11 +100,11 @@ file
 
 
 
-2011-03-03T12:28:36.106297Z
+2011-09-21T18:16:58.284052Z
 1affce0a733572694e085ac1d8565630
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-07T06:33:29.061260Z
+39991
+mont29
 has-props
 
 
@@ -92,7 +126,7 @@ has-props
 
 
 
-2091
+2087
 
 uvedit_parametrizer.c
 file
@@ -100,11 +134,11 @@ file
 
 
 
-2011-03-03T12:28:36.110297Z
-4184e3da6674baedf5d7b5b50d9c1413
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:58.288052Z
+dad6b24dd610d2ff802d0dadc11b39d0
+2011-09-19T12:26:20.076486Z
+40351
+mont29
 has-props
 
 
@@ -126,7 +160,7 @@ has-props
 
 
 
-101429
+101568
 
 SConscript
 file
@@ -134,7 +168,7 @@ file
 
 
 
-2011-03-03T12:28:36.110297Z
+2011-09-21T18:16:58.288052Z
 39fdf874614cb70a8f6837270fcdd5a0
 2011-02-21T12:35:04.852834Z
 35028
@@ -168,11 +202,11 @@ file
 
 
 
-2011-03-03T12:28:36.110297Z
+2011-09-21T18:16:58.288052Z
 d756ef46a17deea9458e67d7c654d52a
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-07T06:33:29.061260Z
+39991
+mont29
 has-props
 
 
@@ -202,44 +236,10 @@ file
 
 
 
-2011-03-03T12:28:36.110297Z
-ab0b03be0942c95c02fe3a0d92b42a08
-2011-02-21T12:35:04.852834Z
-35028
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1251
-
-uvedit_draw.c
-file
-
-
-
-
-2011-03-03T21:53:56.212120Z
-052aeb925c3ca4f7ae49b71249480f9a
-2011-03-03T17:59:04.039119Z
-35337
+2011-09-21T18:16:58.288052Z
+7d146c526dfe48f76b1c2967fe924c48
+2011-07-17T09:11:13.810557Z
+38443
 campbellbarton
 has-props
 
@@ -262,19 +262,19 @@ has-props
 
 
 
-23898
+1319
 
-uvedit_unwrap_ops.c
+uvedit_draw.c
 file
 
 
 
 
-2011-03-03T12:28:36.114297Z
-18db579728d7f2305e776d5c035e5a19
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:58.288052Z
+a06a2563a320219f9f83ca482c5c56c1
+2011-09-17T09:43:51.153028Z
+40289
+campbellbarton
 has-props
 
 
@@ -296,5 +296,39 @@ has-props
 
 
 
-34337
+23966
+
+uvedit_unwrap_ops.c
+file
+
+
+
+
+2011-09-21T18:16:58.292052Z
+60d1ab910fbe0c8a9ce2c3fa32bbfbd0
+2011-09-21T08:02:26.065191Z
+40417
+mont29
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+37347
 

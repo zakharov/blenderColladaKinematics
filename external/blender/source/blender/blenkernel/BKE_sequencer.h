@@ -1,5 +1,5 @@
 /*
- * $Id: BKE_sequencer.h 34962 2011-02-18 13:05:18Z jesterking $
+ * $Id: BKE_sequencer.h 40122 2011-09-11 10:35:26Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -43,8 +43,7 @@ struct Scene;
 struct Sequence;
 struct Strip;
 struct StripElem;
-
-#define MAXSEQ          32
+struct bSound;
 
 #define BUILD_SEQAR_COUNT_NOTHING  0
 #define BUILD_SEQAR_COUNT_CURRENT  1
@@ -177,6 +176,7 @@ int seq_recursive_apply(struct Sequence *seq, int (*apply_func)(struct Sequence 
 /* maintainance functions, mostly for RNA */
 // extern 
 void seq_free_sequence(struct Scene *scene, struct Sequence *seq);
+void seq_free_sequence_recurse(struct Scene *scene, struct Sequence *seq);
 void seq_free_strip(struct Strip *strip);
 void seq_free_editing(struct Scene *scene);
 void seq_free_clipboard(void);
@@ -199,6 +199,11 @@ void update_changed_seq_and_deps(struct Scene *scene, struct Sequence *changed_s
 int input_have_to_preprocess(
 	SeqRenderData context, struct Sequence * seq, float cfra);
 
+void seq_proxy_rebuild(struct Main * bmain, 
+		       struct Scene *scene, struct Sequence * seq,
+		       short *stop, short *do_update, float *progress);
+
+
 /* **********************************************************************
    seqcache.c
 
@@ -217,9 +222,16 @@ void seq_stripelem_cache_destruct(void);
 
 void seq_stripelem_cache_cleanup(void);
 
+/* returned ImBuf is properly refed and has to be freed */
 struct ImBuf * seq_stripelem_cache_get(
 	SeqRenderData context, struct Sequence * seq, 
 	float cfra, seq_stripelem_ibuf_t type);
+
+/* passed ImBuf is properly refed, so ownership is *not* 
+   transfered to the cache.
+   you can pass the same ImBuf multiple times to the cache without problems.
+*/
+   
 void seq_stripelem_cache_put(
 	SeqRenderData context, struct Sequence * seq, 
 	float cfra, seq_stripelem_ibuf_t type, struct ImBuf * nval);
@@ -258,8 +270,13 @@ int seq_single_check(struct Sequence *seq);
 void seq_single_fix(struct Sequence *seq);
 int seq_test_overlap(struct ListBase * seqbasep, struct Sequence *test);
 void seq_translate(struct Scene *scene, struct Sequence *seq, int delta);
+void seq_sound_init(struct Scene *scene, struct Sequence *seq);
 struct Sequence *seq_foreground_frame_get(struct Scene *scene, int frame);
 struct ListBase *seq_seqbase(struct ListBase *seqbase, struct Sequence *seq);
+struct Sequence *seq_metastrip(
+	ListBase * seqbase /* = ed->seqbase */, 
+	struct Sequence * meta /* = NULL */, struct Sequence *seq);
+
 void seq_offset_animdata(struct Scene *scene, struct Sequence *seq, int ofs);
 void seq_dupe_animdata(struct Scene *scene, char *name_from, char *name_to);
 int shuffle_seq(struct ListBase * seqbasep, struct Sequence *test, struct Scene *evil_scene);
@@ -267,10 +284,12 @@ int shuffle_seq_time(ListBase * seqbasep, struct Scene *evil_scene);
 int seqbase_isolated_sel_check(struct ListBase *seqbase);
 void free_imbuf_seq(struct Scene *scene, struct ListBase * seqbasep, int check_mem_usage, int keep_file_handles);
 struct Sequence	*seq_dupli_recursive(struct Scene *scene, struct Scene *scene_to, struct Sequence * seq, int dupe_flag);
-int seq_swap(struct Sequence *seq_a, struct Sequence *seq_b);
+int seq_swap(struct Sequence *seq_a, struct Sequence *seq_b, const char **error_str);
 
-void seq_update_sound(struct Scene* scene, struct Sequence *seq);
-void seq_update_muting(struct Scene* scene, struct Editing *ed);
+void seq_update_sound_bounds_all(struct Scene *scene);
+void seq_update_sound_bounds(struct Scene* scene, struct Sequence *seq);
+void seq_update_muting(struct Editing *ed);
+void seq_update_sound(struct Scene *scene, struct bSound *sound);
 void seqbase_sound_reload(struct Scene *scene, ListBase *seqbase);
 void seqbase_unique_name_recursive(ListBase *seqbasep, struct Sequence *seq);
 void seqbase_dupli_recursive(struct Scene *scene, struct Scene *scene_to, ListBase *nseqbase, ListBase *seqbase, int dupe_flag);
@@ -322,7 +341,7 @@ struct Sequence *sequencer_add_sound_strip(struct bContext *C, ListBase *seqbase
 struct Sequence *sequencer_add_movie_strip(struct bContext *C, ListBase *seqbasep, struct SeqLoadInfo *seq_load);
 
 /* view3d draw callback, run when not in background view */
-typedef struct ImBuf *(*SequencerDrawView)(struct Scene *, int, int, unsigned int, int);
+typedef struct ImBuf *(*SequencerDrawView)(struct Scene *, struct Object *, int, int, unsigned int, int, char[256]);
 extern SequencerDrawView sequencer_view3d_cb;
 
 /* copy/paste */

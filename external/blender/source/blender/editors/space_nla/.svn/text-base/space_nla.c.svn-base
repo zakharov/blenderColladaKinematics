@@ -1,6 +1,4 @@
 /*
- * $Id$
- *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -69,18 +67,13 @@
 ARegion *nla_has_buttons_region(ScrArea *sa)
 {
 	ARegion *ar, *arnew;
-	
-	for (ar= sa->regionbase.first; ar; ar= ar->next) {
-		if (ar->regiontype==RGN_TYPE_UI)
-			return ar;
-	}
-	
+
+	ar= BKE_area_find_region_type(sa, RGN_TYPE_UI);
+	if(ar) return ar;
+
 	/* add subdiv level; after main */
-	for (ar= sa->regionbase.first; ar; ar= ar->next) {
-		if (ar->regiontype==RGN_TYPE_WINDOW)
-			break;
-	}
-	
+	ar= BKE_area_find_region_type(sa, RGN_TYPE_WINDOW);
+
 	/* is error! */
 	if (ar==NULL) return NULL;
 	
@@ -159,7 +152,7 @@ static SpaceLink *nla_new(const bContext *C)
 	
 	ar->v2d.max[0]= MAXFRAMEF;
 	ar->v2d.max[1]= 10000.0f;
- 	
+
 	ar->v2d.minzoom= 0.01f;
 	ar->v2d.maxzoom= 50;
 	ar->v2d.scroll = (V2D_SCROLL_BOTTOM|V2D_SCROLL_SCALE_HORIZONTAL);

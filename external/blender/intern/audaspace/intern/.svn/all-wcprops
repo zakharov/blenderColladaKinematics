@@ -1,13 +1,217 @@
 K 25
 svn:wc:ra_dav:version-url
 V 72
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern
+/svnroot/bf-blender/!svn/ver/40341/trunk/blender/intern/audaspace/intern
+END
+AUD_SequencerHandle.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/40124/trunk/blender/intern/audaspace/intern/AUD_SequencerHandle.cpp
+END
+AUD_JOSResampleReader.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/bf-blender/!svn/ver/40124/trunk/blender/intern/audaspace/intern/AUD_JOSResampleReader.cpp
+END
+AUD_Buffer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_Buffer.cpp
+END
+AUD_SilenceFactory.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_SilenceFactory.cpp
+END
+AUD_SoftwareDevice.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/39815/trunk/blender/intern/audaspace/intern/AUD_SoftwareDevice.cpp
+END
+AUD_SequencerEntry.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_SequencerEntry.cpp
+END
+AUD_SequencerReader.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/40124/trunk/blender/intern/audaspace/intern/AUD_SequencerReader.cpp
+END
+AUD_MixerFactory.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_MixerFactory.h
+END
+AUD_JOSResampleFactory.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_JOSResampleFactory.h
+END
+AUD_SinusFactory.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_SinusFactory.cpp
+END
+AUD_NULLDevice.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_NULLDevice.h
+END
+AUD_ConverterReader.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_ConverterReader.h
+END
+AUD_Space.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_Space.h
+END
+AUD_Reference.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_Reference.h
+END
+AUD_I3DDevice.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_I3DDevice.h
+END
+AUD_SilenceReader.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_SilenceReader.cpp
+END
+AUD_AnimateableProperty.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_AnimateableProperty.cpp
+END
+AUD_FileFactory.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_FileFactory.cpp
+END
+AUD_IHandle.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_IHandle.h
+END
+AUD_JOSResampleReaderCoeff.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/bf-blender/!svn/ver/39809/trunk/blender/intern/audaspace/intern/AUD_JOSResampleReaderCoeff.cpp
+END
+AUD_MixerFactory.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_MixerFactory.cpp
+END
+AUD_JOSResampleReader.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_JOSResampleReader.h
+END
+AUD_JOSResampleFactory.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_JOSResampleFactory.cpp
+END
+AUD_Buffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_Buffer.h
+END
+AUD_SequencerReader.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_SequencerReader.h
+END
+AUD_SinusReader.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_SinusReader.h
+END
+AUD_NULLDevice.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_NULLDevice.cpp
+END
+AUD_ConverterReader.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bf-blender/!svn/ver/40341/trunk/blender/intern/audaspace/intern/AUD_ConverterReader.cpp
+END
+AUD_IWriter.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_IWriter.h
+END
+AUD_LinearResampleReader.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_LinearResampleReader.h
+END
+AUD_ReferenceHandler.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_ReferenceHandler.cpp
+END
+AUD_SinusFactory.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_SinusFactory.h
+END
+AUD_ConverterFactory.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_ConverterFactory.cpp
+END
+AUD_BufferReader.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_BufferReader.h
 END
 AUD_ChannelMapperFactory.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 101
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_ChannelMapperFactory.cpp
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_ChannelMapperFactory.cpp
 END
 AUD_ConverterFunctions.h
 K 25
@@ -15,59 +219,35 @@ svn:wc:ra_dav:version-url
 V 97
 /svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_ConverterFunctions.h
 END
-AUD_Buffer.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 87
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_Buffer.cpp
-END
-AUD_SilenceFactory.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 95
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_SilenceFactory.cpp
-END
 AUD_SilenceReader.h
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_SilenceReader.h
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_SilenceReader.h
 END
-AUD_SoftwareDevice.cpp
+AUD_AnimateableProperty.h
 K 25
 svn:wc:ra_dav:version-url
-V 95
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_SoftwareDevice.cpp
+V 98
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_AnimateableProperty.h
 END
 AUD_FileFactory.h
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_FileFactory.h
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_FileFactory.h
 END
 AUD_IDevice.h
 K 25
 svn:wc:ra_dav:version-url
 V 86
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_IDevice.h
-END
-AUD_SequencerReader.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 96
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_SequencerReader.cpp
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_IDevice.h
 END
 AUD_StreamBufferFactory.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 100
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_StreamBufferFactory.cpp
-END
-AUD_MixerFactory.h
-K 25
-svn:wc:ra_dav:version-url
-V 91
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_MixerFactory.h
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_StreamBufferFactory.cpp
 END
 AUD_PyInit.h
 K 25
@@ -75,119 +255,83 @@ svn:wc:ra_dav:version-url
 V 85
 /svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_PyInit.h
 END
+AUD_FileWriter.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_FileWriter.h
+END
 AUD_SinusReader.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_SinusReader.cpp
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_SinusReader.cpp
 END
 AUD_IFactory.h
 K 25
 svn:wc:ra_dav:version-url
 V 87
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_IFactory.h
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_IFactory.h
 END
 AUD_LinearResampleReader.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 101
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_LinearResampleReader.cpp
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_LinearResampleReader.cpp
 END
 AUD_SequencerFactory.h
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_SequencerFactory.h
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_SequencerFactory.h
 END
 AUD_Mixer.h
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_Mixer.h
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_Mixer.h
 END
 AUD_C-API.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 86
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_C-API.cpp
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_C-API.cpp
 END
-AUD_SinusFactory.cpp
+AUD_ResampleReader.cpp
 K 25
 svn:wc:ra_dav:version-url
-V 93
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_SinusFactory.cpp
-END
-AUD_LinearResampleFactory.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 102
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_LinearResampleFactory.cpp
+V 95
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_ResampleReader.cpp
 END
 AUD_ReadDevice.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_ReadDevice.cpp
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_ReadDevice.cpp
+END
+AUD_LinearResampleFactory.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_LinearResampleFactory.cpp
 END
 AUD_BufferReader.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_BufferReader.cpp
-END
-AUD_DefaultMixer.h
-K 25
-svn:wc:ra_dav:version-url
-V 91
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_DefaultMixer.h
-END
-AUD_ConverterReader.h
-K 25
-svn:wc:ra_dav:version-url
-V 94
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_ConverterReader.h
-END
-AUD_NULLDevice.h
-K 25
-svn:wc:ra_dav:version-url
-V 89
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_NULLDevice.h
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_BufferReader.cpp
 END
 AUD_ConverterFunctions.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_ConverterFunctions.cpp
-END
-AUD_Space.h
-K 25
-svn:wc:ra_dav:version-url
-V 84
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_Space.h
-END
-AUD_Reference.h
-K 25
-svn:wc:ra_dav:version-url
-V 88
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_Reference.h
-END
-AUD_I3DDevice.h
-K 25
-svn:wc:ra_dav:version-url
-V 88
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_I3DDevice.h
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_ConverterFunctions.cpp
 END
 AUD_ConverterFactory.h
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_ConverterFactory.h
-END
-AUD_ChannelMapperReader.h
-K 25
-svn:wc:ra_dav:version-url
-V 98
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_ChannelMapperReader.h
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_ConverterFactory.h
 END
 AUD_ResampleFactory.h
 K 25
@@ -195,153 +339,111 @@ svn:wc:ra_dav:version-url
 V 94
 /svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_ResampleFactory.h
 END
-AUD_SilenceReader.cpp
+AUD_ChannelMapperReader.h
 K 25
 svn:wc:ra_dav:version-url
-V 94
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_SilenceReader.cpp
-END
-AUD_FileFactory.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 92
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_FileFactory.cpp
+V 98
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_ChannelMapperReader.h
 END
 AUD_ChannelMapperFactory.h
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_ChannelMapperFactory.h
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_ChannelMapperFactory.h
 END
-AUD_MixerFactory.cpp
+AUD_SequencerHandle.h
 K 25
 svn:wc:ra_dav:version-url
-V 93
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_MixerFactory.cpp
+V 94
+/svnroot/bf-blender/!svn/ver/40124/trunk/blender/intern/audaspace/intern/AUD_SequencerHandle.h
 END
-AUD_Buffer.h
+AUD_FileWriter.cpp
 K 25
 svn:wc:ra_dav:version-url
-V 85
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_Buffer.h
+V 91
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_FileWriter.cpp
 END
 AUD_SilenceFactory.h
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_SilenceFactory.h
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_SilenceFactory.h
 END
 AUD_SoftwareDevice.h
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_SoftwareDevice.h
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_SoftwareDevice.h
 END
 AUD_IReader.h
 K 25
 svn:wc:ra_dav:version-url
 V 86
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_IReader.h
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_IReader.h
+END
+AUD_SequencerEntry.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_SequencerEntry.h
 END
 AUD_SequencerFactory.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 97
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_SequencerFactory.cpp
-END
-AUD_SequencerReader.h
-K 25
-svn:wc:ra_dav:version-url
-V 94
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_SequencerReader.h
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_SequencerFactory.cpp
 END
 AUD_StreamBufferFactory.h
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_StreamBufferFactory.h
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_StreamBufferFactory.h
 END
 AUD_Mixer.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 86
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_Mixer.cpp
+/svnroot/bf-blender/!svn/ver/40341/trunk/blender/intern/audaspace/intern/AUD_Mixer.cpp
 END
 AUD_3DMath.h
 K 25
 svn:wc:ra_dav:version-url
 V 85
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_3DMath.h
-END
-AUD_DefaultMixer.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 93
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_DefaultMixer.cpp
-END
-AUD_SinusReader.h
-K 25
-svn:wc:ra_dav:version-url
-V 90
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_SinusReader.h
-END
-AUD_ConverterReader.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 96
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_ConverterReader.cpp
-END
-AUD_NULLDevice.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 91
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_NULLDevice.cpp
-END
-AUD_LinearResampleReader.h
-K 25
-svn:wc:ra_dav:version-url
-V 99
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_LinearResampleReader.h
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_3DMath.h
 END
 AUD_C-API.h
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svnroot/bf-blender/!svn/ver/35090/trunk/blender/intern/audaspace/intern/AUD_C-API.h
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_C-API.h
 END
-AUD_SinusFactory.h
+AUD_ResampleReader.h
 K 25
 svn:wc:ra_dav:version-url
-V 91
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_SinusFactory.h
-END
-AUD_ConverterFactory.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 97
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_ConverterFactory.cpp
-END
-AUD_LinearResampleFactory.h
-K 25
-svn:wc:ra_dav:version-url
-V 100
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_LinearResampleFactory.h
-END
-AUD_ChannelMapperReader.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 100
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_ChannelMapperReader.cpp
+V 93
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_ResampleReader.h
 END
 AUD_ReadDevice.h
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_ReadDevice.h
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_ReadDevice.h
 END
-AUD_BufferReader.h
+AUD_LinearResampleFactory.h
 K 25
 svn:wc:ra_dav:version-url
-V 91
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/intern/AUD_BufferReader.h
+V 100
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_LinearResampleFactory.h
+END
+AUD_ChannelMapperReader.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_ChannelMapperReader.cpp
+END
+AUD_I3DHandle.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/intern/AUD_I3DHandle.h
 END

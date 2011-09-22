@@ -1,4 +1,4 @@
-# $Id: CMakeLists.txt 35032 2011-02-21 13:13:08Z campbellbarton $
+# $Id: CMakeLists.txt 40086 2011-09-10 04:21:58Z campbellbarton $
 # ***** BEGIN GPL LICENSE BLOCK *****
 #
 # This program is free software; you can redistribute it and/or
@@ -31,11 +31,21 @@ if(WITH_BULLET)
 	add_subdirectory(bullet2)
 endif()
 
+if(WITH_MOD_CLOTH_ELTOPO)
+	add_subdirectory(eltopo)
+endif()
+
 if(WITH_BINRELOC)
 	add_subdirectory(binreloc)
 endif()
 
-add_subdirectory(glew)
+if(WITH_BUILTIN_GLEW)
+	add_subdirectory(glew)
+endif()
+
+if(WITH_GAMEENGINE)
+   add_subdirectory(recastnavigation)
+endif()
 
 if(WITH_IMAGE_OPENJPEG AND (NOT UNIX OR APPLE))
 	add_subdirectory(libopenjpeg)

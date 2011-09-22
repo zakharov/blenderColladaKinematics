@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_LimiterFactory.cpp 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_LimiterFactory.cpp 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -33,7 +33,7 @@
 #include "AUD_LimiterReader.h"
 #include "AUD_Space.h"
 
-AUD_LimiterFactory::AUD_LimiterFactory(AUD_IFactory* factory,
+AUD_LimiterFactory::AUD_LimiterFactory(AUD_Reference<AUD_IFactory> factory,
 									   float start, float end) :
 		AUD_EffectFactory(factory),
 		m_start(start),
@@ -51,7 +51,7 @@ float AUD_LimiterFactory::getEnd() const
 	return m_end;
 }
 
-AUD_IReader* AUD_LimiterFactory::createReader() const
+AUD_Reference<AUD_IReader> AUD_LimiterFactory::createReader()
 {
 	return new AUD_LimiterReader(getReader(), m_start, m_end);
 }

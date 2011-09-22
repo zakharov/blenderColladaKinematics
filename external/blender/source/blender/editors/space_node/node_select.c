@@ -1,5 +1,5 @@
 /*
- * $Id: node_select.c 35242 2011-02-27 20:29:51Z jesterking $
+ * $Id: node_select.c 40390 2011-09-20 08:48:48Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -37,10 +37,12 @@
 #include "DNA_scene_types.h"
 
 #include "BKE_context.h"
+#include "BKE_main.h"
 
 #include "BLI_rect.h"
 #include "BLI_utildefines.h"
 
+#include "ED_node.h"
 #include "ED_screen.h"
 #include "ED_types.h"
 
@@ -60,7 +62,7 @@ static bNode *node_under_mouse(bNodeTree *ntree, int mx, int my)
 {
 	bNode *node;
 	
-	for(next_node(ntree); (node=next_node(NULL));) {
+	for(node=ntree->nodes.last; node; node=node->prev) {
 		/* node body (header and scale are in other operators) */
 		if (BLI_in_rctf(&node->totr, mx, my))
 			return node;
@@ -70,7 +72,7 @@ static bNode *node_under_mouse(bNodeTree *ntree, int mx, int my)
 
 /* ****** Click Select ****** */
  
-static bNode *node_mouse_select(SpaceNode *snode, ARegion *ar, short *mval, short extend)
+static bNode *node_mouse_select(Main *bmain, SpaceNode *snode, ARegion *ar, const int mval[2], short extend)
 {
 	bNode *node;
 	float mx, my;
@@ -91,8 +93,10 @@ static bNode *node_mouse_select(SpaceNode *snode, ARegion *ar, short *mval, shor
 		}
 		else
 			node->flag ^= SELECT;
-			
-		node_set_active(snode, node);
+		
+		ED_node_set_active(bmain, snode->edittree, node);
+		
+		node_sort(snode->edittree);
 	}
 
 	return node;
@@ -100,11 +104,12 @@ static bNode *node_mouse_select(SpaceNode *snode, ARegion *ar, short *mval, shor
 
 static int node_select_exec(bContext *C, wmOperator *op)
 {
+	Main *bmain= CTX_data_main(C);
 	SpaceNode *snode= CTX_wm_space_node(C);
 	ARegion *ar= CTX_wm_region(C);
-	short mval[2];
+	int mval[2];
 	short extend;
-	bNode *node= NULL;
+	/* bNode *node= NULL; */ /* UNUSED */
 	
 	/* get settings from RNA properties for operator */
 	mval[0] = RNA_int_get(op->ptr, "mouse_x");
@@ -113,7 +118,7 @@ static int node_select_exec(bContext *C, wmOperator *op)
 	extend = RNA_boolean_get(op->ptr, "extend");
 	
 	/* perform the select */
-	node= node_mouse_select(snode, ar, mval, extend);
+	/* node= */ /* UNUSED*/ node_mouse_select(bmain, snode, ar, mval, extend);
 	
 	/* send notifiers */
 	WM_event_add_notifier(C, NC_NODE|NA_SELECTED, NULL);
@@ -124,14 +129,8 @@ static int node_select_exec(bContext *C, wmOperator *op)
 
 static int node_select_invoke(bContext *C, wmOperator *op, wmEvent *event)
 {
-	ARegion *ar= CTX_wm_region(C);
-	short mval[2];	
-	
-	mval[0]= event->x - ar->winrct.xmin;
-	mval[1]= event->y - ar->winrct.ymin;
-	
-	RNA_int_set(op->ptr, "mouse_x", mval[0]);
-	RNA_int_set(op->ptr, "mouse_y", mval[1]);
+	RNA_int_set(op->ptr, "mouse_x", event->mval[0]);
+	RNA_int_set(op->ptr, "mouse_y", event->mval[1]);
 
 	return node_select_exec(C,op);
 }
@@ -142,7 +141,7 @@ void NODE_OT_select(wmOperatorType *ot)
 	/* identifiers */
 	ot->name= "Select";
 	ot->idname= "NODE_OT_select";
-	ot->description= "Select node under cursor";
+	ot->description= "Select the node under the cursor";
 	
 	/* api callbacks */
 	ot->invoke= node_select_invoke;
@@ -185,6 +184,8 @@ static int node_borderselect_exec(bContext *C, wmOperator *op)
 		}
 	}
 	
+	node_sort(snode->edittree);
+	
 	WM_event_add_notifier(C, NC_NODE|NA_SELECTED, NULL);
 
 	return OPERATOR_FINISHED;
@@ -199,17 +200,9 @@ static int node_border_select_invoke(bContext *C, wmOperator *op, wmEvent *event
 		/* this allows border select on empty space, but drag-translate on nodes */
 		SpaceNode *snode= CTX_wm_space_node(C);
 		ARegion *ar= CTX_wm_region(C);
-		short mval[2];
 		float mx, my;
-		
-		mval[0]= event->x - ar->winrct.xmin;
-		mval[1]= event->y - ar->winrct.ymin;
-		
-		/* get mouse coordinates in view2d space */
-		mx= (float)mval[0];
-		my= (float)mval[1];
-		
-		UI_view2d_region_to_view(&ar->v2d, mval[0], mval[1], &mx, &my);
+
+		UI_view2d_region_to_view(&ar->v2d, event->mval[0], event->mval[1], &mx, &my);
 		
 		if (node_under_mouse(snode->edittree, mx, my))
 			return OPERATOR_CANCELLED|OPERATOR_PASS_THROUGH;
@@ -229,6 +222,7 @@ void NODE_OT_select_border(wmOperatorType *ot)
 	ot->invoke= node_border_select_invoke;
 	ot->exec= node_borderselect_exec;
 	ot->modal= WM_border_select_modal;
+	ot->cancel= WM_border_select_cancel;
 	
 	ot->poll= ED_operator_node_active;
 	
@@ -261,6 +255,8 @@ static int node_select_all_exec(bContext *C, wmOperator *UNUSED(op))
 		for(node=first; node; node=node->next)
 			node->flag |= NODE_SELECT;
 	}
+	
+	node_sort(snode->edittree);
 	
 	WM_event_add_notifier(C, NC_NODE|NA_SELECTED, NULL);
 	return OPERATOR_FINISHED;
@@ -302,6 +298,8 @@ static int node_select_linked_to_exec(bContext *C, wmOperator *UNUSED(op))
 			node->flag |= NODE_SELECT;
 	}
 	
+	node_sort(snode->edittree);
+	
 	WM_event_add_notifier(C, NC_NODE|NA_SELECTED, NULL);
 	return OPERATOR_FINISHED;
 }
@@ -342,6 +340,8 @@ static int node_select_linked_from_exec(bContext *C, wmOperator *UNUSED(op))
 			node->flag |= NODE_SELECT;
 	}
 	
+	node_sort(snode->edittree);
+	
 	WM_event_add_notifier(C, NC_NODE|NA_SELECTED, NULL);
 	return OPERATOR_FINISHED;
 }
@@ -368,6 +368,9 @@ static int node_select_same_type_exec(bContext *C, wmOperator *UNUSED(op))
 	SpaceNode *snode = CTX_wm_space_node(C);
 
 	node_select_same_type(snode);
+
+	node_sort(snode->edittree);
+
 	WM_event_add_notifier(C, NC_NODE|NA_SELECTED, NULL);
 	return OPERATOR_FINISHED;
 }
@@ -376,7 +379,7 @@ void NODE_OT_select_same_type(wmOperatorType *ot)
 {
 	/* identifiers */
 	ot->name = "Select Same Type";
-	ot->description = "Select all the same type";
+	ot->description = "Select all the nodes of the same type";
 	ot->idname = "NODE_OT_select_same_type";
 	
 	/* api callbacks */
@@ -394,7 +397,11 @@ static int node_select_same_type_next_exec(bContext *C, wmOperator *UNUSED(op))
 	SpaceNode *snode = CTX_wm_space_node(C);
 
 	node_select_same_type_np(snode, 0);
+
+	node_sort(snode->edittree);
+
 	WM_event_add_notifier(C, NC_NODE|NA_SELECTED, NULL);
+
 	return OPERATOR_FINISHED;
 }
 
@@ -402,7 +409,7 @@ void NODE_OT_select_same_type_next(wmOperatorType *ot)
 {
 	/* identifiers */
 	ot->name = "Select Same Type Next";
-	ot->description = "Select the next node of the same type.";
+	ot->description = "Select the next node of the same type";
 	ot->idname = "NODE_OT_select_same_type_next";
 	
 	/* api callbacks */
@@ -418,6 +425,9 @@ static int node_select_same_type_prev_exec(bContext *C, wmOperator *UNUSED(op))
 	SpaceNode *snode = CTX_wm_space_node(C);
 
 	node_select_same_type_np(snode, 1);
+
+	node_sort(snode->edittree);
+
 	WM_event_add_notifier(C, NC_NODE|NA_SELECTED, NULL);
 	return OPERATOR_FINISHED;
 }
@@ -426,7 +436,7 @@ void NODE_OT_select_same_type_prev(wmOperatorType *ot)
 {
 	/* identifiers */
 	ot->name = "Select Same Type Prev";
-	ot->description = "Select the prev node of the same type.";
+	ot->description = "Select the prev node of the same type";
 	ot->idname = "NODE_OT_select_same_type_prev";
 	
 	/* api callbacks */

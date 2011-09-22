@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_PitchFactory.cpp 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_PitchFactory.cpp 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -33,13 +33,13 @@
 #include "AUD_PitchReader.h"
 #include "AUD_Space.h"
 
-AUD_PitchFactory::AUD_PitchFactory(AUD_IFactory* factory, float pitch) :
+AUD_PitchFactory::AUD_PitchFactory(AUD_Reference<AUD_IFactory> factory, float pitch) :
 		AUD_EffectFactory(factory),
 		m_pitch(pitch)
 {
 }
 
-AUD_IReader* AUD_PitchFactory::createReader() const
+AUD_Reference<AUD_IReader> AUD_PitchFactory::createReader()
 {
 	return new AUD_PitchReader(getReader(), m_pitch);
 }

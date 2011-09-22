@@ -16,21 +16,21 @@
 #
 # ##### END GPL LICENSE BLOCK #####
 
-# <pep8 compliant>
+# <pep8-80 compliant>
 
 bl_info = {
     "name": "STL format",
     "author": "Guillaume Bouchard (Guillaum)",
-    "version": (1, ),
-    "blender": (2, 5, 3),
-    "api": 31667,
+    "version": (1, 0),
+    "blender": (2, 5, 7),
+    "api": 35622,
     "location": "File > Import-Export > Stl",
     "description": "Import-Export STL files",
     "warning": "",
-    "wiki_url": "http://wiki.blender.org/index.php/Extensions:2.5/Py/"\
-        "Scripts/Import-Export/STL",
+    "wiki_url": "http://wiki.blender.org/index.php/Extensions:2.5/Py/"
+                "Scripts/Import-Export/STL",
     "tracker_url": "https://projects.blender.org/tracker/index.php?"
-        "func=detail&aid=22837",
+                   "func=detail&aid=22837",
     "support": 'OFFICIAL',
     "category": "Import-Export"}
 
@@ -60,38 +60,48 @@ import os
 
 import bpy
 from bpy.props import StringProperty, BoolProperty, CollectionProperty
-from io_utils import ExportHelper, ImportHelper
+from bpy_extras.io_utils import ExportHelper, ImportHelper
 
 
 class ImportSTL(bpy.types.Operator, ImportHelper):
     '''Load STL triangle mesh data'''
     bl_idname = "import_mesh.stl"
     bl_label = "Import STL"
+    bl_options = {'UNDO'}
 
     filename_ext = ".stl"
 
-    filter_glob = StringProperty(default="*.stl", options={'HIDDEN'})
-
-    files = CollectionProperty(name="File Path",
-                          description="File path used for importing "
-                                      "the STL file",
-                          type=bpy.types.OperatorFileListElement)
-
-    directory = StringProperty()
+    filter_glob = StringProperty(
+            default="*.stl",
+            options={'HIDDEN'},
+            )
+    files = CollectionProperty(
+            name="File Path",
+            type=bpy.types.OperatorFileListElement,
+            )
+    directory = StringProperty(
+            subtype='DIR_PATH',
+            )
 
     def execute(self, context):
         from . import stl_utils
         from . import blender_utils
 
-        paths = [os.path.join(self.directory, name.name) for name in self.files]
+        paths = [os.path.join(self.directory, name.name)
+                 for name in self.files]
 
         if not paths:
             paths.append(self.filepath)
 
-        for path in paths:
-            objName = bpy.path.display_name(path.split("\\")[-1].split("/")[-1])
-            tris, pts = stl_utils.read_stl(path)
+        if bpy.ops.object.mode_set.poll():
+            bpy.ops.object.mode_set(mode='OBJECT')
 
+        if bpy.ops.object.select_all.poll():
+            bpy.ops.object.select_all(action='DESELECT')
+
+        for path in paths:
+            objName = bpy.path.display_name(os.path.basename(path))
+            tris, pts = stl_utils.read_stl(path)
             blender_utils.create_and_link_mesh(objName, tris, pts)
 
         return {'FINISHED'}

@@ -1,5 +1,5 @@
 /**
- * $Id: GHOST_Test.cpp 28254 2010-04-18 10:28:37Z campbellbarton $
+ * $Id: GHOST_Test.cpp 38065 2011-07-03 16:17:38Z campbellbarton $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -28,7 +28,7 @@
 
 /**
 
- * $Id: GHOST_Test.cpp 28254 2010-04-18 10:28:37Z campbellbarton $
+ * $Id: GHOST_Test.cpp 38065 2011-07-03 16:17:38Z campbellbarton $
  * Copyright (C) 2001 NaN Technologies B.V.
  * Simple test file for the GHOST library.
  * The OpenGL gear code is taken from the Qt sample code which,
@@ -428,7 +428,7 @@ Application::Application(GHOST_ISystem* system)
 	// Create the main window
 	STR_String title1 ("gears - main window");
 	m_mainWindow = system->createWindow(title1, 10, 64, 320, 200, GHOST_kWindowStateNormal,
-		GHOST_kDrawingContextTypeOpenGL, true /* stereo flag */);
+		GHOST_kDrawingContextTypeOpenGL, false, false);
 
     if (!m_mainWindow) {
 		std::cout << "could not create main window\n";
@@ -438,7 +438,7 @@ Application::Application(GHOST_ISystem* system)
 	// Create a secondary window
 	STR_String title2 ("gears - secondary window");
 	m_secondaryWindow = system->createWindow(title2, 340, 64, 320, 200, GHOST_kWindowStateNormal,
-		GHOST_kDrawingContextTypeOpenGL, false /* stereo flag */);
+		GHOST_kDrawingContextTypeOpenGL, false, false);
 	if (!m_secondaryWindow) {
 		cout << "could not create secondary window\n";
 		exit(-1);

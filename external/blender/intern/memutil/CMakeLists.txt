@@ -1,4 +1,4 @@
-# $Id: CMakeLists.txt 34359 2011-01-16 20:52:15Z campbellbarton $
+# $Id: CMakeLists.txt 37030 2011-05-31 01:15:44Z campbellbarton $
 # ***** BEGIN GPL LICENSE BLOCK *****
 #
 # This program is free software; you can redistribute it and/or
@@ -29,6 +29,10 @@ set(INC
 	..
 )
 
+set(INC_SYS
+
+)
+
 set(SRC
 	intern/MEM_CacheLimiterC-Api.cpp
 	intern/MEM_RefCountedC-Api.cpp
@@ -43,4 +47,4 @@ set(SRC
 	MEM_SmartPtr.h
 )
 
-blender_add_lib(bf_intern_memutil "${SRC}" "${INC}")
+blender_add_lib(bf_intern_memutil "${SRC}" "${INC}" "${INC_SYS}")

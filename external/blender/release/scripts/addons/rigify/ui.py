@@ -21,7 +21,6 @@ from bpy.props import *
 import rigify
 from rigify.utils import get_rig_type
 from rigify import generate
-from rna_prop_ui import rna_idprop_ui_prop_get
 
 
 class DATA_PT_rigify_buttons(bpy.types.Panel):
@@ -47,9 +46,8 @@ class DATA_PT_rigify_buttons(bpy.types.Panel):
         obj = context.object
         id_store = C.window_manager
 
-        if obj.mode in ('POSE', 'OBJECT'):
-            row = layout.row()
-            row.operator("pose.rigify_generate", text="Generate")
+        if obj.mode in {'POSE', 'OBJECT'}:
+            layout.operator("pose.rigify_generate", text="Generate")
         elif obj.mode == 'EDIT':
             # Build types list
             collection_name = str(id_store.rigify_collection).replace(" ", "")
@@ -58,7 +56,7 @@ class DATA_PT_rigify_buttons(bpy.types.Panel):
                 id_store.rigify_types.remove(0)
 
             for r in rigify.rig_list:
-                collection = r.split('.')[0]
+                # collection = r.split('.')[0]  # UNUSED
                 if collection_name == "All":
                     a = id_store.rigify_types.add()
                     a.name = r
@@ -76,9 +74,48 @@ class DATA_PT_rigify_buttons(bpy.types.Panel):
             # Rig type list
             row = layout.row()
             row.template_list(id_store, "rigify_types", id_store, 'rigify_active_type')
-            row = layout.row()
-            op = row.operator("armature.metarig_sample_add", text="Add sample")
+
+            op = layout.operator("armature.metarig_sample_add", text="Add sample")
             op.metarig_type = id_store.rigify_types[id_store.rigify_active_type].name
+
+
+class DATA_PT_rigify_layer_names(bpy.types.Panel):
+    bl_label = "Rigify Layer Names"
+    bl_space_type = 'PROPERTIES'
+    bl_region_type = 'WINDOW'
+    bl_context = "data"
+    bl_options = {'DEFAULT_CLOSED'}
+
+    @classmethod
+    def poll(cls, context):
+        if not context.armature:
+            return False
+        return True
+
+    def draw(self, context):
+        layout = self.layout
+        obj = context.object
+
+        # Ensure that the layers exist
+        for i in range(1 + len(obj.data.rigify_layers), 29):
+            obj.data.rigify_layers.add()
+
+        # UI
+        for i in range(28):
+            if (i % 16) == 0:
+                col = layout.column()
+                if i == 0:
+                    col.label(text="Top Row:")
+                else:
+                    col.label(text="Bottom Row:")
+            if (i % 8) == 0:
+                col = layout.column(align=True)
+            row = col.row()
+            row.prop(obj.data, "layers", index=i, text="", toggle=True)
+            split = row.split(percentage=0.8)
+            split.prop(obj.data.rigify_layers[i], "name", text="Layer %d" % (i + 1))
+            split.prop(obj.data.rigify_layers[i], "row", text="")
+            #split.prop(obj.data.rigify_layers[i], "column", text="")
 
 
 class BONE_PT_rigify_buttons(bpy.types.Panel):
@@ -111,7 +148,7 @@ class BONE_PT_rigify_buttons(bpy.types.Panel):
             id_store.rigify_types.remove(0)
 
         for r in rigify.rig_list:
-            collection = r.split('.')[0]
+            # collection = r.split('.')[0]  # UNUSED
             if collection_name == "All":
                 a = id_store.rigify_types.add()
                 a.name = r
@@ -193,15 +230,20 @@ class Generate(bpy.types.Operator):
 
     bl_idname = "pose.rigify_generate"
     bl_label = "Rigify Generate Rig"
+    bl_options = {'UNDO'}
 
     def execute(self, context):
         import imp
         imp.reload(generate)
 
+        use_global_undo = context.user_preferences.edit.use_global_undo
+        context.user_preferences.edit.use_global_undo = False
         try:
             generate.generate_rig(context, context.object)
         except rigify.utils.MetarigError as rig_exception:
             rigify_report_exception(self, rig_exception)
+        finally:
+            context.user_preferences.edit.use_global_undo = use_global_undo
 
         return {'FINISHED'}
 
@@ -211,11 +253,14 @@ class Sample(bpy.types.Operator):
 
     bl_idname = "armature.metarig_sample_add"
     bl_label = "Add a sample metarig for a rig type"
+    bl_options = {'UNDO'}
 
     metarig_type = StringProperty(name="Type", description="Name of the rig type to generate a sample of", maxlen=128, default="")
 
     def execute(self, context):
         if context.mode == 'EDIT_ARMATURE' and self.metarig_type != "":
+            use_global_undo = context.user_preferences.edit.use_global_undo
+            context.user_preferences.edit.use_global_undo = False
             try:
                 rig = get_rig_type(self.metarig_type).Rig
                 create_sample = rig.create_sample
@@ -223,16 +268,19 @@ class Sample(bpy.types.Operator):
                 print("Rigify: rig type has no sample.")
             else:
                 create_sample(context.active_object)
-            bpy.ops.object.mode_set(mode='EDIT')
+            finally:
+                context.user_preferences.edit.use_global_undo = use_global_undo
+                bpy.ops.object.mode_set(mode='EDIT')
 
         return {'FINISHED'}
 
 
 #menu_func = (lambda self, context: self.layout.menu("INFO_MT_armature_metarig_add", icon='OUTLINER_OB_ARMATURE'))
 
-#import space_info  # ensure the menu is loaded first
+#from bl_ui import space_info  # ensure the menu is loaded first
 
 def register():
+    bpy.utils.register_class(DATA_PT_rigify_layer_names)
     bpy.utils.register_class(DATA_PT_rigify_buttons)
     bpy.utils.register_class(BONE_PT_rigify_buttons)
     bpy.utils.register_class(Generate)
@@ -242,6 +290,7 @@ def register():
 
 
 def unregister():
+    bpy.utils.unregister_class(DATA_PT_rigify_layer_names)
     bpy.utils.unregister_class(DATA_PT_rigify_buttons)
     bpy.utils.unregister_class(BONE_PT_rigify_buttons)
     bpy.utils.unregister_class(Generate)

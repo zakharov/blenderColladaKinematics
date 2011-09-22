@@ -150,6 +150,8 @@ public:
 	virtual void  getAabb(btBroadphaseProxy* proxy,btVector3& aabbMin, btVector3& aabbMax ) const;
 	
 	virtual void	rayTest(const btVector3& rayFrom,const btVector3& rayTo, btBroadphaseRayCallback& rayCallback, const btVector3& aabbMin=btVector3(0,0,0), const btVector3& aabbMax = btVector3(0,0,0));
+	virtual void	aabbTest(const btVector3& aabbMin, const btVector3& aabbMax, btBroadphaseAabbCallback& callback);
+
 	
 	void quantize(BP_FP_INT_TYPE* out, const btVector3& point, int isMax) const;
 	///unQuantize should be conservative: aabbMin/aabbMax should be larger then 'getAabb' result
@@ -280,6 +282,31 @@ void	btAxisSweep3Internal<BP_FP_INT_TYPE>::rayTest(const btVector3& rayFrom,cons
 			if (m_pEdges[axis][i].IsMax())
 			{
 				rayCallback.process(getHandle(m_pEdges[axis][i].m_handle));
+			}
+		}
+	}
+}
+
+template <typename BP_FP_INT_TYPE>
+void	btAxisSweep3Internal<BP_FP_INT_TYPE>::aabbTest(const btVector3& aabbMin, const btVector3& aabbMax, btBroadphaseAabbCallback& callback)
+{
+	if (m_raycastAccelerator)
+	{
+		m_raycastAccelerator->aabbTest(aabbMin,aabbMax,callback);
+	} else
+	{
+		//choose axis?
+		BP_FP_INT_TYPE axis = 0;
+		//for each proxy
+		for (BP_FP_INT_TYPE i=1;i<m_numHandles*2+1;i++)
+		{
+			if (m_pEdges[axis][i].IsMax())
+			{
+				Handle* handle = getHandle(m_pEdges[axis][i].m_handle);
+				if (TestAabbAgainstAabb2(aabbMin,aabbMax,handle->m_aabbMin,handle->m_aabbMax))
+				{
+					callback.process(handle);
+				}
 			}
 		}
 	}
@@ -999,7 +1026,7 @@ void btAxisSweep3Internal<BP_FP_INT_TYPE>::sortMaxUp(int axis, BP_FP_INT_TYPE ed
 
 
 /// The btAxisSweep3 is an efficient implementation of the 3d axis sweep and prune broadphase.
-/// It uses arrays rather then lists for storage of the 3 axis. Also it operates using 16 bit integer coordinates instead of floats.
+/// It uses arrays rather than lists for storage of the 3 axis. Also it operates using 16 bit integer coordinates instead of floats.
 /// For large worlds and many objects, use bt32BitAxisSweep3 or btDbvtBroadphase instead. bt32BitAxisSweep3 has higher precision and allows more then 16384 objects at the cost of more memory and bit of performance.
 class btAxisSweep3 : public btAxisSweep3Internal<unsigned short int>
 {
@@ -1011,7 +1038,7 @@ public:
 
 /// The bt32BitAxisSweep3 allows higher precision quantization and more objects compared to the btAxisSweep3 sweep and prune.
 /// This comes at the cost of more memory per handle, and a bit slower performance.
-/// It uses arrays rather then lists for storage of the 3 axis.
+/// It uses arrays rather than lists for storage of the 3 axis.
 class bt32BitAxisSweep3 : public btAxisSweep3Internal<unsigned int>
 {
 public:

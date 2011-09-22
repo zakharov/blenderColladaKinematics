@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_IIRFilterReader.cpp 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_IIRFilterReader.cpp 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -31,9 +31,9 @@
 
 #include "AUD_IIRFilterReader.h"
 
-AUD_IIRFilterReader::AUD_IIRFilterReader(AUD_IReader* reader,
-										 std::vector<float> b,
-										 std::vector<float> a) :
+AUD_IIRFilterReader::AUD_IIRFilterReader(AUD_Reference<AUD_IReader> reader,
+										 const std::vector<float>& b,
+										 const std::vector<float>& a) :
 	AUD_BaseIIRFilterReader(reader, b.size(), a.size()), m_a(a), m_b(b)
 {
 	for(int i = 1; i < m_a.size(); i++)
@@ -53,4 +53,12 @@ sample_t AUD_IIRFilterReader::filter()
 		out += x(-i) * m_b[i];
 
 	return out;
+}
+
+void AUD_IIRFilterReader::setCoefficients(const std::vector<float>& b,
+										  const std::vector<float>& a)
+{
+	setLengths(m_b.size(), m_a.size());
+	m_a = a;
+	m_b = b;
 }

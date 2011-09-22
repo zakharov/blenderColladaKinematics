@@ -1,4 +1,4 @@
-// $Id: KX_TrackToActuator.h 35063 2011-02-22 10:33:14Z jesterking $
+// $Id: KX_TrackToActuator.h 39883 2011-09-03 02:15:49Z campbellbarton $
 //
 // ***** BEGIN GPL LICENSE BLOCK *****
 //
@@ -57,7 +57,7 @@ class KX_TrackToActuator : public SCA_IActuator
 
   public:
 	KX_TrackToActuator(SCA_IObject* gameobj, SCA_IObject *ob, int time,
-				       bool threedee,int trackflag,int upflag);
+	                   bool threedee,int trackflag,int upflag);
 	virtual ~KX_TrackToActuator();
 	virtual CValue* GetReplica() {
 		KX_TrackToActuator* replica = new KX_TrackToActuator(*this);
@@ -67,7 +67,7 @@ class KX_TrackToActuator : public SCA_IActuator
 
 	virtual void ProcessReplica();
 	virtual bool UnlinkObject(SCA_IObject* clientobj);
-	virtual void Relink(GEN_Map<GEN_HashedPtr, void*> *obj_map);
+	virtual void Relink(CTR_Map<CTR_HashedPtr, void*> *obj_map);
 	virtual bool Update(double curtime, bool frame);
 
 #ifdef WITH_PYTHON

@@ -56,7 +56,7 @@ static NPNetscapeFuncs   gNetscapeFuncs;	/* Netscape Function table */
 
 void
 NPN_Version(int* plugin_major, int* plugin_minor,
-	     int* netscape_major, int* netscape_minor)
+            int* netscape_major, int* netscape_minor)
 {
 	*plugin_major = NP_VERSION_MAJOR;
 	*plugin_minor = NP_VERSION_MINOR;
@@ -447,7 +447,7 @@ NP_Initialize(NPNetscapeFuncs* nsTable, NPPluginFuncs* pluginFuncs)
 NPError
 NP_Shutdown(void)
 {
- 	PLUGINDEBUGSTR("NP_Shutdown");
+	PLUGINDEBUGSTR("NP_Shutdown");
 	NPP_Shutdown();
 	return NPERR_NO_ERROR;
 }

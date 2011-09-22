@@ -1,14 +1,14 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/tools
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-30T15:29:22.294392Z
-34567
+2011-08-09T07:48:40.129422Z
+39205
 campbellbarton
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2011-03-03T12:26:43.490297Z
+2011-09-21T18:16:17.319849Z
 524d792376a651203a92a5df272dce2c
 2009-12-26T09:36:50.105781Z
 25566
@@ -60,74 +60,40 @@ has-props
 
 8531
 
-darwin
+MakeGLStipple.py
+file
+
+
+
+
+2011-09-21T18:16:17.319849Z
+03952bcdb9c4d3a16f3c7130f860d114
+2011-08-03T18:14:39.451867Z
+38997
+gsrb3d
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2610
+
+CTS
 dir
-
-to_unix
-file
-
-
-
-
-2011-03-03T12:26:43.490297Z
-78f3b0e88e1b755223cc8bbe2ad3963d
-2002-10-12T11:37:38.000000Z
-2
-hans
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-486
-
-to_dos
-file
-
-
-
-
-2011-03-03T12:26:43.490297Z
-63967f059528e61f2da63f8fa778b676
-2002-10-12T11:37:38.000000Z
-2
-hans
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-548
 

@@ -1,5 +1,5 @@
 /*
- * $Id: rna_meta.c 35238 2011-02-27 20:20:01Z jesterking $
+ * $Id: rna_meta.c 40354 2011-09-19 13:23:58Z mont29 $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -236,15 +236,15 @@ static void rna_def_metaball_elements(BlenderRNA *brna, PropertyRNA *cprop)
 	RNA_def_struct_ui_text(srna, "Meta Elements", "Collection of metaball elements");
 
 	func= RNA_def_function(srna, "new", "rna_MetaBall_elements_new");
-	RNA_def_function_ui_description(func, "Add a new spline to the curve.");
-	RNA_def_enum(func, "type", metaelem_type_items, MB_BALL, "", "type for the new meta element.");
-	parm= RNA_def_pointer(func, "element", "MetaElement", "", "The newly created metaelement.");
+	RNA_def_function_ui_description(func, "Add a new spline to the curve");
+	RNA_def_enum(func, "type", metaelem_type_items, MB_BALL, "", "type for the new meta-element");
+	parm= RNA_def_pointer(func, "element", "MetaElement", "", "The newly created meta-element");
 	RNA_def_function_return(func, parm);
 
 	func= RNA_def_function(srna, "remove", "rna_MetaBall_elements_remove");
-	RNA_def_function_ui_description(func, "Remove a spline from a curve.");
+	RNA_def_function_ui_description(func, "Remove a spline from a curve");
 	RNA_def_function_flag(func, FUNC_USE_REPORTS);
-	parm= RNA_def_pointer(func, "element", "MetaElement", "", "The element to remove.");
+	parm= RNA_def_pointer(func, "element", "MetaElement", "", "The element to remove");
 	RNA_def_property_flag(parm, PROP_REQUIRED|PROP_NEVER_NULL);
 
 	prop= RNA_def_property(srna, "active", PROP_POINTER, PROP_NONE);

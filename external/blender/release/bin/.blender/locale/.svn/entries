@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/release/bin/.blender/locale
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2009-08-02T03:59:00.141259Z
-22131
-campbellbarton
+2011-09-21T17:34:50.780111Z
+40437
+mont29
 
 
 
@@ -41,16 +41,19 @@ dir
 ru
 dir
 
-de
+sv
 dir
 
 bg
 dir
 
-sv
+de
 dir
 
 ja
+dir
+
+zh_TW
 dir
 
 fi
@@ -62,10 +65,13 @@ dir
 zh_CN
 dir
 
+ar
+dir
+
 hr_HR
 dir
 
-ar
+ne
 dir
 
 sr@Latn

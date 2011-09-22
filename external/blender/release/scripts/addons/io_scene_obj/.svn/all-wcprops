@@ -1,23 +1,23 @@
 K 25
 svn:wc:ra_dav:version-url
 V 73
-/svnroot/bf-extensions/!svn/ver/1675/trunk/py/scripts/addons/io_scene_obj
+/svnroot/bf-extensions/!svn/ver/2334/trunk/py/scripts/addons/io_scene_obj
 END
 export_obj.py
 K 25
 svn:wc:ra_dav:version-url
 V 87
-/svnroot/bf-extensions/!svn/ver/1539/trunk/py/scripts/addons/io_scene_obj/export_obj.py
+/svnroot/bf-extensions/!svn/ver/2217/trunk/py/scripts/addons/io_scene_obj/export_obj.py
 END
 __init__.py
 K 25
 svn:wc:ra_dav:version-url
 V 85
-/svnroot/bf-extensions/!svn/ver/1675/trunk/py/scripts/addons/io_scene_obj/__init__.py
+/svnroot/bf-extensions/!svn/ver/2334/trunk/py/scripts/addons/io_scene_obj/__init__.py
 END
 import_obj.py
 K 25
 svn:wc:ra_dav:version-url
 V 87
-/svnroot/bf-extensions/!svn/ver/1675/trunk/py/scripts/addons/io_scene_obj/import_obj.py
+/svnroot/bf-extensions/!svn/ver/2207/trunk/py/scripts/addons/io_scene_obj/import_obj.py
 END

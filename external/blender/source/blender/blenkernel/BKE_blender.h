@@ -1,5 +1,5 @@
 /*
- * $Id: BKE_blender.h 35033 2011-02-21 13:47:49Z lukastoenne $ 
+ * $Id: BKE_blender.h 40397 2011-09-20 14:28:54Z dingto $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -42,18 +42,18 @@ extern "C" {
 
 /* these lines are grep'd, watch out for our not-so-awesome regex
  * and keep comment above the defines.
- * Use STRINGIFY() rather then defining with quotes */
-#define BLENDER_VERSION			256
-#define BLENDER_SUBVERSION		2
+ * Use STRINGIFY() rather than defining with quotes */
+#define BLENDER_VERSION			259
+#define BLENDER_SUBVERSION		3
 
 #define BLENDER_MINVERSION		250
 #define BLENDER_MINSUBVERSION	0
 
 /* used by packaging tools */
 		/* can be left blank, otherwise a,b,c... etc with no quotes */
-#define BLENDER_VERSION_CHAR	a
-		/* alpha/beta/rc/releases */
-#define BLENDER_VERSION_CYCLE	beta	
+#define BLENDER_VERSION_CHAR
+		/* alpha/beta/rc/release, docs use this */
+#define BLENDER_VERSION_CYCLE	beta
 
 struct ListBase;
 struct MemFile;
@@ -89,6 +89,7 @@ extern int BKE_undo_valid(const char *name);
 extern void BKE_reset_undo(void);
 extern char *BKE_undo_menu_string(void);
 extern void BKE_undo_number(struct bContext *C, int nr);
+extern char *BKE_undo_get_name(int nr, int *active);
 extern void BKE_undo_save_quit(void);
 extern struct Main *BKE_undo_get_main(struct Scene **scene);
 

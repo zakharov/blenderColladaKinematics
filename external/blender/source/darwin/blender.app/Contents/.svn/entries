@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/darwin/blender.app/Contents
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2009-05-21T13:39:47.349942Z
-20317
-broken
+2011-05-09T08:15:38.241902Z
+36564
+campbellbarton
 
 
 
@@ -35,11 +35,11 @@ file
 
 
 
-2011-03-03T12:26:49.834297Z
-2cf9a421c0a88d86609916bc72a2d259
-2004-09-28T20:59:14.000000Z
-3149
-ton
+2011-09-21T18:16:19.747861Z
+6cbb5c7984b17f1ec3671c162a3313c0
+2011-05-09T08:15:38.241902Z
+36564
+campbellbarton
 has-props
 
 
@@ -61,7 +61,7 @@ has-props
 
 
 
-1372
+1394
 
 Resources
 dir
@@ -72,7 +72,7 @@ file
 
 
 
-2011-03-03T12:26:49.838297Z
+2011-09-21T18:16:19.747861Z
 23b7d7d024abb0f558420e098800bf27
 2002-12-03T10:02:40.000000Z
 155

@@ -1,5 +1,5 @@
 /*
- * $Id: BL_ArmatureChannel.h 35167 2011-02-25 13:30:41Z jesterking $
+ * $Id: BL_ArmatureChannel.h 36523 2011-05-06 20:18:42Z blendix $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -35,8 +35,8 @@
 #define __BL_ARMATURECHANNEL
 
 #include "DNA_action_types.h"
-#include "GEN_HashedPtr.h"
-#include "GEN_Map.h"
+#include "CTR_HashedPtr.h"
+#include "CTR_Map.h"
 #include "PyObjectPlus.h"
 
 class SCA_IObject;

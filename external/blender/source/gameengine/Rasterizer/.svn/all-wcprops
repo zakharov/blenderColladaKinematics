@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 77
-/svnroot/bf-blender/!svn/ver/35174/trunk/blender/source/gameengine/Rasterizer
+/svnroot/bf-blender/!svn/ver/40372/trunk/blender/source/gameengine/Rasterizer
 END
 RAS_ICanvas.h
 K 25
@@ -19,7 +19,7 @@ RAS_MaterialBucket.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 100
-/svnroot/bf-blender/!svn/ver/35174/trunk/blender/source/gameengine/Rasterizer/RAS_MaterialBucket.cpp
+/svnroot/bf-blender/!svn/ver/39683/trunk/blender/source/gameengine/Rasterizer/RAS_MaterialBucket.cpp
 END
 RAS_Polygon.h
 K 25
@@ -31,7 +31,7 @@ RAS_MaterialBucket.h
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/svnroot/bf-blender/!svn/ver/35072/trunk/blender/source/gameengine/Rasterizer/RAS_MaterialBucket.h
+/svnroot/bf-blender/!svn/ver/36523/trunk/blender/source/gameengine/Rasterizer/RAS_MaterialBucket.h
 END
 RAS_TexVert.cpp
 K 25
@@ -43,7 +43,7 @@ SConscript
 K 25
 svn:wc:ra_dav:version-url
 V 88
-/svnroot/bf-blender/!svn/ver/33156/trunk/blender/source/gameengine/Rasterizer/SConscript
+/svnroot/bf-blender/!svn/ver/36523/trunk/blender/source/gameengine/Rasterizer/SConscript
 END
 RAS_Rect.h
 K 25
@@ -61,7 +61,7 @@ RAS_2DFilterManager.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 101
-/svnroot/bf-blender/!svn/ver/35174/trunk/blender/source/gameengine/Rasterizer/RAS_2DFilterManager.cpp
+/svnroot/bf-blender/!svn/ver/39885/trunk/blender/source/gameengine/Rasterizer/RAS_2DFilterManager.cpp
 END
 RAS_TexVert.h
 K 25
@@ -73,19 +73,19 @@ RAS_IRasterizer.h
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svnroot/bf-blender/!svn/ver/35072/trunk/blender/source/gameengine/Rasterizer/RAS_IRasterizer.h
+/svnroot/bf-blender/!svn/ver/40372/trunk/blender/source/gameengine/Rasterizer/RAS_IRasterizer.h
 END
 RAS_Deformer.h
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35072/trunk/blender/source/gameengine/Rasterizer/RAS_Deformer.h
+/svnroot/bf-blender/!svn/ver/36523/trunk/blender/source/gameengine/Rasterizer/RAS_Deformer.h
 END
 RAS_BucketManager.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svnroot/bf-blender/!svn/ver/35174/trunk/blender/source/gameengine/Rasterizer/RAS_BucketManager.cpp
+/svnroot/bf-blender/!svn/ver/36523/trunk/blender/source/gameengine/Rasterizer/RAS_BucketManager.cpp
 END
 RAS_IRenderTools.cpp
 K 25
@@ -109,7 +109,7 @@ RAS_BucketManager.h
 K 25
 svn:wc:ra_dav:version-url
 V 97
-/svnroot/bf-blender/!svn/ver/35072/trunk/blender/source/gameengine/Rasterizer/RAS_BucketManager.h
+/svnroot/bf-blender/!svn/ver/36523/trunk/blender/source/gameengine/Rasterizer/RAS_BucketManager.h
 END
 RAS_IRenderTools.h
 K 25
@@ -127,7 +127,7 @@ RAS_IPolygonMaterial.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 102
-/svnroot/bf-blender/!svn/ver/35174/trunk/blender/source/gameengine/Rasterizer/RAS_IPolygonMaterial.cpp
+/svnroot/bf-blender/!svn/ver/40372/trunk/blender/source/gameengine/Rasterizer/RAS_IPolygonMaterial.cpp
 END
 RAS_FramingManager.h
 K 25
@@ -145,7 +145,7 @@ RAS_IPolygonMaterial.h
 K 25
 svn:wc:ra_dav:version-url
 V 100
-/svnroot/bf-blender/!svn/ver/35072/trunk/blender/source/gameengine/Rasterizer/RAS_IPolygonMaterial.h
+/svnroot/bf-blender/!svn/ver/40372/trunk/blender/source/gameengine/Rasterizer/RAS_IPolygonMaterial.h
 END
 RAS_texmatrix.cpp
 K 25
@@ -157,13 +157,13 @@ RAS_CameraData.h
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/35072/trunk/blender/source/gameengine/Rasterizer/RAS_CameraData.h
+/svnroot/bf-blender/!svn/ver/39883/trunk/blender/source/gameengine/Rasterizer/RAS_CameraData.h
 END
 CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/34486/trunk/blender/source/gameengine/Rasterizer/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/38443/trunk/blender/source/gameengine/Rasterizer/CMakeLists.txt
 END
 RAS_Polygon.cpp
 K 25
@@ -175,5 +175,5 @@ RAS_MeshObject.h
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/35072/trunk/blender/source/gameengine/Rasterizer/RAS_MeshObject.h
+/svnroot/bf-blender/!svn/ver/36523/trunk/blender/source/gameengine/Rasterizer/RAS_MeshObject.h
 END

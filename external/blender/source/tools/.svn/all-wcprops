@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 61
-/svnroot/bf-blender/!svn/ver/34567/trunk/blender/source/tools
+/svnroot/bf-blender/!svn/ver/39205/trunk/blender/source/tools
 END
 MakeCursor.py
 K 25
@@ -9,15 +9,9 @@ svn:wc:ra_dav:version-url
 V 75
 /svnroot/bf-blender/!svn/ver/25566/trunk/blender/source/tools/MakeCursor.py
 END
-to_unix
+MakeGLStipple.py
 K 25
 svn:wc:ra_dav:version-url
-V 69
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/tools/to_unix
-END
-to_dos
-K 25
-svn:wc:ra_dav:version-url
-V 68
-/svnroot/bf-blender/!svn/ver/23147/trunk/blender/source/tools/to_dos
+V 78
+/svnroot/bf-blender/!svn/ver/38997/trunk/blender/source/tools/MakeGLStipple.py
 END

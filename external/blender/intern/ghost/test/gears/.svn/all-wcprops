@@ -1,17 +1,17 @@
 K 25
 svn:wc:ra_dav:version-url
 V 72
-/svnroot/bf-blender/!svn/ver/34567/trunk/blender/intern/ghost/test/gears
+/svnroot/bf-blender/!svn/ver/38065/trunk/blender/intern/ghost/test/gears
 END
 GHOST_C-Test.c
 K 25
 svn:wc:ra_dav:version-url
 V 87
-/svnroot/bf-blender/!svn/ver/28254/trunk/blender/intern/ghost/test/gears/GHOST_C-Test.c
+/svnroot/bf-blender/!svn/ver/38065/trunk/blender/intern/ghost/test/gears/GHOST_C-Test.c
 END
 GHOST_Test.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 87
-/svnroot/bf-blender/!svn/ver/28254/trunk/blender/intern/ghost/test/gears/GHOST_Test.cpp
+/svnroot/bf-blender/!svn/ver/38065/trunk/blender/intern/ghost/test/gears/GHOST_Test.cpp
 END

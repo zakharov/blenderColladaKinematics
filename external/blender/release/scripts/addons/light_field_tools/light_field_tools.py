@@ -102,15 +102,16 @@ class OBJECT_OT_create_lightfield_rig(bpy.types.Operator):
 
     def arrangeVerts(self):
         """Sorts the vertices as described in the usage part of the doc."""
-        # get mesh with applied modifer stack
+        #FIXME get mesh with applied modifer stack
         scene = bpy.context.scene
-        mesh = self.baseObject.create_mesh(scene, True, "PREVIEW")
+        mesh = self.baseObject.data
         verts = []
         row_length = scene.lightfield.row_length
-
+        matrix = self.baseObject.matrix_local.copy()
         for vert in mesh.vertices:
             # world/parent origin
-            co = vert.co * self.baseObject.matrix_local
+            # ???, normal and co are in different spaces, sure you want this?
+            co = matrix * vert.co
             normal = vert.normal
             verts.append([co, normal])
 
@@ -213,13 +214,11 @@ class OBJECT_OT_create_lightfield_rig(bpy.types.Operator):
 
     def createTexture(self, index):
         name = "light_field_spot_tex_" + str(index)
-        tex = bpy.data.textures.new(name)
-        # change type
-        tex.type = 'IMAGE'
-        tex = tex.recast_type()
+        tex = bpy.data.textures.new(name, type='IMAGE')
 
         # load and set the image
-        img = bpy.data.images.new("lfe_str_" + str(index))
+        #FIXME width, height. not necessary to set in the past.
+        img = bpy.data.images.new("lfe_str_" + str(index), width=5, height=5)
         img.filepath = self.imagePaths[index]
         img.source = 'FILE'
         tex.image = img
@@ -252,7 +251,7 @@ class OBJECT_OT_create_lightfield_rig(bpy.types.Operator):
         if textured:
             spot.data.active_texture = self.createTexture(index)
             # texture mapping
-            spot.data.texture_slots[0].texture_coordinates = 'VIEW'
+            spot.data.texture_slots[0].texture_coords = 'VIEW'
 
         # handler parent
         if scene.lightfield.create_handler:
@@ -313,15 +312,15 @@ class OBJECT_OT_create_lightfield_basemesh(bpy.types.Operator):
     def getWidth(self, obj):
         mat = obj.matrix_local
         mesh = obj.data
-        v0 = mesh.vertices[mesh.edges[0].vertices[0]].co * mat
-        v1 = mesh.vertices[mesh.edges[0].vertices[1]].co * mat
+        v0 = mat * mesh.vertices[mesh.edges[0].vertices[0]].co
+        v1 = mat * mesh.vertices[mesh.edges[0].vertices[1]].co
         return (v0-v1).length
 
 
     def getCamVec(self, obj, angle):
         width = self.getWidth(obj)
         itmat = obj.matrix_local.inverted().transposed()
-        normal = (obj.data.faces[0].normal * itmat).normalized()
+        normal = itmat * obj.data.faces[0].normal.normalized()
         vl = (width/2) * (1/math.tan(math.radians(angle/2)))
         return normal*vl
 
@@ -337,7 +336,7 @@ class OBJECT_OT_create_lightfield_basemesh(bpy.types.Operator):
         scene.objects.link(nobj)
         nobj.select = True 
                 
-        if scene.objects.active == None or scene.objects.active.mode == 'OBJECT':
+        if scene.objects.active is None or scene.objects.active.mode == 'OBJECT':
             scene.objects.active = nobj
 
 
@@ -402,12 +401,11 @@ class VIEW3D_OT_lightfield_tools(bpy.types.Panel):
     bl_label = "Light Field Tools"
 
     def draw(self, context):
+        layout = self.layout
+        
         scene = context.scene
 
-        layout = self.layout
-        row = layout.row()
         col = layout.column()
-
         col.prop(scene.lightfield, "row_length")
         col.prop(scene.lightfield, "angle")
 
@@ -417,18 +415,16 @@ class VIEW3D_OT_lightfield_tools(bpy.types.Panel):
         col.prop(scene.lightfield, "animate_camera")
         col.prop(scene.lightfield, "do_projection")
 
-        if (scene.lightfield.do_projection):
-            sub = layout.row()
-            subcol = sub.column(align=True)
-            subcol.prop(scene.lightfield, "texture_path")
-            subcol.prop(scene.lightfield, "light_intensity")
-            subcol.prop(scene.lightfield, "light_spot_blend")
+        col = layout.column(align=True)
+        col.enabled = scene.lightfield.do_projection
+        col.prop(scene.lightfield, "texture_path")
+        col.prop(scene.lightfield, "light_intensity")
+        col.prop(scene.lightfield, "spot_blend")
 
         # create a basemesh
-        sub = layout.row()
-        subcol = sub.column(align=True)
-        subcol.operator("object.create_lightfield_basemesh", "Create Base Grid")
-        subcol.prop(scene.lightfield, "spacing")
+        col = layout.column(align=True)
+        col.operator("object.create_lightfield_basemesh", "Create Base Grid")
+        col.prop(scene.lightfield, "spacing")
 
         layout.operator("object.create_lightfield_rig", "Create Rig")
 

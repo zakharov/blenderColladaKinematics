@@ -1,5 +1,5 @@
 /*
- * $Id: drawnode.c 35242 2011-02-27 20:29:51Z jesterking $
+ * $Id: drawnode.c 40431 2011-09-21 15:15:30Z blendix $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -53,9 +53,10 @@
 #include "BKE_image.h"
 #include "BKE_library.h"
 #include "BKE_main.h"
+#include "BKE_node.h"
 
-#include "CMP_node.h"
-#include "SHD_node.h"
+#include "NOD_composite.h"
+#include "NOD_shader.h"
 
 #include "BIF_gl.h"
 #include "BIF_glutil.h"
@@ -80,6 +81,143 @@
 
 #include "node_intern.h"
 
+
+// XXX interface.h
+extern void ui_dropshadow(rctf *rct, float radius, float aspect, int select);
+
+/* ****************** SOCKET BUTTON DRAW FUNCTIONS ***************** */
+
+static void node_sync_cb(bContext *UNUSED(C), void *snode_v, void *node_v)
+{
+	SpaceNode *snode= snode_v;
+	
+	if(snode->treetype==NTREE_SHADER) {
+		nodeShaderSynchronizeID(node_v, 1);
+		// allqueue(REDRAWBUTSSHADING, 0);
+	}
+}
+
+static void node_socket_button_default(const bContext *C, uiBlock *block,
+								bNodeTree *ntree, bNode *node, bNodeSocket *sock,
+								const char *name, int x, int y, int width)
+{
+	PointerRNA ptr;
+	uiBut *bt;
+	
+	RNA_pointer_create(&ntree->id, &RNA_NodeSocket, sock, &ptr);
+	
+	bt = uiDefButR(block, NUM, B_NODE_EXEC, name,
+				   x, y+1, width, NODE_DY-2, 
+				   &ptr, "default_value", 0, 0, 0, -1, -1, NULL);
+	if (node)
+		uiButSetFunc(bt, node_sync_cb, CTX_wm_space_node(C), node);
+}
+
+typedef struct SocketComponentMenuArgs {
+	PointerRNA ptr;
+	int x, y, width;
+	uiButHandleFunc cb;
+	void *arg1, *arg2;
+} SocketComponentMenuArgs;
+/* NOTE: this is a block-menu, needs 0 events, otherwise the menu closes */
+static uiBlock *socket_component_menu(bContext *C, ARegion *ar, void *args_v)
+{
+	SocketComponentMenuArgs *args= (SocketComponentMenuArgs*)args_v;
+	uiBlock *block;
+	uiLayout *layout;
+	
+	block= uiBeginBlock(C, ar, "socket menu", UI_EMBOSS);
+	uiBlockSetFlag(block, UI_BLOCK_KEEP_OPEN);
+	
+	layout= uiLayoutColumn(uiBlockLayout(block, UI_LAYOUT_VERTICAL, UI_LAYOUT_PANEL, args->x, args->y+2, args->width, NODE_DY, UI_GetStyle()), 0);
+	
+	uiItemR(layout, &args->ptr, "default_value", UI_ITEM_R_EXPAND, "", ICON_NONE);
+	
+	return block;
+}
+static void node_socket_button_components(const bContext *C, uiBlock *block,
+								   bNodeTree *ntree, bNode *node, bNodeSocket *sock,
+								   const char *name, int x, int y, int width)
+{
+	PointerRNA ptr;
+	SocketComponentMenuArgs *args;
+	
+	RNA_pointer_create(&ntree->id, &RNA_NodeSocket, sock, &ptr);
+	
+	args= MEM_callocN(sizeof(SocketComponentMenuArgs), "SocketComponentMenuArgs");
+	
+	args->ptr = ptr;
+	args->x = x;
+	args->y = y;
+	args->width = width;
+	args->cb = node_sync_cb;
+	args->arg1 = CTX_wm_space_node(C);
+	args->arg2 = node;
+	
+	uiDefBlockButN(block, socket_component_menu, args, name, x, y+1, width, NODE_DY-2, "");
+}
+
+static void node_socket_button_color(const bContext *C, uiBlock *block,
+							  bNodeTree *ntree, bNode *node, bNodeSocket *sock,
+							  const char *name, int x, int y, int width)
+{
+	PointerRNA ptr;
+	uiBut *bt;
+	int labelw= width - 40;
+	
+	RNA_pointer_create(&ntree->id, &RNA_NodeSocket, sock, &ptr);
+	
+	bt=uiDefButR(block, COL, B_NODE_EXEC, "",
+				 x, y+2, (labelw>0 ? 40 : width), NODE_DY-2, 
+				 &ptr, "default_value", 0, 0, 0, -1, -1, NULL);
+	if (node)
+		uiButSetFunc(bt, node_sync_cb, CTX_wm_space_node(C), node);
+	
+	if (name[0]!='\0' && labelw>0)
+		uiDefBut(block, LABEL, 0, name, x + 40, y+2, labelw, NODE_DY-2, NULL, 0, 0, 0, 0, "");
+}
+
+/* ****************** BASE DRAW FUNCTIONS FOR NEW OPERATOR NODES ***************** */
+
+#if 0 /* UNUSED */
+static void node_draw_socket_new(bNodeSocket *sock, float size)
+{
+	float x=sock->locx, y=sock->locy;
+	
+	/* 16 values of sin function */
+	static float si[16] = {
+		0.00000000f, 0.39435585f,0.72479278f,0.93775213f,
+		0.99871650f,0.89780453f,0.65137248f,0.29936312f,
+		-0.10116832f,-0.48530196f,-0.79077573f,-0.96807711f,
+		-0.98846832f,-0.84864425f,-0.57126821f,-0.20129852f
+	};
+	/* 16 values of cos function */
+	static float co[16] ={
+		1.00000000f,0.91895781f,0.68896691f,0.34730525f,
+		-0.05064916f,-0.44039415f,-0.75875812f,-0.95413925f,
+		-0.99486932f,-0.87434661f,-0.61210598f,-0.25065253f,
+		0.15142777f,0.52896401f,0.82076344f,0.97952994f,
+	};
+	int a;
+	
+	glColor3ub(180, 180, 180);
+	
+	glBegin(GL_POLYGON);
+	for(a=0; a<16; a++)
+		glVertex2f(x+size*si[a], y+size*co[a]);
+	glEnd();
+	
+	glColor4ub(0, 0, 0, 150);
+	glEnable(GL_BLEND);
+	glEnable( GL_LINE_SMOOTH );
+	glBegin(GL_LINE_LOOP);
+	for(a=0; a<16; a++)
+		glVertex2f(x+size*si[a], y+size*co[a]);
+	glEnd();
+	glDisable( GL_LINE_SMOOTH );
+	glDisable(GL_BLEND);
+}
+#endif
 
 /* ****************** BUTTON CALLBACKS FOR ALL TREES ***************** */
 
@@ -169,7 +307,7 @@ static void node_buts_curvecol(uiLayout *layout, bContext *UNUSED(C), PointerRNA
 
 	if(_sample_col) {
 		cumap->flag |= CUMA_DRAW_SAMPLE;
-		VECCOPY(cumap->sample, _sample_col);
+		copy_v3_v3(cumap->sample, _sample_col);
 	}
 	else 
 		cumap->flag &= ~CUMA_DRAW_SAMPLE;
@@ -192,11 +330,12 @@ static void node_buts_normal(uiLayout *layout, bContext *UNUSED(C), PointerRNA *
 	bNode *node= ptr->data;
 	rctf *butr= &node->butr;
 	bNodeSocket *sock= node->outputs.first;		/* first socket stores normal */
+	float *nor= ((bNodeSocketValueVector*)sock->default_value)->value;
 	uiBut *bt;
 	
 	bt= uiDefButF(block, BUT_NORMAL, B_NODE_EXEC, "", 
 			  (short)butr->xmin, (short)butr->xmin, butr->xmax-butr->xmin, butr->xmax-butr->xmin, 
-			  sock->ns.vec, 0.0f, 1.0f, 0, 0, "");
+			  nor, 0.0f, 1.0f, 0, 0, "");
 	uiButSetFunc(bt, node_normal_cb, ntree, node);
 }
 #if 0 // not used in 2.5x yet
@@ -287,6 +426,469 @@ static void node_buts_math(uiLayout *layout, bContext *UNUSED(C), PointerRNA *pt
 	uiItemR(layout, ptr, "operation", 0, "", ICON_NONE);
 }
 
+static int node_resize_area_default(bNode *node, int x, int y)
+{
+	if (node->flag & NODE_HIDDEN) {
+		rctf totr= node->totr;
+		/* right part of node */
+		totr.xmin= node->totr.xmax-20.0f;
+		return BLI_in_rctf(&totr, x, y);
+	}
+	else {
+		/* rect we're interested in is just the bottom right corner */
+		rctf totr= node->totr;
+		/* bottom right corner */
+		totr.xmin= totr.xmax-10.0f;
+		totr.ymax= totr.ymin+10.0f;
+		return BLI_in_rctf(&totr, x, y);
+	}
+}
+
+/* ****************** BUTTON CALLBACKS FOR COMMON NODES ***************** */
+
+/* width of socket columns in group display */
+#define NODE_GROUP_FRAME		120
+
+/* based on settings in node, sets drawing rect info. each redraw! */
+/* note: this assumes only 1 group at a time is drawn (linked data) */
+/* in node->totr the entire boundbox for the group is stored */
+static void node_update_group(const bContext *C, bNodeTree *ntree, bNode *gnode)
+{
+	if (!(gnode->flag & NODE_GROUP_EDIT)) {
+		node_update_default(C, ntree, gnode);
+	}
+	else {
+		bNodeTree *ngroup= (bNodeTree *)gnode->id;
+		bNode *node;
+		bNodeSocket *sock, *gsock;
+		float locx, locy;
+		rctf *rect= &gnode->totr;
+		float node_group_frame= U.dpi*NODE_GROUP_FRAME/72;
+		int counter;
+		int dy;
+		
+		/* get "global" coords */
+		nodeSpaceCoords(gnode, &locx, &locy);
+		
+		/* center them, is a bit of abuse of locx and locy though */
+		node_update_nodetree(C, ngroup, locx, locy);
+		
+		rect->xmin = rect->xmax = locx;
+		rect->ymin = rect->ymax = locy;
+		
+		counter= 1;
+		for(node= ngroup->nodes.first; node; node= node->next) {
+			if(counter) {
+				*rect= node->totr;
+				counter= 0;
+			}
+			else
+				BLI_union_rctf(rect, &node->totr);
+		}
+		
+		/* add some room for links to group sockets */
+		rect->xmin -= 4*NODE_DY;
+		rect->xmax += 4*NODE_DY;
+		rect->ymin-= NODE_DY;
+		rect->ymax+= NODE_DY;
+		
+		/* input sockets */
+		dy = 0.5f*(rect->ymin+rect->ymax) + NODE_DY*(BLI_countlist(&gnode->inputs)-1);
+		gsock=ngroup->inputs.first;
+		sock=gnode->inputs.first;
+		while (gsock || sock) {
+			while (sock && !sock->groupsock) {
+				sock->locx = rect->xmin - node_group_frame;
+				sock->locy = dy;
+
+				/* prevent long socket lists from growing out of the group box */
+				if (dy-3*NODE_DYS < rect->ymin)
+					rect->ymin = dy-3*NODE_DYS;
+				if (dy+3*NODE_DYS > rect->ymax)
+					rect->ymax = dy+3*NODE_DYS;
+				dy -= 2*NODE_DY;
+				
+				sock = sock->next;
+			}
+			while (gsock && (!sock || sock->groupsock!=gsock)) {
+				gsock->locx = rect->xmin;
+				gsock->locy = dy;
+				
+				/* prevent long socket lists from growing out of the group box */
+				if (dy-3*NODE_DYS < rect->ymin)
+					rect->ymin = dy-3*NODE_DYS;
+				if (dy+3*NODE_DYS > rect->ymax)
+					rect->ymax = dy+3*NODE_DYS;
+				dy -= 2*NODE_DY;
+				
+				gsock = gsock->next;
+			}
+			while (sock && gsock && sock->groupsock==gsock) {
+				gsock->locx = rect->xmin;
+				sock->locx = rect->xmin - node_group_frame;
+				sock->locy = gsock->locy = dy;
+				
+				/* prevent long socket lists from growing out of the group box */
+				if (dy-3*NODE_DYS < rect->ymin)
+					rect->ymin = dy-3*NODE_DYS;
+				if (dy+3*NODE_DYS > rect->ymax)
+					rect->ymax = dy+3*NODE_DYS;
+				dy -= 2*NODE_DY;
+				
+				sock = sock->next;
+				gsock = gsock->next;
+			}
+		}
+		
+		/* output sockets */
+		dy = 0.5f*(rect->ymin+rect->ymax) + NODE_DY*(BLI_countlist(&gnode->outputs)-1);
+		gsock=ngroup->outputs.first;
+		sock=gnode->outputs.first;
+		while (gsock || sock) {
+			while (sock && !sock->groupsock) {
+				sock->locx = rect->xmax + node_group_frame;
+				sock->locy = dy - NODE_DYS;
+				
+				/* prevent long socket lists from growing out of the group box */
+				if (dy-3*NODE_DYS < rect->ymin)
+					rect->ymin = dy-3*NODE_DYS;
+				if (dy+3*NODE_DYS > rect->ymax)
+					rect->ymax = dy+3*NODE_DYS;
+				dy -= 2*NODE_DY;
+				
+				sock = sock->next;
+			}
+			while (gsock && (!sock || sock->groupsock!=gsock)) {
+				gsock->locx = rect->xmax;
+				gsock->locy = dy - NODE_DYS;
+				
+				/* prevent long socket lists from growing out of the group box */
+				if (dy-3*NODE_DYS < rect->ymin)
+					rect->ymin = dy-3*NODE_DYS;
+				if (dy+3*NODE_DYS > rect->ymax)
+					rect->ymax = dy+3*NODE_DYS;
+				dy -= 2*NODE_DY;
+				
+				gsock = gsock->next;
+			}
+			while (sock && gsock && sock->groupsock==gsock) {
+				gsock->locx = rect->xmax;
+				sock->locx = rect->xmax + node_group_frame;
+				sock->locy = gsock->locy = dy - NODE_DYS;
+				
+				/* prevent long socket lists from growing out of the group box */
+				if (dy-3*NODE_DYS < rect->ymin)
+					rect->ymin = dy-3*NODE_DYS;
+				if (dy+3*NODE_DYS > rect->ymax)
+					rect->ymax = dy+3*NODE_DYS;
+				dy -= 2*NODE_DY;
+				
+				sock = sock->next;
+				gsock = gsock->next;
+			}
+		}
+	}
+}
+
+static void update_group_input_cb(bContext *UNUSED(C), void *UNUSED(snode_v), void *ngroup_v)
+{
+	bNodeTree *ngroup= (bNodeTree*)ngroup_v;
+	
+	ngroup->update |= NTREE_UPDATE_GROUP_IN;
+	ntreeUpdateTree(ngroup);
+}
+
+static void update_group_output_cb(bContext *UNUSED(C), void *UNUSED(snode_v), void *ngroup_v)
+{
+	bNodeTree *ngroup= (bNodeTree*)ngroup_v;
+	
+	ngroup->update |= NTREE_UPDATE_GROUP_OUT;
+	ntreeUpdateTree(ngroup);
+}
+
+static void draw_group_socket_name(SpaceNode *snode, bNode *gnode, bNodeSocket *sock, int in_out, float xoffset, float yoffset)
+{
+	bNodeTree *ngroup= (bNodeTree*)gnode->id;
+	uiBut *bt;
+	
+	if (sock->flag & SOCK_DYNAMIC) {
+		bt = uiDefBut(gnode->block, TEX, 0, "", 
+					  sock->locx+xoffset, sock->locy+1+yoffset, 72, NODE_DY,
+					  sock->name, 0, 31, 0, 0, "");
+		if (in_out==SOCK_IN)
+			uiButSetFunc(bt, update_group_input_cb, snode, ngroup);
+		else
+			uiButSetFunc(bt, update_group_output_cb, snode, ngroup);
+	}
+	else {
+		uiDefBut(gnode->block, LABEL, 0, sock->name, 
+				 sock->locx+xoffset, sock->locy+1+yoffset, 72, NODE_DY,
+				 NULL, 0, 31, 0, 0, "");
+	}
+}
+
+static void draw_group_socket(const bContext *C, SpaceNode *snode, bNodeTree *ntree, bNode *gnode, bNodeSocket *sock, bNodeSocket *gsock, int index, int in_out)
+{
+	bNodeTree *ngroup= (bNodeTree*)gnode->id;
+	bNodeSocketType *stype= ntreeGetSocketType(gsock ? gsock->type : sock->type);
+	uiBut *bt;
+	float offset;
+	int draw_value;
+	float node_group_frame= U.dpi*NODE_GROUP_FRAME/72;
+	float socket_size= NODE_SOCKSIZE*U.dpi/72;
+	float arrowbutw= 0.8f*UI_UNIT_X;
+	/* layout stuff for buttons on group left frame */
+	float colw= 0.6f*node_group_frame;
+	float col1= 6 - node_group_frame;
+	float col2= col1 + colw+6;
+	float col3= - arrowbutw - 6;
+	/* layout stuff for buttons on group right frame */
+	float cor1= 6;
+	float cor2= cor1 + arrowbutw + 6;
+	float cor3= cor2 + arrowbutw + 6;
+	
+	/* node and group socket circles */
+	if (sock)
+		node_socket_circle_draw(ntree, sock, socket_size);
+	if (gsock)
+		node_socket_circle_draw(ngroup, gsock, socket_size);
+	
+	/* socket name */
+	offset = (in_out==SOCK_IN ? col1 : cor3);
+	if (!gsock)
+		offset += (in_out==SOCK_IN ? node_group_frame : -node_group_frame);
+	
+	/* draw both name and value button if:
+	 * 1) input: not internal
+	 * 2) output: (node type uses const outputs) and (group output is unlinked)
+	 */
+	draw_value = 0;
+	switch (in_out) {
+	case SOCK_IN:
+		draw_value = !(gsock && (gsock->flag & SOCK_INTERNAL));
+		break;
+	case SOCK_OUT:
+		if (gnode->typeinfo->flag & NODE_CONST_OUTPUT)
+			draw_value = !(gsock && gsock->link);
+		break;
+	}
+	if (draw_value) {
+		/* both name and value buttons */
+		if (gsock) {
+			draw_group_socket_name(snode, gnode, gsock, in_out, offset, 0);
+			if (stype->buttonfunc)
+				stype->buttonfunc(C, gnode->block, ngroup, NULL, gsock, "", gsock->locx+offset, gsock->locy-NODE_DY, colw);
+		}
+		else {
+			draw_group_socket_name(snode, gnode, sock, in_out, offset, 0);
+			if (stype->buttonfunc)
+				stype->buttonfunc(C, gnode->block, ngroup, NULL, sock, "", sock->locx+offset, sock->locy-NODE_DY, colw);
+		}
+	}
+	else {
+		/* only name, no value button */
+		if (gsock)
+			draw_group_socket_name(snode, gnode, gsock, in_out, offset, -NODE_DYS);
+		else
+			draw_group_socket_name(snode, gnode, sock, in_out, offset, -NODE_DYS);
+	}
+	
+	if (gsock && (gsock->flag & SOCK_DYNAMIC)) {
+		/* up/down buttons */
+		offset = (in_out==SOCK_IN ? col2 : cor2);
+		uiBlockSetDirection(gnode->block, UI_TOP);
+		uiBlockBeginAlign(gnode->block);
+		bt = uiDefIconButO(gnode->block, BUT, "NODE_OT_group_socket_move_up", 0, ICON_TRIA_UP,
+						   gsock->locx+offset, gsock->locy, arrowbutw, arrowbutw, "");
+		if (!gsock->prev || !(gsock->prev->flag & SOCK_DYNAMIC))
+			uiButSetFlag(bt, UI_BUT_DISABLED);
+		RNA_int_set(uiButGetOperatorPtrRNA(bt), "index", index);
+		RNA_enum_set(uiButGetOperatorPtrRNA(bt), "in_out", in_out);
+		bt = uiDefIconButO(gnode->block, BUT, "NODE_OT_group_socket_move_down", 0, ICON_TRIA_DOWN,
+						   gsock->locx+offset, gsock->locy-arrowbutw, arrowbutw, arrowbutw, "");
+		if (!gsock->next || !(gsock->next->flag & SOCK_DYNAMIC))
+			uiButSetFlag(bt, UI_BUT_DISABLED);
+		RNA_int_set(uiButGetOperatorPtrRNA(bt), "index", index);
+		RNA_enum_set(uiButGetOperatorPtrRNA(bt), "in_out", in_out);
+		uiBlockEndAlign(gnode->block);
+		uiBlockSetDirection(gnode->block, 0);
+		
+		/* remove button */
+		offset = (in_out==SOCK_IN ? col3 : cor1);
+		uiBlockSetEmboss(gnode->block, UI_EMBOSSN);
+		bt = uiDefIconButO(gnode->block, BUT, "NODE_OT_group_socket_remove", 0, ICON_X,
+						   gsock->locx+offset, gsock->locy-0.5f*arrowbutw, arrowbutw, arrowbutw, "");
+		RNA_int_set(uiButGetOperatorPtrRNA(bt), "index", index);
+		RNA_enum_set(uiButGetOperatorPtrRNA(bt), "in_out", in_out);
+		uiBlockSetEmboss(gnode->block, UI_EMBOSS);
+	}
+}
+
+/* groups are, on creation, centered around 0,0 */
+static void node_draw_group(const bContext *C, ARegion *ar, SpaceNode *snode, bNodeTree *ntree, bNode *gnode)
+{
+	if (!(gnode->flag & NODE_GROUP_EDIT)) {
+		node_draw_default(C, ar, snode, ntree, gnode);
+	}
+	else {
+		bNodeTree *ngroup= (bNodeTree *)gnode->id;
+		bNodeSocket *sock, *gsock;
+		uiLayout *layout;
+		PointerRNA ptr;
+		rctf rect= gnode->totr;
+		float node_group_frame= U.dpi*NODE_GROUP_FRAME/72;
+		float group_header= 26*U.dpi/72;
+		
+		int index;
+		
+		/* backdrop header */
+		glEnable(GL_BLEND);
+		uiSetRoundBox(UI_CNR_TOP_LEFT | UI_CNR_TOP_RIGHT);
+		UI_ThemeColorShadeAlpha(TH_NODE_GROUP, 0, -70);
+		uiDrawBox(GL_POLYGON, rect.xmin-node_group_frame, rect.ymax, rect.xmax+node_group_frame, rect.ymax+group_header, BASIS_RAD);
+		
+		/* backdrop body */
+		UI_ThemeColorShadeAlpha(TH_BACK, -8, -70);
+		uiSetRoundBox(UI_CNR_NONE);
+		uiDrawBox(GL_POLYGON, rect.xmin, rect.ymin, rect.xmax, rect.ymax, BASIS_RAD);
+	
+		/* input column */
+		UI_ThemeColorShadeAlpha(TH_BACK, 10, -50);
+		uiSetRoundBox(UI_CNR_BOTTOM_LEFT);
+		uiDrawBox(GL_POLYGON, rect.xmin-node_group_frame, rect.ymin, rect.xmin, rect.ymax, BASIS_RAD);
+	
+		/* output column */
+		UI_ThemeColorShadeAlpha(TH_BACK, 10, -50);
+		uiSetRoundBox(UI_CNR_BOTTOM_RIGHT);
+		uiDrawBox(GL_POLYGON, rect.xmax, rect.ymin, rect.xmax+node_group_frame, rect.ymax, BASIS_RAD);
+	
+		/* input column separator */
+		glColor4ub(200, 200, 200, 140);
+		glBegin(GL_LINES);
+		glVertex2f(rect.xmin, rect.ymin);
+		glVertex2f(rect.xmin, rect.ymax);
+		glEnd();
+	
+		/* output column separator */
+		glColor4ub(200, 200, 200, 140);
+		glBegin(GL_LINES);
+		glVertex2f(rect.xmax, rect.ymin);
+		glVertex2f(rect.xmax, rect.ymax);
+		glEnd();
+	
+		/* group node outline */
+		uiSetRoundBox(UI_CNR_ALL);
+		glColor4ub(200, 200, 200, 140);
+		glEnable( GL_LINE_SMOOTH );
+		uiDrawBox(GL_LINE_LOOP, rect.xmin-node_group_frame, rect.ymin, rect.xmax+node_group_frame, rect.ymax+group_header, BASIS_RAD);
+		glDisable( GL_LINE_SMOOTH );
+		glDisable(GL_BLEND);
+		
+		/* backdrop title */
+		UI_ThemeColor(TH_TEXT_HI);
+	
+		layout = uiBlockLayout(gnode->block, UI_LAYOUT_VERTICAL, UI_LAYOUT_PANEL, (short)(rect.xmin+15), (short)(rect.ymax+group_header),
+							   MIN2((int)(rect.xmax - rect.xmin-18.0f), node_group_frame+20), group_header, UI_GetStyle());
+		RNA_pointer_create(&ntree->id, &RNA_Node, gnode, &ptr);
+		uiTemplateIDBrowse(layout, (bContext*)C, &ptr, "node_tree", NULL, NULL, NULL);
+		uiBlockLayoutResolve(gnode->block, NULL, NULL);
+	
+		/* draw the internal tree nodes and links */
+		node_draw_nodetree(C, ar, snode, ngroup);
+	
+		/* group sockets */
+		gsock=ngroup->inputs.first;
+		sock=gnode->inputs.first;
+		index = 0;
+		while (gsock || sock) {
+			while (sock && !sock->groupsock) {
+				draw_group_socket(C, snode, ntree, gnode, sock, NULL, index, SOCK_IN);
+				sock = sock->next;
+			}
+			while (gsock && (!sock || sock->groupsock!=gsock)) {
+				draw_group_socket(C, snode, ntree, gnode, NULL, gsock, index, SOCK_IN);
+				gsock = gsock->next;
+				++index;
+			}
+			while (sock && gsock && sock->groupsock==gsock) {
+				draw_group_socket(C, snode, ntree, gnode, sock, gsock, index, SOCK_IN);
+				sock = sock->next;
+				gsock = gsock->next;
+				++index;
+			}
+		}
+		gsock=ngroup->outputs.first;
+		sock=gnode->outputs.first;
+		index = 0;
+		while (gsock || sock) {
+			while (sock && !sock->groupsock) {
+				draw_group_socket(C, snode, ntree, gnode, sock, NULL, index, SOCK_OUT);
+				sock = sock->next;
+			}
+			while (gsock && (!sock || sock->groupsock!=gsock)) {
+				draw_group_socket(C, snode, ntree, gnode, NULL, gsock, index, SOCK_OUT);
+				gsock = gsock->next;
+				++index;
+			}
+			while (sock && gsock && sock->groupsock==gsock) {
+				draw_group_socket(C, snode, ntree, gnode, sock, gsock, index, SOCK_OUT);
+				sock = sock->next;
+				gsock = gsock->next;
+				++index;
+			}
+		}
+		
+		uiEndBlock(C, gnode->block);
+		uiDrawBlock(C, gnode->block);
+		gnode->block= NULL;
+	}
+}
+
+static void node_common_buts_whileloop(uiLayout *layout, bContext *UNUSED(C), PointerRNA *ptr)
+{
+	uiItemR(layout, ptr, "max_iterations", 0, NULL, 0);
+}
+
+static void node_update_frame(const bContext *UNUSED(C), bNodeTree *UNUSED(ntree), bNode *node)
+{
+	float locx, locy;
+
+	/* get "global" coords */
+	nodeSpaceCoords(node, &locx, &locy);
+
+	node->prvr.xmin= locx + NODE_DYS;
+	node->prvr.xmax= locx + node->width- NODE_DYS;
+
+	node->totr.xmin= locx;
+	node->totr.xmax= locx + node->width;
+	node->totr.ymax= locy;
+	node->totr.ymin= locy - node->height;
+}
+
+static void node_common_set_butfunc(bNodeType *ntype)
+{
+	switch(ntype->type) {
+		case NODE_GROUP:
+//			ntype->uifunc= node_common_buts_group;
+			ntype->drawfunc= node_draw_group;
+			ntype->drawupdatefunc= node_update_group;
+			break;
+		case NODE_FORLOOP:
+//			ntype->uifunc= node_common_buts_group;
+			ntype->drawfunc= node_draw_group;
+			ntype->drawupdatefunc= node_update_group;
+			break;
+		case NODE_WHILELOOP:
+			ntype->uifunc= node_common_buts_whileloop;
+			ntype->drawfunc= node_draw_group;
+			ntype->drawupdatefunc= node_update_group;
+			break;
+		case NODE_FRAME:
+			ntype->drawupdatefunc= node_update_frame;
+			break;
+	}
+}
+
 /* ****************** BUTTON CALLBACKS FOR SHADER NODES ***************** */
 
 static void node_browse_text_cb(bContext *C, void *ntree_v, void *node_v)
@@ -294,14 +896,14 @@ static void node_browse_text_cb(bContext *C, void *ntree_v, void *node_v)
 	Main *bmain= CTX_data_main(C);
 	bNodeTree *ntree= ntree_v;
 	bNode *node= node_v;
-	ID *oldid;
+	/* ID *oldid; */ /* UNUSED */
 	
 	if(node->menunr<1) return;
 	
 	if(node->id) {
 		node->id->us--;
 	}
-	oldid= node->id;
+	/* oldid= node->id; */ /* UNUSED */
 	node->id= BLI_findlink(&bmain->text, node->menunr-1);
 	id_us_plus(node->id);
 	BLI_strncpy(node->name, node->id->name+2, sizeof(node->name));
@@ -423,6 +1025,7 @@ static void node_shader_buts_dynamic(uiLayout *layout, bContext *C, PointerRNA *
 /* only once called */
 static void node_shader_set_butfunc(bNodeType *ntype)
 {
+	ntype->uifuncbut = NULL;
 	switch(ntype->type) {
 		/* case NODE_GROUP:	 note, typeinfo for group is generated... see "XXX ugly hack" */
 
@@ -469,9 +1072,8 @@ static void node_shader_set_butfunc(bNodeType *ntype)
 		case NODE_DYNAMIC:
 			ntype->uifunc= node_shader_buts_dynamic;
 			break;
-		default:
-			ntype->uifunc= NULL;
 	}
+		if (ntype->uifuncbut == NULL) ntype->uifuncbut = ntype->uifunc;
 }
 
 /* ****************** BUTTON CALLBACKS FOR COMPOSITE NODES ***************** */
@@ -482,6 +1084,7 @@ static void node_composit_buts_image(uiLayout *layout, bContext *C, PointerRNA *
 	bNode *node= ptr->data;
 	PointerRNA imaptr;
 	PropertyRNA *prop;
+	int source;
 	
 	uiTemplateID(layout, C, ptr, "image", NULL, "IMAGE_OT_open", NULL);
 	
@@ -495,7 +1098,19 @@ static void node_composit_buts_image(uiLayout *layout, bContext *C, PointerRNA *
 	
 	uiItemR(col, &imaptr, "source", 0, NULL, ICON_NONE);
 	
-	if (ELEM(RNA_enum_get(&imaptr, "source"), IMA_SRC_SEQUENCE, IMA_SRC_MOVIE)) {
+	source= RNA_enum_get(&imaptr, "source");
+
+	if(source == IMA_SRC_SEQUENCE) {
+		/* don't use iuser->framenr directly because it may not be updated if auto-refresh is off */
+		Scene *scene= CTX_data_scene(C);
+		ImageUser *iuser= node->storage;
+		char tstr[32];
+		const int framenr= BKE_image_user_get_frame(iuser, CFRA, 0);
+		BLI_snprintf(tstr, sizeof(tstr), "Frame: %d", framenr);
+		uiItemL(layout, tstr, ICON_NONE);
+	}
+
+	if (ELEM(source, IMA_SRC_SEQUENCE, IMA_SRC_MOVIE)) {
 		col= uiLayoutColumn(layout, 1);
 		uiItemR(col, ptr, "frame_duration", 0, NULL, ICON_NONE);
 		uiItemR(col, ptr, "frame_start", 0, NULL, ICON_NONE);
@@ -518,7 +1133,7 @@ static void node_composit_buts_renderlayers(uiLayout *layout, bContext *C, Point
 	PointerRNA scn_ptr;
 	PropertyRNA *prop;
 	const char *layer_name;
-	char scene_name[19];
+	char scene_name[MAX_ID_NAME-2];
 	
 	uiTemplateID(layout, C, ptr, "scene", NULL, NULL, NULL);
 	
@@ -730,22 +1345,22 @@ static void node_composit_buts_flip(uiLayout *layout, bContext *UNUSED(C), Point
 static void node_composit_buts_crop(uiLayout *layout, bContext *UNUSED(C), PointerRNA *ptr)
 {
 	uiLayout *col;
-	
+
 	uiItemR(layout, ptr, "use_crop_size", 0, NULL, ICON_NONE);
-   uiItemR(layout, ptr, "relative", 0, NULL, ICON_NONE);
+	uiItemR(layout, ptr, "relative", 0, NULL, ICON_NONE);
 
 	col= uiLayoutColumn(layout, 1);
-   if (RNA_boolean_get(ptr, "relative")){
-      uiItemR(col, ptr, "rel_min_x", 0, "Left", ICON_NONE);
-      uiItemR(col, ptr, "rel_max_x", 0, "Right", ICON_NONE);
-      uiItemR(col, ptr, "rel_min_y", 0, "Up", ICON_NONE);
-      uiItemR(col, ptr, "rel_max_y", 0, "Down", ICON_NONE);
-   } else {
-      uiItemR(col, ptr, "min_x", 0, "Left", ICON_NONE);
-      uiItemR(col, ptr, "max_x", 0, "Right", ICON_NONE);
-      uiItemR(col, ptr, "min_y", 0, "Up", ICON_NONE);
-      uiItemR(col, ptr, "max_y", 0, "Down", ICON_NONE);
-   }
+	if (RNA_boolean_get(ptr, "relative")){
+		uiItemR(col, ptr, "rel_min_x", 0, "Left", ICON_NONE);
+		uiItemR(col, ptr, "rel_max_x", 0, "Right", ICON_NONE);
+		uiItemR(col, ptr, "rel_min_y", 0, "Up", ICON_NONE);
+		uiItemR(col, ptr, "rel_max_y", 0, "Down", ICON_NONE);
+	} else {
+		uiItemR(col, ptr, "min_x", 0, "Left", ICON_NONE);
+		uiItemR(col, ptr, "max_x", 0, "Right", ICON_NONE);
+		uiItemR(col, ptr, "min_y", 0, "Up", ICON_NONE);
+		uiItemR(col, ptr, "max_y", 0, "Down", ICON_NONE);
+	}
 }
 
 static void node_composit_buts_splitviewer(uiLayout *layout, bContext *UNUSED(C), PointerRNA *ptr)
@@ -834,26 +1449,26 @@ static void node_composit_buts_color_spill(uiLayout *layout, bContext *UNUSED(C)
 {
 	uiLayout *row, *col;
 	
-   uiItemL(layout, "Despill Channel:", ICON_NONE);
-   row =uiLayoutRow(layout,0);
+	uiItemL(layout, "Despill Channel:", ICON_NONE);
+	row =uiLayoutRow(layout,0);
 	uiItemR(row, ptr, "channel", UI_ITEM_R_EXPAND, NULL, ICON_NONE);
 
-   col= uiLayoutColumn(layout, 0);
-   uiItemR(col, ptr, "limit_method", 0, NULL, ICON_NONE);
+	col= uiLayoutColumn(layout, 0);
+	uiItemR(col, ptr, "limit_method", 0, NULL, ICON_NONE);
 
-   if(RNA_enum_get(ptr, "limit_method")==0) {
-	  uiItemL(col, "Limiting Channel:", ICON_NONE);
-	  row=uiLayoutRow(col,0);
-	  uiItemR(row, ptr, "limit_channel", UI_ITEM_R_EXPAND, NULL, ICON_NONE);
-   }
+	if(RNA_enum_get(ptr, "limit_method")==0) {
+		uiItemL(col, "Limiting Channel:", ICON_NONE);
+		row=uiLayoutRow(col,0);
+		uiItemR(row, ptr, "limit_channel", UI_ITEM_R_EXPAND, NULL, ICON_NONE);
+	}
 
-   uiItemR(col, ptr, "ratio", UI_ITEM_R_SLIDER, NULL, ICON_NONE);
-   uiItemR(col, ptr, "use_unspill", 0, NULL, ICON_NONE);
-   if (RNA_enum_get(ptr, "use_unspill")== 1) {
-	  uiItemR(col, ptr, "unspill_red", UI_ITEM_R_SLIDER, NULL, ICON_NONE);
-	  uiItemR(col, ptr, "unspill_green", UI_ITEM_R_SLIDER, NULL, ICON_NONE);
-	  uiItemR(col, ptr, "unspill_blue", UI_ITEM_R_SLIDER, NULL, ICON_NONE);
-   }
+	uiItemR(col, ptr, "ratio", UI_ITEM_R_SLIDER, NULL, ICON_NONE);
+	uiItemR(col, ptr, "use_unspill", 0, NULL, ICON_NONE);
+	if (RNA_boolean_get(ptr, "use_unspill")== 1) {
+		uiItemR(col, ptr, "unspill_red", UI_ITEM_R_SLIDER, NULL, ICON_NONE);
+		uiItemR(col, ptr, "unspill_green", UI_ITEM_R_SLIDER, NULL, ICON_NONE);
+		uiItemR(col, ptr, "unspill_blue", UI_ITEM_R_SLIDER, NULL, ICON_NONE);
+	}
 }
 
 static void node_composit_buts_chroma_matte(uiLayout *layout, bContext *UNUSED(C), PointerRNA *ptr)
@@ -865,9 +1480,9 @@ static void node_composit_buts_chroma_matte(uiLayout *layout, bContext *UNUSED(C
 	uiItemR(col, ptr, "threshold", 0, NULL, ICON_NONE);
 	
 	col= uiLayoutColumn(layout, 1);
-   /*uiItemR(col, ptr, "lift", UI_ITEM_R_SLIDER, NULL, ICON_NONE);  Removed for now */
+	/*uiItemR(col, ptr, "lift", UI_ITEM_R_SLIDER, NULL, ICON_NONE);  Removed for now */
 	uiItemR(col, ptr, "gain", UI_ITEM_R_SLIDER, NULL, ICON_NONE);
-   /*uiItemR(col, ptr, "shadow_adjust", UI_ITEM_R_SLIDER, NULL, ICON_NONE);  Removed for now*/
+	/*uiItemR(col, ptr, "shadow_adjust", UI_ITEM_R_SLIDER, NULL, ICON_NONE);  Removed for now*/
 }
 
 static void node_composit_buts_color_matte(uiLayout *layout, bContext *UNUSED(C), PointerRNA *ptr)
@@ -884,24 +1499,24 @@ static void node_composit_buts_channel_matte(uiLayout *layout, bContext *UNUSED(
 {	
 	uiLayout *col, *row;
 
-   uiItemL(layout, "Color Space:", ICON_NONE);
+	uiItemL(layout, "Color Space:", ICON_NONE);
 	row= uiLayoutRow(layout, 0);
 	uiItemR(row, ptr, "color_space", UI_ITEM_R_EXPAND, NULL, ICON_NONE);
 
-   col=uiLayoutColumn(layout, 0);  
-   uiItemL(col, "Key Channel:", ICON_NONE);
+	col=uiLayoutColumn(layout, 0);
+	uiItemL(col, "Key Channel:", ICON_NONE);
 	row= uiLayoutRow(col, 0);
 	uiItemR(row, ptr, "matte_channel", UI_ITEM_R_EXPAND, NULL, ICON_NONE);
 
 	col =uiLayoutColumn(layout, 0);
 
-   uiItemR(col, ptr, "limit_method", 0, NULL, ICON_NONE);
-   if(RNA_enum_get(ptr, "limit_method")==0) {
-	  uiItemL(col, "Limiting Channel:", ICON_NONE);
-	  row=uiLayoutRow(col,0);
-	  uiItemR(row, ptr, "limit_channel", UI_ITEM_R_EXPAND, NULL, ICON_NONE);
-   }
-   
+	uiItemR(col, ptr, "limit_method", 0, NULL, ICON_NONE);
+	if(RNA_enum_get(ptr, "limit_method")==0) {
+		uiItemL(col, "Limiting Channel:", ICON_NONE);
+		row=uiLayoutRow(col,0);
+		uiItemR(row, ptr, "limit_channel", UI_ITEM_R_EXPAND, NULL, ICON_NONE);
+	}
+
 	uiItemR(col, ptr, "limit_max", UI_ITEM_R_SLIDER, NULL, ICON_NONE);
 	uiItemR(col, ptr, "limit_min", UI_ITEM_R_SLIDER, NULL, ICON_NONE);
 }
@@ -957,7 +1572,7 @@ static void node_composit_buts_scale(uiLayout *layout, bContext *UNUSED(C), Poin
 
 static void node_composit_buts_rotate(uiLayout *layout, bContext *UNUSED(C), PointerRNA *ptr)
 {
-   uiItemR(layout, ptr, "filter_type", 0, "", ICON_NONE);
+	uiItemR(layout, ptr, "filter_type", 0, "", ICON_NONE);
 }
 
 static void node_composit_buts_invert(uiLayout *layout, bContext *UNUSED(C), PointerRNA *ptr)
@@ -1023,6 +1638,32 @@ static void node_composit_buts_colorbalance(uiLayout *layout, bContext *UNUSED(C
 	}
 
 }
+static void node_composit_buts_colorbalance_but(uiLayout *layout, bContext *UNUSED(C), PointerRNA *ptr)
+{
+	uiItemR(layout, ptr, "correction_method", 0, NULL, ICON_NONE);
+
+	if (RNA_enum_get(ptr, "correction_method")== 0) {
+
+	uiTemplateColorWheel(layout, ptr, "lift", 1, 1, 0, 1);
+		uiItemR(layout, ptr, "lift", 0, NULL, ICON_NONE);
+
+		uiTemplateColorWheel(layout, ptr, "gamma", 1, 1, 1, 1);
+		uiItemR(layout, ptr, "gamma", 0, NULL, ICON_NONE);
+
+		uiTemplateColorWheel(layout, ptr, "gain", 1, 1, 1, 1);
+		uiItemR(layout, ptr, "gain", 0, NULL, ICON_NONE);
+	} else {
+		uiTemplateColorWheel(layout, ptr, "offset", 1, 1, 0, 1);
+		uiItemR(layout, ptr, "offset", 0, NULL, ICON_NONE);
+
+		uiTemplateColorWheel(layout, ptr, "power", 1, 1, 0, 1);
+		uiItemR(layout, ptr, "power", 0, NULL, ICON_NONE);
+
+		uiTemplateColorWheel(layout, ptr, "slope", 1, 1, 0, 1);
+		uiItemR(layout, ptr, "slope", 0, NULL, ICON_NONE);
+	}
+}
+
 
 static void node_composit_buts_huecorrect(uiLayout *layout, bContext *UNUSED(C), PointerRNA *ptr)
 {
@@ -1037,6 +1678,7 @@ static void node_composit_buts_ycc(uiLayout *layout, bContext *UNUSED(C), Pointe
 /* only once called */
 static void node_composit_set_butfunc(bNodeType *ntype)
 {
+	ntype->uifuncbut = NULL;
 	switch(ntype->type) {
 		/* case NODE_GROUP:	 note, typeinfo for group is generated... see "XXX ugly hack" */
 
@@ -1123,7 +1765,7 @@ static void node_composit_set_butfunc(bNodeType *ntype)
 			break;
 		case CMP_NODE_OUTPUT_FILE:
 			ntype->uifunc= node_composit_buts_file_output;
-			break;	
+			break;
 		case CMP_NODE_DIFF_MATTE:
 			ntype->uifunc=node_composit_buts_diff_matte;
 			break;
@@ -1142,9 +1784,9 @@ static void node_composit_set_butfunc(bNodeType *ntype)
 		case CMP_NODE_SCALE:
 			ntype->uifunc= node_composit_buts_scale;
 			break;
-	  case CMP_NODE_ROTATE:
-		 ntype->uifunc=node_composit_buts_rotate;
-		 break;
+		case CMP_NODE_ROTATE:
+			ntype->uifunc=node_composit_buts_rotate;
+			break;
 		case CMP_NODE_CHANNEL_MATTE:
 			ntype->uifunc= node_composit_buts_channel_matte;
 			break;
@@ -1168,23 +1810,24 @@ static void node_composit_set_butfunc(bNodeType *ntype)
 			break;
 		case CMP_NODE_VIEW_LEVELS:
 			ntype->uifunc=node_composit_buts_view_levels;
-			 break;
+			break;
 		case CMP_NODE_COLORBALANCE:
 			ntype->uifunc=node_composit_buts_colorbalance;
-			 break;
+			ntype->uifuncbut=node_composit_buts_colorbalance_but;
+			break;
 		case CMP_NODE_HUECORRECT:
 			ntype->uifunc=node_composit_buts_huecorrect;
-			 break;
+			break;
 		case CMP_NODE_ZCOMBINE:
 			ntype->uifunc=node_composit_buts_zcombine;
-			 break;
+			break;
 		case CMP_NODE_COMBYCCA:
 		case CMP_NODE_SEPYCCA:
 			ntype->uifunc=node_composit_buts_ycc;
 			break;
-		default:
-			ntype->uifunc= NULL;
 	}
+	if (ntype->uifuncbut == NULL) ntype->uifuncbut = ntype->uifunc;
+
 }
 
 /* ****************** BUTTON CALLBACKS FOR TEXTURE NODES ***************** */
@@ -1227,14 +1870,28 @@ static void node_texture_buts_proc(uiLayout *layout, bContext *UNUSED(C), Pointe
 			row= uiLayoutRow(col, 0);
 			uiItemR(row, &tex_ptr, "noise_type", UI_ITEM_R_EXPAND, NULL, ICON_NONE);
 			row= uiLayoutRow(col, 0);
-			uiItemR(row, &tex_ptr, "noisebasis_2", UI_ITEM_R_EXPAND, NULL, ICON_NONE);
+			uiItemR(row, &tex_ptr, "noise_basis", 0, "", ICON_NONE);
+			row= uiLayoutRow(col, 0);
+			uiItemR(row, &tex_ptr, "noise_basis_2", UI_ITEM_R_EXPAND, NULL, ICON_NONE);
+			break;
+
+		case TEX_MAGIC:
+			uiItemR(col, &tex_ptr, "noise_depth", 0, NULL, ICON_NONE);
+			break;
+
+		case TEX_STUCCI:
+			row= uiLayoutRow(col, 0);
+			uiItemR(row, &tex_ptr, "stucci_type", UI_ITEM_R_EXPAND, NULL, ICON_NONE);
+			row= uiLayoutRow(col, 0);
+			uiItemR(row, &tex_ptr, "noise_type", UI_ITEM_R_EXPAND, NULL, ICON_NONE);
+			uiItemR(col, &tex_ptr, "noise_basis", 0, "", ICON_NONE);
 			break;
 
 		case TEX_WOOD:
 			uiItemR(col, &tex_ptr, "noise_basis", 0, "", ICON_NONE);
 			uiItemR(col, &tex_ptr, "wood_type", 0, "", ICON_NONE);
 			row= uiLayoutRow(col, 0);
-			uiItemR(row, &tex_ptr, "noisebasis_2", UI_ITEM_R_EXPAND, NULL, ICON_NONE);
+			uiItemR(row, &tex_ptr, "noise_basis_2", UI_ITEM_R_EXPAND, NULL, ICON_NONE);
 			row= uiLayoutRow(col, 0);
 			uiLayoutSetActive(row, !(RNA_enum_get(&tex_ptr, "wood_type")==TEX_BAND || RNA_enum_get(&tex_ptr, "wood_type")==TEX_RING)); 
 			uiItemR(row, &tex_ptr, "noise_type", UI_ITEM_R_EXPAND, NULL, ICON_NONE);
@@ -1253,6 +1910,18 @@ static void node_texture_buts_proc(uiLayout *layout, bContext *UNUSED(C), Pointe
 			uiItemR(col, &tex_ptr, "noise_basis", 0, "", ICON_NONE);
 			uiItemR(col, &tex_ptr, "noise_distortion", 0, "", ICON_NONE);
 			break;
+
+		case TEX_MUSGRAVE:
+			uiItemR(col, &tex_ptr, "musgrave_type", 0, "", ICON_NONE);
+			uiItemR(col, &tex_ptr, "noise_basis", 0, "", ICON_NONE);
+			break;
+		case TEX_VORONOI:
+			uiItemR(col, &tex_ptr, "distance_metric", 0, "", ICON_NONE);
+			if(tex->vn_distm == TEX_MINKOVSKY) {
+				uiItemR(col, &tex_ptr, "minkovsky_exponent", 0, NULL, ICON_NONE);
+			}
+			uiItemR(col, &tex_ptr, "color_mode", 0, "", ICON_NONE);
+			break;
 	}
 }
 
@@ -1269,6 +1938,7 @@ static void node_texture_buts_output(uiLayout *layout, bContext *UNUSED(C), Poin
 /* only once called */
 static void node_texture_set_butfunc(bNodeType *ntype)
 {
+    ntype->uifuncbut = NULL;
 	if( ntype->type >= TEX_NODE_PROC && ntype->type < TEX_NODE_PROC_MAX ) {
 		ntype->uifunc = node_texture_buts_proc;
 	}
@@ -1309,34 +1979,68 @@ static void node_texture_set_butfunc(bNodeType *ntype)
 		case TEX_NODE_OUTPUT:
 			ntype->uifunc = node_texture_buts_output;
 			break;
-			
-		default:
-			ntype->uifunc= NULL;
 	}
+	if (ntype->uifuncbut == NULL) ntype->uifuncbut = ntype->uifunc;
 }
 
 /* ******* init draw callbacks for all tree types, only called in usiblender.c, once ************* */
 
 void ED_init_node_butfuncs(void)
 {
+	bNodeTreeType *treetype;
 	bNodeType *ntype;
+	bNodeSocketType *stype;
+	int i;
 	
-	/* shader nodes */
-	ntype= node_all_shaders.first;
-	while(ntype) {
-		node_shader_set_butfunc(ntype);
-		ntype= ntype->next;
+	/* node type ui functions */
+	for (i=0; i < NUM_NTREE_TYPES; ++i) {
+		treetype = ntreeGetType(i);
+		if (treetype) {
+			for (ntype= treetype->node_types.first; ntype; ntype= ntype->next) {
+				/* default ui functions */
+				ntype->drawfunc = node_draw_default;
+				ntype->drawupdatefunc = node_update_default;
+				ntype->uifunc = NULL;
+				ntype->uifuncbut = NULL;
+				ntype->resize_area_func = node_resize_area_default;
+				
+				node_common_set_butfunc(ntype);
+				
+				switch (i) {
+				case NTREE_COMPOSIT:
+					node_composit_set_butfunc(ntype);
+					break;
+				case NTREE_SHADER:
+					node_shader_set_butfunc(ntype);
+					break;
+				case NTREE_TEXTURE:
+					node_texture_set_butfunc(ntype);
+					break;
+				}
+			}
+		}
 	}
-	/* composit nodes */
-	ntype= node_all_composit.first;
-	while(ntype) {
-		node_composit_set_butfunc(ntype);
-		ntype= ntype->next;
-	}
-	ntype = node_all_textures.first;
-	while(ntype) {
-		node_texture_set_butfunc(ntype);
-		ntype= ntype->next;
+	
+	/* socket type ui functions */
+	for (i=0; i < NUM_SOCKET_TYPES; ++i) {
+		stype = ntreeGetSocketType(i);
+		if (stype) {
+			switch(stype->type) {
+			case SOCK_FLOAT:
+			case SOCK_INT:
+			case SOCK_BOOLEAN:
+				stype->buttonfunc = node_socket_button_default;
+				break;
+			case SOCK_VECTOR:
+				stype->buttonfunc = node_socket_button_components;
+				break;
+			case SOCK_RGBA:
+				stype->buttonfunc = node_socket_button_color;
+				break;
+			default:
+				stype->buttonfunc = NULL;
+			}
+		}
 	}
 }
 
@@ -1416,45 +2120,209 @@ void draw_nodespace_back_pix(ARegion *ar, SpaceNode *snode, int color_manage)
 	}
 }
 
-void draw_nodespace_color_info(ARegion *ar, int channels, int x, int y, char *cp, float *fp)
+void draw_nodespace_color_info(ARegion *ar, int color_manage, int channels, int x, int y, char *cp, float *fp)
 {
 	char str[256];
-	int ofs;
-	
-	ofs= sprintf(str, "X: %4d Y: %4d ", x, y);
-
-	if(channels==4) {
-		if(cp)
-			ofs+= sprintf(str+ofs, "| R: %3d G: %3d B: %3d A: %3d ", cp[0], cp[1], cp[2], cp[3]);
-		if (fp)
-			ofs+= sprintf(str+ofs, "| R: %.3f G: %.3f B: %.3f A: %.3f ", fp[0], fp[1], fp[2], fp[3]);
-	}
-	else if(channels==1) {
-		if(cp)
-			ofs+= sprintf(str+ofs, "| Val: %3d ", cp[0]);
-		if (fp)
-			ofs+= sprintf(str+ofs, "| Val: %.3f ", fp[0]);
-	}
-	else if(channels==3) {
-		if(cp)
-			ofs+= sprintf(str+ofs, "| R: %3d G: %3d B: %3d ", cp[0], cp[1], cp[2]);
-		if (fp)
-			ofs+= sprintf(str+ofs, "| R: %.3f G: %.3f B: %.3f ", fp[0], fp[1], fp[2]);
-	}
+	float dx= 6;
+	/* text colors */
+	/* XXX colored text not allowed in Blender UI */
+	#if 0
+	unsigned char red[3] = {255, 50, 50};
+	unsigned char green[3] = {0, 255, 0};
+	unsigned char blue[3] = {100, 100, 255};
+	#else
+	unsigned char red[3] = {255, 255, 255};
+	unsigned char green[3] = {255, 255, 255};
+	unsigned char blue[3] = {255, 255, 255};
+	#endif
+	float hue=0, sat=0, val=0, lum=0, u=0, v=0;
+	float col[4], finalcol[4];
 
 	glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
 	glEnable(GL_BLEND);
-	
-	glColor4f(.0,.0,.0,.25);
+
+	/* noisy, high contrast make impossible to read if lower alpha is used. */
+	glColor4ub(0, 0, 0, 190);
 	glRecti(0.0, 0.0, ar->winrct.xmax - ar->winrct.xmin + 1, 20);
 	glDisable(GL_BLEND);
-	
-	glColor3ub(255, 255, 255);
-	
-	// UI_DrawString(6, 6, str); // works ok but fixed width is nicer.
+
 	BLF_size(blf_mono_font, 11, 72);
-	BLF_position(blf_mono_font, 6, 6, 0);
+
+	glColor3ub(255, 255, 255);
+	sprintf(str, "X:%-4d  Y:%-4d |", x, y);
+	// UI_DrawString(6, 6, str); // works ok but fixed width is nicer.
+	BLF_position(blf_mono_font, dx, 6, 0);
 	BLF_draw_ascii(blf_mono_font, str, sizeof(str));
+	dx += BLF_width(blf_mono_font, str);
+
+	#if 0	/* XXX no Z value in compo backdrop atm */
+	if(zp) {
+		glColor3ub(255, 255, 255);
+		sprintf(str, " Z:%-.4f |", 0.5f+0.5f*(((float)*zp)/(float)0x7fffffff));
+		BLF_position(blf_mono_font, dx, 6, 0);
+		BLF_draw_ascii(blf_mono_font, str, sizeof(str));
+		dx += BLF_width(blf_mono_font, str);
+	}
+	if(zpf) {
+		glColor3ub(255, 255, 255);
+		sprintf(str, " Z:%-.3f |", *zpf);
+		BLF_position(blf_mono_font, dx, 6, 0);
+		BLF_draw_ascii(blf_mono_font, str, sizeof(str));
+		dx += BLF_width(blf_mono_font, str);
+	}
+	#endif
+
+	if(channels >= 3) {
+		glColor3ubv(red);
+		if (fp)
+			sprintf(str, "  R:%-.4f", fp[0]);
+		else if (cp)
+			sprintf(str, "  R:%-3d", cp[0]);
+		else
+			sprintf(str, "  R:-");
+		BLF_position(blf_mono_font, dx, 6, 0);
+		BLF_draw_ascii(blf_mono_font, str, sizeof(str));
+		dx += BLF_width(blf_mono_font, str);
+		
+		glColor3ubv(green);
+		if (fp)
+			sprintf(str, "  G:%-.4f", fp[1]);
+		else if (cp)
+			sprintf(str, "  G:%-3d", cp[1]);
+		else
+			sprintf(str, "  G:-");
+		BLF_position(blf_mono_font, dx, 6, 0);
+		BLF_draw_ascii(blf_mono_font, str, sizeof(str));
+		dx += BLF_width(blf_mono_font, str);
+		
+		glColor3ubv(blue);
+		if (fp)
+			sprintf(str, "  B:%-.4f", fp[2]);
+		else if (cp)
+			sprintf(str, "  B:%-3d", cp[2]);
+		else
+			sprintf(str, "  B:-");
+		BLF_position(blf_mono_font, dx, 6, 0);
+		BLF_draw_ascii(blf_mono_font, str, sizeof(str));
+		dx += BLF_width(blf_mono_font, str);
+		
+		if(channels == 4) {
+			glColor3ub(255, 255, 255);
+			if (fp)
+				sprintf(str, "  A:%-.4f", fp[3]);
+			else if (cp)
+				sprintf(str, "  A:%-3d", cp[3]);
+			else
+				sprintf(str, "- ");
+			BLF_position(blf_mono_font, dx, 6, 0);
+			BLF_draw_ascii(blf_mono_font, str, sizeof(str));
+			dx += BLF_width(blf_mono_font, str);
+		}
+	}
+	
+	/* color rectangle */
+	if (channels==1) {
+		if (fp)
+			col[0] = col[1] = col[2] = fp[0];
+		else if (cp)
+			col[0] = col[1] = col[2] = (float)cp[0]/255.0f;
+		else
+			col[0] = col[1] = col[2] = 0.0f;
+	}
+	else if (channels==3) {
+		if (fp)
+			copy_v3_v3(col, fp);
+		else if (cp) {
+			col[0] = (float)cp[0]/255.0f;
+			col[1] = (float)cp[1]/255.0f;
+			col[2] = (float)cp[2]/255.0f;
+		}
+		else
+			zero_v3(col);
+	}
+	else if (channels==4) {
+		if (fp)
+			copy_v4_v4(col, fp);
+		else if (cp) {
+			col[0] = (float)cp[0]/255.0f;
+			col[1] = (float)cp[1]/255.0f;
+			col[2] = (float)cp[2]/255.0f;
+			col[3] = (float)cp[3]/255.0f;
+		}
+		else
+			zero_v4(col);
+	}
+	if (color_manage) {
+		linearrgb_to_srgb_v3_v3(finalcol, col);
+		finalcol[3] = col[3];
+	}
+	else {
+		copy_v4_v4(finalcol, col);
+	}
+	glDisable(GL_BLEND);
+	glColor3fv(finalcol);
+	dx += 5;
+	glBegin(GL_QUADS);
+	glVertex2f(dx, 3);
+	glVertex2f(dx, 17);
+	glVertex2f(dx+30, 17);
+	glVertex2f(dx+30, 3);
+	glEnd();
+	dx += 35;
+
+	glColor3ub(255, 255, 255);
+	if(channels == 1) {
+		if (fp) {
+			rgb_to_hsv(fp[0], fp[0], fp[0], &hue, &sat, &val);
+			rgb_to_yuv(fp[0], fp[0], fp[0], &lum, &u, &v);
+		}
+		else if (cp) {
+			rgb_to_hsv((float)cp[0]/255.0f, (float)cp[0]/255.0f, (float)cp[0]/255.0f, &hue, &sat, &val);
+			rgb_to_yuv((float)cp[0]/255.0f, (float)cp[0]/255.0f, (float)cp[0]/255.0f, &lum, &u, &v);
+		}
+		
+		sprintf(str, "V:%-.4f", val);
+		BLF_position(blf_mono_font, dx, 6, 0);
+		BLF_draw_ascii(blf_mono_font, str, sizeof(str));
+		dx += BLF_width(blf_mono_font, str);
+
+		sprintf(str, "   L:%-.4f", lum);
+		BLF_position(blf_mono_font, dx, 6, 0);
+		BLF_draw_ascii(blf_mono_font, str, sizeof(str));
+		dx += BLF_width(blf_mono_font, str);
+	}
+	else if(channels >= 3) {
+		if (fp) {
+			rgb_to_hsv(fp[0], fp[1], fp[2], &hue, &sat, &val);
+			rgb_to_yuv(fp[0], fp[1], fp[2], &lum, &u, &v);
+		}
+		else if (cp) {
+			rgb_to_hsv((float)cp[0]/255.0f, (float)cp[1]/255.0f, (float)cp[2]/255.0f, &hue, &sat, &val);
+			rgb_to_yuv((float)cp[0]/255.0f, (float)cp[1]/255.0f, (float)cp[2]/255.0f, &lum, &u, &v);
+		}
+
+		sprintf(str, "H:%-.4f", hue);
+		BLF_position(blf_mono_font, dx, 6, 0);
+		BLF_draw_ascii(blf_mono_font, str, sizeof(str));
+		dx += BLF_width(blf_mono_font, str);
+
+		sprintf(str, "  S:%-.4f", sat);
+		BLF_position(blf_mono_font, dx, 6, 0);
+		BLF_draw_ascii(blf_mono_font, str, sizeof(str));
+		dx += BLF_width(blf_mono_font, str);
+
+		sprintf(str, "  V:%-.4f", val);
+		BLF_position(blf_mono_font, dx, 6, 0);
+		BLF_draw_ascii(blf_mono_font, str, sizeof(str));
+		dx += BLF_width(blf_mono_font, str);
+
+		sprintf(str, "   L:%-.4f", lum);
+		BLF_position(blf_mono_font, dx, 6, 0);
+		BLF_draw_ascii(blf_mono_font, str, sizeof(str));
+		dx += BLF_width(blf_mono_font, str);
+	}
+
+	(void)dx;
 }
 
 #if 0
@@ -1531,8 +2399,8 @@ int node_link_bezier_points(View2D *v2d, SpaceNode *snode, bNodeLink *link, floa
 		vec[3][0]= snode->mx;
 		vec[3][1]= snode->my;
 	}
-	
-	dist= 0.5f*ABS(vec[0][0] - vec[3][0]);
+
+	dist= UI_GetThemeValue(TH_NODE_CURVING)*0.10f*ABS(vec[0][0] - vec[3][0]);
 	
 	/* check direction later, for top sockets */
 	vec[1][0]= vec[0][0]+dist;
@@ -1603,6 +2471,69 @@ void node_draw_link_bezier(View2D *v2d, SpaceNode *snode, bNodeLink *link, int t
 	}
 }
 
+static void node_link_straight_points(View2D *UNUSED(v2d), SpaceNode *snode, bNodeLink *link, float coord_array[][2])
+{
+	if(link->fromsock) {
+		coord_array[0][0]= link->fromsock->locx;
+		coord_array[0][1]= link->fromsock->locy;
+	}
+	else {
+		if(snode==NULL) return;
+		coord_array[0][0]= snode->mx;
+		coord_array[0][1]= snode->my;
+	}
+	if(link->tosock) {
+		coord_array[1][0]= link->tosock->locx;
+		coord_array[1][1]= link->tosock->locy;
+	}
+	else {
+		if(snode==NULL) return;
+		coord_array[1][0]= snode->mx;
+		coord_array[1][1]= snode->my;
+	}
+}
+
+void node_draw_link_straight(View2D *v2d, SpaceNode *snode, bNodeLink *link, int th_col1, int do_shaded, int th_col2, int do_triple, int th_col3 )
+{
+	float coord_array[2][2];
+	float linew;
+	int i;
+	
+	node_link_straight_points(v2d, snode, link, coord_array);
+	
+	/* store current linewidth */
+	glGetFloatv(GL_LINE_WIDTH, &linew);
+	
+	glEnable(GL_LINE_SMOOTH);
+	
+	if(do_triple) {
+		UI_ThemeColorShadeAlpha(th_col3, -80, -120);
+		glLineWidth(4.0f);
+		
+		glBegin(GL_LINES);
+		glVertex2fv(coord_array[0]);
+		glVertex2fv(coord_array[1]);
+		glEnd();
+	}
+	
+	UI_ThemeColor(th_col1);
+	glLineWidth(1.5f);
+	
+	glBegin(GL_LINE_STRIP);
+	for (i=0; i < LINK_RESOL; ++i) {
+		float t= (float)i/(float)(LINK_RESOL-1);
+		if(do_shaded)
+			UI_ThemeColorBlend(th_col1, th_col2, t);
+		glVertex2f((1.0f-t)*coord_array[0][0]+t*coord_array[1][0], (1.0f-t)*coord_array[0][1]+t*coord_array[1][1]);
+	}
+	glEnd();
+	
+	glDisable(GL_LINE_SMOOTH);
+	
+	/* restore previuos linewidth */
+	glLineWidth(linew);
+}
+
 /* note; this is used for fake links in groups too */
 void node_draw_link(View2D *v2d, SpaceNode *snode, bNodeLink *link)
 {
@@ -1631,11 +2562,18 @@ void node_draw_link(View2D *v2d, SpaceNode *snode, bNodeLink *link)
 		}
 		else {
 			/* check cyclic */
-			if(link->fromnode->level >= link->tonode->level && link->tonode->level!=0xFFF) {
-				if(link->fromnode->flag & SELECT)
-					th_col1= TH_EDGE_SELECT;
-				if(link->tonode->flag & SELECT)
-					th_col2= TH_EDGE_SELECT;
+			if((link->fromnode->level >= link->tonode->level && link->tonode->level!=0xFFF) && (link->flag & NODE_LINK_VALID)) {
+				/* special indicated link, on drop-node */
+				if(link->flag & NODE_LINKFLAG_HILITE) {
+					th_col1= th_col2= TH_ACTIVE;
+				}
+				else {
+					/* regular link */
+					if(link->fromnode->flag & SELECT)
+						th_col1= TH_EDGE_SELECT;
+					if(link->tonode->flag & SELECT)
+						th_col2= TH_EDGE_SELECT;
+				}
 				do_shaded= 1;
 				do_triple= 1;
 			}				
@@ -1646,6 +2584,5 @@ void node_draw_link(View2D *v2d, SpaceNode *snode, bNodeLink *link)
 	}
 	
 	node_draw_link_bezier(v2d, snode, link, th_col1, do_shaded, th_col2, do_triple, th_col3);
+//	node_draw_link_straight(v2d, snode, link, th_col1, do_shaded, th_col2, do_triple, th_col3);
 }
-
-

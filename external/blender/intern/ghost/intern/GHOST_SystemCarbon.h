@@ -1,5 +1,5 @@
 /*
- * $Id: GHOST_SystemCarbon.h 35152 2011-02-25 11:28:33Z jesterking $
+ * $Id: GHOST_SystemCarbon.h 36429 2011-05-02 08:39:17Z jesterking $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -190,6 +190,11 @@ public:
 	 * @param selection	Indicates which buffer to copy too, only used on X11
 	 */
 	virtual void putClipboard(GHOST_TInt8 *buffer, bool selection) const;
+
+	/**
+	 * @see GHOST_ISystem
+	 */
+	int toggleConsole(int action) { return 0; }
 
 protected:
 	/**

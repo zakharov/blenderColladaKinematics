@@ -1,5 +1,5 @@
 /*
- * $Id: Common.h 35239 2011-02-27 20:23:21Z jesterking $
+ * $Id: Common.h 36546 2011-05-08 09:05:52Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -17,7 +17,7 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  *
- * Contributors: Amorilia (amorilia@gamebox.net)
+ * Contributors: Amorilia (amorilia@users.sourceforge.net)
  *
  * ***** END GPL LICENSE BLOCK *****
  */
@@ -54,5 +54,11 @@ typedef unsigned short     uint16;
 typedef unsigned int       uint;
 typedef unsigned int       uint32;
 typedef unsigned long long uint64;
+
+// copied from nvtt src/nvimage/nvimage.h
+inline uint computePitch(uint w, uint bitsize, uint alignment)
+{
+	return ((w * bitsize +  8 * alignment - 1) / (8 * alignment)) * alignment;
+}
 
 #endif

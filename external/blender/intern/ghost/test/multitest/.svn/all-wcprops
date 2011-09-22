@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/svnroot/bf-blender/!svn/ver/34567/trunk/blender/intern/ghost/test/multitest
+/svnroot/bf-blender/!svn/ver/38260/trunk/blender/intern/ghost/test/multitest
 END
 Basic.c
 K 25
@@ -67,7 +67,7 @@ MultiTest.c
 K 25
 svn:wc:ra_dav:version-url
 V 88
-/svnroot/bf-blender/!svn/ver/28254/trunk/blender/intern/ghost/test/multitest/MultiTest.c
+/svnroot/bf-blender/!svn/ver/38260/trunk/blender/intern/ghost/test/multitest/MultiTest.c
 END
 Util.c
 K 25

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 79
-/svnroot/bf-blender/!svn/ver/35336/trunk/blender/source/blender/ikplugin/intern
+/svnroot/bf-blender/!svn/ver/35814/trunk/blender/source/blender/ikplugin/intern
 END
 ikplugin_api.h
 K 25
@@ -19,7 +19,7 @@ itasc_plugin.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/svnroot/bf-blender/!svn/ver/35240/trunk/blender/source/blender/ikplugin/intern/itasc_plugin.cpp
+/svnroot/bf-blender/!svn/ver/35814/trunk/blender/source/blender/ikplugin/intern/itasc_plugin.cpp
 END
 itasc_plugin.h
 K 25

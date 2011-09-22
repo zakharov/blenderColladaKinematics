@@ -1,59 +1,47 @@
 K 25
 svn:wc:ra_dav:version-url
 V 83
-/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/editors/space_image
+/svnroot/bf-blender/!svn/ver/40372/trunk/blender/source/blender/editors/space_image
 END
 image_draw.c
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_image/image_draw.c
+/svnroot/bf-blender/!svn/ver/36715/trunk/blender/source/blender/editors/space_image/image_draw.c
 END
 image_buttons.c
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/editors/space_image/image_buttons.c
-END
-image_render.c
-K 25
-svn:wc:ra_dav:version-url
-V 98
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_image/image_render.c
+/svnroot/bf-blender/!svn/ver/40351/trunk/blender/source/blender/editors/space_image/image_buttons.c
 END
 image_ops.c
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svnroot/bf-blender/!svn/ver/35332/trunk/blender/source/blender/editors/space_image/image_ops.c
+/svnroot/bf-blender/!svn/ver/40351/trunk/blender/source/blender/editors/space_image/image_ops.c
 END
 SConscript
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/35028/trunk/blender/source/blender/editors/space_image/SConscript
+/svnroot/bf-blender/!svn/ver/36715/trunk/blender/source/blender/editors/space_image/SConscript
 END
 image_intern.h
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_image/image_intern.h
-END
-image_header.c
-K 25
-svn:wc:ra_dav:version-url
-V 98
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_image/image_header.c
+/svnroot/bf-blender/!svn/ver/38908/trunk/blender/source/blender/editors/space_image/image_intern.h
 END
 CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/svnroot/bf-blender/!svn/ver/35028/trunk/blender/source/blender/editors/space_image/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/38443/trunk/blender/source/blender/editors/space_image/CMakeLists.txt
 END
 space_image.c
 K 25
 svn:wc:ra_dav:version-url
 V 97
-/svnroot/bf-blender/!svn/ver/35304/trunk/blender/source/blender/editors/space_image/space_image.c
+/svnroot/bf-blender/!svn/ver/40372/trunk/blender/source/blender/editors/space_image/space_image.c
 END

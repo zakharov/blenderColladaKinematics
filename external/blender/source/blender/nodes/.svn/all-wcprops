@@ -1,35 +1,41 @@
 K 25
 svn:wc:ra_dav:version-url
 V 69
-/svnroot/bf-blender/!svn/ver/35362/trunk/blender/source/blender/nodes
+/svnroot/bf-blender/!svn/ver/40443/trunk/blender/source/blender/nodes
+END
+NOD_texture.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/bf-blender/!svn/ver/39944/trunk/blender/source/blender/nodes/NOD_texture.h
 END
 SConscript
 K 25
 svn:wc:ra_dav:version-url
 V 80
-/svnroot/bf-blender/!svn/ver/32788/trunk/blender/source/blender/nodes/SConscript
+/svnroot/bf-blender/!svn/ver/39941/trunk/blender/source/blender/nodes/SConscript
 END
-SHD_node.h
+NOD_composite.h
 K 25
 svn:wc:ra_dav:version-url
-V 80
-/svnroot/bf-blender/!svn/ver/35014/trunk/blender/source/blender/nodes/SHD_node.h
+V 85
+/svnroot/bf-blender/!svn/ver/39944/trunk/blender/source/blender/nodes/NOD_composite.h
 END
-CMP_node.h
+NOD_shader.h
 K 25
 svn:wc:ra_dav:version-url
-V 80
-/svnroot/bf-blender/!svn/ver/35014/trunk/blender/source/blender/nodes/CMP_node.h
-END
-TEX_node.h
-K 25
-svn:wc:ra_dav:version-url
-V 80
-/svnroot/bf-blender/!svn/ver/35014/trunk/blender/source/blender/nodes/TEX_node.h
+V 82
+/svnroot/bf-blender/!svn/ver/39944/trunk/blender/source/blender/nodes/NOD_shader.h
 END
 CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svnroot/bf-blender/!svn/ver/34486/trunk/blender/source/blender/nodes/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/39941/trunk/blender/source/blender/nodes/CMakeLists.txt
+END
+NOD_socket.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/bf-blender/!svn/ver/39944/trunk/blender/source/blender/nodes/NOD_socket.h
 END

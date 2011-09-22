@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_FaderReader.h 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_FaderReader.h 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -58,16 +58,6 @@ private:
 	 */
 	const float m_length;
 
-	/**
-	 * The playback buffer.
-	 */
-	AUD_Buffer m_buffer;
-
-	/**
-	 * Whether the buffer is empty.
-	 */
-	bool m_empty;
-
 	// hide copy constructor and operator=
 	AUD_FaderReader(const AUD_FaderReader&);
 	AUD_FaderReader& operator=(const AUD_FaderReader&);
@@ -79,10 +69,10 @@ public:
 	 * \param start The time where fading should start in seconds.
 	 * \param length How long fading should last in seconds.
 	 */
-	AUD_FaderReader(AUD_IReader* reader, AUD_FadeType type,
+	AUD_FaderReader(AUD_Reference<AUD_IReader> reader, AUD_FadeType type,
 					float start,float length);
 
-	virtual void read(int & length, sample_t* & buffer);
+	virtual void read(int& length, bool& eos, sample_t* buffer);
 };
 
 #endif //AUD_FADERREADER

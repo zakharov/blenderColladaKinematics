@@ -1,5 +1,5 @@
 /*
-* $Id: MOD_smoke.c 35362 2011-03-05 10:29:10Z campbellbarton $
+* $Id: MOD_smoke.c 39342 2011-08-12 18:11:22Z blendix $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -35,7 +35,7 @@
  */
 
 
-#include "stddef.h"
+#include <stddef.h>
 
 #include "MEM_guardedalloc.h"
 
@@ -43,6 +43,7 @@
 #include "DNA_object_types.h"
 #include "DNA_scene_types.h"
 #include "DNA_smoke_types.h"
+#include "DNA_object_force.h"
 
 #include "BLI_utildefines.h"
 
@@ -147,6 +148,21 @@ static void updateDepgraph(ModifierData *md, DagForest *forest,
 	}
 }
 
+static void foreachIDLink(ModifierData *md, Object *ob,
+					   IDWalkFunc walk, void *userData)
+{
+	SmokeModifierData *smd = (SmokeModifierData*) md;
+
+	if(smd->type==MOD_SMOKE_TYPE_DOMAIN && smd->domain) {
+		walk(userData, ob, (ID **)&smd->domain->coll_group);
+		walk(userData, ob, (ID **)&smd->domain->fluid_group);
+		walk(userData, ob, (ID **)&smd->domain->eff_group);
+
+		if(smd->domain->effector_weights) {
+			walk(userData, ob, (ID **)&smd->domain->effector_weights->group);
+		}
+	}
+}
 
 ModifierTypeInfo modifierType_Smoke = {
 	/* name */              "Smoke",
@@ -172,5 +188,6 @@ ModifierTypeInfo modifierType_Smoke = {
 	/* dependsOnTime */     dependsOnTime,
 	/* dependsOnNormals */	NULL,
 	/* foreachObjectLink */ NULL,
-	/* foreachIDLink */     NULL,
+	/* foreachIDLink */     foreachIDLink,
+	/* foreachTexLink */    NULL
 };

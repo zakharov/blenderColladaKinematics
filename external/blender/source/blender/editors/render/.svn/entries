@@ -1,16 +1,16 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/editors/render
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-03-05T10:29:10.037531Z
-35362
-campbellbarton
-has-props
+2011-09-19T12:26:20.076486Z
+40351
+mont29
+
 
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2011-03-03T12:27:52.962297Z
+2011-09-21T18:16:47.139997Z
 0ab274fa5477a251af5a1985cc7f366b
 2011-02-27T20:29:51.598877Z
 35242
@@ -66,11 +66,11 @@ file
 
 
 
-2011-03-05T14:58:43.808169Z
-f9a17e192dc31ae697946b0bdef26bf8
-2011-03-05T10:29:10.037531Z
-35362
-campbellbarton
+2011-09-21T18:16:47.143997Z
+1838477b89281e9c4bc7a1e5d603ad78
+2011-09-07T06:33:29.061260Z
+39991
+mont29
 has-props
 
 
@@ -92,7 +92,41 @@ has-props
 
 
 
-35344
+25055
+
+render_update.c
+file
+
+
+
+
+2011-09-21T18:16:47.143997Z
+e0797f2be36dc26aedc27b1229752e44
+2011-09-07T06:33:29.061260Z
+39991
+mont29
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5526
 
 render_intern.h
 file
@@ -100,11 +134,11 @@ file
 
 
 
-2011-03-03T12:27:52.962297Z
-6a99a7784ad4ace8921552680da75292
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:47.143997Z
+c59caaed98c9972060502965dbbf2e71
+2011-09-07T06:33:29.061260Z
+39991
+mont29
 has-props
 
 
@@ -126,7 +160,7 @@ has-props
 
 
 
-2819
+2830
 
 render_opengl.c
 file
@@ -134,11 +168,11 @@ file
 
 
 
-2011-03-03T12:27:52.962297Z
-7089d4639398846d251df113f8db6b3f
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:47.147997Z
+73b7e3cb40659750a4be0d72f82ec1a4
+2011-09-19T12:26:20.076486Z
+40351
+mont29
 has-props
 
 
@@ -160,7 +194,7 @@ has-props
 
 
 
-16261
+17680
 
 SConscript
 file
@@ -168,11 +202,11 @@ file
 
 
 
-2011-03-03T12:27:52.966297Z
-18dda7778f1c8389a279c343cfa72893
-2010-02-22T10:36:53.392841Z
-27078
-damien78
+2011-09-21T18:16:47.147997Z
+8d7eaa33a3f0d7e2ddbf51bbae8d97a5
+2011-08-21T13:31:46.436851Z
+39584
+nazgul
 has-props
 
 
@@ -194,52 +228,18 @@ has-props
 
 
 
-942
+941
 
-render_internal.c
+render_view.c
 file
 
 
 
 
-2011-03-03T12:27:52.966297Z
-561f0b7d31963cbec8f6dea7864b9e3b
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-25043
-
-CMakeLists.txt
-file
-
-
-
-
-2011-03-03T12:27:52.966297Z
-ad9c19371d86775de6cbc85cbb4621c5
-2010-12-22T23:09:30.468439Z
-33864
+2011-09-21T18:16:47.147997Z
+17178c086afd64a60589321f0ae416d2
+2011-06-06T00:42:36.750734Z
+37232
 campbellbarton
 has-props
 
@@ -262,19 +262,19 @@ has-props
 
 
 
-1485
+9027
 
-render_shading.c
+render_internal.c
 file
 
 
 
 
-2011-03-03T12:27:52.966297Z
-fbbd0022debd59f773e03ce577f1f5bf
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:47.151997Z
+2ccc8815581773ff0b41a7fb10112fa2
+2011-09-19T12:26:20.076486Z
+40351
+mont29
 has-props
 
 
@@ -296,5 +296,73 @@ has-props
 
 
 
-29503
+17288
+
+CMakeLists.txt
+file
+
+
+
+
+2011-09-21T18:16:47.151997Z
+ac4f28036d0c28c00b5b371122f3b1e4
+2011-07-16T23:01:14.726348Z
+38441
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1634
+
+render_shading.c
+file
+
+
+
+
+2011-09-21T18:16:47.151997Z
+1b2b859c8a8fb6cd63867f607154edd1
+2011-09-19T12:26:20.076486Z
+40351
+mont29
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+25323
 

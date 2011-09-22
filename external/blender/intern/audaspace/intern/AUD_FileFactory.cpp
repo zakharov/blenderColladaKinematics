@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_FileFactory.cpp 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_FileFactory.cpp 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -38,7 +38,6 @@
 #endif
 
 #include "AUD_FileFactory.h"
-#include "AUD_Buffer.h"
 
 #include <cstring>
 
@@ -54,20 +53,20 @@ AUD_FileFactory::AUD_FileFactory(std::string filename) :
 AUD_FileFactory::AUD_FileFactory(const data_t* buffer, int size) :
 	m_buffer(new AUD_Buffer(size))
 {
-	memcpy(m_buffer.get()->getBuffer(), buffer, size);
+	memcpy(m_buffer->getBuffer(), buffer, size);
 }
 
 static const char* read_error = "AUD_FileFactory: File couldn't be read.";
 
-AUD_IReader* AUD_FileFactory::createReader() const
+AUD_Reference<AUD_IReader> AUD_FileFactory::createReader()
 {
 #ifdef WITH_SNDFILE
 	try
 	{
-		if(m_buffer.get())
-			return new AUD_SndFileReader(m_buffer);
-		else
+		if(m_buffer.isNull())
 			return new AUD_SndFileReader(m_filename);
+		else
+			return new AUD_SndFileReader(m_buffer);
 	}
 	catch(AUD_Exception&) {}
 #endif
@@ -75,10 +74,10 @@ AUD_IReader* AUD_FileFactory::createReader() const
 #ifdef WITH_FFMPEG
 	try
 	{
-		if(m_buffer.get())
-			return new AUD_FFMPEGReader(m_buffer);
-		else
+		if(m_buffer.isNull())
 			return new AUD_FFMPEGReader(m_filename);
+		else
+			return new AUD_FFMPEGReader(m_buffer);
 	}
 	catch(AUD_Exception&) {}
 #endif

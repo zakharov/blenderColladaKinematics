@@ -1,4 +1,4 @@
-/* $Id: Exception.h 35082 2011-02-22 19:30:37Z jesterking $
+/* $Id: Exception.h 39883 2011-09-03 02:15:49Z campbellbarton $
 -----------------------------------------------------------------------------
 This source file is part of VideoTexture library
 
@@ -122,11 +122,11 @@ public:
 		desc = m_description;
 	}
 
-    void registerDesc(void)
-    {
-        if (std::find(m_expDescs.begin(), m_expDescs.end(), this) == m_expDescs.end())
-            m_expDescs.push_back(this);
-    }
+	void registerDesc(void)
+	{
+		if (std::find(m_expDescs.begin(), m_expDescs.end(), this) == m_expDescs.end())
+			m_expDescs.push_back(this);
+	}
 	// list of exception descriptions
 	static std::vector<ExpDesc*> m_expDescs;
 

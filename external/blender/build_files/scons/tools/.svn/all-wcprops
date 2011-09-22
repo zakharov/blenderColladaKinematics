@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 72
-/svnroot/bf-blender/!svn/ver/35327/trunk/blender/build_files/scons/tools
+/svnroot/bf-blender/!svn/ver/40403/trunk/blender/build_files/scons/tools
 END
 Blender.py
 K 25
 svn:wc:ra_dav:version-url
 V 83
-/svnroot/bf-blender/!svn/ver/35261/trunk/blender/build_files/scons/tools/Blender.py
+/svnroot/bf-blender/!svn/ver/40403/trunk/blender/build_files/scons/tools/Blender.py
 END
 crossmingw.py
 K 25
@@ -25,7 +25,7 @@ btools.py
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/svnroot/bf-blender/!svn/ver/35327/trunk/blender/build_files/scons/tools/btools.py
+/svnroot/bf-blender/!svn/ver/40341/trunk/blender/build_files/scons/tools/btools.py
 END
 bcolors.py
 K 25

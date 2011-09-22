@@ -1,5 +1,5 @@
 /*
- * $Id: logic_window.c 35315 2011-03-03 01:47:17Z dfelinto $
+ * $Id: logic_window.c 40395 2011-09-20 13:41:43Z nazgul $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -718,6 +718,8 @@ static const char *actuator_name(int type)
 		return "State";
 	case ACT_ARMATURE:
 		return "Armature";
+	case ACT_STEERING:
+		return "Steering";		
 	}
 	return "unknown";
 }
@@ -2167,31 +2169,55 @@ static short draw_actuatorbuttons(Main *bmain, Object *ob, bActuator *act, uiBlo
 				/* reset this value, it is for handling the event */
 				sa->sndnr = 0;
 				uiDefButS(block, MENU, B_SOUNDACT_BROWSE, str, xco+10,yco-22,20,19, &(sa->sndnr), 0, 0, 0, 0, "");	
-				uiDefButO(block, BUT, "sound.open", 0, "Load Sound", xco+wval+10, yco-22, wval, 19, "Load a sound file. Remember to set caching on for small sounds that are played often.");
+				uiDefButO(block, BUT, "sound.open", 0, "Load Sound", xco+wval+10, yco-22, wval, 19,
+				          "Load a sound file (remember to set caching on for small sounds that are played often)");
 
 				if(sa->sound) {
-					char dummy_str[] = "Sound mode %t|Play Stop %x0|Play End %x1|Loop Stop %x2|Loop End %x3|Loop Ping Pong Stop %x5|Loop Ping Pong %x4";
-					uiDefBut(block, TEX, B_IDNAME, "SO:",xco+30,yco-22,wval-20,19, ((ID *)sa->sound)->name+2,    0.0, 21.0, 0, 0, "");
-					uiDefButS(block, MENU, 1, dummy_str,xco+10,yco-44,width-20, 19, &sa->type, 0.0, 0.0, 0, 0, "");
-					uiDefButF(block, NUM, 0, "Volume:", xco+10,yco-66,wval, 19, &sa->volume, 0.0,  1.0, 0, 0, "Sets the volume of this sound");
-					uiDefButF(block, NUM, 0, "Pitch:",xco+wval+10,yco-66,wval, 19, &sa->pitch,-12.0, 12.0, 0, 0, "Sets the pitch of this sound");
-					uiDefButS(block, TOG | BIT, 0, "3D Sound", xco+10, yco-88, width-20, 19, &sa->flag, 0.0, 1.0, 0.0, 0.0, "Plays the sound positioned in 3D space.");
+					char dummy_str[] = "Sound mode %t|Play Stop %x0|Play End %x1|Loop Stop %x2|"
+					                   "Loop End %x3|Loop Ping Pong Stop %x5|Loop Ping Pong %x4";
+					uiDefBut(block, TEX, B_IDNAME, "SO:",xco+30,yco-22,wval-20,19,
+					         ((ID *)sa->sound)->name+2, 0.0, 21.0, 0, 0, "");
+					uiDefButS(block, MENU, 1, dummy_str,xco+10,yco-44,width-20, 19,
+					          &sa->type, 0.0, 0.0, 0, 0, "");
+					uiDefButF(block, NUM, 0, "Volume:", xco+10,yco-66,wval, 19, &sa->volume,
+					          0.0, 1.0, 0, 0, "Sets the volume of this sound");
+					uiDefButF(block, NUM, 0, "Pitch:",xco+wval+10,yco-66,wval, 19, &sa->pitch,-12.0,
+					          12.0, 0, 0, "Sets the pitch of this sound");
+					uiDefButS(block, TOG | BIT, 0, "3D Sound", xco+10, yco-88, width-20, 19,
+					          &sa->flag, 0.0, 1.0, 0.0, 0.0, "Plays the sound positioned in 3D space");
 					if(sa->flag & ACT_SND_3D_SOUND)
 					{
-						uiDefButF(block, NUM, 0, "Minimum Gain: ", xco+10, yco-110, wval, 19, &sa->sound3D.min_gain, 0.0, 1.0, 0.0, 0.0, "The minimum gain of the sound, no matter how far it is away.");
-						uiDefButF(block, NUM, 0, "Maximum Gain: ", xco+10, yco-132, wval, 19, &sa->sound3D.max_gain, 0.0, 1.0, 0.0, 0.0, "The maximum gain of the sound, no matter how near it is.");
-						uiDefButF(block, NUM, 0, "Reference Distance: ", xco+10, yco-154, wval, 19, &sa->sound3D.reference_distance, 0.0, FLT_MAX, 0.0, 0.0, "The reference distance is the distance where the sound has a gain of 1.0.");
-						uiDefButF(block, NUM, 0, "Maximum Distance: ", xco+10, yco-176, wval, 19, &sa->sound3D.max_distance, 0.0, FLT_MAX, 0.0, 0.0, "The maximum distance at which you can hear the sound.");
-						uiDefButF(block, NUM, 0, "Rolloff: ", xco+wval+10, yco-110, wval, 19, &sa->sound3D.rolloff_factor, 0.0, 5.0, 0.0, 0.0, "The rolloff factor defines the influence factor on volume depending on distance.");
-						uiDefButF(block, NUM, 0, "Cone Outer Gain: ", xco+wval+10, yco-132, wval, 19, &sa->sound3D.cone_outer_gain, 0.0, 1.0, 0.0, 0.0, "The gain outside the outer cone. The gain in the outer cone will be interpolated between this value and the normal gain in the inner cone.");
-						uiDefButF(block, NUM, 0, "Cone Outer Angle: ", xco+wval+10, yco-154, wval, 19, &sa->sound3D.cone_outer_angle, 0.0, 360.0, 0.0, 0.0, "The angle of the outer cone.");
-						uiDefButF(block, NUM, 0, "Cone Inner Angle: ", xco+wval+10, yco-176, wval, 19, &sa->sound3D.cone_inner_angle, 0.0, 360.0, 0.0, 0.0, "The angle of the inner cone.");
+						uiDefButF(block, NUM, 0, "Minimum Gain: ", xco+10, yco-110, wval, 19,
+						          &sa->sound3D.min_gain, 0.0, 1.0, 0.0, 0.0,
+						          "The minimum gain of the sound, no matter how far it is away");
+						uiDefButF(block, NUM, 0, "Maximum Gain: ", xco+10, yco-132, wval, 19,
+						          &sa->sound3D.max_gain, 0.0, 1.0, 0.0, 0.0,
+						          "The maximum gain of the sound, no matter how near it is");
+						uiDefButF(block, NUM, 0, "Reference Distance: ", xco+10, yco-154, wval, 19,
+						          &sa->sound3D.reference_distance, 0.0, FLT_MAX, 0.0, 0.0,
+						          "The reference distance is the distance where the sound has a gain of 1.0");
+						uiDefButF(block, NUM, 0, "Maximum Distance: ", xco+10, yco-176, wval, 19,
+						          &sa->sound3D.max_distance, 0.0, FLT_MAX, 0.0, 0.0,
+						          "The maximum distance at which you can hear the sound");
+						uiDefButF(block, NUM, 0, "Rolloff: ", xco+wval+10, yco-110, wval, 19,
+						          &sa->sound3D.rolloff_factor, 0.0, 5.0, 0.0, 0.0,
+						          "The rolloff factor defines the influence factor on volume depending on distance");
+						uiDefButF(block, NUM, 0, "Cone Outer Gain: ", xco+wval+10, yco-132, wval, 19,
+						          &sa->sound3D.cone_outer_gain, 0.0, 1.0, 0.0, 0.0,
+						          "The gain outside the outer cone. The gain in the outer cone will be "
+						          "interpolated between this value and the normal gain in the inner cone");
+						uiDefButF(block, NUM, 0, "Cone Outer Angle: ", xco+wval+10, yco-154, wval,
+						          19, &sa->sound3D.cone_outer_angle, 0.0, 360.0, 0.0, 0.0,
+						          "The angle of the outer cone");
+						uiDefButF(block, NUM, 0, "Cone Inner Angle: ", xco+wval+10, yco-176, wval,
+						          19, &sa->sound3D.cone_inner_angle, 0.0, 360.0, 0.0, 0.0,
+						          "The angle of the inner cone");
 					}
 				}
 				MEM_freeN((void *)str);
 			} 
 			else {
-				uiDefButO(block, BUT, "sound.open", 0, "Load Sound", xco+10, yco-22, width-20, 19, "Load a sound file.");
+				uiDefButO(block, BUT, "sound.open", 0, "Load Sound", xco+10, yco-22, width-20, 19, "Load a sound file");
 			}
 					
 			yco-= ysize;
@@ -2200,28 +2226,28 @@ static short draw_actuatorbuttons(Main *bmain, Object *ob, bActuator *act, uiBlo
 		}
 	case ACT_CAMERA:
 
-		 ysize= 48;
-        
-		 glRects(xco, yco-ysize, xco+width, yco);
-		 uiEmboss((float)xco, (float)yco-ysize, (float)xco+width, (float)yco, 1);
-		
-		 ca= act->data;
-        
-		 uiDefIDPoinBut(block, test_obpoin_but, ID_OB, 1, "OB:",		xco+10, yco-24, (width-20)/2, 19, &(ca->ob), "Look at this Object");
-		 uiDefButF(block, NUM, 0, "Height:",	xco+10+(width-20)/2, yco-24, (width-20)/2, 19, &ca->height, 0.0, 20.0, 0, 0, "");
-		
-		 uiDefButF(block, NUM, 0, "Min:",	xco+10, yco-44, (width-60)/2, 19, &ca->min, 0.0, 20.0, 0, 0, "");
-		
-		 if(ca->axis==0) ca->axis= 'x';
-		 uiDefButS(block, ROW, 0, "X",	xco+10+(width-60)/2, yco-44, 20, 19, &ca->axis, 4.0, (float)'x', 0, 0, "Camera tries to get behind the X axis");
-		 uiDefButS(block, ROW, 0, "Y",	xco+30+(width-60)/2, yco-44, 20, 19, &ca->axis, 4.0, (float)'y', 0, 0, "Camera tries to get behind the Y axis");
-		
-		 uiDefButF(block, NUM, 0, "Max:",	xco+20+(width)/2, yco-44, (width-60)/2, 19, &ca->max, 0.0, 20.0, 0, 0, "");
+		ysize= 48;
 
-		 yco-= ysize;
-        
-		 break;
-		 		
+		glRects(xco, yco-ysize, xco+width, yco);
+		uiEmboss((float)xco, (float)yco-ysize, (float)xco+width, (float)yco, 1);
+		
+		ca= act->data;
+
+		uiDefIDPoinBut(block, test_obpoin_but, ID_OB, 1, "OB:",		xco+10, yco-24, (width-20)/2, 19, &(ca->ob), "Look at this Object");
+		uiDefButF(block, NUM, 0, "Height:",	xco+10+(width-20)/2, yco-24, (width-20)/2, 19, &ca->height, 0.0, 20.0, 0, 0, "");
+		
+		uiDefButF(block, NUM, 0, "Min:",	xco+10, yco-44, (width-60)/2, 19, &ca->min, 0.0, 20.0, 0, 0, "");
+		
+		if(ca->axis==0) ca->axis= 'x';
+		uiDefButS(block, ROW, 0, "X",	xco+10+(width-60)/2, yco-44, 20, 19, &ca->axis, 4.0, (float)'x', 0, 0, "Camera tries to get behind the X axis");
+		uiDefButS(block, ROW, 0, "Y",	xco+30+(width-60)/2, yco-44, 20, 19, &ca->axis, 4.0, (float)'y', 0, 0, "Camera tries to get behind the Y axis");
+		
+		uiDefButF(block, NUM, 0, "Max:",	xco+20+(width)/2, yco-44, (width-60)/2, 19, &ca->max, 0.0, 20.0, 0, 0, "");
+
+		yco-= ysize;
+
+		break;
+
 	case ACT_EDIT_OBJECT:
 		
 		eoa= act->data;
@@ -2230,7 +2256,7 @@ static short draw_actuatorbuttons(Main *bmain, Object *ob, bActuator *act, uiBlo
 			ysize = 92;
 			glRects(xco, yco-ysize, xco+width, yco);
 			uiEmboss((float)xco, (float)yco-ysize, (float)xco+width, (float)yco, 1);
-	 
+
 			uiDefIDPoinBut(block, test_obpoin_but, ID_OB, 1, "OB:",		xco+10, yco-44, (width-20)/2, 19, &(eoa->ob), "Add this Object and all its children (cant be on an visible layer)");
 			uiDefButI(block, NUM, 0, "Time:",	xco+10+(width-20)/2, yco-44, (width-20)/2, 19, &eoa->time, 0.0, 2000.0, 0, 0, "Duration the new Object lives");
 
@@ -2311,15 +2337,15 @@ static short draw_actuatorbuttons(Main *bmain, Object *ob, bActuator *act, uiBlo
 		uiDefButS(block, MENU, B_REDR, str,		xco+40, yco-24, (width-80), 19, &eoa->type, 0.0, 0.0, 0, 0, "");
 
 		 yco-= ysize;
-        
+
 		break;
- 
-	 case ACT_CONSTRAINT:
+
+	case ACT_CONSTRAINT:
 		coa= act->data;
 	
 		if (coa->type == ACT_CONST_TYPE_LOC) {
 			ysize= 69;
-        
+
 			glRects(xco, yco-ysize, xco+width, yco);
 			uiEmboss((float)xco, (float)yco-ysize, (float)xco+width, (float)yco, 1);
 			
@@ -2451,69 +2477,69 @@ static short draw_actuatorbuttons(Main *bmain, Object *ob, bActuator *act, uiBlo
 		break;
  
 	case ACT_SCENE:
-		  sca= act->data; 
+		sca= act->data;
 		
-		  if(sca->type==ACT_SCENE_RESTART) { 
-			  ysize= 28; 
-			  glRects(xco, yco-ysize, xco+width, yco); 
-			  uiEmboss((float)xco, (float)yco-ysize, (float)xco+width, (float)yco, 1); 
-		  } 
-		  else if(sca->type==ACT_SCENE_CAMERA) { 
+		if(sca->type==ACT_SCENE_RESTART) {
+			ysize= 28;
+			glRects(xco, yco-ysize, xco+width, yco);
+			uiEmboss((float)xco, (float)yco-ysize, (float)xco+width, (float)yco, 1);
+		}
+		else if(sca->type==ACT_SCENE_CAMERA) {
+
+			ysize= 48;
+			glRects(xco, yco-ysize, xco+width, yco);
+			uiEmboss((float)xco, (float)yco-ysize, (float)xco+width, (float)yco, 1);
+
+			uiDefIDPoinBut(block, test_obpoin_but, ID_OB, 1, "OB:",		xco+40, yco-44, (width-80), 19, &(sca->camera), "Set this Camera. Leave empty to refer to self object");
+		}
+		else if(sca->type==ACT_SCENE_SET) {
 			
-			  ysize= 48; 
-			  glRects(xco, yco-ysize, xco+width, yco); 
-			  uiEmboss((float)xco, (float)yco-ysize, (float)xco+width, (float)yco, 1); 
-	 
-			  uiDefIDPoinBut(block, test_obpoin_but, ID_OB, 1, "OB:",		xco+40, yco-44, (width-80), 19, &(sca->camera), "Set this Camera. Leave empty to refer to self object"); 
-		  } 
-		  else if(sca->type==ACT_SCENE_SET) { 
-			
-			  ysize= 48; 
-			  glRects(xco, yco-ysize, xco+width, yco); 
-			  uiEmboss((float)xco, (float)yco-ysize, (float)xco+width, (float)yco, 1); 
-	
-			  uiDefIDPoinBut(block, test_scenepoin_but, ID_SCE, 1, "SCE:",		xco+40, yco-44, (width-80), 19, &(sca->scene), "Set this Scene"); 
-		  } 
+			ysize= 48;
+			glRects(xco, yco-ysize, xco+width, yco);
+			uiEmboss((float)xco, (float)yco-ysize, (float)xco+width, (float)yco, 1);
+
+			uiDefIDPoinBut(block, test_scenepoin_but, ID_SCE, 1, "SCE:",		xco+40, yco-44, (width-80), 19, &(sca->scene), "Set this Scene");
+		}
 		else if(sca->type==ACT_SCENE_ADD_FRONT) { 
 			
-			  ysize= 48; 
-			  glRects(xco, yco-ysize, xco+width, yco); 
-			  uiEmboss((float)xco, (float)yco-ysize, (float)xco+width, (float)yco, 1); 
-	
-			  uiDefIDPoinBut(block, test_scenepoin_but, ID_SCE, 1, "SCE:",		xco+40, yco-44, (width-80), 19, &(sca->scene), "Add an Overlay Scene"); 
-		  } 
+			ysize= 48;
+			glRects(xco, yco-ysize, xco+width, yco);
+			uiEmboss((float)xco, (float)yco-ysize, (float)xco+width, (float)yco, 1);
+
+			uiDefIDPoinBut(block, test_scenepoin_but, ID_SCE, 1, "SCE:",		xco+40, yco-44, (width-80), 19, &(sca->scene), "Add an Overlay Scene");
+		}
 		else if(sca->type==ACT_SCENE_ADD_BACK) { 
 			
-			  ysize= 48; 
-			  glRects(xco, yco-ysize, xco+width, yco); 
-			  uiEmboss((float)xco, (float)yco-ysize, (float)xco+width, (float)yco, 1); 
-	
-			  uiDefIDPoinBut(block, test_scenepoin_but, ID_SCE, 1, "SCE:",		xco+40, yco-44, (width-80), 19, &(sca->scene), "Add a Background Scene"); 
-		  } 
+			ysize= 48;
+			glRects(xco, yco-ysize, xco+width, yco);
+			uiEmboss((float)xco, (float)yco-ysize, (float)xco+width, (float)yco, 1);
+
+			uiDefIDPoinBut(block, test_scenepoin_but, ID_SCE, 1, "SCE:",		xco+40, yco-44, (width-80), 19, &(sca->scene), "Add a Background Scene");
+		}
 		else if(sca->type==ACT_SCENE_REMOVE) { 
 			
-			  ysize= 48; 
-			  glRects(xco, yco-ysize, xco+width, yco); 
-			  uiEmboss((float)xco, (float)yco-ysize, (float)xco+width, (float)yco, 1); 
-	
-			  uiDefIDPoinBut(block, test_scenepoin_but, ID_SCE, 1, "SCE:",		xco+40, yco-44, (width-80), 19, &(sca->scene), "Remove a Scene");
-		  } 
+			ysize= 48;
+			glRects(xco, yco-ysize, xco+width, yco);
+			uiEmboss((float)xco, (float)yco-ysize, (float)xco+width, (float)yco, 1);
+
+			uiDefIDPoinBut(block, test_scenepoin_but, ID_SCE, 1, "SCE:",		xco+40, yco-44, (width-80), 19, &(sca->scene), "Remove a Scene");
+		}
 		else if(sca->type==ACT_SCENE_SUSPEND) { 
 			
-			  ysize= 48; 
-			  glRects(xco, yco-ysize, xco+width, yco); 
-			  uiEmboss((float)xco, (float)yco-ysize, (float)xco+width, (float)yco, 1); 
-	
-			  uiDefIDPoinBut(block, test_scenepoin_but, ID_SCE, 1, "SCE:",		xco+40, yco-44, (width-80), 19, &(sca->scene), "Pause a Scene");
-		  } 
+			ysize= 48;
+			glRects(xco, yco-ysize, xco+width, yco);
+			uiEmboss((float)xco, (float)yco-ysize, (float)xco+width, (float)yco, 1);
+
+			uiDefIDPoinBut(block, test_scenepoin_but, ID_SCE, 1, "SCE:",		xco+40, yco-44, (width-80), 19, &(sca->scene), "Pause a Scene");
+		}
 		else if(sca->type==ACT_SCENE_RESUME) { 
 			
-			  ysize= 48; 
-			  glRects(xco, yco-ysize, xco+width, yco); 
-			  uiEmboss((float)xco, (float)yco-ysize, (float)xco+width, (float)yco, 1); 
-	
-			  uiDefIDPoinBut(block, test_scenepoin_but, ID_SCE, 1, "SCE:",		xco+40, yco-44, (width-80), 19, &(sca->scene), "Unpause a Scene");
-		  } 
+			ysize= 48;
+			glRects(xco, yco-ysize, xco+width, yco);
+			uiEmboss((float)xco, (float)yco-ysize, (float)xco+width, (float)yco, 1);
+
+			uiDefIDPoinBut(block, test_scenepoin_but, ID_SCE, 1, "SCE:",		xco+40, yco-44, (width-80), 19, &(sca->scene), "Unpause a Scene");
+		}
 
 		str= "Scene %t|Restart %x0|Set Scene %x1|Set Camera %x2|Add OverlayScene %x3|Add BackgroundScene %x4|Remove Scene %x5|Suspend Scene %x6|Resume Scene %x7";
 		uiDefButS(block, MENU, B_REDR, str,		xco+40, yco-24, (width-80), 19, &sca->type, 0.0, 0.0, 0, 0, ""); 
@@ -2850,41 +2876,41 @@ static short draw_actuatorbuttons(Main *bmain, Object *ob, bActuator *act, uiBlo
 		yco -= ysize;
 		break;
 	case ACT_PARENT:
-		  parAct = act->data; 
+		parAct = act->data;
 
-		  if(parAct->type==ACT_PARENT_SET) { 
+		if(parAct->type==ACT_PARENT_SET) {
 			
-			  ysize= 48; 
-			  glRects(xco, yco-ysize, xco+width, yco); 
-			  uiEmboss((float)xco, (float)yco-ysize, (float)xco+width, (float)yco, 1); 
-			  uiDefIDPoinBut(block, test_obpoin_but, ID_OB, 1, "OB:",		xco+95, yco-24, (width-100), 19, &(parAct->ob), "Set this object as parent"); 
+			ysize= 48;
+			glRects(xco, yco-ysize, xco+width, yco);
+			uiEmboss((float)xco, (float)yco-ysize, (float)xco+width, (float)yco, 1);
+			uiDefIDPoinBut(block, test_obpoin_but, ID_OB, 1, "OB:",		xco+95, yco-24, (width-100), 19, &(parAct->ob), "Set this object as parent");
 			uiBlockBeginAlign(block);
 			uiDefButBitS(block, TOGN, ACT_PARENT_COMPOUND, B_REDR,
-				  "Compound",
-				  xco + 5, yco - 44, (width - 10)/2, 19, &parAct->flag,
-				  0.0, 0.0, 0, 0,
-				  "Add this object shape to the parent shape (only if the parent shape is already compound)");
+			"Compound",
+			xco + 5, yco - 44, (width - 10)/2, 19, &parAct->flag,
+			0.0, 0.0, 0, 0,
+			"Add this object shape to the parent shape (only if the parent shape is already compound)");
 			uiDefButBitS(block, TOGN, ACT_PARENT_GHOST, B_REDR,
-				  "Ghost",
-				  xco + 5 + ((width - 10)/2), yco - 44, (width - 10)/2, 19, &parAct->flag,
-				  0.0, 0.0, 0, 0,
-				  "Make this object ghost while parented (only if not compound)");
+			"Ghost",
+			xco + 5 + ((width - 10)/2), yco - 44, (width - 10)/2, 19, &parAct->flag,
+			0.0, 0.0, 0, 0,
+			"Make this object ghost while parented (only if not compound)");
 			uiBlockEndAlign(block);
-		  }
-		  else if(parAct->type==ACT_PARENT_REMOVE) { 
-			
-			  ysize= 28; 
-			  glRects(xco, yco-ysize, xco+width, yco); 
-			  uiEmboss((float)xco, (float)yco-ysize, (float)xco+width, (float)yco, 1); 
-		 }
+		}
+		else if(parAct->type==ACT_PARENT_REMOVE) {
+
+			ysize= 28;
+			glRects(xco, yco-ysize, xco+width, yco);
+			uiEmboss((float)xco, (float)yco-ysize, (float)xco+width, (float)yco, 1);
+		}
 
 		str= "Parent %t|Set Parent %x0|Remove Parent %x1";
 		uiDefButI(block, MENU, B_REDR, str,		xco+5, yco-24, parAct->type==1?(width-80):90, 19, &parAct->type, 0.0, 0.0, 0, 0, ""); 
 
-		  yco-= ysize; 
-		  break; 
+		yco-= ysize;
+		break;
 	case ACT_ARMATURE:
-		  armAct = act->data; 
+		armAct = act->data;
 
 		if (ob->type == OB_ARMATURE) {
 			str= "Constraint %t|Run armature %x0|Enable %x1|Disable %x2|Set target %x3|Set weight %x4";
@@ -2922,8 +2948,8 @@ static short draw_actuatorbuttons(Main *bmain, Object *ob, bActuator *act, uiBlo
 		  }
 		glRects(xco, yco-ysize, xco+width, yco); 
 		uiEmboss((float)xco, (float)yco-ysize, (float)xco+width, (float)yco, 1); 
-		  yco-= ysize; 
-		  break; 
+		yco-= ysize;
+		break;
 
 	 default:
 		ysize= 4;
@@ -3228,7 +3254,7 @@ static void draw_sensor_header(uiLayout *layout, PointerRNA *ptr, PointerRNA *lo
 
 static void draw_sensor_internal_header(uiLayout *layout, PointerRNA *ptr)
 {
-	uiLayout *box, *split, *row;
+	uiLayout *box, *split, *subrow, *row;
 
 	box= uiLayoutBox(layout);
 	split = uiLayoutSplit(box, 0.45, 0);
@@ -3236,7 +3262,11 @@ static void draw_sensor_internal_header(uiLayout *layout, PointerRNA *ptr)
 	row= uiLayoutRow(split, 1);
 	uiItemR(row, ptr, "use_pulse_true_level", 0, "", ICON_DOTSUP);
 	uiItemR(row, ptr, "use_pulse_false_level", 0, "", ICON_DOTSDOWN);
-	uiItemR(row, ptr, "frequency", 0, "Freq", ICON_NONE);
+
+	subrow=uiLayoutRow(row, 0);
+	uiLayoutSetActive(subrow, (RNA_boolean_get(ptr, "use_pulse_true_level")
+							|| RNA_boolean_get(ptr, "use_pulse_false_level")));
+	uiItemR(subrow, ptr, "frequency", 0, "Freq", ICON_NONE);
 	
 	row= uiLayoutRow(split, 1);
 	uiItemR(row, ptr, "use_level", UI_ITEM_R_TOGGLE, NULL, ICON_NONE);
@@ -3299,7 +3329,7 @@ static void draw_sensor_collision(uiLayout *layout, PointerRNA *ptr, bContext *C
 	uiItemR(row, ptr, "use_pulse", UI_ITEM_R_TOGGLE, NULL, ICON_NONE);
 	uiItemR(row, ptr, "use_material", UI_ITEM_R_TOGGLE, NULL, ICON_NONE);
 
-	switch (RNA_enum_get(ptr, "use_material")) {
+	switch (RNA_boolean_get(ptr, "use_material")) {
 		case SENS_COLLISION_PROPERTY:
 			uiItemR(split, ptr, "property", 0, NULL, ICON_NONE);
 			break;
@@ -3673,17 +3703,23 @@ static void draw_actuator_action(uiLayout *layout, PointerRNA *ptr)
 {
 	Object *ob = (Object *)ptr->id.data;
 	PointerRNA settings_ptr;
-	uiLayout *row;
+	uiLayout *row, *subrow, *col;
 
-	if(ob->type != OB_ARMATURE){
-		uiItemL(layout, "Actuator only available for armatures", ICON_NONE);
-		return;
-	}
 	RNA_pointer_create((ID *)ob, &RNA_GameObjectSettings, ob, &settings_ptr);
 
 	row= uiLayoutRow(layout, 0);
 	uiItemR(row, ptr, "play_mode", 0, "", ICON_NONE);
-	uiItemR(row, ptr, "action", 0, NULL, ICON_NONE);
+
+	subrow= uiLayoutRow(row, 1);
+	uiItemR(subrow, ptr, "use_force", UI_ITEM_R_TOGGLE, NULL, ICON_NONE);
+	uiItemR(subrow, ptr, "use_additive", UI_ITEM_R_TOGGLE, NULL, ICON_NONE);
+
+	col = uiLayoutColumn(subrow, 0);
+	uiLayoutSetActive(col, (RNA_boolean_get(ptr, "use_additive") || RNA_boolean_get(ptr, "use_force")));
+	uiItemR(col, ptr, "use_local", UI_ITEM_R_TOGGLE, NULL, ICON_NONE);
+
+	row= uiLayoutRow(layout, 0);
+	uiItemR(row, ptr, "action", 0, "", ICON_NONE);
 	uiItemR(row, ptr, "use_continue_last_frame", 0, NULL, ICON_NONE);
 
 	row= uiLayoutRow(layout, 0);
@@ -3695,9 +3731,15 @@ static void draw_actuator_action(uiLayout *layout, PointerRNA *ptr)
 		uiItemR(row, ptr, "frame_end", 0, NULL, ICON_NONE);
 	}
 
+	uiItemR(row, ptr, "apply_to_children", 0, NULL, ICON_NONE);
+
 	row= uiLayoutRow(layout, 0);
 	uiItemR(row, ptr, "frame_blend_in", 0, NULL, ICON_NONE);
 	uiItemR(row, ptr, "priority", 0, NULL, ICON_NONE);
+
+	row= uiLayoutRow(layout, 0);
+	uiItemR(row, ptr, "layer", 0, NULL, ICON_NONE);
+	uiItemR(row, ptr, "layer_weight", 0, NULL, ICON_NONE);
 
 	row= uiLayoutRow(layout, 0);
 	uiItemPointerR(layout, ptr, "frame_property", &settings_ptr, "properties", NULL, ICON_NONE);
@@ -3782,6 +3824,8 @@ static void draw_actuator_camera(uiLayout *layout, PointerRNA *ptr)
 	row = uiLayoutRow(layout, 1);
 	uiItemR(row, ptr, "min", 0, NULL, ICON_NONE);
 	uiItemR(row, ptr, "max", 0, NULL, ICON_NONE);
+
+	uiItemR(layout, ptr, "damping", 0, NULL, ICON_NONE);
 }
 
 static void draw_actuator_constraint(uiLayout *layout, PointerRNA *ptr, bContext *C)
@@ -3969,39 +4013,6 @@ static void draw_actuator_game(uiLayout *layout, PointerRNA *ptr)
 	uiItemR(layout, ptr, "mode", 0, NULL, ICON_NONE);
 	if (RNA_enum_get(ptr, "mode") == ACT_GAME_LOAD)
 		uiItemR(layout, ptr, "filename", 0, NULL, ICON_NONE);
-}
-
-static void draw_actuator_ipo(uiLayout *layout, PointerRNA *ptr)
-{
-	Object *ob;
-	PointerRNA settings_ptr;
-	uiLayout *row, *subrow, *col;
-
-	ob = (Object *)ptr->id.data;
-	RNA_pointer_create((ID *)ob, &RNA_GameObjectSettings, ob, &settings_ptr);
-
-	row= uiLayoutRow(layout, 0);
-	uiItemR(row, ptr, "play_type", 0, "", ICON_NONE);
-	subrow= uiLayoutRow(row, 1);
-	uiItemR(subrow, ptr, "use_force", UI_ITEM_R_TOGGLE, NULL, ICON_NONE);
-	uiItemR(subrow, ptr, "use_additive", UI_ITEM_R_TOGGLE, NULL, ICON_NONE);
-
-	col = uiLayoutColumn(subrow, 0);
-	uiLayoutSetActive(col, (RNA_boolean_get(ptr, "use_additive") || RNA_boolean_get(ptr, "use_force")));
-	uiItemR(col, ptr, "use_local", UI_ITEM_R_TOGGLE, NULL, ICON_NONE);
-
-	row= uiLayoutRow(layout, 0);
-	if((RNA_enum_get(ptr, "play_type") == ACT_IPO_FROM_PROP))
-		uiItemPointerR(row, ptr, "property", &settings_ptr, "properties", NULL, ICON_NONE);
-
-	else {
-		uiItemR(row, ptr, "frame_start", 0, NULL, ICON_NONE);
-		uiItemR(row, ptr, "frame_end", 0, NULL, ICON_NONE);
-	}
-	uiItemR(row, ptr, "apply_to_children", 0, NULL, ICON_NONE);
-
-	row= uiLayoutRow(layout, 0);
-	uiItemPointerR(row, ptr, "frame_property", &settings_ptr, "properties", NULL, ICON_NONE);
 }
 
 static void draw_actuator_message(uiLayout *layout, PointerRNA *ptr, bContext *C)
@@ -4275,7 +4286,7 @@ static void draw_actuator_shape_action(uiLayout *layout, PointerRNA *ptr)
 
 	row= uiLayoutRow(layout, 0);
 	uiItemR(row, ptr, "mode", 0, "", ICON_NONE);
-	uiItemR(row, ptr, "action", 0, NULL, ICON_NONE);
+	uiItemR(row, ptr, "action", 0, "", ICON_NONE);
 	uiItemR(row, ptr, "use_continue_last_frame", 0, NULL, ICON_NONE);
 
 	row= uiLayoutRow(layout, 0);
@@ -4360,6 +4371,48 @@ static void draw_actuator_visibility(uiLayout *layout, PointerRNA *ptr)
 	uiItemR(row, ptr, "apply_to_children", 0, NULL, ICON_NONE);
 }
 
+static void draw_actuator_steering(uiLayout *layout, PointerRNA *ptr)
+{
+	uiLayout *row;
+	uiLayout *col;
+
+	uiItemR(layout, ptr, "mode", 0, NULL, 0);
+	uiItemR(layout, ptr, "target", 0, NULL, 0);
+	uiItemR(layout, ptr, "navmesh", 0, NULL, 0);	
+
+	row = uiLayoutRow(layout, 0);
+	uiItemR(row, ptr, "distance", 0, NULL, 0);
+	uiItemR(row, ptr, "velocity", 0, NULL, 0);
+	row = uiLayoutRow(layout, 0);
+	uiItemR(row, ptr, "acceleration", 0, NULL, 0);
+	uiItemR(row, ptr, "turn_speed", 0, NULL, 0);
+
+	row = uiLayoutRow(layout, 0);
+	col = uiLayoutColumn(row, 0);
+	uiItemR(col, ptr, "facing", 0, NULL, 0);
+	col = uiLayoutColumn(row, 0);
+	uiItemR(col, ptr, "facing_axis", 0, NULL, 0);
+	if (!RNA_boolean_get(ptr, "facing"))
+	{
+		uiLayoutSetActive(col, 0);
+	}
+	col = uiLayoutColumn(row, 0);
+	uiItemR(col, ptr, "normal_up", 0, NULL, 0);
+	if (!RNA_pointer_get(ptr, "navmesh").data)
+	{
+		uiLayoutSetActive(col, 0);
+	}
+
+	row = uiLayoutRow(layout, 0);
+	uiItemR(row, ptr, "self_terminated", 0, NULL, 0);
+	if (RNA_enum_get(ptr, "mode")==ACT_STEERING_PATHFOLLOWING)
+	{
+		uiItemR(row, ptr, "update_period", 0, NULL, 0);	
+		row = uiLayoutRow(layout, 0);
+	}
+	uiItemR(row, ptr, "show_visualization", 0, NULL, 0);	
+}
+
 static void draw_brick_actuator(uiLayout *layout, PointerRNA *ptr, bContext *C)
 {
 	uiLayout *box;
@@ -4391,9 +4444,6 @@ static void draw_brick_actuator(uiLayout *layout, PointerRNA *ptr, bContext *C)
 		case ACT_GAME:
 			draw_actuator_game(box, ptr);
 			break;
-		case ACT_IPO:
-			draw_actuator_ipo(box, ptr);
-			break;
 		case ACT_MESSAGE:
 			draw_actuator_message(box, ptr, C);
 			break;
@@ -4424,6 +4474,8 @@ static void draw_brick_actuator(uiLayout *layout, PointerRNA *ptr, bContext *C)
 		case ACT_VISIBILITY:
 			draw_actuator_visibility(box, ptr);
 			break;
+		case ACT_STEERING:
+			draw_actuator_steering(box, ptr);
 	}
 }
 
@@ -4496,7 +4548,7 @@ static void logic_buttons_new(bContext *C, ARegion *ar)
 	/* ****************** Controllers ****************** */
 	
 	xco= 420; yco= 170; width= 300;
-	layout= uiBlockLayout(block, UI_LAYOUT_VERTICAL, UI_LAYOUT_PANEL, xco, yco, width, 20, U.uistyles.first);
+	layout= uiBlockLayout(block, UI_LAYOUT_VERTICAL, UI_LAYOUT_PANEL, xco, yco, width, 20, UI_GetStyle());
 	row = uiLayoutRow(layout, 1);
 	
 	uiDefBlockBut(block, controller_menu, NULL, "Controllers", xco-10, yco, 300, UI_UNIT_Y, "");		/* replace this with uiLayout stuff later */
@@ -4599,7 +4651,7 @@ static void logic_buttons_new(bContext *C, ARegion *ar)
 	/* ****************** Sensors ****************** */
 	
 	xco= 10; yco= 170; width= 340;
-	layout= uiBlockLayout(block, UI_LAYOUT_VERTICAL, UI_LAYOUT_PANEL, xco, yco, width, 20, U.uistyles.first);
+	layout= uiBlockLayout(block, UI_LAYOUT_VERTICAL, UI_LAYOUT_PANEL, xco, yco, width, 20, UI_GetStyle());
 	row = uiLayoutRow(layout, 1);
 	
 	uiDefBlockBut(block, sensor_menu, NULL, "Sensors", xco-10, yco, 300, UI_UNIT_Y, "");		/* replace this with uiLayout stuff later */
@@ -4665,7 +4717,7 @@ static void logic_buttons_new(bContext *C, ARegion *ar)
 	/* ****************** Actuators ****************** */
 	
 	xco= 800; yco= 170; width= 340;
-	layout= uiBlockLayout(block, UI_LAYOUT_VERTICAL, UI_LAYOUT_PANEL, xco, yco, width, 20, U.uistyles.first);
+	layout= uiBlockLayout(block, UI_LAYOUT_VERTICAL, UI_LAYOUT_PANEL, xco, yco, width, 20, UI_GetStyle());
 	row = uiLayoutRow(layout, 1);
 	
 	uiDefBlockBut(block, actuator_menu, NULL, "Actuators", xco-10, yco, 300, UI_UNIT_Y, "");		/* replace this with uiLayout stuff later */

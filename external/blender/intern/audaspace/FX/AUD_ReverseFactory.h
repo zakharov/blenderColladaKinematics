@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_ReverseFactory.h 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_ReverseFactory.h 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -36,7 +36,7 @@
 
 /**
  * This factory reads another factory reverted.
- * \note Readers from the underlying factory must be from the buffer type.
+ * \note Readers from the underlying factory must be seekable.
  */
 class AUD_ReverseFactory : public AUD_EffectFactory
 {
@@ -50,9 +50,9 @@ public:
 	 * Creates a new reverse factory.
 	 * \param factory The input factory.
 	 */
-	AUD_ReverseFactory(AUD_IFactory* factory);
+	AUD_ReverseFactory(AUD_Reference<AUD_IFactory> factory);
 
-	virtual AUD_IReader* createReader() const;
+	virtual AUD_Reference<AUD_IReader> createReader();
 };
 
 #endif //AUD_REVERSEFACTORY

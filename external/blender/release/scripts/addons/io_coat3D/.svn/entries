@@ -1,15 +1,15 @@
 10
 
 dir
-1680
+2344
 https://svn.blender.org/svnroot/bf-extensions/trunk/py/scripts/addons/io_coat3D
 https://svn.blender.org/svnroot/bf-extensions
 
 
 
-2011-02-16T02:52:12.761991Z
-1609
-campbellbarton
+2011-09-19T15:08:06.568619Z
+2334
+mont29
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-03-03T12:29:47.218297Z
-c7dcdb42908a2848d523e9e8c92d4f06
-2011-02-16T02:52:12.761991Z
-1609
-campbellbarton
+2011-09-21T18:17:48.540301Z
+73bfba7efb5b1e63e4db56e87dcc7390
+2011-09-19T15:08:06.568619Z
+2334
+mont29
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-7346
+7419
 
 tex.py
 file
@@ -66,10 +66,10 @@ file
 
 
 
-2011-03-03T12:29:47.222297Z
-c4362807de392e0209fd4bfd5d2c71df
-2011-01-30T13:39:30.958308Z
-1526
+2011-09-21T18:17:48.540301Z
+b095222df7abbf3bff8adfa037bc9761
+2011-09-05T14:08:00.366943Z
+2306
 haikalle
 has-props
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-14016
+14285
 
 coat.py
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-03-03T12:29:47.222297Z
-e3d04ee599a6d97492570838bf565b35
-2011-02-11T01:29:13.146577Z
-1569
-campbellbarton
+2011-09-21T18:17:48.544301Z
+a3ac265aa4328a961d90e24affc02f6e
+2011-09-06T20:14:51.130213Z
+2310
+haikalle
 has-props
 
 
@@ -126,5 +126,5 @@ has-props
 
 
 
-18754
+26442
 

@@ -1,13 +1,19 @@
 K 25
 svn:wc:ra_dav:version-url
 V 73
-/svnroot/bf-blender/!svn/ver/35323/trunk/blender/source/gameengine/Ketsji
+/svnroot/bf-blender/!svn/ver/40419/trunk/blender/source/gameengine/Ketsji
 END
 KX_Scene.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 86
-/svnroot/bf-blender/!svn/ver/35212/trunk/blender/source/gameengine/Ketsji/KX_Scene.cpp
+/svnroot/bf-blender/!svn/ver/40274/trunk/blender/source/gameengine/Ketsji/KX_Scene.cpp
+END
+KX_NavMeshObject.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/40080/trunk/blender/source/gameengine/Ketsji/KX_NavMeshObject.h
 END
 KX_CameraIpoSGController.h
 K 25
@@ -43,7 +49,7 @@ KX_KetsjiEngine.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/KX_KetsjiEngine.cpp
+/svnroot/bf-blender/!svn/ver/40271/trunk/blender/source/gameengine/Ketsji/KX_KetsjiEngine.cpp
 END
 KX_SCA_DynamicActuator.h
 K 25
@@ -57,11 +63,17 @@ svn:wc:ra_dav:version-url
 V 100
 /svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/KX_ScalingInterpolator.cpp
 END
+KX_SteeringActuator.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/40080/trunk/blender/source/gameengine/Ketsji/KX_SteeringActuator.cpp
+END
 KX_Dome.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 85
-/svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/KX_Dome.cpp
+/svnroot/bf-blender/!svn/ver/40289/trunk/blender/source/gameengine/Ketsji/KX_Dome.cpp
 END
 KX_PhysicsEngineEnums.h
 K 25
@@ -74,6 +86,12 @@ K 25
 svn:wc:ra_dav:version-url
 V 99
 /svnroot/bf-blender/!svn/ver/35063/trunk/blender/source/gameengine/Ketsji/KX_SG_NodeRelationships.h
+END
+BL_ActionManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/source/gameengine/Ketsji/BL_ActionManager.h
 END
 KX_ConstraintWrapper.h
 K 25
@@ -109,13 +127,13 @@ KX_SceneActuator.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/KX_SceneActuator.cpp
+/svnroot/bf-blender/!svn/ver/36523/trunk/blender/source/gameengine/Ketsji/KX_SceneActuator.cpp
 END
 KX_PolygonMaterial.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/KX_PolygonMaterial.cpp
+/svnroot/bf-blender/!svn/ver/40372/trunk/blender/source/gameengine/Ketsji/KX_PolygonMaterial.cpp
 END
 KX_ScalarInterpolator.cpp
 K 25
@@ -127,7 +145,7 @@ KX_SCA_AddObjectActuator.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 102
-/svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/KX_SCA_AddObjectActuator.cpp
+/svnroot/bf-blender/!svn/ver/36523/trunk/blender/source/gameengine/Ketsji/KX_SCA_AddObjectActuator.cpp
 END
 KX_WorldInfo.h
 K 25
@@ -159,17 +177,17 @@ svn:wc:ra_dav:version-url
 V 108
 /svnroot/bf-blender/!svn/ver/35063/trunk/blender/source/gameengine/Ketsji/KX_SG_BoneParentNodeRelationship.h
 END
-KX_EmptyObject.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 92
-/svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/KX_EmptyObject.cpp
-END
 KX_ConstraintWrapper.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 98
 /svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/KX_ConstraintWrapper.cpp
+END
+KX_EmptyObject.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/KX_EmptyObject.cpp
 END
 KX_ClientObjectInfo.h
 K 25
@@ -183,29 +201,29 @@ svn:wc:ra_dav:version-url
 V 85
 /svnroot/bf-blender/!svn/ver/35063/trunk/blender/source/gameengine/Ketsji/BL_Shader.h
 END
-KX_ConstraintActuator.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 99
-/svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/KX_ConstraintActuator.cpp
-END
 KX_MouseFocusSensor.h
 K 25
 svn:wc:ra_dav:version-url
 V 95
 /svnroot/bf-blender/!svn/ver/35063/trunk/blender/source/gameengine/Ketsji/KX_MouseFocusSensor.h
 END
-KX_StateActuator.h
+KX_ConstraintActuator.cpp
 K 25
 svn:wc:ra_dav:version-url
-V 92
-/svnroot/bf-blender/!svn/ver/35063/trunk/blender/source/gameengine/Ketsji/KX_StateActuator.h
+V 99
+/svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/KX_ConstraintActuator.cpp
 END
 KX_Camera.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 87
-/svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/KX_Camera.cpp
+/svnroot/bf-blender/!svn/ver/39834/trunk/blender/source/gameengine/Ketsji/KX_Camera.cpp
+END
+KX_StateActuator.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bf-blender/!svn/ver/35063/trunk/blender/source/gameengine/Ketsji/KX_StateActuator.h
 END
 KX_Dome.h
 K 25
@@ -217,25 +235,25 @@ KX_PythonInitTypes.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/KX_PythonInitTypes.cpp
+/svnroot/bf-blender/!svn/ver/40080/trunk/blender/source/gameengine/Ketsji/KX_PythonInitTypes.cpp
 END
 KX_SoundActuator.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/KX_SoundActuator.cpp
+/svnroot/bf-blender/!svn/ver/39984/trunk/blender/source/gameengine/Ketsji/KX_SoundActuator.cpp
 END
 KX_OrientationInterpolator.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 104
-/svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/KX_OrientationInterpolator.cpp
+/svnroot/bf-blender/!svn/ver/39883/trunk/blender/source/gameengine/Ketsji/KX_OrientationInterpolator.cpp
 END
 KX_BulletPhysicsController.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 104
-/svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/KX_BulletPhysicsController.cpp
+/svnroot/bf-blender/!svn/ver/39834/trunk/blender/source/gameengine/Ketsji/KX_BulletPhysicsController.cpp
 END
 KX_PythonSeq.h
 K 25
@@ -253,13 +271,13 @@ KX_SceneActuator.h
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35063/trunk/blender/source/gameengine/Ketsji/KX_SceneActuator.h
+/svnroot/bf-blender/!svn/ver/36523/trunk/blender/source/gameengine/Ketsji/KX_SceneActuator.h
 END
 KX_PyMath.h
 K 25
 svn:wc:ra_dav:version-url
 V 85
-/svnroot/bf-blender/!svn/ver/35267/trunk/blender/source/gameengine/Ketsji/KX_PyMath.h
+/svnroot/bf-blender/!svn/ver/38409/trunk/blender/source/gameengine/Ketsji/KX_PyMath.h
 END
 KX_WorldIpoController.h
 K 25
@@ -295,19 +313,19 @@ KX_SCA_AddObjectActuator.h
 K 25
 svn:wc:ra_dav:version-url
 V 100
-/svnroot/bf-blender/!svn/ver/35063/trunk/blender/source/gameengine/Ketsji/KX_SCA_AddObjectActuator.h
+/svnroot/bf-blender/!svn/ver/36523/trunk/blender/source/gameengine/Ketsji/KX_SCA_AddObjectActuator.h
 END
 KX_ObjectActuator.h
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/35063/trunk/blender/source/gameengine/Ketsji/KX_ObjectActuator.h
+/svnroot/bf-blender/!svn/ver/36523/trunk/blender/source/gameengine/Ketsji/KX_ObjectActuator.h
 END
 BL_Shader.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 87
-/svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/BL_Shader.cpp
+/svnroot/bf-blender/!svn/ver/39730/trunk/blender/source/gameengine/Ketsji/BL_Shader.cpp
 END
 KX_IScalarInterpolator.h
 K 25
@@ -325,7 +343,7 @@ KX_CameraActuator.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/KX_CameraActuator.cpp
+/svnroot/bf-blender/!svn/ver/37455/trunk/blender/source/gameengine/Ketsji/KX_CameraActuator.cpp
 END
 KX_Camera.h
 K 25
@@ -357,12 +375,6 @@ svn:wc:ra_dav:version-url
 V 104
 /svnroot/bf-blender/!svn/ver/35063/trunk/blender/source/gameengine/Ketsji/KX_PhysicsPropertiesobsolete.h
 END
-KX_ISceneConverter.h
-K 25
-svn:wc:ra_dav:version-url
-V 94
-/svnroot/bf-blender/!svn/ver/35063/trunk/blender/source/gameengine/Ketsji/KX_ISceneConverter.h
-END
 KX_MeshProxy.h
 K 25
 svn:wc:ra_dav:version-url
@@ -375,11 +387,17 @@ svn:wc:ra_dav:version-url
 V 89
 /svnroot/bf-blender/!svn/ver/35063/trunk/blender/source/gameengine/Ketsji/KX_TimeLogger.h
 END
+KX_ISceneConverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/35063/trunk/blender/source/gameengine/Ketsji/KX_ISceneConverter.h
+END
 SConscript
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svnroot/bf-blender/!svn/ver/33707/trunk/blender/source/gameengine/Ketsji/SConscript
+/svnroot/bf-blender/!svn/ver/40127/trunk/blender/source/gameengine/Ketsji/SConscript
 END
 KX_ObColorIpoSGController.cpp
 K 25
@@ -387,11 +405,17 @@ svn:wc:ra_dav:version-url
 V 103
 /svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/KX_ObColorIpoSGController.cpp
 END
+KX_ObstacleSimulation.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bf-blender/!svn/ver/40080/trunk/blender/source/gameengine/Ketsji/KX_ObstacleSimulation.h
+END
 KX_ObjectActuator.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svnroot/bf-blender/!svn/ver/35323/trunk/blender/source/gameengine/Ketsji/KX_ObjectActuator.cpp
+/svnroot/bf-blender/!svn/ver/39883/trunk/blender/source/gameengine/Ketsji/KX_ObjectActuator.cpp
 END
 KX_PhysicsObjectWrapper.cpp
 K 25
@@ -433,7 +457,7 @@ KX_KetsjiEngine.h
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svnroot/bf-blender/!svn/ver/35063/trunk/blender/source/gameengine/Ketsji/KX_KetsjiEngine.h
+/svnroot/bf-blender/!svn/ver/40113/trunk/blender/source/gameengine/Ketsji/KX_KetsjiEngine.h
 END
 KX_PolyProxy.cpp
 K 25
@@ -459,11 +483,23 @@ svn:wc:ra_dav:version-url
 V 91
 /svnroot/bf-blender/!svn/ver/35063/trunk/blender/source/gameengine/Ketsji/KX_IPOTransform.h
 END
+KX_SteeringActuator.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/40080/trunk/blender/source/gameengine/Ketsji/KX_SteeringActuator.h
+END
 KX_IpoActuator.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/KX_IpoActuator.cpp
+/svnroot/bf-blender/!svn/ver/40419/trunk/blender/source/gameengine/Ketsji/KX_IpoActuator.cpp
+END
+KX_ParentActuator.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bf-blender/!svn/ver/36523/trunk/blender/source/gameengine/Ketsji/KX_ParentActuator.cpp
 END
 KX_TimeCategoryLogger.cpp
 K 25
@@ -471,11 +507,11 @@ svn:wc:ra_dav:version-url
 V 99
 /svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/KX_TimeCategoryLogger.cpp
 END
-KX_ParentActuator.cpp
+KX_ObstacleSimulation.cpp
 K 25
 svn:wc:ra_dav:version-url
-V 95
-/svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/KX_ParentActuator.cpp
+V 99
+/svnroot/bf-blender/!svn/ver/40081/trunk/blender/source/gameengine/Ketsji/KX_ObstacleSimulation.cpp
 END
 KX_ISystem.h
 K 25
@@ -493,13 +529,13 @@ KX_Light.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 86
-/svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/KX_Light.cpp
+/svnroot/bf-blender/!svn/ver/39834/trunk/blender/source/gameengine/Ketsji/KX_Light.cpp
 END
 KX_PythonInit.h
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/35063/trunk/blender/source/gameengine/Ketsji/KX_PythonInit.h
+/svnroot/bf-blender/!svn/ver/40080/trunk/blender/source/gameengine/Ketsji/KX_PythonInit.h
 END
 KX_SG_BoneParentNodeRelationship.cpp
 K 25
@@ -523,7 +559,7 @@ KX_TrackToActuator.h
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/35063/trunk/blender/source/gameengine/Ketsji/KX_TrackToActuator.h
+/svnroot/bf-blender/!svn/ver/39883/trunk/blender/source/gameengine/Ketsji/KX_TrackToActuator.h
 END
 KX_SCA_ReplaceMeshActuator.cpp
 K 25
@@ -535,7 +571,7 @@ KX_MouseFocusSensor.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 97
-/svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/KX_MouseFocusSensor.cpp
+/svnroot/bf-blender/!svn/ver/39834/trunk/blender/source/gameengine/Ketsji/KX_MouseFocusSensor.cpp
 END
 KX_RadarSensor.cpp
 K 25
@@ -571,13 +607,13 @@ KX_ConvertPhysicsObjects.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 102
-/svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/KX_ConvertPhysicsObjects.cpp
+/svnroot/bf-blender/!svn/ver/36523/trunk/blender/source/gameengine/Ketsji/KX_ConvertPhysicsObjects.cpp
 END
 KX_BlenderMaterial.h
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/35063/trunk/blender/source/gameengine/Ketsji/KX_BlenderMaterial.h
+/svnroot/bf-blender/!svn/ver/40372/trunk/blender/source/gameengine/Ketsji/KX_BlenderMaterial.h
 END
 KX_IPhysicsController.cpp
 K 25
@@ -589,19 +625,19 @@ KX_SoundActuator.h
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35063/trunk/blender/source/gameengine/Ketsji/KX_SoundActuator.h
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/source/gameengine/Ketsji/KX_SoundActuator.h
+END
+KX_ParentActuator.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bf-blender/!svn/ver/36523/trunk/blender/source/gameengine/Ketsji/KX_ParentActuator.h
 END
 KX_TimeCategoryLogger.h
 K 25
 svn:wc:ra_dav:version-url
 V 97
 /svnroot/bf-blender/!svn/ver/35063/trunk/blender/source/gameengine/Ketsji/KX_TimeCategoryLogger.h
-END
-KX_ParentActuator.h
-K 25
-svn:wc:ra_dav:version-url
-V 93
-/svnroot/bf-blender/!svn/ver/35063/trunk/blender/source/gameengine/Ketsji/KX_ParentActuator.h
 END
 KX_PyMath.cpp
 K 25
@@ -613,7 +649,7 @@ KX_PythonInit.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/KX_PythonInit.cpp
+/svnroot/bf-blender/!svn/ver/40113/trunk/blender/source/gameengine/Ketsji/KX_PythonInit.cpp
 END
 KX_MotionState.cpp
 K 25
@@ -631,7 +667,7 @@ BL_Material.h
 K 25
 svn:wc:ra_dav:version-url
 V 87
-/svnroot/bf-blender/!svn/ver/35063/trunk/blender/source/gameengine/Ketsji/BL_Material.h
+/svnroot/bf-blender/!svn/ver/40372/trunk/blender/source/gameengine/Ketsji/BL_Material.h
 END
 KX_ConvertPhysicsObject.h
 K 25
@@ -649,7 +685,7 @@ BL_BlenderShader.h
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35063/trunk/blender/source/gameengine/Ketsji/BL_BlenderShader.h
+/svnroot/bf-blender/!svn/ver/40372/trunk/blender/source/gameengine/Ketsji/BL_BlenderShader.h
 END
 KX_LightIpoSGController.h
 K 25
@@ -663,6 +699,18 @@ svn:wc:ra_dav:version-url
 V 101
 /svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/KX_SG_NodeRelationships.cpp
 END
+BL_ActionManager.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/source/gameengine/Ketsji/BL_ActionManager.cpp
+END
+BL_Action.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/source/gameengine/Ketsji/BL_Action.cpp
+END
 KX_RayEventManager.h
 K 25
 svn:wc:ra_dav:version-url
@@ -673,7 +721,7 @@ KX_MeshProxy.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/KX_MeshProxy.cpp
+/svnroot/bf-blender/!svn/ver/39834/trunk/blender/source/gameengine/Ketsji/KX_MeshProxy.cpp
 END
 KX_TimeLogger.cpp
 K 25
@@ -691,13 +739,13 @@ KX_CameraActuator.h
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/35063/trunk/blender/source/gameengine/Ketsji/KX_CameraActuator.h
+/svnroot/bf-blender/!svn/ver/37455/trunk/blender/source/gameengine/Ketsji/KX_CameraActuator.h
 END
 KX_GameObject.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svnroot/bf-blender/!svn/ver/35323/trunk/blender/source/gameengine/Ketsji/KX_GameObject.cpp
+/svnroot/bf-blender/!svn/ver/40274/trunk/blender/source/gameengine/Ketsji/KX_GameObject.cpp
 END
 KX_WorldInfo.cpp
 K 25
@@ -709,7 +757,7 @@ BL_Material.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/BL_Material.cpp
+/svnroot/bf-blender/!svn/ver/40372/trunk/blender/source/gameengine/Ketsji/BL_Material.cpp
 END
 KX_MaterialIpoController.cpp
 K 25
@@ -721,19 +769,19 @@ KX_PolygonMaterial.h
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/35063/trunk/blender/source/gameengine/Ketsji/KX_PolygonMaterial.h
+/svnroot/bf-blender/!svn/ver/40372/trunk/blender/source/gameengine/Ketsji/KX_PolygonMaterial.h
 END
 BL_Texture.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 88
-/svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/BL_Texture.cpp
+/svnroot/bf-blender/!svn/ver/37521/trunk/blender/source/gameengine/Ketsji/BL_Texture.cpp
 END
 BL_BlenderShader.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/BL_BlenderShader.cpp
+/svnroot/bf-blender/!svn/ver/40372/trunk/blender/source/gameengine/Ketsji/BL_BlenderShader.cpp
 END
 KX_LightIpoSGController.cpp
 K 25
@@ -771,6 +819,12 @@ svn:wc:ra_dav:version-url
 V 93
 /svnroot/bf-blender/!svn/ver/35063/trunk/blender/source/gameengine/Ketsji/KX_VehicleWrapper.h
 END
+KX_NavMeshObject.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/bf-blender/!svn/ver/40404/trunk/blender/source/gameengine/Ketsji/KX_NavMeshObject.cpp
+END
 KX_RaySensor.h
 K 25
 svn:wc:ra_dav:version-url
@@ -781,7 +835,13 @@ CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 88
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/gameengine/Ketsji/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/40127/trunk/blender/source/gameengine/Ketsji/CMakeLists.txt
+END
+BL_Action.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/source/gameengine/Ketsji/BL_Action.h
 END
 KX_PythonInitTypes.h
 K 25
@@ -793,7 +853,7 @@ KX_Scene.h
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svnroot/bf-blender/!svn/ver/35063/trunk/blender/source/gameengine/Ketsji/KX_Scene.h
+/svnroot/bf-blender/!svn/ver/40080/trunk/blender/source/gameengine/Ketsji/KX_Scene.h
 END
 KX_OrientationInterpolator.h
 K 25
@@ -805,7 +865,7 @@ KX_BulletPhysicsController.h
 K 25
 svn:wc:ra_dav:version-url
 V 102
-/svnroot/bf-blender/!svn/ver/35063/trunk/blender/source/gameengine/Ketsji/KX_BulletPhysicsController.h
+/svnroot/bf-blender/!svn/ver/35580/trunk/blender/source/gameengine/Ketsji/KX_BulletPhysicsController.h
 END
 KX_WorldIpoController.cpp
 K 25
@@ -817,7 +877,7 @@ KX_GameObject.h
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/35063/trunk/blender/source/gameengine/Ketsji/KX_GameObject.h
+/svnroot/bf-blender/!svn/ver/40080/trunk/blender/source/gameengine/Ketsji/KX_GameObject.h
 END
 KX_ArmatureSensor.cpp
 K 25
@@ -829,7 +889,7 @@ KX_TrackToActuator.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/KX_TrackToActuator.cpp
+/svnroot/bf-blender/!svn/ver/39834/trunk/blender/source/gameengine/Ketsji/KX_TrackToActuator.cpp
 END
 KX_Light.h
 K 25
@@ -847,13 +907,13 @@ KX_RaySensor.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/KX_RaySensor.cpp
+/svnroot/bf-blender/!svn/ver/39834/trunk/blender/source/gameengine/Ketsji/KX_RaySensor.cpp
 END
 KX_SCA_EndObjectActuator.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 102
-/svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/KX_SCA_EndObjectActuator.cpp
+/svnroot/bf-blender/!svn/ver/39834/trunk/blender/source/gameengine/Ketsji/KX_SCA_EndObjectActuator.cpp
 END
 KX_RadarSensor.h
 K 25
@@ -865,7 +925,7 @@ KX_PyConstraintBinding.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 100
-/svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/KX_PyConstraintBinding.cpp
+/svnroot/bf-blender/!svn/ver/38880/trunk/blender/source/gameengine/Ketsji/KX_PyConstraintBinding.cpp
 END
 KX_IPO_SGController.h
 K 25
@@ -877,5 +937,5 @@ KX_BlenderMaterial.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/svnroot/bf-blender/!svn/ver/35171/trunk/blender/source/gameengine/Ketsji/KX_BlenderMaterial.cpp
+/svnroot/bf-blender/!svn/ver/40372/trunk/blender/source/gameengine/Ketsji/KX_BlenderMaterial.cpp
 END

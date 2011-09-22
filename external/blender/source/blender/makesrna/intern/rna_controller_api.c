@@ -1,5 +1,5 @@
 /*
- * $Id: rna_controller_api.c 35238 2011-02-27 20:20:01Z jesterking $
+ * $Id: rna_controller_api.c 40354 2011-09-19 13:23:58Z mont29 $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -68,17 +68,17 @@ void RNA_api_controller(StructRNA *srna)
 	PropertyRNA *parm;
 
 	func= RNA_def_function(srna, "link", "rna_Controller_link");
-	RNA_def_function_ui_description(func, "Link the controller with a sensor/actuator.");
-	parm= RNA_def_pointer(func, "sensor", "Sensor", "", "Sensor to link the controller to."); 
+	RNA_def_function_ui_description(func, "Link the controller with a sensor/actuator");
+	parm= RNA_def_pointer(func, "sensor", "Sensor", "", "Sensor to link the controller to"); 
 	RNA_def_property_update(parm, NC_LOGIC, NULL);
-	parm= RNA_def_pointer(func, "actuator", "Actuator", "", "Actuator to link the controller to."); 
+	parm= RNA_def_pointer(func, "actuator", "Actuator", "", "Actuator to link the controller to"); 
 	RNA_def_property_update(parm, NC_LOGIC, NULL);
 
 	func= RNA_def_function(srna, "unlink", "rna_Controller_unlink");
-	RNA_def_function_ui_description(func, "Unlink the controller from a sensor/actuator.");
-	parm= RNA_def_pointer(func, "sensor", "Sensor", "", "Sensor to unlink the controller from."); 
+	RNA_def_function_ui_description(func, "Unlink the controller from a sensor/actuator");
+	parm= RNA_def_pointer(func, "sensor", "Sensor", "", "Sensor to unlink the controller from"); 
 	RNA_def_property_update(parm, NC_LOGIC, NULL);
-	parm= RNA_def_pointer(func, "actuator", "Actuator", "", "Actuator to unlink the controller from."); 
+	parm= RNA_def_pointer(func, "actuator", "Actuator", "", "Actuator to unlink the controller from"); 
 	RNA_def_property_update(parm, NC_LOGIC, NULL);
 }
 

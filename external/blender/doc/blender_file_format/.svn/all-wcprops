@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 72
-/svnroot/bf-blender/!svn/ver/32814/trunk/blender/doc/blender_file_format
+/svnroot/bf-blender/!svn/ver/37689/trunk/blender/doc/blender_file_format
 END
 mystery_of_the_blend.html
 K 25
@@ -19,7 +19,7 @@ BlendFileDnaExporter_25.py
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svnroot/bf-blender/!svn/ver/32812/trunk/blender/doc/blender_file_format/BlendFileDnaExporter_25.py
+/svnroot/bf-blender/!svn/ver/37689/trunk/blender/doc/blender_file_format/BlendFileDnaExporter_25.py
 END
 README
 K 25
@@ -31,5 +31,5 @@ BlendFileReader.py
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svnroot/bf-blender/!svn/ver/32783/trunk/blender/doc/blender_file_format/BlendFileReader.py
+/svnroot/bf-blender/!svn/ver/37689/trunk/blender/doc/blender_file_format/BlendFileReader.py
 END

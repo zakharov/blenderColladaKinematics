@@ -21,8 +21,8 @@ bl_info = {
     "name": "Torus Knots",
     "author": "testscreenings",
     "version": (0,1),
-    "blender": (2, 5, 5),
-    "api": 33754,
+    "blender": (2, 5, 9),
+    "api": 39685,
     "location": "View3D > Add > Curve",
     "description": "Adds many types of (torus) knots",
     "warning": "",
@@ -89,8 +89,7 @@ def create_torus_knot(self, context):
     if self.geo_surf:
         curve_data.bevel_depth = self.geo_bDepth
         curve_data.bevel_resolution = self.geo_bRes
-        curve_data.use_fill_front = False
-        curve_data.use_fill_back = False
+        curve_data.fill_mode = 'FULL'
         curve_data.extrude = self.geo_extrude
         #curve_data.offset = self.geo_width # removed, somehow screws things up all of a sudden
         curve_data.resolution_u = self.geo_res
@@ -108,7 +107,7 @@ class torus_knot_plus(bpy.types.Operator, AddObjectHelper):
     #### general options
     options_plus = BoolProperty(name="plus options",
                 default=False,
-                description="Show more options (the plus part).")
+                description="Show more options (the plus part)")
 
     #### GEO Options
     geo_surf = BoolProperty(name="Surface",
@@ -174,8 +173,7 @@ class torus_knot_plus(bpy.types.Operator, AddObjectHelper):
         layout = self.layout
 
         # general options        
-        col = layout.column()
-        col.label(text="Torus Knot Parameters")
+        layout.label(text="Torus Knot Parameters:")
 
         # Parameters 
         box = layout.box()
@@ -192,7 +190,7 @@ class torus_knot_plus(bpy.types.Operator, AddObjectHelper):
 
         # surface Options
         col = layout.column()
-        col.label(text="Geometry Options")
+        col.label(text="Geometry Options:")
         box = layout.box()
         box.prop(self, 'geo_surf')
         if self.geo_surf:
@@ -200,6 +198,7 @@ class torus_knot_plus(bpy.types.Operator, AddObjectHelper):
             box.prop(self, 'geo_bRes')
             box.prop(self, 'geo_extrude')
             box.prop(self, 'geo_res')
+
         col = layout.column()
         col.prop(self, 'location')
         col.prop(self, 'rotation')

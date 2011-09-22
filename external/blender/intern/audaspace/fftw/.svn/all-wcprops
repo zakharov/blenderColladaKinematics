@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 70
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/fftw
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/fftw
 END
 AUD_BandPassFactory.h
 K 25
@@ -13,7 +13,7 @@ AUD_BandPassReader.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/35141/trunk/blender/intern/audaspace/fftw/AUD_BandPassReader.cpp
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/intern/audaspace/fftw/AUD_BandPassReader.cpp
 END
 AUD_BandPassFactory.cpp
 K 25

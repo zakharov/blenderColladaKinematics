@@ -1,7 +1,7 @@
 /*
  * Set or remove an objects parent
  *
- * $Id: KX_ParentActuator.cpp 35171 2011-02-25 13:35:59Z jesterking $
+ * $Id: KX_ParentActuator.cpp 36523 2011-05-06 20:18:42Z blendix $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -99,7 +99,7 @@ bool KX_ParentActuator::UnlinkObject(SCA_IObject* clientobj)
 	return false;
 }
 
-void KX_ParentActuator::Relink(GEN_Map<GEN_HashedPtr, void*> *obj_map)
+void KX_ParentActuator::Relink(CTR_Map<CTR_HashedPtr, void*> *obj_map)
 {
 	void **h_obj = (*obj_map)[m_ob];
 	if (h_obj) {

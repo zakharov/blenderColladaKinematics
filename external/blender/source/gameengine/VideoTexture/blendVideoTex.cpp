@@ -1,7 +1,7 @@
 /** \file gameengine/VideoTexture/blendVideoTex.cpp
  *  \ingroup bgevideotex
  */
-/* $Id: blendVideoTex.cpp 35176 2011-02-25 13:39:34Z jesterking $
+/* $Id: blendVideoTex.cpp 40095 2011-09-10 09:38:38Z campbellbarton $
 -----------------------------------------------------------------------------
 This source file is part of VideoTexture library
 
@@ -112,7 +112,7 @@ static PyMethodDef moduleMethods[] =
 	{NULL}  /* Sentinel */
 };
 
-#if WITH_FFMPEG
+#ifdef WITH_FFMPEG
 extern PyTypeObject VideoFFmpegType;
 extern PyTypeObject ImageFFmpegType;
 #endif
@@ -134,7 +134,7 @@ extern PyTypeObject ImageViewportType;
 
 static void registerAllTypes(void)
 {
-#if WITH_FFMPEG
+#ifdef WITH_FFMPEG
 	pyImageTypes.add(&VideoFFmpegType, "VideoFFmpeg");
 	pyImageTypes.add(&ImageFFmpegType, "ImageFFmpeg");
 #endif
@@ -175,9 +175,9 @@ PyObject* initVideoTexture(void)
 
 	// prepare classes
 	registerAllTypes();
-    registerAllExceptions();
+	registerAllExceptions();
 
-	if (!pyImageTypes.ready()) 
+	if (!pyImageTypes.ready())
 		return NULL;
 	if (!pyFilterTypes.ready()) 
 		return NULL;

@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/gameengine/GamePlayer/xembed
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-02-23T10:52:22.533264Z
-35106
-jesterking
+2011-09-03T02:15:49.389436Z
+39883
+campbellbarton
 
 
 
@@ -35,10 +35,10 @@ file
 
 
 
-2011-03-03T12:26:30.206297Z
-25d7dda091d4f37f59043da5834041b8
-2010-04-18T10:28:37.496249Z
-28254
+2011-09-21T18:16:09.551810Z
+4d14a5aa7b04cd67fb33408fa037d063
+2011-09-03T02:15:49.389436Z
+39883
 campbellbarton
 has-props
 
@@ -61,7 +61,7 @@ has-props
 
 
 
-12293
+12298
 
 blender_plugin_types.h
 file
@@ -69,7 +69,7 @@ file
 
 
 
-2011-03-03T12:26:30.206297Z
+2011-09-21T18:16:09.551810Z
 c9ca85a6614f56545a3d9f33c1016c03
 2011-02-23T10:52:22.533264Z
 35106
@@ -103,10 +103,10 @@ file
 
 
 
-2011-03-03T12:26:30.206297Z
-1f92741f269b70f8ab91fe833bf0adeb
-2010-02-12T13:34:04.213317Z
-26841
+2011-09-21T18:16:09.551810Z
+dfbccecb9519eaa9adc2c923774ed210
+2011-04-21T15:53:30.732996Z
+36276
 campbellbarton
 has-props
 
@@ -129,7 +129,7 @@ has-props
 
 
 
-5686
+5684
 
 UnixShell.c
 file
@@ -137,44 +137,10 @@ file
 
 
 
-2011-03-03T12:26:30.206297Z
-0ca548bc3d90b60300d288bb65e58db2
-2011-02-23T10:52:22.533264Z
-35106
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-13171
-
-CMakeLists.txt
-file
-
-
-
-
-2011-03-03T12:26:30.206297Z
-0773768cce5b489c4de34570cdf8d72e
-2010-12-31T04:29:11.127530Z
-33962
+2011-09-21T18:16:09.551810Z
+2d6ce5f1caaa394ac5596b573e8f7f53
+2011-04-21T15:53:30.732996Z
+36276
 campbellbarton
 has-props
 
@@ -197,5 +163,39 @@ has-props
 
 
 
-1885
+13172
+
+CMakeLists.txt
+file
+
+
+
+
+2011-09-21T18:16:09.551810Z
+0773768cce5b489c4de34570cdf8d72e
+2011-05-16T07:55:12.828378Z
+36711
+gsrb3d
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1877
 

@@ -1,14 +1,14 @@
 10
 
 dir
-1680
+2344
 https://svn.blender.org/svnroot/bf-extensions/trunk/py/scripts/addons/rigify/metarigs
 https://svn.blender.org/svnroot/bf-extensions
 
 
 
-2011-02-24T06:26:52.578543Z
-1652
+2011-06-19T19:53:01.249906Z
+2039
 cessen
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2011-03-03T12:29:49.886297Z
-ebc4aff3e4c5d50b4aa49fbbd829c13d
-2011-02-24T06:26:52.578543Z
-1652
+2011-09-21T18:17:49.536306Z
+13818e26347a9c3a4149f6c954f02f2e
+2011-06-19T19:53:01.249906Z
+2039
 cessen
 has-props
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-59108
+60267
 
 __init__.py
 file
@@ -66,7 +66,7 @@ file
 
 
 
-2011-03-03T12:29:49.886297Z
+2011-09-21T18:17:49.536306Z
 d41d8cd98f00b204e9800998ecf8427e
 2010-11-17T18:12:18.841214Z
 1165

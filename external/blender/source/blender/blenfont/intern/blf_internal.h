@@ -1,5 +1,5 @@
 /*
- * $Id: blf_internal.h 35248 2011-02-27 20:42:42Z jesterking $
+ * $Id: blf_internal.h 40116 2011-09-11 08:12:16Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -40,11 +40,11 @@ struct rctf;
 
 unsigned int blf_next_p2(unsigned int x);
 unsigned int blf_hash(unsigned int val);
-int blf_utf8_next(unsigned char *buf, int *iindex);
+int blf_utf8_next(unsigned char *buf, unsigned int *iindex);
 
 char *blf_dir_search(const char *file);
 char *blf_dir_metrics_search(const char *filename);
-int blf_dir_split(const char *str, char *file, int *size);
+// int blf_dir_split(const char *str, char *file, int *size); // UNUSED
 
 int blf_font_init(void);
 void blf_font_exit(void);

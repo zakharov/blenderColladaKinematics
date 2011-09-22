@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 83
-/svnroot/bf-blender/!svn/ver/35170/trunk/blender/source/gameengine/GamePlayer/ghost
+/svnroot/bf-blender/!svn/ver/40396/trunk/blender/source/gameengine/GamePlayer/ghost
 END
 GPG_Application.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 103
-/svnroot/bf-blender/!svn/ver/35170/trunk/blender/source/gameengine/GamePlayer/ghost/GPG_Application.cpp
+/svnroot/bf-blender/!svn/ver/40113/trunk/blender/source/gameengine/GamePlayer/ghost/GPG_Application.cpp
 END
 GPG_System.cpp
 K 25
@@ -19,7 +19,7 @@ GPG_ghost.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 97
-/svnroot/bf-blender/!svn/ver/35170/trunk/blender/source/gameengine/GamePlayer/ghost/GPG_ghost.cpp
+/svnroot/bf-blender/!svn/ver/40396/trunk/blender/source/gameengine/GamePlayer/ghost/GPG_ghost.cpp
 END
 GPG_KeyboardDevice.h
 K 25
@@ -31,7 +31,7 @@ GPG_Application.h
 K 25
 svn:wc:ra_dav:version-url
 V 101
-/svnroot/bf-blender/!svn/ver/35063/trunk/blender/source/gameengine/GamePlayer/ghost/GPG_Application.h
+/svnroot/bf-blender/!svn/ver/40113/trunk/blender/source/gameengine/GamePlayer/ghost/GPG_Application.h
 END
 GPG_System.h
 K 25
@@ -43,7 +43,7 @@ SConscript
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/33156/trunk/blender/source/gameengine/GamePlayer/ghost/SConscript
+/svnroot/bf-blender/!svn/ver/40395/trunk/blender/source/gameengine/GamePlayer/ghost/SConscript
 END
 GPG_Canvas.cpp
 K 25
@@ -55,7 +55,7 @@ CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/svnroot/bf-blender/!svn/ver/34486/trunk/blender/source/gameengine/GamePlayer/ghost/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/40395/trunk/blender/source/gameengine/GamePlayer/ghost/CMakeLists.txt
 END
 GPG_Canvas.h
 K 25

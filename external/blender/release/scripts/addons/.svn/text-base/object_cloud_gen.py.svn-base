@@ -20,8 +20,8 @@ bl_info = {
     "name": "Cloud Generator",
     "author": "Nick Keeline(nrk)",
     "version": (1,0),
-    "blender": (2, 5, 5),
-    "api": 31965,
+    "blender": (2, 5, 9),
+    "api": 39685,
     "location": "View3D > Tool Shelf > Cloud Generator Panel",
     "description": "Creates Volumetric Clouds",
     "warning": "",
@@ -51,7 +51,6 @@ Rev 1.0 Added ability to convert object with particle system to cloud and auto r
 """
 
 import bpy
-import mathutils
 from math import *
 from bpy.props import *
 
@@ -173,9 +172,7 @@ def applyScaleRotLoc(scene, obj):
     obj.select = True
     scene.objects.active = obj
 
-    bpy.ops.object.rotation_apply()
-    bpy.ops.object.location_apply()
-    bpy.ops.object.scale_apply()
+    bpy.ops.object.transform_apply(location=True, rotation=True, scale=True)
    
 def totallyDeleteObject(scene, obj):
     scene.objects.unlink(obj)
@@ -324,26 +321,21 @@ class VIEW3D_PT_tools_cloud(bpy.types.Panel):
         WhatToDo = getActionToDo(active_obj)
 
         if WhatToDo == 'DEGENERATE':
-
             col.operator("cloud.generate_cloud", text="DeGenerate")
 
         elif WhatToDo == 'CLOUD_CONVERT_TO_MESH':
-
             col.operator("cloud.generate_cloud", text="Convert to Mesh")
 
         elif WhatToDo == 'NO_SELECTION_DO_NOTHING':
-
             col.label(text="Select one or more")
             col.label(text="objects to generate")
-            col.label(text="a cloud.")
+            col.label(text="a cloud")
 
         elif WhatToDo == 'CLOUD_DO_NOTHING':
-
             col.label(text="Must select")
             col.label(text="bound box")
            
         elif WhatToDo == 'GENERATE':
-
             col.operator("cloud.generate_cloud", text="Generate Cloud")
 
             col.prop(context.scene, "cloud_type")
@@ -352,9 +344,9 @@ class VIEW3D_PT_tools_cloud(bpy.types.Panel):
         else:
             col.label(text="Select one or more")
             col.label(text="objects to generate")
-            col.label(text="a cloud.")
+            col.label(text="a cloud")
 
-                                
+
 class GenerateCloud(bpy.types.Operator):
     bl_idname = "cloud.generate_cloud"
     bl_label = "Generate Cloud"
@@ -516,7 +508,7 @@ class GenerateCloud(bpy.types.Operator):
             #Don't subdivide object or smooth if smoothing box not checked.
             if scene.cloudsmoothing:            
                 bpy.ops.mesh.subdivide(number_cuts=2, fractal=0, smoothness=1)
-                bpy.ops.object.location_apply()
+ #               bpy.ops.object.transform_apply(location=True)
                 bpy.ops.mesh.vertices_smooth(repeat=20)
             bpy.ops.mesh.tris_convert_to_quads()
             bpy.ops.mesh.faces_shade_smooth()
@@ -581,7 +573,7 @@ class GenerateCloud(bpy.types.Operator):
             mVolume.cache_resolution = 45
 
             # Add a texture
-            vMaterialTextureSlots = cloudMaterial.texture_slots
+            # vMaterialTextureSlots = cloudMaterial.texture_slots  # UNUSED
             cloudtex = blend_data.textures.new("CloudTex", type='CLOUDS')
             cloudtex.noise_type = 'HARD_NOISE'
             cloudtex.noise_scale = 2
@@ -657,7 +649,7 @@ class GenerateCloud(bpy.types.Operator):
                 cldPntsModifiers[0].name = "CloudPnts"
                 cldPntsModifiers[0].texture = cloudtex
                 cldPntsModifiers[0].texture_coords = 'OBJECT'
-                cldPntsModifiers[0].texture_coordinate_object = cloud
+                cldPntsModifiers[0].texture_coords_object = cloud
                 cldPntsModifiers[0].strength = -1.4
 
                 # Apply modifier

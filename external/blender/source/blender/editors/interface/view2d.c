@@ -1,5 +1,5 @@
 /*
- * $Id: view2d.c 35362 2011-03-05 10:29:10Z campbellbarton $
+ * $Id: view2d.c 40395 2011-09-20 13:41:43Z nazgul $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -44,6 +44,7 @@
 #include "BLI_utildefines.h"
 
 #include "BKE_context.h"
+#include "BKE_screen.h"
 #include "BKE_global.h"
 
 
@@ -167,7 +168,7 @@ static void view2d_masks(View2D *v2d)
 void UI_view2d_region_reinit(View2D *v2d, short type, int winx, int winy)
 {
 	short tot_changed= 0, init= 0;
-	uiStyle *style= U.uistyles.first;
+	uiStyle *style= UI_GetStyle();
 
 	/* initialise data if there is a need for such */
 	if ((v2d->flag & V2D_IS_INITIALISED) == 0) {
@@ -419,8 +420,8 @@ void UI_view2d_curRect_validate_resize(View2D *v2d, int resize)
 	
 	/* check if we should restore aspect ratio (if view size changed) */
 	if (v2d->keepzoom & V2D_KEEPASPECT) {
-		short do_x=0, do_y=0, do_cur, do_win;
-		float curRatio, winRatio;
+		short do_x=0, do_y=0, do_cur /* , do_win */ /* UNUSED */;
+		float /* curRatio, */ /* UNUSED */ winRatio;
 		
 		/* when a window edge changes, the aspect ratio can't be used to
 		 * find which is the best new 'cur' rect. thats why it stores 'old' 
@@ -428,7 +429,7 @@ void UI_view2d_curRect_validate_resize(View2D *v2d, int resize)
 		if (winx != v2d->oldwinx) do_x= 1;
 		if (winy != v2d->oldwiny) do_y= 1;
 		
-		curRatio= height / width;
+		/* curRatio= height / width; */ /* UNUSED */
 		winRatio= winy / winx;
 		
 		/* both sizes change (area/region maximised)  */
@@ -442,7 +443,7 @@ void UI_view2d_curRect_validate_resize(View2D *v2d, int resize)
 			else do_x= 1;
 		}
 		do_cur= do_x;
-		do_win= do_y;
+		/* do_win= do_y; */ /* UNUSED */
 		
 		if (do_cur) {
 			if ((v2d->keeptot == V2D_KEEPTOT_STRICT) && (winx != v2d->oldwinx)) {
@@ -996,12 +997,12 @@ void UI_view2d_view_ortho(View2D *v2d)
 	
 	/* XXX ton: this flag set by outliner, for icons */
 	if(v2d->flag & V2D_PIXELOFS_X) {
-		curmasked.xmin= floor(curmasked.xmin) - 0.001f;
-		curmasked.xmax= floor(curmasked.xmax) - 0.001f;
+		curmasked.xmin= floorf(curmasked.xmin) - 0.001f;
+		curmasked.xmax= floorf(curmasked.xmax) - 0.001f;
 	}
 	if(v2d->flag & V2D_PIXELOFS_Y) {
-		curmasked.ymin= floor(curmasked.ymin) - 0.001f;
-		curmasked.ymax= floor(curmasked.ymax) - 0.001f;
+		curmasked.ymin= floorf(curmasked.ymin) - 0.001f;
+		curmasked.ymax= floorf(curmasked.ymax) - 0.001f;
 	}
 	
 	/* set matrix on all appropriate axes */
@@ -1541,7 +1542,7 @@ static void scroll_printstr(Scene *scene, float x, float y, float val, int power
 	}
 	
 	/* draw it */
-	BLF_draw_default(x, y, 0.0f, str, sizeof(str)-1);
+	BLF_draw_default_ascii(x, y, 0.0f, str, sizeof(str)-1);
 }
 
 /* Draw scrollbars in the given 2d-region */
@@ -1815,8 +1816,8 @@ void UI_view2d_listview_view_to_cell(View2D *v2d, short columnwidth, short rowhe
 						float viewx, float viewy, int *column, int *row)
 {
 	/* adjust view coordinates to be all positive ints, corrected for the start offset */
-	const int x= (int)(floor(fabs(viewx) + 0.5f) - startx); 
-	const int y= (int)(floor(fabs(viewy) + 0.5f) - starty);
+	const int x= (int)(floorf(fabsf(viewx) + 0.5f) - startx);
+	const int y= (int)(floorf(fabsf(viewy) + 0.5f) - starty);
 	
 	/* sizes must not be negative */
 	if ( (v2d == NULL) || ((columnwidth <= 0) && (rowheight <= 0)) ) {
@@ -1959,17 +1960,14 @@ View2D *UI_view2d_fromcontext(const bContext *C)
 /* same as above, but it returns regionwindow. Utility for pulldowns or buttons */
 View2D *UI_view2d_fromcontext_rwin(const bContext *C)
 {
-	ScrArea *area= CTX_wm_area(C);
+	ScrArea *sa= CTX_wm_area(C);
 	ARegion *region= CTX_wm_region(C);
 
-	if (area == NULL) return NULL;
+	if (sa == NULL) return NULL;
 	if (region == NULL) return NULL;
 	if (region->regiontype!=RGN_TYPE_WINDOW) {
-		ARegion *ar= area->regionbase.first;
-		for(; ar; ar= ar->next)
-			if(ar->regiontype==RGN_TYPE_WINDOW)
-				return &(ar->v2d);
-		return NULL;
+		ARegion *ar= BKE_area_find_region_type(sa, RGN_TYPE_WINDOW);
+		return ar ? &(ar->v2d) : NULL;
 	}
 	return &(region->v2d);
 }
@@ -2028,7 +2026,7 @@ typedef struct View2DString {
 		unsigned char ub[4];
 		int pack;
 	} col;
-	short mval[2];
+	int mval[2];
 	rcti rect;
 } View2DString;
 

@@ -1,5 +1,5 @@
 /*
- * $Id: reeb.c 35242 2011-02-27 20:29:51Z jesterking $
+ * $Id: reeb.c 36276 2011-04-21 15:53:30Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -2572,7 +2572,7 @@ ReebGraph * generateReebGraph(EditMesh *em, int subdivisions)
 	int totfaces;
 	int countfaces = 0;
 #endif
- 	
+
 	rg = newReebGraph();
 	
 	rg->resolution = subdivisions;

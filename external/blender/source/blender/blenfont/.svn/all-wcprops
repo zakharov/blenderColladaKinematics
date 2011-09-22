@@ -1,23 +1,29 @@
 K 25
 svn:wc:ra_dav:version-url
 V 72
-/svnroot/bf-blender/!svn/ver/35248/trunk/blender/source/blender/blenfont
+/svnroot/bf-blender/!svn/ver/40430/trunk/blender/source/blender/blenfont
 END
 BLF_api.h
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/svnroot/bf-blender/!svn/ver/35248/trunk/blender/source/blender/blenfont/BLF_api.h
+/svnroot/bf-blender/!svn/ver/40430/trunk/blender/source/blender/blenfont/BLF_api.h
+END
+BLF_translation.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/bf-blender/!svn/ver/40402/trunk/blender/source/blender/blenfont/BLF_translation.h
 END
 SConscript
 K 25
 svn:wc:ra_dav:version-url
 V 83
-/svnroot/bf-blender/!svn/ver/31645/trunk/blender/source/blender/blenfont/SConscript
+/svnroot/bf-blender/!svn/ver/40395/trunk/blender/source/blender/blenfont/SConscript
 END
 CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 87
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/blender/blenfont/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/40395/trunk/blender/source/blender/blenfont/CMakeLists.txt
 END

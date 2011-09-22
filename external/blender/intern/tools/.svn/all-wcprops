@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 61
-/svnroot/bf-blender/!svn/ver/35260/trunk/blender/intern/tools
+/svnroot/bf-blender/!svn/ver/40132/trunk/blender/intern/tools
 END
 dump_rna2xml.py
 K 25
@@ -13,13 +13,19 @@ pydna.py
 K 25
 svn:wc:ra_dav:version-url
 V 70
-/svnroot/bf-blender/!svn/ver/34522/trunk/blender/intern/tools/pydna.py
+/svnroot/bf-blender/!svn/ver/40027/trunk/blender/intern/tools/pydna.py
 END
-cpifdiff.sh
+credits_svn_gen.py
 K 25
 svn:wc:ra_dav:version-url
-V 73
-/svnroot/bf-blender/!svn/ver/26841/trunk/blender/intern/tools/cpifdiff.sh
+V 80
+/svnroot/bf-blender/!svn/ver/40132/trunk/blender/intern/tools/credits_svn_gen.py
+END
+ui_snapshot.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/bf-blender/!svn/ver/36820/trunk/blender/intern/tools/ui_snapshot.py
 END
 bpy_introspect_ui.py
 K 25

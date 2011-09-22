@@ -1,5 +1,5 @@
 /*
-* $Id: MOD_lattice.c 35362 2011-03-05 10:29:10Z campbellbarton $
+* $Id: MOD_lattice.c 39342 2011-08-12 18:11:22Z blendix $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -156,4 +156,5 @@ ModifierTypeInfo modifierType_Lattice = {
 	/* dependsOnNormals */	NULL,
 	/* foreachObjectLink */ foreachObjectLink,
 	/* foreachIDLink */     NULL,
+	/* foreachTexLink */    NULL,
 };

@@ -1,5 +1,5 @@
 /*
- * $Id: KX_NetworkMessageActuator.cpp 35171 2011-02-25 13:35:59Z jesterking $
+ * $Id: KX_NetworkMessageActuator.cpp 39834 2011-09-01 02:12:53Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -91,8 +91,7 @@ bool KX_NetworkMessageActuator::Update()
 
 CValue* KX_NetworkMessageActuator::GetReplica()
 {
-	KX_NetworkMessageActuator* replica =
-	    new KX_NetworkMessageActuator(*this);
+	KX_NetworkMessageActuator* replica = new KX_NetworkMessageActuator(*this);
 	replica->ProcessReplica();
 
 	return replica;

@@ -1,5 +1,5 @@
 /*
- * $Id: IDProp.h 35236 2011-02-27 20:10:08Z jesterking $
+ * $Id: IDProp.h 37579 2011-06-17 05:45:46Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -37,14 +37,15 @@ struct BPy_IDGroup_Iter;
 typedef struct BPy_IDProperty {
 	PyObject_VAR_HEAD
 	struct ID *id;
-	struct IDProperty *prop, *parent;
+	struct IDProperty *prop; /* must be second member */
+	struct IDProperty *parent;
 	PyObject *data_wrap;
 } BPy_IDProperty;
 
 typedef struct BPy_IDArray {
 	PyObject_VAR_HEAD
 	struct ID *id;
-	struct IDProperty *prop;
+	struct IDProperty *prop;  /* must be second member */
 } BPy_IDArray;
 
 typedef struct BPy_IDGroup_Iter {

@@ -1,16 +1,16 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/editors/space_outliner
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-03-05T10:29:10.037531Z
-35362
+2011-09-20T08:48:48.910969Z
+40390
 campbellbarton
-
+has-props
 
 
 
@@ -26,16 +26,84 @@ campbellbarton
 
 954f8c5b-7b00-dc11-b283-0030488c597c
 
-outliner.c
+outliner_draw.c
 file
 
 
 
 
-2011-03-05T14:58:43.756169Z
-a57e67fb4efe0e66840430cf5cea283a
-2011-03-05T10:29:10.037531Z
-35362
+2011-09-21T18:16:46.963996Z
+cc679c8afbdd107579cbd2e771c699f1
+2011-09-16T16:05:45.933125Z
+40268
+mont29
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+53540
+
+outliner_select.c
+file
+
+
+
+
+2011-09-21T18:16:46.963996Z
+9b0eafcd100e1460c02a5258069beb2c
+2011-09-19T12:26:20.076486Z
+40351
+mont29
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+22893
+
+outliner_tree.c
+file
+
+
+
+
+2011-09-21T18:16:46.967996Z
+3aa162c9764313411ba117ca283861a3
+2011-09-20T08:48:48.910969Z
+40390
 campbellbarton
 has-props
 
@@ -58,7 +126,41 @@ has-props
 
 
 
-165506
+44275
+
+outliner_tools.c
+file
+
+
+
+
+2011-09-21T18:16:46.967996Z
+12eca56f1ead0992df31064ee964c7cf
+2011-09-19T12:26:20.076486Z
+40351
+mont29
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+34854
 
 outliner_ops.c
 file
@@ -66,11 +168,11 @@ file
 
 
 
-2011-03-03T12:27:52.658297Z
-cf17f0c98d5465aa429e55abb6dfab07
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:46.967996Z
+f001d013342565b88fdd02e3d2491785
+2011-08-30T09:15:55.930526Z
+39792
+nexyon
 has-props
 
 
@@ -92,7 +194,7 @@ has-props
 
 
 
-5129
+5167
 
 outliner_intern.h
 file
@@ -100,11 +202,11 @@ file
 
 
 
-2011-03-03T12:27:52.658297Z
-62612adb6bd5d851fb9d752ee86ae969
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:46.967996Z
+8c77125851b392609cec0cb58b8f041c
+2011-09-09T12:46:07.230597Z
+40066
+aligorith
 has-props
 
 
@@ -126,7 +228,7 @@ has-props
 
 
 
-4704
+8797
 
 SConscript
 file
@@ -134,7 +236,7 @@ file
 
 
 
-2011-03-03T12:27:52.658297Z
+2011-09-21T18:16:46.967996Z
 c61a69076a48619708d33d9bd7934883
 2011-02-21T12:35:04.852834Z
 35028
@@ -162,17 +264,17 @@ has-props
 
 364
 
-CMakeLists.txt
+outliner_edit.c
 file
 
 
 
 
-2011-03-03T12:27:52.658297Z
-393d5bd66b4d3c149757b139442cbcb3
-2011-02-21T12:35:04.852834Z
-35028
-jesterking
+2011-09-21T18:16:46.967996Z
+79a89f6cfe209def8ec46dae69c27351
+2011-09-20T08:48:48.910969Z
+40390
+campbellbarton
 has-props
 
 
@@ -194,7 +296,41 @@ has-props
 
 
 
-1224
+40310
+
+CMakeLists.txt
+file
+
+
+
+
+2011-09-21T18:16:46.967996Z
+787ec9b235db05518ceeb77f051ea6f0
+2011-08-11T05:46:18.276406Z
+39291
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1350
 
 space_outliner.c
 file
@@ -202,11 +338,11 @@ file
 
 
 
-2011-03-03T12:27:52.658297Z
-c0f076eac147af35121899a5b1fb53b4
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:46.967996Z
+b38fd9a0b3128f05f881dd654e621ec9
+2011-08-30T09:15:55.930526Z
+39792
+nexyon
 has-props
 
 
@@ -228,5 +364,5 @@ has-props
 
 
 
-8015
+8076
 

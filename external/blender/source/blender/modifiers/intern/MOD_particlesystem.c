@@ -1,5 +1,5 @@
 /*
-* $Id: MOD_particlesystem.c 35362 2011-03-05 10:29:10Z campbellbarton $
+* $Id: MOD_particlesystem.c 39342 2011-08-12 18:11:22Z blendix $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -35,7 +35,7 @@
  */
 
 
-#include "stddef.h"
+#include <stddef.h>
 
 #include "DNA_material_types.h"
 
@@ -101,7 +101,7 @@ static CustomDataMask requiredDataMask(Object *UNUSED(ob), ModifierData *md)
 			dataMask |= CD_MASK_MTFACE;
 	}
 
-	if(psmd->psys->part->tanfac!=0.0)
+	if(psmd->psys->part->tanfac != 0.0f)
 		dataMask |= CD_MASK_MTFACE;
 
 	/* ask for vertexgroups if we need them */
@@ -242,4 +242,5 @@ ModifierTypeInfo modifierType_ParticleSystem = {
 	/* dependsOnNormals */	NULL,
 	/* foreachObjectLink */ NULL,
 	/* foreachIDLink */     NULL,
+	/* foreachTexLink */    NULL,
 };

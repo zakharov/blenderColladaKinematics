@@ -1,5 +1,5 @@
 /*
- * $Id: render_texture.c 35266 2011-02-28 15:42:15Z jhk $
+ * $Id: render_texture.c 40446 2011-09-22 05:36:52Z mmikkelsen $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -125,7 +125,7 @@ static void init_render_texture(Render *re, Tex *tex)
 	}
 	
 	if(tex->nodetree && tex->use_nodes) {
-		ntreeBeginExecTree(tex->nodetree); /* has internal flag to detect it only does it once */
+		ntreeTexBeginExecTree(tex->nodetree, 1); /* has internal flag to detect it only does it once */
 	}
 }
 
@@ -144,8 +144,8 @@ void init_render_textures(Render *re)
 
 static void end_render_texture(Tex *tex)
 {
-	if(tex && tex->use_nodes && tex->nodetree)
-		ntreeEndExecTree(tex->nodetree);
+	if(tex && tex->use_nodes && tex->nodetree && tex->nodetree->execdata)
+		ntreeTexEndExecTree(tex->nodetree->execdata, 1);
 }
 
 void end_render_textures(Render *re)
@@ -175,9 +175,9 @@ static void tex_normal_derivate(Tex *tex, TexResult *texres)
 			do_colorband(tex->coba, texres->nor[2], col);
 			fac3= (col[0]+col[1]+col[2]);
 			
-			texres->nor[0]= 0.3333*(fac0 - fac1);
-			texres->nor[1]= 0.3333*(fac0 - fac2);
-			texres->nor[2]= 0.3333*(fac0 - fac3);
+			texres->nor[0]= 0.3333f*(fac0 - fac1);
+			texres->nor[1]= 0.3333f*(fac0 - fac2);
+			texres->nor[2]= 0.3333f*(fac0 - fac3);
 			
 			return;
 		}
@@ -203,31 +203,31 @@ static int blend(Tex *tex, float *texvec, TexResult *texres)
 	}
 
 	if(tex->stype==TEX_LIN) {	/* lin */
-		texres->tin= (1.0+x)/2.0;
+		texres->tin= (1.0f+x)/2.0f;
 	}
 	else if(tex->stype==TEX_QUAD) {	/* quad */
-		texres->tin= (1.0+x)/2.0;
-		if(texres->tin<0.0) texres->tin= 0.0;
+		texres->tin= (1.0f+x)/2.0f;
+		if(texres->tin<0.0f) texres->tin= 0.0f;
 		else texres->tin*= texres->tin;
 	}
 	else if(tex->stype==TEX_EASE) {	/* ease */
-		texres->tin= (1.0+x)/2.0;
-		if(texres->tin<=.0) texres->tin= 0.0;
-		else if(texres->tin>=1.0) texres->tin= 1.0;
+		texres->tin= (1.0f+x)/2.0f;
+		if(texres->tin<=0.0f) texres->tin= 0.0f;
+		else if(texres->tin>=1.0f) texres->tin= 1.0f;
 		else {
 			t= texres->tin*texres->tin;
-			texres->tin= (3.0*t-2.0*t*texres->tin);
+			texres->tin= (3.0f*t-2.0f*t*texres->tin);
 		}
 	}
 	else if(tex->stype==TEX_DIAG) { /* diag */
-		texres->tin= (2.0+x+y)/4.0;
+		texres->tin= (2.0f+x+y)/4.0f;
 	}
 	else if(tex->stype==TEX_RAD) { /* radial */
 		texres->tin= (atan2(y,x) / (2*M_PI) + 0.5);
 	}
 	else {  /* sphere TEX_SPHERE */
 		texres->tin= 1.0-sqrt(x*x+	y*y+texvec[2]*texvec[2]);
-		if(texres->tin<0.0) texres->tin= 0.0;
+		if(texres->tin<0.0f) texres->tin= 0.0f;
 		if(tex->stype==TEX_HALO) texres->tin*= texres->tin;  /* halo */
 	}
 
@@ -299,7 +299,7 @@ static float tex_tri(float a)
 	const float b = 2*M_PI;
 	const float rmax = 1.0;
 	
-	a = rmax - 2.0*fabs(floor((a*(1.0/b))+0.5) - (a*(1.0/b)));
+	a = rmax - 2.0f*fabsf(floorf((a*(1.0f/b))+0.5f) - (a*(1.0f/b)));
 	
 	return a;
 }
@@ -319,18 +319,18 @@ static float wood_int(Tex *tex, float x, float y, float z)
 	if ((wf>TEX_TRI) || (wf<TEX_SIN)) wf=0; /* check to be sure noisebasis2 is initialized ahead of time */
 		
 	if (wt==TEX_BAND) {
-		wi = waveform[wf]((x + y + z)*10.0);
+		wi = waveform[wf]((x + y + z)*10.0f);
 	}
 	else if (wt==TEX_RING) {
-		wi = waveform[wf](sqrt(x*x + y*y + z*z)*20.0);
+		wi = waveform[wf](sqrt(x*x + y*y + z*z)*20.0f);
 	}
 	else if (wt==TEX_BANDNOISE) {
 		wi = tex->turbul*BLI_gNoise(tex->noisesize, x, y, z, (tex->noisetype!=TEX_NOISESOFT), tex->noisebasis);
-		wi = waveform[wf]((x + y + z)*10.0 + wi);
+		wi = waveform[wf]((x + y + z)*10.0f + wi);
 	}
 	else if (wt==TEX_RINGNOISE) {
 		wi = tex->turbul*BLI_gNoise(tex->noisesize, x, y, z, (tex->noisetype!=TEX_NOISESOFT), tex->noisebasis);
-		wi = waveform[wf](sqrt(x*x + y*y + z*z)*20.0 + wi);
+		wi = waveform[wf](sqrt(x*x + y*y + z*z)*20.0f + wi);
 	}
 	
 	return wi;
@@ -370,7 +370,7 @@ static float marble_int(Tex *tex, float x, float y, float z)
 	
 	if ((wf>TEX_TRI) || (wf<TEX_SIN)) wf=0; /* check to be sure noisebasis2 isn't initialized ahead of time */
 	
-	n = 5.0 * (x + y + z);
+	n = 5.0f * (x + y + z);
 	
 	mi = n + tex->turbul * BLI_gTurbulence(tex->noisesize, x, y, z, tex->noisedepth, (tex->noisetype!=TEX_NOISESOFT),  tex->noisebasis);
 
@@ -417,11 +417,11 @@ static int magic(Tex *tex, float *texvec, TexResult *texres)
 	int n;
 
 	n= tex->noisedepth;
-	turb= tex->turbul/5.0;
+	turb= tex->turbul/5.0f;
 
-	x=  sin( ( texvec[0]+texvec[1]+texvec[2])*5.0 );
-	y=  cos( (-texvec[0]+texvec[1]-texvec[2])*5.0 );
-	z= -cos( (-texvec[0]-texvec[1]+texvec[2])*5.0 );
+	x=  sin( ( texvec[0]+texvec[1]+texvec[2])*5.0f );
+	y=  cos( (-texvec[0]+texvec[1]-texvec[2])*5.0f );
+	z= -cos( (-texvec[0]-texvec[1]+texvec[2])*5.0f );
 	if(n>0) {
 		x*= turb;
 		y*= turb;
@@ -466,17 +466,17 @@ static int magic(Tex *tex, float *texvec, TexResult *texres)
 		}
 	}
 
-	if(turb!=0.0) {
-		turb*= 2.0;
+	if(turb!=0.0f) {
+		turb*= 2.0f;
 		x/= turb; 
 		y/= turb; 
 		z/= turb;
 	}
-	texres->tr= 0.5-x;
-	texres->tg= 0.5-y;
-	texres->tb= 0.5-z;
+	texres->tr= 0.5f-x;
+	texres->tg= 0.5f-y;
+	texres->tb= 0.5f-z;
 
-	texres->tin= 0.3333*(texres->tr+texres->tg+texres->tb);
+	texres->tin= 0.3333f*(texres->tr+texres->tg+texres->tb);
 	
 	BRICONTRGB;
 	texres->ta= 1.0;
@@ -494,7 +494,7 @@ static int stucci(Tex *tex, float *texvec, TexResult *texres)
 	
 	b2= BLI_gNoise(tex->noisesize, texvec[0], texvec[1], texvec[2], (tex->noisetype!=TEX_NOISESOFT), tex->noisebasis);
 	
-	ofs= tex->turbul/200.0;
+	ofs= tex->turbul/200.0f;
 
 	if(tex->stype) ofs*=(b2*b2);
 	nor[0] = BLI_gNoise(tex->noisesize, texvec[0]+ofs, texvec[1], texvec[2], (tex->noisetype!=TEX_NOISESOFT), tex->noisebasis);
@@ -505,7 +505,7 @@ static int stucci(Tex *tex, float *texvec, TexResult *texres)
 	
 	if(texres->nor) { 
 		
-		VECCOPY(texres->nor, nor);
+		copy_v3_v3(texres->nor, nor);
 		tex_normal_derivate(tex, texres);
 		
 		if(tex->stype==TEX_WALLOUT) {
@@ -732,7 +732,7 @@ static int texnoise(Tex *tex, TexResult *texres)
 	while(loop--) {
 		ran= (ran>>2);
 		val*= (ran & 3);
-		div*= 3.0;
+		div*= 3.0f;
 	}
 	
 	texres->tin= ((float)val)/div;
@@ -755,9 +755,9 @@ static int plugintex(Tex *tex, float *texvec, float *dxt, float *dyt, int osatex
 	if(pit && pit->doit) {
 		if(texres->nor) {
 			if (pit->version < 6) {
-				VECCOPY(pit->result+5, texres->nor);
+				copy_v3_v3(pit->result+5, texres->nor);
 			} else {
-				VECCOPY(result+5, texres->nor);
+				copy_v3_v3(result+5, texres->nor);
 			}
 		}
 		if (pit->version < 6) {
@@ -781,9 +781,9 @@ static int plugintex(Tex *tex, float *texvec, float *dxt, float *dyt, int osatex
 		if(rgbnor & TEX_NOR) {
 			if(texres->nor) {
 				if (pit->version < 6) {
-					VECCOPY(texres->nor, pit->result+5);
+					copy_v3_v3(texres->nor, pit->result+5);
 				} else {
-					VECCOPY(texres->nor, result+5);
+					copy_v3_v3(texres->nor, result+5);
 				}
 			}
 		}
@@ -820,7 +820,7 @@ static int cubemap_glob(float *n, float x, float y, float z, float *adr1, float 
 		nor[0]= x; nor[1]= y; nor[2]= z;	// use local render coord
 	}
 	else {
-		VECCOPY(nor, n);
+		copy_v3_v3(nor, n);
 	}
 	mul_mat3_m4_v3(R.viewinv, nor);
 
@@ -829,18 +829,18 @@ static int cubemap_glob(float *n, float x, float y, float z, float *adr1, float 
 	z1= fabs(nor[2]);
 	
 	if(z1>=x1 && z1>=y1) {
-		*adr1 = (x + 1.0) / 2.0;
-		*adr2 = (y + 1.0) / 2.0;
+		*adr1 = (x + 1.0f) / 2.0f;
+		*adr2 = (y + 1.0f) / 2.0f;
 		ret= 0;
 	}
 	else if(y1>=x1 && y1>=z1) {
-		*adr1 = (x + 1.0) / 2.0;
-		*adr2 = (z + 1.0) / 2.0;
+		*adr1 = (x + 1.0f) / 2.0f;
+		*adr2 = (z + 1.0f) / 2.0f;
 		ret= 1;
 	}
 	else {
-		*adr1 = (y + 1.0) / 2.0;
-		*adr2 = (z + 1.0) / 2.0;
+		*adr1 = (y + 1.0f) / 2.0f;
+		*adr2 = (z + 1.0f) / 2.0f;
 		ret= 2;		
 	}
 	return ret;
@@ -884,17 +884,17 @@ static int cubemap(MTex *mtex, VlakRen *vlr, float *n, float x, float y, float z
 		}
 		
 		if(vlr->puno & proj[1]) {
-			*adr1 = (x + 1.0) / 2.0;
-			*adr2 = (y + 1.0) / 2.0;	
+			*adr1 = (x + 1.0f) / 2.0f;
+			*adr2 = (y + 1.0f) / 2.0f;
 		}
 		else if(vlr->puno & proj[2]) {
-			*adr1 = (x + 1.0) / 2.0;
-			*adr2 = (z + 1.0) / 2.0;
+			*adr1 = (x + 1.0f) / 2.0f;
+			*adr2 = (z + 1.0f) / 2.0f;
 			ret= 1;
 		}
 		else {
-			*adr1 = (y + 1.0) / 2.0;
-			*adr2 = (z + 1.0) / 2.0;
+			*adr1 = (y + 1.0f) / 2.0f;
+			*adr2 = (z + 1.0f) / 2.0f;
 			ret= 2;
 		}		
 	} 
@@ -914,7 +914,7 @@ static int cubemap_ob(Object *ob, float *n, float x, float y, float z, float *ad
 	
 	if(n==NULL) return 0;
 	
-	VECCOPY(nor, n);
+	copy_v3_v3(nor, n);
 	if(ob) mul_mat3_m4_v3(ob->imat, nor);
 	
 	x1= fabs(nor[0]);
@@ -922,18 +922,18 @@ static int cubemap_ob(Object *ob, float *n, float x, float y, float z, float *ad
 	z1= fabs(nor[2]);
 	
 	if(z1>=x1 && z1>=y1) {
-		*adr1 = (x + 1.0) / 2.0;
-		*adr2 = (y + 1.0) / 2.0;
+		*adr1 = (x + 1.0f) / 2.0f;
+		*adr2 = (y + 1.0f) / 2.0f;
 		ret= 0;
 	}
 	else if(y1>=x1 && y1>=z1) {
-		*adr1 = (x + 1.0) / 2.0;
-		*adr2 = (z + 1.0) / 2.0;
+		*adr1 = (x + 1.0f) / 2.0f;
+		*adr2 = (z + 1.0f) / 2.0f;
 		ret= 1;
 	}
 	else {
-		*adr1 = (y + 1.0) / 2.0;
-		*adr2 = (z + 1.0) / 2.0;
+		*adr1 = (y + 1.0f) / 2.0f;
+		*adr2 = (z + 1.0f) / 2.0f;
 		ret= 2;		
 	}
 	return ret;
@@ -957,8 +957,8 @@ static void do_2d_mapping(MTex *mtex, float *t, VlakRen *vlr, float *n, float *d
 	if(R.osa==0) {
 		
 		if(wrap==MTEX_FLAT) {
-			fx = (t[0] + 1.0) / 2.0;
-			fy = (t[1] + 1.0) / 2.0;
+			fx = (t[0] + 1.0f) / 2.0f;
+			fy = (t[1] + 1.0f) / 2.0f;
 		}
 		else if(wrap==MTEX_TUBE) map_to_tube( &fx, &fy,t[0], t[1], t[2]);
 		else if(wrap==MTEX_SPHERE) map_to_sphere( &fx, &fy,t[0], t[1], t[2]);
@@ -973,34 +973,34 @@ static void do_2d_mapping(MTex *mtex, float *t, VlakRen *vlr, float *n, float *d
 			if(tex->xrepeat>1) {
 				float origf= fx *= tex->xrepeat;
 				
-				if(fx>1.0) fx -= (int)(fx);
-				else if(fx<0.0) fx+= 1-(int)(fx);
+				if(fx>1.0f) fx -= (int)(fx);
+				else if(fx<0.0f) fx+= 1-(int)(fx);
 				
 				if(tex->flag & TEX_REPEAT_XMIR) {
 					int orig= (int)floor(origf);
 					if(orig & 1)
-						fx= 1.0-fx;
+						fx= 1.0f-fx;
 				}
 			}
 			if(tex->yrepeat>1) {
 				float origf= fy *= tex->yrepeat;
 				
-				if(fy>1.0) fy -= (int)(fy);
-				else if(fy<0.0) fy+= 1-(int)(fy);
+				if(fy>1.0f) fy -= (int)(fy);
+				else if(fy<0.0f) fy+= 1-(int)(fy);
 				
 				if(tex->flag & TEX_REPEAT_YMIR) {
 					int orig= (int)floor(origf);
 					if(orig & 1) 
-						fy= 1.0-fy;
+						fy= 1.0f-fy;
 				}
 			}
 		}
 		/* crop */
-		if(tex->cropxmin!=0.0 || tex->cropxmax!=1.0) {
+		if(tex->cropxmin!=0.0f || tex->cropxmax!=1.0f) {
 			fac1= tex->cropxmax - tex->cropxmin;
 			fx= tex->cropxmin+ fx*fac1;
 		}
-		if(tex->cropymin!=0.0 || tex->cropymax!=1.0) {
+		if(tex->cropymin!=0.0f || tex->cropymax!=1.0f) {
 			fac1= tex->cropymax - tex->cropymin;
 			fy= tex->cropymin+ fy*fac1;
 		}
@@ -1011,23 +1011,23 @@ static void do_2d_mapping(MTex *mtex, float *t, VlakRen *vlr, float *n, float *d
 	else {
 		
 		if(wrap==MTEX_FLAT) {
-			fx= (t[0] + 1.0) / 2.0;
-			fy= (t[1] + 1.0) / 2.0;
-			dxt[0]/= 2.0; 
-			dxt[1]/= 2.0;
-			dxt[2]/= 2.0;
-			dyt[0]/= 2.0; 
-			dyt[1]/= 2.0;
-			dyt[2]/= 2.0;
+			fx= (t[0] + 1.0f) / 2.0f;
+			fy= (t[1] + 1.0f) / 2.0f;
+			dxt[0]/= 2.0f;
+			dxt[1]/= 2.0f;
+			dxt[2]/= 2.0f;
+			dyt[0]/= 2.0f;
+			dyt[1]/= 2.0f;
+			dyt[2]/= 2.0f;
 		}
 		else if ELEM(wrap, MTEX_TUBE, MTEX_SPHERE) {
 			/* exception: the seam behind (y<0.0) */
 			ok= 1;
-			if(t[1]<=0.0) {
+			if(t[1]<=0.0f) {
 				fx= t[0]+dxt[0];
 				fy= t[0]+dyt[0];
-				if(fx>=0.0 && fy>=0.0 && t[0]>=0.0);
-				else if(fx<=0.0 && fy<=0.0 && t[0]<=0.0);
+				if(fx>=0.0f && fy>=0.0f && t[0]>=0.0f);
+				else if(fx<=0.0f && fy<=0.0f && t[0]<=0.0f);
 				else ok= 0;
 			}
 			if(ok) {
@@ -1046,10 +1046,10 @@ static void do_2d_mapping(MTex *mtex, float *t, VlakRen *vlr, float *n, float *d
 			else {
 				if(wrap==MTEX_TUBE) map_to_tube( &fx, &fy,t[0], t[1], t[2]);
 				else map_to_sphere( &fx, &fy,t[0], t[1], t[2]);
-				dxt[0]/= 2.0; 
-				dxt[1]/= 2.0;
-				dyt[0]/= 2.0; 
-				dyt[1]/= 2.0;
+				dxt[0]/= 2.0f;
+				dxt[1]/= 2.0f;
+				dyt[0]/= 2.0f;
+				dyt[1]/= 2.0f;
 			}
 		}
 		else {
@@ -1143,13 +1143,13 @@ static void do_2d_mapping(MTex *mtex, float *t, VlakRen *vlr, float *n, float *d
 			
 		}
 		/* crop */
-		if(tex->cropxmin!=0.0 || tex->cropxmax!=1.0) {
+		if(tex->cropxmin!=0.0f || tex->cropxmax!=1.0f) {
 			fac1= tex->cropxmax - tex->cropxmin;
 			fx= tex->cropxmin+ fx*fac1;
 			dxt[0]*= fac1;
 			dyt[0]*= fac1;
 		}
-		if(tex->cropymin!=0.0 || tex->cropymax!=1.0) {
+		if(tex->cropymin!=0.0f || tex->cropymax!=1.0f) {
 			fac1= tex->cropymax - tex->cropymin;
 			fy= tex->cropymin+ fy*fac1;
 			dxt[1]*= fac1;
@@ -1219,8 +1219,8 @@ static int multitex(Tex *tex, float *texvec, float *dxt, float *dyt, int osatex,
 		/* ton: added this, for Blender convention reason. 
 		 * artificer: added the use of tmpvec to avoid scaling texvec
 		 */
-		VECCOPY(tmpvec, texvec);
-		mul_v3_fl(tmpvec, 1.0/tex->noisesize);
+		copy_v3_v3(tmpvec, texvec);
+		mul_v3_fl(tmpvec, 1.0f/tex->noisesize);
 		
 		switch(tex->stype) {
 		case TEX_MFRACTAL:
@@ -1241,8 +1241,8 @@ static int multitex(Tex *tex, float *texvec, float *dxt, float *dyt, int osatex,
 		/* ton: added this, for Blender convention reason.
 		 * artificer: added the use of tmpvec to avoid scaling texvec
 		 */
-		VECCOPY(tmpvec, texvec);
-		mul_v3_fl(tmpvec, 1.0/tex->noisesize);
+		copy_v3_v3(tmpvec, texvec);
+		mul_v3_fl(tmpvec, 1.0f/tex->noisesize);
 		
 		retval= voronoiTex(tex, tmpvec, texres);
 		break;
@@ -1250,8 +1250,8 @@ static int multitex(Tex *tex, float *texvec, float *dxt, float *dyt, int osatex,
 		/* ton: added this, for Blender convention reason.
 		 * artificer: added the use of tmpvec to avoid scaling texvec
 		 */
-		VECCOPY(tmpvec, texvec);
-		mul_v3_fl(tmpvec, 1.0/tex->noisesize);
+		copy_v3_v3(tmpvec, texvec);
+		mul_v3_fl(tmpvec, 1.0f/tex->noisesize);
 		
 		retval= mg_distNoiseTex(tex, tmpvec, texres);
 		break;
@@ -1374,14 +1374,14 @@ int multitex_ext_safe(Tex *tex, float *texvec, TexResult *texres)
 
 /* in = destination, tex = texture, out = previous color */
 /* fact = texture strength, facg = button strength value */
-void texture_rgb_blend(float *in, float *tex, float *out, float fact, float facg, int blendtype)
+void texture_rgb_blend(float in[3], const float tex[3], const float out[3], float fact, float facg, int blendtype)
 {
 	float facm, col;
 	
 	switch(blendtype) {
 	case MTEX_BLEND:
 		fact*= facg;
-		facm= 1.0-fact;
+		facm= 1.0f-fact;
 
 		in[0]= (fact*tex[0] + facm*out[0]);
 		in[1]= (fact*tex[1] + facm*out[1]);
@@ -1390,7 +1390,7 @@ void texture_rgb_blend(float *in, float *tex, float *out, float fact, float facg
 		
 	case MTEX_MUL:
 		fact*= facg;
-		facm= 1.0-facg;
+		facm= 1.0f-facg;
 		in[0]= (facm+fact*tex[0])*out[0];
 		in[1]= (facm+fact*tex[1])*out[1];
 		in[2]= (facm+fact*tex[2])*out[2];
@@ -1398,28 +1398,28 @@ void texture_rgb_blend(float *in, float *tex, float *out, float fact, float facg
 
 	case MTEX_SCREEN:
 		fact*= facg;
-		facm= 1.0-facg;
-		in[0]= 1.0 - (facm+fact*(1.0-tex[0])) * (1.0-out[0]);
-		in[1]= 1.0 - (facm+fact*(1.0-tex[1])) * (1.0-out[1]);
-		in[2]= 1.0 - (facm+fact*(1.0-tex[2])) * (1.0-out[2]);
+		facm= 1.0f-facg;
+		in[0]= 1.0f - (facm+fact*(1.0f-tex[0])) * (1.0f-out[0]);
+		in[1]= 1.0f - (facm+fact*(1.0f-tex[1])) * (1.0f-out[1]);
+		in[2]= 1.0f - (facm+fact*(1.0f-tex[2])) * (1.0f-out[2]);
 		break;
 
 	case MTEX_OVERLAY:
 		fact*= facg;
-		facm= 1.0-facg;
+		facm= 1.0f-facg;
 		
 		if(out[0] < 0.5f)
 			in[0] = out[0] * (facm + 2.0f*fact*tex[0]);
 		else
-			in[0] = 1.0f - (facm + 2.0f*fact*(1.0 - tex[0])) * (1.0 - out[0]);
+			in[0] = 1.0f - (facm + 2.0f*fact*(1.0f - tex[0])) * (1.0f - out[0]);
 		if(out[1] < 0.5f)
 			in[1] = out[1] * (facm + 2.0f*fact*tex[1]);
 		else
-			in[1] = 1.0f - (facm + 2.0f*fact*(1.0 - tex[1])) * (1.0 - out[1]);
+			in[1] = 1.0f - (facm + 2.0f*fact*(1.0f - tex[1])) * (1.0f - out[1]);
 		if(out[2] < 0.5f)
 			in[2] = out[2] * (facm + 2.0f*fact*tex[2]);
 		else
-			in[2] = 1.0f - (facm + 2.0f*fact*(1.0 - tex[2])) * (1.0 - out[2]);
+			in[2] = 1.0f - (facm + 2.0f*fact*(1.0f - tex[2])) * (1.0f - out[2]);
 		break;
 		
 	case MTEX_SUB:
@@ -1433,20 +1433,20 @@ void texture_rgb_blend(float *in, float *tex, float *out, float fact, float facg
 
 	case MTEX_DIV:
 		fact*= facg;
-		facm= 1.0-fact;
+		facm= 1.0f-fact;
 		
-		if(tex[0]!=0.0)
+		if(tex[0]!=0.0f)
 			in[0]= facm*out[0] + fact*out[0]/tex[0];
-		if(tex[1]!=0.0)
+		if(tex[1]!=0.0f)
 			in[1]= facm*out[1] + fact*out[1]/tex[1];
-		if(tex[2]!=0.0)
+		if(tex[2]!=0.0f)
 			in[2]= facm*out[2] + fact*out[2]/tex[2];
 
 		break;
 
 	case MTEX_DIFF:
 		fact*= facg;
-		facm= 1.0-fact;
+		facm= 1.0f-fact;
 		in[0]= facm*out[0] + fact*fabs(tex[0]-out[0]);
 		in[1]= facm*out[1] + fact*fabs(tex[1]-out[1]);
 		in[2]= facm*out[2] + fact*fabs(tex[2]-out[2]);
@@ -1454,7 +1454,7 @@ void texture_rgb_blend(float *in, float *tex, float *out, float fact, float facg
 
 	case MTEX_DARK:
 		fact*= facg;
-		facm= 1.0-fact;
+		facm= 1.0f-fact;
 		
 		col= tex[0]+((1-tex[0])*facm);
 		if(col < out[0]) in[0]= col; else in[0]= out[0];
@@ -1477,32 +1477,32 @@ void texture_rgb_blend(float *in, float *tex, float *out, float fact, float facg
 		
 	case MTEX_BLEND_HUE:
 		fact*= facg;
-		VECCOPY(in, out);
+		copy_v3_v3(in, out);
 		ramp_blend(MA_RAMP_HUE, in, in+1, in+2, fact, tex);
 		break;
 	case MTEX_BLEND_SAT:
 		fact*= facg;
-		VECCOPY(in, out);
+		copy_v3_v3(in, out);
 		ramp_blend(MA_RAMP_SAT, in, in+1, in+2, fact, tex);
 		break;
 	case MTEX_BLEND_VAL:
 		fact*= facg;
-		VECCOPY(in, out);
+		copy_v3_v3(in, out);
 		ramp_blend(MA_RAMP_VAL, in, in+1, in+2, fact, tex);
 		break;
 	case MTEX_BLEND_COLOR:
 		fact*= facg;
-		VECCOPY(in, out);
+		copy_v3_v3(in, out);
 		ramp_blend(MA_RAMP_COLOR, in, in+1, in+2, fact, tex);
 		break;
 	case MTEX_SOFT_LIGHT: 
 		fact*= facg; 
-		VECCOPY(in, out); 
+		copy_v3_v3(in, out);
 		ramp_blend(MA_RAMP_SOFT, in, in+1, in+2, fact, tex); 
 		break; 
 	case MTEX_LIN_LIGHT: 
 		fact*= facg; 
-		VECCOPY(in, out); 
+		copy_v3_v3(in, out);
 		ramp_blend(MA_RAMP_LINEAR, in, in+1, in+2, fact, tex); 
 		break; 
 	}
@@ -1516,7 +1516,7 @@ float texture_value_blend(float tex, float out, float fact, float facg, int blen
 	facg= fabsf(facg);
 	
 	fact*= facg;
-	facm= 1.0-fact;
+	facm= 1.0f-fact;
 	if(flip) SWAP(float, fact, facm);
 
 	switch(blendtype) {
@@ -1525,21 +1525,21 @@ float texture_value_blend(float tex, float out, float fact, float facg, int blen
 		break;
 
 	case MTEX_MUL:
-		facm= 1.0-facg;
+		facm= 1.0f-facg;
 		in= (facm+fact*tex)*out;
 		break;
 
 	case MTEX_SCREEN:
-		facm= 1.0-facg;
-		in= 1.0-(facm+fact*(1.0-tex))*(1.0-out);
+		facm= 1.0f-facg;
+		in= 1.0f-(facm+fact*(1.0f-tex))*(1.0f-out);
 		break;
 
 	case MTEX_OVERLAY:
-		facm= 1.0-facg;
+		facm= 1.0f-facg;
 		if(out < 0.5f)
 			in = out * (facm + 2.0f*fact*tex);
 		else
-			in = 1.0f - (facm + 2.0f*fact*(1.0 - tex)) * (1.0 - out);
+			in = 1.0f - (facm + 2.0f*fact*(1.0f - tex)) * (1.0f - out);
 		break;
 
 	case MTEX_SUB:
@@ -1549,7 +1549,7 @@ float texture_value_blend(float tex, float out, float fact, float facg, int blen
 		break;
 
 	case MTEX_DIV:
-		if(tex!=0.0)
+		if(tex!=0.0f)
 			in= facm*out + fact*out/tex;
 		break;
 
@@ -1568,15 +1568,15 @@ float texture_value_blend(float tex, float out, float fact, float facg, int blen
 		break;
 
 	case MTEX_SOFT_LIGHT: 
-		scf=1.0 - (1.0 - tex) * (1.0 - out); 
-		in= facm*out + fact * ((1.0 - out) * tex * out) + (out * scf); 
+		scf=1.0f - (1.0f - tex) * (1.0f - out);
+		in= facm*out + fact * ((1.0f - out) * tex * out) + (out * scf);
 		break;       
 
 	case MTEX_LIN_LIGHT: 
-		if (tex > 0.5) 
-			in = out + fact*(2*(tex - 0.5)); 
+		if (tex > 0.5f)
+			in = out + fact*(2.0f*(tex - 0.5f));
 		else 
-			in = out + fact*(2*tex - 1); 
+			in = out + fact*(2.0f*tex - 1.0f);
 		break;
 	}
 	
@@ -1789,7 +1789,7 @@ static int compatible_bump_compute(CompatibleBump *compat_bump, ShadeInput *shi,
 			const float adx[3] = {fabsf(dx[0]), fabsf(dx[1]), fabsf(dx[2])};
 			const float ady[3] = {fabsf(dy[0]), fabsf(dy[1]), fabsf(dy[2])};
 			du = MAX3(adx[0], adx[1], adx[2]);
-			dv = MAX3(ady[1], ady[1], ady[2]);
+			dv = MAX3(ady[0], ady[1], ady[2]);
 		}
 	}
 
@@ -1905,11 +1905,15 @@ static int ntap_bump_compute(NTapBump *ntap_bump, ShadeInput *shi, MTex *mtex, T
 
 	const int fromrgb = ((tex->type == TEX_IMAGE) || ((tex->flag & TEX_COLORBAND)!=0));
 	float Hscale = Tnor*mtex->norfac;
+	int dimx=512, dimy=512;
+	const int imag_tspace_dimension_x = 1024;		// only used for texture space variant
+	float aspect = 1.0f;
 
 	// 2 channels for 2D texture and 3 for 3D textures.
 	const int nr_channels = (mtex->texco == TEXCO_UV)? 2 : 3;
 	int c, rgbnor, iBumpSpace;
 	float dHdx, dHdy;
+	int found_deriv_map = (tex->type==TEX_IMAGE) && (tex->imaflag & TEX_DERIVATIVEMAP);
 
 	// disable internal bump eval in sampler, save pointer
 	float *nvec = texres->nor;
@@ -1922,15 +1926,39 @@ static int ntap_bump_compute(NTapBump *ntap_bump, ShadeInput *shi, MTex *mtex, T
 		Hscale *= 0.1f; // factor 0.1 proved to look like the previous bump code
 
 	if( !ntap_bump->init_done ) {
-		VECCOPY(ntap_bump->vNacc, shi->vn);
-		VECCOPY(ntap_bump->vNorg, shi->vn);
+		copy_v3_v3(ntap_bump->vNacc, shi->vn);
+		copy_v3_v3(ntap_bump->vNorg, shi->vn);
 		ntap_bump->fPrevMagnitude = 1.0f;
 		ntap_bump->iPrevBumpSpace = 0;
 		
 		ntap_bump->init_done = 1;
 	}
+
+	// resolve image dimensions
+	if(found_deriv_map || (mtex->texflag&MTEX_BUMP_TEXTURESPACE)!=0) {
+		ImBuf* ibuf = BKE_image_get_ibuf(tex->ima, &tex->iuser);
+		if (ibuf) {
+			dimx = ibuf->x;
+			dimy = ibuf->y;
+			aspect = ((float) dimy) / dimx;
+		}
+	}
 	
-	if(!(mtex->texflag & MTEX_5TAP_BUMP)) {
+	if(found_deriv_map) {
+		float dBdu, dBdv;
+		float s = 1;		// negate this if flipped texture coordinate
+		texco_mapping(shi, tex, mtex, co, dx, dy, texvec, dxt, dyt);
+		rgbnor = multitex_mtex(shi, mtex, texvec, dxt, dyt, texres);
+		
+		// this variant using a derivative map is described here
+		// http://mmikkelsen3d.blogspot.com/2011/07/derivative-maps.html
+		dBdu = Hscale*dimx*(2*texres->tr-1);
+		dBdv = Hscale*dimy*(2*texres->tg-1);
+
+		dHdx = dBdu*dxt[0] + s * dBdv*dxt[1];
+		dHdy = dBdu*dyt[0] + s * dBdv*dyt[1];
+	}
+	else if(!(mtex->texflag & MTEX_5TAP_BUMP)) {
 		// compute height derivatives with respect to output image pixel coordinates x and y
 		float STll[3], STlr[3], STul[3];
 		float Hll, Hlr, Hul;
@@ -1969,7 +1997,7 @@ static int ntap_bump_compute(NTapBump *ntap_bump, ShadeInput *shi, MTex *mtex, T
 	else {
 		/* same as above, but doing 5 taps, increasing quality at cost of speed */
 		float STc[3], STl[3], STr[3], STd[3], STu[3];
-		float Hc, Hl, Hr, Hd, Hu;
+		float /* Hc, */ /* UNUSED */  Hl, Hr, Hd, Hu;
 
 		texco_mapping(shi, tex, mtex, co, dx, dy, texvec, dxt, dyt);
 
@@ -1992,7 +2020,7 @@ static int ntap_bump_compute(NTapBump *ntap_bump, ShadeInput *shi, MTex *mtex, T
 
 		// use texres for the center sample, set rgbnor
 		rgbnor = multitex_mtex(shi, mtex, STc, dxt, dyt, texres);
-		Hc = (fromrgb)? RGBTOBW(texres->tr, texres->tg, texres->tb) : texres->tin;
+		/* Hc = (fromrgb)? RGBTOBW(texres->tr, texres->tg, texres->tb) : texres->tin; */ /* UNUSED */
 
 		// use ttexr for the other taps
 		multitex_mtex(shi, mtex, STl, dxt, dyt, &ttexr);
@@ -2031,9 +2059,9 @@ static int ntap_bump_compute(NTapBump *ntap_bump, ShadeInput *shi, MTex *mtex, T
 		float obj2view[3][3], view2obj[3][3], tmp[4][4];
 		// local copies of derivatives and normal
 		float dPdx[3], dPdy[3], vN[3];
-		VECCOPY(dPdx, shi->dxco);
-		VECCOPY(dPdy, shi->dyco);
-		VECCOPY(vN, ntap_bump->vNorg);
+		copy_v3_v3(dPdx, shi->dxco);
+		copy_v3_v3(dPdy, shi->dyco);
+		copy_v3_v3(vN, ntap_bump->vNorg);
 		
 		if( mtex->texflag & MTEX_BUMP_OBJECTSPACE ) {
 			// TODO: these calculations happen for every pixel!
@@ -2086,12 +2114,13 @@ static int ntap_bump_compute(NTapBump *ntap_bump, ShadeInput *shi, MTex *mtex, T
 		if(tex->ima) {
 			// crazy hack solution that gives results similar to normal mapping - part 2
 			float vec[2];
+			const float imag_tspace_dimension_y = aspect*imag_tspace_dimension_x;
 			
-			vec[0] = tex->ima->gen_x*dxt[0];
-			vec[1] = tex->ima->gen_y*dxt[1];
+			vec[0] = imag_tspace_dimension_x*dxt[0];
+			vec[1] = imag_tspace_dimension_y*dxt[1];
 			dHdx *= 1.0f/len_v2(vec);
-			vec[0] = tex->ima->gen_x*dyt[0];
-			vec[1] = tex->ima->gen_y*dyt[1];
+			vec[0] = imag_tspace_dimension_x*dyt[0];
+			vec[1] = imag_tspace_dimension_y*dyt[1];
 			dHdy *= 1.0f/len_v2(vec);
 		}
 	}
@@ -2118,7 +2147,8 @@ void do_material_tex(ShadeInput *shi)
 	float fact, facm, factt, facmm, stencilTin=1.0;
 	float texvec[3], dxt[3], dyt[3], tempvec[3], norvec[3], warpvec[3]={0.0f, 0.0f, 0.0f}, Tnor=1.0;
 	int tex_nr, rgbnor= 0, warpdone=0;
-	int use_compat_bump, use_ntap_bump;
+	int use_compat_bump = 0, use_ntap_bump = 0;
+	int found_nmapping = 0, found_deriv_map = 0;
 	int iFirstTimeNMap=1;
 
 	compatible_bump_init(&compat_bump);
@@ -2138,8 +2168,9 @@ void do_material_tex(ShadeInput *shi)
 			tex= mtex->tex;
 			if(tex==0) continue;
 
+			found_deriv_map = (tex->type==TEX_IMAGE) && (tex->imaflag & TEX_DERIVATIVEMAP);
 			use_compat_bump= (mtex->texflag & MTEX_COMPAT_BUMP);
-			use_ntap_bump= (mtex->texflag & (MTEX_3TAP_BUMP|MTEX_5TAP_BUMP));
+			use_ntap_bump= ((mtex->texflag & (MTEX_3TAP_BUMP|MTEX_5TAP_BUMP))!=0 || found_deriv_map!=0) ? 1 : 0;
 
 			/* XXX texture node trees don't work for this yet */
 			if(tex->nodetree && tex->use_nodes) {
@@ -2173,14 +2204,14 @@ void do_material_tex(ShadeInput *shi)
 					co= tempvec;
 					dx= dxt;
 					dy= dyt;
-					VECCOPY(tempvec, shi->co);
+					copy_v3_v3(tempvec, shi->co);
 					if(mtex->texflag & MTEX_OB_DUPLI_ORIG)
 						if(shi->obi && shi->obi->duplitexmat)
 							mul_m4_v3(shi->obi->duplitexmat, tempvec);
 					mul_m4_v3(ob->imat_ren, tempvec);
 					if(shi->osatex) {
-						VECCOPY(dxt, shi->dxco);
-						VECCOPY(dyt, shi->dyco);
+						copy_v3_v3(dxt, shi->dxco);
+						copy_v3_v3(dyt, shi->dyco);
 						mul_mat3_m4_v3(ob->imat_ren, dxt);
 						mul_mat3_m4_v3(ob->imat_ren, dyt);
 					}
@@ -2192,6 +2223,7 @@ void do_material_tex(ShadeInput *shi)
 				}
 			}
 			else if(mtex->texco==TEXCO_REFL) {
+				calc_R_ref(shi);
 				co= shi->ref; dx= shi->dxref; dy= shi->dyref;
 			}
 			else if(mtex->texco==TEXCO_NORM) {
@@ -2269,7 +2301,7 @@ void do_material_tex(ShadeInput *shi)
 				if(use_compat_bump) {
 					rgbnor = compatible_bump_compute(&compat_bump, shi, mtex, tex,
 						&texres, Tnor*stencilTin, co, dx, dy, texvec, dxt, dyt);
- 				}
+				}
 				else if(use_ntap_bump) {
 					rgbnor = ntap_bump_compute(&ntap_bump, shi, mtex, tex,
 						&texres, Tnor*stencilTin, co, dx, dy, texvec, dxt, dyt);
@@ -2287,16 +2319,16 @@ void do_material_tex(ShadeInput *shi)
 			/* texture output */
 
 			if( (rgbnor & TEX_RGB) && (mtex->texflag & MTEX_RGBTOINT)) {
-				texres.tin= (0.35*texres.tr+0.45*texres.tg+0.2*texres.tb);
+				texres.tin= (0.35f*texres.tr+0.45f*texres.tg+0.2f*texres.tb);
 				rgbnor-= TEX_RGB;
 			}
 			if(mtex->texflag & MTEX_NEGATIVE) {
 				if(rgbnor & TEX_RGB) {
-					texres.tr= 1.0-texres.tr;
-					texres.tg= 1.0-texres.tg;
-					texres.tb= 1.0-texres.tb;
+					texres.tr= 1.0f-texres.tr;
+					texres.tg= 1.0f-texres.tg;
+					texres.tb= 1.0f-texres.tb;
 				}
-				texres.tin= 1.0-texres.tin;
+				texres.tin= 1.0f-texres.tin;
 			}
 			if(mtex->texflag & MTEX_STENCIL) {
 				if(rgbnor & TEX_RGB) {
@@ -2323,14 +2355,13 @@ void do_material_tex(ShadeInput *shi)
 						texres.nor[2]= texres.tb;
 					}
 					else {
-						float co_nor= 0.5*cos(texres.tin-0.5);
-						float si= 0.5*sin(texres.tin-0.5);
+						float co_nor= 0.5*cos(texres.tin-0.5f);
+						float si= 0.5*sin(texres.tin-0.5f);
 						float f1, f2;
 
 						f1= shi->vn[0];
 						f2= shi->vn[1];
 						texres.nor[0]= f1*co_nor+f2*si;
-						texres.nor[1]= f2*co_nor-f1*si;
 						f1= shi->vn[1];
 						f2= shi->vn[2];
 						texres.nor[1]= f1*co_nor+f2*si;
@@ -2339,9 +2370,16 @@ void do_material_tex(ShadeInput *shi)
 				}
 				// warping, local space
 				if(mtex->mapto & MAP_WARP) {
-					warpvec[0]= mtex->warpfac*texres.nor[0];
-					warpvec[1]= mtex->warpfac*texres.nor[1];
-					warpvec[2]= mtex->warpfac*texres.nor[2];
+					float *warpnor= texres.nor, warpnor_[3];
+					
+					if(use_ntap_bump) {
+						copy_v3_v3(warpnor_, texres.nor);
+						warpnor= warpnor_;
+						normalize_v3(warpnor_);
+					}
+					warpvec[0]= mtex->warpfac*warpnor[0];
+					warpvec[1]= mtex->warpfac*warpnor[1];
+					warpvec[2]= mtex->warpfac*warpnor[2];
 					warpdone= 1;
 				}
 #if 0				
@@ -2403,7 +2441,7 @@ void do_material_tex(ShadeInput *shi)
 					// exception for envmap only
 					if(tex->type==TEX_ENVMAP && mtex->blendtype==MTEX_BLEND) {
 						fact= texres.tin*mirrfac;
-						facm= 1.0- fact;
+						facm= 1.0f- fact;
 						shi->refcol[0]= fact + facm*shi->refcol[0];
 						shi->refcol[1]= fact*tcol[0] + facm*shi->refcol[1];
 						shi->refcol[2]= fact*tcol[1] + facm*shi->refcol[2];
@@ -2421,6 +2459,9 @@ void do_material_tex(ShadeInput *shi)
 					/* we need to code blending modes for normals too once.. now 1 exception hardcoded */
 					
 					if ((tex->type==TEX_IMAGE) && (tex->imaflag & TEX_NORMALMAP)) {
+						
+						found_nmapping = 1;
+						
 						/* qdn: for normalmaps, to invert the normalmap vector,
 						   it is better to negate x & y instead of subtracting the vector as was done before */
 						if (norfac < 0.0f) {
@@ -2448,7 +2489,7 @@ void do_material_tex(ShadeInput *shi)
 						else {
 							float nor[3];
 
-							VECCOPY(nor, texres.nor);
+							copy_v3_v3(nor, texres.nor);
 
 							if(mtex->normapspace == MTEX_NSPACE_CAMERA);
 							else if(mtex->normapspace == MTEX_NSPACE_WORLD) {
@@ -2489,7 +2530,7 @@ void do_material_tex(ShadeInput *shi)
 							nor[1]= Tnor*norfac*texres.nor[1];
 							nor[2]= Tnor*norfac*texres.nor[2];
 							
-							dot= 0.5f + 0.5f*INPR(nor, shi->vn);
+							dot= 0.5f + 0.5f * dot_v3v3(nor, shi->vn);
 							
 							shi->vn[0]+= dot*nor[0];
 							shi->vn[1]+= dot*nor[1];
@@ -2502,9 +2543,6 @@ void do_material_tex(ShadeInput *shi)
 					shi->orn[0]= -shi->vn[0];
 					shi->orn[1]= -shi->vn[1];
 					shi->orn[2]= -shi->vn[2];
-					
-					/* reflection vector */
-					calc_R_ref(shi);
 				}
 			}
 
@@ -2537,7 +2575,6 @@ void do_material_tex(ShadeInput *shi)
 				}
 				else { /* add or sub */
 					if(mtex->blendtype==MTEX_SUB) factt= -factt;
-					else factt= factt;
 					shi->displace[0]+= factt*shi->vn[0];
 					shi->displace[1]+= factt*shi->vn[1];
 					shi->displace[2]+= factt*shi->vn[2];
@@ -2549,65 +2586,65 @@ void do_material_tex(ShadeInput *shi)
 				
 				if(rgbnor & TEX_RGB) {
 					if(texres.talpha) texres.tin= texres.ta;
-					else texres.tin= (0.35*texres.tr+0.45*texres.tg+0.2*texres.tb);
+					else texres.tin= (0.35f*texres.tr+0.45f*texres.tg+0.2f*texres.tb);
 				}
 
 				if(mtex->mapto & MAP_REF) {
 					float difffac= mtex->difffac*stencilTin;
 
 					shi->refl= texture_value_blend(mtex->def_var, shi->refl, texres.tin, difffac, mtex->blendtype);
-					if(shi->refl<0.0) shi->refl= 0.0;
+					if(shi->refl<0.0f) shi->refl= 0.0f;
 				}
 				if(mtex->mapto & MAP_SPEC) {
 					float specfac= mtex->specfac*stencilTin;
 					
 					shi->spec= texture_value_blend(mtex->def_var, shi->spec, texres.tin, specfac, mtex->blendtype);
-					if(shi->spec<0.0) shi->spec= 0.0;
+					if(shi->spec<0.0f) shi->spec= 0.0f;
 				}
 				if(mtex->mapto & MAP_EMIT) {
 					float emitfac= mtex->emitfac*stencilTin;
 
 					shi->emit= texture_value_blend(mtex->def_var, shi->emit, texres.tin, emitfac, mtex->blendtype);
-					if(shi->emit<0.0) shi->emit= 0.0;
+					if(shi->emit<0.0f) shi->emit= 0.0f;
 				}
 				if(mtex->mapto & MAP_ALPHA) {
 					float alphafac= mtex->alphafac*stencilTin;
 
 					shi->alpha= texture_value_blend(mtex->def_var, shi->alpha, texres.tin, alphafac, mtex->blendtype);
-					if(shi->alpha<0.0) shi->alpha= 0.0;
-					else if(shi->alpha>1.0) shi->alpha= 1.0;
+					if(shi->alpha<0.0f) shi->alpha= 0.0f;
+					else if(shi->alpha>1.0f) shi->alpha= 1.0f;
 				}
 				if(mtex->mapto & MAP_HAR) {
 					float har;  // have to map to 0-1
 					float hardfac= mtex->hardfac*stencilTin;
 					
-					har= ((float)shi->har)/128.0;
-					har= 128.0*texture_value_blend(mtex->def_var, har, texres.tin, hardfac, mtex->blendtype);
+					har= ((float)shi->har)/128.0f;
+					har= 128.0f*texture_value_blend(mtex->def_var, har, texres.tin, hardfac, mtex->blendtype);
 					
-					if(har<1.0) shi->har= 1; 
-					else if(har>511.0) shi->har= 511;
+					if(har<1.0f) shi->har= 1;
+					else if(har>511) shi->har= 511;
 					else shi->har= (int)har;
 				}
 				if(mtex->mapto & MAP_RAYMIRR) {
 					float raymirrfac= mtex->raymirrfac*stencilTin;
 
 					shi->ray_mirror= texture_value_blend(mtex->def_var, shi->ray_mirror, texres.tin, raymirrfac, mtex->blendtype);
-					if(shi->ray_mirror<0.0) shi->ray_mirror= 0.0;
-					else if(shi->ray_mirror>1.0) shi->ray_mirror= 1.0;
+					if(shi->ray_mirror<0.0f) shi->ray_mirror= 0.0f;
+					else if(shi->ray_mirror>1.0f) shi->ray_mirror= 1.0f;
 				}
 				if(mtex->mapto & MAP_TRANSLU) {
 					float translfac= mtex->translfac*stencilTin;
 
 					shi->translucency= texture_value_blend(mtex->def_var, shi->translucency, texres.tin, translfac, mtex->blendtype);
-					if(shi->translucency<0.0) shi->translucency= 0.0;
-					else if(shi->translucency>1.0) shi->translucency= 1.0;
+					if(shi->translucency<0.0f) shi->translucency= 0.0f;
+					else if(shi->translucency>1.0f) shi->translucency= 1.0f;
 				}
 				if(mtex->mapto & MAP_AMB) {
 					float ambfac= mtex->ambfac*stencilTin;
 
 					shi->amb= texture_value_blend(mtex->def_var, shi->amb, texres.tin, ambfac, mtex->blendtype);
-					if(shi->amb<0.0) shi->amb= 0.0;
-					else if(shi->amb>1.0) shi->amb= 1.0;
+					if(shi->amb<0.0f) shi->amb= 0.0f;
+					else if(shi->amb>1.0f) shi->amb= 1.0f;
 					
 					shi->ambr= shi->amb*R.wrld.ambr;
 					shi->ambg= shi->amb*R.wrld.ambg;
@@ -2616,10 +2653,16 @@ void do_material_tex(ShadeInput *shi)
 			}
 		}
 	}
+	if ((use_compat_bump || use_ntap_bump || found_nmapping) && (shi->mat->mode & MA_TANGENT_V)!=0) {
+		const float fnegdot = -dot_v3v3(shi->vn, shi->tang);
+		// apply Gram-Schmidt projection
+		madd_v3_v3fl(shi->tang,  shi->vn, fnegdot);
+		normalize_v3(shi->tang);
+	}
 }
 
 
-void do_volume_tex(ShadeInput *shi, float *xyz, int mapto_flag, float *col, float *val)
+void do_volume_tex(ShadeInput *shi, const float xyz[3], int mapto_flag, float col[3], float *val)
 {
 	MTex *mtex;
 	Tex *tex;
@@ -2648,7 +2691,7 @@ void do_volume_tex(ShadeInput *shi, float *xyz, int mapto_flag, float *col, floa
 			if(mtex->texco==TEXCO_OBJECT) { 
 				Object *ob= mtex->object;
 				if(ob) {						
-					VECCOPY(co, xyz);	
+					copy_v3_v3(co, xyz);
 					if(mtex->texflag & MTEX_OB_DUPLI_ORIG) {
 						if(shi->obi && shi->obi->duplitexmat)
 							mul_m4_v3(shi->obi->duplitexmat, co);					
@@ -2660,16 +2703,16 @@ void do_volume_tex(ShadeInput *shi, float *xyz, int mapto_flag, float *col, floa
 			else if(mtex->texco==TEXCO_ORCO) {
 				
 				if(mtex->texflag & MTEX_DUPLI_MAPTO) {
-					VECCOPY(co, shi->duplilo);
+					copy_v3_v3(co, shi->duplilo);
 				}
 				else {
 					Object *ob= shi->obi->ob;
-					VECCOPY(co, xyz);
+					copy_v3_v3(co, xyz);
 					mul_m4_v3(ob->imat_ren, co);
 				}
 			}
 			else if(mtex->texco==TEXCO_GLOB) {							
-			   VECCOPY(co, xyz);
+			   copy_v3_v3(co, xyz);
 			   mul_m4_v3(R.viewinv, co);
 			}
 			else continue;	// can happen when texco defines disappear and it renders old files
@@ -2697,16 +2740,16 @@ void do_volume_tex(ShadeInput *shi, float *xyz, int mapto_flag, float *col, floa
 			/* texture output */
 
 			if( (rgbnor & TEX_RGB) && (mtex->texflag & MTEX_RGBTOINT)) {
-				texres.tin= (0.35*texres.tr+0.45*texres.tg+0.2*texres.tb);
+				texres.tin= (0.35f*texres.tr+0.45f*texres.tg+0.2f*texres.tb);
 				rgbnor-= TEX_RGB;
 			}
 			if(mtex->texflag & MTEX_NEGATIVE) {
 				if(rgbnor & TEX_RGB) {
-					texres.tr= 1.0-texres.tr;
-					texres.tg= 1.0-texres.tg;
-					texres.tb= 1.0-texres.tb;
+					texres.tr= 1.0f-texres.tr;
+					texres.tg= 1.0f-texres.tg;
+					texres.tb= 1.0f-texres.tb;
 				}
-				texres.tin= 1.0-texres.tin;
+				texres.tin= 1.0f-texres.tin;
 			}
 			if(mtex->texflag & MTEX_STENCIL) {
 				if(rgbnor & TEX_RGB) {
@@ -2763,7 +2806,7 @@ void do_volume_tex(ShadeInput *shi, float *xyz, int mapto_flag, float *col, floa
 				if (!(rgbnor & TEX_INT)) {
 					if (rgbnor & TEX_RGB) {
 						if(texres.talpha) texres.tin= texres.ta;
-						else texres.tin= (0.35*texres.tr+0.45*texres.tg+0.2*texres.tb);
+						else texres.tin= (0.35f*texres.tr+0.45f*texres.tg+0.2f*texres.tb);
 					}
 				}
 				
@@ -2771,25 +2814,25 @@ void do_volume_tex(ShadeInput *shi, float *xyz, int mapto_flag, float *col, floa
 					float emitfac= mtex->emitfac*stencilTin;
 
 					*val = texture_value_blend(mtex->def_var, *val, texres.tin, emitfac, mtex->blendtype);
-					if(*val<0.0) *val= 0.0;
+					if(*val<0.0f) *val= 0.0f;
 				}
 				if((mapto_flag & MAP_DENSITY) && (mtex->mapto & MAP_DENSITY)) {
 					float densfac= mtex->densfac*stencilTin;
 
 					*val = texture_value_blend(mtex->def_var, *val, texres.tin, densfac, mtex->blendtype);
-					CLAMP(*val, 0.0, 1.0);
+					CLAMP(*val, 0.0f, 1.0f);
 				}
 				if((mapto_flag & MAP_SCATTERING) && (mtex->mapto & MAP_SCATTERING)) {
 					float scatterfac= mtex->scatterfac*stencilTin;
 					
 					*val = texture_value_blend(mtex->def_var, *val, texres.tin, scatterfac, mtex->blendtype);
-					CLAMP(*val, 0.0, 1.0);
+					CLAMP(*val, 0.0f, 1.0f);
 				}
 				if((mapto_flag & MAP_REFLECTION) && (mtex->mapto & MAP_REFLECTION)) {
 					float reflfac= mtex->reflfac*stencilTin;
 					
 					*val = texture_value_blend(mtex->def_var, *val, texres.tin, reflfac, mtex->blendtype);
-					CLAMP(*val, 0.0, 1.0);
+					CLAMP(*val, 0.0f, 1.0f);
 				}
 			}
 		}
@@ -2799,7 +2842,7 @@ void do_volume_tex(ShadeInput *shi, float *xyz, int mapto_flag, float *col, floa
 
 /* ------------------------------------------------------------------------- */
 
-void do_halo_tex(HaloRen *har, float xn, float yn, float *colf)
+void do_halo_tex(HaloRen *har, float xn, float yn, float col_r[4])
 {
 	MTex *mtex;
 	TexResult texres= {0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0, NULL};
@@ -2833,7 +2876,7 @@ void do_halo_tex(HaloRen *har, float xn, float yn, float *colf)
 	
 	if(osatex) {
 	
-		dx= 1.0/har->rad;
+		dx= 1.0f/har->rad;
 	
 		if(mtex->projx) {
 			dxt[0]= mtex->size[0]*dx;
@@ -2861,16 +2904,16 @@ void do_halo_tex(HaloRen *har, float xn, float yn, float *colf)
 
 	/* texture output */
 	if(rgb && (mtex->texflag & MTEX_RGBTOINT)) {
-		texres.tin= (0.35*texres.tr+0.45*texres.tg+0.2*texres.tb);
+		texres.tin= (0.35f*texres.tr+0.45f*texres.tg+0.2f*texres.tb);
 		rgb= 0;
 	}
 	if(mtex->texflag & MTEX_NEGATIVE) {
 		if(rgb) {
-			texres.tr= 1.0-texres.tr;
-			texres.tg= 1.0-texres.tg;
-			texres.tb= 1.0-texres.tb;
+			texres.tr= 1.0f-texres.tr;
+			texres.tg= 1.0f-texres.tg;
+			texres.tb= 1.0f-texres.tb;
 		}
-		else texres.tin= 1.0-texres.tin;
+		else texres.tin= 1.0f-texres.tin;
 	}
 
 	/* mapping */
@@ -2897,48 +2940,48 @@ void do_halo_tex(HaloRen *har, float xn, float yn, float *colf)
 		}
 
 		fact= texres.tin*mtex->colfac;
-		facm= 1.0-fact;
+		facm= 1.0f-fact;
 		
 		if(mtex->blendtype==MTEX_MUL) {
-			facm= 1.0-mtex->colfac;
+			facm= 1.0f-mtex->colfac;
 		}
 		
 		if(mtex->blendtype==MTEX_SUB) fact= -fact;
 
 		if(mtex->blendtype==MTEX_BLEND) {
-			colf[0]= (fact*texres.tr + facm*har->r);
-			colf[1]= (fact*texres.tg + facm*har->g);
-			colf[2]= (fact*texres.tb + facm*har->b);
+			col_r[0]= (fact*texres.tr + facm*har->r);
+			col_r[1]= (fact*texres.tg + facm*har->g);
+			col_r[2]= (fact*texres.tb + facm*har->b);
 		}
 		else if(mtex->blendtype==MTEX_MUL) {
-			colf[0]= (facm+fact*texres.tr)*har->r;
-			colf[1]= (facm+fact*texres.tg)*har->g;
-			colf[2]= (facm+fact*texres.tb)*har->b;
+			col_r[0]= (facm+fact*texres.tr)*har->r;
+			col_r[1]= (facm+fact*texres.tg)*har->g;
+			col_r[2]= (facm+fact*texres.tb)*har->b;
 		}
 		else {
-			colf[0]= (fact*texres.tr + har->r);
-			colf[1]= (fact*texres.tg + har->g);
-			colf[2]= (fact*texres.tb + har->b);
+			col_r[0]= (fact*texres.tr + har->r);
+			col_r[1]= (fact*texres.tg + har->g);
+			col_r[2]= (fact*texres.tb + har->b);
 			
-			CLAMP(colf[0], 0.0, 1.0);
-			CLAMP(colf[1], 0.0, 1.0);
-			CLAMP(colf[2], 0.0, 1.0);
+			CLAMP(col_r[0], 0.0f, 1.0f);
+			CLAMP(col_r[1], 0.0f, 1.0f);
+			CLAMP(col_r[2], 0.0f, 1.0f);
 		}
 	}
 	if(mtex->mapto & MAP_ALPHA) {
 		if(rgb) {
 			if(texres.talpha) texres.tin= texres.ta;
-			else texres.tin= (0.35*texres.tr+0.45*texres.tg+0.2*texres.tb);
+			else texres.tin= (0.35f*texres.tr+0.45f*texres.tg+0.2f*texres.tb);
 		}
 				
-		colf[3]*= texres.tin;
+		col_r[3]*= texres.tin;
 	}
 }
 
 /* ------------------------------------------------------------------------- */
 
 /* hor and zen are RGB vectors, blend is 1 float, should all be initialized */
-void do_sky_tex(float *rco, float *lo, float *dxyview, float *hor, float *zen, float *blend, int skyflag, short thread)
+void do_sky_tex(const float rco[3], float lo[3], const float dxyview[2], float hor[3], float zen[3], float *blend, int skyflag, short thread)
 {
 	MTex *mtex;
 	Tex *tex;
@@ -2978,7 +3021,7 @@ void do_sky_tex(float *rco, float *lo, float *dxyview, float *hor, float *zen, f
 				/* only works with texture being "real" */
 				/* use saacos(), fixes bug [#22398], float precision caused lo[2] to be slightly less then -1.0 */
 				if(lo[0] || lo[1]) { /* check for zero case [#24807] */
-					fact= (1.0/M_PI)*saacos(lo[2])/(sqrt(lo[0]*lo[0] + lo[1]*lo[1])); 
+					fact= (1.0f/(float)M_PI)*saacos(lo[2])/(sqrt(lo[0]*lo[0] + lo[1]*lo[1]));
 					tempvec[0]= lo[0]*fact;
 					tempvec[1]= lo[1]*fact;
 					tempvec[2]= 0.0;
@@ -2999,13 +3042,13 @@ void do_sky_tex(float *rco, float *lo, float *dxyview, float *hor, float *zen, f
 					if(mtex->texco==TEXCO_H_TUBEMAP) map_to_tube( tempvec, tempvec+1,lo[0], lo[2], lo[1]);
 					else map_to_sphere( tempvec, tempvec+1,lo[0], lo[2], lo[1]);
 					/* tube/spheremap maps for outside view, not inside */
-					tempvec[0]= 1.0-tempvec[0];
+					tempvec[0]= 1.0f-tempvec[0];
 					/* only top half */
-					tempvec[1]= 2.0*tempvec[1]-1.0;
+					tempvec[1]= 2.0f*tempvec[1]-1.0f;
 					tempvec[2]= 0.0;
 					/* and correction for do_2d_mapping */
-					tempvec[0]= 2.0*tempvec[0]-1.0;
-					tempvec[1]= 2.0*tempvec[1]-1.0;
+					tempvec[0]= 2.0f*tempvec[0]-1.0f;
+					tempvec[1]= 2.0f*tempvec[1]-1.0f;
 					co= tempvec;
 				}
 				else {
@@ -3015,7 +3058,7 @@ void do_sky_tex(float *rco, float *lo, float *dxyview, float *hor, float *zen, f
 				break;
 			case TEXCO_OBJECT:
 				if(mtex->object) {
-					VECCOPY(tempvec, lo);
+					copy_v3_v3(tempvec, lo);
 					mul_m4_v3(mtex->object->imat_ren, tempvec);
 					co= tempvec;
 				}
@@ -3023,16 +3066,16 @@ void do_sky_tex(float *rco, float *lo, float *dxyview, float *hor, float *zen, f
 				
 			case TEXCO_GLOB:
 				if(rco) {
-					VECCOPY(tempvec, rco);
+					copy_v3_v3(tempvec, rco);
 					mul_m4_v3(R.viewinv, tempvec);
 					co= tempvec;
 				}
 				else
 					co= lo;
 				
-//				VECCOPY(shi->dxgl, shi->dxco);
+//				copy_v3_v3(shi->dxgl, shi->dxco);
 //				mul_m3_v3(R.imat, shi->dxco);
-//				VECCOPY(shi->dygl, shi->dyco);
+//				copy_v3_v3(shi->dygl, shi->dyco);
 //				mul_m3_v3(R.imat, shi->dyco);
 				break;
 			}
@@ -3054,16 +3097,16 @@ void do_sky_tex(float *rco, float *lo, float *dxyview, float *hor, float *zen, f
 			
 			/* texture output */
 			if(rgb && (mtex->texflag & MTEX_RGBTOINT)) {
-				texres.tin= (0.35*texres.tr+0.45*texres.tg+0.2*texres.tb);
+				texres.tin= (0.35f*texres.tr+0.45f*texres.tg+0.2f*texres.tb);
 				rgb= 0;
 			}
 			if(mtex->texflag & MTEX_NEGATIVE) {
 				if(rgb) {
-					texres.tr= 1.0-texres.tr;
-					texres.tg= 1.0-texres.tg;
-					texres.tb= 1.0-texres.tb;
+					texres.tr= 1.0f-texres.tr;
+					texres.tg= 1.0f-texres.tg;
+					texres.tb= 1.0f-texres.tb;
 				}
-				else texres.tin= 1.0-texres.tin;
+				else texres.tin= 1.0f-texres.tin;
 			}
 			if(mtex->texflag & MTEX_STENCIL) {
 				if(rgb) {
@@ -3124,7 +3167,7 @@ void do_sky_tex(float *rco, float *lo, float *dxyview, float *hor, float *zen, f
 				}
 			}
 			if(mtex->mapto & WOMAP_BLEND) {
-				if(rgb) texres.tin= (0.35*texres.tr+0.45*texres.tg+0.2*texres.tb);
+				if(rgb) texres.tin= (0.35f*texres.tr+0.45f*texres.tg+0.2f*texres.tb);
 				
 				*blend= texture_value_blend(mtex->def_var, *blend, texres.tin, mtex->blendfac, mtex->blendtype);
 			}
@@ -3133,9 +3176,9 @@ void do_sky_tex(float *rco, float *lo, float *dxyview, float *hor, float *zen, f
 }
 
 /* ------------------------------------------------------------------------- */
-/* colf supposed to be initialized with la->r,g,b */
+/* col_r supposed to be initialized with la->r,g,b */
 
-void do_lamp_tex(LampRen *la, float *lavec, ShadeInput *shi, float *colf, int effect)
+void do_lamp_tex(LampRen *la, const float lavec[3], ShadeInput *shi, float col_r[3], int effect)
 {
 	Object *ob;
 	MTex *mtex;
@@ -3164,11 +3207,11 @@ void do_lamp_tex(LampRen *la, float *lavec, ShadeInput *shi, float *colf, int ef
 					co= tempvec;
 					dx= dxt;
 					dy= dyt;
-					VECCOPY(tempvec, shi->co);
+					copy_v3_v3(tempvec, shi->co);
 					mul_m4_v3(ob->imat_ren, tempvec);
 					if(shi->osatex) {
-						VECCOPY(dxt, shi->dxco);
-						VECCOPY(dyt, shi->dyco);
+						copy_v3_v3(dxt, shi->dxco);
+						copy_v3_v3(dyt, shi->dyco);
 						mul_mat3_m4_v3(ob->imat_ren, dxt);
 						mul_mat3_m4_v3(ob->imat_ren, dyt);
 					}
@@ -3180,18 +3223,18 @@ void do_lamp_tex(LampRen *la, float *lavec, ShadeInput *shi, float *colf, int ef
 			}
 			else if(mtex->texco==TEXCO_GLOB) {
 				co= shi->gl; dx= shi->dxco; dy= shi->dyco;
-				VECCOPY(shi->gl, shi->co);
+				copy_v3_v3(shi->gl, shi->co);
 				mul_m4_v3(R.viewinv, shi->gl);
 			}
 			else if(mtex->texco==TEXCO_VIEW) {
 				
-				VECCOPY(tempvec, lavec);
+				copy_v3_v3(tempvec, lavec);
 				mul_m3_v3(la->imat, tempvec);
 				
 				if(la->type==LA_SPOT) {
 					tempvec[0]*= la->spottexfac;
 					tempvec[1]*= la->spottexfac;
-                    /* project from 3d to 2d */
+				/* project from 3d to 2d */
 					tempvec[0] /= -tempvec[2];
 					tempvec[1] /= -tempvec[2];
 				}
@@ -3199,8 +3242,8 @@ void do_lamp_tex(LampRen *la, float *lavec, ShadeInput *shi, float *colf, int ef
 				
 				dx= dxt; dy= dyt;	
 				if(shi->osatex) {
-					VECCOPY(dxt, shi->dxlv);
-					VECCOPY(dyt, shi->dylv);
+					copy_v3_v3(dxt, shi->dxlv);
+					copy_v3_v3(dyt, shi->dylv);
 					/* need some matrix conversion here? la->imat is a [3][3]  matrix!!! **/
 					mul_m3_v3(la->imat, dxt);
 					mul_m3_v3(la->imat, dyt);
@@ -3260,16 +3303,16 @@ void do_lamp_tex(LampRen *la, float *lavec, ShadeInput *shi, float *colf, int ef
 
 			/* texture output */
 			if(rgb && (mtex->texflag & MTEX_RGBTOINT)) {
-				texres.tin= (0.35*texres.tr+0.45*texres.tg+0.2*texres.tb);
+				texres.tin= (0.35f*texres.tr+0.45f*texres.tg+0.2f*texres.tb);
 				rgb= 0;
 			}
 			if(mtex->texflag & MTEX_NEGATIVE) {
 				if(rgb) {
-					texres.tr= 1.0-texres.tr;
-					texres.tg= 1.0-texres.tg;
-					texres.tb= 1.0-texres.tb;
+					texres.tr= 1.0f-texres.tr;
+					texres.tg= 1.0f-texres.tg;
+					texres.tb= 1.0f-texres.tb;
 				}
-				else texres.tin= 1.0-texres.tin;
+				else texres.tin= 1.0f-texres.tin;
 			}
 			if(mtex->texflag & MTEX_STENCIL) {
 				if(rgb) {
@@ -3317,7 +3360,7 @@ void do_lamp_tex(LampRen *la, float *lavec, ShadeInput *shi, float *colf, int ef
 				col[1]= texres.tg*la->energy;
 				col[2]= texres.tb*la->energy;
 				
-				texture_rgb_blend(colf, col, colf, texres.tin, mtex->colfac, mtex->blendtype);
+				texture_rgb_blend(col_r, col, col_r, texres.tin, mtex->colfac, mtex->blendtype);
 			}
 		}
 	}
@@ -3325,7 +3368,7 @@ void do_lamp_tex(LampRen *la, float *lavec, ShadeInput *shi, float *colf, int ef
 
 /* ------------------------------------------------------------------------- */
 
-int externtex(MTex *mtex, float *vec, float *tin, float *tr, float *tg, float *tb, float *ta, const int thread)
+int externtex(MTex *mtex, const float vec[3], float *tin, float *tr, float *tg, float *tb, float *ta, const int thread)
 {
 	Tex *tex;
 	TexResult texr;
@@ -3354,7 +3397,7 @@ int externtex(MTex *mtex, float *vec, float *tin, float *tr, float *tg, float *t
 	rgb= multitex(tex, texvec, dxt, dyt, 0, &texr, thread, mtex->which_output);
 	
 	if(rgb) {
-		texr.tin= (0.35*texr.tr+0.45*texr.tg+0.2*texr.tb);
+		texr.tin= (0.35f*texr.tr+0.45f*texr.tg+0.2f*texr.tb);
 	}
 	else {
 		texr.tr= mtex->r;
@@ -3403,14 +3446,14 @@ void render_realtime_texture(ShadeInput *shi, Image *ima)
 	tex= &imatex[shi->thread];
 	tex->iuser.ok= ima->ok;
 	
-	texvec[0]= 0.5+0.5*suv->uv[0];
-	texvec[1]= 0.5+0.5*suv->uv[1];
-	texvec[2] = 0;  // initalize it because imagewrap looks at it.
+	texvec[0]= 0.5f+0.5f*suv->uv[0];
+	texvec[1]= 0.5f+0.5f*suv->uv[1];
+	texvec[2] = 0.0f;  // initalize it because imagewrap looks at it.
 	if(shi->osatex) {
-		dx[0]= 0.5*suv->dxuv[0];
-		dx[1]= 0.5*suv->dxuv[1];
-		dy[0]= 0.5*suv->dyuv[0];
-		dy[1]= 0.5*suv->dyuv[1];
+		dx[0]= 0.5f*suv->dxuv[0];
+		dx[1]= 0.5f*suv->dxuv[1];
+		dy[0]= 0.5f*suv->dyuv[0];
+		dy[1]= 0.5f*suv->dyuv[1];
 	}
 	
 	texr.nor= NULL;

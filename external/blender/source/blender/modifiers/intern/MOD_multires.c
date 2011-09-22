@@ -1,5 +1,5 @@
 /*
-* $Id: MOD_multires.c 35362 2011-03-05 10:29:10Z campbellbarton $
+* $Id: MOD_multires.c 39342 2011-08-12 18:11:22Z blendix $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -112,6 +112,7 @@ ModifierTypeInfo modifierType_Multires = {
 	/* structSize */        sizeof(MultiresModifierData),
 	/* type */              eModifierTypeType_Constructive,
 	/* flags */             eModifierTypeFlag_AcceptsMesh
+							| eModifierTypeFlag_SupportsMapping
 							| eModifierTypeFlag_RequiresOriginalData,
 
 	/* copyData */          copyData,
@@ -130,4 +131,5 @@ ModifierTypeInfo modifierType_Multires = {
 	/* dependsOnNormals */	NULL,
 	/* foreachObjectLink */ NULL,
 	/* foreachIDLink */     NULL,
+	/* foreachTexLink */    NULL,
 };

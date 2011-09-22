@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_ConverterFactory.cpp 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_ConverterFactory.cpp 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -32,15 +32,15 @@
 #include "AUD_ConverterFactory.h"
 #include "AUD_ConverterReader.h"
 
-AUD_ConverterFactory::AUD_ConverterFactory(AUD_IFactory* factory,
+AUD_ConverterFactory::AUD_ConverterFactory(AUD_Reference<AUD_IFactory> factory,
 										   AUD_DeviceSpecs specs) :
 		AUD_MixerFactory(factory, specs)
 {
 }
 
-AUD_IReader* AUD_ConverterFactory::createReader() const
+AUD_Reference<AUD_IReader> AUD_ConverterFactory::createReader()
 {
-	AUD_IReader* reader = getReader();
+	AUD_Reference<AUD_IReader> reader = getReader();
 
 	if(m_specs.format != AUD_FORMAT_FLOAT32)
 		reader = new AUD_ConverterReader(reader, m_specs);

@@ -1,5 +1,5 @@
 /*
- * $Id: BL_ModifierDeformer.cpp 35167 2011-02-25 13:30:41Z jesterking $
+ * $Id: BL_ModifierDeformer.cpp 36523 2011-05-06 20:18:42Z blendix $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -38,7 +38,7 @@
 
 #include "MEM_guardedalloc.h"
 #include "BL_ModifierDeformer.h"
-#include "GEN_Map.h"
+#include "CTR_Map.h"
 #include "STR_HashedString.h"
 #include "RAS_IPolygonMaterial.h"
 #include "RAS_MeshObject.h"

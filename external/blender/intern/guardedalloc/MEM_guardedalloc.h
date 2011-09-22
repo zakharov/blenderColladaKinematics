@@ -1,5 +1,5 @@
 /*
- * $Id: MEM_guardedalloc.h 35078 2011-02-22 16:12:12Z jesterking $
+ * $Id: MEM_guardedalloc.h 35417 2011-03-09 01:25:59Z campbellbarton $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -61,7 +61,7 @@
 #ifndef MEM_MALLOCN_H
 #define MEM_MALLOCN_H
 
-#include "stdio.h" /* needed for FILE* */
+#include <stdio.h> /* needed for FILE* */
 #include "MEM_sys_types.h" /* needed for uintptr_t */
 
 #ifndef WARN_UNUSED

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/svnroot/bf-blender/!svn/ver/35255/trunk/blender/source/blender/editors/space_info
+/svnroot/bf-blender/!svn/ver/40395/trunk/blender/source/blender/editors/space_info
 END
 info_intern.h
 K 25
@@ -31,13 +31,13 @@ info_report.c
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_info/info_report.c
+/svnroot/bf-blender/!svn/ver/40351/trunk/blender/source/blender/editors/space_info/info_report.c
 END
 space_info.c
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_info/space_info.c
+/svnroot/bf-blender/!svn/ver/40395/trunk/blender/source/blender/editors/space_info/space_info.c
 END
 info_draw.c
 K 25
@@ -49,17 +49,17 @@ info_stats.c
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_info/info_stats.c
+/svnroot/bf-blender/!svn/ver/40193/trunk/blender/source/blender/editors/space_info/info_stats.c
 END
 CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 97
-/svnroot/bf-blender/!svn/ver/35028/trunk/blender/source/blender/editors/space_info/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/38443/trunk/blender/source/blender/editors/space_info/CMakeLists.txt
 END
 info_ops.c
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/35255/trunk/blender/source/blender/editors/space_info/info_ops.c
+/svnroot/bf-blender/!svn/ver/40351/trunk/blender/source/blender/editors/space_info/info_ops.c
 END

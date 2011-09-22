@@ -1,4 +1,4 @@
-# $Id: CMakeLists.txt 35028 2011-02-21 12:35:04Z jesterking $
+# $Id: CMakeLists.txt 39631 2011-08-22 19:13:26Z campbellbarton $
 # ***** BEGIN GPL LICENSE BLOCK *****
 #
 # This program is free software; you can redistribute it and/or
@@ -29,12 +29,16 @@ remove_strict_flags()
 
 set(INC 
 	.
-	.. 
+	..
+	../../blender/blenkernel
+	../../blender/blenloader
+	../../blender/makesdna
+	../../blender/makesrna
 	../../../intern/guardedalloc
-	../../../source/blender/makesdna
-	../../../source/blender/blenloader
-	../../../source/blender/makesrna
-	../../../source/blender/blenkernel
+)
+
+set(INC_SYS
+	
 )
 
 set(SRC
@@ -42,18 +46,19 @@ set(SRC
 )
 
 if(WITH_BUILDINFO)
-	add_definitions(-DBUILD_DATE)
 	list(APPEND SRC
 		../../creator/buildinfo.c
 	)
+	add_definitions(-DBUILD_DATE="\"\""
+					-DBUILD_TIME="\"\""
+					-DBUILD_REV="\"\""
+					-DBUILD_PLATFORM="\"\""
+					-DBUILD_TYPE="\"\""
+					)
 endif()
 
 if(WITH_GAMEENGINE)
 	add_definitions(-DWITH_GAMEENGINE)
 endif()
 
-if(WITH_INTERNATIONAL)
-	add_definitions(-DWITH_FREETYPE2)
-endif()
-
-blender_add_lib_nolist(blenkernel_blc "${SRC}" "${INC}")
+blender_add_lib_nolist(blenkernel_blc "${SRC}" "${INC}" "${INC_SYS}")

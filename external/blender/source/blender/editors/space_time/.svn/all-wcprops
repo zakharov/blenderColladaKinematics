@@ -1,19 +1,19 @@
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/svnroot/bf-blender/!svn/ver/35337/trunk/blender/source/blender/editors/space_time
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/source/blender/editors/space_time
 END
 time_ops.c
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_time/time_ops.c
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/source/blender/editors/space_time/time_ops.c
 END
 time_intern.h
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/space_time/time_intern.h
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/source/blender/editors/space_time/time_intern.h
 END
 SConscript
 K 25
@@ -25,11 +25,11 @@ space_time.c
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svnroot/bf-blender/!svn/ver/35337/trunk/blender/source/blender/editors/space_time/space_time.c
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/source/blender/editors/space_time/space_time.c
 END
 CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 97
-/svnroot/bf-blender/!svn/ver/35028/trunk/blender/source/blender/editors/space_time/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/38443/trunk/blender/source/blender/editors/space_time/CMakeLists.txt
 END

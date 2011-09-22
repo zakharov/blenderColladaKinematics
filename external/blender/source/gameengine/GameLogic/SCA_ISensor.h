@@ -1,5 +1,5 @@
 /*
- * $Id: SCA_ISensor.h 35063 2011-02-22 10:33:14Z jesterking $
+ * $Id: SCA_ISensor.h 39815 2011-08-31 01:07:55Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -105,7 +105,7 @@ public:
 	};
 
 	SCA_ISensor(SCA_IObject* gameobj,
-				class SCA_EventManager* eventmgr);;
+				class SCA_EventManager* eventmgr);
 	~SCA_ISensor();
 	virtual void	ReParent(SCA_IObject* parent);
 

@@ -1,5 +1,5 @@
 /*
- * $Id: GHOST_DropTargetWin32.h 35152 2011-02-25 11:28:33Z jesterking $
+ * $Id: GHOST_DropTargetWin32.h 38908 2011-08-02 04:28:05Z merwin $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -33,7 +33,6 @@
 #ifndef _GHOST_DROP_TARGET_WIN32_H_
 #define _GHOST_DROP_TARGET_WIN32_H_
 
-#include <windows.h>
 #include <string.h>
 #include <GHOST_Types.h>
 #include "GHOST_WindowWin32.h"

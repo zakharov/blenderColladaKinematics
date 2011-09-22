@@ -1,4 +1,4 @@
-$Id: scons.txt 32452 2010-10-13 14:44:22Z mindrones $
+$Id: scons.txt 39584 2011-08-21 13:31:46Z nazgul $
 
     Blenders SCons build scripts
     ============================
@@ -76,7 +76,7 @@ $Id: scons.txt 32452 2010-10-13 14:44:22Z mindrones $
     $BLENDERHOME/config. Your platform specific defaults are in
     (platform)-config.py, where platform is one of:
 
-        - linux2, for machines running Linux
+        - linux, for machines running Linux
         - win32-vc, for Windows machines, compiling with a Microsoft compiler
         - win32-mingw, for Windows machines, compiling with the MingW compiler
         - darwin, for OS X machines

@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/release/freedesktop/icons
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-01-05T23:23:09.260413Z
-34109
-mindrones
+2011-04-21T22:24:49.677156Z
+36281
+gsrb3d
 
 
 
@@ -26,30 +26,58 @@ mindrones
 
 954f8c5b-7b00-dc11-b283-0030488c597c
 
-192x192
-dir
-
 22x22
 dir
 
 48x48
 dir
 
+256x256
+dir
+
 32x32
+dir
+
+blender_icon_source.svg
+file
+
+
+
+
+2011-09-21T18:16:03.823782Z
+c365739608a10a70d2de5e706e077d7b
+2011-04-21T22:24:49.677156Z
+36281
+gsrb3d
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+60140
+
+24x24
 dir
 
 16x16
 dir
 
-96x96
-dir
-
 scalable
-dir
-
-64x64
-dir
-
-128x128
 dir
 

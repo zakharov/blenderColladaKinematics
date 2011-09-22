@@ -1,5 +1,5 @@
 /*
- * $Id: blf_internal_types.h 35248 2011-02-27 20:42:42Z jesterking $
+ * $Id: blf_internal_types.h 40292 2011-09-17 10:45:20Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -45,6 +45,9 @@ typedef struct GlyphCacheBLF {
 
 	/* and the glyphs. */
 	ListBase bucket[257];
+
+	/* fast ascii lookup */
+	struct GlyphBLF *glyph_ascii_table[256];
 
 	/* texture array, to draw the glyphs. */
 	GLuint *textures;
@@ -158,7 +161,10 @@ typedef struct FontBLF {
 
 	/* shadow color. */
 	float shadow_col[4];
-	
+
+	/* store color here when drawing shadow or blur. */
+	float orig_col[4];
+
 	/* Multiplied this matrix with the current one before
 	 * draw the text! see blf_draw__start.
 	 */
@@ -176,6 +182,9 @@ typedef struct FontBLF {
 	/* max texture size. */
 	int max_tex_size;
 
+	/* current opengl texture  bind, avoids calling glGet */
+	int tex_bind_state;
+
 	/* font options. */
 	int flags;
 
@@ -184,9 +193,6 @@ typedef struct FontBLF {
 
 	/* current glyph cache, size and dpi. */
 	GlyphCacheBLF *glyph_cache;
-	
-	/* fast ascii lookip */
-	GlyphBLF *glyph_ascii_table[256];
 
 	/* freetype2 lib handle. */
 	FT_Library ft_lib;
@@ -200,9 +206,9 @@ typedef struct FontBLF {
 	/* the same but unsigned char */
 	unsigned char *b_cbuf;
 
-	/* buffer size. */
-	unsigned int bw;
-	unsigned int bh;
+	/* buffer size, keep signed so comparisons with negative values work */
+	int bw;
+	int bh;
 
 	/* number of channels. */
 	int bch;

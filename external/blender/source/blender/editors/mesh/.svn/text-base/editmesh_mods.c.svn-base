@@ -79,6 +79,7 @@ editmesh_mods.c, UI level access, no geometry changes
 #include "ED_mesh.h"
 #include "ED_screen.h"
 #include "ED_view3d.h"
+#include "ED_uvedit.h"
 
 #include "BIF_gl.h"
 
@@ -139,14 +140,13 @@ void EM_automerge(Scene *scene, Object *obedit, int update)
 	int len;
 
 	if ((scene->toolsettings->automerge) &&
-		(obedit && obedit->type==OB_MESH && (obedit->mode & OB_MODE_EDIT)) &&
-		(me->mr==NULL)
+		(obedit && obedit->type==OB_MESH && (obedit->mode & OB_MODE_EDIT))
 	  ) {
 		EditMesh *em= me->edit_mesh;
+		int totvert= em->totvert, totedge= em->totedge, totface= em->totface;
 
 		len = removedoublesflag(em, 1, 1, scene->toolsettings->doublimit);
-		if (len) {
-			em->totvert -= len; /* saves doing a countall */
+		if (totvert != em->totvert || totedge != em->totedge || totface != em->totface) {
 			if (update) {
 				DAG_id_tag_update(&me->id, 0);
 			}
@@ -162,7 +162,7 @@ unsigned int em_solidoffs=0, em_wireoffs=0, em_vertoffs=0;	/* set in drawobject.
 static char *selbuf= NULL;
 
 /* opengl doesn't support concave... */
-static void draw_triangulated(short mcords[][2], short tot)
+static void draw_triangulated(int mcords[][2], short tot)
 {
 	ListBase lb={NULL, NULL};
 	DispList *dl;
@@ -256,7 +256,7 @@ void EM_free_backbuf(void)
    - grab again and compare
    returns 'OK' 
 */
-int EM_mask_init_backbuf_border(ViewContext *vc, short mcords[][2], short tot, short xmin, short ymin, short xmax, short ymax)
+int EM_mask_init_backbuf_border(ViewContext *vc, int mcords[][2], short tot, short xmin, short ymin, short xmax, short ymax)
 {
 	unsigned int *dr, *drm;
 	struct ImBuf *buf, *bufmask;
@@ -266,6 +266,7 @@ int EM_mask_init_backbuf_border(ViewContext *vc, short mcords[][2], short tot, s
 	/* method in use for face selecting too */
 	if(vc->obedit==NULL) {
 		if(paint_facesel_test(vc->obact));
+		else if(paint_vertsel_test(vc->obact));
 		else return 0;
 	}
 	else if(vc->v3d->drawtype<OB_SOLID || (vc->v3d->flag & V3D_ZBUF_SELECT)==0) return 0;
@@ -290,7 +291,7 @@ int EM_mask_init_backbuf_border(ViewContext *vc, short mcords[][2], short tot, s
 	draw_triangulated(mcords, tot);
 	
 	glBegin(GL_LINE_LOOP);	/* for zero sized masks, lines */
-	for(a=0; a<tot; a++) glVertex2s(mcords[a][0], mcords[a][1]);
+	for(a=0; a<tot; a++) glVertex2iv(mcords[a]);
 	glEnd();
 	
 	glFinish();	/* to be sure readpixels sees mask */
@@ -328,6 +329,7 @@ int EM_init_backbuf_circle(ViewContext *vc, short xs, short ys, short rads)
 	/* method in use for face selecting too */
 	if(vc->obedit==NULL) {
 		if(paint_facesel_test(vc->obact));
+		else if (paint_vertsel_test(vc->obact));
 		else return 0;
 	}
 	else if(vc->v3d->drawtype<OB_SOLID || (vc->v3d->flag & V3D_ZBUF_SELECT)==0) return 0;
@@ -358,7 +360,7 @@ int EM_init_backbuf_circle(ViewContext *vc, short xs, short ys, short rads)
 
 static void findnearestvert__doClosest(void *userData, EditVert *eve, int x, int y, int index)
 {
-	struct { short mval[2], pass, select, strict; int dist, lastIndex, closestIndex; EditVert *closest; } *data = userData;
+	struct { int mval[2]; short pass, select, strict; int dist, lastIndex, closestIndex; EditVert *closest; } *data = userData;
 
 	if (data->pass==0) {
 		if (index<=data->lastIndex)
@@ -426,7 +428,7 @@ EditVert *findnearestvert(ViewContext *vc, int *dist, short sel, short strict)
 			
 	}
 	else {
-		struct { short mval[2], pass, select, strict; int dist, lastIndex, closestIndex; EditVert *closest; } data;
+		struct { int mval[2]; short pass, select, strict; int dist, lastIndex, closestIndex; EditVert *closest; } data;
 		static int lastSelectedIndex=0;
 		static EditVert *lastSelected=NULL;
 
@@ -504,7 +506,7 @@ static void findnearestedge__doClosest(void *userData, EditEdge *eed, int x0, in
 			vec[1]= eed->v1->co[1] + labda*(eed->v2->co[1] - eed->v1->co[1]);
 			vec[2]= eed->v1->co[2] + labda*(eed->v2->co[2] - eed->v1->co[2]);
 
-			if(view3d_test_clipping(data->vc.rv3d, vec, 1)==0) {
+			if(ED_view3d_test_clipping(data->vc.rv3d, vec, 1)==0) {
 				data->dist = distance;
 				data->closest = eed;
 			}
@@ -549,7 +551,7 @@ EditEdge *findnearestedge(ViewContext *vc, int *dist)
 
 static void findnearestface__getDistance(void *userData, EditFace *efa, int x, int y, int UNUSED(index))
 {
-	struct { short mval[2]; int dist; EditFace *toFace; } *data = userData;
+	struct { int mval[2]; int dist; EditFace *toFace; } *data = userData;
 
 	if (efa==data->toFace) {
 		int temp = abs(data->mval[0]-x) + abs(data->mval[1]-y);
@@ -560,7 +562,7 @@ static void findnearestface__getDistance(void *userData, EditFace *efa, int x, i
 }
 static void findnearestface__doClosest(void *userData, EditFace *efa, int x, int y, int index)
 {
-	struct { short mval[2], pass; int dist, lastIndex, closestIndex; EditFace *closest; } *data = userData;
+	struct { int mval[2]; short pass; int dist, lastIndex, closestIndex; EditFace *closest; } *data = userData;
 
 	if (data->pass==0) {
 		if (index<=data->lastIndex)
@@ -588,7 +590,7 @@ static EditFace *findnearestface(ViewContext *vc, int *dist)
 		EditFace *efa = BLI_findlink(&vc->em->faces, index-1);
 
 		if (efa) {
-			struct { short mval[2]; int dist; EditFace *toFace; } data;
+			struct { int mval[2]; int dist; EditFace *toFace; } data;
 
 			data.mval[0] = vc->mval[0];
 			data.mval[1] = vc->mval[1];
@@ -607,7 +609,7 @@ static EditFace *findnearestface(ViewContext *vc, int *dist)
 		return NULL;
 	}
 	else {
-		struct { short mval[2], pass; int dist, lastIndex, closestIndex; EditFace *closest; } data;
+		struct { int mval[2]; short pass; int dist, lastIndex, closestIndex; EditFace *closest; } data;
 		static int lastSelectedIndex=0;
 		static EditFace *lastSelected=NULL;
 
@@ -734,7 +736,7 @@ static EnumPropertyItem prop_similar_types[] = {
 
 /* this as a way to compare the ares, perim  of 2 faces thay will scale to different sizes
 *0.5 so smaller faces arnt ALWAYS selected with a thresh of 1.0 */
-#define SCALE_CMP(a,b) ((a+a*thresh >= b) && (a-(a*thresh*0.5) <= b))
+#define SCALE_CMP(a,b) ((a+a*thresh >= b) && (a-(a*thresh*0.5f) <= b))
 
 static int similar_face_select__internal(EditMesh *em, int mode, float thresh)
 {
@@ -827,8 +829,8 @@ static int similar_face_select__internal(EditMesh *em, int mode, float thresh)
 				float angle;
 				for(efa= em->faces.first; efa; efa= efa->next) {
 					if (!(efa->f & SELECT) && !efa->h) {
-						angle= RAD2DEG(angle_v2v2(base_efa->n, efa->n));
-						if (angle/180.0<=thresh) {
+						angle= RAD2DEGF(angle_v3v3(base_efa->n, efa->n));
+						if (angle/180.0f<=thresh) {
 							EM_select_face(efa, 1);
 							selcount++;
 							deselcount--;
@@ -842,10 +844,10 @@ static int similar_face_select__internal(EditMesh *em, int mode, float thresh)
 				base_dot= dot_v3v3(base_efa->cent, base_efa->n);
 				for(efa= em->faces.first; efa; efa= efa->next) {
 					if (!(efa->f & SELECT) && !efa->h) {
-						angle= RAD2DEG(angle_v2v2(base_efa->n, efa->n));
-						if (angle/180.0<=thresh) {
+						angle= RAD2DEGF(angle_v3v3(base_efa->n, efa->n));
+						if (angle/180.0f<=thresh) {
 							dot=dot_v3v3(efa->cent, base_efa->n);
-							if (fabs(base_dot-dot) <= thresh) {
+							if (fabsf(base_dot-dot) <= thresh) {
 								EM_select_face(efa, 1);
 								selcount++;
 								deselcount--;
@@ -867,7 +869,7 @@ static int similar_face_select_exec(bContext *C, wmOperator *op)
 	Mesh *me= obedit->data;
 	EditMesh *em= BKE_mesh_get_editmesh(me); 
 
-	int selcount = similar_face_select__internal(em, RNA_int_get(op->ptr, "type"), RNA_float_get(op->ptr, "threshold"));
+	int selcount = similar_face_select__internal(em, RNA_enum_get(op->ptr, "type"), RNA_float_get(op->ptr, "threshold"));
 	
 	if (selcount) {
 		/* here was an edge-mode only select flush case, has to be generalized */
@@ -959,7 +961,7 @@ static int similar_edge_select__internal(EditMesh *em, int mode, float thresh)
 					else if (eed->f2==0) /* first access, assign the face */
 						eed->tmp.f= efa;
 					else if (eed->f2==1) /* second, we assign the angle*/
-						eed->tmp.fp= RAD2DEG(angle_v2v2(eed->tmp.f->n, efa->n))/180;
+						eed->tmp.fp= RAD2DEGF(angle_v3v3(eed->tmp.f->n, efa->n))/180;
 					eed->f2++; /* f2==0 no face assigned. f2==1 one face found. f2==2 angle calculated.*/
 				}
 				j++;
@@ -989,12 +991,12 @@ static int similar_edge_select__internal(EditMesh *em, int mode, float thresh)
 				for(eed= em->edges.first; eed; eed= eed->next) {
 					if (!(eed->f & SELECT) && !eed->h) {
 						sub_v3_v3v3(dir, eed->v1->co, eed->v2->co);
-						angle= RAD2DEG(angle_v2v2(base_dir, dir));
+						angle= RAD2DEGF(angle_v3v3(base_dir, dir));
 						
-						if (angle>90) /* use the smallest angle between the edges */
-							angle= fabs(angle-180.0f);
+						if (angle>90.0f) /* use the smallest angle between the edges */
+							angle= fabsf(angle-180.0f);
 						
-						if (angle/90.0<=thresh) {
+						if (angle / 90.0f<=thresh) {
 							EM_select_edge(eed, 1);
 							selcount++;
 							deselcount--;
@@ -1023,7 +1025,7 @@ static int similar_edge_select__internal(EditMesh *em, int mode, float thresh)
 						!(eed->f & SELECT) &&
 						!eed->h &&
 						eed->f2==2 &&
-						(fabs(base_eed->tmp.fp-eed->tmp.fp)<=thresh)
+						(fabsf(base_eed->tmp.fp-eed->tmp.fp)<=thresh)
 					) {
 						EM_select_edge(eed, 1);
 						selcount++;
@@ -1037,7 +1039,7 @@ static int similar_edge_select__internal(EditMesh *em, int mode, float thresh)
 					if (
 						!(eed->f & SELECT) &&
 						!eed->h &&
-						(fabs(base_eed->crease-eed->crease) <= thresh)
+						(fabsf(base_eed->crease-eed->crease) <= thresh)
 					) {
 						EM_select_edge(eed, 1);
 						selcount++;
@@ -1086,7 +1088,7 @@ static int similar_edge_select_exec(bContext *C, wmOperator *op)
 	Mesh *me= obedit->data;
 	EditMesh *em= BKE_mesh_get_editmesh(me); 
 
-	int selcount = similar_edge_select__internal(em, RNA_int_get(op->ptr, "type"), RNA_float_get(op->ptr, "threshold"));
+	int selcount = similar_edge_select__internal(em, RNA_enum_get(op->ptr, "type"), RNA_float_get(op->ptr, "threshold"));
 	
 	if (selcount) {
 		/* here was an edge-mode only select flush case, has to be generalized */
@@ -1159,8 +1161,8 @@ static int similar_vert_select_exec(bContext *C, wmOperator *op)
 				float angle;
 				for(eve= em->verts.first; eve; eve= eve->next) {
 					if (!(eve->f & SELECT) && !eve->h) {
-						angle= RAD2DEG(angle_v2v2(base_eve->no, eve->no));
-						if (angle/180.0<=thresh) {
+						angle= RAD2DEGF(angle_v3v3(base_eve->no, eve->no));
+						if (angle/180.0f<=thresh) {
 							eve->f |= SELECT;
 							selcount++;
 							deselcount--;
@@ -1250,7 +1252,7 @@ static int select_similar_exec(bContext *C, wmOperator *op)
 		return similar_face_select_exec(C, op);
 }
 
-static EnumPropertyItem *select_similar_type_itemf(bContext *C, PointerRNA *UNUSED(ptr), int *free)
+static EnumPropertyItem *select_similar_type_itemf(bContext *C, PointerRNA *UNUSED(ptr), PropertyRNA *UNUSED(prop), int *free)
 {
 	Object *obedit= CTX_data_edit_object(C);
 	EnumPropertyItem *item= NULL;
@@ -1463,7 +1465,7 @@ static void EM_mesh_copy_face(EditMesh *em, wmOperator *op, short type)
 		break;
 	case 2:	/* copy image */
 		if (!tf_act) {
-			BKE_report(op->reports, RPT_WARNING, "Mesh has no uv/image layers.");
+			BKE_report(op->reports, RPT_WARNING, "Mesh has no uv/image layers");
 			return;
 		}
 		for(efa=em->faces.first; efa; efa=efa->next) {
@@ -1471,10 +1473,8 @@ static void EM_mesh_copy_face(EditMesh *em, wmOperator *op, short type)
 				tf = CustomData_em_get(&em->fdata, efa->data, CD_MTFACE);
 				if (tf_act->tpage) {
 					tf->tpage = tf_act->tpage;
-					tf->mode |= TF_TEX;
 				} else {
 					tf->tpage = NULL;
-					tf->mode &= ~TF_TEX;
 				}
 				tf->tile= tf_act->tile;
 				change = 1;
@@ -1484,7 +1484,7 @@ static void EM_mesh_copy_face(EditMesh *em, wmOperator *op, short type)
 
 	case 3: /* copy UV's */
 		if (!tf_act) {
-			BKE_report(op->reports, RPT_WARNING, "Mesh has no uv/image layers.");
+			BKE_report(op->reports, RPT_WARNING, "Mesh has no uv/image layers");
 			return;
 		}
 		for(efa=em->faces.first; efa; efa=efa->next) {
@@ -1497,7 +1497,7 @@ static void EM_mesh_copy_face(EditMesh *em, wmOperator *op, short type)
 		break;
 	case 4: /* mode's */
 		if (!tf_act) {
-			BKE_report(op->reports, RPT_WARNING, "Mesh has no uv/image layers.");
+			BKE_report(op->reports, RPT_WARNING, "Mesh has no uv/image layers");
 			return;
 		}
 		for(efa=em->faces.first; efa; efa=efa->next) {
@@ -1510,7 +1510,7 @@ static void EM_mesh_copy_face(EditMesh *em, wmOperator *op, short type)
 		break;
 	case 5: /* copy transp's */
 		if (!tf_act) {
-			BKE_report(op->reports, RPT_WARNING, "Mesh has no uv/image layers.");
+			BKE_report(op->reports, RPT_WARNING, "Mesh has no uv/image layers");
 			return;
 		}
 		for(efa=em->faces.first; efa; efa=efa->next) {
@@ -1524,7 +1524,7 @@ static void EM_mesh_copy_face(EditMesh *em, wmOperator *op, short type)
 
 	case 6: /* copy vcols's */
 		if (!mcol_act) {
-			BKE_report(op->reports, RPT_WARNING, "Mesh has no color layers.");
+			BKE_report(op->reports, RPT_WARNING, "Mesh has no color layers");
 			return;
 		} else {
 			/* guess the 4th color if needs be */
@@ -1654,10 +1654,8 @@ void EM_mesh_copy_face_layer(EditMesh *em, wmOperator *op, short type)
 				tf = CustomData_em_get(&em->fdata, efa->data, CD_MTFACE);
 				if (tf_from->tpage) {
 					tf->tpage = tf_from->tpage;
-					tf->mode |= TF_TEX;
 				} else {
 					tf->tpage = NULL;
-					tf->mode &= ~TF_TEX;
 				}
 				tf->tile= tf_from->tile;
 				change = 1;
@@ -1697,7 +1695,7 @@ void EM_mesh_copy_face_layer(EditMesh *em, wmOperator *op, short type)
 
 
 /* ctrl+c in mesh editmode */
-static void mesh_copy_menu(EditMesh *em, wmOperator *op)
+static void UNUSED_FUNCTION(mesh_copy_menu)(EditMesh *em, wmOperator *op)
 {
 	EditSelection *ese;
 	int ret;
@@ -1826,6 +1824,20 @@ static int edge_not_in_tagged_face(EditMesh *em, EditEdge *eed)
 	return 1;
 }
 
+static void ensure_ed_vert_sel(EditMesh *em)
+{
+	EditEdge *eed;
+
+	/* EM_selectmode_flush() doesnt take into account that deselected edges
+	 * may be still connected to selected edges [#26885] */
+	for(eed= em->edges.first; eed; eed= eed->next) {
+		if(eed->f & SELECT) {
+			eed->v1->f |= SELECT;
+			eed->v2->f |= SELECT;
+		}
+	}
+}
+
 /* selects or deselects edges that:
 - if edges has 2 faces:
 	- has vertices with valence of 4
@@ -1898,6 +1910,10 @@ static void edgeloop_select(EditMesh *em, EditEdge *starteed, int select)
 	for(eed= em->edges.first; eed; eed= eed->next) {
 		if(eed->f2) EM_select_edge(eed, select);
 	}
+
+	if(select == FALSE && !(em->selectmode & SCE_SELECT_VERTEX)) { /* only when not in vert sel [#26931] */
+		ensure_ed_vert_sel(em);
+	}
 }
 
 /* 
@@ -1966,6 +1982,10 @@ static void edgering_select(EditMesh *em, EditEdge *startedge, int select)
 	/* (de)select the edges */
 	for(eed= em->edges.first; eed; eed= eed->next) {
 			if(eed->f2) EM_select_edge(eed, select);
+	}
+
+	if(select == FALSE && !(em->selectmode & SCE_SELECT_VERTEX)) { /* only when not in vert sel [#26931] */
+		ensure_ed_vert_sel(em);
 	}
 }
 
@@ -2039,7 +2059,7 @@ void MESH_OT_loop_multi_select(wmOperatorType *ot)
 
 /* ***************** loop select (non modal) ************** */
 
-static void mouse_mesh_loop(bContext *C, short mval[2], short extend, short ring)
+static void mouse_mesh_loop(bContext *C, const int mval[2], short extend, short ring)
 {
 	ViewContext vc;
 	EditMesh *em;
@@ -2127,7 +2147,7 @@ void MESH_OT_loop_select(wmOperatorType *ot)
 /* ******************* mesh shortest path select, uses prev-selected edge ****************** */
 
 /* since you want to create paths with multiple selects, it doesn't have extend option */
-static void mouse_mesh_shortest_path(bContext *C, short mval[2])
+static void mouse_mesh_shortest_path(bContext *C, const int mval[2])
 {
 	ViewContext vc;
 	EditMesh *em;
@@ -2201,7 +2221,15 @@ static void mouse_mesh_shortest_path(bContext *C, short mval[2])
 				me->drawflag |= ME_DRAWBWEIGHTS;
 				break;
 		}
-		
+
+		/* live unwrap while tagging */
+		if(	(vc.scene->toolsettings->edge_mode_live_unwrap) &&
+			(vc.scene->toolsettings->edge_mode == EDGE_MODE_TAG_SEAM) &&
+			(CustomData_has_layer(&em->fdata, CD_MTFACE))
+		) {
+			ED_unwrap_lscm(vc.scene, vc.obedit, FALSE); /* unwrap all not just sel */
+		}
+
 		DAG_id_tag_update(vc.obedit->data, 0);
 		WM_event_add_notifier(C, NC_GEOM|ND_SELECT, vc.obedit->data);
 	}
@@ -2252,7 +2280,7 @@ void MESH_OT_select_shortest_path(wmOperatorType *ot)
 
 /* here actual select happens */
 /* gets called via generic mouse select operator */
-int mouse_mesh(bContext *C, short mval[2], short extend)
+int mouse_mesh(bContext *C, const int mval[2], short extend)
 {
 	ViewContext vc;
 	EditVert *eve;
@@ -2309,7 +2337,7 @@ int mouse_mesh(bContext *C, short mval[2], short extend)
 		if (efa && efa->mat_nr != vc.obedit->actcol-1) {
 			vc.obedit->actcol= efa->mat_nr+1;
 			vc.em->mat_nr= efa->mat_nr;
-//			BIF_preview_changed(ID_MA);
+			WM_event_add_notifier(C, NC_MATERIAL|ND_SHADING, NULL);
 		}
 
 		WM_event_add_notifier(C, NC_GEOM|ND_SELECT, vc.obedit->data);
@@ -2421,7 +2449,7 @@ static int select_linked_limited_invoke(ViewContext *vc, short all, short sel)
 	if (!change)
 		return OPERATOR_CANCELLED;
 	
-	if (!sel) /* make sure de-selecting faces didnt de-select the verts/edges connected to selected faces, this is common with boundries */
+	if (!sel) /* make sure de-selecting faces didnt de-select the verts/edges connected to selected faces, this is common with boundaries */
 		for(efa= em->faces.first; efa; efa= efa->next)
 			if (efa->f & SELECT)
 				EM_select_face(efa, 1);
@@ -2551,7 +2579,7 @@ void MESH_OT_select_linked_pick(wmOperatorType *ot)
 	ot->flag= OPTYPE_REGISTER|OPTYPE_UNDO;
 	
 	RNA_def_boolean(ot->srna, "deselect", 0, "Deselect", "");
-	RNA_def_boolean(ot->srna, "limit", 0, "Limit by Seams", "Limit selection by seam boundries (faces only)");
+	RNA_def_boolean(ot->srna, "limit", 0, "Limit by Seams", "Limit selection by seam boundaries (faces only)");
 }
 
 
@@ -2640,7 +2668,7 @@ void MESH_OT_select_linked(wmOperatorType *ot)
 	/* flags */
 	ot->flag= OPTYPE_REGISTER|OPTYPE_UNDO;
 	
-	RNA_def_boolean(ot->srna, "limit", 0, "Limit by Seams", "Limit selection by seam boundries (faces only)");
+	RNA_def_boolean(ot->srna, "limit", 0, "Limit by Seams", "Limit selection by seam boundaries (faces only)");
 }
 
 
@@ -2777,7 +2805,7 @@ void MESH_OT_hide(wmOperatorType *ot)
 	ot->flag= OPTYPE_REGISTER|OPTYPE_UNDO;
 	
 	/* props */
-	RNA_def_boolean(ot->srna, "unselected", 0, "Unselected", "Hide unselected rather than selected.");
+	RNA_def_boolean(ot->srna, "unselected", 0, "Unselected", "Hide unselected rather than selected");
 }
 
 void EM_reveal_mesh(EditMesh *em)
@@ -2902,7 +2930,7 @@ void MESH_OT_select_by_number_vertices(wmOperatorType *ot)
 	ot->flag= OPTYPE_REGISTER|OPTYPE_UNDO;
 	
 	/* props */
-	ot->prop= RNA_def_enum(ot->srna, "type", type_items, 3, "Type", "Type of elements to select.");
+	ot->prop= RNA_def_enum(ot->srna, "type", type_items, 3, "Type", "Type of elements to select");
 }
 
 
@@ -2962,7 +2990,7 @@ static int select_sharp_edges_exec(bContext *C, wmOperator *op)
 	}
 
 	sharpness= RNA_float_get(op->ptr, "sharpness");
-	fsharpness = ((180.0 - sharpness) * M_PI) / 180.0;
+	fsharpness = ((180.0f - sharpness) * (float)M_PI) / 180.0f;
 
 	/* count edges, use tmp.l  */
 	eed= em->edges.first;
@@ -3022,7 +3050,7 @@ static int select_sharp_edges_exec(bContext *C, wmOperator *op)
 				angle = saacos(efa1[i]->n[0]*efa2[i]->n[0] +
 							   efa1[i]->n[1]*efa2[i]->n[1] +
 							   efa1[i]->n[2]*efa2[i]->n[2]);
-				if (fabs(angle) >= fsharpness)
+				if (fabsf(angle) >= fsharpness)
 					EM_select_edge(eed, 1);
 			}
 		}
@@ -3078,7 +3106,7 @@ static void select_linked_flat_faces(EditMesh *em, wmOperator *op, float sharpne
 		return;
 	}
 
-	fsharpness = ((180.0 - sharpness) * M_PI) / 180.0;
+	fsharpness = ((180.0f - sharpness) * (float)M_PI) / 180.0f;
 
 	i=0;
 	/* count edges, use tmp.l */
@@ -3144,7 +3172,7 @@ static void select_linked_flat_faces(EditMesh *em, wmOperator *op, float sharpne
 							   efa1[i]->n[1]*efa2[i]->n[1] +
 							   efa1[i]->n[2]*efa2[i]->n[2]);
 				/* invalidate: edge too sharp */
-				if (fabs(angle) >= fsharpness)
+				if (fabsf(angle) >= fsharpness)
 					eed->tmp.l = -1;
 			}
 			else {
@@ -3684,8 +3712,8 @@ void MESH_OT_select_random(wmOperatorType *ot)
 	ot->flag= OPTYPE_REGISTER|OPTYPE_UNDO;
 	
 	/* props */
-	RNA_def_float_percentage(ot->srna, "percent", 50.f, 0.0f, 100.0f, "Percent", "Percentage of elements to select randomly.", 0.f, 100.0f);
-	RNA_def_boolean(ot->srna, "extend", FALSE, "Extend Selection", "Extend selection instead of deselecting everything first.");
+	RNA_def_float_percentage(ot->srna, "percent", 50.f, 0.0f, 100.0f, "Percent", "Percentage of elements to select randomly", 0.f, 100.0f);
+	RNA_def_boolean(ot->srna, "extend", FALSE, "Extend Selection", "Extend selection instead of deselecting everything first");
 }
 
 void EM_select_by_material(EditMesh *em, int index) 
@@ -3718,6 +3746,7 @@ void EM_deselect_by_material(EditMesh *em, int index)
 
 static int editmesh_mark_seam(bContext *C, wmOperator *op)
 {
+	Scene *scene= CTX_data_scene(C);
 	Object *obedit= CTX_data_edit_object(C);
 	EditMesh *em= BKE_mesh_get_editmesh(((Mesh *)obedit->data));
 	Mesh *me= ((Mesh *)obedit->data);
@@ -3746,6 +3775,13 @@ static int editmesh_mark_seam(bContext *C, wmOperator *op)
 			}
 			eed= eed->next;
 		}
+	}
+
+	/* live unwrap while tagging */
+	if(	(scene->toolsettings->edge_mode_live_unwrap) &&
+		(CustomData_has_layer(&em->fdata, CD_MTFACE))
+	) {
+		ED_unwrap_lscm(scene, obedit, FALSE); /* unwrap all not just sel */
 	}
 
 	BKE_mesh_end_editmesh(obedit->data, em);
@@ -3920,10 +3956,10 @@ void EM_recalc_normal_direction(EditMesh *em, int inside, int select)	/* makes f
 		}
 		/* first normal is oriented this way or the other */
 		if(inside) {
-			if(cent[0]*nor[0]+cent[1]*nor[1]+cent[2]*nor[2] > 0.0) flipface(em, startvl);
+			if(cent[0]*nor[0]+cent[1]*nor[1]+cent[2]*nor[2] > 0.0f) flipface(em, startvl);
 		}
 		else {
-			if(cent[0]*nor[0]+cent[1]*nor[1]+cent[2]*nor[2] < 0.0) flipface(em, startvl);
+			if(cent[0]*nor[0]+cent[1]*nor[1]+cent[2]*nor[2] < 0.0f) flipface(em, startvl);
 		}
 
 		eed= startvl->e1;
@@ -4110,7 +4146,7 @@ static int smooth_vertex(bContext *C, wmOperator *op)
 	 * are within tolerance of the plane(s) of reflection 
 	 */
 	for(md=obedit->modifiers.first; md; md=md->next) {
-		if(md->type==eModifierType_Mirror) {
+		if((md->type==eModifierType_Mirror) && (md->mode & eModifierMode_Realtime)) {
 			MirrorModifierData *mmd = (MirrorModifierData*) md;	
 		
 			if(mmd->flag & MOD_MIR_CLIPPING) {
@@ -4119,15 +4155,15 @@ static int smooth_vertex(bContext *C, wmOperator *op)
 
 						switch(mmd->axis){
 							case 0:
-								if (fabs(eve->co[0]) < mmd->tolerance)
+								if (fabsf(eve->co[0]) < mmd->tolerance)
 									eve->f2 |= 1;
 								break;
 							case 1:
-								if (fabs(eve->co[1]) < mmd->tolerance)
+								if (fabsf(eve->co[1]) < mmd->tolerance)
 									eve->f2 |= 2;
 								break;
 							case 2:
-								if (fabs(eve->co[2]) < mmd->tolerance)
+								if (fabsf(eve->co[2]) < mmd->tolerance)
 									eve->f2 |= 4;
 								break;
 						}
@@ -4140,9 +4176,7 @@ static int smooth_vertex(bContext *C, wmOperator *op)
 	eed= em->edges.first;
 	while(eed) {
 		if( (eed->v1->f & SELECT) || (eed->v2->f & SELECT) ) {
-			fvec[0]= (eed->v1->co[0]+eed->v2->co[0])/2.0;
-			fvec[1]= (eed->v1->co[1]+eed->v2->co[1])/2.0;
-			fvec[2]= (eed->v1->co[2]+eed->v2->co[2])/2.0;
+			mid_v3_v3v3(fvec, eed->v1->co, eed->v2->co);
 			
 			if((eed->v1->f & SELECT) && eed->v1->f1<255) {
 				eed->v1->f1++;
@@ -4171,14 +4205,14 @@ static int smooth_vertex(bContext *C, wmOperator *op)
 				}
 				
 				adr = eve->tmp.p;
-				fac= 0.5/(float)eve->f1;
+				fac= 0.5f/(float)eve->f1;
 				
 				if(xaxis)
-					eve->co[0]= 0.5*eve->co[0]+fac*adr[0];
+					eve->co[0]= 0.5f*eve->co[0]+fac*adr[0];
 				if(yaxis)
-					eve->co[1]= 0.5*eve->co[1]+fac*adr[1];
+					eve->co[1]= 0.5f*eve->co[1]+fac*adr[1];
 				if(zaxis)
-					eve->co[2]= 0.5*eve->co[2]+fac*adr[2];
+					eve->co[2]= 0.5f*eve->co[2]+fac*adr[2];
 				
 				
 				/* clip if needed by mirror modifier */
@@ -4247,9 +4281,9 @@ void MESH_OT_vertices_smooth(wmOperatorType *ot)
 	ot->flag= OPTYPE_REGISTER|OPTYPE_UNDO;
 
 	RNA_def_int(ot->srna, "repeat", 1, 1, 100, "Smooth Iterations", "", 1, INT_MAX);
-	RNA_def_boolean(ot->srna, "xaxis", 1, "X-Axis", "Smooth along the X axis.");
-	RNA_def_boolean(ot->srna, "yaxis", 1, "Y-Axis", "Smooth along the Y axis.");
-	RNA_def_boolean(ot->srna, "zaxis", 1, "Z-Axis", "Smooth along the Z axis.");
+	RNA_def_boolean(ot->srna, "xaxis", 1, "X-Axis", "Smooth along the X axis");
+	RNA_def_boolean(ot->srna, "yaxis", 1, "Y-Axis", "Smooth along the Y axis");
+	RNA_def_boolean(ot->srna, "zaxis", 1, "Z-Axis", "Smooth along the Z axis");
 }
 
 static int mesh_noise_exec(bContext *C, wmOperator *op)
@@ -4265,7 +4299,7 @@ static int mesh_noise_exec(bContext *C, wmOperator *op)
 
 	ma= give_current_material(obedit, obedit->actcol);
 	if(ma==0 || ma->mtex[0]==0 || ma->mtex[0]->tex==0) {
-		BKE_report(op->reports, RPT_WARNING, "Mesh has no material or texture assigned.");
+		BKE_report(op->reports, RPT_WARNING, "Mesh has no material or texture assigned");
 		return OPERATOR_FINISHED;
 	}
 	tex= give_current_material_texture(ma);
@@ -4273,7 +4307,7 @@ static int mesh_noise_exec(bContext *C, wmOperator *op)
 
 	if(tex->type==TEX_STUCCI) {
 		float b2, vec[3];
-		float ofs= tex->turbul/200.0;
+		float ofs= tex->turbul/200.0f;
 		for(eve= em->verts.first; eve; eve= eve->next) {
 			if(eve->f & SELECT) {
 				b2= BLI_hnoise(tex->noisesize, eve->co[0], eve->co[1], eve->co[2]);

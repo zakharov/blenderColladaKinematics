@@ -17,12 +17,11 @@
 #======================= END GPL LICENSE BLOCK ========================
 
 import bpy
-import math
 from mathutils import Vector
 from rigify.utils import MetarigError
-from rigify.utils import copy_bone, flip_bone, put_bone
+from rigify.utils import copy_bone
 from rigify.utils import connected_children_names, has_connected_children
-from rigify.utils import strip_org, make_mechanism_name, make_deformer_name
+from rigify.utils import strip_org, make_mechanism_name
 from rigify.utils import get_layers
 from rigify.utils import create_widget, create_limb_widget
 from rna_prop_ui import rna_idprop_ui_prop_get
@@ -47,7 +46,7 @@ class Rig:
         leg_bones = [bone] + connected_children_names(self.obj, bone)[:2]
 
         if len(leg_bones) != 2:
-            raise MetarigError("RIGIFY ERROR: Bone '%s': incorrect bone configuration for rig type." % (strip_org(bone)))
+            raise MetarigError("RIGIFY ERROR: Bone '%s': incorrect bone configuration for rig type" % (strip_org(bone)))
 
         # Get the foot and heel
         foot = None
@@ -59,8 +58,8 @@ class Rig:
                 else:
                     heel = b.name
 
-        if foot == None or heel == None:
-            raise MetarigError("RIGIFY ERROR: Bone '%s': incorrect bone configuration for rig type." % (strip_org(bone)))
+        if foot is None or heel is None:
+            raise MetarigError("RIGIFY ERROR: Bone '%s': incorrect bone configuration for rig type" % (strip_org(bone)))
 
         # Get the toe
         toe = None
@@ -69,13 +68,13 @@ class Rig:
                 toe = b.name
 
         # Get the toe
-        if toe == None:
-            raise MetarigError("RIGIFY ERROR: Bone '%s': incorrect bone configuration for rig type." % (strip_org(bone)))
+        if toe is None:
+            raise MetarigError("RIGIFY ERROR: Bone '%s': incorrect bone configuration for rig type" % (strip_org(bone)))
 
         self.org_bones = leg_bones + [foot, toe, heel]
 
         # Get (optional) parent
-        if self.obj.data.bones[bone].parent == None:
+        if self.obj.data.bones[bone].parent is None:
             self.org_parent = None
         else:
             self.org_parent = self.obj.data.bones[bone].parent.name
@@ -158,12 +157,14 @@ class Rig:
         thigh_p = pb[thigh]
         shin_p = pb[shin]
         foot_p = pb[foot]
+        if self.org_parent != None:
+            hinge_p = pb[hinge]
 
         if self.org_parent != None:
-            socket1_p = pb[socket1]
+            # socket1_p = pb[socket1]  # UNUSED
             socket2_p = pb[socket2]
 
-        # Set the elbow to only bend on the x-axis.
+        # Set the knee to only bend on the x-axis.
         shin_p.rotation_mode = 'XYZ'
         if 'X' in self.primary_rotation_axis:
             shin_p.lock_rotation = (False, True, True)
@@ -171,6 +172,13 @@ class Rig:
             shin_p.lock_rotation = (True, False, True)
         else:
             shin_p.lock_rotation = (True, True, False)
+
+        # Hinge transforms are locked, for auto-ik
+        if self.org_parent != None:
+            hinge_p.lock_location = True, True, True
+            hinge_p.lock_rotation = True, True, True
+            hinge_p.lock_rotation_w = True
+            hinge_p.lock_scale = True, True, True
 
         # Set up custom properties
         if self.org_parent != None:
@@ -242,5 +250,5 @@ class Rig:
             mod = ob.modifiers.new("subsurf", 'SUBSURF')
             mod.levels = 2
 
-        return [thigh, shin, foot]
+        return [thigh, shin, foot, foot_mch]
 

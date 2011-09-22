@@ -1,14 +1,14 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern/tools
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-02-28T12:05:43.795068Z
-35260
+2011-09-11T15:36:11.113794Z
+40132
 campbellbarton
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2011-03-03T12:25:39.554297Z
+2011-09-21T18:15:49.031709Z
 04893b83c21782bf1a0d42315c316b41
 2011-02-28T12:05:43.795068Z
 35260
@@ -66,10 +66,10 @@ file
 
 
 
-2011-03-03T12:25:39.554297Z
-d2cb6b3bf8f575bc9aabb4dd3b060633
-2011-01-27T03:37:10.113242Z
-34522
+2011-09-21T18:15:49.035709Z
+efcac7d09a80d4cca7a28a1ffdfe30b5
+2011-09-08T05:42:44.830733Z
+40027
 campbellbarton
 has-props
 
@@ -92,18 +92,18 @@ has-props
 
 
 
-12264
+12257
 
-cpifdiff.sh
+credits_svn_gen.py
 file
 
 
 
 
-2011-03-03T12:25:39.558297Z
-c4106871fe915475c4fb42c4e4d39d99
-2010-02-12T13:34:04.213317Z
-26841
+2011-09-21T18:15:49.035709Z
+13ffe625271ecad0bf31e98dc157bb98
+2011-09-11T15:36:11.113794Z
+40132
 campbellbarton
 has-props
 
@@ -126,7 +126,41 @@ has-props
 
 
 
-2060
+13850
+
+ui_snapshot.py
+file
+
+
+
+
+2011-09-21T18:15:49.035709Z
+8c079fe5e57fa4ecf43b4c52456cce92
+2011-05-22T12:28:23.509588Z
+36820
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6234
 
 bpy_introspect_ui.py
 file
@@ -134,7 +168,7 @@ file
 
 
 
-2011-03-03T12:25:39.558297Z
+2011-09-21T18:15:49.039709Z
 4f17f7f027656e71608eca71425d11fe
 2011-02-16T02:51:56.382707Z
 34890
@@ -161,13 +195,4 @@ has-props
 
 
 9068
-
-cvs-tools
-dir
-
-update-cvs
-dir
-
-tinderbox
-dir
 

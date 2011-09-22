@@ -1,5 +1,5 @@
 /*
- * $Id: UI_interface_icons.h 35016 2011-02-21 07:25:24Z jesterking $
+ * $Id: UI_interface_icons.h 37210 2011-06-05 14:00:06Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -49,6 +49,10 @@ typedef struct IconFile {
 
 #define ICON_DEFAULT_HEIGHT 16
 #define ICON_DEFAULT_WIDTH	16
+
+#define ICON_DEFAULT_HEIGHT_SCALE	(UI_UNIT_Y * 0.8f)
+#define ICON_DEFAULT_WIDTH_SCALE	(UI_UNIT_X * 0.8f)
+
 #define PREVIEW_DEFAULT_HEIGHT 96
 
 /*

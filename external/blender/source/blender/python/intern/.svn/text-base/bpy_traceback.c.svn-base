@@ -30,75 +30,76 @@
 
 #include "bpy_traceback.h"
 
-static const char *traceback_filepath(PyTracebackObject *tb)
+static const char *traceback_filepath(PyTracebackObject *tb, PyObject **coerce)
 {
-	return _PyUnicode_AsString(tb->tb_frame->f_code->co_filename);
+	return PyBytes_AS_STRING((*coerce= PyUnicode_EncodeFSDefault(tb->tb_frame->f_code->co_filename)));
 }
 
 /* copied from pythonrun.c, 3.2.0 */
 static int
 parse_syntax_error(PyObject *err, PyObject **message, const char **filename,
-                   int *lineno, int *offset, const char **text)
+				   int *lineno, int *offset, const char **text)
 {
-    long hold;
-    PyObject *v;
+	long hold;
+	PyObject *v;
 
-    /* old style errors */
-    if (PyTuple_Check(err))
-        return PyArg_ParseTuple(err, "O(ziiz)", message, filename,
-                                lineno, offset, text);
+	/* old style errors */
+	if (PyTuple_Check(err))
+		return PyArg_ParseTuple(err, "O(ziiz)", message, filename,
+								lineno, offset, text);
 
-    /* new style errors.  `err' is an instance */
+	/* new style errors.  `err' is an instance */
 
-    if (! (v = PyObject_GetAttrString(err, "msg")))
-        goto finally;
-    *message = v;
+	if (! (v = PyObject_GetAttrString(err, "msg")))
+		goto finally;
+	*message = v;
 
-    if (!(v = PyObject_GetAttrString(err, "filename")))
-        goto finally;
-    if (v == Py_None)
-        *filename = NULL;
-    else if (! (*filename = _PyUnicode_AsString(v)))
-        goto finally;
+	if (!(v = PyObject_GetAttrString(err, "filename")))
+		goto finally;
+	if (v == Py_None)
+		*filename = NULL;
+	else if (! (*filename = _PyUnicode_AsString(v)))
+		goto finally;
 
-    Py_DECREF(v);
-    if (!(v = PyObject_GetAttrString(err, "lineno")))
-        goto finally;
-    hold = PyLong_AsLong(v);
-    Py_DECREF(v);
-    v = NULL;
-    if (hold < 0 && PyErr_Occurred())
-        goto finally;
-    *lineno = (int)hold;
+	Py_DECREF(v);
+	if (!(v = PyObject_GetAttrString(err, "lineno")))
+		goto finally;
+	hold = PyLong_AsLong(v);
+	Py_DECREF(v);
+	v = NULL;
+	if (hold < 0 && PyErr_Occurred())
+		goto finally;
+	*lineno = (int)hold;
 
-    if (!(v = PyObject_GetAttrString(err, "offset")))
-        goto finally;
-    if (v == Py_None) {
-        *offset = -1;
-        Py_DECREF(v);
-        v = NULL;
-    } else {
-        hold = PyLong_AsLong(v);
-        Py_DECREF(v);
-        v = NULL;
-        if (hold < 0 && PyErr_Occurred())
-            goto finally;
-        *offset = (int)hold;
-    }
+	if (!(v = PyObject_GetAttrString(err, "offset")))
+		goto finally;
+	if (v == Py_None) {
+		*offset = -1;
+		Py_DECREF(v);
+		v = NULL;
+	}
+	else {
+		hold = PyLong_AsLong(v);
+		Py_DECREF(v);
+		v = NULL;
+		if (hold < 0 && PyErr_Occurred())
+			goto finally;
+		*offset = (int)hold;
+	}
 
-    if (!(v = PyObject_GetAttrString(err, "text")))
-        goto finally;
-    if (v == Py_None)
-        *text = NULL;
-    else if (!PyUnicode_Check(v) ||
-             !(*text = _PyUnicode_AsString(v)))
-        goto finally;
-    Py_DECREF(v);
-    return 1;
+	if (!(v = PyObject_GetAttrString(err, "text")))
+		goto finally;
+	if (v == Py_None)
+		*text = NULL;
+	else if (!PyUnicode_Check(v) ||
+			 !(*text = _PyUnicode_AsString(v)))
+		goto finally;
+	Py_DECREF(v);
+	return 1;
 
 finally:
-    Py_XDECREF(v);
-    return 0;
+	Py_XDECREF(v);
+	return 0;
 }
 /* end copied function! */
 
@@ -121,7 +122,7 @@ void python_script_error_jump(const char *filepath, int *lineno, int *offset)
 
 		if(value) { /* should always be true */
 			PyObject *message;
-	        const char *filename, *text;
+			const char *filename, *text;
 
 			if(parse_syntax_error(value, &message, &filename, lineno, offset, &text)) {
 				/* python adds a '/', prefix, so check for both */
@@ -138,8 +139,6 @@ void python_script_error_jump(const char *filepath, int *lineno, int *offset)
 				*lineno= -1;
 			}
 		}
-
-		/* this avoids an abort in Python 2.3's garbage collecting */
 	}
 	else {
 		PyErr_NormalizeException(&exception, &value, (PyObject **)&tb);
@@ -147,7 +146,12 @@ void python_script_error_jump(const char *filepath, int *lineno, int *offset)
 		PyErr_Print();
 
 		for(tb= (PyTracebackObject *)PySys_GetObject("last_traceback"); tb && (PyObject *)tb != Py_None; tb= tb->tb_next) {
-			if(strcmp(traceback_filepath(tb), filepath) != 0) {
+			PyObject *coerce;
+			const char *tb_filepath= traceback_filepath(tb, &coerce);
+			const int match= strcmp(tb_filepath, filepath) != 0;
+			Py_DECREF(coerce);
+
+			if(match) {
 				*lineno= tb->tb_lineno;
 				break;
 			}

@@ -1,7 +1,7 @@
 /*
  * radiance_hdr.c
  *
- * $Id: radiance_hdr.c 35239 2011-02-27 20:23:21Z jesterking $
+ * $Id: radiance_hdr.c 40340 2011-09-19 06:32:19Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -33,9 +33,6 @@
  *  \ingroup imbuf
  */
 
-
-#ifdef WITH_HDR
-
 /* ----------------------------------------------------------------------
   Radiance High Dynamic Range image file IO
   For description and code for reading/writing of radiance hdr files 
@@ -45,7 +42,7 @@
 */
 
 #ifdef WIN32
-#include <io.h>
+#  include <io.h>
 #endif
 
 #include "MEM_guardedalloc.h"
@@ -369,5 +366,3 @@ int imb_savehdr(struct ImBuf *ibuf, const char *name, int flags)
 	fclose(file);
 	return 1;
 }
-
-#endif /* WITH_HDR */

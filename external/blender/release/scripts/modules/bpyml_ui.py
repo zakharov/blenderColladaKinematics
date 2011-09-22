@@ -22,7 +22,6 @@
 import bpy as _bpy
 import bpyml
 from bpyml import TAG, ARGS, CHILDREN
-from types import ModuleType
 
 _uilayout_rna = _bpy.types.UILayout.bl_rna
 
@@ -41,13 +40,13 @@ def _parse_rna(prop, value):
     elif prop.type == 'INT':
         value = int(value)
     elif prop.type == 'BOOLEAN':
-        if value in (True, False):
+        if value in {True, False}:
             pass
         else:
-            if value not in ("True", "False"):
+            if value not in {"True", "False"}:
                 raise Exception("invalid bool value: %s" % value)
             value = bool(value == "True")
-    elif prop.type in ('STRING', 'ENUM'):
+    elif prop.type in {'STRING', 'ENUM'}:
         pass
     elif prop.type == 'POINTER':
         value = eval("_bpy." + value)
@@ -65,7 +64,7 @@ def _parse_rna_args(base, py_node):
 
 
 def _call_recursive(context, base, py_node):
-    prop = base.bl_rna.properties.get(py_node[TAG])
+    # prop = base.bl_rna.properties.get(py_node[TAG])
     if py_node[TAG] in base.bl_rna.properties:
         value = py_node[ARGS].get("expr")
         if value:
@@ -73,7 +72,7 @@ def _call_recursive(context, base, py_node):
             setattr(base, py_node[TAG], value)
         else:
             value = py_node[ARGS]['value']  # have to have this
-            setattr(base, name, value)
+            setattr(base, py_node[TAG], value)
     else:
         args = _parse_rna_args(base, py_node)
         func_new = getattr(base, py_node[TAG])

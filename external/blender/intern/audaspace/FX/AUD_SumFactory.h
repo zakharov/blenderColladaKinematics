@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_SumFactory.h 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_SumFactory.h 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -49,9 +49,9 @@ public:
 	 * Creates a new sum factory.
 	 * \param factory The input factory.
 	 */
-	AUD_SumFactory(AUD_IFactory* factory);
+	AUD_SumFactory(AUD_Reference<AUD_IFactory> factory);
 
-	virtual AUD_IReader* createReader() const;
+	virtual AUD_Reference<AUD_IReader> createReader();
 };
 
 #endif //AUD_SUMFACTORY

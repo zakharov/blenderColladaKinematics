@@ -1,4 +1,4 @@
-# $Id: CMakeLists.txt 33962 2010-12-31 04:29:11Z campbellbarton $
+# $Id: CMakeLists.txt 38443 2011-07-17 09:11:13Z campbellbarton $
 # ***** BEGIN GPL LICENSE BLOCK *****
 #
 # This program is free software; you can redistribute it and/or
@@ -30,10 +30,12 @@ set(INC
 	../..
 	../../../blenkernel
 	../../../blenlib
-	intern/include
-	../../../../../intern/guardedalloc
 	../../../makesdna
-	${OPENEXR_INC}
+	../../../../../intern/guardedalloc
+)
+
+set(INC_SYS
+
 )
 
 set(SRC
@@ -41,7 +43,10 @@ set(SRC
 )
 
 if(WITH_IMAGE_OPENEXR)
+	list(APPEND INC_SYS
+		${OPENEXR_INCLUDE_DIRS}
+	)
 	add_definitions(-DWITH_OPENEXR)
 endif()
 
-blender_add_lib(bf_imbuf_openexr "${SRC}" "${INC}")                 
+blender_add_lib(bf_imbuf_openexr "${SRC}" "${INC}" "${INC_SYS}")                 

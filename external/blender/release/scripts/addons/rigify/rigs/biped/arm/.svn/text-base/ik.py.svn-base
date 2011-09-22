@@ -23,7 +23,6 @@ from rigify.utils import MetarigError
 from rigify.utils import copy_bone
 from rigify.utils import connected_children_names
 from rigify.utils import strip_org, make_mechanism_name, insert_before_lr
-from rigify.utils import get_layers
 from rigify.utils import create_widget, create_line_widget, create_sphere_widget
 from rna_prop_ui import rna_idprop_ui_prop_get
 
@@ -76,13 +75,15 @@ class Rig:
         self.org_bones = [bone] + connected_children_names(self.obj, bone)[:2]
 
         if len(self.org_bones) != 3:
-            raise MetarigError("RIGIFY ERROR: Bone '%s': input to rig type must be a chain of 3 bones." % (strip_org(bone)))
+            raise MetarigError("RIGIFY ERROR: Bone '%s': input to rig type must be a chain of 3 bones" % (strip_org(bone)))
 
         # Get the rig parameters
         if params.separate_ik_layers:
             self.layers = list(params.ik_layers)
         else:
             self.layers = None
+
+        self.bend_hint = params.bend_hint
 
         self.primary_rotation_axis = params.primary_rotation_axis
 
@@ -167,7 +168,7 @@ class Rig:
         bpy.ops.object.mode_set(mode='OBJECT')
         pb = self.obj.pose.bones
 
-        uarm_p = pb[uarm]
+        # uarm_p = pb[uarm]  # UNUSED
         farm_p = pb[farm]
         hand_p = pb[hand]
         pole_p = pb[pole]
@@ -197,6 +198,36 @@ class Rig:
             hand_p["ikfk_switch"] = 0.0
             prop["soft_min"] = prop["min"] = 0.0
             prop["soft_max"] = prop["max"] = 1.0
+
+        # Bend direction hint
+        if self.bend_hint:
+            con = farm_p.constraints.new('LIMIT_ROTATION')
+            con.name = "bend_hint"
+            con.owner_space = 'LOCAL'
+            if self.primary_rotation_axis == 'X':
+                con.use_limit_x = True
+                con.min_x = pi / 10
+                con.max_x = pi / 10
+            elif self.primary_rotation_axis == '-X':
+                con.use_limit_x = True
+                con.min_x = -pi / 10
+                con.max_x = -pi / 10
+            elif self.primary_rotation_axis == 'Y':
+                con.use_limit_y = True
+                con.min_y = pi / 10
+                con.max_y = pi / 10
+            elif self.primary_rotation_axis == '-Y':
+                con.use_limit_y = True
+                con.min_y = -pi / 10
+                con.max_y = -pi / 10
+            elif self.primary_rotation_axis == 'Z':
+                con.use_limit_z = True
+                con.min_z = pi / 10
+                con.max_z = pi / 10
+            elif self.primary_rotation_axis == '-Z':
+                con.use_limit_z = True
+                con.min_z = -pi / 10
+                con.max_z = -pi / 10
 
         # IK Constraint
         con = farm_p.constraints.new('IK')
@@ -303,5 +334,5 @@ class Rig:
             mod = ob.modifiers.new("subsurf", 'SUBSURF')
             mod.levels = 2
 
-        return [hand, pole]
+        return [uarm, farm, hand, pole]
 

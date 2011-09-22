@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 77
-/svnroot/bf-blender/!svn/ver/35175/trunk/blender/source/gameengine/SceneGraph
+/svnroot/bf-blender/!svn/ver/39883/trunk/blender/source/gameengine/SceneGraph
 END
 SConscript
 K 25
@@ -13,7 +13,7 @@ SG_IObject.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35175/trunk/blender/source/gameengine/SceneGraph/SG_IObject.cpp
+/svnroot/bf-blender/!svn/ver/39792/trunk/blender/source/gameengine/SceneGraph/SG_IObject.cpp
 END
 SG_Controller.cpp
 K 25
@@ -25,13 +25,13 @@ SG_IObject.h
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svnroot/bf-blender/!svn/ver/35082/trunk/blender/source/gameengine/SceneGraph/SG_IObject.h
+/svnroot/bf-blender/!svn/ver/39883/trunk/blender/source/gameengine/SceneGraph/SG_IObject.h
 END
 SG_DList.h
 K 25
 svn:wc:ra_dav:version-url
 V 88
-/svnroot/bf-blender/!svn/ver/35082/trunk/blender/source/gameengine/SceneGraph/SG_DList.h
+/svnroot/bf-blender/!svn/ver/39883/trunk/blender/source/gameengine/SceneGraph/SG_DList.h
 END
 SG_Node.cpp
 K 25
@@ -55,7 +55,7 @@ SG_BBox.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/35175/trunk/blender/source/gameengine/SceneGraph/SG_BBox.cpp
+/svnroot/bf-blender/!svn/ver/39834/trunk/blender/source/gameengine/SceneGraph/SG_BBox.cpp
 END
 SG_ParentRelation.h
 K 25
@@ -67,7 +67,7 @@ SG_Spatial.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35175/trunk/blender/source/gameengine/SceneGraph/SG_Spatial.cpp
+/svnroot/bf-blender/!svn/ver/39883/trunk/blender/source/gameengine/SceneGraph/SG_Spatial.cpp
 END
 SG_Tree.cpp
 K 25
@@ -85,7 +85,7 @@ SG_QList.h
 K 25
 svn:wc:ra_dav:version-url
 V 88
-/svnroot/bf-blender/!svn/ver/35082/trunk/blender/source/gameengine/SceneGraph/SG_QList.h
+/svnroot/bf-blender/!svn/ver/39883/trunk/blender/source/gameengine/SceneGraph/SG_QList.h
 END
 SG_Spatial.h
 K 25
@@ -97,7 +97,7 @@ CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/source/gameengine/SceneGraph/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/37030/trunk/blender/source/gameengine/SceneGraph/CMakeLists.txt
 END
 SG_Tree.h
 K 25

@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/build_files/scons/config
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-03-04T10:19:02.196122Z
-35347
-lusque
+2011-09-21T08:40:30.090958Z
+40419
+campbellbarton
 
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2011-03-03T12:28:41.314297Z
-f592e9b97b1742de7ab3fb7a55b579cf
-2011-02-25T16:19:50.895951Z
-35187
+2011-09-22T08:02:14.092248Z
+4cce4bfee87131e8c00b1b9075b46725
+2011-06-27T07:44:59.235958Z
+37849
 campbellbarton
 has-props
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-6406
+6293
 
 win32-vc-config.py
 file
@@ -66,10 +66,10 @@ file
 
 
 
-2011-03-05T14:58:44.628169Z
-b38c8894db436bd02b93e936807eacd4
-2011-03-04T00:59:45.157796Z
-35342
+2011-09-22T08:02:14.092248Z
+5d574a09619373b1aef4be70450a011a
+2011-08-30T12:40:15.952316Z
+39803
 jesterking
 has-props
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-6508
+6398
 
 linuxcross-config.py
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-03-03T12:28:41.318297Z
-579d10b010293d009862dff72ef325cf
-2011-02-25T16:19:50.895951Z
-35187
-campbellbarton
+2011-09-22T08:02:14.096248Z
+57d283bc5754762f64dc3afcea3247f9
+2011-09-08T19:05:52.223825Z
+40046
+nazgul
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-6130
+6568
 
 sunos5-config.py
 file
@@ -134,10 +134,10 @@ file
 
 
 
-2011-03-03T12:28:41.318297Z
-65e8061b476f64ba345cc6e06dcc8a25
-2011-02-25T16:19:50.895951Z
-35187
+2011-09-22T08:02:14.096248Z
+f2891a2ef552ac4408a8190ec232d2e0
+2011-03-12T01:03:15.898308Z
+35482
 campbellbarton
 has-props
 
@@ -168,10 +168,10 @@ file
 
 
 
-2011-03-03T12:28:41.318297Z
-ad570e4db686eecefae65e7bb368626a
-2011-02-25T16:19:50.895951Z
-35187
+2011-09-22T08:02:14.096248Z
+3cde6eaa77d53c3fa9f419cdd3e2ce7b
+2011-03-12T01:03:15.898308Z
+35482
 campbellbarton
 has-props
 
@@ -202,11 +202,11 @@ file
 
 
 
-2011-03-05T14:58:44.632169Z
-35a5ddbe22df0c5b54619ab741600f40
-2011-03-04T00:59:45.157796Z
-35342
-jesterking
+2011-09-22T08:02:14.096248Z
+f3aabc3d3c45f5b5d5310ee01d60d6f1
+2011-09-20T14:07:40.666773Z
+40396
+nazgul
 has-props
 
 
@@ -228,7 +228,41 @@ has-props
 
 
 
-6458
+6319
+
+linux-config.py
+file
+
+
+
+
+2011-09-22T08:02:14.096248Z
+72cb0c84b329805eae8898f96feaa1a0
+2011-08-21T13:31:46.436851Z
+39584
+nazgul
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8204
 
 freebsd7-config.py
 file
@@ -236,11 +270,11 @@ file
 
 
 
-2011-03-03T12:28:41.318297Z
-4dd6afe3c5648cb2f5e05b396583e2ce
-2011-02-25T16:19:50.895951Z
-35187
-campbellbarton
+2011-09-22T08:02:14.096248Z
+0256c80147fb3b1bb9a42a8c067e3627
+2011-03-13T09:29:47.430007Z
+35511
+nazgul
 has-props
 
 
@@ -262,7 +296,7 @@ has-props
 
 
 
-6574
+6665
 
 irix6-config.py
 file
@@ -270,10 +304,10 @@ file
 
 
 
-2011-03-03T12:28:41.318297Z
-113620be169d319f1265c2ce90a8da69
-2011-02-25T16:19:50.895951Z
-35187
+2011-09-22T08:02:14.096248Z
+d41d8cd98f00b204e9800998ecf8427e
+2011-09-21T08:40:30.090958Z
+40419
 campbellbarton
 has-props
 
@@ -296,41 +330,7 @@ has-props
 
 
 
-6262
-
-linux2-config.py
-file
-
-
-
-
-2011-03-03T12:28:41.318297Z
-81117f5500ea2b8174ba9061c3c14deb
-2011-02-25T16:19:50.895951Z
-35187
-campbellbarton
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7586
+0
 
 win32-mingw-config.py
 file
@@ -338,11 +338,11 @@ file
 
 
 
-2011-03-05T14:58:44.632169Z
-fe190da59a3d3ce83f057e97be85c297
-2011-03-04T10:19:02.196122Z
-35347
-lusque
+2011-09-22T08:02:14.096248Z
+e35b01afd0aa9b1fff73b1a8c9de1153
+2011-09-06T11:17:29.018686Z
+39964
+psy-fi
 has-props
 
 
@@ -364,7 +364,7 @@ has-props
 
 
 
-5827
+6165
 
 freebsd8-config.py
 file
@@ -372,11 +372,11 @@ file
 
 
 
-2011-03-03T12:28:41.318297Z
-2239c0a4e09e658e3cec44be96a0aa0a
-2011-02-25T16:19:50.895951Z
-35187
-campbellbarton
+2011-09-22T08:02:14.096248Z
+41eda9a06fa801f032ec594f4fc613ae
+2011-03-13T09:29:47.430007Z
+35511
+nazgul
 has-props
 
 
@@ -398,7 +398,7 @@ has-props
 
 
 
-6574
+6665
 
 freebsd9-config.py
 file
@@ -406,11 +406,11 @@ file
 
 
 
-2011-03-03T12:28:41.318297Z
-e273a28eee650019f83a2914ed37face
-2011-02-25T16:19:50.895951Z
-35187
-campbellbarton
+2011-09-22T08:02:14.096248Z
+d3825b9054635d78729c29fedfcbb030
+2011-03-13T09:29:47.430007Z
+35511
+nazgul
 has-props
 
 
@@ -432,7 +432,7 @@ has-props
 
 
 
-6574
+6665
 
 darwin-config.py
 file
@@ -440,11 +440,11 @@ file
 
 
 
-2011-03-05T14:58:44.632169Z
-cbb7cee8f1c4a578cb5096677de97fdf
-2011-03-04T09:08:47.341690Z
-35345
-jesterking
+2011-09-22T08:02:14.100248Z
+180c4bac6429f4ae3d845062de0a224d
+2011-09-07T14:44:52.293835Z
+40014
+jensverwiebe
 has-props
 
 
@@ -466,5 +466,5 @@ has-props
 
 
 
-12291
+13697
 

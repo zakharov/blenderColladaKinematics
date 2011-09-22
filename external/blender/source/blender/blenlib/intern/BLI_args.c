@@ -1,7 +1,7 @@
 /*
  * A general argument parsing module
  *
- * $Id: BLI_args.c 35246 2011-02-27 20:37:56Z jesterking $
+ * $Id: BLI_args.c 38847 2011-07-30 09:24:10Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -290,8 +290,10 @@ void BLI_argsParse(struct bArgs *ba, int pass, BA_ArgCallback default_cb, void *
 					}
 					i += retval;
 				} else if (retval == -1){
-					if (a->key->pass != -1)
-						ba->passes[i] = pass;
+					if (a) {
+						if (a->key->pass != -1)
+							ba->passes[i] = pass;
+					}
 					break;
 				}
 			}

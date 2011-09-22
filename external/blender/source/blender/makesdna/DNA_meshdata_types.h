@@ -1,5 +1,5 @@
 /*
- * $Id: DNA_meshdata_types.h 34941 2011-02-17 20:48:12Z jesterking $ 
+ * $Id: DNA_meshdata_types.h 40372 2011-09-19 19:55:59Z dfelinto $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -184,6 +184,10 @@ typedef struct PartialVisibility {
 	unsigned int totface, totedge, totvert, pad;
 } PartialVisibility;
 
+typedef struct MRecast{
+	int		i;
+} MRecast;
+
 /* mvert->flag (1=SELECT) */
 #define ME_SPHERETEST		2
 #define ME_VERT_TMP_TAG		4
@@ -242,6 +246,8 @@ typedef struct PartialVisibility {
 #define TF_TEX			4
 #define TF_SHAREDVERT	8
 #define TF_LIGHT		16
+
+#define TF_CONVERTED 32 /* tface converted to material */
 
 #define TF_SHAREDCOL	64
 #define TF_TILES		128		/* deprecated */

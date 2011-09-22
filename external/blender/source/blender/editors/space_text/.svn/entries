@@ -1,14 +1,14 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/editors/space_text
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-03-04T17:01:33.853060Z
-35355
+2011-09-20T08:48:48.910969Z
+40390
 campbellbarton
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-03-03T12:27:45.278297Z
-071775c3a3faf4f987445b191999c151
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:43.827980Z
+8cd9d708a5eb63b945a9ac78e1b74bce
+2011-09-02T09:39:21.450928Z
+39868
+nazgul
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-20666
+20938
 
 text_draw.c
 file
@@ -66,44 +66,10 @@ file
 
 
 
-2011-03-03T12:27:45.282297Z
-3bb7a1ef34fc0ea8bc6d55efbae0101c
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-46202
-
-text_ops.c
-file
-
-
-
-
-2011-03-05T14:58:43.520169Z
-d79262ff14c791e258a58caeff1e57a5
-2011-03-04T17:01:33.853060Z
-35355
+2011-09-21T18:16:43.827980Z
+50d14e4edb1a3e76c17d2076b6119efb
+2011-09-20T08:48:48.910969Z
+40390
 campbellbarton
 has-props
 
@@ -126,19 +92,19 @@ has-props
 
 
 
-73861
+46484
 
-text_python.c
+text_ops.c
 file
 
 
 
 
-2011-03-03T12:27:45.286297Z
-62dab10430a9e6965aaeccc28ef8e64f
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:43.827980Z
+285e0b8a48f98f05b6aabdabe68757d7
+2011-09-19T12:26:20.076486Z
+40351
+mont29
 has-props
 
 
@@ -160,7 +126,41 @@ has-props
 
 
 
-13891
+74444
+
+text_python.c
+file
+
+
+
+
+2011-09-21T18:16:43.831980Z
+7f9a4b9876ff544ba298e1983453dbc1
+2011-08-15T16:18:04.845637Z
+39421
+blendix
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+13949
 
 SConscript
 file
@@ -168,7 +168,7 @@ file
 
 
 
-2011-03-03T12:27:45.286297Z
+2011-09-21T18:16:43.831980Z
 3e2f1d965788924fa46eac4bdca59ac3
 2011-02-21T12:35:04.852834Z
 35028
@@ -202,11 +202,11 @@ file
 
 
 
-2011-03-03T12:27:45.286297Z
-f489b5f6b34a17d741b3fbddf9d6a2a4
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:43.831980Z
+c83664dbb67f866d064239de93718c69
+2011-09-02T09:39:21.450928Z
+39868
+nazgul
 has-props
 
 
@@ -228,7 +228,7 @@ has-props
 
 
 
-5940
+6006
 
 CMakeLists.txt
 file
@@ -236,11 +236,11 @@ file
 
 
 
-2011-03-03T12:27:45.286297Z
-68b5523ba1e449b2284162cb7c23de07
-2011-02-21T12:35:04.852834Z
-35028
-jesterking
+2011-09-21T18:16:43.831980Z
+e3cb71b8e5f55319f8a852461c27991e
+2011-07-17T09:11:13.810557Z
+38443
+campbellbarton
 has-props
 
 
@@ -262,7 +262,7 @@ has-props
 
 
 
-1313
+1393
 
 text_header.c
 file
@@ -270,11 +270,11 @@ file
 
 
 
-2011-03-03T12:27:45.286297Z
-f5b253fa5a570fcd336dd922bfa06ef1
-2011-02-27T20:29:51.598877Z
-35242
-jesterking
+2011-09-21T18:16:43.831980Z
+33d802b6afc18277d4d742292e1723f0
+2011-05-20T05:27:31.167986Z
+36788
+campbellbarton
 has-props
 
 
@@ -296,5 +296,5 @@ has-props
 
 
 
-5018
+4971
 

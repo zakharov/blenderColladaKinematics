@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 69
-/svnroot/bf-blender/!svn/ver/30755/trunk/blender/release/bin/.blender
+/svnroot/bf-blender/!svn/ver/40437/trunk/blender/release/bin/.blender
 END
 .bfont.ttf
 K 25
@@ -13,5 +13,5 @@ END
 K 25
 svn:wc:ra_dav:version-url
 V 81
-/svnroot/bf-blender/!svn/ver/30755/trunk/blender/release/bin/.blender/.Blanguages
+/svnroot/bf-blender/!svn/ver/40395/trunk/blender/release/bin/.blender/.Blanguages
 END

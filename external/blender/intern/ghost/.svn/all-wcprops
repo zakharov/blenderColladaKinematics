@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 61
-/svnroot/bf-blender/!svn/ver/35283/trunk/blender/intern/ghost
+/svnroot/bf-blender/!svn/ver/40419/trunk/blender/intern/ghost
 END
 GHOST_IEventConsumer.h
 K 25
@@ -13,13 +13,13 @@ GHOST_C-api.h
 K 25
 svn:wc:ra_dav:version-url
 V 75
-/svnroot/bf-blender/!svn/ver/35092/trunk/blender/intern/ghost/GHOST_C-api.h
+/svnroot/bf-blender/!svn/ver/38908/trunk/blender/intern/ghost/GHOST_C-api.h
 END
 GHOST_IEvent.h
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/GHOST_IEvent.h
+/svnroot/bf-blender/!svn/ver/35904/trunk/blender/intern/ghost/GHOST_IEvent.h
 END
 GHOST_ITimerTask.h
 K 25
@@ -31,7 +31,7 @@ GHOST_ISystem.h
 K 25
 svn:wc:ra_dav:version-url
 V 77
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/GHOST_ISystem.h
+/svnroot/bf-blender/!svn/ver/38908/trunk/blender/intern/ghost/GHOST_ISystem.h
 END
 GHOST_ISystemPaths.h
 K 25
@@ -49,7 +49,7 @@ SConscript
 K 25
 svn:wc:ra_dav:version-url
 V 72
-/svnroot/bf-blender/!svn/ver/34096/trunk/blender/intern/ghost/SConscript
+/svnroot/bf-blender/!svn/ver/40419/trunk/blender/intern/ghost/SConscript
 END
 GHOST_IWindow.h
 K 25
@@ -61,7 +61,7 @@ CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/svnroot/bf-blender/!svn/ver/34998/trunk/blender/intern/ghost/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/39168/trunk/blender/intern/ghost/CMakeLists.txt
 END
 GHOST_Path-api.h
 K 25
@@ -73,5 +73,5 @@ GHOST_Types.h
 K 25
 svn:wc:ra_dav:version-url
 V 75
-/svnroot/bf-blender/!svn/ver/35152/trunk/blender/intern/ghost/GHOST_Types.h
+/svnroot/bf-blender/!svn/ver/38908/trunk/blender/intern/ghost/GHOST_Types.h
 END

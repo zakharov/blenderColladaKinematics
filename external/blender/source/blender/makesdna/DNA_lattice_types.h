@@ -1,5 +1,5 @@
 /*
- * $Id: DNA_lattice_types.h 34941 2011-02-17 20:48:12Z jesterking $ 
+ * $Id: DNA_lattice_types.h 37239 2011-06-06 06:40:09Z campbellbarton $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -82,6 +82,8 @@ typedef struct Lattice {
 #define LT_OUTSIDE	2
 
 #define LT_DS_EXPAND	4
+
+#define LT_INDEX(lt, u, v, w) ((w) * ((lt)->pntsu * (lt)->pntsv) + ((v) * (lt)->pntsu) + (u))
 
 #endif
 

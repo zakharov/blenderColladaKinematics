@@ -49,8 +49,6 @@ extern "C" {
  * \warning Seeking may not be accurate! Moreover the position is updated after
  *          a buffer reading call. So calling getPosition right after seek
  *          normally results in a wrong value.
- * \warning Playback of an ogg with some outdated ffmpeg versions results in a
- *          segfault on windows.
  */
 class AUD_FFMPEGReader : public AUD_IReader
 {
@@ -59,11 +57,6 @@ private:
 	 * The current position in samples.
 	 */
 	int m_position;
-
-	/**
-	 * The playback buffer.
-	 */
-	AUD_Buffer m_buffer;
 
 	/**
 	 * The specification of the audio data.
@@ -91,9 +84,9 @@ private:
 	AVCodecContext* m_codecCtx;
 
 	/**
-	 * The ByteIOContext to read the data from.
+	 * The AVIOContext to read the data from.
 	 */
-	ByteIOContext* m_byteiocontext;
+	AVIOContext* m_aviocontext;
 
 	/**
 	 * The stream ID in the file.
@@ -106,9 +99,19 @@ private:
 	AUD_convert_f m_convert;
 
 	/**
-	 * The memory file to read from, only saved to keep the buffer alive.
+	 * The memory file to read from.
 	 */
 	AUD_Reference<AUD_Buffer> m_membuffer;
+
+	/**
+	 * The buffer to read with.
+	 */
+	data_t* m_membuf;
+
+	/**
+	 * Reading position of the buffer.
+	 */
+	int64_t m_membufferpos;
 
 	/**
 	 * Decodes a packet into the given buffer.
@@ -149,12 +152,15 @@ public:
 	 */
 	virtual ~AUD_FFMPEGReader();
 
+	static int read_packet(void* opaque, uint8_t* buf, int buf_size);
+	static int64_t seek_packet(void* opaque, int64_t offset, int whence);
+
 	virtual bool isSeekable() const;
 	virtual void seek(int position);
 	virtual int getLength() const;
 	virtual int getPosition() const;
 	virtual AUD_Specs getSpecs() const;
-	virtual void read(int & length, sample_t* & buffer);
+	virtual void read(int& length, bool& eos, sample_t* buffer);
 };
 
 #endif //AUD_FFMPEGREADER

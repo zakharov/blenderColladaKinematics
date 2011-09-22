@@ -1,5 +1,5 @@
 /*
- * $Id: console_draw.c 35242 2011-02-27 20:29:51Z jesterking $
+ * $Id: console_draw.c 37413 2011-06-11 17:05:20Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -83,11 +83,13 @@ typedef struct ConsoleDrawContext {
 	int console_width;
 	int winx;
 	int ymin, ymax;
+#if 0 /* used by textview, may use later */
 	int *xy; // [2]
 	int *sel; // [2]
 	int *pos_pick; // bottom of view == 0, top of file == combine chars, end of line is lower then start. 
 	int *mval; // [2]
 	int draw;
+#endif
 } ConsoleDrawContext;
 
 void console_scrollback_prompt_begin(struct SpaceConsole *sc, ConsoleLine *cl_dummy)

@@ -1,5 +1,5 @@
 /*
- * $Id: physics_intern.h 35242 2011-02-27 20:29:51Z jesterking $
+ * $Id: physics_intern.h 36628 2011-05-12 01:57:47Z nicholasbishop $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -60,7 +60,6 @@ void PARTICLE_OT_delete(struct wmOperatorType *ot);
 void PARTICLE_OT_mirror(struct wmOperatorType *ot);
 
 void PARTICLE_OT_brush_edit(struct wmOperatorType *ot);
-void PARTICLE_OT_brush_radial_control(struct wmOperatorType *ot);
 
 void PARTICLE_OT_particle_edit_toggle(struct wmOperatorType *ot);
 void PARTICLE_OT_edited_clear(struct wmOperatorType *ot);

@@ -1,5 +1,5 @@
 /*
- * $Id: BLI_storage_types.h 34966 2011-02-18 13:58:08Z jesterking $
+ * $Id: BLI_storage_types.h 35642 2011-03-20 11:16:59Z elubie $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -54,7 +54,7 @@ struct direntry{
 #else
 	struct	stat s;
 #endif
-	unsigned int	flags;
+	unsigned int flags;
 	char	size[16];
 	char	mode1[4];
 	char	mode2[4];
@@ -66,6 +66,7 @@ struct direntry{
 	void	*poin;
 	int		nr;
 	struct ImBuf *image;
+	unsigned int selflag; /* selection flag */
 };
 
 struct dirlink

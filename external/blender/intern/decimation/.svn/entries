@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern/decimation
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-02-25T10:47:28.630336Z
-35147
-jesterking
+2011-05-31T01:15:44.429162Z
+37030
+campbellbarton
 
 
 
@@ -41,11 +41,11 @@ file
 
 
 
-2011-03-03T12:25:44.298297Z
-32007bc0755e50646150c1c174d28cbd
-2011-02-21T16:41:36.105218Z
-35035
-jesterking
+2011-09-21T18:15:50.827718Z
+7bd1eed21f0caa176fadc63eba7b33da
+2011-05-24T11:01:39.958345Z
+36858
+blendix
 has-props
 
 
@@ -67,7 +67,7 @@ has-props
 
 
 
-239
+255
 
 CMakeLists.txt
 file
@@ -75,10 +75,10 @@ file
 
 
 
-2011-03-03T12:25:44.298297Z
-6f913bd64102e3644f4d5ea8d8860172
-2010-12-22T23:09:30.468439Z
-33864
+2011-09-21T18:15:50.827718Z
+7b3a79618bf31d1567774bf96770f942
+2011-05-31T01:15:44.429162Z
+37030
 campbellbarton
 has-props
 
@@ -101,5 +101,5 @@ has-props
 
 
 
-1742
+1788
 

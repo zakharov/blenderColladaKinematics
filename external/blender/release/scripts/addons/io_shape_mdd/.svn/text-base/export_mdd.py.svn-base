@@ -49,9 +49,6 @@ def check_vertcount(mesh, vertcount):
     '''
     if len(mesh.vertices) != vertcount:
         raise Exception('Error, number of verts has changed during animation, cannot export')
-        f.close()
-        zero_file(filepath)
-        return
 
 
 def save(operator, context, filepath="", frame_start=1, frame_end=300, fps=25):
@@ -70,14 +67,14 @@ def save(operator, context, filepath="", frame_start=1, frame_end=300, fps=25):
 
     orig_frame = scene.frame_current
     scene.frame_set(frame_start)
-    me = obj.create_mesh(scene, True, 'PREVIEW')
+    me = obj.to_mesh(scene, True, 'PREVIEW')
 
     #Flip y and z
-    mat_flip = mathutils.Matrix(((1.0, 0.0, 0.0, 0.0), \
-                                  (0.0, 0.0, 1.0, 0.0), \
-                                  (0.0, 1.0, 0.0, 0.0), \
-                                  (0.0, 0.0, 0.0, 1.0), \
-                                  ))
+    mat_flip = mathutils.Matrix(((1.0, 0.0, 0.0, 0.0),
+                                 (0.0, 0.0, 1.0, 0.0),
+                                 (0.0, 1.0, 0.0, 0.0),
+                                 (0.0, 0.0, 0.0, 1.0),
+                                 ))
 
     numverts = len(me.vertices)
 
@@ -108,7 +105,7 @@ def save(operator, context, filepath="", frame_start=1, frame_end=300, fps=25):
         """
 
         scene.frame_set(frame)
-        me = obj.create_mesh(scene, True, 'PREVIEW')
+        me = obj.to_mesh(scene, True, 'PREVIEW')
         check_vertcount(me, numverts)
         me.transform(mat_flip * obj.matrix_world)
 

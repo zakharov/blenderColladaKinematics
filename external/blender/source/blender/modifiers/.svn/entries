@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/modifiers
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-03-05T10:29:10.037531Z
-35362
-campbellbarton
+2011-09-20T17:23:52.870522Z
+40408
+nazgul
 
 
 
@@ -35,11 +35,11 @@ file
 
 
 
-2011-03-03T12:27:12.910297Z
-fd1d9f82ed33f603351f04cc7aaafec2
-2011-02-21T12:35:04.852834Z
-35028
-jesterking
+2011-09-21T18:16:30.667915Z
+36e9a1ed98346146a489667adef824c7
+2011-09-20T16:24:50.093521Z
+40404
+nazgul
 has-props
 
 
@@ -61,7 +61,7 @@ has-props
 
 
 
-694
+853
 
 MOD_modifiertypes.h
 file
@@ -69,11 +69,11 @@ file
 
 
 
-2011-03-03T12:27:12.910297Z
-06490c9324f0d784709bebc921a8e21b
-2011-02-21T06:58:46.816603Z
-35014
-jesterking
+2011-09-21T18:16:30.667915Z
+4de1816c7437a1995694ee4c66ce9e7b
+2011-09-09T21:28:56.572940Z
+40080
+ben2610
 has-props
 
 
@@ -95,7 +95,7 @@ has-props
 
 
 
-3022
+3265
 
 CMakeLists.txt
 file
@@ -103,11 +103,11 @@ file
 
 
 
-2011-03-03T12:27:12.910297Z
-f4262376ab54a82d7d1c8b192ba1a009
-2011-02-21T12:35:04.852834Z
-35028
-jesterking
+2011-09-21T18:16:30.667915Z
+7acbc5884b703a0a5540ec25cfe25620
+2011-09-20T16:24:50.093521Z
+40404
+nazgul
 has-props
 
 
@@ -129,5 +129,5 @@ has-props
 
 
 
-2516
+2925
 

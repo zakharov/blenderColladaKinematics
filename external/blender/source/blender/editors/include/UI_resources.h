@@ -1,5 +1,5 @@
 /*
- * $Id: UI_resources.h 35229 2011-02-27 17:50:12Z elubie $
+ * $Id: UI_resources.h 40109 2011-09-11 04:31:09Z campbellbarton $
  *
  * ***** BEGIN GPL/BL DUAL LICENSE BLOCK *****
  *
@@ -161,6 +161,7 @@ enum {
 	TH_VERTEX,
 	TH_VERTEX_SELECT,
 	TH_VERTEX_SIZE,
+	TH_OUTLINE_WIDTH,
 	TH_EDGE,
 	TH_EDGE_SELECT,
 	TH_EDGE_SEAM,
@@ -182,10 +183,12 @@ enum {
 	TH_HANDLE_AUTO,
 	TH_HANDLE_VECT,
 	TH_HANDLE_ALIGN,
+	TH_HANDLE_AUTOCLAMP,
 	TH_HANDLE_SEL_FREE,
 	TH_HANDLE_SEL_AUTO,
 	TH_HANDLE_SEL_VECT,
 	TH_HANDLE_SEL_ALIGN,
+	TH_HANDLE_SEL_AUTOCLAMP,
 
 	TH_ACTIVE_SPLINE,
 	TH_LASTSEL_POINT,
@@ -203,6 +206,8 @@ enum {
 	TH_STRIP_SELECT,
 	
 	TH_LAMP,
+
+	TH_SPEAKER,
 	
 	TH_NODE,
 	TH_NODE_IN_OUT,
@@ -241,7 +246,9 @@ enum {
 
 	TH_DRAWEXTRA_EDGELEN,
 	TH_DRAWEXTRA_FACEAREA,
-	TH_DRAWEXTRA_FACEANG
+	TH_DRAWEXTRA_FACEANG,
+
+	TH_NODE_CURVING
 };
 /* XXX WARNING: previous is saved in file, so do not change order! */
 
@@ -288,6 +295,9 @@ void	UI_GetThemeColorType4ubv(int colorid, int spacetype, char col[4]);
 
 // blends and shades between two color pointers
 void	UI_ColorPtrBlendShade3ubv(const unsigned char cp1[3], const unsigned char cp2[3], float fac, int offset);
+
+// shade a 3 byte color (same as UI_GetColorPtrBlendShade3ubv with 0.0 factor)
+void	UI_GetColorPtrShade3ubv(const unsigned char cp1[3], unsigned char col[3], int offset);
 
 // get a 3 byte color, blended and shaded between two other char color pointers
 void	UI_GetColorPtrBlendShade3ubv(const unsigned char cp1[3], const unsigned char cp2[3], unsigned char col[3], float fac, int offset);

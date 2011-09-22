@@ -20,11 +20,11 @@
 
 bl_info = {
     "name": "Scalable Vector Graphics (SVG) 1.1 format",
-    "author": "Sergey Sharybin",
-    "blender": (2, 5, 6),
-    "api": 34996,
-    "location": "File > Import-Export",
-    "description": "Import SVG",
+    "author": "JM Soler, Sergey Sharybin",
+    "blender": (2, 5, 7),
+    "api": 36079,
+    "location": "File > Import > Scalable Vector Graphics (.svg)",
+    "description": "Import SVG as curves",
     "warning": "",
     "wiki_url": "http://wiki.blender.org/index.php/Extensions:2.5/Py/"\
         "Scripts/Import-Export/SVG",
@@ -43,13 +43,14 @@ if "bpy" in locals():
 
 import bpy
 from bpy.props import StringProperty
-from io_utils import ImportHelper, ExportHelper
+from bpy_extras.io_utils import ImportHelper
 
 
 class ImportSVG(bpy.types.Operator, ImportHelper):
     '''Load a SVG file'''
     bl_idname = "import_curve.svg"
     bl_label = "Import SVG"
+    bl_options = {'UNDO'}
 
     filename_ext = ".svg"
     filter_glob = StringProperty(default="*.svg", options={'HIDDEN'})

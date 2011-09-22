@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_BandPassReader.cpp 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_BandPassReader.cpp 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -71,8 +71,7 @@ void AUD_BandPassReader::read(int & length, sample_t* & buffer)
 
 	if(length > 0)
 	{
-		if(length * AUD_SAMPLE_SIZE(specs) > m_buffer->getSize())
-			m_buffer->resize(length * AUD_SAMPLE_SIZE(specs));
+		m_buffer->assureSize(length * AUD_SAMPLE_SIZE(specs));
 
 		if(length != m_length)
 		{

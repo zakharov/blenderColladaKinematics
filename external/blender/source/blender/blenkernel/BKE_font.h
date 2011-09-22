@@ -1,5 +1,5 @@
 /*
- * $Id: BKE_font.h 34962 2011-02-18 13:05:18Z jesterking $ 
+ * $Id: BKE_font.h 36179 2011-04-15 03:47:54Z campbellbarton $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -84,10 +84,10 @@ struct chartrans *BKE_text_to_curve(struct Scene *scene, struct Object *ob, int 
 
 int BKE_font_getselection(struct Object *ob, int *start, int *end);
 
-void chtoutf8(unsigned long c, char *o);
-void wcs2utf8s(char *dst, wchar_t *src);
-int wcsleninu8(wchar_t *src);
-int utf8towchar(wchar_t *w, char *c);
+size_t chtoutf8(const unsigned long c, char o[4]);
+void wcs2utf8s(char *dst, const wchar_t *src);
+size_t wcsleninu8(wchar_t *src);
+size_t utf8towchar(wchar_t *w, const char *c);
 
 #ifdef __cplusplus
 }

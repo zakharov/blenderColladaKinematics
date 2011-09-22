@@ -1,4 +1,4 @@
-// $Id: KX_SceneActuator.h 35063 2011-02-22 10:33:14Z jesterking $
+// $Id: KX_SceneActuator.h 36523 2011-05-06 20:18:42Z blendix $
 //
 // ***** BEGIN GPL LICENSE BLOCK *****
 //
@@ -85,7 +85,7 @@ class KX_SceneActuator : public SCA_IActuator
 	virtual CValue* GetReplica();
 	virtual void ProcessReplica();
 	virtual bool UnlinkObject(SCA_IObject* clientobj);
-	virtual void Relink(GEN_Map<GEN_HashedPtr, void*> *obj_map);
+	virtual void Relink(CTR_Map<CTR_HashedPtr, void*> *obj_map);
 
 	virtual bool Update();
 	

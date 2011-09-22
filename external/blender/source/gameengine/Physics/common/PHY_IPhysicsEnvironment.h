@@ -1,5 +1,5 @@
 /*
- * $Id: PHY_IPhysicsEnvironment.h 35072 2011-02-22 12:42:55Z jesterking $
+ * $Id: PHY_IPhysicsEnvironment.h 35500 2011-03-12 20:34:17Z erwin $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -180,6 +180,7 @@ class PHY_IPhysicsEnvironment
 		virtual void	setConstraintParam(int constraintId,int param,float value,float value1) = 0;
 		virtual float	getConstraintParam(int constraintId,int param) = 0;
 		
+		virtual void	exportFile(const char* filename) {};
 		
 #ifdef WITH_CXX_GUARDEDALLOC
 public:

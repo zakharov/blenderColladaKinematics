@@ -1,5 +1,5 @@
 /*
- * $Id: KX_SCA_EndObjectActuator.cpp 35171 2011-02-25 13:35:59Z jesterking $
+ * $Id: KX_SCA_EndObjectActuator.cpp 39834 2011-09-01 02:12:53Z campbellbarton $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -44,11 +44,11 @@
 #include "SCA_IScene.h"
 
 KX_SCA_EndObjectActuator::KX_SCA_EndObjectActuator(SCA_IObject *gameobj,
-												   SCA_IScene* scene):
-	SCA_IActuator(gameobj, KX_ACT_END_OBJECT),
-	m_scene(scene)
+                                                   SCA_IScene* scene):
+    SCA_IActuator(gameobj, KX_ACT_END_OBJECT),
+    m_scene(scene)
 {
-    // intentionally empty 
+	// intentionally empty
 } /* End of constructor */
 
 

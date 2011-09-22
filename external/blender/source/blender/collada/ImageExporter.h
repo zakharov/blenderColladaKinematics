@@ -1,5 +1,5 @@
 /*
- * $Id: ImageExporter.h 35020 2011-02-21 08:38:53Z jesterking $
+ * $Id: ImageExporter.h 40019 2011-09-07 18:23:30Z jesterking $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -40,15 +40,19 @@
 #include "DNA_object_types.h"
 #include "DNA_scene_types.h"
 
+#include "ExportSettings.h"
+
 class ImagesExporter: COLLADASW::LibraryImages
 {
-	const char *mfilename;
-	std::vector<std::string> mImages; // contains list of written images, to avoid duplicates
 public:
-	ImagesExporter(COLLADASW::StreamWriter *sw, const char* filename);
+	ImagesExporter(COLLADASW::StreamWriter *sw, const ExportSettings *export_settings);
 	
 	void exportImages(Scene *sce);
 	void operator()(Material *ma, Object *ob);
+private:
+	std::vector<std::string> mImages; // contains list of written images, to avoid duplicates
+	bool hasImages(Scene *sce);
+	const ExportSettings *export_settings;
 };
 
 #endif

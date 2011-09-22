@@ -71,17 +71,12 @@ ARegion *graph_has_buttons_region(ScrArea *sa)
 {
 	ARegion *ar, *arnew;
 	
-	for (ar= sa->regionbase.first; ar; ar= ar->next) {
-		if (ar->regiontype==RGN_TYPE_UI)
-			return ar;
-	}
-	
+	ar= BKE_area_find_region_type(sa, RGN_TYPE_UI);
+	if(ar) return ar;
+
 	/* add subdiv level; after main */
-	for (ar= sa->regionbase.first; ar; ar= ar->next) {
-		if (ar->regiontype==RGN_TYPE_WINDOW)
-			break;
-	}
-	
+	ar= BKE_area_find_region_type(sa, RGN_TYPE_WINDOW);
+
 	/* is error! */
 	if (ar==NULL) return NULL;
 	
@@ -114,6 +109,10 @@ static SpaceLink *graph_new(const bContext *C)
 	/* allocate DopeSheet data for Graph Editor */
 	sipo->ads= MEM_callocN(sizeof(bDopeSheet), "GraphEdit DopeSheet");
 	sipo->ads->source= (ID *)scene;
+	
+	/* settings for making it easier by default to just see what you're interested in tweaking */
+	sipo->ads->filterflag |= ADS_FILTER_ONLYSEL;
+	sipo->flag |= SIPO_SELVHANDLESONLY;
 	
 	/* header */
 	ar= MEM_callocN(sizeof(ARegion), "header for graphedit");
@@ -191,7 +190,7 @@ static void graph_init(struct wmWindowManager *UNUSED(wm), ScrArea *sa)
 		sipo->ads= MEM_callocN(sizeof(bDopeSheet), "GraphEdit DopeSheet");
 		sipo->ads->source= (ID *)(G.main->scene.first); // FIXME: this is a really nasty hack here for now...
 	}
-
+	
 	ED_area_tag_refresh(sa);
 }
 
@@ -253,7 +252,7 @@ static void graph_main_area_draw(const bContext *C, ARegion *ar)
 		graph_draw_curves(&ac, sipo, ar, grid, 1);
 		
 		/* XXX the slow way to set tot rect... but for nice sliders needed (ton) */
-		get_graph_keyframe_extents(&ac, &v2d->tot.xmin, &v2d->tot.xmax, &v2d->tot.ymin, &v2d->tot.ymax);
+		get_graph_keyframe_extents(&ac, &v2d->tot.xmin, &v2d->tot.xmax, &v2d->tot.ymin, &v2d->tot.ymax, FALSE);
 		/* extra offset so that these items are visible */
 		v2d->tot.xmin -= 10.0f;
 		v2d->tot.xmax += 10.0f;
@@ -469,6 +468,13 @@ static void graph_listener(ScrArea *sa, wmNotifier *wmn)
 					break;
 			}
 			break;
+		case NC_NODE:
+			if (wmn->action == NA_SELECTED) {
+				/* selection changed, so force refresh to flush (needs flag set to do syncing) */
+				sipo->flag |= SIPO_TEMP_NEEDCHANSYNC;
+				ED_area_tag_refresh(sa);
+			}
+				break;
 		case NC_SPACE:
 			if(wmn->data == ND_SPACE_GRAPH)
 				ED_area_tag_redraw(sa);
@@ -518,14 +524,15 @@ static void graph_refresh(const bContext *C, ScrArea *sa)
 	if (ANIM_animdata_get_context(C, &ac)) {
 		ListBase anim_data = {NULL, NULL};
 		bAnimListElem *ale;
+		size_t items;
 		int filter;
-		int items, i;
+		int i;
 		
 		/* build list of F-Curves which will be visible as channels in channel-region
 		 * 	- we don't include ANIMFILTER_CURVEVISIBLE filter, as that will result in a 
 		 * 	  mismatch between channel-colors and the drawn curves
 		 */
-		filter= (ANIMFILTER_VISIBLE|ANIMFILTER_CURVESONLY|ANIMFILTER_NODUPLIS);
+		filter= (ANIMFILTER_DATA_VISIBLE|ANIMFILTER_NODUPLIS);
 		items= ANIM_animdata_filter(&ac, &anim_data, filter, ac.data, ac.datatype);
 		
 		/* loop over F-Curves, assigning colors */

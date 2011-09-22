@@ -1,5 +1,5 @@
 /*
- * $Id: node_buttons.c 35242 2011-02-27 20:29:51Z jesterking $
+ * $Id: node_buttons.c 39941 2011-09-05 21:01:50Z lukastoenne $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -112,11 +112,15 @@ static void active_node_panel(const bContext *C, Panel *pa)
 	uiBlockSetHandleFunc(block, do_node_region_buttons, NULL);
 	
 	/* draw this node's name, etc. */
+	uiItemR(layout, &ptr, "label", 0, NULL, ICON_NODE);
+	uiItemS(layout);
 	uiItemR(layout, &ptr, "name", 0, NULL, ICON_NODE);
-	// TODO: a separator would be nice...
-	
+	uiItemS(layout);
+
 	/* draw this node's settings */
-	if (node->typeinfo && node->typeinfo->uifunc)
+	if (node->typeinfo && node->typeinfo->uifuncbut)
+		node->typeinfo->uifuncbut(layout, (bContext *)C, &ptr);
+	else if (node->typeinfo && node->typeinfo->uifunc)
 		node->typeinfo->uifunc(layout, (bContext *)C, &ptr);
 }
 

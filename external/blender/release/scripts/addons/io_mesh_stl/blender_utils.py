@@ -30,12 +30,15 @@ def create_and_link_mesh(name, faces, points):
     mesh = bpy.data.meshes.new(name)
     mesh.from_pydata(points, [], faces)
 
-    ob = bpy.data.objects.new(name, mesh)
-    bpy.context.scene.objects.link(ob)
-
     # update mesh to allow proper display
     mesh.validate()
     mesh.update()
+
+    scene = bpy.context.scene
+
+    obj = bpy.data.objects.new(name, mesh)
+    scene.objects.link(obj)
+    obj.select = True
 
 
 def faces_from_mesh(ob, apply_modifier=False, triangulate=True):
@@ -54,10 +57,11 @@ def faces_from_mesh(ob, apply_modifier=False, triangulate=True):
 
     # get the modifiers
     try:
-        mesh = ob.create_mesh(bpy.context.scene,
-                                apply_modifier, "PREVIEW")
+        mesh = ob.to_mesh(bpy.context.scene, apply_modifier, "PREVIEW")
     except RuntimeError:
-        return ()
+        raise StopIteration
+
+    mesh.transform(ob.matrix_world)
 
     if triangulate:
         # From a list of faces, return the face triangulated if needed.
@@ -74,5 +78,9 @@ def faces_from_mesh(ob, apply_modifier=False, triangulate=True):
             for face in mesh.faces:
                 yield face.vertices[:]
 
-    return ([(mesh.vertices[index].co * ob.matrix_world)[:]
-             for index in indexes] for indexes in iter_face_index())
+    vertices = mesh.vertices
+
+    for indexes in iter_face_index():
+        yield [vertices[index].co.copy() for index in indexes]
+
+    bpy.data.meshes.remove(mesh)

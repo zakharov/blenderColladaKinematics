@@ -59,8 +59,7 @@ def draw_callback_px(self, context):
     perspective_matrix = region3d.perspective_matrix.copy()
 
     def draw_text(text, vec):
-        vec_4d = vec.to_4d()
-        vec_4d *= perspective_matrix
+        vec_4d = perspective_matrix * vec.to_4d()
         if vec_4d.w > 0.0:
             x = region_mid_width + region_mid_width * (vec_4d.x / vec_4d.w)
             y = region_mid_height + region_mid_height * (vec_4d.y / vec_4d.w)
@@ -110,7 +109,7 @@ def draw_callback_view(self, context):
     bb = [Vector() for i in range(8)]
 
     def draw_matrix(mat):
-        zero_tx = zero * mat
+        zero_tx = mat * zero
 
         glLineWidth(2.0)
 
@@ -118,39 +117,39 @@ def draw_callback_view(self, context):
         glColor3f(1.0, 0.2, 0.2)
         glBegin(GL_LINES)
         glVertex3f(*(zero_tx))
-        glVertex3f(*(x_p * mat))
+        glVertex3f(*(mat * x_p))
         glEnd()
 
         glColor3f(0.6, 0.0, 0.0)
         glBegin(GL_LINES)
         glVertex3f(*(zero_tx))
-        glVertex3f(*(x_n * mat))
+        glVertex3f(*(mat * x_n))
         glEnd()
 
         # y
         glColor3f(0.2, 1.0, 0.2)
         glBegin(GL_LINES)
         glVertex3f(*(zero_tx))
-        glVertex3f(*(y_p * mat))
+        glVertex3f(*(mat * y_p))
         glEnd()
 
         glColor3f(0.0, 0.6, 0.0)
         glBegin(GL_LINES)
         glVertex3f(*(zero_tx))
-        glVertex3f(*(y_n * mat))
+        glVertex3f(*(mat * y_n))
         glEnd()
 
         # z
         glColor3f(0.2, 0.2, 1.0)
         glBegin(GL_LINES)
         glVertex3f(*(zero_tx))
-        glVertex3f(*(z_p * mat))
+        glVertex3f(*(mat * z_p))
         glEnd()
 
         glColor3f(0.0, 0.0, 0.6)
         glBegin(GL_LINES)
         glVertex3f(*(zero_tx))
-        glVertex3f(*(z_n * mat))
+        glVertex3f(*(mat * z_n))
         glEnd()
 
         # bounding box
@@ -160,7 +159,7 @@ def draw_callback_view(self, context):
             for y in (-1.0, 1.0):
                 for z in (-1.0, 1.0):
                     bb[i][:] = x, y, z
-                    bb[i] *= mat
+                    bb[i] = mat * bb[i]
                     i += 1
 
         # strip

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 74
-/svnroot/bf-blender/!svn/ver/33908/trunk/blender/release/windows/installer
+/svnroot/bf-blender/!svn/ver/37074/trunk/blender/release/windows/installer
 END
 00.checked.bmp
 K 25
@@ -25,7 +25,7 @@ END
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/33908/trunk/blender/release/windows/installer/00.sconsblender.nsi
+/svnroot/bf-blender/!svn/ver/37074/trunk/blender/release/windows/installer/00.sconsblender.nsi
 END
 01.installer.bmp
 K 25

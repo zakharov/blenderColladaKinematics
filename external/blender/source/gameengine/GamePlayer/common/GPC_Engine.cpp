@@ -1,5 +1,5 @@
 /*
- * $Id: GPC_Engine.cpp 35170 2011-02-25 13:35:11Z jesterking $
+ * $Id: GPC_Engine.cpp 36523 2011-05-06 20:18:42Z blendix $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -50,7 +50,7 @@
 
 // include files needed by "KX_BlenderSceneConverter.h"
 
-#include "GEN_Map.h"
+#include "CTR_Map.h"
 #include "SCA_IActuator.h"
 #include "RAS_MeshObject.h"
 

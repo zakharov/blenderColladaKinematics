@@ -17,14 +17,14 @@
 # ##### END GPL LICENSE BLOCK #####
 
 bl_info = {
-    'name': 'Import Autocad DXF (.dxf)',
+    'name': 'Import Autocad DXF Format (.dxf)',
     'author': 'Thomas Larsson, Remigiusz Fiedler',
     'version': (0, 1, 5),
-    'blender': (2, 5, 6),
-    'api': 34600,
-    'location': 'File > Import',
+    "blender": (2, 5, 7),
+    "api": 36079,
+    'location': 'File > Import > Autocad (.dxf)',
     'description': 'Import files in the Autocad DXF format (.dxf)',
-    'warning': 'only a part of DXF specification is supported, WIP',
+    'warning': 'only a part of DXF specification is supported: Work in Progress',
     'wiki_url': 'http://wiki.blender.org/index.php/Extensions:2.5/Py/'\
         'Scripts/Import-Export/DXF_Importer',
     'tracker_url': 'https://projects.blender.org/tracker/index.php?'\
@@ -89,7 +89,6 @@ import codecs
 import math
 from math import sin, cos, radians
 import bpy
-import mathutils
 from mathutils import Vector, Matrix
 
 #
@@ -271,7 +270,7 @@ class CArc(CEntity):
         start, end = self.start_angle, self.end_angle
         if end > 360: end = end % 360.0
         if end < start: end +=360.0
-        angle = end - start
+        # angle = end - start  # UNUSED
 
         deg2rad = math.pi/180.0
         start *= deg2rad
@@ -312,7 +311,7 @@ class CArc(CEntity):
             ma = getOCS(self.normal)
             if ma:
                 #ma.invert()
-                points = [v * ma for v in points]
+                points = [ma * v for v in points]
         #print ('arc vn=', vn)
         #print ('faces=', len(faces))
         return ((points, edges, faces, vn))
@@ -521,7 +520,7 @@ class CCircle(CEntity):
             ma = getOCS(self.normal)
             if ma:
                 #ma.invert()
-                points = [v * ma for v in points]
+                points = [ma * v for v in points]
         #print ('cir vn=', vn)
         #print ('faces=',len(faces))
         return( (points, edges, faces, vn) )
@@ -627,7 +626,7 @@ class CEllipse(CEntity):
             ma = getOCS(self.normal)
             if ma:
                 #ma.invert()
-                points = [v * ma for v in points]
+                points = [ma * v for v in points]
         return ((points, edges, faces, vn))
 
 #
@@ -811,7 +810,7 @@ class CLWPolyLine(CEntity):
             ma = getOCS(self.normal)
             if ma:
                 #ma.invert()
-                verts = [v * ma for v in verts]
+                verts = [ma * v for v in verts]
         return (verts, edges, [], vn-1)
         
 #
@@ -964,8 +963,9 @@ class CPoint(CEntity):
     def draw(self):
         #todo
         # draw as empty-object
-        loc = self.point
+        # loc = self.point  # UNUSED
         #bpy.ops.object.new('DXFpoint')
+        pass
 
 #
 #    class CPolyLine(CEntity):
@@ -1018,7 +1018,7 @@ class CPolyLine(CEntity):
         if self.normal!=Vector((0,0,1)):
             ma = getOCS(self.normal)
             if ma:
-                verts = [v * ma for v in verts]
+                verts = [ma * v for v in verts]
         return((verts, lines, [], vn-1))
 
 #
@@ -1182,7 +1182,7 @@ class CSolid(CEntity):
         if self.normal!=Vector((0,0,1)):
             ma = getOCS(self.normal)
             if ma:
-                points = [v * ma for v in points]
+                points = [ma * v for v in points]
         return((points, edges, faces, vn))
         
 #
@@ -1315,7 +1315,7 @@ class CTrace(CEntity):
         if self.normal!=Vector((0,0,1)):
             ma = getOCS(self.normal)
             if ma:
-                points = [v * ma for v in points]
+                points = [ma * v for v in points]
         return ((points, edges, faces, vn))
 
 #
@@ -1425,7 +1425,7 @@ def transform(normal, rotation, obj):  #----------------------------------------
     if ma_new:
         ma = ma_new
         ma.resize_4x4()
-        o = o * ma
+        o = ma * o
 
     if rotation != 0:
         g = radians(-rotation)
@@ -2247,7 +2247,7 @@ def buildGeometry(entities):
     f_faces = []
     f_vn = 0
     for ent in entities:
-        if ent.drawtype in ('Mesh','Curve'):
+        if ent.drawtype in {'Mesh', 'Curve'}:
             (verts, edges, faces, vn) = ent.build()
             if not toggle & T_DrawOne:
                 drawGeometry(verts, edges, faces)
@@ -2393,7 +2393,7 @@ def readAndBuildDxfFile(filepath):
             if 0: # how to switch to the new scene?? (migius)
                 new_scn = bpy.data.scenes.new(shortName[-20:])
                 #new_scn.layers = (1<<20) -1
-                new_scn_name = new_scn.name
+                #new_scn_name = new_scn.name  # UNUSED
                 bpy.data.screens.scene = new_scn
                 #print("newScene: %s" % (new_scn))
         sections = readDxfFile(fileName)
@@ -2424,25 +2424,78 @@ class IMPORT_OT_autocad_dxf(bpy.types.Operator):
     bl_label = "Import DXF" +' v.'+ __version__
     bl_space_type = "PROPERTIES"
     bl_region_type = "WINDOW"
+    bl_options = {'UNDO'}
 
-    filepath = StringProperty(name="File Path", description="Filepath used for importing the DXF file", maxlen= 1024, default= "", subtype='FILE_PATH')
-
-    new_scene = BoolProperty(name="Replace scene", description="Replace scene", default=toggle&T_NewScene)
-    #new_scene = BoolProperty(name="New scene", description="Create new scene", default=toggle&T_NewScene)
-    curves = BoolProperty(name="Draw curves", description="Draw entities as curves", default=toggle&T_Curves)
-    thic_on = BoolProperty(name="Thic ON", description="Support THICKNESS", default=toggle&T_ThicON)
-
-    merge = BoolProperty(name="Remove doubles", description="Merge coincident vertices", default=toggle&T_Merge)
-    mergeLimit = FloatProperty(name="Limit", description="Merge limit", default = theMergeLimit*1e4,min=1.0, soft_min=1.0, max=100.0, soft_max=100.0)
-
-    draw_one = BoolProperty(name="Merge all", description="Draw all into one mesh-object", default=toggle&T_DrawOne)
-    circleResolution = IntProperty(name="Circle resolution", description="Circle/Arc are aproximated will this factor", default = theCircleRes,
-                min=4, soft_min=4, max=360, soft_max=360)
+    filepath = StringProperty(
+            name="File Path",
+            description="Filepath used for importing the DXF file",
+            maxlen=1024,
+            subtype='FILE_PATH',
+            )
+    new_scene = BoolProperty(
+            name="Replace scene",
+            description="Replace scene",
+            default=toggle & T_NewScene,
+            )
+    #~ new_scene = BoolProperty(
+            #~ name="New scene",
+            #~ description="Create new scene",
+            #~ default=toggle & T_NewScene,
+            #~ )
+    curves = BoolProperty(
+            name="Draw curves",
+            description="Draw entities as curves",
+            default=toggle & T_Curves,
+            )
+    thic_on = BoolProperty(
+            name="Thic ON",
+            description="Support THICKNESS",
+            default=toggle & T_ThicON,
+            )
+    merge = BoolProperty(
+            name="Remove doubles",
+            description="Merge coincident vertices",
+            default=toggle & T_Merge,
+            )
+    mergeLimit = FloatProperty(
+            name="Limit",
+            description="Merge limit",
+            default=theMergeLimit * 1e4,
+            min=1.0,
+            soft_min=1.0,
+            max=100.0,
+            soft_max=100.0,
+            )
+    draw_one = BoolProperty(
+            name="Merge all",
+            description="Draw all into one mesh-object",
+            default=toggle & T_DrawOne,
+            )
+    circleResolution = IntProperty(
+            name="Circle resolution",
+            description="Circle/Arc are aproximated will this factor",
+            default=theCircleRes,
+            min=4,
+            soft_min=4,
+            max=360,
+            soft_max=360,
+            )
     codecs = tripleList(['iso-8859-15', 'utf-8', 'ascii'])
-    codec = EnumProperty(name="Codec", description="Codec",  items=codecs, default = 'ascii')
-
-    debug = BoolProperty(name="Debug", description="Unknown DXF-codes generate errors", default=toggle&T_Debug)
-    verbose = BoolProperty(name="Verbose", description="Print debug info", default=toggle&T_Verbose)
+    codec = EnumProperty(name="Codec",
+            description="Codec",
+            items=codecs,
+            default='ascii',
+            )
+    debug = BoolProperty(
+            name="Debug",
+            description="Unknown DXF-codes generate errors",
+            default=toggle & T_Debug,
+            )
+    verbose = BoolProperty(
+            name="Verbose",
+            description="Print debug info",
+            default=toggle & T_Verbose,
+            )
 
     ##### DRAW #####
     def draw(self, context):

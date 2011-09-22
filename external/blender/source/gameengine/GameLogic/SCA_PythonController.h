@@ -1,5 +1,5 @@
 /*
- * $Id: SCA_PythonController.h 35063 2011-02-22 10:33:14Z jesterking $
+ * $Id: SCA_PythonController.h 39883 2011-09-03 02:15:49Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -34,7 +34,7 @@
 
 #ifndef KX_PYTHONCONTROLLER_H
 #define KX_PYTHONCONTROLLER_H
-	      
+
 #include "SCA_IController.h"
 #include "SCA_LogicManager.h"
 #include "BoolValue.h"

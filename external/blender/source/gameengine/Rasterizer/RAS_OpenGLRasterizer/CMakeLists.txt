@@ -1,4 +1,4 @@
-# $Id: CMakeLists.txt 33864 2010-12-22 23:09:30Z campbellbarton $
+# $Id: CMakeLists.txt 38443 2011-07-17 09:11:13Z campbellbarton $
 # ***** BEGIN GPL LICENSE BLOCK *****
 #
 # This program is free software; you can redistribute it and/or
@@ -25,18 +25,22 @@
 # ***** END GPL LICENSE BLOCK *****
 
 set(INC
-	../../../../source/kernel/gen_system
-	../../../../intern/string
+	..
+	../../BlenderRoutines
+	../../Ketsji
+	../../SceneGraph
+	../../../blender/blenkernel
+	../../../blender/blenlib
+	../../../blender/blenloader
+	../../../blender/gpu
+	../../../blender/makesdna
+	../../../../intern/container
 	../../../../intern/moto/include
-	../../../../source/gameengine/Rasterizer
-	../../../../source/gameengine/Ketsji
-	../../../../source/gameengine/SceneGraph
-	../../../../extern/glew/include
-	../../../../source/blender/gpu
-	../../../../source/blender/makesdna
-	../../../../source/blender/blenkernel
-	../../../../source/blender/blenlib
-	../../../../source/blender/blenloader
+	../../../../intern/string
+)
+
+set(INC_SYS
+	${GLEW_INCLUDE_PATH}
 )
 
 set(SRC
@@ -53,4 +57,4 @@ set(SRC
 
 add_definitions(-DGLEW_STATIC)
 
-blender_add_lib(ge_oglrasterizer "${SRC}" "${INC}")
+blender_add_lib(ge_oglrasterizer "${SRC}" "${INC}" "${INC_SYS}")

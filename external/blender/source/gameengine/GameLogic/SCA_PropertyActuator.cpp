@@ -1,7 +1,7 @@
 /*
  * Assign, change, copy properties
  *
- * $Id: SCA_PropertyActuator.cpp 35169 2011-02-25 13:32:11Z jesterking $
+ * $Id: SCA_PropertyActuator.cpp 36523 2011-05-06 20:18:42Z blendix $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -213,7 +213,7 @@ bool SCA_PropertyActuator::UnlinkObject(SCA_IObject* clientobj)
 	return false;
 }
 
-void SCA_PropertyActuator::Relink(GEN_Map<GEN_HashedPtr, void*> *obj_map)
+void SCA_PropertyActuator::Relink(CTR_Map<CTR_HashedPtr, void*> *obj_map)
 {
 	void **h_obj = (*obj_map)[m_sourceObj];
 	if (h_obj) {

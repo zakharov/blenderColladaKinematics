@@ -1,5 +1,5 @@
 /*
- * $Id: IMB_thumbs.h 35239 2011-02-27 20:23:21Z jesterking $ 
+ * $Id: IMB_thumbs.h 36433 2011-05-02 10:22:49Z campbellbarton $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -58,6 +58,9 @@ typedef enum ThumbSource {
 	THB_SOURCE_MOVIE,
 	THB_SOURCE_BLEND
 } ThumbSource;
+
+/* dont generate thumbs for images bigger then this (100mb) */
+#define THUMB_SIZE_MAX (100 * 1024*1024)
 
 // IB_metadata
 

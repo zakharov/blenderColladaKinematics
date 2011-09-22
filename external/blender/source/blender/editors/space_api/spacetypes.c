@@ -1,5 +1,5 @@
 /*
- * $Id: spacetypes.c 35365 2011-03-05 14:03:29Z ton $
+ * $Id: spacetypes.c 37206 2011-06-05 12:57:09Z ton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -70,6 +70,9 @@ void ED_spacetypes_init(void)
 	const ListBase *spacetypes;
 	SpaceType *type;
 
+	/* UI_UNIT_X is now a variable, is used in some spacetype inits? */
+	U.widget_unit= 20;
+	
 	/* create space types */
 	ED_spacetype_outliner();
 	ED_spacetype_time();

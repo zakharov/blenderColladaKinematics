@@ -1,5 +1,5 @@
 /*
- * $Id: BKE_global.h 34962 2011-02-18 13:05:18Z jesterking $ 
+ * $Id: BKE_global.h 40341 2011-09-19 08:02:17Z campbellbarton $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -92,9 +92,6 @@ typedef struct Global {
     
 	/* save the allowed windowstate of blender when using -W or -w */
 	int windowstate;
-
-	/* ndof device found ? */
-	int ndofdevice;
 } Global;
 
 /* **************** GLOBAL ********************* */
@@ -111,9 +108,10 @@ typedef struct Global {
 
 #define G_DEBUG			(1 << 12)
 #define G_SCRIPT_AUTOEXEC (1 << 13)
+#define G_SCRIPT_OVERRIDE_PREF (1 << 14) /* when this flag is set ignore the userprefs */
 
 /* #define G_NOFROZEN	(1 << 17) also removed */
-#define G_GREASEPENCIL 	(1 << 17)
+/* #define G_GREASEPENCIL 	(1 << 17)   also removed */
 
 /* #define G_AUTOMATKEYS	(1 << 30)   also removed */
 
@@ -144,6 +142,7 @@ typedef struct Global {
 #define G_FILE_IGNORE_DEPRECATION_WARNINGS	(1 << 22)	/* deprecated */
 #define G_FILE_RECOVER			 (1 << 23)
 #define G_FILE_RELATIVE_REMAP	 (1 << 24)
+#define G_FILE_HISTORY			 (1 << 25)
 
 /* G.windowstate */
 #define G_WINDOWSTATE_USERDEF		0
@@ -152,9 +151,18 @@ typedef struct Global {
 
 /* ENDIAN_ORDER: indicates what endianness the platform where the file was
  * written had. */
+#if !defined( __BIG_ENDIAN__ ) && !defined( __LITTLE_ENDIAN__ )
+#  error Either __BIG_ENDIAN__ or __LITTLE_ENDIAN__ must be defined.
+#endif
+
 #define L_ENDIAN	1
 #define B_ENDIAN	0
-extern short ENDIAN_ORDER;
+
+#ifdef __BIG_ENDIAN__
+#  define ENDIAN_ORDER B_ENDIAN
+#else
+#  define ENDIAN_ORDER L_ENDIAN
+#endif
 
 /* G.moving, signals drawing in (3d) window to denote transform */
 #define G_TRANSFORM_OBJ			1
@@ -172,5 +180,3 @@ extern Global G;
 #endif
 	
 #endif
-
-

@@ -1,5 +1,5 @@
 /*
- * $Id: rayobject_svbvh.cpp 35233 2011-02-27 19:31:27Z jesterking $
+ * $Id: rayobject_svbvh.cpp 35477 2011-03-11 22:27:06Z blendix $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -115,8 +115,12 @@ void bvh_done<SVBVHTree>(SVBVHTree *obj)
 			return;
 		}
 
-		VBVH_optimalPackSIMD<OVBVHNode,PackCost>(PackCost()).transform(root);
-		obj->root = Reorganize_SVBVH<OVBVHNode>(arena2).transform(root);
+		if(root) {
+			VBVH_optimalPackSIMD<OVBVHNode,PackCost>(PackCost()).transform(root);
+			obj->root = Reorganize_SVBVH<OVBVHNode>(arena2).transform(root);
+		}
+		else
+			obj->root = NULL;
 	}
 	
 	//Free data

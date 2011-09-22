@@ -1,6 +1,4 @@
 /*
- * $Id: rna_nla.c 35336 2011-03-03 17:58:06Z campbellbarton $
- *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -61,7 +59,7 @@ static void rna_NlaStrip_name_set(PointerRNA *ptr, const char *value)
 	NlaStrip *data= (NlaStrip *)ptr->data;
 	
 	/* copy the name first */
-	BLI_strncpy(data->name, value, sizeof(data->name));
+	BLI_strncpy_utf8(data->name, value, sizeof(data->name));
 	
 	/* validate if there's enough info to do so */
 	if (ptr->id.data) {
@@ -94,7 +92,7 @@ static char *rna_NlaStrip_path(PointerRNA *ptr)
 	return "";
 }
 
-static void rna_NlaStrip_transform_update(Main *bmain, Scene *scene, PointerRNA *ptr)
+static void rna_NlaStrip_transform_update(Main *UNUSED(bmain), Scene *UNUSED(scene), PointerRNA *ptr)
 {
 	NlaStrip *strip= (NlaStrip*)ptr->data;
 
@@ -163,7 +161,7 @@ static void rna_NlaStrip_end_frame_set(PointerRNA *ptr, float value)
 		
 		len= data->end - data->start;
 		actlen= data->actend - data->actstart;
-		if (IS_EQ(actlen, 0.0f)) actlen= 1.0f;
+		if (IS_EQF(actlen, 0.0f)) actlen= 1.0f;
 		
 		/* now, adjust the 'scale' setting to reflect this (so that this change can be valid) */
 		data->scale= len / ((actlen) * data->repeat);
@@ -222,6 +220,29 @@ static void rna_NlaStrip_blend_out_set(PointerRNA *ptr, float value)
 	data->blendout= value;
 }
 
+static int rna_NlaStrip_action_editable(PointerRNA *ptr)
+{
+	NlaStrip *strip = (NlaStrip *)ptr->data;
+	
+	/* strip actions shouldn't be editable if NLA tweakmode is on */
+	if (ptr->id.data) {
+		AnimData *adt = BKE_animdata_from_id(ptr->id.data);
+		
+		if (adt) {
+			/* active action is only editable when it is not a tweaking strip */
+			if ((adt->flag & ADT_NLA_EDIT_ON) || (adt->actstrip) || (adt->tmpact))
+				return 0;
+		}
+	}
+	
+	/* check for clues that strip probably shouldn't be used... */
+	if (strip->flag & NLASTRIP_FLAG_TWEAKUSER)
+		return 0;
+		
+	/* should be ok, though we may still miss some cases */
+	return 1;
+}
+
 static void rna_NlaStrip_action_start_frame_set(PointerRNA *ptr, float value)
 {
 	NlaStrip *data= (NlaStrip*)ptr->data;
@@ -273,12 +294,12 @@ static void rna_NlaStrip_animated_time_set(PointerRNA *ptr, int value)
 		data->flag &= ~NLASTRIP_FLAG_USR_TIME;
 }
 
-static NlaStrip *rna_NlaStrip_new(NlaTrack *track, bContext *C, ReportList *reports, const char *name, int start, bAction *action)
+static NlaStrip *rna_NlaStrip_new(NlaTrack *track, bContext *C, ReportList *reports, const char *UNUSED(name), int start, bAction *action)
 {
 	NlaStrip *strip = add_nlastrip(action);
 	
 	if (strip == NULL) {
-		BKE_reportf(reports, RPT_ERROR, "Unable to create new strip.");
+		BKE_reportf(reports, RPT_ERROR, "Unable to create new strip");
 		return NULL;
 	}
 	
@@ -286,7 +307,7 @@ static NlaStrip *rna_NlaStrip_new(NlaTrack *track, bContext *C, ReportList *repo
 	strip->start = start;
 	
 	if (BKE_nlastrips_add_strip(&track->strips, strip) == 0) {
-		BKE_reportf(reports, RPT_ERROR, "Unable to add strip. Track doesn't have any space to accommodate this new strip.");
+		BKE_reportf(reports, RPT_ERROR, "Unable to add strip. Track doesn't have any space to accommodate this new strip");
 		free_nlastrip(NULL, strip);
 		return NULL;
 	}
@@ -337,9 +358,9 @@ static void rna_NlaStrip_remove(NlaTrack *track, bContext *C, ReportList *report
 /* enum defines exported for rna_animation.c */
 EnumPropertyItem nla_mode_blend_items[] = {
 	{NLASTRIP_MODE_REPLACE, "REPLACE", 0, "Replace", "Result strip replaces the accumulated results by amount specified by influence"},
-	{NLASTRIP_MODE_ADD, "ADD", 0, "Add", "Weighted result of strip is added to the accumlated results"},
-	{NLASTRIP_MODE_SUBTRACT, "SUBTRACT", 0, "Subtract", "Weighted result of strip is removed from the accumlated results"},
-	{NLASTRIP_MODE_MULTIPLY, "MULITPLY", 0, "Multiply", "Weighted result of strip is multiplied with the accumlated results"},
+	{NLASTRIP_MODE_ADD, "ADD", 0, "Add", "Weighted result of strip is added to the accumulated results"},
+	{NLASTRIP_MODE_SUBTRACT, "SUBTRACT", 0, "Subtract", "Weighted result of strip is removed from the accumulated results"},
+	{NLASTRIP_MODE_MULTIPLY, "MULITPLY", 0, "Multiply", "Weighted result of strip is multiplied with the accumulated results"},
 	{0, NULL, 0, NULL, NULL}};
 EnumPropertyItem nla_mode_extend_items[] = {
 	{NLASTRIP_EXTEND_NOTHING, "NOTHING", 0, "Nothing", "Strip has no influence past its extents"},
@@ -357,6 +378,7 @@ static void rna_def_nlastrip(BlenderRNA *brna)
 		{NLASTRIP_TYPE_CLIP, "CLIP", 0, "Action Clip", "NLA Strip references some Action"},
 		{NLASTRIP_TYPE_TRANSITION, "TRANSITION", 0, "Transition", "NLA Strip 'transitions' between adjacent strips"},
 		{NLASTRIP_TYPE_META, "META", 0, "Meta", "NLA Strip acts as a container for adjacent strips"},
+		{NLASTRIP_TYPE_SOUND, "SOUND", 0, "Sound Clip", "NLA Strip representing a sound event for speakers"},
 		{0, NULL, 0, NULL, NULL}};
 	
 	/* struct definition */
@@ -426,7 +448,9 @@ static void rna_def_nlastrip(BlenderRNA *brna)
 	/* Action */
 	prop= RNA_def_property(srna, "action", PROP_POINTER, PROP_NONE);
 	RNA_def_property_pointer_sdna(prop, NULL, "act");
+	RNA_def_property_pointer_funcs(prop, NULL, NULL, NULL, "rna_Action_id_poll");
 	RNA_def_property_flag(prop, PROP_EDITABLE); 
+	RNA_def_property_editable_func(prop, "rna_NlaStrip_action_editable");
 	RNA_def_property_ui_text(prop, "Action", "Action referenced by this strip");
 	RNA_def_property_update(prop, NC_ANIMATION|ND_NLA, NULL); /* this will do? */
 	
@@ -541,20 +565,20 @@ static void rna_api_nlatrack_strips(BlenderRNA *brna, PropertyRNA *cprop)
 	func = RNA_def_function(srna, "new", "rna_NlaStrip_new");
 	RNA_def_function_flag(func, FUNC_USE_CONTEXT|FUNC_USE_REPORTS);
 	RNA_def_function_ui_description(func, "Add a new Action-Clip strip to the track");
-	parm= RNA_def_string(func, "name", "NlaStrip", 0, "", "Name for the NLA Strips.");
+	parm= RNA_def_string(func, "name", "NlaStrip", 0, "", "Name for the NLA Strips");
 	RNA_def_property_flag(parm, PROP_REQUIRED);
-	parm = RNA_def_int(func, "start", 0, INT_MIN, INT_MAX, "Start Frame", "Start frame for this strip.", INT_MIN, INT_MAX);
+	parm = RNA_def_int(func, "start", 0, INT_MIN, INT_MAX, "Start Frame", "Start frame for this strip", INT_MIN, INT_MAX);
 	RNA_def_property_flag(parm, PROP_REQUIRED);
-	parm = RNA_def_pointer(func, "action", "Action", "", "Action to assign to this strip.");
+	parm = RNA_def_pointer(func, "action", "Action", "", "Action to assign to this strip");
 	RNA_def_property_flag(parm, PROP_REQUIRED|PROP_NEVER_NULL);
 	/* return type */
-	parm = RNA_def_pointer(func, "strip", "NlaStrip", "", "New NLA Strip.");
+	parm = RNA_def_pointer(func, "strip", "NlaStrip", "", "New NLA Strip");
 	RNA_def_function_return(func, parm);
 
 	func = RNA_def_function(srna, "remove", "rna_NlaStrip_remove");
 	RNA_def_function_flag(func, FUNC_USE_CONTEXT|FUNC_USE_REPORTS);
-	RNA_def_function_ui_description(func, "Remove a NLA Strip.");
-	parm = RNA_def_pointer(func, "strip", "NlaStrip", "", "NLA Strip to remove.");
+	RNA_def_function_ui_description(func, "Remove a NLA Strip");
+	parm = RNA_def_pointer(func, "strip", "NlaStrip", "", "NLA Strip to remove");
 	RNA_def_property_flag(parm, PROP_REQUIRED|PROP_NEVER_NULL);
 }
 

@@ -1,5 +1,5 @@
 /*
- * $Id: renderdatabase.h 35233 2011-02-27 19:31:27Z jesterking $
+ * $Id: renderdatabase.h 40108 2011-09-11 02:50:01Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -91,7 +91,7 @@ void free_renderdata_vertnodes(struct VertTableNode *vertnodes);
 void free_renderdata_vlaknodes(struct VlakTableNode *vlaknodes);
 
 void set_normalflags(struct Render *re, struct ObjectRen *obr);
-void project_renderdata(struct Render *re, void (*projectfunc)(float *, float mat[][4], float *),  int do_pano, float xoffs, int do_buckets);
+void project_renderdata(struct Render *re, void (*projectfunc)(const float *, float mat[][4], float *),  int do_pano, float xoffs, int do_buckets);
 int clip_render_object(float boundbox[][3], float *bounds, float mat[][4]);
 
 /* functions are not exported... so wrong names */

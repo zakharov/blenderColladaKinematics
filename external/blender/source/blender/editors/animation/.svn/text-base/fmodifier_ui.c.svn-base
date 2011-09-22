@@ -1,6 +1,4 @@
 /*
- * $Id$
- *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -62,6 +60,7 @@
 #include "UI_resources.h"
 
 #include "ED_anim_api.h"
+#include "ED_util.h"
 
 /* ********************************************** */
 /* UI STUFF */
@@ -99,6 +98,8 @@ static void delete_fmodifier_cb (bContext *C, void *fmods_v, void *fcm_v)
 	
 	/* remove the given F-Modifier from the active modifier-stack */
 	remove_fmodifier(modifiers, fcm);
+
+	ED_undo_push(C, "Delete F-Curve Modifier");
 	
 	/* send notifiers */
 	// XXX for now, this is the only way to get updates in all the right places... but would be nice to have a special one in this case 
@@ -159,7 +160,7 @@ static void draw_modifier__generator(uiLayout *layout, ID *id, FModifier *fcm, s
 					if (i == 1)
 						strcpy(xval, "x");
 					else
-						sprintf(xval, "x^%d", i);
+						sprintf(xval, "x^%u", i);
 					uiDefBut(block, LABEL, 1, xval, 0, 0, 50, 20, NULL, 0.0, 0.0, 0, 0, "Power of x");
 				}
 				
@@ -301,7 +302,7 @@ static void draw_modifier__noise(uiLayout *layout, ID *id, FModifier *fcm, short
 
 /* --------------- */
 
-#define BINARYSEARCH_FRAMEEQ_THRESH	0.0001
+#define BINARYSEARCH_FRAMEEQ_THRESH	0.0001f
 
 /* Binary search algorithm for finding where to insert Envelope Data Point.
  * Returns the index to insert at (data already at that index will be offset if replace is 0)
@@ -443,9 +444,9 @@ static void fmod_envelope_deletepoint_cb (bContext *UNUSED(C), void *fcm_dv, voi
 	if (env->totvert > 1) {
 		/* allocate a new smaller array */
 		fedn= MEM_callocN(sizeof(FCM_EnvelopeData)*(env->totvert-1), "FCM_EnvelopeData");
-		
-		memcpy(fedn, &env->data, sizeof(FCM_EnvelopeData)*(index));
-		memcpy(&fedn[index], &env->data[index+1], sizeof(FCM_EnvelopeData)*(env->totvert-index-1));
+
+		memcpy(fedn, env->data, sizeof(FCM_EnvelopeData)*(index));
+		memcpy(fedn + index, env->data + (index + 1), sizeof(FCM_EnvelopeData)*((env->totvert - index)-1));
 		
 		/* free old array, and set the new */
 		MEM_freeN(env->data);
@@ -454,8 +455,10 @@ static void fmod_envelope_deletepoint_cb (bContext *UNUSED(C), void *fcm_dv, voi
 	}
 	else {
 		/* just free array, since the only vert was deleted */
-		if (env->data) 
+		if (env->data) {
 			MEM_freeN(env->data);
+			env->data= NULL;
+		}
 		env->totvert= 0;
 	}
 }
@@ -599,7 +602,7 @@ static void draw_modifier__stepped(uiLayout *layout, ID *id, FModifier *fcm, sho
 void ANIM_uiTemplate_fmodifier_draw (uiLayout *layout, ID *id, ListBase *modifiers, FModifier *fcm)
 {
 	FModifierTypeInfo *fmi= fmodifier_get_typeinfo(fcm);
-	uiLayout *box, *row, *subrow;
+	uiLayout *box, *row, *subrow, *col;
 	uiBlock *block;
 	uiBut *but;
 	short width= 314;
@@ -617,7 +620,7 @@ void ANIM_uiTemplate_fmodifier_draw (uiLayout *layout, ID *id, ListBase *modifie
 		block= uiLayoutGetBlock(row); // err...
 		
 		/* left-align -------------------------------------------- */
-		subrow= uiLayoutRow(row, 0);
+		subrow= uiLayoutRow(row, 1);
 		uiLayoutSetAlignment(subrow, UI_LAYOUT_ALIGN_LEFT);
 		
 		uiBlockSetEmboss(block, UI_EMBOSSN);
@@ -635,7 +638,7 @@ void ANIM_uiTemplate_fmodifier_draw (uiLayout *layout, ID *id, ListBase *modifie
 			uiItemL(subrow, "<Unknown Modifier>", ICON_NONE);
 		
 		/* right-align ------------------------------------------- */
-		subrow= uiLayoutRow(row, 0);
+		subrow= uiLayoutRow(row, 1);
 		uiLayoutSetAlignment(subrow, UI_LAYOUT_ALIGN_RIGHT);
 		
 		
@@ -645,7 +648,7 @@ void ANIM_uiTemplate_fmodifier_draw (uiLayout *layout, ID *id, ListBase *modifie
 		uiBlockSetEmboss(block, UI_EMBOSSN);
 		
 		/* delete button */
-		but= uiDefIconBut(block, BUT, B_REDR, ICON_X, 0, 0, UI_UNIT_X, UI_UNIT_Y, NULL, 0.0, 0.0, 0.0, 0.0, "Delete F-Curve Modifier.");
+		but= uiDefIconBut(block, BUT, B_REDR, ICON_X, 0, 0, UI_UNIT_X, UI_UNIT_Y, NULL, 0.0, 0.0, 0.0, 0.0, "Delete F-Curve Modifier");
 		uiButSetFunc(but, delete_fmodifier_cb, modifiers, fcm);
 		
 		uiBlockSetEmboss(block, UI_EMBOSS);
@@ -688,6 +691,44 @@ void ANIM_uiTemplate_fmodifier_draw (uiLayout *layout, ID *id, ListBase *modifie
 			
 			default: /* unknown type */
 				break;
+		}
+		
+		/* one last panel below this: FModifier range */
+		// TODO: experiment with placement of this
+		{
+			box = uiLayoutBox(layout);
+			
+			/* restricted range ----------------------------------------------------- */
+			col = uiLayoutColumn(box, 1);
+			
+			/* top row: use restricted range */
+			row= uiLayoutRow(col, 1);
+			uiItemR(row, &ptr, "use_restricted_range", 0, NULL, ICON_NONE);
+			
+			if (fcm->flag & FMODIFIER_FLAG_RANGERESTRICT) {
+				/* second row: settings */
+				row = uiLayoutRow(col, 1);
+				
+				uiItemR(row, &ptr, "frame_start", 0, "Start", ICON_NONE);
+				uiItemR(row, &ptr, "frame_end", 0, "End", ICON_NONE);
+				
+				/* third row: blending influence */
+				row = uiLayoutRow(col, 1);
+				
+				uiItemR(row, &ptr, "blend_in", 0, "In", ICON_NONE);
+				uiItemR(row, &ptr, "blend_out", 0, "Out", ICON_NONE);
+			}
+			
+			/* influence -------------------------------------------------------------- */
+			col = uiLayoutColumn(box, 1);
+			
+			/* top row: use influence */
+			uiItemR(col, &ptr, "use_influence", 0, NULL, ICON_NONE);
+			
+			if (fcm->flag & FMODIFIER_FLAG_USEINFLUENCE) {
+				/* second row: influence value */
+				uiItemR(col, &ptr, "influence", 0, NULL, ICON_NONE);
+			}
 		}
 	}
 }

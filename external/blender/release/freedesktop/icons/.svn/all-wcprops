@@ -1,5 +1,11 @@
 K 25
 svn:wc:ra_dav:version-url
 V 74
-/svnroot/bf-blender/!svn/ver/34109/trunk/blender/release/freedesktop/icons
+/svnroot/bf-blender/!svn/ver/36281/trunk/blender/release/freedesktop/icons
+END
+blender_icon_source.svg
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/bf-blender/!svn/ver/36281/trunk/blender/release/freedesktop/icons/blender_icon_source.svg
 END

@@ -1,5 +1,5 @@
 /*
- * $Id: logic_buttons.c 35242 2011-02-27 20:29:51Z jesterking $
+ * $Id: logic_buttons.c 37246 2011-06-06 11:04:54Z nazgul $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -206,6 +206,7 @@ void LOGIC_OT_links_cut(wmOperatorType *ot)
 	ot->invoke= WM_gesture_lines_invoke;
 	ot->modal= WM_gesture_lines_modal;
 	ot->exec= cut_links_exec;
+	ot->cancel= WM_gesture_lines_cancel;
 	
 	ot->poll= ED_operator_logic_active;
 	

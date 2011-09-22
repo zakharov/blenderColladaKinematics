@@ -1,5 +1,5 @@
 /*
- * $Id: BIF_glutil.h 35016 2011-02-21 07:25:24Z jesterking $
+ * $Id: BIF_glutil.h 38978 2011-08-03 09:28:16Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -52,6 +52,8 @@ void fdrawXORcirc(float xofs, float yofs, float rad);
 /* glStipple defines */
 extern unsigned char stipple_halftone[128];
 extern unsigned char stipple_quarttone[128];
+extern unsigned char stipple_diag_stripes_pos[128];
+extern unsigned char stipple_diag_stripes_neg[128];
 
 	/**
 	 * Draw a lined (non-looping) arc with the given

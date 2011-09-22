@@ -1,5 +1,5 @@
 /*
- * $Id: BLI_editVert.h 34966 2011-02-18 13:58:08Z jesterking $
+ * $Id: BLI_editVert.h 35793 2011-03-26 08:28:24Z blendix $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -60,6 +60,7 @@ typedef struct EditVert
 		void            *p;
 		intptr_t         l;
 		float            fp;
+		int				 t;
 	} tmp;
 	float no[3]; /*vertex normal */
 	float co[3]; /*vertex location */

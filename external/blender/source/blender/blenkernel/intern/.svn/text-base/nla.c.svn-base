@@ -1,6 +1,4 @@
 /*
- * $Id$
- *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -46,6 +44,8 @@
 
 #include "DNA_anim_types.h"
 #include "DNA_scene_types.h"
+#include "DNA_sound_types.h"
+#include "DNA_speaker_types.h"
 
 #include "BKE_action.h"
 #include "BKE_fcurve.h"
@@ -53,6 +53,9 @@
 #include "BKE_global.h"
 #include "BKE_library.h"
 
+#ifdef WITH_AUDASPACE
+#  include "AUD_C-API.h"
+#endif
 
 #include "RNA_access.h"
 #include "nla_private.h"
@@ -296,7 +299,7 @@ NlaStrip *add_nlastrip (bAction *act)
 	calc_action_range(strip->act, &strip->actstart, &strip->actend, 0);
 	
 	strip->start = strip->actstart;
-	strip->end = (IS_EQ(strip->actstart, strip->actend)) ?  (strip->actstart + 1.0f): (strip->actend);
+	strip->end = (IS_EQF(strip->actstart, strip->actend)) ?  (strip->actstart + 1.0f): (strip->actend);
 	
 	/* strip should be referenced as-is */
 	strip->scale= 1.0f;
@@ -337,6 +340,44 @@ NlaStrip *add_nlastrip_to_stack (AnimData *adt, bAction *act)
 	return strip;
 }
 
+/* Add a NLA Strip referencing the given speaker's sound */
+NlaStrip *add_nla_soundstrip (Scene *scene, Speaker *speaker)
+{
+	NlaStrip *strip = MEM_callocN(sizeof(NlaStrip), "NlaSoundStrip");
+	
+	/* if speaker has a sound, set the strip length to the length of the sound,
+	 * otherwise default to length of 10 frames
+	 */
+#ifdef WITH_AUDASPACE
+	if (speaker->sound) 
+	{
+		AUD_SoundInfo info = AUD_getInfo(speaker->sound->playback_handle);
+		
+		strip->end = ceil(info.length * FPS);
+	}
+	else 
+#endif
+	{
+		strip->end = 10.0f;
+		/* quiet compiler warnings */
+		(void)scene;
+		(void)speaker;
+	}
+	
+	/* general settings */
+	strip->type = NLASTRIP_TYPE_SOUND;
+	
+	strip->flag = NLASTRIP_FLAG_SELECT;
+	strip->extendmode = NLASTRIP_EXTEND_NOTHING; /* nothing to extend... */
+	
+	/* strip should be referenced as-is */
+	strip->scale= 1.0f;
+	strip->repeat = 1.0f;
+	
+	/* return this strip */
+	return strip;
+}
+
 /* *************************************************** */
 /* NLA Evaluation <-> Editing Stuff */
 
@@ -347,19 +388,20 @@ NlaStrip *add_nlastrip_to_stack (AnimData *adt, bAction *act)
  */
 static float nlastrip_get_frame_actionclip (NlaStrip *strip, float cframe, short mode)
 {
-	float actlength, repeat, scale;
+	float actlength, scale;
+	// float repeat; // UNUSED
 	
 	/* get number of repeats */
-	if (IS_EQ(strip->repeat, 0.0f)) strip->repeat = 1.0f;
-	repeat = strip->repeat;
+	if (IS_EQF(strip->repeat, 0.0f)) strip->repeat = 1.0f;
+	// repeat = strip->repeat; // UNUSED
 	
 	/* scaling */
-	if (IS_EQ(strip->scale, 0.0f)) strip->scale= 1.0f;
+	if (IS_EQF(strip->scale, 0.0f)) strip->scale= 1.0f;
 	scale = (float)fabs(strip->scale); /* scale must be positive - we've got a special flag for reversing */
 	
 	/* length of referenced action */
 	actlength = strip->actend - strip->actstart;
-	if (IS_EQ(actlength, 0.0f)) actlength = 1.0f;
+	if (IS_EQF(actlength, 0.0f)) actlength = 1.0f;
 	
 	/* reversed = play strip backwards */
 	if (strip->flag & NLASTRIP_FLAG_REVERSE) {
@@ -371,7 +413,7 @@ static float nlastrip_get_frame_actionclip (NlaStrip *strip, float cframe, short
 			return (strip->end + (strip->actstart * scale - cframe)) / scale;
 		}
 		else /* if (mode == NLATIME_CONVERT_EVAL) */{
-			if (IS_EQ(cframe, strip->end) && IS_EQ(strip->repeat, ((int)strip->repeat))) {
+			if (IS_EQF(cframe, strip->end) && IS_EQF(strip->repeat, ((int)strip->repeat))) {
 				/* this case prevents the motion snapping back to the first frame at the end of the strip 
 				 * by catching the case where repeats is a whole number, which means that the end of the strip
 				 * could also be interpreted as the end of the start of a repeat
@@ -382,7 +424,7 @@ static float nlastrip_get_frame_actionclip (NlaStrip *strip, float cframe, short
 				/* - the 'fmod(..., actlength*scale)' is needed to get the repeats working
 				 * - the '/ scale' is needed to ensure that scaling influences the timing within the repeat
 				 */
-				return strip->actend - fmod(cframe - strip->start, actlength*scale) / scale; 
+				return strip->actend - fmodf(cframe - strip->start, actlength*scale) / scale;
 			}
 		}
 	}
@@ -394,7 +436,7 @@ static float nlastrip_get_frame_actionclip (NlaStrip *strip, float cframe, short
 			return strip->actstart + (cframe - strip->start) / scale;
 		}
 		else /* if (mode == NLATIME_CONVERT_EVAL) */{
-			if (IS_EQ(cframe, strip->end) && IS_EQ(strip->repeat, ((int)strip->repeat))) {
+			if (IS_EQF(cframe, strip->end) && IS_EQF(strip->repeat, ((int)strip->repeat))) {
 				/* this case prevents the motion snapping back to the first frame at the end of the strip 
 				 * by catching the case where repeats is a whole number, which means that the end of the strip
 				 * could also be interpreted as the end of the start of a repeat
@@ -405,7 +447,7 @@ static float nlastrip_get_frame_actionclip (NlaStrip *strip, float cframe, short
 				/* - the 'fmod(..., actlength*scale)' is needed to get the repeats working
 				 * - the '/ scale' is needed to ensure that scaling influences the timing within the repeat
 				 */
-				return strip->actstart + fmod(cframe - strip->start, actlength*scale) / scale; 
+				return strip->actstart + fmodf(cframe - strip->start, actlength*scale) / scale;
 			}
 		}
 	}
@@ -507,7 +549,7 @@ short BKE_nlastrips_has_space (ListBase *strips, float start, float end)
 	NlaStrip *strip;
 	
 	/* sanity checks */
-	if ((strips == NULL) || IS_EQ(start, end))
+	if ((strips == NULL) || IS_EQF(start, end))
 		return 0;
 	if (start > end) {
 		puts("BKE_nlastrips_has_space() error... start and end arguments swapped");
@@ -800,45 +842,46 @@ void BKE_nlameta_flush_transforms (NlaStrip *mstrip)
 	 * don't flush if nothing changed yet
 	 *	TODO: maybe we need a flag to say always flush?
 	 */
-	if (IS_EQ(oStart, mstrip->start) && IS_EQ(oEnd, mstrip->end))
+	if (IS_EQF(oStart, mstrip->start) && IS_EQF(oEnd, mstrip->end))
 		return;
 	
 	/* check if scale changed */
 	oLen = oEnd - oStart;
 	nLen = mstrip->end - mstrip->start;
-	if (IS_EQ(nLen, oLen) == 0)
+	if (IS_EQF(nLen, oLen) == 0)
 		scaleChanged= 1;
 	
 	/* for each child-strip, calculate new start/end points based on this new info */
 	for (strip= mstrip->strips.first; strip; strip= strip->next) {
 		if (scaleChanged) {
-			PointerRNA ptr;
-			float p1, p2, nStart, nEnd;
+			float p1, p2;
 			
 			/* compute positions of endpoints relative to old extents of strip */
 			p1= (strip->start - oStart) / oLen;
 			p2= (strip->end - oStart) / oLen;
 			
-			/* compute the new strip endpoints using the proportions */
-			nStart= (p1 * nLen) + mstrip->start;
-			nEnd= (p2 * nLen) + mstrip->start;
-			
-			/* firstly, apply the new positions manually, then apply using RNA 
-			 *	- first time is to make sure no truncation errors from one endpoint not being 
-			 *	  set yet occur
-			 *	- second time is to make sure scale is computed properly...
-			 */
-			strip->start= nStart;
-			strip->end= nEnd;
-			
-			RNA_pointer_create(NULL, &RNA_NlaStrip, strip, &ptr);
-			RNA_float_set(&ptr, "frame_start", nStart);
-			RNA_float_set(&ptr, "frame_end", nEnd);
+			/* apply new strip endpoints using the proportions, then wait for second pass to flush scale properly */
+			strip->start= (p1 * nLen) + mstrip->start;
+			strip->end= (p2 * nLen) + mstrip->start;
 		}
 		else {
 			/* just apply the changes in offset to both ends of the strip */
 			strip->start += offset;
 			strip->end += offset;
+		}
+	}
+		
+	/* apply a second pass over child strips, to finish up unfinished business */
+	for (strip= mstrip->strips.first; strip; strip= strip->next) {
+		/* only if scale changed, need to perform RNA updates */
+		if (scaleChanged) {
+			PointerRNA ptr;
+			
+			/* use RNA updates to compute scale properly */
+			RNA_pointer_create(NULL, &RNA_NlaStrip, strip, &ptr);
+			
+			RNA_float_set(&ptr, "frame_start", strip->start);
+			RNA_float_set(&ptr, "frame_end", strip->end);
 		}
 		
 		/* finally, make sure the strip's children (if it is a meta-itself), get updated */
@@ -927,7 +970,7 @@ short BKE_nlatrack_has_space (NlaTrack *nlt, float start, float end)
 	 * 	- track must be editable
 	 * 	- bounds cannot be equal (0-length is nasty) 
 	 */
-	if ((nlt == NULL) || (nlt->flag & NLATRACK_PROTECTED) || IS_EQ(start, end))
+	if ((nlt == NULL) || (nlt->flag & NLATRACK_PROTECTED) || IS_EQF(start, end))
 		return 0;
 	
 	if (start > end) {
@@ -1044,7 +1087,7 @@ short BKE_nlastrip_within_bounds (NlaStrip *strip, float min, float max)
 	const float boundsLen= (float)fabs(max - min);
 	
 	/* sanity checks */
-	if ((strip == NULL) || IS_EQ(stripLen, 0.0f) || IS_EQ(boundsLen, 0.0f))
+	if ((strip == NULL) || IS_EQF(stripLen, 0.0f) || IS_EQF(boundsLen, 0.0f))
 		return 0;
 	
 	/* only ok if at least part of the strip is within the bounding window
@@ -1084,12 +1127,12 @@ void BKE_nlastrip_recalculate_bounds (NlaStrip *strip)
 		
 	/* calculate new length factors */
 	actlen= strip->actend - strip->actstart;
-	if (IS_EQ(actlen, 0.0f)) actlen= 1.0f;
+	if (IS_EQF(actlen, 0.0f)) actlen= 1.0f;
 	
 	mapping= strip->scale * strip->repeat;
 	
 	/* adjust endpoint of strip in response to this */
-	if (IS_EQ(mapping, 0.0f) == 0)
+	if (IS_EQF(mapping, 0.0f) == 0)
 		strip->end = (actlen * mapping) + strip->start;
 }
 
@@ -1184,7 +1227,7 @@ void BKE_nlastrip_validate_fcurves (NlaStrip *strip)
 			BLI_addtail(&strip->fcurves, fcu);
 			
 			/* set default flags */
-			fcu->flag = (FCURVE_VISIBLE|FCURVE_AUTO_HANDLES|FCURVE_SELECTED);
+			fcu->flag = (FCURVE_VISIBLE|FCURVE_SELECTED);
 			
 			/* store path - make copy, and store that */
 			fcu->rna_path= BLI_strdupn("influence", 9);
@@ -1205,7 +1248,7 @@ void BKE_nlastrip_validate_fcurves (NlaStrip *strip)
 			BLI_addtail(&strip->fcurves, fcu);
 			
 			/* set default flags */
-			fcu->flag = (FCURVE_VISIBLE|FCURVE_AUTO_HANDLES|FCURVE_SELECTED);
+			fcu->flag = (FCURVE_VISIBLE|FCURVE_SELECTED);
 			
 			/* store path - make copy, and store that */
 			fcu->rna_path= BLI_strdupn("strip_time", 10);
@@ -1241,7 +1284,7 @@ void BKE_nlastrip_validate_name (AnimData *adt, NlaStrip *strip)
 	if (strip->name[0]==0) {
 		switch (strip->type) {
 			case NLASTRIP_TYPE_CLIP: /* act-clip */
-				sprintf(strip->name, "Act: %s", (strip->act)?(strip->act->id.name+2):("<None>"));
+				sprintf(strip->name, "%s", (strip->act)?(strip->act->id.name+2):("<No Action>"));
 				break;
 			case NLASTRIP_TYPE_TRANSITION: /* transition */
 				sprintf(strip->name, "Transition");
@@ -1313,11 +1356,11 @@ static void nlastrip_get_endpoint_overlaps (NlaStrip *strip, NlaTrack *track, fl
 		/* if this strip is not part of an island of continuous strips, it can be used
 		 *	- this check needs to be done for each end of the strip we try and use...
 		 */
-		if ((nls->next == NULL) || IS_EQ(nls->next->start, nls->end)==0) {
+		if ((nls->next == NULL) || IS_EQF(nls->next->start, nls->end)==0) {
 			if ((nls->end > strip->start) && (nls->end < strip->end))
 				*start= &nls->end;
 		}
-		if ((nls->prev == NULL) || IS_EQ(nls->prev->end, nls->start)==0) {
+		if ((nls->prev == NULL) || IS_EQF(nls->prev->end, nls->start)==0) {
 			if ((nls->start < strip->end) && (nls->start > strip->start))
 				*end= &nls->start;
 		}
@@ -1349,7 +1392,7 @@ static void BKE_nlastrip_validate_autoblends (NlaTrack *nlt, NlaStrip *nls)
 	 *	  is directly followed/preceeded by another strip, forming an 
 	 *	  'island' of continuous strips
 	 */
-	if ( (ps || ns) && ((nls->prev == NULL) || IS_EQ(nls->prev->end, nls->start)==0) ) 
+	if ( (ps || ns) && ((nls->prev == NULL) || IS_EQF(nls->prev->end, nls->start)==0) )
 	{
 		/* start overlaps - pick the largest overlap */
 		if ( ((ps && ns) && (*ps > *ns)) || (ps) )
@@ -1360,7 +1403,7 @@ static void BKE_nlastrip_validate_autoblends (NlaTrack *nlt, NlaStrip *nls)
 	else /* no overlap allowed/needed */
 		nls->blendin= 0.0f;
 		
-	if ( (pe || ne) && ((nls->next == NULL) || IS_EQ(nls->next->start, nls->end)==0) ) 
+	if ( (pe || ne) && ((nls->next == NULL) || IS_EQF(nls->next->start, nls->end)==0) )
 	{
 		/* end overlaps - pick the largest overlap */
 		if ( ((pe && ne) && (*pe > *ne)) || (pe) )
@@ -1581,7 +1624,7 @@ void BKE_nla_tweakmode_exit (AnimData *adt)
 
 /* Baking Tools ------------------------------------------- */
 
-static void BKE_nla_bake (Scene *scene, ID *UNUSED(id), AnimData *adt, int UNUSED(flag))
+static void UNUSED_FUNCTION(BKE_nla_bake) (Scene *scene, ID *UNUSED(id), AnimData *adt, int UNUSED(flag))
 {
 
 	/* verify that data is valid 

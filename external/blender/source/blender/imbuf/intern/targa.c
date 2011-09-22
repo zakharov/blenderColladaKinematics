@@ -24,7 +24,7 @@
  * Contributor(s): none yet.
  *
  * ***** END GPL LICENSE BLOCK *****
- * $Id: targa.c 35362 2011-03-05 10:29:10Z campbellbarton $
+ * $Id: targa.c 37158 2011-06-04 03:07:56Z campbellbarton $
  */
 
 /** \file blender/imbuf/intern/targa.c
@@ -532,7 +532,7 @@ struct ImBuf *imb_loadtarga(unsigned char *mem, size_t mem_size, int flags)
 	TARGA tga;
 	struct ImBuf * ibuf;
 	int col, count, size;
-	unsigned int *rect, *cmap= NULL, mincol= 0, maxcol= 0;
+	unsigned int *rect, *cmap= NULL /*, mincol= 0*/, maxcol= 0;
 	uchar * cp = (uchar *) &col;
 	
 	if (checktarga(&tga,mem) == 0) return(NULL);
@@ -550,7 +550,7 @@ struct ImBuf *imb_loadtarga(unsigned char *mem, size_t mem_size, int flags)
 	
 	if (tga.mapsize){
 		/* load color map */
-		mincol = tga.maporig;
+		/*mincol = tga.maporig;*/ /*UNUSED*/
 		maxcol = tga.mapsize;
 		cmap = MEM_callocN(sizeof(unsigned int)*maxcol, "targa cmap");
 
@@ -586,7 +586,7 @@ struct ImBuf *imb_loadtarga(unsigned char *mem, size_t mem_size, int flags)
 		ibuf->depth = size;
 
 		if (tga.mapbits != 32) {	/* set alpha bits  */
-			cmap[0] &= BIG_LONG(0x00ffffff);
+			cmap[0] &= BIG_LONG(0x00ffffffl);
 		}
 	}
 	

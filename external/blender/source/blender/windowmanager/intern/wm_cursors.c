@@ -1,5 +1,5 @@
 /*
-* $Id: wm_cursors.c 35179 2011-02-25 14:04:21Z jesterking $
+* $Id: wm_cursors.c 35388 2011-03-07 14:56:19Z ton $
 *
 * ***** BEGIN GPL LICENSE BLOCK *****
 *
@@ -47,6 +47,7 @@
 #include "BKE_main.h"
 
 #include "WM_api.h"
+#include "WM_types.h"
 #include "wm_cursors.h"
 
 /* XXX this still is mess from old code */
@@ -210,6 +211,29 @@ void WM_cursor_ungrab(wmWindow *win)
 		}
 	}
 }
+
+/* give it a modal keymap one day? */
+int wm_cursor_arrow_move(wmWindow *win, wmEvent *event)
+{
+	if(win && event->val==KM_PRESS) {
+		
+		if(event->type==UPARROWKEY) {
+			WM_cursor_warp(win, event->x, event->y+1);
+			return 1;
+		} else if(event->type==DOWNARROWKEY) {
+			WM_cursor_warp(win, event->x, event->y-1);
+			return 1;
+		} else if(event->type==LEFTARROWKEY) {
+			WM_cursor_warp(win, event->x-1, event->y);
+			return 1;
+		} else if(event->type==RIGHTARROWKEY) {
+			WM_cursor_warp(win, event->x+1, event->y);
+			return 1;
+		}
+	}
+	return 0;
+}
+
 
 /* afer this you can call restore too */
 void WM_timecursor(wmWindow *win, int nr)

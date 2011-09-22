@@ -1,5 +1,5 @@
 /*
- * $Id: GHOST_DisplayManagerWin32.cpp 35152 2011-02-25 11:28:33Z jesterking $
+ * $Id: GHOST_DisplayManagerWin32.cpp 38908 2011-08-02 04:28:05Z merwin $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -28,22 +28,18 @@
 
 /** \file ghost/intern/GHOST_DisplayManagerWin32.cpp
  *  \ingroup GHOST
- */
-
-
-/**
-
- * $Id: GHOST_DisplayManagerWin32.cpp 35152 2011-02-25 11:28:33Z jesterking $
- * Copyright (C) 2001 NaN Technologies B.V.
- * @author	Maarten Gribnau
- * @date	September 21, 2001
+ *  \author	Maarten Gribnau
+ *  \date	September 21, 2001
  */
 
 #include "GHOST_DisplayManagerWin32.h"
 #include "GHOST_Debug.h"
 
-// We do not support multiple monitors at the moment
+#define _WIN32_WINNT 0x501 // require Windows XP or newer
+#define WIN32_LEAN_AND_MEAN
 #include <windows.h>
+
+// We do not support multiple monitors at the moment
 #define COMPILE_MULTIMON_STUBS
 #ifndef FREE_WINDOWS
 #include <multimon.h>

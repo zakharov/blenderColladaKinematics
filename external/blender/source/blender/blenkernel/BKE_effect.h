@@ -1,5 +1,5 @@
 /*
- * $Id: BKE_effect.h 34962 2011-02-18 13:05:18Z jesterking $ 
+ * $Id: BKE_effect.h 38663 2011-07-24 17:44:22Z jhk $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -105,6 +105,7 @@ typedef struct EffectorCache {
 	/* precalculated for guides */
 	struct GuideEffectorData *guide_data;
 	float guide_loc[4], guide_dir[3], guide_radius;
+	float velocity[3];
 
 	float frame;
 	int flag;

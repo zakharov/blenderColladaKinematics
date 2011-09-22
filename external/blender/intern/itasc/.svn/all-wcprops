@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 61
-/svnroot/bf-blender/!svn/ver/35155/trunk/blender/intern/itasc
+/svnroot/bf-blender/!svn/ver/40322/trunk/blender/intern/itasc
 END
 Distance.hpp
 K 25
@@ -13,7 +13,7 @@ ConstraintSet.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 79
-/svnroot/bf-blender/!svn/ver/35155/trunk/blender/intern/itasc/ConstraintSet.cpp
+/svnroot/bf-blender/!svn/ver/37836/trunk/blender/intern/itasc/ConstraintSet.cpp
 END
 Scene.hpp
 K 25
@@ -73,7 +73,7 @@ CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/svnroot/bf-blender/!svn/ver/33864/trunk/blender/intern/itasc/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/37030/trunk/blender/intern/itasc/CMakeLists.txt
 END
 ControlledObject.cpp
 K 25
@@ -199,5 +199,5 @@ Scene.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 71
-/svnroot/bf-blender/!svn/ver/35155/trunk/blender/intern/itasc/Scene.cpp
+/svnroot/bf-blender/!svn/ver/35814/trunk/blender/intern/itasc/Scene.cpp
 END

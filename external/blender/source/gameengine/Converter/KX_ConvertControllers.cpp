@@ -1,5 +1,5 @@
 /*
- * $Id: KX_ConvertControllers.cpp 35167 2011-02-25 13:30:41Z jesterking $
+ * $Id: KX_ConvertControllers.cpp 39767 2011-08-29 03:20:15Z dfelinto $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -210,7 +210,11 @@ void BL_ConvertControllers(
 			CIntValue* uniqueval = new CIntValue(uniqueint);
 			uniquename += uniqueval->GetText();
 			uniqueval->Release();
-			gamecontroller->SetName(uniquename);
+			//unique name was never implemented for sensors and actuators, only for controllers
+			//and it's producing difference in the keys for the lists: obj.controllers/sensors/actuators
+			//at some point it should either be implemented globally (and saved as a separate var) or removed.
+			//gamecontroller->SetName(uniquename);
+			gamecontroller->SetName(bcontr->name);
 			gameobj->AddController(gamecontroller);
 			
 			converter->RegisterGameController(gamecontroller, bcontr);

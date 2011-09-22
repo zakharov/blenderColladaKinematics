@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/extern/bullet2/src/BulletDynamics
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2010-12-22T22:54:48.259649Z
-33863
-campbellbarton
+2011-03-29T18:44:18.010695Z
+35884
+erwin
 
 
 
@@ -41,7 +41,7 @@ file
 
 
 
-2011-03-03T12:28:52.562297Z
+2011-09-21T18:17:08.572103Z
 eded317e6c6758f720a29543a8dc84e8
 2009-03-17T21:44:58.713628Z
 19323
@@ -68,4 +68,7 @@ has-props
 
 
 325
+
+Character
+dir
 

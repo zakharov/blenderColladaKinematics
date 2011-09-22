@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_PingPongFactory.h 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_PingPongFactory.h 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -36,7 +36,7 @@
 
 /**
  * This factory plays another factory first normal, then reversed.
- * \note Readers from the underlying factory must be from the buffer type.
+ * \note Readers from the underlying factory must be reversable with seeking.
  */
 class AUD_PingPongFactory : public AUD_EffectFactory
 {
@@ -50,9 +50,9 @@ public:
 	 * Creates a new ping pong factory.
 	 * \param factory The input factory.
 	 */
-	AUD_PingPongFactory(AUD_IFactory* factory);
+	AUD_PingPongFactory(AUD_Reference<AUD_IFactory> factory);
 
-	virtual AUD_IReader* createReader() const;
+	virtual AUD_Reference<AUD_IReader> createReader();
 };
 
 #endif //AUD_PINGPONGFACTORY

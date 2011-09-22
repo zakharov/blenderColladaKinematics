@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/svnroot/bf-blender/!svn/ver/25043/trunk/blender/extern/Eigen2/Eigen/src/Core/util
+/svnroot/bf-blender/!svn/ver/35905/trunk/blender/extern/Eigen2/Eigen/src/Core/util
 END
 StaticAssert.h
 K 25
@@ -55,5 +55,5 @@ Memory.h
 K 25
 svn:wc:ra_dav:version-url
 V 91
-/svnroot/bf-blender/!svn/ver/23994/trunk/blender/extern/Eigen2/Eigen/src/Core/util/Memory.h
+/svnroot/bf-blender/!svn/ver/35905/trunk/blender/extern/Eigen2/Eigen/src/Core/util/Memory.h
 END

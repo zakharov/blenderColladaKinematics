@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 77
-/svnroot/bf-blender/!svn/ver/35337/trunk/blender/source/blender/editors/curve
+/svnroot/bf-blender/!svn/ver/40443/trunk/blender/source/blender/editors/curve
 END
 lorem.c
 K 25
@@ -13,7 +13,7 @@ curve_ops.c
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/curve/curve_ops.c
+/svnroot/bf-blender/!svn/ver/40255/trunk/blender/source/blender/editors/curve/curve_ops.c
 END
 SConscript
 K 25
@@ -31,17 +31,17 @@ editcurve.c
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svnroot/bf-blender/!svn/ver/35337/trunk/blender/source/blender/editors/curve/editcurve.c
+/svnroot/bf-blender/!svn/ver/40443/trunk/blender/source/blender/editors/curve/editcurve.c
 END
 CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35028/trunk/blender/source/blender/editors/curve/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/38443/trunk/blender/source/blender/editors/curve/CMakeLists.txt
 END
 editfont.c
 K 25
 svn:wc:ra_dav:version-url
 V 88
-/svnroot/bf-blender/!svn/ver/35242/trunk/blender/source/blender/editors/curve/editfont.c
+/svnroot/bf-blender/!svn/ver/40351/trunk/blender/source/blender/editors/curve/editfont.c
 END

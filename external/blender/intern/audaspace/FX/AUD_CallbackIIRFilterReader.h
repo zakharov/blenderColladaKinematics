@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_CallbackIIRFilterReader.h 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_CallbackIIRFilterReader.h 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -76,7 +76,7 @@ public:
 	 * \param endFilter The finishing callback.
 	 * \param data Data pointer for the callbacks.
 	 */
-	AUD_CallbackIIRFilterReader(AUD_IReader* reader, int in, int out,
+	AUD_CallbackIIRFilterReader(AUD_Reference<AUD_IReader> reader, int in, int out,
 								doFilterIIR doFilter,
 								endFilterIIR endFilter = 0,
 								void* data = 0);

@@ -1,5 +1,5 @@
 /*
- * $Id: BKE_sketch.h 34962 2011-02-18 13:05:18Z jesterking $ 
+ * $Id: BKE_sketch.h 36644 2011-05-12 16:47:36Z campbellbarton $ 
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -73,8 +73,8 @@ typedef struct SK_Overdraw
 
 typedef struct SK_DrawData
 {
-	short mval[2];
-	short previous_mval[2];
+	int mval[2];
+	int previous_mval[2];
 	SK_PType type;
 } SK_DrawData;
 
@@ -152,7 +152,7 @@ void sk_endContinuousStroke(SK_Stroke *stk);
 
 void sk_updateNextPoint(SK_Sketch *sketch, SK_Stroke *stk);
 
-void sk_initDrawData(SK_DrawData *dd, short mval[2]);
+void sk_initDrawData(SK_DrawData *dd, const int mval[2]);
 
 void sk_deleteSelectedStrokes(SK_Sketch *sketch);
 void sk_selectAllSketch(SK_Sketch *sketch, int mode);

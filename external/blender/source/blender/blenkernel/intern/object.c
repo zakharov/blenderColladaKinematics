@@ -1,7 +1,7 @@
 /* object.c
  *
  * 
- * $Id: object.c 35336 2011-03-03 17:58:06Z campbellbarton $
+ * $Id: object.c 40406 2011-09-20 17:07:33Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -54,6 +54,7 @@
 #include "DNA_scene_types.h"
 #include "DNA_screen_types.h"
 #include "DNA_sequence_types.h"
+#include "DNA_sound_types.h"
 #include "DNA_space_types.h"
 #include "DNA_view3d_types.h"
 #include "DNA_world_types.h"
@@ -96,7 +97,9 @@
 #include "BKE_sca.h"
 #include "BKE_scene.h"
 #include "BKE_sequencer.h"
+#include "BKE_speaker.h"
 #include "BKE_softbody.h"
+#include "BKE_material.h"
 
 #include "LBM_fluidsim.h"
 
@@ -208,8 +211,8 @@ void object_link_modifiers(struct Object *ob, struct Object *from)
 		BLI_addtail(&ob->modifiers, nmd);
 	}
 
-	copy_object_particlesystems(from, ob);
-	copy_object_softbody(from, ob);
+	copy_object_particlesystems(ob, from);
+	copy_object_softbody(ob, from);
 
 	// TODO: smoke?, cloth?
 }
@@ -230,6 +233,17 @@ void object_free_display(Object *ob)
 	}
 	
 	freedisplist(&ob->disp);
+}
+
+void free_sculptsession_deformMats(SculptSession *ss)
+{
+	if(ss->orig_cos) MEM_freeN(ss->orig_cos);
+	if(ss->deform_cos) MEM_freeN(ss->deform_cos);
+	if(ss->deform_imats) MEM_freeN(ss->deform_imats);
+
+	ss->orig_cos = NULL;
+	ss->deform_cos = NULL;
+	ss->deform_imats = NULL;
 }
 
 void free_sculptsession(Object *ob)
@@ -261,6 +275,7 @@ void free_sculptsession(Object *ob)
 		ob->sculpt = NULL;
 	}
 }
+
 
 /* do not free object itself */
 void free_object(Object *ob)
@@ -403,7 +418,7 @@ void unlink_object(Object *ob)
 						for (ct= targets.first; ct; ct= ct->next) {
 							if (ct->tar == ob) {
 								ct->tar = NULL;
-								strcpy(ct->subtarget, "");
+								ct->subtarget[0]= '\0';
 								obt->recalc |= OB_RECALC_DATA;
 							}
 						}
@@ -433,7 +448,7 @@ void unlink_object(Object *ob)
 				for (ct= targets.first; ct; ct= ct->next) {
 					if (ct->tar == ob) {
 						ct->tar = NULL;
-						strcpy(ct->subtarget, "");
+						ct->subtarget[0]= '\0';
 						obt->recalc |= OB_RECALC_DATA;
 					}
 				}
@@ -736,51 +751,45 @@ void make_local_camera(Camera *cam)
 {
 	Main *bmain= G.main;
 	Object *ob;
-	Camera *camn;
 	int local=0, lib=0;
 
 	/* - only lib users: do nothing
-		* - only local users: set flag
-		* - mixed: make copy
-		*/
+	 * - only local users: set flag
+	 * - mixed: make copy
+	 */
 	
 	if(cam->id.lib==NULL) return;
 	if(cam->id.us==1) {
 		cam->id.lib= NULL;
 		cam->id.flag= LIB_LOCAL;
-		new_id(NULL, (ID *)cam, NULL);
+		new_id(&bmain->camera, (ID *)cam, NULL);
 		return;
 	}
 	
-	ob= bmain->object.first;
-	while(ob) {
+	for(ob= bmain->object.first; ob && ELEM(0, lib, local); ob= ob->id.next) {
 		if(ob->data==cam) {
 			if(ob->id.lib) lib= 1;
 			else local= 1;
 		}
-		ob= ob->id.next;
 	}
 	
 	if(local && lib==0) {
 		cam->id.lib= NULL;
 		cam->id.flag= LIB_LOCAL;
-		new_id(NULL, (ID *)cam, NULL);
+		new_id(&bmain->camera, (ID *)cam, NULL);
 	}
 	else if(local && lib) {
-		camn= copy_camera(cam);
+		Camera *camn= copy_camera(cam);
 		camn->id.us= 0;
 		
-		ob= bmain->object.first;
-		while(ob) {
-			if(ob->data==cam) {
-				
+		for(ob= bmain->object.first; ob; ob= ob->id.next) {
+			if(ob->data == cam) {
 				if(ob->id.lib==NULL) {
 					ob->data= camn;
 					camn->id.us++;
 					cam->id.us--;
 				}
 			}
-			ob= ob->id.next;
 		}
 	}
 }
@@ -872,11 +881,32 @@ Lamp *copy_lamp(Lamp *la)
 	
 	lan->curfalloff = curvemapping_copy(la->curfalloff);
 	
-#if 0 // XXX old animation system
-	id_us_plus((ID *)lan->ipo);
-#endif // XXX old animation system
+	if(la->preview)
+		lan->preview = BKE_previewimg_copy(la->preview);
+	
+	return lan;
+}
 
-	if (la->preview) lan->preview = BKE_previewimg_copy(la->preview);
+Lamp *localize_lamp(Lamp *la)
+{
+	Lamp *lan;
+	int a;
+	
+	lan= copy_libblock(la);
+	BLI_remlink(&G.main->lamp, lan);
+
+	for(a=0; a<MAX_MTEX; a++) {
+		if(lan->mtex[a]) {
+			lan->mtex[a]= MEM_mallocN(sizeof(MTex), "localize_lamp");
+			memcpy(lan->mtex[a], la->mtex[a], sizeof(MTex));
+			/* free lamp decrements */
+			id_us_plus((ID *)lan->mtex[a]->tex);
+		}
+	}
+	
+	lan->curfalloff = curvemapping_copy(la->curfalloff);
+
+	lan->preview= NULL;
 	
 	return lan;
 }
@@ -897,7 +927,7 @@ void make_local_lamp(Lamp *la)
 	if(la->id.us==1) {
 		la->id.lib= NULL;
 		la->id.flag= LIB_LOCAL;
-		new_id(NULL, (ID *)la, NULL);
+		new_id(&bmain->lamp, (ID *)la, NULL);
 		return;
 	}
 	
@@ -913,7 +943,7 @@ void make_local_lamp(Lamp *la)
 	if(local && lib==0) {
 		la->id.lib= NULL;
 		la->id.flag= LIB_LOCAL;
-		new_id(NULL, (ID *)la, NULL);
+		new_id(&bmain->lamp, (ID *)la, NULL);
 	}
 	else if(local && lib) {
 		lan= copy_lamp(la);
@@ -973,6 +1003,7 @@ static void *add_obdata_from_type(int type)
 	case OB_LAMP: return add_lamp("Lamp");
 	case OB_LATTICE: return add_lattice("Lattice");
 	case OB_ARMATURE: return add_armature("Armature");
+	case OB_SPEAKER: return add_speaker("Speaker");
 	case OB_EMPTY: return NULL;
 	default:
 		printf("add_obdata_from_type: Internal error, bad type: %d\n", type);
@@ -992,6 +1023,7 @@ static const char *get_obdata_defname(int type)
 	case OB_LAMP: return "Lamp";
 	case OB_LATTICE: return "Lattice";
 	case OB_ARMATURE: return "Armature";
+	case OB_SPEAKER: return "Speaker";
 	case OB_EMPTY: return "Empty";
 	default:
 		printf("get_obdata_defname: Internal error, bad type: %d\n", type);
@@ -1035,7 +1067,7 @@ Object *add_only_object(int type, const char *name)
 	ob->empty_drawtype= OB_PLAINAXES;
 	ob->empty_drawsize= 1.0;
 
-	if(type==OB_CAMERA || type==OB_LAMP) {
+	if(type==OB_CAMERA || type==OB_LAMP || type==OB_SPEAKER) {
 		ob->trackflag= OB_NEGZ;
 		ob->upflag= OB_POSY;
 	}
@@ -1062,6 +1094,7 @@ Object *add_only_object(int type, const char *name)
 	ob->state=1;
 	/* ob->pad3 == Contact Processing Threshold */
 	ob->m_contactProcessingThreshold = 1.;
+	ob->obstacleRad = 1.;
 	
 	/* NT fluid sim defaults */
 	ob->fluidsimFlag = 0;
@@ -1277,6 +1310,37 @@ static void copy_object_pose(Object *obn, Object *ob)
 	}
 }
 
+static int object_pose_context(Object *ob)
+{
+	if(	(ob) &&
+		(ob->type == OB_ARMATURE) &&
+		(ob->pose) &&
+		(ob->mode & OB_MODE_POSE)
+	) {
+		return 1;
+	}
+	else {
+		return 0;
+	}
+}
+
+//Object *object_pose_armature_get(Object *ob)
+Object *object_pose_armature_get(struct Object *ob)
+{
+	if(ob==NULL)
+		return NULL;
+
+	if(object_pose_context(ob))
+		return ob;
+
+	ob= modifiers_isDeformedByArmature(ob);
+
+	if(object_pose_context(ob))
+		return ob;
+
+	return NULL;
+}
+
 static void copy_object_transform(Object *ob_tar, Object *ob_src)
 {
 	copy_v3_v3(ob_tar->loc, ob_src->loc);
@@ -1366,11 +1430,10 @@ Object *copy_object(Object *ob)
 	return obn;
 }
 
-void expand_local_object(Object *ob)
+static void extern_local_object(Object *ob)
 {
 	//bActionStrip *strip;
 	ParticleSystem *psys;
-	int a;
 
 #if 0 // XXX old animation system
 	id_lib_extern((ID *)ob->action);
@@ -1378,10 +1441,11 @@ void expand_local_object(Object *ob)
 #endif // XXX old animation system
 	id_lib_extern((ID *)ob->data);
 	id_lib_extern((ID *)ob->dup_group);
-	
-	for(a=0; a<ob->totcol; a++) {
-		id_lib_extern((ID *)ob->mat[a]);
-	}
+	id_lib_extern((ID *)ob->poselib);
+	id_lib_extern((ID *)ob->gpd);
+
+	extern_local_matarar(ob->mat, ob->totcol);
+
 #if 0 // XXX old animation system
 	for (strip=ob->nlastrips.first; strip; strip=strip->next) {
 		id_lib_extern((ID *)strip->act);
@@ -1394,16 +1458,15 @@ void expand_local_object(Object *ob)
 void make_local_object(Object *ob)
 {
 	Main *bmain= G.main;
-	Object *obn;
 	Scene *sce;
 	Base *base;
 	int local=0, lib=0;
 
 	/* - only lib users: do nothing
-		* - only local users: set flag
-		* - mixed: make copy
-		*/
-	
+	 * - only local users: set flag
+	 * - mixed: make copy
+	 */
+
 	if(ob->id.lib==NULL) return;
 	
 	ob->proxy= ob->proxy_from= NULL;
@@ -1411,31 +1474,23 @@ void make_local_object(Object *ob)
 	if(ob->id.us==1) {
 		ob->id.lib= NULL;
 		ob->id.flag= LIB_LOCAL;
-		new_id(NULL, (ID *)ob, NULL);
-
+		new_id(&bmain->object, (ID *)ob, NULL);
 	}
 	else {
-		sce= bmain->scene.first;
-		while(sce) {
-			base= sce->base.first;
-			while(base) {
-				if(base->object==ob) {
-					if(sce->id.lib) lib++;
-					else local++;
-					break;
-				}
-				base= base->next;
+		for(sce= bmain->scene.first; sce && ELEM(0, lib, local); sce= sce->id.next) {
+			if(object_in_scene(ob, sce)) {
+				if(sce->id.lib) lib= 1;
+				else local= 1;
 			}
-			sce= sce->id.next;
 		}
-		
+
 		if(local && lib==0) {
 			ob->id.lib= NULL;
 			ob->id.flag= LIB_LOCAL;
-			new_id(NULL, (ID *)ob, NULL);
+			new_id(&bmain->object, (ID *)ob, NULL);
 		}
 		else if(local && lib) {
-			obn= copy_object(ob);
+			Object *obn= copy_object(ob);
 			obn->id.us= 0;
 			
 			sce= bmain->scene.first;
@@ -1456,7 +1511,7 @@ void make_local_object(Object *ob)
 		}
 	}
 	
-	expand_local_object(ob);
+	extern_local_object(ob);
 }
 
 /*
@@ -1563,6 +1618,12 @@ void object_make_proxy(Object *ob, Object *target, Object *gob)
 	if(gob) {
 		ob->rotmode= target->rotmode;
 		mul_m4_m4m4(ob->obmat, target->obmat, gob->obmat);
+		if(gob->dup_group) { /* should always be true */
+			float tvec[3];
+			copy_v3_v3(tvec, gob->dup_group->dupli_ofs);
+			mul_mat3_m4_v3(ob->obmat, tvec);
+			sub_v3_v3(ob->obmat[3], tvec);
+		}
 		object_apply_mat4(ob, ob->obmat, FALSE, TRUE);
 	}
 	else {
@@ -1611,6 +1672,10 @@ void object_make_proxy(Object *ob, Object *target, Object *gob)
 		
 		armature_set_id_extern(ob);
 	}
+	else if (target->type == OB_EMPTY) {
+		ob->empty_drawtype = target->empty_drawtype;
+		ob->empty_drawsize = target->empty_drawsize;
+	}
 
 	/* copy IDProperties */
 	if(ob->id.properties) {
@@ -1631,12 +1696,6 @@ void object_make_proxy(Object *ob, Object *target, Object *gob)
 
 /* there is also a timing calculation in drawobject() */
 
-static int no_speed_curve= 0;
-
-void disable_speed_curve(int val)
-{
-	no_speed_curve= val;
-}
 
 // XXX THIS CRUFT NEEDS SERIOUS RECODING ASAP!
 /* ob can be NULL */
@@ -1674,21 +1733,20 @@ void object_rot_to_mat3(Object *ob, float mat[][3])
 {
 	float rmat[3][3], dmat[3][3];
 	
-	/* initialise the delta-rotation matrix, which will get (pre)multiplied 
+	/* 'dmat' is the delta-rotation matrix, which will get (pre)multiplied
 	 * with the rotation matrix to yield the appropriate rotation
 	 */
-	unit_m3(dmat);
-	
+
 	/* rotations may either be quats, eulers (with various rotation orders), or axis-angle */
 	if (ob->rotmode > 0) {
 		/* euler rotations (will cause gimble lock, but this can be alleviated a bit with rotation orders) */
-		eulO_to_mat3( rmat,ob->rot, ob->rotmode);
-		eulO_to_mat3( dmat,ob->drot, ob->rotmode);
+		eulO_to_mat3(rmat, ob->rot, ob->rotmode);
+		eulO_to_mat3(dmat, ob->drot, ob->rotmode);
 	}
 	else if (ob->rotmode == ROT_MODE_AXISANGLE) {
 		/* axis-angle -  not really that great for 3D-changing orientations */
-		axis_angle_to_mat3( rmat,ob->rotAxis, ob->rotAngle);
-		axis_angle_to_mat3( dmat,ob->drotAxis, ob->drotAngle);
+		axis_angle_to_mat3(rmat, ob->rotAxis, ob->rotAngle);
+		axis_angle_to_mat3(dmat, ob->drotAxis, ob->drotAngle);
 	}
 	else {
 		/* quats are normalised before use to eliminate scaling issues */
@@ -1723,9 +1781,22 @@ void object_mat3_to_rot(Object *ob, float mat[][3], short use_compat)
 		ob->rotAngle -= ob->drotAngle;
 		break;
 	default: /* euler */
-		if(use_compat)	mat3_to_compatible_eulO(ob->rot, ob->rot, ob->rotmode, mat);
-		else			mat3_to_eulO(ob->rot, ob->rotmode, mat);
-		sub_v3_v3(ob->rot, ob->drot);
+		{
+			float quat[4];
+			float dquat[4];
+			float tmat[3][3];
+
+			/* without drot we could apply 'mat' directly */
+			mat3_to_quat(quat, mat);
+			eulO_to_quat(dquat, ob->drot, ob->rotmode);
+			invert_qt(dquat);
+			mul_qt_qtqt(quat, dquat, quat);
+			quat_to_mat3(tmat, quat);
+			/* end drot correction */
+
+			if(use_compat)	mat3_to_compatible_eulO(ob->rot, ob->rot, ob->rotmode, tmat);
+			else			mat3_to_eulO(ob->rot, ob->rotmode, tmat);
+		}
 	}
 }
 
@@ -1741,7 +1812,7 @@ void object_apply_mat4(Object *ob, float mat[][4], const short use_compat, const
 		mul_m4_m4m4(rmat, mat, imat); /* get the parent relative matrix */
 		object_apply_mat4(ob, rmat, use_compat, FALSE);
 		
-		/* same as below, use rmat rather then mat */
+		/* same as below, use rmat rather than mat */
 		mat4_to_loc_rot_size(ob->loc, rot, ob->size, rmat);
 		object_mat3_to_rot(ob, rot, use_compat);
 	}
@@ -1814,19 +1885,19 @@ static void ob_parcurve(Scene *scene, Object *ob, Object *par, float mat[][4])
 		 * we divide the curvetime calculated in the previous step by the length of the path, to get a time
 		 * factor, which then gets clamped to lie within 0.0 - 1.0 range
 		 */
-		if (IS_EQ(cu->pathlen, 0.0f) == 0)
+		if (IS_EQF(cu->pathlen, 0.0f) == 0)
 			ctime= cu->ctime / cu->pathlen;
 		else
 			ctime= cu->ctime;
-		
-		CLAMP(ctime, 0.0, 1.0);
+
+		CLAMP(ctime, 0.0f, 1.0f);
 	}
 	else {
 		ctime= scene->r.cfra - give_timeoffset(ob);
-		if (IS_EQ(cu->pathlen, 0.0f) == 0)
+		if (IS_EQF(cu->pathlen, 0.0f) == 0)
 			ctime /= cu->pathlen;
 		
-		CLAMP(ctime, 0.0, 1.0);
+		CLAMP(ctime, 0.0f, 1.0f);
 	}
 	
 	/* time calculus is correct, now apply distance offset */
@@ -1917,9 +1988,10 @@ static void give_parvert(Object *par, int nr, float *vec)
 		if(dm) {
 			MVert *mvert= dm->getVertArray(dm);
 			int *index = (int *)dm->getVertDataArray(dm, CD_ORIGINDEX);
-			int i, count = 0, vindex, numVerts = dm->getNumVerts(dm);
+			int i, vindex, numVerts = dm->getNumVerts(dm);
 
 			/* get the average of all verts with (original index == nr) */
+			count= 0;
 			for(i = 0; i < numVerts; i++) {
 				vindex= (index)? index[i]: i;
 
@@ -2060,7 +2132,7 @@ void where_is_object_time(Scene *scene, Object *ob, float ctime)
 	if(ob==NULL) return;
 	
 	/* execute drivers only, as animation has already been done */
-	BKE_animsys_evaluate_animdata(&ob->id, ob->adt, ctime, ADT_RECALC_DRIVERS);
+	BKE_animsys_evaluate_animdata(scene, &ob->id, ob->adt, ctime, ADT_RECALC_DRIVERS);
 	
 	if(ob->parent) {
 		Object *par= ob->parent;
@@ -2268,7 +2340,7 @@ void what_does_parent(Scene *scene, Object *ob, Object *workob)
 	workob->constraints.first = ob->constraints.first;
 	workob->constraints.last = ob->constraints.last;
 
-	strcpy(workob->parsubstr, ob->parsubstr); 
+	BLI_strncpy(workob->parsubstr, ob->parsubstr, sizeof(workob->parsubstr));
 
 	where_is_object(scene, workob);
 }
@@ -2278,7 +2350,7 @@ BoundBox *unit_boundbox(void)
 	BoundBox *bb;
 	float min[3] = {-1.0f,-1.0f,-1.0f}, max[3] = {-1.0f,-1.0f,-1.0f};
 
-	bb= MEM_callocN(sizeof(BoundBox), "bb");
+	bb= MEM_callocN(sizeof(BoundBox), "OB-BoundBox");
 	boundbox_set_from_min_max(bb, min, max);
 	
 	return bb;
@@ -2332,9 +2404,9 @@ void object_get_dimensions(Object *ob, float *value)
 		
 		mat4_to_size( scale,ob->obmat);
 		
-		value[0] = fabs(scale[0]) * (bb->vec[4][0] - bb->vec[0][0]);
-		value[1] = fabs(scale[1]) * (bb->vec[2][1] - bb->vec[0][1]);
-		value[2] = fabs(scale[2]) * (bb->vec[1][2] - bb->vec[0][2]);
+		value[0] = fabsf(scale[0]) * (bb->vec[4][0] - bb->vec[0][0]);
+		value[1] = fabsf(scale[1]) * (bb->vec[2][1] - bb->vec[0][1]);
+		value[2] = fabsf(scale[2]) * (bb->vec[1][2] - bb->vec[0][2]);
 	} else {
 		value[0] = value[1] = value[2] = 0.f;
 	}
@@ -2363,24 +2435,42 @@ void object_set_dimensions(Object *ob, const float *value)
 void minmax_object(Object *ob, float *min, float *max)
 {
 	BoundBox bb;
-	Mesh *me;
-	Curve *cu;
 	float vec[3];
 	int a;
+	short change= FALSE;
 	
 	switch(ob->type) {
-		
 	case OB_CURVE:
 	case OB_FONT:
 	case OB_SURF:
-		cu= ob->data;
-		
-		if(cu->bb==NULL) tex_space_curve(cu);
-		bb= *(cu->bb);
-		
-		for(a=0; a<8; a++) {
-			mul_m4_v3(ob->obmat, bb.vec[a]);
-			DO_MINMAX(bb.vec[a], min, max);
+		{
+			Curve *cu= ob->data;
+
+			if(cu->bb==NULL) tex_space_curve(cu);
+			bb= *(cu->bb);
+
+			for(a=0; a<8; a++) {
+				mul_m4_v3(ob->obmat, bb.vec[a]);
+				DO_MINMAX(bb.vec[a], min, max);
+			}
+			change= TRUE;
+		}
+		break;
+	case OB_LATTICE:
+		{
+			Lattice *lt= ob->data;
+			BPoint *bp= lt->def;
+			int u, v, w;
+
+			for(w=0; w<lt->pntsw; w++) {
+				for(v=0; v<lt->pntsv; v++) {
+					for(u=0; u<lt->pntsu; u++, bp++) {
+						mul_v3_m4v3(vec, ob->obmat, bp->vec);
+						DO_MINMAX(vec, min, max);
+					}
+				}
+			}
+			change= TRUE;
 		}
 		break;
 	case OB_ARMATURE:
@@ -2392,25 +2482,27 @@ void minmax_object(Object *ob, float *min, float *max)
 				mul_v3_m4v3(vec, ob->obmat, pchan->pose_tail);
 				DO_MINMAX(vec, min, max);
 			}
-			break;
+			change= TRUE;
 		}
-		/* no break, get_mesh will give NULL and it passes on to default */
+		break;
 	case OB_MESH:
-		me= get_mesh(ob);
-		
-		if(me) {
-			bb = *mesh_get_bb(ob);
-			
-			for(a=0; a<8; a++) {
-				mul_m4_v3(ob->obmat, bb.vec[a]);
-				DO_MINMAX(bb.vec[a], min, max);
+		{
+			Mesh *me= get_mesh(ob);
+
+			if(me) {
+				bb = *mesh_get_bb(ob);
+
+				for(a=0; a<8; a++) {
+					mul_m4_v3(ob->obmat, bb.vec[a]);
+					DO_MINMAX(bb.vec[a], min, max);
+				}
+				change= TRUE;
 			}
 		}
-		if(min[0] < max[0] ) break;
-		
-		/* else here no break!!!, mesh can be zero sized */
-		
-	default:
+		break;
+	}
+
+	if(change == FALSE) {
 		DO_MINMAX(ob->obmat[3], min, max);
 
 		copy_v3_v3(vec, ob->obmat[3]);
@@ -2420,7 +2512,6 @@ void minmax_object(Object *ob, float *min, float *max)
 		copy_v3_v3(vec, ob->obmat[3]);
 		sub_v3_v3(vec, ob->size);
 		DO_MINMAX(vec, min, max);
-		break;
 	}
 }
 
@@ -2556,6 +2647,9 @@ void object_handle_update(Scene *scene, Object *ob)
 					Object *obg= ob->proxy_from->proxy_group;
 					invert_m4_m4(obg->imat, obg->obmat);
 					mul_m4_m4m4(ob->obmat, ob->proxy_from->obmat, obg->imat);
+					if(obg->dup_group) { /* should always be true */
+						add_v3_v3(ob->obmat[3], obg->dup_group->dupli_ofs);
+					}
 				}
 				else
 					copy_m4_m4(ob->obmat, ob->proxy_from->obmat);
@@ -2577,7 +2671,7 @@ void object_handle_update(Scene *scene, Object *ob)
 			if(adt) {
 				/* evaluate drivers */
 				// XXX: for mesh types, should we push this to derivedmesh instead?
-				BKE_animsys_evaluate_animdata(data_id, adt, ctime, ADT_RECALC_DRIVERS);
+				BKE_animsys_evaluate_animdata(scene, data_id, adt, ctime, ADT_RECALC_DRIVERS);
 			}
 
 			/* includes all keys and modifiers */
@@ -2595,11 +2689,12 @@ void object_handle_update(Scene *scene, Object *ob)
 
 #else				/* ensure CD_MASK_BAREMESH for now */
 					EditMesh *em = (ob == scene->obedit)? BKE_mesh_get_editmesh(ob->data): NULL;
+					unsigned int data_mask= scene->customdata_mask | ob->customdata_mask | CD_MASK_BAREMESH;
 					if(em) {
-						makeDerivedMesh(scene, ob, em,  scene->customdata_mask | CD_MASK_BAREMESH); /* was CD_MASK_BAREMESH */
+						makeDerivedMesh(scene, ob, em,  data_mask); /* was CD_MASK_BAREMESH */
 						BKE_mesh_end_editmesh(ob->data, em);
 					} else
-						makeDerivedMesh(scene, ob, NULL, scene->customdata_mask | CD_MASK_BAREMESH);
+						makeDerivedMesh(scene, ob, NULL, data_mask);
 #endif
 
 				}
@@ -2704,6 +2799,33 @@ void object_handle_update(Scene *scene, Object *ob)
 	if(ob->proxy) {
 		ob->proxy->proxy_from= ob;
 		// printf("set proxy pointer for later group stuff %s\n", ob->id.name);
+	}
+}
+
+void object_sculpt_modifiers_changed(Object *ob)
+{
+	SculptSession *ss= ob->sculpt;
+
+	if(!ss->cache) {
+		/* we free pbvh on changes, except during sculpt since it can't deal with
+		   changing PVBH node organization, we hope topology does not change in
+		   the meantime .. weak */
+		if(ss->pbvh) {
+				BLI_pbvh_free(ss->pbvh);
+				ss->pbvh= NULL;
+		}
+
+		free_sculptsession_deformMats(ob->sculpt);
+	} else {
+		PBVHNode **nodes;
+		int n, totnode;
+
+		BLI_pbvh_search_gather(ss->pbvh, NULL, NULL, &nodes, &totnode);
+
+		for(n = 0; n < totnode; n++)
+			BLI_pbvh_node_mark_update(nodes[n]);
+
+		MEM_freeN(nodes);
 	}
 }
 
@@ -2812,6 +2934,16 @@ int object_insert_ptcache(Object *ob)
 	return i;
 }
 
+void object_camera_mode(RenderData *rd, Object *camera)
+{
+	rd->mode &= ~(R_ORTHO|R_PANORAMA);
+	if(camera && camera->type==OB_CAMERA) {
+		Camera *cam= camera->data;
+		if(cam->type == CAM_ORTHO) rd->mode |= R_ORTHO;
+		if(cam->flag & CAM_PANORAMA) rd->mode |= R_PANORAMA;
+	}
+}
+
 /* 'lens' may be set for envmap only */
 void object_camera_matrix(
 		RenderData *rd, Object *camera, int winx, int winy, short field_second,
@@ -2821,8 +2953,7 @@ void object_camera_matrix(
 	Camera *cam=NULL;
 	float pixsize;
 	float shiftx=0.0, shifty=0.0, winside, viewfac;
-
-	rd->mode &= ~(R_ORTHO|R_PANORAMA);
+	short is_ortho= FALSE;
 
 	/* question mark */
 	(*ycor)= rd->yasp / rd->xasp;
@@ -2832,8 +2963,9 @@ void object_camera_matrix(
 	if(camera->type==OB_CAMERA) {
 		cam= camera->data;
 
-		if(cam->type==CAM_ORTHO) rd->mode |= R_ORTHO;
-		if(cam->flag & CAM_PANORAMA) rd->mode |= R_PANORAMA;
+		if(cam->type == CAM_ORTHO) {
+			is_ortho= TRUE;
+		}
 
 		/* solve this too... all time depending stuff is in convertblender.c?
 		 * Need to update the camera early because it's used for projection matrices
@@ -2853,18 +2985,18 @@ void object_camera_matrix(
 	}
 	else if(camera->type==OB_LAMP) {
 		Lamp *la= camera->data;
-		float fac= cos( M_PI*la->spotsize/360.0 );
+		float fac= cosf((float)M_PI*la->spotsize/360.0f);
 		float phi= acos(fac);
 
-		(*lens)= 16.0*fac/sin(phi);
+		(*lens)= 16.0f*fac/sinf(phi);
 		if((*lens)==0.0f)
-			(*lens)= 35.0;
+			(*lens)= 35.0f;
 		(*clipsta)= la->clipsta;
 		(*clipend)= la->clipend;
 	}
 	else {	/* envmap exception... */;
 		if((*lens)==0.0f)
-			(*lens)= 16.0;
+			(*lens)= 16.0f;
 
 		if((*clipsta)==0.0f || (*clipend)==0.0f) {
 			(*clipsta)= 0.1f;
@@ -2873,7 +3005,7 @@ void object_camera_matrix(
 	}
 
 	/* ortho only with camera available */
-	if(cam && rd->mode & R_ORTHO) {
+	if(cam && is_ortho) {
 		if(rd->xasp*winx >= rd->yasp*winy) {
 			viewfac= winx;
 		}
@@ -2884,8 +3016,8 @@ void object_camera_matrix(
 		pixsize= cam->ortho_scale/viewfac;
 	}
 	else {
-		if(rd->xasp*winx >= rd->yasp*winy)	viewfac= ((*lens) * winx)/32.0;
-		else								viewfac= (*ycor) * ((*lens) * winy)/32.0;
+		if(rd->xasp*winx >= rd->yasp*winy)	viewfac= ((*lens) * winx)/32.0f;
+		else								viewfac= (*ycor) * ((*lens) * winy)/32.0f;
 		pixsize= (*clipsta) / viewfac;
 	}
 
@@ -2898,12 +3030,12 @@ void object_camera_matrix(
 
 	if(field_second) {
 		if(rd->mode & R_ODDFIELD) {
-			viewplane->ymin-= 0.5 * (*ycor);
-			viewplane->ymax-= 0.5 * (*ycor);
+			viewplane->ymin-= 0.5f * (*ycor);
+			viewplane->ymax-= 0.5f * (*ycor);
 		}
 		else {
-			viewplane->ymin+= 0.5 * (*ycor);
-			viewplane->ymax+= 0.5 * (*ycor);
+			viewplane->ymin+= 0.5f * (*ycor);
+			viewplane->ymax+= 0.5f * (*ycor);
 		}
 	}
 	/* the window matrix is used for clipping, and not changed during OSA steps */
@@ -2916,7 +3048,7 @@ void object_camera_matrix(
 	(*viewdx)= pixsize;
 	(*viewdy)= (*ycor) * pixsize;
 
-	if(rd->mode & R_ORTHO)
+	if(is_ortho)
 		orthographic_m4(winmat, viewplane->xmin, viewplane->xmax, viewplane->ymin, viewplane->ymax, *clipsta, *clipend);
 	else
 		perspective_m4(winmat, viewplane->xmin, viewplane->xmax, viewplane->ymin, viewplane->ymax, *clipsta, *clipend);
@@ -3000,9 +3132,14 @@ static KeyBlock *insert_lattkey(Scene *scene, Object *ob, const char *name, int 
 
 	if(newkey || from_mix==FALSE) {
 		kb= add_keyblock(key, name);
-
-		/* create from lattice */
-		latt_to_key(lt, kb);
+		if (!newkey) {
+			KeyBlock *basekb= (KeyBlock *)key->block.first;
+			kb->data= MEM_dupallocN(basekb->data);
+			kb->totelem= basekb->totelem;
+		}
+		else {
+			latt_to_key(lt, kb);
+		}
 	}
 	else {
 		/* copy from current values */
@@ -3038,7 +3175,10 @@ static KeyBlock *insert_curvekey(Scene *scene, Object *ob, const char *name, int
 			KeyBlock *basekb= (KeyBlock *)key->block.first;
 			kb->data= MEM_dupallocN(basekb->data);
 			kb->totelem= basekb->totelem;
-		} else curve_to_key(cu, kb, lb);
+		}
+		else {
+			curve_to_key(cu, kb, lb);
+		}
 	}
 	else {
 		/* copy from current values */
@@ -3061,3 +3201,53 @@ KeyBlock *object_insert_shape_key(Scene *scene, Object *ob, const char *name, in
 	else									 return NULL;
 }
 
+/* most important if this is modified it should _always_ return True, in certain
+ * cases false positives are hard to avoid (shape keys for eg)
+ */
+int object_is_modified(Scene *scene, Object *ob)
+{
+	int flag= 0;
+
+	if(ob_get_key(ob)) {
+		flag |= eModifierMode_Render;
+	}
+	else {
+		ModifierData *md;
+		/* cloth */
+		for(md=modifiers_getVirtualModifierList(ob); md && (flag != (eModifierMode_Render | eModifierMode_Realtime)); md=md->next) {
+			if((flag & eModifierMode_Render) == 0	&& modifier_isEnabled(scene, md, eModifierMode_Render))		flag |= eModifierMode_Render;
+			if((flag & eModifierMode_Realtime) == 0	&& modifier_isEnabled(scene, md, eModifierMode_Realtime))	flag |= eModifierMode_Realtime;
+		}
+	}
+
+	return flag;
+}
+
+static void copy_object__forwardModifierLinks(void *UNUSED(userData), Object *UNUSED(ob), ID **idpoin)
+{
+	/* this is copied from ID_NEW; it might be better to have a macro */
+	if(*idpoin && (*idpoin)->newid) *idpoin = (*idpoin)->newid;
+}
+
+void object_relink(Object *ob)
+{
+	if(ob->id.lib)
+		return;
+
+	relink_constraints(&ob->constraints);
+	if (ob->pose){
+		bPoseChannel *chan;
+		for (chan = ob->pose->chanbase.first; chan; chan=chan->next){
+			relink_constraints(&chan->constraints);
+		}
+	}
+	modifiers_foreachIDLink(ob, copy_object__forwardModifierLinks, NULL);
+
+	if(ob->adt)
+		BKE_relink_animdata(ob->adt);
+
+	ID_NEW(ob->parent);
+
+	ID_NEW(ob->proxy);
+	ID_NEW(ob->proxy_group);
+}

@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_FaderFactory.h 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_FaderFactory.h 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -69,7 +69,7 @@ public:
 	 * \param start The time where fading should start in seconds.
 	 * \param length How long fading should last in seconds.
 	 */
-	AUD_FaderFactory(AUD_IFactory* factory,
+	AUD_FaderFactory(AUD_Reference<AUD_IFactory> factory,
 					  AUD_FadeType type = AUD_FADE_IN,
 					  float start = 0.0f, float length = 1.0f);
 
@@ -88,7 +88,7 @@ public:
 	 */
 	float getLength() const;
 
-	virtual AUD_IReader* createReader() const;
+	virtual AUD_Reference<AUD_IReader> createReader();
 };
 
 #endif //AUD_FADERFACTORY

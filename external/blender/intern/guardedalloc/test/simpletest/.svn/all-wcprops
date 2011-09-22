@@ -1,11 +1,11 @@
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svnroot/bf-blender/!svn/ver/34567/trunk/blender/intern/guardedalloc/test/simpletest
+/svnroot/bf-blender/!svn/ver/36276/trunk/blender/intern/guardedalloc/test/simpletest
 END
 memtest.c
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svnroot/bf-blender/!svn/ver/28254/trunk/blender/intern/guardedalloc/test/simpletest/memtest.c
+/svnroot/bf-blender/!svn/ver/36276/trunk/blender/intern/guardedalloc/test/simpletest/memtest.c
 END

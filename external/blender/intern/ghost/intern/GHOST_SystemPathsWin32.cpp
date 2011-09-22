@@ -1,5 +1,5 @@
 /*
- * $Id: GHOST_SystemPathsWin32.cpp 35152 2011-02-25 11:28:33Z jesterking $
+ * $Id: GHOST_SystemPathsWin32.cpp 38908 2011-08-02 04:28:05Z merwin $
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
  * This program is free software; you can redistribute it and/or
@@ -32,12 +32,9 @@
 
 #include "GHOST_SystemPathsWin32.h"
 
-#define WIN32_LEAN_AND_MEAN
-#ifdef _WIN32_IE
-#undef _WIN32_IE
-#endif
+#ifndef _WIN32_IE
 #define _WIN32_IE 0x0501
-#include <windows.h>
+#endif
 #include <shlobj.h>
 
 #if defined(__MINGW32__) || defined(__CYGWIN__)

@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svnroot/bf-blender/!svn/ver/35170/trunk/blender/source/gameengine/GamePlayer/common
+/svnroot/bf-blender/!svn/ver/39834/trunk/blender/source/gameengine/GamePlayer/common
 END
 GPC_Engine.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svnroot/bf-blender/!svn/ver/35170/trunk/blender/source/gameengine/GamePlayer/common/GPC_Engine.cpp
+/svnroot/bf-blender/!svn/ver/36523/trunk/blender/source/gameengine/GamePlayer/common/GPC_Engine.cpp
 END
 GPC_RenderTools.h
 K 25
@@ -61,7 +61,7 @@ SConscript
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svnroot/bf-blender/!svn/ver/33707/trunk/blender/source/gameengine/GamePlayer/common/SConscript
+/svnroot/bf-blender/!svn/ver/36523/trunk/blender/source/gameengine/GamePlayer/common/SConscript
 END
 GPC_KeyboardDevice.cpp
 K 25
@@ -115,7 +115,7 @@ bmfont.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 95
-/svnroot/bf-blender/!svn/ver/35170/trunk/blender/source/gameengine/GamePlayer/common/bmfont.cpp
+/svnroot/bf-blender/!svn/ver/39834/trunk/blender/source/gameengine/GamePlayer/common/bmfont.cpp
 END
 GPC_RenderTools.cpp
 K 25
@@ -145,7 +145,7 @@ CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svnroot/bf-blender/!svn/ver/34486/trunk/blender/source/gameengine/GamePlayer/common/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/38443/trunk/blender/source/gameengine/GamePlayer/common/CMakeLists.txt
 END
 GPC_RawLoadDotBlendArray.cpp
 K 25

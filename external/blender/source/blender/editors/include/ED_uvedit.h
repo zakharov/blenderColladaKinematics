@@ -1,5 +1,5 @@
 /*
- * $Id: ED_uvedit.h 35016 2011-02-21 07:25:24Z jesterking $
+ * $Id: ED_uvedit.h 36434 2011-05-02 11:11:57Z blendix $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -32,12 +32,13 @@
 #ifndef ED_UVEDIT_H
 #define ED_UVEDIT_H
 
-struct bContext;
-struct Scene;
-struct Object;
-struct MTFace;
+struct ARegionType;
 struct EditFace;
 struct Image;
+struct MTFace;
+struct Object;
+struct Scene;
+struct bContext;
 struct wmKeyConfig;
 
 /* uvedit_ops.c */
@@ -66,12 +67,19 @@ void uvedit_uv_select(struct Scene *scene, struct EditFace *efa, struct MTFace *
 
 int ED_uvedit_nearest_uv(struct Scene *scene, struct Object *obedit, struct Image *ima, float co[2], float uv[2]);
 
-/* uvedit_unwrap.c */
+/* uvedit_unwrap_ops.c */
 void ED_uvedit_live_unwrap_begin(struct Scene *scene, struct Object *obedit);
 void ED_uvedit_live_unwrap_re_solve(void);
 void ED_uvedit_live_unwrap_end(short cancel);
 
+/* single call up unwrap using scene settings, used for edge tag unwrapping */
+void ED_unwrap_lscm(struct Scene *scene, struct Object *obedit, const short sel);
+
+/* uvedit_draw.c */
 void draw_uvedit_main(struct SpaceImage *sima, struct ARegion *ar, struct Scene *scene, struct Object *obedit);
+
+/* uvedit_buttons.c */
+void ED_uvedit_buttons_register(struct ARegionType *art);
 
 #endif /* ED_UVEDIT_H */
 

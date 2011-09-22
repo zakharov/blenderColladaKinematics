@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_SinusReader.cpp 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_SinusReader.cpp 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -72,19 +72,14 @@ AUD_Specs AUD_SinusReader::getSpecs() const
 	return specs;
 }
 
-void AUD_SinusReader::read(int & length, sample_t* & buffer)
+void AUD_SinusReader::read(int& length, bool& eos, sample_t* buffer)
 {
-	// resize if necessary
-	if(m_buffer.getSize() < length * sizeof(sample_t))
-		m_buffer.resize(length * sizeof(sample_t));
-
 	// fill with sine data
-	buffer = m_buffer.getBuffer();
 	for(int i = 0; i < length; i++)
 	{
-		buffer[i] = sin((m_position + i) * 2 * M_PI * m_frequency /
-						(float)m_sampleRate);
+		buffer[i] = sin((m_position + i) * 2 * M_PI * m_frequency / m_sampleRate);
 	}
 
 	m_position += length;
+	eos = false;
 }

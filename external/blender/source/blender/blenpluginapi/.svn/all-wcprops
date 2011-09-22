@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 77
-/svnroot/bf-blender/!svn/ver/35244/trunk/blender/source/blender/blenpluginapi
+/svnroot/bf-blender/!svn/ver/39814/trunk/blender/source/blender/blenpluginapi
 END
 documentation.h
 K 25
@@ -25,7 +25,7 @@ SConscript
 K 25
 svn:wc:ra_dav:version-url
 V 88
-/svnroot/bf-blender/!svn/ver/35028/trunk/blender/source/blender/blenpluginapi/SConscript
+/svnroot/bf-blender/!svn/ver/39584/trunk/blender/source/blender/blenpluginapi/SConscript
 END
 externdef.h
 K 25
@@ -37,7 +37,7 @@ iff.h
 K 25
 svn:wc:ra_dav:version-url
 V 83
-/svnroot/bf-blender/!svn/ver/35244/trunk/blender/source/blender/blenpluginapi/iff.h
+/svnroot/bf-blender/!svn/ver/39814/trunk/blender/source/blender/blenpluginapi/iff.h
 END
 floatpatch.h
 K 25
@@ -55,5 +55,5 @@ CMakeLists.txt
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svnroot/bf-blender/!svn/ver/35028/trunk/blender/source/blender/blenpluginapi/CMakeLists.txt
+/svnroot/bf-blender/!svn/ver/38443/trunk/blender/source/blender/blenpluginapi/CMakeLists.txt
 END

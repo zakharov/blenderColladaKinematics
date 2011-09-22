@@ -1,7 +1,7 @@
 /*
  * Abstract class for sensor logic bricks
  *
- * $Id: SCA_ISensor.cpp 35169 2011-02-25 13:32:11Z jesterking $
+ * $Id: SCA_ISensor.cpp 39834 2011-09-01 02:12:53Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -216,8 +216,8 @@ void SCA_ISensor::UnregisterToManager()
 
 void SCA_ISensor::ActivateControllers(class SCA_LogicManager* logicmgr)
 {
-    for(vector<SCA_IController*>::const_iterator c= m_linkedcontrollers.begin();
-		c!=m_linkedcontrollers.end();++c)
+	for(vector<SCA_IController*>::const_iterator c= m_linkedcontrollers.begin();
+	    c!=m_linkedcontrollers.end();++c)
 	{
 		SCA_IController* contr = *c;
 		if (contr->IsActive())

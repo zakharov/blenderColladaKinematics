@@ -1,15 +1,15 @@
 10
 
 dir
-1680
+2344
 https://svn.blender.org/svnroot/bf-extensions/trunk/py/scripts/addons/rigify/rigs/biped/leg
 https://svn.blender.org/svnroot/bf-extensions
 
 
 
-2011-02-24T02:16:38.689535Z
-1651
-cessen
+2011-09-19T15:08:06.568619Z
+2334
+mont29
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-03-03T12:29:49.766297Z
-6c6177ca172ffa2a645fc5ab254f6862
-2011-02-24T02:16:38.689535Z
-1651
-cessen
+2011-09-21T18:17:49.444306Z
+aebfc5d72e7895817e26dade3b3e6cb5
+2011-09-19T15:08:06.568619Z
+2334
+mont29
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-9073
+9061
 
 __init__.py
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2011-03-03T12:29:49.766297Z
-e417bbe0cfdc9677d1d055aa73319222
-2011-02-24T02:16:38.689535Z
-1651
-cessen
+2011-09-21T18:17:49.444306Z
+569b9038867d34b9645ba780f1de4f5b
+2011-09-19T15:08:06.568619Z
+2334
+mont29
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-10450
+11485
 
 fk.py
 file
@@ -100,11 +100,11 @@ file
 
 
 
-2011-03-03T12:29:49.766297Z
-9990cdae8c445a4bb1f5dcae4d7d110b
-2011-02-24T02:16:38.689535Z
-1651
-cessen
+2011-09-21T18:17:49.444306Z
+4631e63fd42abfcfad801124f7ca62aa
+2011-09-19T15:08:06.568619Z
+2334
+mont29
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-8891
+9211
 
 ik.py
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-03-03T12:29:49.766297Z
-64c54c64c8abafc1962dab3286216bde
-2011-02-24T02:16:38.689535Z
-1651
-cessen
+2011-09-21T18:17:49.444306Z
+cb11e63c0b6049cb79daeee90ef8dc99
+2011-09-19T15:08:06.568619Z
+2334
+mont29
 has-props
 
 
@@ -160,5 +160,5 @@ has-props
 
 
 
-21802
+22988
 

@@ -63,6 +63,7 @@
 #include "BKE_library.h"
 #include "BKE_main.h"
 #include "BKE_object.h"
+#include "BKE_deform.h"
 
 
 #include "RNA_access.h"
@@ -422,7 +423,7 @@ static int setkeys(float fac, ListBase *lb, KeyBlock *k[], float *t, int cycl)
 		t[3]= k1->pos+ofs; 
 		k[3]= k1;
 
-		if(ofs>2.1+lastpos) break;
+		if(ofs > 2.1f + lastpos) break;
 	}
 	
 	bsplinetype= 0;
@@ -448,7 +449,7 @@ static int setkeys(float fac, ListBase *lb, KeyBlock *k[], float *t, int cycl)
 	}
 
 	d= t[2]-t[1];
-	if(d==0.0) {
+	if(d == 0.0f) {
 		if(bsplinetype==0) {
 			return 1;	/* both keys equal */
 		}
@@ -473,20 +474,20 @@ static int setkeys(float fac, ListBase *lb, KeyBlock *k[], float *t, int cycl)
 
 }
 
-static void flerp(int aantal, float *in, float *f0, float *f1, float *f2, float *f3, float *t)	
+static void flerp(int tot, float *in, float *f0, float *f1, float *f2, float *f3, float *t)
 {
 	int a;
 
-	for(a=0; a<aantal; a++) {
+	for(a=0; a<tot; a++) {
 		in[a]= t[0]*f0[a]+t[1]*f1[a]+t[2]*f2[a]+t[3]*f3[a];
 	}
 }
 
-static void rel_flerp(int aantal, float *in, float *ref, float *out, float fac)
+static void rel_flerp(int tot, float *in, float *ref, float *out, float fac)
 {
 	int a;
 	
-	for(a=0; a<aantal; a++) {
+	for(a=0; a<tot; a++) {
 		in[a]-= fac*(ref[a]-out[a]);
 	}
 }
@@ -649,8 +650,8 @@ static void cp_key(const int start, int end, const int tot, char *poin, Key *key
 		/* are we going to be nasty? */
 		if(flagflo) {
 			ktot+= kd;
-			while(ktot>=1.0) {
-				ktot-= 1.0;
+			while(ktot >= 1.0f) {
+				ktot -= 1.0f;
 				k1+= elemsize;
 				kref+= elemsize;
 			}
@@ -953,8 +954,8 @@ static void do_key(const int start, int end, const int tot, char *poin, Key *key
 		if(flagdo & 1) {
 			if(flagflo & 1) {
 				k1tot+= k1d;
-				while(k1tot>=1.0) {
-					k1tot-= 1.0;
+				while(k1tot >= 1.0f) {
+					k1tot -= 1.0f;
 					k1+= elemsize;
 				}
 			}
@@ -963,8 +964,8 @@ static void do_key(const int start, int end, const int tot, char *poin, Key *key
 		if(flagdo & 2) {
 			if(flagflo & 2) {
 				k2tot+= k2d;
-				while(k2tot>=1.0) {
-					k2tot-= 1.0;
+				while(k2tot >= 1.0f) {
+					k2tot -= 1.0f;
 					k2+= elemsize;
 				}
 			}
@@ -973,8 +974,8 @@ static void do_key(const int start, int end, const int tot, char *poin, Key *key
 		if(flagdo & 4) {
 			if(flagflo & 4) {
 				k3tot+= k3d;
-				while(k3tot>=1.0) {
-					k3tot-= 1.0;
+				while(k3tot >= 1.0f) {
+					k3tot -= 1.0f;
 					k3+= elemsize;
 				}
 			}
@@ -983,8 +984,8 @@ static void do_key(const int start, int end, const int tot, char *poin, Key *key
 		if(flagdo & 8) {
 			if(flagflo & 8) {
 				k4tot+= k4d;
-				while(k4tot>=1.0) {
-					k4tot-= 1.0;
+				while(k4tot >= 1.0f) {
+					k4tot -= 1.0f;
 					k4+= elemsize;
 				}
 			}
@@ -1005,7 +1006,7 @@ static float *get_weights_array(Object *ob, char *vgroup)
 	MDeformVert *dvert= NULL;
 	EditMesh *em= NULL;
 	EditVert *eve;
-	int totvert= 0, index= 0;
+	int totvert= 0, defgrp_index= 0;
 	
 	/* no vgroup string set? */
 	if(vgroup[0]==0) return NULL;
@@ -1028,10 +1029,10 @@ static float *get_weights_array(Object *ob, char *vgroup)
 	if(dvert==NULL) return NULL;
 	
 	/* find the group (weak loop-in-loop) */
-	index= defgroup_name_index(ob, vgroup);
-	if(index >= 0) {
+	defgrp_index= defgroup_name_index(ob, vgroup);
+	if(defgrp_index >= 0) {
 		float *weights;
-		int i, j;
+		int i;
 		
 		weights= MEM_callocN(totvert*sizeof(float), "weights");
 
@@ -1040,23 +1041,13 @@ static float *get_weights_array(Object *ob, char *vgroup)
 				dvert= CustomData_em_get(&em->vdata, eve->data, CD_MDEFORMVERT);
 
 				if(dvert) {
-					for(j=0; j<dvert->totweight; j++) {
-						if(dvert->dw[j].def_nr == index) {
-							weights[i]= dvert->dw[j].weight;
-							break;
-						}
-					}
+					weights[i]= defvert_find_weight(dvert, defgrp_index);
 				}
 			}
 		}
 		else {
 			for(i=0; i < totvert; i++, dvert++) {
-				for(j=0; j<dvert->totweight; j++) {
-					if(dvert->dw[j].def_nr == index) {
-						weights[i]= dvert->dw[j].weight;
-						break;
-					}
-				}
+				weights[i]= defvert_find_weight(dvert, defgrp_index);
 			}
 		}
 
@@ -1409,7 +1400,7 @@ float *do_ob_key(Scene *scene, Object *ob)
 		/* do shapekey local drivers */
 		float ctime= (float)scene->r.cfra; // XXX this needs to be checked
 		
-		BKE_animsys_evaluate_animdata(&key->id, key->adt, ctime, ADT_RECALC_DRIVERS);
+		BKE_animsys_evaluate_animdata(scene, &key->id, key->adt, ctime, ADT_RECALC_DRIVERS);
 		
 		if(ob->type==OB_MESH) do_mesh_key(scene, ob, key, out, tot);
 		else if(ob->type==OB_LATTICE) do_latt_key(scene, ob, key, out, tot);
@@ -1473,7 +1464,7 @@ KeyBlock *add_keyblock(Key *key, const char *name)
 	
 	// XXX kb->pos is the confusing old horizontal-line RVK crap in old IPO Editor...
 	if(key->type == KEY_RELATIVE) 
-		kb->pos= curpos+0.1;
+		kb->pos= curpos + 0.1f;
 	else {
 #if 0 // XXX old animation system
 		curpos= bsystem_time(scene, 0, (float)CFRA, 0.0);

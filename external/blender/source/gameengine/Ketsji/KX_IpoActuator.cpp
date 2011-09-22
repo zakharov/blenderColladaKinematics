@@ -1,7 +1,7 @@
 /*
  * Do Ipo stuff
  *
- * $Id: KX_IpoActuator.cpp 35171 2011-02-25 13:35:59Z jesterking $
+ * $Id: KX_IpoActuator.cpp 40419 2011-09-21 08:40:30Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -33,12 +33,7 @@
  *  \ingroup ketsji
  */
 
-
-#if defined (__sgi)
-#include <math.h>
-#else
 #include <cmath>
-#endif
  
 #include "KX_IpoActuator.h"
 #include "KX_GameObject.h"

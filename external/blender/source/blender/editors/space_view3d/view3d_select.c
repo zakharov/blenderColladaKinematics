@@ -1,5 +1,5 @@
 /*
- * $Id: view3d_select.c 35337 2011-03-03 17:59:04Z campbellbarton $
+ * $Id: view3d_select.c 40390 2011-09-20 08:48:48Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -54,6 +54,11 @@
 #include "BLI_linklist.h"
 #include "BLI_utildefines.h"
 
+/* vertex box select */
+#include "IMB_imbuf_types.h"
+#include "IMB_imbuf.h"
+#include "BKE_global.h"
+
 #include "BKE_context.h"
 #include "BKE_paint.h"
 #include "BKE_armature.h"
@@ -93,21 +98,35 @@ void view3d_set_viewcontext(bContext *C, ViewContext *vc)
 	vc->obedit= CTX_data_edit_object(C); 
 }
 
-void view3d_get_view_aligned_coordinate(ViewContext *vc, float *fp, short mval[2])
+int view3d_get_view_aligned_coordinate(ViewContext *vc, float fp[3], const int mval[2], const short do_fallback)
 {
 	float dvec[3];
-	short mx, my;
-	
-	mx= mval[0];
-	my= mval[1];
-	
-	project_short_noclip(vc->ar, fp, mval);
-	
+	int mval_cpy[2];
+
+	mval_cpy[0]= mval[0];
+	mval_cpy[1]= mval[1];
+
+	project_int_noclip(vc->ar, fp, mval_cpy);
+
 	initgrabz(vc->rv3d, fp[0], fp[1], fp[2]);
-	
-	if(mval[0]!=IS_CLIPPED) {
-		window_to_3d_delta(vc->ar, dvec, mval[0]-mx, mval[1]-my);
+
+	if(mval_cpy[0]!=IS_CLIPPED) {
+		float mval_f[2];
+		VECSUB2D(mval_f, mval_cpy, mval);
+		ED_view3d_win_to_delta(vc->ar, mval_f, dvec);
 		sub_v3_v3(fp, dvec);
+
+		return TRUE;
+	}
+	else {
+		/* fallback to the view center */
+		if(do_fallback) {
+			negate_v3_v3(fp, vc->rv3d->ofs);
+			return view3d_get_view_aligned_coordinate(vc, fp, mval, FALSE);
+		}
+		else {
+			return FALSE;
+		}
 	}
 }
 
@@ -184,6 +203,24 @@ static void EM_backbuf_checkAndSelectFaces(EditMesh *em, int select)
 	}
 }
 
+
+/* object mode, EM_ prefix is confusing here, rename? */
+static void EM_backbuf_checkAndSelectVerts_obmode(Mesh *me, int select)
+{
+	MVert *mv = me->mvert;
+	int a;
+
+	if (mv) {
+		for(a=1; a<=me->totvert; a++, mv++) {
+			if(EM_check_backbuf(a)) {
+				if(!(mv->flag & ME_HIDE)) {
+					mv->flag = select?(mv->flag|SELECT):(mv->flag&~SELECT);
+				}
+			}
+		}
+	}
+}
+/* object mode, EM_ prefix is confusing here, rename? */
 static void EM_backbuf_checkAndSelectTFaces(Mesh *me, int select)
 {
 	MFace *mface = me->mface;
@@ -197,26 +234,6 @@ static void EM_backbuf_checkAndSelectTFaces(Mesh *me, int select)
 		}
 	}
 }
-
-#if 0
-void arrows_move_cursor(unsigned short event)
-{
-	short mval[2];
-
-	getmouseco_sc(mval);
-
-	if(event==UPARROWKEY) {
-		warp_pointer(mval[0], mval[1]+1);
-	} else if(event==DOWNARROWKEY) {
-		warp_pointer(mval[0], mval[1]-1);
-	} else if(event==LEFTARROWKEY) {
-		warp_pointer(mval[0]-1, mval[1]);
-	} else if(event==RIGHTARROWKEY) {
-		warp_pointer(mval[0]+1, mval[1]);
-	}
-}
-#endif
-
 
 /* *********************** GESTURE AND LASSO ******************* */
 
@@ -237,7 +254,7 @@ static int view3d_selectable_data(bContext *C)
 			if (ob->mode & OB_MODE_SCULPT) {
 				return 0;
 			}
-			if (ob->mode & (OB_MODE_VERTEX_PAINT|OB_MODE_WEIGHT_PAINT|OB_MODE_TEXTURE_PAINT) && !paint_facesel_test(ob)) {
+			if (ob->mode & (OB_MODE_VERTEX_PAINT|OB_MODE_WEIGHT_PAINT|OB_MODE_TEXTURE_PAINT) && !paint_facesel_test(ob) && !paint_vertsel_test(ob)) {
 				return 0;
 			}
 		}
@@ -282,12 +299,12 @@ static int edge_inside_rect(rcti *rect, short x1, short y1, short x2, short y2)
 #define MOVES_GESTURE 50
 #define MOVES_LASSO 500
 
-int lasso_inside(short mcords[][2], short moves, short sx, short sy)
+int lasso_inside(int mcords[][2], short moves, int sx, int sy)
 {
 	/* we do the angle rule, define that all added angles should be about zero or 2*PI */
 	float angletot=0.0, len, dot, ang, cross, fp1[2], fp2[2];
 	int a;
-	short *p1, *p2;
+	int *p1, *p2;
 	
 	if(sx==IS_CLIPPED)
 		return 0;
@@ -316,7 +333,7 @@ int lasso_inside(short mcords[][2], short moves, short sx, short sy)
 
 		cross= (float)((p1[1]-p2[1])*(p1[0]-sx) + (p2[0]-p1[0])*(p1[1]-sy));
 		
-		if(cross<0.0) angletot-= ang;
+		if(cross<0.0f) angletot-= ang;
 		else angletot+= ang;
 		
 		/* circulate */
@@ -330,9 +347,9 @@ int lasso_inside(short mcords[][2], short moves, short sx, short sy)
 }
 
 /* edge version for lasso select. we assume boundbox check was done */
-int lasso_inside_edge(short mcords[][2], short moves, int x0, int y0, int x1, int y1)
+int lasso_inside_edge(int mcords[][2], short moves, int x0, int y0, int x1, int y1)
 {
-	short v1[2], v2[2];
+	int v1[2], v2[2];
 	int a;
 
 	if(x0==IS_CLIPPED || x1==IS_CLIPPED)
@@ -347,9 +364,9 @@ int lasso_inside_edge(short mcords[][2], short moves, int x0, int y0, int x1, in
 	
 	/* no points in lasso, so we have to intersect with lasso edge */
 	
-	if( isect_line_line_v2_short(mcords[0], mcords[moves-1], v1, v2) > 0) return 1;
+	if( isect_line_line_v2_int(mcords[0], mcords[moves-1], v1, v2) > 0) return 1;
 	for(a=0; a<moves-1; a++) {
-		if( isect_line_line_v2_short(mcords[a], mcords[a+1], v1, v2) > 0) return 1;
+		if( isect_line_line_v2_int(mcords[a], mcords[a+1], v1, v2) > 0) return 1;
 	}
 	
 	return 0;
@@ -359,11 +376,11 @@ int lasso_inside_edge(short mcords[][2], short moves, int x0, int y0, int x1, in
 /* warning; lasso select with backbuffer-check draws in backbuf with persp(PERSP_WIN) 
    and returns with persp(PERSP_VIEW). After lasso select backbuf is not OK
 */
-static void do_lasso_select_pose(ViewContext *vc, Object *ob, short mcords[][2], short moves, short select)
+static void do_lasso_select_pose(ViewContext *vc, Object *ob, int mcords[][2], short moves, short select)
 {
 	bPoseChannel *pchan;
 	float vec[3];
-	short sco1[2], sco2[2];
+	int sco1[2], sco2[2];
 	bArmature *arm= ob->data;
 	
 	if(ob->type!=OB_ARMATURE || ob->pose==NULL) return;
@@ -371,9 +388,9 @@ static void do_lasso_select_pose(ViewContext *vc, Object *ob, short mcords[][2],
 	for(pchan= ob->pose->chanbase.first; pchan; pchan= pchan->next) {
 		if (PBONE_VISIBLE(arm, pchan->bone) && (pchan->bone->flag & BONE_UNSELECTABLE)==0) {
 			mul_v3_m4v3(vec, ob->obmat, pchan->pose_head);
-			project_short(vc->ar, vec, sco1);
+			project_int(vc->ar, vec, sco1);
 			mul_v3_m4v3(vec, ob->obmat, pchan->pose_tail);
-			project_short(vc->ar, vec, sco2);
+			project_int(vc->ar, vec, sco2);
 			
 			if(lasso_inside_edge(mcords, moves, sco1[0], sco1[1], sco2[0], sco2[1])) {
 				if(select) pchan->bone->flag |= BONE_SELECTED;
@@ -394,7 +411,7 @@ static void object_deselect_all_visible(Scene *scene, View3D *v3d)
 	}
 }
 
-static void do_lasso_select_objects(ViewContext *vc, short mcords[][2], short moves, short extend, short select)
+static void do_lasso_select_objects(ViewContext *vc, int mcords[][2], short moves, short extend, short select)
 {
 	Base *base;
 	
@@ -417,7 +434,7 @@ static void do_lasso_select_objects(ViewContext *vc, short mcords[][2], short mo
 	}
 }
 
-static void lasso_select_boundbox(rcti *rect, short mcords[][2], short moves)
+static void lasso_select_boundbox(rcti *rect, int mcords[][2], short moves)
 {
 	short a;
 	
@@ -434,7 +451,7 @@ static void lasso_select_boundbox(rcti *rect, short mcords[][2], short moves)
 
 static void do_lasso_select_mesh__doSelectVert(void *userData, EditVert *eve, int x, int y, int UNUSED(index))
 {
-	struct { ViewContext vc; rcti *rect; short (*mcords)[2], moves, select, pass, done; } *data = userData;
+	struct { ViewContext vc; rcti *rect; int (*mcords)[2], moves, select, pass, done; } *data = userData;
 
 	if (BLI_in_rcti(data->rect, x, y) && lasso_inside(data->mcords, data->moves, x, y)) {
 		eve->f = data->select?(eve->f|1):(eve->f&~1);
@@ -442,7 +459,7 @@ static void do_lasso_select_mesh__doSelectVert(void *userData, EditVert *eve, in
 }
 static void do_lasso_select_mesh__doSelectEdge(void *userData, EditEdge *eed, int x0, int y0, int x1, int y1, int index)
 {
-	struct { ViewContext vc; rcti *rect; short (*mcords)[2], moves, select, pass, done; } *data = userData;
+	struct { ViewContext vc; rcti *rect; int (*mcords)[2], moves, select, pass, done; } *data = userData;
 
 	if (EM_check_backbuf(em_solidoffs+index)) {
 		if (data->pass==0) {
@@ -461,16 +478,16 @@ static void do_lasso_select_mesh__doSelectEdge(void *userData, EditEdge *eed, in
 }
 static void do_lasso_select_mesh__doSelectFace(void *userData, EditFace *efa, int x, int y, int UNUSED(index))
 {
-	struct { ViewContext vc; rcti *rect; short (*mcords)[2], moves, select, pass, done; } *data = userData;
+	struct { ViewContext vc; rcti *rect; int (*mcords)[2], moves, select, pass, done; } *data = userData;
 
 	if (BLI_in_rcti(data->rect, x, y) && lasso_inside(data->mcords, data->moves, x, y)) {
 		EM_select_face_fgon(data->vc.em, efa, data->select);
 	}
 }
 
-static void do_lasso_select_mesh(ViewContext *vc, short mcords[][2], short moves, short extend, short select)
+static void do_lasso_select_mesh(ViewContext *vc, int mcords[][2], short moves, short extend, short select)
 {
-	struct { ViewContext vc; rcti *rect; short (*mcords)[2], moves, select, pass, done; } data;
+	struct { ViewContext vc; rcti *rect; int (*mcords)[2], moves, select, pass, done; } data;
 	ToolSettings *ts= vc->scene->toolsettings;
 	rcti rect;
 	int bbsel;
@@ -491,11 +508,8 @@ static void do_lasso_select_mesh(ViewContext *vc, short mcords[][2], short moves
 	if (extend == 0 && select)
 		EM_deselect_all(vc->em);
 
-	/* workaround: init mats first, EM_mask_init_backbuf_border can change
-	   view matrix to pixel space, breaking edge select with backbuf. fixes bug [#20936] */
-
-	/* [#21018] breaks zbuf select. run below. only if bbsel fails */
-	/* ED_view3d_init_mats_rv3d(vc->obedit, vc->rv3d) */
+	 /* for non zbuf projections, dont change the GL state */
+	ED_view3d_init_mats_rv3d(vc->obedit, vc->rv3d);
 
 	glLoadMatrixf(vc->rv3d->viewmat);
 	bbsel= EM_mask_init_backbuf_border(vc, mcords, moves, rect.xmin, rect.ymin, rect.xmax, rect.ymax);
@@ -503,15 +517,13 @@ static void do_lasso_select_mesh(ViewContext *vc, short mcords[][2], short moves
 	if(ts->selectmode & SCE_SELECT_VERTEX) {
 		if (bbsel) {
 			EM_backbuf_checkAndSelectVerts(vc->em, select);
-		} else {
-			ED_view3d_init_mats_rv3d(vc->obedit, vc->rv3d); /* for foreach's screen/vert projection */
+		}
+		else {
 			mesh_foreachScreenVert(vc, do_lasso_select_mesh__doSelectVert, &data, 1);
 		}
 	}
 	if(ts->selectmode & SCE_SELECT_EDGE) {
-			/* Does both bbsel and non-bbsel versions (need screen cos for both) */
-		ED_view3d_init_mats_rv3d(vc->obedit, vc->rv3d); /* for foreach's screen/vert projection */
-
+		/* Does both bbsel and non-bbsel versions (need screen cos for both) */
 		data.pass = 0;
 		mesh_foreachScreenEdge(vc, do_lasso_select_mesh__doSelectEdge, &data, 0);
 
@@ -524,8 +536,8 @@ static void do_lasso_select_mesh(ViewContext *vc, short mcords[][2], short moves
 	if(ts->selectmode & SCE_SELECT_FACE) {
 		if (bbsel) {
 			EM_backbuf_checkAndSelectFaces(vc->em, select);
-		} else {
-			ED_view3d_init_mats_rv3d(vc->obedit, vc->rv3d); /* for foreach's screen/vert projection */
+		}
+		else {
 			mesh_foreachScreenFace(vc, do_lasso_select_mesh__doSelectFace, &data);
 		}
 	}
@@ -536,7 +548,7 @@ static void do_lasso_select_mesh(ViewContext *vc, short mcords[][2], short moves
 
 #if 0
 /* this is an exception in that its the only lasso that dosnt use the 3d view (uses space image view) */
-static void do_lasso_select_mesh_uv(short mcords[][2], short moves, short select)
+static void do_lasso_select_mesh_uv(int mcords[][2], short moves, short select)
 {
 	EditFace *efa;
 	MTFace *tf;
@@ -593,7 +605,7 @@ static void do_lasso_select_mesh_uv(short mcords[][2], short moves, short select
 
 static void do_lasso_select_curve__doSelect(void *userData, Nurb *UNUSED(nu), BPoint *bp, BezTriple *bezt, int beztindex, int x, int y)
 {
-	struct { ViewContext *vc; short (*mcords)[2]; short moves; short select; } *data = userData;
+	struct { ViewContext *vc; int (*mcords)[2]; short moves; short select; } *data = userData;
 	Object *obedit= data->vc->obedit;
 	Curve *cu= (Curve*)obedit->data;
 
@@ -620,9 +632,9 @@ static void do_lasso_select_curve__doSelect(void *userData, Nurb *UNUSED(nu), BP
 	}
 }
 
-static void do_lasso_select_curve(ViewContext *vc, short mcords[][2], short moves, short extend, short select)
+static void do_lasso_select_curve(ViewContext *vc, int mcords[][2], short moves, short extend, short select)
 {
-	struct { ViewContext *vc; short (*mcords)[2]; short moves; short select; } data;
+	struct { ViewContext *vc; int (*mcords)[2]; short moves; short select; } data;
 
 	/* set vc->editnurb */
 	data.vc = vc;
@@ -639,15 +651,15 @@ static void do_lasso_select_curve(ViewContext *vc, short mcords[][2], short move
 
 static void do_lasso_select_lattice__doSelect(void *userData, BPoint *bp, int x, int y)
 {
-	struct { short (*mcords)[2]; short moves; short select; } *data = userData;
+	struct { int (*mcords)[2]; short moves; short select; } *data = userData;
 
 	if (lasso_inside(data->mcords, data->moves, x, y)) {
 		bp->f1 = data->select?(bp->f1|SELECT):(bp->f1&~SELECT);
 	}
 }
-static void do_lasso_select_lattice(ViewContext *vc, short mcords[][2], short moves, short extend, short select)
+static void do_lasso_select_lattice(ViewContext *vc, int mcords[][2], short moves, short extend, short select)
 {
-	struct { short (*mcords)[2]; short moves; short select; } data;
+	struct { int (*mcords)[2]; short moves; short select; } data;
 
 	/* set editdata in vc */
 	data.mcords = mcords;
@@ -661,7 +673,7 @@ static void do_lasso_select_lattice(ViewContext *vc, short mcords[][2], short mo
 	lattice_foreachScreenVert(vc, do_lasso_select_lattice__doSelect, &data);
 }
 
-static void do_lasso_select_armature(ViewContext *vc, short mcords[][2], short moves, short extend, short select)
+static void do_lasso_select_armature(ViewContext *vc, int mcords[][2], short moves, short extend, short select)
 {
 	bArmature *arm= vc->obedit->data;
 	EditBone *ebone;
@@ -689,10 +701,10 @@ static void do_lasso_select_armature(ViewContext *vc, short mcords[][2], short m
 				change= TRUE;
 			}
 			if(lasso_inside(mcords, moves, sco2[0], sco2[1])) {
-			   if(select) ebone->flag |= BONE_TIPSEL;
-			   else ebone->flag &= ~BONE_TIPSEL;
-			   didpoint= 1;
-			   change= TRUE;
+				if(select) ebone->flag |= BONE_TIPSEL;
+				else ebone->flag &= ~BONE_TIPSEL;
+				didpoint= 1;
+				change= TRUE;
 			}
 			/* if one of points selected, we skip the bone itself */
 			if(didpoint==0 && lasso_inside_edge(mcords, moves, sco1[0], sco1[1], sco2[0], sco2[1])) {
@@ -713,7 +725,7 @@ static void do_lasso_select_armature(ViewContext *vc, short mcords[][2], short m
 
 
 
-static void do_lasso_select_meta(ViewContext *vc, short mcords[][2], short moves, short extend, short select)
+static void do_lasso_select_meta(ViewContext *vc, int mcords[][2], short moves, short extend, short select)
 {
 	MetaBall *mb = (MetaBall*)vc->obedit->data;
 	MetaElem *ml;
@@ -738,7 +750,89 @@ static void do_lasso_select_meta(ViewContext *vc, short mcords[][2], short moves
 	}
 }
 
-static void do_lasso_select_paintface(ViewContext *vc, short mcords[][2], short moves, short extend, short select)
+int do_paintvert_box_select(ViewContext *vc, rcti *rect, int select, int extend)
+{
+	Mesh *me;
+	MVert *mvert;
+	struct ImBuf *ibuf;
+	unsigned int *rt;
+	int a, index;
+	char *selar;
+	int sx= rect->xmax-rect->xmin+1;
+	int sy= rect->ymax-rect->ymin+1;
+
+	me= vc->obact->data;
+
+	if(me==NULL || me->totvert==0 || sx*sy <= 0)
+		return OPERATOR_CANCELLED;
+
+	selar= MEM_callocN(me->totvert+1, "selar");
+
+	if (extend == 0 && select)
+		paintvert_deselect_all_visible(vc->obact, SEL_DESELECT, FALSE);
+
+	view3d_validate_backbuf(vc);
+
+	ibuf = IMB_allocImBuf(sx,sy,32,IB_rect);
+	rt = ibuf->rect;
+	glReadPixels(rect->xmin+vc->ar->winrct.xmin,  rect->ymin+vc->ar->winrct.ymin, sx, sy, GL_RGBA, GL_UNSIGNED_BYTE,  ibuf->rect);
+	if(ENDIAN_ORDER==B_ENDIAN) IMB_convert_rgba_to_abgr(ibuf);
+
+	a= sx*sy;
+	while(a--) {
+		if(*rt) {
+			index= WM_framebuffer_to_index(*rt);
+			if(index<=me->totvert) selar[index]= 1;
+		}
+		rt++;
+	}
+
+	mvert= me->mvert;
+	for(a=1; a<=me->totvert; a++, mvert++) {
+		if(selar[a]) {
+			if(mvert->flag & ME_HIDE);
+			else {
+				if(select) mvert->flag |= SELECT;
+				else mvert->flag &= ~SELECT;
+			}
+		}
+	}
+
+	IMB_freeImBuf(ibuf);
+	MEM_freeN(selar);
+
+#ifdef __APPLE__	
+	glReadBuffer(GL_BACK);
+#endif
+
+	paintvert_flush_flags(vc->obact);
+
+	return OPERATOR_FINISHED;
+}
+
+static void do_lasso_select_paintvert(ViewContext *vc, int mcords[][2], short moves, short extend, short select)
+{
+	Object *ob= vc->obact;
+	Mesh *me= ob?ob->data:NULL;
+	rcti rect;
+
+	if(me==NULL || me->totvert==0)
+		return;
+
+	if(extend==0 && select)
+		paintvert_deselect_all_visible(ob, SEL_DESELECT, FALSE); /* flush selection at the end */
+	em_vertoffs= me->totvert+1;	/* max index array */
+
+	lasso_select_boundbox(&rect, mcords, moves);
+	EM_mask_init_backbuf_border(vc, mcords, moves, rect.xmin, rect.ymin, rect.xmax, rect.ymax);
+
+	EM_backbuf_checkAndSelectVerts_obmode(me, select);
+
+	EM_free_backbuf();
+
+	paintvert_flush_flags(ob);
+}
+static void do_lasso_select_paintface(ViewContext *vc, int mcords[][2], short moves, short extend, short select)
 {
 	Object *ob= vc->obact;
 	Mesh *me= ob?ob->data:NULL;
@@ -763,7 +857,7 @@ static void do_lasso_select_paintface(ViewContext *vc, short mcords[][2], short 
 }
 
 #if 0
-static void do_lasso_select_node(short mcords[][2], short moves, short select)
+static void do_lasso_select_node(int mcords[][2], short moves, short select)
 {
 	SpaceNode *snode = sa->spacedata.first;
 	
@@ -793,13 +887,15 @@ static void do_lasso_select_node(short mcords[][2], short moves, short select)
 }
 #endif
 
-static void view3d_lasso_select(bContext *C, ViewContext *vc, short mcords[][2], short moves, short extend, short select)
+static void view3d_lasso_select(bContext *C, ViewContext *vc, int mcords[][2], short moves, short extend, short select)
 {
 	Object *ob = CTX_data_active_object(C);
 
 	if(vc->obedit==NULL) { /* Object Mode */
 		if(paint_facesel_test(ob))
 			do_lasso_select_paintface(vc, mcords, moves, extend, select);
+		else if(paint_vertsel_test(ob))
+			do_lasso_select_paintvert(vc, mcords, moves, extend, select);
 		else if(ob && ob->mode & (OB_MODE_VERTEX_PAINT|OB_MODE_WEIGHT_PAINT|OB_MODE_TEXTURE_PAINT))
 			;
 		else if(ob && ob->mode & OB_MODE_PARTICLE_EDIT)
@@ -842,14 +938,14 @@ static int view3d_lasso_select_exec(bContext *C, wmOperator *op)
 {
 	ViewContext vc;
 	int i= 0;
-	short mcords[1024][2];
+	int mcords[1024][2];
 
 	RNA_BEGIN(op->ptr, itemptr, "path") {
 		float loc[2];
 		
 		RNA_float_get_array(&itemptr, "loc", loc);
-		mcords[i][0]= (short)loc[0];
-		mcords[i][1]= (short)loc[1];
+		mcords[i][0]= (int)loc[0];
+		mcords[i][1]= (int)loc[1];
 		i++;
 		if(i>=1024) break;
 	}
@@ -881,13 +977,14 @@ void VIEW3D_OT_select_lasso(wmOperatorType *ot)
 	ot->modal= WM_gesture_lasso_modal;
 	ot->exec= view3d_lasso_select_exec;
 	ot->poll= view3d_selectable_data;
+	ot->cancel= WM_gesture_lasso_cancel;
 	
 	/* flags */
 	ot->flag= OPTYPE_UNDO;
 	
 	RNA_def_collection_runtime(ot->srna, "path", &RNA_OperatorMousePath, "Path", "");
-	RNA_def_boolean(ot->srna, "deselect", 0, "Deselect", "Deselect rather than select items.");
-	RNA_def_boolean(ot->srna, "extend", 1, "Extend", "Extend selection instead of deselecting everything first.");
+	RNA_def_boolean(ot->srna, "deselect", 0, "Deselect", "Deselect rather than select items");
+	RNA_def_boolean(ot->srna, "extend", 1, "Extend", "Extend selection instead of deselecting everything first");
 }
 
 
@@ -899,14 +996,14 @@ static unsigned int samplerect(unsigned int *buf, int size, unsigned int dontdo)
 {
 	Base *base;
 	unsigned int *bufmin,*bufmax;
-	int a,b,rc,tel,aantal,dirvec[4][2],maxob;
+	int a,b,rc,tel,len,dirvec[4][2],maxob;
 	unsigned int retval=0;
 	
 	base= LASTBASE;
 	if(base==0) return 0;
 	maxob= base->selcol;
 
-	aantal= (size-1)/2;
+	len= (size-1)/2;
 	rc= 0;
 
 	dirvec[0][0]= 1;
@@ -920,7 +1017,7 @@ static unsigned int samplerect(unsigned int *buf, int size, unsigned int dontdo)
 
 	bufmin= buf;
 	bufmax= buf+ size*size;
-	buf+= aantal*size+ aantal;
+	buf+= len*size+ len;
 
 	for(tel=1;tel<=size;tel++) {
 
@@ -961,7 +1058,7 @@ static void deselectall_except(Scene *scene, Base *b)   /* deselect all except b
 	}
 }
 
-static Base *mouse_select_menu(bContext *C, ViewContext *vc, unsigned int *buffer, int hits, short *mval, short extend)
+static Base *mouse_select_menu(bContext *C, ViewContext *vc, unsigned int *buffer, int hits, const int mval[2], short extend)
 {
 	short baseCount = 0;
 	short ok;
@@ -1047,7 +1144,7 @@ static Base *mouse_select_menu(bContext *C, ViewContext *vc, unsigned int *buffe
 
 /* we want a select buffer with bones, if there are... */
 /* so check three selection levels and compare */
-static short mixed_bones_object_selectbuffer(ViewContext *vc, unsigned int *buffer, short *mval)
+static short mixed_bones_object_selectbuffer(ViewContext *vc, unsigned int *buffer, const int mval[2])
 {
 	rcti rect;
 	int offs;
@@ -1104,12 +1201,12 @@ static short mixed_bones_object_selectbuffer(ViewContext *vc, unsigned int *buff
 }
 
 /* returns basact */
-static Base *mouse_select_eval_buffer(ViewContext *vc, unsigned int *buffer, int hits, short *mval, Base *startbase, int has_bones)
+static Base *mouse_select_eval_buffer(ViewContext *vc, unsigned int *buffer, int hits, const int mval[2], Base *startbase, int has_bones)
 {
 	Scene *scene= vc->scene;
 	View3D *v3d= vc->v3d;
 	Base *base, *basact= NULL;
-	static short lastmval[2]={-100, -100};
+	static int lastmval[2]={-100, -100};
 	int a, donearest= 0;
 	
 	/* define if we use solid nearest select or not */
@@ -1197,7 +1294,7 @@ static Base *mouse_select_eval_buffer(ViewContext *vc, unsigned int *buffer, int
 }
 
 /* mval comes from event->mval, only use within region handlers */
-Base *ED_view3d_give_base_under_cursor(bContext *C, short *mval)
+Base *ED_view3d_give_base_under_cursor(bContext *C, const int mval[2])
 {
 	ViewContext vc;
 	Base *basact= NULL;
@@ -1222,7 +1319,7 @@ Base *ED_view3d_give_base_under_cursor(bContext *C, short *mval)
 }
 
 /* mval is region coords */
-static int mouse_select(bContext *C, short *mval, short extend, short obcenter, short enumerate)
+static int mouse_select(bContext *C, const int mval[2], short extend, short obcenter, short enumerate)
 {
 	ViewContext vc;
 	ARegion *ar= CTX_wm_region(C);
@@ -1240,9 +1337,9 @@ static int mouse_select(bContext *C, short *mval, short extend, short obcenter, 
 	startbase=  FIRSTBASE;
 	if(BASACT && BASACT->next) startbase= BASACT->next;
 	
-	/* This block uses the control key to make the object selected by its center point rather then its contents */
-	/* XXX later on, in editmode do not activate */
-	if(vc.obedit==NULL && obcenter) {
+	/* This block uses the control key to make the object selected by its center point rather than its contents */
+	/* in editmode do not activate */
+	if(obcenter) {
 		
 		/* note; shift+alt goes to group-flush-selecting */
 		if(enumerate) {
@@ -1345,9 +1442,9 @@ static int mouse_select(bContext *C, short *mval, short extend, short obcenter, 
 			if(oldbasact != basact) {
 				ED_base_object_activate(C, basact); /* adds notifier */
 			}
-
-			WM_event_add_notifier(C, NC_SCENE|ND_OB_SELECT, scene);
 		}
+
+		WM_event_add_notifier(C, NC_SCENE|ND_OB_SELECT, scene);
 	}
 
 	return retval;
@@ -1496,12 +1593,8 @@ static int do_mesh_box_select(ViewContext *vc, rcti *rect, int select, int exten
 	if (extend == 0 && select)
 		EM_deselect_all(vc->em);
 
-	/* workaround: init mats first, EM_mask_init_backbuf_border can change
-	   view matrix to pixel space, breaking edge select with backbuf. fixes bug #20936 */
-	/*ED_view3d_init_mats_rv3d(vc->obedit, vc->rv3d);*/ /* for foreach's screen/vert projection */
-
-	/* [#21018] breaks zbuf select. run below. only if bbsel fails */
-	/* ED_view3d_init_mats_rv3d(vc->obedit, vc->rv3d) */
+	/* for non zbuf projections, dont change the GL state */
+	ED_view3d_init_mats_rv3d(vc->obedit, vc->rv3d);
 
 	glLoadMatrixf(vc->rv3d->viewmat);
 	bbsel= EM_init_backbuf_border(vc, rect->xmin, rect->ymin, rect->xmax, rect->ymax);
@@ -1510,7 +1603,6 @@ static int do_mesh_box_select(ViewContext *vc, rcti *rect, int select, int exten
 		if (bbsel) {
 			EM_backbuf_checkAndSelectVerts(vc->em, select);
 		} else {
-			ED_view3d_init_mats_rv3d(vc->obedit, vc->rv3d);
 			mesh_foreachScreenVert(vc, do_mesh_box_select__doSelectVert, &data, 1);
 		}
 	}
@@ -1530,7 +1622,6 @@ static int do_mesh_box_select(ViewContext *vc, rcti *rect, int select, int exten
 		if(bbsel) {
 			EM_backbuf_checkAndSelectFaces(vc->em, select);
 		} else {
-			ED_view3d_init_mats_rv3d(vc->obedit, vc->rv3d);
 			mesh_foreachScreenFace(vc, do_mesh_box_select__doSelectFace, &data);
 		}
 	}
@@ -1781,9 +1872,15 @@ static int view3d_borderselect_exec(bContext *C, wmOperator *op)
 		case OB_CURVE:
 		case OB_SURF:
 			ret= do_nurbs_box_select(&vc, &rect, select, extend);
+			if(ret & OPERATOR_FINISHED) {
+				WM_event_add_notifier(C, NC_GEOM|ND_SELECT, vc.obedit->data);
+			}
 			break;
 		case OB_MBALL:
 			ret= do_meta_box_select(&vc, &rect, select, extend);
+			if(ret & OPERATOR_FINISHED) {
+				WM_event_add_notifier(C, NC_GEOM|ND_SELECT, vc.obedit->data);
+			}
 			break;
 		case OB_ARMATURE:
 			ret= do_armature_box_select(&vc, &rect, select, extend);
@@ -1807,6 +1904,9 @@ static int view3d_borderselect_exec(bContext *C, wmOperator *op)
 		}
 		else if(vc.obact && paint_facesel_test(vc.obact)) {
 			ret= do_paintface_box_select(&vc, &rect, select, extend);
+		}
+		else if(vc.obact && paint_vertsel_test(vc.obact)) {
+			ret= do_paintvert_box_select(&vc, &rect, select, extend);
 		}
 		else if(vc.obact && vc.obact->mode & OB_MODE_PARTICLE_EDIT) {
 			ret= PE_border_select(C, &rect, select, extend);
@@ -1835,12 +1935,65 @@ void VIEW3D_OT_select_border(wmOperatorType *ot)
 	ot->exec= view3d_borderselect_exec;
 	ot->modal= WM_border_select_modal;
 	ot->poll= view3d_selectable_data;
+	ot->cancel= WM_border_select_cancel;
 	
 	/* flags */
 	ot->flag= OPTYPE_UNDO;
 	
 	/* rna */
 	WM_operator_properties_gesture_border(ot, TRUE);
+}
+
+/* much like facesel_face_pick()*/
+/* returns 0 if not found, otherwise 1 */
+static int vertsel_vert_pick(struct bContext *C, Mesh *me, const int mval[2], unsigned int *index, short rect)
+{
+	ViewContext vc;
+	view3d_set_viewcontext(C, &vc);
+
+	if (!me || me->totvert==0)
+		return 0;
+
+	if (rect) {
+		/* sample rect to increase changes of selecting, so that when clicking
+		   on an face in the backbuf, we can still select a vert */
+
+		int dist;
+		*index = view3d_sample_backbuf_rect(&vc, mval, 3, 1, me->totvert+1, &dist,0,NULL, NULL);
+	}
+	else {
+		/* sample only on the exact position */
+		*index = view3d_sample_backbuf(&vc, mval[0], mval[1]);
+	}
+
+	if ((*index)<=0 || (*index)>(unsigned int)me->totvert)
+		return 0;
+
+	(*index)--;
+	
+	return 1;
+}
+
+/* mouse selection in weight paint */
+/* gets called via generic mouse select operator */
+static int mouse_weight_paint_vertex_select(bContext *C, const int mval[2], short extend, Object *obact)
+{
+	Mesh* me= obact->data; /* already checked for NULL */
+	unsigned int index = 0;
+	MVert *mv;
+	if(vertsel_vert_pick(C, me, mval, &index, 1)) {
+		mv = me->mvert+index;
+		if(extend) {
+			mv->flag ^= SELECT;
+		} else {
+			paintvert_deselect_all_visible(obact, SEL_DESELECT, FALSE);
+			mv->flag |= SELECT;
+		}
+		paintvert_flush_flags(obact);
+		WM_event_add_notifier(C, NC_GEOM|ND_SELECT, obact->data);
+		return 1;
+	}
+	return 0;
 }
 
 /* ****** Mouse Select ****** */
@@ -1853,11 +2006,22 @@ static int view3d_select_invoke(bContext *C, wmOperator *op, wmEvent *event)
 	short extend= RNA_boolean_get(op->ptr, "extend");
 	short center= RNA_boolean_get(op->ptr, "center");
 	short enumerate= RNA_boolean_get(op->ptr, "enumerate");
+	short object= RNA_boolean_get(op->ptr, "object");
 	int	retval = 0;
 
 	view3d_operator_needs_opengl(C);
-	
-	if(obedit) {
+
+	if(object) {
+		obedit= NULL;
+		obact= NULL;
+
+		/* ack, this is incorrect but to do this correctly we would need an
+		 * alternative editmode/objectmode keymap, this copies the functionality
+		 * from 2.4x where Ctrl+Select in editmode does object select only */
+		center= FALSE;
+	}
+
+	if(obedit && object==FALSE) {
 		if(obedit->type==OB_MESH)
 			retval = mouse_mesh(C, event->mval, extend);
 		else if(obedit->type==OB_ARMATURE)
@@ -1876,6 +2040,8 @@ static int view3d_select_invoke(bContext *C, wmOperator *op, wmEvent *event)
 		return PE_mouse_particles(C, event->mval, extend);
 	else if(obact && paint_facesel_test(obact))
 		retval = paintface_mouse_select(C, obact, event->mval, extend);
+	else if (paint_vertsel_test(obact))
+		retval = mouse_weight_paint_vertex_select(C, event->mval, extend, obact);
 	else
 		retval = mouse_select(C, event->mval, extend, center, enumerate);
 
@@ -1903,9 +2069,10 @@ void VIEW3D_OT_select(wmOperatorType *ot)
 	ot->flag= OPTYPE_UNDO;
 	
 	/* properties */
-	RNA_def_boolean(ot->srna, "extend", 0, "Extend", "Extend selection instead of deselecting everything first.");
-	RNA_def_boolean(ot->srna, "center", 0, "Center", "Use the object center when selecting (object mode only).");
-	RNA_def_boolean(ot->srna, "enumerate", 0, "Enumerate", "List objects under the mouse (object mode only).");
+	RNA_def_boolean(ot->srna, "extend", 0, "Extend", "Extend selection instead of deselecting everything first");
+	RNA_def_boolean(ot->srna, "center", 0, "Center", "Use the object center when selecting, in editmode used to extend object selection");
+	RNA_def_boolean(ot->srna, "enumerate", 0, "Enumerate", "List objects under the mouse (object mode only)");
+	RNA_def_boolean(ot->srna, "object", 0, "Object", "Use object selection (editmode only)");
 }
 
 
@@ -1913,7 +2080,7 @@ void VIEW3D_OT_select(wmOperatorType *ot)
 
 static void mesh_circle_doSelectVert(void *userData, EditVert *eve, int x, int y, int UNUSED(index))
 {
-	struct {ViewContext *vc; short select, mval[2]; float radius; } *data = userData;
+	struct {ViewContext *vc; short select; int mval[2]; float radius; } *data = userData;
 	int mx = x - data->mval[0], my = y - data->mval[1];
 	float r = sqrt(mx*mx + my*my);
 
@@ -1923,7 +2090,7 @@ static void mesh_circle_doSelectVert(void *userData, EditVert *eve, int x, int y
 }
 static void mesh_circle_doSelectEdge(void *userData, EditEdge *eed, int x0, int y0, int x1, int y1, int UNUSED(index))
 {
-	struct {ViewContext *vc; short select, mval[2]; float radius; } *data = userData;
+	struct {ViewContext *vc; short select; int mval[2]; float radius; } *data = userData;
 
 	if (edge_inside_circle(data->mval[0], data->mval[1], (short) data->radius, x0, y0, x1, y1)) {
 		EM_select_edge(eed, data->select);
@@ -1931,7 +2098,7 @@ static void mesh_circle_doSelectEdge(void *userData, EditEdge *eed, int x0, int 
 }
 static void mesh_circle_doSelectFace(void *userData, EditFace *efa, int x, int y, int UNUSED(index))
 {
-	struct {ViewContext *vc; short select, mval[2]; float radius; } *data = userData;
+	struct {ViewContext *vc; short select; int mval[2]; float radius; } *data = userData;
 	int mx = x - data->mval[0], my = y - data->mval[1];
 	float r = sqrt(mx*mx + my*my);
 	
@@ -1940,13 +2107,13 @@ static void mesh_circle_doSelectFace(void *userData, EditFace *efa, int x, int y
 	}
 }
 
-static void mesh_circle_select(ViewContext *vc, int select, short *mval, float rad)
+static void mesh_circle_select(ViewContext *vc, int select, const int mval[2], float rad)
 {
 	ToolSettings *ts= vc->scene->toolsettings;
 	int bbsel;
-	struct {ViewContext *vc; short select, mval[2]; float radius; } data;
+	struct {ViewContext *vc; short select; int mval[2]; float radius; } data;
 	
-	bbsel= EM_init_backbuf_circle(vc, mval[0], mval[1], (short)(rad+1.0));
+	bbsel= EM_init_backbuf_circle(vc, mval[0], mval[1], (short)(rad+1.0f));
 	ED_view3d_init_mats_rv3d(vc->obedit, vc->rv3d); /* for foreach's screen/vert projection */
 
 	vc->em= ((Mesh *)vc->obedit->data)->edit_mesh;
@@ -1985,25 +2152,43 @@ static void mesh_circle_select(ViewContext *vc, int select, short *mval, float r
 	EM_selectmode_flush(vc->em);
 }
 
-static void paint_facesel_circle_select(ViewContext *vc, int select, short *mval, float rad)
+static void paint_facesel_circle_select(ViewContext *vc, int select, const int mval[2], float rad)
 {
 	Object *ob= vc->obact;
 	Mesh *me = ob?ob->data:NULL;
-	int bbsel;
+	/* int bbsel; */ /* UNUSED */
 
 	if (me) {
 		em_vertoffs= me->totface+1;	/* max index array */
 
-		bbsel= EM_init_backbuf_circle(vc, mval[0], mval[1], (short)(rad+1.0));
+		/* bbsel= */ /* UNUSED */ EM_init_backbuf_circle(vc, mval[0], mval[1], (short)(rad+1.0f));
 		EM_backbuf_checkAndSelectTFaces(me, select==LEFTMOUSE);
 		EM_free_backbuf();
 	}
 }
 
 
+static void paint_vertsel_circle_select(ViewContext *vc, int select, const int mval[2], float rad)
+{
+	Object *ob= vc->obact;
+	Mesh *me = ob?ob->data:NULL;
+	/* int bbsel; */ /* UNUSED */
+	/* struct {ViewContext *vc; short select; int mval[2]; float radius; } data = {NULL}; */ /* UNUSED */
+	if (me) {
+		em_vertoffs= me->totvert+1;	/* max index array */
+
+		/* bbsel= */ /* UNUSED */ EM_init_backbuf_circle(vc, mval[0], mval[1], (short)(rad+1.0f));
+		EM_backbuf_checkAndSelectVerts_obmode(me, select==LEFTMOUSE);
+		EM_free_backbuf();
+
+		paintvert_flush_flags(ob);
+	}
+}
+
+
 static void nurbscurve_circle_doSelect(void *userData, Nurb *UNUSED(nu), BPoint *bp, BezTriple *bezt, int beztindex, int x, int y)
 {
-	struct {ViewContext *vc; short select, mval[2]; float radius; } *data = userData;
+	struct {ViewContext *vc; short select; int mval[2]; float radius; } *data = userData;
 	int mx = x - data->mval[0], my = y - data->mval[1];
 	float r = sqrt(mx*mx + my*my);
 	Object *obedit= data->vc->obedit;
@@ -2032,9 +2217,9 @@ static void nurbscurve_circle_doSelect(void *userData, Nurb *UNUSED(nu), BPoint 
 		}
 	}
 }
-static void nurbscurve_circle_select(ViewContext *vc, int select, short *mval, float rad)
+static void nurbscurve_circle_select(ViewContext *vc, int select, const int mval[2], float rad)
 {
-	struct {ViewContext *vc; short select, mval[2]; float radius; } data;
+	struct {ViewContext *vc; short select; int mval[2]; float radius; } data;
 
 	/* set vc-> edit data */
 	
@@ -2051,7 +2236,7 @@ static void nurbscurve_circle_select(ViewContext *vc, int select, short *mval, f
 
 static void latticecurve_circle_doSelect(void *userData, BPoint *bp, int x, int y)
 {
-	struct {ViewContext *vc; short select, mval[2]; float radius; } *data = userData;
+	struct {ViewContext *vc; short select; int mval[2]; float radius; } *data = userData;
 	int mx = x - data->mval[0], my = y - data->mval[1];
 	float r = sqrt(mx*mx + my*my);
 
@@ -2059,9 +2244,9 @@ static void latticecurve_circle_doSelect(void *userData, BPoint *bp, int x, int 
 		bp->f1 = data->select?(bp->f1|SELECT):(bp->f1&~SELECT);
 	}
 }
-static void lattice_circle_select(ViewContext *vc, int select, short *mval, float rad)
+static void lattice_circle_select(ViewContext *vc, int select, const int mval[2], float rad)
 {
-	struct {ViewContext *vc; short select, mval[2]; float radius; } data;
+	struct {ViewContext *vc; short select; int mval[2]; float radius; } data;
 
 	/* set vc-> edit data */
 	
@@ -2078,7 +2263,7 @@ static void lattice_circle_select(ViewContext *vc, int select, short *mval, floa
 // NOTE: pose-bone case is copied from editbone case...
 static short pchan_circle_doSelectJoint(void *userData, bPoseChannel *pchan, int x, int y)
 {
-	struct {ViewContext *vc; short select, mval[2]; float radius; } *data = userData;
+	struct {ViewContext *vc; short select; int mval[2]; float radius; } *data = userData;
 	int mx = x - data->mval[0], my = y - data->mval[1];
 	float r = sqrt(mx*mx + my*my);
 	
@@ -2091,9 +2276,9 @@ static short pchan_circle_doSelectJoint(void *userData, bPoseChannel *pchan, int
 	}
 	return 0;
 }
-static void pose_circle_select(ViewContext *vc, int select, short *mval, float rad)
+static void pose_circle_select(ViewContext *vc, int select, const int mval[2], float rad)
 {
-	struct {ViewContext *vc; short select, mval[2]; float radius; } data;
+	struct {ViewContext *vc; short select; int mval[2]; float radius; } data;
 	bPose *pose = vc->obact->pose;
 	bPoseChannel *pchan;
 	int change= FALSE;
@@ -2138,7 +2323,7 @@ static void pose_circle_select(ViewContext *vc, int select, short *mval, float r
 
 static short armature_circle_doSelectJoint(void *userData, EditBone *ebone, int x, int y, short head)
 {
-	struct {ViewContext *vc; short select, mval[2]; float radius; } *data = userData;
+	struct {ViewContext *vc; short select; int mval[2]; float radius; } *data = userData;
 	int mx = x - data->mval[0], my = y - data->mval[1];
 	float r = sqrt(mx*mx + my*my);
 	
@@ -2159,7 +2344,7 @@ static short armature_circle_doSelectJoint(void *userData, EditBone *ebone, int 
 	}
 	return 0;
 }
-static void armature_circle_select(ViewContext *vc, int select, short *mval, float rad)
+static void armature_circle_select(ViewContext *vc, int select, const int mval[2], float rad)
 {
 	struct {ViewContext *vc; short select, mval[2]; float radius; } data;
 	bArmature *arm= vc->obedit->data;
@@ -2218,7 +2403,7 @@ static void armature_circle_select(ViewContext *vc, int select, short *mval, flo
 
 /** Callbacks for circle selection in Editmode */
 
-static void obedit_circle_select(ViewContext *vc, short select, short *mval, float rad) 
+static void obedit_circle_select(ViewContext *vc, short select, const int mval[2], float rad)
 {
 	switch(vc->obedit->type) {		
 	case OB_MESH:
@@ -2254,12 +2439,12 @@ static int view3d_circle_select_exec(bContext *C, wmOperator *op)
 	int select;
 	
 	select= (gesture_mode==GESTURE_MODAL_SELECT);
-    
-	if( CTX_data_edit_object(C) || paint_facesel_test(obact) ||
+
+	if( CTX_data_edit_object(C) || paint_facesel_test(obact) || paint_vertsel_test(obact) ||
 		(obact && (obact->mode & (OB_MODE_PARTICLE_EDIT|OB_MODE_POSE))) )
 	{
 		ViewContext vc;
-		short mval[2];
+		int mval[2];
 		
 		view3d_operator_needs_opengl(C);
 		
@@ -2273,6 +2458,10 @@ static int view3d_circle_select_exec(bContext *C, wmOperator *op)
 		}
 		else if(paint_facesel_test(obact)) {
 			paint_facesel_circle_select(&vc, select, mval, (float)radius);
+			WM_event_add_notifier(C, NC_GEOM|ND_SELECT, obact->data);
+		}
+		else if(paint_vertsel_test(obact)) {
+			paint_vertsel_circle_select(&vc, select, mval, (float)radius);
 			WM_event_add_notifier(C, NC_GEOM|ND_SELECT, obact->data);
 		}
 		else if(obact->mode & OB_MODE_POSE)
@@ -2314,6 +2503,7 @@ void VIEW3D_OT_select_circle(wmOperatorType *ot)
 	ot->modal= WM_gesture_circle_modal;
 	ot->exec= view3d_circle_select_exec;
 	ot->poll= view3d_selectable_data;
+	ot->cancel= WM_gesture_circle_cancel;
 	
 	/* flags */
 	ot->flag= OPTYPE_UNDO;

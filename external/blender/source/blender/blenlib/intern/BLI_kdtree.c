@@ -1,5 +1,5 @@
 /*
- * $Id: BLI_kdtree.c 35246 2011-02-27 20:37:56Z jesterking $
+ * $Id: BLI_kdtree.c 39794 2011-08-30 09:50:31Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -187,7 +187,7 @@ int	BLI_kdtree_find_nearest(KDTree *tree, float *co, float *nor, KDTreeNearest *
 
 		cur_dist = node->co[node->d] - co[node->d];
 
-		if(cur_dist<0.0){
+		if(cur_dist<0.0f){
 			cur_dist= -cur_dist*cur_dist;
 
 			if(-cur_dist<min_dist){
@@ -294,7 +294,7 @@ int	BLI_kdtree_find_n_nearest(KDTree *tree, int n, float *co, float *nor, KDTree
 
 		cur_dist = node->co[node->d] - co[node->d];
 
-		if(cur_dist<0.0){
+		if(cur_dist<0.0f){
 			cur_dist= -cur_dist*cur_dist;
 
 			if(found<n || -cur_dist<nearest[found-1].dist){

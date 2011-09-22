@@ -1,5 +1,5 @@
 /*
- * $Id: object_modifier.c 35362 2011-03-05 10:29:10Z campbellbarton $
+ * $Id: object_modifier.c 40351 2011-09-19 12:26:20Z mont29 $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -97,7 +97,7 @@ ModifierData *ED_object_modifier_add(ReportList *reports, Main *bmain, Scene *sc
 	
 	if(mti->flags&eModifierTypeFlag_Single) {
 		if(modifiers_findByType(ob, type)) {
-			BKE_report(reports, RPT_WARNING, "Only one modifier of this type allowed.");
+			BKE_report(reports, RPT_WARNING, "Only one modifier of this type allowed");
 			return NULL;
 		}
 	}
@@ -169,7 +169,7 @@ int ED_object_modifier_remove(ReportList *reports, Main *bmain, Scene *scene, Ob
 			break;
 	
 	if(!obmd) {
-		BKE_reportf(reports, RPT_ERROR, "Modifier '%s' not in object '%s'.", ob->id.name, md->name);
+		BKE_reportf(reports, RPT_ERROR, "Modifier '%s' not in object '%s'", ob->id.name, md->name);
 		return 0;
 	}
 
@@ -204,17 +204,28 @@ int ED_object_modifier_remove(ReportList *reports, Main *bmain, Scene *scene, Ob
 		ob->dt = OB_TEXTURE;
 	}
 	else if(md->type == eModifierType_Multires) {
+		int ok= 1;
 		Mesh *me= ob->data;
+		ModifierData *tmpmd;
 
-		if(me->edit_mesh) {
-			EditMesh *em= me->edit_mesh;
-			/* CustomData_external_remove is used here only to mark layer as non-external
-			   for further free-ing, so zero element count looks safer than em->totface */
-			CustomData_external_remove(&em->fdata, &me->id, CD_MDISPS, 0);
-			EM_free_data_layer(em, &em->fdata, CD_MDISPS);
-		} else {
-			CustomData_external_remove(&me->fdata, &me->id, CD_MDISPS, me->totface);
-			CustomData_free_layer_active(&me->fdata, CD_MDISPS, me->totface);
+		/* ensure MDISPS CustomData layer is't used by another multires modifiers */
+		for(tmpmd= ob->modifiers.first; tmpmd; tmpmd= tmpmd->next)
+			if(tmpmd!=md && tmpmd->type == eModifierType_Multires) {
+				ok= 0;
+				break;
+			}
+
+		if(ok) {
+			if(me->edit_mesh) {
+				EditMesh *em= me->edit_mesh;
+				/* CustomData_external_remove is used here only to mark layer as non-external
+				   for further free-ing, so zero element count looks safer than em->totface */
+				CustomData_external_remove(&em->fdata, &me->id, CD_MDISPS, 0);
+				EM_free_data_layer(em, &em->fdata, CD_MDISPS);
+			} else {
+				CustomData_external_remove(&me->fdata, &me->id, CD_MDISPS, me->totface);
+				CustomData_free_layer_active(&me->fdata, CD_MDISPS, me->totface);
+			}
 		}
 	}
 
@@ -244,7 +255,7 @@ int ED_object_modifier_move_up(ReportList *reports, Object *ob, ModifierData *md
 			ModifierTypeInfo *nmti = modifierType_getInfo(md->prev->type);
 
 			if(nmti->flags&eModifierTypeFlag_RequiresOriginalData) {
-				BKE_report(reports, RPT_WARNING, "Cannot move above a modifier requiring original data.");
+				BKE_report(reports, RPT_WARNING, "Cannot move above a modifier requiring original data");
 				return 0;
 			}
 		}
@@ -265,7 +276,7 @@ int ED_object_modifier_move_down(ReportList *reports, Object *ob, ModifierData *
 			ModifierTypeInfo *nmti = modifierType_getInfo(md->next->type);
 
 			if(nmti->type!=eModifierTypeType_OnlyDeform) {
-				BKE_report(reports, RPT_WARNING, "Cannot move beyond a non-deforming modifier.");
+				BKE_report(reports, RPT_WARNING, "Cannot move beyond a non-deforming modifier");
 				return 0;
 			}
 		}
@@ -309,15 +320,21 @@ int ED_object_modifier_convert(ReportList *UNUSED(reports), Main *bmain, Scene *
 	cache= psys->pathcache;
 	for(a=0; a<totpart; a++) {
 		key= cache[a];
-		totvert+= key->steps+1;
-		totedge+= key->steps;
+
+		if(key->steps > 0) {
+			totvert+= key->steps+1;
+			totedge+= key->steps;
+		}
 	}
 
 	cache= psys->childcache;
 	for(a=0; a<totchild; a++) {
 		key= cache[a];
-		totvert+= key->steps+1;
-		totedge+= key->steps;
+
+		if(key->steps > 0) {
+			totvert+= key->steps+1;
+			totedge+= key->steps;
+		}
 	}
 
 	if(totvert==0) return 0;
@@ -382,6 +399,15 @@ int ED_object_modifier_convert(ReportList *UNUSED(reports), Main *bmain, Scene *
 
 static int modifier_apply_shape(ReportList *reports, Scene *scene, Object *ob, ModifierData *md)
 {
+	ModifierTypeInfo *mti= modifierType_getInfo(md->type);
+
+	md->scene= scene;
+
+	if (mti->isDisabled && mti->isDisabled(md, 0)) {
+		BKE_report(reports, RPT_ERROR, "Modifier is disabled, skipping apply");
+		return 0;
+	}
+
 	if (ob->type==OB_MESH) {
 		DerivedMesh *dm;
 		Mesh *me= ob->data;
@@ -425,7 +451,9 @@ static int modifier_apply_obdata(ReportList *reports, Scene *scene, Object *ob, 
 {
 	ModifierTypeInfo *mti= modifierType_getInfo(md->type);
 
-	if (!(md->mode&eModifierMode_Realtime) || (mti->isDisabled && mti->isDisabled(md, 0))) {
+	md->scene= scene;
+
+	if (mti->isDisabled && mti->isDisabled(md, 0)) {
 		BKE_report(reports, RPT_ERROR, "Modifier is disabled, skipping apply");
 		return 0;
 	}
@@ -467,7 +495,7 @@ static int modifier_apply_obdata(ReportList *reports, Scene *scene, Object *ob, 
 				CustomData_free_layer_active(&me->fdata, CD_MDISPS, me->totface);
 			}
 		}
-	} 
+	}
 	else if (ELEM(ob->type, OB_CURVE, OB_SURF)) {
 		Curve *cu;
 		int numVerts;
@@ -513,6 +541,8 @@ static int modifier_apply_obdata(ReportList *reports, Scene *scene, Object *ob, 
 
 int ED_object_modifier_apply(ReportList *reports, Scene *scene, Object *ob, ModifierData *md, int mode)
 {
+	int prev_mode;
+
 	if (scene->obedit) {
 		BKE_report(reports, RPT_ERROR, "Modifiers cannot be applied in editmode");
 		return 0;
@@ -522,14 +552,22 @@ int ED_object_modifier_apply(ReportList *reports, Scene *scene, Object *ob, Modi
 	}
 
 	if (md!=ob->modifiers.first)
-		BKE_report(reports, RPT_INFO, "Applied modifier was not first, result may not be as expected.");
+		BKE_report(reports, RPT_INFO, "Applied modifier was not first, result may not be as expected");
+
+	/* allow apply of a not-realtime modifier, by first re-enabling realtime. */
+	prev_mode= md->mode;
+	md->mode |= eModifierMode_Realtime;
 
 	if (mode == MODIFIER_APPLY_SHAPE) {
-		if (!modifier_apply_shape(reports, scene, ob, md))
+		if (!modifier_apply_shape(reports, scene, ob, md)) {
+			md->mode= prev_mode;
 			return 0;
+		}
 	} else {
-		if (!modifier_apply_obdata(reports, scene, ob, md))
+		if (!modifier_apply_obdata(reports, scene, ob, md)) {
+			md->mode= prev_mode;
 			return 0;
+		}
 	}
 
 	BLI_remlink(&ob->modifiers, md);
@@ -567,7 +605,7 @@ static int modifier_add_exec(bContext *C, wmOperator *op)
 	return OPERATOR_FINISHED;
 }
 
-static EnumPropertyItem *modifier_add_itemf(bContext *C, PointerRNA *UNUSED(ptr), int *free)
+static EnumPropertyItem *modifier_add_itemf(bContext *C, PointerRNA *UNUSED(ptr), PropertyRNA *UNUSED(prop), int *free)
 {	
 	Object *ob= ED_object_active_context(C);
 	EnumPropertyItem *item= NULL, *md_item;
@@ -686,7 +724,7 @@ static int modifier_remove_exec(bContext *C, wmOperator *op)
 	Scene *scene= CTX_data_scene(C);
 	Object *ob = ED_object_active_context(C);
 	ModifierData *md = edit_modifier_property_get(op, ob, 0);
-	int mode_orig = ob->mode;
+	int mode_orig = ob ? ob->mode : 0;
 	
 	if(!ob || !md || !ED_object_modifier_remove(op->reports, bmain, scene, ob, md))
 		return OPERATOR_CANCELLED;
@@ -965,6 +1003,7 @@ static int multires_higher_levels_delete_invoke(bContext *C, wmOperator *op, wmE
 void OBJECT_OT_multires_higher_levels_delete(wmOperatorType *ot)
 {
 	ot->name= "Delete Higher Levels";
+	ot->description= "Deletes the higher resolution mesh, potential loss of detail";
 	ot->idname= "OBJECT_OT_multires_higher_levels_delete";
 
 	ot->poll= multires_poll;
@@ -1027,7 +1066,12 @@ static int multires_reshape_exec(bContext *C, wmOperator *op)
 
 	if (!mmd)
 		return OPERATOR_CANCELLED;
-	
+
+	if(mmd->lvl==0) {
+		BKE_report(op->reports, RPT_ERROR, "Reshape can work only with higher levels of subdivisions");
+		return OPERATOR_CANCELLED;
+	}
+
 	CTX_DATA_BEGIN(C, Object*, selob, selected_editable_objects) {
 		if(selob->type == OB_MESH && selob != ob) {
 			secondob= selob;
@@ -1037,12 +1081,12 @@ static int multires_reshape_exec(bContext *C, wmOperator *op)
 	CTX_DATA_END;
 
 	if(!secondob) {
-		BKE_report(op->reports, RPT_ERROR, "Second selected mesh object require to copy shape from.");
+		BKE_report(op->reports, RPT_ERROR, "Second selected mesh object require to copy shape from");
 		return OPERATOR_CANCELLED;
 	}
 
 	if(!multiresModifier_reshape(scene, mmd, ob, secondob)) {
-		BKE_report(op->reports, RPT_ERROR, "Objects do not have the same number of vertices.");
+		BKE_report(op->reports, RPT_ERROR, "Objects do not have the same number of vertices");
 		return OPERATOR_CANCELLED;
 	}
 
@@ -1241,16 +1285,22 @@ static int meshdeform_bind_exec(bContext *C, wmOperator *op)
 		return OPERATOR_CANCELLED;
 
 	if(mmd->bindcagecos) {
-		if(mmd->bindweights) MEM_freeN(mmd->bindweights);
-		if(mmd->bindcagecos) MEM_freeN(mmd->bindcagecos);
+		MEM_freeN(mmd->bindcagecos);
 		if(mmd->dyngrid) MEM_freeN(mmd->dyngrid);
 		if(mmd->dyninfluences) MEM_freeN(mmd->dyninfluences);
+		if(mmd->bindinfluences) MEM_freeN(mmd->bindinfluences);
+		if(mmd->bindoffsets) MEM_freeN(mmd->bindoffsets);
 		if(mmd->dynverts) MEM_freeN(mmd->dynverts);
-		mmd->bindweights= NULL;
+		if(mmd->bindweights) MEM_freeN(mmd->bindweights); /* deprecated */
+		if(mmd->bindcos) MEM_freeN(mmd->bindcos); /* deprecated */
+
 		mmd->bindcagecos= NULL;
 		mmd->dyngrid= NULL;
 		mmd->dyninfluences= NULL;
+		mmd->bindoffsets= NULL;
 		mmd->dynverts= NULL;
+		mmd->bindweights= NULL; /* deprecated */
+		mmd->bindcos= NULL; /* deprecated */
 		mmd->totvert= 0;
 		mmd->totcagevert= 0;
 		mmd->totinfluence= 0;

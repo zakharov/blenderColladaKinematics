@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 60
-/svnroot/bf-blender/!svn/ver/35292/trunk/blender/doc/doxygen
+/svnroot/bf-blender/!svn/ver/39205/trunk/blender/doc/doxygen
 END
 doxygen.main
 K 25
@@ -25,7 +25,7 @@ Doxyfile
 K 25
 svn:wc:ra_dav:version-url
 V 69
-/svnroot/bf-blender/!svn/ver/35258/trunk/blender/doc/doxygen/Doxyfile
+/svnroot/bf-blender/!svn/ver/39205/trunk/blender/doc/doxygen/Doxyfile
 END
 doxygen.intern
 K 25
@@ -37,5 +37,5 @@ doxygen.source
 K 25
 svn:wc:ra_dav:version-url
 V 75
-/svnroot/bf-blender/!svn/ver/35251/trunk/blender/doc/doxygen/doxygen.source
+/svnroot/bf-blender/!svn/ver/36620/trunk/blender/doc/doxygen/doxygen.source
 END

@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/extern/bullet2/src
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-02-27T19:29:07.792951Z
-35232
-jesterking
+2011-08-21T13:31:46.436851Z
+39584
+nazgul
 
 
 
@@ -44,11 +44,11 @@ file
 
 
 
-2011-03-03T12:29:02.258297Z
-bfdb3b8fe8f618d203df11c6ec255819
-2010-12-03T14:35:10.871719Z
-33445
-nazgul
+2011-09-21T18:17:11.248116Z
+293ab043da8eed40bb3f574bcc413ae6
+2011-03-12T23:41:57.844668Z
+35503
+campbellbarton
 has-props
 
 
@@ -70,7 +70,7 @@ has-props
 
 
 
-7162
+7236
 
 btBulletDynamicsCommon.h
 file
@@ -78,11 +78,11 @@ file
 
 
 
-2011-03-03T12:29:02.262297Z
-3afd919095cd21073ce2dc108875d2f9
-2008-11-12T21:16:53.478104Z
-17433
-blendix
+2011-09-21T18:17:11.248116Z
+92ef6a77dd415820b85ca5b9b43f7d6a
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 has-props
 
 
@@ -104,7 +104,7 @@ has-props
 
 
 
-1943
+2149
 
 Jamfile
 file
@@ -112,7 +112,7 @@ file
 
 
 
-2011-03-03T12:29:02.262297Z
+2011-09-21T18:17:11.248116Z
 d4b6ffb60951ed11326b62e4d5570243
 2009-03-17T21:44:58.713628Z
 19323
@@ -146,11 +146,11 @@ file
 
 
 
-2011-03-03T12:29:02.262297Z
-bae6709afc9d7385cba1d85f23432fee
-2009-11-30T02:28:50.963882Z
-25017
-aligorith
+2011-09-21T18:17:11.248116Z
+9c73c4702140f53d42ce26cbca451aa2
+2011-08-21T13:31:46.436851Z
+39584
+nazgul
 has-props
 
 
@@ -172,7 +172,7 @@ has-props
 
 
 
-2985
+2950
 
 btBulletCollisionCommon.h
 file
@@ -180,11 +180,11 @@ file
 
 
 
-2011-03-03T12:29:02.262297Z
-38244ea88eaec45be89bfbffb8377e9f
-2008-11-12T21:16:53.478104Z
-17433
-blendix
+2011-09-21T18:17:11.248116Z
+b2fdc162e85707f09af72e92f6efc480
+2011-03-12T20:34:17.682024Z
+35500
+erwin
 has-props
 
 
@@ -206,5 +206,5 @@ has-props
 
 
 
-3347
+3459
 

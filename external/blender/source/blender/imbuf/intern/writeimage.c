@@ -26,7 +26,7 @@
  * ***** END GPL LICENSE BLOCK *****
  * writeimage.c
  *
- * $Id: writeimage.c 35239 2011-02-27 20:23:21Z jesterking $
+ * $Id: writeimage.c 39810 2011-08-30 23:08:38Z campbellbarton $
  */
 
 /** \file blender/imbuf/intern/writeimage.c
@@ -55,7 +55,6 @@ short IMB_saveiff(struct ImBuf *ibuf, const char *name, int flags)
 				if(ibuf->rect==NULL && ibuf->rect_float)
 					IMB_rect_from_float(ibuf);
 			}
-			/* TODO. have const char for image write funcs */
 			return type->save(ibuf, name, flags);
 		}
 	}

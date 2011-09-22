@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_ReverseFactory.cpp 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_ReverseFactory.cpp 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -33,12 +33,12 @@
 #include "AUD_ReverseReader.h"
 #include "AUD_Space.h"
 
-AUD_ReverseFactory::AUD_ReverseFactory(AUD_IFactory* factory) :
+AUD_ReverseFactory::AUD_ReverseFactory(AUD_Reference<AUD_IFactory> factory) :
 		AUD_EffectFactory(factory)
 {
 }
 
-AUD_IReader* AUD_ReverseFactory::createReader() const
+AUD_Reference<AUD_IReader> AUD_ReverseFactory::createReader()
 {
 	return new AUD_ReverseReader(getReader());
 }

@@ -1,5 +1,5 @@
 /* 
- * $Id: ED_physics.h 35016 2011-02-21 07:25:24Z jesterking $
+ * $Id: ED_physics.h 39991 2011-09-07 06:33:29Z mont29 $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *

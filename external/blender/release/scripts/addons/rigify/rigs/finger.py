@@ -22,8 +22,7 @@ from rigify.utils import MetarigError
 from rigify.utils import copy_bone
 from rigify.utils import connected_children_names
 from rigify.utils import strip_org, make_mechanism_name, make_deformer_name
-from rigify.utils import get_layers
-from rigify.utils import create_widget, create_line_widget, create_limb_widget
+from rigify.utils import create_widget, create_limb_widget
 from rna_prop_ui import rna_idprop_ui_prop_get
 import re
 
@@ -40,8 +39,7 @@ class Rig:
         self.params = params
 
         if len(self.org_bones) <= 1:
-            raise MetarigError("RIGIFY ERROR: Bone '%s': input to rig type must be a chain of 2 or more bones." % (strip_org(bone)))
-
+            raise MetarigError("RIGIFY ERROR: Bone '%s': input to rig type must be a chain of 2 or more bones" % (strip_org(bone)))
 
         # Get user-specified layers, if they exist
         if params.separate_extra_layers:
@@ -282,10 +280,10 @@ class Rig:
         items = [('X', 'X', ''), ('Y', 'Y', ''), ('Z', 'Z', ''), ('-X', '-X', ''), ('-Y', '-Y', ''), ('-Z', '-Z', '')]
         group.primary_rotation_axis = bpy.props.EnumProperty(items=items, name="Primary Rotation Axis", default='X')
 
-        group.separate_extra_layers = bpy.props.BoolProperty(name="Separate Secondary Control Layers:", default=False, description="Enable putting the secondary controls on a separate layer from the primary controls.")
-        group.extra_layers = bpy.props.BoolVectorProperty(size=32, description="Layers for the secondary controls to be on.")
+        group.separate_extra_layers = bpy.props.BoolProperty(name="Separate Secondary Control Layers:", default=False, description="Enable putting the secondary controls on a separate layer from the primary controls")
+        group.extra_layers = bpy.props.BoolVectorProperty(size=32, description="Layers for the secondary controls to be on")
 
-        group.use_digit_twist = bpy.props.BoolProperty(name="Digit Twist", default=True, description="Generate the dual-bone twist setup for the first finger digit.")
+        group.use_digit_twist = bpy.props.BoolProperty(name="Digit Twist", default=True, description="Generate the dual-bone twist setup for the first finger digit")
 
     @classmethod
     def parameters_ui(self, layout, obj, bone):

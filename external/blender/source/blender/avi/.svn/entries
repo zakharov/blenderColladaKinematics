@@ -1,14 +1,14 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/source/blender/avi
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-03-05T10:29:10.037531Z
-35362
+2011-09-19T08:11:30.603201Z
+40342
 campbellbarton
 
 
@@ -35,11 +35,11 @@ file
 
 
 
-2011-03-03T12:26:59.266297Z
-ae3a87505fc4b36aae1c33afcab69bda
-2011-02-21T09:23:34.241136Z
-35022
-jesterking
+2011-09-21T18:16:22.831876Z
+9c4c20d125ea443517b1537c87cd52f4
+2011-07-11T09:47:13.004753Z
+38302
+blendix
 has-props
 
 
@@ -61,7 +61,7 @@ has-props
 
 
 
-7599
+7628
 
 SConscript
 file
@@ -69,11 +69,11 @@ file
 
 
 
-2011-03-03T12:26:59.266297Z
-ba7b34ece49f6f438ea5b6ab557c873e
-2009-09-05T01:58:02.640114Z
-23013
-jesterking
+2011-09-21T18:16:22.831876Z
+200f628a125f8f761409f81ab870bd8a
+2011-07-06T10:19:04.896572Z
+38142
+blendix
 has-props
 
 
@@ -95,7 +95,7 @@ has-props
 
 
 
-237
+248
 
 CMakeLists.txt
 file
@@ -103,10 +103,10 @@ file
 
 
 
-2011-03-03T12:26:59.266297Z
-a6ff48d38542528dcc75a2fbb3aa98de
-2011-01-25T14:43:13.999734Z
-34486
+2011-09-21T18:16:22.831876Z
+072e81902e205509e553f25e9786bb78
+2011-07-17T09:11:13.810557Z
+38443
 campbellbarton
 has-props
 
@@ -129,5 +129,5 @@ has-props
 
 
 
-1352
+1392
 

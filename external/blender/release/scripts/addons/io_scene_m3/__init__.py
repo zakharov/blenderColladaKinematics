@@ -19,13 +19,13 @@
 # <pep8 compliant>
 
 bl_info = {
-    'name': 'Blizzard M3 format',
+    'name': 'Import Blizzard M3 format (.m3)',
     'author': 'Cory Perry',
     'version': (0, 2, 1),
-    'blender': (2, 5, 6),
-    'api': 34893,
-    'location': 'File > Import-Export',
-    'description': 'This script imports the Blizzard M3 format (.m3)',
+    "blender": (2, 5, 7),
+    "api": 36079,
+    'location': 'File > Import > Blizzard M3 (.m3)',
+    'description': 'Imports the Blizzard M3 format (.m3)',
     'warning': '',
     'wiki_url': 'http://wiki.blender.org/index.php/Extensions:2.5/Py/Scripts/'\
         'Import-Export/M3_Import',
@@ -47,13 +47,14 @@ import time
 import datetime
 import bpy
 from bpy.props import StringProperty, BoolProperty
-from io_utils import ImportHelper, ExportHelper
+from bpy_extras.io_utils import ImportHelper
 
 
 class ImportM3(bpy.types.Operator, ImportHelper):
     '''Import from M3 file format (.m3)'''
     bl_idname = 'import_scene.blizzard_m3'
     bl_label = 'Import M3'
+    bl_options = {'UNDO'}
 
     filename_ext = '.m3'
     filter_glob = StringProperty(default='*.m3', options={'HIDDEN'})

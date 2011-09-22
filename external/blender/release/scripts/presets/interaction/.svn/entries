@@ -1,14 +1,14 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/release/scripts/presets/interaction
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2010-10-06T20:29:00.011589Z
-32353
+2011-04-28T09:52:16.749806Z
+36369
 campbellbarton
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2011-03-03T12:25:48.718297Z
-2303e9f39f5a096075c77710d387802c
-2010-09-02T04:53:05.029195Z
-31713
+2011-09-21T18:15:53.115729Z
+324a69a18a0e21771cd9d16f0545c73d
+2011-04-28T09:52:16.749806Z
+36369
 campbellbarton
 has-props
 
@@ -58,5 +58,39 @@ has-props
 
 
 
-760
+673
+
+maya.py
+file
+
+
+
+
+2011-09-21T18:15:53.115729Z
+2d78b1c7f23b969e46a7bbdddc847cc2
+2011-04-28T09:52:16.749806Z
+36369
+campbellbarton
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+482
 

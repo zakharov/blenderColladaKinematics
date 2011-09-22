@@ -1,5 +1,5 @@
 /*
- * $Id: KX_ConvertPhysicsObjects.cpp 35171 2011-02-25 13:35:59Z jesterking $
+ * $Id: KX_ConvertPhysicsObjects.cpp 36523 2011-05-06 20:18:42Z blendix $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -42,13 +42,13 @@
 #include "BL_DeformableGameObject.h"
 #include "RAS_MeshObject.h"
 #include "KX_Scene.h"
-#include "SYS_System.h"
+#include "BL_System.h"
 
 #include "PHY_Pro.h" //todo cleanup
 #include "KX_ClientObjectInfo.h"
 
-#include "GEN_Map.h"
-#include "GEN_HashedPtr.h"
+#include "CTR_Map.h"
+#include "CTR_HashedPtr.h"
 
 #include "KX_PhysicsEngineEnums.h"
 #include "PHY_Pro.h"

@@ -1,5 +1,5 @@
 /*
- * $Id: AUD_SilenceFactory.cpp 35141 2011-02-25 10:21:56Z jesterking $
+ * $Id: AUD_SilenceFactory.cpp 39792 2011-08-30 09:15:55Z nexyon $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -37,7 +37,7 @@ AUD_SilenceFactory::AUD_SilenceFactory()
 {
 }
 
-AUD_IReader* AUD_SilenceFactory::createReader() const
+AUD_Reference<AUD_IReader> AUD_SilenceFactory::createReader()
 {
 	return new AUD_SilenceReader();
 }

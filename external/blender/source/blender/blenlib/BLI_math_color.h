@@ -1,5 +1,5 @@
 /*
- * $Id: BLI_math_color.h 34966 2011-02-18 13:58:08Z jesterking $
+ * $Id: BLI_math_color.h 37783 2011-06-24 03:49:56Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -70,6 +70,7 @@ unsigned int rgb_to_cpack(float r, float g, float b);
 unsigned int hsv_to_cpack(float h, float s, float v);
 
 float rgb_to_grayscale(float rgb[3]);
+unsigned char rgb_to_grayscale_byte(unsigned char rgb[3]);
 
 /***************** Profile Transformations ********************/
 

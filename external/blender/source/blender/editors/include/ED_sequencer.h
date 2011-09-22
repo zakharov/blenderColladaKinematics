@@ -1,5 +1,5 @@
 /*
- * $Id: ED_sequencer.h 35016 2011-02-21 07:25:24Z jesterking $
+ * $Id: ED_sequencer.h 39937 2011-09-05 19:34:27Z blendix $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -29,10 +29,6 @@
 #ifndef ED_SEQUENCER_H
 #define ED_SEQUENCER_H
 
-#define SEQ_ZOOM_FAC(szoom) (szoom > 0)? (szoom) : (szoom == 0)? (1.0) : (-1.0/szoom)
-
-
-/* in space_sequencer.c, for rna update function */
-void ED_sequencer_update_view(bContext *C, int view);
+#define SEQ_ZOOM_FAC(szoom) ((szoom) > 0.0f)? (szoom) : ((szoom) == 0.0f)? (1.0f) : (-1.0f/(szoom))
 
 #endif /*  ED_SEQUENCER_H */

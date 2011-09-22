@@ -1,5 +1,5 @@
 /*
- * $Id: editarmature_retarget.c 35242 2011-02-27 20:29:51Z jesterking $
+ * $Id: editarmature_retarget.c 36276 2011-04-21 15:53:30Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -1536,7 +1536,7 @@ RigGraph *RIG_graphFromArmature(const bContext *C, Object *ob, bArmature *arm)
 	Scene *scene = CTX_data_scene(C);
 	EditBone *ebone;
 	RigGraph *rg;
- 	
+
 	rg = newRigGraph();
 	
 	if (obedit == ob)
@@ -1588,7 +1588,7 @@ static RigGraph *armatureSelectedToGraph(bContext *C, Object *ob, bArmature *arm
 	Scene *scene = CTX_data_scene(C);
 	EditBone *ebone;
 	RigGraph *rg;
- 	
+
 	rg = newRigGraph();
 	
 	if (obedit == ob)
@@ -2829,7 +2829,7 @@ void BIF_retargetArmature(bContext *C)
 		{
 			RigGraph *rigg;
 			bArmature *arm;
-		 	
+
 			arm = ob->data;
 		
 			/* Put the armature into editmode */

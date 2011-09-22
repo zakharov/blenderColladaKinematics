@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/scons/scons-local-1.2.0.d20090223/SCons/Script
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2009-09-05T02:30:42.308240Z
-23016
-jesterking
+2011-05-09T08:15:38.241902Z
+36564
+campbellbarton
 
 
 
@@ -32,12 +32,12 @@ file
 
 
 
-2011-03-03T12:29:15.538297Z
+2011-09-21T18:17:14.560133Z
 b75522a3874ab152c0ac6f7f6ce57f18
-2009-09-05T02:30:42.308240Z
-23016
-jesterking
-
+2011-05-09T08:15:38.241902Z
+36564
+campbellbarton
+has-props
 
 
 
@@ -66,12 +66,12 @@ file
 
 
 
-2011-03-03T12:29:15.538297Z
+2011-09-21T18:17:14.564133Z
 f6b20dff169d37f0f83463c618766535
-2009-09-05T02:30:42.308240Z
-23016
-jesterking
-
+2011-05-09T08:15:38.241902Z
+36564
+campbellbarton
+has-props
 
 
 
@@ -100,12 +100,12 @@ file
 
 
 
-2011-03-03T12:29:15.538297Z
+2011-09-21T18:17:14.564133Z
 ed3e4e8db3a0b6c3348e4b1a7b326fa2
-2009-09-05T02:30:42.308240Z
-23016
-jesterking
-
+2011-05-09T08:15:38.241902Z
+36564
+campbellbarton
+has-props
 
 
 
@@ -134,12 +134,12 @@ file
 
 
 
-2011-03-03T12:29:15.538297Z
+2011-09-21T18:17:14.564133Z
 4489b4399058d4c488a834ec062cb0f2
-2009-09-05T02:30:42.308240Z
-23016
-jesterking
-
+2011-05-09T08:15:38.241902Z
+36564
+campbellbarton
+has-props
 
 
 
@@ -168,12 +168,12 @@ file
 
 
 
-2011-03-03T12:29:15.542297Z
+2011-09-21T18:17:14.564133Z
 80419c14afdeaff9bcba3c0e3d1a9442
-2009-09-05T02:30:42.308240Z
-23016
-jesterking
-
+2011-05-09T08:15:38.241902Z
+36564
+campbellbarton
+has-props
 
 
 

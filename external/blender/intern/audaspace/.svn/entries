@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/intern/audaspace
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2011-02-25T10:21:56.373241Z
-35141
-jesterking
+2011-09-20T18:29:19.809825Z
+40413
+campbellbarton
 
 
 
@@ -53,11 +53,11 @@ file
 
 
 
-2011-03-03T12:25:18.630297Z
-68ebfb52d3163ddc1e501b04d2e7e355
-2010-11-21T14:32:55.729393Z
-33212
-campbellbarton
+2011-09-21T18:15:46.811698Z
+72685b2fea47221de138d6df50d23f57
+2011-05-27T23:33:40.494970Z
+36960
+schlaile
 has-props
 
 
@@ -79,7 +79,7 @@ has-props
 
 
 
-1502
+1519
 
 jack
 dir
@@ -90,12 +90,12 @@ file
 
 
 
-2011-03-03T12:25:18.630297Z
+2011-09-21T18:15:46.811698Z
 7316c8a55f6166386b7b0bf7a239839b
-2011-02-18T23:47:37.358430Z
-34981
-nexyon
-
+2011-05-09T08:15:38.241902Z
+36564
+campbellbarton
+has-props
 
 
 
@@ -127,10 +127,10 @@ file
 
 
 
-2011-03-03T12:25:18.634297Z
-6b4d02b45792ead6dd598b407cb037f3
-2011-01-25T14:43:13.999734Z
-34486
+2011-09-21T18:15:46.811698Z
+de29cffbcce1678e46b00c4cc37ceaee
+2011-09-20T18:29:19.809825Z
+40413
 campbellbarton
 has-props
 
@@ -153,7 +153,7 @@ has-props
 
 
 
-5954
+6949
 
 OpenAL
 dir

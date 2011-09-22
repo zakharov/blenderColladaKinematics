@@ -1,15 +1,15 @@
 10
 
 dir
-35365
+40447
 https://svn.blender.org/svnroot/bf-blender/trunk/blender/release/windows/contrib/vfapi
 https://svn.blender.org/svnroot/bf-blender
 
 
 
-2006-02-05T19:39:12.000000Z
-6701
-schlaile
+2011-04-21T13:11:51.185139Z
+36271
+campbellbarton
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2011-03-03T12:26:08.946297Z
-a851fb5788b6235f1e87420437e7a6cf
-2006-02-05T19:39:12.000000Z
-6701
-schlaile
+2011-09-21T18:16:02.699776Z
+ddfd9274827aaaba5f5c0f951adfb975
+2011-04-21T13:11:51.185139Z
+36271
+campbellbarton
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-8647
+8516
 
 README
 file
@@ -66,7 +66,7 @@ file
 
 
 
-2011-03-03T12:26:08.950297Z
+2011-09-21T18:16:02.699776Z
 31c6a8011c0f985e5220a8ea522837df
 2006-02-05T19:39:12.000000Z
 6701

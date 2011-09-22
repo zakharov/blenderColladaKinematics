@@ -1,17 +1,17 @@
 K 25
 svn:wc:ra_dav:version-url
 V 73
-/svnroot/bf-extensions/!svn/ver/1664/trunk/py/scripts/addons/io_scene_fbx
+/svnroot/bf-extensions/!svn/ver/2334/trunk/py/scripts/addons/io_scene_fbx
 END
 __init__.py
 K 25
 svn:wc:ra_dav:version-url
 V 85
-/svnroot/bf-extensions/!svn/ver/1664/trunk/py/scripts/addons/io_scene_fbx/__init__.py
+/svnroot/bf-extensions/!svn/ver/2311/trunk/py/scripts/addons/io_scene_fbx/__init__.py
 END
 export_fbx.py
 K 25
 svn:wc:ra_dav:version-url
 V 87
-/svnroot/bf-extensions/!svn/ver/1608/trunk/py/scripts/addons/io_scene_fbx/export_fbx.py
+/svnroot/bf-extensions/!svn/ver/2334/trunk/py/scripts/addons/io_scene_fbx/export_fbx.py
 END

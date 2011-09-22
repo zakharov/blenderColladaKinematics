@@ -1,5 +1,5 @@
 /*
- * $Id: bpy.h 35236 2011-02-27 20:10:08Z jesterking $
+ * $Id: bpy.h 40401 2011-09-20 15:17:24Z campbellbarton $
  *
  * ***** BEGIN GPL LICENSE BLOCK *****
  *
@@ -26,5 +26,9 @@
  */
 
  
-void BPy_init_modules( void );
+void BPy_init_modules(void);
 extern PyObject *bpy_package_py;
+
+/* bpy_interface_atexit.c */
+void BPY_atexit_register(void);
+void BPY_atexit_unregister(void);

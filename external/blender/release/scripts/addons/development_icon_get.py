@@ -22,9 +22,9 @@
 bl_info = {
     'name': 'Icons',
     'author': 'Crouch, N.tox, PKHG, Campbell Barton, Dany Lebel',
-    'version': (1, 5, 0),
-    'blender': (2, 5, 7),
-    'api': 34404,
+    'version': (1, 5, 1),
+    "blender": (2, 5, 7),
+    "api": 35850,
     'location': 'Text Editor > Properties or '\
         'Console > Console Menu',
     'warning': '',
@@ -42,7 +42,7 @@ import bpy
 
 def create_icon_list_all():
     icons = bpy.types.UILayout.bl_rna.functions['prop'].parameters['icon'].\
-        items.keys()
+        enum_items.keys()
 
     icons.remove("NONE")
 
@@ -89,9 +89,9 @@ class OBJECT_PT_icons(bpy.types.Panel):
         if props.search != CONSOLE_HT_icons._search_old:
             self.icon_list = create_icon_list()
             # adjusting max value of scroller
-            IconProps.scroll = bpy.props.IntProperty(default=1, min=1,
-                max=max(1, len(self.icon_list) - self.amount + 1),
-                description="Drag to scroll icons")
+#            IconProps.scroll = bpy.props.IntProperty(default=1, min=1,
+#                max=max(1, len(self.icon_list) - self.amount + 1),
+#                description="Drag to scroll icons")
 
         box = self.layout.box()
         # scroll view
@@ -139,7 +139,7 @@ class OBJECT_PT_icons(bpy.types.Panel):
             # icons
             col = box.column(align=True)
             if len(self.icon_list) == 0:
-                row.label("No icons found")
+                col.label("No icons found")
             else:
                 for i, icon in enumerate(self.icon_list):
                     if i % self.amount == 0:
@@ -162,13 +162,13 @@ class CONSOLE_HT_icons(bpy.types.Header):
     def draw(self, context):
         props = context.scene.icon_props
         # polling for updates
-        if props.search != __class__._search_old:
-            __class__._search_old = props.search
+        if props.search != self.__class__._search_old:
+            self.__class__._search_old = props.search
             self.icon_list = create_icon_list()
             # adjusting max value of scroller
-            IconProps.scroll = bpy.props.IntProperty(default=1, min=1,
-                max=max(1, len(self.icon_list) - self.amount + 1),
-                description="Drag to scroll icons")
+#            IconProps.scroll = bpy.props.IntProperty(default=1, min=1,
+#                max=max(1, len(self.icon_list) - self.amount + 1),
+#                description="Drag to scroll icons")
 
         # scroll view
         if props.console:
@@ -219,14 +219,11 @@ def register():
             description="Drag to scroll icons")
 
     bpy.utils.register_module(__name__)
-
     bpy.types.Scene.icon_props = bpy.props.PointerProperty(type=IconProps)
-
     bpy.types.CONSOLE_MT_console.append(menu_func)
 
 
 def unregister():
-
     if bpy.context.scene.get('icon_props') != None:
         del bpy.context.scene['icon_props']
     try:
@@ -240,6 +237,7 @@ def unregister():
         bpy.utils.unregister_class(CONSOLE_HT_icons)
 
     bpy.utils.unregister_module(__name__)
+
 
 if __name__ == "__main__":
     register()
