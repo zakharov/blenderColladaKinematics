@@ -266,7 +266,7 @@ void DocumentExporter::exportCurrentScene(Scene *sce)
 
         // <library_kinematics_models>
         KinematicsExporter kin_exporter;
-        kin_exporter.exportKinematics();
+        kin_exporter.exportKinematics(sce);
 
 	// <library_controllers>
 	ArmatureExporter arm_exporter(&sw, this->export_settings);
